@@ -3,7 +3,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_REVEAL_BONUS</Tag>
 		<English>[PARAGRAPH:1][ICON_BULLET]Reveals %s1</English>
-		<French>[PARAGRAPH:1][ICON_BULLET]Révèle %s1</French>
+		<French>[PARAGRAPH:1][ICON_BULLET]Rï¿½vï¿½le %s1</French>
 		<German>[PARAGRAPH:1][ICON_BULLET]Reveals %s1</German>
 		<Italian>[PARAGRAPH:1][ICON_BULLET]Reveals %s1</Italian>
 		<Spanish>[PARAGRAPH:1][ICON_BULLET]Reveals %s1</Spanish>
@@ -27,7 +27,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FREE_SPECIALIST_NON_STATE_RELIGION</Tag>
 		<English>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 per Non-State Religion in a City following the State Religion</English>
-		<French>[PARAGRAPH:1][ICON_BULLET]Fournit un %s1 par religion non-étatique dans une cité pourvue d'une religion d'État</French>
+		<French>[PARAGRAPH:1][ICON_BULLET]Fournit un %s1 par religion non-ï¿½tatique dans une citï¿½ pourvue d'une religion d'ï¿½tat</French>
 		<German>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 per Non-State Religion in a City following the State Religion</German>
 		<Italian>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 per Non-State Religion in a City following the State Religion</Italian>
 		<Spanish>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 per Non-State Religion in a City following the State Religion</Spanish>
@@ -35,7 +35,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FREE_SPECIALIST_STATE_RELIGION</Tag>
 		<English>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 in a City following the State Religion</English>
-		<French>[PARAGRAPH:1][ICON_BULLET]Fournit un %s1 dans une cité pourvue d'une religion d'État</French>
+		<French>[PARAGRAPH:1][ICON_BULLET]Fournit un %s1 dans une citï¿½ pourvue d'une religion d'ï¿½tat</French>
 		<German>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 in a City following the State Religion</German>
 		<Italian>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 in a City following the State Religion</Italian>
 		<Spanish>[PARAGRAPH:1][ICON_BULLET]Gives one %s1 in a City following the State Religion</Spanish>
@@ -43,7 +43,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DEATHMARKED</Tag>
 		<English>Marked By Death</English>
-		<French>Marqué par la Mort</French>
+		<French>Marquï¿½ par la Mort</French>
 		<German>Marked By Death</German>
 		<Italian>Marked By Death</Italian>
 		<Spanish>Marked By Death</Spanish>
@@ -75,7 +75,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_INTOLERANT</Tag>
 		<English>Intolerant</English>
-		<French>Intolérant</French>
+		<French>Intolï¿½rant</French>
 		<German>Intolerant</German>
 		<Italian>Intolerant</Italian>
 		<Spanish>Intolerant</Spanish>
@@ -83,7 +83,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_CRUSADER</Tag>
 		<English>Crusader</English>
-		<French>Croisé</French>
+		<French>Croisï¿½</French>
 		<German>Crusader</German>
 		<Italian>Crusader</Italian>
 		<Spanish>Crusader</Spanish>
@@ -99,7 +99,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_THEOCRATIC_WARRIOR</Tag>
 		<English>Theocratic Warrior</English>
-		<French>Guerrier théocrate</French>
+		<French>Guerrier thï¿½ocrate</French>
 		<German>Theocratic Warrior</German>
 		<Italian>Theocratic Warrior</Italian>
 		<Spanish>Theocratic Warrior</Spanish>
@@ -155,7 +155,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SPECIALIST_CRIME_CHANGE</Tag>
 		<English>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</English>
-		<French>[NEWLINE][ICON_BULLET]%d2 au taux de criminalité par %s1</French>
+		<French>[NEWLINE][ICON_BULLET]%d2 au taux de criminalitï¿½ par %s1</French>
 		<German>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</German>
 		<Italian>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</Spanish>
@@ -252,8 +252,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_NECROMANCER_HELP</Tag>
 		<English>[NEWLINE][ICON_BULLET]Summoned Skeletons and Spectres gain the Dark Strength promotion with the Necromancy technology.[NEWLINE][ICON_BULLET] Free Death Mana from the Palace.</English>
-		<French>[NEWLINE][ICON_BULLET]Les Squelettes et les Spectres invoqués obtiennent la promotion [LINK=PROMOTION_DARK_STRENGTH]Force Occulte[\LINK] après la découverte de la [LINK=TECH_NECROMANCY]Nécromancie[\LINK].[NEWLINE][ICON_BULLET] Mana de Mort Gratuite pour le Palais.</French>
-		<German>[NEWLINE][ICON_BULLET]Beschworene Skelete und Spektren erhalten durch die Technologie Nekromantie automatisch die Beförderung "Dunkle Stärke"[NEWLINE][ICON_BULLET] Free Death Mana from the Palace.</German>
+		<French>[NEWLINE][ICON_BULLET]Les Squelettes et les Spectres invoquï¿½s obtiennent la promotion [LINK=PROMOTION_DARK_STRENGTH]Force Occulte[\LINK] aprï¿½s la dï¿½couverte de la [LINK=TECH_NECROMANCY]Nï¿½cromancie[\LINK].[NEWLINE][ICON_BULLET] Mana de Mort Gratuite pour le Palais.</French>
+		<German>[NEWLINE][ICON_BULLET]Beschworene Skelete und Spektren erhalten durch die Technologie Nekromantie automatisch die Befï¿½rderung "Dunkle Stï¿½rke"[NEWLINE][ICON_BULLET] Free Death Mana from the Palace.</German>
 		<Italian>[NEWLINE][ICON_BULLET]Summoned Skeletons and Spectres gain the Dark Strength promotion with the Necromancy technology[NEWLINE][ICON_BULLET] Free Death Mana from the Palace.</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Summoned Skeletons and Spectres gain the Dark Strength promotion with the Necromancy technology[NEWLINE][ICON_BULLET] Free Death Mana from the Palace.</Spanish>
 	</TEXT>
@@ -411,7 +411,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_GIFT_WEREWOLF</Tag>
 		<English>Bite Ally</English>
-		<French>Mordre un Allié</French>
+		<French>Mordre un Alliï¿½</French>
 		<German>Bite Ally</German>
 		<Italian>Bite Ally</Italian>
 		<Spanish>Bite Ally</Spanish>
@@ -419,7 +419,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_GIFT_WEREWOLF_PEDIA</Tag>
 		<English>Bite Ally</English>
-		<French>Mordre un Allié</French>
+		<French>Mordre un Alliï¿½</French>
 		<German>Bite Ally</German>
 		<Italian>Bite Ally</Italian>
 		<Spanish>Bite Ally</Spanish>
@@ -686,7 +686,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_BREAK_NETHER_BLADE_HELP</Tag>
 		<English>[ICON_BULLET]Requires the current owner of the Blade not to be a Sidar.[NEWLINE][ICON_BULLET]All units killed by the Blade can now be resurrected by their former owner.</English>
-		<French>[ICON_BULLET]Le porteur de la Lame ne doit pas être sidar.[NEWLINE][ICON_BULLET]Toutes les unités tuées à l'aide de la Lame des Morts pevent désormais être ressuscitées par leur propriétaire originel.</French>
+		<French>[ICON_BULLET]Le porteur de la Lame ne doit pas ï¿½tre sidar.[NEWLINE][ICON_BULLET]Toutes les unitï¿½s tuï¿½es ï¿½ l'aide de la Lame des Morts pevent dï¿½sormais ï¿½tre ressuscitï¿½es par leur propriï¿½taire originel.</French>
 		<German>[ICON_BULLET]Requires the current owner of the Blade not to be a Sidar.[NEWLINE][ICON_BULLET]All units killed by the Blade can now be resurrected by their former owner.</German>
 		<Italian>[ICON_BULLET]Requires the current owner of the Blade not to be a Sidar.[NEWLINE][ICON_BULLET]All units killed by the Blade can now be resurrected by their former owner.</Italian>
 		<Spanish>[ICON_BULLET]Requires the current owner of the Blade not to be a Sidar.[NEWLINE][ICON_BULLET]All units killed by the Blade can now be resurrected by their former owner.</Spanish>
@@ -965,7 +965,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BRONZE_WORKING_QUOTE</Tag>
 		<English>Copper and tin are rarely found together, but the clear superiority of bronze weapons over rocks meant that the difficulty of transportation was justified.[NEWLINE][NEWLINE]Felix Askanier, Scholar</English>
-		<French>Le cuivre et l'étain sont rarement découverts au même endroit, mais la supériorité évidente des armes de bronze sur les armes de pierre signifie que les difficultés logistiques en valaient bien la peine.[NEWLINE][NEWLINE]Felix Askanier, Érudit</French>
+		<French>Le cuivre et l'ï¿½tain sont rarement dï¿½couverts au mï¿½me endroit, mais la supï¿½rioritï¿½ ï¿½vidente des armes de bronze sur les armes de pierre signifie que les difficultï¿½s logistiques en valaient bien la peine.[NEWLINE][NEWLINE]Felix Askanier, ï¿½rudit</French>
 		<German>Copper and tin are rarely found together, but the clear superiority of bronze weapons over rocks meant that the difficulty of transportation was justified.[NEWLINE][NEWLINE]Felix Askanier, Scholar</German>
 		<Italian>Copper and tin are rarely found together, but the clear superiority of bronze weapons over rocks meant that the difficulty of transportation was justified.[NEWLINE][NEWLINE]Felix Askanier, Scholar</Italian>
 		<Spanish>Copper and tin are rarely found together, but the clear superiority of bronze weapons over rocks meant that the difficulty of transportation was justified.[NEWLINE][NEWLINE]Felix Askanier, Scholar</Spanish>
@@ -1141,7 +1141,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_LEADER_RELATION_MODIFIER_GOOD</Tag>
 		<English>%D1: "We share a good history."</English>
-		<French>%D1: "Nous avons tissé des liens de confiance entre nos peuples."</French>
+		<French>%D1: "Nous avons tissï¿½ des liens de confiance entre nos peuples."</French>
 		<German>%D1: "Unsere gemeinsame Vergangenheit ist erfreulich."</German>
 		<Italian>%D1: "We share a good history."</Italian>
 		<Spanish>%D1: "We share a good history."</Spanish>
@@ -1149,7 +1149,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_LEADER_RELATION_MODIFIER_BAD</Tag>
 		<English>%D1: "We share a troubled past."</English>
-		<French>%D1: "Nous partageons un passé trouble."</French>
+		<French>%D1: "Nous partageons un passï¿½ trouble."</French>
 		<German>%D1: "Unsere gemeinsame Vergangenheit ist problematisch."</German>
 		<Italian>%D1: "We share a troubled past."</Italian>
 		<Spanish>%D1: "We share a troubled past."</Spanish>
@@ -1222,7 +1222,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_SHOPLIFTING</Tag>
 		<English>(Crime) Shoplifting</English>
-		<French>(Crime) Vol à l'étalage</French>
+		<French>(Crime) Vol ï¿½ l'ï¿½talage</French>
 		<German>(Crime) Shoplifting</German>
 		<Italian>(Crime) Shoplifting</Italian>
 		<Spanish>(Crime) Shoplifting</Spanish>
@@ -1246,7 +1246,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_DESERTION</Tag>
 		<English>(Crime) Desertion</English>
-		<French>(Crime) Désertion</French>
+		<French>(Crime) Dï¿½sertion</French>
 		<German>(Crime) Desertion</German>
 		<Italian>(Crime) Desertion</Italian>
 		<Spanish>(Crime) Desertion</Spanish>
@@ -1262,7 +1262,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PREREQ_CRIME</Tag>
 		<English>[NEWLINE][ICON_BULLET]Requires %d1 Crime</English>
-		<French>[NEWLINE][ICON_BULLET]Nécessite un taux de criminalité de %d1</French>
+		<French>[NEWLINE][ICON_BULLET]Nï¿½cessite un taux de criminalitï¿½ de %d1</French>
 		<German>[NEWLINE][ICON_BULLET]Requires %d1 Crime</German>
 		<Italian>[NEWLINE][ICON_BULLET]Requires %d1 Crime</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Requires %d1 Crime</Spanish>
@@ -1270,7 +1270,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PREREQ_MAGICAL_POWER</Tag>
 		<English>[NEWLINE][ICON_BULLET]Requires %d1 Power</English>
-		<French>[NEWLINE][ICON_BULLET]Nécessite %d1 de puissance</French>
+		<French>[NEWLINE][ICON_BULLET]Nï¿½cessite %d1 de puissance</French>
 		<German>[NEWLINE][ICON_BULLET]Requires %d1 Power</German>
 		<Italian>[NEWLINE][ICON_BULLET]Requires %d1 Power</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Requires %d1 Power</Spanish>
@@ -1286,7 +1286,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PREREQ_POPULATION</Tag>
 		<English>[NEWLINE][ICON_BULLET]Requires %d1 Population</English>
-		<French>[NEWLINE][ICON_BULLET]Nécessite une population de %d1</French>
+		<French>[NEWLINE][ICON_BULLET]Nï¿½cessite une population de %d1</French>
 		<German>[NEWLINE][ICON_BULLET]Requires %d1 Population</German>
 		<Italian>[NEWLINE][ICON_BULLET]Requires %d1 Population</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Requires %d1 Population</Spanish>
@@ -1294,7 +1294,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_BREAKOUT</Tag>
 		<English>(Crime) Breakout</English>
-		<French>(Crime) Évasion</French>
+		<French>(Crime) ï¿½vasion</French>
 		<German>(Crime) Breakout</German>
 		<Italian>(Crime) Breakout</Italian>
 		<Spanish>(Crime) Breakout</Spanish>
@@ -1302,7 +1302,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_UNETHICAL_EXPERIMENT</Tag>
 		<English>(Crime) Unethical Experiments</English>
-		<French>(Crime) Expériences immorales</French>
+		<French>(Crime) Expï¿½riences immorales</French>
 		<German>(Crime) Unethical Experiments</German>
 		<Italian>(Crime) Unethical Experiments</Italian>
 		<Spanish>(Crime) Unethical Experiments</Spanish>
@@ -1310,7 +1310,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ENTERTAINING_EXPERIMENT</Tag>
 		<English>(Crime) Entertaining Experiments</English>
-		<French>(Crime) Expériences amusantes</French>
+		<French>(Crime) Expï¿½riences amusantes</French>
 		<German>(Crime) Entertaining Experiments</German>
 		<Italian>(Crime) Entertaining Experiments</Italian>
 		<Spanish>(Crime) Entertaining Experiments</Spanish>
@@ -1326,7 +1326,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_RUNAWAY_SUMMONS</Tag>
 		<English>(Crime) Runaway Summons</English>
-		<French>(Crime) Évocations en fuite</French>
+		<French>(Crime) ï¿½vocations en fuite</French>
 		<German>(Crime) Runaway Summons</German>
 		<Italian>(Crime) Runaway Summons</Italian>
 		<Spanish>(Crime) Runaway Summons</Spanish>
@@ -1342,7 +1342,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BONUS_CRIME_PER_TURN</Tag>
 		<English>%s1 Crime</English>
-		<French>%s1 Criminalité</French>
+		<French>%s1 Criminalitï¿½</French>
 		<German>%s1 Crime</German>
 		<Italian>%s1 Crime</Italian>
 		<Spanish>%s1 Crime</Spanish>
@@ -1390,7 +1390,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Tag>
 		<English>(Crime) Organized Crime</English>
-		<French>(Crime) Crime organisé</French>
+		<French>(Crime) Crime organisï¿½</French>
 		<German>(Crime) Organized Crime</German>
 		<Italian>(Crime) Organized Crime</Italian>
 		<Spanish>(Crime) Organized Crime</Spanish>
@@ -1414,7 +1414,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELLCLASS_SUMMONING</Tag>
 		<English>Summoning[SPACE]</English>
-		<French>Évocation[SPACE]</French>
+		<French>ï¿½vocation[SPACE]</French>
 		<German>Summoning[SPACE]</German>
 		<Italian>Summoning[SPACE]</Italian>
 		<Spanish>Summoning[SPACE]</Spanish>
@@ -1518,7 +1518,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CRIME</Tag>
 		<English>Total Crime : %d1</English>
-		<French>Criminalité totale : %d1</French>
+		<French>Criminalitï¿½ totale : %d1</French>
 		<German>Total Crime : %d1</German>
 		<Italian>Total Crime : %d1</Italian>
 		<Spanish>Total Crime : %d1</Spanish>
@@ -1534,7 +1534,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_POPULATION</Tag>
 		<English>%d1 from Population</English>
-		<French>%d1 à cause de la population</French>
+		<French>%d1 ï¿½ cause de la population</French>
 		<German>%d1 from Population</German>
 		<Italian>%d1 from Population</Italian>
 		<Spanish>%d1 from Population</Spanish>
@@ -1542,7 +1542,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_GOLDEN_AGE</Tag>
 		<English>%d1 from Golden Age</English>
-		<French>%d1 grâce à l'Âge d'Or</French>
+		<French>%d1 grï¿½ce ï¿½ l'ï¿½ge d'Or</French>
 		<German>%d1 from Golden Age</German>
 		<Italian>%d1 from Golden Age</Italian>
 		<Spanish>%d1 from Golden Age</Spanish>
@@ -1550,7 +1550,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_BUILDING</Tag>
 		<English>%d1 from Buildings</English>
-		<French>%d1 à cause des bâtiments</French>
+		<French>%d1 ï¿½ cause des bï¿½timents</French>
 		<German>%d1 from Buildings</German>
 		<Italian>%d1 from Buildings</Italian>
 		<Spanish>%d1 from Buildings</Spanish>
@@ -1558,7 +1558,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_CIVIC</Tag>
 		<English>%d1 from Civics</English>
-		<French>%d1 à cause des doctrines</French>
+		<French>%d1 ï¿½ cause des doctrines</French>
 		<German>%d1 from Civics</German>
 		<Italian>%d1 from Civics</Italian>
 		<Spanish>%d1 from Civics</Spanish>
@@ -1566,7 +1566,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_BONUS</Tag>
 		<English>%d1 from access to %s2</English>
-		<French>%d1 à cause de l'accès à %s2</French>
+		<French>%d1 ï¿½ cause de l'accï¿½s ï¿½ %s2</French>
 		<German>%d1 from access to %s2</German>
 		<Italian>%d1 from access to %s2</Italian>
 		<Spanish>%d1 from access to %s2</Spanish>
@@ -1574,7 +1574,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_UNIT</Tag>
 		<English>%d1 from nearby Units</English>
-		<French>%d1 à cause des unités voisines</French>
+		<French>%d1 ï¿½ cause des unitï¿½s voisines</French>
 		<German>%d1 from nearby Units</German>
 		<Italian>%d1 from nearby Units</Italian>
 		<Spanish>%d1 from nearby Units</Spanish>
@@ -1582,7 +1582,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_HAPPY</Tag>
 		<English>%d1 from Happiness</English>
-		<French>%d1 à cause du bonheur</French>
+		<French>%d1 ï¿½ cause du bonheur</French>
 		<German>%d1 from Happiness</German>
 		<Italian>%d1 from Happiness</Italian>
 		<Spanish>%d1 from Happiness</Spanish>
@@ -1590,7 +1590,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_SPECIALIST</Tag>
 		<English>%d1 from Specialists</English>
-		<French>%d1 à cause des spécialistes</French>
+		<French>%d1 ï¿½ cause des spï¿½cialistes</French>
 		<German>%d1 from Specialists</German>
 		<Italian>%d1 from Specialists</Italian>
 		<Spanish>%d1 from Specialists</Spanish>
@@ -1598,7 +1598,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_CRACKDOWN</Tag>
 		<English>%d1 from Production</English>
-		<French>%d1 à cause de la production</French>
+		<French>%d1 ï¿½ cause de la production</French>
 		<German>%d1 from Production</German>
 		<Italian>%d1 from Production</Italian>
 		<Spanish>%d1 from Production</Spanish>
@@ -1606,7 +1606,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_RIOTS</Tag>
 		<English>(Crime) Riots</English>
-		<French>(Crime) Émeutes</French>
+		<French>(Crime) ï¿½meutes</French>
 		<German>(Crime) Riots</German>
 		<Italian>(Crime) Riots</Italian>
 		<Spanish>(Crime) Riots</Spanish>
@@ -1655,9 +1655,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_NEW</Tag>
 		<English>[NEWLINE]%d1[ICON_GOLD]: Distance Maintenance[NEWLINE]%d2[ICON_GOLD]: Number of Cities Maintenance[NEWLINE]%d3[ICON_GOLD]: Colony Expenses[NEWLINE]%d4[ICON_GOLD]: Corporation Payments[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]TOTAL CITY MAINTENANCE COST: %d7[ICON_GOLD]</English>
-		<French>[NEWLINE]%d1[ICON_GOLD] : entretien lié à la distance[NEWLINE]%d2[ICON_GOLD] : entretien lié au nombre de villes[NEWLINE]%d3[ICON_GOLD] : dépenses des colonies[NEWLINE]%d4[ICON_GOLD] : paiements des sociétés commerciales[NEWLINE]%d5[ICON_GOLD]: Unités voisines[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COÛT D'ENTRETIEN TOTAL DES VILLES : %d7[ICON_GOLD]</French>
-		<German>[NEWLINE]%d1[ICON_GOLD]: Unterhalt für entfernte Städte[NEWLINE]%d2[ICON_GOLD]: Anzahl der unterhaltspflichtigen Städte[NEWLINE]%d3[ICON_GOLD]: Kolonialausgaben[NEWLINE]%d4[ICON_GOLD]: Zahlungen für Kapitalgesellschaften[NEWLINE]%d5[ICON_GOLD]: Einheiten in der Nähe[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]STADTUNTERHALTSKOSTEN GESAMT: %d7[ICON_GOLD]</German>
-		<Italian>[NEWLINE]%d1[ICON_GOLD]: Distanza Mantenimento[NEWLINE]%d2[ICON_GOLD]: Numero di città Mantenimento[NEWLINE]%d3[ICON_GOLD]: Spese per le colonie[NEWLINE]%d4[ICON_GOLD]: Pagamenti corporativi[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COSTO TOTALE MANTENIMENTO CITT&#192;: %d7[ICON_GOLD]</Italian>
+		<French>[NEWLINE]%d1[ICON_GOLD] : entretien liï¿½ ï¿½ la distance[NEWLINE]%d2[ICON_GOLD] : entretien liï¿½ au nombre de villes[NEWLINE]%d3[ICON_GOLD] : dï¿½penses des colonies[NEWLINE]%d4[ICON_GOLD] : paiements des sociï¿½tï¿½s commerciales[NEWLINE]%d5[ICON_GOLD]: Unitï¿½s voisines[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COï¿½T D'ENTRETIEN TOTAL DES VILLES : %d7[ICON_GOLD]</French>
+		<German>[NEWLINE]%d1[ICON_GOLD]: Unterhalt fï¿½r entfernte Stï¿½dte[NEWLINE]%d2[ICON_GOLD]: Anzahl der unterhaltspflichtigen Stï¿½dte[NEWLINE]%d3[ICON_GOLD]: Kolonialausgaben[NEWLINE]%d4[ICON_GOLD]: Zahlungen fï¿½r Kapitalgesellschaften[NEWLINE]%d5[ICON_GOLD]: Einheiten in der Nï¿½he[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]STADTUNTERHALTSKOSTEN GESAMT: %d7[ICON_GOLD]</German>
+		<Italian>[NEWLINE]%d1[ICON_GOLD]: Distanza Mantenimento[NEWLINE]%d2[ICON_GOLD]: Numero di cittï¿½ Mantenimento[NEWLINE]%d3[ICON_GOLD]: Spese per le colonie[NEWLINE]%d4[ICON_GOLD]: Pagamenti corporativi[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COSTO TOTALE MANTENIMENTO CITT&#192;: %d7[ICON_GOLD]</Italian>
 		<Spanish>[NEWLINE]%d1 [ICON_GOLD]: mantenimiento por lejan&#237;a[NEWLINE]%d2 [ICON_GOLD]: mantenimiento por cantidad de ciudades[NEWLINE]%d3[ICON_GOLD]: gastos de la colonia[NEWLINE]%d4 [ICON_GOLD]: pagos a la corporaci&#243;n[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COSTE TOTAL MANTENIMIENTO CIUDAD: %d7 [ICON_GOLD]</Spanish>
 	</TEXT>
 
@@ -1720,7 +1720,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_GARRISON</Tag>
 		<English>-4 from Garrison</English>
-		<French>-4 grâce à la Garnison</French>
+		<French>-4 grï¿½ce ï¿½ la Garnison</French>
 		<German>-4 from Garrison</German>
 		<Italian>-4 from Garrison</Italian>
 		<Spanish>-4 from Garrison</Spanish>
@@ -1760,7 +1760,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PENAL_COLONY</Tag>
 		<English>Penal Colony</English>
-		<French>Colonie Pénitentiaire</French>
+		<French>Colonie Pï¿½nitentiaire</French>
 		<German>Penal Colony</German>
 		<Italian>Penal Colony</Italian>
 		<Spanish>Penal Colony</Spanish>
@@ -1776,7 +1776,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PENAL_COLONY_STRATEGY</Tag>
 		<English>Adds a [LINK=BUILDING_PENAL_COLONY_EFFECT](Effect) Penal Colony[\LINK] to all other cities in your empire, halving crime per turn from population</English>
-		<French>[H1]Attention ![\H1][NEWLINE]Ajoute un [LINK=BUILDING_PENAL_COLONY_EFFECT](Effet) Colonie Pénale[\LINK] à toutes les autres villes de votre empire[NEWLINE][ICON_BULLET]La population génère désormais 1 point de criminalité par tour (au lieu de 2)[NEWLINE][ICON_BULLET]Malus de [ICON_FOOD] : -10%</French>
+		<French>[H1]Attention ![\H1][NEWLINE]Ajoute un [LINK=BUILDING_PENAL_COLONY_EFFECT](Effet) Colonie Pï¿½nale[\LINK] ï¿½ toutes les autres villes de votre empire[NEWLINE][ICON_BULLET]La population gï¿½nï¿½re dï¿½sormais 1 point de criminalitï¿½ par tour (au lieu de 2)[NEWLINE][ICON_BULLET]Malus de [ICON_FOOD]ï¿½: -10%</French>
 		<German>Adds a [LINK=BUILDING_PENAL_COLONY_EFFECT](Effect) Penal Colony[\LINK] to all other cities in your empire, halving crime per turn from population</German>
 		<Italian>Adds a [LINK=BUILDING_PENAL_COLONY_EFFECT](Effect) Penal Colony[\LINK] to all other cities in your empire, halving crime per turn from population</Italian>
 		<Spanish>Adds a [LINK=BUILDING_PENAL_COLONY_EFFECT](Effect) Penal Colony[\LINK] to all other cities in your empire, halving crime per turn from population</Spanish>
@@ -1784,7 +1784,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PENAL_COLONY_EFFECT</Tag>
 		<English>(Effect) Penal Colony</English>
-		<French>(Effet) Colonie Pénitentiaire</French>
+		<French>(Effet) Colonie Pï¿½nitentiaire</French>
 		<German>(Effect) Penal Colony</German>
 		<Italian>(Effect) Penal Colony</Italian>
 		<Spanish>(Effect) Penal Colony</Spanish>
@@ -1808,7 +1808,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_CRIMINAL_FEED</Tag>
 		<English>Devour Criminals</English>
-		<French>Dévorer les criminels</French>
+		<French>Dï¿½vorer les criminels</French>
 		<German>Devour Criminals</German>
 		<Italian>Devour Criminals</Italian>
 		<Spanish>Devour Criminals</Spanish>
@@ -1816,7 +1816,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_CRIMINAL_FEED_HELP</Tag>
 		<English>[ICON_BULLET]The Spider will feast on those detained in the feeding pit, halving the Crime rate in the city and gaining experience.[NEWLINE][ICON_BULLET]The Spider may get overzealous and start eating your population.</English>
-		<French>[ICON_BULLET]L'araignée va dévorer les détenus du garde-manger, réduisant de moitié le taux de criminalité de la ville, et acquérant de l'expérience.[NEWLINE][ICON_BULLET]L'araignée pourrait faire preuve d'un zèle excessif et commencer à dévorer la population.</French>
+		<French>[ICON_BULLET]L'araignï¿½e va dï¿½vorer les dï¿½tenus du garde-manger, rï¿½duisant de moitiï¿½ le taux de criminalitï¿½ de la ville, et acquï¿½rant de l'expï¿½rience.[NEWLINE][ICON_BULLET]L'araignï¿½e pourrait faire preuve d'un zï¿½le excessif et commencer ï¿½ dï¿½vorer la population.</French>
 		<German>[ICON_BULLET]The Spider will feast on those detained in the feeding pit, halving the Crime rate in the city and gaining experience.[NEWLINE][ICON_BULLET]The Spider may get overzealous and start eating your population.</German>
 		<Italian>[ICON_BULLET]The Spider will feast on those detained in the feeding pit, halving the Crime rate in the city and gaining experience.[NEWLINE][ICON_BULLET]The Spider may get overzealous and start eating your population.</Italian>
 		<Spanish>[ICON_BULLET]The Spider will feast on those detained in the feeding pit, halving the Crime rate in the city and gaining experience.[NEWLINE][ICON_BULLET]The Spider may get overzealous and start eating your population.</Spanish>
@@ -1856,7 +1856,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_NO_CRIME</Tag>
 		<English>No Crime</English>
-		<French>Sans Criminalité</French>
+		<French>Sans Criminalitï¿½</French>
 		<German>No Crime</German>
 		<Italian>No Crime</Italian>
 		<Spanish>No Crime</Spanish>
@@ -1864,7 +1864,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_NO_CRIME_HELP</Tag>
 		<English>Disables the Crime System</English>
-		<French>Désactive le système de Criminalité</French>
+		<French>Dï¿½sactive le systï¿½me de Criminalitï¿½</French>
 		<German>Disables the Crime System</German>
 		<Italian>Disables the Crime System</Italian>
 		<Spanish>Disables the Crime System</Spanish>
@@ -2100,7 +2100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP</Tag>
 		<English>(Crime) Attempted Coup</English>
-		<French>(Crime) Tentative de coup d'État</French>
+		<French>(Crime) Tentative de coup d'ï¿½tat</French>
 		<German>(Crime) Attempted Coup</German>
 		<Italian>(Crime) Attempted Coup</Italian>
 		<Spanish>(Crime) Attempted Coup</Spanish>
@@ -2108,7 +2108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_BLACK_MARKET_FUEL</Tag>
 		<English>(Crime) Black Market Fuel</English>
-		<French>(Crime) Carburant du marché noir</French>
+		<French>(Crime) Carburant du marchï¿½ noir</French>
 		<German>(Crime) Black Market Fuel</German>
 		<Italian>(Crime) Black Market Fuel</Italian>
 		<Spanish>(Crime) Black Market Fuel</Spanish>
@@ -2116,7 +2116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_BLESSING_OF_BHALL</Tag>
 		<English>(Crime) Blessing of Bhall</English>
-		<French>(Crime) Bénédiction de Bhall</French>
+		<French>(Crime) Bï¿½nï¿½diction de Bhall</French>
 		<German>(Crime) Blessing of Bhall</German>
 		<Italian>(Crime) Blessing of Bhall</Italian>
 		<Spanish>(Crime) Blessing of Bhall</Spanish>
@@ -2132,7 +2132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_BURIED_TREASURE</Tag>
 		<English>(Crime) Buried Treasure</English>
-		<French>(Crime) Trésor enterré</French>
+		<French>(Crime) Trï¿½sor enterrï¿½</French>
 		<German>(Crime) Buried Treasure</German>
 		<Italian>(Crime) Buried Treasure</Italian>
 		<Spanish>(Crime) Buried Treasure</Spanish>
@@ -2156,7 +2156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS</Tag>
 		<English>(Crime) Demonic Riots</English>
-		<French>(Crime) Émeutes démoniaques</French>
+		<French>(Crime) ï¿½meutes dï¿½moniaques</French>
 		<German>(Crime) Demonic Riots</German>
 		<Italian>(Crime) Demonic Riots</Italian>
 		<Spanish>(Crime) Demonic Riots</Spanish>
@@ -2164,7 +2164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS</Tag>
 		<English>(Crime) Disillusioned Exodus</English>
-		<French>(Crime) Exode désillusionné</French>
+		<French>(Crime) Exode dï¿½sillusionnï¿½</French>
 		<German>(Crime) Disillusioned Exodus</German>
 		<Italian>(Crime) Disillusioned Exodus</Italian>
 		<Spanish>(Crime) Disillusioned Exodus</Spanish>
@@ -2180,7 +2180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_HERETICAL_PYRES</Tag>
 		<English>(Crime) Heretical Pyres</English>
-		<French>(Crime) Bûchers d'hérétiques</French>
+		<French>(Crime) Bï¿½chers d'hï¿½rï¿½tiques</French>
 		<German>(Crime) Heretical Pyres</German>
 		<Italian>(Crime) Heretical Pyres</Italian>
 		<Spanish>(Crime) Heretical Pyres</Spanish>
@@ -2196,7 +2196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_IMPERIAL_BLASPHEMY</Tag>
 		<English>(Crime) Imperial Blasphemy</English>
-		<French>(Crime) Blasphème Impérial</French>
+		<French>(Crime) Blasphï¿½me Impï¿½rial</French>
 		<German>(Crime) Imperial Blasphemy</German>
 		<Italian>(Crime) Imperial Blasphemy</Italian>
 		<Spanish>(Crime) Imperial Blasphemy</Spanish>
@@ -2204,7 +2204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY</Tag>
 		<English>(Crime) Improvised Fireworks Display</English>
-		<French>(Crime) Feux d'artifice improvisés</French>
+		<French>(Crime) Feux d'artifice improvisï¿½s</French>
 		<German>(Crime) Improvised Fireworks Display</German>
 		<Italian>(Crime) Improvised Fireworks Display</Italian>
 		<Spanish>(Crime) Improvised Fireworks Display</Spanish>
@@ -2212,7 +2212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Tag>
 		<English>(Crime) Institutional Bribery</English>
-		<French>(Crime) Corruption étatique</French>
+		<French>(Crime) Corruption ï¿½tatique</French>
 		<German>(Crime) Institutional Bribery</German>
 		<Italian>(Crime) Institutional Bribery</Italian>
 		<Spanish>(Crime) Institutional Bribery</Spanish>
@@ -2244,7 +2244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING</Tag>
 		<English>(Crime) Organized Trafficking</English>
-		<French>(Crime) Trafic organisé</French>
+		<French>(Crime) Trafic organisï¿½</French>
 		<German>(Crime) Organized Trafficking</German>
 		<Italian>(Crime) Organized Trafficking</Italian>
 		<Spanish>(Crime) Organized Trafficking</Spanish>
@@ -2260,7 +2260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_PRESSGANGING</Tag>
 		<English>(Crime) Pressganging</English>
-		<French>(Crime) Enrôlement forcé</French>
+		<French>(Crime) Enrï¿½lement forcï¿½</French>
 		<German>(Crime) Pressganging</German>
 		<Italian>(Crime) Pressganging</Italian>
 		<Spanish>(Crime) Pressganging</Spanish>
@@ -2268,7 +2268,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK</Tag>
 		<English>(Crime) Ravenous Packs</English>
-		<French>(Crime) Meutes affamées</French>
+		<French>(Crime) Meutes affamï¿½es</French>
 		<German>(Crime) Ravenous Packs</German>
 		<Italian>(Crime) Ravenous Packs</Italian>
 		<Spanish>(Crime) Ravenous Packs</Spanish>
@@ -2284,7 +2284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS</Tag>
 		<English>(Crime) Stolen Eggs</English>
-		<French>(Crime) &#140;ufs volés</French>
+		<French>(Crime) &#140;ufs volï¿½s</French>
 		<German>(Crime) Stolen Eggs</German>
 		<Italian>(Crime) Stolen Eggs</Italian>
 		<Spanish>(Crime) Stolen Eggs</Spanish>
@@ -2300,7 +2300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_SUMMER_LOYALIST</Tag>
 		<English>(Crime) Summer Loyalists</English>
-		<French>(Crime) Loyalistes de l'Été</French>
+		<French>(Crime) Loyalistes de l'ï¿½tï¿½</French>
 		<German>(Crime) Summer Loyalists</German>
 		<Italian>(Crime) Summer Loyalists</Italian>
 		<Spanish>(Crime) Summer Loyalists</Spanish>
@@ -2356,7 +2356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES</Tag>
 		<English>(Crime) Worker Strikes</English>
-		<French>(Crime) Grèves de Travailleurs</French>
+		<French>(Crime) Grï¿½ves de Travailleurs</French>
 		<German>(Crime) Worker Strikes</German>
 		<Italian>(Crime) Worker Strikes</Italian>
 		<Spanish>(Crime) Worker Strikes</Spanish>
@@ -2364,7 +2364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLOOD_TIDE_GAOL</Tag>
 		<English>Flood Tide Gaol</English>
-		<French>Geôles de la marée montante</French>
+		<French>Geï¿½les de la marï¿½e montante</French>
 		<German>Flood Tide Gaol</German>
 		<Italian>Flood Tide Gaol</Italian>
 		<Spanish>Flood Tide Gaol</Spanish>
@@ -2372,7 +2372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAGISTRATE_LANUN</Tag>
 		<English>Magistrate of the Free Republic</English>
-		<French>Magistrature de la République Libre</French>
+		<French>Magistrature de la Rï¿½publique Libre</French>
 		<German>Magistrate of the Free Republic</German>
 		<Italian>Magistrate of the Free Republic</Italian>
 		<Spanish>Magistrate of the Free Republic</Spanish>
@@ -2444,7 +2444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_REBUILD_MITHRIL_GOLEM_HELP</Tag>
 		<English>[ICON_BULLET]Allows a player to rebuild The Mithril Golem in a city of a Runes of Kilmorph Worshipper (The Mithril Golem will be built as an unit of the city owner)</English>
-		<French>[ICON_BULLET]Permet au joueur de reconstruire le Golem de Mithril dans une ville ayant pour religion les runes de Kilmorph (Le Golem de Mithril sera reconstruit comme une unité du propriétaire de la ville)</French>
+		<French>[ICON_BULLET]Permet au joueur de reconstruire le Golem de Mithril dans une ville ayant pour religion les runes de Kilmorph (Le Golem de Mithril sera reconstruit comme une unitï¿½ du propriï¿½taire de la ville)</French>
 		<German>[ICON_BULLET]Allows a player to rebuild The Mithril Golem in a city of a Runes of Kilmorph Worshipper (The Mithril Golem will be built as an unit of the city owner)</German>
 		<Italian>[ICON_BULLET]Allows a player to rebuild The Mithril Golem in a city of a Runes of Kilmorph Worshipper (The Mithril Golem will be built as an unit of the city owner)</Italian>
 		<Spanish>[ICON_BULLET]Allows a player to rebuild The Mithril Golem in a city of a Runes of Kilmorph Worshipper (The Mithril Golem will be built as an unit of the city owner)</Spanish>
@@ -2468,7 +2468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SWARM_OF_LOCUSTS</Tag>
 		<English>Summon Swarm</English>
-		<French>Évocation de l'Essaim</French>
+		<French>ï¿½vocation de l'Essaim</French>
 		<German>Summon Swarm</German>
 		<Italian>Summon Swarm</Italian>
 		<Spanish>Summon Swarm</Spanish>
@@ -2652,7 +2652,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PIECES_OF_THE_HIVE_PEDIA</Tag>
 		<English>[ICON_BULLET]If these pieces are recovered and brought to a city, the Hive can be remade</English>
-		<French>[ICON_BULLET]Si ces morceaux sont récupérés et ramenés dans une ville, le Golem-Ruche peut être reconstruit.</French>
+		<French>[ICON_BULLET]Si ces morceaux sont rï¿½cupï¿½rï¿½s et ramenï¿½s dans une ville, le Golem-Ruche peut ï¿½tre reconstruit.</French>
 		<German>[ICON_BULLET]If these pieces are recovered and brought to a city, the Hive can be remade</German>
 		<Italian>[ICON_BULLET]If these pieces are recovered and brought to a city, the Hive can be remade</Italian>
 		<Spanish>[ICON_BULLET]If these pieces are recovered and brought to a city, the Hive can be remade</Spanish>
@@ -2660,7 +2660,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PIECES_OF_MITHRIL_GOLEM_PEDIA</Tag>
 		<English>[ICON_BULLET]If these pieces are recovered by a Runes worshipper and returned to their cities the Mithril Golem can be remade</English>
-		<French>[ICON_BULLET]Si ces morceaux sont récupérés par un adorateur des Runes et ramenés dans une de ses villes, le Golem de Mithril peut être reconstruit.</French>
+		<French>[ICON_BULLET]Si ces morceaux sont rï¿½cupï¿½rï¿½s par un adorateur des Runes et ramenï¿½s dans une de ses villes, le Golem de Mithril peut ï¿½tre reconstruit.</French>
 		<German>[ICON_BULLET]If these pieces are recovered by a Runes worshipper and returned to their cities the Mithril Golem can be remade</German>
 		<Italian>[ICON_BULLET]If these pieces are recovered by a Runes worshipper and returned to their cities the Mithril Golem can be remade</Italian>
 		<Spanish>[ICON_BULLET]If these pieces are recovered by a Runes worshipper and returned to their cities the Mithril Golem can be remade</Spanish>
@@ -3150,7 +3150,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HIGHWAYMAN_PEDIA</Tag>
 		<English>A highwayman was a robber who steals from travellers. Such criminals operate outside of the reach of civil authorities, though if thrown a few coin they've been known to bring their skills to the nation's army.</English>
-		<French>Les bandits de grand chemin s'en prenaient surtout aux voyageurs. Ces criminels agissaient hors de portée des autorités civiles. Mais ils étaient parfois payés pour rejoindre les armées de leur pays.</French>
+		<French>Les bandits de grand chemin s'en prenaient surtout aux voyageurs. Ces criminels agissaient hors de portï¿½e des autoritï¿½s civiles. Mais ils ï¿½taient parfois payï¿½s pour rejoindre les armï¿½es de leur pays.</French>
 		<German>A highwayman was a robber who steals from travellers. Such criminals operate outside of the reach of civil authorities, though if thrown a few coin they've been known to bring their skills to the nation's army.</German>
 		<Italian>A highwayman was a robber who steals from travellers. Such criminals operate outside of the reach of civil authorities, though if thrown a few coin they've been known to bring their skills to the nation's army.</Italian>
 		<Spanish>A highwayman was a robber who steals from travellers. Such criminals operate outside of the reach of civil authorities, though if thrown a few coin they've been known to bring their skills to the nation's army.</Spanish>
@@ -3358,11 +3358,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAVERN_GRIGORI_PEDIA</Tag>
-		<English>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naïve) Balseraphs around in Midgar.</English>
-		<French>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naïve) Balseraphs around in Midgar.</French>
-		<German>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naïve) Balseraphs around in Midgar.</German>
-		<Italian>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naïve) Balseraphs around in Midgar.</Italian>
-		<Spanish>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naïve) Balseraphs around in Midgar.</Spanish>
+		<English>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naï¿½ve) Balseraphs around in Midgar.</English>
+		<French>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naï¿½ve) Balseraphs around in Midgar.</French>
+		<German>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naï¿½ve) Balseraphs around in Midgar.</German>
+		<Italian>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naï¿½ve) Balseraphs around in Midgar.</Italian>
+		<Spanish>"No really, I'm just glad to show you around town. See that guy over in the corner? That's Needles. He killed eight Amurite Wizards single-handedly in the last Grigori war. And that guy? Groo the Wanderer, they call him. Buy me another beer and I'll tell you about the time he outran a Hippus Lancer - barefooted."[NEWLINE][NEWLINE]- Ozziel, showing one of his fellow (if rather naï¿½ve) Balseraphs around in Midgar.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RIDE_OF_THE_NINE_KINGS_PEDIA</Tag>
@@ -3470,11 +3470,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ADULARIA_CHAMBER_PEDIA</Tag>
-		<English>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Völa, in her lecture on the nature of golem warfare</English>
-		<French>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Völa, in her lecture on the nature of golem warfare</French>
-		<German>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Völa, in her lecture on the nature of golem warfare</German>
-		<Italian>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Völa, in her lecture on the nature of golem warfare</Italian>
-		<Spanish>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Völa, in her lecture on the nature of golem warfare</Spanish>
+		<English>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Vï¿½la, in her lecture on the nature of golem warfare</English>
+		<French>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Vï¿½la, in her lecture on the nature of golem warfare</French>
+		<German>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Vï¿½la, in her lecture on the nature of golem warfare</German>
+		<Italian>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Vï¿½la, in her lecture on the nature of golem warfare</Italian>
+		<Spanish>"Let's discuss the golem. A mighty and loyal fighter with the strength of several full grown men, who never needs to eat or sleep, who never runs away in fear. The perfect warrior. When our enemies see an army of constructed soldiers marching at them, they know that they will have to fight for with everything they got in order to survive. Now, imagine if you couldn't see the golems..."[NEWLINE][NEWLINE]- Vï¿½la, in her lecture on the nature of golem warfare</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BARRACKS_PEDIA</Tag>
@@ -3719,7 +3719,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_GREAT_HUNTER</Tag>
 		<English>Your Unit finds a number of scrolls from an old master hunter detailing how best to capture animals.</English>
-		<French>Votre unité trouve un certain nombre de parchemins rédigés par un vieux Maître-chasseur, détaillant la meilleure façon de capturer différents animaux.</French>
+		<French>Votre unitï¿½ trouve un certain nombre de parchemins rï¿½digï¿½s par un vieux Maï¿½tre-chasseur, dï¿½taillant la meilleure faï¿½on de capturer diffï¿½rents animaux.</French>
 		<German>Your Unit finds a number of scrolls from an old master hunter detailing how best to capture animals.</German>
 		<Italian>Your Unit finds a number of scrolls from an old master hunter detailing how best to capture animals.</Italian>
 		<Spanish>Your Unit finds a number of scrolls from an old master hunter detailing how best to capture animals.</Spanish>
@@ -3743,7 +3743,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_GATES_OF_HELL</Tag>
 		<English>Your explorers have stumbled upon a gate of hell. They flee as quickly as they are able to.</English>
-		<French>Vos explorateurs découvrent par mégarde un portail des enfers. Ils fuient aussi vite que possible.</French>
+		<French>Vos explorateurs dï¿½couvrent par mï¿½garde un portail des enfers. Ils fuient aussi vite que possible.</French>
 		<German>Your explorers have stumbled upon a gate of hell. They flee as quickly as they are able to.</German>
 		<Italian>Your explorers have stumbled upon a gate of hell. They flee as quickly as they are able to.</Italian>
 		<Spanish>Your explorers have stumbled upon a gate of hell. They flee as quickly as they are able to.</Spanish>
@@ -3760,7 +3760,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_BOTTLED_DJINN</Tag>
 		<English>Your Unit found a bottle and broke it. It liberated a Djinn, which joins you.</English>
-		<French>Votre unité trouve une bouteille et la brise. Un Djinn s'en échappe et décide de se joindre à vous.</French>
+		<French>Votre unitï¿½ trouve une bouteille et la brise. Un Djinn s'en ï¿½chappe et dï¿½cide de se joindre ï¿½ vous.</French>
 		<German>Your Unit found a bottle and broke it. It liberated a Djinn, which joins you.</German>
 		<Italian>Your Unit found a bottle and broke it. It liberated a Djinn, which joins you.</Italian>
 		<Spanish>Your Unit found a bottle and broke it. It liberated a Djinn, which joins you.</Spanish>
@@ -3768,7 +3768,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_BOTTLED_DJINN_2</Tag>
 		<English>Your Unit found a bottle and broke it. It liberated a Djinn, which angrily attacks you.</English>
-		<French>Votre unité trouve une bouteille et la brise. Un Djinn s'en échappe et vous attaque férocement.</French>
+		<French>Votre unitï¿½ trouve une bouteille et la brise. Un Djinn s'en ï¿½chappe et vous attaque fï¿½rocement.</French>
 		<German>Your Unit found a bottle and broke it. It liberated a Djinn, which angrily attacks you.</German>
 		<Italian>Your Unit found a bottle and broke it. It liberated a Djinn, which angrily attacks you.</Italian>
 		<Spanish>Your Unit found a bottle and broke it. It liberated a Djinn, which angrily attacks you.</Spanish>
@@ -4008,7 +4008,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MECH_DRAGON</Tag>
 		<English>Mechanical Dragon</English>
-		<French>Dragon Mécanique</French>
+		<French>Dragon Mï¿½canique</French>
 		<German>Mechanical Dragon</German>
 		<Italian>Mechanical Dragon</Italian>
 		<Spanish>Mechanical Dragon</Spanish>
@@ -4016,7 +4016,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EQUIPMENT_PIECES_OF_MECH_DRAGON</Tag>
 		<English>Pieces of the Mechanical Dragon</English>
-		<French>Morceaux du Dragon Mécanique</French>
+		<French>Morceaux du Dragon Mï¿½canique</French>
 		<German>Pieces of the Mechanical Dragon</German>
 		<Italian>Pieces of the Mechanical Dragon</Italian>
 		<Spanish>Pieces of the Mechanical Dragon</Spanish>
@@ -4048,7 +4048,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_REBUILD_MECH_DRAGON</Tag>
 		<English>Rebuild the Mechanical Dragon</English>
-		<French>Reconstruire le Dragon Mécanique</French>
+		<French>Reconstruire le Dragon Mï¿½canique</French>
 		<German>Rebuild the Mechanical Dragon</German>
 		<Italian>Rebuild the Mechanical Dragon</Italian>
 		<Spanish>Rebuild the Mechanical Dragon</Spanish>
@@ -4056,7 +4056,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_REBUILD_MECH_DRAGON_HELP</Tag>
 		<English>[ICON_BULLET]Allows a player to rebuild The Mechanical Dragon in one of their cities</English>
-		<French>[ICON_BULLET]Permet au joueur de reconstruire le Dragon Mécanique dans une de ses villes</French>
+		<French>[ICON_BULLET]Permet au joueur de reconstruire le Dragon Mï¿½canique dans une de ses villes</French>
 		<German>[ICON_BULLET]Allows a player to rebuild The Mechanical Dragon in one of their cities</German>
 		<Italian>[ICON_BULLET]Allows a player to rebuild The Mechanical Dragon in one of their cities</Italian>
 		<Spanish>[ICON_BULLET]Allows a player to rebuild The Mechanical Dragon in one of their cities</Spanish>
@@ -4185,7 +4185,7 @@
 		<Tag>TXT_KEY_UNIT_GOAT</Tag>
 		<English>Goat</English>
 		<French>
-			<Text>Chèvre:Chèvres</Text>
+			<Text>Chï¿½vre:Chï¿½vres</Text>
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</French>
@@ -4204,7 +4204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_GOAT_CONSUME_EQUIPMENT</Tag>
 		<English>Your goat has eaten a magical item.</English>
-		<French>Votre chèvre a dévoré un équipement magique.</French>
+		<French>Votre chï¿½vre a dï¿½vorï¿½ un ï¿½quipement magique.</French>
 		<German>Your goat has eaten a magical item.</German>
 		<Italian>Your goat has eaten a magical item.</Italian>
 		<Spanish>Your goat has eaten a magical item.</Spanish>
@@ -4212,7 +4212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_APOPHIS_REVEALED</Tag>
 		<English>Your goat is actually Apophis of the Endless Hunger, one of the most powerful demons under Agares' command, currently locked in goat form.</English>
-		<French>Votre chèvre est en réalité « Apophis l'Insatiable », un des pluis puissants démons aux ordres d'Agares, enfermé dans un corps de chèvre.</French>
+		<French>Votre chï¿½vre est en rï¿½alitï¿½ ï¿½ï¿½Apophis l'Insatiableï¿½ï¿½, un des pluis puissants dï¿½mons aux ordres d'Agares, enfermï¿½ dans un corps de chï¿½vre.</French>
 		<German>Your goat is actually Apophis of the Endless Hunger, one of the most powerful demons under Agares' command, currently locked in goat form.</German>
 		<Italian>Your goat is actually Apophis of the Endless Hunger, one of the most powerful demons under Agares' command, currently locked in goat form.</Italian>
 		<Spanish>Your goat is actually Apophis of the Endless Hunger, one of the most powerful demons under Agares' command, currently locked in goat form.</Spanish>
@@ -4220,7 +4220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GOAT_PEN</Tag>
 		<English>Goat Pen</English>
-		<French>Enclos à chèvres</French>
+		<French>Enclos ï¿½ chï¿½vres</French>
 		<German>Goat Pen</German>
 		<Italian>Goat Pen</Italian>
 		<Spanish>Goat Pen</Spanish>
@@ -4228,7 +4228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_HAUNTED_BREATH</Tag>
 		<English>Haunted Breath</English>
-		<French>Inhaler les terres hantées</French>
+		<French>Inhaler les terres hantï¿½es</French>
 		<German>Haunted Breath</German>
 		<Italian>Haunted Breath</Italian>
 		<Spanish>Haunted Breath</Spanish>
@@ -4236,7 +4236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_HAUNTED_BREATH</Tag>
 		<English>Haunted Breath</English>
-		<French>Inhalation Hantée</French>
+		<French>Inhalation Hantï¿½e</French>
 		<German>Haunted Breath</German>
 		<Italian>Haunted Breath</Italian>
 		<Spanish>Haunted Breath</Spanish>
@@ -4260,7 +4260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PARANOID</Tag>
 		<English>Paranoid</English>
-		<French>Paranoïaque</French>
+		<French>Paranoï¿½aque</French>
 		<German>Paranoid</German>
 		<Italian>Paranoid</Italian>
 		<Spanish>Paranoid</Spanish>
@@ -4340,7 +4340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_BEAST_AGARES</Tag>
 		<English>A Beast of Agares emerges from the lair.</English>
-		<French>Une Bête d'Agares émerge de la tanière.</French>
+		<French>Une Bï¿½te d'Agares ï¿½merge de la taniï¿½re.</French>
 		<German>A Beast of Agares emerges from the lair.</German>
 		<Italian>A Beast of Agares emerges from the lair.</Italian>
 		<Spanish>A Beast of Agares emerges from the lair.</Spanish>
@@ -4573,7 +4573,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_STAG</Tag>
 		<English>Your troops find a stag in the forest. He's surprisingly tame.</English>
-		<French>Vos troupes trouvent un cerf dans la forêt. Étonnament, il est apprivoisé.</French>
+		<French>Vos troupes trouvent un cerf dans la forï¿½t. ï¿½tonnament, il est apprivoisï¿½.</French>
 		<German>Your troops find a stag in the forest. He's surprisingly tame.</German>
 		<Italian>Your troops find a stag in the forest. He's surprisingly tame.</Italian>
 		<Spanish>Your troops find a stag in the forest. He's surprisingly tame.</Spanish>
@@ -4725,7 +4725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NEITH_CLAN_WOLF_ARCHER</Tag>
 		<English>Neith Clan Wolf Archer</English>
-		<French>Archer monté du Clan Neith</French>
+		<French>Archer montï¿½ du Clan Neith</French>
 		<German>Neith Clan Wolf Archer</German>
 		<Italian>Neith Clan Wolf Archer</Italian>
 		<Spanish>Neith Clan Wolf Archer</Spanish>
@@ -4797,7 +4797,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LUKOS_CLAN_WOLF_ARCHER</Tag>
 		<English>Lukos Clan Wolf Archer</English>
-		<French>Archer monté du Clan Lukos</French>
+		<French>Archer montï¿½ du Clan Lukos</French>
 		<German>Lukos Clan Wolf Archer</German>
 		<Italian>Lukos Clan Wolf Archer</Italian>
 		<Spanish>Lukos Clan Wolf Archer</Spanish>
@@ -4845,7 +4845,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_KEEPERS_CLOCKWORK</Tag>
 		<English>Keepers of the Mechanical Marvel</English>
-		<French>Gardien de la Merveille Mécanique</French>
+		<French>Gardien de la Merveille Mï¿½canique</French>
 		<German>Keepers of the Mechanical Marvel</German>
 		<Italian>Keepers of the Mechanical Marvel</Italian>
 		<Spanish>Keepers of the Mechanical Marvel</Spanish>
@@ -5166,7 +5166,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MAX_TRAITS_PER_CLASS</Tag>
 		<English>Can get up to %d1 %s2 .</English>
-		<French>Peut obtenir jusqu'à %d1 %s2.</French>
+		<French>Peut obtenir jusqu'ï¿½ %d1 %s2.</French>
 		<German>Can get up to %d1 %s2 .</German>
 		<Italian>Can get up to %d1 %s2 .</Italian>
 		<Spanish>Can get up to %d1 %s2 .</Spanish>
@@ -5174,7 +5174,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MAX_TRAITS_PER_CLASS_STATIC</Tag>
 		<English>Has up to %d1 static %s2 .</English>
-		<French>Possède un maximum de %d1 %s2 [NUM1:statique:statiques].</French>
+		<French>Possï¿½de un maximum de %d1 %s2 [NUM1:statique:statiques].</French>
 		<German>Has up to %d1 static %s2 .</German>
 		<Italian>Has up to %d1 static %s2 .</Italian>
 		<Spanish>Has up to %d1 static %s2 .</Spanish>
@@ -5182,7 +5182,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAITCLASS_EMERGENT</Tag>
 		<English>Emergent Traits</English>
-		<French>Trait Émergent:Traits Émergents</French>
+		<French>Trait ï¿½mergent:Traits ï¿½mergents</French>
 		<German>Emergent Traits</German>
 		<Italian>Emergent Traits</Italian>
 		<Spanish>Emergent Traits</Spanish>
@@ -5334,7 +5334,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RAISE_THE_DEAD3</Tag>
 		<English>Necromancy 3</English>
-		<French>Nécromancie III</French>
+		<French>Nï¿½cromancie III</French>
 		<German>Necromancy 3</German>
 		<Italian>Necromancy 3</Italian>
 		<Spanish>Necromancy 3</Spanish>
@@ -5342,7 +5342,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RAISE_THE_DEAD2</Tag>
 		<English>Necromancy 2</English>
-		<French>Nécromancie II</French>
+		<French>Nï¿½cromancie II</French>
 		<German>Necromancy 2</German>
 		<Italian>Necromancy 2</Italian>
 		<Spanish>Necromancy 2</Spanish>
@@ -5350,7 +5350,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RAISE_THE_DEAD1</Tag>
 		<English>Necromancy 1</English>
-		<French>Nécromancie I</French>
+		<French>Nï¿½cromancie I</French>
 		<German>Necromancy 1</German>
 		<Italian>Necromancy 1</Italian>
 		<Spanish>Necromancy 1</Spanish>
@@ -5374,7 +5374,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_TAKE_PIECES_OF_MECHDRAGON</Tag>
 		<English>Take Pieces of the Mechanical Dragon</English>
-		<French>Ramasser les morceaux du Dragon Mécanique</French>
+		<French>Ramasser les morceaux du Dragon Mï¿½canique</French>
 		<German>Take Pieces of the Mechanical Dragon</German>
 		<Italian>Take Pieces of the Mechanical Dragon</Italian>
 		<Spanish>Take Pieces of the Mechanical Dragon</Spanish>
@@ -5398,7 +5398,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_KAHD_OGHMA</Tag>
 		<English>Enlightened</English>
-		<French>Éclairé</French>
+		<French>ï¿½clairï¿½</French>
 		<German>Enlightened</German>
 		<Italian>Enlightened</Italian>
 		<Spanish>Enlightened</Spanish>
@@ -5555,7 +5555,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SUMMON_SHADOW_TREANT</Tag>
 		<English>Summon Shadow Treant</English>
-		<French>Évocation d'Homarbre des Ombres</French>
+		<French>ï¿½vocation d'Homarbre des Ombres</French>
 		<German>Summon Shadow Treant</German>
 		<Italian>Summon Shadow Treant</Italian>
 		<Spanish>Summon Shadow Treant</Spanish>
@@ -5563,7 +5563,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MASTER_OF_SHADOWS</Tag>
 		<English>Master of Shadows</English>
-		<French>Maître des Ombres</French>
+		<French>Maï¿½tre des Ombres</French>
 		<German>Master of Shadows</German>
 		<Italian>Master of Shadows</Italian>
 		<Spanish>Master of Shadows</Spanish>
@@ -5675,7 +5675,7 @@
 	<TEXT>  <!-- Vault Spawn Chance -->
 		<Tag>TXT_KEY_PYHELP_VAULT_CHANCE</Tag>
 		<English>[ICON_BULLET] Chance to spawn new unit: %d1%</English>
-		<French>[ICON_BULLET]Chance d'apparition d'une nouvelle unité : %d1%</French>
+		<French>[ICON_BULLET]Chance d'apparition d'une nouvelle unitï¿½: %d1%</French>
 		<German>[ICON_BULLET] Chance to spawn new unit: %d1%</German>
 		<Italian>[ICON_BULLET] Chance to spawn new unit: %d1%</Italian>
 		<Spanish>[ICON_BULLET] Chance to spawn new unit: %d1%</Spanish>
@@ -5691,7 +5691,7 @@
 	<TEXT>  <!-- Vault Spawn Thade -->
 		<Tag>TXT_KEY_PYHELP_VAULT_THADE</Tag>
 		<English>[ICON_BULLET] Thade: %d1 / %d2</English>
-		<French>[ICON_BULLET] Thade : %d1 / %d2</French>
+		<French>[ICON_BULLET] Thadeï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Thade: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Thade: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Thade: %d1 / %d2</Spanish>
@@ -5699,7 +5699,7 @@
 	<TEXT>  <!-- Vault Spawn Djinn -->
 		<Tag>TXT_KEY_PYHELP_VAULT_DJINN</Tag>
 		<English>[ICON_BULLET] Djinn: %d1 / %d2</English>
-		<French>[ICON_BULLET] Djinn : %d1 / %d2</French>
+		<French>[ICON_BULLET] Djinnï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Djinn: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Djinn: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Djinn: %d1 / %d2</Spanish>
@@ -5707,7 +5707,7 @@
 	<TEXT>  <!-- Vault Spawn Fire Elemental -->
 		<Tag>TXT_KEY_PYHELP_VAULT_F_ELEMENTAL</Tag>
 		<English>[ICON_BULLET] Fire Elemental: %d1 / %d2</English>
-		<French>[ICON_BULLET] Élémentaire de Feu : %d1 / %d2</French>
+		<French>[ICON_BULLET] ï¿½lï¿½mentaire de Feuï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Fire Elemental: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Fire Elemental: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Fire Elemental: %d1 / %d2</Spanish>
@@ -5715,7 +5715,7 @@
 	<TEXT>  <!-- Vault Spawn Air Elemental -->
 		<Tag>TXT_KEY_PYHELP_VAULT_A_ELEMENTAL</Tag>
 		<English>[ICON_BULLET] Air Elemental: %d1 / %d2</English>
-		<French>[ICON_BULLET] Élémentaire d'Air : %d1 / %d2</French>
+		<French>[ICON_BULLET] ï¿½lï¿½mentaire d'Airï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Air Elemental: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Air Elemental: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Air Elemental: %d1 / %d2</Spanish>
@@ -5723,7 +5723,7 @@
 	<TEXT>  <!-- Vault Spawn Spectre -->
 		<Tag>TXT_KEY_PYHELP_VAULT_SPECTRE</Tag>
 		<English>[ICON_BULLET] Spectre: %d1 / %d2</English>
-		<French>[ICON_BULLET] Spectre : %d1 / %d2</French>
+		<French>[ICON_BULLET] Spectreï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Spectre: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Spectre: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Spectre: %d1 / %d2</Spanish>
@@ -5731,7 +5731,7 @@
 	<TEXT>  <!-- Vault Spawn Flesh Golem -->
 		<Tag>TXT_KEY_PYHELP_VAULT_FLESH_GOLEM</Tag>
 		<English>[ICON_BULLET] Flesh Golem: %d1 / %d2</English>
-		<French>[ICON_BULLET] Golem de Chair : %d1 / %d2</French>
+		<French>[ICON_BULLET] Golem de Chairï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Flesh Golem: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Flesh Golem: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Flesh Golem: %d1 / %d2</Spanish>
@@ -5739,7 +5739,7 @@
 	<TEXT>  <!-- Vault Spawn Pit Beast-->
 		<Tag>TXT_KEY_PYHELP_VAULT_PIT_BEAST</Tag>
 		<English>[ICON_BULLET] Pit Beast: %d1 / %d2</English>
-		<French>[ICON_BULLET] Bête des Mines : %d1 / %d2</French>
+		<French>[ICON_BULLET] Bï¿½te des Minesï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Pit Beast: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Pit Beast: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Pit Beast: %d1 / %d2</Spanish>
@@ -5747,7 +5747,7 @@
 	<TEXT>  <!-- Vault Spawn Ice Elemental -->
 		<Tag>TXT_KEY_PYHELP_VAULT_I_ELEMENTAL</Tag>
 		<English>[ICON_BULLET] Ice Elemental: %d1 / %d2</English>
-		<French>[ICON_BULLET] Élémentaire de Glace : %d1 / %d2</French>
+		<French>[ICON_BULLET] ï¿½lï¿½mentaire de Glaceï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Ice Elemental: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Ice Elemental: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Ice Elemental: %d1 / %d2</Spanish>
@@ -5755,7 +5755,7 @@
 	<TEXT>  <!-- Vault Spawn Einherjar -->
 		<Tag>TXT_KEY_PYHELP_VAULT_EINHERJAR</Tag>
 		<English>[ICON_BULLET] Einherjar: %d1 / %d2</English>
-		<French>[ICON_BULLET] Einherjar : %d1 / %d2</French>
+		<French>[ICON_BULLET] Einherjarï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Einherjar: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Einherjar: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Einherjar: %d1 / %d2</Spanish>
@@ -5763,7 +5763,7 @@
 	<TEXT>  <!-- Vault Spawn Mistform -->
 		<Tag>TXT_KEY_PYHELP_VAULT_MISTFORM</Tag>
 		<English>[ICON_BULLET] Mistform: %d1 / %d2</English>
-		<French>[ICON_BULLET] Forme Brumeuse : %d1 / %d2</French>
+		<French>[ICON_BULLET] Forme Brumeuseï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Mistform: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Mistform: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Mistform: %d1 / %d2</Spanish>
@@ -5779,7 +5779,7 @@
 	<TEXT>  <!-- Vault Spawn Water Elemental -->
 		<Tag>TXT_KEY_PYHELP_VAULT_W_ELEMENTAL</Tag>
 		<English>[ICON_BULLET] Water Elemental: %d1 / %d2</English>
-		<French>[ICON_BULLET] Élémentaire d'Eau : %d1 / %d2</French>
+		<French>[ICON_BULLET] ï¿½lï¿½mentaire d'Eauï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Water Elemental: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Water Elemental: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Water Elemental: %d1 / %d2</Spanish>
@@ -5787,7 +5787,7 @@
 	<TEXT>  <!-- Vault Spawn Psion -->
 		<Tag>TXT_KEY_PYHELP_VAULT_PSION</Tag>
 		<English>[ICON_BULLET] Psion: %d1 / %d2</English>
-		<French>[ICON_BULLET] Psion : %d1 / %d2</French>
+		<French>[ICON_BULLET] Psionï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Psion: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Psion: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Psion: %d1 / %d2</Spanish>
@@ -5795,7 +5795,7 @@
 	<TEXT>  <!-- Vault Library Help -->
 		<Tag>TXT_KEY_PYHELP_VAULT_LIBRARY</Tag>
 		<English>[ICON_BULLET] Build Library to increase spawn rate</English>
-		<French>[ICON_BULLET]Construisez une bibliothèque pour augmenter la chance d'apparition</French>
+		<French>[ICON_BULLET]Construisez une bibliothï¿½que pour augmenter la chance d'apparition</French>
 		<German>[ICON_BULLET] Build Library to increase spawn rate</German>
 		<Italian>[ICON_BULLET] Build Library to increase spawn rate</Italian>
 		<Spanish>[ICON_BULLET] Build Library to increase spawn rate</Spanish>
@@ -5803,7 +5803,7 @@
 	<TEXT>  <!-- Vault Wizard Hall Help -->
 		<Tag>TXT_KEY_PYHELP_VAULT_WIZARD_HALL</Tag>
 		<English>[ICON_BULLET] Build Wizard's Hall to get access to more units</English>
-		<French>[ICON_BULLET]Construisez une École de Sorcellerie pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construisez une ï¿½cole de Sorcellerie pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET] Build Halle des Zauberers to get access to more units</German>
 		<Italian>[ICON_BULLET] Build Wizard's Hall to get access to more units</Italian>
 		<Spanish>[ICON_BULLET] Build Wizard's Hall to get access to more units</Spanish>
@@ -5811,7 +5811,7 @@
 	<TEXT>  <!-- Vault School of Govannon Help, Vault Help End -->
 		<Tag>TXT_KEY_PYHELP_VAULT_SCHOOL_OF_GOVANNON</Tag>
 		<English>[ICON_BULLET] Build School of Govannon to get access to more units</English>
-		<French>[ICON_BULLET]Construisez l'École de Govannon pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construisez l'ï¿½cole de Govannon pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET] Build School of Govannon to get access to more units</German>
 		<Italian>[ICON_BULLET] Build School of Govannon to get access to more units</Italian>
 		<Spanish>[ICON_BULLET] Build School of Govannon to get access to more units</Spanish>
@@ -5851,7 +5851,7 @@
 	<TEXT>  <!-- Planar Gate Spawn Manticore -->
 		<Tag>TXT_KEY_PYHELP_PGATE_MANTICORE</Tag>
 		<English>[ICON_BULLET] Manticore: %d1 / %d2</English>
-		<French>[ICON_BULLET] Manticore : %d1 / %d2</French>
+		<French>[ICON_BULLET] Manticoreï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Manticore: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Manticore: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Manticore: %d1 / %d2</Spanish>
@@ -5859,7 +5859,7 @@
 	<TEXT>  <!-- Planar Gate Spawn Succubus -->
 		<Tag>TXT_KEY_PYHELP_PGATE_SUCCUBUS</Tag>
 		<English>[ICON_BULLET] Succubus: %d1 / %d2</English>
-		<French>[ICON_BULLET] Succube : %d1 / %d2</French>
+		<French>[ICON_BULLET] Succubeï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Succubus: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Succubus: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Succubus: %d1 / %d2</Spanish>
@@ -5867,7 +5867,7 @@
 	<TEXT>  <!-- Planar Gate Spawn Minotaur -->
 		<Tag>TXT_KEY_PYHELP_PGATE_MINOTAUR</Tag>
 		<English>[ICON_BULLET] Minotaur: %d1 / %d2</English>
-		<French>[ICON_BULLET] Minotaure : %d1 / %d2</French>
+		<French>[ICON_BULLET] Minotaureï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Minotaur: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Minotaur: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Minotaur: %d1 / %d2</Spanish>
@@ -5875,7 +5875,7 @@
 	<TEXT>  <!-- Planar Gate Spawn  -->
 		<Tag>TXT_KEY_PYHELP_PGATE_TAR_DEMON</Tag>
 		<English>[ICON_BULLET] Tar Demon: %d1 / %d2</English>
-		<French>[ICON_BULLET] Démon goudronneux : %d1 / %d2</French>
+		<French>[ICON_BULLET] Dï¿½mon goudronneuxï¿½: %d1 / %d2</French>
 		<German>[ICON_BULLET] Tar Demon: %d1 / %d2</German>
 		<Italian>[ICON_BULLET] Tar Demon: %d1 / %d2</Italian>
 		<Spanish>[ICON_BULLET] Tar Demon: %d1 / %d2</Spanish>
@@ -5883,7 +5883,7 @@
 	<TEXT>  <!-- Planar Gate No Gambling House -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_GAMBLING_HOUSE</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Gambling House[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire la [COLOR_BUILDING_TEXT]Maison de Jeu[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire la [COLOR_BUILDING_TEXT]Maison de Jeu[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Gambling House[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Gambling House[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Gambling House[COLOR_REVERT] to get access to more units</Spanish>
@@ -5891,7 +5891,7 @@
 	<TEXT>  <!-- Planar Gate No Mage Guild -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_MAGE_GUILD</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Mage Guild[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire la [COLOR_BUILDING_TEXT]Guilde de Magie[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire la [COLOR_BUILDING_TEXT]Guilde de Magie[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Mage Guild[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Mage Guild[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Mage Guild[COLOR_REVERT] to get access to more units</Spanish>
@@ -5899,7 +5899,7 @@
 	<TEXT>  <!-- Planar Gate No Carnival -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_CARNIVAL</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Carnival[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Carnaval[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Carnaval[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Carnival[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Carnival[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Carnival[COLOR_REVERT] to get access to more units</Spanish>
@@ -5907,7 +5907,7 @@
 	<TEXT>  <!-- Planar Gate No Grove -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_GROVE</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Grove[COLOR_REVERT] to get access to more units</Spanish>
@@ -5915,7 +5915,7 @@
 	<TEXT>  <!-- Planar Gate No Public Baths -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_PUBLIC_BATHS</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Public Baths[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire les [COLOR_BUILDING_TEXT]Bains Publics[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire les [COLOR_BUILDING_TEXT]Bains Publics[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Public Baths[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Public Baths[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Public Baths[COLOR_REVERT] to get access to more units</Spanish>
@@ -5923,7 +5923,7 @@
 	<TEXT>  <!-- Planar Gate No Obsidian Gate -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_OBSIDIAN_GATE</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Obsidian Gate[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Portail d'Obsidienne[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Portail d'Obsidienne[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Obsidian Gate[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Obsidian Gate[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Obsidian Gate[COLOR_REVERT] to get access to more units</Spanish>
@@ -5931,7 +5931,7 @@
 	<TEXT>  <!-- Planar Gate No Temple of the Veil, Planar Gate Help End -->
 		<Tag>TXT_KEY_PYHELP_PGATE_NO_TEMPLE_OF_THE_VEIL</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Temple of the Veil[COLOR_REVERT] to get access to more units</English>
-		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Temple du Voile[COLOR_REVERT] pour accéder à plus d'unités</French>
+		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Temple du Voile[COLOR_REVERT] pour accï¿½der ï¿½ plus d'unitï¿½s</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Temple of the Veil[COLOR_REVERT] to get access to more units</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Temple of the Veil[COLOR_REVERT] to get access to more units</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Temple of the Veil[COLOR_REVERT] to get access to more units</Spanish>
@@ -5963,7 +5963,7 @@
 	<TEXT>  <!-- Wizard's Hall No Cave -->
 		<Tag>TXT_KEY_PYHELP_VAULT_WH_NO_CAV</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Cave of Ancestors[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</English>
-		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Caveau des Ancêtres[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</French>
+		<French>[ICON_BULLET]Construire le [COLOR_BUILDING_TEXT]Caveau des Ancï¿½tres[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Cave of Ancestors[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Cave of Ancestors[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]Cave of Ancestors[COLOR_REVERT] to have a chance to get a free arcane promotion of level 1 to 2</Spanish>
@@ -5971,7 +5971,7 @@
 	<TEXT>  <!-- Wizard's Hall No School, Wizard's Hall Help End -->
 		<Tag>TXT_KEY_PYHELP_VAULT_WH_NO_GOV</Tag>
 		<English>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]School of Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</English>
-		<French>[ICON_BULLET]Construire l'[COLOR_BUILDING_TEXT]École de Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</French>
+		<French>[ICON_BULLET]Construire l'[COLOR_BUILDING_TEXT]ï¿½cole de Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</French>
 		<German>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]School of Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</German>
 		<Italian>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]School of Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</Italian>
 		<Spanish>[ICON_BULLET]Build [COLOR_BUILDING_TEXT]School of Govannon[COLOR_REVERT] to have a chance to get an extra free arcane promotion of level 1 to 3</Spanish>
@@ -5979,7 +5979,7 @@
 	<TEXT>  <!-- Master Building Total Promotion Number, Master Building Help Start -->
 		<Tag>TXT_KEY_PYHELP_MASTER_TOTAL</Tag>
 		<English>Available Promotions: %d1</English>
-		<French>Promotions disponibles : %d1</French>
+		<French>Promotions disponiblesï¿½: %d1</French>
 		<German>Available Promotions: %d1</German>
 		<Italian>Available Promotions: %d1</Italian>
 		<Spanish>Available Promotions: %d1</Spanish>
@@ -5995,7 +5995,7 @@
 	<TEXT>  <!-- Master Building No Tech -->
 		<Tag>TXT_KEY_PYHELP_MASTER_NO_TECH</Tag>
 		<English>[ICON_BULLET]Research [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</English>
-		<French>[ICON_BULLET]Rechercher [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accéder à plus de promotions</French>
+		<French>[ICON_BULLET]Rechercher [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accï¿½der ï¿½ plus de promotions</French>
 		<German>[ICON_BULLET]Research [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</German>
 		<Italian>[ICON_BULLET]Research [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Italian>
 		<Spanish>[ICON_BULLET]Research [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Spanish>
@@ -6003,7 +6003,7 @@
 	<TEXT>  <!-- Master Building No Bonus -->
 		<Tag>TXT_KEY_PYHELP_MASTER_NO_BONUS</Tag>
 		<English>[ICON_BULLET] Obtain [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</English>
-		<French>[ICON_BULLET]Obtenir [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accéder à plus de promotions</French>
+		<French>[ICON_BULLET]Obtenir [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accï¿½der ï¿½ plus de promotions</French>
 		<German>[ICON_BULLET] Obtain [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</German>
 		<Italian>[ICON_BULLET] Obtain [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Italian>
 		<Spanish>[ICON_BULLET] Obtain [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Spanish>
@@ -6011,7 +6011,7 @@
 	<TEXT>  <!-- Master Building No Building -->
 		<Tag>TXT_KEY_PYHELP_MASTER_NO_BUILDING</Tag>
 		<English>[ICON_BULLET] Build [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</English>
-		<French>[ICON_BULLET]Construire [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accéder à plus de promotions</French>
+		<French>[ICON_BULLET]Construire [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accï¿½der ï¿½ plus de promotions</French>
 		<German>[ICON_BULLET] Build [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</German>
 		<Italian>[ICON_BULLET] Build [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Italian>
 		<Spanish>[ICON_BULLET] Build [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Spanish>
@@ -6019,7 +6019,7 @@
 	<TEXT>  <!-- Master Building No State Religion, Master Building Help End -->
 		<Tag>TXT_KEY_PYHELP_MASTER_NO_REL</Tag>
 		<English>[ICON_BULLET] Adopt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</English>
-		<French>[ICON_BULLET]Adopter [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accéder à plus de promotions</French>
+		<French>[ICON_BULLET]Adopter [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pour accï¿½der ï¿½ plus de promotions</French>
 		<German>[ICON_BULLET] Adopt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</German>
 		<Italian>[ICON_BULLET] Adopt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Italian>
 		<Spanish>[ICON_BULLET] Adopt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to get access to more Promotions</Spanish>
@@ -6027,7 +6027,7 @@
 	<TEXT> <!-- Base Game - Start, Landmarks (With Icons) Start -->
 		<Tag>TEXT_KEY_LANDMARK_ANGELIC_PROCESSION_2</Tag>
 		<English>Angelic Procession, +1[ICON_COMMERCE]</English>
-		<French>Procession Angélique, +1[ICON_COMMERCE]</French>
+		<French>Procession Angï¿½lique, +1[ICON_COMMERCE]</French>
 		<German>Angelic Procession, +1[ICON_COMMERCE]</German>
 		<Italian>Angelic Procession, +1[ICON_COMMERCE]</Italian>
 		<Spanish>Angelic Procession, +1[ICON_COMMERCE]</Spanish>
@@ -6043,7 +6043,7 @@
 	<TEXT>
 		<Tag>TEXT_KEY_LANDMARK_GREAT_BEAST_1</Tag>
 		<English>Great Beast, +1[ICON_FOOD]</English>
-		<French>Bête énorme, +1[ICON_FOOD]</French>
+		<French>Bï¿½te ï¿½norme, +1[ICON_FOOD]</French>
 		<German>Great Beast, +1[ICON_FOOD]</German>
 		<Italian>Great Beast, +1[ICON_FOOD]</Italian>
 		<Spanish>Great Beast, +1[ICON_FOOD]</Spanish>
@@ -6067,7 +6067,7 @@
 	<TEXT>
 		<Tag>TEXT_KEY_LANDMARK_MYSTIC_TREE_3</Tag>
 		<English>Sacred Grove, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</English>
-		<French>Bosquet sacré, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</French>
+		<French>Bosquet sacrï¿½, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</French>
 		<German>Sacred Grove, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</German>
 		<Italian>Sacred Grove, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</Italian>
 		<Spanish>Sacred Grove, +1[ICON_FOOD] +1[ICON_COMMERCE] +1[ICON_PRODUCTION]</Spanish>
@@ -6099,7 +6099,7 @@
 	<TEXT>
 		<Tag>TEXT_KEY_LANDMARK_TIN</Tag>
 		<English>Tin, +2[ICON_PRODUCTION]</English>
-		<French>Étain, +2[ICON_PRODUCTION]</French>
+		<French>ï¿½tain, +2[ICON_PRODUCTION]</French>
 		<German>Tin, +2[ICON_PRODUCTION]</German>
 		<Italian>Tin, +2[ICON_PRODUCTION]</Italian>
 		<Spanish>Tin, +2[ICON_PRODUCTION]</Spanish>
@@ -6139,7 +6139,7 @@
 	<TEXT>
 		<Tag>TEXT_KEY_LANDMARK_RAZED_FOXFORD</Tag>
 		<English>Razed Foxford</English>
-		<French>Foxford rasée</French>
+		<French>Foxford rasï¿½e</French>
 		<German>Razed Foxford</German>
 		<Italian>Razed Foxford</Italian>
 		<Spanish>Razed Foxford</Spanish>
@@ -6195,7 +6195,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FISHERMAN</Tag>
 		<English>Fisherman</English>
-		<French>Pêcheur</French>
+		<French>Pï¿½cheur</French>
 		<German>Fisherman</German>
 		<Italian>Fisherman</Italian>
 		<Spanish>Fisherman</Spanish>
@@ -6203,7 +6203,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FISHERMAN_SHORT</Tag>
 		<English>Fshmn</English>
-		<French>Pêch</French>
+		<French>Pï¿½ch</French>
 		<German>Fshmn</German>
 		<Italian>Fshmn</Italian>
 		<Spanish>Fshmn</Spanish>
@@ -6227,7 +6227,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TYRANT</Tag>
 		<English>Monument to Tyranny</English>
-		<French>Monument à la Tyrannie</French>
+		<French>Monument ï¿½ la Tyrannie</French>
 		<German>Monument to Tyranny</German>
 		<Italian>Monument to Tyranny</Italian>
 		<Spanish>Monument to Tyranny</Spanish>
@@ -6256,7 +6256,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_THRIFTY</Tag>
 		<English>Thrifty</English>
-		<French>Économe</French>
+		<French>ï¿½conome</French>
 		<German>Thrifty</German>
 		<Italian>Thrifty</Italian>
 		<Spanish>Thrifty</Spanish>
@@ -6312,7 +6312,7 @@
 	<TEXT> <!-- Promotion High Maintenance -->
 		<Tag>TXT_KEY_PROMOTION_HIGH_MAINTENANCE</Tag>
 		<English>High Maintenance (2[ICON_GOLD])</English>
-		<French>Maintenance élevée (2[ICON_GOLD])</French>
+		<French>Maintenance ï¿½levï¿½e (2[ICON_GOLD])</French>
 		<German>High Maintenance (2[ICON_GOLD])</German>
 		<Italian>High Maintenance (2[ICON_GOLD])</Italian>
 		<Spanish>High Maintenance (2[ICON_GOLD])</Spanish>
@@ -6432,7 +6432,7 @@
 	<TEXT> <!-- Temple Map -->
 		<Tag>TXT_KEY_GOODY_TEMPLE_MAP</Tag>
 		<English>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</English>
-		<French>Une carte rudimentaire trouvée dans le repaire des orques indique le chemin menant aux ruines du plus grand temple de Bhall.</French>
+		<French>Une carte rudimentaire trouvï¿½e dans le repaire des orques indique le chemin menant aux ruines du plus grand temple de Bhall.</French>
 		<German>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</German>
 		<Italian>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Italian>
 		<Spanish>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Spanish>
@@ -6784,7 +6784,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILITARY_SCHOOL</Tag>
 		<English>Military School</English>
-		<French>École Militaire</French>
+		<French>ï¿½cole Militaire</French>
 		<German>Military School</German>
 		<Italian>Military School</Italian>
 		<Spanish>Military School</Spanish>
@@ -6792,7 +6792,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILITARY_SCHOOL_EXT</Tag>
 		<English>Military School Training Annex</English>
-		<French>Annexe d'entraînement de l'École Militaire</French>
+		<French>Annexe d'entraï¿½nement de l'ï¿½cole Militaire</French>
 		<German>Military School Training Annex</German>
 		<Italian>Military School Training Annex</Italian>
 		<Spanish>Military School Training Annex</Spanish>
@@ -6912,7 +6912,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EQUIPMENT_NETHER_BLADE_HELP</Tag>
 		<English>[ICON_BULLET] Will kill any living unit harmed by it.</English>
-		<French>[ICON_BULLET]Tuera toute unité vivante qu'elle blesse.</French>
+		<French>[ICON_BULLET]Tuera toute unitï¿½ vivante qu'elle blesse.</French>
 		<German>[ICON_BULLET] Will kill any living unit harmed by it.</German>
 		<Italian>[ICON_BULLET] Will kill any living unit harmed by it.</Italian>
 		<Spanish>[ICON_BULLET] Will kill any living unit harmed by it.</Spanish>
@@ -6992,7 +6992,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAM_OF_VIR</Tag>
 		<English>Ram of Vir</English>
-		<French>Bélier de Vir</French>
+		<French>Bï¿½lier de Vir</French>
 		<German>Ram of Vir</German>
 		<Italian>Ram of Vir</Italian>
 		<Spanish>Ram of Vir</Spanish>
@@ -7120,7 +7120,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELLCLASS_BUFF</Tag>
 		<English>Buff[SPACE]</English>
-		<French>bénéfique[SPACE]</French>
+		<French>bï¿½nï¿½fique[SPACE]</French>
 		<German>Buff[SPACE]</German>
 		<Italian>Buff[SPACE]</Italian>
 		<Spanish>Buff[SPACE]</Spanish>
@@ -7152,7 +7152,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELLCLASS_DEBUFF</Tag>
 		<English>Debuff[SPACE]</English>
-		<French>néfaste[SPACE]</French>
+		<French>nï¿½faste[SPACE]</French>
 		<German>Debuff[SPACE]</German>
 		<Italian>Debuff[SPACE]</Italian>
 		<Spanish>Debuff[SPACE]</Spanish>
@@ -7160,7 +7160,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELLCLASS_CREATION</Tag>
 		<English>Creation[SPACE]</English>
-		<French>Création[SPACE]</French>
+		<French>Crï¿½ation[SPACE]</French>
 		<German>Creation[SPACE]</German>
 		<Italian>Creation[SPACE]</Italian>
 		<Spanish>Creation[SPACE]</Spanish>
@@ -7224,7 +7224,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELLCLASS_MIND</Tag>
 		<English>Mind[SPACE]</English>
-		<French>Pensée[SPACE]</French>
+		<French>Pensï¿½e[SPACE]</French>
 		<German>Mind[SPACE]</German>
 		<Italian>Mind[SPACE]</Italian>
 		<Spanish>Mind[SPACE]</Spanish>
@@ -7296,7 +7296,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENIX</Tag>
 		<English>Phoenix</English>
-		<French>Phénix</French>
+		<French>Phï¿½nix</French>
 		<German>Phoenix</German>
 		<Italian>Phoenix</Italian>
 		<Spanish>Phoenix</Spanish>
@@ -7312,7 +7312,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SATYR_ELDER</Tag>
 		<English>Satyr Elder</English>
-		<French>Satyre Vénérable</French>
+		<French>Satyre Vï¿½nï¿½rable</French>
 		<German>Satyr Elder</German>
 		<Italian>Satyr Elder</Italian>
 		<Spanish>Satyr Elder</Spanish>
@@ -7328,7 +7328,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TOMB_WARDEN_PEDIA</Tag>
 		<English>Though they are primarily responsible for escorting the souls of the newly born to their new bodies, Tomb Wardens have a special dislike for grave robbers and most commonly come into contact with mortals when appearing to stop them.</English>
-		<French>Bien que leur mission primaire soit l'escorte des âmes des nouveaux-nés jusqu'à leurs futurs corps, les Gardiens des Tombes font preuve d'une aversion poussée pour les pilleurs de tombes. La majorité de leurs contacts avec les mortels vise à stopper ces actes répréhensibles.</French>
+		<French>Bien que leur mission primaire soit l'escorte des ï¿½mes des nouveaux-nï¿½s jusqu'ï¿½ leurs futurs corps, les Gardiens des Tombes font preuve d'une aversion poussï¿½e pour les pilleurs de tombes. La majoritï¿½ de leurs contacts avec les mortels vise ï¿½ stopper ces actes rï¿½prï¿½hensibles.</French>
 		<German>Though they are primarily responsible for escorting the souls of the newly born to their new bodies, Tomb Wardens have a special dislike for grave robbers and most commonly come into contact with mortals when appearing to stop them.</German>
 		<Italian>Though they are primarily responsible for escorting the souls of the newly born to their new bodies, Tomb Wardens have a special dislike for grave robbers and most commonly come into contact with mortals when appearing to stop them.</Italian>
 		<Spanish>Though they are primarily responsible for escorting the souls of the newly born to their new bodies, Tomb Wardens have a special dislike for grave robbers and most commonly come into contact with mortals when appearing to stop them.</Spanish>
@@ -7448,7 +7448,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COUATL_COMPANION_PEDIA</Tag>
 		<English>The snake is the symbol of Amathaon and the Couatl, a winged snake, is his preferred messenger.</English>
-		<French>Le serpent est le symbole d'Amathaon et le Couatl, un serpent ailé, est son messager de prédilection.</French>
+		<French>Le serpent est le symbole d'Amathaon et le Couatl, un serpent ailï¿½, est son messager de prï¿½dilection.</French>
 		<German>The snake is the symbol of Amathaon and the Couatl, a winged snake, is his preferred messenger.</German>
 		<Italian>The snake is the symbol of Amathaon and the Couatl, a winged snake, is his preferred messenger.</Italian>
 		<Spanish>The snake is the symbol of Amathaon and the Couatl, a winged snake, is his preferred messenger.</Spanish>
@@ -7504,7 +7504,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PARALYZED</Tag>
 		<English>Paralyzed</English>
-		<French>Paralysé</French>
+		<French>Paralysï¿½</French>
 		<German>Paralyzed</German>
 		<Italian>Paralyzed</Italian>
 		<Spanish>Paralyzed</Spanish>
@@ -7544,7 +7544,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_LOIREAG_COMPANION_PEDIA</Tag>
 		<English>The Loireag are fairies of the dawn and twilight. They are known to be great tailors and weavers. They often leave gifts for the generous poor and dislike the greedy.</English>
-		<French>Les Loireag sont des nymphes de l'aube et du crépuscule. Elles sont réputées pour le talent incomparable qu'elle montrent dans l'art de filer et de tisser. Elles laissent souvent des cadeaux pour les pauvres bienfaisants et réprouvent la cupidité.</French>
+		<French>Les Loireag sont des nymphes de l'aube et du crï¿½puscule. Elles sont rï¿½putï¿½es pour le talent incomparable qu'elle montrent dans l'art de filer et de tisser. Elles laissent souvent des cadeaux pour les pauvres bienfaisants et rï¿½prouvent la cupiditï¿½.</French>
 		<German>The Loireag are fairies of the dawn and twilight. They are known to be great tailors and weavers. They often leave gifts for the generous poor and dislike the greedy.</German>
 		<Italian>The Loireag are fairies of the dawn and twilight. They are known to be great tailors and weavers. They often leave gifts for the generous poor and dislike the greedy.</Italian>
 		<Spanish>The Loireag are fairies of the dawn and twilight. They are known to be great tailors and weavers. They often leave gifts for the generous poor and dislike the greedy.</Spanish>
@@ -7560,7 +7560,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PEGASUS</Tag>
 		<English>Pegasus Mount</English>
-		<French>Monture Pégase</French>
+		<French>Monture Pï¿½gase</French>
 		<German>Pegasus Mount</German>
 		<Italian>Pegasus Mount</Italian>
 		<Spanish>Pegasus Mount</Spanish>
@@ -7592,7 +7592,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX</Tag>
 		<English>Phoenix</English>
-		<French>Phénix</French>
+		<French>Phï¿½nix</French>
 		<German>Phoenix</German>
 		<Italian>Phoenix</Italian>
 		<Spanish>Phoenix</Spanish>
@@ -7600,7 +7600,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX_BIG</Tag>
 		<English>Big Phoenix</English>
-		<French>Phénix Imposant</French>
+		<French>Phï¿½nix Imposant</French>
 		<German>Big Phoenix</German>
 		<Italian>Big Phoenix</Italian>
 		<Spanish>Big Phoenix</Spanish>
@@ -7608,7 +7608,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX_EGG</Tag>
 		<English>Phoenix Egg</English>
-		<French>&#140;uf de Phénix</French>
+		<French>&#140;uf de Phï¿½nix</French>
 		<German>Phoenix Egg</German>
 		<Italian>Phoenix Egg</Italian>
 		<Spanish>Phoenix Egg</Spanish>
@@ -7616,7 +7616,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX_GIANT</Tag>
 		<English>Giant Phoenix</English>
-		<French>Phénix Géant</French>
+		<French>Phï¿½nix Gï¿½ant</French>
 		<German>Giant Phoenix</German>
 		<Italian>Giant Phoenix</Italian>
 		<Spanish>Giant Phoenix</Spanish>
@@ -7624,7 +7624,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX_SMALL</Tag>
 		<English>Small Phoenix</English>
-		<French>Petit Phénix</French>
+		<French>Petit Phï¿½nix</French>
 		<German>Small Phoenix</German>
 		<Italian>Small Phoenix</Italian>
 		<Spanish>Small Phoenix</Spanish>
@@ -7632,7 +7632,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PHOENIX_VERY_BIG</Tag>
 		<English>Large Phoenix</English>
-		<French>Énorme Phénix</French>
+		<French>ï¿½norme Phï¿½nix</French>
 		<German>Large Phoenix</German>
 		<Italian>Large Phoenix</Italian>
 		<Spanish>Large Phoenix</Spanish>
@@ -7848,7 +7848,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_KILL_PHOENIX</Tag>
 		<English>Kill Phoenix</English>
-		<French>Tuer le Phénix</French>
+		<French>Tuer le Phï¿½nix</French>
 		<German>Kill Phoenix</German>
 		<Italian>Kill Phoenix</Italian>
 		<Spanish>Kill Phoenix</Spanish>
@@ -7856,7 +7856,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SUMMON_ANESIDORA</Tag>
 		<English>Summon Anesidora</English>
-		<French>Évoquer Anesidora</French>
+		<French>ï¿½voquer Anesidora</French>
 		<German>Summon Anesidora</German>
 		<Italian>Summon Anesidora</Italian>
 		<Spanish>Summon Anesidora</Spanish>
@@ -7936,7 +7936,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IMMUNE_TO_CAPTURE</Tag>
 		<English>[ICON_BULLET]Unit is immune to Capture.</English>
-		<French>[ICON_BULLET]L'unité est immunisée à la capture.</French>
+		<French>[ICON_BULLET]L'unitï¿½ est immunisï¿½e ï¿½ la capture.</French>
 		<German>[ICON_BULLET]Unit is immune to Capture.</German>
 		<Italian>[ICON_BULLET]Unit is immune to Capture.</Italian>
 		<Spanish>[ICON_BULLET]Unit is immune to Capture.</Spanish>
@@ -7968,7 +7968,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_STRIKE_FROM_BEHIND_HELP</Tag>
 		<English>[ICON_BULLET]Grants +40% Strength when Hidden, -40% when Detected</English>
-		<French>[ICON_BULLET]Fournit +40% de Force si furtif, -40% si détecté</French>
+		<French>[ICON_BULLET]Fournit +40% de Force si furtif, -40% si dï¿½tectï¿½</French>
 		<German>[ICON_BULLET]Grants +40% Strength when Hidden, -40% when Detected</German>
 		<Italian>[ICON_BULLET]Grants +40% Strength when Hidden, -40% when Detected</Italian>
 		<Spanish>[ICON_BULLET]Grants +40% Strength when Hidden, -40% when Detected</Spanish>
@@ -7976,7 +7976,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SIPHON_FUNDS_HELP</Tag>
 		<English>[ICON_BULLET]Unit Steals 1[ICON_GOLD] per turn from bordering non-allied cities when hidden.</English>
-		<French>[ICON_BULLET]L'unité vole 1[ICON_GOLD] par tour lorsqu'elle est invisible et adjacente à une ville neutre ou ennemie.</French>
+		<French>[ICON_BULLET]L'unitï¿½ vole 1[ICON_GOLD] par tour lorsqu'elle est invisible et adjacente ï¿½ une ville neutre ou ennemie.</French>
 		<German>[ICON_BULLET]Unit Steals 1[ICON_GOLD] per turn from bordering non-allied cities when hidden.</German>
 		<Italian>[ICON_BULLET]Unit Steals 1[ICON_GOLD] per turn from bordering non-allied cities when hidden.</Italian>
 		<Spanish>[ICON_BULLET]Unit Steals 1[ICON_GOLD] per turn from bordering non-allied cities when hidden.</Spanish>
@@ -8152,7 +8152,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_PIXIES</Tag>
 		<English>Your unit finds a small community of pixies tending to plants within the woods. One of them starts to follow around.</English>
-		<French>Votre unité a découvert une petite communauté de pixies jardinant au sein des bois. L'une d'entre elles décide de vous accompagner.</French>
+		<French>Votre unitï¿½ a dï¿½couvert une petite communautï¿½ de pixies jardinant au sein des bois. L'une d'entre elles dï¿½cide de vous accompagner.</French>
 		<German>Your unit finds a small community of pixies tending to plants within the woods. One of them starts to follow around.</German>
 		<Italian>Your unit finds a small community of pixies tending to plants within the woods. One of them starts to follow around.</Italian>
 		<Spanish>Your unit finds a small community of pixies tending to plants within the woods. One of them starts to follow around.</Spanish>
@@ -8168,7 +8168,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_SPAWN_FROST_GIANT</Tag>
 		<English>A frost Giant emerges from the ruins.</English>
-		<French>Un géant du froid émerge des ruines.</French>
+		<French>Un gï¿½ant du froid ï¿½merge des ruines.</French>
 		<German>A frost Giant emerges from the ruins.</German>
 		<Italian>A frost Giant emerges from the ruins.</Italian>
 		<Spanish>A frost Giant emerges from the ruins.</Spanish>
@@ -8176,7 +8176,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BLIZZARD_CALLER</Tag>
 		<English>Blizzard Caller</English>
-		<French>Maître des blizzards</French>
+		<French>Maï¿½tre des blizzards</French>
 		<German>Anrufer der Schneest&#252;rme</German>
 		<Italian>Blizzard Caller</Italian>
 		<Spanish>Blizzard Caller</Spanish>
@@ -8184,7 +8184,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ICE_DEMON</Tag>
 		<English>Ice Demon</English>
-		<French>Cryodémon</French>
+		<French>Cryodï¿½mon</French>
 		<German>Eisd&#228;mon</German>
 		<Italian>Ice Demon</Italian>
 		<Spanish>Ice Demon</Spanish>
@@ -8232,7 +8232,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_APPELEUR</Tag>
 		<English>An owl with shining eyes has appeared before your unit. It's an omen from Sirona.</English>
-		<French>Une chouette aux yeux brillants est apparue à votre unité. C'est un présage de Sirona.</French>
+		<French>Une chouette aux yeux brillants est apparue ï¿½ votre unitï¿½. C'est un prï¿½sage de Sirona.</French>
 		<German>An owl with shining eyes has appeared before your unit. It's an omen from Sirona.</German>
 		<Italian>An owl with shining eyes has appeared before your unit. It's an omen from Sirona.</Italian>
 		<Spanish>An owl with shining eyes has appeared before your unit. It's an omen from Sirona.</Spanish>
@@ -8296,7 +8296,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRIESTESS_OF_BHALL</Tag>
 		<English>Priestess Of Bhall</English>
-		<French>Prêtresse de Bhall</French>
+		<French>Prï¿½tresse de Bhall</French>
 		<German>Priestess Of Bhall</German>
 		<Italian>Priestess Of Bhall</Italian>
 		<Spanish>Priestess Of Bhall</Spanish>
@@ -8304,7 +8304,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HIGH_PRIESTESS_OF_BHALL</Tag>
 		<English>High Priestess of Bhall</English>
-		<French>Grande Prêtresse de Bhall</French>
+		<French>Grande Prï¿½tresse de Bhall</French>
 		<German>High Priestess of Bhall</German>
 		<Italian>High Priestess of Bhall</Italian>
 		<Spanish>High Priestess of Bhall</Spanish>
@@ -8328,7 +8328,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_PIXIE_JOIN</Tag>
 		<English>A pixie has left her garden to join your unit.</English>
-		<French>Une pixie a quitté son jardin pour se joindre à votre unité.</French>
+		<French>Une pixie a quittï¿½ son jardin pour se joindre ï¿½ votre unitï¿½.</French>
 		<German>A pixie has left her garden to join your unit.</German>
 		<Italian>A pixie has left her garden to join your unit.</Italian>
 		<Spanish>A pixie has left her garden to join your unit.</Spanish>
@@ -8352,7 +8352,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_SLYPH</Tag>
 		<English>Your unit finds a Slyph dancing in a clearing. She follows them out when they leave.</English>
-		<French>Votre unité trouve une Sylphe dansant dans une clairière. Elle décide de la suivre.</French>
+		<French>Votre unitï¿½ trouve une Sylphe dansant dans une clairiï¿½re. Elle dï¿½cide de la suivre.</French>
 		<German>Your unit finds a Slyph dancing in a clearing. She follows them out when they leave.</German>
 		<Italian>Your unit finds a Slyph dancing in a clearing. She follows them out when they leave.</Italian>
 		<Spanish>Your unit finds a Slyph dancing in a clearing. She follows them out when they leave.</Spanish>
@@ -8400,7 +8400,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EFREET</Tag>
 		<English>Efreet</English>
-		<French>Éfrit</French>
+		<French>ï¿½frit</French>
 		<German>Efreet</German>
 		<Italian>Efreet</Italian>
 		<Spanish>Efreet</Spanish>
@@ -8472,7 +8472,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SIRFIS</Tag>
 		<English>Sirfis the Radiantly-Birthed</English>
-		<French>Sirfis le Né-des-Cieux</French>
+		<French>Sirfis le Nï¿½-des-Cieux</French>
 		<German>Sirfis the Radiantly-Birthed</German>
 		<Italian>Sirfis the Radiantly-Birthed</Italian>
 		<Spanish>Sirfis the Radiantly-Birthed</Spanish>
@@ -8488,7 +8488,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SAPPER_BOOM</Tag>
 		<English>Light the Fuse!</English>
-		<French>Allumer la mèche !</French>
+		<French>Allumer la mï¿½cheï¿½!</French>
 		<German>Light the Fuse!</German>
 		<Italian>Light the Fuse!</Italian>
 		<Spanish>Light the Fuse!</Spanish>
@@ -8504,7 +8504,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SUMMON_EFREET</Tag>
 		<English>Summon Efreet</English>
-		<French>Évocation d'Éfrit</French>
+		<French>ï¿½vocation d'ï¿½frit</French>
 		<German>Summon Efreet</German>
 		<Italian>Summon Efreet</Italian>
 		<Spanish>Summon Efreet</Spanish>
@@ -8512,7 +8512,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SUMMON_SLUAGH</Tag>
 		<English>Summon Sluagh</English>
-		<French>Évocation de Sluagh</French>
+		<French>ï¿½vocation de Sluagh</French>
 		<German>Summon Sluagh</German>
 		<Italian>Summon Sluagh</Italian>
 		<Spanish>Summon Sluagh</Spanish>
@@ -8520,7 +8520,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_HEMAPYROSYNCRETISTIC</Tag>
 		<English>Syncretist</English>
-		<French>Syncrétiste</French>
+		<French>Syncrï¿½tiste</French>
 		<German>Syncretist</German>
 		<Italian>Syncretist</Italian>
 		<Spanish>Syncretist</Spanish>
@@ -8677,7 +8677,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AIRLIFT_CONNECT</Tag>
 		<English>[NEWLINE][ICON_BULLET]Connects plot to trade network</English>
-		<French>[NEWLINE][ICON_BULLET]Connecte l'emplacement au réseau commercial</French>
+		<French>[NEWLINE][ICON_BULLET]Connecte l'emplacement au rï¿½seau commercial</French>
 		<German>[NEWLINE][ICON_BULLET]Connects plot to trade network</German>
 		<Italian>[NEWLINE][ICON_BULLET]Connects plot to trade network</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Connects plot to trade network</Spanish>
@@ -8750,7 +8750,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_MAKES_VALID</Tag>
 		<English>[ICON_BULLET]Can be Built on %s1.</English>
-		<French>[ICON_BULLET]Peut être construit sur [NUM1:un:une:des:des] %s1.</French>
+		<French>[ICON_BULLET]Peut ï¿½tre construit sur [NUM1:un:une:des:des] %s1.</French>
 		<German>[ICON_BULLET]Can be Built on %s1.</German>
 		<Italian>[ICON_BULLET]Can be Built on %s1.</Italian>
 		<Spanish>[ICON_BULLET]Can be Built on %s1.</Spanish>
@@ -8758,7 +8758,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FRESH_WATER_MAKES_VALID</Tag>
 		<English>[ICON_BULLET]Can be Built on any terrain with access to Fresh Water.</English>
-		<French>[ICON_BULLET]Peut être construit sur tout terrain disposant d'eau douce.</French>
+		<French>[ICON_BULLET]Peut ï¿½tre construit sur tout terrain disposant d'eau douce.</French>
 		<German>[ICON_BULLET]Can be Built on any terrain with access to Fresh Water.</German>
 		<Italian>[ICON_BULLET]Can be Built on any terrain with access to Fresh Water.</Italian>
 		<Spanish>[ICON_BULLET]Can be Built on any terrain with access to Fresh Water.</Spanish>
@@ -8767,7 +8767,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_TAKE_EQUIPMENT</Tag>
 		<English>Take Equipment</English>
-		<French>Prendre l'équipement</French>
+		<French>Prendre l'ï¿½quipement</French>
 		<German>Take Equipment</German>
 		<Italian>Take Equipment</Italian>
 		<Spanish>Take Equipment</Spanish>
@@ -8775,7 +8775,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_DROP_EQUIPMENT</Tag>
 		<English>Drop Equipment</English>
-		<French>Lâcher l'équipement</French>
+		<French>Lï¿½cher l'ï¿½quipement</French>
 		<German>Drop Equipment</German>
 		<Italian>Drop Equipment</Italian>
 		<Spanish>Drop Equipment</Spanish>
@@ -8783,7 +8783,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SWAP_EQUIPMENT</Tag>
 		<English>Swap Equipment</English>
-		<French>Échanger l'équipement</French>
+		<French>ï¿½changer l'ï¿½quipement</French>
 		<German>Swap Equipment</German>
 		<Italian>Swap Equipment</Italian>
 		<Spanish>Swap Equipment</Spanish>
@@ -8791,7 +8791,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_TAKE_EQUIPMENT_NO_LIST</Tag>
 		<English>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from the Treasure Chest</English>
-		<French>Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] dans le coffre au trésor</French>
+		<French>Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] dans le coffre au trï¿½sor</French>
 		<German>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from the Treasure Chest</German>
 		<Italian>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from the Treasure Chest</Italian>
 		<Spanish>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from the Treasure Chest</Spanish>
@@ -8799,7 +8799,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_TAKE_EQUIPMENT_OPEN_LIST</Tag>
 		<English>Pick an item from the list to take it from the Treasure Chest</English>
-		<French>Choisir un objet de la liste et le prendre dans le coffre au trésor</French>
+		<French>Choisir un objet de la liste et le prendre dans le coffre au trï¿½sor</French>
 		<German>Pick an item from the list to take it from the Treasure Chest</German>
 		<Italian>Pick an item from the list to take it from the Treasure Chest</Italian>
 		<Spanish>Pick an item from the list to take it from the Treasure Chest</Spanish>
@@ -8807,7 +8807,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_TAKE_EQUIPMENT</Tag>
 		<English>Take an item from the Treasure Chest</English>
-		<French>Prendre un objet dans le coffre au trésor</French>
+		<French>Prendre un objet dans le coffre au trï¿½sor</French>
 		<German>Take an item from the Treasure Chest</German>
 		<Italian>Take an item from the Treasure Chest</Italian>
 		<Spanish>Take an item from the Treasure Chest</Spanish>
@@ -8823,7 +8823,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_DROP_EQUIPMENT_NO_LIST</Tag>
 		<English>Place [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] in the Treasure Chest</English>
-		<French>Déposer [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] dans le coffre au trésor</French>
+		<French>Dï¿½poser [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] dans le coffre au trï¿½sor</French>
 		<German>Place [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] in the Treasure Chest</German>
 		<Italian>Place [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] in the Treasure Chest</Italian>
 		<Spanish>Place [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] in the Treasure Chest</Spanish>
@@ -8831,7 +8831,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_DROP_EQUIPMENT_OPEN_LIST</Tag>
 		<English>Pick an equipped item from the list to unequip it</English>
-		<French>Choisir un objet équipé dans la liste et le déposer</French>
+		<French>Choisir un objet ï¿½quipï¿½ dans la liste et le dï¿½poser</French>
 		<German>Pick an equipped item from the list to unequip it</German>
 		<Italian>Pick an equipped item from the list to unequip it</Italian>
 		<Spanish>Pick an equipped item from the list to unequip it</Spanish>
@@ -8839,7 +8839,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_DROP_EQUIPMENT</Tag>
 		<English>Unequip an item</English>
-		<French>Déposer un objet</French>
+		<French>Dï¿½poser un objet</French>
 		<German>Unequip an item</German>
 		<Italian>Unequip an item</Italian>
 		<Spanish>Unequip an item</Spanish>
@@ -8847,7 +8847,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_DROP_ALL</Tag>
 		<English>[ICON_BULLET]Unequip all</English>
-		<French>[ICON_BULLET]Tout déposer</French>
+		<French>[ICON_BULLET]Tout dï¿½poser</French>
 		<German>[ICON_BULLET]Unequip all</German>
 		<Italian>[ICON_BULLET]Unequip all</Italian>
 		<Spanish>[ICON_BULLET]Unequip all</Spanish>
@@ -8855,7 +8855,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_DROP_ONE</Tag>
 		<English>[ICON_BULLET]Unequip [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]Déposer [NUM1:un:une:des:des] [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</French>
+		<French>[ICON_BULLET]Dï¿½poser [NUM1:un:une:des:des] [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</French>
 		<German>[ICON_BULLET]Unequip [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</German>
 		<Italian>[ICON_BULLET]Unequip [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET]Unequip [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT]</Spanish>
@@ -8863,7 +8863,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_SWAP_EQUIPMENT_NO_LIST</Tag>
 		<English>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</English>
-		<French>Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] à [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</French>
+		<French>Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] ï¿½ [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</French>
 		<German>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</German>
 		<Italian>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</Italian>
 		<Spanish>Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT]</Spanish>
@@ -8871,7 +8871,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PYHELP_SWAP_EQUIPMENT_OPEN_LIST</Tag>
 		<English>Pick an equipment item from the list to take it from another unit</English>
-		<French>Choisir un équipement dans la liste et le prendre à une autre unité</French>
+		<French>Choisir un ï¿½quipement dans la liste et le prendre ï¿½ une autre unitï¿½</French>
 		<German>Pick an equipment item from the list to take it from another unit</German>
 		<Italian>Pick an equipment item from the list to take it from another unit</Italian>
 		<Spanish>Pick an equipment item from the list to take it from another unit</Spanish>
@@ -8879,7 +8879,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_SWAP_EQUIPMENT</Tag>
 		<English>Pick an equipment item from the list to take it from another unit</English>
-		<French>Choisir un équipement dans la liste et le prendre à une autre unité</French>
+		<French>Choisir un ï¿½quipement dans la liste et le prendre ï¿½ une autre unitï¿½</French>
 		<German>Pick an equipment item from the list to take it from another unit</German>
 		<Italian>Pick an equipment item from the list to take it from another unit</Italian>
 		<Spanish>Pick an equipment item from the list to take it from another unit</Spanish>
@@ -8887,7 +8887,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_SWAP_EQUIPMENT_LIST</Tag>
 		<English>[ICON_BULLET]Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (level %d3)</English>
-		<French>[ICON_BULLET]Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] à [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (niveau %d3)</French>
+		<French>[ICON_BULLET]Prendre [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] ï¿½ [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (niveau %d3)</French>
 		<German>[ICON_BULLET]Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (level %d3)</German>
 		<Italian>[ICON_BULLET]Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (level %d3)</Italian>
 		<Spanish>[ICON_BULLET]Take [COLOR_YIELD_COMMERCE]%s1[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] (level %d3)</Spanish>
@@ -8903,7 +8903,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_PREREQ_CASTER_ALIVE</Tag>
 		<English>[ICON_BULLET]Caster must be Alive.</English>
-		<French>[ICON_BULLET]Le lanceur doit être vivant.</French>
+		<French>[ICON_BULLET]Le lanceur doit ï¿½tre vivant.</French>
 		<German>[ICON_BULLET]Caster must be Alive.</German>
 		<Italian>[ICON_BULLET]Caster must be Alive.</Italian>
 		<Spanish>[ICON_BULLET]Caster must be Alive.</Spanish>
@@ -8927,7 +8927,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NEXT_ELECTION</Tag>
 		<English>Next Election: Turn %d1</English>
-		<French>Prochaines élections au tour %d1</French>
+		<French>Prochaines ï¿½lections au tour %d1</French>
 		<German>Next Election: Turn %d1</German>
 		<Italian>Next Election: Turn %d1</Italian>
 		<Spanish>Next Election: Turn %d1</Spanish>
@@ -8976,7 +8976,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GOBLIN_WASTE_NEW_HELP_1</Tag>
 		<English>Spawns a Barbarian Group of Muris Goblins</English>
-		<French>Fait apparaître un groupe de gobelins du Clan Muris</French>
+		<French>Fait apparaï¿½tre un groupe de gobelins du Clan Muris</French>
 		<German>Erzeugt eine Barbarische Gruppe von Muris Goblins</German>
 		<Italian>Spawns a Barbarian Group of Muris Goblins</Italian>
 		<Spanish>Spawns a Barbarian Group of Muris Goblins</Spanish>
@@ -9072,7 +9072,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_AFFINITY_GRAVELEECH</Tag>
 		<English>Graveleech Affinity</English>
-		<French>Affinité Graveleech</French>
+		<French>Affinitï¿½ Graveleech</French>
 		<German>Graveleech Affinity</German>
 		<Italian>Graveleech Affinity</Italian>
 		<Spanish>Graveleech Affinity</Spanish>
@@ -9080,7 +9080,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MIN_CRIME_MOD</Tag>
 		<English>[ICON_BULLET]Sets Minimum Crime to %d1.</English>
-		<French>[ICON_BULLET]Le taux de criminalité est au minimum de %d1.</French>
+		<French>[ICON_BULLET]Le taux de criminalitï¿½ est au minimum de %d1.</French>
 		<German>[ICON_BULLET]Sets Minimum Crime to %d1.</German>
 		<Italian>[ICON_BULLET]Sets Minimum Crime to %d1.</Italian>
 		<Spanish>[ICON_BULLET]Sets Minimum Crime to %d1.</Spanish>
@@ -9130,7 +9130,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POISONER_WORKSHOP_STRATEGY</Tag>
 		<English>Grants access to various poisons for your rogue units</English>
-		<French>Donne accès à divers poisons pour vos unités scélérates</French>
+		<French>Donne accï¿½s ï¿½ divers poisons pour vos unitï¿½s scï¿½lï¿½rates</French>
 		<German>Grants access to various poisons for your rogue units</German>
 		<Italian>Grants access to various poisons for your rogue units</Italian>
 		<Spanish>Grants access to various poisons for your rogue units</Spanish>
@@ -9146,7 +9146,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ARCANE_RIDER</Tag>
 		<English>Arcane Rider</English>
-		<French>Magicien Monté</French>
+		<French>Magicien Montï¿½</French>
 		<German>Arcane Rider</German>
 		<Italian>Arcane Rider</Italian>
 		<Spanish>Arcane Rider</Spanish>
@@ -9154,7 +9154,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DESERT_ROSE_BLADE</Tag>
 		<English>Desert Rose-Coated Blade</English>
-		<French>Lame enduite de rose du désert</French>
+		<French>Lame enduite de rose du dï¿½sert</French>
 		<German>Desert Rose-Coated Blade</German>
 		<Italian>Desert Rose-Coated Blade</Italian>
 		<Spanish>Desert Rose-Coated Blade</Spanish>
@@ -9242,7 +9242,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BLEEDING_GOD</Tag>
 		<English>Bleeding God</English>
-		<French>Dieu Hémophile</French>
+		<French>Dieu Hï¿½mophile</French>
 		<German>Bleeding God</German>
 		<Italian>Bleeding God</Italian>
 		<Spanish>Bleeding God</Spanish>
@@ -9306,7 +9306,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_DROP_HERON_THRONE</Tag>
 		<English>Drop Heron Throne</English>
-		<French>Construire le Trône des Hérons</French>
+		<French>Construire le Trï¿½ne des Hï¿½rons</French>
 		<German>Drop Heron Throne</German>
 		<Italian>Drop Heron Throne</Italian>
 		<Spanish>Drop Heron Throne</Spanish>
@@ -10363,7 +10363,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EVANGELIST</Tag>
 		<English>Evangelist</English>
-		<French>Évangéliste</French>
+		<French>ï¿½vangï¿½liste</French>
 		<German>Evangelist</German>
 		<Italian>Evangelist</Italian>
 		<Spanish>Evangelist</Spanish>
@@ -10371,7 +10371,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_APOSTLE</Tag>
 		<English>Apostle</English>
-		<French>Apôtre</French>
+		<French>Apï¿½tre</French>
 		<German>Apostle</German>
 		<Italian>Apostle</Italian>
 		<Spanish>Apostle</Spanish>
@@ -10379,7 +10379,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DEVOUT</Tag>
 		<English>Itinerant Healer</English>
-		<French>Guérisseur Itinérant</French>
+		<French>Guï¿½risseur Itinï¿½rant</French>
 		<German>Itinerant Healer</German>
 		<Italian>Itinerant Healer</Italian>
 		<Spanish>Itinerant Healer</Spanish>
@@ -10419,7 +10419,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SECONDARY_ROGUE_SVARTALFAR</Tag>
 		<English>Trained Assassin</English>
-		<French>Assassin Entraîné</French>
+		<French>Assassin Entraï¿½nï¿½</French>
 		<German>Trained Assassin</German>
 		<Italian>Trained Assassin</Italian>
 		<Spanish>Trained Assassin</Spanish>
@@ -10435,7 +10435,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_TRAINING_LABEL</Tag>
 		<English>Training</English>
-		<French>Entraînement</French>
+		<French>Entraï¿½nement</French>
 		<German>Training</German>
 		<Italian>Training</Italian>
 		<Spanish>Training</Spanish>
@@ -10455,6 +10455,14 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<German>XP Rate</German>
 		<Italian>XP Rate</Italian>
 		<Spanish>XP Rate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FREE_XP</Tag>
+		<English>Free XP</English>
+		<French>Free XP</French>
+		<German>Free XP</German>
+		<Italian>Free XP</Italian>
+		<Spanish>Free XP</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NO_XP_BONUSES</Tag>
@@ -10515,7 +10523,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE_CRIME_EFFECT</Tag>
 		<English>(Effect) Summer Palace Crime Reduction</English>
-		<French>(Effet) Baisse du crime par le Palais d'Été</French>
+		<French>(Effet) Baisse du crime par le Palais d'ï¿½tï¿½</French>
 		<German>(Effect) Summer Palace Crime Reduction</German>
 		<Italian>(Effect) Summer Palace Crime Reduction</Italian>
 		<Spanish>(Effect) Summer Palace Crime Reduction</Spanish>
@@ -10531,7 +10539,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_PURIFY_WELL_SOULS</Tag>
 		<English>Open Well of Souls</English>
-		<French>Ouvrir le Puits des Âmes</French>
+		<French>Ouvrir le Puits des ï¿½mes</French>
 		<German>Open Well of Souls</German>
 		<Italian>Open Well of Souls</Italian>
 		<Spanish>Open Well of Souls</Spanish>
@@ -10539,7 +10547,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MEDIATOR</Tag>
 		<English>Mediator</English>
-		<French>Médiateur</French>
+		<French>Mï¿½diateur</French>
 		<German>Mediator</German>
 		<Italian>Mediator</Italian>
 		<Spanish>Mediator</Spanish>
@@ -10555,7 +10563,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_NO_NATIONAL_LIMIT_HELP</Tag>
 		<English>Tier4 Units are no longer limited to 4.(Global Limit for Heroes are still active)</English>
-		<French>Les unités de rang 4 ne sont plus limitées à 4.(La limite mondiale à 1 pour les héros reste active)</French>
+		<French>Les unitï¿½s de rang 4 ne sont plus limitï¿½es ï¿½ 4.(La limite mondiale ï¿½ 1 pour les hï¿½ros reste active)</French>
 		<German>Tier4 Units are no longer limited to 4.(Global Limit for Heroes are still active)</German>
 		<Italian>Tier4 Units are no longer limited to 4.(Global Limit for Heroes are still active)</Italian>
 		<Spanish>Tier4 Units are no longer limited to 4.(Global Limit for Heroes are still active)</Spanish>
