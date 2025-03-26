@@ -3719,7 +3719,7 @@ class CvMainInterface:
 				screen.setStyle( "TradeRouteTable", "Table_City_Style" )
 				screen.addTableControlGFC( "BuildingListTable", 3, 10, 232, HUD_City_Left_Panel_Width - 20, yResolution - 450, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 				screen.setStyle( "BuildingListTable", "Table_City_Style" )
-				screen.addTableControlGFC( "TrainingTable", 3, 10, 232, HUD_City_Left_Panel_Width - 20, yResolution - 450, True, True, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
+				screen.addTableControlGFC( "TrainingTable", 4, 10, 232, HUD_City_Left_Panel_Width - 20, yResolution - 450, True, True, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 				screen.setStyle( "TrainingTable", "Table_City_Style" )
 
 
@@ -3740,9 +3740,10 @@ class CvMainInterface:
 				screen.setTableColumnHeader( "BuildingListTable", 2, u"", 10 )
 				screen.setTableColumnRightJustify( "BuildingListTable", 1 )
 
-				screen.setTableColumnHeader( "TrainingTable", 0, "<font=2>" + localText.getText("TXT_KEY_PEDIA_CATEGORY_UNIT_COMBAT", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 2 )
-				screen.setTableColumnHeader( "TrainingTable", 1, "<font=2>" + localText.getText("TXT_KEY_XP_CAP", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 4 )
-				screen.setTableColumnHeader( "TrainingTable", 2, "<font=2>" + localText.getText("TXT_KEY_XP_RATE", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 4 )
+				screen.setTableColumnHeader( "TrainingTable", 0, "<font=2>" + localText.getText("TXT_KEY_PEDIA_CATEGORY_UNIT_COMBAT", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) * 2 / 5 )
+				screen.setTableColumnHeader( "TrainingTable", 1, "<font=2>" + localText.getText("TXT_KEY_XP_CAP", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 5 )
+				screen.setTableColumnHeader( "TrainingTable", 2, "<font=2>" + localText.getText("TXT_KEY_XP_RATE", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 5 )
+				screen.setTableColumnHeader( "TrainingTable", 3, "<font=2>" + localText.getText("TXT_KEY_FREE_XP", ()) + "</font>", ( HUD_City_Left_Panel_Width - 20 ) / 5 )
 
 				screen.show( "BuildingListBackground" )
 				screen.show( "TradeRouteListBackground" )
@@ -3944,14 +3945,18 @@ class CvMainInterface:
 				for iUC in xrange(gc.getNumUnitCombatInfos()):
 					fUCXPRate = pHeadSelectedCity.getTrainXPRate(iUC)
 					iUCXPCap = pHeadSelectedCity.getTrainXPCap(iUC)
+					iFreeXP = pHeadSelectedCity.getUnitCombatFreeExperience(iUC)
+					iFreeXP += pHeadSelectedCity.getSpecialistFreeExperience()
 					szUCDecription = gc.getUnitCombatInfo(iUC).getDescription()
 					szUCXPRate = u"%.2f" %(fUCXPRate)
 					szUCXPCap = str(iUCXPCap / 100)
-					if fUCXPRate > 0 or iUCXPCap > 0:
+					szUCXPFree = str(iFreeXP / 100)
+					if fUCXPRate > 0 or iUCXPCap > 0 or iFreeXP >0:
 						screen.appendTableRow( "TrainingTable" )
 						screen.setTableText( "TrainingTable", 0, iNumTrainingRows, "<font=1>" + szUCDecription + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 						screen.setTableText( "TrainingTable", 1, iNumTrainingRows, "<font=1>" + szUCXPCap + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 						screen.setTableText( "TrainingTable", 2, iNumTrainingRows, "<font=1>" + szUCXPRate + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
+						screen.setTableText( "TrainingTable", 3, iNumTrainingRows, "<font=1>" + szUCXPFree + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 						iNumTrainingRows += 1
 				if iNumTrainingRows == 0:
 					screen.appendTableRow( "TrainingTable" )
