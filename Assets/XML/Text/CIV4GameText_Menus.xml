@@ -1572,4 +1572,12 @@
 		<Italian>Premi &lt;INVIO> per terminare il turno...</Italian>
 		<Spanish>Pulsar &lt;INTRO> para terminar el turno...</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CITYCLASS</Tag>
+		<English>City Classes</English>
+		<French>City Classes</French>
+		<German>City Classes</German>
+		<Italian>City Classes</Italian>
+		<Spanish>City Classes</Spanish>
+	</TEXT>
 </Civ4GameText>
