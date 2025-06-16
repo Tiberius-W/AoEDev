@@ -33541,7 +33541,6 @@
 			<PrereqUnits>
 				<PrereqUnit>UNIT_SLAVE</PrereqUnit>
 				<PrereqUnit>UNIT_SLAVE_UNDEAD</PrereqUnit>
-				<PrereqUnit>UNIT_GLADIATOR</PrereqUnit>
 			</PrereqUnits>
 			<UnitCombats>
 				<UnitCombat>
