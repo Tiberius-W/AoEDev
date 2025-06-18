@@ -6,19 +6,188 @@
 <!-- Promotion Infos -->
 <Civ4PromotionInfos xmlns="x-schema:ViciousSeas_CIV4UnitSchema.xml">
 	<PromotionInfos>
-		<PromotionInfo>		<!-- Leash - 2 Range -->
-			<Type>PROMOTION_LEASH_2</Type>
-			<Description>TXT_KEY_PROMOTION_LEASH_2</Description>
-			<iLeashRange>3</iLeashRange>
+		<PromotionInfo>		<!-- Leash - 5 Range decay 1 -->
+			<Type>PROMOTION_LEASH_5_1</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
 			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+			</PromotionOverwrites>
+			<iExpireChance>1</iExpireChance>
 			<iMinLevel>-1</iMinLevel>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Leash - 3 Range -->
-			<Type>PROMOTION_LEASH_3</Type>
-			<Description>TXT_KEY_PROMOTION_LEASH_3</Description>
-			<iLeashRange>3</iLeashRange>
+		<PromotionInfo>		<!-- Leash - 5 Range decay 2 -->
+			<Type>PROMOTION_LEASH_5_2</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
 			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_1</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_1</Promotion>
+			</PromotionOverwrites>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PRELUDE_AWAKENED1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_LEASH_5_1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<iExpireChance>2</iExpireChance>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<iMinLevel>-1</iMinLevel>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Leash - 5 Range decay 3 -->
+			<Type>PROMOTION_LEASH_5_3</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
+			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_2</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_2</Promotion>
+			</PromotionOverwrites>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PRELUDE_AWAKENED2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_LEASH_5_2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<iExpireChance>3</iExpireChance>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<iMinLevel>-1</iMinLevel>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Leash - 5 Range decay 4 -->
+			<Type>PROMOTION_LEASH_5_4</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
+			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_3</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_3</Promotion>
+			</PromotionOverwrites>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PRELUDE_AWAKENED3</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_LEASH_5_3</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<iExpireChance>4</iExpireChance>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<iMinLevel>-1</iMinLevel>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Leash - 5 Range decay 5 -->
+			<Type>PROMOTION_LEASH_5_5</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
+			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_4</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+				<Promotion>PROMOTION_LEASH_5_4</Promotion>
+			</PromotionOverwrites>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PRELUDE_AWAKENED4</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_LEASH_5_4</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<iExpireChance>5</iExpireChance>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<iMinLevel>-1</iMinLevel>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Leash - 4 Range -->
+			<Type>PROMOTION_LEASH_4</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_4</Description>
+			<iLeashRange>4</iLeashRange>
+			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_AWAKENED</Promotion>
+			</PromotionOverwrites>
 			<iMinLevel>-1</iMinLevel>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</PromotionInfo>

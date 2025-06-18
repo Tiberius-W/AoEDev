@@ -1353,6 +1353,7 @@
 			<Class>UNITCLASS_KRAKEN</Class>
 			<Type>UNIT_KRAKEN</Type>
             <Special>SPECIALUNIT_SEABEAST</Special>
+			<iExtraPerception>3</iExtraPerception>
 		</UnitInfo>
 		<UnitInfo>        <!-- Sea Drake -->
 			<Class>UNITCLASS_SEA_DRAKE</Class>
@@ -1385,6 +1386,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bRenderBelowWater>1</bRenderBelowWater>
+			<iExtraPerception>3</iExtraPerception>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
@@ -1392,7 +1394,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<iMoves>3</iMoves>
-			<iCombat>8</iCombat>
+			<iCombat>7</iCombat>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -1515,6 +1517,19 @@
 			</DamageTypeCombats>
 			<iAlignmentModifier>-1</iAlignmentModifier>
 			<bForceOverwrite>1</bForceOverwrite>
+		</UnitInfo>
+		<UnitInfo>        <!-- Malignant Flora Fort Commander -->
+			<Class>UNITCLASS_FORT_COMMANDER</Class>
+			<Type>UNIT_MALIGNANT_COMMANDER</Type>
+			<iCombat>2</iCombat>
+			<iAirCombat>5</iAirCombat>
+			<iAirCombatLimit>50</iAirCombatLimit>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_LEASH_4</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

@@ -291,7 +291,7 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_PIRATE_STRONGHOLD</ImprovementUpgrade>
-			<iAppearanceProbability>60</iAppearanceProbability>
+			<iAppearanceProbability>80</iAppearanceProbability>
 			<SpawnUnitType>UNIT_GALLEY</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_BOARDING_PARTY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -314,7 +314,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iLairCreationWeight>80</iLairCreationWeight>
+			<iLairCreationWeight>90</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_OPTICS</LairCreationWeightTechType>
@@ -536,13 +536,17 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
-			<iCultureRange>3</iCultureRange>
+			<iCultureRange>4</iCultureRange>
 			<iCultureControlStrength>3</iCultureControlStrength>
 			<iCultureCenterBonus>2</iCultureCenterBonus>
 			<bWater>1</bWater>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LEASH_5_1</Promotion>
+				<Promotion>PROMOTION_SHIP_MARCH</Promotion>
+			</SpawnPromotions>
 			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_3</Promotion>
-				<Promotion>PROMOTION_MARCH</Promotion>
+				<Promotion>PROMOTION_LEASH_4</Promotion>
+				<Promotion>PROMOTION_SHIP_MARCH</Promotion>
 			</GuardianPromotions>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Titan Shell Lair -->
@@ -582,12 +586,16 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
-			<iCultureRange>3</iCultureRange>
+			<iCultureRange>4</iCultureRange>
 			<iCultureControlStrength>3</iCultureControlStrength>
 			<iCultureCenterBonus>2</iCultureCenterBonus>
 			<bWater>1</bWater>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LEASH_5_1</Promotion>
+				<Promotion>PROMOTION_TITAN_SCALE_PLATING</Promotion>
+			</SpawnPromotions>
 			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_3</Promotion>
+				<Promotion>PROMOTION_LEASH_4</Promotion>
 				<Promotion>PROMOTION_TITAN_SCALE_PLATING</Promotion>
 			</GuardianPromotions>
 		</ImprovementInfo>
@@ -629,18 +637,20 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
-			<iCultureRange>3</iCultureRange>
+			<iCultureRange>4</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
 			<iCultureCenterBonus>5</iCultureCenterBonus>
 			<iLairTier>1</iLairTier>
 			<bWater>1</bWater>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
+				<Promotion>PROMOTION_LEASH_5_3</Promotion>
+				<Promotion>PROMOTION_DEEPENED_VISION</Promotion>
 			</SpawnPromotions>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LIZARDMAN_BEZERI</Promotion>
 				<Promotion>PROMOTION_BAD_KRAKEN</Promotion>
-				<Promotion>PROMOTION_LEASH_3</Promotion>
+				<Promotion>PROMOTION_LEASH_4</Promotion>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
 				<Promotion>PROMOTION_WICKED</Promotion>
 				<Promotion>PROMOTION_CRAZED</Promotion>
@@ -648,6 +658,7 @@
 				<Promotion>PROMOTION_COMMAND1</Promotion>
 				<Promotion>PROMOTION_COMMAND2</Promotion>
 				<Promotion>PROMOTION_COMMAND3</Promotion>
+				<Promotion>PROMOTION_DEEPENED_VISION</Promotion>
 			</GuardianPromotions>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Drowned Lair -->
@@ -665,7 +676,7 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_DREDGE_HEEP</ImprovementUpgrade>
-			<iAppearanceProbability>50</iAppearanceProbability>
+			<iAppearanceProbability>70</iAppearanceProbability>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_DROWN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -680,7 +691,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iLairCreationWeight>80</iLairCreationWeight>
+			<iLairCreationWeight>90</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_NECROMANCY</LairCreationWeightTechType>
@@ -752,6 +763,7 @@
 			</LairUpgradeTechs>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
+				<Promotion>PROMOTION_STRONG</Promotion>
 			</SpawnPromotions>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
