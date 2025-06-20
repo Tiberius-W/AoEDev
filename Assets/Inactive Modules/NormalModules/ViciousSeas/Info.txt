@@ -79,7 +79,9 @@ Coral fort now requires no tech to build.
 (tentative) Drown and Krakens moved from demon to barbarian faction due to new demon spawn rules
 Seek Leviathan spell.
 Conquerors trait loses +1 movement.
-
+Drown and pirate lair spawn rate up 30%.
+Ocean fortress spawns now start with a leash promotion that falls off faster and faster as the animal awakens, should delay early aggression.
+Lair spawns made slightly stronger, Kraken spawn loses 1 strength but gains 3 perception.
 
 V1.5
 Fixed the promotion Sinking sharing names with Scionhealthcare promotions 
