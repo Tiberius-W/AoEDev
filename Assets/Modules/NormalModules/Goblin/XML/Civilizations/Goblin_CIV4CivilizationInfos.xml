@@ -16,7 +16,6 @@
 			<DefaultPlayerColor>PLAYERCOLOR_GOBLIN</DefaultPlayerColor>
             <ArtDefineTag>ART_DEF_CIVILIZATION_GOBLIN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_CLAN_OF_EMBERS</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GOBLIN</UnitArtStyleType>
             <bPlayable>1</bPlayable>
             <bAIPlayable>1</bAIPlayable>
             <Cities>

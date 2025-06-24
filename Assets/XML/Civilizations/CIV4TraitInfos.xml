@@ -2755,6 +2755,12 @@
 			<iMinRequiredPoints>300</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<iHappiness>2</iHappiness>
+			<FreeBonuses>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_MIND</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>			
+			</FreeBonuses>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MIND1</PromotionType>

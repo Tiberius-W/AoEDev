@@ -1646,6 +1646,13 @@ bInGeneric: Unknown. Always 1.
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SND_SPELL_CATTLE</SoundID>
+			<Filename>Sounds/Spells/Cattle</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_SPELL_BURNING_BLOOD</SoundID>
 			<Filename>Sounds/Spells/Burningblood</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>

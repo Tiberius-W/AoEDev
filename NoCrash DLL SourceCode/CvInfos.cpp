@@ -28681,32 +28681,44 @@ void CvHandicapInfo::copyNonDefaults(CvHandicapInfo* pClassInfo, CvXMLLoadUtilit
 		if (m_pbFreeTechs[i]					== false)	m_pbFreeTechs[i]						= pClassInfo->isFreeTechs(i);
 		if (m_pbAIFreeTechs[i]					== false)	m_pbAIFreeTechs[i]						= pClassInfo->isAIFreeTechs(i);
 	}
-	if ( pClassInfo->getNumGoodies() >= 0 )
+	if (pClassInfo->getNumGoodies() > 0)
 	{
-		int iNumGoodiesOld = m_iNumGoodies;
-		CvXMLLoadUtilityModTools* pCurrentUnitClass = new CvXMLLoadUtilityModTools;
-		for ( int i = 0; i < pClassInfo->getNumGoodies(); i++ )
+		int* tempArray = new int[getNumGoodies() + pClassInfo->getNumGoodies()];
+		for (int i = 0; i < getNumGoodies(); ++i)
 		{
-			if (!(pCurrentUnitClass->isDuplicate(getNumGoodies(), &m_piGoodies[0], pClassInfo->getGoodies(i))))
+			tempArray[i] = getGoodies(i);
+		}
+		int iNewItems = 0;
+		for (int i = 0; i < pClassInfo->getNumGoodies(); ++i)
+		{
+			bool bLoad = true;
+			for (int j = 0; j < getNumGoodies(); ++j)
 			{
-				if (pClassInfo->getGoodies(i) != NO_GOODY)	m_iNumGoodies++;
+				if (pClassInfo->getGoodies(i) == getGoodies(j))
+				{
+					bLoad = false;
+					break;
+				}
+			}
+			if (bLoad)
+			{
+				tempArray[iNewItems + getNumGoodies()] = pClassInfo->getGoodies(i);
+				iNewItems++;
 			}
 		}
-		int* m_piGoodiesTemp = new int[m_iNumGoodies];
-		for ( int i = 0; i < m_iNumGoodies; i++ )
-		{
-			if (i < iNumGoodiesOld)		m_piGoodiesTemp[i] = m_piGoodies[i];
-			else if (!(pCurrentUnitClass->isDuplicate(getNumGoodies(), &m_piGoodiesTemp[0], pClassInfo->getGoodies(i-iNumGoodiesOld))))		m_piGoodiesTemp[i] = pClassInfo->getGoodies(i - iNumGoodiesOld);
-		}
 		SAFE_DELETE_ARRAY(m_piGoodies);
-		m_piGoodies = new int[m_iNumGoodies];
-		for ( int i = 0; i < m_iNumGoodies; i++ )
+		int iGoalSize = getNumGoodies() + iNewItems;
+		m_piGoodies = new int[iGoalSize];
+		for (int i = 0; i < iGoalSize; ++i)
 		{
-															m_piGoodies[i]							= m_piGoodiesTemp[i];
+			m_piGoodies[i] = tempArray[i];
+			FAssertMsg(m_piGoodies[i] < GC.getNumGoodyInfos(), "Out of Bounds Array Melding");
+			FAssertMsg(m_piGoodies[i] > -1, "Out of Bounds Array Melding");
 		}
-		SAFE_DELETE_ARRAY(m_piGoodiesTemp);
-		SAFE_DELETE(pCurrentUnitClass);
+		m_iNumGoodies = iGoalSize;
+		SAFE_DELETE_ARRAY(tempArray);
 	}
+
 }
 /*************************************************************************************************/
 /**	TrueModular								END													**/

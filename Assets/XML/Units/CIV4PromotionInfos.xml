@@ -30806,6 +30806,19 @@
 			<iDefensiveStrikeDamage>5</iDefensiveStrikeDamage>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Rat Blood -->
+			<Type>PROMOTION_RAT_BLOOD</Type>
+			<Description>TXT_KEY_PROMOTION_RAT_BLOOD</Description>
+			<iWithdrawalChange>25</iWithdrawalChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Mutation % Strength -->				<!-- Mutation Start -->
 			<Type>PROMOTION_MUTATION_STRENGTH_PERCENT</Type>
 			<Description>TXT_KEY_PROMOTION_MUTATION_STRENGTH_PERCENT</Description>

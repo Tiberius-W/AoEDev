@@ -7351,6 +7351,22 @@
 					<UnitType>UNIT_FENRIS</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_RAT</UnitClassType>
+					<UnitType>UNIT_RAT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_RAT_PACK</UnitClassType>
+					<UnitType>UNIT_RAT_PACK</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_DEMON_RAT</UnitClassType>
+					<UnitType>UNIT_DEMON_RAT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_RATATOSKR</UnitClassType>
+					<UnitType>UNIT_RATATOSKR</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_ELEPHANT</UnitClassType>
 					<UnitType>UNIT_ELEPHANT</UnitType>
 				</Unit>

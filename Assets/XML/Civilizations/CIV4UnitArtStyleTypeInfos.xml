@@ -1650,12 +1650,20 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_MARKSMAN_CHIMAR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-					<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_KNIGHT</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_KNIGHT_CHIMAR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_KNIGHT_CHIMAR</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_KNIGHT_CHIMAR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_CENTAUR</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_WOLF_RIDER_LUKOS_CLAN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_WOLF_RIDER_LUKOS_CLAN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_WOLF_RIDER_LUKOS_CLAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>

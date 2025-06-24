@@ -442,7 +442,7 @@
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WOLF</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<iTier>2</iTier>
@@ -654,7 +654,7 @@
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_PANTHER</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<bNeverObsolete>1</bNeverObsolete>
@@ -721,15 +721,15 @@
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WOLF</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BIG_RAT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WOLF</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WOLF</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				
 			</UnitMeshGroups>

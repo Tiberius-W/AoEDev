@@ -12372,7 +12372,7 @@
 			<bInBordersOnly>1</bInBordersOnly>
 			<PyResult>spellSettleCattle(pCaster)</PyResult>
 			<Effect>EFFECT_CREATION</Effect>
-			<Sound>AS3D_SPELL_REPAIR</Sound>
+			<Sound>AS3D_SPELL_CATTLE</Sound>
 			<Button>Art/Interface/Buttons/WorldBuilder/Cow.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Sacrifice  -->					
