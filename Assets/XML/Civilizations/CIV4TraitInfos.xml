@@ -2717,6 +2717,10 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
@@ -2751,12 +2755,6 @@
 			<iMinRequiredPoints>300</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<iHappiness>2</iHappiness>
-			<FreeBonuses>
-				<FreeBonus>
-					<BonusType>BONUS_MANA_MIND</BonusType>
-					<bFreeBonus>1</bFreeBonus>
-				</FreeBonus>			
-			</FreeBonuses>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MIND1</PromotionType>
@@ -2823,6 +2821,10 @@
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_SLUGA_COMMANDER_V2</UnitClassType>
 					<UnitType>UNIT_SLUGA_COMMANDER_V2</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_BATTLE_SLUGA_V2</UnitClassType>
+					<UnitType>UNIT_BATTLE_SLUGA_V2</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_WAR_SLUGA_V2</UnitClassType>

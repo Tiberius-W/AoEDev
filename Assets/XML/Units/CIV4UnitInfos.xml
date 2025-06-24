@@ -30511,6 +30511,13 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<AllowPromotions>
+				<PromotionType>PROMOTION_MOBILITY1</PromotionType>
+				<PromotionType>PROMOTION_MOBILITY2</PromotionType>
+				<PromotionType>PROMOTION_HARDY1</PromotionType>
+				<PromotionType>PROMOTION_HARDY2</PromotionType>
+				<PromotionType>PROMOTION_HARDY3</PromotionType>
+			</AllowPromotions>
 			<iCombatDefense>3</iCombatDefense>
 			<iMinLevel>1</iMinLevel>
 			<bDisableUpgradeTo>1</bDisableUpgradeTo>
@@ -30600,6 +30607,9 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<UnitClassUpgrades>
+				<UnitClassUpgradeType>UNITCLASS_BATTLE_SLUGA_V2</UnitClassUpgradeType>
+			</UnitClassUpgrades>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>0</iWorkRate>
