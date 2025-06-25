@@ -11126,7 +11126,7 @@ void CvGame::createBarbarianUnits()
 	int iNeededBarbs, iTargetBarbs, iValue, iBestValue, iLoop, iI, iJ, iPreference, iFlags;
 	bool bAlwaysSpawn;
 
-	if (isOption(GAMEOPTION_NO_BARBARIANS))
+	if (isOption(GAMEOPTION_NO_BARBARIANS) || isOption(GAMEOPTION_NO_RANDOM_BARBARIANS))
 	{
 		return;
 	}
