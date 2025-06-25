@@ -46431,7 +46431,7 @@
 			</AppearanceTechs>
 			<iPowerMult>5</iPowerMult>
 		</UnitInfo>
-		<UnitInfo>        <!-- Rat T1 550-->                    <!-- Wolves -->
+		<UnitInfo>        <!-- Rat T1 550-->                    <!-- Rats -->
 			<Class>UNITCLASS_RAT</Class>
 			<Type>UNIT_RAT</Type>
 			<Combat>UNITCOMBAT_ANIMAL</Combat>
