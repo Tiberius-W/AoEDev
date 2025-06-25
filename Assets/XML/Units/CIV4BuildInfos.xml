@@ -6,7 +6,7 @@
 <!-- Build Infos -->
 <Civ4BuildInfos xmlns="x-schema:CIV4UnitSchema.xml">
 	<BuildInfos>
-		<BuildInfo> <!-- Road -->
+		<BuildInfo> <!-- Road 0-->
 			<Type>BUILD_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROAD</Description>
 			<Help/>
@@ -452,7 +452,7 @@
 				</TechBuildDiscount>
 			</TechBuildDiscounts>
 		</BuildInfo>
-		<BuildInfo> <!-- Watermill -->
+		<BuildInfo> <!-- Watermill 10-->
 			<Type>BUILD_WATERMILL</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
 			<Help/>
@@ -1045,7 +1045,7 @@
 				</TechBuildDiscount>
 			</TechBuildDiscounts>
 		</BuildInfo>
-		<BuildInfo> <!-- Castle -->
+		<BuildInfo> <!-- Castle 20-->
 			<Type>BUILD_CASTLE</Type>
 			<Description>TXT_KEY_BUILD_CASTLE</Description>
 			<Help/>
@@ -1596,7 +1596,7 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Worldbuilder/Earth.dds</Button>
 		</BuildInfo>
-		<BuildInfo>
+		<BuildInfo><!--30-->
 			<Type>BUILD_MANA_ENCHANTMENT</Type>
 			<Description>TXT_KEY_BUILD_MANA_ENCHANTMENT</Description>
 			<Help/>
@@ -2186,7 +2186,7 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Worldbuilder/Nature.dds</Button>
 		</BuildInfo>
-		<BuildInfo>
+		<BuildInfo><!--40-->
 			<Type>BUILD_MANA_SPIRIT</Type>
 			<Description>TXT_KEY_BUILD_MANA_SPIRIT</Description>
 			<Help/>
@@ -2422,13 +2422,13 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Worldbuilder/Sun.dds</Button>
 		</BuildInfo>
-		<BuildInfo> <!-- Bedouin Sit -->
+		<BuildInfo> <!-- Bedouin Sit 44-->
 			<Type>BUILD_BEDOUIN_SIT</Type>
 			<Description>TXT_KEY_BUILD_BEDOUIN_SIT</Description>
 			<Help/>
 			<PrereqTech>NONE</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>15</iCost>
+			<iCost>0</iCost>
 			<bKill>0</bKill>
 			<LinkedBuilds>
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>

@@ -38,7 +38,7 @@
 				</CounterChange>
 			</CounterChanges>
 			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>			
-			<TraitHookType>TRAITHOOK_CATRAITTRIGGER_CAST_SUMMON_SPECTRE_CHURELST_SPELL</TraitHookType>
+			<TraitHookType>TRAITHOOK_CAST_SPELL</TraitHookType>
 			<PrereqSpellType>SPELL_RAISE_SKELETON</PrereqSpellType>
 			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>

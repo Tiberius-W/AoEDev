@@ -7,11 +7,11 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_IMPROVEMENT_TOO_CLOSE</Tag>
-		<English>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles from other %s1_Improvement[COLOR_REVERT]</English>
+		<English>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles between two %s1_Improvement[COLOR_REVERT]</English>
 		<French>[COLOR_WARNING_TEXT]Nécessite au moins %d2_InvalidRange [NUM2:case:cases] d'écart avec [NUM1:un autre:une autre:d'autres:d'autres] %s1_Improvement[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Erfordert %d2_InvalidRange Felder Abstand zu %s1_Improvement[COLOR_REVERT]</German>
-		<Italian>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles from other %s1_Improvement[COLOR_REVERT]</Italian>
-		<Spanish>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles from other %s1_Improvement[COLOR_REVERT]</Spanish>
+		<Italian>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles between two %s1_Improvement[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requires %d2_InvalidRange tiles between two %s1_Improvement[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_SPREADS_CULTURE_CONTROL_THIS_TILE</Tag>

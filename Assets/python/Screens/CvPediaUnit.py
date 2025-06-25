@@ -244,6 +244,18 @@ class CvPediaUnit:
 				"Civ Specific" : True,
 			},
 			{
+				"name" : 'localText.getText("TXT_KEY_PEDIA_FILTER_UNIT_CHIMAR", ())',
+				"Purpose" : "Civ Specific Cases, massive PITA to just write all these in...",
+				"TypeHardcoded" : False,
+				"TypeHardcodeList" : [],
+				"ClassHardcoded" : False,
+				"ClassHardcodeList" : [],
+				"Value to Check" : 'gc.getCivilizationInfo(gc.getInfoTypeForString("CIVILIZATION_GOBLIN")).getCivilizationUnits(eUnit.getUnitClassType()) == iUnit',
+				"Desired Result" : 'True',
+				"Primary" : False,
+				"Civ Specific" : True,
+			},
+			{
 				"name" : 'localText.getText("TXT_KEY_PEDIA_FILTER_UNIT_CHISLEV", ())',
 				"Purpose" : "Civ Specific Cases, massive PITA to just write all these in...",
 				"TypeHardcoded" : False,

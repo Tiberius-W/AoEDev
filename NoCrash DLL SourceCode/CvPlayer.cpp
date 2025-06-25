@@ -9150,17 +9150,17 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 
 
 //FfH: Modified by Kael 05/13/2008 (so AI workers can upgrade mana nodes)
-//	return true;
-	if (isHuman())
-	{
-		return true;
-	}
-	else
-	{
-		if (pPlot->getBonusType(getTeam()) == GC.getDefineINT("BONUS_MANA"))
-		{
-			return true;
-		}
+	return true;
+//	if (isHuman())
+//	{
+//		return true;
+//	}
+//	else
+//	{
+//		if (pPlot->getBonusType(getTeam()) == GC.getDefineINT("BONUS_MANA"))
+//		{
+//			return true;
+//		}
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/04/09											**/
 /**																								**/
@@ -9169,19 +9169,19 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 /**								---- Start Original Code ----									**
 		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(this->getID()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_WORKER"))).getBuilds(eBuild))
 /**								----  End Original Code  ----									**/
-		if (!isBarbarian() && GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(this->getID()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_WORKER"))).getBuilds(eBuild))
+//		if (!isBarbarian() && GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(this->getID()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_WORKER"))).getBuilds(eBuild))
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
-		{
-			return true;
-		}
-		if (pPlot->isWater())
-		{
-			return true;
-		}
-	}
-	return false;
+//		{
+//			return true;
+//		}
+//		if (pPlot->isWater())
+//		{
+//			return true;
+//		}
+//	}
+//	return false;
 //FfH: End Modify
 
 }

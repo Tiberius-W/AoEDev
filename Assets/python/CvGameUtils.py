@@ -1774,7 +1774,7 @@ class CvGameUtils:
 		elif eProject == Project["Ascension"]:
 			if pPlayer.getLeaderType() == Leader["Raitlor"]: return True
 			if eCiv == Civ["Illians"]:
-				if pPlayer.getCivCounterMod() != 0: return True # Illian counter is 100 if Auric is dead
+				if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0: return True 
 
 # TODO Ronkhar: split and move to frozen module (here = if genesis and civ illians. In module = if genesis and civ frozen)
 		# """ Genesis """

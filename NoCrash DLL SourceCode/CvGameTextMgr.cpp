@@ -7757,7 +7757,7 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			for (iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
 			{
 				// Show free promotion, so long as it's not bgraphicalonly/hidden. We don't have a easy way to see if the player qualifies for the hidden *promotion* here, so it'll just have to stay hidden
-				if (GC.getTraitInfo(eTrait).isFreePromotion(iJ) && !GC.getPromotionInfo((PromotionTypes)iJ).isGraphicalOnly())
+				if (GC.getTraitInfo(eTrait).isFreePromotionUnitCombat(iJ) && !GC.getPromotionInfo((PromotionTypes)iJ).isGraphicalOnly())
 				{
 					szTempBuffer.Format(L"\n        %c<link=literal>%s</link>", gDLL->getSymbolID(BULLET_CHAR), GC.getUnitCombatInfo((UnitCombatTypes)iJ).getDescription());
 					szHelpString.append(szTempBuffer);

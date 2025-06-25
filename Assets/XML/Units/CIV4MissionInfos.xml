@@ -843,7 +843,7 @@
 			<Waypoint>NONE</Waypoint>
 			<EntityEventType>ENTITY_EVENT_BUILD</EntityEventType>
 			<iTime>10</iTime>
-			<iGoldCost>20</iGoldCost>
+			<iGoldCost>0</iGoldCost>
 			<bTarget>0</bTarget>
 			<bBuild>0</bBuild>
 			<bSound>0</bSound>

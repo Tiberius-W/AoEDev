@@ -3,6 +3,7 @@
 	<LeaderHeadInfos>
 		<LeaderHeadInfo>		<!-- Amelanchier --><!-- Ljosalfar leader -->
 			<Type>LEADER_AMELANCHIER</Type>
+			<bForceOverwrite>1</bForceOverwrite>
 			<Description>TXT_KEY_LEADER_AMELANCHIER</Description>
 			<Civilopedia>TXT_KEY_LEADER_AMELANCHIER_PEDIA</Civilopedia>
 			<DefeatQuote>TXT_KEY_POPUP_DEFEATED_LJOSALFAR</DefeatQuote>

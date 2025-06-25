@@ -218,11 +218,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CRAFTMASTER2_INFO_HELP</Tag>
-		<English>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependant on the Golem's cost.</English>
-		<French>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependant on the Golem's cost.</French>
-		<German>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependant on the Golem's cost.</German>
-		<Italian>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependant on the Golem's cost.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependant on the Golem's cost.</Spanish>
+		<English>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependent on the Golem's cost.</English>
+		<French>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependent on the Golem's cost.</French>
+		<German>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependent on the Golem's cost.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependent on the Golem's cost.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants Golems the ability to get equipped with a Runic Plating boosting them in one Damage Type.[NEWLINE][ICON_BULLET]Recycling a Golem also grants an amount on culture dependent on the Golem's cost.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_HYDROMANCER_INFO_HELP</Tag>
@@ -1453,11 +1453,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_EXPLORE_GRAVEYARD</Tag>
-		<English>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetary.</English>
-		<French>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetary.</French>
-		<German>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetary.</German>
-		<Italian>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetary.</Italian>
-		<Spanish>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetary.</Spanish>
+		<English>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetery.</English>
+		<French>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetery.</French>
+		<German>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetery.</German>
+		<Italian>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetery.</Italian>
+		<Spanish>You dismantle quickly the lair, which contained nothing of value. However, your explorers discover the remains of several tombstones. It seems that the lair lay above an Patrian cemetery.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_BOAR</Tag>
@@ -4628,11 +4628,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_WOLF_RIDER_AMBUSH</Tag>
-		<English>While inside the fort, your troops suddenly hear the wolfs howling outside. They're trapped.</English>
-		<French>While inside the fort, your troops suddenly hear the wolfs howling outside. They're trapped.</French>
-		<German>While inside the fort, your troops suddenly hear the wolfs howling outside. They're trapped.</German>
-		<Italian>While inside the fort, your troops suddenly hear the wolfs howling outside. They're trapped.</Italian>
-		<Spanish>While inside the fort, your troops suddenly hear the wolfs howling outside. They're trapped.</Spanish>
+		<English>While inside the fort, your troops suddenly hear the wolves howling outside. They're trapped.</English>
+		<French>While inside the fort, your troops suddenly hear the wolves howling outside. They're trapped.</French>
+		<German>While inside the fort, your troops suddenly hear the wolves howling outside. They're trapped.</German>
+		<Italian>While inside the fort, your troops suddenly hear the wolves howling outside. They're trapped.</Italian>
+		<Spanish>While inside the fort, your troops suddenly hear the wolves howling outside. They're trapped.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORNSE</Tag>
@@ -10938,12 +10938,20 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<Spanish>Ember City of Fire and Blood</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_UN_VOTE_FORCE_WAR</Tag>
+		<English>Common War Resolution</English>
+		<French>Common War Resolution</French>
+		<German>Common War Resolution</German>
+		<Italian>Common War Resolution</Italian>
+		<Spanish>Common War Resolution</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_TXT_KEY_PEDIA_FILTER_UNIT_CHIMARKEY_</Tag>
+		<English>Chimarese Units</English>
+		<French>Chimarese Units</French>
+		<German>Chimarese Units</German>
+		<Italian>Chimarese Units</Italian>
+		<Spanish>Chimarese Units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

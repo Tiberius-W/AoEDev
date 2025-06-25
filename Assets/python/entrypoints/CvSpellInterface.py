@@ -5042,7 +5042,11 @@ def atRangeWellOfSouls(pCaster, pPlot):
 
 def onMoveForest(pCaster, pPlot):
 	if pPlot.isOwned():
-		if (pCaster.getOwner() != pPlot.getOwner()):
+		pPlayer		= gc.getPlayer(pCaster.getOwner())
+		pTeam		= gc.getTeam(pPlayer.getTeam())
+		p2Player	= gc.getPlayer(pPlot.getOwner())
+		i2Team		= p2Player.getTeam()					
+		if (pCaster.getOwner() != pPlot.getOwner() and pTeam.isAtWar(i2Team)):
 			if (gc.getPlayer(pPlot.getOwner()).hasTrait(gc.getInfoTypeForString("TRAIT_SKIAMANCER"))):
 				iChance = 5
 				iUnit = gc.getInfoTypeForString("UNIT_SCEADUGENGAN")
@@ -5057,7 +5061,11 @@ def onMoveForest(pCaster, pPlot):
 
 def onMoveAncientForest(pCaster, pPlot):
 	if pPlot.isOwned():
-		if (pCaster.getOwner() != pPlot.getOwner()):
+		pPlayer		= gc.getPlayer(pCaster.getOwner())
+		pTeam		= gc.getTeam(pPlayer.getTeam())
+		p2Player	= gc.getPlayer(pPlot.getOwner())
+		i2Team		= p2Player.getTeam()					
+		if (pCaster.getOwner() != pPlot.getOwner() and pTeam.isAtWar(i2Team)):
 			if (gc.getPlayer(pPlot.getOwner()).hasTrait(gc.getInfoTypeForString("TRAIT_SKIAMANCER"))):
 				iChance = 10
 				iUnit = gc.getInfoTypeForString("UNIT_SCEADUGENGAN")
@@ -7660,7 +7668,7 @@ def effectWanderingCurse(caster):
 		CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_WANDERING", ()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/Lost.dds',ColorTypes(7),pPlot.getX(),pPlot.getY(),True,True)
 
 def effectFieldExercise(caster):
-	caster.changeExperienceTimes100(200/(caster.getLevel()*caster.getLevel()+1),-1)
+	caster.changeExperienceTimes100(200/(caster.getLevel()*caster.getLevel()+1),-1,False,False,False)
 
 def postCombatWinWerewolf(pCaster, pOpponent):
 	if pOpponent.isAlive() and pOpponent.canDefend(pOpponent.plot()):                                       #Can only convert Living Combat Units

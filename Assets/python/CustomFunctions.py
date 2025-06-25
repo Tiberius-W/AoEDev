@@ -2723,6 +2723,8 @@ class CustomFunctions:
 		newUnit.changeExperience(iAverage, -1, False, False, False)
 		
 	def angelorMane(self, unit):
+		if( self.Religions=={}):
+			self.initialize()
 		gc 				= CyGlobalContext()
 		iUnitCombat = unit.getUnitCombatType()
 		UnitCombat  = self.UnitCombats

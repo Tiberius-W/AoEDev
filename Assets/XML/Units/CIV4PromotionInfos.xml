@@ -39043,6 +39043,10 @@
 					<UnitCombatCaptureRateType>UNITCOMBAT_BEAST</UnitCombatCaptureRateType>
 					<iUnitCombatCaptureRate>100</iUnitCombatCaptureRate>
 				</UnitCombatCaptureRate>
+				<UnitCombatCaptureRate>
+					<UnitCombatCaptureRateType>UNITCOMBAT_ANIMAL</UnitCombatCaptureRateType>
+					<iUnitCombatCaptureRate>100</iUnitCombatCaptureRate>
+				</UnitCombatCaptureRate>
 			</UnitCombatCaptureRates>
 			<UnitCombatMods>
 				<UnitCombatMod>

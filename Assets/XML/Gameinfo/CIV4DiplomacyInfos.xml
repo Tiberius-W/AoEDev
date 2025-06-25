@@ -14649,7 +14649,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FR_2</Text>
+						<Text>AI_DIPLO_FR_NO_DEAL_2</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Valledia Annoyed Furious-->
@@ -15349,7 +15349,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FR_2</Text>
+						<Text>AI_DIPLO_FR_NO_DEAL_2</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Mahala Annoyed Furious-->
