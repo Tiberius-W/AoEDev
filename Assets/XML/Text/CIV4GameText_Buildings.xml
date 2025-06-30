@@ -654,7 +654,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPIDER_WEB_PEDIA</Tag>
-		<English>A Spider Web can only be produced by sacrificing a [LINK=UNIT_GIANT_SPIDER]Giant Spider[\LINK], and the [LINK=TECH_ANIMAL_HANDLING]Animal Handling[\LINK] tech is required to do so. A Spider Web produces Silk.</English>
+		<English>A Spider Web can only be produced by sacrificing a [LINK=UNIT_SPIDER]Spider[\LINK] or  [LINK=UNIT_GIANT_SPIDER]Giant Spider[\LINK], and the [LINK=TECH_ANIMAL_HANDLING]Animal Handling[\LINK] tech is required to do so. A Spider Web produces Silk.</English>
 		<French>Une toile d'araignée peut seulement être construite en sacrifiant un Araignée Géante et la technologie Dressage est requise pour ce faire. Une toile d'araignée produit une ressource Soie.</French>
 		<German>Eine Spinnenfarm kann nur durch opfern einer Riesenspinne gebaut werden. Die Technologie 'Zähmen' wird ebenfalls benötigt. Eine Spinnenfarm liefert Seide.</German>
 		<Italian>Una Ragnatela del Ragno può essere prodotta solo sacrificando un [LINK=UNIT_GIANT_SPIDER]Ragno Gigante[\LINK], e la tecnologia [LINK=TECH_ANIMAL_HANDLING]Gestione degli Animali[\LINK] è richiesta per fare ciò. La ragnatela del Ragno produce Seta.</Italian>
