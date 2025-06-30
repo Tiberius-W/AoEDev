@@ -10621,7 +10621,15 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_FLETCHER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_HUNTERS_HALL</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -10629,7 +10637,19 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_THIEVES_GUILD</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_POISONER_WORKSHOP</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_GARRISON_QUARTERS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_DRILL_YARD</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -10677,11 +10697,139 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JOUSTING_TILT</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_BARRACKS</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_FLETCHER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_INN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_COURTHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_DUNGEON</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_PAGAN_TEMPLE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SMOKEHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GRANARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_MARKET</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_CARNIVAL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ELDER_COUNCIL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALMSHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_LIGHTHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ARTISANS_WORKSHOP</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WALLS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_HARBOR</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WELL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALCHEMY_LAB</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_TAX_OFFICE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GRANARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_THEATRE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_PUBLIC_BATHS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SEWERS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_INFIRMARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_BOWYER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SHIPYARD</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_BASILICA</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_MONEYCHANGER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GAMBLING_HOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GROVE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_HIPPODROME</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_TAVERN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WEAPONSMITH</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -10735,11 +10883,23 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_FLETCHER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_HUNTERS_HALL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_THIEVES_DEN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_POISONER_WORKSHOP</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -10787,6 +10947,18 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JOUSTING_TILT</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_INN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_DUNGEON</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_COURTHOUSE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
@@ -10820,6 +10992,122 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_SHRINE_TO_KYLORIN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GARRISON_QUARTERS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_DRILL_YARD</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SMOKEHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GRANARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_MARKET</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_CARNIVAL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ELDER_COUNCIL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALMSHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_LIGHTHOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ARTISANS_WORKSHOP</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WALLS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_HARBOR</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WELL</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALCHEMY_LAB</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_TAX_OFFICE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GRANARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_THEATRE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_PUBLIC_BATHS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SEWERS</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_INFIRMARY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_BOWYER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_SHIPYARD</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_BASILICA</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_MONEYCHANGER</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GAMBLING_HOUSE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_GROVE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_HIPPODROME</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_TAVERN</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_WEAPONSMITH</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
