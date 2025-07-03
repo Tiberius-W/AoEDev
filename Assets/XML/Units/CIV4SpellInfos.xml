@@ -10661,7 +10661,7 @@
 			<bCityAction>1</bCityAction>
 			<bAllowAI>1</bAllowAI>
 			<iChangePopulation>-1</iChangePopulation>
-			<iCost>0</iCost>
+			<iCost>15</iCost>
 			<PyResult>spellEnslaveDissidents(pCaster)</PyResult>
 			<PyRequirement>reqEnslaveDissidents(pCaster)</PyRequirement>
 			<Effect>EFFECT_SPELL1</Effect>
