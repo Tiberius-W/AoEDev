@@ -10472,7 +10472,7 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_MEKARA_WORLDSPELL_HELP</Help>
 			<CivilizationPrereq>CIVILIZATION_MEKARA_V2</CivilizationPrereq>
-			<TechPrereq>TECH_ALTERATION</TechPrereq>
+			<TechPrereq>TECH_ARCANE_LORE</TechPrereq>
 			<bAllowAI>1</bAllowAI>
 			<bGlobal>1</bGlobal>
 			<Quote>TXT_KEY_GLOBALSPELL_MEKARA_WORLDSPELL</Quote>
