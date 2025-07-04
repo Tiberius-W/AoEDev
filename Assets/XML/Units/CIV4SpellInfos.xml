@@ -10767,8 +10767,8 @@
 			</PrereqTraits>
 			<bInCityOnly>1</bInCityOnly>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>150</iAIWeight>
 			<bHasCasted>1</bHasCasted>
-			<bSacrificeCaster>1</bSacrificeCaster>
 			<ConvertUnitType>UNIT_BATTLE_SLUGA_V2</ConvertUnitType>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_ANGEL</RemovePromotion>
@@ -10838,10 +10838,9 @@
 			<BuildingPrereq>BUILDING_SHAPER_CABAL</BuildingPrereq>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<iCost>300</iCost>
 			<UnitClassPrereq>UNITCLASS_SLAVE</UnitClassPrereq>
-			<bAllowAI>1</bAllowAI>
-			<bSacrificeCaster>1</bSacrificeCaster>
 			<ConvertUnitType>UNIT_BEHEMOTH_SLUGA_V2</ConvertUnitType>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_ANGEL</RemovePromotion>
