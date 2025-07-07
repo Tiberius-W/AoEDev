@@ -2,6 +2,128 @@
 <!-- Promotion Infos -->
 <Civ4PromotionInfos xmlns="x-schema:Jotnar_CIV4UnitSchema.xml">
 	<PromotionInfos>
+		<PromotionInfo>		<!-- Jotnar Great Person Charge -->
+			<Type>PROMOTION_GREAT_JOTNAR</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Bard -->
+			<Type>PROMOTION_GREAT_JOTNAR_ARTIST</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Engineer -->
+			<Type>PROMOTION_GREAT_JOTNAR_ENGINEER</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Merchant -->
+			<Type>PROMOTION_GREAT_JOTNAR_MERCHANT</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Prophet -->
+			<Type>PROMOTION_GREAT_JOTNAR_PROPHET</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Sage -->
+			<Type>PROMOTION_GREAT_JOTNAR_SCIENTIST</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Great Healer -->
+			<Type>PROMOTION_GREAT_JOTNAR_HEALER</Type>
+			<Description>Kindred</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+	<PromotionInfo>        <!-- NO Cottage -->
+            <Type>PROMOTION_COMMUNAL_TRADITIONS</Type>
+            <Description>TXT_KEY_PROMOTION_COMMUNAL_TRADITIONS</Description>
+            <PrereqCivilizations>
+                <PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+            </PrereqCivilizations>
+            <bAutoAcquire>1</bAutoAcquire>
+            <bEffectProm>1</bEffectProm>
+            <bMustMaintain>1</bMustMaintain>
+            <bNoXP>1</bNoXP>
+            <UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+            </UnitCombats>
+            <Button>Art/Interface/Buttons/Promotions/Blank_promo.dds</Button>
+            <PromotionCannotBuilds>
+                <PromotionBuild>BUILD_COTTAGE</PromotionBuild>
+            </PromotionCannotBuilds>
+        </PromotionInfo>
 		<PromotionInfo>		<!-- Deadeye Crew -->
 			<Type>PROMOTION_DEADEYE_CREW</Type>
 			<PrereqCivilizations>

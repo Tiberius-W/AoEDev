@@ -301,7 +301,6 @@
 			<FreeBuilding>BUILDINGCLASS_JOT_STAEDDING</FreeBuilding>
 			<bCapital>1</bCapital>
 			<iHealth>2</iHealth>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>160</iCost>
