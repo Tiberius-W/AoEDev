@@ -4,51 +4,44 @@
 	<PromotionInfos>
 		<PromotionInfo>		<!-- Jotnar Great Person Charge -->
 			<Type>PROMOTION_GREAT_JOTNAR</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Person</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Bard -->
 			<Type>PROMOTION_GREAT_JOTNAR_ARTIST</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Bard</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Engineer -->
 			<Type>PROMOTION_GREAT_JOTNAR_ENGINEER</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Engineer</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Merchant -->
 			<Type>PROMOTION_GREAT_JOTNAR_MERCHANT</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Merchant</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Prophet -->
 			<Type>PROMOTION_GREAT_JOTNAR_PROPHET</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Prophet</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Sage -->
 			<Type>PROMOTION_GREAT_JOTNAR_SCIENTIST</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Sage</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Jotnar Great Healer -->
 			<Type>PROMOTION_GREAT_JOTNAR_HEALER</Type>
-			<Description>Kindred</Description>
+			<Description>Jotnar Great Healer</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bEffectProm>1</bEffectProm>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
 	<PromotionInfo>        <!-- NO Cottage -->
