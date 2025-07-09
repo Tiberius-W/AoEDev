@@ -31688,8 +31688,8 @@
 			<PythonPostCombatLost>postCombatStolenCattle(pCaster, pOpponent)</PythonPostCombatLost>
 			<Button>Art/Interface/Buttons/WorldBuilder/Cow.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Familiar -->					<!-- Mekara Promotions Begin -->
-			<Type>PROMOTION_FAMILIAR</Type>
+        <!-- <PromotionInfo>	-->	<!-- Familiar -->					<!-- Mekara Promotions Begin -->
+	<!--    <Type>PROMOTION_FAMILIAR</Type>
 			<Description>TXT_KEY_UNIT_FAMILIAR</Description>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_DISEASED</Promotion>
@@ -31708,7 +31708,7 @@
 					<iResist>50</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
-		</PromotionInfo>
+		</PromotionInfo> -->
 	<!-- <PromotionInfo>	-->	<!-- Sluga Innate Abilities--> 
 		<!-- <Type>PROMOTION_SLUGA_ABILITIES</Type>
 			<Description>TXT_KEY_PROMOTION_SLUGA_ABILITIES</Description>
@@ -34804,7 +34804,6 @@
 				<Promotion>PROMOTION_LEADERLESS_WAR_SLUGA_V2</Promotion>
 				<Promotion>PROMOTION_LEADERLESS_BEHEMOTH_SLUGA_V2</Promotion>
 			</PromotionOverwrites>
-			<TempUnitCombat>UNITCOMBAT_MELEE</TempUnitCombat>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/MinionIndependent.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
@@ -35559,6 +35558,9 @@
 			<PrereqBonusANDs>
 				<PrereqBonus>BONUS_MANA_BODY</PrereqBonus>
 			</PrereqBonusANDs>
+			<PrereqTechANDs>
+				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
+			</PrereqTechANDs>
 			<iMovesChange>1</iMovesChange>
 			<PromotionNextLevel>PROMOTION_COM_OVERSEER_CELERITY2_V2</PromotionNextLevel>
 		</PromotionInfo>

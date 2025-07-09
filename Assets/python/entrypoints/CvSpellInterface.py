@@ -11836,7 +11836,7 @@ def spellFormSlugaBehemoth(caster):
 		if (pUnit.isAlive() and pUnit.getOwner() == caster.getOwner() and pUnit.getUnitType() == iUnitType and pUnit.getID() != iID):
 			sameTypeSlaves.append(pUnit)
 	sameTypeSlaves.sort(cmp = lambda a, b: a.getExperienceTimes100() - b.getExperienceTimes100())
-	for i in range(2):
+	for i in range(3):
 		if sameTypeSlaves[i].isImmortal():
 			sameTypeSlaves[i].changeImmortal(-10)
 		sameTypeSlaves[i].kill(True, 0)

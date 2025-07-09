@@ -10472,7 +10472,7 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_MEKARA_WORLDSPELL_HELP</Help>
 			<CivilizationPrereq>CIVILIZATION_MEKARA_V2</CivilizationPrereq>
-			<TechPrereq>TECH_ALTERATION</TechPrereq>
+			<TechPrereq>TECH_ARCANE_LORE</TechPrereq>
 			<bAllowAI>1</bAllowAI>
 			<bGlobal>1</bGlobal>
 			<Quote>TXT_KEY_GLOBALSPELL_MEKARA_WORLDSPELL</Quote>
@@ -10661,7 +10661,7 @@
 			<bCityAction>1</bCityAction>
 			<bAllowAI>1</bAllowAI>
 			<iChangePopulation>-1</iChangePopulation>
-			<iCost>0</iCost>
+			<iCost>15</iCost>
 			<PyResult>spellEnslaveDissidents(pCaster)</PyResult>
 			<PyRequirement>reqEnslaveDissidents(pCaster)</PyRequirement>
 			<Effect>EFFECT_SPELL1</Effect>
@@ -10767,8 +10767,8 @@
 			</PrereqTraits>
 			<bInCityOnly>1</bInCityOnly>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>150</iAIWeight>
 			<bHasCasted>1</bHasCasted>
-			<bSacrificeCaster>1</bSacrificeCaster>
 			<ConvertUnitType>UNIT_BATTLE_SLUGA_V2</ConvertUnitType>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_ANGEL</RemovePromotion>
@@ -10838,10 +10838,9 @@
 			<BuildingPrereq>BUILDING_SHAPER_CABAL</BuildingPrereq>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<iCost>300</iCost>
 			<UnitClassPrereq>UNITCLASS_SLAVE</UnitClassPrereq>
-			<bAllowAI>1</bAllowAI>
-			<bSacrificeCaster>1</bSacrificeCaster>
 			<ConvertUnitType>UNIT_BEHEMOTH_SLUGA_V2</ConvertUnitType>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_ANGEL</RemovePromotion>
