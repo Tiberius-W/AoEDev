@@ -24143,7 +24143,10 @@ bool CvUnit::canCast(int spell, bool bTestVisible, CvPlot* pTargetPlot)
 	}
 	if (GC.getSpellInfo(eSpell).getDamage() != 0)
 	{
-		return true;
+		if (canCastDamage(spell, pTargetPlot))
+		{
+			return true;
+		}
 	}
 	if (GC.getSpellInfo(eSpell).isDispel())
 	{
@@ -24678,6 +24681,73 @@ bool CvUnit::canAddPromotion(int spell, CvPlot* pTargetPlot)
 									/**	TempCombat									END												**/
 									/*************************************************************************************************/
 								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+bool CvUnit::canCastDamage(int spell, CvPlot* pTargetPlot)
+{
+	SpellUpgradeData spellData = getSpellData(spell);
+	bool bResistable = GC.getSpellInfo((SpellTypes)spell).isResistable();
+	int iDmg = spellData.iDamage;
+	int iDmgLimit = spellData.iMaxDamage;
+	int iNumTargets = spellData.iNumTargets;
+	int iDmgType = GC.getSpellInfo((SpellTypes)spell).getDamageType();
+	int iRange = GC.getSpellInfo((SpellTypes)spell).getRange();
+
+
+	/*************************************************************************************************/
+	/**	Spellcasting Range						04/08/08	Written: Grey Fox	Imported: Xienwolf	**/
+	/**																								**/
+	/**						Allows SpellRange to be extended by Promotions							**/
+	/*************************************************************************************************/
+	iRange += getSpellExtraRange();
+	/*************************************************************************************************/
+	/**	Spellcasting Range						END													**/
+	/*************************************************************************************************/
+
+
+	CLLNode<IDInfo>* pUnitNode;
+	CvUnit* pLoopUnit;
+	CvPlot* pLoopPlot;
+	bool* bUnitHit = NULL;
+	bool bValid = true;
+	for (int i = -iRange; i <= iRange; ++i)
+	{
+		for (int j = -iRange; j <= iRange; ++j)
+		{
+			pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
+			if (NULL != pLoopPlot && canCastTargetPlot(spell, false, pLoopPlot))
+			{
+				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
+				{
+					pUnitNode = pLoopPlot->headUnitNode();
+					while (pUnitNode != NULL)
+					{
+						pLoopUnit = ::getUnit(pUnitNode->m_data);
+						pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+						if (pLoopUnit != NULL)
+						{
+							if (GC.getSpellInfo((SpellTypes)spell).getNumTargetPromotionsPrereq() > 0)
+							{
+								bValid = false;
+								for (int k = 0; k < GC.getSpellInfo((SpellTypes)spell).getNumTargetPromotionsPrereq(); k++)
+								{
+									if (pLoopUnit->isHasPromotion((PromotionTypes)GC.getSpellInfo((SpellTypes)spell).getTargetPromotionPrereq(k)))
+									{
+										bValid = true;
+										break;
+									}
+								}
+							}
+							if (bValid && !pLoopUnit->isImmuneToSpell(this, spell))
+							{
+								return true;
 							}
 						}
 					}

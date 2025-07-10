@@ -5568,7 +5568,7 @@
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>
 			</SpellClasses>
-			<UnitPrereq>UNIT_PRIESTESS_OF_BHALL</UnitPrereq>
+			<PromotionPrereq1>PROMOTION_SERVANT_OF_THE_FLAME</PromotionPrereq1>
 			<TechPrereq>TECH_ELEMENTALISM</TechPrereq>
 			<bAllowAI>1</bAllowAI>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>

@@ -1431,6 +1431,7 @@ public:
 	bool canCastAnyPlot(int spell, bool bTestVisible);
 	bool canCreateUnit(int spell, CvPlot* pTargetPlot = NULL) const;
 	bool canAddPromotion(int spell, CvPlot* pTargetPlot = NULL);
+	bool canCastDamage(int spell, CvPlot* pTargetPlot = NULL);
 	bool canCreateBuilding(int spell, CvPlot* pTargetPlot = NULL) const;
 	bool canCreateFeature(int spell, CvPlot* pTargetPlot = NULL);
 	bool canCreateFeaturePlot(int spell, CvPlot* pTargetPlot = NULL) const;

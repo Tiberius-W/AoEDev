@@ -632,11 +632,9 @@ def postCombatArs(pCaster, pOpponent):
 def postCombatAuricAscendedLost(pCaster, pOpponent):
 	iPlayer = pCaster.getOwner()
 	pPlayer = gc.getPlayer(iPlayer)
-	for iTrait in range(gc.getNumTraitInfos()):
-		if pPlayer.hasTrait(iTrait):
-			if not gc.isNoCrash():
-				pPlayer.setHasTrait(iTrait,False,-1,True,True)
-			else:
+	if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_ASCENDED"))==0 :
+		for iTrait in range(gc.getNumTraitInfos()):
+			if pPlayer.hasTrait(iTrait):
 				pPlayer.setHasTrait(iTrait,False)
 			
 	if pOpponent.isHasPromotion(getInfoType('PROMOTION_GODSLAYER')):
@@ -667,13 +665,11 @@ def postCombatAuricAscendedWon(pCaster, pOpponent):
 def onDeathAuric(pCaster):
 	iPlayer = pCaster.getOwner()
 	pPlayer = gc.getPlayer(iPlayer)
-	for iTrait in range(gc.getNumTraitInfos()):
-		if pPlayer.hasTrait(iTrait):
-			if not gc.isNoCrash():
-				pPlayer.setHasTrait(iTrait,False,-1,True,True)
-			else:
+	if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_ASCENDED"))==0 :
+		for iTrait in range(gc.getNumTraitInfos()):
+			if pPlayer.hasTrait(iTrait):
 				pPlayer.setHasTrait(iTrait,False)
-	pPlayer.setCivCounterMod(100)
+		pPlayer.setCivCounterMod(100)
 
 def postCombatBasium(pCaster, pOpponent):
 	if not pCaster.isImmortal():
@@ -1650,7 +1646,7 @@ def spellEarthquake(caster):
 				pCity = pPlot.getPlotCity()
 				for i in xrange(gc.getNumBuildingInfos()):
 					iRnd = CyGame().getSorenRandNum(100, "Earthquake - destory building")
-					if (gc.getBuildingInfo(i).getConquestProbability() != 100 and iRnd <= 25):
+					if (gc.getBuildingInfo(i).getConquestProbability() != 100 and gc.getBuildingClassInfo(gc.getBuildingInfo(i).getBuildingClassType()).getMaxPlayerInstances()==0 and iRnd <= 25):
 						pCity.setNumRealBuilding(i, 0)
 			for iUnit in xrange(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(iUnit)
@@ -12946,7 +12942,7 @@ def ReqBereguine(argsList):
 	if pPlayer.getStateReligion() !=getInfoType("RELIGION_FELLOWSHIP_OF_LEAVES"):
 		return True
 	return False
-def ExploreBereguine(argsList):
+def exploreLairBereguine(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	OrcPlayer			= gc.getPlayer(gc.getANIMAL_PLAYER())
@@ -12959,7 +12955,7 @@ def ReqBocquillon(argsList):
 	if pPlayer.getStateReligion()==getInfoType("RELIGION_FELLOWSHIP_OF_LEAVES"):
 		return True
 	return False
-def ExploreBocquillon(argsList):
+def exploreLairBocquillon(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	OrcPlayer			= gc.getPlayer(gc.getANIMAL_PLAYER())

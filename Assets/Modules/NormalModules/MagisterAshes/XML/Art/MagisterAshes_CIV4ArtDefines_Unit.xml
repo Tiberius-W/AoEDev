@@ -9,7 +9,7 @@
 	<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ABADDON_2</Type>
 			<Button>Art/Interface/Buttons/Units/Manticore.dds</Button>
-			<fScale>2</fScale>
+			<fScale>1.7</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>

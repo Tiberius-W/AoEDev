@@ -6509,5 +6509,12 @@
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
-	</LeaderHeadInfos>
+		<LeaderHeadInfo>		<!--Kas DynRel-->
+			<Type>LEADER_KAS</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_DYNAMIC_RELIGION</DependencyType>
+			</AndDependencyTypes>
+			<LeaderClass>LEADERCLASS_EMERGENT_AGNOSTIC</LeaderClass>
+		</LeaderHeadInfo></LeaderHeadInfos>
 </Civ4LeaderHeadInfos>

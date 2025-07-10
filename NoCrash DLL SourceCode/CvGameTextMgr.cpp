@@ -2824,7 +2824,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 			{
 				szString.append(NEWLINE);
 				szString.append(gDLL->getText((pUnit->unitCombatModifier((UnitCombatTypes)iI) > 0) ? "TXT_KEY_COLOR_POSITIVE" : "TXT_KEY_COLOR_NEGATIVE"));
-				szString.append(gDLL->getText("TXT_KEY_UNIT_STRENGTH", pUnit->unitCombatModifier((UnitCombatTypes)iI), GC.getUnitCombatInfo((UnitCombatTypes) iI).getTextKeyWide()));
+				szString.append(gDLL->getText("TXT_KEY_PROMOTION_VERSUS_TEXT", pUnit->unitCombatModifier((UnitCombatTypes)iI), GC.getUnitCombatInfo((UnitCombatTypes) iI).getTextKeyWide()));
 				szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
 			}
 		}

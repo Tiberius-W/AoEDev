@@ -3483,7 +3483,7 @@
 			<Sound>AS2D_GOODY_GOLD</Sound>
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<PythonPrereq>ReqBocquillon</PythonPrereq>
-			<PythonCallback>exploreBocquillon</PythonCallback>
+			<PythonCallback>exploreLairBocquillon</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--Treant					Lair     Results Nature		Bad  Major    -->
 			<Type>GOODY_MARNOK_TREANT</Type>
@@ -3501,7 +3501,7 @@
 			<PythonCallback>exploreLairTreant</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--ShadowTreant-->
-			<Type>GOODY_MARNOK_SHADOW_TREANT</Type>
+			<Type>GOODY_EXPLORE_LAIR_SHADOW_TREANT</Type>
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_NATURE_MAJOR</GoodyClassType>
@@ -3516,7 +3516,7 @@
 			<PythonCallback>exploreLairShadowTreant</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--Bereguine-->
-			<Type>GOODY_MARNOK_BEREGUINE</Type>
+			<Type>GOODY_EXPLORE_LAIR_BEREGUINE</Type>
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_NATURE_MAJOR</GoodyClassType>
@@ -3529,7 +3529,7 @@
 			<iDestroyLairChance>40</iDestroyLairChance>
 			<bBad>1</bBad>
 			<PythonPrereq>ReqBereguine</PythonPrereq>
-			<PythonCallback>exploreBereguine</PythonCallback>
+			<PythonCallback>exploreLairBereguine</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--Murderhoof		Unique-->
 			<Type>GOODY_EXPLORE_LAIR_MURDERHOOF</Type>
@@ -4152,7 +4152,7 @@
 			<bBad>1</bBad>
 			<PythonCallback>exploreLairAbomination</PythonCallback>
 		</GoodyInfo>
-		<GoodyInfo> <!--Graveleech-->
+		<GoodyInfo> <!--bonegolem-->
 			<Type>GOODY_EXPLORE_LAIR_BONEGOLEM</Type>
 			<GoodyClasses>
 				<GoodyClass>

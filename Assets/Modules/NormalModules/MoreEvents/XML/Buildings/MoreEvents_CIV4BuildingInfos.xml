@@ -17,7 +17,6 @@
 			<iConquestProb>25</iConquestProb>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
-			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCrime>10</iCrime>
 			<iAlignmentModifier>-10</iAlignmentModifier>
 		</BuildingInfo>
@@ -32,7 +31,6 @@
 			<iConquestProb>25</iConquestProb>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
-			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCrime>10</iCrime>
 			<iAlignmentModifier>-10</iAlignmentModifier>
 		</BuildingInfo>

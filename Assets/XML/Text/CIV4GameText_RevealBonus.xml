@@ -10986,6 +10986,86 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<Spanish>Ratatoskr</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRIFA_HELP</Tag>
+		<English>[ICON_BULLET]Is Obtained after completing the [LINK=PROJECT_STIR_FROM_SLUMBER]Stir from Slumber[\LINK] Ritual.</English>
+		<French>[ICON_BULLET]Is Obtained after completing the [LINK=PROJECT_STIR_FROM_SLUMBER]Stir from Slumber[\LINK] Ritual.</French>
+		<German>[ICON_BULLET]Is Obtained after completing the [LINK=PROJECT_STIR_FROM_SLUMBER]Stir from Slumber[\LINK] Ritual.</German>
+		<Italian>[ICON_BULLET]Is Obtained after completing the [LINK=PROJECT_STIR_FROM_SLUMBER]Stir from Slumber[\LINK] Ritual.</Italian>
+		<Spanish>[ICON_BULLET]Is Obtained after completing the [LINK=PROJECT_STIR_FROM_SLUMBER]Stir from Slumber[\LINK] Ritual.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EARTH_ELEMENTAL_HELP</Tag>
+		<English>[ICON_BULLET] Causes an [LINK=SPELL_EARTHQUAKE]Earthquake[\LINK] on Death.</English>
+		<French>[ICON_BULLET] Causes an [LINK=SPELL_EARTHQUAKE]Earthquake[\LINK] on Death.</French>
+		<German>[ICON_BULLET] Causes an [LINK=SPELL_EARTHQUAKE]Earthquake[\LINK] on Death.</German>
+		<Italian>[ICON_BULLET] Causes an [LINK=SPELL_EARTHQUAKE]Earthquake[\LINK] on Death.</Italian>
+		<Spanish>[ICON_BULLET] Causes an [LINK=SPELL_EARTHQUAKE]Earthquake[\LINK] on Death.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
