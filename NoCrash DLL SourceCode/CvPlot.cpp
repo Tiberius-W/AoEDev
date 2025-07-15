@@ -940,7 +940,7 @@ void CvPlot::doLairSpawn()
 	}
 
 	// 4th check: Can a spawned unit coexist on this tile with all already existing units on said tile
-	if (isVisibleEnemyUnit(eSpawnPlayer) || !bValid)
+	if (!bValid || isVisibleEnemyUnit(eSpawnPlayer)  )
 		return;
 
 	// 5th check: Don't spawn infinite barbs, there should be a limit : Snarko 20/10/12

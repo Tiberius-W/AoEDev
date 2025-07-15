@@ -33683,12 +33683,12 @@
 		<UnitArtInfo> <!-- UNIT_NUCKELAVEE -->
 			<Type>ART_DEF_UNIT_SEA_SERPENT_2</Type>
 			<Button>Art/Interface/Buttons/Units/Sea Serpent.dds</Button>
-			<fScale>0.35</fScale>
-			<fInterfaceScale>1</fInterfaceScale>
+			<fScale>0.004</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/animal/SeaSerpent/Water Lizard.nif</NIF>
-			<KFM>Art/animations/Dragon/dragon.kfm</KFM>
+			<NIF>Art/Units/animal/nuckelavee/nuckelavee.nif</NIF>
+			<KFM>Art/animations/maar2/maar.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/horseshadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Center</ShadowAttachNode>
@@ -35974,12 +35974,12 @@
 		<UnitArtInfo> <!-- UNIT_FIRE_ELEMENTAL -->
 			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL</Type>
 			<Button>Art/Interface/Buttons/Units/Fire Elemental.dds</Button>
-			<fScale>0.01</fScale>
+			<fScale>1</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Summons/Fire Elemental/GreatProphet.nif</NIF>
-			<KFM>Art/Units/greatpeople/prophet/GreatProphet.kfm</KFM>
+			<NIF>Art/Units/Summons/Fire Elemental/warrior.nif</NIF>
+			<KFM>Art/animations/warrior/warrior.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>

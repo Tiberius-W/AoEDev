@@ -13852,27 +13852,27 @@ def spellChangeForm(caster):
 	if not hasform:
 		if caster.getUnitType()==getInfoType("UNIT_SWANMAY"):
 			caster.setHasPromotion(getInfoType("PROMOTION_SWAN_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
 			caster.setHasPromotion(getInfoType("PROMOTION_LION_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
 			caster.setHasPromotion(getInfoType("PROMOTION_BEAR_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DEFENSIVE_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DEFENSIVE_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
 			caster.setHasPromotion(getInfoType("PROMOTION_BOAR_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DEFENSIVE_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DEFENSIVE_MELEE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
 			caster.setHasPromotion(getInfoType("PROMOTION_ELEPHANT_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_RECON") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_RECON") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
 			caster.setHasPromotion(getInfoType("PROMOTION_WOLF_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_RECON") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_RECON") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
 			caster.setHasPromotion(getInfoType("PROMOTION_GRIFFON_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ROGUE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ROGUE") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
 			caster.setHasPromotion(getInfoType("PROMOTION_SPIDER_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ROGUE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ROGUE") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
 			caster.setHasPromotion(getInfoType("PROMOTION_RAPTOR_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ARCHER") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ARCHER") and gc.getUnitInfo((caster.getUnitType())).getTier()<3:
 			caster.setHasPromotion(getInfoType("PROMOTION_SCORPION_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ARCHER") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ARCHER") and gc.getUnitInfo((caster.getUnitType())).getTier()>2:
 			caster.setHasPromotion(getInfoType("PROMOTION_GORILLA_FORM"),True)
-		if caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ADEPT") or caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DISCIPLE"):
+		elif caster.getUnitCombatType()==getInfoType("UNITCOMBAT_ADEPT") or caster.getUnitCombatType()==getInfoType("UNITCOMBAT_DISCIPLE"):
 			caster.setHasPromotion(getInfoType("PROMOTION_DRAKE_FORM"),True)
 	return
 # Master Buildings Help

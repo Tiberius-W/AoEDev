@@ -6,72 +6,72 @@
 <!-- Basic Infos -->
 <Civ4UnitCombatInfos xmlns="x-schema:CIV4BasicInfoSchema.xml">
 	<UnitCombatInfos>
-		<UnitCombatInfo>
+		<UnitCombatInfo> <!--Recon-->
 			<Type>UNITCOMBAT_RECON</Type>
 			<Description>TXT_KEY_UNITCOMBAT_RECON</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Recon.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Archer-->
 			<Type>UNITCOMBAT_ARCHER</Type>
 			<Description>TXT_KEY_UNITCOMBAT_ARCHER</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Archer.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Mounted-->
 			<Type>UNITCOMBAT_MOUNTED</Type>
 			<Description>TXT_KEY_UNITCOMBAT_MOUNTED</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Formation.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,2</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Melee-->
 			<Type>UNITCOMBAT_MELEE</Type>
 			<Description>TXT_KEY_UNITCOMBAT_MELEE</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Shock.dds,Art/Interface/Buttons/Promotions_Atlas.dds,4,5</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Siege-->
 			<Type>UNITCOMBAT_SIEGE</Type>
 			<Description>TXT_KEY_UNITCOMBAT_SIEGE</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Charge.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,5</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--adept-->
 			<Type>UNITCOMBAT_ADEPT</Type>
 			<Description>TXT_KEY_UNITCOMBAT_ADEPT</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Adept.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Disciple-->
 			<Type>UNITCOMBAT_DISCIPLE</Type>
 			<Description>TXT_KEY_UNITCOMBAT_DISCIPLE</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Disciple.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Animal-->
 			<Type>UNITCOMBAT_ANIMAL</Type>
 			<Description>TXT_KEY_UNITCOMBAT_ANIMAL</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Animal.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Naval-->
 			<Type>UNITCOMBAT_NAVAL</Type>
 			<Description>TXT_KEY_UNITCOMBAT_NAVAL</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Beast-->
 			<Type>UNITCOMBAT_BEAST</Type>
 			<Description>TXT_KEY_UNITCOMBAT_BEAST</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_Beast.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Worker-->
 			<Type>UNITCOMBAT_WORKER</Type>
 			<Description>TXT_KEY_UNITCOMBAT_WORKER</Description>
 			<Button>Art/Interface/Buttons/unitcombats/uc_worker.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Commander-->
 			<Type>UNITCOMBAT_COMMANDER</Type>
 			<Description>TXT_KEY_UNITCOMBAT_COMMANDER</Description>
 			<Button>Art/Interface/Buttons/Unitcombats/UC_CommanderAlt.dds</Button>
 		</UnitCombatInfo>
-				<UnitCombatInfo>
+		<UnitCombatInfo><!--Rogue-->
 			<Type>UNITCOMBAT_ROGUE</Type>
 			<Description>TXT_KEY_UNITCOMBAT_ROGUE</Description>
 			<Button>Art/Interface/Buttons/Units/UCRogue.dds</Button>
 		</UnitCombatInfo>
-		<UnitCombatInfo>
+		<UnitCombatInfo><!--Defensive Melee-->
 			<Type>UNITCOMBAT_DEFENSIVE_MELEE</Type>
 			<Description>TXT_KEY_UNITCOMBAT_DEFENSIVE_MELEE</Description>
 			<Button>Art/Interface/Buttons/Units/UCDefensiveMelee.dds</Button>

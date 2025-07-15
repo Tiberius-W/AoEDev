@@ -3973,20 +3973,20 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HERBALIST</ArtDefineTag>
 			<PrereqTech>TECH_WAY_OF_THE_WISE</PrereqTech>
 			<iAIWeight>15</iAIWeight>
-			<iCost>180</iCost>
+			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
-			<iHealth>1</iHealth>
+			<iHealth>2</iHealth>
 			<iHappiness>1</iHappiness>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<iCrime>-4</iCrime>
-			<YieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>-5</iYield>
-			</YieldModifiers>
-			<Flavors>
+			<CommerceModifiers>
+				<iCommerce>-5</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceModifiers>
+		<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>

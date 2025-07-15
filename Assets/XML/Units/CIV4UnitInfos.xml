@@ -9702,6 +9702,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_COMMANDER_SALAMANDER</Description>
 			<Civilopedia>TXT_KEY_UNIT_COMMANDER_SALAMANDER_PEDIA</Civilopedia>
+			<PrereqTech>TECH_MILITARY_STRATEGY</PrereqTech>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<UnitAIs>
 				<UnitAI>
@@ -36625,6 +36626,7 @@
 			</FreePromotions>
 			<bNoWarWeariness>1</bNoWarWeariness>
 			<iTier>4</iTier>
+			<PrereqTech>TECH_ELEMENTALISM</PrereqTech>
 			<PythonPostCombatLost>postCombatExplode(pCaster,pOpponent)</PythonPostCombatLost>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
@@ -40945,6 +40947,7 @@
 			<Description>TXT_KEY_UNIT_LICH</Description>
 			<Civilopedia>TXT_KEY_UNIT_LICH_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
+			<PrereqTech>TECH_NECROMANCY</PrereqTech>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>

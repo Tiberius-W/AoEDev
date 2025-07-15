@@ -1395,6 +1395,10 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 						case 7: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/animal_units.dds", 340, 12); break;
 						case 8: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/naval_units.dds", 340, 12); break;
 						case 9: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/beast_units.dds", 340, 12); break;
+						case 10: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/worker_units.dds", 340, 12); break;
+						case 11: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/commander_units.dds", 340, 12); break;
+						case 12: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/rogue_units.dds", 340, 12); break;
+						case 13: gDLL->getInterfaceIFace()->popupAddSeparator(pPopup); gDLL->getInterfaceIFace()->popupAddDDS(pPopup, "Art/Interface/Popup/defensive_units.dds", 340, 12); break;
 					}
 				}
 				else

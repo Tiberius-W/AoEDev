@@ -14523,7 +14523,10 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 	if (GC.getSpellInfo(eSpell).getImmobileTurns() != -1)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_NUM_TARGETS", GC.getSpellInfo(eSpell).getNumTargets()));
+		if (GC.getSpellInfo(eSpell).getNumTargets() > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_SPELL_NUM_TARGETS", GC.getSpellInfo(eSpell).getNumTargets()));
+		}
 	}
 	if (GC.getSpellInfo(eSpell).isSacrificeCaster())
 	{
