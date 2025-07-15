@@ -17555,6 +17555,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<PrereqTech>TECH_NEVER</PrereqTech>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMoves>1</iMoves>
@@ -55296,16 +55297,7 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		<iAppearanceProb>-1</iAppearanceProb>
-			<AppearanceTechs>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_HORSEBACK_RIDING</AppearanceTechType>
-					<iAppearanceTech>101</iAppearanceTech>
-				</AppearanceTech>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_STIRRUPS</AppearanceTechType>
-					<iAppearanceTech>-101</iAppearanceTech>
-				</AppearanceTech>
-			</AppearanceTechs>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
 			<iPowerMult>1</iPowerMult>
 		</UnitInfo>
 		<UnitInfo>        <!-- Wolf Pack T2 -->
@@ -55377,16 +55369,7 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iAppearanceProb>-1</iAppearanceProb>
-			<AppearanceTechs>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_TRACKING</AppearanceTechType>
-					<iAppearanceTech>101</iAppearanceTech>
-				</AppearanceTech>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_FERAL_BOND</AppearanceTechType>
-					<iAppearanceTech>-50</iAppearanceTech>
-				</AppearanceTech>
-			</AppearanceTechs>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
 		</UnitInfo>
 		<UnitInfo>        <!-- Sluagh -->
 			<Class>UNITCLASS_SLUAGH</Class>
