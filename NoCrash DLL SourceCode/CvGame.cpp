@@ -10887,6 +10887,7 @@ void CvGame::createDemons()
 	CvPlot* pPlot;
 	UnitTypes eBestUnit;
 	UnitTypes eLoopUnit;
+	int iTargetDemons;
 	int iNeededDemons;
 	int iValue;
 	int iBestValue;
@@ -10907,8 +10908,10 @@ void CvGame::createDemons()
 
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Demons have no spawn rate limit, instead depending on hell tiles
-		iNeededDemons = calcTargetBarbs(pLoopArea, true, DEMON_PLAYER) - (pLoopArea->getUnitsPerPlayer(DEMON_PLAYER));
+		// Note: Demon spawnrate is artificially lowered at low #s of available spawn tiles, because of stupid syncRandPlot
+		iTargetDemons = calcTargetBarbs(pLoopArea, true, DEMON_PLAYER);
+		// Spawn at most 20% of limit
+		iNeededDemons =  std::min(std::max(1, 2 * iTargetDemons/10), iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER));
 
 		for (iI = 0; iI < iNeededDemons; iI++)
 		{
