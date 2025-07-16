@@ -31,10 +31,10 @@
 			<iAttitudeChange>2</iAttitudeChange>
 			<iNoTechTradeModifier>100</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
-			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- DIFF CONSTANT: Applies to animals on land only -->
-			<iWaterTilesPerAnimal>100</iWaterTilesPerAnimal> <!-- DIFF CONSTANT: Applies to animals on water only -->
-			<iTilesPerOrc>80</iTilesPerOrc> <!-- DIFF CONSTANT: Applies to savages on land only -->
-			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- DIFF CONSTANT: Applies to savages on water only -->
+			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- Applies to animals on land only -->
+			<iWaterTilesPerAnimal>100</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
+			<iTilesPerOrc>80</iTilesPerOrc> <!-- Applies to savages on land only -->
+			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
 			<iUnownedTilesPerBarbarianCity>105</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
 			<iBarbarianCityCreationTurnsElapsed>55</iBarbarianCityCreationTurnsElapsed>
@@ -106,9 +106,9 @@
 			</FreeTechs>
 			<AIFreeTechs>
 			</AIFreeTechs>
-			<iAnimalEscalationTurnsElapsed>150</iAnimalEscalationTurnsElapsed> <!-- DIFF MODULATED: Ehh... leaving for now. -->
-			<iPercentDemonsPerEvilPlot>75</iPercentDemonsPerEvilPlot> <!-- DIFF MODULATED: Applies to land and water both -->
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>225</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- DIFF MODULATED: Additive with iPercentDemonsPerEvilPlot. 40 means if AC is 10, +4% demons/evil plot -->
+			<iAnimalEscalationTurnsElapsed>150</iAnimalEscalationTurnsElapsed> <!-- Ehh... leaving for now. -->
+			<iPercentDemonsPerEvilPlot>75</iPercentDemonsPerEvilPlot> <!-- Applies to land and water both -->
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>225</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 40 means if AC is 10, +4% demons/evil plot -->
 			<iDemonGlobalCounterFreeXPPercent>0</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>1</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>-50</iDemonBonus>
