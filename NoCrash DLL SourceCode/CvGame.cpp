@@ -10873,6 +10873,7 @@ void CvGame::createLairs()
 		else if (pArea != NULL && ((calcTargetBarbs(pArea, true, ePlayer) + (ePlayer == ANIMAL_PLAYER)) > pArea->getUnitsPerPlayer(ePlayer)))
 		{
 			pPlot->setImprovementType(eLair);
+			iGoal--;
 		}
 
 		if (iGoal <= 0) return;
