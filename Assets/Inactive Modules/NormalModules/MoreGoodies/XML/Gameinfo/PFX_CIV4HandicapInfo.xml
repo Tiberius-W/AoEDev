@@ -8,67 +8,7 @@
 	<HandicapInfos>
 		<HandicapInfo>
 			<Type>HANDICAP_DEITY</Type>
-			<bForceOverwrite>1</bForceOverwrite>
-			<Description>TXT_KEY_HANDICAP_DEITY</Description>
-			<Help>TXT_KEY_HANDICAP_DEITY_HELP</Help>
-			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
-			<iAnimalAttackProb>90</iAnimalAttackProb>
-			<iStartingLocPercent>90</iStartingLocPercent>
-			<iAdvancedStartPointsMod>75</iAdvancedStartPointsMod>
-			<iGold>0</iGold>
-			<iFreeUnits>2</iFreeUnits>
-			<iUnitCostPercent>100</iUnitCostPercent>
-			<iResearchPercent>125</iResearchPercent>
-			<iDistanceMaintenancePercent>100</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>100</iNumCitiesMaintenancePercent>
-			<iMaxNumCitiesMaintenance>8</iMaxNumCitiesMaintenance>
-			<iColonyMaintenancePercent>150</iColonyMaintenancePercent>
-			<iMaxColonyMaintenance>100</iMaxColonyMaintenance>
-			<iCorporationMaintenancePercent>150</iCorporationMaintenancePercent>
-			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
-			<iInflationPercent>90</iInflationPercent>
-			<iHealthBonus>4</iHealthBonus>
-			<iHappyBonus>4</iHappyBonus>
-			<iAttitudeChange>-1</iAttitudeChange>
-			<iNoTechTradeModifier>20</iNoTechTradeModifier>
-			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>20</iTilesPerAnimal>
-			<iTilesPerOrc>30</iTilesPerOrc>
-			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>10</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>15</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
-			<iAnimalBonus>0</iAnimalBonus>
-			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
-			<iStartingDefenseUnits>0</iStartingDefenseUnits>
-			<iStartingWorkerUnits>0</iStartingWorkerUnits>
-			<iStartingExploreUnits>0</iStartingExploreUnits>
-			<iAIStartingUnitMultiplier>1</iAIStartingUnitMultiplier>
-			<iAIStartingDefenseUnits>4</iAIStartingDefenseUnits>
-			<iAIStartingWorkerUnits>1</iAIStartingWorkerUnits>
-			<iAIStartingExploreUnits>1</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
-			<iAIDeclareWarProb>120</iAIDeclareWarProb>
-			<iAIWorkRateModifier>100</iAIWorkRateModifier>
-			<iAIGrowthPercent>80</iAIGrowthPercent>
-			<iAITrainPercent>60</iAITrainPercent>
-			<iAIWorldTrainPercent>100</iAIWorldTrainPercent>
-			<iAIConstructPercent>60</iAIConstructPercent>
-			<iAIWorldConstructPercent>100</iAIWorldConstructPercent>
-			<iAICreatePercent>60</iAICreatePercent>
-			<iAIWorldCreatePercent>100</iAIWorldCreatePercent>
-			<iAICivicUpkeepPercent>60</iAICivicUpkeepPercent>
-			<iAIUnitCostPercent>75</iAIUnitCostPercent>
-			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
-			<iAIUnitUpgradePercent>25</iAIUnitUpgradePercent>
-			<iAIInflationPercent>25</iAIInflationPercent>
-			<iAIWarWearinessPercent>20</iAIWarWearinessPercent>
-			<iAIPerEraModifier>-10</iAIPerEraModifier>
-			<iAIAdvancedStartPercent>170</iAIAdvancedStartPercent>
-			<Goodies>
+		<Goodies>
 				<GoodyType>GOODY_LOW_GOLD</GoodyType>
 				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
 				<GoodyType>GOODY_MAP</GoodyType>
@@ -90,35 +30,6 @@
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 			</Goodies>
-			<FreeTechs>
-			</FreeTechs>
-			<AIFreeTechs>
-				<FreeTech>
-					<TechType>TECH_EXPLORATION</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
-				<FreeTech>
-					<TechType>TECH_AGRICULTURE</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
-				<FreeTech>
-					<TechType>TECH_CRAFTING</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
-				<FreeTech>
-					<TechType>TECH_ANCIENT_CHANTS</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
-			</AIFreeTechs>
-			<iAIFreeXP>8</iAIFreeXP>
-			<iWaterTilesPerAnimal>75</iWaterTilesPerAnimal>
-			<iAnimalEscalationTurnsElapsed>35</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>100</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>700</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iDemonGlobalCounterFreeXPPercent>130</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
-			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
 		</HandicapInfo>
 	</HandicapInfos>
 </Civ4HandicapInfo>

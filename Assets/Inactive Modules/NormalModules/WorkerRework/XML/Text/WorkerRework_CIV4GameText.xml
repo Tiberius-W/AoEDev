@@ -49,7 +49,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ENCHANTED_TOOLS</Tag>
 		<English>Tools (Enchanted)</English>
-		<French>Tools (Enchanted)e</French>
+		<French>Tools (Enchanted)</French>
 		<German>Tools (Enchanted)</German>
 		<Italian>Tools (Enchanted)</Italian>
 		<Spanish>Tools (Enchanted)</Spanish>
@@ -117,112 +117,112 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKERTOOLS1_HELP</Tag>
-		<English>Unit can use Stone, Bronze, Iron and Mithril tools</English>
-		<French>Unit can use Stone, Bronze, Iron and Mithril tools</French>
-		<German>Unit can use Stone, Bronze, Iron and Mithril tools</German>
-		<Italian>Unit can use Stone, Bronze, Iron and Mithril tools</Italian>
-		<Spanish>Unit can use Stone, Bronze, Iron and Mithril tools</Spanish>
+		<English>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK] and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, and [LINK=PROMOTION_ENCHANTED_TOOLS]Enchantments[\LINK]</English>
+		<French>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK] and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, and [LINK=PROMOTION_ENCHANTED_TOOLS]Enchantments[\LINK]</French>
+		<German>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK] and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, and [LINK=PROMOTION_ENCHANTED_TOOLS]Enchantments[\LINK]</German>
+		<Italian>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK] and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, and [LINK=PROMOTION_ENCHANTED_TOOLS]Enchantments[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK] and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, and [LINK=PROMOTION_ENCHANTED_TOOLS]Enchantments[\LINK]</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKERTOOLSMECHANOS_HELP</Tag>
-		<English>Unit can use Stone, Bronze, Iron, Mithril and Power tools, but can't use enchanted tools</English>
-		<French>Unit can use Stone, Bronze, Iron, Mithril and Power tools, but can't use enchanted tools</French>
-		<German>Unit can use Stone, Bronze, Iron, Mithril and Power tools, but can't use enchanted toolss</German>
-		<Italian>Unit can use Stone, Bronze, Iron, Mithril and Power tools, but can't use enchanted tools</Italian>
-		<Spanish>Unit can use Stone, Bronze, Iron, Mithril and Power tools, but can't use enchanted tools</Spanish>
+		<English>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK], [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] and [LINK=PROMOTION_POWER_TOOLS]Power[\LINK] tools, but can't use [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted tools[\LINK]</English>
+		<French>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK], [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] and [LINK=PROMOTION_POWER_TOOLS]Power[\LINK] tools, but can't use [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted tools[\LINK]</French>
+		<German>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK], [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] and [LINK=PROMOTION_POWER_TOOLS]Power[\LINK] tools, but can't use [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted tools[\LINK]</German>
+		<Italian>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK], [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] and [LINK=PROMOTION_POWER_TOOLS]Power[\LINK] tools, but can't use [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted tools[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], [LINK=PROMOTION_IRON_TOOLS]Iron[\LINK], [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] and [LINK=PROMOTION_POWER_TOOLS]Power[\LINK] tools, but can't use [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted tools[\LINK]</Spanish>
 	</TEXT>
 	
 	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKERTOOLSGOBLIN_HELP</Tag>
-		<English>Unit can't use upgraded tools</English>
-		<French>Unit can't use upgraded tools</French>
-		<German>Unit can't use upgraded tools</German>
-		<Italian>Unit can't use upgraded tools</Italian>
-		<Spanish>Unit can't use upgraded tools</Spanish>
+		<English>[ICON_BULLET]Unit can't use upgraded tools</English>
+		<French>[ICON_BULLET]Unit can't use upgraded tools</French>
+		<German>[ICON_BULLET]Unit can't use upgraded tools</German>
+		<Italian>[ICON_BULLET]Unit can't use upgraded tools</Italian>
+		<Spanish>[ICON_BULLET]Unit can't use upgraded tools</Spanish>
 	</TEXT>
 	
 	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKERTOOLSBEZERI_HELP</Tag>
-		<English>Unit can use Stone, Bronze, and Mithril tools, but can only use iron tools if they are enchanted</English>
-		<French>Unit can use Stone, Bronze, and Mithril tools, but can only use iron tools if they are enchanted</French>
-		<German>Unit can use Stone, Bronze, and Mithril tools, but can only use iron tools if they are enchanted</German>
-		<Italian>Unit can use Stone, Bronze, and Mithril tools, but can only use iron tools if they are enchanted</Italian>
-		<Spanish>Unit can use Stone, Bronze, and Mithril tools, but can only use iron tools if they are enchanted</Spanish>
+		<English>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, but can only use [LINK=PROMOTION_WATERPROOF_IRON_TOOLS]Iron[\LINK] tools if they are [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted[\LINK]</English>
+		<French>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, but can only use [LINK=PROMOTION_WATERPROOF_IRON_TOOLS]Iron[\LINK] tools if they are [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted[\LINK]</French>
+		<German>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, but can only use [LINK=PROMOTION_WATERPROOF_IRON_TOOLS]Iron[\LINK] tools if they are [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted[\LINK]</German>
+		<Italian>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, but can only use [LINK=PROMOTION_WATERPROOF_IRON_TOOLS]Iron[\LINK] tools if they are [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Unit can use [LINK=PROMOTION_STONE_TOOLS]Stone[\LINK], [LINK=PROMOTION_BRONZE_TOOLS]Bronze[\LINK], and [LINK=PROMOTION_MITHRIL_TOOLS]Mithril[\LINK] tools, but can only use [LINK=PROMOTION_WATERPROOF_IRON_TOOLS]Iron[\LINK] tools if they are [LINK=PROMOTION_ENCHANTED_TOOLS]Enchanted[\LINK]</Spanish>
 	</TEXT>
 	
 	
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_STONE_TOOLS_HELP</Tag>
-		<English>Basic Tools</English>
-		<French>Basic Tools</French>
-		<German>Basic Tools</German>
-		<Italian>Basic Tools</Italian>
-		<Spanish>Basic Tools</Spanish>
+		<English>[ICON_BULLET]Basic Tools</English>
+		<French>[ICON_BULLET]Basic Tools</French>
+		<German>[ICON_BULLET]Basic Tools</German>
+		<Italian>[ICON_BULLET]Basic Tools</Italian>
+		<Spanish>[ICON_BULLET]Basic Tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BRONZE_TOOLS_HELP</Tag>
-		<English>Upgraded Tools</English>
-		<French>Upgraded Tools</French>
-		<German>Upgraded Tools</German>
-		<Italian>Upgraded Tools</Italian>
-		<Spanish>Upgraded Tools</Spanish>
+		<English>[ICON_BULLET]Upgraded Tools</English>
+		<French>[ICON_BULLET]Upgraded Tools</French>
+		<German>[ICON_BULLET]Upgraded Tools</German>
+		<Italian>[ICON_BULLET]Upgraded Tools</Italian>
+		<Spanish>[ICON_BULLET]Upgraded Tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_IRON_TOOLS_HELP</Tag>
-		<English>Advanced Tools</English>
-		<French>Advanced Tools</French>
-		<German>Advanced Tools</German>
-		<Italian>Advanced Tools</Italian>
-		<Spanish>Advanced Tools</Spanish>
+		<English>[ICON_BULLET]Advanced Tools</English>
+		<French>[ICON_BULLET]Advanced Toolss</French>
+		<German>[ICON_BULLET]Advanced Tools</German>
+		<Italian>[ICON_BULLET]Advanced Tools</Italian>
+		<Spanish>[ICON_BULLET]Advanced Tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MITHRIL_TOOLS_HELP</Tag>
-		<English>Masterwork Tools</English>
-		<French>Masterwork Tools</French>
-		<German>Masterwork Tools</German>
-		<Italian>Masterwork Tools</Italian>
-		<Spanish>Masterwork Tools</Spanish>
+		<English>[ICON_BULLET]Masterwork Tools</English>
+		<French>[ICON_BULLET]Masterwork Tools</French>
+		<German>[ICON_BULLET]Masterwork Tools</German>
+		<Italian>[ICON_BULLET]Masterwork Tools</Italian>
+		<Spanish>[ICON_BULLET]Masterwork Tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_POWER_TOOLS_HELP</Tag>
-		<English>Exclusive to the Mechanos</English>
-		<French>Exclusive to the Mechanos</French>
-		<German>Exclusive to the Mechanos</German>
-		<Italian>Exclusive to the Mechanos</Italian>
-		<Spanish>Exclusive to the Mechanos</Spanish>
+		<English>[ICON_BULLET]Exclusive to the Mechanos</English>
+		<French>[ICON_BULLET]Exclusive to the Mechanos</French>
+		<German>[ICON_BULLET]Exclusive to the Mechanos</German>
+		<Italian>[ICON_BULLET]Exclusive to the Mechanos</Italian>
+		<Spanish>[ICON_BULLET]Exclusive to the Mechanos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ENCHANTED_TOOLS_HELP</Tag>
-		<English>Enchanted Tools</English>
-		<French>Enchanted Tools</French>
-		<German>Enchanted Tools</German>
-		<Italian>Enchanted Tools</Italian>
-		<Spanish>Enchanted Tools</Spanish>
+		<English>[ICON_BULLET]Enchanted Tools</English>
+		<French>[ICON_BULLET]Enchanted Tools</French>
+		<German>[ICON_BULLET]Enchanted Tools</German>
+		<Italian>[ICON_BULLET]Enchanted Tools</Italian>
+		<Spanish>[ICON_BULLET]Enchanted Tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_GOBLIN_TOOLS_HELP</Tag>
-		<English>Goblins don't use advanced tools</English>
-		<French>Goblins don't use advanced tools</French>
-		<German>Goblins don't use advanced tools</German>
-		<Italian>Goblins don't use advanced tools</Italian>
-		<Spanish>Goblins don't use advanced tools</Spanish>
+		<English>[ICON_BULLET]Goblins can't use advanced tools</English>
+		<French>[ICON_BULLET]Goblins can't use advanced tools</French>
+		<German>[ICON_BULLET]Goblins can't use advanced tools</German>
+		<Italian>[ICON_BULLET]Goblins can't use advanced tools</Italian>
+		<Spanish>[ICON_BULLET]Goblins can't use advanced tools</Spanish>
 	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_WATERPROOF_IRON_TOOLS_HELP</Tag>
-		<English>Enchanted Iron tools that can survive the depths</English>
-		<French>Enchanted Iron tools that can survive the depths</French>
-		<German>Enchanted Iron tools that can survive the depths</German>
-		<Italian>Enchanted Iron tools that can survive the depths</Italian>
-		<Spanish>Enchanted Iron tools that can survive the depths</Spanish>
+		<English>[ICON_BULLET]Enchanted Iron tools that can survive the depths</English>
+		<French>[ICON_BULLET]Enchanted Iron tools that can survive the depths</French>
+		<German>[ICON_BULLET]Enchanted Iron tools that can survive the depths</German>
+		<Italian>[ICON_BULLET]Enchanted Iron tools that can survive the depths</Italian>
+		<Spanish>[ICON_BULLET]Enchanted Iron tools that can survive the depths</Spanish>
 	</TEXT>
 </Civ4GameText>

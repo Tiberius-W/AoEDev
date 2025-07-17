@@ -129,6 +129,9 @@
 			<PrereqBuildingORs>
 				<PrereqBuilding>BUILDING_FACTORY</PrereqBuilding>
 			</PrereqBuildingORs>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_MECHANOS</PrereqCivilization>
+			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
 				<Promotion>PROMOTION_BRONZE_TOOLS</Promotion>
@@ -141,6 +144,9 @@
 				<Promotion>PROMOTION_IRON_TOOLS</Promotion>
 				<Promotion>PROMOTION_MITHRIL_TOOLS</Promotion>
 			</PromotionOverwrites>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_OPERATOR</PrereqUnit>
+			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
 			<PrereqInCity>1</PrereqInCity>
@@ -227,6 +233,9 @@
 			<Type>PROMOTION_GOBLIN_TOOLS</Type>
 			<Description>TXT_KEY_PROMOTION_GOBLIN_TOOLS</Description>
 			<Help>TXT_KEY_PROMOTION_GOBLIN_TOOLS_HELP</Help>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_CHIMAR</PrereqCivilization>
+			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
 				<Promotion>PROMOTION_BRONZE_TOOLS</Promotion>
@@ -255,6 +264,9 @@
 		<PromotionInfo>		<!-- Iron Doesn't work in water -->
 			<Type>PROMOTION_WATERLOGGED_TOOLS</Type>
 			<Description>TXT_KEY_PROMOTION_WATERLOGGED_TOOLS</Description>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_BEZERI</PrereqCivilization>
+			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_IRON_TOOLS</Promotion>
 			</PromotionExcludes>
@@ -280,6 +292,9 @@
 			<Type>PROMOTION_WATERPROOF_IRON_TOOLS</Type>
 			<Description>TXT_KEY_PROMOTION_WATERPROOF_IRON_TOOLS</Description>
 			<Help>TXT_KEY_PROMOTION_WATERPROOF_IRON_TOOLS_HELP</Help>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_BEZERI</PrereqCivilization>
+			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
 				<Promotion>PROMOTION_BRONZE_TOOLS</Promotion>
@@ -291,6 +306,10 @@
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_WATERLOGGED_TOOLS</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_ENCHANTED_TOOLS</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
@@ -373,8 +392,8 @@
 		
 		
 		
-		
-		<PromotionInfo>		<!-- Disables hasted Promotion for workers -->
+		<!--
+		<PromotionInfo>		 Disables hasted Promotion for workers 
 			<Type>PROMOTION_WORKER_HASTED_BLOCK</Type>
 			<Description>TXT_KEY_PROMOTION_WORKER_HASTED_BLOCK</Description>
 			<PromotionExcludes>
@@ -386,9 +405,75 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
+			<bGraphicalOnly>1</bGraphicalOnly>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bEffectProm>1</bEffectProm>
 			<bNoXP>1</bNoXP>
+		</PromotionInfo>
+		-->
+		
+		<PromotionInfo>		<!-- Hasted -->
+			<Type>PROMOTION_HASTED</Type>
+			<Description>TXT_KEY_PROMOTION_HASTED</Description>
+			<PromotionDegradesTo>
+				<Promotion>PROMOTION_FATIGUED</Promotion>
+			</PromotionDegradesTo>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_FATIGUED</Promotion>
+			</PromotionOverwrites>
+			<iMovesChange>1</iMovesChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/Hasted.dds</Button>
+			<bDispellable>1</bDispellable>
+			<iAIWeight>50</iAIWeight>
+			<iExpireChance>100</iExpireChance>
+			<iMinLevel>-1</iMinLevel>
+			<bForceOverwrite>1</bForceOverwrite>
 		</PromotionInfo>
 		
 			</PromotionInfos>

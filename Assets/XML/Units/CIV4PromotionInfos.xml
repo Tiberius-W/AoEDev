@@ -24295,7 +24295,8 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Guardsman.dds</Button>
 			<bTargetWeakestUnitCounter>1</bTargetWeakestUnitCounter>
-		</PromotionInfo>
+			<PromotionNextLevel>PROMOTION_GUARDSMAN2</PromotionNextLevel>
+			</PromotionInfo>
 		<PromotionInfo>		<!-- Guardsman II-->
 			<Type>PROMOTION_GUARDSMAN2</Type>
 			<Description>TXT_KEY_PROMOTION_GUARDSMAN2</Description>
