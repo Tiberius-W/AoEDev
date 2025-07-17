@@ -27911,6 +27911,7 @@ m_iPercentDemonsPerEvilPlot(0),
 m_iDemonPerTurnKnownTechsPercent(0),
 m_iDemonGlobalCounterFreeXPPercent(0),
 m_iPercentDemonsPerEvilPlotPerGlobalCounter(0),
+m_iMinimumTilesPerDemon(0),
 m_iDemonBonus(0),
 m_iAIDemonBonus(0)
 /*************************************************************************************************/
@@ -28252,6 +28253,7 @@ int CvHandicapInfo::getPercentDemonsPerEvilPlot() const							{return m_iPercent
 int CvHandicapInfo::getDemonPerTurnKnownTechsPercent() const					{return m_iDemonPerTurnKnownTechsPercent;}
 int CvHandicapInfo::getDemonGlobalCounterFreeXPPercent() const					{return m_iDemonGlobalCounterFreeXPPercent;}
 int CvHandicapInfo::getPercentDemonsPerEvilPlotPerGlobalCounter() const			{return m_iPercentDemonsPerEvilPlotPerGlobalCounter;}
+int CvHandicapInfo::getMinimumTilesPerDemon() const								{return m_iMinimumTilesPerDemon;}
 int CvHandicapInfo::getDemonBonus() const										{return m_iDemonBonus;}
 int CvHandicapInfo::getAIDemonBonus() const										{return m_iAIDemonBonus;}
 /*************************************************************************************************/
@@ -28364,6 +28366,7 @@ void CvHandicapInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iDemonPerTurnKnownTechsPercent);
 	stream->Read(&m_iDemonGlobalCounterFreeXPPercent);
 	stream->Read(&m_iPercentDemonsPerEvilPlotPerGlobalCounter);
+	stream->Read(&m_iMinimumTilesPerDemon);
 	stream->Read(&m_iDemonBonus);
 	stream->Read(&m_iAIDemonBonus);
 /*************************************************************************************************/
@@ -28468,6 +28471,7 @@ void CvHandicapInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iDemonPerTurnKnownTechsPercent);
 	stream->Write(m_iDemonGlobalCounterFreeXPPercent);
 	stream->Write(m_iPercentDemonsPerEvilPlotPerGlobalCounter);
+	stream->Write(m_iMinimumTilesPerDemon);
 	stream->Write(m_iDemonBonus);
 	stream->Write(m_iAIDemonBonus);
 /*************************************************************************************************/
@@ -28558,6 +28562,7 @@ bool CvHandicapInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iDemonPerTurnKnownTechsPercent, "iDemonPerTurnKnownTechsPercent");
 	pXML->GetChildXmlValByName(&m_iDemonGlobalCounterFreeXPPercent, "iDemonGlobalCounterFreeXPPercent");
 	pXML->GetChildXmlValByName(&m_iPercentDemonsPerEvilPlotPerGlobalCounter, "iPercentDemonsPerEvilPlotPerGlobalCounter");
+	pXML->GetChildXmlValByName(&m_iMinimumTilesPerDemon, "iMinimumTilesPerDemon");
 	pXML->GetChildXmlValByName(&m_iDemonBonus, "iDemonBonus");
 	pXML->GetChildXmlValByName(&m_iAIDemonBonus, "iAIDemonBonus");
 /*************************************************************************************************/
@@ -28673,6 +28678,7 @@ void CvHandicapInfo::copyNonDefaults(CvHandicapInfo* pClassInfo, CvXMLLoadUtilit
 	if (getDemonPerTurnKnownTechsPercent()		== 0)		m_iDemonPerTurnKnownTechsPercent		= pClassInfo->getDemonPerTurnKnownTechsPercent();
 	if (getDemonGlobalCounterFreeXPPercent()	== 0)		m_iDemonGlobalCounterFreeXPPercent		= pClassInfo->getDemonGlobalCounterFreeXPPercent();
 	if (getPercentDemonsPerEvilPlotPerGlobalCounter()== 0)	m_iPercentDemonsPerEvilPlotPerGlobalCounter	= pClassInfo->getPercentDemonsPerEvilPlotPerGlobalCounter();
+	if (getMinimumTilesPerDemon() 				== 0)		m_iMinimumTilesPerDemon					= pClassInfo->getMinimumTilesPerDemon();
 	if (getDemonBonus()							== 0)		m_iDemonBonus							= pClassInfo->getDemonBonus();
 	if (getAIDemonBonus()						== 0)		m_iAIDemonBonus							= pClassInfo->getAIDemonBonus();
 	if (getAIFreeXP()							== 0)		m_iAIFreeXP								= (float)pClassInfo->getAIFreeXP()/100.0f;

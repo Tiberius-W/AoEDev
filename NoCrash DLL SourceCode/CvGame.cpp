@@ -10778,7 +10778,7 @@ void CvGame::createLairs()
 		iFlags |= RANDPLOT_UNOWNED;
 	}
 
-	// 50 attempts to place the lairs...... stops early if places 2 though
+	// 50 attempts to place the lairs...... stops early if places iDefaultPlayers amount though
 	for (iI = 0; iI < 50; iI++)
 	{
 		// Pick a random value from the static total sum. If we recalculate weights until this value, then our stopping point will be random & weight-modulated.
@@ -11016,7 +11016,7 @@ void CvGame::createAnimals()
 
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Spawn at most 20% of limit (round up)
+		// Spawn at most 20% of limit
 		iTargetAnimals = calcTargetBarbs(pLoopArea, false, ANIMAL_PLAYER);
 		iNeededAnimals =  std::min(std::max(1, 2 * iTargetAnimals/10), iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER));
 
@@ -11160,7 +11160,7 @@ void CvGame::createBarbarianUnits()
 	{
 		// Don't count owned tiles, even if allied to orc player, to spawn random orcs
 		iTargetBarbs = calcTargetBarbs(pLoopArea, false, ORC_PLAYER);
-		// Spawn at most 20% of limit (round up)
+		// Spawn at most 20% of limit
 		iNeededBarbs = std::min(std::max(1, 2 * iTargetBarbs/10), iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER));
 
 		pLoopArea->isWater() ? eBarbUnitAI = UNITAI_ATTACK_SEA : eBarbUnitAI = UNITAI_ATTACK;
@@ -11279,14 +11279,24 @@ int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes eP
 	}
 	else
 	{
+		// Possible min value
+		int iMinDemons = pArea->getNumTiles() / GC.getHandicapInfo(getHandicapType()).getMinimumTilesPerDemon();
+
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();
 		// Reduce density on water, otherwise big oceans can get loooots of demons
-		if (pArea->isWater()) iAreaSize /= 20;
+		if (pArea->isWater())
+		{
+			iAreaSize /= 10;
+			iMinDemons /= 10;
+		}
 
 		// AC effect is additive to demons/evil plot calcuation. Ex: 10AC*0.4/AC adds +4% to the X%demon/evil tile target density
 		int iCounterAdjust = getGlobalCounter() * GC.getHandicapInfo(getHandicapType()).getPercentDemonsPerEvilPlotPerGlobalCounter() / 100;
 		iTargetBarbs = (GC.getHandicapInfo(getHandicapType()).getPercentDemonsPerEvilPlot() + iCounterAdjust) * iAreaSize / 100;
+
+		// Check against minimum target value
+		iTargetBarbs = std::max(iTargetBarbs, iMinDemons);
 	}
 
 	if (isOption(GAMEOPTION_RAGING_BARBARIANS)) iTargetBarbs *= 2;

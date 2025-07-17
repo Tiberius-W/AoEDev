@@ -5851,6 +5851,7 @@ public:
 	int getDemonPerTurnKnownTechsPercent() const;
 	int getDemonGlobalCounterFreeXPPercent() const;
 	int getPercentDemonsPerEvilPlotPerGlobalCounter() const;
+	int getMinimumTilesPerDemon() const;
 	int getDemonBonus() const;
 	int getAIDemonBonus() const;
 /*************************************************************************************************/
@@ -5962,9 +5963,10 @@ protected:
 	int m_iWaterTilesPerAnimal;
 	int m_iAnimalEscalationTurnsElapsed;
 	int m_iPercentDemonsPerEvilPlot;
-	int m_iDemonPerTurnKnownTechsPercent;
-	int m_iDemonGlobalCounterFreeXPPercent;
 	int m_iPercentDemonsPerEvilPlotPerGlobalCounter;
+	int m_iMinimumTilesPerDemon;
+	int m_iDemonGlobalCounterFreeXPPercent;
+	int m_iDemonPerTurnKnownTechsPercent;
 	int m_iDemonBonus;
 	int m_iAIDemonBonus;
 /*************************************************************************************************/
