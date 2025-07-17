@@ -630,6 +630,7 @@
 		<element type="iAnimalEscalationTurnsElapsed"/>
 		<element type="iPercentDemonsPerEvilPlot"/>
 		<element type="iPercentDemonsPerEvilPlotPerGlobalCounter"/>
+		<element type="iMinimumTilesPerDemon"/>
 		<element type="iDemonGlobalCounterFreeXPPercent"/>
 		<element type="iDemonPerTurnKnownTechsPercent"/>
 		<element type="iDemonBonus"/>
@@ -642,6 +643,7 @@
 	<ElementType name="iAnimalEscalationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iPercentDemonsPerEvilPlot" content="textOnly" dt:type="int"/>
 	<ElementType name="iPercentDemonsPerEvilPlotPerGlobalCounter" content="textOnly" dt:type="int"/>
+	<ElementType name="iMinimumTilesPerDemon" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonGlobalCounterFreeXPPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonPerTurnKnownTechsPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonBonus" content="textOnly" dt:type="int"/>
