@@ -39,7 +39,7 @@
 					<iTurnsPerIncrement>1800</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>5</iLairSpawnChance> <!-- Chance a lair will spit something out a unit. Also 3x the chance to spit out a group. Individual results can be modulated in improvementInfos -->
+			<iLairSpawnChance>10</iLairSpawnChance> <!-- Chance a lair will spit a unit out. Also 3x the chance to spit out a group, and 1/3 of replace guardian. Individual results can be modulated in improvementInfos -->
 			<iTurnsPerLairCycle>30</iTurnsPerLairCycle> <!-- Turns until barbs can spawn, and turns between lairs spawning. +/- 10% randomness after the first -->
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -74,7 +74,7 @@
 					<iTurnsPerIncrement>990</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>7</iLairSpawnChance>
+			<iLairSpawnChance>15</iLairSpawnChance>
 			<iTurnsPerLairCycle>22</iTurnsPerLairCycle>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -109,7 +109,7 @@
 					<iTurnsPerIncrement>690</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>10</iLairSpawnChance>
+			<iLairSpawnChance>20</iLairSpawnChance>
 			<iTurnsPerLairCycle>15</iTurnsPerLairCycle>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -144,7 +144,7 @@
 					<iTurnsPerIncrement>480</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>15</iLairSpawnChance>
+			<iLairSpawnChance>30</iLairSpawnChance>
 			<iTurnsPerLairCycle>10</iTurnsPerLairCycle>
 		</GameSpeedInfo>
 	</GameSpeedInfos>
