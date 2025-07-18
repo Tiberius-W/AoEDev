@@ -10910,8 +10910,11 @@ void CvGame::createDemons()
 	{
 		// Note: Demon spawnrate is artificially lowered at low #s of available spawn tiles, because of stupid syncRandPlot
 		iTargetDemons = calcTargetBarbs(pLoopArea, true, DEMON_PLAYER);
+		iNeededDemons = iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER);
+		if (iNeededDemons < 1)
+			continue;
 		// Spawn at most 20% of the actual missing amount, gamespeed modulated
-		iNeededDemons =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER)) / 1000);
+		iNeededDemons =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededDemons / 1000);
 
 		for (iI = 0; iI < iNeededDemons; iI++)
 		{
@@ -11018,7 +11021,10 @@ void CvGame::createAnimals()
 	{
 		// Spawn at most 20% of the actual missing amount, gamespeed modulated
 		iTargetAnimals = calcTargetBarbs(pLoopArea, false, ANIMAL_PLAYER);
-		iNeededAnimals =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER)) / 1000);
+		iNeededAnimals = iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER);
+		if (iNeededAnimals < 1)
+			continue;
+		iNeededAnimals =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededAnimals / 1000);
 
 		for (iI = 0; iI < iNeededAnimals; iI++)
 		{
@@ -11160,7 +11166,10 @@ void CvGame::createBarbarianUnits()
 	{
 		// Spawn at most 20% of the actual missing amount, gamespeed modulated
 		iTargetBarbs = calcTargetBarbs(pLoopArea, false, ORC_PLAYER);
-		iNeededBarbs = std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER)) / 1000);
+		iNeededBarbs = iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER);
+		if (iNeededBarbs < 1)
+			continue;
+		iNeededBarbs = std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededBarbs / 1000);
 
 		pLoopArea->isWater() ? eBarbUnitAI = UNITAI_ATTACK_SEA : eBarbUnitAI = UNITAI_ATTACK;
 
