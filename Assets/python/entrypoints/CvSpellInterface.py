@@ -602,7 +602,8 @@ def postCombatMimic(pCaster, pOpponent):
 									if gc.getPromotionInfo(iProm).getExpireChance() ==0:
 										if gc.getPromotionInfo(iProm).isDispellable() ==False:
 											if gc.getPromotionInfo(iProm).isLeashed()==False:
-												listProms.append(iProm)
+												if (gc.getPromotionInfo(iProm).getPromotionClass() != gc.getInfoTypeForString("PROMOTIONCLASS_NAVAL_CREW") and gc.getPromotionInfo(iProm).getPromotionClass() != gc.getInfoTypeForString("PROMOTIONCLASS_MOUNT")):
+													listProms.append(iProm)
 	if len(listProms) > 0:
 		iCount += 1
 		iRnd = CyGame().getSorenRandNum(len(listProms), "Mimic")
