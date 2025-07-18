@@ -10910,8 +10910,8 @@ void CvGame::createDemons()
 	{
 		// Note: Demon spawnrate is artificially lowered at low #s of available spawn tiles, because of stupid syncRandPlot
 		iTargetDemons = calcTargetBarbs(pLoopArea, true, DEMON_PLAYER);
-		// Spawn at most 20% of limit
-		iNeededDemons =  std::min(std::max(1, 2 * iTargetDemons/10), iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER));
+		// Spawn at most 20% of the actual missing amount, gamespeed modulated
+		iNeededDemons =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER)) / 1000);
 
 		for (iI = 0; iI < iNeededDemons; iI++)
 		{
@@ -11016,9 +11016,9 @@ void CvGame::createAnimals()
 
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Spawn at most 20% of limit
+		// Spawn at most 20% of the actual missing amount, gamespeed modulated
 		iTargetAnimals = calcTargetBarbs(pLoopArea, false, ANIMAL_PLAYER);
-		iNeededAnimals =  std::min(std::max(1, 2 * iTargetAnimals/10), iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER));
+		iNeededAnimals =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER)) / 1000);
 
 		for (iI = 0; iI < iNeededAnimals; iI++)
 		{
@@ -11158,10 +11158,9 @@ void CvGame::createBarbarianUnits()
 
 	for (pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Don't count owned tiles, even if allied to orc player, to spawn random orcs
+		// Spawn at most 20% of the actual missing amount, gamespeed modulated
 		iTargetBarbs = calcTargetBarbs(pLoopArea, false, ORC_PLAYER);
-		// Spawn at most 20% of limit
-		iNeededBarbs = std::min(std::max(1, 2 * iTargetBarbs/10), iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER));
+		iNeededBarbs = std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * (iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER)) / 1000);
 
 		pLoopArea->isWater() ? eBarbUnitAI = UNITAI_ATTACK_SEA : eBarbUnitAI = UNITAI_ATTACK;
 
