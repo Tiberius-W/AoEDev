@@ -8598,6 +8598,7 @@
 			<BonusConvert>BONUS_MANA_DEATH</BonusConvert>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
+			<iBasePlotCounterModify>20</iBasePlotCounterModify>
 			<PythonAtRange>atRangeWellOfSouls(pCaster, pPlot)</PythonAtRange>
 			<GoodyClasses>
 				<GoodyClass>
@@ -8634,6 +8635,7 @@
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
+			<iBasePlotCounterModify>-20</iBasePlotCounterModify>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_SPIRIT</BonusType>
