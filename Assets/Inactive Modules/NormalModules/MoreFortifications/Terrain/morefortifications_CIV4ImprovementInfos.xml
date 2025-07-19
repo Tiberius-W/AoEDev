@@ -14,7 +14,7 @@
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_MANES</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bradeline's Well (Purified) -->
 			<Type>IMPROVEMENT_BRADELINES_WELL_PURIFIED</Type>
@@ -81,7 +81,7 @@
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_MONK</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
