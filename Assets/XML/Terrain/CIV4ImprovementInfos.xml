@@ -980,7 +980,7 @@
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<iLairCreationWeight>1000</iLairCreationWeight>
 			<iBasePlotCounterModify>20</iBasePlotCounterModify>
 		</ImprovementInfo>
@@ -2053,7 +2053,7 @@
 			<ImmediateSpawnUnitType>UNIT_BANDIT_CHIEF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -2137,7 +2137,7 @@
 			<ImmediateSpawnUnitType>UNIT_BANDIT_VIGIL</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -2243,7 +2243,7 @@
 			<ImmediateSpawnUnitType>UNIT_BANDIT_VIGIL</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -2366,7 +2366,7 @@
 			<ImmediateSpawnUnitType>UNIT_SKELETON_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -2467,7 +2467,7 @@
 			<ImmediateSpawnUnitType>UNIT_SKELETON_PIKEMAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -2586,7 +2586,7 @@
 			<ImmediateSpawnUnitType>UNIT_FALLEN_KNIGHT</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -2669,7 +2669,7 @@
 			<SpawnUnitType>UNIT_BEAR</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Blighted Forest -->
@@ -2780,7 +2780,7 @@
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -2862,7 +2862,7 @@
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -2962,7 +2962,7 @@
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -3515,7 +3515,7 @@
 			<ImmediateSpawnUnitType>UNIT_ARCHER_SCORPION_CLAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>8</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>10</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -3596,7 +3596,7 @@
 			<ImmediateSpawnUnitType>UNIT_GOBLIN_SAPPER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>8</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>15</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -3702,7 +3702,7 @@
 			<ImmediateSpawnGroupType>SPAWN_GROUP_GOBLIN_LORD</ImmediateSpawnGroupType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>8</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>20</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -3927,7 +3927,7 @@
 			<SpawnUnitType>UNIT_LION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Shipwreck -->
@@ -4108,7 +4108,7 @@
 			<ImmediateSpawnUnitType>UNIT_JARL</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnUnitChancePercentMod>25</iSpawnUnitChancePercentMod>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -4217,7 +4217,7 @@
 			<iSpawnGroupChancePercentMod>25</iSpawnGroupChancePercentMod>
 			<ImmediateSpawnUnitType>UNIT_VANIR</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -4305,7 +4305,7 @@
 			<ImmediateSpawnUnitType>UNIT_LIZARDMAN_HEAVY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -4367,7 +4367,7 @@
 			<ImmediateSpawnUnitType>UNIT_LIZARD_BLOWPIPE</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -4447,7 +4447,7 @@
 			<ImmediateSpawnUnitType>UNIT_TEOPIXKI</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -4539,7 +4539,7 @@
 			<SpawnUnitType>UNIT_WOLF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Spider Den -->
@@ -4572,7 +4572,7 @@
 			<SpawnUnitType>UNIT_BABY_SPIDER</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>45</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hippogriff Weyr -->
@@ -4583,7 +4583,7 @@
 			<SpawnUnitType>UNIT_HIPPOGRIFF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iLairCreationWeight>10</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Griffin Weyr -->
@@ -4594,7 +4594,7 @@
 			<SpawnUnitType>UNIT_GRIFFON</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iLairCreationWeight>10</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Frostling Encampment -->
@@ -4626,7 +4626,7 @@
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -4692,7 +4692,7 @@
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -4776,7 +4776,7 @@
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -7728,7 +7728,7 @@
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_BEASTMAN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<PythonOnMove>onMoveLetumFrigus(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Maelstrom -->
@@ -8156,7 +8156,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
 			<iCultureCenterBonus>5</iCultureCenterBonus>
@@ -8175,7 +8175,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_STYGIAN_GUARD</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iCultureRange>3</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
 			<iCultureCenterBonus>5</iCultureCenterBonus>
@@ -8621,7 +8621,7 @@
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_SKELETON</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Well of Souls (Open) -->
 			<Type>IMPROVEMENT_WELL_OF_SOULS_OPEN</Type>

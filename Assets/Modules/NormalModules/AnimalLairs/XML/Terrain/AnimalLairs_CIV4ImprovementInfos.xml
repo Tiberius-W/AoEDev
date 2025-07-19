@@ -44,7 +44,7 @@
 			<SpawnUnitType>UNIT_BEAR</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -116,7 +116,7 @@
 			<SpawnUnitType>UNIT_BEAR_GROUP</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -187,7 +187,7 @@
 			<SpawnUnitType>UNIT_CAVE_BEARS</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -240,7 +240,7 @@
 			<SpawnUnitType>UNIT_HIPPOGRIFF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iLairCreationWeight>20</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -286,7 +286,7 @@
 			<SpawnUnitType>UNIT_GRIFFON</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -377,7 +377,7 @@
 			<SpawnUnitType>UNIT_ROC</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -449,7 +449,7 @@
 			<SpawnUnitType>UNIT_LION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -520,7 +520,7 @@
 			<SpawnUnitType>UNIT_LION_PRIDE</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -590,7 +590,7 @@
 			<SpawnUnitType>UNIT_SABRETOOTH</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -669,7 +669,7 @@
 			<SpawnUnitType>UNIT_BABY_SPIDER</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>40</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -748,7 +748,7 @@
 			<SpawnUnitType>UNIT_SPIDER</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -826,7 +826,7 @@
 			<SpawnUnitType>UNIT_GIANT_SPIDER</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -909,7 +909,7 @@
 			<SpawnUnitType>UNIT_WOLF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -992,7 +992,7 @@
 			<SpawnUnitType>UNIT_WOLF_PACK</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -1075,7 +1075,7 @@
 			<SpawnUnitType>UNIT_DIRE_WOLF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -1135,7 +1135,7 @@
 			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<iLairCreationWeight>50</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -1195,7 +1195,7 @@
 			<SpawnUnitType>UNIT_SCORPION_SWARM</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -1254,7 +1254,7 @@
 			<SpawnUnitType>UNIT_SCORPION_GIANT</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>

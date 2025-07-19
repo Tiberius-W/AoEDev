@@ -608,12 +608,10 @@ CvPlot* CvMap::syncRandPlot(int iFlags, int iArea, int iMinUnitDistance, int iTi
 	CvPlot* pPlot;
 	CvPlot* pTestPlot;
 	CvPlot* pLoopPlot;
-	int iCount;
-	int iDX, iDY;
 
 	pPlot = NULL;
 
-	iCount = 0;
+	int iCount = 0;
 
 	while (iCount < iTimeout)
 	{
@@ -630,9 +628,9 @@ CvPlot* CvMap::syncRandPlot(int iFlags, int iArea, int iMinUnitDistance, int iTi
 
 		if (iMinUnitDistance != -1)
 		{
-			for (iDX = -(iMinUnitDistance); iDX <= iMinUnitDistance; iDX++)
+			for (int iDX = -(iMinUnitDistance); iDX <= iMinUnitDistance; iDX++)
 			{
-				for (iDY = -(iMinUnitDistance); iDY <= iMinUnitDistance; iDY++)
+				for (int iDY = -(iMinUnitDistance); iDY <= iMinUnitDistance; iDY++)
 				{
 					pLoopPlot = plotXY(pTestPlot->getX_INLINE(), pTestPlot->getY_INLINE(), iDX, iDY);
 

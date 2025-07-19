@@ -31,10 +31,10 @@
 			<iAttitudeChange>2</iAttitudeChange>
 			<iNoTechTradeModifier>100</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
-			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- Applies to animals on land only -->
-			<iWaterTilesPerAnimal>100</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
-			<iTilesPerOrc>80</iTilesPerOrc> <!-- Applies to savages on land only -->
-			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
+			<iTilesPerAnimal>36</iTilesPerAnimal> <!-- Applies to animals on land only -->
+			<iWaterTilesPerAnimal>60</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
+			<iTilesPerOrc>45</iTilesPerOrc> <!-- Applies to savages on land only -->
+			<iWaterTilesPerOrc>60</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
 			<iUnownedTilesPerBarbarianCity>105</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
 			<iBarbarianCityCreationTurnsElapsed>55</iBarbarianCityCreationTurnsElapsed>
@@ -140,10 +140,10 @@
 			<iAttitudeChange>1</iAttitudeChange>
 			<iNoTechTradeModifier>90</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-50</iTechTradeKnownModifier>
-			<iTilesPerAnimal>50</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>90</iWaterTilesPerAnimal>
-			<iTilesPerOrc>70</iTilesPerOrc>
-			<iWaterTilesPerOrc>180</iWaterTilesPerOrc>
+			<iTilesPerAnimal>32</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>55</iWaterTilesPerAnimal>
+			<iTilesPerOrc>40</iTilesPerOrc>
+			<iWaterTilesPerOrc>55</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>84</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>45</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>50</iBarbarianCityCreationTurnsElapsed>
@@ -245,10 +245,10 @@
 			<iAttitudeChange>0</iAttitudeChange>
 			<iNoTechTradeModifier>80</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-25</iTechTradeKnownModifier>
-			<iTilesPerAnimal>45</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>90</iWaterTilesPerAnimal>
-			<iTilesPerOrc>70</iTilesPerOrc>
-			<iWaterTilesPerOrc>180</iWaterTilesPerOrc>
+			<iTilesPerAnimal>28</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
+			<iTilesPerOrc>35</iTilesPerOrc>
+			<iWaterTilesPerOrc>50</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>84</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>40</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>45</iBarbarianCityCreationTurnsElapsed>
@@ -346,10 +346,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>40</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>80</iWaterTilesPerAnimal>
-			<iTilesPerOrc>60</iTilesPerOrc>
-			<iWaterTilesPerOrc>160</iWaterTilesPerOrc>
+			<iTilesPerAnimal>24</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>45</iWaterTilesPerAnimal>
+			<iTilesPerOrc>30</iTilesPerOrc>
+			<iWaterTilesPerOrc>45</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>63</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>35</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>40</iBarbarianCityCreationTurnsElapsed>
@@ -444,10 +444,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>60</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>40</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>80</iWaterTilesPerAnimal>
-			<iTilesPerOrc>60</iTilesPerOrc>
-			<iWaterTilesPerOrc>160</iWaterTilesPerOrc>
+			<iTilesPerAnimal>20</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>40</iWaterTilesPerAnimal>
+			<iTilesPerOrc>25</iTilesPerOrc>
+			<iWaterTilesPerOrc>40</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>63</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>30</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>35</iBarbarianCityCreationTurnsElapsed>
@@ -542,10 +542,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>50</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>30</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>70</iWaterTilesPerAnimal>
-			<iTilesPerOrc>50</iTilesPerOrc>
-			<iWaterTilesPerOrc>140</iWaterTilesPerOrc>
+			<iTilesPerAnimal>16</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>35</iWaterTilesPerAnimal>
+			<iTilesPerOrc>20</iTilesPerOrc>
+			<iWaterTilesPerOrc>35</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>42</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>25</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>30</iBarbarianCityCreationTurnsElapsed>
@@ -645,10 +645,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>40</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>25</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>60</iWaterTilesPerAnimal>
-			<iTilesPerOrc>40</iTilesPerOrc>
-			<iWaterTilesPerOrc>120</iWaterTilesPerOrc>
+			<iTilesPerAnimal>12</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>30</iWaterTilesPerAnimal>
+			<iTilesPerOrc>15</iTilesPerOrc>
+			<iWaterTilesPerOrc>30</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>42</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>20</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>25</iBarbarianCityCreationTurnsElapsed>
@@ -753,10 +753,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>30</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>25</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>60</iWaterTilesPerAnimal>
-			<iTilesPerOrc>40</iTilesPerOrc>
-			<iWaterTilesPerOrc>120</iWaterTilesPerOrc>
+			<iTilesPerAnimal>8</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>25</iWaterTilesPerAnimal>
+			<iTilesPerOrc>10</iTilesPerOrc>
+			<iWaterTilesPerOrc>25</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>15</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
@@ -864,10 +864,10 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>20</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>20</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
-			<iTilesPerOrc>30</iTilesPerOrc>
-			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
+			<iTilesPerAnimal>4</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>20</iWaterTilesPerAnimal>
+			<iTilesPerOrc>5</iTilesPerOrc>
+			<iWaterTilesPerOrc>20</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>10</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>15</iBarbarianCityCreationTurnsElapsed>

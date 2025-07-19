@@ -4870,16 +4870,10 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	else if (bShift && !bAlt && (gDLL->getChtLvl() > 0))
 	{
 		szString.append(GC.getTerrainInfo(pPlot->getTerrainType()).getDescription());
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/04/09											**/
-/**																								**/
-/**					Displays Plot Counter and Number of Evil Tiles for the Area					**/
-/*************************************************************************************************/
+		// Xienwolf : 01/04/09 : Area & hell info
 		szString.append(CvWString::format(L"\n Plot Counter = %d", pPlot->getPlotCounter()));
 		szString.append(CvWString::format(L"\n Evil Tiles in this Area: %d", GC.getMapINLINE().getArea(pPlot->getArea())->getNumEvilTiles()));
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+		szString.append(CvWString::format(L"\n Tiles in this Area: %d", GC.getMapINLINE().getArea(pPlot->getArea())->getNumTiles()));
 
 		FAssert((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvInterface::updateHelpStrings");
 		for (iI = 0; iI < GC.getNumBonusInfos(); ++iI)

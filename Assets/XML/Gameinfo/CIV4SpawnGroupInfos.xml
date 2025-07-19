@@ -36,6 +36,24 @@
 			<PyOnSpawn/>
 			<PyRequirement/>
 		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  1 Galley at fishing (otherwise, sailing introduces ARMADAS) -->
+			<Type>SPAWN_GROUP_GALLEY_ONE</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description>
+			<bNaval>1</bNaval>
+			<iWeight>1000</iWeight>
+			<GroupUnitClasses>
+				<GroupUnitClass>
+					<UnitClass>UNITCLASS_GALLEY</UnitClass>
+					<iNumUnits>1</iNumUnits>
+				</GroupUnitClass>
+			</GroupUnitClasses>
+			<PrereqTechANDs>
+				<Tech>TECH_FISHING</Tech>
+			</PrereqTechANDs>
+			<BlockTechANDs>
+				<Tech>TECH_OPTICS</Tech>
+			</BlockTechANDs>
+		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Galley -->
 			<Type>SPAWN_GROUP_GALLEY</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY</Description>
@@ -44,12 +62,15 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEY</UnitClass>
-					<iNumUnits>5</iNumUnits>
+					<iNumUnits>3</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
 				<Tech>TECH_SAILING</Tech>
 			</PrereqTechANDs>
+			<BlockTechANDs>
+				<Tech>TECH_ASTRONOMY</Tech>
+			</BlockTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Galleon -->
 			<Type>SPAWN_GROUP_GALLEON</Type>
@@ -69,6 +90,10 @@
 			<PrereqTechANDs>
 				<Tech>TECH_OPTICS</Tech>
 			</PrereqTechANDs>
+			<BlockTechANDs>
+				<Tech>TECH_ASTRONOMY</Tech>
+				<Tech>TECH_ENGINEERING</Tech>
+			</BlockTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Caravel -->
 			<Type>SPAWN_GROUP_CARAVEL</Type>
@@ -162,7 +187,7 @@
 				<Tech>TECH_ENGINEERING</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
-		<SpawnGroupInfo>	<!--  Arcane Barge --> <!-- Begin random land groups -->
+		<SpawnGroupInfo>	<!--  Arcane Barge -->
 			<Type>SPAWN_GROUP_ARCANE_BARGE</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_ARCANE_BARGES</Description>
 			<bNaval>1</bNaval>
@@ -178,6 +203,7 @@
 				<Tech>TECH_SORCERY</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
+		 <!-- Begin random land groups -->
 		<SpawnGroupInfo>	<!--  Assassins -->
 			<Type>SPAWN_GROUP_ASSASSIN</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_ASSASSIN</Description>

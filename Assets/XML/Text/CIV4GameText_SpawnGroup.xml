@@ -574,6 +574,14 @@
 		<Spanish>Frost Giant Entourage</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Tag>
+		<English>Galley</English>
+		<French>Galère</French>
+		<German>Galley</German>
+		<Italian>Galley</Italian>
+		<Spanish>Galley</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPAWN_GROUP_GALLEY</Tag>
 		<English>Galleys</English>
 		<French>Galères</French>

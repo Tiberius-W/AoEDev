@@ -66,7 +66,7 @@
 			<ImmediateSpawnUnitType>UNIT_RAVENOUS_WEREWOLF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -167,7 +167,7 @@
 			<ImmediateSpawnUnitType>UNIT_GREATER_WEREWOLF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>9</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -286,7 +286,7 @@
 			<ImmediateSpawnUnitType>UNIT_GREATER_WEREWOLF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>12</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>

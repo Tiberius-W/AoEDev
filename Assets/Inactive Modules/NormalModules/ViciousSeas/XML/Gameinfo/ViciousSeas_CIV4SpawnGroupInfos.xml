@@ -7,6 +7,21 @@
 <Civ4SpawnGroupInfos xmlns="x-schema:ViciousSeas_CIV4GameInfoSchema.xml">
 	<SpawnGroupInfos>
 		<SpawnGroupInfo>	<!--  Galley -->
+			<Type>SPAWN_GROUP_GALLEY_ONE</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description>
+			<bNaval>1</bNaval>
+			<iWeight>-999</iWeight>
+			<GroupUnitClasses>
+				<GroupUnitClass>
+					<UnitClass>UNITCLASS_GALLEY</UnitClass>
+					<iNumUnits>0</iNumUnits>
+				</GroupUnitClass>
+			</GroupUnitClasses>
+			<PrereqTechANDs>
+				<Tech>TECH_NEVER</Tech>
+			</PrereqTechANDs>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Galley -->
 			<Type>SPAWN_GROUP_GALLEY</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY</Description>
 			<bNaval>1</bNaval>
@@ -14,7 +29,7 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEY</UnitClass>
-					<iNumUnits>5</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -29,11 +44,11 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEON</UnitClass>
-					<iNumUnits>3</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEY</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -48,7 +63,7 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_CARAVEL</UnitClass>
-					<iNumUnits>4</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -63,11 +78,11 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_CARRACK</UnitClass>
-					<iNumUnits>3</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEY</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -82,7 +97,7 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-					<iNumUnits>3</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -97,11 +112,11 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-					<iNumUnits>3</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_CARRACK</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
@@ -116,22 +131,22 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_QUEEN_OF_THE_LINE</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-					<iNumUnits>1</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_GALLEON</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
 				<Tech>TECH_NEVER</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
-		<SpawnGroupInfo>	<!--  Arcane Barge --> <!-- Begin random land groups -->
+		<SpawnGroupInfo>	<!--  Arcane Barge -->
 			<Type>SPAWN_GROUP_ARCANE_BARGE</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_ARCANE_BARGES</Description>
 			<bNaval>1</bNaval>
@@ -139,7 +154,7 @@
 			<GroupUnitClasses>
 				<GroupUnitClass>
 					<UnitClass>UNITCLASS_ARCANE_BARGE</UnitClass>
-					<iNumUnits>2</iNumUnits>
+					<iNumUnits>0</iNumUnits>
 				</GroupUnitClass>
 			</GroupUnitClasses> 
 			<PrereqTechANDs>
