@@ -44,7 +44,7 @@
 			<SpawnUnitType>UNIT_BEAR</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -286,7 +286,7 @@
 			<SpawnUnitType>UNIT_GRIFFON</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -449,7 +449,7 @@
 			<SpawnUnitType>UNIT_LION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -669,7 +669,7 @@
 			<SpawnUnitType>UNIT_BABY_SPIDER</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iLairCreationWeight>40</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -909,7 +909,7 @@
 			<SpawnUnitType>UNIT_WOLF</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
@@ -1135,7 +1135,7 @@
 			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iLairCreationWeight>50</iLairCreationWeight>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>

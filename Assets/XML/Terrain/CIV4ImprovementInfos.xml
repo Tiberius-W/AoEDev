@@ -2669,7 +2669,7 @@
 			<SpawnUnitType>UNIT_BEAR</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Blighted Forest -->
@@ -2780,7 +2780,7 @@
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>6</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
