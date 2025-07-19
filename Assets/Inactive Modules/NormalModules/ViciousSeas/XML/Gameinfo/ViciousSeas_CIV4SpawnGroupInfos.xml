@@ -6,7 +6,7 @@
 <!-- Basic Infos -->
 <Civ4SpawnGroupInfos xmlns="x-schema:ViciousSeas_CIV4GameInfoSchema.xml">
 	<SpawnGroupInfos>
-		<SpawnGroupInfo>	<!--  Galley -->
+		<!-- <SpawnGroupInfo>
 			<Type>SPAWN_GROUP_GALLEY_ONE</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description>
 			<bNaval>1</bNaval>
@@ -20,7 +20,7 @@
 			<PrereqTechANDs>
 				<Tech>TECH_NEVER</Tech>
 			</PrereqTechANDs>
-		</SpawnGroupInfo>
+		</SpawnGroupInfo> -->
 		<SpawnGroupInfo>	<!--  Galley -->
 			<Type>SPAWN_GROUP_GALLEY</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY</Description>
