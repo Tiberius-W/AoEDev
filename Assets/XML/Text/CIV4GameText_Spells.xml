@@ -3911,6 +3911,14 @@
 		<Spanish>Sacrifice the Bear</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_CONSUME_BLOOD_RAT</Tag>
+		<English>Sacrifice the Rat</English>
+		<French>Sacrifier le Rat</French>
+		<German>Sacrifice the Rat</German>
+		<Italian>Sacrifice the Rat</Italian>
+		<Spanish>Sacrifice the Rat</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_CONSUME_BLOOD_BOAR</Tag>
 		<English>Sacrifice the Boar</English>
 		<French>Sacrifier le Sanglier</French>

@@ -3834,14 +3834,14 @@ def spellScorch(caster):
 
 	# 1) spawn a defender in scorched terrain
 	pSpawnPlot = findClearPlot(UnitTypes.NO_UNIT, pPlot)
-	if iFeature == Feature["Ancient Forest"]:
+	if iFeature == gc.getInfoTypeForString("FEATURE_FOREST_ANCIENT"):
 		if pSpawnPlot != -1:
 			iTreant      = getInfoType('UNIT_TREANT')
 			eDirection   = directionXYFromPlot(pSpawnPlot, pPlot)
 			pDemonPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 			pTreant      = pDemonPlayer.initUnit(iTreant, pSpawnPlot.getX(), pSpawnPlot.getY(), UnitAITypes.NO_UNITAI, eDirection)
 			pTreant.setDuration(5)
-	elif iFeature == Feature["Burnt Forest"]:
+	elif iFeature == gc.getInfoTypeForString("FEATURE_FOREST_BURNT"):
 		if CyGame().getSorenRandNum(100, "Mistform Spawn") < 25:
 			if pSpawnPlot != -1:
 				iMistform    = getInfoType('UNIT_MISTFORM')
@@ -3849,7 +3849,7 @@ def spellScorch(caster):
 				pDemonPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 				pMistform    = pDemonPlayer.initUnit(iMistform, pSpawnPlot.getX(), pSpawnPlot.getY(), UnitAITypes.NO_UNITAI, eDirection)
 				pMistform.setDuration(5)
-	elif iFeature == Feature["Jungle"]:
+	elif iFeature == gc.getInfoTypeForString("FEATURE_JUNGLE"):
 		if CyGame().getSorenRandNum(100, "Jungle Defender Spawn") < 5:
 			if pSpawnPlot != -1:
 				lJList          = ['UNIT_GOBLIN', 'UNIT_GOBLIN', 'UNIT_GOBLIN', 'UNIT_WOLF_RIDER', 'UNIT_LIZARDMAN', 'UNIT_LIZARDMAN', 'UNIT_LIZARDMAN', 'UNIT_LIZARDMAN', 'UNIT_LIZARDMAN_RANGER', 'UNIT_LIZARDMAN_ASSASSIN']
@@ -3858,7 +3858,7 @@ def spellScorch(caster):
 				eDirection      = directionXYFromPlot(pSpawnPlot, pPlot)
 				pOrcPlayer      = gc.getPlayer(gc.getORC_PLAYER())
 				pJungleDefender = pOrcPlayer.initUnit(iJungleDefender, pSpawnPlot.getX(), pSpawnPlot.getY(), UnitAITypes.NO_UNITAI, eDirection)
-	elif iFeature in [Feature["Forest"],Feature["Forest New"]]:
+	elif iFeature in [gc.getInfoTypeForString("FEATURE_FOREST"),gc.getInfoTypeForString("FEATURE_FOREST_NEW")]:
 		if CyGame().getSorenRandNum(100, "Forest Defender Spawn") < 5:
 			if pSpawnPlot != -1:
 				lFList          = ['UNIT_WOLF', 'UNIT_WOLF', 'UNIT_WOLF', 'UNIT_WOLF', 'UNIT_WOLF', 'UNIT_WOLF_PACK', 'UNIT_WOLF_PACK', 'UNIT_WOLF_PACK', 'UNIT_BABY_SPIDER', 'UNIT_BABY_SPIDER', 'UNIT_BABY_SPIDER', 'UNIT_BABY_SPIDER', 'UNIT_BABY_SPIDER', 'UNIT_GRIFFON', 'UNIT_BEAR','UNIT_BEAR', 'UNIT_FAWN', 'UNIT_FAWN', 'UNIT_FAWN', 'UNIT_FAWN', 'UNIT_FAWN', 'UNIT_SATYR']

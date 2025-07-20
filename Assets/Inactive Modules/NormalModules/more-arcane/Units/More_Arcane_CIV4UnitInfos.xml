@@ -129,6 +129,7 @@
 		<UnitInfo>		<!-- Mounted Adept -->			<!-- MOUNTED ARCANE UNITS --> 
 			<Class>UNITCLASS_MOUNTED_ADEPT</Class>
 			<Type>UNIT_MOUNTED_ADEPT</Type>
+			<iMagicalPower>50</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_ADEPT</Description>
@@ -199,6 +200,7 @@
 		<UnitInfo>		<!-- Mounted Mage -->
 			<Class>UNITCLASS_MOUNTED_MAGE</Class>
 			<Type>UNIT_MOUNTED_MAGE</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_MAGE</Description>
@@ -274,6 +276,7 @@
 		<UnitInfo>		<!-- Mounted Archmage -->
 			<Class>UNITCLASS_MOUNTED_ARCHMAGE</Class>
 			<Type>UNIT_MOUNTED_ARCHMAGE</Type>
+			<iMagicalPower>300</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_ARCHMAGE</Description>
@@ -350,6 +353,7 @@
 		<UnitInfo>		<!-- Svartalfar Mounted Illusionist -->
 			<Class>UNITCLASS_MOUNTED_MAGE</Class>
 			<Type>UNIT_MOUNTED_ILLUSIONIST</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_ILLUSIONIST</Description>
@@ -429,6 +433,7 @@
 		<UnitInfo>		<!-- Scion Mounted Necromancer -->
 			<Class>UNITCLASS_MOUNTED_MAGE</Class>
 			<Type>UNIT_MOUNTED_NECROMANCER</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_NECROMANCER</Description>
@@ -518,6 +523,7 @@
 		<UnitInfo>		<!-- Scion Mounted Wraith Lord -->
 			<Class>UNITCLASS_MOUNTED_ARCHMAGE</Class>
 			<Type>UNIT_MOUNTED_WRAITH_LORD</Type>
+			<iMagicalPower>350</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_WRAITH_LORD</Description>
@@ -608,6 +614,7 @@
 		<UnitInfo>		<!-- D'Teshi Mounted Binder -->
 			<Class>UNITCLASS_MOUNTED_ADEPT</Class>
 			<Type>UNIT_MOUNTED_BINDER</Type>
+			<iMagicalPower>30</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_BINDER</Description>
@@ -685,6 +692,7 @@
 		<UnitInfo>		<!-- D'Teshi Mounted Chosen of D'Tesh -->
 			<Class>UNITCLASS_MOUNTED_MAGE</Class>
 			<Type>UNIT_MOUNTED_COD</Type>
+			<iMagicalPower>120</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_COD</Description>
@@ -767,6 +775,7 @@
 		<UnitInfo>		<!-- Amurite Mounted Apprentice -->
 			<Class>UNITCLASS_MOUNTED_ADEPT</Class>
 			<Type>UNIT_MOUNTED_APPRENTICE</Type>
+			<iMagicalPower>80</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_APPRENTICE</Description>
@@ -842,6 +851,7 @@
 		<UnitInfo>		<!-- Amurite Mounted Wizard -->
 			<Class>UNITCLASS_MOUNTED_MAGE</Class>
 			<Type>UNIT_MOUNTED_WIZARD</Type>
+			<iMagicalPower>200</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_WIZARD</Description>
@@ -925,6 +935,7 @@
 		<UnitInfo>		<!-- Amurite Mounted Battlemage -->
 			<Class>UNITCLASS_MOUNTED_ARCHMAGE</Class>
 			<Type>UNIT_MOUNTED_BATTLEMAGE</Type>
+			<iMagicalPower>400</iMagicalPower>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOUNTED_BATTLEMAGE</Description>

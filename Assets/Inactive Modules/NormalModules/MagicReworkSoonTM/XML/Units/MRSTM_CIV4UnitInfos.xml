@@ -206,5 +206,13 @@
 			<Type>UNIT_JUDECCA</Type>
 			<iMagicalPower>450</iMagicalPower>
 		</UnitInfo>
+		<UnitInfo>        <!-- Yvain-->
+			<Type>UNIT_YVAIN</Type>
+			<iMagicalPower>450</iMagicalPower>
+		</UnitInfo>
+		<UnitInfo>        <!-- Sphener-->
+			<Type>UNIT_SPHENER</Type>
+			<iMagicalPower>300</iMagicalPower>
+		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

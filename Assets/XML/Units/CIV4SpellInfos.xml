@@ -3903,6 +3903,28 @@
 			<Sound>AS3D_BRAWL</Sound>
 			<Button>Art/Interface/Buttons/Units/Bear.dds</Button>
 		</SpellInfo>
+		<SpellInfo>			<!-- Consume Blood - Rat -->
+			<Type>SPELL_CONSUME_BLOOD_RAT</Type>
+			<Description>TXT_KEY_SPELL_CONSUME_BLOOD_RAT</Description>
+			<Civilopedia></Civilopedia>
+			<Strategy></Strategy>
+			<PromotionPrereq1>PROMOTION_RAT_BLOOD</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_TAME</PromotionPrereq2>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>100</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_RAT_BLOOD</AddPromotion>
+			</AddPromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bSacrificeCaster>1</bSacrificeCaster>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_BRAWL</Sound>
+			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
+		</SpellInfo>
 		<SpellInfo>			<!-- Consume Blood - Boar -->
 			<Type>SPELL_CONSUME_BLOOD_BOAR</Type>
 			<Description>TXT_KEY_SPELL_CONSUME_BLOOD_BOAR</Description>

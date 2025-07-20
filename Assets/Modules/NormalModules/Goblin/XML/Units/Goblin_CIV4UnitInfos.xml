@@ -15,6 +15,7 @@
 	<UnitInfo>        <!-- Mage -->
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_MAGE_NEITH_CLAN</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MAGE_NEITH_CLAN</Description>
@@ -193,6 +194,7 @@
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_ARCHMAGE_NEITH_CLAN</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
+			<iMagicalPower>300</iMagicalPower>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ARCHMAGE_NEITH_CLAN</Description>
 			<Civilopedia>TXT_KEY_UNIT_ARCHMAGE_PEDIA</Civilopedia>
