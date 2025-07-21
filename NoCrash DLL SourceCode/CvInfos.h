@@ -9301,6 +9301,7 @@ public:
 	int getCommerceModifier(int i) const;				// Exposed to Python
 
 	int isRevealBonus(int i) const;				// Exposed to Python
+	int isFreeBonus(int i) const;				// Exposed to Python
 	int isNoBonus(int i) const;				// Exposed to Python
 
 	int isFreeSpecialistStateReligion(int i) const;				// Exposed to Python
@@ -9504,6 +9505,7 @@ protected:
 	int* m_paiCommerceModifier;
 
 	bool* m_pabRevealBonus;
+	bool* m_pabFreeBonus;
 	bool* m_pabNoBonus;
 
 	bool* m_pabFreeSpecialistStateReligion;

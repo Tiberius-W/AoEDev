@@ -140,7 +140,7 @@
 			<AddPromotions>
 				<AddPromotion>PROMOTION_MATRON_ESSENDI</AddPromotion>
 			</AddPromotions>
-			<ConvertUnitType>UNITCLASS_HIGH_PRIESTESS_OF_BHALL</ConvertUnitType>
+			<ConvertUnitType>UNIT_HIGH_PRIESTESS_OF_BHALL</ConvertUnitType>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<bAbility>1</bAbility>
 			<Effect>EFFECT_SPELL1</Effect>

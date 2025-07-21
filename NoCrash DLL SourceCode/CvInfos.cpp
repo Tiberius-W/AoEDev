@@ -40065,6 +40065,7 @@ m_paiCommerceModifier(NULL),
 m_pabFreePromotionUnitCombat(NULL),
 m_pabFreePromotion(NULL),
 m_pabRevealBonus(NULL),
+m_pabFreeBonus(NULL),
 m_pabNoBonus(NULL),
 m_pabFreeSpecialistStateReligion(NULL),
 m_pabFreeSpecialistNonStateReligion(NULL),
@@ -40146,6 +40147,7 @@ CvTraitInfo::~CvTraitInfo()
 	SAFE_DELETE_ARRAY(m_pabFreePromotionUnitCombat);
 	SAFE_DELETE_ARRAY(m_pabFreePromotion);
 	SAFE_DELETE_ARRAY(m_pabRevealBonus);
+	SAFE_DELETE_ARRAY(m_pabFreeBonus);
 	SAFE_DELETE_ARRAY(m_pabNoBonus);
 
 	SAFE_DELETE_ARRAY(m_pabFreeSpecialistStateReligion);
@@ -40546,6 +40548,10 @@ int CvTraitInfo::isRevealBonus(int i) const
 	return m_pabRevealBonus ? m_pabRevealBonus[i] : -1;
 }
 
+int CvTraitInfo::isFreeBonus(int i) const
+{
+	return m_pabFreeBonus ? m_pabFreeBonus[i] : -1;
+}
 int CvTraitInfo::isNoBonus(int i) const
 {
 	return m_pabNoBonus ? m_pabNoBonus[i] : -1;
@@ -40928,6 +40934,7 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_paiCommerceModifier, NUM_COMMERCE_TYPES);
 	}
 	pXML->SetVariableListTagPair(&m_pabRevealBonus, "RevealBonuses", sizeof(GC.getBonusInfo((BonusTypes)0)), GC.getNumBonusInfos());
+	pXML->SetVariableListTagPair(&m_pabFreeBonus, "FreeBonuses", sizeof(GC.getBonusInfo((BonusTypes)0)), GC.getNumBonusInfos());
 	pXML->SetVariableListTagPair(&m_pabNoBonus, "NoBonuses", sizeof(GC.getBonusInfo((BonusTypes)0)), GC.getNumBonusInfos());
 
 	pXML->SetVariableListTagPair(&m_pabFreeSpecialistStateReligion, "FreeSpecialistsStateReligion", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
@@ -41405,6 +41412,7 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 	for (int j = 0; j < GC.getNumBonusInfos(); j++)
 	{
 		if (isRevealBonus(j) == false)		m_pabRevealBonus[j] = pClassInfo->isRevealBonus(j);
+		if (isFreeBonus(j) == false)		m_pabFreeBonus[j] = pClassInfo->isFreeBonus(j);
 		if (isNoBonus(j) == false)		m_pabNoBonus[j] = pClassInfo->isNoBonus(j);
 	}
 	for (int j = 0; j < GC.getNumUnitCombatInfos(); j++)

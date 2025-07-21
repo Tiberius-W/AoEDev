@@ -18,11 +18,11 @@
 	</TEXT>
 		<TEXT>
 		<Tag>TXT_KEY_TRAIT_FREE_BONUS</Tag>
-		<English>[PARAGRAPH:1][ICON_BULLET]Grants a free untradable %s1</English>
-		<French>[PARAGRAPH:1][ICON_BULLET]Fournit un %s1 gratuit mais non commercialisable</French>
-		<German>[PARAGRAPH:1][ICON_BULLET]Grants a free untradable %s1</German>
-		<Italian>[PARAGRAPH:1][ICON_BULLET]Grants a free untradable %s1</Italian>
-		<Spanish>[PARAGRAPH:1][ICON_BULLET]Grants a free untradable %s1</Spanish>
+		<English>[ICON_BULLET]Grants a free untradable %s1</English>
+		<French>[ICON_BULLET]Fournit un %s1 gratuit mais non commercialisable</French>
+		<German>[ICON_BULLET]Grants a free untradable %s1</German>
+		<Italian>[ICON_BULLET]Grants a free untradable %s1</Italian>
+		<Spanish>[ICON_BULLET]Grants a free untradable %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FREE_SPECIALIST_NON_STATE_RELIGION</Tag>
@@ -11098,20 +11098,20 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<Spanish>Jobin Seras</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_PROMOTION_RAT_BLOOD</Tag>
+		<English>Rat Blood</English>
+		<French>Sang de Rat</French>
+		<German>Rat Blood</German>
+		<Italian>Rat Blood</Italian>
+		<Spanish>Rat Blood</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_PROMOTION_SERVANT_OF_THE_FLAME</Tag>
+		<English>Servant of the Flame</English>
+		<French>Servant of the Flame</French>
+		<German>Servant of the Flame</German>
+		<Italian>Servant of the Flame</Italian>
+		<Spanish>Servant of the Flame</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

@@ -87,7 +87,7 @@
 			</PrereqBonusANDs>
 		</PromotionInfo>
 		
-
+		
 		<PromotionInfo>		<!-- Mithril Tools -->
 			<Type>PROMOTION_MITHRIL_TOOLS</Type>
 			<Description>TXT_KEY_PROMOTION_MITHRIL_TOOLS</Description>
@@ -96,13 +96,11 @@
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
 				<Promotion>PROMOTION_BRONZE_TOOLS</Promotion>
 				<Promotion>PROMOTION_IRON_TOOLS</Promotion>
-				<Promotion>PROMOTION_WATERPROOF_IRON_TOOLS</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
 				<Promotion>PROMOTION_BRONZE_TOOLS</Promotion>
 				<Promotion>PROMOTION_IRON_TOOLS</Promotion>
-				<Promotion>PROMOTION_WATERPROOF_IRON_TOOLS</Promotion>
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -121,6 +119,22 @@
 			</PrereqBonusANDs>
 		</PromotionInfo>
 	
+	
+		<PromotionInfo>		<!-- Mithril Tools Vicious Seas Dependency -->
+			<Type>PROMOTION_MITHRIL_TOOLS</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+			</AndDependencyTypes>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_WATERPROOF_IRON_TOOLS</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_WATERPROOF_IRON_TOOLS</Promotion>
+			</PromotionOverwrites>
+		</PromotionInfo>
+		
+		
 		<PromotionInfo>		<!-- Power Tools -->
 			<Type>PROMOTION_POWER_TOOLS</Type>
 			<Description>TXT_KEY_PROMOTION_POWER_TOOLS</Description>
@@ -234,7 +248,7 @@
 			<Description>TXT_KEY_PROMOTION_GOBLIN_TOOLS</Description>
 			<Help>TXT_KEY_PROMOTION_GOBLIN_TOOLS_HELP</Help>
 			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_CHIMAR</PrereqCivilization>
+				<PrereqCivilization>CIVILIZATION_GOBLIN</PrereqCivilization>
 			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_STONE_TOOLS</Promotion>
@@ -251,7 +265,6 @@
 			</UnitCombats>
 			<PrereqUnits>
 				<PrereqUnit>UNIT_GRETCHIN</PrereqUnit>
-				<PrereqUnit>UNIT_FAMILIAR</PrereqUnit>
 				<PrereqUnit>UNIT_THRALL_MILITIA</PrereqUnit>
 			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
@@ -259,10 +272,31 @@
 			<Button>Art/Interface/Buttons/Promotions/StoneTools.dds</Button>
 			<bValidate>1</bValidate>
 		</PromotionInfo>
-		
+		<PromotionInfo>        <!-- Jotnar Thrall Militia Dependency -->
+			<Type>PROMOTION_GOBLIN_TOOLS</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_JOTNAR</DependencyType>
+			</AndDependencyTypes> 
+			<PrereqUnits>
+				<PrereqUnit>UNIT_THRALL_MILITIA</PrereqUnit>
+			</PrereqUnits>
+		</PromotionInfo>
+	
+			
+		<PromotionInfo>		<!-- Waterlogged tools only work with bezeri active -->
+			<Type>PROMOTION_WATERLOGGED_TOOLS</Type>
+			<Description>zzzzzzDeletedPromoObsidian</Description>
+			<bGraphicalOnly>1</bGraphicalOnly>
+			<bEffectProm>1</bEffectProm>
+		</PromotionInfo>
 	
 		<PromotionInfo>		<!-- Iron Doesn't work in water -->
 			<Type>PROMOTION_WATERLOGGED_TOOLS</Type>
+			<bTypeDependency>1</bTypeDependency>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		     </AndDependencyTypes>
 			<Description>TXT_KEY_PROMOTION_WATERLOGGED_TOOLS</Description>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_BEZERI</PrereqCivilization>
@@ -283,13 +317,25 @@
 			<bNoXP>1</bNoXP>
 			<Button>Art/Interface/Buttons/Units/WaterElemental.dds</Button>
 			<bValidate>1</bValidate>
+			<bForceOverwrite>1</bForceOverwrite>
 		</PromotionInfo>
 		
 		
 		
+			
+		<PromotionInfo>		<!-- waterproof tools only work with bezeri active -->
+			<Type>PROMOTION_WATERPROOF_IRON_TOOLS</Type>
+			<Description>zzzzzzDeletedPromoObsidian</Description>
+			<bGraphicalOnly>1</bGraphicalOnly>
+			<bEffectProm>1</bEffectProm>
+		</PromotionInfo>
 		
 		<PromotionInfo>		<!-- Enchanted Iron Tools work in water-->
 			<Type>PROMOTION_WATERPROOF_IRON_TOOLS</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+			</AndDependencyTypes>
 			<Description>TXT_KEY_PROMOTION_WATERPROOF_IRON_TOOLS</Description>
 			<Help>TXT_KEY_PROMOTION_WATERPROOF_IRON_TOOLS_HELP</Help>
 			<PrereqCivilizations>
@@ -328,6 +374,7 @@
 			<Button>Art/Interface/Buttons/Promotions/ObsidianTools.dds</Button>
 			<iWorkRateModify>50</iWorkRateModify>
 			<bValidate>1</bValidate>
+			<bForceOverwrite>1</bForceOverwrite>
 			<PrereqBonusANDs>
 				<PrereqBonus>BONUS_IRON</PrereqBonus>
 				<PrereqBonus>BONUS_MANA_ENCHANTMENT</PrereqBonus>
@@ -412,7 +459,7 @@
 		</PromotionInfo>
 		-->
 		
-		<PromotionInfo>		<!-- Hasted -->
+		<PromotionInfo>	   <!--  Hasted -->
 			<Type>PROMOTION_HASTED</Type>
 			<Description>TXT_KEY_PROMOTION_HASTED</Description>
 			<PromotionDegradesTo>
@@ -474,10 +521,9 @@
 			<iExpireChance>100</iExpireChance>
 			<iMinLevel>-1</iMinLevel>
 			<bForceOverwrite>1</bForceOverwrite>
-		</PromotionInfo>
-		
-			</PromotionInfos>
-		</Civ4PromotionInfos>
+		</PromotionInfo>		
+	</PromotionInfos>
+</Civ4PromotionInfos>
 
 
 

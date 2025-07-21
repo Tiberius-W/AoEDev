@@ -7256,10 +7256,11 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			{
 				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_NO_BONUS", GC.getBonusInfo((BonusTypes)iI).getDescription()));
 			}
-			//	if (kTrait.hasFreeBonus(iI))
-		//	{
-		//		szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_FREE_BONUS", GC.getBonusInfo((BonusTypes)iI).getDescription()));
-		//	}
+			if (GC.getTraitInfo(eTrait).isFreeBonus(iI))
+			{
+				szHelpString.append(NEWLINE);
+				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_FREE_BONUS", GC.getBonusInfo((BonusTypes)iI).getDescription()));
+			}
 		}
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
 		{
@@ -16512,6 +16513,7 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 	}
 
 	bFirst = true;
+	
 
 	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
 	{
@@ -17707,8 +17709,22 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 		}
 		else
 		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_RESTRICTED_UNIT"));
+			bFound = false;
+			for (iI = 0; iI < GC.getNumTraitInfos(); ++iI)
+			{
+				if (eUnit == (UnitTypes)GC.getTraitInfo((TraitTypes)iI).getExtraUnitClasses(eUnitClass))
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_UNIQUE_UNIT_TRAIT", GC.getTraitInfo((TraitTypes)iI).getTextKeyWide()));
+					bFound = true;
+
+				}
+			}
+			if (!bFound)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_RESTRICTED_UNIT"));
+			}
 		}
 	}
 	if (eSecondUnitClass != NO_UNITCLASS && (GC.getUnitClassInfo(eSecondUnitClass).isUnique() || eSecondDefaultUnit != eUnit))
@@ -17919,7 +17935,18 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_REQUIRES_HOLY_CITY", GC.getReligionInfo((ReligionTypes)(GC.getUnitInfo(eUnit).getHolyCity())).getChar()));
 			}
 		}
-
+		if (GC.getUnitInfo(eUnit).getPrereqReligion() != NO_RELIGION)
+		{
+			szBuffer.append(NEWLINE);
+			if (GC.getUnitInfo(eUnit).getStateReligion() == GC.getUnitInfo(eUnit).getPrereqReligion())
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ_STATE", GC.getReligionInfo((ReligionTypes)GC.getUnitInfo(eUnit).getPrereqReligion()).getChar()));
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ", GC.getReligionInfo((ReligionTypes)GC.getUnitInfo(eUnit).getPrereqReligion()).getChar()));
+			}
+		}
 		bFirst = true;
 
 		if (GC.getUnitInfo(eUnit).getSpecialUnitType() != NO_SPECIALUNIT)
@@ -21256,7 +21283,14 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			if (pCity == NULL || !pCity->isHasReligion((ReligionTypes)kBuilding.getPrereqReligion()))
 			{
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ", GC.getReligionInfo((ReligionTypes)kBuilding.getPrereqReligion()).getChar()));
+				if (kBuilding.getStateReligion() == kBuilding.getPrereqReligion())
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ_STATE", GC.getReligionInfo((ReligionTypes)kBuilding.getPrereqReligion()).getChar()));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ", GC.getReligionInfo((ReligionTypes)kBuilding.getPrereqReligion()).getChar()));
+				}
 			}
 		}
 

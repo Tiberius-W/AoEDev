@@ -1573,12 +1573,12 @@
 
 		
 		<UnitInfo>        
-			<bTypeDependency>1</bTypeDependency>
-			<AndDependencyTypes>
-				<DependencyType>MODULE_VICIOUSSEAS</DependencyType>
-			</AndDependencyTypes>
 			<Class>UNITCLASS_WORKER</Class>
 			<Type>UNIT_WORKER_LIZARD_BEZERI</Type>
+			<bTypeDependency>1</bTypeDependency>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		     </AndDependencyTypes>
 			<Capture>UNITCLASS_WORKER</Capture>
 			<Combat>UNITCOMBAT_WORKER</Combat>
 			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>

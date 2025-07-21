@@ -12913,7 +12913,7 @@ int CvCity::getNumBonuses(BonusTypes eIndex) const
 //FfH: End Add
 	if (plotGroup(getOwner()) != NULL)
 	{
-		return plotGroup(getOwner())->getNumBonuses(eIndex) + m_paiNumCorpProducedBonuses[eIndex];
+		return plotGroup(getOwner())->getNumBonuses(eIndex) + m_paiNumCorpProducedBonuses[eIndex]+ GET_PLAYER(getOwnerINLINE()).getFreeBonus(eIndex);
 	}
 	else
 	{

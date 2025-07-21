@@ -74,6 +74,7 @@ CvPlayer::CvPlayer()
 	m_aiCommerceFromUnitModifier = new int[NUM_COMMERCE_TYPES];
 	m_pabRevealBonus = new bool[GC.getNumBonusInfos()];
 	m_paiNoBonus = new int[GC.getNumBonusInfos()];
+	m_paiFreeBonus = new int[GC.getNumBonusInfos()];
 	m_paiPlotEffectSpawnChance = new int[GC.getNumPlotEffectInfos()];
 	m_pafPotencyAffinity = new float[GC.getNumBonusInfos()];
 	m_paiPotencyBonusPrereq = new int[GC.getNumBonusInfos()];
@@ -213,6 +214,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiCommerceFromUnitModifier);
 	SAFE_DELETE_ARRAY(m_pabRevealBonus);
 	SAFE_DELETE_ARRAY(m_paiNoBonus);
+	SAFE_DELETE_ARRAY(m_paiFreeBonus);
 	SAFE_DELETE_ARRAY(m_paiPlotEffectSpawnChance);
 	SAFE_DELETE_ARRAY(m_pafPotencyAffinity);
 	SAFE_DELETE_ARRAY(m_paiPotencyBonusPrereq);
@@ -916,6 +918,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 		m_pabRevealBonus = new bool[GC.getNumBonusInfos()];
 		m_paiNoBonus = new int[GC.getNumBonusInfos()];
+		m_paiFreeBonus = new int[GC.getNumBonusInfos()];
 		m_paiPlotEffectSpawnChance = new int[GC.getNumPlotEffectInfos()];
 		m_pafPotencyAffinity = new float[GC.getNumBonusInfos()];
 		m_paiPotencyBonusPrereq = new int[GC.getNumBonusInfos()];
@@ -926,6 +929,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 			m_pabRevealBonus[iI] = false;
 			m_paiNoBonus[iI] = 0;
+			m_paiFreeBonus[iI] = 0;
 			m_pafPotencyAffinity[iI] = 0;
 			m_paiPotencyBonusPrereq[iI] = 0;
 			m_pafShieldingAffinity[iI] = 0;
@@ -3279,10 +3283,10 @@ void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
 		{
 			changeNoBonus(iChange, eBonus);
 		}
-//		if (kTrait.hasFreeBonus(eBonus))
-	//	{
-	//		changeFreeBonus(eBonus, iChange);
-	//	}
+		if (GC.getTraitInfo(eTrait).isFreeBonus(eBonus))
+		{
+			changeFreeBonus(iChange, eBonus);
+		}
 	}
 	for (UnitClassTypes eUnitClass = (UnitClassTypes)0; eUnitClass < GC.getNumUnitClassInfos(); eUnitClass = (UnitClassTypes)(eUnitClass + 1))
 	{
@@ -6001,7 +6005,7 @@ int CvPlayer::getNumAvailableBonuses(BonusTypes eBonus) const
 
 	if (pPlotGroup != NULL)
 	{
-		return pPlotGroup->getNumBonuses(eBonus);
+		return pPlotGroup->getNumBonuses(eBonus)+getFreeBonus(eBonus);
 	}
 
 	return 0;
@@ -11662,6 +11666,11 @@ bool CvPlayer::isNoBonus(int iI) const
 	return (m_paiNoBonus[iI]>0);
 }
 
+int CvPlayer::getFreeBonus(int iI) const
+{
+	if (iI < 0 || iI > GC.getNumBonusInfos()) return 0;
+	return m_paiFreeBonus[iI];
+}
 int CvPlayer::getPlotEffectSpawnChance(int iI) const
 {
 	if (iI < 0 || iI > GC.getNumPlotEffectInfos()) return 0;
@@ -11722,6 +11731,13 @@ void CvPlayer::changeNoBonus(int fChange, int iI)
 	if (iI >= 0 && iI <= GC.getNumBonusInfos())
 	{
 		m_paiNoBonus[iI] += fChange;
+	}
+}
+void CvPlayer::changeFreeBonus(int fChange, int iI)
+{
+	if (iI >= 0 && iI <= GC.getNumBonusInfos())
+	{
+		m_paiFreeBonus[iI] += fChange;
 	}
 }
 void CvPlayer::changePotencyBonusPrereq(int iChange, int iI)
@@ -20718,6 +20734,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 
 	pStream->Read(GC.getNumBonusInfos(), m_pabRevealBonus);
 	pStream->Read(GC.getNumBonusInfos(), m_paiNoBonus);
+	pStream->Read(GC.getNumBonusInfos(), m_paiFreeBonus);
 
 	pStream->Read(GC.getNumPlotEffectInfos(), m_paiPlotEffectSpawnChance);
 
@@ -21460,6 +21477,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	pStream->Write(GC.getNumBonusInfos(), m_pabRevealBonus);
 	pStream->Write(GC.getNumBonusInfos(), m_paiNoBonus);
+	pStream->Write(GC.getNumBonusInfos(), m_paiFreeBonus);
 	pStream->Write(GC.getNumPlotEffectInfos(), m_paiPlotEffectSpawnChance);
 
 	pStream->Write(m_iPotency);

@@ -10828,9 +10828,12 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 		{
 			if (pPlot->getBonusType(getTeam()) == GC.getDefineINT("BONUS_MANA"))
 			{
-				if (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WORKER"))
+				if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT && GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isImprovementBonusMakesValid(GC.getDefineINT("BONUS_MANA")))
 				{
-					return true;
+					if (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WORKER"))
+					{
+						return true;
+					}
 				}
 			}
 		}

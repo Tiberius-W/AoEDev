@@ -1224,6 +1224,8 @@ public:
 	
 	bool isNoBonus(int iI) const;
 	void changeNoBonus(int fChange, int iI);
+	int getFreeBonus(int iI) const;
+	void changeFreeBonus(int fChange, int iI);
 
 	int getPlotEffectSpawnChance(int iI)const;
 	void changePlotEffectSpawnChance(int iChange, int iI);
@@ -1796,6 +1798,7 @@ protected:
 
 	bool* m_pabRevealBonus;
 	int* m_paiNoBonus;
+	int* m_paiFreeBonus;
 
 	int* m_paiPlotEffectSpawnChance;
 

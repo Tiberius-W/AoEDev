@@ -1084,6 +1084,14 @@
 		<Spanish>Cannot be built by any Civilization</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIQUE_UNIT_TRAIT</Tag>
+		<English>Unique Unit for [LINK=literal]%s1_civ[\LINK] Leaders</English>
+		<French>Unit&#233; unique pour : [LINK=literal]%s1_civ[\LINK]</French>
+		<German>Unique Unit for [LINK=literal]%s1_civ[\LINK] Leaders</German>
+		<Italian>Unique Unit for [LINK=literal]%s1_civ[\LINK] Leaders</Italian>
+		<Spanish>Unidad exclusiva de [LINK=literal]%s1_civ[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DENIED_BUILDINGS</Tag>
 		<English>Cannot Build</English>
 		<French>Ne peut pas construire</French>

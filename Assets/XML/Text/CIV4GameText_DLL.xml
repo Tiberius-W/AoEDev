@@ -11,6 +11,14 @@
 		<Spanish>[COLOR_WARNING_TEXT]Requires %F1_RelIcon in the city.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACTION_BUILDING_RELICORP_PREREQ_STATE</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %F1_RelIcon as the State Religion.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Requiert %F1_RelIcon en Religion d'Etat.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Requires %F1_RelIcon as the State Religion.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Requires %F1_RelIcon as the State Religion.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requires %F1_RelIcon as the State Religion.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ACTION_BUILDING_CIVIC_PREREQ</Tag>
 		<English>[ICON_BULLET][COLOR_WARNING_TEXT]Requires [LINK=%s1]%s2[\LINK].[COLOR_REVERT]</English>
 		<French>[ICON_BULLET][COLOR_WARNING_TEXT]Requiert [LINK=%s1]%s2[\LINK].[COLOR_REVERT]</French>
