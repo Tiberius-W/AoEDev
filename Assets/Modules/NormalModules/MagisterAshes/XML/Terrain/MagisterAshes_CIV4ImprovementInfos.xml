@@ -41,7 +41,7 @@
 			<bUnique>1</bUnique>
 			<BonusConvert>BONUS_MANA_ENTROPY</BonusConvert>
 			<bExplorable>1</bExplorable>
-			<iExploreDelay>50</iExploreDelay> 
+			<iExploreDelay>75</iExploreDelay> 
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
@@ -130,7 +130,7 @@
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveBlizzard(pCaster, pPlot)</PythonOnMove>
 			<bExplorable>1</bExplorable>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
@@ -196,7 +196,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -317,7 +317,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>

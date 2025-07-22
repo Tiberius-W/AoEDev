@@ -7211,7 +7211,7 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_AIFON_ISLE</ArtDefineTag>
 			<bWater>1</bWater>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -7240,7 +7240,7 @@
 			<bPermanent>1</bPermanent>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -7327,7 +7327,7 @@
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -7446,7 +7446,7 @@
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BROKEN_SEPULCHER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BROKEN_SEPULCHER</ArtDefineTag>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -7539,7 +7539,7 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DRAGON_BONES</ArtDefineTag>
 			<bPermanent>1</bPermanent>
 			<bUnique>1</bUnique>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
@@ -7698,7 +7698,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_TAIGA</TerrainType>
@@ -7944,7 +7944,7 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE_OF_THE_SERAPHIC</ArtDefineTag>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
@@ -8023,7 +8023,7 @@
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -8360,7 +8360,7 @@
 			<iDefenseModifier>100</iDefenseModifier>
 			<bPermanent>1</bPermanent>
 			<iHappiness>100</iHappiness>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -8551,7 +8551,7 @@
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -9482,7 +9482,7 @@
 			<iDefenseModifier>100</iDefenseModifier>
 			<bPermanent>1</bPermanent>
 			<iHappiness>100</iHappiness>
-			<iExploreDelay>50</iExploreDelay>
+			<iExploreDelay>75</iExploreDelay>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
