@@ -42284,7 +42284,7 @@
 			<Capture>UNITCLASS_SLAVE</Capture>
 			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SLAVE_UNDEAD</Description>
 			<Strategy>TXT_KEY_UNIT_SLAVE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
@@ -42297,35 +42297,15 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_ROAD</BuildType>
+					<BuildType>BUILD_PYRE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MINE</BuildType>
+					<BuildType>BUILD_GRAVEYARD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_FARM</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WORKSHOP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_LUMBERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINDMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WATERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PLANTATION</BuildType>
+					<BuildType>BUILD_PASTURE_CORRUPTED</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -42333,27 +42313,23 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_PASTURE</BuildType>
+					<BuildType>BUILD_CATACOMBS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_CAMP</BuildType>
+					<BuildType>BUILD_MAUSOLEUM_LESSER</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_COTTAGE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_FORT</BuildType>
+					<BuildType>BUILD_ROAD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
 					<BuildType>BUILD_REMOVE_JUNGLE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_REMOVE_FOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -42384,6 +42360,84 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iTier>1</iTier>
+		</UnitInfo>
+		<UnitInfo>        <!-- Worker D'tesh -->            
+			<Class>UNITCLASS_WORKER</Class>
+			<Type>UNIT_DTESH_WORKER</Type>
+			<Capture>UNITCLASS_WORKER</Capture>
+			<Combat>UNITCOMBAT_WORKER</Combat>
+			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DTESH_WORKER</Description>
+			<Civilopedia>TXT_KEY_UNIT_DTESH_WORKER_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<bOnlyDefensive>1</bOnlyDefensive>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_PYRE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_GRAVEYARD</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_PASTURE_CORRUPTED</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_QUARRY</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_CATACOMBS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_MAUSOLEUM_LESSER</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_ROAD</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_REMOVE_JUNGLE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_REMOVE_FOREST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+			<iCost>75</iCost>
+			<iMoves>2</iMoves>
+			<iWorkRate>100</iWorkRate>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>2</iGroupSize>
+				<iMeleeWaveSize>2</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_INFERNAL</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_APTITUDE1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bFreeXP>1</bFreeXP>
+			<iTier>1</iTier>
+			<iWeaponTierMin>4</iWeaponTierMin>
+			<iWeaponTierMax>6</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Settler -->
 			<Class>UNITCLASS_SETTLER</Class>
