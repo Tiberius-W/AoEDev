@@ -6776,10 +6776,6 @@
 					<UnitType>UNIT_SLAVE_UNDEAD</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>UNIT_DTESH_WORKER</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
