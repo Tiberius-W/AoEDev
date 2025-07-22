@@ -37,9 +37,9 @@
 			<PyRequirement/>
 		</SpawnGroupInfo>
 		<!--  1 Galley at fishing (otherwise, sailing introduces ARMADAS) -->
-		<!-- <SpawnGroupInfo>	
+		<SpawnGroupInfo>	
 			<Type>SPAWN_GROUP_GALLEY_ONE</Type>
-			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description> (Also commented out)
+			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description>
 			<bNaval>1</bNaval>
 			<iWeight>1000</iWeight>
 			<GroupUnitClasses>
@@ -54,7 +54,7 @@
 			<BlockTechANDs>
 				<Tech>TECH_OPTICS</Tech>
 			</BlockTechANDs>
-		</SpawnGroupInfo> -->
+		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Galley -->
 			<Type>SPAWN_GROUP_GALLEY</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY</Description>
