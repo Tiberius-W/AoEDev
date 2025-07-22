@@ -6021,6 +6021,7 @@
 			<CivilizationPrereq>CIVILIZATION_DTESH</CivilizationPrereq>
 			<bHasCasted>1</bHasCasted>
 			<bSacrificeCaster>1</bSacrificeCaster>
+			<bAllowAI>0</bAllowAI>
 			<PyResult>spellGiftEssence(pCaster)</PyResult>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_REDWHIRL</Sound>
@@ -6065,7 +6066,7 @@
 			<Help>TXT_KEY_SPELL_DARK_EMPOWERMENT_HELP</Help>
 			<CivilizationPrereq>CIVILIZATION_DTESH</CivilizationPrereq>
 			<PromotionPrereq1>PROMOTION_NECROMANTICALLY_EMPOWERED</PromotionPrereq1>
-			<bAllowAI>1</bAllowAI>
+			<bAllowAI>0</bAllowAI>
 			<iAIWeight>10</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
@@ -6152,6 +6153,7 @@
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_CREEPING_DEAD_EFFECT_BLOCK_PERM</RemovePromotion>
 			</RemovePromotions>
+			<bAllowAI>0</bAllowAI>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<bAbility>1</bAbility>
 			<Effect>EFFECT_SPELL1</Effect>
@@ -6164,7 +6166,7 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_REMOVE_FROM_CITY_HELP</Help>
 			<CivilizationPrereq>CIVILIZATION_DTESH</CivilizationPrereq>
-			<bAllowAI>1</bAllowAI>
+			<bAllowAI>0</bAllowAI>
 			<bInBordersOnly>1</bInBordersOnly>
 			<bInCityOnly>1</bInCityOnly>
 			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
@@ -6207,6 +6209,7 @@
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_CREEPING_DEAD_EFFECT</RemovePromotion>
 			</RemovePromotions>
+			<bAllowAI>0</bAllowAI>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<bAbility>1</bAbility>
 			<Effect>EFFECT_SPELL1</Effect>
