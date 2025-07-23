@@ -25669,7 +25669,6 @@
 				<CityBonus>
 					<bApplyEnemy>1</bApplyEnemy>
 					<bApplyRival>1</bApplyRival>
-					<fDiplo>-0.25</fDiplo>
 					<fHappy>-3</fHappy>
 					<fCrime>5</fCrime>
 					<iBonusRange>3</iBonusRange>
