@@ -69,9 +69,9 @@
 			<PrereqTechANDs>
 				<Tech>TECH_SAILING</Tech>
 			</PrereqTechANDs>
-			<!-- <BlockTechANDs>
+			<BlockTechANDs>
 				<Tech>TECH_ASTRONOMY</Tech>
-			</BlockTechANDs> -->
+			</BlockTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Galleon -->
 			<Type>SPAWN_GROUP_GALLEON</Type>
@@ -91,10 +91,10 @@
 			<PrereqTechANDs>
 				<Tech>TECH_OPTICS</Tech>
 			</PrereqTechANDs>
-			<!-- <BlockTechANDs>
+			<BlockTechANDs>
 				<Tech>TECH_ASTRONOMY</Tech>
 				<Tech>TECH_ENGINEERING</Tech>
-			</BlockTechANDs> -->
+			</BlockTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Caravel -->
 			<Type>SPAWN_GROUP_CARAVEL</Type>
