@@ -789,7 +789,7 @@
 			<ImmediateSpawnUnitType>UNIT_STYGIAN_GUARD</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<bWater>1</bWater>
