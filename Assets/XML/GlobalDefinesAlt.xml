@@ -384,10 +384,6 @@
 		<iDefineIntVal>35</iDefineIntVal>
 	</Define>
 	<Define>
-		<DefineName>EVIL_TILE_THRESHOLD</DefineName>
-		<iDefineIntVal>9</iDefineIntVal>
-	</Define>
-	<Define>
 		<DefineName>MAX_ANIMAL_ESCALATIONS</DefineName>
 		<iDefineIntVal>5</iDefineIntVal>
 	</Define>

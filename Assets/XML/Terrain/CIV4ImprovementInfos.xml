@@ -62,7 +62,7 @@
 			</GuardianPromotions>
 			<SpawnGroupType></SpawnGroupType> <!-- Baseline chance to spawn is 1/3 of iLairSpawnChance. See SpawnGroupInfos for what's in each group. Each unit in it counts toward iSpawnAtOnceLimit; note this can push over the limit -->
 			<iSpawnGroupChancePercentMod>0</iSpawnGroupChancePercentMod> <!-- As iSpawnUnitChancePercentMod, but for the listed group -->
-			<iBasePlotCounterModify>0</iBasePlotCounterModify> <!-- Changes baseline plot hell counter. >10 sets to hell terrain from base, if no other effects considered -->
+			<iBasePlotCounterModify>0</iBasePlotCounterModify> <!-- Sets tile plot counter to this value **if non-zero** and prevents per-turn value change. Values greater than PLOT_COUNTER_HELL_THRESHOLD (10) are hell tiles -->
 			<iVisibilityChange>1</iVisibilityChange> <!-- How much further this improvement lets units on it see -->
 			<iCultureControlStrength>1</iCultureControlStrength> <!-- Magnitude of culture control -->
 			<iCultureRange>1</iCultureRange> <!-- How many tiles distance out from the center, culture control applies. 0 is own tile only (if strength>0), 2 is BFC, etc -->

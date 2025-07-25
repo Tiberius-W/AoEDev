@@ -939,7 +939,7 @@ class CustomFunctions:
 			if pPlot == None: continue
 			iBonus 				= pPlot.getBonusType(-1)
 			iFeature 			= pPlot.getFeatureType()
-			iPlotEffect = pPlot.getPlotEffectType()
+			iPlotEffect 		= pPlot.getPlotEffectType()
 			iImprovement 		= pPlot.getImprovementType()
 			iTerrain 			= pPlot.getTerrainType()
 			bIsOwned 			= pPlot.isOwned()
@@ -1037,7 +1037,7 @@ class CustomFunctions:
 										pPlot.setPlotEffectType(Feature["Haunted Lands"])
 
 		#### Hell Terrain Section
-			if not Option["No Plot Counter"]:
+			if not Option["No Plot Counter"] and not (iImprovement != -1 and gc.getImprovementInfo(iImprovement).getBasePlotCounterModify() != 0):
 				bUntouched = True
 				changePlotCounter = pPlot.changePlotCounter
 				if bIsOwned:

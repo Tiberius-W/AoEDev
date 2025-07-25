@@ -3118,7 +3118,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 			}
 		}
 
-		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() < GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 		{
 			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain()))
 			{
@@ -7216,7 +7216,7 @@ void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bReb
 /**																								**/
 /**						Ensures Terrain Type and Tile Status remain linked						**/
 /*************************************************************************************************/
-		if ((getPlotCounter() < GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && GC.getTerrainInfo(getTerrainType()).isHell())
+		if ((getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && GC.getTerrainInfo(getTerrainType()).isHell())
 		{
 			m_eTerrainType = (TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain();
 		}
@@ -7329,34 +7329,43 @@ PlotEffectTypes CvPlot::getPlotEffectType() const
 {
 	return (PlotEffectTypes)m_ePlotEffectType;
 }
+
 void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
-{	
-	
+{
+	if (m_ePlotEffectType == eNewValue)
+		return;
+
 	bool bUpdateSight = false;
-	if ((m_ePlotEffectType != eNewValue))
+
+	if ((m_ePlotEffectType == NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != 0)
+	 || (eNewValue == NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange() != 0)
+	 ||	(eNewValue != NO_PLOT_EFFECT && m_ePlotEffectType != NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange()))
 	{
-		if ((m_ePlotEffectType == NO_PLOT_EFFECT) ||
-			(eNewValue == NO_PLOT_EFFECT) ||
-			(GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange() != GC.getPlotEffectInfo(eNewValue).getSeeThroughChange()))
-		{
-			bUpdateSight = true;
-		}
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(false, true);
-		}
-		m_ePlotEffectType = eNewValue;
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(true, true);
-		}	
+		bUpdateSight = true;
+		updateSeeFromSight(false, true);
 	}
+
+	// If the incoming plot effect reduces max possible hell terrain counter, actually apply that change
+	if (eNewValue != NO_PLOT_EFFECT)
+	{
+		changePlotCounter(std::min(0, GC.getPlotEffectInfo(eNewValue).getMaxPlotCounter() - getPlotCounter()));
+	}
+
+	m_ePlotEffectType = eNewValue;
+
+	if (bUpdateSight)
+	{
+		updateSeeFromSight(true, true);
+	}	
+
+	updateYield();
+
 	updateFeatureSymbol();
 	setLayoutDirty(true);
 	updateRouteSymbol(false, true);
 	updateRiverSymbol(false, true);
-
 }
+
 void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 {
 	CvCity* pLoopCity;
@@ -7635,7 +7644,10 @@ ImprovementTypes CvPlot::getImprovementType() const
 }
 
 void CvPlot::setImprovementType(ImprovementTypes eNewValue)
-{
+{	
+	if (getImprovementType() == eNewValue)
+		return;
+
 	// TODO: Ensure owner improvement # tracking is consistent for improvements that add or remove cultural control or are bOutsideBorders
 	// Currently is triggering some asserts... maybe split up into two func, remove improvement and add improvement
 	int iI;
@@ -7654,302 +7666,292 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			setExploreNextTurn(0);
 		}
 	}
-	if (getImprovementType() != eNewValue)
+
+	if (getImprovementType() != NO_IMPROVEMENT)
 	{
-		if (getImprovementType() != NO_IMPROVEMENT)
+		if (area())
 		{
-			if (area())
-			{
-				area()->changeNumImprovements(getImprovementType(), -1);
-			}
-			if (isOwned())
-			{
-				eOldImprovementOwner = getImprovementOwner();
-				GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), -1);
-			}
+			area()->changeNumImprovements(getImprovementType(), -1);
 		}
-
-		// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
-		CLLNode<IDInfo>* pUnitNode = headUnitNode();
-		while (pUnitNode != NULL)
+		if (isOwned())
 		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = nextUnitNode(pUnitNode);
-			changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
+			eOldImprovementOwner = getImprovementOwner();
+			GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), -1);
 		}
-		// Modifies Apparent PlotCounter based on Improvement Shift (required redundancy) : Xienwolf 02/01/09
-		bool bEvilPre = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
+	}
 
-		if (eOldImprovement != NO_IMPROVEMENT && isOwned())
+	// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
+	CLLNode<IDInfo>* pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
+	}
+
+	if (eOldImprovement != NO_IMPROVEMENT)
+	{
+		// Removing a "negative plot counter" improvement shouldn't add counter to the tile
+		changePlotCounter(std::min(0, -GC.getImprovementInfo(eOldImprovement).getBasePlotCounterModify()));
+		if (isOwned())
 		{
 			TraitTriggeredData kData;
 			kData.m_iImprovement = eOldImprovement;
-			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_LOSE_IMPROVEMENT, &kData);		
+			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_LOSE_IMPROVEMENT, &kData);
 		}
+	}
 
-		updatePlotGroupBonus(false);
-		m_eImprovementType = eNewValue;
-		if (eNewValue != NO_IMPROVEMENT && isOwned())
+	updatePlotGroupBonus(false);
+	m_eImprovementType = eNewValue;
+	if (eNewValue != NO_IMPROVEMENT)
+	{
+		changePlotCounter(GC.getImprovementInfo(eNewValue).getBasePlotCounterModify());
+		if (isOwned())
 		{
 			TraitTriggeredData kData;
 			kData.m_iImprovement = eOldImprovement;
 			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_GAIN_IMPROVEMENT, &kData);
 		}
-		
-		updatePlotGroupBonus(true);
+	}
 
-		// Update plot visibility after improvement change
-		pUnitNode = headUnitNode();
-		while (pUnitNode != NULL)
-		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = nextUnitNode(pUnitNode);
-			changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
-		}
-		// Update plotcounter based on improvement shift (required redundancy)
-		bool bEvilPost = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
-		if (bEvilPre != bEvilPost)
-		{
-			GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
-		}
-		// Building an improvement shouldn't lock temp terrain in place
-		if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER) && getTempTerrainTimer() < 0)
-		{
-			TerrainTypes terrainType = (TerrainTypes)getTerrainType();
-			FAssert(terrainType != NO_TERRAIN);
-			CvTerrainInfo& terrain = GC.getTerrainInfo(terrainType);
-			CvTerrainClassInfo& terrainClass = GC.getTerrainClassInfo((TerrainClassTypes)terrain.getTerrainClassType());
+	updatePlotGroupBonus(true);
 
-			if (getPlotCounter()==-1 || getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+	// Update plot visibility after improvement change
+	pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
+	}
+	// Building an improvement shouldn't lock temp terrain in place
+	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER) && getTempTerrainTimer() < 0)
+	{
+		TerrainTypes terrainType = (TerrainTypes)getTerrainType();
+		FAssert(terrainType != NO_TERRAIN);
+		CvTerrainInfo& terrain = GC.getTerrainInfo(terrainType);
+		CvTerrainClassInfo& terrainClass = GC.getTerrainClassInfo((TerrainClassTypes)terrain.getTerrainClassType());
+	}
+	// END Xienwolf
+
+	/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+	if (eOldImprovement != NO_IMPROVEMENT && (getImprovementType() == NO_IMPROVEMENT || getImprovementOwner() != NO_PLAYER))
+	{
+		clearCultureControl(getImprovementOwner(), eOldImprovement, true);
+		updateCulture(true, true);
+	}
+
+	ImprovementTypes eLoopImprovement;
+	BuildTypes eBuild = NO_BUILD;
+
+	// Remove build progress on incomplete builds for this tile, IF that build has a minimum range. Why?
+	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		eBuild = (BuildTypes)iI;
+		if (getBuildProgress(eBuild) > 0)
+		{
+			// The improvement can be NO_IMPROVEMENT (example roads) : Snarko 09/06/10
+			if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
 			{
-				setTerrainType((TerrainTypes)terrainClass.getHellTerrain(), true, true);
-			}
-			else
-			{
-				setTerrainType((TerrainTypes)terrainClass.getNaturalTerrain(), true, true);
-			}
-		}
-		// END Xienwolf
-
-		/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-		if (eOldImprovement != NO_IMPROVEMENT && (getImprovementType() == NO_IMPROVEMENT || getImprovementOwner() != NO_PLAYER))
-		{
-			clearCultureControl(getImprovementOwner(), eOldImprovement, true);
-			updateCulture(true, true);
-		}
-
-		ImprovementTypes eLoopImprovement;
-		BuildTypes eBuild = NO_BUILD;
-
-		// Remove build progress on incomplete builds for this tile, IF that build has a minimum range. Why?
-		for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
-		{
-			eBuild = (BuildTypes)iI;
-			if (getBuildProgress(eBuild) > 0)
-			{
-				// The improvement can be NO_IMPROVEMENT (example roads) : Snarko 09/06/10
-				if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+				eLoopImprovement = (ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement();
+				if (eLoopImprovement != getImprovementType() && GC.getImprovementInfo(eLoopImprovement).getMinimumDistance() != 0)
 				{
-					eLoopImprovement = (ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement();
-					if (eLoopImprovement != getImprovementType() && GC.getImprovementInfo(eLoopImprovement).getMinimumDistance() != 0)
-					{
-						m_paiBuildProgress[eBuild] = 0;
-					}
+					m_paiBuildProgress[eBuild] = 0;
 				}
 			}
 		}
-		if (getImprovementType() != NO_IMPROVEMENT)
+	}
+	if (getImprovementType() != NO_IMPROVEMENT)
+	{
+		int iCiv = GC.getImprovementInfo(getImprovementType()).getSpawnUnitCiv();
+		int iUnit = GC.getImprovementInfo(getImprovementType()).getSpawnUnitType();
+
+		// Allows for lairs to spawn a unit on creation, but spawn others normally : Valkrionn 7/17/10 LairGuardians 
+		int iImmediateUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
+		int iSpawnGroup = GC.getImprovementInfo(getImprovementType()).getSpawnGroupType();
+		int iImmediateSpawnGroup = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnGroupType();
+
+		PlayerTypes eSpawnPlayer = NO_PLAYER;
+		if (iCiv != NO_CIVILIZATION
+			&& (iUnit != -1 || iSpawnGroup != -1 || iImmediateUnit != -1 || iImmediateSpawnGroup != -1)
+			&& !(iCiv == GC.getDefineINT("DEMON_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_DEMONS))
+			&& !(iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_ANIMALS))
+			&& !(iCiv == GC.getDefineINT("ORC_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS)))
 		{
-			int iCiv = GC.getImprovementInfo(getImprovementType()).getSpawnUnitCiv();
-			int iUnit = GC.getImprovementInfo(getImprovementType()).getSpawnUnitType();
-
-			// Allows for lairs to spawn a unit on creation, but spawn others normally : Valkrionn 7/17/10 LairGuardians 
-			int iImmediateUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
-			int iSpawnGroup = GC.getImprovementInfo(getImprovementType()).getSpawnGroupType();
-			int iImmediateSpawnGroup = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnGroupType();
-
-			PlayerTypes eSpawnPlayer = NO_PLAYER;
-			if (iCiv != NO_CIVILIZATION
-				&& (iUnit != -1 || iSpawnGroup != -1 || iImmediateUnit != -1 || iImmediateSpawnGroup != -1)
-				&& !(iCiv == GC.getDefineINT("DEMON_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_DEMONS))
-				&& !(iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_ANIMALS))
-				&& !(iCiv == GC.getDefineINT("ORC_CIVILIZATION") && GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS)))
+			for (int iI = MAX_PLAYERS-1; iI > -1 ; iI--)
 			{
-				for (int iI = MAX_PLAYERS-1; iI > -1 ; iI--)
+				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() == (CivilizationTypes)iCiv)
 				{
-					if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() == (CivilizationTypes)iCiv)
-					{
-						eSpawnPlayer = (PlayerTypes)iI;
-						break;
-					}
+					eSpawnPlayer = (PlayerTypes)iI;
+					break;
 				}
-				if (eSpawnPlayer != NO_PLAYER)
+			}
+			if (eSpawnPlayer != NO_PLAYER)
+			{
+				// Immediately update owner if can spawn only for that owner
+				// When an improvement is directly swapped for a spawner, weird things can happen, but... oh well.
+				// Fixes Rinwell losing control to demons if owned while upgrading
+				eOldImprovementOwner == NO_PLAYER ? setImprovementOwner(eSpawnPlayer) : setImprovementOwner(eOldImprovementOwner);
+
+				if (GC.getImprovementInfo(getImprovementType()).getCultureControlStrength() > 0)
 				{
-					// Immediately update owner if can spawn only for that owner
-					// When an improvement is directly swapped for a spawner, weird things can happen, but... oh well.
-					// Fixes Rinwell losing control to demons if owned while upgrading
-					eOldImprovementOwner == NO_PLAYER ? setImprovementOwner(eSpawnPlayer) : setImprovementOwner(eOldImprovementOwner);
+					addCultureControl(eSpawnPlayer, getImprovementType(), 1);
+				}
+				else if (GC.getImprovementInfo(getImprovementType()).isOutsideBorders())
+				{
+					updateCulture(true, true);
+				}
 
-					if (GC.getImprovementInfo(getImprovementType()).getCultureControlStrength() > 0)
+				// Allows for lairs to spawn a unit on creation, but spawn others normally : Valkrionn 7/17/10 LairGuardians 
+				if (iImmediateUnit != -1)
+				{
+					CvUnit* pGuardianUnit = GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes) iImmediateUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_NORTH);
+					if (GC.getImprovementInfo(getImprovementType()).getNumGuardianPromotions() > 0)
 					{
-						addCultureControl(eSpawnPlayer, getImprovementType(), 1);
-					}
-					else if (GC.getImprovementInfo(getImprovementType()).isOutsideBorders())
-					{
-						updateCulture(true, true);
-					}
-
-					// Allows for lairs to spawn a unit on creation, but spawn others normally : Valkrionn 7/17/10 LairGuardians 
-					if (iImmediateUnit != -1)
-					{
-						CvUnit* pGuardianUnit = GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes) iImmediateUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_NORTH);
-						if (GC.getImprovementInfo(getImprovementType()).getNumGuardianPromotions() > 0)
+						int iNumGuardianPromotions = GC.getImprovementInfo(getImprovementType()).getNumGuardianPromotions();
+						for (int iL = 0; iL < iNumGuardianPromotions; iL++)
 						{
-							int iNumGuardianPromotions = GC.getImprovementInfo(getImprovementType()).getNumGuardianPromotions();
-							for (int iL = 0; iL < iNumGuardianPromotions; iL++)
-							{
-								pGuardianUnit->setHasPromotion((PromotionTypes)GC.getImprovementInfo(getImprovementType()).getGuardianPromotions(iL), true);
-							}
+							pGuardianUnit->setHasPromotion((PromotionTypes)GC.getImprovementInfo(getImprovementType()).getGuardianPromotions(iL), true);
 						}
 					}
-					if (iImmediateSpawnGroup != -1)
-					{
-						GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iImmediateSpawnGroup, this, eSpawnPlayer);
-					}
 				}
-			}
-		}
-
-		if (getImprovementType() == NO_IMPROVEMENT)
-		{
-			setImprovementDuration(0);
-
-			/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-			if (getImprovementOwner() != NO_PLAYER)
-			{
-				setImprovementOwner(NO_PLAYER);
-			}
-		}
-
-		setUpgradeProgress(0);
-
-		for (iI = 0; iI < MAX_TEAMS; ++iI)
-		{
-			if (GET_TEAM((TeamTypes)iI).isAlive())
-			{
-				if (isVisible((TeamTypes)iI, false))
+				if (iImmediateSpawnGroup != -1)
 				{
-					setRevealedImprovementType((TeamTypes)iI, getImprovementType());
+					GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iImmediateSpawnGroup, this, eSpawnPlayer);
 				}
 			}
 		}
-
-		if (getImprovementType() != NO_IMPROVEMENT)
-		{
-			if (area())
-			{
-				area()->changeNumImprovements(getImprovementType(), 1);
-			}
-			if (isOwned())
-			{
-				GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), 1);
-			}
-		}
-
-		updateIrrigated();
-		updateYield();
-
-		for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
-		{
-			CvPlot* pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
-
-			if (pLoopPlot != NULL)
-			{
-				CvCity* pLoopCity = pLoopPlot->getPlotCity();
-
-				if (pLoopCity != NULL)
-				{
-					pLoopCity->updateFeatureHappiness();
-				}
-			}
-		}
-
-		// Building or removing a fort will now force a plotgroup update to verify resource connections.
-		if ( (NO_IMPROVEMENT != getImprovementType() && GC.getImprovementInfo(getImprovementType()).isActsAsCity()) !=
-			 (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity()) )
-		{
-			updatePlotGroup();
-		}
-
-		if (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
-		{
-			verifyUnitValidPlot();
-		}
-
-		if (GC.getGameINLINE().isDebugMode())
-		{
-			setLayoutDirty(true);
-		}
-
-		// Trigger destroy improvement reports on direct replacement as well as set-to-none
-		// This should suffice to use the event reporter to remove a landmark and then
-		// immediately place a new one, but nooo.... smh. See onImprovementBuilt /Blazenclaw
-		if (eOldImprovement != NO_IMPROVEMENT)
-		{
-			CvEventReporter::getInstance().improvementDestroyed(eOldImprovement, getOwnerINLINE(), getX_INLINE(), getY_INLINE());
-		}
-		if (getImprovementType() != NO_IMPROVEMENT)
-		{
-
-			//FfH Improvements: Added by Kael 08/07/2007
-			if (GC.getImprovementInfo(getImprovementType()).getBonusConvert() != NO_BONUS)
-			{
-				setBonusType((BonusTypes)GC.getImprovementInfo(getImprovementType()).getBonusConvert());
-			}
-			//FfH: End Add
-
-			CvEventReporter::getInstance().improvementBuilt(getImprovementType(), getX_INLINE(), getY_INLINE());
-		}
-
-		CvCity* pWorkingCity = getWorkingCity();
-		if (NULL != pWorkingCity)
-		{
-			if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
-				(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))
-			{
-
-				pWorkingCity->AI_setAssignWorkDirty(true);
-
-			}
-
-			// Allows improvements to grant specific specialists : Statesmen 02/05/10
-			if (getImprovementType() != NO_IMPROVEMENT)
-			{
-				if (GC.getImprovementInfo(getImprovementType()).getFreeSpecialist() != NO_SPECIALIST)
-				{
-					if (GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() == GET_PLAYER(getOwnerINLINE()).getCivilizationType())
-					{
-						pWorkingCity->changeFreeSpecialistCount((SpecialistTypes)GC.getImprovementInfo(getImprovementType()).getFreeSpecialist(), 1);
-						pWorkingCity->changeImprovementSpecialistCount((SpecialistTypes)GC.getImprovementInfo(getImprovementType()).getFreeSpecialist(), 1);
-					}
-				}
-			}
-			if (NO_IMPROVEMENT != eOldImprovement)
-			{
-				if (GC.getImprovementInfo(eOldImprovement).getFreeSpecialist() != NO_SPECIALIST)
-				{
-					if (GC.getImprovementInfo(eOldImprovement).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo(eOldImprovement).getPrereqCivilization() == GET_PLAYER(getOwnerINLINE()).getCivilizationType())
-					{
-						pWorkingCity->changeFreeSpecialistCount((SpecialistTypes)GC.getImprovementInfo(eOldImprovement).getFreeSpecialist(), -1);
-						pWorkingCity->changeImprovementSpecialistCount((SpecialistTypes)GC.getImprovementInfo(eOldImprovement).getFreeSpecialist(), -1);
-					}
-				}
-			}
-			// End Statesmen
-		}
-
-		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 	}
+
+	if (getImprovementType() == NO_IMPROVEMENT)
+	{
+		setImprovementDuration(0);
+
+		/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+		if (getImprovementOwner() != NO_PLAYER)
+		{
+			setImprovementOwner(NO_PLAYER);
+		}
+	}
+
+	setUpgradeProgress(0);
+
+	for (iI = 0; iI < MAX_TEAMS; ++iI)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
+		{
+			if (isVisible((TeamTypes)iI, false))
+			{
+				setRevealedImprovementType((TeamTypes)iI, getImprovementType());
+			}
+		}
+	}
+
+	if (getImprovementType() != NO_IMPROVEMENT)
+	{
+		if (area())
+		{
+			area()->changeNumImprovements(getImprovementType(), 1);
+		}
+		if (isOwned())
+		{
+			GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), 1);
+		}
+	}
+
+	updateIrrigated();
+	updateYield();
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+	{
+		CvPlot* pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
+
+		if (pLoopPlot != NULL)
+		{
+			CvCity* pLoopCity = pLoopPlot->getPlotCity();
+
+			if (pLoopCity != NULL)
+			{
+				pLoopCity->updateFeatureHappiness();
+			}
+		}
+	}
+
+	// Building or removing a fort will now force a plotgroup update to verify resource connections.
+	if ( (NO_IMPROVEMENT != getImprovementType() && GC.getImprovementInfo(getImprovementType()).isActsAsCity()) !=
+			(NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity()) )
+	{
+		updatePlotGroup();
+	}
+
+	if (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
+	{
+		verifyUnitValidPlot();
+	}
+
+	if (GC.getGameINLINE().isDebugMode())
+	{
+		setLayoutDirty(true);
+	}
+
+	// Trigger destroy improvement reports on direct replacement as well as set-to-none
+	// This should suffice to use the event reporter to remove a landmark and then
+	// immediately place a new one, but nooo.... smh. See onImprovementBuilt /Blazenclaw
+	if (eOldImprovement != NO_IMPROVEMENT)
+	{
+		CvEventReporter::getInstance().improvementDestroyed(eOldImprovement, getOwnerINLINE(), getX_INLINE(), getY_INLINE());
+	}
+	if (getImprovementType() != NO_IMPROVEMENT)
+	{
+
+		//FfH Improvements: Added by Kael 08/07/2007
+		if (GC.getImprovementInfo(getImprovementType()).getBonusConvert() != NO_BONUS)
+		{
+			setBonusType((BonusTypes)GC.getImprovementInfo(getImprovementType()).getBonusConvert());
+		}
+		//FfH: End Add
+
+		CvEventReporter::getInstance().improvementBuilt(getImprovementType(), getX_INLINE(), getY_INLINE());
+	}
+
+	CvCity* pWorkingCity = getWorkingCity();
+	if (NULL != pWorkingCity)
+	{
+		if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
+			(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))
+		{
+
+			pWorkingCity->AI_setAssignWorkDirty(true);
+
+		}
+
+		// Allows improvements to grant specific specialists : Statesmen 02/05/10
+		if (getImprovementType() != NO_IMPROVEMENT)
+		{
+			if (GC.getImprovementInfo(getImprovementType()).getFreeSpecialist() != NO_SPECIALIST)
+			{
+				if (GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() == GET_PLAYER(getOwnerINLINE()).getCivilizationType())
+				{
+					pWorkingCity->changeFreeSpecialistCount((SpecialistTypes)GC.getImprovementInfo(getImprovementType()).getFreeSpecialist(), 1);
+					pWorkingCity->changeImprovementSpecialistCount((SpecialistTypes)GC.getImprovementInfo(getImprovementType()).getFreeSpecialist(), 1);
+				}
+			}
+		}
+		if (NO_IMPROVEMENT != eOldImprovement)
+		{
+			if (GC.getImprovementInfo(eOldImprovement).getFreeSpecialist() != NO_SPECIALIST)
+			{
+				if (GC.getImprovementInfo(eOldImprovement).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo(eOldImprovement).getPrereqCivilization() == GET_PLAYER(getOwnerINLINE()).getCivilizationType())
+				{
+					pWorkingCity->changeFreeSpecialistCount((SpecialistTypes)GC.getImprovementInfo(eOldImprovement).getFreeSpecialist(), -1);
+					pWorkingCity->changeImprovementSpecialistCount((SpecialistTypes)GC.getImprovementInfo(eOldImprovement).getFreeSpecialist(), -1);
+				}
+			}
+		}
+		// End Statesmen
+	}
+
+	gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 }
 
 
@@ -11790,7 +11792,7 @@ void CvPlot::processArea(CvArea* pArea, int iChange)
 /**																								**/
 /**							Transfers information on Tile changing Areas						**/
 /*************************************************************************************************/
-	if (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"))
+	if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 	{
 		pArea->changeNumEvilTiles(iChange);
 	}
@@ -13662,96 +13664,40 @@ int CvPlot::getNumAnimalUnits() const
 
 int CvPlot::getPlotCounter() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**					Includes new Improvement modifiers in the PlotCounter						**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
 	return m_iPlotCounter;
-/**								----  End Original Code  ----**/
-	int maxplot = 100;
-	if (getPlotEffectType() != NO_PLOT_EFFECT)
-	{
-		if (GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter() != -1)
-		{
-			maxplot = GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter();
-		}
-	}
-	return (getImprovementType() != NO_IMPROVEMENT ? std::min(maxplot, std::max(0, GC.getImprovementInfo(getImprovementType()).getBasePlotCounterModify() + m_iPlotCounter)) : m_iPlotCounter);
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 }
 
 void CvPlot::changePlotCounter(int iChange)
 {
-/*************************************************************************************************/
-/**	Climate System							11/16/09											**/
-/**																								**/
-/**					Hell Terrain type is now handled in TerrainClass							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	bool bEvilPre = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
-	m_iPlotCounter += iChange;
-	bool bEvilPost = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
-	if (bEvilPre != bEvilPost)
-	{
-		GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
-	}
-	if (m_iPlotCounter < 0)
-	{
-		m_iPlotCounter = 0;
-	}
-	if (m_iPlotCounter > 100)
-	{
-		m_iPlotCounter = 100;
-	}
-	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
-	{
-		if (getPlotCounter() < GC.getTerrainInfo((TerrainTypes)getTerrainType()).getPlotCounterDown())
-		{
-			setTerrainType((TerrainTypes)GC.getTerrainInfo((TerrainTypes)getTerrainType()).getTerrainDown(), false, false);
-		}
-		if (getPlotCounter() > GC.getTerrainInfo((TerrainTypes)getTerrainType()).getPlotCounterUp())
-		{
-			setTerrainType((TerrainTypes)GC.getTerrainInfo((TerrainTypes)getTerrainType()).getTerrainUp(), false, false);
-		}
-	}
-/**								----  End Original Code  ----									**/
-	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
-	{
-		if (iChange != 0)
-		{
-			bool bEvilPre = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
-			m_iPlotCounter += iChange;
-			bool bEvilPost = (getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"));
-			if (bEvilPre != bEvilPost)
-			{
-				GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
-			}
+	if (iChange == 0 || GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
+		return;
 
-			if (getPlotCounter() < GC.getDefineINT("PLOT_COUNTER_MIN"))
-			{
-				m_iPlotCounter = GC.getDefineINT("PLOT_COUNTER_MIN");
-			}
-			else if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_MAX"))
-			{
-				m_iPlotCounter = GC.getDefineINT("PLOT_COUNTER_MAX");
-			}
-			if (getPlotCounter() < GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
-			{
-				setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain(), false, false);
-			}
-			else
-			{
-				setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, false);
-			}
-		}
+	bool bEvilPre = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
+
+	int maxplot = GC.getDefineINT("PLOT_COUNTER_MAX");
+	if (getPlotEffectType() != NO_PLOT_EFFECT
+	 && GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter() != -1)
+	{
+		maxplot = GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter();
 	}
-/*************************************************************************************************/
-/**	Climate System								END												**/
-/*************************************************************************************************/
+
+	m_iPlotCounter = std::max(GC.getDefineINT("PLOT_COUNTER_MIN"), std::min(m_iPlotCounter + iChange, maxplot));
+	bool bEvilPost = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
+
+	if (bEvilPre == bEvilPost)
+		return;
+
+	// Climate System - 11/16/09 - Hell Terrain type is now handled in TerrainClass
+	GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
+	if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+	{
+		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, true);
+	}
+	else
+	{
+		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain(), false, true);
+	}
+
 	if (getFeatureType() != NO_FEATURE)
 	{
 		if (!GC.getFeatureInfo(getFeatureType()).isTerrain(getTerrainType()))
@@ -14799,13 +14745,13 @@ void CvPlot::setTerrainClassType(TerrainClassTypes eNewValue, bool bRecalculate,
 {
 	if (getTerrainClassType() != eNewValue)
 	{
-		if (getPlotCounter() < GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+		if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 		{
-			setTerrainType((TerrainTypes)GC.getTerrainClassInfo(eNewValue).getNaturalTerrain(), bRecalculate, bRebuildGraphics);
+			setTerrainType((TerrainTypes)GC.getTerrainClassInfo(eNewValue).getHellTerrain(), bRecalculate, bRebuildGraphics);
 		}
 		else
 		{
-			setTerrainType((TerrainTypes)GC.getTerrainClassInfo(eNewValue).getHellTerrain(), bRecalculate, bRebuildGraphics);
+			setTerrainType((TerrainTypes)GC.getTerrainClassInfo(eNewValue).getNaturalTerrain(), bRecalculate, bRebuildGraphics);
 		}
 	}
 }

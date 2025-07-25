@@ -648,7 +648,7 @@ CvPlot* CvMap::syncRandPlot(int iFlags, int iArea, int iMinUnitDistance, int iTi
 		}
 		if (iFlags & RANDPLOT_EVIL)
 		{
-			if (pTestPlot->getPlotCounter() <= GC.getDefineINT("EVIL_TILE_THRESHOLD")) continue;
+			if (pTestPlot->getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) continue;
 		}
 		if (iFlags & RANDPLOT_ORC_ALLY)
 		{

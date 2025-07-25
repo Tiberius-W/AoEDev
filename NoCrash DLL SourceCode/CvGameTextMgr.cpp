@@ -5991,7 +5991,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 /**				Verbal Indication of Hell Terrain for those cases without a Visual				**/
 /*************************************************************************************************/
 			bool bColored = false;
-			if (pPlot->getPlotCounter() > GC.getDefineINT("EVIL_TILE_THRESHOLD"))
+			if (pPlot->getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 			{
 				if(!bColored)
 				{
