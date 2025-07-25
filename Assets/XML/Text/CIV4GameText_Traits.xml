@@ -2049,6 +2049,14 @@
 		<Spanish>Two objectives for the Virtuous Pirate emergent trait. First, use your navy to control the oceans. Then, once the seas are safe, expand your trade opportunities.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_VIRTUOUS_PIRATE3_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Gain access to the [LINK=BUILDING_TRADER_ENCLAVE]Trader's Enclave[\LINK]</English>
+		<French>[NEWLINE][ICON_BULLET]Gain access to the [LINK=BUILDING_TRADER_ENCLAVE]Trader's Enclave[\LINK]</French>
+		<German>[NEWLINE][ICON_BULLET]Gain access to the [LINK=BUILDING_TRADER_ENCLAVE]Trader's Enclave[\LINK]</German>
+		<Italian>[NEWLINE][ICON_BULLET]Gain access to the [LINK=BUILDING_TRADER_ENCLAVE]Trader's Enclave[\LINK]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Gain access to the [LINK=BUILDING_TRADER_ENCLAVE]Trader's Enclave[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_NULL_PEDIA</Tag>
 		<English></English>
 		<French></French>
