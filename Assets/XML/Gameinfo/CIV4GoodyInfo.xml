@@ -1604,7 +1604,7 @@
 			<Type>GOODY_EXPLORE_LAIR_BOARDING_PARTY</Type>
 			<GoodyClasses>
 				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_BANDIT_MINOR</GoodyClassType>
+					<GoodyClassType>GOODYCLASS_BANDIT_MODERATE</GoodyClassType>
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
