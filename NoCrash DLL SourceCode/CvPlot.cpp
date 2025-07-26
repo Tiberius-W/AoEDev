@@ -2983,13 +2983,11 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 {
 	PROFILE("CvPlot::canHaveImprovement");
 	CvPlot* pLoopPlot;
-	bool bValid;
+	bool bValid = false;
 	int iI;
 
 	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
-
-	bValid = false;
 
 	// Xienwolf - 12/13/08 - Attempt to keep Unique Features from being removed on Mapgen
 	if (isCity() || (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isPermanent()))
@@ -3023,18 +3021,9 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	if (getFeatureType() != NO_FEATURE)
 	{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							12/27/08											**/
-/**																								**/
-/**						Allows for some unique Improvement/Feature combinations					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement())
-/**								----  End Original Code  ----									**/
-		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement() && !(GC.getImprovementInfo(eImprovement).isRequiresFeature() && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType())) )
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+		// Xienwolf - 12/27/08 - Allows for some unique Improvement/Feature combinations
+		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement()
+		&& !(GC.getImprovementInfo(eImprovement).isRequiresFeature() && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType())))
 		{
 			return false;
 		}
@@ -3056,63 +3045,6 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFeature() && (getFeatureType() == NO_FEATURE))
-	{
-		return false;
-	}
-
-
-	if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
-	{
-		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
-	{
-		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
-	{
-		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
-	{
-		bValid = true;
-	}
-
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**			Validates Improvements against what the terrain will be after they are placed		**/
-/*************************************************************************************************/
-	if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() != 0)
-	{
-		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
-		{
-			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain()))
-			{
-				bValid = true;
-			}
-		}
-
-		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
-		{
-			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain()))
-			{
-				bValid = true;
-			}
-		}
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
-	{
-		bValid = true;
-	}
-
-	if (!bValid)
 	{
 		return false;
 	}
@@ -3144,24 +3076,70 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		}
 	}
 
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**					Moved to Player-specific canHaveImprovement method.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
+
+	if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
 	{
-		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI))
+		bValid = true;
+	}
+
+	if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
+	{
+		bValid = true;
+	}
+
+	if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
+	{
+		bValid = true;
+	}
+
+	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+	{
+		bValid = true;
+	}
+
+	/* Blaze - Disabled; runs risk of hellfire spontaneously creating hell terrain, don't see the upside/purpose in AoE.
+
+	// Xienwolf - 02/01/09 - Validates Improvements against what the terrain will be after they are placed
+	if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() != 0)
+	{
+		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 		{
-			return false;
+			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain()))
+			{
+				bValid = true;
+			}
+		}
+
+		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+		{
+			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain()))
+			{
+				bValid = true;
+			}
 		}
 	}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+	*/
 
+	if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+	{
+		bValid = true;
+	}
+
+	if (!bValid)
+	{
+		return false;
+	}
+
+	// Jean Elcard - CivPlotMods - 04/02/09 - Moved to Player-specific canHaveImprovement method.
+	// for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
+	// {
+	// 	if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI))
+	// 	{
+	// 		return false;
+	// 	}
+	// }
+
+	// ????
 	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
 	{
 		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
