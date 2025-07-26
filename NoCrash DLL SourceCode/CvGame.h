@@ -632,7 +632,7 @@ public:
 	void changeTrophyValue(const TCHAR* szName, int iChange);
 	bool isReligionDisabled(int iReligion) const;
 	void testVictory();
-	int calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes ePlayer) const;
+	int calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes ePlayer, bool bLairDemon = false) const;
 /*************************************************************************************************/
 /**	Spawn Groups						08/12/10									Valkrionn	**/
 /**																								**/

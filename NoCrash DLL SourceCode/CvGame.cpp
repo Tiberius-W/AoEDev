@@ -10884,7 +10884,7 @@ void CvGame::createLairs()
 		}
 		// Lairs can only spawn if there's space for barbs to spawn; prevents wildly dense barb areas
 		// 1 animal lair can always spawn even if there's no space for a normal animal to spawn
-		else if (pArea != NULL && ((calcTargetBarbs(pArea, true, ePlayer) + (ePlayer == ANIMAL_PLAYER)) > pArea->getUnitsPerPlayer(ePlayer)))
+		else if (pArea != NULL && ((calcTargetBarbs(pArea, true, ePlayer, true) + (ePlayer == ANIMAL_PLAYER)) > pArea->getUnitsPerPlayer(ePlayer)))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
@@ -11281,7 +11281,7 @@ void CvGame::createBarbarianUnits()
 // Each barb type has slightly different density limit calculation. All here for easy comparison.
 // Note that barbs can spawn as groups and so go over the limit on the turn spawned, but should not
 // be substantially over aside from happenstance of small limit and multiple large groups spawning.
-int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes ePlayer) const
+int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes ePlayer, bool bLairDemon) const
 {
 	FAssertMsg(pArea != NULL, "Need passing valid area to calculated barb density");
 	FAssertMsg(ePlayer == ANIMAL_PLAYER || ePlayer == ORC_PLAYER || ePlayer == DEMON_PLAYER, "Need to calculate spawn for a barb team")
@@ -11313,7 +11313,9 @@ int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes eP
 	else
 	{
 		// Possible min value
-		int iMinDemons = pArea->getNumTiles() / GC.getHandicapInfo(getHandicapType()).getMinimumTilesPerDemon();
+		int iMinDemons = 0;
+		if (bLairDemon)
+			iMinDemons = pArea->getNumTiles() / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
 
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();

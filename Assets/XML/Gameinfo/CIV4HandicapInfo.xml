@@ -109,7 +109,7 @@
 			<iAnimalEscalationTurnsElapsed>150</iAnimalEscalationTurnsElapsed> <!-- Ehh... leaving for now. -->
 			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
-			<iMinimumTilesPerDemon>100</iMinimumTilesPerDemon> <!-- Minimum lower bound for demon density, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
+			<iTilesPerLairDemon>100</iTilesPerLairDemon> <!-- Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
 			<iDemonGlobalCounterFreeXPPercent>0</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
 			<iDemonPerTurnKnownTechsPercent>1</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
 			<iDemonBonus>-50</iDemonBonus>
@@ -214,7 +214,7 @@
 			<iAnimalEscalationTurnsElapsed>135</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>2</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>8</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>90</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>90</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>2</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>-30</iDemonBonus>
@@ -315,7 +315,7 @@
 			<iAnimalEscalationTurnsElapsed>120</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>3</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>12</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>80</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>80</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>2</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>-20</iDemonBonus>
@@ -413,7 +413,7 @@
 			<iAnimalEscalationTurnsElapsed>90</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>4</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>16</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>70</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>70</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>20</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>3</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
@@ -511,7 +511,7 @@
 			<iAnimalEscalationTurnsElapsed>75</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>60</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>60</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>30</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>4</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
@@ -614,7 +614,7 @@
 			<iAnimalEscalationTurnsElapsed>67</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>50</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>50</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>50</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>5</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
@@ -722,7 +722,7 @@
 			<iAnimalEscalationTurnsElapsed>50</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>7</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>28</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>45</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>45</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>70</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>7</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
@@ -833,7 +833,7 @@
 			<iAnimalEscalationTurnsElapsed>45</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>8</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>32</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>42</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>42</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>90</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>10</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
@@ -947,7 +947,7 @@
 			<iAnimalEscalationTurnsElapsed>35</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>9</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>41</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iMinimumTilesPerDemon>40</iMinimumTilesPerDemon>
+			<iTilesPerLairDemon>40</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>130</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
