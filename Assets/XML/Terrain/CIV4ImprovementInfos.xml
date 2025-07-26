@@ -14,6 +14,9 @@
 			<iAdvancedStartCost>0</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
+			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
+			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
+			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeaksMakesValid, but prevents spawning on flat/hill/water tiles as well -->
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
 			<iAppearanceProbability>0</iAppearanceProbability> <!-- X/100 of a percent to spawn on a valid tile in mapgen. Aka 10 means 1 in 1000 tiles will have this improvement, 50 means 1 in 200, etc -->
 			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
@@ -62,7 +65,7 @@
 			</GuardianPromotions>
 			<SpawnGroupType></SpawnGroupType> <!-- Baseline chance to spawn is 1/3 of iLairSpawnChance. See SpawnGroupInfos for what's in each group. Each unit in it counts toward iSpawnAtOnceLimit; note this can push over the limit -->
 			<iSpawnGroupChancePercentMod>0</iSpawnGroupChancePercentMod> <!-- As iSpawnUnitChancePercentMod, but for the listed group -->
-			<iBasePlotCounterModify>0</iBasePlotCounterModify> <!-- Sets tile plot counter to this value **if non-zero** and prevents per-turn value change. Values greater than PLOT_COUNTER_HELL_THRESHOLD (10) are hell tiles -->
+			<iBasePlotCounterModify>0</iBasePlotCounterModify> <!-- Sets tile plot counter to this value **if non-zero** and prevents per-turn value change. Values greater than PLOT_COUNTER_HELL_THRESHOLD (9) are hell tiles -->
 			<iVisibilityChange>1</iVisibilityChange> <!-- How much further this improvement lets units on it see -->
 			<iCultureControlStrength>1</iCultureControlStrength> <!-- Magnitude of culture control -->
 			<iCultureRange>1</iCultureRange> <!-- How many tiles distance out from the center, culture control applies. 0 is own tile only (if strength>0), 2 is BFC, etc -->

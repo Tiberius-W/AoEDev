@@ -2991,53 +2991,30 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	bValid = false;
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							12/13/08											**/
-/**																								**/
-/**					Attempt to keep Unique Features from being removed on Mapgen				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (isCity())
-/**								----  End Original Code  ----									**/
+	// Xienwolf - 12/13/08 - Attempt to keep Unique Features from being removed on Mapgen
 	if (isCity() || (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isPermanent()))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	{
 		return false;
 	}
 
-//FfH: Modified by Kael 09/10/2008
-//	if (isImpassable())
-//	{
-//		return false;
-//	}
 	if (isImpassable())
 	{
 		return false;
 	}
-/*************************************************************************************************/
-/**	Mountain Mod				expanded by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
+
+	// Mountain Mod - Ahwaric - 19.09.09
 	if (isPeak())
 	{
-		if (GC.getImprovementInfo(eImprovement).isPeakMakesValid())
+		if (GC.getImprovementInfo(eImprovement).isPeakMakesValid() || GC.getImprovementInfo(eImprovement).isRequiresPeak())
 		{
-				return true;
+			return true;
 		}
 		return false;
 	}
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
-	if (GC.getImprovementInfo(eImprovement).isRequiresPeak())
+	else if (GC.getImprovementInfo(eImprovement).isRequiresPeak())
 	{
-		if (!isPeak())
-		{
-			return false;
-		}
+		return false;
 	}
-//FfH: End Modify
 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
 	{
@@ -3082,6 +3059,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	{
 		return false;
 	}
+
 
 	if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
 	{
