@@ -10768,7 +10768,7 @@ void CvGame::createLairs()
 		}
 	}
 
-	// Setting up the static flags
+	// Setting up the static flags. Passable = not ice/volcano/walls
 	iFlags = RANDPLOT_PASSIBLE | RANDPLOT_NOT_CITY | RANDPLOT_NOT_IMPROVED | RANDPLOT_UNOCCUPIED | RANDPLOT_ADJACENT_UNOWNED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
 	{
@@ -10832,11 +10832,11 @@ void CvGame::createLairs()
 			iLairFlags |= RANDPLOT_LAND;
 		}
 
-		if (GC.getImprovementInfo(eLair).isPeakMakesValid())
+		if (GC.getImprovementInfo(eLair).isRequiresPeak())
 		{
 			iLairFlags |= RANDPLOT_PEAK;
 		}
-		else
+		else if (!GC.getImprovementInfo(eLair).isPeakMakesValid())
 		{
 			iLairFlags |= RANDPLOT_NOT_PEAK;
 		}
@@ -10864,7 +10864,8 @@ void CvGame::createLairs()
 		}
 
 		pPlot = GC.getMapINLINE().syncRandPlot(iLairFlags);
-		if (pPlot == NULL || !GC.getImprovementInfo(eLair).getTerrainMakesValid(pPlot->getTerrainType()))
+
+		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
 			continue;
 
 		// Check spawning criteria vs density requirements. Lairs that don't spawn might fill up tiles...
