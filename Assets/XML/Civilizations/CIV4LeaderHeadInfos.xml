@@ -25989,7 +25989,7 @@
 			<ReligionWeightModifiers>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
-					<iWeightModifier>-100</iWeightModifier>
+					<iWeightModifier>-80</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
@@ -25997,7 +25997,7 @@
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
-					<iWeightModifier>-100</iWeightModifier>
+					<iWeightModifier>-80</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
@@ -26005,7 +26005,7 @@
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ASHEN_VEIL</ReligionType>
-					<iWeightModifier>-100</iWeightModifier>
+					<iWeightModifier>-80</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
@@ -26013,11 +26013,11 @@
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ORDER</ReligionType>
-					<iWeightModifier>-100</iWeightModifier>
+					<iWeightModifier>-80</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_WHITE_HAND</ReligionType>
-					<iWeightModifier>-100</iWeightModifier>
+					<iWeightModifier>-80</iWeightModifier>
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
