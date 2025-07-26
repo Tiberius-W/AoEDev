@@ -8370,6 +8370,7 @@ public:
 //FfH: Added by Kael 10/01/2007
 	int getMaxCitiesMod() const;
 	int getUniqueFeatureChance() const;
+	int getMapsizePlotCounterAttenuation() const;
 //FfH: End Add
 
 	bool read(CvXMLLoadUtility* pXML);

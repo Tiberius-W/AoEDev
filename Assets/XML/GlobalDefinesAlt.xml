@@ -598,9 +598,17 @@
 		<DefineName>PLOT_COUNTER_HELL_THRESHOLD</DefineName>
 		<iDefineIntVal>9</iDefineIntVal>
 	</Define>
-	<Define> <!-- Controls how fast hell spreads per AC, gamespeed modified. 0% chance of spreading at 0AC, linear to 100% at AC of this value -->
-		<DefineName>FULL_PLOT_COUNTER_SPREAD_AT_AC</DefineName>
+	<Define> <!-- Controls how fast hell spreads per AC, gamespeed modified. Each tile has 0% chance of spreading at 0AC, linear to 100% at AC of this value -->
+		<DefineName>PLOT_COUNTER_FULL_SPREAD_AT_AC</DefineName>
 		<iDefineIntVal>80</iDefineIntVal>
+	</Define>
+	<Define> <!-- At 0 AC, how much dropoff there is between hell tiles from the origin source. Attenuation applies when source is under (100-AC) -->
+		<DefineName>PLOT_COUNTER_INITIAL_ATTENUATION</DefineName>
+		<iDefineIntVal>-25</iDefineIntVal>
+	</Define>
+	<Define> <!-- At this AC, there is 0 dropoff from adjacent tiles. Hell tiles will also stop passively disappearing if disconnected from source. -->
+		<DefineName>PLOT_COUNTER_NO_ATTENUATION_AC</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 <!-- FlavourMod: End Add -->
 	<Define>
