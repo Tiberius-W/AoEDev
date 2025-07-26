@@ -594,9 +594,9 @@
 		<DefineName>PLOT_COUNTER_MAX</DefineName>
 		<iDefineIntVal>100</iDefineIntVal>
 	</Define>
-	<Define>
+	<Define> <!-- Value *over* this is a hell tile, at or below is normal -->
 		<DefineName>PLOT_COUNTER_HELL_THRESHOLD</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>9</iDefineIntVal>
 	</Define>
 <!-- FlavourMod: End Add -->
 	<Define>
