@@ -37,6 +37,7 @@
 	<ElementType name="iAdvancedStartPointsMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxCitiesMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iUniqueFeatureChance" content="textOnly" dt:type="int"/>
+	<ElementType name="iMapsizePlotCounterAttenuation" content="textOnly" dt:type="int"/>
 	<ElementType name="ClimateInfo" content="eltOnly" order="many">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -83,6 +84,7 @@
 		<element type="iAdvancedStartPointsMod"/>
 		<element type="iMaxCitiesMod"/>
 		<element type="iUniqueFeatureChance"/>
+		<element type="iMapsizePlotCounterAttenuation"/>
 	</ElementType>
 	<ElementType name="WorldInfos" content="eltOnly">
 		<element type="WorldInfo" maxOccurs="*"/>

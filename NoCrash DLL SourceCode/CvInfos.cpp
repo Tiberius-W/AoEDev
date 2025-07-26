@@ -37243,8 +37243,9 @@ m_iAdvancedStartPointsMod(0),
 
 //FfH: Added by Kael 10/01/2007
 m_iMaxCitiesMod(0),
-m_iUniqueFeatureChance(0)
+m_iUniqueFeatureChance(0),
 //FfH: End Add
+m_iMapsizePlotCounterAttenuation(0)
 
 {
 }
@@ -37367,6 +37368,11 @@ int CvWorldInfo::getUniqueFeatureChance() const
 }
 //FfH: End Add
 
+int CvWorldInfo::getMapsizePlotCounterAttenuation() const
+{
+	return m_iMapsizePlotCounterAttenuation;
+}
+
 bool CvWorldInfo::read(CvXMLLoadUtility* pXML)
 {
 	if (!CvInfoBase::read(pXML))
@@ -37398,6 +37404,7 @@ bool CvWorldInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMaxCitiesMod, "iMaxCitiesMod");
 	pXML->GetChildXmlValByName(&m_iUniqueFeatureChance, "iUniqueFeatureChance");
 //FfH: End Add
+	pXML->GetChildXmlValByName(&m_iMapsizePlotCounterAttenuation, "iMapsizePlotCounterAttenuation");
 
 	return true;
 }
@@ -37434,6 +37441,7 @@ void CvWorldInfo::copyNonDefaults(CvWorldInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getAdvancedStartPointsMod()			== 0)	m_iAdvancedStartPointsMod			= pClassInfo->getAdvancedStartPointsMod();
 	if (getMaxCitiesMod()					== 0)	m_iMaxCitiesMod						= pClassInfo->getMaxCitiesMod();
 	if (getUniqueFeatureChance()			== 0)	m_iUniqueFeatureChance				= pClassInfo->getUniqueFeatureChance();
+	if (getMapsizePlotCounterAttenuation()	== 0)	m_iMapsizePlotCounterAttenuation	= pClassInfo->getMapsizePlotCounterAttenuation();
 }
 /*************************************************************************************************/
 /**	TrueModular								END													**/

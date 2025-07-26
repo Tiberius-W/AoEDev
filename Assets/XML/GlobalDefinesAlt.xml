@@ -598,6 +598,10 @@
 		<DefineName>PLOT_COUNTER_HELL_THRESHOLD</DefineName>
 		<iDefineIntVal>9</iDefineIntVal>
 	</Define>
+	<Define> <!-- Controls how fast hell spreads per AC, gamespeed modified. 0% chance of spreading at 0AC, linear to 100% at AC of this value -->
+		<DefineName>FULL_PLOT_COUNTER_SPREAD_AT_AC</DefineName>
+		<iDefineIntVal>80</iDefineIntVal>
+	</Define>
 <!-- FlavourMod: End Add -->
 	<Define>
 		<DefineName>WITHDRAW_PROMOTION</DefineName>

@@ -8410,6 +8410,7 @@ protected:
 	int m_iMaxCitiesMod;
 	int m_iUniqueFeatureChance;
 //FfH: End Add
+	int m_iMapsizePlotCounterAttenuation;
 
 };
 
