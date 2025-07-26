@@ -1115,7 +1115,7 @@ void CvPlot::doImprovementUpgrade()
 		{
 			// Slow down upgrade rate of lairs from 25%/turn once primary condition is met : Snarko Tweak 04/02/12
 			// iUpgradeOdds +=	(GC.getImprovementInfo(getImprovementType()).getLairUpgradeTechs(iK)) * GC.getGameINLINE().countKnownTechNumTeams((TechTypes)iK);
-			iUpgradeOdds +=	(GC.getImprovementInfo(getImprovementType()).getLairUpgradeTechs(iK)) * std::min(1, 3*GC.getGameINLINE().countKnownTechNumTeams((TechTypes)iK) / GC.getGameINLINE().countCivTeamsAlive());
+			iUpgradeOdds +=	(GC.getImprovementInfo(getImprovementType()).getLairUpgradeTechs(iK)) * std::min(1, 3*GC.getGameINLINE().countKnownTechNumTeams((TechTypes)iK) / GC.getGameINLINE().countTeamsAlive());
 		}
 		if (iUpgradeOdds > 0)
 		{

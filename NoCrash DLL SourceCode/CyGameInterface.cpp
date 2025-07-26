@@ -46,6 +46,7 @@ void CyGamePythonInterface()
 		.def("countCivPlayersAlive", &CyGame::countCivPlayersAlive, "int ()")
 		.def("countCivPlayersEverAlive", &CyGame::countCivPlayersEverAlive, "int ()")
 		.def("countCivTeamsAlive", &CyGame::countCivTeamsAlive, "int ()")
+		.def("countTeamsAlive", &CyGame::countTeamsAlive, "int ()")
 		.def("countCivTeamsEverAlive", &CyGame::countCivTeamsEverAlive, "int ()")
 		.def("countHumanPlayersAlive", &CyGame::countHumanPlayersAlive, "int ()")
 

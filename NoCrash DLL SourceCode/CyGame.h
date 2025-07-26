@@ -56,6 +56,7 @@ public:
 	int countCivPlayersAlive();
 	int countCivPlayersEverAlive();
 	int countCivTeamsAlive();
+	int countTeamsAlive();
 	int countCivTeamsEverAlive();
 	int countHumanPlayersAlive();
 

@@ -112,6 +112,7 @@ public:
 	DllExport int countCivPlayersAlive() const;																		// Exposed to Python
 	DllExport int countCivPlayersEverAlive() const;																// Exposed to Python
 	DllExport int countCivTeamsAlive() const;																			// Exposed to Python
+			  int countTeamsAlive() const;																			// Exposed to Python
 	DllExport int countCivTeamsEverAlive() const;																	// Exposed to Python
 	DllExport int countHumanPlayersAlive() const;																	// Exposed to Python
 

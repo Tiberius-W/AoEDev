@@ -166,6 +166,11 @@ int CyGame::countCivTeamsAlive()
 	return m_pGame ? m_pGame->countCivTeamsAlive() : -1;
 }
 
+int CyGame::countTeamsAlive()
+{
+	return m_pGame ? m_pGame->countTeamsAlive() : -1;
+}
+
 int CyGame::countCivTeamsEverAlive()
 {
 	return m_pGame ? m_pGame->countCivTeamsEverAlive() : -1;

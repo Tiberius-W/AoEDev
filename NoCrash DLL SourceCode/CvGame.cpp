@@ -3500,6 +3500,20 @@ int CvGame::countCivTeamsAlive() const
 	return iCount;
 }
 
+int CvGame::countTeamsAlive() const
+{
+	int iCount = 0;
+
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
+		{
+			iCount++;
+		}
+	}
+
+	return iCount;
+}
 
 int CvGame::countCivTeamsEverAlive() const
 {
@@ -10744,7 +10758,7 @@ void CvGame::createLairs()
 			iWeight = GC.getImprovementInfo((ImprovementTypes)iI).getLairCreationWeight();
 			for (int iJ = 0; iJ < GC.getNumTechInfos(); iJ++)
 			{
-				iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iJ)) * countKnownTechNumTeams((TechTypes)iJ);
+				iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iJ)) * countKnownTechNumTeams((TechTypes)iJ) / countTeamsAlive();
 			}
 			// Total weight for this lair might be negative; don't include if so
 			if (iWeight > 0)
@@ -10793,7 +10807,7 @@ void CvGame::createLairs()
 				iWeight = GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeight();
 				for (int iK = 0; iK < GC.getNumTechInfos(); iK++)
 				{
-					iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iK)) * countKnownTechNumTeams((TechTypes)iK);
+					iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iK)) * countKnownTechNumTeams((TechTypes)iK) / countTeamsAlive();
 				}
 				// Total weight for this lair might be negative; don't include if so
 				if (iWeight > 0)

@@ -31,14 +31,14 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<!-- Multiply civs that have this tech by the weight to adjust iLairCreationWeight. -->
+			<!-- Additive by percent of teams that have this tech (10 teams, 3 know, value is 20 => weight adjusted by 6) to adjust iLairCreationWeight. -->
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType> 
 					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
-			<!-- Multiply civs that have this tech by the weight. If sum weight is positive, allows upgrade to ImprovementUpgrade -->
+			<!-- Additive by percent of teams that have this tech (10 teams, 3 know, value is 20 => weight adjusted by 6). If sum weight is positive, allows upgrade to ImprovementUpgrade -->
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType> 
