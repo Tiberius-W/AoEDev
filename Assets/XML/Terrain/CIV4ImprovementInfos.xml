@@ -7659,7 +7659,6 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<bRequiresPeak>1</bRequiresPeak>
-			<bPeakMakesValid>1</bPeakMakesValid>
 			<bUnique>1</bUnique>
 			<PythonAtRange>atRangeGuardian(pCaster, pPlot)</PythonAtRange>
 			<iCultureRange>3</iCultureRange>

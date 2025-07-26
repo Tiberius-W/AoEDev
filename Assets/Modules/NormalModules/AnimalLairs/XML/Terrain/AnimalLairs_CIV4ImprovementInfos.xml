@@ -232,6 +232,7 @@
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bHillsMakesValid>1</bHillsMakesValid>
+			<bPeakMakesValid>1</bPeakMakesValid>
 			<ImmediateSpawnUnitType>UNIT_HIPPOGRIFF</ImmediateSpawnUnitType>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
@@ -276,6 +277,7 @@
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bHillsMakesValid>1</bHillsMakesValid>
+			<bPeakMakesValid>1</bPeakMakesValid>
 			<ImmediateSpawnUnitType>UNIT_GRIFFON</ImmediateSpawnUnitType>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
@@ -325,46 +327,8 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
+			<bHillsMakesValid>1</bHillsMakesValid>
 			<bPeakMakesValid>1</bPeakMakesValid>
-			<bRequiresPeak>1</bRequiresPeak>
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
 			<ImmediateSpawnUnitType>UNIT_ROC</ImmediateSpawnUnitType>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
