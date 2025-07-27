@@ -91,13 +91,17 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_TRACKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<SpawnPromotions>
@@ -207,11 +211,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -342,7 +346,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<SpawnPromotions>
