@@ -16,7 +16,7 @@
 			<iTilesPerGoody>0</iTilesPerGoody>
 			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
 			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
-			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeaksMakesValid, but prevents spawning on flat/hill/water tiles as well -->
+			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
 			<iAppearanceProbability>0</iAppearanceProbability> <!-- X/100 of a percent to spawn on a valid tile in mapgen. Aka 10 means 1 in 1000 tiles will have this improvement, 50 means 1 in 200, etc -->
 			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
@@ -24,7 +24,6 @@
 			<ImprovementUpgrade></ImprovementUpgrade> <!-- When upgraded, what it turns into. Tracked alive units are set to 0, ImmediateSpawnUnitType will spawn -->
 			<bPermanent>0</bPermanent> <!-- 1 means the improvement can't be destroyed in almost all circumstances -->
 			<bUnique>0</bUnique> <!-- 1 means won't spawn multiple, and represents a UF. Additional work elsewhere needed to implement name tag and such -->
-			<iLairCreationWeight>0</iLairCreationWeight> <!-- If above 0, allows lair to spawn as a lair during the game provided terrain and feature prereqs are met. Use LairCreationWeightTechs to allow spawn after gamestart -->
 			<bExplorable>1</bExplorable> <!-- Means units can explore to destroy/pillage it. If ImprovementPillage is set, will change to that. Recommend setting with GoodyClasses... -->
 			<iLairTier>1</iLairTier> <!-- For AI. 1 is minor stuff, 2 is moderate, 3 is UFs. Roughly matches to the tier of a unit the AI will consider using to explore with -->
 			<!-- Look at goody classes for options -->
@@ -34,17 +33,18 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iLairCreationWeight>0</iLairCreationWeight> <!-- If above 0, allows lair to spawn as a lair during the game provided terrain and feature prereqs are met. Weight relative to other lairs, avg ~50 -->
 			<!-- Additive by percent of teams that have this tech (10 teams, 3 know, value is 20 => weight adjusted by 6) to adjust iLairCreationWeight. -->
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType> 
+					<LairCreationWeightTechType>TECH_NEVER</LairCreationWeightTechType> 
 					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
-			<!-- Additive by percent of teams that have this tech (10 teams, 3 know, value is 20 => weight adjusted by 6). If sum weight is positive, allows upgrade to ImprovementUpgrade -->
+			<!-- Determines % chance per turn to upgrade to next tier if has ImprovementUpgrade set. E.g. 6 total teams exist, value set at 30 means if 1 team has the tech, then 5% chance/turn -->
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType> 
+					<LairUpgradeTechType>TECH_NEVER</LairUpgradeTechType> 
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
@@ -984,7 +984,12 @@
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
-			<iLairCreationWeight>500</iLairCreationWeight>
+			<LairCreationWeightTechs>
+				<LairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_WAY_OF_THE_WICKED</LairCreationWeightTechType> 
+					<iLairCreationWeightTech>1000</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+			</LairCreationWeightTechs>
 			<iBasePlotCounterModify>30</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Jungle Altar -->
@@ -2050,7 +2055,6 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<iAppearanceProbability>60</iAppearanceProbability>
 			<ImprovementUpgrade>IMPROVEMENT_BANDIT_HIDEOUT</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_BANDIT</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_BANDIT_CHIEF</ImmediateSpawnUnitType>
@@ -2077,17 +2081,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>60</iAppearanceProbability>
 			<iLairCreationWeight>100</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -2180,21 +2189,17 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
-					<iLairUpgradeTech>5</iLairUpgradeTech>
-				</LairUpgradeTech>
-				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_WARHORSES</LairUpgradeTechType>
-					<iLairUpgradeTech>25</iLairUpgradeTech>
+					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -2302,7 +2307,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -2364,7 +2369,6 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_BARROW_GLOOMY</ImprovementUpgrade>
-			<iAppearanceProbability>50</iAppearanceProbability>
 			<SpawnUnitType>UNIT_SKELETON</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_SKELETON_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
@@ -2390,17 +2394,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>50</iAppearanceProbability>
 			<iLairCreationWeight>75</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_NECROMANCY</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-75</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_NECROMANCY</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_MALEVOLENT_DESIGNS</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<iBasePlotCounterModify>10</iBasePlotCounterModify>
@@ -2511,11 +2520,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_NECROMANCY</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>75</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_MALEVOLENT_DESIGNS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-75</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -2647,7 +2656,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_MALEVOLENT_DESIGNS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>75</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<iBasePlotCounterModify>20</iBasePlotCounterModify>
@@ -2676,6 +2685,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iAppearanceProbability>20</iAppearanceProbability>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Blighted Forest -->
@@ -2739,7 +2749,6 @@
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
 			</GuardianPromotions>
-			<iLairCreationWeight>0</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Centaur Camp -->
 			<Type>IMPROVEMENT_CENTAUR_CAMP</Type>
@@ -2779,7 +2788,6 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_CENTAUR_WARCAMP</ImprovementUpgrade>
-			<iAppearanceProbability>50</iAppearanceProbability>
 			<SpawnUnitType>UNIT_CENTAUR_OUTRUNNER</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_CENTAUR_MARAUDER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -2807,17 +2815,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>50</iAppearanceProbability>
 			<iLairCreationWeight>45</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_HORSEBACK_RIDING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_HORSEBACK_RIDING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_STIRRUPS</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -2908,11 +2921,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_HORSEBACK_RIDING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_STIRRUPS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -3024,7 +3037,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_STIRRUPS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -3071,7 +3084,6 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<iAppearanceProbability>70</iAppearanceProbability>
 			<bExplorable>1</bExplorable>
 			<iLairTier>2</iLairTier>
 			<GoodyClasses>
@@ -3188,6 +3200,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>70</iAppearanceProbability>
 			<iLairCreationWeight>80</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower -->
@@ -3200,6 +3213,10 @@
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_SORCERY</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_ARCANE_LORE</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<bPermanent>1</bPermanent>
@@ -3238,7 +3255,6 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<iAppearanceProbability>20</iAppearanceProbability>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -3263,6 +3279,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>20</iAppearanceProbability>
 			<iLairCreationWeight>40</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower 2 -->
@@ -3354,11 +3371,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_SORCERY</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ARCANE_LORE</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -3477,7 +3494,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ARCANE_LORE</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
@@ -3516,7 +3533,6 @@
 			</TerrainMakesValids>
 			<ImprovementPillage>IMPROVEMENT_GOBLIN_FORT_CLEARED</ImprovementPillage>
 			<ImprovementUpgrade>IMPROVEMENT_GOBLIN_VILLAGE</ImprovementUpgrade>
-			<iAppearanceProbability>40</iAppearanceProbability>
 			<SpawnGroupType>SPAWN_GROUP_GOBLIN_PARTY</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_ARCHER_SCORPION_CLAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -3546,17 +3562,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>40</iAppearanceProbability>
 			<iLairCreationWeight>70</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CODE_OF_LAWS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-70</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_CODE_OF_LAWS</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_TAXATION</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -3650,11 +3671,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CODE_OF_LAWS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>70</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TAXATION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-70</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -3776,7 +3797,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TAXATION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>70</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -3906,7 +3927,6 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<iAppearanceProbability>25</iAppearanceProbability>
 			<bExplorable>1</bExplorable>
 			<iLairTier>1</iLairTier>
 			<GoodyClasses>
@@ -3915,6 +3935,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>25</iAppearanceProbability>
 			<iLairCreationWeight>100</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lion Den -->
@@ -3949,8 +3970,11 @@
 					<TerrainType>TERRAIN_COAST</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<iAppearanceProbability>10</iAppearanceProbability>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
 			<GoodyClasses>
@@ -3967,6 +3991,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>100</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Staedding -->
@@ -4018,7 +4043,6 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_STAEDDING_OLD</ImprovementUpgrade>
-			<iAppearanceProbability>50</iAppearanceProbability>
 			<SpawnUnitType>UNIT_HUSCARL</SpawnUnitType>
 			<iSpawnUnitChancePercentMod>25</iSpawnUnitChancePercentMod>
 			<ImmediateSpawnUnitType>UNIT_HILL_GIANT</ImmediateSpawnUnitType>
@@ -4044,17 +4068,23 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iLairCreationWeight>80</iLairCreationWeight>
+			<!-- Giants start with a high percent to spawn, but each tier is half as likely to appear -->
+			<iAppearanceProbability>80</iAppearanceProbability>
+			<iLairCreationWeight>60</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CONSTRUCTION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-15</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_CONSTRUCTION</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_ENGINEERING</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -4154,11 +4184,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CONSTRUCTION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>30</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ENGINEERING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -4279,7 +4309,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ENGINEERING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>15</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -4306,7 +4336,6 @@
 				</FeatureMakesValid>
 			</FeatureMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_RUINS_SPRAWLING</ImprovementUpgrade>
-			<iAppearanceProbability>75</iAppearanceProbability>
 			<SpawnUnitType>UNIT_LIZARDMAN_WILD</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_LIZARDMAN_HEAVY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4332,17 +4361,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>75</iAppearanceProbability>
 			<iLairCreationWeight>100</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_TRACKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -4413,11 +4447,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -4509,7 +4543,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>100</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -4596,7 +4630,7 @@
 			<Type>IMPROVEMENT_GRIFFIN_WEYR</Type>
 			<Description>TXT_KEY_IMPROVEMENT_GRIFFIN_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
-			<bHillsMakesValid>1</bHillsMakesValid>
+			<bPeakMakesValid>1</bPeakMakesValid>
 			<SpawnUnitType>UNIT_GRIFFON</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -4625,7 +4659,6 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_FROSTLING_CAMP</ImprovementUpgrade>
-			<iAppearanceProbability>50</iAppearanceProbability>
 			<SpawnUnitType>UNIT_FROSTLING</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_FROSTLING_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4653,17 +4686,22 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>50</iAppearanceProbability>
 			<iLairCreationWeight>45</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_HUNTING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_KNOWLEDGE_OF_THE_ETHER</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_HUNTING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_KNOWLEDGE_OF_THE_ETHER</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_ELEMENTALISM</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<GuardianPromotions>
@@ -4737,17 +4775,17 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_HUNTING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_KNOWLEDGE_OF_THE_ETHER</LairCreationWeightTechType>
+					<iLairCreationWeightTech>45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_ELEMENTALISM</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_TRACKING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_ELEMENTALISM</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
@@ -4776,6 +4814,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<iSpawnGroupChancePercentMod>25</iSpawnGroupChancePercentMod>
 			<SpawnGroupType>SPAWN_GROUP_FROST_GIANT_ENTOURAGE</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_FROSTLING_SHAMAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4837,8 +4876,8 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_ELEMENTALISM</LairCreationWeightTechType>
+					<iLairCreationWeightTech>45</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
