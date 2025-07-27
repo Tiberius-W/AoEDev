@@ -5081,8 +5081,8 @@
 					<BonusType>BONUS_MARBLE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>1750</iSpreadRand>
+					<iDiscoverRand>1750</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>1</iYieldChange>
@@ -5093,8 +5093,8 @@
 					<BonusType>BONUS_SHEUT_STONE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>1750</iSpreadRand>
+					<iDiscoverRand>1750</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>2</iYieldChange>
@@ -5105,8 +5105,8 @@
 					<BonusType>BONUS_STONE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>1750</iSpreadRand>
+					<iDiscoverRand>1750</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>2</iYieldChange>
@@ -5117,8 +5117,8 @@
 					<BonusType>BONUS_SALT</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>1750</iSpreadRand>
+					<iDiscoverRand>1750</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
@@ -5126,6 +5126,48 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_NECROMANCY</PrereqTech>
@@ -5724,7 +5766,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_CLAM</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5736,7 +5778,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_CRAB</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5748,7 +5790,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_SHRIMP</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5760,7 +5802,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_FISH</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5772,7 +5814,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_PEARL</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5784,7 +5826,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_JETEYE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5796,7 +5838,7 @@
 				<BonusTypeStruct>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>0</bBonusTrade>
+					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
@@ -5806,16 +5848,6 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<FeatureMakesValids>
-				<FeatureMakesValid>
-					<FeatureType>FEATURE_KELP</FeatureType>
-					<bMakesValid>1</bMakesValid>
-				</FeatureMakesValid>
-				<FeatureMakesValid>
-					<FeatureType>FEATURE_KELP_FOREST</FeatureType>
-					<bMakesValid>1</bMakesValid>
-				</FeatureMakesValid>
-			</FeatureMakesValids>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_NECROMANCY</PrereqTech>

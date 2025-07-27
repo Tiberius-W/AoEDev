@@ -2573,8 +2573,8 @@
 			<Button>Art/Civs/Dtesh/Pyre/Pyre.dds</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
-		<BuildInfo> <!-- Graveyard -->
-			<Type>BUILD_GRAVEYARD</Type>
+		<BuildInfo> <!-- D'tesh Crypt-->
+			<Type>BUILD_DTESH_CRYPT</Type>
 			<Description>TXT_KEY_BUILD_CRYPT</Description>
 			<Help/>
 			<PrereqTech>TECH_DARK_SECRETS</PrereqTech>
