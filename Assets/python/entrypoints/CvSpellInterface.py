@@ -4779,7 +4779,7 @@ def spellWonder(caster):
 			for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
 				pLoopPlot = CyMap().plot(x, y)
 				if not pLoopPlot.isNone():
-					pLoopPlot.changePlotCounter(100)
+					pLoopPlot.changePlotCounter(80)
 		elif iRnd == 14:
 			caster.cast(getInfoType('SPELL_ENTANGLE'))
 		elif iRnd == 15:
@@ -13145,18 +13145,7 @@ def ExploreCowardlyCultist(argsList):
 def ExploreSealedWell(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
-	PlotCap				= 2
-	ExtraPlots			= CyGame().getSorenRandNum(5, "Extra Corrupted Plots")
-	PlotCap				= PlotCap + ExtraPlots
-	pPlot.changePlotCounter(100)
-	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,1):
-		iPlot			= getPlot(x,y)
-		iRnd			= CyGame().getSorenRandNum(100, "Chance to spread Hell Terrain")
-		if iRnd > 50:
-			iPlot.changePlotCounter(100)
-			PlotCap		+= -1
-			if PlotCap == 0:
-				break
+	pPlot.changePlotCounter(10 + CyGame().getSorenRandNum(100, "Could be a little evil, 10percent could be a lot of evil..."))
 
 # GOODY_BURNED_LAIR
 def ReqBurnedLair(argsList):

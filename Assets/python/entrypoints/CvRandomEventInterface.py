@@ -766,7 +766,7 @@ def doFlareEntropyNode(argsList):
 		for iY in range(kTriggeredData.iPlotY-1, kTriggeredData.iPlotY+2, 1):
 			pPlot = CyMap().plot(iX,iY)
 			if pPlot.isNone() == False:
-				pPlot.changePlotCounter(100)
+				pPlot.changePlotCounter(40)
 	CyGame().changeGlobalCounter(2)
 # FF: Added by Jean Elcard 14/01/2009 (speed tweak)
 	rebuildGraphics()
@@ -800,7 +800,7 @@ def doFlareLifeNode(argsList):
 		for iY in range(kTriggeredData.iPlotY-2, kTriggeredData.iPlotY+3, 1):
 			pPlot = CyMap().plot(iX,iY)
 			if pPlot.isNone() == False:
-				pPlot.changePlotCounter(-100)
+				pPlot.changePlotCounter(-90)
 	CyGame().changeGlobalCounter(-2)
 # FF: Added by Jean Elcard 14/01/2009 (speed tweak)
 	rebuildGraphics()

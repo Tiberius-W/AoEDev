@@ -7574,28 +7574,10 @@ public:
 	bool isFoundFreshWater() const;			// Exposed to Python
 	bool isHell() const;					// Exposed to Python
 
-//FfH: Added by Kael 08/02/2007
+	//FfH: Added by Kael 08/02/2007
 	void setArtDefineTag2(const TCHAR* szTag);
 	bool isNormalize() const;
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**			Obsolete FfH Code. Replaced with TerrainYieldChanges in CvCivilizationInfo.			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	int getPlotCounterDown() const;
-	int getTerrainDown() const;
-	int getPlotCounterUp() const;
-	int getTerrainUp() const;
-	bool readPass2(CvXMLLoadUtility* pXML);
-	int getCivilizationYieldType() const;
-	int getCivilizationYieldChange(int i) const;
-	bool readPass3();
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
-//FfH: End Add
+	//FfH: End Add
 
 	DllExport const TCHAR* getArtDefineTag() const;
 	void setArtDefineTag(const TCHAR* szTag);

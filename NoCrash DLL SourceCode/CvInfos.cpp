@@ -34537,48 +34537,6 @@ bool CvTerrainInfo::isNormalize() const
 	return m_bNormalize;
 }
 
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**			Obsolete FfH Code. Replaced with TerrainYieldChanges in CvCivilizationInfo.			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-int CvTerrainInfo::getCivilizationYieldType() const
-{
-	return m_iCivilizationYieldType;
-}
-
-int CvTerrainInfo::getCivilizationYieldChange(int i) const
-{
-	return m_piCivilizationYieldChange ? m_piCivilizationYieldChange[i] : -1;
-}
-
-int CvTerrainInfo::getPlotCounterDown() const
-{
-	return m_iPlotCounterDown;
-}
-
-int CvTerrainInfo::getTerrainDown() const
-{
-	return m_iTerrainDown;
-}
-
-int CvTerrainInfo::getPlotCounterUp() const
-{
-	return m_iPlotCounterUp;
-}
-
-int CvTerrainInfo::getTerrainUp() const
-{
-	return m_iTerrainUp;
-}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
-
-//FfH: End Add
-
 // Arrays
 
 int CvTerrainInfo::getYield(int i) const
