@@ -1037,75 +1037,34 @@ class CustomFunctions:
 										pPlot.setPlotEffectType(Feature["Haunted Lands"])
 
 		#### Hell Terrain Section
-			if not Option["No Plot Counter"] and not (iImprovement != -1 and gc.getImprovementInfo(iImprovement).getBasePlotCounterModify() != 0):
-				# bUntouched = True
-				# changePlotCounter = pPlot.changePlotCounter
-				# if bIsOwned:
-				# 	if eCiv == Civ["Infernal"]:
-				# 		changePlotCounter(100)
-				# 		bUntouched = False
-				# 	if (bUntouched and iStateReligion == Rel["Ashen Veil"] or (iCount >= 50 and iAlignment == Alignment["Evil"]) or (iCount >= 75 and iAlignment == Alignment["Neutral"])):
-				# 		iX = pPlot.getX()
-				# 		iY = pPlot.getY()
-				# 		for iiX,iiY in RANGE1:
-				# 			pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
-				# 			if pAdjacentPlot.isNone() == False:
-				# 				if pAdjacentPlot.getPlotCounter() > 10:
-				# 					changePlotCounter(1)
-				# 					bUntouched = False
-				# if (bUntouched and pPlot.isOwned() == False and iCount > 25):
-				# 	iX = pPlot.getX(); iY = pPlot.getY()
-				# 	for iiX,iiY in RANGE1:
-				# 		pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
-				# 		if pAdjacentPlot.isNone() == False:
-				# 			if pAdjacentPlot.getPlotCounter() > 10:
-				# 				changePlotCounter(1)
-				# 				bUntouched = False
+			if not Option["No Plot Counter"]:
 				iPlotCount = pPlot.getPlotCounter()
-				# if (bUntouched and iPlotCount > 0):
-				# 	changePlotCounter(-1)
-
-				#### Added Check here incase decision is to let Plot Counter progress while leaving terrain unaffected
-				if not Option["No Plot Counter"]:
-					setBonus = pPlot.setBonusType
-					if iPlotCount > 9:
-						if (iBonus == Bonus["Sheep"] or iBonus == Bonus["Pig"]):
-							setBonus(Bonus["Toad"])
-						elif (iBonus == Bonus["Horse"] or iBonus == Bonus["Cow"]):
-							setBonus(Bonus["Nightmare"])
-						elif (iBonus == Bonus["Cotton"] or iBonus == Bonus["Silk"]):
-							setBonus(Bonus["Razorweed"])
-						elif (iBonus == Bonus["Banana"] or iBonus == Bonus["Sugar"]):
-							setBonus(Bonus["Gulagarm"])
-						elif (iBonus == Bonus["Marble"]): setBonus(Bonus["Sheut"])
-						elif (iBonus == Bonus["Corn"] or iBonus == Bonus["Rice"] or iBonus == Bonus["Wheat"]):
-							setBonus(-1)
-							setImprov(Improvement["Snake Pillar"])
-					if iPlotCount < 10:
-					#	if iBonus == Bonus["Toad"]:
-					#		if randNum(100, "Hell Convert") < 50: setImprov(Bonus["Sheep"])
-					#		else: pPlot.setBonusType(Bonus["Pig"])
-					#	if iBonus == Bonus["Nightmare"]:
-					#		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Horse"])
-					#		else: setBonus(Bonus["Cow"])
-					#	if iBonus == Bonus["Razorweed"]:
-					#		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Cotton"])
-					#		else: setBonus(Bonus["Silk"])
-					#	if iBonus == Bonus["Gulagarm"]:
-					#		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Banana"])
-					#		else: setBonus(Bonus["Sugar"])
-					#	if (iBonus == Bonus["Sheut"]): setBonus(Bonus["Marble"])
-						if iImprovement == Improvement["Snake Pillar"]:
-							setImprov(-1)
-							iCount = randNum(100, "Hell Convert")
-							if  iCount < 33: setBonus(Bonus["Corn"])
-							else:
-								if iCount < 66: setBonus(Bonus["Rice"])
-								else: setBonus(Bonus["Wheat"])
-					if iTerrain == Terrain["Burning sands"]:
-						if not bCity and not bPeak:
-							if randNum(100, "Flames") <= Define["Flame Spread"]:
-								setFeature(Feature["Flames"], 0)
+				setBonus = pPlot.setBonusType
+				if iPlotCount > 9:
+					if (iBonus == Bonus["Sheep"] or iBonus == Bonus["Pig"]):
+						setBonus(Bonus["Toad"])
+					elif (iBonus == Bonus["Horse"] or iBonus == Bonus["Cow"]):
+						setBonus(Bonus["Nightmare"])
+					elif (iBonus == Bonus["Cotton"] or iBonus == Bonus["Silk"]):
+						setBonus(Bonus["Razorweed"])
+					elif (iBonus == Bonus["Banana"] or iBonus == Bonus["Sugar"]):
+						setBonus(Bonus["Gulagarm"])
+					elif (iBonus == Bonus["Marble"]): setBonus(Bonus["Sheut"])
+					elif (iBonus == Bonus["Corn"] or iBonus == Bonus["Rice"] or iBonus == Bonus["Wheat"]):
+						setBonus(-1)
+						setImprov(Improvement["Snake Pillar"])
+				if iPlotCount < 10:
+					if iImprovement == Improvement["Snake Pillar"]:
+						setImprov(-1)
+						iCount = randNum(100, "Hell Convert")
+						if  iCount < 33: setBonus(Bonus["Corn"])
+						else:
+							if iCount < 66: setBonus(Bonus["Rice"])
+							else: setBonus(Bonus["Wheat"])
+				if iTerrain == Terrain["Burning sands"]:
+					if not bCity and not bPeak:
+						if randNum(100, "Flames") <= Define["Flame Spread"]:
+							setFeature(Feature["Flames"], 0)
 
 
 	def doTurnKhazad(self, iPlayer):

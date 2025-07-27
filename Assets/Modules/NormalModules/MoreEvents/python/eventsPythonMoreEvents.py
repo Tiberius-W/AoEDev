@@ -484,7 +484,7 @@ def doDeadAngel4 (argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	pPlot.changePlotCounter(60)
+	pPlot.changePlotCounter(50)
 
 def helpDeadAngel4(argsList):
 	iEvent = argsList[0]

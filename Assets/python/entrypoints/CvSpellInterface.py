@@ -3655,25 +3655,32 @@ def reqSanctify(caster):
 		return True
 	if pPlot.getImprovementType() == getInfoType('IMPROVEMENT_GRAVEYARD'):
 		return True
+	if pPlot.getImprovementType() == getInfoType('IMPROVEMENT_SNAKE_PILLAR'):
+		return True
 	getPlot	= CyMap().plot
 	iRange = 1 + caster.getSpellExtraRange()
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_PLOT_COUNTER):
-		iBrokenLands = Terrain["Broken lands"]
-		iBurningSands = Terrain["Burning sands"]
-		iFieldsOfPerdition = Terrain["Fields of perdition"]
-		iShallows = Terrain["Shallows"]
+		lValidTerrains = [
+			Terrain["Broken lands"],
+			Terrain["Burning sands"],
+			Terrain["Fields of perdition"],
+			Terrain["Shallows"],
+			Terrain["Blackwater"],
+			Terrain["Blighted coast"]
+		]
 		for x,y in plotsInCircularRange( caster.getX(), caster.getY(), iRange ):
 			pPlot = getPlot(x,y)
 			if not pPlot.isNone():
-				iTerrain = pPlot.getTerrainType()
-				if (iTerrain == iBrokenLands or iTerrain == iBurningSands or iTerrain == iFieldsOfPerdition or iTerrain == iShallows):
+				if pPlot.getTerrainType() in lValidTerrains:
 					bValid = True
+					break
 	else:
 		for x,y in plotsInCircularRange( caster.getX(), caster.getY(), iRange ):
 			pPlot = getPlot(x,y)
 			if not pPlot.isNone():
-				if pPlot.getPlotCounter() != 0:
+				if pPlot.getPlotCounter() > gc.getDefineINT('PLOT_COUNTER_HELL_THRESHOLD'):
 					bValid = True
+					break
 	if bValid == False:
 		return False
 	pPlayer = gc.getPlayer(caster.getOwner())
@@ -3730,8 +3737,11 @@ def spellSanctify(caster):
 				iTerrain = pPlot.getTerrainType()
 				if iTerrain == Terrain["Blackwater"]:
 					pPlot.setTerrainType(Terrain["Ocean"], False, False)
+					bSwapped = True
 				if iTerrain == Terrain["Blighted coast"]:
+					bSwapped = True
 					pPlot.setTerrainType(Terrain["Coast"], False, False)
+					bSwapped = True
 				if iTerrain == Terrain["Broken lands"]:
 					pPlot.setTerrainType(Terrain["Grass"], False, False)
 					bSwapped = True
@@ -3752,9 +3762,8 @@ def spellSanctify(caster):
 			if not pPlot.isNone():
 				if gc.getTerrainInfo(pPlot.getTerrainType()).isHell():
 					sanctifyResource(pPlot)
-				iPlotCounter = pPlot.getPlotCounter()
-				if iPlotCounter > 0:
-					pPlot.changePlotCounter(pPlot.getPlotCounter() * -1)
+				pPlot.setPlotCounter(0)
+
 # FF: Added by Jean Elcard 14/01/2009 (speed tweak)
 		rebuildGraphics()
 # FF: End Add
@@ -4907,7 +4916,7 @@ def spellWonder(caster):
 			for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
 				pLoopPlot = CyMap().plot(x, y)
 				if pLoopPlot.isNone() == False:
-					pLoopPlot.changePlotCounter(-100)
+					pLoopPlot.setPlotCounter(0)
 		elif iRnd == 62:
 			caster.cast(getInfoType('SPELL_SEVER_SOUL'))
 		elif iRnd == 63:
@@ -13145,7 +13154,7 @@ def ExploreCowardlyCultist(argsList):
 def ExploreSealedWell(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
-	pPlot.changePlotCounter(10 + CyGame().getSorenRandNum(100, "Could be a little evil, 10percent could be a lot of evil..."))
+	pPlot.changePlotCounter(10 + CyGame().getSorenRandNum(70, "Could be a little evil, could be a lot of evil..."))
 
 # GOODY_BURNED_LAIR
 def ReqBurnedLair(argsList):

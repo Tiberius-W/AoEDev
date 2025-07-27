@@ -984,8 +984,8 @@
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
-			<iLairCreationWeight>1000</iLairCreationWeight>
-			<iBasePlotCounterModify>20</iBasePlotCounterModify>
+			<iLairCreationWeight>500</iLairCreationWeight>
+			<iBasePlotCounterModify>30</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Jungle Altar -->
 			<Type>IMPROVEMENT_JUNGLE_ALTAR</Type>
@@ -2403,6 +2403,7 @@
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
+			<iBasePlotCounterModify>10</iBasePlotCounterModify>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
 			</SpawnPromotions>
@@ -2523,6 +2524,7 @@
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
+			<iBasePlotCounterModify>15</iBasePlotCounterModify>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
 			</SpawnPromotions>
@@ -2648,6 +2650,7 @@
 					<iLairCreationWeightTech>30</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iBasePlotCounterModify>20</iBasePlotCounterModify>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
 			</SpawnPromotions>
@@ -7441,7 +7444,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<bUnique>1</bUnique>
 			<BonusConvert>BONUS_MANA_SPIRIT</BonusConvert>
-			<iBasePlotCounterModify>-20</iBasePlotCounterModify>
+			<iBasePlotCounterModify>-100</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Broken Sepulcher -->
 			<Type>IMPROVEMENT_BROKEN_SEPULCHER</Type>
@@ -8137,6 +8140,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<iBasePlotCounterModify>10</iBasePlotCounterModify>
 			<ImprovementUpgrade>IMPROVEMENT_RINWELL2</ImprovementUpgrade>
 			<bUnique>1</bUnique>
 			<iCultureRange>1</iCultureRange>
@@ -8158,6 +8162,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
+			<iBasePlotCounterModify>15</iBasePlotCounterModify>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
@@ -8177,6 +8182,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_STYGIAN_GUARD</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
+			<iBasePlotCounterModify>20</iBasePlotCounterModify>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<iCultureRange>3</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
@@ -8637,7 +8643,7 @@
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
-			<iBasePlotCounterModify>-20</iBasePlotCounterModify>
+			<iBasePlotCounterModify>-100</iBasePlotCounterModify>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_SPIRIT</BonusType>

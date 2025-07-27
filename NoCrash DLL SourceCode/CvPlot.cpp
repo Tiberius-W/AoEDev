@@ -13596,6 +13596,7 @@ void CvPlot::changePlotCounter(int iChange)
 	if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
 	{
 		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, true);
+		// If we want to move hellification of resources into dll, this would be the place.
 	}
 	else
 	{
@@ -13706,8 +13707,8 @@ int CvPlot::calcTargetPlotCounter()
 	if (GC.getGameINLINE().getMapRandNum(100, "Chance hell doesn't grow") >= iSpreadChance)
 		return iPlotCounter;
 
-	// Peaks are significantly slower for hell to spread through, assuming not directly owned by infernals
-	int iGain = iHighestAdjCounter * iAC / 100 / (1 + 4 * isPeak());
+	// Some terrain is slower for hell to spread through, assuming not directly owned by infernals
+	int iGain = iHighestAdjCounter * iAC / 100 / (1 + 9*isPeak() + 3*isWater());
 	return std::min(iTargetCounter, iPlotCounter + iGain);
 }
 
