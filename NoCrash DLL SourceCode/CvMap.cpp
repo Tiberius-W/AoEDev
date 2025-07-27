@@ -358,14 +358,30 @@ void CvMap::doTurn()
 {
 	PROFILE("CvMap::doTurn()")
 
-	int iI;
+	int iI, iPlotIndex;
 	int iNumPlots = numPlotsINLINE();
 	// Start at a random plot, otherwise barbs will be always denser closer to index 0.
 	int iOffset = GC.getGameINLINE().getMapRandNum(iNumPlots, "Rand Starting Plot");
 
-	for (iI = 0; iI < iNumPlots; iI++)
+	std::list<int> listPlotCounters;
+
+	for (iI = iOffset; iI < (iNumPlots + iOffset); iI++)
 	{
-		plotByIndexINLINE((iI + iOffset)%iNumPlots)->doTurn();
+		iPlotIndex = iI % iNumPlots;
+		plotByIndexINLINE(iPlotIndex)->doTurn();
+		// Construct a list of what all the plot counters should be. Can't immediately apply due to ordering oddities
+		listPlotCounters.push_back(plotByIndexINLINE(iPlotIndex)->calcPlotCounter());
+	}
+
+	iPlotIndex = iOffset;
+
+	// Apply plot counters after all have been calculated
+	while (!listPlotCounters.empty())
+	{
+		iPlotIndex %= iNumPlots;
+		plotByIndexINLINE(iPlotIndex)->setPlotCounter(listPlotCounters.front());
+		listPlotCounters.pop_front();
+		iPlotIndex++;
 	}
 }
 

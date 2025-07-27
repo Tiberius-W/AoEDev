@@ -13663,6 +13663,17 @@ void CvPlot::changePlotCounter(int iChange)
 	}
 }
 
+void CvPlot::setPlotCounter(int iNewValue)
+{
+	changePlotCounter(iNewValue - getPlotCounter());
+}
+
+int CvPlot::calcPlotCounter() const
+{
+	// Placeholder!
+	return getPlotCounter();
+}
+
 bool CvPlot::isPythonActive() const
 {
 	return m_bPythonActive;

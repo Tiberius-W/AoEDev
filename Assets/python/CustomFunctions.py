@@ -1038,32 +1038,32 @@ class CustomFunctions:
 
 		#### Hell Terrain Section
 			if not Option["No Plot Counter"] and not (iImprovement != -1 and gc.getImprovementInfo(iImprovement).getBasePlotCounterModify() != 0):
-				bUntouched = True
-				changePlotCounter = pPlot.changePlotCounter
-				if bIsOwned:
-					if eCiv == Civ["Infernal"]:
-						changePlotCounter(100)
-						bUntouched = False
-					if (bUntouched and iStateReligion == Rel["Ashen Veil"] or (iCount >= 50 and iAlignment == Alignment["Evil"]) or (iCount >= 75 and iAlignment == Alignment["Neutral"])):
-						iX = pPlot.getX()
-						iY = pPlot.getY()
-						for iiX,iiY in RANGE1:
-							pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
-							if pAdjacentPlot.isNone() == False:
-								if pAdjacentPlot.getPlotCounter() > 10:
-									changePlotCounter(1)
-									bUntouched = False
-				if (bUntouched and pPlot.isOwned() == False and iCount > 25):
-					iX = pPlot.getX(); iY = pPlot.getY()
-					for iiX,iiY in RANGE1:
-						pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
-						if pAdjacentPlot.isNone() == False:
-							if pAdjacentPlot.getPlotCounter() > 10:
-								changePlotCounter(1)
-								bUntouched = False
+				# bUntouched = True
+				# changePlotCounter = pPlot.changePlotCounter
+				# if bIsOwned:
+				# 	if eCiv == Civ["Infernal"]:
+				# 		changePlotCounter(100)
+				# 		bUntouched = False
+				# 	if (bUntouched and iStateReligion == Rel["Ashen Veil"] or (iCount >= 50 and iAlignment == Alignment["Evil"]) or (iCount >= 75 and iAlignment == Alignment["Neutral"])):
+				# 		iX = pPlot.getX()
+				# 		iY = pPlot.getY()
+				# 		for iiX,iiY in RANGE1:
+				# 			pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
+				# 			if pAdjacentPlot.isNone() == False:
+				# 				if pAdjacentPlot.getPlotCounter() > 10:
+				# 					changePlotCounter(1)
+				# 					bUntouched = False
+				# if (bUntouched and pPlot.isOwned() == False and iCount > 25):
+				# 	iX = pPlot.getX(); iY = pPlot.getY()
+				# 	for iiX,iiY in RANGE1:
+				# 		pAdjacentPlot = getPlot(iX+iiX,iY+iiY)
+				# 		if pAdjacentPlot.isNone() == False:
+				# 			if pAdjacentPlot.getPlotCounter() > 10:
+				# 				changePlotCounter(1)
+				# 				bUntouched = False
 				iPlotCount = pPlot.getPlotCounter()
-				if (bUntouched and iPlotCount > 0):
-					changePlotCounter(-1)
+				# if (bUntouched and iPlotCount > 0):
+				# 	changePlotCounter(-1)
 
 				#### Added Check here incase decision is to let Plot Counter progress while leaving terrain unaffected
 				if not Option["No Plot Counter"]:

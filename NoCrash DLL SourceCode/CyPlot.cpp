@@ -1142,6 +1142,11 @@ void CyPlot::changePlotCounter(int iChange)
 	if (m_pPlot)
 		m_pPlot->changePlotCounter(iChange);
 }
+void CyPlot::setPlotCounter(int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setPlotCounter(iNewValue);
+}
 
 int CyPlot::getPlotCounter() const
 {

@@ -302,6 +302,7 @@ public:
 
 //FfH: Added by Kael 08/15/2007
 	void changePlotCounter(int iChange);
+	void setPlotCounter(int iNewValue);
 	int getPlotCounter() const;
 	int getPortalExitX() const;
 	void setPortalExitX(int iNewValue);

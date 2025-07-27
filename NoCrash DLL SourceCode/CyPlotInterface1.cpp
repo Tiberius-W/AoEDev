@@ -297,6 +297,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 
 //FfH: Added by Kael 08/15/2007
 		.def("changePlotCounter", &CyPlot::changePlotCounter, "int (int iChange)")
+		.def("setPlotCounter", &CyPlot::setPlotCounter, "int (int iNewValue)")
 		.def("getPlotCounter", &CyPlot::getPlotCounter, "int ()")
 		.def("getPortalExitX", &CyPlot::getPortalExitX, "int ()")
 		.def("setPortalExitX", &CyPlot::setPortalExitX, "int (int iNewValue)")
