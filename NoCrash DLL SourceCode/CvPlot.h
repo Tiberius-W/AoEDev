@@ -676,7 +676,7 @@ public:
 	int getPlotCounter() const;
 	void changePlotCounter(int iChange);
 	void setPlotCounter(int iNewValue);
-	int calcPlotCounter() const;
+	int calcTargetPlotCounter();
 	int getPortalExitX() const;
 	void setPortalExitX(int iNewValue);
 	int getPortalExitY() const;

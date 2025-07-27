@@ -6745,6 +6745,10 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 				GET_PLAYER(getOwnerINLINE()).doGoody(this, NULL);
 			}
 
+			// Immediately update hell tile for Infernals
+			if (eNewValue == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+				setPlotCounter(100);
+
 			for (iI = 0; iI < MAX_CIV_TEAMS; ++iI)
 			{
 				if (GET_TEAM((TeamTypes)iI).isAlive())
@@ -13576,14 +13580,14 @@ void CvPlot::changePlotCounter(int iChange)
 
 	bool bEvilPre = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
-	int maxplot = GC.getDefineINT("PLOT_COUNTER_MAX");
+	int maxplot = 100;
 	if (getPlotEffectType() != NO_PLOT_EFFECT
 	 && GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter() != -1)
 	{
 		maxplot = GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getMaxPlotCounter();
 	}
 
-	m_iPlotCounter = std::max(GC.getDefineINT("PLOT_COUNTER_MIN"), std::min(m_iPlotCounter + iChange, maxplot));
+	m_iPlotCounter = std::max(0, std::min(m_iPlotCounter + iChange, maxplot));
 	bool bEvilPost = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
 	if (bEvilPre == bEvilPost)
@@ -13614,38 +13618,99 @@ void CvPlot::setPlotCounter(int iNewValue)
 	changePlotCounter(iNewValue - getPlotCounter());
 }
 
-int CvPlot::calcPlotCounter() const
+int CvPlot::calcTargetPlotCounter()
 {
-	// Placeholder!
-	return getPlotCounter();
-
 	// Infernals always have max counter in their territory
-	int iMaxPlot = GC.getDefineINT("PLOT_COUNTER_MAX");
-	if (GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
-		return iMaxPlot;
+	if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+		return 100;
 
 	// Improvements that modify the plot tile counter are locked into place from turn-based modification
 	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).getBasePlotCounterModify() != 0)
 		return getPlotCounter();
 
-	int a = GC.getDefineINT("PLOT_COUNTER_MIN");
-	int b = GC.getDefineINT("PLOT_COUNTER_MAX");
-	int c = GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD");
-	int d = GC.getDefineINT("PLOT_COUNTER_FULL_SPREAD_AT_AC");
-	int e = GC.getDefineINT("PLOT_COUNTER_INITIAL_ATTENUATION");
-	int f = GC.getDefineINT("PLOT_COUNTER_NO_ATTENUATION_AC");
-
-	int g = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMapsizePlotCounterAttenuation();
-	int h = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getHurryPercent();
-
 	int iHighestAdjCounter = 0;
+	int iPlotCounter = getPlotCounter();
+	CvPlot* pAdjacentPlot;
 
+	// Find adjacent plot with highest counter. This is our "Source"
 	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
-		iHighestAdjCounter = std::max(iHighestAdjCounter, plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI))->getPlotCounter());
-		if (iHighestAdjCounter == iMaxPlot)
+		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+		if (pAdjacentPlot == NULL)
+			continue;
+		iHighestAdjCounter = std::max(iHighestAdjCounter, pAdjacentPlot->getPlotCounter());
+		if (iHighestAdjCounter == 100)
 			break;
 	}
+
+	// Common exit case. Anything else might need attenuation decay
+	if (iHighestAdjCounter == 0 && iPlotCounter == 0)
+		return 0;
+
+	// If we're here, it means: There is hell to spread or decay (or we're at steady state).
+	// The target value to reach for our plot counter is either:
+	//		1) the same as the source, if it is above the dynamic attenuation limit & source > us
+	//		2) ourselves, if we're over the attenuation limit and we're >= source
+	//		3) attenuated from the source
+	// 		4) attenuated from ourselves
+	// If 4) or 3) AND we are above it, then the plot counter needs to decay
+	// If 2) or 3) AND we're at that value, then do nothing
+	// If 1) or 3) AND we're below it, then we have a chance of growing
+
+	int iTargetCounter = 0;
+	int iAC = GC.getGameINLINE().getGlobalCounter();
+	int iAttenuationLimit = MAX_INT;
+
+	// Attenuation limit depends on alignment and AC. If hell terrain is 'allowed' to spread, limit further depends on AC
+	// Otherwise, even infernal tiles (100 plot counter) won't spread more than a few tiles from their borders
+	if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD"))
+		iAttenuationLimit = 100 - iAC;
+	else if (iAC < GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD")) {}
+		// hell terrain "can't" spread if AC under unowned threshold
+	else if (getOwner() == NO_PLAYER)
+		iAttenuationLimit = 100 - iAC;
+	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_EVIL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_EVIL_THRESHOLD"))
+		iAttenuationLimit = 100 - iAC;
+	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
+		iAttenuationLimit = 100 - iAC;
+
+	// Attenuation has a flat source from mapsize, and an AC mapped source.
+	int iAttenuationPenalty = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMapsizePlotCounterAttenuation();
+	iAttenuationPenalty += std::max(0, GC.getDefineINT("PLOT_COUNTER_INITIAL_ATTENUATION") * (100 - 100 * iAC / GC.getDefineINT("PLOT_COUNTER_NO_ATTENUATION_AC")) / 100);
+
+	// Condition 1
+	if (iHighestAdjCounter >= iAttenuationLimit && iHighestAdjCounter > iPlotCounter)
+	{
+		iTargetCounter = iHighestAdjCounter;
+	}
+	// Condition 2 always just exits; this plot is supplying itself
+	else if (iPlotCounter >= iAttenuationLimit && iPlotCounter >= iHighestAdjCounter)
+	{
+		return iPlotCounter;
+	}
+	else
+	{
+		iTargetCounter = std::max(iHighestAdjCounter, iPlotCounter) - iAttenuationPenalty;
+
+		// Condition 3, steady state
+		if (iPlotCounter == iTargetCounter)
+			return iPlotCounter;
+
+		// Condition 4 or 3 and decay; decay to the attenuation penalty or by a max of the penalty
+		// This technically means bigger maps decay more slowly at same AC.... but whatever man.
+		// They're also hurt more by AC changes around a steady state, so I guess it's a wash.
+		if (iPlotCounter > iTargetCounter)
+			return iTargetCounter;
+	}
+
+	// When growing, do a random chance per plot to both break up straight walls of hell and modulate speed
+	int iSpreadChance = std::min(100, GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getHurryPercent() * iAC / GC.getDefineINT("PLOT_COUNTER_FULL_SPREAD_AT_AC"));
+	if (GC.getGameINLINE().getMapRandNum(100, "Chance hell doesn't grow") >= iSpreadChance)
+		return iPlotCounter;
+
+	// Peaks are significantly slower for hell to spread through, assuming not directly owned by infernals
+	int iGain = iHighestAdjCounter * iAC / 100 / (1 + 4 * isPeak());
+	return std::min(iTargetCounter, iPlotCounter + iGain);
 }
 
 bool CvPlot::isPythonActive() const

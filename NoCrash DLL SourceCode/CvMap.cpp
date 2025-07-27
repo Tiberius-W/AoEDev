@@ -370,7 +370,7 @@ void CvMap::doTurn()
 		iPlotIndex = iI % iNumPlots;
 		plotByIndexINLINE(iPlotIndex)->doTurn();
 		// Construct a list of what all the plot counters should be. Can't immediately apply due to ordering oddities
-		listPlotCounters.push_back(plotByIndexINLINE(iPlotIndex)->calcPlotCounter());
+		listPlotCounters.push_back(plotByIndexINLINE(iPlotIndex)->calcTargetPlotCounter());
 	}
 
 	iPlotIndex = iOffset;

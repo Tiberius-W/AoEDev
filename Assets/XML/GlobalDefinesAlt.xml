@@ -586,29 +586,37 @@
 		<DefineName>HUMIDITY_THRESHOLD</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
-	<Define>
-		<DefineName>PLOT_COUNTER_MIN</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>
-	</Define>
-	<Define>
-		<DefineName>PLOT_COUNTER_MAX</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
-	</Define>
 	<Define> <!-- Value *over* this is a hell tile, at or below is normal -->
 		<DefineName>PLOT_COUNTER_HELL_THRESHOLD</DefineName>
 		<iDefineIntVal>9</iDefineIntVal>
 	</Define>
-	<Define> <!-- Controls how fast hell spreads per AC, gamespeed modified. Each tile has 0% chance of spreading at 0AC, linear to 100% at AC of this value -->
+	<Define> <!-- MUST BE > 0 !! Controls how fast hell spreads per AC, gamespeed modified. Each tile has 0% chance of spreading at 0AC, linear to 100% at AC of this value -->
 		<DefineName>PLOT_COUNTER_FULL_SPREAD_AT_AC</DefineName>
 		<iDefineIntVal>80</iDefineIntVal>
 	</Define>
-	<Define> <!-- At 0 AC, how much dropoff there is between hell tiles from the origin source. Attenuation applies when source is under (100-AC) -->
+	<Define> <!-- At 0 AC, how much dropoff there is between hell tiles from the origin source. Attenuation applies when source strength is under the current AC -->
 		<DefineName>PLOT_COUNTER_INITIAL_ATTENUATION</DefineName>
-		<iDefineIntVal>-25</iDefineIntVal>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
-	<Define> <!-- At this AC, there is 0 dropoff from adjacent tiles. Hell tiles will also stop passively disappearing if disconnected from source. -->
+	<Define> <!-- MUST BE > 0 !! At this AC, there is 0 dropoff from adjacent tiles due to AC. Does not apply to iMapsizePlotCounterAttenuation in worldInfo -->
 		<DefineName>PLOT_COUNTER_NO_ATTENUATION_AC</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
+	<Define> <!-- The following 4 control at what AC levels hell terrain is allowed to penetrate without attenuation -->
+		<DefineName>PLOT_COUNTER_AC_UNOWNED_THRESHOLD</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>PLOT_COUNTER_AC_EVIL_THRESHOLD</DefineName>
+		<iDefineIntVal>25</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>PLOT_COUNTER_AC_NEUTRAL_THRESHOLD</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>PLOT_COUNTER_AC_GOOD_THRESHOLD</DefineName>
+		<iDefineIntVal>80</iDefineIntVal>
 	</Define>
 <!-- FlavourMod: End Add -->
 	<Define>
