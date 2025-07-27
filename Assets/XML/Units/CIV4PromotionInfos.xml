@@ -5728,9 +5728,9 @@
 			<iWorkRateModify>30</iWorkRateModify>
 			<PromotionBuilds>
 				<PromotionBuild>BUILD_PYRE</PromotionBuild>
-		        <PromotionBuild>BUILD_GRAVEYARD</PromotionBuild> 
+		        <PromotionBuild>BUILD_DTESH_CRYPT</PromotionBuild> 
 				<PromotionBuild>BUILD_PASTURE_CORRUPTED</PromotionBuild>
-		        <PromotionBuild>BUILD_CATACOMBS</PromotionBuild> 
+		    <!--<PromotionBuild>BUILD_CATACOMBS</PromotionBuild> -->
 				<PromotionBuild>BUILD_MAUSOLEUM_LESSER</PromotionBuild>
 			</PromotionBuilds>
 			<PromotionCannotBuilds>
@@ -5743,7 +5743,7 @@
 				<PromotionBuild>BUILD_QUARRY</PromotionBuild>
 				<PromotionBuild>BUILD_FORT</PromotionBuild>
 				<PromotionBuild>BUILD_FARM</PromotionBuild>
-		<!--    <PromotionBuild>BUILD_WORKSHOP</PromotionBuild> -->
+		        <PromotionBuild>BUILD_WORKSHOP</PromotionBuild> 
 				<PromotionBuild>BUILD_PASTURE</PromotionBuild>
 				<PromotionBuild>BUILD_CAMP</PromotionBuild>
 				<PromotionBuild>BUILD_WINERY</PromotionBuild>
