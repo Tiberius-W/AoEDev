@@ -5,9 +5,7 @@
 <!-- -->
 <!-- Improvement Infos -->
 <Civ4ImprovementInfos xmlns="x-schema:AnimalLairs_CIV4TerrainSchema.xml">
-
 	<ImprovementInfos>
-	
 		<ImprovementInfo>	<!-- Bear Den t1 -->
 			<Type>IMPROVEMENT_BEAR_DEN</Type>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_1</Description>
@@ -60,26 +58,24 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
+					<!-- Percentage linear mapping: Starts at 60 weight and drops to 0 by the time 100% of civs have 1st advance -->
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
-				</LairCreationWeightTech>
-				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
+					<!-- 30% chance/turn to upgrade if all civs have 1st advance,  -->
 					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
+					<!-- 100% chance/turn to upgrade if 1/30 civs have 2nd advance -->
 					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Bear Den t2 -->
 			<Type>IMPROVEMENT_BEAR_DEN_2</Type>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_2</Description>
@@ -139,8 +135,14 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
+					<!-- As 100% of civs have 1st advance, T2 takes over fully -->
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+				<LairCreationWeightTech>
+					<!-- But as 100% of civs have 2nd advance, stops spawning in favor of... -->
+					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -150,7 +152,6 @@
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-		
 		<ImprovementInfo>	<!-- Bear Den t3 -->
 			<Type>IMPROVEMENT_BEAR_DEN_3</Type>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_3</Description>
@@ -218,8 +219,9 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
+					<!-- Only bear version that spawns when all civs have 2nd advance -->
 					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
@@ -266,9 +268,12 @@
 					<LairUpgradeTechType>TECH_TRACKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
+				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Griffin Weyr t2 -->
 			<Type>IMPROVEMENT_GRIFFIN_WEYR</Type>
 			<Description>TXT_KEY_IMPROVEMENT_GRIFFIN_WEYR</Description>
@@ -319,8 +324,13 @@
 					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<LairUpgradeTechs>
+				<LairUpgradeTech>
+					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
+					<iLairUpgradeTech>30</iLairUpgradeTech>
+				</LairUpgradeTech>
+			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Roc Weyr t3 -->
 			<Type>IMPROVEMENT_ROC_WEYR</Type>
 			<Description>TXT_KEY_IMPROVEMENT_ROC_WEYR</Description>
@@ -429,26 +439,21 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_ANIMAL_HANDLING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
-				</LairCreationWeightTech>
-				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_STIRRUPS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_TRADE</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_ANIMAL_HANDLING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_TRADE</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_STIRRUPS</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Lion Den t2 -->
 			<Type>IMPROVEMENT_LION_DEN_2</Type>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN_2</Description>
@@ -507,8 +512,12 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_ANIMAL_HANDLING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_TRADE</LairCreationWeightTechType>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+				<LairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_STIRRUPS</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -518,7 +527,6 @@
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Lion Den t3 -->
 			<Type>IMPROVEMENT_LION_DEN_3</Type>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN_3</Description>
@@ -586,7 +594,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_STIRRUPS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
@@ -649,26 +657,21 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
-				</LairCreationWeightTech>
-				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_HUNTING</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_HUNTING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<LairUpgradeTechType>TECH_POISONS</LairUpgradeTechType>
+					<iLairUpgradeTech>300</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Spider Den t2 -->
 			<Type>IMPROVEMENT_SPIDER_DEN_2</Type>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN_2</Description>
@@ -735,18 +738,21 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>20</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_HUNTING</LairCreationWeightTechType>
+					<iLairCreationWeightTech>40</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+				<LairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_POISONS</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_POISONS</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Spider Den t3 -->
 			<Type>IMPROVEMENT_SPIDER_DEN_3</Type>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN_3</Description>
@@ -821,8 +827,8 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>20</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_POISONS</LairCreationWeightTechType>
+					<iLairCreationWeightTech>40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
@@ -890,11 +896,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
-				</LairCreationWeightTech>
-				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -904,11 +906,10 @@
 				</LairUpgradeTech>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Wolf Lair t2 -->
 			<Type>IMPROVEMENT_WOLF_LAIR_2</Type>
 			<Description>TXT_KEY_IMPROVEMENT_WOLF_LAIR_2</Description>
@@ -980,7 +981,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+				<LairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -990,7 +995,6 @@
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Wolf Lair t3 -->
 			<Type>IMPROVEMENT_WOLF_LAIR_3</Type>
 			<Description>TXT_KEY_IMPROVEMENT_WOLF_LAIR_3</Description>
@@ -1071,7 +1075,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
@@ -1114,27 +1118,23 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<LairCreationWeightTechs>
+				<!-- Not entirely sure I know the justification for choosing these techs, but look I'm just trying to spread things out a little, mmk -->
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
-				</LairCreationWeightTech>
-				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_CODE_OF_LAWS</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_TRACKING</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_CODE_OF_LAWS</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<LairUpgradeTechType>TECH_TAXATION</LairUpgradeTechType>
+					<iLairUpgradeTech>300</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Scorpion Nest t2 -->
 			<Type>IMPROVEMENT_SCORPION_NEST_2</Type>
 			<Description>TXT_KEY_IMPROVEMENT_SCORPION_NEST_2</Description>
@@ -1182,18 +1182,21 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_CODE_OF_LAWS</LairCreationWeightTechType>
+					<iLairCreationWeightTech>50</iLairCreationWeightTech>
+				</LairCreationWeightTech>
+				<LairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_TAXATION</LairCreationWeightTechType>
+					<iLairCreationWeightTech>-50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<LairUpgradeTechType>TECH_FERAL_BOND</LairUpgradeTechType>
+					<LairUpgradeTechType>TECH_TAXATION</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 		</ImprovementInfo>
-
 		<ImprovementInfo>	<!-- Scorpion Nest t3 -->
 			<Type>IMPROVEMENT_SCORPION_NEST_3</Type>
 			<Description>TXT_KEY_IMPROVEMENT_SCORPION_NEST_3</Description>
@@ -1249,11 +1252,10 @@
 			</GoodyClasses>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<LairCreationWeightTechType>TECH_FERAL_BOND</LairCreationWeightTechType>
-					<iLairCreationWeightTech>25</iLairCreationWeightTech>
+					<LairCreationWeightTechType>TECH_TAXATION</LairCreationWeightTechType>
+					<iLairCreationWeightTech>50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 		</ImprovementInfo>
-
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
