@@ -4978,15 +4978,19 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
 		CvWString szTempBuffer;
-		szString.append(NEWLINE);
 /*************************************************************************************************/
 /**	Fix by Opera																				**/
 /*************************************************************************************************/
 		if (pPlot->getImprovementOwner() != -1)
 		{
+			szString.append(NEWLINE);
 			szTempBuffer.Format(L"Improvement Owner: %d (%s)", pPlot->getImprovementOwner(), GC.getCivilizationInfo(GET_PLAYER(pPlot->getImprovementOwner()).getCivilizationType()).getAdjective());
 			szString.append(szTempBuffer);
 		}
+		szString.append(NEWLINE);
+		szTempBuffer.Format(L"Number Spawns Alive: %d", pPlot->getNumSpawnsAlive());
+		szString.append(szTempBuffer);
+		
 /*************************************************************************************************/
 /**	Fix by Opera		END																		**/
 /*************************************************************************************************/

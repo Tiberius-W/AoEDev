@@ -1294,7 +1294,7 @@ void CyEnumsPythonInterface()
 /*************************************************************************************************/
 		//TargetedSpell 0924 blackimp
 		.value("MISSION_TARGETED_SPELL", MISSION_TARGETED_SPELL)
-.value("NUM_MISSION_TYPES", NUM_MISSION_TYPES )
+		.value("NUM_MISSION_TYPES", NUM_MISSION_TYPES )
 		;
 
 	python::enum_<MissionAITypes>("MissionAITypes")

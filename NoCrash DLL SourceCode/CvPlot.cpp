@@ -956,7 +956,7 @@ void CvPlot::doLairSpawn()
 
 	// Starting chance
 	int iBaseChance = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getLairSpawnChance();
-	bool bMissingGuard = (getNumSpawnsAlive() == 0);
+	bool bMissingGuard = (getNumSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
 	CvWString szBuffer;
 
 	// Check for spawn unit
@@ -964,10 +964,8 @@ void CvPlot::doLairSpawn()
 	 && GC.getGameINLINE().getSorenRandNum(10000, "Spawn Unit") < iBaseChance * (100 + GC.getImprovementInfo(getImprovementType()).getSpawnUnitChancePercentMod()) * (1 + bMissingGuard))
 	{
 		// If we're entirely out of units spawned from here, respawn the guardian if exists. Guard won't respawn if there is a spawned unit wandered off somewhere; oh well.
-		if (bMissingGuard && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT)
-		{
+		if (bMissingGuard)
 			iUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
-		}
 
 		// Spawn the thang
 		CvUnit* pUnit=GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes)iUnit, getX_INLINE(), getY_INLINE(), (bMissingGuard ? NO_UNITAI: UNITAI_ATTACK));

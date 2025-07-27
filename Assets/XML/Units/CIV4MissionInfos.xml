@@ -916,8 +916,7 @@
 			<bBuild>0</bBuild>
 			<bSound>0</bSound>
 		</MissionInfo>		
-	
-				<MissionInfo>
+		<MissionInfo>
 			<Type>MISSION_JOINPOP</Type>
 			<Description>TXT_KEY_MISSION_BUILD_CITY</Description>
 			<Help>TXT_KEY_MISSION_BUILD_CITY_HELP</Help>
