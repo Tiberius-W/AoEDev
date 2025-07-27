@@ -6507,6 +6507,9 @@ PlayerTypes CvPlot::getOwner() const
 void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotGroup)
 {
 	PROFILE_FUNC();
+	
+	if (getOwnerINLINE() == eNewValue)
+		return;
 
 	CLLNode<IDInfo>* pUnitNode;
 	CvCity* pOldCity;
@@ -6517,326 +6520,269 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 	int iFreeUnits;
 	int iI;
 
-	if (getOwnerINLINE() != eNewValue)
+	// DynTraits Start
+	if (getOwnerINLINE() != NO_PLAYER)
 	{
-		// DynTraits Start
-		if (getOwnerINLINE() != NO_PLAYER)
+		TraitTriggeredData kTrigger;
+		kTrigger.m_iImprovement = getImprovementType();
+		kTrigger.m_iTerrain = getTerrainType();
+		kTrigger.m_iFeature = getFeatureType();
+		kTrigger.m_bHill = isHills();
+		kTrigger.m_bPeak = isPeak();
+		GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_LOSE_PLOT_OWNERSHIP, &kTrigger);
+	}
+	if (eNewValue != NO_PLAYER)
+	{
+		TraitTriggeredData kTrigger;
+		kTrigger.m_iImprovement = getImprovementType();
+		kTrigger.m_iTerrain = getTerrainType();
+		kTrigger.m_iFeature = getFeatureType();
+		kTrigger.m_bHill = isHills();
+		kTrigger.m_bPeak = isPeak();
+		GET_PLAYER(eNewValue).doTraitTriggers(TRAITHOOK_GAIN_PLOT_OWNERSHIP, &kTrigger);
+	}
+	// DynTraits Start
+	GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_PLOT_OWNER_CHANGE, eNewValue, (char*)NULL, getX_INLINE(), getY_INLINE());
+
+	pOldCity = getPlotCity();
+
+	if (pOldCity != NULL)
+	{
+		szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED", pOldCity->getNameKey(), GET_PLAYER(eNewValue).getCivilizationDescriptionKey());
+		gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+		gDLL->getInterfaceIFace()->addMessage(eNewValue, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
+		szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTS_JOINS", pOldCity->getNameKey(), GET_PLAYER(eNewValue).getCivilizationDescriptionKey());
+		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getOwnerINLINE(), szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_ALT_HIGHLIGHT_TEXT"));
+
+		FAssertMsg(pOldCity->getOwnerINLINE() != eNewValue, "pOldCity->getOwnerINLINE() is not expected to be equal with eNewValue");
+		GET_PLAYER(eNewValue).acquireCity(pOldCity, false, false, bUpdatePlotGroup); // will delete the pointer
+		pOldCity = NULL;
+		pNewCity = getPlotCity();
+		FAssertMsg(pNewCity != NULL, "NewCity is not assigned a valid value");
+
+		if (pNewCity != NULL)
 		{
-			TraitTriggeredData kTrigger;
-			kTrigger.m_iImprovement = getImprovementType();
-			kTrigger.m_iTerrain = getTerrainType();
-			kTrigger.m_iFeature = getFeatureType();
-			kTrigger.m_bHill = isHills();
-			kTrigger.m_bPeak = isPeak();
-			GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_LOSE_PLOT_OWNERSHIP, &kTrigger);
-		}
-		if (eNewValue != NO_PLAYER)
-		{
-			TraitTriggeredData kTrigger;
-			kTrigger.m_iImprovement = getImprovementType();
-			kTrigger.m_iTerrain = getTerrainType();
-			kTrigger.m_iFeature = getFeatureType();
-			kTrigger.m_bHill = isHills();
-			kTrigger.m_bPeak = isPeak();
-			GET_PLAYER(eNewValue).doTraitTriggers(TRAITHOOK_GAIN_PLOT_OWNERSHIP, &kTrigger);
-		}
-		// DynTraits Start
-		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_PLOT_OWNER_CHANGE, eNewValue, (char*)NULL, getX_INLINE(), getY_INLINE());
-
-		pOldCity = getPlotCity();
-
-		if (pOldCity != NULL)
-		{
-			szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED", pOldCity->getNameKey(), GET_PLAYER(eNewValue).getCivilizationDescriptionKey());
-			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-			gDLL->getInterfaceIFace()->addMessage(eNewValue, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-
-			szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTS_JOINS", pOldCity->getNameKey(), GET_PLAYER(eNewValue).getCivilizationDescriptionKey());
-			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getOwnerINLINE(), szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_ALT_HIGHLIGHT_TEXT"));
-
-			FAssertMsg(pOldCity->getOwnerINLINE() != eNewValue, "pOldCity->getOwnerINLINE() is not expected to be equal with eNewValue");
-			GET_PLAYER(eNewValue).acquireCity(pOldCity, false, false, bUpdatePlotGroup); // will delete the pointer
-			pOldCity = NULL;
-			pNewCity = getPlotCity();
-			FAssertMsg(pNewCity != NULL, "NewCity is not assigned a valid value");
-
-			if (pNewCity != NULL)
-			{
-				CLinkList<IDInfo> oldUnits;
-
-				pUnitNode = headUnitNode();
-
-				while (pUnitNode != NULL)
-				{
-					oldUnits.insertAtEnd(pUnitNode->m_data);
-					pUnitNode = nextUnitNode(pUnitNode);
-				}
-
-				pUnitNode = oldUnits.head();
-
-				while (pUnitNode != NULL)
-				{
-					pLoopUnit = ::getUnit(pUnitNode->m_data);
-					pUnitNode = oldUnits.next(pUnitNode);
-
-					if (pLoopUnit)
-					{
-						if (pLoopUnit->isEnemy(GET_PLAYER(eNewValue).getTeam(), this))
-						{
-							FAssert(pLoopUnit->getTeam() != GET_PLAYER(eNewValue).getTeam());
-							pLoopUnit->kill(false, eNewValue);
-						}
-					}
-				}
-
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Prevents spawning of limited unit classes in automated functions				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-//FfH: Modified by Kael 01/23/2009
-//				eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
-//				if (eBestUnit == NO_UNIT)
-//				{
-//					eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_ATTACK);
-//				}
-				eBestUnit = pNewCity->getConscriptUnit();
-//FfH: End Modify
-/**								----  End Original Code  ----									**/
-				eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR, true);
-				if (eBestUnit == NO_UNIT)
-				{
-					eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR, true);
-				}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-
-				if (eBestUnit != NO_UNIT)
-				{
-					iFreeUnits = (GC.getDefineINT("BASE_REVOLT_FREE_UNITS") + ((pNewCity->getHighestPopulation() * GC.getDefineINT("REVOLT_FREE_UNITS_PERCENT")) / 100));
-
-					for (iI = 0; iI < iFreeUnits; ++iI)
-					{
-						GET_PLAYER(eNewValue).initUnit(eBestUnit, getX_INLINE(), getY_INLINE(), UNITAI_CITY_DEFENSE);
-					}
-				}
-			}
-		}
-		else
-		{
-			setOwnershipDuration(0);
-
-			if (isOwned())
-			{
-				changeAdjacentSight(getTeam(), GC.getDefineINT("PLOT_VISIBILITY_RANGE"), false, NULL, bUpdatePlotGroup);
-
-				if (area())
-				{
-					area()->changeNumOwnedTiles(-1);
-				}
-				GC.getMapINLINE().changeOwnedPlots(-1);
-
-				if (!isWater())
-				{
-					GET_PLAYER(getOwnerINLINE()).changeTotalLand(-1);
-					GET_TEAM(getTeam()).changeTotalLand(-1);
-
-					if (isOwnershipScore())
-					{
-						GET_PLAYER(getOwnerINLINE()).changeTotalLandScored(-1);
-					}
-				}
-
-				if (getImprovementType() != NO_IMPROVEMENT)
-				{
-					GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), -1);
-				}
-
-				updatePlotGroupBonus(false);
-			}
+			CLinkList<IDInfo> oldUnits;
 
 			pUnitNode = headUnitNode();
 
 			while (pUnitNode != NULL)
 			{
-				pLoopUnit = ::getUnit(pUnitNode->m_data);
+				oldUnits.insertAtEnd(pUnitNode->m_data);
 				pUnitNode = nextUnitNode(pUnitNode);
-
-				if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
-				{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Should prevent double correction conflicts with my earlier fix for this			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-//FfH: Modified by Kael 04/19/2009
-//					GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(-1);
-					if (pLoopUnit->getDuration() == 0)
-/**								----  End Original Code  ----									**/
-					if (pLoopUnit->getDuration() == 0 && !pLoopUnit->isNoSupply())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-					{
-						GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(-1);
-					}
-//FfH: End Modify
-
-				}
-
-				if (pLoopUnit->isBlockading())
-				{
-					pLoopUnit->setBlockading(false);
-					pLoopUnit->getGroup()->clearMissionQueue();
-					pLoopUnit->getGroup()->setActivityType(ACTIVITY_AWAKE);
-				}
 			}
 
-			m_eOwner = eNewValue;
-
-			setWorkingCityOverride(NULL);
-			updateWorkingCity();
-
-			if (isOwned())
-			{
-				changeAdjacentSight(getTeam(), GC.getDefineINT("PLOT_VISIBILITY_RANGE"), true, NULL, bUpdatePlotGroup);
-
-				if (area())
-				{
-					area()->changeNumOwnedTiles(1);
-				}
-				GC.getMapINLINE().changeOwnedPlots(1);
-
-				if (!isWater())
-				{
-					GET_PLAYER(getOwnerINLINE()).changeTotalLand(1);
-					GET_TEAM(getTeam()).changeTotalLand(1);
-
-					if (isOwnershipScore())
-					{
-						GET_PLAYER(getOwnerINLINE()).changeTotalLandScored(1);
-					}
-				}
-
-				if (getImprovementType() != NO_IMPROVEMENT)
-				{
-					GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), 1);
-				}
-
-				updatePlotGroupBonus(true);
-			}
-
-			pUnitNode = headUnitNode();
+			pUnitNode = oldUnits.head();
 
 			while (pUnitNode != NULL)
 			{
 				pLoopUnit = ::getUnit(pUnitNode->m_data);
-				pUnitNode = nextUnitNode(pUnitNode);
+				pUnitNode = oldUnits.next(pUnitNode);
 
-				if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
+				if (pLoopUnit)
 				{
-
-//FfH: Modified by Kael 04/19/2009
-//					GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(1);
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Should prevent double correction conflicts with my earlier fix for this			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-					if (pLoopUnit->getDuration() == 0)
-/**								----  End Original Code  ----									**/
-					if (pLoopUnit->getDuration() == 0 && !pLoopUnit->isNoSupply())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+					if (pLoopUnit->isEnemy(GET_PLAYER(eNewValue).getTeam(), this))
 					{
-						GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(1);
+						FAssert(pLoopUnit->getTeam() != GET_PLAYER(eNewValue).getTeam());
+						pLoopUnit->kill(false, eNewValue);
 					}
-//FfH: End Modify
-
 				}
 			}
 
-			for (iI = 0; iI < MAX_TEAMS; ++iI)
+			// Xienwolf - 06/18/09 - Prevents spawning of limited unit classes in automated functions
+			eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR, true);
+			if (eBestUnit == NO_UNIT)
+			{
+				eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR, true);
+			}
+
+			if (eBestUnit != NO_UNIT)
+			{
+				iFreeUnits = (GC.getDefineINT("BASE_REVOLT_FREE_UNITS") + ((pNewCity->getHighestPopulation() * GC.getDefineINT("REVOLT_FREE_UNITS_PERCENT")) / 100));
+
+				for (iI = 0; iI < iFreeUnits; ++iI)
+				{
+					GET_PLAYER(eNewValue).initUnit(eBestUnit, getX_INLINE(), getY_INLINE(), UNITAI_CITY_DEFENSE);
+				}
+			}
+		}
+	}
+	else
+	{
+		setOwnershipDuration(0);
+
+		if (isOwned())
+		{
+			changeAdjacentSight(getTeam(), GC.getDefineINT("PLOT_VISIBILITY_RANGE"), false, NULL, bUpdatePlotGroup);
+
+			if (area())
+			{
+				area()->changeNumOwnedTiles(-1);
+			}
+			GC.getMapINLINE().changeOwnedPlots(-1);
+
+			if (!isWater())
+			{
+				GET_PLAYER(getOwnerINLINE()).changeTotalLand(-1);
+				GET_TEAM(getTeam()).changeTotalLand(-1);
+
+				if (isOwnershipScore())
+				{
+					GET_PLAYER(getOwnerINLINE()).changeTotalLandScored(-1);
+				}
+			}
+
+			if (getImprovementType() != NO_IMPROVEMENT)
+			{
+				GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), -1);
+			}
+
+			updatePlotGroupBonus(false);
+		}
+
+		pUnitNode = headUnitNode();
+
+		while (pUnitNode != NULL)
+		{
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = nextUnitNode(pUnitNode);
+
+			if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
+			{
+				// Xienwolf - 06/18/09 - Should prevent double correction conflicts with my earlier fix for this
+				if (pLoopUnit->getDuration() == 0 && !pLoopUnit->isNoSupply())
+				{
+					GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(-1);
+				}
+
+			}
+
+			if (pLoopUnit->isBlockading())
+			{
+				pLoopUnit->setBlockading(false);
+				pLoopUnit->getGroup()->clearMissionQueue();
+				pLoopUnit->getGroup()->setActivityType(ACTIVITY_AWAKE);
+			}
+		}
+
+		m_eOwner = eNewValue;
+
+		setWorkingCityOverride(NULL);
+		updateWorkingCity();
+
+		if (isOwned())
+		{
+			changeAdjacentSight(getTeam(), GC.getDefineINT("PLOT_VISIBILITY_RANGE"), true, NULL, bUpdatePlotGroup);
+
+			if (area())
+			{
+				area()->changeNumOwnedTiles(1);
+			}
+			GC.getMapINLINE().changeOwnedPlots(1);
+
+			if (!isWater())
+			{
+				GET_PLAYER(getOwnerINLINE()).changeTotalLand(1);
+				GET_TEAM(getTeam()).changeTotalLand(1);
+
+				if (isOwnershipScore())
+				{
+					GET_PLAYER(getOwnerINLINE()).changeTotalLandScored(1);
+				}
+			}
+
+			if (getImprovementType() != NO_IMPROVEMENT)
+			{
+				GET_PLAYER(getOwnerINLINE()).changeImprovementCount(getImprovementType(), 1);
+			}
+
+			updatePlotGroupBonus(true);
+		}
+
+		pUnitNode = headUnitNode();
+
+		while (pUnitNode != NULL)
+		{
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = nextUnitNode(pUnitNode);
+
+			if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
+			{
+				// Xienwolf - 06/18/09 - Should prevent double correction conflicts with my earlier fix for this
+				if (pLoopUnit->getDuration() == 0 && !pLoopUnit->isNoSupply())
+				{
+					GET_PLAYER(pLoopUnit->getOwnerINLINE()).changeNumOutsideUnits(1);
+				}
+			}
+		}
+
+		for (iI = 0; iI < MAX_TEAMS; ++iI)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive())
+			{
+				updateRevealedOwner((TeamTypes)iI);
+			}
+		}
+
+		updateIrrigated();
+		updateYield();
+
+		if (bUpdatePlotGroup)
+		{
+			updatePlotGroup();
+		}
+
+		if (bCheckUnits)
+		{
+			verifyUnitValidPlot();
+		}
+
+		if (isOwned())
+		{
+			if (isGoody())
+			{
+				GET_PLAYER(getOwnerINLINE()).doGoody(this, NULL);
+			}
+
+			for (iI = 0; iI < MAX_CIV_TEAMS; ++iI)
 			{
 				if (GET_TEAM((TeamTypes)iI).isAlive())
 				{
-					updateRevealedOwner((TeamTypes)iI);
-				}
-			}
-
-			updateIrrigated();
-			updateYield();
-
-			if (bUpdatePlotGroup)
-			{
-				updatePlotGroup();
-			}
-
-			if (bCheckUnits)
-			{
-				verifyUnitValidPlot();
-			}
-
-			if (isOwned())
-			{
-				if (isGoody())
-				{
-					GET_PLAYER(getOwnerINLINE()).doGoody(this, NULL);
-				}
-
-				for (iI = 0; iI < MAX_CIV_TEAMS; ++iI)
-				{
-					if (GET_TEAM((TeamTypes)iI).isAlive())
+					if (isVisible((TeamTypes)iI, false))
 					{
-						if (isVisible((TeamTypes)iI, false))
-						{
-							GET_TEAM((TeamTypes)iI).meet(getTeam(), true);
-						}
+						GET_TEAM((TeamTypes)iI).meet(getTeam(), true);
 					}
 				}
 			}
-
-			if (GC.getGameINLINE().isDebugMode())
-			{
-				updateMinimapColor();
-
-				gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-
-				gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-			}
 		}
 
-
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      08/21/09                                jdog5000      */
-/*                                                                                              */
-/* Efficiency                                                                                   */
-/************************************************************************************************/
-		// Plot danger cache
-		CvPlot* pLoopPlot;
-		for (int iDX = -(DANGER_RANGE); iDX <= DANGER_RANGE; iDX++)
+		if (GC.getGameINLINE().isDebugMode())
 		{
-			for (int iDY = -(DANGER_RANGE); iDY <= (DANGER_RANGE); iDY++)
-			{
-				pLoopPlot	= plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			updateMinimapColor();
 
-				if (pLoopPlot != NULL)
-				{
-					pLoopPlot->invalidateIsTeamBorderCache();
-				}
+			gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+
+			gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+		}
+	}
+
+	// BETTER_BTS_AI_MOD - jdog5000 - 08/21/09 - Efficiency, Plot danger cache
+	CvPlot* pLoopPlot;
+	for (int iDX = -(DANGER_RANGE); iDX <= DANGER_RANGE; iDX++)
+	{
+		for (int iDY = -(DANGER_RANGE); iDY <= (DANGER_RANGE); iDY++)
+		{
+			pLoopPlot	= plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
+			if (pLoopPlot != NULL)
+			{
+				pLoopPlot->invalidateIsTeamBorderCache();
 			}
 		}
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
-
-		updateSymbols();
 	}
+
+	updateSymbols();
 }
 
 
@@ -13672,6 +13618,34 @@ int CvPlot::calcPlotCounter() const
 {
 	// Placeholder!
 	return getPlotCounter();
+
+	// Infernals always have max counter in their territory
+	int iMaxPlot = GC.getDefineINT("PLOT_COUNTER_MAX");
+	if (GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+		return iMaxPlot;
+
+	// Improvements that modify the plot tile counter are locked into place from turn-based modification
+	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).getBasePlotCounterModify() != 0)
+		return getPlotCounter();
+
+	int a = GC.getDefineINT("PLOT_COUNTER_MIN");
+	int b = GC.getDefineINT("PLOT_COUNTER_MAX");
+	int c = GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD");
+	int d = GC.getDefineINT("PLOT_COUNTER_FULL_SPREAD_AT_AC");
+	int e = GC.getDefineINT("PLOT_COUNTER_INITIAL_ATTENUATION");
+	int f = GC.getDefineINT("PLOT_COUNTER_NO_ATTENUATION_AC");
+
+	int g = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMapsizePlotCounterAttenuation();
+	int h = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getHurryPercent();
+
+	int iHighestAdjCounter = 0;
+
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		iHighestAdjCounter = std::max(iHighestAdjCounter, plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI))->getPlotCounter());
+		if (iHighestAdjCounter == iMaxPlot)
+			break;
+	}
 }
 
 bool CvPlot::isPythonActive() const
