@@ -36,8 +36,7 @@
 			<PyOnSpawn/>
 			<PyRequirement/>
 		</SpawnGroupInfo>
-		<!--  1 Galley at fishing (otherwise, sailing introduces ARMADAS) -->
-		<SpawnGroupInfo>	
+		<SpawnGroupInfo>	<!--  1 Galley at fishing (otherwise, sailing introduces ARMADAS) -->
 			<Type>SPAWN_GROUP_GALLEY_ONE</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_GALLEY_ONE</Description>
 			<bNaval>1</bNaval>
@@ -204,7 +203,7 @@
 				<Tech>TECH_SORCERY</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
-		 <!-- Begin random land groups -->
+		<!-- Begin random land groups -->
 		<SpawnGroupInfo>	<!--  Assassins -->
 			<Type>SPAWN_GROUP_ASSASSIN</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_ASSASSIN</Description>
@@ -593,7 +592,8 @@
 			</SpawnTerrains>
 			<PrereqRitual>PROJECT_SAMHAIN</PrereqRitual>
 		</SpawnGroupInfo>
-		<SpawnGroupInfo>	<!--  Mon's Goblin Raiders --> <!-- !!! cool groups start here !!!-->
+		<!-- !!! cool groups start here !!!-->
+		<SpawnGroupInfo>	<!--  Mon's Goblin Raiders -->
 			<Type>SPAWN_GROUP_MONS_GOBLIN_RAIDERS</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_MONS_GOBLIN_RAIDERS</Description>
 			<Civilopedia>TXT_KEY_SPAWN_GROUP_MONS_GOBLIN_RAIDERS_PEDIA</Civilopedia>
@@ -1784,7 +1784,8 @@
 				<Tech>TECH_ANIMAL_HUSBANDRY</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
-		<SpawnGroupInfo>	<!-- Marsh Marchers -->  <!-- Begin Lair Spawngroups -->
+		<!-- Begin Lair Spawngroups -->
+		<SpawnGroupInfo>	<!-- Marsh Marchers -->
 			<Type>SPAWN_GROUP_MARSH_MARCHERS</Type>
 			<Description>TXT_KEY_SPAWN_GROUP_MARSH_MARCHERS</Description>
 			<Civilopedia>TXT_KEY_SPAWN_GROUP_MARSH_MARCHERS_PEDIA</Civilopedia>

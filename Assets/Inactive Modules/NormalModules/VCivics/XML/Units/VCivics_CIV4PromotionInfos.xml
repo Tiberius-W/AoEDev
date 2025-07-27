@@ -9,7 +9,9 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqCivics>CIVIC_MAGOCRACY</PrereqCivics>
+			<PrereqCivics>
+				<PrereqCivic>CIVIC_MAGOCRACY</PrereqCivic>
+			</PrereqCivics>
 			<MinionPromotions>
 				<PromotionType>PROMOTION_ARCANE_BATTLE_SUPPORT</PromotionType>
 			</MinionPromotions>
@@ -41,7 +43,9 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqCivics>CIVIC_MAGOCRACY</PrereqCivics>
+			<PrereqCivics>
+				<PrereqCivic>CIVIC_MAGOCRACY</PrereqCivic>
+			</PrereqCivics>
 			<iExtraSupport>1</iExtraSupport>
 			<MinionPromotions>
 				<PromotionType>PROMOTION_ARCANE_AUXILIARY1</PromotionType>
@@ -70,7 +74,9 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqCivics>CIVIC_MAGOCRACY</PrereqCivics>
+			<PrereqCivics>
+				<PrereqCivic>CIVIC_MAGOCRACY</PrereqCivic>
+			</PrereqCivics>
 			<iExtraSupport>1</iExtraSupport>
 			<MinionPromotions>
 				<PromotionType>PROMOTION_ARCANE_AUXILIARY2</PromotionType>
@@ -173,7 +179,9 @@
 			<Button>Modules/NormalModules/VCivics/Art/Interface/Buttons/Promotions/ArcaneAuxiliary1.dds</Button>
 			<bOverrideHelpText>1</bOverrideHelpText>
 			<iMinLevel>-1</iMinLevel>
-			<PrereqCivics>CIVIC_MAGOCRACY</PrereqCivics>
+			<PrereqCivics>
+				<PrereqCivic>CIVIC_MAGOCRACY</PrereqCivic>
+			</PrereqCivics>
 			<PromotionAllows>
 				<Promotion>PROMOTION_AIR1</Promotion>
 				<Promotion>PROMOTION_BODY1</Promotion>
@@ -280,7 +288,9 @@
 			<Button>Modules/NormalModules/VCivics/Art/Interface/Buttons/Promotions/ArcaneAuxiliary2.dds</Button>
 			<bOverrideHelpText>1</bOverrideHelpText>
 			<iMinLevel>-1</iMinLevel>
-			<PrereqCivics>CIVIC_MAGOCRACY</PrereqCivics>
+			<PrereqCivics>
+				<PrereqCivic>CIVIC_MAGOCRACY</PrereqCivic>
+			</PrereqCivics>
 			<PromotionAllows>
 				<Promotion>PROMOTION_AIR2</Promotion>
 				<Promotion>PROMOTION_BODY2</Promotion>

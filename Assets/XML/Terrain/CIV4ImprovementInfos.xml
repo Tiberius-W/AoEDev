@@ -4816,6 +4816,7 @@
 			</TerrainMakesValids>
 			<iSpawnGroupChancePercentMod>25</iSpawnGroupChancePercentMod>
 			<SpawnGroupType>SPAWN_GROUP_FROST_GIANT_ENTOURAGE</SpawnGroupType>
+			<SpawnUnitType>UNIT_FROSTLING_AXEMAN</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_FROSTLING_SHAMAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iCultureRange>2</iCultureRange>

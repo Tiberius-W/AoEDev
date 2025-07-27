@@ -40166,7 +40166,9 @@
 			<iAsset>10</iAsset>
 			<bNoXP>1</bNoXP>
 			<bHeld>1</bHeld>
-			<PromotionReplacedBy>PROMOTION_PHOENIX_SMALL</PromotionReplacedBy>
+			<PromotionReplacedBy>
+				<Promotion>PROMOTION_PHOENIX_SMALL</Promotion>
+			</PromotionReplacedBy>
 			<Button>Art/Interface/Buttons/units/hawk.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Phoenix Small -->
