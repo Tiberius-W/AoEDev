@@ -32,12 +32,12 @@
 			<iNoTechTradeModifier>100</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
 			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- Applies to animals on land only -->
-			<iWaterTilesPerAnimal>100</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
-			<iTilesPerOrc>80</iTilesPerOrc> <!-- Applies to savages on land only -->
-			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
-			<iUnownedTilesPerBarbarianCity>105</iUnownedTilesPerBarbarianCity>
+			<iWaterTilesPerAnimal>130</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
+			<iTilesPerOrc>70</iTilesPerOrc> <!-- Applies to savages on land only -->
+			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
+			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
-			<iBarbarianCityCreationTurnsElapsed>55</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
 			<iAnimalBonus>-30</iAnimalBonus>
 			<iBarbarianBonus>-30</iBarbarianBonus>
@@ -50,7 +50,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders> <!-- Barbs get city guard module too! -->
 			<iAIDeclareWarProb>45</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>160</iAIGrowthPercent>
@@ -110,10 +110,10 @@
 			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
 			<iTilesPerLairDemon>100</iTilesPerLairDemon> <!-- Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
-			<iDemonGlobalCounterFreeXPPercent>0</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
-			<iDemonPerTurnKnownTechsPercent>1</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
+			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
+			<iDemonPerTurnKnownTechsPercent>3</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
 			<iDemonBonus>-50</iDemonBonus>
-			<iAIDemonBonus>-10</iAIDemonBonus>
+			<iAIDemonBonus>0</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_CHIEFTAIN</Type>
@@ -141,10 +141,10 @@
 			<iNoTechTradeModifier>90</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-50</iTechTradeKnownModifier>
 			<iTilesPerAnimal>50</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>90</iWaterTilesPerAnimal>
-			<iTilesPerOrc>70</iTilesPerOrc>
-			<iWaterTilesPerOrc>180</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>84</iUnownedTilesPerBarbarianCity>
+			<iWaterTilesPerAnimal>110</iWaterTilesPerAnimal>
+			<iTilesPerOrc>60</iTilesPerOrc>
+			<iWaterTilesPerOrc>150</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>75</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>45</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>50</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>5</iBarbarianCityCreationProb>
@@ -159,7 +159,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>70</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>130</iAIGrowthPercent>
@@ -214,11 +214,11 @@
 			<iAnimalEscalationTurnsElapsed>135</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>2</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>8</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>90</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>2</iDemonPerTurnKnownTechsPercent>
+			<iTilesPerLairDemon>85</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>24</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>6</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>-30</iDemonBonus>
-			<iAIDemonBonus>-20</iAIDemonBonus>
+			<iAIDemonBonus>-10</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_WARLORD</Type>
@@ -245,18 +245,18 @@
 			<iAttitudeChange>0</iAttitudeChange>
 			<iNoTechTradeModifier>80</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-25</iTechTradeKnownModifier>
-			<iTilesPerAnimal>45</iTilesPerAnimal>
+			<iTilesPerAnimal>40</iTilesPerAnimal>
 			<iWaterTilesPerAnimal>90</iWaterTilesPerAnimal>
-			<iTilesPerOrc>70</iTilesPerOrc>
-			<iWaterTilesPerOrc>180</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>84</iUnownedTilesPerBarbarianCity>
+			<iTilesPerOrc>50</iTilesPerOrc>
+			<iWaterTilesPerOrc>125</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>60</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>40</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>45</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>5</iBarbarianCityCreationProb>
+			<iBarbarianCityCreationTurnsElapsed>40</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>6</iBarbarianCityCreationProb>
 			<iAnimalBonus>-10</iAnimalBonus>
 			<iBarbarianBonus>-10</iBarbarianBonus>
-			<iAIAnimalBonus>-30</iAIAnimalBonus>
-			<iAIBarbarianBonus>-30</iAIBarbarianBonus>
+			<iAIAnimalBonus>-20</iAIAnimalBonus>
+			<iAIBarbarianBonus>-20</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -264,7 +264,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>95</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>110</iAIGrowthPercent>
@@ -315,11 +315,11 @@
 			<iAnimalEscalationTurnsElapsed>120</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>3</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>12</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>80</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>2</iDemonPerTurnKnownTechsPercent>
+			<iTilesPerLairDemon>70</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>38</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>9</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>-20</iDemonBonus>
-			<iAIDemonBonus>-40</iAIDemonBonus>
+			<iAIDemonBonus>-20</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_NOBLE</Type>
@@ -346,18 +346,18 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>40</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>80</iWaterTilesPerAnimal>
-			<iTilesPerOrc>60</iTilesPerOrc>
-			<iWaterTilesPerOrc>160</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>63</iUnownedTilesPerBarbarianCity>
+			<iTilesPerAnimal>30</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>70</iWaterTilesPerAnimal>
+			<iTilesPerOrc>40</iTilesPerOrc>
+			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>45</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>35</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>40</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>6</iBarbarianCityCreationProb>
+			<iBarbarianCityCreationTurnsElapsed>30</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>7</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-30</iAIAnimalBonus>
+			<iAIBarbarianBonus>-30</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -365,7 +365,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>100</iAIGrowthPercent>
@@ -413,11 +413,11 @@
 			<iAnimalEscalationTurnsElapsed>90</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>4</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>16</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>70</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>20</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>3</iDemonPerTurnKnownTechsPercent>
+			<iTilesPerLairDemon>55</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>52</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>12</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
+			<iAIDemonBonus>-30</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_PRINCE</Type>
@@ -444,18 +444,18 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>60</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>40</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>80</iWaterTilesPerAnimal>
-			<iTilesPerOrc>60</iTilesPerOrc>
-			<iWaterTilesPerOrc>160</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>63</iUnownedTilesPerBarbarianCity>
+			<iTilesPerAnimal>20</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
+			<iTilesPerOrc>30</iTilesPerOrc>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>30</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>35</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>6</iBarbarianCityCreationProb>
+			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-40</iAIAnimalBonus>
+			<iAIBarbarianBonus>-40</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -463,7 +463,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>10</iAIWorkRateModifier>
 			<iAIGrowthPercent>100</iAIGrowthPercent>
@@ -511,12 +511,13 @@
 			<iAnimalEscalationTurnsElapsed>75</iAnimalEscalationTurnsElapsed>
 			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>60</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>30</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>4</iDemonPerTurnKnownTechsPercent>
+			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
+			<iAIDemonBonus>-40</iAIDemonBonus>
 		</HandicapInfo>
+		<!-- Barbarian density stops decreasing here (prince is same as monarch+); instead, AI gets better bonuses vs barbs! -->
 		<HandicapInfo>
 			<Type>HANDICAP_MONARCH</Type>
 			<Description>TXT_KEY_HANDICAP_MONARCH</Description>
@@ -542,14 +543,14 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>50</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>30</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>70</iWaterTilesPerAnimal>
-			<iTilesPerOrc>50</iTilesPerOrc>
-			<iWaterTilesPerOrc>140</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>42</iUnownedTilesPerBarbarianCity>
+			<iTilesPerAnimal>20</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
+			<iTilesPerOrc>30</iTilesPerOrc>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>25</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>30</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>7</iBarbarianCityCreationProb>
+			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>-50</iAIAnimalBonus>
@@ -561,7 +562,7 @@
 			<iAIStartingDefenseUnits>1</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>20</iAIWorkRateModifier>
 			<iAIGrowthPercent>95</iAIGrowthPercent>
@@ -573,7 +574,7 @@
 			<iAIWorldCreatePercent>100</iAIWorldCreatePercent>
 			<iAICivicUpkeepPercent>90</iAICivicUpkeepPercent>
 			<iAIUnitCostPercent>90</iAIUnitCostPercent>
-			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
+			<iAIUnitSupplyPercent>45</iAIUnitSupplyPercent>
 			<iAIUnitUpgradePercent>70</iAIUnitUpgradePercent>
 			<iAIInflationPercent>40</iAIInflationPercent>
 			<iAIWarWearinessPercent>50</iAIWarWearinessPercent>
@@ -612,11 +613,11 @@
 			</AIFreeTechs>
 			<iAIFreeXP>2</iAIFreeXP>
 			<iAnimalEscalationTurnsElapsed>67</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>50</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>50</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>5</iDemonPerTurnKnownTechsPercent>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
 			<iAIDemonBonus>-50</iAIDemonBonus>
 		</HandicapInfo>
@@ -645,18 +646,18 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>40</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>25</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>60</iWaterTilesPerAnimal>
-			<iTilesPerOrc>40</iTilesPerOrc>
-			<iWaterTilesPerOrc>120</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>42</iUnownedTilesPerBarbarianCity>
+			<iTilesPerAnimal>20</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
+			<iTilesPerOrc>30</iTilesPerOrc>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>20</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>25</iBarbarianCityCreationTurnsElapsed>
-			<iBarbarianCityCreationProb>7</iBarbarianCityCreationProb>
+			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-60</iAIAnimalBonus>
+			<iAIBarbarianBonus>-60</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -664,7 +665,7 @@
 			<iAIStartingDefenseUnits>2</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>1</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>50</iAIWorkRateModifier>
 			<iAIGrowthPercent>90</iAIGrowthPercent>
@@ -676,7 +677,7 @@
 			<iAIWorldCreatePercent>100</iAIWorldCreatePercent>
 			<iAICivicUpkeepPercent>85</iAICivicUpkeepPercent>
 			<iAIUnitCostPercent>85</iAIUnitCostPercent>
-			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
+			<iAIUnitSupplyPercent>40</iAIUnitSupplyPercent>
 			<iAIUnitUpgradePercent>55</iAIUnitUpgradePercent>
 			<iAIInflationPercent>35</iAIInflationPercent>
 			<iAIWarWearinessPercent>40</iAIWarWearinessPercent>
@@ -720,13 +721,13 @@
 			</AIFreeTechs>
 			<iAIFreeXP>4</iAIFreeXP>
 			<iAnimalEscalationTurnsElapsed>50</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>7</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>28</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>45</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>70</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>7</iDemonPerTurnKnownTechsPercent>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
+			<iAIDemonBonus>-60</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_IMMORTAL</Type>
@@ -753,18 +754,18 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>30</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iTilesPerAnimal>25</iTilesPerAnimal>
-			<iWaterTilesPerAnimal>60</iWaterTilesPerAnimal>
-			<iTilesPerOrc>40</iTilesPerOrc>
-			<iWaterTilesPerOrc>120</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
+			<iTilesPerAnimal>20</iTilesPerAnimal>
+			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
+			<iTilesPerOrc>30</iTilesPerOrc>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>15</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-70</iAIAnimalBonus>
+			<iAIBarbarianBonus>-70</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -772,7 +773,7 @@
 			<iAIStartingDefenseUnits>3</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>1</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>1</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>75</iAIWorkRateModifier>
 			<iAIGrowthPercent>85</iAIGrowthPercent>
@@ -784,7 +785,7 @@
 			<iAIWorldCreatePercent>100</iAIWorldCreatePercent>
 			<iAICivicUpkeepPercent>80</iAICivicUpkeepPercent>
 			<iAIUnitCostPercent>80</iAIUnitCostPercent>
-			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
+			<iAIUnitSupplyPercent>35</iAIUnitSupplyPercent>
 			<iAIUnitUpgradePercent>40</iAIUnitUpgradePercent>
 			<iAIInflationPercent>30</iAIInflationPercent>
 			<iAIWarWearinessPercent>30</iAIWarWearinessPercent>
@@ -831,13 +832,13 @@
 			</AIFreeTechs>
 			<iAIFreeXP>6</iAIFreeXP>
 			<iAnimalEscalationTurnsElapsed>45</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>8</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>32</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>42</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>90</iDemonGlobalCounterFreeXPPercent>
-			<iDemonPerTurnKnownTechsPercent>10</iDemonPerTurnKnownTechsPercent>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
+			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
+			<iAIDemonBonus>-70</iAIDemonBonus>
 		</HandicapInfo>
 		<HandicapInfo>
 			<Type>HANDICAP_DEITY</Type>
@@ -867,15 +868,15 @@
 			<iTilesPerAnimal>20</iTilesPerAnimal>
 			<iWaterTilesPerAnimal>50</iWaterTilesPerAnimal>
 			<iTilesPerOrc>30</iTilesPerOrc>
-			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
-			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>10</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>15</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-80</iAIAnimalBonus>
+			<iAIBarbarianBonus>-80</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -883,7 +884,7 @@
 			<iAIStartingDefenseUnits>4</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>1</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>1</iAIStartingExploreUnits>
-			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>100</iAIWorkRateModifier>
 			<iAIGrowthPercent>80</iAIGrowthPercent>
@@ -895,7 +896,7 @@
 			<iAIWorldCreatePercent>100</iAIWorldCreatePercent>
 			<iAICivicUpkeepPercent>60</iAICivicUpkeepPercent>
 			<iAIUnitCostPercent>75</iAIUnitCostPercent>
-			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
+			<iAIUnitSupplyPercent>30</iAIUnitSupplyPercent>
 			<iAIUnitUpgradePercent>25</iAIUnitUpgradePercent>
 			<iAIInflationPercent>25</iAIInflationPercent>
 			<iAIWarWearinessPercent>20</iAIWarWearinessPercent>
@@ -945,13 +946,13 @@
 			</AIFreeTechs>
 			<iAIFreeXP>8</iAIFreeXP>
 			<iAnimalEscalationTurnsElapsed>35</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>9</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>41</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
 			<iTilesPerLairDemon>40</iTilesPerLairDemon>
-			<iDemonGlobalCounterFreeXPPercent>130</iDemonGlobalCounterFreeXPPercent>
+			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iDemonBonus>0</iDemonBonus>
-			<iAIDemonBonus>-50</iAIDemonBonus>
+			<iAIDemonBonus>-80</iAIDemonBonus>
 		</HandicapInfo>
 	</HandicapInfos>
 </Civ4HandicapInfo>
