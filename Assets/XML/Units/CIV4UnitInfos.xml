@@ -49226,7 +49226,7 @@
 			<Class>UNITCLASS_SCOUT</Class>
 			<Type>UNIT_JOT_TROLL</Type>
 			<Combat>UNITCOMBAT_RECON</Combat>
-			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<iExtraPerception>2</iExtraPerception>
 			<Description>TXT_KEY_UNIT_JOT_TROLL</Description>
 			<Civilopedia>TXT_KEY_UNIT_WILD_TROLL_PEDIA</Civilopedia>
@@ -49241,7 +49241,7 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
