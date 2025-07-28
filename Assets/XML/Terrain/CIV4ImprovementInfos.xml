@@ -18,7 +18,6 @@
 			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
 			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
-			<iAppearanceProbability>0</iAppearanceProbability> <!-- X/100 of a percent to spawn on a valid tile in mapgen. Aka 10 means 1 in 1000 tiles will have this improvement, 50 means 1 in 200, etc -->
 			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
 			<iUpgradeTime>0</iUpgradeTime> <!-- How many turns it takes to upgrade the improvement. If 0, will only upgrade if the upgrade has weights > 0 (I think?) -->
 			<ImprovementUpgrade></ImprovementUpgrade> <!-- When upgraded, what it turns into. Tracked alive units are set to 0, ImmediateSpawnUnitType will spawn -->
@@ -33,6 +32,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<iAppearanceProbability>0</iAppearanceProbability> <!-- X/100 of a percent to spawn on a valid tile in mapgen. Aka 10 means 1 in 1000 tiles will have this improvement, 50 means 1 in 200, etc -->
 			<iLairCreationWeight>0</iLairCreationWeight> <!-- If above 0, allows lair to spawn as a lair during the game provided terrain and feature prereqs are met. Weight relative to other lairs, avg ~50 -->
 			<!-- Additive by percent of teams that have this tech (10 teams, 3 know, value is 20 => weight adjusted by 6) to adjust iLairCreationWeight. -->
 			<LairCreationWeightTechs>
@@ -2685,7 +2685,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
-			<iAppearanceProbability>20</iAppearanceProbability>
+			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Blighted Forest -->
@@ -3201,7 +3201,7 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<iAppearanceProbability>70</iAppearanceProbability>
-			<iLairCreationWeight>80</iLairCreationWeight>
+			<iLairCreationWeight>70</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower -->
 			<Type>IMPROVEMENT_MAGE_TOWER</Type>
@@ -3936,7 +3936,7 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<iAppearanceProbability>25</iAppearanceProbability>
-			<iLairCreationWeight>100</iLairCreationWeight>
+			<iLairCreationWeight>10</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lion Den -->
 			<Type>IMPROVEMENT_LION_DEN</Type>
@@ -3955,6 +3955,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Shipwreck -->
@@ -4580,6 +4581,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Spider Den -->
@@ -4613,6 +4615,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>45</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hippogriff Weyr -->
@@ -4624,9 +4627,10 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
-			<iLairCreationWeight>10</iLairCreationWeight>
+			<iAppearanceProbability>2</iAppearanceProbability>
+			<iLairCreationWeight>20</iLairCreationWeight>
 		</ImprovementInfo>
-		<ImprovementInfo><!-- Griffin Weyr -->
+		<ImprovementInfo><!-- Griffin Weyr (T2) -->
 			<Type>IMPROVEMENT_GRIFFIN_WEYR</Type>
 			<Description>TXT_KEY_IMPROVEMENT_GRIFFIN_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
@@ -4635,7 +4639,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
-			<iLairCreationWeight>10</iLairCreationWeight>
+			<iLairCreationWeight>5</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Frostling Encampment -->
 			<Type>IMPROVEMENT_FROSTLING_ENCAMPMENT</Type>

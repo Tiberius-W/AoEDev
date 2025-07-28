@@ -275,7 +275,7 @@
 					<BuildingClassType>BUILDINGCLASS_DUNGEON</BuildingClassType>
 					<BuildingType>BUILDING_FEEDING_PIT</BuildingType>
 				</Building>
-		</Buildings>
+			</Buildings>
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
@@ -353,7 +353,7 @@
 					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<UnitType>UNIT_PIKEMAN_DOVIELLO</UnitType>
 				</Unit>
-		</Units>
+			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -2126,7 +2126,7 @@
 					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<UnitType>UNIT_PIKEMAN_DOVIELLO</UnitType>
 				</Unit>
-		</Units>
+			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -5410,7 +5410,7 @@
 					<BuildingClassType>BUILDINGCLASS_THIEVES_GUILD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
-		</Buildings>
+			</Buildings>
 			<Units>
 						<Unit>
 					<UnitClassType>UNITCLASS_ASSASSIN</UnitClassType>
@@ -5420,7 +5420,7 @@
 					<UnitClassType>UNITCLASS_THIEF</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
-		<Unit>
+			<Unit>
 					<UnitClassType>UNITCLASS_BASIUM</UnitClassType>
 					<UnitType>UNIT_BASIUM</UnitType>
 				</Unit>
@@ -5721,7 +5721,7 @@
 					<BuildingClassType>BUILDINGCLASS_THIEVES_GUILD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
-		</Buildings>
+			</Buildings>
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_ASSASSIN</UnitClassType>
@@ -6210,7 +6210,7 @@
 					<BuildingClassType>BUILDINGCLASS_THIEVES_GUILD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
-		</Buildings>
+			</Buildings>
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_RATHUS</UnitClassType>

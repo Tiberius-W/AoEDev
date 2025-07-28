@@ -668,13 +668,18 @@ void CvMapGenerator::addFeatures()
 		CvPlot* pPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 		FAssert(pPlot != NULL);
 
-		for (int iJ = 0; iJ < GC.getNumFeatureInfos(); iJ++)
+		// Start with a random feature info, otherwise ordering of weights matters
+		int iNumFeatures = GC.getNumFeatureInfos();
+		int iOffset = GC.getGameINLINE().getMapRandNum(iNumFeatures, "Proper randomization mattters, people!");
+
+		for (int iJ = iOffset; iJ < iNumFeatures + iOffset; iJ++)
 		{
-			if (pPlot->canHaveFeature((FeatureTypes)iJ))
+			FeatureTypes eFeature = (FeatureTypes)(iJ % iNumFeatures);
+			if (pPlot->canHaveFeature(eFeature))
 			{
-				if (GC.getGameINLINE().getMapRandNum(10000, "addFeaturesAtPlot") < GC.getFeatureInfo((FeatureTypes)iJ).getAppearanceProbability())
+				if (GC.getGameINLINE().getMapRandNum(10000, "addFeaturesAtPlot") < GC.getFeatureInfo(eFeature).getAppearanceProbability())
 				{
-					pPlot->setFeatureType((FeatureTypes)iJ);
+					pPlot->setFeatureType(eFeature);
 				}
 			}
 		}
@@ -1230,8 +1235,13 @@ void CvMapGenerator::addImprovements()
 	}
 
 	bool bValid = true;
-	CvPlot* pAdjacentPlot;
 	CvPlot* pPlot;
+	CvPlot* pAdjacentPlot;
+	CvPlot* pLoopPlot;
+	ImprovementTypes eImprovement;
+	int iNumImprovements = GC.getNumImprovementInfos();
+	int iOffset, iRange;
+
 	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
 	{
 		pPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
@@ -1267,20 +1277,47 @@ void CvMapGenerator::addImprovements()
 		if (pPlot->getNumUnits() > 0)
 			continue;
 
-		for (int iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
+		iOffset = GC.getGameINLINE().getMapRandNum(iNumImprovements, "proper randomization!");
+
+		for (int iJ = iOffset; iJ < iNumImprovements; iJ++)
 		{
-			if (!(pPlot->canHaveImprovement((ImprovementTypes)iJ, NO_TEAM)))
+			eImprovement = (ImprovementTypes)(iJ % iNumImprovements);
+
+			if (GC.getImprovementInfo(eImprovement).getAppearanceProbability() <= 0)
 				continue;
 
-			// Spawners can't be adjacent to another spawner on game start
-			if ((GC.getImprovementInfo((ImprovementTypes)iJ).getSpawnUnitCiv() != NO_CIVILIZATION) && (pPlot->isOwned() || pPlot->isAdjacentOwned()))
+			if (!(pPlot->canHaveImprovement(eImprovement)))
+				continue;
+
+			// Ensuring there's enough space between improvements that immediately claim tiles; no overlap or touching
+			if (GC.getImprovementInfo(eImprovement).getCultureControlStrength() > 0)
+			{
+				iRange = 1 + GC.getImprovementInfo(eImprovement).getCultureRange();
+
+				for (int iDX = -(iRange); iDX <= iRange; iDX++)
+				{
+					for (int iDY = -(iRange); iDY <= iRange; iDY++)
+					{
+						pLoopPlot = plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iDX, iDY);
+
+						if (pLoopPlot == NULL)
+							continue;
+
+						if (plotDistance(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()) > iRange)
+							continue;
+
+						if (pLoopPlot->isOwned())
+							bValid = false;
+					}
+				}
+			}
+
+			if (!bValid)
 				continue;
 
 			// Use MapRandNum instead of SorenRandNum to reduce logger spam : Xienwolf Tweak 12/13/08
-			if (GC.getGameINLINE().getMapRandNum(10000, "Spawn Improvement") < GC.getImprovementInfo((ImprovementTypes)iJ).getAppearanceProbability())
-			{
-				pPlot->setImprovementType((ImprovementTypes)iJ);
-			}
+			if (GC.getGameINLINE().getMapRandNum(10000, "Spawn Improvement") < GC.getImprovementInfo(eImprovement).getAppearanceProbability())
+				pPlot->setImprovementType(eImprovement);
 		}
 	}
 }
