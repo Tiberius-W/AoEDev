@@ -37,7 +37,7 @@
 			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
 			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity>
 			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
-			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo --> 
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
 			<iAnimalBonus>-30</iAnimalBonus>
 			<iBarbarianBonus>-30</iBarbarianBonus>

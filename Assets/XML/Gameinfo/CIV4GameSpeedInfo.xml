@@ -21,7 +21,7 @@
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
 			<iCulturePercent>300</iCulturePercent>
 			<iAnarchyPercent>200</iAnarchyPercent>
-			<iBarbPercent>400</iBarbPercent>
+			<iBarbPercent>400</iBarbPercent> <!-- Percentage multiplier to turns before barb cities can spawn (see iBarbarianCityCreationTurnsElapsed) -->
 			<iFeatureProductionPercent>300</iFeatureProductionPercent>
 			<iUnitDiscoverPercent>300</iUnitDiscoverPercent>
 			<iUnitHurryPercent>300</iUnitHurryPercent>
@@ -39,8 +39,8 @@
 					<iTurnsPerIncrement>1800</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>10</iLairSpawnChance> <!-- Chance a lair will spit a unit out. Also 3x the chance to spit out a group, and 1/3 of replace guardian. Individual results can be modulated in improvementInfos -->
-			<iTurnsPerLairCycle>30</iTurnsPerLairCycle> <!-- Turns until barbs can spawn, and turns between lairs spawning. +/- 10% randomness after the first -->
+			<iLairSpawnChance>10</iLairSpawnChance> <!-- Default chance a lair will spit a unit out. 2x if raging barbs on. Also 3x the chance to spit out a group, and 1/3 of replace guardian. Individual results can be modulated in improvementInfos -->
+			<iTurnsPerLairCycle>30</iTurnsPerLairCycle> <!-- 1/2 this value if raging barbs on. 2x this value before random animals spawn. 3x until rando barbs and additional lairs can spawn (and 1x +/- 10% thereafter, #=map default players) -->
 		</GameSpeedInfo>
 		<GameSpeedInfo>
 			<Type>GAMESPEED_EPIC</Type>

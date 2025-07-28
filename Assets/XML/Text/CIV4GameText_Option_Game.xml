@@ -839,11 +839,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_RAGING_BARBARIANS_HELP</Tag>
-		<English>Orcish Hordes respawn quicker and gain new cities more rapidly</English>
-		<French>Les hordes barbares réapparaissent et construisent des villes plus vite.</French>
-		<German>Erhöhte Barbarenaktivität und -aggressivität</German>
-		<Italian>Aumenta le attività e l'aggressività dei Barbari</Italian>
-		<Spanish>Aumenta la actividad y agresividad de los b&#225;rbaros.</Spanish>
+		<English>All barbarians spawn and respawn quicker, denser, and found cities faster</English>
+		<French>All barbarians spawn and respawn quicker, denser, and found cities faster</French>
+		<German>All barbarians spawn and respawn quicker, denser, and found cities faster</German>
+		<Italian>All barbarians spawn and respawn quicker, denser, and found cities faster</Italian>
+		<Spanish>All barbarians spawn and respawn quicker, denser, and found cities faster</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_RELIGIOUS_HUD</Tag>

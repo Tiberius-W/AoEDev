@@ -6640,7 +6640,7 @@ void CvGame::doTurn()
 		if (!isGameMultiPlayer())
 		{
 			// Modifies Challenge escalation based on Gamespeed : Xienwolf 12/13/08
-			if (getGameTurn() >= 50 * GC.getGameSpeedInfo(getGameSpeedType()).getGrowthPercent() / 100)
+			if (getElapsedGameTurns() >= 50 * GC.getGameSpeedInfo(getGameSpeedType()).getGrowthPercent() / 100)
 			{
 				if (getHighToLowCounter() < 2)
 				{
@@ -10727,20 +10727,17 @@ void CvGame::createLairs()
 	if (isOption(GAMEOPTION_NO_LAIRS))
 		return;
 
-	if (getGameTurn() < getNextLairCycle())
+	if (getElapsedGameTurns() < getNextLairCycle())
 		return;
 
-	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle();
+	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / isOption(GAMEOPTION_RAGING_BARBARIANS);
 	if (getGameTurn() == 0)
 	{
-		setNextLairCycle(iLairCycleLength);
+		setNextLairCycle(3 * iLairCycleLength);
 		return;
 	}
 	else
-	{
-		// Some randomization in followup lair cycle length
-		setNextLairCycle(getGameTurn() + 11 * iLairCycleLength / 10 - getSorenRandNum(iLairCycleLength/5, "~ +-10% Randomization in cycle length"));
-	}
+		setNextLairCycle(getElapsedGameTurns() + 11 * iLairCycleLength / 10 - getSorenRandNum(iLairCycleLength/5, "~ +-10% Randomization in cycle length"));
 
 	iGoal = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDefaultPlayers();
 	if (iGoal <= 0) return;
@@ -10757,40 +10754,27 @@ void CvGame::createLairs()
 			// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 			iWeight = GC.getImprovementInfo((ImprovementTypes)iI).getLairCreationWeight();
 			for (int iJ = 0; iJ < GC.getNumTechInfos(); iJ++)
-			{
 				iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iJ)) * countKnownTechNumTeams((TechTypes)iJ) / countTeamsAlive();
-			}
+
 			// Total weight for this lair might be negative; don't include if so
 			if (iWeight > 0)
-			{
 				iNetWeight += iWeight;
-			}
 		}
 	}
 
 	// Setting up the static flags. Passable = not ice/volcano/walls
 	iFlags = RANDPLOT_PASSIBLE | RANDPLOT_NOT_CITY | RANDPLOT_NOT_IMPROVED | RANDPLOT_UNOCCUPIED | RANDPLOT_ADJACENT_UNOWNED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
-	{
 		iFlags |= RANDPLOT_NOT_VISIBLE_TO_CIV;
-	}
 
 	if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
-	{
 		iFlags |= RANDPLOT_DEMON_ALLY;
-	}
 	else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
-	{
 		iFlags |= RANDPLOT_ORC_ALLY;
-	}
 	else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
-	{
 		iFlags |= RANDPLOT_ANIMAL_ALLY;
-	}
 	else
-	{
 		iFlags |= RANDPLOT_UNOWNED;
-	}
 
 	for (int iI = 0; iI < iGoal * 20; iI++)
 	{
@@ -10806,14 +10790,12 @@ void CvGame::createLairs()
 				// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 				iWeight = GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeight();
 				for (int iK = 0; iK < GC.getNumTechInfos(); iK++)
-				{
 					iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iK)) * countKnownTechNumTeams((TechTypes)iK) / countTeamsAlive();
-				}
+
 				// Total weight for this lair might be negative; don't include if so
 				if (iWeight > 0)
-				{
 					iTargetWeight -= iWeight;
-				}
+
 				if (iTargetWeight <= 0)
 				{
 					eLair = (ImprovementTypes)iJ;
@@ -10824,22 +10806,14 @@ void CvGame::createLairs()
 
 		iLairFlags = iFlags;
 		if (GC.getImprovementInfo(eLair).isWater())
-		{
 			iLairFlags |= RANDPLOT_WATER;
-		}
 		else
-		{
 			iLairFlags |= RANDPLOT_LAND;
-		}
 
 		if (GC.getImprovementInfo(eLair).isRequiresPeak())
-		{
 			iLairFlags |= RANDPLOT_PEAK;
-		}
 		else if (!GC.getImprovementInfo(eLair).isPeakMakesValid())
-		{
 			iLairFlags |= RANDPLOT_NOT_PEAK;
-		}
 
 		// Checking to see if *only* valid on hell terrain
 		bEvilValid = false;
@@ -10849,19 +10823,13 @@ void CvGame::createLairs()
 			if (GC.getImprovementInfo(eLair).getTerrainMakesValid(iJ))
 			{
 				if (GC.getTerrainInfo((TerrainTypes)iJ).isHell())
-				{
 					bEvilValid = true;
-				}
 				else
-				{
 					bNormalValid = true;
-				}
 			}
 		}
 		if (bEvilValid && !bNormalValid)
-		{
 			iLairFlags |= RANDPLOT_EVIL;
-		}
 
 		pPlot = GC.getMapINLINE().syncRandPlot(iLairFlags);
 
@@ -10870,10 +10838,14 @@ void CvGame::createLairs()
 
 		// Check spawning criteria vs density requirements. Lairs that don't spawn might fill up tiles...
 		bNoSpawns = false;
-		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION")) ePlayer = DEMON_PLAYER;
-		else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION")) ePlayer = ORC_PLAYER;
-		else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION")) ePlayer = ANIMAL_PLAYER;
-		else bNoSpawns = true;
+		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
+			ePlayer = DEMON_PLAYER;
+		else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
+			ePlayer = ORC_PLAYER;
+		else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
+			ePlayer = ANIMAL_PLAYER;
+		else
+			bNoSpawns = true;
 
 		pArea = pPlot->area();
 
@@ -10883,8 +10855,8 @@ void CvGame::createLairs()
 			iGoal--;
 		}
 		// Lairs can only spawn if there's space for barbs to spawn; prevents wildly dense barb areas
-		// 1 animal lair can always spawn even if there's no space for a normal animal to spawn
-		else if (pArea != NULL && ((calcTargetBarbs(pArea, true, ePlayer, true) + (ePlayer == ANIMAL_PLAYER)) > pArea->getUnitsPerPlayer(ePlayer)))
+		// But, 1 valid lair/type can always spawn even if there's no space for a normal barb to spawn
+		else if (pArea != NULL && (calcTargetBarbs(pArea, true, ePlayer, true) >= pArea->getUnitsPerPlayer(ePlayer)))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
@@ -10923,7 +10895,7 @@ void CvGame::createDemons()
 		iNeededDemons = iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER);
 		if (iNeededDemons < 1)
 			continue;
-		// Spawn at most 10% of the actual missing amount, gamespeed modulated
+		// Spawn at most 10% of the actual missing amount, gamespeed modulated. This prevents instant-replacement of killed units when near target threshold
 		iNeededDemons =  std::max(1, GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededDemons / 1000);
 		iTimeout = 20 * iNeededDemons;
 
@@ -10978,9 +10950,7 @@ void CvGame::createDemons()
 				iValue = (1 + getSorenRandNum(1500, "Demon Unit Selection")) + GET_PLAYER(DEMON_PLAYER).AI_unitValue(eLoopUnit, UNITAI_ATTACK, pLoopArea);
 
 				if (kUnit.getUnitAIType(UNITAI_ATTACK))
-				{
 					iValue += 200;
-				}
 
 				if (iValue > iBestValue)
 				{
@@ -10993,9 +10963,8 @@ void CvGame::createDemons()
 			{
 				CvUnit* pUnit = GET_PLAYER(DEMON_PLAYER).initUnit(eBestUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE(), UNITAI_ATTACK);
 				if (isMPOption(MPOPTION_SIMULTANEOUS_TURNS))
-				{
 					pUnit->setImmobileTimer(2);
-				}
+
 				iCount++;
 				if (iCount >= iNeededDemons)
 					break;
@@ -11017,35 +10986,30 @@ void CvGame::createAnimals()
 	if (isOption(GAMEOPTION_NO_ANIMALS) || isOption(GAMEOPTION_NO_RANDOM_BARBARIANS))
 		return;
 
-	if (getNumCivCities() < countCivPlayersAlive())
-		return;
-
-	// Random animals spawn 5x sooner than barbs, or once all civs settled
-	if ((5 * getElapsedGameTurns() < (GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle()))
-	 || (getNumCivCities() < countCivPlayersAlive()))
+	// Rando animals spawn slightly sooner than random lairs
+	if (getGameTurn() < 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
 		return;
 
 	// Animals weighting gets weird if a mountain is picked; best to simply not choose mountains
 	iFlags = RANDPLOT_ANIMAL_ALLY | RANDPLOT_PASSIBLE | RANDPLOT_NOT_PEAK | RANDPLOT_UNOCCUPIED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
-	{
 		iFlags |= RANDPLOT_NOT_VISIBLE_TO_CIV;
-	}
 
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Spawn at most 20% of the actual missing amount, gamespeed modulated
+		// Spawn at most 15% of the actual missing amount, gamespeed modulated. This prevents instant-replacement of killed units when near target threshold
 		iTargetAnimals = calcTargetBarbs(pLoopArea, false, ANIMAL_PLAYER);
 		iNeededAnimals = iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER);
 		if (iNeededAnimals < 1)
 			continue;
-		iNeededAnimals =  std::max(1, 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededAnimals / 1000);
+		iNeededAnimals =  std::max(1, 15 * GC.getGameSpeedInfo(getGameSpeedType()).getTrainPercent() * iNeededAnimals / 10000);
 		iTimeout = 20 * iNeededAnimals;
 
 		for (int iI = 0; iI < iTimeout; iI++)
 		{
 			pPlot = GC.getMapINLINE().syncRandPlot(iFlags, pLoopArea->getID());
-			if (pPlot == NULL) continue;
+			if (pPlot == NULL)
+				continue;
 
 			eBestUnit = NO_UNIT;
 			iNetValue = 0;
@@ -11080,13 +11044,10 @@ void CvGame::createAnimals()
 
 				iValue = (GC.getUnitInfo(eLoopUnit).getAppearanceProb());
 				for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
-				{
 					iValue += (GC.getUnitInfo(eLoopUnit).getAppearanceTechs(iI)) * (countKnownTechNumTeams((TechTypes)iI) > 0 ? 1 : 0);
-				}
+
 				if (iValue > 0)
-				{
 					iNetValue += iValue;
-				}
 			}
 
 			// From the total weight, pick a number at random. We then need to do the same calculation, to find which animal it's associated with.
@@ -11108,13 +11069,11 @@ void CvGame::createAnimals()
 
 				iValue = (GC.getUnitInfo(eLoopUnit).getAppearanceProb());
 				for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
-				{
 					iValue += (GC.getUnitInfo(eLoopUnit).getAppearanceTechs(iI)) * (countKnownTechNumTeams((TechTypes)iI) > 0 ? 1 : 0);
-				}
+
 				if (iValue > 0)
-				{
 					iTargetValue -= iValue;
-				}
+
 				if (iTargetValue <= 0)
 				{
 					eBestUnit = eLoopUnit;
@@ -11126,9 +11085,8 @@ void CvGame::createAnimals()
 			{
 				CvUnit* pUnit = GET_PLAYER(ANIMAL_PLAYER).initUnit(eBestUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE(), UNITAI_ANIMAL);
 				if (isMPOption(MPOPTION_SIMULTANEOUS_TURNS))
-				{
 					pUnit->setImmobileTimer(2);
-				}
+
 				iCount++;
 				if (iCount >= iNeededAnimals)
 					break;
@@ -11157,34 +11115,25 @@ void CvGame::createBarbarianUnits()
 	bool bAlwaysSpawn;
 
 	if (isOption(GAMEOPTION_NO_BARBARIANS) || isOption(GAMEOPTION_NO_RANDOM_BARBARIANS))
-	{
 		return;
-	}
 
 	lResult = 0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "createBarbarianUnits", NULL, &lResult);
 	if (lResult == 1)
-	{
 		return;
-	}
 
-	// Random barbs only spawn past lair start, and if there are enough civ cities in the world
-	if ((getElapsedGameTurns() < GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle())
-		|| (getNumCivCities() < ((countCivPlayersAlive() * 3) / 2) || isOption(GAMEOPTION_NO_SETTLERS)))
-	{
+	// Random barbs only spawn past lair start
+	if (getGameTurn() < 3 * GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
 		return;
-	}
 
 	// Random spawn can't be on 1-tile island I guess, nor in deep ocean. Weighting is also weird for peaks, so don't spawn on those
 	iFlags = RANDPLOT_ORC_ALLY | RANDPLOT_ADJACENT_LAND | RANDPLOT_NOT_PEAK | RANDPLOT_PASSIBLE | RANDPLOT_UNOCCUPIED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
-	{
 		iFlags |= RANDPLOT_NOT_VISIBLE_TO_CIV;
-	}
 
 	for (pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
-		// Spawn at most 10% of the actual missing amount, gamespeed modulated
+		// Spawn at most 10% of the actual missing amount, gamespeed modulated. This prevents instant-replacement of killed animals when near target threshold
 		iTargetBarbs = calcTargetBarbs(pLoopArea, false, ORC_PLAYER);
 		iNeededBarbs = iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER);
 		if (iNeededBarbs < 1)
@@ -11195,12 +11144,10 @@ void CvGame::createBarbarianUnits()
 		pLoopArea->isWater() ? eBarbUnitAI = UNITAI_ATTACK_SEA : eBarbUnitAI = UNITAI_ATTACK;
 
 		// Python exposure for modular barb bosses. They can spawn regardless of density limit (if exist...)
+		// Unused???
 		if (pLoopArea->getNumUnownedTiles() > 0)
 		{
-			if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
-				pPlot = GC.getMapINLINE().syncRandPlot((RANDPLOT_ORC_ALLY | RANDPLOT_ADJACENT_LAND | RANDPLOT_PASSIBLE | RANDPLOT_UNOCCUPIED| RANDPLOT_NOT_VISIBLE_TO_CIV), pLoopArea->getID(), GC.getDefineINT("MIN_BARBARIAN_STARTING_DISTANCE"));
-			else
-				pPlot = GC.getMapINLINE().syncRandPlot((RANDPLOT_ORC_ALLY | RANDPLOT_ADJACENT_LAND | RANDPLOT_PASSIBLE | RANDPLOT_UNOCCUPIED), pLoopArea->getID(), GC.getDefineINT("MIN_BARBARIAN_STARTING_DISTANCE"));
+			pPlot = GC.getMapINLINE().syncRandPlot(iFlags, pLoopArea->getID(), GC.getDefineINT("MIN_BARBARIAN_STARTING_DISTANCE"));
 			CyPlot* pyPlot = new CyPlot(pPlot);
 			CyArgsList argsList;
 			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in plot class
