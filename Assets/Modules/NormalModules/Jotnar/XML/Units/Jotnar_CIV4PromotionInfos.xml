@@ -2,47 +2,52 @@
 <!-- Promotion Infos -->
 <Civ4PromotionInfos xmlns="x-schema:Jotnar_CIV4UnitSchema.xml">
 	<PromotionInfos>
-		<PromotionInfo>		<!-- Jotnar Great Person Charge -->
+<!--    <PromotionInfo>		 Jotnar Great Person Charge 
 			<Type>PROMOTION_GREAT_JOTNAR</Type>
 			<Description>Jotnar Great Person</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Bard -->
+		<PromotionInfo>		 Jotnar Great Bard 
 			<Type>PROMOTION_GREAT_JOTNAR_ARTIST</Type>
 			<Description>Jotnar Great Bard</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Engineer -->
+		<PromotionInfo>		 Jotnar Great Engineer 
 			<Type>PROMOTION_GREAT_JOTNAR_ENGINEER</Type>
 			<Description>Jotnar Great Engineer</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Merchant -->
+		<PromotionInfo>		 Jotnar Great Merchant 
 			<Type>PROMOTION_GREAT_JOTNAR_MERCHANT</Type>
 			<Description>Jotnar Great Merchant</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Prophet -->
+		<PromotionInfo>		 Jotnar Great Prophet 
 			<Type>PROMOTION_GREAT_JOTNAR_PROPHET</Type>
 			<Description>Jotnar Great Prophet</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Sage -->
+		<PromotionInfo>		 Jotnar Great Sage 
 			<Type>PROMOTION_GREAT_JOTNAR_SCIENTIST</Type>
 			<Description>Jotnar Great Sage</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Jotnar Great Healer -->
+		<PromotionInfo>		 Jotnar Great Healer 
 			<Type>PROMOTION_GREAT_JOTNAR_HEALER</Type>
 			<Description>Jotnar Great Healer</Description>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo> -->
+		<PromotionInfo>		<!-- GiantKin -->
+			<Type>PROMOTION_GIANTKIN</Type>
+			<Description>TXT_KEY_PROMOTION_GIANTKIN</Description>
+			<iExperiencePercent>-60</iExperiencePercent>=
 		</PromotionInfo>
 	<PromotionInfo>        <!-- NO Cottage -->
             <Type>PROMOTION_COMMUNAL_TRADITIONS</Type>

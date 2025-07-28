@@ -429,8 +429,8 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Hill Giant.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Rally Thrall COnscript -->
-			<Type>SPELL_THRALL_CONSCRIPT</Type>
+<!--    <SpellInfo>	-->		<!-- Rally Thrall COnscript -->
+<!--    <Type>SPELL_THRALL_CONSCRIPT</Type>
 			<Description>Feed the Goblins</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -446,7 +446,7 @@
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Gretchin.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Blessed (Jotnar - Altar 1) -->			<!-- JOTNAR SPELLS -->
 			<Type>SPELL_JOT_BLESS1</Type>
 			<Description>Blessed</Description>
@@ -677,8 +677,8 @@
 			<Sound>AS3D_SPELL_BLOOM</Sound>
 			<Button>Art/Interface/Buttons/Spells/Entangle.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Feed (Jotnar) -->
-			<Type>SPELL_JOT_FEED</Type>
+<!--    <SpellInfo>	-->		<!-- Feed (Jotnar) -->
+<!--    <Type>SPELL_JOT_FEED</Type>
 			<Description>TXT_KEY_SPELL_FEED</Description>
 			<Civilopedia>TXT_KEY_SPELL_FEED_PEDIA</Civilopedia>
 			<Help>TXT_KEY_SPELL_JOT_FEED_HELP</Help>
@@ -693,7 +693,7 @@
 			<Effect>EFFECT_SACRIFICE</Effect>
 			<Sound>AS3D_SPELL_FEED</Sound>
 			<Button>Art/Interface/Buttons/WorldBuilder/Pig.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Fireball (Jotnar) -->
 			<Type>SPELL_JOT_FIREBALL</Type>
 			<Description>TXT_KEY_SPELL_FIREBALL</Description>

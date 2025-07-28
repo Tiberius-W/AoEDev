@@ -2,7 +2,7 @@
 <!-- Unit Infos -->
 <Civ4UnitInfos xmlns="x-schema:Jotnar_CIV4UnitSchema.xml">
 	<UnitInfos>
-			<UnitInfo>        <!-- Great Bard -->
+	   <!-- <UnitInfo>       Great Bard 
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_ARTIST_JOT</Type>
 			<UniqueNames>
@@ -142,7 +142,7 @@
 			<iCombat>3</iCombat>
 			<iCombatDefense>5</iCombatDefense>
 		</UnitInfo>
-		<UnitInfo>        <!-- Great Commander -->
+		<UnitInfo>         Great Commander 
 			<Class>UNITCLASS_COMMANDER</Class>
 			<Type>UNIT_COMMANDER_JOT</Type>
 			<UniqueNames>
@@ -277,7 +277,7 @@
 			<iPowerMult>3</iPowerMult>
 			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
-		<UnitInfo>		  <!-- Great Engineer -->
+		<UnitInfo>		   Great Engineer 
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_ENGINEER_JOT</Type>
 			<UniqueNames>
@@ -408,7 +408,7 @@
 			<iCombatDefense>5</iCombatDefense>
 			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
-		<UnitInfo>        <!-- Great Merchant -->
+		<UnitInfo>         Great Merchant 
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_MERCHANT_JOT</Type>
 			<UniqueNames>
@@ -539,7 +539,7 @@
 			<iCombat>4</iCombat>
 			<iCombatDefense>4</iCombatDefense>
 		</UnitInfo>
-		<UnitInfo>        <!-- Great Prophet -->
+		<UnitInfo>         Great Prophet 
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_PROPHET_JOT</Type>
 			<UniqueNames>
@@ -681,7 +681,7 @@
 			<iCombat>4</iCombat>
 			<iCombatDefense>4</iCombatDefense>
 		</UnitInfo>
-		<UnitInfo>        <!-- Great Sage 100-->
+		<UnitInfo>        Great Sage 100
 			<Class>UNITCLASS_SCIENTIST</Class>
 			<Type>UNIT_SCIENTIST_JOT</Type>
 			<UniqueNames>
@@ -830,7 +830,7 @@
 			<iCombat>4</iCombat>
 			<iCombatDefense>4</iCombatDefense>
 		</UnitInfo>
-		<UnitInfo>        <!-- Healer -->
+		<UnitInfo>         Healer 
 			<Class>UNITCLASS_HEALER</Class>
 			<Type>UNIT_HEALER_JOT</Type>
 			<UniqueNames>
@@ -981,7 +981,7 @@
 			</UnitClassUpgrades>
 			<iCombat>2</iCombat>
 			<iCombatDefense>5</iCombatDefense>
-		</UnitInfo>
+		</UnitInfo> -->
 		<UnitInfo>		<!-- Egrass -->
 			<Class>UNITCLASS_EGRASS</Class>
 			<Type>UNIT_EGRASS</Type>
