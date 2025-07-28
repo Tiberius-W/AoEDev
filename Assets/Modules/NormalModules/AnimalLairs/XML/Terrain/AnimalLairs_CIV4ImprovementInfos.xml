@@ -56,21 +56,20 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<!-- Percentage linear mapping: Starts at 60 weight and drops to 0 by the time 100% of civs have 1st advance -->
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<!-- Percentage linear mapping: Starts at 60 weight and drops to 0 by the time 100% of civs have 1st advance -->
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
 					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<!-- 30% chance/turn to upgrade if all civs have 1st advance, 100% chance/turn to upgrade if 1/30 civs have 2nd advance -->
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
-					<!-- 30% chance/turn to upgrade if all civs have 1st advance,  -->
 					<LairUpgradeTechType>TECH_BRONZE_WORKING</LairUpgradeTechType>
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
-					<!-- 100% chance/turn to upgrade if 1/30 civs have 2nd advance -->
 					<LairUpgradeTechType>TECH_IRON_WORKING</LairUpgradeTechType>
 					<iLairUpgradeTech>3000</iLairUpgradeTech>
 				</LairUpgradeTech>
@@ -133,14 +132,13 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<!-- As 100% of civs have 1st advance, T2 takes over fully: But as 100% of civs have 2nd advance, stops spawning in favor of 3rd -->
 			<LairCreationWeightTechs>
-				<LairCreationWeightTech>
-					<!-- As 100% of civs have 1st advance, T2 takes over fully -->
+				<LairCreationWeightTech> 
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
-					<!-- But as 100% of civs have 2nd advance, stops spawning in favor of... -->
 					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
 					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
@@ -217,9 +215,9 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<!-- Only bear version that spawns when all civs have 2nd advance -->
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
-					<!-- Only bear version that spawns when all civs have 2nd advance -->
 					<LairCreationWeightTechType>TECH_IRON_WORKING</LairCreationWeightTechType>
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
@@ -1117,8 +1115,8 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
+			<!-- Not entirely sure I know the justification for choosing these techs, but look I'm just trying to spread things out a little, mmk -->
 			<LairCreationWeightTechs>
-				<!-- Not entirely sure I know the justification for choosing these techs, but look I'm just trying to spread things out a little, mmk -->
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CODE_OF_LAWS</LairCreationWeightTechType>
 					<iLairCreationWeightTech>-50</iLairCreationWeightTech>

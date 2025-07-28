@@ -25465,7 +25465,7 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 				{
 					if (!bFirst)
 					{
-						szTechBuffer.append(gDLL->getText("TXT_KEY_AND"));
+						szTechBuffer.append(gDLL->getText("TXT_KEY_OR"));
 					}
 					szTechBuffer.append(CvWString::format(L"<link=literal>%s</link>", GC.getTechInfo((TechTypes) iK).getDescription()));
 					bFirst = false;
