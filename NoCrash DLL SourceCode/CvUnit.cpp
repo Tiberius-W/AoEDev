@@ -12369,40 +12369,18 @@ bool CvUnit::isHidden() const
 
 int CvUnit::visibilityRange() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							03/27/09											**/
-/**																								**/
-/**								Ensures no Vision Range for Marked Units						**/
-/*************************************************************************************************/
+	// Needed to ensure no vision on blinded units
 	if (isBlind())
 	{
 		return -99;
 	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-//FfH: Modified by Kael 08/10/2007
-//	return (GC.getDefineINT("UNIT_VISIBILITY_RANGE") + getExtraVisibilityRange());
-	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE");
-	iRange += getExtraVisibilityRange();
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/14/09											**/
-/**																								**/
-/**					Required for the current Visibility update system in setXY					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (plot()->getImprovementType() != NO_IMPROVEMENT)
-/**								----  End Original Code  ----									**/
-	if (plot() != NULL && plot()->getImprovementType() != NO_IMPROVEMENT)
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	{
-		iRange += GC.getImprovementInfo((ImprovementTypes)plot()->getImprovementType()).getVisibilityChange();
-	}
-	return iRange;
-//FfH: End Modify
 
+	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + getExtraVisibilityRange();
+
+	if (plot() != NULL && plot()->getImprovementType() != NO_IMPROVEMENT)
+		iRange += GC.getImprovementInfo((ImprovementTypes)plot()->getImprovementType()).getVisibilityChange();
+
+	return iRange;
 }
 
 
