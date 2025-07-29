@@ -10730,7 +10730,7 @@ void CvGame::createLairs()
 	if (getElapsedGameTurns() < getNextLairCycle())
 		return;
 
-	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / isOption(GAMEOPTION_RAGING_BARBARIANS);
+	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
 	if (getGameTurn() == 0)
 	{
 		setNextLairCycle(3 * iLairCycleLength);
