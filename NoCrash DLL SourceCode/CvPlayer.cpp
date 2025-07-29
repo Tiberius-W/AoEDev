@@ -3782,18 +3782,8 @@ void CvPlayer::updateHuman()
 
 bool CvPlayer::isBarbarian() const
 {
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getID() == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
+	// MultiBarb - Xienwolf - 12/23/08 - Adds extra Barbarian Civilizations
 	return (getID() == ORC_PLAYER || getID() == ANIMAL_PLAYER || getID() == DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
 }
 
 
@@ -4307,24 +4297,22 @@ void CvPlayer::doTurnUnits()
 
 void CvPlayer::verifyCivics()
 {
-	int iI, iJ;
+	if (isAnarchy())
+		return;
 
-	if (!isAnarchy())
+	for (int iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
 	{
-		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+		if (canDoCivics(getCivics((CivicOptionTypes)iI)))
+			continue;
+
+		for (int iJ = 0; iJ < GC.getNumCivicInfos(); iJ++)
 		{
-			if (!canDoCivics(getCivics((CivicOptionTypes)iI)))
+			if (GC.getCivicInfo((CivicTypes)iJ).getCivicOptionType() == iI)
 			{
-				for (iJ = 0; iJ < GC.getNumCivicInfos(); iJ++)
+				if (canDoCivics((CivicTypes)iJ))
 				{
-					if (GC.getCivicInfo((CivicTypes)iJ).getCivicOptionType() == iI)
-					{
-						if (canDoCivics((CivicTypes)iJ))
-						{
-							setCivics(((CivicOptionTypes)iI), ((CivicTypes)iJ));
-							break;
-						}
-					}
+					setCivics(((CivicOptionTypes)iI), ((CivicTypes)iJ));
+					break;
 				}
 			}
 		}
@@ -7688,9 +7676,7 @@ void CvPlayer::found(int iX, int iY)
 	int iI;
 
 	if (!canFound(iX, iY))
-	{
 		return;
-	}
 
 	pCity = initCity(iX, iY, true, true);
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
@@ -7702,35 +7688,16 @@ void CvPlayer::found(int iX, int iY)
 
 	if (isBarbarian())
 	{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Prevents spawning of limited unit classes in automated functions				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
+		// Xienwolf - 06/18/09 - Prevents spawning of limited unit classes in automated functions
+		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR);
 
 		if (eDefenderUnit == NO_UNIT)
-		{
-			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK);
-		}
-/**								----  End Original Code  ----									**/
-		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR, true);
-
-		if (eDefenderUnit == NO_UNIT)
-		{
-			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR, true);
-		}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR);
 
 		if (eDefenderUnit != NO_UNIT)
 		{
 			for (iI = 0; iI < GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getBarbarianInitialDefenders(); iI++)
-			{
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
-			}
 		}
 	}
 
@@ -7855,23 +7822,11 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		}
 	}
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**					Allows Barbarian Spawning to ignore City oriented requirements				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (GC.getUnitInfo(eUnit).getStateReligion() != NO_RELIGION)
-/**								----  End Original Code  ----									**/
+	// Xienwolf - 02/01/09 - Allows Barbarian Spawning to ignore City oriented requirements
 	if (GC.getUnitInfo(eUnit).getStateReligion() != NO_RELIGION && !(isBarbarian()))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	{
 		if (getStateReligion() != GC.getUnitInfo(eUnit).getStateReligion())
-		{
 			return false;
-		}
 	}
 
 	if (GC.getGameINLINE().isUnitClassMaxedOut(eUnitClass) && (eSecondaryUnitClass==NO_UNITCLASS|| GC.getGameINLINE().isUnitClassMaxedOut(eSecondaryUnitClass)))
@@ -7945,19 +7900,8 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		}
 	}
 
-//FfH Units: Added by Kael 08/04/2007
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**					Allows Barbarian Spawning to ignore City oriented requirements				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (GC.getUnitInfo(eUnit).getPrereqCivic() != NO_CIVIC)
-/**								----  End Original Code  ----									**/
+	// Xienwolf - 02/01/09 - Allows Barbarian Spawning to ignore City oriented requirements
 	if (GC.getUnitInfo(eUnit).getPrereqCivic() != NO_CIVIC && !isBarbarian())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	{
 		bool bValid = false;
 		for (iI = 0; iI < GC.getDefineINT("MAX_CIVIC_OPTIONS"); iI++)
@@ -7985,18 +7929,8 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			return false;
 		}
 	}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**					Allows Barbarian Spawning to ignore City oriented requirements				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (GC.getUnitInfo(eUnit).getPrereqAlignment() != NO_ALIGNMENT)
-/**								----  End Original Code  ----									**/
+	// Xienwolf - 02/01/09 - Allows Barbarian Spawning to ignore City oriented requirements
 	if (GC.getUnitInfo(eUnit).getPrereqAlignment() != NO_ALIGNMENT && !isBarbarian())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	{
 		if (getAlignment() != GC.getUnitInfo(eUnit).getPrereqAlignment())
 		{
@@ -8036,11 +7970,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 /**	AITweak									END													**/
 /*************************************************************************************************/
 {
-	BuildingClassTypes eBuildingClass;
+	BuildingClassTypes eBuildingClass = ((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType()));
 	int iI;
 	CvTeamAI& currentTeam = GET_TEAM(getTeam());
 
-	eBuildingClass = ((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType()));
 	//if (GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) != eBuilding && (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) != NO_BUILDING && GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex() != eBuilding)
 	//{
 	//	CvString szError;
@@ -8050,12 +7983,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//}
 	//FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) == eBuilding);
 
-//FfH: Modified by Kael 07/05/2008
-//	if (GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) != eBuilding)
-//	{
-//		return false;
-//	}
-//FfH: End Modify
+	if (isBarbarian() && isWorldWonderClass(eBuildingClass))
+		return false;
 
 	if (!bIgnoreCost)
 	{
@@ -8733,7 +8662,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 	iProductionNeeded *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getConstructPercent();
 	iProductionNeeded /= 100;
 
-	if (!isHuman() && !isBarbarian())
+	if (!isHuman())
 	{
 		if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 		{
@@ -11317,6 +11246,8 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	else
 	{
 		iThreshold = ((GC.getDefineINT("GREAT_PEOPLE_THRESHOLD") * std::max(0, (getGreatPeopleThresholdModifier() + 100))) / 100);
+		if (isBarbarian())
+			iThreshold *= 4;
 	}
 
 	iThreshold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGreatPeoplePercent();
@@ -12104,7 +12035,7 @@ int CvPlayer::getGreatPeopleThresholdModifier() const
 
 void CvPlayer::changeGreatPeopleThresholdModifier(int iChange)
 {
-	m_iGreatPeopleThresholdModifier = (m_iGreatPeopleThresholdModifier + iChange);
+	m_iGreatPeopleThresholdModifier += iChange;
 }
 
 

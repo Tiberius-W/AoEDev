@@ -602,7 +602,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 	iValue = AI_yieldValue(aiYields, aiCommerceYields, bAvoidGrowth, bRemove);
 
-	iGreatPeopleRate = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
+	iGreatPeopleRate = isBarbarian() ? 0 : GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
 
 	int iEmphasisCount = 0;
 	if (iGreatPeopleRate != 0)
@@ -634,25 +634,17 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		//iGreatPeopleRate = ((iGreatPeopleRate * getTotalGreatPeopleRateModifier()) / 100);
 		// UnitTypes iGreatPeopleType = (UnitTypes)GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass();
 
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      12/06/09                                jdog5000      */
-/*                                                                                              */
-/* City AI                                                                                      */
-/************************************************************************************************/
-		// Scale up value for civs/civics with bonuses
+		// BETTER_BTS_AI_MOD - jdog5000 - 12/06/09 - Scale up value for civs/civics with bonuses
 		iGreatPeopleRate *= (100 + GET_PLAYER(getOwnerINLINE()).getGreatPeopleRateModifier());
 		iGreatPeopleRate /= 100;
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 
 		iTempValue = (iGreatPeopleRate * iGPPValue);
 
-//		if (isHuman() && (getGreatPeopleUnitRate(iGreatPeopleType) == 0)
-//			&& (getForceSpecialistCount(eSpecialist) == 0) && !AI_isEmphasizeGreatPeople())
-//		{
-//			iTempValue -= (iGreatPeopleRate * 4);
-//		}
+		// if (isHuman() && (getGreatPeopleUnitRate(iGreatPeopleType) == 0)
+		// 	&& (getForceSpecialistCount(eSpecialist) == 0) && !AI_isEmphasizeGreatPeople())
+		// {
+		// 	iTempValue -= (iGreatPeopleRate * 4);
+		// }
 
 		if (!isHuman() || AI_isEmphasizeGreatPeople())
 		{
@@ -667,11 +659,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		int iCurrentEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 		int iTotalEras = GC.getNumEraInfos();
 
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      03/08/10                                jdog5000      */
-/*                                                                                              */
-/* Victory Strategy AI                                                                          */
-/************************************************************************************************/
+		// BETTER_BTS_AI_MOD Victory Strategy AI - jdog5000 - 03/08/10
 		if (GET_PLAYER(getOwnerINLINE()).AI_isDoVictoryStrategy(AI_VICTORY_CULTURE, 2))
 		{
 			int iUnitClass = GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass();
@@ -688,15 +676,8 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 				}
 			}
 		}
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 
-/*************************************************************************************************/
-/**	AI Altar Victory				08/04/10								Snarko				**/
-/**																								**/
-/**							Convince the AI to go for altar victory								**/
-/*************************************************************************************************/
+		// AI Altar Victory - Snarko - 08/04/10 - Convince the AI to go for altar victory
 		//This may be too heavy... try to figure out a faster way
 		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_BUILDING_VICTORY))
 		{
@@ -735,9 +716,6 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 				}
 			}
 		}
-/*************************************************************************************************/
-/**	AI Altar Victory					END														**/
-/*************************************************************************************************/
 
 		if (!isHuman() && (iCurrentEra <= ((iTotalEras * 2) / 3)))
 		{
@@ -786,19 +764,9 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 			}
 		}
 
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      12/06/09                                jdog5000      */
-/*                                                                                              */
-/* Bugfix, City AI                                                                              */
-/************************************************************************************************/
-/* original BTS code
-		iTempValue *= 100;
-*/
 		// Scale up value for civs/civics with bonuses
+		// BETTER_BTS_AI_MOD - jdog5000 - 12/06/09 - Bugfix, City AI
 		iTempValue *= getTotalGreatPeopleRateModifier();
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 		iTempValue /= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
 
 		iTempValue /= (1 + iEmphasisCount);
@@ -4837,7 +4805,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 
 				// prefer to build great people buildings in places that already have some GP points
-				iValue += (kBuilding.getGreatPeopleRateChange() * 10) * (1 + (getBaseGreatPeopleRate() / 2));
+				if (!isBarbarian())
+					iValue += (kBuilding.getGreatPeopleRateChange() * 10) * (1 + (getBaseGreatPeopleRate() / 2));
 
 				if (!bAreaAlone)
 				{
@@ -13311,7 +13280,8 @@ int CvCityAI::AI_countGoodSpecialists(bool bHealthy)
 		iValue += 40 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_GOLD);
 		iValue += 20 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_ESPIONAGE);
 		iValue += 15 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_CULTURE);
-		iValue += 25 * GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
+		if (!isBarbarian())
+			iValue += 25 * GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
 
 		if (iValue >= (bHealthy ? 200 : 300))
 		{
