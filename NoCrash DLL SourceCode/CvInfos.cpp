@@ -27850,7 +27850,6 @@ m_iTilesPerAnimal(0),
 m_iTilesPerOrc(0),
 m_iWaterTilesPerOrc(0),
 m_iUnownedTilesPerBarbarianCity(0),
-m_iBarbarianCreationTurnsElapsed(0),
 m_iBarbarianCityCreationTurnsElapsed(0),
 m_iBarbarianCityCreationProb(0),
 m_iAnimalCombatModifier(0),
@@ -28058,11 +28057,6 @@ int CvHandicapInfo::getWaterTilesPerOrc() const
 int CvHandicapInfo::getUnownedTilesPerBarbarianCity() const
 {
 	return m_iUnownedTilesPerBarbarianCity;
-}
-
-int CvHandicapInfo::getBarbarianCreationTurnsElapsed() const
-{
-	return m_iBarbarianCreationTurnsElapsed;
 }
 
 int CvHandicapInfo::getBarbarianCityCreationTurnsElapsed() const
@@ -28315,7 +28309,6 @@ void CvHandicapInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iTilesPerOrc);
 	stream->Read(&m_iWaterTilesPerOrc);
 	stream->Read(&m_iUnownedTilesPerBarbarianCity);
-	stream->Read(&m_iBarbarianCreationTurnsElapsed);
 	stream->Read(&m_iBarbarianCityCreationTurnsElapsed);
 	stream->Read(&m_iBarbarianCityCreationProb);
 	stream->Read(&m_iAnimalCombatModifier);
@@ -28420,7 +28413,6 @@ void CvHandicapInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iTilesPerOrc);
 	stream->Write(m_iWaterTilesPerOrc);
 	stream->Write(m_iUnownedTilesPerBarbarianCity);
-	stream->Write(m_iBarbarianCreationTurnsElapsed);
 	stream->Write(m_iBarbarianCityCreationTurnsElapsed);
 	stream->Write(m_iBarbarianCityCreationProb);
 	stream->Write(m_iAnimalCombatModifier);
@@ -28519,7 +28511,6 @@ bool CvHandicapInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTilesPerOrc, "iTilesPerOrc");
 	pXML->GetChildXmlValByName(&m_iWaterTilesPerOrc, "iWaterTilesPerOrc");
 	pXML->GetChildXmlValByName(&m_iUnownedTilesPerBarbarianCity, "iUnownedTilesPerBarbarianCity");
-	pXML->GetChildXmlValByName(&m_iBarbarianCreationTurnsElapsed, "iBarbarianCreationTurnsElapsed");
 	pXML->GetChildXmlValByName(&m_iBarbarianCityCreationTurnsElapsed, "iBarbarianCityCreationTurnsElapsed");
 	pXML->GetChildXmlValByName(&m_iBarbarianCityCreationProb, "iBarbarianCityCreationProb");
 	pXML->GetChildXmlValByName(&m_iAnimalCombatModifier, "iAnimalBonus");
@@ -28640,7 +28631,6 @@ void CvHandicapInfo::copyNonDefaults(CvHandicapInfo* pClassInfo, CvXMLLoadUtilit
 	if (getTilesPerOrc()		== 0)		m_iTilesPerOrc			= pClassInfo->getTilesPerOrc();
 	if (getWaterTilesPerOrc()	== 0)		m_iWaterTilesPerOrc	= pClassInfo->getWaterTilesPerOrc();
 	if (getUnownedTilesPerBarbarianCity()		== 0)		m_iUnownedTilesPerBarbarianCity			= pClassInfo->getUnownedTilesPerBarbarianCity();
-	if (getBarbarianCreationTurnsElapsed()		== 0)		m_iBarbarianCreationTurnsElapsed		= pClassInfo->getBarbarianCreationTurnsElapsed();
 	if (getBarbarianCityCreationTurnsElapsed()	== 0)		m_iBarbarianCityCreationTurnsElapsed	= pClassInfo->getBarbarianCityCreationTurnsElapsed();
 	if (getBarbarianCityCreationProb()			== 0)		m_iBarbarianCityCreationProb			= pClassInfo->getBarbarianCityCreationProb();
 	if (getAnimalCombatModifier()				== 0)		m_iAnimalCombatModifier					= pClassInfo->getAnimalCombatModifier();

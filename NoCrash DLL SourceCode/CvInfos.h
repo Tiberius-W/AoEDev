@@ -5802,7 +5802,6 @@ public:
 	int getTilesPerOrc() const;				// Exposed to Python
 	int getWaterTilesPerOrc() const;				// Exposed to Python
 	int getUnownedTilesPerBarbarianCity() const;				// Exposed to Python
-	int getBarbarianCreationTurnsElapsed() const;				// Exposed to Python
 	int getBarbarianCityCreationTurnsElapsed() const;				// Exposed to Python
 	int getBarbarianCityCreationProb() const;				// Exposed to Python
 	int getAnimalCombatModifier() const;				// Exposed to Python
@@ -5906,7 +5905,6 @@ protected:
 	int m_iTilesPerOrc;
 	int m_iWaterTilesPerOrc;
 	int m_iUnownedTilesPerBarbarianCity;
-	int m_iBarbarianCreationTurnsElapsed;
 	int m_iBarbarianCityCreationTurnsElapsed;
 	int m_iBarbarianCityCreationProb;
 	int m_iAnimalCombatModifier;

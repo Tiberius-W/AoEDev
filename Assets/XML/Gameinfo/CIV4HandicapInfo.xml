@@ -36,7 +36,6 @@
 			<iTilesPerOrc>70</iTilesPerOrc> <!-- Applies to savages on land only -->
 			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
 			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
 			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo --> 
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
 			<iAnimalBonus>-30</iAnimalBonus>
@@ -145,7 +144,6 @@
 			<iTilesPerOrc>60</iTilesPerOrc>
 			<iWaterTilesPerOrc>150</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>75</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>45</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>50</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>5</iBarbarianCityCreationProb>
 			<iAnimalBonus>-20</iAnimalBonus>
@@ -250,7 +248,6 @@
 			<iTilesPerOrc>50</iTilesPerOrc>
 			<iWaterTilesPerOrc>125</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>60</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>40</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>40</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>6</iBarbarianCityCreationProb>
 			<iAnimalBonus>-10</iAnimalBonus>
@@ -351,7 +348,6 @@
 			<iTilesPerOrc>40</iTilesPerOrc>
 			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>45</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>35</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>30</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>7</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -449,7 +445,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>30</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -548,7 +543,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>25</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -651,7 +645,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>20</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -759,7 +752,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>15</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -870,7 +862,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>30</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>10</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>

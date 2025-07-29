@@ -35,7 +35,6 @@
 			<iTilesPerOrc>30</iTilesPerOrc>
 			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
 			<iUnownedTilesPerBarbarianCity>21</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>15</iBarbarianCreationTurnsElapsed>
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
