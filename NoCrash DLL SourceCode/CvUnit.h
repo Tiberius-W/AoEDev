@@ -770,6 +770,7 @@ public:
 	int getKamikazePercent() const;																									// Exposed to Python
 	void changeKamikazePercent(int iChange);
 
+	// checkLineOfSightProperty true returns NO_DIRECTION, false gives the unit's facing direction
 	DllExport DirectionTypes getFacingDirection(bool checkLineOfSightProperty) const;
 	void setFacingDirection(DirectionTypes facingDirection);
 	void rotateFacingDirectionClockwise();

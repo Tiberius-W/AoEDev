@@ -175,7 +175,6 @@
 	<ElementType name="bRenderBelowWater" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bRenderAlways" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSuicide" content="textOnly" dt:type="boolean"/>
-	<ElementType name="bLineOfSight" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bHiddenNationality" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAlwaysHostile" content="textOnly" dt:type="boolean"/>
 	<ElementType name="UnitClassUpgradeType" content="textOnly"/>
@@ -882,7 +881,6 @@
 		<element type="bRenderBelowWater"/>
 		<element type="bRenderAlways"/>
 		<element type="bSuicide"/>
-		<element type="bLineOfSight"/>
 		<element type="bHiddenNationality"/>
 		<element type="bAlwaysHostile"/>
 		<element type="UnitClassUpgrades"/>

@@ -13050,7 +13050,6 @@ m_bMechanized(false),
 m_bRenderBelowWater(false),
 m_bRenderAlways(false),
 m_bSuicide(false),
-m_bLineOfSight(false),
 m_bHiddenNationality(false),
 m_bAlwaysHostile(false),
 m_bNoRevealMap(false),
@@ -14144,11 +14143,6 @@ bool CvUnitInfo::isRenderAlways() const
 bool CvUnitInfo::isSuicide() const
 {
 	return m_bSuicide;
-}
-
-bool CvUnitInfo::isLineOfSight() const
-{
-	return m_bLineOfSight;
 }
 
 bool CvUnitInfo::isHiddenNationality() const
@@ -15284,7 +15278,6 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bRenderBelowWater);
 	stream->Read(&m_bRenderAlways);
 	stream->Read(&m_bSuicide);
-	stream->Read(&m_bLineOfSight);
 	stream->Read(&m_bHiddenNationality);
 	stream->Read(&m_bAlwaysHostile);
 	stream->Read(&m_bNoRevealMap);
@@ -15929,7 +15922,6 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bRenderBelowWater);
 	stream->Write(m_bRenderAlways);
 	stream->Write(m_bSuicide);
-	stream->Write(m_bLineOfSight);
 	stream->Write(m_bHiddenNationality);
 	stream->Write(m_bAlwaysHostile);
 	stream->Write(m_bNoRevealMap);
@@ -16309,7 +16301,6 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bRenderBelowWater,"bRenderBelowWater",false);
 	pXML->GetChildXmlValByName(&m_bRenderAlways,"bRenderAlways",false);
 	pXML->GetChildXmlValByName(&m_bSuicide,"bSuicide");
-	pXML->GetChildXmlValByName(&m_bLineOfSight,"bLineOfSight",false);
 	pXML->GetChildXmlValByName(&m_bHiddenNationality,"bHiddenNationality",false);
 	pXML->GetChildXmlValByName(&m_bAlwaysHostile,"bAlwaysHostile",false);
 	pXML->GetChildXmlValByName(&m_bNoRevealMap,"bNoRevealMap",false);
@@ -17045,7 +17036,6 @@ void CvUnitInfo::copyNonDefaults(CvUnitInfo* pClassInfo, CvXMLLoadUtility* pXML)
 	if(isRenderBelowWater()					== false)			m_bRenderBelowWater					= pClassInfo->isRenderBelowWater();
 	if(isRenderAlways()						== false)			m_bRenderAlways						= pClassInfo->isRenderAlways();
 	if(isSuicide()							== false)			m_bSuicide							= pClassInfo->isSuicide();
-	if(isLineOfSight()						== false)			m_bLineOfSight						= pClassInfo->isLineOfSight();
 	if(isHiddenNationality()				== false)			m_bHiddenNationality				= pClassInfo->isHiddenNationality();
 	if(isAlwaysHostile()					== false)			m_bAlwaysHostile					= pClassInfo->isAlwaysHostile();
 	if(isNoRevealMap()						== false)			m_bNoRevealMap						= pClassInfo->isNoRevealMap();

@@ -5252,31 +5252,21 @@ TeamTypes CvUnit::getDeclareWarMove(const CvPlot* pPlot) const
 
 bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							03/27/09											**/
-/**																								**/
-/**									Blocks Movement of Marked Units								**/
-/*************************************************************************************************/
+	// Xienwolf - 03/27/09 - Blocks Movement of Marked Units
 	if (isBlind())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	int iRange = visibilityRange() + 1;
 	for (int i = -iRange; i <= iRange; ++i)
 	{
 		for (int j = -iRange; j <= iRange; ++j)
 		{
 			CvPlot* pLoopPlot = ::plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), i, j);
-			if (NULL != pLoopPlot)
-			{
-				if (!pLoopPlot->isRevealed(getTeam(), false) && pPlot->canSeePlot(pLoopPlot, getTeam(), visibilityRange(), NO_DIRECTION))
-				{
-					return true;
-				}
-			}
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (!pLoopPlot->isRevealed(getTeam(), false) && pPlot->canSeePlot(pLoopPlot, getTeam(), visibilityRange()))
+				return true;
 		}
 	}
 
@@ -19624,47 +19614,17 @@ void CvUnit::changeKamikazePercent(int iChange)
 	}
 }
 
+// checkLineOfSightProperty true returns NO_DIRECTION, false gives the unit's facing direction
 DirectionTypes CvUnit::getFacingDirection(bool checkLineOfSightProperty) const
 {
-	if (checkLineOfSightProperty)
-	{
-		if (m_pUnitInfo->isLineOfSight())
-		{
-			return m_eFacingDirection; //only look in facing direction
-		}
-		else
-		{
-			return NO_DIRECTION; //look in all directions
-		}
-	}
-	else
-	{
-		return m_eFacingDirection;
-	}
+	return checkLineOfSightProperty ? NO_DIRECTION : m_eFacingDirection;
 }
 
 void CvUnit::setFacingDirection(DirectionTypes eFacingDirection)
 {
 	if (eFacingDirection != m_eFacingDirection)
 	{
-		if (m_pUnitInfo->isLineOfSight())
-		{
-			//remove old fog
-			plot()->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
-
-			//change direction
-			m_eFacingDirection = eFacingDirection;
-
-			//clear new fog
-			plot()->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true);
-
-			gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
-		}
-		else
-		{
-			m_eFacingDirection = eFacingDirection;
-		}
-
+		m_eFacingDirection = eFacingDirection;
 		//update formation
 		NotifyEntity(NO_MISSION);
 	}
@@ -30956,7 +30916,7 @@ bool CvUnit::canRangeStrikeAt(const CvPlot* pPlot, int iX, int iY, bool bTest) c
 		return false;
 	}
 
-	if (!pPlot->canSeePlot(pTargetPlot, getTeam(), airRange(), getFacingDirection(true)))
+	if (!pPlot->canSeePlot(pTargetPlot, getTeam(), airRange()))
 	{
 		return false;
 	}
@@ -33652,6 +33612,7 @@ void CvUnit::DeselectUnit()
 		gDLL->getInterfaceIFace()->clearSelectionList();
 	}
 }
+
 bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 {
 	if (pTarget == NULL)
@@ -33664,7 +33625,7 @@ bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 
 	int iRange = getSpellTargetRange(iI);//GC.getSpellInfo((SpellTypes)iI).getTargetRange();
 
-	if (!plot()->canSeePlot(pTarget, getTeam(), iRange, getFacingDirection(true)))
+	if (!plot()->canSeePlot(pTarget, getTeam(), iRange))
 	{
 		return false;
 	}
@@ -33689,7 +33650,7 @@ bool CvUnit::canSpellTargetSecondaryPlot(CvPlot* pMainTarget, CvPlot* pTarget, i
 
 	int iRange = GC.getSpellInfo((SpellTypes)iI).getRange();
 
-	if (!pMainTarget->canSeePlot(pTarget, getTeam(), iRange, getFacingDirection(true)))
+	if (!pMainTarget->canSeePlot(pTarget, getTeam(), iRange))
 	{
 		return false;
 	}
@@ -33701,7 +33662,6 @@ bool CvUnit::canSpellTargetSecondaryPlot(CvPlot* pMainTarget, CvPlot* pTarget, i
 
 	return true;
 }
-
 
 int CvUnit::getMissionSpell() const
 {

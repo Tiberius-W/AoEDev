@@ -2432,76 +2432,13 @@ int CvPlot::seeThroughLevel() const
 
 void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups)
 {
+	int iDist;
 	bool bAerial = (pUnit != NULL && pUnit->getDomainType() == DOMAIN_AIR);
-
-	DirectionTypes eFacingDirection = NO_DIRECTION;
-	if (!bAerial && NULL != pUnit)
-	{
-		eFacingDirection = pUnit->getFacingDirection(true);
-	}
-
-	//fill invisible types
-	//std::vector<InvisibleTypes> aSeeInvisibleTypes;
-	//if (NULL != pUnit)
-	//{
-	//	for(int i=0;i<pUnit->getNumSeeInvisibleTypes();i++)
-	//	{
-	//		aSeeInvisibleTypes.push_back(pUnit->getSeeInvisibleType(i));
-	//	}
-	//}
-
-	//if(aSeeInvisibleTypes.size() == 0)
-	//{
-	//	aSeeInvisibleTypes.push_back(NO_INVISIBLE);
-	//}
 
 	//check one extra outer ring
 	if (!bAerial)
-	{
 		iRange++;
-	}
 
-	//for(int i=0;i<(int)aSeeInvisibleTypes.size();i++)
-	//{
-	//	for (int dx = -iRange; dx <= iRange; dx++)
-	//	{
-	//		for (int dy = -iRange; dy <= iRange; dy++)
-	//		{
-	//			//check if in facing direction
-	//			if (bAerial || shouldProcessDisplacementPlot(dx, dy, iRange - 1, eFacingDirection))
-	//			{
-	//				bool outerRing = false;
-	//				if ((abs(dx) == iRange) || (abs(dy) == iRange))
-	//				{
-	//					outerRing = true;
-	//				}
-
-	//				//check if anything blocking the plot
-	//				if (bAerial || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
-	//				{
-	//					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
-	//					if (NULL != pPlot)
-	//					{
-	//						pPlot->changeVisibilityCount(eTeam, ((bIncrement) ? 1 : -1), aSeeInvisibleTypes[i], bUpdatePlotGroups);
-	//					}
-	//				}
-	//			}
-
-	//			if (eFacingDirection != NO_DIRECTION)
-	//			{
-	//				if((abs(dx) <= 1) && (abs(dy) <= 1)) //always reveal adjacent plots when using line of sight
-	//				{
-	//					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
-	//					if (NULL != pPlot)
-	//					{
-	//						pPlot->changeVisibilityCount(eTeam, 1, aSeeInvisibleTypes[i], bUpdatePlotGroups);
-	//						pPlot->changeVisibilityCount(eTeam, -1, aSeeInvisibleTypes[i], bUpdatePlotGroups);
-	//					}
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
 	int iLoop = 0;
 	if (pUnit != NULL)
 	{
@@ -2509,80 +2446,62 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 	}
 	for (int i = -1; i < iLoop; i++)
 	{
-	//	if (iLoop == 0)
-	//	{
-	//		continue;
-	//	}
 		for (int dx = -iRange; dx <= iRange; dx++)
 		{
 			for (int dy = -iRange; dy <= iRange; dy++)
 			{
-				//check if in facing direction
-				if (bAerial || shouldProcessDisplacementPlot(dx, dy, iRange - 1, eFacingDirection))
-				{
-					bool outerRing = false;
-					if ((abs(dx) == iRange) || (abs(dy) == iRange))
-					{
-						outerRing = true;
-					}
-											//check if anything blocking the plot
-					if (bAerial || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
-					{
-						CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
-						if (NULL != pPlot)
-						{
-							pPlot->changeVisibilityCount(eTeam, ((bIncrement) ? 1 : -1), (InvisibleTypes)i, bUpdatePlotGroups);
-						}
-					}
-				}
+				bool outerRing = false;
+				// Enable further sight only on straightaways
+				// if ((abs(dx) == iRange) || (abs(dy) == iRange))
+				// 	outerRing = true;
 
-				if (eFacingDirection != NO_DIRECTION)
+				// Enable further sight all-around
+				iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
+				if (iDist > iRange)
+					continue;
+				if (iDist == iRange)
+					outerRing = true;
+
+				//check if anything blocking the plot
+				if (bAerial || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
 				{
-					if ((abs(dx) <= 1) && (abs(dy) <= 1)) //always reveal adjacent plots when using line of sight
-					{
-						CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
-						if (NULL != pPlot)
-						{
-							pPlot->changeVisibilityCount(eTeam, 1, (InvisibleTypes)i, bUpdatePlotGroups);
-							pPlot->changeVisibilityCount(eTeam, -1, (InvisibleTypes)i, bUpdatePlotGroups);
-						}
-					}
+					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
+					if (NULL != pPlot)
+						pPlot->changeVisibilityCount(eTeam, ((bIncrement) ? 1 : -1), (InvisibleTypes)i, bUpdatePlotGroups);
 				}
 			}
 		}
 	}
 }
 
-bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange, DirectionTypes eFacingDirection) const
+bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 {
+	if (pPlot == NULL)
+		return false;
+
+	// Units might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
 
-	if (pPlot == NULL)
-	{
-		return false;
-	}
-
 	//find displacement
-	int dx = pPlot->getX() - getX();
-	int dy = pPlot->getY() - getY();
-	dx = dxWrap(dx); //world wrap
-	dy = dyWrap(dy);
+	int dx = xDistance(getX(), pPlot->getX());
+	int dy = yDistance(getY(), pPlot->getY());
 
-	//check if in facing direction
-	if (shouldProcessDisplacementPlot(dx, dy, iRange - 1, eFacingDirection))
-	{
-		bool outerRing = false;
-		if ((abs(dx) == iRange) || (abs(dy) == iRange))
-		{
-			outerRing = true;
-		}
+	// Enable further sight all-around (same as plotDistance)
+	int iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
+	if (iDist > iRange)
+		return false;
 
-		//check if anything blocking the plot
-		if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
-		{
-			return true;
-		}
-	}
+	bool outerRing = false;
+	// Enable further sight only on straightaways
+	// if ((abs(dx) == iRange) || (abs(dy) == iRange))
+	// 	outerRing = true;
+
+	if (iDist == iRange)
+		outerRing = true;
+
+	//check if nothing blocking the plot
+	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
+		return true;
 
 	return false;
 }
@@ -2590,138 +2509,81 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange, DirectionTyp
 bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
-	if (pPlot != NULL)
+	if (pPlot == NULL)
+		return false;
+
+	//base case is current plot
+	if((dx == 0) && (dy == 0))
+		return true;
+
+	//find closest of three points (1, 2, 3) to original line from Start (S) to End (E)
+	//The diagonal is computed first as that guarantees a change in position
+	// -------------
+	// |   | 2 | S |
+	// -------------
+	// | E | 1 | 3 |
+	// -------------
+
+	int displacements[3][2] = {{dx - getSign(dx), dy - getSign(dy)}, {dx - getSign(dx), dy}, {dx, dy - getSign(dy)}};
+	int allClosest[3];
+	int closest = -1;
+	for (int i=0;i<3;i++)
 	{
-		//base case is current plot
-		if((dx == 0) && (dy == 0))
+		//int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
+		allClosest[i] = abs(displacements[i][0] * dy - displacements[i][1] * dx); //cross product
+		if((closest == -1) || (allClosest[i] < closest))
 		{
-			return true;
+			closest = allClosest[i];
 		}
+	}
 
-		//find closest of three points (1, 2, 3) to original line from Start (S) to End (E)
-		//The diagonal is computed first as that guarantees a change in position
-		// -------------
-		// |   | 2 | S |
-		// -------------
-		// | E | 1 | 3 |
-		// -------------
+	//iterate through all minimum plots to see if any of them are passable
+	for(int i=0;i<3;i++)
+	{
+		int nextDX = displacements[i][0];
+		int nextDY = displacements[i][1];
+		if((nextDX == dx) && (nextDY == dy)) //make sure we change plots
+			continue;
 
-		int displacements[3][2] = {{dx - getSign(dx), dy - getSign(dy)}, {dx - getSign(dx), dy}, {dx, dy - getSign(dy)}};
-		int allClosest[3];
-		int closest = -1;
-		for (int i=0;i<3;i++)
+		if(allClosest[i] != closest)
+			continue;
+
+		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false))
+			continue;
+
+		int fromLevel = seeFromLevel(eTeam);
+		int throughLevel = pPlot->seeThroughLevel();
+
+		if(outerRing) //check strictly higher level
 		{
-			//int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
-			allClosest[i] = abs(displacements[i][0] * dy - displacements[i][1] * dx); //cross product
-			if((closest == -1) || (allClosest[i] < closest))
+			CvPlot *passThroughPlot = plotXY(getX_INLINE(), getY_INLINE(), nextDX, nextDY);
+			int passThroughLevel = passThroughPlot->seeThroughLevel();
+			if (fromLevel >= passThroughLevel)
 			{
-				closest = allClosest[i];
-			}
-		}
-
-		//iterate through all minimum plots to see if any of them are passable
-		for(int i=0;i<3;i++)
-		{
-			int nextDX = displacements[i][0];
-			int nextDY = displacements[i][1];
-			if((nextDX != dx) || (nextDY != dy)) //make sure we change plots
-			{
-				if(allClosest[i] == closest)
+				if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel)) //either we can see through to it or it is high enough to see from far
 				{
-					if(canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false))
-					{
-						int fromLevel = seeFromLevel(eTeam);
-						int throughLevel = pPlot->seeThroughLevel();
-						if(outerRing) //check strictly higher level
-						{
-							CvPlot *passThroughPlot = plotXY(getX_INLINE(), getY_INLINE(), nextDX, nextDY);
-							int passThroughLevel = passThroughPlot->seeThroughLevel();
-							if (fromLevel >= passThroughLevel)
-							{
-								if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel)) //either we can see through to it or it is high enough to see from far
-								{
-									return true;
-								}
-							}
-						}
-						else
-						{
-							if(fromLevel >= throughLevel) //we can clearly see this level
-							{
-								return true;
-							}
-							else if(firstPlot) //we can also see it if it is the first plot that is too tall
-							{
-								return true;
-							}
-						}
-					}
+					return true;
 				}
 			}
+		}
+		else
+		{
+			if(fromLevel >= throughLevel) //we can clearly see this level
+				return true;
+
+			if(firstPlot) //we can also see it if it is the first plot that is too tall
+				return true;
 		}
 	}
 
 	return false;
 }
 
-bool CvPlot::shouldProcessDisplacementPlot(int dx, int dy, int range, DirectionTypes eFacingDirection) const
-{
-	if(eFacingDirection == NO_DIRECTION)
-	{
-		return true;
-	}
-	else if((dx == 0) && (dy == 0)) //always process this plot
-	{
-		return true;
-	}
-	else
-	{
-		//							N		NE		E		SE			S		SW		W			NW
-		int displacements[8][2] = {{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}};
-
-		int directionX = displacements[eFacingDirection][0];
-		int directionY = displacements[eFacingDirection][1];
-
-		//compute angle off of direction
-		int crossProduct = directionX * dy - directionY * dx; //cross product
-		int dotProduct = directionX * dx + directionY * dy; //dot product
-
-		float theta = atan2((float) crossProduct, (float) dotProduct);
-		float spread = 60 * (float) M_PI / 180;
-		if((abs(dx) <= 1) && (abs(dy) <= 1)) //close plots use wider spread
-		{
-			spread = 90 * (float) M_PI / 180;
-		}
-
-		if((theta >= -spread / 2) && (theta <= spread / 2))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-		/*
-		DirectionTypes leftDirection = GC.getTurnLeftDirection(eFacingDirection);
-		DirectionTypes rightDirection = GC.getTurnRightDirection(eFacingDirection);
-
-		//test which sides of the line equation (cross product)
-		int leftSide = displacements[leftDirection][0] * dy - displacements[leftDirection][1] * dx;
-		int rightSide = displacements[rightDirection][0] * dy - displacements[rightDirection][1] * dx;
-		if((leftSide <= 0) && (rightSide >= 0))
-			return true;
-		else
-			return false;
-		*/
-	}
-}
-
 void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvCity* pCity;
-//	CvCity* pHolyCity;
+	// CvCity* pHolyCity;
 	CvUnit* pLoopUnit;
 	int iLoop;
 	int iI;
@@ -2730,24 +2592,7 @@ void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 
 	if (pCity != NULL)
 	{
-		// Religion - Disabled with new Espionage System
-/*		for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
-		{
-			if (pCity->isHasReligion((ReligionTypes)iI))
-			{
-				pHolyCity = GC.getGameINLINE().getHolyCity((ReligionTypes)iI);
-
-				if (pHolyCity != NULL)
-				{
-					if (GET_PLAYER(pHolyCity->getOwnerINLINE()).getStateReligion() == iI)
-					{
-						changeAdjacentSight(pHolyCity->getTeam(), GC.getDefineINT("PLOT_VISIBILITY_RANGE"), bIncrement, NO_INVISIBLE);
-					}
-				}
-			}
-		}*/
-
-//FfH: Added by Kael 11/03/2007
+		//FfH: Added by Kael 11/03/2007
 		for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
 		{
 			if (pCity->isHasReligion((ReligionTypes)iI))
@@ -2765,7 +2610,7 @@ void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 				}
 			}
 		}
-//FfH: End Add
+		//FfH: End Add
 
 		// Vassal
 		for (iI = 0; iI < MAX_TEAMS; ++iI)
@@ -2801,7 +2646,6 @@ void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-
 		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), bIncrement, pLoopUnit, bUpdatePlotGroups);
 	}
 
@@ -2826,12 +2670,15 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
+	int iMaxImpRange = 0;
 
 	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
 	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
-	{
 		iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
-	}
+
+	// for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
+	// iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
+	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
 
 	iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
 
@@ -2842,9 +2689,7 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot != NULL)
-			{
 				pLoopPlot->updateSight(bIncrement, bUpdatePlotGroups);
-			}
 		}
 	}
 }

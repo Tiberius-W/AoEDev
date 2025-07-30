@@ -753,7 +753,6 @@ void CyInfoPythonInterface1()
 		.def("isMechUnit", &CvUnitInfo::isMechUnit, "bool ()")
 		.def("isRenderBelowWater", &CvUnitInfo::isRenderBelowWater, "bool ()")
 		.def("isSuicide", &CvUnitInfo::isSuicide, "bool ()")
-		.def("isLineOfSight", &CvUnitInfo::isLineOfSight, "bool ()")
 		.def("isHiddenNationality", &CvUnitInfo::isHiddenNationality, "bool ()")
 		.def("isAlwaysHostile", &CvUnitInfo::isAlwaysHostile, "bool ()")
 

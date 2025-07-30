@@ -2821,7 +2821,6 @@ public:
 	bool isRenderBelowWater() const;			// Exposed to Python
 	bool isRenderAlways() const;			// Exposed to Python
 	bool isSuicide() const;			// Exposed to Python
-	bool isLineOfSight() const;			// Exposed to Python
 	bool isHiddenNationality() const;			// Exposed to Python
 	bool isAlwaysHostile() const;			// Exposed to Python
 	bool isNoRevealMap() const;			// Exposed to Python
@@ -3325,7 +3324,6 @@ protected:
 	bool m_bRenderBelowWater;
 	bool m_bRenderAlways;
 	bool m_bSuicide;
-	bool m_bLineOfSight;
 	bool m_bHiddenNationality;
 	bool m_bAlwaysHostile;
 	bool m_bNoRevealMap;

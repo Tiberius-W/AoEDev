@@ -145,22 +145,24 @@ bool CvSelectionGroup::sentryAlert() const
 		}
 	}
 
-	if (NULL != pHeadUnit)
+	if (pHeadUnit == NULL)
+		return false;
+
+	CvPlot* pPlot;
+
+	for (int iX = -iMaxRange; iX <= iMaxRange; ++iX)
 	{
-		for (int iX = -iMaxRange; iX <= iMaxRange; ++iX)
+		for (int iY = -iMaxRange; iY <= iMaxRange; ++iY)
 		{
-			for (int iY = -iMaxRange; iY <= iMaxRange; ++iY)
+			pPlot = ::plotXY(pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), iX, iY);
+			if (pPlot == NULL)
+				continue;
+
+			if (pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange - 1))
 			{
-				CvPlot* pPlot = ::plotXY(pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), iX, iY);
-				if (NULL != pPlot)
+				if (pPlot->isVisibleEnemyUnit(pHeadUnit))
 				{
-					if (pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange - 1, NO_DIRECTION))
-					{
-						if (pPlot->isVisibleEnemyUnit(pHeadUnit))
-						{
-							return true;
-						}
-					}
+					return true;
 				}
 			}
 		}
