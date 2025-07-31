@@ -148,7 +148,7 @@ bool CvUnitAI::AI_update()
 		// Only ignore land units if they aren't allowed on the water tile
 		if (plot()->isWater()
 		 && !canMoveAllTerrain()
-		 && !plot()->getImprovementType() != NO_IMPROVEMENT
+		 && !(plot()->getImprovementType() != NO_IMPROVEMENT)
 		 && !GC.getImprovementInfo(plot()->getImprovementType()).isActsAsCity())
 		{
 			getGroup()->pushMission(MISSION_SKIP);
