@@ -6667,7 +6667,9 @@ bool CvUnit::canLoadUnit(const CvUnit* pUnit, const CvPlot* pPlot) const
 	{
 		return false;
 	}
-	if (isHeld())
+
+	// No sneaky Archeon boating away!
+	if (isHeld() || pUnit->isHeld() || isLeashed() || pUnit->isLeashed())
 	{
 		return false;
 	}
@@ -6691,10 +6693,6 @@ bool CvUnit::canLoadUnit(const CvUnit* pUnit, const CvPlot* pPlot) const
 
 	// Prevents Grouping Combat Capables with non-Combat Capables : PeaceAndFlowers Xienwolf 03/27/09
 	if (isNeverHostile() != pUnit->isNeverHostile())
-	{
-		return false;
-	}
-	if (pUnit->isLeashed())
 	{
 		return false;
 	}
