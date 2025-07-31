@@ -2873,5 +2873,6 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Techtree/Swampdwelling.dds</Button>
-		</BuildInfo></BuildInfos>
+		</BuildInfo>
+	</BuildInfos>
 </Civ4BuildInfos>

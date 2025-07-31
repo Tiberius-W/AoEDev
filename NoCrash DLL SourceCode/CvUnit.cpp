@@ -5507,20 +5507,15 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		break;
 
 	case DOMAIN_LAND:
-		if (pPlot->isWater() && !canMoveAllTerrain()
-
-//FfH: Added by Kael 08/27/2007 (for boarding)
-			  && !(bAttack && isBoarding())
-//FfH: End Add
-
-		)
+		if (pPlot->isWater()
+		 && !canMoveAllTerrain()
+		 && !(bAttack && isBoarding())
+		 && !pPlot->isCity(true))
 		{
-			if (!pPlot->isCity(true) )//|| 0 == GC.getDefineINT("LAND_UNITS_CAN_ATTACK_WATER_CITIES"))
+			// Last two checks are... probably to avoid confusing AI? Boat-to-boat walking could be cool, enabled here if desired
+			if (bIgnoreLoad || !canLoad(pPlot) || !isHuman() || plot()->isWater())
 			{
-				if (bIgnoreLoad || !isHuman() || plot()->isWater() || !canLoad(pPlot))
-				{
-					return false;
-				}
+				return false;
 			}
 		}
 		break;
@@ -6236,15 +6231,7 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 }
 
 // false if unit is killed
-/************************************************************************************************/
-/* Afforess					  Start		 06/13/10                                               */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
 bool CvUnit::jumpToNearestValidPlot(bool bKill)
-/************************************************************************************************/
-/* Afforess						 END                                                            */
-/************************************************************************************************/
 {
 	PROFILE_FUNC();
 
@@ -13917,10 +13904,7 @@ bool CvUnit::canDefend(const CvPlot* pPlot) const
 
 	if (!pPlot->isValidDomainForAction(*this))
 	{
-		if (GC.getDefineINT("LAND_UNITS_CAN_ATTACK_WATER_CITIES") == 0)
-		{
-			return false;
-		}
+		return false;
 	}
 
 //FfH: Added by Kael 10/31/2007

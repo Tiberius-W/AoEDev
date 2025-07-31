@@ -49,7 +49,7 @@
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<bFort>0</bFort> <!-- 1 means this is can be claimed with a fort commander -->
-			<bActsAsCity>0</bActsAsCity> <!-- 1 means ships can sail through, possibly airlife to/from? Treated as city in many ways. -->
+			<bActsAsCity>0</bActsAsCity> <!-- 1 means water units can pass thru as if water, and land units can pass thru as if land. Exploits all revealed resources on the tile. Treated as city in many ways. -->
 			<bOutsideBorders>0</bOutsideBorders> <!-- 1 means the improvement gets automatically owned by whichever is set in SpawnUnitCiv, and upgrades by itself if unowned. Claiming via bFort overrides this IF the fort is claimed -->
 			<bSpawnOnlyForOwner>0</bSpawnOnlyForOwner> <!-- 1 means: Units and groups spawned from here will only go to SpawnUnitCiv, IF the current owner is not at war with SpawnUnitCiv. And: -->
 			<SpawnUnitCiv></SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
@@ -4914,6 +4914,7 @@
 			<ImprovementPillage>IMPROVEMENT_BEDOUIN_SIT</ImprovementPillage>
 			<ImprovementUpgrade>IMPROVEMENT_BEDOUIN_GATHERING</ImprovementUpgrade>
 			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
@@ -4943,6 +4944,7 @@
 			<ImprovementPillage>IMPROVEMENT_BEDOUIN_CAMP</ImprovementPillage>
 			<ImprovementUpgrade>IMPROVEMENT_BEDOUIN_VILLAGE</ImprovementUpgrade>
 			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
@@ -5014,6 +5016,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>2</iCultureControlStrength>
 			<iCultureCenterBonus>2</iCultureCenterBonus>
@@ -6031,6 +6034,7 @@
 			<iUpgradeTime>25</iUpgradeTime>
 			<iPillageGold>25</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
+			<iMinimumDistance>1</iMinimumDistance>
 			<bFort>1</bFort>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
@@ -6097,6 +6101,7 @@
 			<iDefenseModifier>25</iDefenseModifier>
 			<iPillageGold>50</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
+			<iMinimumDistance>1</iMinimumDistance>
 			<bFort>1</bFort>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
@@ -6464,7 +6469,6 @@
 				<iYieldChange>2</iYieldChange>
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
-			<bActsAsCity>1</bActsAsCity>
 			<iUpgradeTime>45</iUpgradeTime>
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>40</iDefenseModifier>
@@ -7063,6 +7067,7 @@
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>1</bActsAsCity>
+			<iMinimumDistance>2</iMinimumDistance>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<iUpgradeTime>30</iUpgradeTime>
 			<iDefenseModifier>20</iDefenseModifier>
@@ -7087,6 +7092,7 @@
 				<iYieldChange>3</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>1</bActsAsCity>
+			<iMinimumDistance>2</iMinimumDistance>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<iDefenseModifier>30</iDefenseModifier>
 			<iPillageGold>5</iPillageGold>
