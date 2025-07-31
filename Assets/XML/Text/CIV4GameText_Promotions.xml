@@ -2934,6 +2934,22 @@
 		<Spanish>Shock II</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_SKIRMISHING</Tag>
+		<English>Skirmishing I</English>
+		<French>Skirmishing I</French>
+		<German>Skirmishing I</German>
+		<Italian>Skirmishing I</Italian>
+		<Spanish>Skirmishing I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_SKIRMISHING2</Tag>
+		<English>Skirmishing II</English>
+		<French>Skirmishing II</French>
+		<German>Skirmishing II</German>
+		<Italian>Skirmishing II</Italian>
+		<Spanish>Skirmishing II</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SKELETON_CREW</Tag>
 		<English>Skeleton Crew</English>
 		<French>Équipage Squelettique</French>
