@@ -1458,51 +1458,42 @@ void CvPlot::verifyUnitValidPlot()
 		}
 	}
 
+	bool bErased = false;
 	std::vector<CvUnit*>::iterator it = aUnits.begin();
 	while (it != aUnits.end())
 	{
 		CvUnit* pLoopUnit = *it;
-		bool bErased = false;
 
-		if (pLoopUnit != NULL)
+		if (pLoopUnit == NULL
+		|| !pLoopUnit->atPlot(this)
+		|| pLoopUnit->isCombat()
+		|| pLoopUnit->isCargo())
 		{
-			if (pLoopUnit->atPlot(this))
-			{
-				if (!(pLoopUnit->isCargo()))
-				{
-					if (!(pLoopUnit->isCombat()))
-					{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							05/31/09											**/
-/**																								**/
-/**					Should keep the HELD units from bouncing out of their cages					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-						if (!isValidDomainForLocation(*pLoopUnit) || !(pLoopUnit->canEnterArea(getTeam(), area())))
-/**								----  End Original Code  ----									**/
-						if (!isValidDomainForLocation(*pLoopUnit) || !(pLoopUnit->canEnterArea(getTeam(), area()) || pLoopUnit->isHeld()))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-						{
-							if (!pLoopUnit->jumpToNearestValidPlot(false))
-							{
-								bErased = true;
-							}
-						}
-					}
-				}
-			}
+			++it;
+			continue;
+		}
+
+		// Fort commanders must have a *fort* to command
+		if (pLoopUnit->getUnitClassType() == GC.getDefineINT("FORT_COMMANDER_UNITCLASS")
+		&& (getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(getImprovementType()).isFort()))
+		{
+			pLoopUnit->kill(false);
+			bErased = true;
+		}
+		//  Xienwolf - 05/31/09 - Added isHeld check to keep the HELD units from bouncing out of their cages
+		else if (!isValidDomainForLocation(*pLoopUnit) || !(pLoopUnit->canEnterArea(getTeam(), area()) || pLoopUnit->isHeld()))
+		{
+			if (!pLoopUnit->jumpToNearestValidPlot(false))
+				bErased = true;
 		}
 
 		if (bErased)
 		{
 			it = aUnits.erase(it);
+			bErased = false;
 		}
 		else
-		{
 			++it;
-		}
 	}
 
 	if (isOwned())
@@ -7626,14 +7617,15 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		}
 	}
 
-	// Building or removing a fort will now force a plotgroup update to verify resource connections.
+	// Building or removing an actsascity improvement (typically, forts) will now force a plotgroup update to verify resource connections.
 	if ( (NO_IMPROVEMENT != getImprovementType() && GC.getImprovementInfo(getImprovementType()).isActsAsCity()) !=
 			(NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity()) )
 	{
 		updatePlotGroup();
 	}
 
-	if (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
+	// Check for fort commanders, and if boat on destroyed canal or land unit now on water
+	if (NO_IMPROVEMENT != eOldImprovement && (GC.getImprovementInfo(eOldImprovement).isActsAsCity() || GC.getImprovementInfo(eOldImprovement).isFort()))
 	{
 		verifyUnitValidPlot();
 	}
