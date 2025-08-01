@@ -8,6 +8,7 @@
 			<ShortDescription>TXT_KEY_CIV_JOTNAR_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_JOTNAR_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_JOTNAR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIV_JOTNAR_STRATEGY</Strategy>
 			<DefaultPlayerColor>PLAYERCOLOR_JOTNAR</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JOTNAR</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_WILDERNESS</ArtStyleType>
