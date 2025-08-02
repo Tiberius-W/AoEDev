@@ -243,7 +243,6 @@ public:
 	int getRiverID() const;
 	void setRiverID(int iNewValue);
 	int getMinOriginalStartDist();
-	int getReconCount();
 	int getRiverCrossingCount();
 	int getYield(YieldTypes eIndex);
 	int calculateNatureYield(YieldTypes eIndex, TeamTypes eTeam, bool bIgnoreFeature = false);

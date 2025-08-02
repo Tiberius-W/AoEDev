@@ -1607,6 +1607,7 @@ void CvUnit::convert(CvUnit* pUnit)
 }
 
 
+// Python must NOT kill the unit during this process
 void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 {
 	PROFILE_FUNC();
@@ -1616,7 +1617,6 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	CvUnit* pLoopUnit;
 	CvPlot* pPlot;
 	CvWString szBuffer;
-	PlayerTypes eOwner;
 	PlayerTypes eCapturingPlayer;
 	UnitTypes eCaptureUnitType;
 	int iRace = getRace();
@@ -1634,12 +1634,12 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		pUnitNode = pPlot->nextUnitNode(pUnitNode);
 	}
 
-/*************************************************************************************************/
-/**	DeathPython							12/07/08									Xienwolf	**/
-/**				Relocated Immortal Rebirth to pre-empt announcement of death					**/
-/**					Runs a Python function on the death of a unit								**/
-/**be careful not to call kill on the unit during the python unless you disable the python call	**/
-/*************************************************************************************************/
+	// When placed after delay death check, setting recon plot was failing to update vision. Why... I'm not 100% sure. Null unit on second call, is my guess.
+	setReconPlot(NULL);
+	setBlockading(false);
+
+	// DeathPython - Xienwolf - 12/07/08 - Relocated Immortal Rebirth to pre-empt announcement of death
+	// Runs a Python function on the death of a unit, be careful not to call kill on the unit during the python unless you disable the python call
 	if (isImmortal())
 	{
 		if (doImmortalRebirth())
@@ -1673,6 +1673,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			return;
 		}
 	}
+
 	setMustDie(true);
 	eCapturingPlayer = getCapturingPlayer();
 
@@ -1698,9 +1699,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			}
 		}
 	}
-/*************************************************************************************************/
-/**	DeathPython								END													**/
-/*************************************************************************************************/
+
 	for (uint i = 0; i < oldUnits.size(); i++)
 	{
 		pLoopUnit = ::getUnit(oldUnits[i]);
@@ -1723,6 +1722,14 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			}
 		}
 	}
+
+	// Point of no return; everything before this should be OK to trigger repeatedly, after, trigger only once
+	if (bDelay)
+	{
+		startDelayedDeath();
+		return;
+	}
+
 	if (GET_PLAYER(getOwner()).isBarbarian())
 	{
 		if (getCombatUnit() != NULL)
@@ -1730,15 +1737,14 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			CvUnit* pKiller = getCombatUnit();
 			if (pKiller->isTradeDefender())
 			{
-
 				CvString szError;
 
-				//	szError.Format("found a trade defender ");
-					//				gDLL->logMsg("tradedef.log", szError);
+				// szError.Format("found a trade defender ");
+				// gDLL->logMsg("tradedef.log", szError);
 				CvCity* pClosestCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), pKiller->getOwner());
 
-				//			szError.Format("closest city is %s",pClosestCity->getName().c_str());
-					//		gDLL->logMsg("tradedef.log", szError);
+				// szError.Format("closest city is %s",pClosestCity->getName().c_str());
+				// gDLL->logMsg("tradedef.log", szError);
 				if (pClosestCity != NULL)
 				{
 					for (int eIndex = 0; eIndex < GC.getDefineINT("MAX_TRADE_ROUTES"); eIndex++)
@@ -1769,46 +1775,47 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	if (ePlayer != NO_PLAYER)
 	{
 		
-			TraitTriggeredData kTriggerData;
-			if (getCombatUnit() != NULL)
-			{
-				CvUnit* pKiller = getCombatUnit();
-				kTriggerData.m_iUnitClass = pKiller->getUnitClassType();
-				kTriggerData.m_iUnitCombat = pKiller->getUnitCombatType();
-			//	kTriggerData.eLevel = pKiller->getLevel();
-				kTriggerData.m_iRace = (PromotionTypes)pKiller->getRace();
-				kTriggerData.m_iReligion = GET_PLAYER(pKiller->getOwner()).getStateReligion();
-				kTriggerData.m_iAlignment = GET_PLAYER(pKiller->getOwner()).getBroadAlignment();
-				kTriggerData.m_iEthicalAlignment = GET_PLAYER(pKiller->getOwner()).getBroadEthicalAlignment();
-				kTriggerData.m_iAlignmentStatus = GET_PLAYER(pKiller->getOwner()).getAlignment();
-				kTriggerData.m_iEthicalAlignmentStatus = GET_PLAYER(pKiller->getOwner()).getEthicalAlignment();
-				kTriggerData.m_bWerewolf = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_WEREWOLF"));
-				kTriggerData.m_bUndead = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_UNDEAD"));
-				kTriggerData.m_bHero = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_HERO"));
-				kTriggerData.m_bHiddenNationality = pKiller->isHiddenNationality();
-				kTriggerData.m_bInBorders = pKiller->getOwner() == pKiller->plot()->getOwner();
-				kTriggerData.m_bOutsideBorders = pKiller->getOwner() != pKiller->plot()->getOwner();
-			}
+		TraitTriggeredData kTriggerData;
+		if (getCombatUnit() != NULL)
+		{
+			CvUnit* pKiller = getCombatUnit();
+			kTriggerData.m_iUnitClass = pKiller->getUnitClassType();
+			kTriggerData.m_iUnitCombat = pKiller->getUnitCombatType();
+			// kTriggerData.eLevel = pKiller->getLevel();
+			kTriggerData.m_iRace = (PromotionTypes)pKiller->getRace();
+			kTriggerData.m_iReligion = GET_PLAYER(pKiller->getOwner()).getStateReligion();
+			kTriggerData.m_iAlignment = GET_PLAYER(pKiller->getOwner()).getBroadAlignment();
+			kTriggerData.m_iEthicalAlignment = GET_PLAYER(pKiller->getOwner()).getBroadEthicalAlignment();
+			kTriggerData.m_iAlignmentStatus = GET_PLAYER(pKiller->getOwner()).getAlignment();
+			kTriggerData.m_iEthicalAlignmentStatus = GET_PLAYER(pKiller->getOwner()).getEthicalAlignment();
+			kTriggerData.m_bWerewolf = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_WEREWOLF"));
+			kTriggerData.m_bUndead = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_UNDEAD"));
+			kTriggerData.m_bHero = pKiller->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_HERO"));
+			kTriggerData.m_bHiddenNationality = pKiller->isHiddenNationality();
+			kTriggerData.m_bInBorders = pKiller->getOwner() == pKiller->plot()->getOwner();
+			kTriggerData.m_bOutsideBorders = pKiller->getOwner() != pKiller->plot()->getOwner();
+		}
 
-			kTriggerData.m_iKilledUnitClass = getUnitClassType();
-			kTriggerData.m_iKilledUnitCombat = getUnitCombatType();
-			//kTriggerData.m_iKilledLevel = getLevel();
-			kTriggerData.m_iKilledRace = (PromotionTypes)getRace();
-		//	kTriggerData.m_iKilledReligion = GET_PLAYER(getOwner()).getStateReligion();
-			kTriggerData.m_iKilledAlignment = GET_PLAYER(getOwner()).getBroadAlignment();
-			kTriggerData.m_iKilledEthicalAlignment = GET_PLAYER(getOwner()).getBroadEthicalAlignment();
-			kTriggerData.m_iKilledAlignmentStatus = GET_PLAYER(getOwner()).getAlignment();
-			kTriggerData.m_iKilledEthicalAlignmentStatus = GET_PLAYER(getOwner()).getEthicalAlignment();
-			kTriggerData.m_bKilledWerewolf = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_WEREWOLF"));
-			kTriggerData.m_bKilledUndead = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_UNDEAD"));
-			kTriggerData.m_bKilledHero = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_HERO"));
-			kTriggerData.m_bKilledHiddenNationality = isHiddenNationality();
-			kTriggerData.m_bKilledInBorders = getOwner() == plot()->getOwner();
-			kTriggerData.m_bKilledOutsideBorders = getOwner() != plot()->getOwner();
+		kTriggerData.m_iKilledUnitClass = getUnitClassType();
+		kTriggerData.m_iKilledUnitCombat = getUnitCombatType();
+		// kTriggerData.m_iKilledLevel = getLevel();
+		kTriggerData.m_iKilledRace = (PromotionTypes)getRace();
+		// kTriggerData.m_iKilledReligion = GET_PLAYER(getOwner()).getStateReligion();
+		kTriggerData.m_iKilledAlignment = GET_PLAYER(getOwner()).getBroadAlignment();
+		kTriggerData.m_iKilledEthicalAlignment = GET_PLAYER(getOwner()).getBroadEthicalAlignment();
+		kTriggerData.m_iKilledAlignmentStatus = GET_PLAYER(getOwner()).getAlignment();
+		kTriggerData.m_iKilledEthicalAlignmentStatus = GET_PLAYER(getOwner()).getEthicalAlignment();
+		kTriggerData.m_bKilledWerewolf = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_WEREWOLF"));
+		kTriggerData.m_bKilledUndead = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_UNDEAD"));
+		kTriggerData.m_bKilledHero = isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_HERO"));
+		kTriggerData.m_bKilledHiddenNationality = isHiddenNationality();
+		kTriggerData.m_bKilledInBorders = getOwner() == plot()->getOwner();
+		kTriggerData.m_bKilledOutsideBorders = getOwner() != plot()->getOwner();
 
-			GET_PLAYER(ePlayer).doTraitTriggers(TRAITHOOK_KILL_UNIT, &kTriggerData);
-			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_UNIT_KILLED, &kTriggerData);
+		GET_PLAYER(ePlayer).doTraitTriggers(TRAITHOOK_KILL_UNIT, &kTriggerData);
+		GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_UNIT_KILLED, &kTriggerData);
 		// DynTraits End
+
 		CvEventReporter::getInstance().unitKilled(this, ePlayer);
 
 		if (NO_UNIT != getLeaderUnitType())
@@ -1824,19 +1831,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		}
 	}
 
-	if (bDelay)
-	{
-		startDelayedDeath();
-		return;
-	}
-/*************************************************************************************************/
-/**	WorldBreakers						01/05/09									Xienwolf	**/
-/**																								**/
-/**							Tracks AC Contributions on a player basis							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	GC.getGameINLINE().changeGlobalCounter(-1 * m_pUnitInfo->getModifyGlobalCounter());
-/**								----  End Original Code  ----									**/
+	// WorldBreakers - Xienwolf - 01/05/09 - Tracks AC Contributions on a player basis
 	if (ePlayer == NO_PLAYER)
 	{
 		GET_PLAYER(getOwner()).changeGlobalCounterContrib(-1 * m_pUnitInfo->getModifyGlobalCounter());
@@ -1847,44 +1842,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	}
 
 
-/*************************************************************************************************/
-/**	WorldBreakers							END													**/
-/*************************************************************************************************/
+	// Xienwolf - 10/03/08 - Removes all Promotions to ensure nothing added elsewhere via promotion is forgottten (& place equipment)
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
 		if (isHasPromotion((PromotionTypes)iI))
 		{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							10/03/08											**/
-/**																								**/
-/**		Removes all Promotions to ensure nothing added elsewhere via promotion is forgottten	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			GC.getGameINLINE().changeGlobalCounter(-1 * GC.getPromotionInfo((PromotionTypes)iI).getModifyGlobalCounter());
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	EquipRedux								05/31/09								Xienwolf	**/
-/**			Removes promotions from the unit and spawns minimal containers to hold them			**/
-/**		Removes the need to add units for each equipment item introduced into the game			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (GC.getPromotionInfo((PromotionTypes)iI).isEquipment())
+			PromotionTypes ePromotion = (PromotionTypes)iI;
+
+			// EquipRedux - Xienwolf - 05/31/09 - Removes promotions from the unit and spawns minimal containers to hold them
+			if (GC.getPromotionInfo(ePromotion).isEquipment() && getUnitType() != GC.getDefineINT("EQUIPMENT_HOLDER"))
 			{
-				for (int iJ = 0; iJ < GC.getNumUnitInfos(); iJ++)
-				{
-					if (GC.getUnitInfo((UnitTypes)iJ).getEquipmentPromotion() == iI)
-					{
-						GET_PLAYER(getOwnerINLINE()).initUnit((UnitTypes)iJ, getX_INLINE(), getY_INLINE(), AI_getUnitAIType());
-						setHasPromotion((PromotionTypes)iI, false);
-					}
-				}
-/**								----  End Original Code  ----									**/
-			if (GC.getPromotionInfo((PromotionTypes)iI).isEquipment() && getUnitType() != GC.getDefineINT("EQUIPMENT_HOLDER"))
-			{
-				PromotionTypes ePromotion = (PromotionTypes)iI;
 				if (ePromotion != NO_PROMOTION)
 				{
 					bool bPlaced = false;
@@ -1906,22 +1873,12 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 						pLoopUnit->setHasPromotion(ePromotion, true);
 					}
 				}
-				setHasPromotion((PromotionTypes)iI, false, true);
-/*************************************************************************************************/
-/**	EquipRedux								END													**/
-/*************************************************************************************************/
 			}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							10/03/08											**/
-/**																								**/
-/**		Removes all Promotions to ensure nothing added elsewhere via promotion is forgottten	**/
-/*************************************************************************************************/
-			setHasPromotion((PromotionTypes)iI, false, true);
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
+			setHasPromotion(ePromotion, false, true);
 		}
 	}
+
 	if (isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) && GC.getGameINLINE().getUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) == 1)
 	{
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
@@ -1941,7 +1898,6 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			pLoopUnit->setSummoner(-1);
 		}
 	}
-//FfH: End Add
 
 	if (isMadeAttack() && nukeRange() != -1)
 	{
@@ -1989,9 +1945,6 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		setTransportUnit(NULL);
 	}
 
-	setReconPlot(NULL);
-	setBlockading(false);
-
 	FAssertMsg(getAttackPlot() == NULL, "The current unit instance's attack plot is expected to be NULL");
 	FAssertMsg(getCombatUnit() == NULL, "The current unit instance's combat unit is expected to be NULL");
 
@@ -1999,12 +1952,8 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	GET_PLAYER(getOwnerINLINE()).changeUnitClassCount((UnitClassTypes)m_pUnitInfo->getUnitClassType(), -1);
 
 	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-(m_pUnitInfo->getExtraCost()));
-/*************************************************************************************************/
-/**	Upkeep									07/10/08								Xienwolf	**/
-/**						Removes Free Upkeep from Summons on Death								**/
-/**	LairLimit								12/30/08								Xienwolf	**/
-/**			Tracks Units Spawned from each Improvement to limit the potential spawns			**/
-/*************************************************************************************************/
+
+	// Upkeep - Xienwolf - 07/10/08 - Removes Free Upkeep from Summons on Death
 	if (isFreeUnit())
 	{
 		changeFreeUnit(-1);
@@ -2013,54 +1962,29 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	{
 		changeNoSupply(-1);
 	}
+	// Spawn plot tracking for lair improvements (Xienwolf original implementation, Blaze edit 08/2025)
 	getSpawnPlot()->changeNumSpawnsAlive(-1);
-/*************************************************************************************************/
-/**	Upkeep										END												**/
-/*************************************************************************************************/
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{
 		GET_PLAYER(getOwnerINLINE()).changeNumNukeUnits(-1);
 	}
 
-/*************************************************************************************************/
-/**	MilSupport 								05/15/08								Xienwolf	**/
-/**				Prevents Reduction in Military Support Level of Civ on Unit Death				**/
-/**								if Promotion still attached										**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (m_pUnitInfo->isMilitarySupport())
-/**								----  End Original Code  ----									**/
+	// MilSupport - Xienwolf - 05/15/08 - Prevents Reduction in Military Support Level of Civ on Unit Death
 	if (m_pUnitInfo->isMilitarySupport() && !isNoSupport())
-/*************************************************************************************************/
-/**	MilSupport 									END												**/
-/*************************************************************************************************/
 	{
 		GET_PLAYER(getOwnerINLINE()).changeNumMilitaryUnits(-1);
 	}
 
 	GET_PLAYER(getOwnerINLINE()).changeAssets(-(m_pUnitInfo->getAssetValue()));
 
-/*************************************************************************************************/
-/**	Unit power						17/02/12										Snarko		**/
-/**																								**/
-/**							Rewriting unit power system											**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	GET_PLAYER(getOwnerINLINE()).changePower(-(m_pUnitInfo->getPowerValue()));
-/**								----  End Original Code  ----									**/
+	// Unit power - Snarko - 17/02/12 - Rewriting unit power system. Old: .changePower(-(m_pUnitInfo->getPowerValue()));
 	GET_PLAYER(getOwnerINLINE()).changePower(-(getPower()));
-/*************************************************************************************************/
-/**	Unit power						END															**/
-/*************************************************************************************************/
 
 	GET_PLAYER(getOwnerINLINE()).AI_changeNumAIUnits(AI_getUnitAIType(), -1);
 
-/*************************************************************************************************/
-/**	Whiplash								07/23/08								Xienwolf	**/
-/**		Clears record of the Summon from the Master Unit so he may summon a replacement			**/
-/**		Sets all Units Summoned by the MasterUnit to die at the start of next turn				**/
-/*************************************************************************************************/
+	// Whiplash - Xienwolf - 07/23/08 - Clears record of the Summon from the Master Unit so he may summon a replacement
+	// Sets all Units Summoned by the MasterUnit to die at the start of next turn
 	if (getMasterUnit() != NULL)
 	{
 		if (getSpecialUnitType() != GC.getDefineINT("SPECIALUNIT_SPELL"))
@@ -2079,7 +2003,6 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		getMasterUnit()->getGroup()->setActivityType(ACTIVITY_AWAKE);
 
 	}
-
 	if (getNumSlaves() > 0)
 	{
 		std::list<int> slaveUnits = getAllSlaveUnits();
@@ -2088,14 +2011,12 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			getUnit(IDInfo(getOwner(),*iter))->setMustDie(true);
 		}
 	}
-
 	if (getCommanderUnit() != NULL)
 	{
 		getCommanderUnit()->getGroup()->clearMissionQueue();
 		getCommanderUnit()->getGroup()->setActivityType(ACTIVITY_AWAKE);
 		getCommanderUnit()->removeMinionUnit(getID());
 	}
-
 	if (getNumMinions() > 0)
 	{
 		std::list<int> minionUnits = getAllMinionUnits();
@@ -2104,12 +2025,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			removeMinionUnit(*iter);
 		}
 	}
-/*************************************************************************************************/
-/**	Whiplash								END													**/
-/*************************************************************************************************/
-	eOwner = getOwnerINLINE();
-	
-//FfH: End Modify
+
 
 	setXY(INVALID_PLOT_COORD, INVALID_PLOT_COORD, true);
 
@@ -2119,18 +2035,14 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).deleteUnit(getID());
 
-//FfH: Modified by Kael 01/19/2008
-//	if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT) && !(GET_PLAYER(eCapturingPlayer).isBarbarian()))
+	// FfH: Modified by Kael 01/19/2008 (Can capture barbs)
 	if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT))
-//FfH: End Modify
-
 	{
-
 		if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
 		{
 			CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
-//FfH: Added by Kael 08/18/2008
+			//FfH: Added by Kael 08/18/2008
 			if (pkCapturedUnit->getRace() != NO_PROMOTION)
 			{
 				pkCapturedUnit->setHasPromotion((PromotionTypes)pkCapturedUnit->getRace(), false);
@@ -2139,7 +2051,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			{
 				pkCapturedUnit->setHasPromotion((PromotionTypes)iRace, true);
 			}
-//FfH: End Add
+			//FfH: End Add
 
 			if (pkCapturedUnit != NULL)
 			{
@@ -2163,12 +2075,8 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 					if (pPlot && !pPlot->isCity(false))
 					{
 						if (GET_PLAYER(eCapturingPlayer).AI_getAnyPlotDanger(pPlot) && GC.getDefineINT("AI_CAN_DISBAND_UNITS")
-
-//FfH: Added by Kael 12/02/2007
-						  && pkCapturedUnit->canScrap()
-//FfH: End Add
-
-						  )
+							//FfH: Added by Kael 12/02/2007
+						  && pkCapturedUnit->canScrap())
 						{
 							pkCapturedUnit->kill(false);
 						}
@@ -16661,31 +16569,27 @@ CvPlot* CvUnit::getReconPlot() const
 
 void CvUnit::setReconPlot(CvPlot* pNewValue)
 {
-	CvPlot* pOldPlot;
+	CvPlot* pOldPlot = getReconPlot();
 
-	pOldPlot = getReconPlot();
+	if (pOldPlot == pNewValue)
+		return;
 
-	if (pOldPlot != pNewValue)
+	if (pOldPlot != NULL)
 	{
-		if (pOldPlot != NULL)
-		{
-			pOldPlot->changeAdjacentSight(getTeam(), GC.getDefineINT("RECON_VISIBILITY_RANGE"), false, this, true);
-			pOldPlot->changeReconCount(-1); // changeAdjacentSight() tests for getReconCount()
-		}
+		pOldPlot->changeAdjacentSight(getTeam(), GC.getDefineINT("RECON_VISIBILITY_RANGE"), false, this, true);
+	}
 
-		if (pNewValue == NULL)
-		{
-			m_iReconX = INVALID_PLOT_COORD;
-			m_iReconY = INVALID_PLOT_COORD;
-		}
-		else
-		{
-			m_iReconX = pNewValue->getX_INLINE();
-			m_iReconY = pNewValue->getY_INLINE();
+	if (pNewValue == NULL)
+	{
+		m_iReconX = INVALID_PLOT_COORD;
+		m_iReconY = INVALID_PLOT_COORD;
+	}
+	else
+	{
+		m_iReconX = pNewValue->getX_INLINE();
+		m_iReconY = pNewValue->getY_INLINE();
 
-			pNewValue->changeReconCount(1); // changeAdjacentSight() tests for getReconCount()
-			pNewValue->changeAdjacentSight(getTeam(), GC.getDefineINT("RECON_VISIBILITY_RANGE"), true, this, true);
-		}
+		pNewValue->changeAdjacentSight(getTeam(), GC.getDefineINT("RECON_VISIBILITY_RANGE"), true, this, true);
 	}
 }
 

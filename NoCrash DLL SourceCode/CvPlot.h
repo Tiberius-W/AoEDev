@@ -454,9 +454,6 @@ public:
 	int getMinOriginalStartDist() const;																																// Exposed to Python
 	void setMinOriginalStartDist(int iNewValue);
 
-	int getReconCount() const;																																					// Exposed to Python
-	void changeReconCount(int iChange);
-
 	int getRiverCrossingCount() const;																																	// Exposed to Python
 	void changeRiverCrossingCount(int iChange);
 
@@ -821,7 +818,6 @@ protected:
 	short m_iCityRadiusCount;
 	int m_iRiverID;
 	short m_iMinOriginalStartDist;
-	short m_iReconCount;
 	short m_iRiverCrossingCount;
 	int m_iExploreNextTurn;
 	int m_iCurrentAirlift;

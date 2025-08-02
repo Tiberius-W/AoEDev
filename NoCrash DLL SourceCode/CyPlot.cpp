@@ -920,11 +920,6 @@ int CyPlot::getMinOriginalStartDist()
 	return m_pPlot ? m_pPlot->getMinOriginalStartDist() : -1;
 }
 
-int CyPlot::getReconCount()
-{
-	return m_pPlot ? m_pPlot->getReconCount() : -1;
-}
-
 int CyPlot::getRiverCrossingCount()
 {
 	return m_pPlot ? m_pPlot->getRiverCrossingCount() : -1;

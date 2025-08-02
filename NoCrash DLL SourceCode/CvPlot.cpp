@@ -209,7 +209,6 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iCityRadiusCount = 0;
 	m_iRiverID = -1;
 	m_iMinOriginalStartDist = -1;
-	m_iReconCount = 0;
 	m_iRiverCrossingCount = 0;
 	m_iExploreNextTurn = 0;
 	m_iCurrentAirlift = 0;
@@ -1477,7 +1476,7 @@ void CvPlot::verifyUnitValidPlot()
 		if (pLoopUnit->getUnitClassType() == GC.getDefineINT("FORT_COMMANDER_UNITCLASS")
 		&& (getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(getImprovementType()).isFort()))
 		{
-			pLoopUnit->kill(false);
+			pLoopUnit->kill(true);
 			bErased = true;
 		}
 		//  Xienwolf - 05/31/09 - Added isHeld check to keep the HELD units from bouncing out of their cages
@@ -2420,7 +2419,7 @@ int CvPlot::seeThroughLevel() const
 }
 
 
-
+// Add or remove visibility count to applicable tiles within range
 void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups)
 {
 	int iDist;
@@ -2570,6 +2569,7 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 	return false;
 }
 
+// For this plot, update all passive and outgoing sources of vision
 void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -2639,24 +2639,10 @@ void CvPlot::updateSight(bool bIncrement, bool bUpdatePlotGroups)
 
 		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), bIncrement, pLoopUnit, bUpdatePlotGroups);
 	}
-
-	if (getReconCount() > 0)
-	{
-		int iRange = GC.getDefineINT("RECON_VISIBILITY_RANGE");
-		for (iI = 0; iI < MAX_PLAYERS; ++iI)
-		{
-			for(pLoopUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
-			{
-				if (pLoopUnit->getReconPlot() == this)
-				{
-					changeAdjacentSight(pLoopUnit->getTeam(), iRange, bIncrement, pLoopUnit, bUpdatePlotGroups);
-				}
-			}
-		}
-	}
 }
 
 
+// Expensive function; updates sight on every tile that can possibly see this one, sortof: no accounting for tile effects
 void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CvPlot* pLoopPlot;
@@ -8018,19 +8004,6 @@ void CvPlot::setMinOriginalStartDist(int iNewValue)
 }
 
 
-int CvPlot::getReconCount() const
-{
-	return m_iReconCount;
-}
-
-
-void CvPlot::changeReconCount(int iChange)
-{
-	m_iReconCount = (m_iReconCount + iChange);
-	FAssert(getReconCount() >= 0);
-}
-
-
 int CvPlot::getRiverCrossingCount() const
 {
 	return m_iRiverCrossingCount;
@@ -9401,6 +9374,7 @@ int CvPlot::getVisibilityCount(TeamTypes eTeam) const
 }
 
 
+// Tell plot which teams can see this plot, and at what invisibility level
 void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes eSeeInvisible, bool bUpdatePlotGroups)
 {
 	CvCity* pCity;
@@ -9422,12 +9396,12 @@ void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes 
 			}
 		}
 
-//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
+		//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
 		if (m_aiVisibilityCount[eTeam] < 0)
 		{
 			m_aiVisibilityCount[eTeam] = 0;
 		}
-//FfH: End Add
+		//FfH: End Add
 
 		bOldVisible = isVisible(eTeam, false);
 
@@ -9907,6 +9881,7 @@ bool CvPlot::isRevealed(TeamTypes eTeam, bool bDebug) const
 }
 
 
+// Final step before plot is revealed
 void CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, TeamTypes eFromTeam, bool bUpdatePlotGroup)
 {
 	CvCity* pCity;
@@ -9963,13 +9938,12 @@ void CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 		{
 			// ONEVENT - PlotRevealed
 
-//FfH: Modified by Kael 08/02/2008
-//			CvEventReporter::getInstance().plotRevealed(this, eTeam);
+			//FfH: Modified by Kael 08/02/2008
+			// CvEventReporter::getInstance().plotRevealed(this, eTeam);
 			if(GC.getUSE_PLOT_REVEALED_CALLBACK())
 			{
 				CvEventReporter::getInstance().plotRevealed(this, eTeam);
 			}
-//FfH: End Modify
 
 		}
 	}
@@ -11610,7 +11584,6 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCityRadiusCount);
 	pStream->Read(&m_iRiverID);
 	pStream->Read(&m_iMinOriginalStartDist);
-	pStream->Read(&m_iReconCount);
 	pStream->Read(&m_iRiverCrossingCount);
 	pStream->Read(&m_iExploreNextTurn);
 	pStream->Read(&m_iCurrentAirlift);
@@ -11939,7 +11912,6 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCityRadiusCount);
 	pStream->Write(m_iRiverID);
 	pStream->Write(m_iMinOriginalStartDist);
-	pStream->Write(m_iReconCount);
 	pStream->Write(m_iRiverCrossingCount);
 	pStream->Write(m_iExploreNextTurn);
 	pStream->Write(m_iCurrentAirlift);

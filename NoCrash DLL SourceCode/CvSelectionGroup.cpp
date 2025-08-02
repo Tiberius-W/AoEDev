@@ -2593,9 +2593,8 @@ bool CvSelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
 				}
 			}
 			break;
-//TargetedSpell 0924 blackimp
+		//TargetedSpell 0924 blackimp
 		case INTERFACEMODE_TARGETED_SPELL:
-		{
 			for (int iI = 0; iI < GC.getNumSpellInfos(); iI++)
 			{
 				if (GC.getSpellInfo((SpellTypes)iI).isTargeted() && pLoopUnit->canCastAnyPlot(iI, false))
@@ -2603,8 +2602,7 @@ bool CvSelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
 					return true;
 				}
 			}
-		}
-		break;
+			break;
 		case INTERFACEMODE_REBASE:
 			if (pLoopUnit->getDomainType() == DOMAIN_AIR)
 			{

@@ -172,7 +172,7 @@
 			<bAbandon>0</bAbandon>
 			<bAutoRaze>0</bAutoRaze>
 			<bDisableUpgradeTo>0</bDisableUpgradeTo>
-			<bExplodeInCombat>0</bExplodeInCombat>
+			<bExplodeInCombat>0</bExplodeInCombat> <!-- Only used to draw visual effect of explosion after combat resolution -->
 			<bFreeXP>0</bFreeXP>
 			<bImmortal>0</bImmortal>
 			<bNeverObsolete>0</bNeverObsolete>
