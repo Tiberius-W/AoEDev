@@ -54,7 +54,7 @@ def spellSteading(caster):
 	pCity = pPlayer.initCity(pPlot.getX(),pPlot.getY())
 	CvEventInterface.getEventManager().onCityBuilt([pCity])
 
-def ReqSteading(pCaster):
+def reqSteading(pCaster):
 	pPlot = pCaster.plot()
 	iImprovement = pPlot.getImprovementType()
 	if iImprovement != -1:

@@ -101,24 +101,24 @@ def exploreLairUmberguardFriend(argsList):
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_DWARVEN_DEFENDER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_UMBERGUARD'),True)
 	
-def ReqDiscoverOnceElves(argsList):
+def reqDiscoverOnceElves(argsList):
 	pUnit, pPlot = argsList
 	return not (pUnit.isHasPromotion(getInfoType("PROMOTION_SUN3")) or pUnit.isHasPromotion(getInfoType("PROMOTION_METAMAGIC3")))
 
-def ReqBreakWiddershinsCurse(argsList):
+def reqBreakWiddershinsCurse(argsList):
 	pUnit, pPlot = argsList
 	return (pUnit.isHasPromotion(getInfoType("PROMOTION_SUN3")) or pUnit.isHasPromotion(getInfoType("PROMOTION_METAMAGIC3")))
 
-def ReqNetherBlade(argsList):
+def reqNetherBlade(argsList):
 	game 		= CyGame()
 	pUnit, pPlot = argsList
 	return not (game.getNumCivActive(getInfoType("CIVILIZATION_SIDAR"))>0)
 	
-def ExploreLairNetherBlade(argsList):
+def exploreLairNetherBlade(argsList):
 	pUnit,pPlot = argsList
 	pUnit.setHasPromotion(getInfoType("PROMOTION_NETHER_BLADE"),True)
 	
-def ExploreLairOstauriiPatrol(argsList):
+def exploreLairOstauriiPatrol(argsList):
 	pUnit,pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	bPlayer=gc.getPlayer(gc.getORC_PLAYER())
@@ -128,7 +128,7 @@ def ExploreLairOstauriiPatrol(argsList):
 	newUnit1 = bPlayer.initUnit(getInfoType('UNIT_OSTAURII_RIDER'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit1.setHasPromotion(getInfoType("PROMOTION_ONCE_ELF"),True)
 
-def ExploreLairRogueNecromancerBad(argsList):
+def exploreLairRogueNecromancerBad(argsList):
 	pUnit,pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	bPlayer=gc.getPlayer(gc.getORC_PLAYER())
@@ -137,14 +137,14 @@ def ExploreLairRogueNecromancerBad(argsList):
 	newUnit.setHasPromotion(getInfoType("PROMOTION_ONCE_ELF"),True)
 
 
-def ExploreLairRogueNecromancerGood(argsList):
+def exploreLairRogueNecromancerGood(argsList):
 	pUnit,pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_NECROMANCER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(getInfoType("PROMOTION_ONCE_ELF"),True)
 	
 
-def ExploreLairBreakWiddershinsCurse(argsList):
+def exploreLairBreakWiddershinsCurse(argsList):
 	pUnit, pPlot = argsList
 	game 		= CyGame()
 	iPlayer = pUnit.getOwner()

@@ -914,7 +914,7 @@
 			<bGlobal>1</bGlobal>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CannotTriggerInfernal</PythonCanDo>
+			<PythonCanDo>cannotTriggerInfernal</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CIRCLE_OF_GAELAN_2</Type>
@@ -6359,7 +6359,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CannotTriggerDtesh</PythonCanDo>
+			<PythonCanDo>cannotTriggerDtesh</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_LUNATIC</Type>
@@ -7591,7 +7591,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CanDoArcosUnhappy</PythonCanDo>
+			<PythonCanDo>canDoArcosUnhappy</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_MOTHER_WANTS</Type>

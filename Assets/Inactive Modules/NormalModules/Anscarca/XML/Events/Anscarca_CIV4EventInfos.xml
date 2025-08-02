@@ -10,8 +10,8 @@
 			<Type>EVENT_SICKNESS_ANSCARCA</Type>
 			<Description>TXT_KEY_EVENT_SICKNESS_ANSCARCA</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSicknessAnscarca</PythonCallback>
-			<PythonHelp>HelpSicknessAnscarca</PythonHelp>
+			<PythonCallback>doSicknessAnscarca</PythonCallback>
+			<PythonHelp>helpSicknessAnscarca</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
@@ -20,8 +20,8 @@
 			<Type>EVENT_STRANGE_ADVISOR_ANSCARCA</Type>
 			<Description>TXT_KEY_EVENT_STRANGE_ADVISOR_ANSCARCA</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoStrangeAdvisorAnscarca</PythonCallback>
-			<PythonHelp>HelpStrangeAdvisorAnscarca</PythonHelp>
+			<PythonCallback>doStrangeAdvisorAnscarca</PythonCallback>
+			<PythonHelp>helpStrangeAdvisorAnscarca</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>

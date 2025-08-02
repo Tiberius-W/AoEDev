@@ -152,7 +152,7 @@
 			<bBad>0</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonPrereq>ReqDiscoverOnceElves</PythonPrereq>
+			<PythonPrereq>reqDiscoverOnceElves</PythonPrereq>
 		</GoodyInfo>
 		<GoodyInfo>	<!--Break Widdershins Curse -->
 			<Type>GOODY_BREAK_WIDDERSHINS_CURSE</Type>
@@ -180,8 +180,8 @@
 			<bBad>0</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonPrereq>ReqBreakWiddershinsCurse</PythonPrereq>
-			<PythonCallback>ExploreLairBreakWiddershinsCurse</PythonCallback>
+			<PythonPrereq>reqBreakWiddershinsCurse</PythonPrereq>
+			<PythonCallback>exploreLairBreakWiddershinsCurse</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo>	<!--Nether Blade -->
 			<Type>GOODY_NETHER_BLADE</Type>
@@ -209,8 +209,8 @@
 			<bBad>0</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonPrereq>ReqNetherBlade</PythonPrereq>
-			<PythonCallback>ExploreLairNetherBlade</PythonCallback>
+			<PythonPrereq>reqNetherBlade</PythonPrereq>
+			<PythonCallback>exploreLairNetherBlade</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo>	<!--Ostaurii Patrol -->
 			<Type>GOODY_OSTAURII_PATROL</Type>
@@ -238,7 +238,7 @@
 			<bBad>1</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonCallback>ExploreLairOstauriiPatrol</PythonCallback>
+			<PythonCallback>exploreLairOstauriiPatrol</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo>	<!--Rogue Necromancer Good -->
 			<Type>GOODY_ROGUE_NECROMANCER_GOOD</Type>
@@ -266,7 +266,7 @@
 			<bBad>0</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonCallback>ExploreLairRogueNecromancerGood</PythonCallback>
+			<PythonCallback>exploreLairRogueNecromancerGood</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo>	<!--Rogue Necromancer Bad -->
 			<Type>GOODY_ROGUE_NECROMANCER_BAD</Type>
@@ -294,7 +294,7 @@
 			<bBad>1</bBad>
 			<UnitClass>NONE</UnitClass>
 			<BarbarianClass>NONE</BarbarianClass>
-			<PythonCallback>ExploreLairRogueNecromancerBad</PythonCallback>
+			<PythonCallback>exploreLairRogueNecromancerBad</PythonCallback>
 		</GoodyInfo>
 	</GoodyInfos>
 </Civ4GoodyInfo>

@@ -65,7 +65,7 @@ def cannotTriggerAnscarca(argsList):
 	return pPlayer.getCivilizationType() != iAnscarca
 	
 	
-def HelpSicknessAnscarca(argsList):
+def helpSicknessAnscarca(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -76,7 +76,7 @@ def HelpSicknessAnscarca(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 	
-def DoSicknessAnscarca(argsList): 
+def doSicknessAnscarca(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -86,7 +86,7 @@ def DoSicknessAnscarca(argsList):
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
 		
-def HelpStrangeAdvisorAnscarca(argsList):
+def helpStrangeAdvisorAnscarca(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -97,7 +97,7 @@ def HelpStrangeAdvisorAnscarca(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 	
-def DoStrangeAdvisorAnscarca(argsList): 
+def doStrangeAdvisorAnscarca(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)

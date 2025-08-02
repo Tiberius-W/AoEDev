@@ -32,7 +32,7 @@ def helpStrangeAdept(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_STRANGE_ADEPT_HELP", ())
 	return szHelp
 
-def CanDoHellRefugees(argsList):
+def canDoHellRefugees(argsList):
 	for iPlayer2 in range(gc.getMAX_PLAYERS()):
 		pPlayer2 = gc.getPlayer(iPlayer2)
 		if (pPlayer2.isAlive()):
@@ -57,7 +57,7 @@ def helpHellRefugees3(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_HELL_REFUGEES_3_HELP", ())
 	return szHelp
 
-def CanDoHellRefugees4(argsList):
+def canDoHellRefugees4(argsList):
 	if CyGame().getGlobalCounter() >35 :
 		return True
 	return false
@@ -98,7 +98,7 @@ def helpHellRefugees5(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_HELL_REFUGEES_5_HELP", ())
 	return szHelp
 
-def CanDoScholarsExpandLibrary(argsList):
+def canDoScholarsExpandLibrary(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -112,7 +112,7 @@ def CanDoScholarsExpandLibrary(argsList):
 		return False
 	return True
 
-def CanDoScholarsExpandMageGuild(argsList):
+def canDoScholarsExpandMageGuild(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -126,7 +126,7 @@ def CanDoScholarsExpandMageGuild(argsList):
 		return False
 	return True
 
-def CanDoScholarsBuildLibrary(argsList):
+def canDoScholarsBuildLibrary(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -140,7 +140,7 @@ def CanDoScholarsBuildLibrary(argsList):
 		return True
 	return False
 
-def CanDoScholarsBuildMageGuild(argsList):
+def canDoScholarsBuildMageGuild(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -154,7 +154,7 @@ def CanDoScholarsBuildMageGuild(argsList):
 		return True
 	return False
 
-def CanDoScholars5(argsList):
+def canDoScholars5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -162,7 +162,7 @@ def CanDoScholars5(argsList):
 		return True
 	return False
 
-def DoScholars5(argsList):
+def doScholars5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -179,7 +179,7 @@ def helpScholars5(argsList):
 	return szHelp
 
 
-def CanDoTrappedFrostlings3(argsList):
+def canDoTrappedFrostlings3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -188,7 +188,7 @@ def CanDoTrappedFrostlings3(argsList):
 		return False
 	return True
 
-def DoTrappedFrostlings2(argsList):
+def doTrappedFrostlings2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -228,7 +228,7 @@ def helpTrappedFrostlings3(argsList):
 	return szHelp
 
 
-def DoTrappedFrostlings5(argsList):
+def doTrappedFrostlings5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -238,7 +238,7 @@ def DoTrappedFrostlings5(argsList):
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STRONG'), True)
 
 
-def CanDoTrappedFrostlings5(argsList):
+def canDoTrappedFrostlings5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -256,7 +256,7 @@ def helpTrappedFrostlings5(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_TRAPPED_FROSTLINGS_5_HELP", ())
 	return szHelp
 
-def CanTriggerTrappedFrostlings (argsList):
+def canTriggerTrappedFrostlings (argsList):
 	kTriggeredData              = argsList[0]
 	pPlayer                     = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity                       = pPlayer.getCity(kTriggeredData.iCityId)
@@ -285,7 +285,7 @@ def canTriggerPacifistDemonstration(argsList):
 		return False
 	return True
 
-def DoPacifistDemonstration2(argsList):
+def doPacifistDemonstration2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -301,7 +301,7 @@ def helpPacifistDemonstration2(argsList):
 	return szHelp
 
 
-def DoPacifistDemonstration5(argsList):
+def doPacifistDemonstration5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -322,13 +322,13 @@ def helpPacifistDemonstration5(argsList):
 	return szHelp
 
 
-def CanDoPacifistDemonstration4(argsList):
+def canDoPacifistDemonstration4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	return pPlayer.hasTrait(gc.getInfoTypeForString('TRAIT_FERAL'))
 
-def DoPacifistDemonstration4(argsList):
+def doPacifistDemonstration4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -344,7 +344,7 @@ def helpPacifistDemonstration4(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_PACIFIST_DEMONSTRATION_4_HELP", ())
 	return szHelp
 
-def DoPacifistDemonstration3(argsList):
+def doPacifistDemonstration3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -361,7 +361,7 @@ def helpPacifistDemonstration3(argsList):
 	return szHelp
 
 
-def CanTriggerDemonSign (argsList): # UNUSED ?
+def canTriggerDemonSign (argsList): # UNUSED ?
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -430,7 +430,7 @@ def helpDemonSign6(argsList):
 	return szHelp
 
 
-def CanDoAshCough2 (argsList):
+def canDoAshCough2 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -441,7 +441,7 @@ def CanDoAshCough2 (argsList):
 		return True
 	return false
 
-def CanDoAshCough4 (argsList):
+def canDoAshCough4 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -888,7 +888,7 @@ def helpThatKindOfDay5(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_THAT_KIND_OF_DAY_5_HELP", ())
 	return szHelp
 
-def CanTriggerThatKindOfDay(argsList):
+def canTriggerThatKindOfDay(argsList):
 	kTriggeredData = argsList[0]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 
@@ -929,7 +929,7 @@ def canDoThatKindOfDay5(argsList):
 	return False
 
 
-def CanDoPrincessRule4 (argsList):
+def canDoPrincessRule4 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -968,7 +968,7 @@ def doPrincessRule5(argsList):
 		newUnit = pDemonPlayer.initUnit(gc.getInfoTypeForString('UNIT_SHADOW'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 	
-def CanDoCorruptJudge4 (argsList):
+def canDoCorruptJudge4 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -990,7 +990,7 @@ def helpWayWardElves1(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_WAYWARD_ELVES_1_HELP", ())
 	return szHelp
 
-def CanDoWaywardElves2 (argsList):
+def canDoWaywardElves2 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1007,7 +1007,7 @@ def helpWayWardElves4(argsList):
 	return szHelp
 
 
-def CanDoWaywardElves4 (argsList):
+def canDoWaywardElves4 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1175,7 +1175,7 @@ def doTraveller5 (argsList):
 					pPlot= pCity.plot()
 	pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 
-def CanDoTraveller1(argsList):
+def canDoTraveller1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1199,7 +1199,7 @@ def CanDoTraveller1(argsList):
 					return True
 	return False
 
-def CanDoTraveller2(argsList):
+def canDoTraveller2(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1226,7 +1226,7 @@ def CanDoTraveller2(argsList):
 					
 	return False
 
-def CanDoTraveller3(argsList):
+def canDoTraveller3(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1253,7 +1253,7 @@ def CanDoTraveller3(argsList):
 	
 	return False
 
-def CanDoTraveller4(argsList):
+def canDoTraveller4(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1274,7 +1274,7 @@ def CanDoTraveller4(argsList):
 				return True
 	return False
 
-def CanTriggerUnfortunateAssassinCity(argsList):
+def canTriggerUnfortunateAssassinCity(argsList):
 	#eTrigger = argsList[0]
 	iPlayer = argsList[1]
 	iCity = argsList[2]
@@ -1615,7 +1615,7 @@ def doSignMulcarnNew (argsList):
 								pPlot.setNaturalClimate(iClimate)
 	rebuildGraphics()
 
-def CantriggerAssassinWar (argsList):
+def cantriggerAssassinWar (argsList):
 	eTrigger = argsList[0]
 	ePlayer = argsList[1]
 	iCity = argsList[2]
@@ -1686,7 +1686,7 @@ def doAssassinWar3(argsList):
 		newUnit2 = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_ASSASSIN'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit2.setHasPromotion(gc.getInfoTypeForString('PROMOTION_ASSASSIN_CHAPTER_1'), True)
 
-def CanDoAssassinWar4 (argsList):
+def canDoAssassinWar4 (argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	for i in xrange(pPlayer.getNumUnits(), -1, -1):
@@ -1695,7 +1695,7 @@ def CanDoAssassinWar4 (argsList):
 			return True
 	return false
 
-def CanTriggerTreasureHunter(argsList):
+def canTriggerTreasureHunter(argsList):
 	kTriggeredData = argsList[0]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	bBool=False
@@ -2365,7 +2365,7 @@ def canTriggerPlotEmptyImprovement(argsList):
 
 # r361 xml to python unit spawn - Start
 # EVENT_UNFORTUNATE_ASSASSIN_6
-def DoUnfortunateAssassin6(argsList): 
+def doUnfortunateAssassin6(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -2374,7 +2374,7 @@ def DoUnfortunateAssassin6(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpUnfortunateAssassin6(argsList):
+def helpUnfortunateAssassin6(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -2384,85 +2384,85 @@ def HelpUnfortunateAssassin6(argsList):
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_3
-def DoThreadNecromancy3(argsList):
+def doThreadNecromancy3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_DISEASED_CORPSE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy3(argsList):
+def helpThreadNecromancy3(argsList):
 	iUnit          = getInfoType('UNIT_DISEASED_CORPSE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_4
-def DoThreadNecromancy4(argsList):
+def doThreadNecromancy4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_DROWN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy4(argsList):
+def helpThreadNecromancy4(argsList):
 	iUnit          = getInfoType('UNIT_DROWN')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_6
-def DoThreadNecromancy6(argsList):
+def doThreadNecromancy6(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_AWAKENED'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy6(argsList):
+def helpThreadNecromancy6(argsList):
 	iUnit          = getInfoType('UNIT_AWAKENED')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_7
-def DoThreadNecromancy7(argsList):
+def doThreadNecromancy7(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_PYRE_ZOMBIE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy7(argsList):
+def helpThreadNecromancy7(argsList):
 	iUnit          = getInfoType('UNIT_PYRE_ZOMBIE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_8
-def DoThreadNecromancy8(argsList):
+def doThreadNecromancy8(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ICE_ELEMENTAL'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy8(argsList):
+def helpThreadNecromancy8(argsList):
 	iUnit          = getInfoType('UNIT_ICE_ELEMENTAL')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_9
-def DoThreadNecromancy9(argsList):
+def doThreadNecromancy9(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_MANES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy9(argsList):
+def helpThreadNecromancy9(argsList):
 	iUnit          = getInfoType('UNIT_MANES')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_THREAD_NECROMANCY_10
-def DoThreadNecromancy10(argsList):
+def doThreadNecromancy10(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -2470,41 +2470,41 @@ def DoThreadNecromancy10(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SLAVE_UNDEAD'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SLAVE_UNDEAD'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpThreadNecromancy10(argsList):
+def helpThreadNecromancy10(argsList):
 	iUnit          = getInfoType('UNIT_SLAVE_UNDEAD')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (2, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 
 # EVENT_CENTAUR_TRIBE_2
-def DoCentaurTribe2(argsList): 
+def doCentaurTribe2(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pPlot          = gc.getMap().plot(kTriggeredData.iPlotX,  kTriggeredData.iPlotY)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_CENTAUR'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpCentaurTribe2(argsList):
+def helpCentaurTribe2(argsList):
 	iUnit          = getInfoType('UNIT_CENTAUR')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_HAUNTED_CASTLE_1
-def DoHauntedCastle1(argsList):
+def doHauntedCastle1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pPlot          = gc.getMap().plot(kTriggeredData.iPlotX,  kTriggeredData.iPlotY)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SPECTRE'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpHauntedCastle1(argsList):
+def helpHauntedCastle1(argsList):
 	iUnit          = getInfoType('UNIT_SPECTRE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 # r361 xml to python unit spawn - End
 
 # r362 Event and Eventtrigger fixes - Start
-# def CanDoGela(argsList):
+# def canDoGela(argsList):
 	# kTriggeredData = argsList[0]
 	# pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	# pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
@@ -2517,7 +2517,7 @@ def HelpHauntedCastle1(argsList):
 
 # r363 Tile Landmark - Strat
 # EVENT_DEAD_ANGEL_2 and 3
-def DoDeadAngel2(argsList):
+def doDeadAngel2(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -2529,7 +2529,7 @@ def DoDeadAngel2(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_WAYWARD_ELVES_1
-#def DoWaywardElves1(argsList):																		# Disabled without a way to remove landmark from non-unique improvements
+#def doWaywardElves1(argsList):																		# Disabled without a way to remove landmark from non-unique improvements
 #	iEvent			= argsList[0]																	# Don't forget to add PythonCallback to EVENT_WAYWARD_ELVES_1 to enable
 #	kTriggeredData	= argsList[1]
 #	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)

@@ -23,7 +23,7 @@ def canTriggerLukosGames(argsList):
 	pCity = pPlayer.getCity(iCity)
 	return pCity.getCityClass()==getInfoType("CITYCLASS_LUKOS")
 	
-def DoLukosGames3(argsList):
+def doLukosGames3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -45,7 +45,7 @@ def canTriggerScorpionSabotage(argsList):
 	pCity = pPlayer.getCity(iCity)
 	return pCity.getCityClass()==getInfoType("CITYCLASS_SCORPION")
 	
-def DoScorpionSabotage3(argsList):
+def doScorpionSabotage3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -67,7 +67,7 @@ def canTriggerMurisYouth(argsList):
 	pCity = pPlayer.getCity(iCity)
 	return pCity.getCityClass()==getInfoType("CITYCLASS_MURIS")
 	
-def DoMurisYouth3(argsList):
+def doMurisYouth3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)

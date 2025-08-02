@@ -22,7 +22,7 @@ from BasicFunctions import *
 #				return objects[ index ]
 #	return choosing_function
 
-def CanTriggerBlackDuke(argsList):
+def canTriggerBlackDuke(argsList):
 	for iPlayer in xrange(gc.getMAX_PLAYERS()):
 		pLoopPlayer = gc.getPlayer(iPlayer)
 		if pLoopPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_BLACK_DUKE"))>0:

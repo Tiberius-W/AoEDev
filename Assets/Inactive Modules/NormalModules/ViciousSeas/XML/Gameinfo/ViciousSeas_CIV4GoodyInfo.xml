@@ -241,8 +241,8 @@
 			<Description>TXT_KEY_MESSAGE_EXPLORE_LAIR_GEAR_STASH</Description>
 			<Sound>AS2D_GOODY_SETTLER</Sound>
 			<bBad>0</bBad>
-			<PythonCallback>ExploreGearStash</PythonCallback>
-			<PythonPrereq>ReqGearStash</PythonPrereq>
+			<PythonCallback>exploreGearStash</PythonCallback>
+			<PythonPrereq>reqGearStash</PythonPrereq>
 		</GoodyInfo>
 	</GoodyInfos>
 </Civ4GoodyInfo>

@@ -32,7 +32,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CanTriggerBlackDuke</PythonCanDo>
+			<PythonCanDo>canTriggerBlackDuke</PythonCanDo>
 		</EventTriggerInfo>
 	</EventTriggerInfos>
 </Civ4EventTriggerInfos>

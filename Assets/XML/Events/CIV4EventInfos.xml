@@ -205,7 +205,7 @@
 			<iHappyTurns>20</iHappyTurns>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<PythonCallback>DoAffluentDuke2</PythonCallback>
+			<PythonCallback>doAffluentDuke2</PythonCallback>
 
 		</EventInfo>
 		<EventInfo>
@@ -234,9 +234,9 @@
 			<Type>EVENT_ALCHEMIST_3</Type>
 			<Description>TXT_KEY_EVENT_ALCHEMIST_3</Description>
 			<iGold>-400</iGold>
-			<PythonCallback>DoAlchemist3</PythonCallback>
-			<PythonHelp>HelpAlchemist3</PythonHelp>
-			<PythonCanDo>CanDoAlchemist3</PythonCanDo>
+			<PythonCallback>doAlchemist3</PythonCallback>
+			<PythonHelp>helpAlchemist3</PythonHelp>
+			<PythonCanDo>canDoAlchemist3</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -344,7 +344,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoAngelicProcession2</PythonCallback>
+			<PythonCallback>doAngelicProcession2</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGlobalCounter>-2</iGlobalCounter>
@@ -375,8 +375,8 @@
 			<Type>EVENT_ASHEN_VEIL_DEAL_SALLOS_1</Type>
 			<Description>TXT_KEY_EVENT_ASHEN_VEIL_DEAL_SALLOS_1</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSallos1</PythonCallback>
-			<PythonHelp>HelpSallos1</PythonHelp>
+			<PythonCallback>doSallos1</PythonCallback>
+			<PythonHelp>helpSallos1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -626,9 +626,9 @@
 			<Type>EVENT_CARNIVAL_STAR_3</Type>
 			<Description>TXT_KEY_EVENT_CARNIVAL_STAR_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoCarnivalStar3</PythonCallback>
-			<PythonHelp>HelpCarnivalStar3</PythonHelp>
-			<PythonCanDo>CanDoCarnivalStar3</PythonCanDo>
+			<PythonCallback>doCarnivalStar3</PythonCallback>
+			<PythonHelp>helpCarnivalStar3</PythonHelp>
+			<PythonCanDo>canDoCarnivalStar3</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -636,8 +636,8 @@
 			<Type>EVENT_CARNIVAL_STAR_4</Type>
 			<Description>TXT_KEY_EVENT_CARNIVAL_STAR_4</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoCarnivalStar4</PythonCallback>
-			<PythonHelp>HelpCarnivalStar4</PythonHelp>
+			<PythonCallback>doCarnivalStar4</PythonCallback>
+			<PythonHelp>helpCarnivalStar4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqStateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqStateReligion>
@@ -646,8 +646,8 @@
 			<Type>EVENT_CARNIVAL_STAR_5</Type>
 			<Description>TXT_KEY_EVENT_CARNIVAL_STAR_5</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoCarnivalStar5</PythonCallback>
-			<PythonHelp>HelpCarnivalStar5</PythonHelp>
+			<PythonCallback>doCarnivalStar5</PythonCallback>
+			<PythonHelp>helpCarnivalStar5</PythonHelp>
 			<PythonCanDo>canApplyChimar</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -746,8 +746,8 @@
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
 			</BuildingExtraCommerces>
-			<PythonCallback>DoCircleOfGalean32</PythonCallback>
-			<PythonHelp>HelpCircleOfGalean32</PythonHelp>
+			<PythonCallback>doCircleOfGalean32</PythonCallback>
+			<PythonHelp>helpCircleOfGalean32</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -768,16 +768,16 @@
 					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
-			<PythonCallback>DoCircleOfGalean32</PythonCallback>
-			<PythonHelp>HelpCircleOfGalean32</PythonHelp>
+			<PythonCallback>doCircleOfGalean32</PythonCallback>
+			<PythonHelp>helpCircleOfGalean32</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_CIRCLE_OF_GAELAN_2_2_1</Type>
 			<Description>TXT_KEY_EVENT_CIRCLE_OF_GAELAN_2_2_1</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoCircleOfGalean221</PythonCallback>
-			<PythonHelp>HelpCircleOfGalean221</PythonHelp>
+			<PythonCallback>doCircleOfGalean221</PythonCallback>
+			<PythonHelp>helpCircleOfGalean221</PythonHelp>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
 					<BuildingClass>BUILDINGCLASS_MAGE_GUILD</BuildingClass>
@@ -790,8 +790,8 @@
 		<EventInfo>
 			<Type>EVENT_CIRCLE_OF_GAELAN_2_2_2</Type>
 			<Description>TXT_KEY_EVENT_CIRCLE_OF_GAELAN_2_2_2</Description>
-			<PythonCallback>DoCircleOfGalean222</PythonCallback>
-			<PythonHelp>HelpCircleOfGalean222</PythonHelp>
+			<PythonCallback>doCircleOfGalean222</PythonCallback>
+			<PythonHelp>helpCircleOfGalean222</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -805,8 +805,8 @@
 			<Type>EVENT_CITY_FEUD_ARSON_2</Type>
 			<Description>TXT_KEY_EVENT_CITY_FEUD_ARSON_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoFeudArson2</PythonCallback>
-			<PythonHelp>HelpFeudArson2</PythonHelp>
+			<PythonCallback>doFeudArson2</PythonCallback>
+			<PythonHelp>helpFeudArson2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -842,8 +842,8 @@
 			<Type>EVENT_CITY_FEUD_MERC_2</Type>
 			<Description>TXT_KEY_EVENT_CITY_FEUD_MERC_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoFeudMerc2</PythonCallback>
-			<PythonHelp>HelpFeudMerc2</PythonHelp>
+			<PythonCallback>doFeudMerc2</PythonCallback>
+			<PythonHelp>helpFeudMerc2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -1377,8 +1377,8 @@
 		<EventInfo>
 			<Type>EVENT_DREAMS_OF_DEATH_3</Type>
 			<Description>TXT_KEY_EVENT_DREAMS_OF_DEATH_3</Description>
-			<PythonCallback>DoGetProphet</PythonCallback>
-			<PythonHelp>HelpGetProphet</PythonHelp>
+			<PythonCallback>doGetProphet</PythonCallback>
+			<PythonHelp>helpGetProphet</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqStateReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqStateReligion>
@@ -1513,9 +1513,9 @@
 			<Description>TXT_KEY_EVENT_ENCHANTER_3</Description>
 			<iGold>-50</iGold>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
-			<PythonCallback>DoEnchanter3</PythonCallback>
-			<PythonHelp>HelpEnchanter3</PythonHelp>
-			<PythonCanDo>CannotApplyChimar</PythonCanDo>
+			<PythonCallback>doEnchanter3</PythonCallback>
+			<PythonHelp>helpEnchanter3</PythonHelp>
+			<PythonCanDo>cannotApplyChimar</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -1524,8 +1524,8 @@
 			<Description>TXT_KEY_EVENT_ENCHANTER_4</Description>
 			<iGold>-50</iGold>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
-			<PythonCallback>DoEnchanter4</PythonCallback>
-			<PythonHelp>HelpEnchanter4</PythonHelp>
+			<PythonCallback>doEnchanter4</PythonCallback>
+			<PythonHelp>helpEnchanter4</PythonHelp>
 			<PythonCanDo>canApplyChimar</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -1742,7 +1742,7 @@
 					<iExtraYield>2</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoFortyThieves</PythonCallback>
+			<PythonCallback>doFortyThieves</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -1886,8 +1886,8 @@
 			<Type>EVENT_GRAVEYARD_3</Type>
 			<Description>TXT_KEY_EVENT_GRAVEYARD_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoGraveyard3</PythonCallback>
-			<PythonHelp>HelpGraveyard3</PythonHelp>
+			<PythonCallback>doGraveyard3</PythonCallback>
+			<PythonHelp>helpGraveyard3</PythonHelp>
 			<iHealth>-1</iHealth>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -1902,7 +1902,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoGreatBeast1</PythonCallback>
+			<PythonCallback>doGreatBeast1</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -1945,8 +1945,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_1_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-90</iGold>
-			<PythonCallback>DoGuildOfTheNine11</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine11</PythonHelp>
+			<PythonCallback>doGuildOfTheNine11</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine11</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -1954,8 +1954,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_1_2</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-120</iGold>
-			<PythonCallback>DoGuildOfTheNine12</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine12</PythonHelp>
+			<PythonCallback>doGuildOfTheNine12</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine12</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -1963,8 +1963,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_2_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-60</iGold>
-			<PythonCallback>DoGuildOfTheNine21</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine21</PythonHelp>
+			<PythonCallback>doGuildOfTheNine21</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine21</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -1972,8 +1972,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_2_2</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-120</iGold>
-			<PythonCallback>DoGuildOfTheNine22</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine22</PythonHelp>
+			<PythonCallback>doGuildOfTheNine22</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine22</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -1981,8 +1981,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_3_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-120</iGold>
-			<PythonCallback>DoGuildOfTheNine31</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine31</PythonHelp>
+			<PythonCallback>doGuildOfTheNine31</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine31</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -1990,8 +1990,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_3_2</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-180</iGold>
-			<PythonCallback>DoGuildOfTheNine32</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine32</PythonHelp>
+			<PythonCallback>doGuildOfTheNine32</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine32</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -2039,8 +2039,8 @@
 			<Description>TXT_KEY_EVENT_GUILD_OF_THE_NINE_MERC_4_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-200</iGold>
-			<PythonCallback>DoGuildOfTheNine31</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine31</PythonHelp>
+			<PythonCallback>doGuildOfTheNine31</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine31</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
@@ -2208,8 +2208,8 @@
 			<Type>EVENT_HOLY_CHILD_4</Type>
 			<Description>TXT_KEY_EVENT_HOLY_CHILD_4</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoGetProphet</PythonCallback>
-			<PythonHelp>HelpGetProphet</PythonHelp>
+			<PythonCallback>doGetProphet</PythonCallback>
+			<PythonHelp>helpGetProphet</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqStateReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqStateReligion>
@@ -2236,7 +2236,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoHorticulture1</PythonCallback>
+			<PythonCallback>doHorticulture1</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2257,7 +2257,7 @@
 					<iEventChance>67</iEventChance>
 				</EventChance>
 			</AdditionalEvents>
-			<PythonCallback>DoHorticulture1</PythonCallback>
+			<PythonCallback>doHorticulture1</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2312,8 +2312,8 @@
 			<Type>EVENT_HUNTER_5</Type>
 			<Description>TXT_KEY_EVENT_HUNTER_5</Description>
 			<iGold>-50</iGold>
-			<PythonCallback>DoHunter5</PythonCallback>
-			<PythonHelp>HelpHunter5</PythonHelp>
+			<PythonCallback>doHunter5</PythonCallback>
+			<PythonHelp>helpHunter5</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2392,9 +2392,9 @@
 			<Description>TXT_KEY_EVENT_IMMIGRANTS_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-100</iGold>
-			<PythonCallback>DoImmigrants1</PythonCallback>
-			<PythonHelp>HelpImmigrants1</PythonHelp>
-			<PythonCanDo>CanDoImmigrants1</PythonCanDo>
+			<PythonCallback>doImmigrants1</PythonCallback>
+			<PythonHelp>helpImmigrants1</PythonHelp>
+			<PythonCanDo>canDoImmigrants1</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2404,9 +2404,9 @@
 			<bPickCity>1</bPickCity>
 			<iGold>-80</iGold>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
-			<PythonCallback>DoImmigrants2</PythonCallback>
-			<PythonHelp>HelpImmigrants2</PythonHelp>
-			<PythonCanDo>CanDoImmigrants2</PythonCanDo>
+			<PythonCallback>doImmigrants2</PythonCallback>
+			<PythonHelp>helpImmigrants2</PythonHelp>
+			<PythonCanDo>canDoImmigrants2</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2416,9 +2416,9 @@
 			<bPickCity>1</bPickCity>
 			<iGold>-60</iGold>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
-			<PythonCallback>DoImmigrants3</PythonCallback>
-			<PythonHelp>HelpImmigrants3</PythonHelp>
-			<PythonCanDo>CanDoImmigrants3</PythonCanDo>
+			<PythonCallback>doImmigrants3</PythonCallback>
+			<PythonHelp>helpImmigrants3</PythonHelp>
+			<PythonCanDo>canDoImmigrants3</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2428,9 +2428,9 @@
 			<bPickCity>1</bPickCity>
 			<iGold>-60</iGold>
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
-			<PythonCallback>DoImmigrants4</PythonCallback>
-			<PythonHelp>HelpImmigrants4</PythonHelp>
-			<PythonCanDo>CanDoImmigrants4</PythonCanDo>
+			<PythonCallback>doImmigrants4</PythonCallback>
+			<PythonHelp>helpImmigrants4</PythonHelp>
+			<PythonCanDo>canDoImmigrants4</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2440,9 +2440,9 @@
 			<bPickCity>1</bPickCity>
 			<iGold>-40</iGold>
 			<PrereqTech>TECH_HUNTING</PrereqTech>
-			<PythonCallback>DoImmigrants5</PythonCallback>
-			<PythonHelp>HelpImmigrants5</PythonHelp>
-			<PythonCanDo>CanDoImmigrants5</PythonCanDo>
+			<PythonCallback>doImmigrants5</PythonCallback>
+			<PythonHelp>helpImmigrants5</PythonHelp>
+			<PythonCanDo>canDoImmigrants5</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2558,7 +2558,7 @@
 					<iExtraYield>2</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoJade</PythonCallback>
+			<PythonCallback>doJade</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2841,8 +2841,8 @@
 			<Type>EVENT_MARY_2</Type>
 			<Description>TXT_KEY_EVENT_MARY_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoMary2</PythonCallback>
-			<PythonHelp>HelpMary2</PythonHelp>
+			<PythonCallback>doMary2</PythonCallback>
+			<PythonHelp>helpMary2</PythonHelp>
 			<iHealth>-2</iHealth>
 			<PythonCanDo>cannotApplyDteshInfernalScions</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -2851,8 +2851,8 @@
 			<Type>EVENT_MARY_3</Type>
 			<Description>TXT_KEY_EVENT_MARY_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoMary3</PythonCallback>
-			<PythonHelp>HelpMary3</PythonHelp>
+			<PythonCallback>doMary3</PythonCallback>
+			<PythonHelp>helpMary3</PythonHelp>
 			<PythonCanDo>canApplyDteshInfernalScions</PythonCanDo>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
@@ -2897,16 +2897,16 @@
 			<Description>TXT_KEY_EVENT_MERCENARY_1</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-120</iGold>
-			<PythonCallback>DoGuildOfTheNine31</PythonCallback>
-			<PythonHelp>HelpGuildOfTheNine31</PythonHelp>
+			<PythonCallback>doGuildOfTheNine31</PythonCallback>
+			<PythonHelp>helpGuildOfTheNine31</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_MERCHANT_KEEP_1</Type>
 			<Description>TXT_KEY_EVENT_MERCHANT_KEEP_1</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoMerchantKeep1</PythonCallback>
-			<PythonHelp>HelpMerchantKeep1</PythonHelp>
+			<PythonCallback>doMerchantKeep1</PythonCallback>
+			<PythonHelp>helpMerchantKeep1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -2922,8 +2922,8 @@
 			<Type>EVENT_MERCHANT_KEEP_3</Type>
 			<Description>TXT_KEY_EVENT_MERCHANT_KEEP_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoMerchantKeep1</PythonCallback>
-			<PythonHelp>HelpMerchantKeep1</PythonHelp>
+			<PythonCallback>doMerchantKeep1</PythonCallback>
+			<PythonHelp>helpMerchantKeep1</PythonHelp>
 			<iAlignmentModifier>-10</iAlignmentModifier>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -3095,7 +3095,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoMysticTree3</PythonCallback>
+			<PythonCallback>doMysticTree3</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqStateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqStateReligion>
@@ -3201,8 +3201,8 @@
 			<Type>EVENT_ORPHANAGE_FIRE_3</Type>
 			<Description>TXT_KEY_EVENT_ORPHANAGE_FIRE_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoOrphanageFire3</PythonCallback>
-			<PythonHelp>HelpOrphanageFire3</PythonHelp>
+			<PythonCallback>doOrphanageFire3</PythonCallback>
+			<PythonHelp>helpOrphanageFire3</PythonHelp>
 			<iPopulationChange>-1</iPopulationChange>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -3231,8 +3231,8 @@
 					<iFlavor>1</iFlavor>
 				</TechFlavor>
 			</TechFlavors>
-			<PythonCallback>DoOvercouncilGift2</PythonCallback>
-			<PythonHelp>HelpOvercouncilGift2</PythonHelp>
+			<PythonCallback>doOvercouncilGift2</PythonCallback>
+			<PythonHelp>helpOvercouncilGift2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3257,7 +3257,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoParrots</PythonCallback>
+			<PythonCallback>doParrots</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3331,7 +3331,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoPrairieDogs</PythonCallback>
+			<PythonCallback>doPrairieDogs</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3515,8 +3515,8 @@
 			<Type>EVENT_SAGE_KEEP_1</Type>
 			<Description>TXT_KEY_EVENT_SAGE_KEEP_1</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSageKeep1</PythonCallback>
-			<PythonHelp>HelpSageKeep1</PythonHelp>
+			<PythonCallback>doSageKeep1</PythonCallback>
+			<PythonHelp>helpSageKeep1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3540,8 +3540,8 @@
 					<iExtraCommerce>3</iExtraCommerce>
 				</BuildingExtraCommerce>
 			</BuildingExtraCommerces>
-			<PythonCallback>DoSageKeep1</PythonCallback>
-			<PythonHelp>HelpSageKeep1</PythonHelp>
+			<PythonCallback>doSageKeep1</PythonCallback>
+			<PythonHelp>helpSageKeep1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3550,9 +3550,9 @@
 			<Description>TXT_KEY_EVENT_SAGE_KEEP_4</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-25</iGold>
-			<PythonCallback>DoSageKeep4</PythonCallback>
-			<PythonHelp>HelpSageKeep4</PythonHelp>
-			<PythonCanDo>CanDoSageKeep4</PythonCanDo>
+			<PythonCallback>doSageKeep4</PythonCallback>
+			<PythonHelp>helpSageKeep4</PythonHelp>
+			<PythonCanDo>canDoSageKeep4</PythonCanDo>
 			<FreeSpecialistCounts>
 				<FreeSpecialistCount>
 					<SpecialistType>SPECIALIST_GREAT_SCIENTIST</SpecialistType>
@@ -3620,7 +3620,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoSeaTurtles</PythonCallback>
+			<PythonCallback>doSeaTurtles</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3707,8 +3707,8 @@
 			<Type>EVENT_SICKNESS_DTESH_SLAVE</Type>
 			<Description>TXT_KEY_EVENT_SICKNESS_DTESH_SLAVE</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSicknessDteshSlave</PythonCallback>
-			<PythonHelp>HelpSicknessDteshSlave</PythonHelp>
+			<PythonCallback>doSicknessDteshSlave</PythonCallback>
+			<PythonHelp>helpSicknessDteshSlave</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
@@ -3728,8 +3728,8 @@
 			<Type>EVENT_SICKNESS_EVIL_RECRUIT</Type>
 			<Description>TXT_KEY_EVENT_SICKNESS_EVIL_RECRUIT</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSicknessEvilRecruit</PythonCallback>
-			<PythonHelp>HelpSicknessEvilRecruit</PythonHelp>
+			<PythonCallback>doSicknessEvilRecruit</PythonCallback>
+			<PythonHelp>helpSicknessEvilRecruit</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqAlignment>ALIGNMENT_EVIL</PrereqAlignment>
@@ -3774,8 +3774,8 @@
 			<Type>EVENT_SIGN_AMATHAON_1</Type>
 			<Description>TXT_KEY_EVENT_SIGN_AMATHAON_1</Description>
 			<iGold>-50</iGold>
-			<PythonCallback>DoGetProphet</PythonCallback>
-			<PythonHelp>HelpGetProphet</PythonHelp>
+			<PythonCallback>doGetProphet</PythonCallback>
+			<PythonHelp>helpGetProphet</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3790,8 +3790,8 @@
 			<Type>EVENT_SIGN_CERIDWEN_1</Type>
 			<Description>TXT_KEY_EVENT_SIGN_CERIDWEN_1</Description>
 			<iGold>-50</iGold>
-			<PythonCallback>DoGetProphet</PythonCallback>
-			<PythonHelp>HelpGetProphet</PythonHelp>
+			<PythonCallback>doGetProphet</PythonCallback>
+			<PythonHelp>helpGetProphet</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3890,8 +3890,8 @@
 			<Type>EVENT_SLAVE_RING_END_2</Type>
 			<Description>TXT_KEY_EVENT_SLAVE_RING_END_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSlaveRingEnd2</PythonCallback>
-			<PythonHelp>HelpSlaveRingEnd2</PythonHelp>
+			<PythonCallback>doSlaveRingEnd2</PythonCallback>
+			<PythonHelp>helpSlaveRingEnd2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4065,7 +4065,7 @@
 					<iExtraYield>2</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoTin</PythonCallback>
+			<PythonCallback>doTin</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4321,7 +4321,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoTruffles</PythonCallback>
+			<PythonCallback>doTruffles</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4348,8 +4348,8 @@
 					<iFlavor>1</iFlavor>
 				</TechFlavor>
 			</TechFlavors>
-			<PythonCallback>DoUndercouncilGift2</PythonCallback>
-			<PythonHelp>HelpUndercouncilGift2</PythonHelp>
+			<PythonCallback>doUndercouncilGift2</PythonCallback>
+			<PythonHelp>helpUndercouncilGift2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4473,7 +4473,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoWatersOfLife</PythonCallback>
+			<PythonCallback>doWatersOfLife</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4542,8 +4542,8 @@
 			<Type>EVENT_WEREWOLF_4</Type>
 			<Description>TXT_KEY_EVENT_WEREWOLF_4</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoWerewolf4</PythonCallback>
-			<PythonHelp>HelpWerewolf4</PythonHelp>
+			<PythonCallback>doWerewolf4</PythonCallback>
+			<PythonHelp>helpWerewolf4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PythonCanDo>canApplyLycanthropic</PythonCanDo>
@@ -4573,8 +4573,8 @@
 			<Type>EVENT_LUNATIC_2</Type>
 			<Description>TXT_KEY_EVENT_LUNATIC_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoLunatic2</PythonCallback>
-			<PythonHelp>HelpLunatic2</PythonHelp>
+			<PythonCallback>doLunatic2</PythonCallback>
+			<PythonHelp>helpLunatic2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -4583,8 +4583,8 @@
 			<Type>EVENT_LUNATIC_3</Type>
 			<Description>TXT_KEY_EVENT_LUNATIC_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoLunatic3</PythonCallback>
-			<PythonHelp>HelpLunatic3</PythonHelp>
+			<PythonCallback>doLunatic3</PythonCallback>
+			<PythonHelp>helpLunatic3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGlobalCounter>5</iGlobalCounter>
@@ -4594,8 +4594,8 @@
 			<Type>EVENT_LUNATIC_4</Type>
 			<Description>TXT_KEY_EVENT_LUNATIC_4</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoLunatic4</PythonCallback>
-			<PythonHelp>HelpLunatic4</PythonHelp>
+			<PythonCallback>doLunatic4</PythonCallback>
+			<PythonHelp>helpLunatic4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGlobalCounter>5</iGlobalCounter>
@@ -4635,8 +4635,8 @@
 			<Type>EVENT_WILDERNESS_MAN_2</Type>
 			<Description>TXT_KEY_EVENT_WILDERNESS_MAN_2</Description>
 			<iGold>-25</iGold>
-			<PythonCallback>DoWildernessMan2</PythonCallback>
-			<PythonHelp>HelpWildernessMan2</PythonHelp>
+			<PythonCallback>doWildernessMan2</PythonCallback>
+			<PythonHelp>helpWildernessMan2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4664,7 +4664,7 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoFarmer1</PythonCallback>
+			<PythonCallback>doFarmer1</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -4677,15 +4677,15 @@
 					<iExtraYield>1</iExtraYield>
 				</PlotExtraYield>
 			</PlotExtraYields>
-			<PythonCallback>DoFarmer2</PythonCallback>
+			<PythonCallback>doFarmer2</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_PIG_GIANT_1</Type>
 			<Description>TXT_KEY_EVENT_PIG_GIANT_1</Description>
-			<PythonCallback>DoPigGiant1</PythonCallback>
-			<PythonHelp>HelpPigGiant1</PythonHelp>
+			<PythonCallback>doPigGiant1</PythonCallback>
+			<PythonHelp>helpPigGiant1</PythonHelp>
 			<BonusType>BONUS_PIG</BonusType>
 			<iBonusChange>-1</iBonusChange>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -4760,8 +4760,8 @@
 			<Type>EVENT_PSYCHOPATH_CAUGHT_3</Type>
 			<Description>TXT_KEY_EVENT_PSYCHOPATH_CAUGHT_3</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoPsychopathCaught3</PythonCallback>
-			<PythonHelp>HelpPsychopathCaught3</PythonHelp>
+			<PythonCallback>doPsychopathCaught3</PythonCallback>
+			<PythonHelp>helpPsychopathCaught3</PythonHelp>
 			<iHurryAnger>4</iHurryAnger>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -4770,8 +4770,8 @@
 			<Type>EVENT_PSYCHOPATH_CAUGHT_4</Type>
 			<Description>TXT_KEY_EVENT_PSYCHOPATH_CAUGHT_4</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoPsychopathCaught4</PythonCallback>
-			<PythonHelp>HelpPsychopathCaught4</PythonHelp>
+			<PythonCallback>doPsychopathCaught4</PythonCallback>
+			<PythonHelp>helpPsychopathCaught4</PythonHelp>
 			<BuildingClass>BUILDINGCLASS_ASYLUM</BuildingClass>
 			<iHurryAnger>4</iHurryAnger>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -5262,8 +5262,8 @@
 			<Type>EVENT_SIGN_DAGDA_1</Type> <!-- sop inf start -->
 			<Description>TXT_KEY_EVENT_DAGDA_1</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoSignDagda1</PythonCallback>
-			<PythonHelp>HelpSignDagda1</PythonHelp>
+			<PythonCallback>doSignDagda1</PythonCallback>
+			<PythonHelp>helpSignDagda1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<PrereqCivilization>CIVILIZATION_SCIONS</PrereqCivilization>
@@ -5331,8 +5331,8 @@
 		<EventInfo>
 			<Type>EVENT_REMNANTS_OF_PATRIA_SCIONS</Type>
 			<Description>TXT_KEY_EVENT_REMNANTS_OF_PATRIA_SCIONS</Description>
-			<PythonCallback>DoRemainsScion</PythonCallback>
-			<PythonHelp>HelpRemainsScion</PythonHelp>
+			<PythonCallback>doRemainsScion</PythonCallback>
+			<PythonHelp>helpRemainsScion</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -5348,8 +5348,8 @@
 			<Type>EVENT_GOOD_SCIONS</Type>
 			<Description>TXT_KEY_EVENT_GOOD_SCIONS</Description>
 			<bGoldenAge>1</bGoldenAge>
-			<PythonCallback>DoGoodScions</PythonCallback>
-			<PythonHelp>HelpGoodScions</PythonHelp>
+			<PythonCallback>doGoodScions</PythonCallback>
+			<PythonHelp>helpGoodScions</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -5599,7 +5599,7 @@
 			<QuestFailText>TXT_KEY_EVENT_FAIL_MOTHER_WANTS</QuestFailText>
 			<bQuest>1</bQuest>
 			<PythonExpireCheck>expireMotherWants1</PythonExpireCheck>
-			<PythonCallback>DoMotherWants1</PythonCallback>
+			<PythonCallback>doMotherWants1</PythonCallback>
 			<PythonHelp>getHelpMotherWants1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -5880,8 +5880,8 @@
 			<Type>EVENT_CLAIRONE_2</Type>
 			<Description>TXT_KEY_EVENT_CLAIRONE_2</Description>
 			<bPickCity>1</bPickCity>
-			<PythonCallback>DoGetArtist</PythonCallback>
-			<PythonHelp>HelpGetArtist</PythonHelp>
+			<PythonCallback>doGetArtist</PythonCallback>
+			<PythonHelp>helpGetArtist</PythonHelp>
 			<iHurryAnger>5</iHurryAnger>
 			<iMaxNumReligions>-1</iMaxNumReligions>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -5993,8 +5993,8 @@
 			<Description>TXT_KEY_EVENT_BAREKE_2</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-75</iGold>
-			<PythonCallback>DoGetEngineer</PythonCallback>
-			<PythonHelp>HelpGetEngineer</PythonHelp>
+			<PythonCallback>doGetEngineer</PythonCallback>
+			<PythonHelp>helpGetEngineer</PythonHelp>
 			<iMaxNumReligions>-1</iMaxNumReligions>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -6004,8 +6004,8 @@
 			<Description>TXT_KEY_EVENT_BAREKE_3</Description>
 			<bPickCity>1</bPickCity>
 			<iGold>-50</iGold>
-			<PythonCallback>DoBareke3</PythonCallback>
-			<PythonHelp>HelpBareke3</PythonHelp>
+			<PythonCallback>doBareke3</PythonCallback>
+			<PythonHelp>helpBareke3</PythonHelp>
 			<iMaxNumReligions>-1</iMaxNumReligions>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -7177,7 +7177,7 @@
 					<UnitPromotion>PROMOTION_SHOCK</UnitPromotion> 
 				</UnitCombatPromotion> 
 			</UnitCombatPromotions>
-			<PythonCallback>DoDealwithTribeEvent1</PythonCallback>
+			<PythonCallback>doDealwithTribeEvent1</PythonCallback>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo> <!-- Deal with Centaurs Tribe -->
@@ -7190,9 +7190,9 @@
 					<UnitPromotion>PROMOTION_SHOCK</UnitPromotion> 
 				</UnitCombatPromotion> 
 			</UnitCombatPromotions>
-			<PythonCallback>DoDealwithTribeEvent2</PythonCallback>
-			<PythonHelp>HelpDealwithTribeEvent2</PythonHelp>
-			<PythonCanDo>CanDealwithTribeEvent2</PythonCanDo>
+			<PythonCallback>doDealwithTribeEvent2</PythonCallback>
+			<PythonHelp>helpDealwithTribeEvent2</PythonHelp>
+			<PythonCanDo>canDealwithTribeEvent2</PythonCanDo>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo> <!-- Deal with Centaurs Tribe -->
@@ -7205,9 +7205,9 @@
 					<UnitPromotion>PROMOTION_SHOCK</UnitPromotion> 
 				</UnitCombatPromotion> 
 			</UnitCombatPromotions>
-			<PythonCallback>DoDealwithTribeEvent3</PythonCallback>
-			<PythonHelp>HelpDealwithTribeEvent3</PythonHelp>
-			<PythonCanDo>CanDealwithTribeEvent3</PythonCanDo>
+			<PythonCallback>doDealwithTribeEvent3</PythonCallback>
+			<PythonHelp>helpDealwithTribeEvent3</PythonHelp>
+			<PythonCanDo>canDealwithTribeEvent3</PythonCanDo>
 			<PrereqCivilization>CIVILIZATION_KURIOTATES</PrereqCivilization>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -7223,7 +7223,7 @@
 			<iGold>250</iGold>
 			<iRandomGold>100</iRandomGold>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<PythonCallback>DoCityOfGold1</PythonCallback>
+			<PythonCallback>doCityOfGold1</PythonCallback>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo> <!-- City of Gold -->
@@ -7231,8 +7231,8 @@
 			<Description>TXT_KEY_EVENT_CITY_OF_GOLD_2</Description>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<UnitPromotion>PROMOTION_PILLAGED_GOLD</UnitPromotion>
-			<PythonCallback>DoCityOfGold2</PythonCallback>
-			<PythonHelp>HelpCityOfGold2</PythonHelp>
+			<PythonCallback>doCityOfGold2</PythonCallback>
+			<PythonHelp>helpCityOfGold2</PythonHelp>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo> <!-- City of Gold -->
@@ -7242,7 +7242,7 @@
 			<iGold>250</iGold>
 			<iRandomGold>100</iRandomGold>
 			<bGoldenAge>1</bGoldenAge>
-			<PythonCanDo>CanCityOfGold3</PythonCanDo>
+			<PythonCanDo>canCityOfGold3</PythonCanDo>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
 		<EventInfo> <!-- City of Gold -->

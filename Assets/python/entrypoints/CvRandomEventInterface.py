@@ -5275,7 +5275,7 @@ def canTriggerMotherWants(argsList):
 
 	return True
 
-def DoMotherWants1(argsList): #r362 Setting event reoccurring
+def doMotherWants1(argsList): #r362 Setting event reoccurring
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_MOTHER_WANTS'),True)
@@ -6734,20 +6734,20 @@ def cannotApplyStateReligionOrder(argsList):
 
 # r361 xml to python unit spawn - Start
 # EVENT_ASHEN_VEIL_DEAL_SALLOS_1
-def DoSallos1(argsList): # Example of Unit with non-specific UnitType
+def doSallos1(argsList): # Example of Unit with non-specific UnitType
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SUCCUBUS'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpSallos1(argsList):
+def helpSallos1(argsList):
 	iUnit          = getInfoType('UNIT_SUCCUBUS')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_CARNIVAL_STAR_3
-def DoCarnivalStar3(argsList): # Example of Unit with city-specific UnitType
+def doCarnivalStar3(argsList): # Example of Unit with city-specific UnitType
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6757,7 +6757,7 @@ def DoCarnivalStar3(argsList): # Example of Unit with city-specific UnitType
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'), True)
 
-def HelpCarnivalStar3(argsList): # Example of help pop-up that can return specific Unit within Unitclass
+def helpCarnivalStar3(argsList): # Example of help pop-up that can return specific Unit within Unitclass
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6769,7 +6769,7 @@ def HelpCarnivalStar3(argsList): # Example of help pop-up that can return specif
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
-def CanDoCarnivalStar3(argsList): # Example of preventing Event for Civ without specific Unitclass
+def canDoCarnivalStar3(argsList): # Example of preventing Event for Civ without specific Unitclass
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6781,7 +6781,7 @@ def CanDoCarnivalStar3(argsList): # Example of preventing Event for Civ without 
 	return True
 
 # EVENT_CARNIVAL_STAR_4
-def DoCarnivalStar4 (argsList):
+def doCarnivalStar4 (argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6789,14 +6789,14 @@ def DoCarnivalStar4 (argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'), True)
 
-def HelpCarnivalStar4(argsList):
+def helpCarnivalStar4(argsList):
 	iUnit          = getInfoType('UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES')
 	iPromotion     = getInfoType('PROMOTION_MOBILITY1')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_CARNIVAL_STAR_5
-def DoCarnivalStar5 (argsList):
+def doCarnivalStar5 (argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6804,14 +6804,14 @@ def DoCarnivalStar5 (argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HUNTER_MURIS_CLAN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'), True)
 
-def HelpCarnivalStar5(argsList):
+def helpCarnivalStar5(argsList):
 	iUnit          = getInfoType('UNIT_HUNTER_MURIS_CLAN')
 	iPromotion     = getInfoType('PROMOTION_MOBILITY1')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_CIRCLE_OF_GAELAN_3_2 and EVENT_CIRCLE_OF_GAELAN_3_3
-def DoCircleOfGalean32(argsList):
+def doCircleOfGalean32(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6819,14 +6819,14 @@ def DoCircleOfGalean32(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_GAELAN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_UNDEAD'), True)
 
-def HelpCircleOfGalean32(argsList):
+def helpCircleOfGalean32(argsList):
 	iUnit          = getInfoType('UNIT_GAELAN')
 	iPromotion     = getInfoType('PROMOTION_UNDEAD')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_CIRCLE_OF_GAELAN_2_2_1
-def DoCircleOfGalean221(argsList):
+def doCircleOfGalean221(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6839,7 +6839,7 @@ def DoCircleOfGalean221(argsList):
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_RANGER'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MAGIC_RESISTANCE'), True)
 
-def HelpCircleOfGalean221(argsList):
+def helpCircleOfGalean221(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6855,20 +6855,20 @@ def HelpCircleOfGalean221(argsList):
 		return szHelp2
 
 # EVENT_CIRCLE_OF_GAELAN_2_2_2
-def DoCircleOfGalean222(argsList):
+def doCircleOfGalean222(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_GAELAN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpCircleOfGalean222(argsList):
+def helpCircleOfGalean222(argsList):
 	iUnit          = getInfoType('UNIT_GAELAN')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_CITY_FEUD_ARSON_2
-def DoFeudArson2(argsList): # Example of Unit that will spawn as city-specific UnitType unless UnitType NONE, than it will spawn default UnitType
+def doFeudArson2(argsList): # Example of Unit that will spawn as city-specific UnitType unless UnitType NONE, than it will spawn default UnitType
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6881,7 +6881,7 @@ def DoFeudArson2(argsList): # Example of Unit that will spawn as city-specific U
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ADEPT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_FIRE1'), True)
 
-def HelpFeudArson2(argsList): # Example of help pop-up for that case
+def helpFeudArson2(argsList): # Example of help pop-up for that case
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6897,7 +6897,7 @@ def HelpFeudArson2(argsList): # Example of help pop-up for that case
 		return szHelp2
 
 # EVENT_CITY_FEUD_MERC_2 
-def DoFeudMerc2(argsList):
+def doFeudMerc2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6910,7 +6910,7 @@ def DoFeudMerc2(argsList):
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_CHAMPION'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_RAIDER'), True)
 
-def HelpFeudMerc2(argsList):
+def helpFeudMerc2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6926,7 +6926,7 @@ def HelpFeudMerc2(argsList):
 		return szHelp2
 
 # Get Prophet EVENT_DREAMS_OF_DEATH_3, EVENT_HOLY_CHILD_4, EVENT_SIGN_AMATHAON_1, EVENT_SIGN_CERIDWEN_1, EVENT_ANCIENT_TOWER_LORE_2
-def DoGetProphet(argsList): # This function used by different events and if eventtrigger lacks bPickCity 1 it uses capital as spawning point
+def doGetProphet(argsList): # This function used by different events and if eventtrigger lacks bPickCity 1 it uses capital as spawning point
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6937,13 +6937,13 @@ def DoGetProphet(argsList): # This function used by different events and if even
 	else:
 		newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_PROPHET'), pCity2.getX(), pCity2.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpGetProphet(argsList):
+def helpGetProphet(argsList):
 	iUnit          = getInfoType('UNIT_PROPHET')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # Get Artist EVENT_CLAIRONE_2
-def DoGetArtist(argsList):
+def doGetArtist(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6954,13 +6954,13 @@ def DoGetArtist(argsList):
 	else:
 		newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ARTIST'), pCity2.getX(), pCity2.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpGetArtist(argsList):
+def helpGetArtist(argsList):
 	iUnit          = getInfoType('UNIT_ARTIST')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # Get Engineer EVENT_BAREKE_2
-def DoGetEngineer(argsList):
+def doGetEngineer(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6971,13 +6971,13 @@ def DoGetEngineer(argsList):
 	else:
 		newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ENGINEER'), pCity2.getX(), pCity2.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpGetEngineer(argsList):
+def helpGetEngineer(argsList):
 	iUnit          = getInfoType('UNIT_ENGINEER')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_ENCHANTER_3
-def DoEnchanter3(argsList):
+def doEnchanter3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -6990,7 +6990,7 @@ def DoEnchanter3(argsList):
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ADEPT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_ENCHANTMENT1'), True)
 
-def HelpEnchanter3(argsList):
+def helpEnchanter3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7005,7 +7005,7 @@ def HelpEnchanter3(argsList):
 		szHelp2    = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit2).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 		return szHelp2
 
-def DoEnchanter4(argsList):
+def doEnchanter4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7018,7 +7018,7 @@ def DoEnchanter4(argsList):
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ADEPT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_ENCHANTMENT1'), True)
 
-def HelpEnchanter4(argsList):
+def helpEnchanter4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7092,20 +7092,20 @@ def doGoblinWaste5(argsList):
 	newUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOBLIN_MURIS_CLAN"),pCityPlot.getX(),pCityPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # EVENT_GRAVEYARD_3
-def DoGraveyard3(argsList):
+def doGraveyard3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_PYRE_ZOMBIE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpGraveyard3(argsList):
+def helpGraveyard3(argsList):
 	iUnit          = getInfoType('UNIT_PYRE_ZOMBIE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_1_1
-def DoGuildOfTheNine11(argsList): # Some fun with random Promotions
+def doGuildOfTheNine11(argsList): # Some fun with random Promotions
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7117,13 +7117,13 @@ def DoGuildOfTheNine11(argsList): # Some fun with random Promotions
 	if	newUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CORPUS1')): # If random picked promo is Corpus - add Undead
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_UNDEAD'), True)
 
-def HelpGuildOfTheNine11(argsList):
+def helpGuildOfTheNine11(argsList):
 	iUnit          = getInfoType('UNIT_ADEPT')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), 'random tier 1 magic sphere'));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_1_2
-def DoGuildOfTheNine12(argsList):
+def doGuildOfTheNine12(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7137,14 +7137,14 @@ def DoGuildOfTheNine12(argsList):
 	newUnit2.setHasPromotion(gc.getInfoTypeForString( getMercArcherRace() ), True )
 	newUnit2.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CITY_GARRISON1'), True)
 	
-def HelpGuildOfTheNine12(argsList):
+def helpGuildOfTheNine12(argsList):
 	iUnit          = getInfoType('UNIT_ARCHER')
 	iPromotion     = getInfoType('PROMOTION_CITY_GARRISON1')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (2, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_2_1
-def DoGuildOfTheNine21(argsList):
+def doGuildOfTheNine21(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7152,14 +7152,14 @@ def DoGuildOfTheNine21(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HUNTER'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SUBDUE_ANIMAL'), True)
 
-def HelpGuildOfTheNine21(argsList):
+def helpGuildOfTheNine21(argsList):
 	iUnit          = getInfoType('UNIT_HUNTER')
 	iPromotion     = getInfoType('PROMOTION_SUBDUE_ANIMAL')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_2_2
-def DoGuildOfTheNine22(argsList):
+def doGuildOfTheNine22(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7169,13 +7169,13 @@ def DoGuildOfTheNine22(argsList):
 	getMercHArcherRace = wchoice( PotentialPromo, 'Roll Merc Horse Archer' )
 	newUnit.setHasPromotion(gc.getInfoTypeForString( getMercHArcherRace() ), True )
 
-def HelpGuildOfTheNine22(argsList):
+def helpGuildOfTheNine22(argsList):
 	iUnit          = getInfoType('UNIT_HORSE_ARCHER')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_3_1 and EVENT_GUILD_OF_THE_NINE_MERC_9_1 and EVENT_MERCENARY_1
-def DoGuildOfTheNine31(argsList):
+def doGuildOfTheNine31(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7185,13 +7185,13 @@ def DoGuildOfTheNine31(argsList):
 	getMercChampionRace = wchoice( PotentialPromo, 'Roll Merc Champion' )
 	newUnit.setHasPromotion(gc.getInfoTypeForString( getMercChampionRace() ), True )
 
-def HelpGuildOfTheNine31(argsList):
+def helpGuildOfTheNine31(argsList):
 	iUnit          = getInfoType('UNIT_CHAMPION')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_GUILD_OF_THE_NINE_MERC_3_2
-def DoGuildOfTheNine32(argsList):
+def doGuildOfTheNine32(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7202,14 +7202,14 @@ def DoGuildOfTheNine32(argsList):
 	newUnit.setHasPromotion(gc.getInfoTypeForString( getMercAssassinRace() ), True )
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_HIDDEN_NATIONALITY'), True)
 
-def HelpGuildOfTheNine32(argsList):
+def helpGuildOfTheNine32(argsList):
 	iUnit          = getInfoType('UNIT_ASSASSIN')
 	iPromotion     = getInfoType('PROMOTION_HIDDEN_NATIONALITY')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_HUNTER_5
-def DoHunter5(argsList):
+def doHunter5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7217,14 +7217,14 @@ def DoHunter5(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HUNTER'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SUBDUE_ANIMAL'), True)
 
-def HelpHunter5(argsList):
+def helpHunter5(argsList):
 	iUnit          = getInfoType('UNIT_HUNTER')
 	iPromotion     = getInfoType('PROMOTION_SUBDUE_ANIMAL')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_IMMIGRANTS_1
-def DoImmigrants1(argsList): 
+def doImmigrants1(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7233,7 +7233,7 @@ def DoImmigrants1(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpImmigrants1(argsList):
+def helpImmigrants1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7244,7 +7244,7 @@ def HelpImmigrants1(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoImmigrants1(argsList):
+def canDoImmigrants1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7256,7 +7256,7 @@ def CanDoImmigrants1(argsList):
 	return True
 
 # EVENT_IMMIGRANTS_2
-def DoImmigrants2(argsList): 
+def doImmigrants2(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7265,7 +7265,7 @@ def DoImmigrants2(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpImmigrants2(argsList):
+def helpImmigrants2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7276,7 +7276,7 @@ def HelpImmigrants2(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoImmigrants2(argsList):
+def canDoImmigrants2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7288,7 +7288,7 @@ def CanDoImmigrants2(argsList):
 	return True
 
 # EVENT_IMMIGRANTS_3
-def DoImmigrants3(argsList): 
+def doImmigrants3(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7297,7 +7297,7 @@ def DoImmigrants3(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpImmigrants3(argsList):
+def helpImmigrants3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7308,7 +7308,7 @@ def HelpImmigrants3(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoImmigrants3(argsList):
+def canDoImmigrants3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7320,7 +7320,7 @@ def CanDoImmigrants3(argsList):
 	return True
 
 # EVENT_IMMIGRANTS_4
-def DoImmigrants4(argsList): 
+def doImmigrants4(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7329,7 +7329,7 @@ def DoImmigrants4(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpImmigrants4(argsList):
+def helpImmigrants4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7340,7 +7340,7 @@ def HelpImmigrants4(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoImmigrants4(argsList):
+def canDoImmigrants4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7352,7 +7352,7 @@ def CanDoImmigrants4(argsList):
 	return True
 
 # EVENT_IMMIGRANTS_5
-def DoImmigrants5(argsList): 
+def doImmigrants5(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7361,7 +7361,7 @@ def DoImmigrants5(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpImmigrants5(argsList):
+def helpImmigrants5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7372,7 +7372,7 @@ def HelpImmigrants5(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoImmigrants5(argsList):
+def canDoImmigrants5(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7384,7 +7384,7 @@ def CanDoImmigrants5(argsList):
 	return True
 
 # EVENT_MARY_2
-def DoMary2(argsList):
+def doMary2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7392,13 +7392,13 @@ def DoMary2(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_MARY'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setName(CyTranslator().getText("TXT_KEY_UNIT_DISEASED_CORPSE",()))
 
-def HelpMary2(argsList):
+def helpMary2(argsList):
 	iUnit          = getInfoType('UNIT_MARY')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_MARY_3
-def DoMary3(argsList):
+def doMary3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7406,27 +7406,27 @@ def DoMary3(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_MARY'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_UNDEAD'), True)
 
-def HelpMary3(argsList):
+def helpMary3(argsList):
 	iUnit          = getInfoType('UNIT_MARY')
 	iPromotion     = getInfoType('PROMOTION_UNDEAD')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_ORPHANAGE_FIRE_3
-def DoOrphanageFire3(argsList):
+def doOrphanageFire3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SPECTRE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpOrphanageFire3(argsList):
+def helpOrphanageFire3(argsList):
 	iUnit          = getInfoType('UNIT_SPECTRE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_OVERCOUNCIL_GIFT_2
-def DoOvercouncilGift2(argsList):
+def doOvercouncilGift2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7436,14 +7436,14 @@ def DoOvercouncilGift2(argsList):
 	newUnit2       = pPlayer.initUnit(getInfoType('UNIT_RADIANT_GUARD'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2.setHasPromotion(getInfoType('PROMOTION_LOYALTY2'), True)
 
-def HelpOvercouncilGift2(argsList):
+def helpOvercouncilGift2(argsList):
 	iUnit          = getInfoType('UNIT_RADIANT_GUARD')
 	iPromotion     = getInfoType('PROMOTION_LOYALTY2')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (2, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_SAGE_KEEP_4 
-def DoSageKeep4(argsList): 
+def doSageKeep4(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7453,7 +7453,7 @@ def DoSageKeep4(argsList):
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setExperienceTimes100(1000, -1)
 
-def HelpSageKeep4(argsList):
+def helpSageKeep4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7464,7 +7464,7 @@ def HelpSageKeep4(argsList):
 		szHelp     = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
-def CanDoSageKeep4(argsList):
+def canDoSageKeep4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7476,7 +7476,7 @@ def CanDoSageKeep4(argsList):
 	return True
 
 # EVENT_SICKNESS_DTESH_SLAVE 
-def DoSicknessDteshSlave(argsList): 
+def doSicknessDteshSlave(argsList): 
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7485,7 +7485,7 @@ def DoSicknessDteshSlave(argsList):
 	if iUnit != -1:
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpSicknessDteshSlave(argsList):
+def helpSicknessDteshSlave(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7497,7 +7497,7 @@ def HelpSicknessDteshSlave(argsList):
 	return szHelp
 	
 # EVENT_SICKNESS_EVIL_RECRUIT
-def DoSicknessEvilRecruit(argsList):
+def doSicknessEvilRecruit(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7506,27 +7506,27 @@ def DoSicknessEvilRecruit(argsList):
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHAOS1'), True)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHAOS2'), True)
 
-def HelpSicknessEvilRecruit(argsList):
+def helpSicknessEvilRecruit(argsList):
 	iUnit          = getInfoType('UNIT_ADEPT')
 	iPromotion     = getInfoType('PROMOTION_CHAOS2')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_SIGN_DAGDA_1
-def DoSignDagda1(argsList):
+def doSignDagda1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_REBORN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpSignDagda1(argsList):
+def helpSignDagda1(argsList):
 	iUnit          = getInfoType('UNIT_REBORN')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_SLAVE_RING_END_2 UNITCLASS_SLAVE
-def DoSlaveRingEnd2(argsList):
+def doSlaveRingEnd2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7534,13 +7534,13 @@ def DoSlaveRingEnd2(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SLAVE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2       = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SLAVE'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpSlaveRingEnd2(argsList):
+def helpSlaveRingEnd2(argsList):
 	iUnit          = getInfoType('UNIT_SLAVE')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (2, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_UNDERCOUNCIL_GIFT_1
-def DoUndercouncilGift2(argsList):
+def doUndercouncilGift2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7550,14 +7550,14 @@ def DoUndercouncilGift2(argsList):
 	newUnit2       = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ASSASSIN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'), True)
 
-def HelpUndercouncilGift2(argsList):
+def helpUndercouncilGift2(argsList):
 	iUnit          = getInfoType('UNIT_ASSASSIN')
 	iPromotion     = getInfoType('PROMOTION_MOBILITY1')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (2, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_WEREWOLF_4
-def DoWerewolf4(argsList):
+def doWerewolf4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7567,7 +7567,7 @@ def DoWerewolf4(argsList):
 		newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_WEREWOLF'), True)
 
-def HelpWerewolf4(argsList):
+def helpWerewolf4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7578,20 +7578,20 @@ def HelpWerewolf4(argsList):
 	return szHelp
 
 # EVENT_LUNATIC_2
-def DoLunatic2(argsList):
+def doLunatic2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_STYGIAN_GUARD'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpLunatic2(argsList):
+def helpLunatic2(argsList):
 	iUnit          = getInfoType('UNIT_STYGIAN_GUARD')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_LUNATIC_3
-def DoLunatic3(argsList):
+def doLunatic3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7599,14 +7599,14 @@ def DoLunatic3(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIEST_OF_THE_VEIL'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CRAZED'), True)
 
-def HelpLunatic3(argsList):
+def helpLunatic3(argsList):
 	iUnit          = getInfoType('UNIT_PRIEST_OF_THE_VEIL')
 	iPromotion     = getInfoType('PROMOTION_CRAZED')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_LUNATIC_4
-def DoLunatic4(argsList):
+def doLunatic4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7614,14 +7614,14 @@ def DoLunatic4(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CRAZED'), True)
 
-def HelpLunatic4(argsList):
+def helpLunatic4(argsList):
 	iUnit          = getInfoType('UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES')
 	iPromotion     = getInfoType('PROMOTION_CRAZED')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON_WITH_PROMO", (1, gc.getUnitInfo(iUnit).getTextKey(), gc.getPromotionInfo(iPromotion).getTextKey()));
 	return szHelp
 
 # EVENT_WILDERNESS_MAN_2
-def DoWildernessMan2(argsList):
+def doWildernessMan2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7634,7 +7634,7 @@ def DoWildernessMan2(argsList):
 		newUnit    = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HUNTER'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_FREE_UNIT'), True)
 
-def HelpWildernessMan2(argsList):
+def helpWildernessMan2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7650,20 +7650,20 @@ def HelpWildernessMan2(argsList):
 		return szHelp2
 
 # EVENT_PIG_GIANT_1
-def DoPigGiant1(argsList):
+def doPigGiant1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCapitalCity()
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HILL_GIANT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpPigGiant1(argsList):
+def helpPigGiant1(argsList):
 	iUnit          = getInfoType('UNIT_HILL_GIANT')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_PSYCHOPATH_CAUGHT_3
-def DoPsychopathCaught3(argsList):
+def doPsychopathCaught3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7678,7 +7678,7 @@ def DoPsychopathCaught3(argsList):
 		newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CRAZED'), True)
 		newUnit.setExperienceTimes100(1000, -1)
 
-def HelpPsychopathCaught3(argsList):
+def helpPsychopathCaught3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7694,20 +7694,20 @@ def HelpPsychopathCaught3(argsList):
 		return szHelp2
 
 # EVENT_PSYCHOPATH_CAUGHT_4
-def DoPsychopathCaught4(argsList):
+def doPsychopathCaught4(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_LUNATIC'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpPsychopathCaught4(argsList):
+def helpPsychopathCaught4(argsList):
 	iUnit          = getInfoType('UNIT_LUNATIC')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_REMNANTS_OF_PATRIA_SCIONS
-def DoRemainsScion(argsList):
+def doRemainsScion(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7715,13 +7715,13 @@ def DoRemainsScion(argsList):
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SUPPLIES'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2       = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SUPPLIES'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpRemainsScion(argsList):
+def helpRemainsScion(argsList):
 	iUnit          = getInfoType('UNIT_SUPPLIES')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (2, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_GOOD_SCIONS
-def DoGoodScions(argsList):
+def doGoodScions(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7733,26 +7733,26 @@ def DoGoodScions(argsList):
 	newUnit3       = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ANGEL'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit3.setExperienceTimes100(1000, -1)
 
-def HelpGoodScions(argsList):
+def helpGoodScions(argsList):
 	iUnit          = getInfoType('UNIT_ANGEL')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (3, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 
 # EVENT_BAREKE_3
-def DoBareke3(argsList):
+def doBareke3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	newUnit        = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SUPPLIES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def HelpBareke3(argsList):
+def helpBareke3(argsList):
 	iUnit          = getInfoType('UNIT_SUPPLIES')
 	szHelp         = localText.getText("TXT_KEY_EVENT_SUMMON", (1, gc.getUnitInfo(iUnit).getTextKey()));
 	return szHelp
 # r361 xml to python unit spawn - End
 
-def DoAffluentDuke2(argsList):
+def doAffluentDuke2(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7765,7 +7765,7 @@ def DoAffluentDuke2(argsList):
 	
 # r362 Event and Eventtrigger fixes - Start
 # EVENT_ALCHEMIST_3
-def DoAlchemist3(argsList):
+def doAlchemist3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7779,7 +7779,7 @@ def DoAlchemist3(argsList):
 			return
 		(loopCity, iter) = pPlayer.nextCity(iter, False)
 
-def HelpAlchemist3(argsList):
+def helpAlchemist3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7798,7 +7798,7 @@ def HelpAlchemist3(argsList):
 	szHelp         = localText.getText("TXT_KEY_EVENT_ALCHEMIST_3_HELP",(gc.getBuildingInfo(iBuilding).getTextKey(), szCityName));
 	return szHelp
 
-def CanDoAlchemist3(argsList):
+def canDoAlchemist3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7812,14 +7812,14 @@ def CanDoAlchemist3(argsList):
 	return True
 	
 # EVENT_MERCHANT_KEEP_1 (XML can't subtract GP from city)
-def DoMerchantKeep1(argsList):
+def doMerchantKeep1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	pCity.changeFreeSpecialistCount(getInfoType('SPECIALIST_GREAT_MERCHANT'), -1)
 
-def HelpMerchantKeep1(argsList):
+def helpMerchantKeep1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7828,7 +7828,7 @@ def HelpMerchantKeep1(argsList):
 	return szHelp
 
 # EVENT_MERCHANT_KEEP_3
-def HelpMerchantKeep3(argsList):
+def helpMerchantKeep3(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7837,14 +7837,14 @@ def HelpMerchantKeep3(argsList):
 	return szHelp
 
 # EVENT_SAGE_KEEP_1, EVENT_SAGE_KEEP_3
-def DoSageKeep1(argsList):
+def doSageKeep1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity          = pPlayer.getCity(kTriggeredData.iCityId)
 	pCity.changeFreeSpecialistCount(getInfoType('SPECIALIST_GREAT_SCIENTIST'), -1)
 
-def HelpSageKeep1(argsList):
+def helpSageKeep1(argsList):
 	iEvent         = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
@@ -7853,7 +7853,7 @@ def HelpSageKeep1(argsList):
 	return szHelp
 	
 # EVENTTRIGGER_ARCHOS_UNHAPPY
-def CanDoArcosUnhappy(argsList):
+def canDoArcosUnhappy(argsList):
 	kTriggeredData = argsList[0]
 	pPlayer        = gc.getPlayer(kTriggeredData.ePlayer)
 	if pPlayer.getCivilizationType() == iArchos: # Checking if Archos
@@ -7864,7 +7864,7 @@ def CanDoArcosUnhappy(argsList):
 
 # r363 Tile Landmark - Strat
 # EVENT_ANGELIC_PROCESSION_2
-def DoAngelicProcession2(argsList):
+def doAngelicProcession2(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7876,7 +7876,7 @@ def DoAngelicProcession2(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_FORTY_THIEVES
-def DoFortyThieves(argsList):
+def doFortyThieves(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7888,7 +7888,7 @@ def DoFortyThieves(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_GREAT_BEAST_1
-def DoGreatBeast1(argsList):
+def doGreatBeast1(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7900,7 +7900,7 @@ def DoGreatBeast1(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_HORTICULTURE_1
-def DoHorticulture1(argsList):
+def doHorticulture1(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7912,7 +7912,7 @@ def DoHorticulture1(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_JADE
-def DoJade(argsList):
+def doJade(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7924,7 +7924,7 @@ def DoJade(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_MYSTIC_TREE_3
-def DoMysticTree3(argsList):
+def doMysticTree3(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7936,7 +7936,7 @@ def DoMysticTree3(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_PARROTS
-def DoParrots(argsList):
+def doParrots(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7948,7 +7948,7 @@ def DoParrots(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_PRAIRIE_DOGS
-def DoPrairieDogs(argsList):
+def doPrairieDogs(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7960,7 +7960,7 @@ def DoPrairieDogs(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_SEA_TURTLES
-def DoSeaTurtles(argsList):
+def doSeaTurtles(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7972,7 +7972,7 @@ def DoSeaTurtles(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_TIN
-def DoTin(argsList):
+def doTin(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7984,7 +7984,7 @@ def DoTin(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_TRUFFLES
-def DoTruffles(argsList):
+def doTruffles(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -7996,7 +7996,7 @@ def DoTruffles(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_WATERS_OF_LIFE
-def DoWatersOfLife(argsList):
+def doWatersOfLife(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -8008,7 +8008,7 @@ def DoWatersOfLife(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_FARMER_1
-def DoFarmer1(argsList):
+def doFarmer1(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -8020,7 +8020,7 @@ def DoFarmer1(argsList):
 		CyEngine().addLandmark(pPlot,szLandmarkText)
 
 # EVENT_FARMER_2
-def DoFarmer2(argsList):
+def doFarmer2(argsList):
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -8066,14 +8066,14 @@ def doRazedFoxford(argsList):
 # r363 Tile Landmark - End
 
 # EVENT_DEAL_WITH_CENTAURS_TRIBE_1
-# def DoDealwithTribeEvent1(argsList): # Sets flag to prevent lair result from happening again
+# def doDealwithTribeEvent1(argsList): # Sets flag to prevent lair result from happening again
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlayer			= gc.getPlayer(kTriggeredData.ePlayer)
 	# pPlayer.setHasFlag(getInfoType('FLAG_DEAL_WITH_CENTAURS_TRIBE'), True)
 
 # EVENT_DEAL_WITH_CENTAURS_TRIBE_2
-# def CanDealwithTribeEvent2(argsList): # Checks for bonus in player's borders to donate
+# def canDealwithTribeEvent2(argsList): # Checks for bonus in player's borders to donate
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# iPlayer			= kTriggeredData.ePlayer
@@ -8093,7 +8093,7 @@ def doRazedFoxford(argsList):
 			# return True
 	# return False
 
-# def DoDealwithTribeEvent2(argsList): # Removes one bonus, sets flag to prevent lair result from happening again
+# def doDealwithTribeEvent2(argsList): # Removes one bonus, sets flag to prevent lair result from happening again
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# iPlayer			= kTriggeredData.ePlayer
@@ -8115,14 +8115,14 @@ def doRazedFoxford(argsList):
 			# break
 	# pPlayer.setHasFlag(getInfoType('FLAG_DEAL_WITH_CENTAURS_TRIBE'), True)
 
-def HelpDealwithTribeEvent2(argsList): # Tells player about removing a bonus
+def helpDealwithTribeEvent2(argsList): # Tells player about removing a bonus
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	szHelp = localText.getText("TXT_KEY_EVENT_DEAL_WITH_CENTAURS_TRIBE_2_HELP", ())
 	return szHelp
 
 # EVENT_DEAL_WITH_CENTAURS_TRIBE_2
-# def CanDealwithTribeEvent3(argsList): # Checks for player's capital
+# def canDealwithTribeEvent3(argsList): # Checks for player's capital
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlayer			= gc.getPlayer(kTriggeredData.ePlayer)
@@ -8131,7 +8131,7 @@ def HelpDealwithTribeEvent2(argsList): # Tells player about removing a bonus
 		# return True
 	# return False
 
-# def DoDealwithTribeEvent3(argsList): # Adds a pop to player's capital, sets flag to prevent lair result from happening again
+# def doDealwithTribeEvent3(argsList): # Adds a pop to player's capital, sets flag to prevent lair result from happening again
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlayer			= gc.getPlayer(kTriggeredData.ePlayer)
@@ -8139,14 +8139,14 @@ def HelpDealwithTribeEvent2(argsList): # Tells player about removing a bonus
 	# pCapital.changePopulation(1)
 	# pPlayer.setHasFlag(getInfoType('FLAG_DEAL_WITH_CENTAURS_TRIBE'), True)
 
-def HelpDealwithTribeEvent3(argsList): # Tells player about pop change
+def helpDealwithTribeEvent3(argsList): # Tells player about pop change
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	szHelp = localText.getText("TXT_KEY_EVENT_DEAL_WITH_CENTAURS_TRIBE_3_HELP", ())
 	return szHelp
 
 # EVENT_CITY_OF_GOLD_1
-# def DoCityOfGold1(argsList): # Spawn Enemy Group with 35% chance
+# def doCityOfGold1(argsList): # Spawn Enemy Group with 35% chance
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlot			= gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -8163,7 +8163,7 @@ def HelpDealwithTribeEvent3(argsList): # Tells player about pop change
 		# newUnit3.setHasPromotion(getInfoType('PROMOTION_COMBAT1'),True)
 
 # EVENT_CITY_OF_GOLD_2
-# def DoCityOfGold2(argsList): # Spawn Enemy Group, Immobilize Unit
+# def doCityOfGold2(argsList): # Spawn Enemy Group, Immobilize Unit
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlayer			= gc.getPlayer(kTriggeredData.ePlayer)
@@ -8180,14 +8180,14 @@ def HelpDealwithTribeEvent3(argsList): # Tells player about pop change
 	# newUnit3		= pOrcPlayer.initUnit(getInfoType('UNIT_LIZARD_BLOWPIPE'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.UNITAI_EXPLORE, DirectionTypes.DIRECTION_SOUTH)
 	# newUnit3.setHasPromotion(getInfoType('PROMOTION_COMBAT1'),True)
 
-def HelpCityOfGold2(argsList): # Tells player about immobilization and enemy spawn
+def helpCityOfGold2(argsList): # Tells player about immobilization and enemy spawn
 	iEvent			= argsList[0]
 	kTriggeredData	= argsList[1]
 	szHelp = localText.getText("TXT_KEY_EVENT_CITY_OF_GOLD_2_HELP", ())
 	return szHelp
 
 # EVENT_CITY_OF_GOLD_3
-# def CanCityOfGold3(argsList): # Checks if player is Mazatl or Cualli
+# def canCityOfGold3(argsList): # Checks if player is Mazatl or Cualli
 	# iEvent			= argsList[0]
 	# kTriggeredData	= argsList[1]
 	# pPlayer			= gc.getPlayer(kTriggeredData.ePlayer)

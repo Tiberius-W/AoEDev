@@ -56,7 +56,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CanDoHellRefugees</PythonCanDo>
+			<PythonCanDo>canDoHellRefugees</PythonCanDo>
 			<iPrereqGlobalCounter>20</iPrereqGlobalCounter>
 			<PrereqAlignment>ALIGNMENT_GOOD</PrereqAlignment>
 		</EventTriggerInfo>
@@ -110,7 +110,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDo>CanTriggerTrappedFrostlings</PythonCanDo>
+			<PythonCanDo>canTriggerTrappedFrostlings</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_PACIFIST_DEMONSTRATION</Type>
@@ -433,7 +433,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>CanTriggerThatKindOfDay</PythonCanDo>
+			<PythonCanDo>canTriggerThatKindOfDay</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_PRINCESS_RULE</Type>
@@ -1261,7 +1261,7 @@
 			<bRecurring>0</bRecurring>
 			<bGlobal>1</bGlobal>
 			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>CanTriggerTreasureHunter</PythonCanDo>
+			<PythonCanDo>canTriggerTreasureHunter</PythonCanDo>
 		</EventTriggerInfo>
 		<EventTriggerInfo> <!-- EVEN MORE EVENTS STARTS -->
 			<Type>EVENTTRIGGER_WANDERING_BARD1</Type>

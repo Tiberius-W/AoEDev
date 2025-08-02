@@ -50,7 +50,7 @@ ScorpionLairs		= [LairScorpion1,LairScorpion2,LairScorpion3]
 # AnimalLairsT3		= [LairBear3,LairRoc3,LairLion3,LairSpider3,LairWolf3,LairScorpion3]
 
 # GOODY_EXPLORE_LAIR_DEN_FRIENDLY_ANIMAL
-def ExploreLairFriendly(argsList):
+def exploreLairFriendly(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	iRandStrength	= gc.getGame().getSorenRandNum(100, "Friendly Animal Lair") # 0-49 - weak result; 50-89 - normal result; 90-99 - strong result
@@ -105,7 +105,7 @@ def ExploreLairFriendly(argsList):
 			newUnit.setHasPromotion(git('PROMOTION_STRONG'),True)
 
 # GOODY_EXPLORE_LAIR_HOSTILE_ANIMAL_T1
-def ExploreLairHostileT1(argsList):
+def exploreLairHostileT1(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	CernPlayer		= gc.getPlayer(gc.getANIMAL_PLAYER())
@@ -166,7 +166,7 @@ def ExploreLairHostileT1(argsList):
 		newUnit.setHasPromotion(git('PROMOTION_LOYALTY2'),True)
 
 # GOODY_EXPLORE_LAIR_DEN_HOSTILE_RECON
-def ExploreLairHostileGoblin(argsList):
+def exploreLairHostileGoblin(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer 		= gc.getPlayer(pUnit.getOwner())
 	GoblinCiv		= gc.getPlayer(gc.getORC_PLAYER())
@@ -185,7 +185,7 @@ def ExploreLairHostileGoblin(argsList):
 		newUnit.setHasPromotion(git('PROMOTION_MOBILITY1'),True)
 
 # GOODY_EXPLORE_LAIR_HOSTILE_ANIMAL_T2
-def ExploreLairHostileT2(argsList):
+def exploreLairHostileT2(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	CernPlayer		= gc.getPlayer(gc.getANIMAL_PLAYER())
@@ -246,7 +246,7 @@ def ExploreLairHostileT2(argsList):
 		newUnit.setHasPromotion(git('PROMOTION_LOYALTY2'),True)
 
 # GOODY_EXPLORE_LAIR_HOSTILE_ANIMAL_T3
-def ExploreLairHostileT3(argsList):
+def exploreLairHostileT3(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	CernPlayer		= gc.getPlayer(gc.getANIMAL_PLAYER())
@@ -422,7 +422,7 @@ def reqConvertLairDovielloAL(pCaster):
 
 # Alt result for Nature Minor Blood promotions
 # GOODY_EXPLORE_LAIR_ANIMAL_BLOOD
-def ExploreLairAnimalBlood(argsList):
+def exploreLairAnimalBlood(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	iLair			= pPlot.getImprovementType()
@@ -452,7 +452,7 @@ def ExploreLairAnimalBlood(argsList):
 			RndGold		= gc.getGame().getSorenRandNum(26, "Old Blood")
 			pPlayer.changeGold(25+RndGold)
 
-def ReqLairAnimalBlood(argsList):
+def reqLairAnimalBlood(argsList):
 	pUnit, pPlot	= argsList
 	iLair			= pPlot.getImprovementType()
 	if iLair in BearLairs:
@@ -476,7 +476,7 @@ def ReqLairAnimalBlood(argsList):
 	return True
 
 # GOODY_EXPLORE_LAIR_DEN_LIVESTOCK
-def ExploreLairLivestock(argsList):
+def exploreLairLivestock(argsList):
 	pUnit, pPlot	= argsList
 	BonusList		= []
 	BonusList.append(git('BONUS_SHEEP'))
@@ -491,7 +491,7 @@ def ExploreLairLivestock(argsList):
 	Bonus			= BonusList[gc.getGame().getSorenRandNum(len(BonusList), "Pick Bonus Livestock")]
 	pPlot.setBonusType(Bonus)
 
-def ReqLairLivestock(argsList):
+def reqLairLivestock(argsList):
 	pUnit, pPlot	= argsList
 	if pPlot.getBonusType(-1) == -1:
 		return True

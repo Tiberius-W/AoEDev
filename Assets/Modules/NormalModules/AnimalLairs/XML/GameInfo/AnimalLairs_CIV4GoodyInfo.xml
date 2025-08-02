@@ -19,7 +19,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<Sound/>
-			<PythonCallback>ExploreLairFriendly</PythonCallback>
+			<PythonCallback>exploreLairFriendly</PythonCallback>
 		</GoodyInfo>
 
 		<GoodyInfo> <!--Adds Subdue Animal to a recon unit-->
@@ -72,7 +72,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>1</bBad>
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
-			<PythonCallback>ExploreLairHostileT1</PythonCallback>
+			<PythonCallback>exploreLairHostileT1</PythonCallback>
 		</GoodyInfo>
 
 		<GoodyInfo> <!--Goblin Recon Unit attacks player-->
@@ -88,7 +88,7 @@
 			<iDestroyLairChance>60</iDestroyLairChance>
 			<bBad>1</bBad>
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
-			<PythonCallback>ExploreLairHostileGoblin</PythonCallback>
+			<PythonCallback>exploreLairHostileGoblin</PythonCallback>
 		</GoodyInfo>
 
 		<GoodyInfo> <!--Adds Poisoned Blade to a recon unit-->
@@ -161,8 +161,8 @@
 			<iDestroyLairChance>100</iDestroyLairChance>
 			<bBad>0</bBad>
 			<Sound>AS2D_GOODY_GOLD</Sound>
-			<PythonCallback>ExploreLairLivestock</PythonCallback>
-			<PythonPrereq>ReqLairLivestock</PythonPrereq>
+			<PythonCallback>exploreLairLivestock</PythonCallback>
+			<PythonPrereq>reqLairLivestock</PythonPrereq>
 		</GoodyInfo>	
 		
 		<GoodyInfo> <!--Adds Poisoned to any unit and damages it-->
@@ -200,7 +200,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>1</bBad>
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
-			<PythonCallback>ExploreLairHostileT2</PythonCallback>
+			<PythonCallback>exploreLairHostileT2</PythonCallback>
 		</GoodyInfo>
 
 		<GoodyInfo> <!--Adds Great Hunter to any unit (cuz it has no UnitCombat)-->
@@ -273,7 +273,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>1</bBad>
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
-			<PythonCallback>ExploreLairHostileT3</PythonCallback>
+			<PythonCallback>exploreLairHostileT3</PythonCallback>
 		</GoodyInfo>
 
 		<GoodyInfo> <!--Adds Withered and Plagued to any unit and damages it-->
@@ -302,8 +302,8 @@
 <!--Nature Minor Blood promotions alternative-->
 		<GoodyInfo> <!--Random Blood-->
 			<Type>GOODY_EXPLORE_LAIR_ANIMAL_BLOOD</Type>
-			<PythonCallback>ExploreLairAnimalBlood</PythonCallback>
-			<PythonPrereq>ReqLairAnimalBlood</PythonPrereq>
+			<PythonCallback>exploreLairAnimalBlood</PythonCallback>
+			<PythonPrereq>reqLairAnimalBlood</PythonPrereq>
 		</GoodyInfo>
 
 	</GoodyInfos>

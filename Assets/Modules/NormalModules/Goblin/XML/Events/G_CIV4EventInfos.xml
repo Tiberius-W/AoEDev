@@ -40,7 +40,7 @@
 			<bPickCity>1</bPickCity>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<PythonCallback>DoLukosGames3</PythonCallback>
+			<PythonCallback>doLukosGames3</PythonCallback>
 			
 			<iHurryAnger>2</iHurryAnger>
 		</EventInfo>
@@ -79,7 +79,7 @@
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iHurryAnger>2</iHurryAnger>
-			<PythonCallback>DoScorpionSabotage3</PythonCallback>
+			<PythonCallback>doScorpionSabotage3</PythonCallback>
 
 		</EventInfo>
 	<EventInfo>	<!--Muris Youth-->
@@ -117,7 +117,7 @@
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iHurryAnger>2</iHurryAnger>
-			<PythonCallback>DoMurisYouth3</PythonCallback>
+			<PythonCallback>doMurisYouth3</PythonCallback>
 
 		</EventInfo>
 	</EventInfos>

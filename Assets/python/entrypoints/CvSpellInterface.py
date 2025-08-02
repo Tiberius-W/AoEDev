@@ -9409,7 +9409,6 @@ def exploreBlightedForest(argsList):
 	iRnd			= CyGame().getSorenRandNum(100, "Explore Blighted Forest")
 	iRnd			+= pUnit.getNoBadExplore()/2
 	pNewPlot		= findClearPlot(-1, pPlot) #r363 fixing pushing units out
-	iDestroyLair	= 0
 
 	if pTeam.isHasTech(getInfoType('TECH_IRON_WORKING')):
 		iRnd += 20
@@ -9422,15 +9421,11 @@ def exploreBlightedForest(argsList):
 		newUnit = pPlayer.initUnit(getInfoType('UNIT_BEAR'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setDamage(25, -1)
 		newUnit.setHasPromotion(getInfoType('PROMOTION_DISEASED'), True)
-		iDestroyLair = 50
-	elif iRnd >= 40 and iRnd < 50:
+	elif iRnd >= 40:
 		pPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 		newUnit = pPlayer.initUnit(getInfoType('UNIT_WOLF'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setDamage(25, -1)
 		newUnit.setHasPromotion(getInfoType('PROMOTION_DISEASED'), True)
-		iDestroyLair = 50
-	elif iRnd >= 50:
-		iDestroyLair = 100
 	return
 
 def exploreLairArmageddonIncrease(argsList):
@@ -9528,7 +9523,7 @@ def exploreLairUnblemishedShelter(argsList):
 	newUnit2.setHasPromotion(getInfoType('PROMOTION_GUARDIAN'),True)
 	newUnit3.setHasPromotion(getInfoType('PROMOTION_GUARDIAN'),True)
 
-def ReqUnblemishedShelter(argsList):
+def reqUnblemishedShelter(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	return (not CyGame().isUnitClassMaxedOut(getInfoType("UNITCLASS_PHOENIX"),0))
@@ -12484,7 +12479,7 @@ def helpDemonOfTheDeep(argsList):
 	return szHelp
 
 #Kahd's Vault Gate Help
-def HelpVaultGates (argsList):
+def helpVaultGates (argsList):
 	eBuilding, pCity = argsList
 	if pCity == -1 or pCity.isNone():
 		szHelp 			= ""
@@ -12643,7 +12638,7 @@ def HelpVaultGates (argsList):
 	return szHelp	
 	
 # Wizard`s Hall Help
-def HelpWizardsHall (argsList):
+def helpWizardsHall (argsList):
 	eBuilding, pCity = argsList
 	if pCity == -1 or pCity.isNone():
 		szHelp 			= ""
@@ -12707,7 +12702,7 @@ def HelpWizardsHall (argsList):
 		# Pop-up end
 	return szHelp
 #Planar Gate Help
-def HelpPlanarGate (argsList):
+def helpPlanarGate (argsList):
 	eBuilding, pCity = argsList
 	if pCity == -1 or pCity.isNone():
 		szHelp 			= ""
@@ -12858,7 +12853,7 @@ def reqRestoreFP(caster):
 
 # Combining similar goodies r363
 # GOODY_MARNOK_GEAR_STASH
-def ExploreGearStash(argsList):
+def exploreGearStash(argsList):
 	pUnit, pPlot	= argsList
 	pUnitCombat		= pUnit.getUnitCombatType()
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
@@ -12935,7 +12930,7 @@ def ExploreGearStash(argsList):
 		pPlayer.changeGold(25+RndGold)
 
 
-def ReqGearStash(argsList):
+def reqGearStash(argsList):
 	pUnit, pPlot	= argsList
 	pUnitCombat		= pUnit.getUnitCombatType()
 	ReconUC			= getInfoType('UNITCOMBAT_RECON')
@@ -12947,7 +12942,7 @@ def ReqGearStash(argsList):
 		return True
 	return False
 
-def ReqBereguine(argsList):
+def reqBereguine(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer=gc.getPlayer(pUnit.getOwner())
 	if pPlayer.getStateReligion() !=getInfoType("RELIGION_FELLOWSHIP_OF_LEAVES"):
@@ -12960,7 +12955,7 @@ def exploreLairBereguine(argsList):
 	pNewPlot			= findClearPlot(-1, pPlot)
 	newUnit				= OrcPlayer.initUnit(getInfoType('UNIT_BEREGUINE'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
-def ReqBocquillon(argsList):
+def reqBocquillon(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer=gc.getPlayer(pUnit.getOwner())
 	if pPlayer.getStateReligion()==getInfoType("RELIGION_FELLOWSHIP_OF_LEAVES"):
@@ -12975,7 +12970,7 @@ def exploreLairBocquillon(argsList):
 	
 
 # GOODY_MARNOK_RELEASE_PRISONER_MAJOR
-def ExploreReleasePrisoner(argsList):
+def exploreReleasePrisoner(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	PrisonersList	= []
@@ -12997,7 +12992,7 @@ def ExploreReleasePrisoner(argsList):
 	newUnit			= pPlayer.initUnit(getInfoType(Prisoner), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # GOODY_MARNOK_SUBTERRAN_BONUS_MINOR
-def ExploreSubterranBonusMinor(argsList):
+def exploreSubterranBonusMinor(argsList):
 	pUnit, pPlot	= argsList
 	BonusList		= []
 	BonusList.append(getInfoType('BONUS_GOLD'))
@@ -13009,14 +13004,14 @@ def ExploreSubterranBonusMinor(argsList):
 	Bonus			= BonusList[gc.getGame().getSorenRandNum(len(BonusList), "Pick Bonus Minor")]
 	pPlot.setBonusType(Bonus)
 
-def ReqSubterranBonusMinor(argsList):
+def reqSubterranBonusMinor(argsList):
 	pUnit, pPlot	= argsList
 	if pPlot.getBonusType(-1) == -1:
 		return True
 	return False
 
 # GOODY_MARNOK_RANDOM_MANA
-def ExploreMarnokMana(argsList):
+def exploreMarnokMana(argsList):
 	pUnit, pPlot	= argsList
 	ManaList		= []
 	ManaList.append('_AIR')
@@ -13044,7 +13039,7 @@ def ExploreMarnokMana(argsList):
 	pPlot.setBonusType(getInfoType('BONUS_MANA' + szMana))
 	pUnit.setHasPromotion(getInfoType('PROMOTION' + szMana + '1'),True)
 
-def ReqMarnokMana(argsList):
+def reqMarnokMana(argsList):
 	pUnit, pPlot	= argsList
 	if gc.getImprovementInfo(pPlot.getImprovementType()).isPermanent():
 		return False
@@ -13053,7 +13048,7 @@ def ReqMarnokMana(argsList):
 		
 	return False
 # GOODY_EXPLORE_LAIR_ANIMAL_BLOOD
-def ExploreAnimalBlood(argsList):
+def exploreAnimalBlood(argsList):
 	pUnit, pPlot	= argsList
 	pPlayer			= gc.getPlayer(pUnit.getOwner())
 	iLair			= pPlot.getImprovementType()
@@ -13071,7 +13066,7 @@ def ExploreAnimalBlood(argsList):
 		pPlayer.changeGold(25+RndGold)
 			
 # GOODY_DEAL_WITH_IMP
-def ExploreDealWithImp(argsList):
+def exploreDealWithImp(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	ElementalPromo		= [('PROMOTION_FIRE1', 1),('PROMOTION_ICE1', 1),('PROMOTION_WATER1', 1),('PROMOTION_EARTH1', 1),('PROMOTION_AIR1', 1)]
@@ -13084,7 +13079,7 @@ def ExploreDealWithImp(argsList):
 	newUnit.setHasPromotion(getInfoType('PROMOTION_HIGH_MAINTENANCE'),True)
 
 # GOODY_SUCCUBUS_TRAP
-def ExploreSuccubusTrap(argsList):
+def exploreSuccubusTrap(argsList):
 	pUnit, pPlot		= argsList
 	pNewPlot			= findClearPlot(-1, pPlot)
 	pDemonPlayer		= gc.getPlayer(gc.getDEMON_PLAYER())
@@ -13096,7 +13091,7 @@ def ExploreSuccubusTrap(argsList):
 		pUnit.changeImmobileTimer(2)
 
 # GOODY_ABANDONED_RITUAL
-def ExploreAbandonedRitual(argsList):
+def exploreAbandonedRitual(argsList):
 	pUnit, pPlot	= argsList
 	iPlayer			= pUnit.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
@@ -13128,7 +13123,7 @@ def ExploreAbandonedRitual(argsList):
 			CyGame().changeGlobalCounter(iChange)
 
 # GOODY_COWARDLY_CULTIST
-def ExploreCowardlyCultist(argsList):
+def exploreCowardlyCultist(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	NecromancyPromoList	= []
@@ -13152,13 +13147,13 @@ def ExploreCowardlyCultist(argsList):
 	newUnit.setDamage(50,-1)
 
 # GOODY_SEALED_WELL
-def ExploreSealedWell(argsList):
+def exploreSealedWell(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	pPlot.changePlotCounter(10 + CyGame().getSorenRandNum(70, "Could be a little evil, could be a lot of evil..."))
 
 # GOODY_BURNED_LAIR
-def ReqBurnedLair(argsList):
+def reqBurnedLair(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	ClearTreesCount		= 0
@@ -13171,7 +13166,7 @@ def ReqBurnedLair(argsList):
 		return True
 	return False
 
-def ExploreBurnedLair(argsList):
+def exploreBurnedLair(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,0):
@@ -13181,7 +13176,7 @@ def ExploreBurnedLair(argsList):
 				iPlot.setImprovementType(getInfoType('IMPROVEMENT_SMOKE'))
 
 # GOODY_BOTTLE_OF_LIQUID_STONE
-def ExploreLiquidStone(argsList):
+def exploreLiquidStone(argsList):
 	pUnit, pPlot		= argsList
 	pUnit.changeImmobileTimer(4)
 	pUnit.setHasPromotion(getInfoType('PROMOTION_STONESKIN'),True)
@@ -13189,7 +13184,7 @@ def ExploreLiquidStone(argsList):
 		pUnit.changeStrBoost(1)
 
 # GOODY_NEW_CHIEFTAIN
-def ExploreNewChieftain(argsList):
+def exploreNewChieftain(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	OrcPlayer			= gc.getPlayer(gc.getORC_PLAYER())
@@ -13197,7 +13192,7 @@ def ExploreNewChieftain(argsList):
 	newUnit.setHasPromotion(getInfoType('PROMOTION_ORC'),True)
 
 # GOODY_TEMPLE_MAP
-def ReqTempleMap(argsList):
+def reqTempleMap(argsList):
 	pUnit, pPlot		= argsList
 	for i in range (CyMap().numPlots()):
 		iPlot = CyMap().plotByIndex(i)
@@ -13205,7 +13200,7 @@ def ReqTempleMap(argsList):
 			return True
 	return False
 
-def ExploreTempleMap(argsList):
+def exploreTempleMap(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
@@ -13225,7 +13220,7 @@ def ExploreTempleMap(argsList):
 			break
 
 # GOODY_TWENTY_ONE_ARGUING_FIGURES
-def ExploreArguingFigures(argsList):
+def exploreArguingFigures(argsList):
 	pUnit, pPlot		= argsList
 	PromotionList		= []
 	PromotionList.append('PROMOTION_AIR1')
@@ -13276,14 +13271,14 @@ def ExploreArguingFigures(argsList):
 		pUnit.setHasPromotion(getInfoType('PROMOTION_CHANNELING1'),True)
 
 # GOODY_MIRROR_OF_POSSIBILITY
-def ReqMirror1(argsList):
+def reqMirror1(argsList):
 	pUnit, pPlot		= argsList
 	if pUnit.isAlive() and pUnit.getExperienceTimes100() > 1000:
 		return True
 	return False
 
 
-def ExploreMirror1(argsList):
+def exploreMirror1(argsList):
 	pUnit, pPlot		= argsList
 	BaseXP				= pUnit.getExperienceTimes100()
 	ExtraXP				= BaseXP * 0.2
@@ -13294,33 +13289,33 @@ def ExploreMirror1(argsList):
 	pUnit.setExperienceTimes100(NewXP, -1)
 
 # GOODY_SWANMAY_GOOD
-def ReqSwanmayGood(argsList):
+def reqSwanmayGood(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	if pPlayer.getAlignment() == getInfoType('ALIGNMENT_GOOD') and pUnit.isAlive() and pUnit.getExperienceTimes100() > 1000:
 		return True
 	return False
 
-def ExploreSwanmayGood(argsList):
+def exploreSwanmayGood(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_SWANMAY'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # GOODY_SWANMAY_EVIL
-def ReqSwanmayEvil(argsList):
+def reqSwanmayEvil(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	if pPlayer.getAlignment() == getInfoType('ALIGNMENT_EVIL') and pUnit.isAlive() and pUnit.getExperienceTimes100() > 1000:
 		return True
 	return False
 
-def ExploreSwanmayEvil(argsList):
+def exploreSwanmayEvil(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	pUnit.setHasPromotion(getInfoType("PROMOTION_SWANMAY_CLOAK"),True)
 	
 # GOODY_HORRORS_OF_FUTURE
-def ExploreMirror2(argsList):
+def exploreMirror2(argsList):
 	pUnit, pPlot		= argsList
 	BaseXP				= pUnit.getExperienceTimes100()
 	ExtraXP				= BaseXP * 0.2
@@ -13331,7 +13326,7 @@ def ExploreMirror2(argsList):
 	pUnit.setExperienceTimes100(NewXP, -1)
 
 # GOODY_MIRROR_MIRROR
-def ExploreMirror3(argsList):
+def exploreMirror3(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	iPlayer				= pUnit.getOwner()
@@ -13371,12 +13366,12 @@ def ExploreMirror3(argsList):
 		if pUnit.getUnitType() == getInfoType("UNIT_KEEPER"):
 			setKeeperLevel(qUnit,getKeeperLevel(qUnit))
 # GOODY_CAVE_IN
-def ExploreCaveIn(argsList):
+def exploreCaveIn(argsList):
 	pUnit, pPlot		= argsList
 	pUnit.changeImmobileTimer(3)
 
 # GOODY_EARTHQUAKE
-def ReqEarthquake(argsList):
+def reqEarthquake(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,0):
@@ -13386,7 +13381,7 @@ def ReqEarthquake(argsList):
 				return False
 	return True
 
-def ExploreEarthquake(argsList):
+def exploreEarthquake(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,0):
@@ -13401,13 +13396,13 @@ def ExploreEarthquake(argsList):
 				iPlot.setPlotType(PlotTypes.PLOT_HILLS, True, True)
 
 # GOODY_STOLEN_SUPPLIES
-def ExploreStolenSupplies(argsList):
+def exploreStolenSupplies(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_SUPPLIES'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # GOODY_SLAVERS
-def ExploreSlavers(argsList):
+def exploreSlavers(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	infoCiv 	= gc.getCivilizationInfo(pPlayer.getCivilizationType())
@@ -13439,7 +13434,7 @@ def PrereqEnchantedMap(argsList):
 		return False
 	return True
 
-def ExploreEnchantedMap(argsList):
+def exploreEnchantedMap(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
@@ -13450,7 +13445,7 @@ def ExploreEnchantedMap(argsList):
 			iPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 
 # GOODY_THE_OUTRUNEREST
-def ExploreTheOutrunerest(argsList):
+def exploreTheOutrunerest(argsList):
 	pUnit, pPlot		= argsList
 	pOrcPlayer			= gc.getPlayer(gc.getORC_PLAYER())
 	pNewPlot			= findClearPlot(-1, pPlot)
@@ -13468,7 +13463,7 @@ def ExploreTheOutrunerest(argsList):
 	newUnit2.setHasPromotion(getInfoType('PROMOTION_UNSTOPPABLE'),True)
 
 # GOODY_EVASIVE_CENTAURS
-def ExploreEvasiveCentaurs(argsList):
+def exploreEvasiveCentaurs(argsList):
 	pUnit, pPlot		= argsList
 	pOrcPlayer			= gc.getPlayer(gc.getORC_PLAYER())
 	pNewPlot			= findClearPlot(-1, pPlot)
@@ -13483,14 +13478,14 @@ def ExploreEvasiveCentaurs(argsList):
 	newUnit3.setHasPromotion(getInfoType('PROMOTION_FLANKING2'),True)
 
 # GOODY_DEAL_WITH_CENTAURS_TRIBE
-def ReqDealwithTribe(argsList):
+def reqDealwithTribe(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	if pPlayer.isHasFlag(getInfoType("FLAG_DEAL_WITH_CENTAURS_TRIBE")):
 		return False
 	return True
 
-def ExploreDealwithTribe(argsList):
+def exploreDealwithTribe(argsList):
 	pUnit, pPlot	= argsList
 	iPlayer			= pUnit.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
@@ -13569,7 +13564,7 @@ def effectDealwithTribe(argsList):
 	# pPlayer.setFreePromotion(git("UNITCOMBAT_MOUNTED"),git("PROMOTION_SHOCK"),true)
 
 # GOODY_AGARES_WORSHIPERS
-def ExploreAgaresWorshipers(argsList):
+def exploreAgaresWorshipers(argsList):
 	pUnit, pPlot		= argsList
 	pNewPlot			= findClearPlot(-1, pPlot)
 	pDemonPlayer		= gc.getPlayer(gc.getDEMON_PLAYER())
@@ -13615,19 +13610,19 @@ def ExploreAgaresWorshipers(argsList):
 		newUnit5.changeStrBoost(1)
 
 # GOODY_PET_ROC
-def ExplorePetRoc(argsList):
+def explorePetRoc(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_ROC'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # GOODY_LIZARDMEN_BOOZE
-def ExploreLizardmenBooze(argsList):
+def exploreLizardmenBooze(argsList):
 	pUnit, pPlot		= argsList
 	if not pUnit.isHasPromotion(getInfoType('PROMOTION_IMMUNE_DISEASE')) or pUnit.isHasPromotion(getInfoType('PROMOTION_LIZARDMAN')):
 		pUnit.doDamage(20, 100, pUnit, getInfoType('DAMAGE_POISON'), False)
 
 # GOODY_HIDDEN_RUINS
-def ReqHiddenRuins(argsList):
+def reqHiddenRuins(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	ClearJungleCount	= 0
@@ -13640,7 +13635,7 @@ def ReqHiddenRuins(argsList):
 		return True
 	return False
 
-def ExploreHiddenRuins(argsList):
+def exploreHiddenRuins(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	RuinCap				= 2
@@ -13672,7 +13667,7 @@ def ExploreHiddenRuins(argsList):
 				break
 
 # GOODY_CITY_OF_GOLD
-def ExploreCityOfGold(argsList):
+def exploreCityOfGold(argsList):
 	pUnit, pPlot	= argsList
 	iPlayer			= pUnit.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
@@ -13739,7 +13734,7 @@ def effectCityOfGold(argsList):
 			pUnit.setHasPromotion(git('PROMOTION_PILLAGED_GOLD'),True)
 
 # GOODY_SACELLUM
-def ExploreSacellum(argsList):
+def exploreSacellum(argsList):
 	pUnit, pPlot		= argsList
 	iPlayer				= pUnit.getOwner()
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
@@ -13772,7 +13767,7 @@ def ExploreSacellum(argsList):
 		CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_GOODY_GOODY_SACELLUM_AVOIDED",()),'',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
 
 # GOODY_FLARE_OF_ARCANE_ENERGY
-def ReqArcaneFlare(argsList):
+def reqArcaneFlare(argsList):
 	pUnit, pPlot		= argsList
 	iPlayer				= pUnit.getOwner()
 	for i in range (CyMap().numPlots()):
@@ -13786,7 +13781,7 @@ def ReqArcaneFlare(argsList):
 						return True
 	return False
 
-def ExploreArcaneFlare(argsList):
+def exploreArcaneFlare(argsList):
 	pUnit, pPlot		= argsList
 	iPlayer				= pUnit.getOwner()
 	iRnd				= CyGame().getSorenRandNum(3, "Arcane Flare, Extra Dispel")
@@ -13809,7 +13804,7 @@ def ExploreArcaneFlare(argsList):
 							break
 
 # GOODY_TRADE_SHIP
-def ExploreTradeShip(argsList):
+def exploreTradeShip(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_TRADESHIP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
@@ -13876,7 +13871,7 @@ def spellChangeForm(caster):
 			caster.setHasPromotion(getInfoType("PROMOTION_DRAKE_FORM"),True)
 	return
 # Master Buildings Help
-def HelpMasterBuildings (argsList):
+def helpMasterBuildings (argsList):
 	eBuilding, pCity = argsList
 	if pCity == -1 or pCity.isNone():
 		szHelp 			= ""
@@ -14321,13 +14316,13 @@ def helpCommanderPicker(argsList):
 			szHelp = localText.getText("You shouldn't see this, ping T_W in AoE discord", ())
 		return szHelp
 
-def ReqLairImmortal(argsList):
+def reqLairImmortal(argsList):
 	pUnit, pPlot		= argsList
 	if pUnit.isAlive():
 		return True
 	return False
 	
-def ReqAustrinCallFalcon(pCaster):
+def reqAustrinCallFalcon(pCaster):
 	return pCaster.cargoSpaceAvailable(getInfoType("SPECIALUNIT_BIRD"),DomainTypes.DOMAIN_AIR)>0
 	
 def spellAustrinCallFalcon(pCaster):
@@ -14370,7 +14365,7 @@ def spellSapperBoom(caster):
 			pCity=pLoopPlot.getPlotCity()
 			pCity.changeDefenseModifier(-caster.bombardRate()*10)
 	
-def SpellDemonLairSpawn(caster):
+def spellDemonLairSpawn(caster):
 	pPlot = caster.plot()
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isBarbarian():

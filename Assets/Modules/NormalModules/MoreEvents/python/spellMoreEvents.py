@@ -767,7 +767,7 @@ def effectGelaImprovement(argsList):
 						newUnit.setHasPromotion(git('PROMOTION_WATER_WALKING'), True)
 			CyInterface().addMessage(pUnit.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_GELA_2",()),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
 
-def ReqCheckLanunQuest(pCaster):
+def reqCheckLanunQuest(pCaster):
 	pPlayer = gc.getPlayer(pCaster.getOwner())
 	FlagList = ['FLAG_TREASURE_HUNTER_AIFON_ISLE','FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA','FLAG_TREASURE_HUNTER_BRADELINES_WELL','FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER','FLAG_TREASURE_HUNTER_DRAGON_BONES','FLAG_TREASURE_HUNTER_FOXFORD','FLAG_TREASURE_HUNTER_LETUM_FRIGUS','FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN','FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK','FLAG_TREASURE_HUNTER_ODIOS_PRISON','FLAG_TREASURE_HUNTER_POOL_OF_TEARS','FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC','FLAG_TREASURE_HUNTER_RINWELL','FLAG_TREASURE_HUNTER_SEVEN_PINES','FLAG_TREASURE_HUNTER_SIRONAS_BEACON','FLAG_TREASURE_HUNTER_STANDING_STONES','FLAG_TREASURE_HUNTER_TOWER_OF_EYES','FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS','FLAG_TREASURE_HUNTER_YGGDRASIL','FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA']
 	for Flag in FlagList:
@@ -775,7 +775,7 @@ def ReqCheckLanunQuest(pCaster):
 			return True
 	return False
 
-def SpellCheckLanunQuest(pCaster):
+def spellCheckLanunQuest(pCaster):
 	pPlayer = gc.getPlayer(pCaster.getOwner())
 	szHelp = ""
 	if pCaster == -1 or pCaster.isNone():
