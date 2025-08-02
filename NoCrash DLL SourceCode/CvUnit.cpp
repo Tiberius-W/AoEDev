@@ -1487,7 +1487,6 @@ void CvUnit::convert(CvUnit* pUnit)
 		}
 	}
 	setSpawnPlot(pUnit->getSpawnPlot());
-	setSpawnImprovementType(pUnit->getSpawnImprovementType());
 	changeStrBoost(pUnit->getStrBoost());
 	setSuppressImage(pUnit->isSuppressImage());
 /*************************************************************************************************/
@@ -2014,11 +2013,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	{
 		changeNoSupply(-1);
 	}
-	CvPlot* pSpawnPlot = getSpawnPlot();
-	if (pSpawnPlot->getImprovementType() == getSpawnImprovementType())
-	{
-		pSpawnPlot->changeNumSpawnsAlive(-1);
-	}
+	getSpawnPlot()->changeNumSpawnsAlive(-1);
 /*************************************************************************************************/
 /**	Upkeep										END												**/
 /*************************************************************************************************/
@@ -18832,24 +18827,10 @@ CvPlot* CvUnit::getSpawnPlot() const
 }
 void CvUnit::setSpawnPlot(CvPlot* pPlot)
 {
-	// Count guardians toward spawn; allows for a kinda-way to track if guardian is alive without more dedicated tracking
-	if (pPlot->getImprovementType() != NO_IMPROVEMENT 
-	 && (getUnitType() == (UnitTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getSpawnUnitType()
-	  || getUnitType() == (UnitTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImmediateSpawnUnitType()))
-	{
-		pPlot->changeNumSpawnsAlive(1);
-		setSpawnImprovementType(pPlot->getImprovementType());
-	}
+	pPlot->changeNumSpawnsAlive(1);
+
 	m_iSpawnPlotX = pPlot->getX();
 	m_iSpawnPlotY = pPlot->getY();
-}
-ImprovementTypes CvUnit::getSpawnImprovementType() const
-{
-	return (ImprovementTypes)m_eSpawnImprovementType;
-}
-void CvUnit::setSpawnImprovementType(ImprovementTypes eImprovement)
-{
-	m_eSpawnImprovementType = eImprovement;
 }
 int CvUnit::getNoBadExplore() const
 {
@@ -30721,6 +30702,7 @@ bool CvUnit::canAirStrike(const CvPlot* pPlot) const
 }
 
 
+// True if damage set, did recon; false if intercepted or can't attack the plot
 bool CvUnit::airStrike(CvPlot* pPlot)
 {
 	if (!canAirStrike(pPlot))

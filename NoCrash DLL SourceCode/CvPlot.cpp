@@ -7452,6 +7452,10 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			kData.m_iImprovement = eOldImprovement;
 			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_GAIN_IMPROVEMENT, &kData);
 		}
+		// Clear any tracking from random/old lairs when a new lair spawns from nothing
+		// Upgrading lairs is intentionally kept; direct replacement from X to lair should be impossible.
+		if (eOldImprovement == NO_IMPROVEMENT)
+			changeNumSpawnsAlive(-getNumSpawnsAlive());
 	}
 
 	updatePlotGroupBonus(true);

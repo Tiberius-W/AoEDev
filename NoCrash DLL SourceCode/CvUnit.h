@@ -1412,8 +1412,6 @@ public:
 	void setDisablePyDeath(bool bNewValue);
 	CvPlot* getSpawnPlot() const;
 	void setSpawnPlot(CvPlot* pPlot);
-	ImprovementTypes getSpawnImprovementType() const;
-	void setSpawnImprovementType(ImprovementTypes eImprovement);
 	int getNoBadExplore() const;
 	void changeNoBadExplore(int iChange);
 	const wchar* getQuote() const;

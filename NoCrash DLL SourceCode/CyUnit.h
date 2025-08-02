@@ -745,8 +745,6 @@ public:
 	bool isDisablePyDeath() const;
 	void setDisablePyDeath(bool bNewValue);
 	CyPlot* getSpawnPlot();
-	int getSpawnImprovementType();
-	void setSpawnImprovementType(int eIndex); //(ImprovementTypes)
 	int getStrBoost();
 	void changeStrBoost(int iChange);
 	int getNoBadExplore() const;

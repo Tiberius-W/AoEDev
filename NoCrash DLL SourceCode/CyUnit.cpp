@@ -2436,8 +2436,6 @@ bool CyUnit::isDenyPromotion(int ePromotion) const	{return m_pUnit ? m_pUnit->is
 bool CyUnit::isDisablePyDeath() const				{return m_pUnit ? m_pUnit->isDisablePyDeath(): false;}
 void CyUnit::setDisablePyDeath(bool bNewValue)		{if (m_pUnit != NULL)	m_pUnit->setDisablePyDeath(bNewValue);}
 CyPlot* CyUnit::getSpawnPlot()						{return m_pUnit ? new CyPlot(m_pUnit->getSpawnPlot()) : false;}
-int CyUnit::getSpawnImprovementType()				{return m_pUnit ? m_pUnit->getSpawnImprovementType(): -1;}
-void CyUnit::setSpawnImprovementType(int eIndex)	{if (m_pUnit != NULL) m_pUnit->setSpawnImprovementType((ImprovementTypes)eIndex);}
 int CyUnit::getStrBoost()							{return m_pUnit ? m_pUnit->getStrBoost(): 0;}
 void CyUnit::changeStrBoost(int iChange)			{if (m_pUnit != NULL) m_pUnit->changeStrBoost(iChange);}
 int CyUnit::getNoBadExplore() const					{return m_pUnit ? m_pUnit->getNoBadExplore(): 0;}
