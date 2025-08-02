@@ -27292,7 +27292,9 @@
 			<bExplodeInCombat>1</bExplodeInCombat>
 			<bFreeXP>1</bFreeXP>
 			<PythonPostCombatLost>postCombatBigExplode(pCaster,pOpponent)</PythonPostCombatLost>
-			<PythonOnDeath>onDeathBigExplode(pCaster)</PythonOnDeath>
+			<!-- Somewhat redundant with above, and with forts requiring no adjacent foes to claim.
+			 Also causes crashes if it destroys the fort, as it'll try to kill the already dead unit -->
+			<!-- <PythonOnDeath>onDeathBigExplode(pCaster)</PythonOnDeath> -->
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_FIRE</DamageType>

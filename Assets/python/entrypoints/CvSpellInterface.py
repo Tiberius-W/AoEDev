@@ -504,14 +504,15 @@ def postCombatBigExplode(pCaster, pOpponent):
 	if pCaster.isHasPromotion(getInfoType('PROMOTION_SHEUT_STONE')):
 		pOpponent.doDamage(20, 100, pCaster, getInfoType('DAMAGE_DEATH'), False)
 
-def onDeathBigExplode(pCaster):
-	pPlot = pCaster.plot()
-	pCaster.DeselectUnit()
-	iImprovement = pPlot.getImprovementType()
-	if iImprovement != -1:
-		pImprovement = gc.getImprovementInfo(iImprovement)
-		if not pImprovement.isUnique():
-			pPlot.setImprovementType(-1) #This can kill the unit!
+# Removed for redundancy with new fort rules. Also, killing a unit as a result of its death causes crashes...
+# def onDeathBigExplode(pCaster):
+# 	pPlot = pCaster.plot()
+# 	pCaster.DeselectUnit()
+# 	iImprovement = pPlot.getImprovementType()
+# 	if iImprovement != -1:
+# 		pImprovement = gc.getImprovementInfo(iImprovement)
+# 		if not pImprovement.isUnique():
+# 			pPlot.setImprovementType(-1) #This can kill the unit!
 
 def fireSpreadToTile(iX, iY):
 	pPlot = CyMap().plot(iX,iY)
