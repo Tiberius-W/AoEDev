@@ -1995,7 +1995,7 @@
 			<HillsYieldChange/>
 			<iMovement>2</iMovement>
 			<iCultureDistance>-1</iCultureDistance>
-			<iSeeThrough>1</iSeeThrough>
+			<iSeeThrough>0</iSeeThrough>
 			<iHealthPercent>0</iHealthPercent>
 			<iDefense>0</iDefense>
 			<iAppearance>500</iAppearance>
