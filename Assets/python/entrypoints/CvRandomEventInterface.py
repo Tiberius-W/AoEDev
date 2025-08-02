@@ -104,19 +104,20 @@ def canTriggerAmathaonMessenger(argsList):
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
+	# Coatl companion on workers is alright
 	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS")):
 		return False
 	#if pUnit.getLevel() < 5:
 	#	return False
 	#return True
-	return pUnit.isAlive() and (not pUnit.isHasPromotion(getInfoType('PROMOTION_COUATL_COMPANION'))) and  pUnit.getUnitClassType()!=getInfoType("UNITCLASS_WORKER")
+	return pUnit.isAlive() and (not pUnit.isHasPromotion(getInfoType('PROMOTION_COUATL_COMPANION'))) and pUnit.getUnitClassType()!=getInfoType("UNITCLASS_WORKER")
 def canTriggerPseudoDragon(argsList):
 	kTriggeredData = argsList[0]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS")):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
 		return False
 	#if pUnit.getLevel() < 5:
 	#	return False
@@ -129,7 +130,7 @@ def canTriggerAmicus(argsList):
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS")):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
 		return False
 	if pUnit.getLevel() < 5:
 		return False
@@ -142,7 +143,7 @@ def canTriggerAppeleur(argsList):
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS")):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
 		return False
 	return pUnit.isAlive() and not pUnit.isHasPromotion(getInfoType('PROMOTION_APPELEUR_COMPANION')) and (pPlayer.getAlignment()== iGood ) 
 
