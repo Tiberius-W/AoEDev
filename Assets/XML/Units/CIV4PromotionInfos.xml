@@ -977,6 +977,51 @@
 				<Promotion>PROMOTION_JOT_PROMINENT_GIANT</Promotion>
 				<Promotion>PROMOTION_JOT_LEGENDARY_GIANT</Promotion>
 			</PromotionAllows>
+			<bWaterWalking>1</bWaterWalking>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Goblinoid -->
 			<Type>PROMOTION_GOBLIN</Type>

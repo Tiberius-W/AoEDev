@@ -20,8 +20,8 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Spells/Mother Lode.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Convert Slave -->
-			<Type>SPELL_JOT_SLAVE_CONVERT</Type>
+        <SpellInfo>			<!-- Convert Giant Slave To Citizen --> 
+		<Type>SPELL_JOT_SLAVE_CONVERT</Type>
 			<Description>Giantkin Thrall</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -30,12 +30,19 @@
 			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
+			<iCost>35</iCost>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_APTITUDE1</AddPromotion>
+				<AddPromotion>PROMOTION_GIANTKIN</AddPromotion>
+				<AddPromotion>PROMOTION_JOT_POTENTIAL</AddPromotion>
+				<AddPromotion>PROMOTION_JOT_ALLEGIANCE</AddPromotion>
+			</AddPromotions>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_JOT_CONVERT</RemovePromotion>
 				<RemovePromotion>PROMOTION_THRALL</RemovePromotion>
 			</RemovePromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<ConvertUnitType>UNIT_JOT_SLAVE</ConvertUnitType>
+			<ConvertUnitType>UNIT_JOT_ADULT</ConvertUnitType>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Civics/Slavery.dds</Button>
@@ -64,8 +71,8 @@
 			<iCost>200</iCost>
 			<Button>Art/Interface/Buttons/Units/Eidolon.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Hurler-->
-			<Type>SPELL_HURLER</Type>
+<!-- <SpellInfo> -->			<!-- Hurler   Overpowered.-->
+	<!-- <Type>SPELL_HURLER</Type>
 			<Description>Hurler</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -86,7 +93,7 @@
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_MUTATION</Sound>
 			<Button>Art/Interface/Buttons/Units/Archer.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Jolly Roger -->
 			<Type>SPELL_JOLLY_ROGER</Type>
 			<Description>Jolly Roger</Description>
@@ -374,7 +381,7 @@
 			<Sound>AS3D_SPELL_MUTATION</Sound>
 			<Button>Art/Interface/Buttons/Projects/PrepareExpedition.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Steading (Hillgiant Steading) -->
+		<SpellInfo>			<!-- Steading (Hillgiant Steading) (does this do anything?, you can't own a staeding tile) -->
 			<Type>SPELL_STEADING2</Type>
 			<Description>Steading</Description>
 			<Civilopedia></Civilopedia>

@@ -1343,6 +1343,16 @@
 				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
 				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
 			</AllowPromotions>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Fyrd -->
 			<Class>UNITCLASS_AXEMAN</Class>
@@ -1665,6 +1675,16 @@
 			<DenyPromotions>
 				<Promotion>PROMOTION_MOBILITY1</Promotion>
 			</DenyPromotions>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Hurler -->
 			<Class>UNITCLASS_ARCHER</Class>
@@ -1753,6 +1773,16 @@
 				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
 				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
 			</AllowPromotions>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Huscarl -->
 			<Class>UNITCLASS_WARRIOR</Class>
@@ -1991,6 +2021,16 @@
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Jotnar Citizens -->
 			<Class>UNITCLASS_WORKER</Class>
@@ -2236,6 +2276,54 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<AllowPromotions>
+				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
+				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
+			</AllowPromotions>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
@@ -2340,6 +2428,54 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<AllowPromotions>
+				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
+				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
+			</AllowPromotions>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>2</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
@@ -2392,6 +2528,16 @@
 			</FreePromotions>
 			<iCombatDefense>4</iCombatDefense>
 			<iTier>1</iTier>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Jotnar Slave -->
 			<Class>UNITCLASS_SLAVE</Class>
@@ -3614,6 +3760,16 @@
 				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
 				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
 			</AllowPromotions>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Vala -->
 			<Class>UNITCLASS_ARCHMAGE</Class>
@@ -3883,6 +4039,16 @@
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>		<!-- Voice of the Divine -->
 			<Class>UNITCLASS_VOICE_OF_THE_DIVINE</Class>

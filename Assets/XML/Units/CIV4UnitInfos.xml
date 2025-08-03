@@ -8422,6 +8422,16 @@
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<Image>Art/Interface/Popups/Wilboman.dds</Image>
 			<Quote>TXT_KEY_POPUP_WILBOMAN_CREATION</Quote>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Yersinia -->
 			<Class>UNITCLASS_YERSINIA</Class>
@@ -36126,6 +36136,16 @@
 					<iCombat>3</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Air Elemental -->                                                         <!-- BEGIN SUMMONED UNITS LIST -->
 			<Class>UNITCLASS_AIR_ELEMENTAL</Class>
@@ -48489,6 +48509,16 @@
 			<iTier>1</iTier>
 			<iWeaponTierMax>1</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Frostling -->
 			<Class>UNITCLASS_FROSTLING</Class>
@@ -48818,6 +48848,16 @@
 			<iTier>2</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Minotaur -->
 			<Class>UNITCLASS_MINOTAUR</Class>
@@ -50689,6 +50729,16 @@
 			<iTier>3</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Skald -->                      <!-- End "Staedding" Spawns -->
 			<Class>UNITCLASS_MAGE</Class>
@@ -50773,6 +50823,16 @@
 			</FreePromotions>
 			<bFreeXP>1</bFreeXP>
 			<iTier>3</iTier>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Frostling Axeman -->           <!-- Begin "Frostling Camp" Spawns -->
 			<Class>UNITCLASS_CHAMPION</Class>
