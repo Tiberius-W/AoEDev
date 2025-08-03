@@ -117,7 +117,7 @@ def canTriggerPseudoDragon(argsList):
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or pUnit.getUnitCombatType()==-1 or pUnit.getUnitCombatType()==getInfoType('UNITCOMBAT_WORKER')):
 		return False
 	#if pUnit.getLevel() < 5:
 	#	return False
@@ -130,7 +130,7 @@ def canTriggerAmicus(argsList):
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or pUnit.getUnitCombatType()==-1 or pUnit.getUnitCombatType()==getInfoType('UNITCOMBAT_WORKER')):
 		return False
 	if pUnit.getLevel() < 5:
 		return False
@@ -143,7 +143,7 @@ def canTriggerAppeleur(argsList):
 	iPlayer = pPlayer.getCivilizationType()
 	pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
 	iGood          = getInfoType('ALIGNMENT_GOOD')
-	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or not pUnit.canDefend()):
+	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or pUnit.getUnitCombatType()==-1 or pUnit.getUnitCombatType()==getInfoType('UNITCOMBAT_WORKER')):
 		return False
 	return pUnit.isAlive() and not pUnit.isHasPromotion(getInfoType('PROMOTION_APPELEUR_COMPANION')) and (pPlayer.getAlignment()== iGood ) 
 
