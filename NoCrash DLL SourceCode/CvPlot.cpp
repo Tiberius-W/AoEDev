@@ -1104,7 +1104,7 @@ void CvPlot::doImprovementUpgrade()
 		return;
 
 	// To upgrade, improvements must be A) worked or B) bOutsideBorders and not an unclaimed fort (on land due to Rinwell)
-	if (!(isBeingWorked() || (GC.getImprovementInfo(eImprovementUpgrade).isOutsideBorders() && !(!isOwned() && !isWater() && GC.getImprovementInfo(getImprovementType()).isFort()))))
+	if (!(isBeingWorked() || (GC.getImprovementInfo(getImprovementType()).isOutsideBorders() && !(!isOwned() && !isWater() && GC.getImprovementInfo(getImprovementType()).isFort()))))
 		return;
 
 	// ? : Hinterlands Valkrionn 07/11/09
@@ -11091,26 +11091,20 @@ void CvPlot::doFeature()
 	int iProbability;
 	int iI, iJ;
 
-/*************************************************************************************************/
-/**	Sidar Mist 								25/06/10								Grey Fox	**/
-/*************************************************************************************************/
-//	if (getMistChangeTimer() > 0)
-//	{
-//		changeMistChangeTimer(-1);
-//	}
-//	if (getMistChangeTimer() == 0)
-//	{
-//		setMistChangeTimer(-1);
-//		setPerceptionCost(getMistChangeTemp());
-//	}
-/*************************************************************************************************/
-/**	END                                                                   						**/
-/*************************************************************************************************/
+	// Sidar Mist - Grey Fox - 25/06/10
+	// if (getMistChangeTimer() > 0)
+	// {
+	// 	changeMistChangeTimer(-1);
+	// }
+	// if (getMistChangeTimer() == 0)
+	// {
+	// 	setMistChangeTimer(-1);
+	// 	setPerceptionCost(getMistChangeTemp());
+	// }
 
 	if (getFeatureType() != NO_FEATURE)
 	{
-
-//FfH: Added by Kael 03/20/2008
+		//FfH: Added by Kael 03/20/2008 (religion upgrade feature)
 		if (GC.getFeatureInfo(getFeatureType()).getFeatureUpgrade() != NO_FEATURE)
 		{
 			if (GC.getFeatureInfo((FeatureTypes)GC.getFeatureInfo(getFeatureType()).getFeatureUpgrade()).getPrereqStateReligion() == NO_RELIGION
@@ -11122,6 +11116,8 @@ void CvPlot::doFeature()
 				}
 			}
 		}
+
+		//FfH: Added by Kael 03/20/2008 (flame spread)
 		if (GC.getDefineINT("FLAMES_FEATURE") != -1  && GC.getDefineINT("FLAMES_SPREAD_EFFECT") != -1)
 		{
 			if (getFeatureType() == GC.getDefineINT("FLAMES_FEATURE"))
@@ -11167,7 +11163,6 @@ void CvPlot::doFeature()
 				}
 			}
 		}
-//FfH: End Add
 
 		iProbability = GC.getFeatureInfo(getFeatureType()).getDisappearanceProbability();
 		if (iProbability > 0)
@@ -11178,11 +11173,9 @@ void CvPlot::doFeature()
 			}
 		}
 	}
-	else // if (getFeatureType() == NO_FEATURE)
+	// Feature Spread - Ahwaric - 23.09.09
+	else
 	{
-/*************************************************************************************************/
-/**	Feature Spread 	 	   				expanded by Ahwaric  23.09.09	**/
-/*************************************************************************************************/
 		for (iI = 0; iI < GC.getNumFeatureInfos(); ++iI)
 		{
 			if (canHaveFeature((FeatureTypes)iI))
@@ -11201,9 +11194,6 @@ void CvPlot::doFeature()
 							{
 								if (pLoopPlot->getFeatureType() == ((FeatureTypes)iI))
 								{
-/*************************************************************************************************/
-/**	Feature Spread 	 Mongoose FeatureGrowthMod & Sanguo Mod	   added by Ahwaric  22.09.09	**/
-/*************************************************************************************************/
 									iProbability += GC.getFeatureInfo((FeatureTypes)iI).getGrowthProbability();
 									if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 
@@ -11214,9 +11204,6 @@ void CvPlot::doFeature()
 											iProbability += GET_PLAYER(getOwnerINLINE()).getFeatureGrowthChange((FeatureTypes)iI);
 										}
 									}
-/*************************************************************************************************/
-/**	Feature Spread		END								**/
-/*************************************************************************************************/
 								}
 							}
 						}
@@ -11232,16 +11219,7 @@ void CvPlot::doFeature()
 
 						if (iProbability > 0)
 						{
-/*************************************************************************************************/
-/**	Flavour Mod								11/16/08								Jean Elcard	**/
-/**					Attempt to keep Unique Features from being removed on Mapgen				**/
-/**		A feature spreads only temporary, if the real terrain does not allow the feature.		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							if (GC.getGameINLINE().getSorenRandNum(10000, "Feature Growth") < iProbability)
-							{
-								setFeatureType((FeatureTypes)iI);
-/**								----  End Original Code  ----									**/
+							// Flavour Mod - Jean Elcard - 11/16/08 - A feature spreads only temporary, if the real terrain does not allow the feature
 							if (GC.getGameINLINE().getMapRandNum(10000, "Feature Growth") < iProbability)
 							{
 								if (getTempTerrainTimer() > 0  && !GC.getFeatureInfo((FeatureTypes)iI).isTerrain(getRealTerrainType()))
@@ -11252,9 +11230,6 @@ void CvPlot::doFeature()
 								{
 									setFeatureType((FeatureTypes)iI);
 								}
-/*************************************************************************************************/
-/**	Flavour Mod								END													**/
-/*************************************************************************************************/
 
 								pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
 
@@ -11272,15 +11247,6 @@ void CvPlot::doFeature()
 				}
 			}
 		}
-/*************************************************************************************************/
-/**	Feature Spread 	 	   expanded by Ahwaric  23.09.09				**/
-/*************************************************************************************************/
-/**			---- Start Original Code ----						**
-		}
-/**			----  End Original Code  ----						**/
-/*************************************************************************************************/
-/**	Feature Spread		END								**/
-/*************************************************************************************************/
 	}
 }
 

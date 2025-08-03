@@ -6318,14 +6318,16 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (eImprovement != NO_IMPROVEMENT)
 		{
+			CvImprovementInfo& info = GC.getImprovementInfo(eImprovement);
+
 			szString.append(NEWLINE);
 			if (pPlot->getImprovementOwner() != NO_PLAYER)
 			{
-				szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_NAME",GET_PLAYER(pPlot->getImprovementOwner()).getCivilizationAdjective(0),GC.getImprovementInfo(eImprovement).getDescription()));
+				szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_NAME",GET_PLAYER(pPlot->getImprovementOwner()).getCivilizationAdjective(0), info.getDescription()));
 			}
 			else
 			{
-				szString.append(GC.getImprovementInfo(eImprovement).getDescription());
+				szString.append(info.getDescription());
 			}
 			if (pPlot->getExploreNextTurn() > GC.getGame().getGameTurn())
 			{
@@ -6334,38 +6336,31 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			}
 			else
 			{
-				if (GC.getImprovementInfo(eImprovement).isExplorable())
+				if (info.isExplorable())
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_EXPLORE_NOW"));
 				}
 			}
-/*************************************************************************************************/
-/**	Statesmen								02/05/10											**/
-/**																								**/
-/**						Allows improvements to grant specific specialists						**/
-/*************************************************************************************************/
-			if (GC.getImprovementInfo(eImprovement).getFreeSpecialist() != NO_SPECIALIST)
+
+			if (info.getFreeSpecialist() != NO_SPECIALIST)
 			{
 				szString.append(NEWLINE);
-				if (GC.getImprovementInfo(eImprovement).getPrereqCivilization() == NO_CIVILIZATION)
+				if (info.getPrereqCivilization() == NO_CIVILIZATION)
 				{
-					szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_PLOT", GC.getSpecialistInfo((SpecialistTypes) GC.getImprovementInfo(eImprovement).getFreeSpecialist()).getDescription()));
+					szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_PLOT", GC.getSpecialistInfo((SpecialistTypes)info.getFreeSpecialist()).getDescription()));
 				}
 				else
 				{
-					szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_PLOT_PREREQ_CIV", GC.getSpecialistInfo((SpecialistTypes) GC.getImprovementInfo(eImprovement).getFreeSpecialist()).getDescription(), GC.getCivilizationInfo((CivilizationTypes)GC.getImprovementInfo(eImprovement).getPrereqCivilization()).getDescription()));
+					szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_PLOT_PREREQ_CIV", GC.getSpecialistInfo((SpecialistTypes)info.getFreeSpecialist()).getDescription(), GC.getCivilizationInfo((CivilizationTypes)info.getPrereqCivilization()).getDescription()));
 				}
 			}
-/*************************************************************************************************/
-/**	Statesmen								END													**/
-/*************************************************************************************************/
 
 			bFound = false;
 
 			for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 			{
-				if (GC.getImprovementInfo(eImprovement).getIrrigatedYieldChange(iI) != 0)
+				if (info.getIrrigatedYieldChange(iI) != 0)
 				{
 					bFound = true;
 					break;
@@ -6384,32 +6379,33 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				}
 			}
 
-			if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT)
+			// Don't show timer (it's inaccurate) for lairs without upgrade times
+			if (info.getImprovementUpgrade() != NO_IMPROVEMENT && GC.getImprovementInfo(eImprovement).getUpgradeTime() > 0)
 			{
-				if (GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION ||
+				if (GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION ||
 				 GC.getGameINLINE().getActivePlayer() == NO_PLAYER ||
-				 GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType() == GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization())
+				 GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType() == GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getPrereqCivilization())
 				{
-					// Always show turns to upgrade if there is progress, it is being worked, or it is improving by itself
-					if ((pPlot->getUpgradeProgress() > 0) || pPlot->isBeingWorked() || (GC.getImprovementInfo(eImprovement).isOutsideBorders() && (pPlot->isWater() || eRevealOwner != NO_PLAYER)))
+					// Always show turns to upgrade if there is progress, it is being worked, or it is improving by itself (and not a land unowned fort)
+					if ((pPlot->getUpgradeProgress() > 0) || pPlot->isBeingWorked() || (GC.getImprovementInfo(eImprovement).isOutsideBorders() && !(!pPlot->isWater() && eRevealOwner != NO_PLAYER) && GC.getImprovementInfo(eImprovement).isFort()))
 					{
 						iTurns = pPlot->getUpgradeTimeLeft(eImprovement, eRevealOwner);
-						szString.append(gDLL->getText("TXT_KEY_PLOT_IMP_UPGRADE", iTurns, GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide()));
+						szString.append(gDLL->getText("TXT_KEY_PLOT_IMP_UPGRADE", iTurns, GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getTextKeyWide()));
 					}
 					// Land forts must be owned to be upgraded
-					else if (GC.getImprovementInfo(eImprovement).isFort() && !pPlot->isWater() && (eRevealOwner == NO_PLAYER))
+					else if (info.isFort() && !pPlot->isWater() && (eRevealOwner == NO_PLAYER))
 					{
-						szString.append(gDLL->getText("TXT_KEY_PLOT_OWN_TO_UPGRADE", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide()));
+						szString.append(gDLL->getText("TXT_KEY_PLOT_OWN_TO_UPGRADE", GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getTextKeyWide()));
 					}
 					else
 					{
-						if (GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION)
+						if (GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION)
 						{
-							szString.append(gDLL->getText("TXT_KEY_PLOT_WORK_TO_UPGRADE", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide()));
+							szString.append(gDLL->getText("TXT_KEY_PLOT_WORK_TO_UPGRADE", GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getTextKeyWide()));
 						}
 						else
 						{
-							szString.append(gDLL->getText("TXT_KEY_PLOT_WORK_TO_UPGRADE_PREREQ_CIV", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide(), GC.getCivilizationInfo((CivilizationTypes)GC.getImprovementInfo((ImprovementTypes)GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization()).getDescription()));
+							szString.append(gDLL->getText("TXT_KEY_PLOT_WORK_TO_UPGRADE_PREREQ_CIV", GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getTextKeyWide(), GC.getCivilizationInfo((CivilizationTypes)GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getPrereqCivilization()).getDescription()));
 						}
 					}
 				}
@@ -25399,9 +25395,9 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 /**																								**/
 /**									Loads Information from XML									**/
 /*************************************************************************************************/
-	if (GC.getImprovementInfo(eImprovement).getMaxOutgoingAirlift())
+	if (info.getMaxOutgoingAirlift())
 	{
-		szBuffer.append (NEWLINE + gDLL->getText("TXT_KEY_BUILDING_AIRLIFT", GC.getImprovementInfo(eImprovement).getMaxOutgoingAirlift()));
+		szBuffer.append (NEWLINE + gDLL->getText("TXT_KEY_BUILDING_AIRLIFT", info.getMaxOutgoingAirlift()));
 		szBuffer.append(NEWLINE + gDLL->getText("TXT_KEY_BUILDING_AIRLIFT_CONNECT"));
 	}
 
@@ -25461,7 +25457,7 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 			bool bFirst = true;
 			for (int iK = 0; iK < GC.getNumTechInfos(); iK++)
 			{
-				if (GC.getImprovementInfo(eImprovement).getLairUpgradeTechs(iK) > 0)
+				if (info.getLairUpgradeTechs(iK) > 0)
 				{
 					if (!bFirst)
 					{
@@ -25474,13 +25470,13 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 			szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_EVOLVES_TECH", GC.getImprovementInfo((ImprovementTypes) info.getImprovementUpgrade()).getTextKeyWide()));
 			szBuffer.append(szTechBuffer);
 		}
-		else if (GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION)
+		else if (GC.getImprovementInfo((ImprovementTypes) info.getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_EVOLVES", GC.getImprovementInfo((ImprovementTypes) info.getImprovementUpgrade()).getTextKeyWide(), iTurns,((CvWString)GC.getImprovementInfo((ImprovementTypes) info.getImprovementUpgrade()).getType()).c_str()));
 		}
 		else
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_EVOLVES_PREREQ_CIV", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide(), iTurns, GC.getCivilizationInfo((CivilizationTypes)GC.getImprovementInfo((ImprovementTypes)GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization()).getDescription()));
+			szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_EVOLVES_PREREQ_CIV", GC.getImprovementInfo((ImprovementTypes) info.getImprovementUpgrade()).getTextKeyWide(), iTurns, GC.getCivilizationInfo((CivilizationTypes)GC.getImprovementInfo((ImprovementTypes)info.getImprovementUpgrade()).getPrereqCivilization()).getDescription()));
 		}
 //FfH: End Modify
 
@@ -25583,7 +25579,7 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 	if (info.getMinimumDistance() > 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_MINIMUM_DISTANCE", GC.getImprovementInfo(eImprovement).getMinimumDistance(), GC.getImprovementInfo(eImprovement).getDescription()));
+		szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_MINIMUM_DISTANCE", info.getMinimumDistance(), info.getDescription()));
 	}
 	if (info.getCultureControlStrength() > 0)
 	{
