@@ -2539,8 +2539,8 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 		</UnitInfo>
-		<UnitInfo>		<!-- Jotnar Slave -->
-			<Class>UNITCLASS_SLAVE</Class>
+   <!-- <UnitInfo>	-->	<!-- Jotnar Slave -->
+	    <!--<Class>UNITCLASS_SLAVE</Class>
 			<Type>UNIT_JOT_SLAVE</Type>
 			<Capture>UNITCLASS_SLAVE</Capture>
 			<Combat>NONE</Combat>
@@ -2673,7 +2673,7 @@
 			<iCombatDefense>0</iCombatDefense>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>1</iTier>
-		</UnitInfo>
+		</UnitInfo> -->
 		<UnitInfo>		<!-- Jotun -->
 			<Class>UNITCLASS_PHALANX</Class>
 			<Type>UNIT_JOTUN</Type>
@@ -3235,8 +3235,8 @@
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>2</iTier>
 		</UnitInfo>
-		<UnitInfo>		<!-- Thrall Militia -->
-			<Class>UNITCLASS_WARRIOR</Class>
+   <!-- <UnitInfo>	-->	<!-- Thrall Militia -->
+   <!-- <Class>UNITCLASS_WARRIOR</Class>
 			<Type>UNIT_THRALL_MILITIA</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
 			<Combat>UNITCOMBAT_WORKER</Combat>
@@ -3359,7 +3359,7 @@
 			<iTier>1</iTier>
 			<iWeaponTierMin>4</iWeaponTierMin>
 			<iWeaponTierMax>6</iWeaponTierMax>
-		</UnitInfo>
+		</UnitInfo> -->
 		<UnitInfo>		<!-- Troll Elder -->
 			<Class>UNITCLASS_BEASTMASTER</Class>
 			<Type>UNIT_JOT_BEASTMASTER</Type>
