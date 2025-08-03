@@ -1,0 +1,18 @@
+<CivFlavourInfos>
+	<CivFlavourInfo>
+		<Civilization>CIVILIZATION_BEZERI</Civilization>
+		<Preference>
+			<FlavourType>COASTAL_START</FlavourType>
+			<Value>8</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>IMPROVEMENT_MAELSTROM</FlavourType>
+			<Value>6</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_GRASS</FlavourType>
+			<Value>4</Value>
+		</Preference>
+		<iSearchAreaModifier>-1</iSearchAreaModifier>
+	</CivFlavourInfo>
+</CivFlavourInfos>
