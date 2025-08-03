@@ -915,15 +915,20 @@ void CvPlot::doLairSpawn()
 			bValid = true;
 		}
 	}
-	// For nonbarb, bSpawnOnlyForOwner requires specifically that owner. Enable king-of-the-hill control over a spawner if no spawnciv is set...
+	// bSpawnOnlyForOwner requires specifically that owner. Enable king-of-the-hill control over a spawner if no spawnciv is set...
 	else if (GC.getImprovementInfo(getImprovementType()).isSpawnOnlyForOwner())
 	{
 		if (isOwned()
-		&&  ((GET_PLAYER(getOwner()).getCivilizationType() == (CivilizationTypes)iCiv)
-			 || (iCiv == NO_CIVILIZATION)))
+		&&  ((iCiv == NO_CIVILIZATION)
+			 || (GET_PLAYER(getOwner()).getCivilizationType() == (CivilizationTypes)iCiv)))
 		{
-			eSpawnPlayer = getOwner();
-			bValid = true;
+			// Don't let barbs spawn non-combat units
+			if (!GET_PLAYER(getOwner()).isBarbarian()
+			 || (iUnit != NO_UNIT && (GC.getUnitInfo((UnitTypes)iUnit).getUnitCombatType() != NO_UNITCOMBAT)))
+			{
+				eSpawnPlayer = getOwner();
+				bValid = true;
+			}
 		}
 	}
 	else
