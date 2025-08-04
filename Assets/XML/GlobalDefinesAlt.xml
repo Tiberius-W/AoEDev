@@ -755,4 +755,9 @@
 		<!-- how much magical power is lost per Extra Dominion chosen -->
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>RECON_VISIBILITY_RANGE</DefineName>
+		<!-- Overriding BTS default of 5 -->
+		<iDefineIntVal>4</iDefineIntVal>
+	</Define>
 </Civ4Defines>
