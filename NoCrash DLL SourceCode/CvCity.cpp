@@ -1665,10 +1665,7 @@ void CvCity::doTurn()
 
 	if (!isDisorder())
 	{
-//>>>>Unofficial Bug Fix: Modified by Denev 2010/04/04
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		for (iI = 0; iI < getNumCityPlots(); iI++)
-//<<<<Unofficial Bug Fix: End Modify
 		{
 			pLoopPlot = getCityIndexPlot(iI);
 
@@ -1678,7 +1675,7 @@ void CvCity::doTurn()
 				{
 					if (pLoopPlot->isBeingWorked())
 					{
-						pLoopPlot->doImprovement();
+						pLoopPlot->doImprovementCityWorking();
 					}
 				}
 			}

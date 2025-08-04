@@ -55,7 +55,7 @@ public:
 
 	void doUniqueLairTimecheck();
 
-	void doImprovement();
+	void doImprovementCityWorking();
 
 	void updateCulture(bool bBumpUnits, bool bUpdatePlotGroups);
 

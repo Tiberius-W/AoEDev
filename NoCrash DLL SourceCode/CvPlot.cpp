@@ -1008,14 +1008,13 @@ void CvPlot::doLairSpawn()
 }
 
 
-void CvPlot::doImprovement()
+// Bonus spread and discover only happens when tile is worked by a city. Upgrade is checked directly as part of CvPlot::doTurn()
+void CvPlot::doImprovementCityWorking()
 {
 	PROFILE_FUNC();
 
 	if (getImprovementType() == NO_IMPROVEMENT)
 		return;
-
-	doImprovementUpgrade();
 
 	if (getBonusType() != NO_BONUS)
 		return;
