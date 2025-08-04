@@ -1019,74 +1019,61 @@ void CvPlot::doImprovementCityWorking()
 	if (getBonusType() != NO_BONUS)
 		return;
 
+	FAssert(isBeingWorked() && isOwned());
+	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlot::doImprovementCityWorking");
+
 	CvCity* pCity;
 	CvWString szBuffer;
-	int iI;
+	int iChance, iBonus;
+	bool bFound = false;
 
-	//FfH Mana Effects: Added by Kael 08/21/2007
-	int iChance;
+	int iSpeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getImprovementPercent();
+	int iDiscoverMod = std::max(-99, GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier());
+	int iOffset = GC.getGameINLINE().getMapRandNum(GC.getNumBonusInfos(), "Don't wanna weigh first bonuses differently");
 
-	FAssert(isBeingWorked() && isOwned());
-
-	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlot::doImprovement");
-	for (iI = 0; iI < GC.getNumBonusInfos(); ++iI)
+	for (int iI = iOffset; iI < GC.getNumBonusInfos() + iOffset; ++iI)
 	{
-		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes) iI).getTechReveal())))
+		iBonus = iI % GC.getNumBonusInfos();
+
+		// Can't dowsing our way into patrician artifacts
+		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes)iBonus).getTechReveal())))
 			continue;
 
-		// SpreadBonus : Opera 28/08/09
-		if (GC.getImprovementInfo(getImprovementType()).getImprovementBonusSpreadRand(iI) > 0)
+		// First check for discovery. Should respect original placement rules, since we're "discovering" it
+		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iBonus);
+		if (iChance > 0 && canHaveBonus((BonusTypes)iBonus, true))
 		{
-			iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusSpreadRand(iI);
-			if (isOwned() && (100 + GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier()) != 0)
+			iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
+			if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Discovery") == 0)
 			{
-				iChance *= 100;
-				iChance /= 100 + GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier();
-			}
-
-			if (GET_PLAYER(getOwnerINLINE()).hasBonus((BonusTypes)iI))
-			{
-				if (GC.getGameINLINE().getSorenRandNum(iChance, "Bonus Spreading") == 0)
-				{
-					setBonusType((BonusTypes)iI);
-
-					pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
-
-					if (pCity != NULL)
-					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", GC.getBonusInfo((BonusTypes) iI).getTextKeyWide(), pCity->getNameKey());
-						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MINOR_EVENT, GC.getBonusInfo((BonusTypes) iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-					}
-
-					break;
-				}
+				setBonusType((BonusTypes)iBonus);
+				bFound = true;
+				break;
 			}
 		}
 
-		if (GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iI) > 0)
+		// Then try spread an already existing one (original implementation -> SpreadBonus : Opera 28/08/09)
+		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusSpreadRand(iBonus);
+		if (!GET_PLAYER(getOwnerINLINE()).hasBonus((BonusTypes)iBonus) || iChance <= 0)
+			continue;
+		iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
+		if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Spread") == 0)
 		{
-			//FfH Mana Effects: Modified by Kael 08/21/2007
-			// if (GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iI), "Bonus Discovery") == 0)
-			iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iI);
-			if (isOwned() && (100 + GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier()) != 0)
-			{
-				iChance *= 100;
-				iChance /= 100 + GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier();
-			}
-			if (GC.getGameINLINE().getSorenRandNum(iChance, "Bonus Discovery") == 0)
-			{
-				setBonusType((BonusTypes)iI);
+			setBonusType((BonusTypes)iBonus);
+			bFound = true;
+			break;
+		}
+	}
 
-				pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
-
-				if (pCity != NULL)
-				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", GC.getBonusInfo((BonusTypes) iI).getTextKeyWide(), pCity->getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MINOR_EVENT, GC.getBonusInfo((BonusTypes) iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-
-				break;
-			}
+	// If we put something down, notify
+	if (bFound)
+	{
+		pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+		if (pCity != NULL)
+		{
+			szBuffer = gDLL->getText("TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", GC.getBonusInfo((BonusTypes)iBonus).getTextKeyWide(), pCity->getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getBonusInfo((BonusTypes)iBonus).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 	}
 }

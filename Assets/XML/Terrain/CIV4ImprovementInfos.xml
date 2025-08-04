@@ -14,6 +14,20 @@
 			<iAdvancedStartCost>0</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_PATRIAN_ARTIFACTS</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid> <!-- If the presence of this resource should override plot terrain/feature/type requirements -->
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>3000</iDiscoverRand> <!-- 1 in this # speed-modulated chance/turn when worked to DISCOVER this resource under the improvement. Resource must be able to be seen by civ, does not override hidden resource -->
+					<iSpreadRand>1750</iSpreadRand> <!-- 1 in this # speed-modulated chance/turn when worked to ADD this resource under the improvement, provided you have access to it already. Does not override a hidden resource -->
+					<YieldChanges> <!-- F/H/C bonus when this improvement on seen resource -->
+						<iYieldChange>2</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
 			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
 			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
 			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->

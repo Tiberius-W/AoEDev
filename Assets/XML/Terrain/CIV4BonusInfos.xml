@@ -2701,7 +2701,7 @@
 				<iRandApp4>0</iRandApp4>
 			</Rands>
 			<bModifierPerBonus>1</bModifierPerBonus>
-			<iDiscoverRandModifier>20</iDiscoverRandModifier>
+			<iDiscoverRandModifier>20</iDiscoverRandModifier> <!-- This is x percent per resource. 100 -> 2x faster discovery -->
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Enchantment 59-->
 			<Type>BONUS_MANA_ENCHANTMENT</Type>
@@ -3008,7 +3008,7 @@
 			</FeatureTerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iBadAttitude>0</iBadAttitude>
-			<iDiscoverRandModifier>10</iDiscoverRandModifier>
+			<iDiscoverRandModifier>2</iDiscoverRandModifier> <!-- This is x percent per resource. 100 -> 2x faster discovery -->
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iHealChange>0</iHealChange>
 			<iHealChangeEnemy>0</iHealChangeEnemy>

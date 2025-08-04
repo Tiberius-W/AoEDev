@@ -2126,10 +2126,10 @@
 			<NextTrait>TRAIT_VEINHUNTER2</NextTrait>
 			<iLevel>1</iLevel>
 			<Civilopedia>TXT_KEY_TRAIT_VEINHUNTER_PEDIA</Civilopedia>
-			
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_VEINHUNTER</Description>
 			<ShortDescription>TXT_KEY_TRAIT_VEINHUNTER_SHORT</ShortDescription>
+			<iDiscoverRandModifier>100</iDiscoverRandModifier> <!-- This isn't referenced in xml afaik, but doesn't throw error?? Is evaluated as 100 = 2x faster, 300 is 4x faster, etc -->
 			<RevealBonuses>
 				<RevealBonus>
 					<BonusType>BONUS_COPPER</BonusType>
@@ -2160,6 +2160,7 @@
 			</ExtraYieldThresholds>
 			<Description>TXT_KEY_TRAIT_VEINHUNTER</Description>
 			<ShortDescription>TXT_KEY_TRAIT_VEINHUNTER_SHORT</ShortDescription>
+			<iDiscoverRandModifier>300</iDiscoverRandModifier> <!-- This isn't referenced in xml afaik, but doesn't throw error?? Is evaluated as 100 = 2x faster, 300 is 4x faster, etc -->
 		</TraitInfo>
 		<TraitInfo>		<!-- Veinhunter 3-->
 			<Type>TRAIT_VEINHUNTER3</Type>
@@ -2170,7 +2171,7 @@
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_VEINHUNTER</Description>
 			<ShortDescription>TXT_KEY_TRAIT_VEINHUNTER_SHORT</ShortDescription>
-			<iDiscoverRandModifier>2000</iDiscoverRandModifier>
+			<iDiscoverRandModifier>500</iDiscoverRandModifier> <!-- This isn't referenced in xml afaik, but doesn't throw error?? Is evaluated as 100 = 2x faster, 300 is 4x faster, etc -->
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_VEINHUNTER_AFFINITY_ENABLER</PromotionType>
