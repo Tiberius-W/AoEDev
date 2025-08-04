@@ -254,9 +254,11 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
-			<TechPrereq>TECH_WARFARE</TechPrereq>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
+			</PromotionExcludes>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -355,9 +357,8 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
-			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -365,6 +366,9 @@
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionOverwrites>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
+			</PromotionExcludes>
 			<TerrainAttacks>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_GLACIER</TerrainType>
@@ -1100,8 +1104,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/Pirate.dds</Button>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Reveal -->
 			<Type>PROMOTION_REVEAL</Type>
@@ -1172,9 +1174,8 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
-			<TechPrereq>TECH_FISHING</TechPrereq>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1186,6 +1187,7 @@
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FERAL</Promotion>
 				<Promotion>PROMOTION_WOODKIN</Promotion>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
@@ -1196,29 +1198,45 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<iTerrainAttack>50</iTerrainAttack>
+					<iTerrainAttack>75</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<iTerrainAttack>50</iTerrainAttack>
+					<iTerrainAttack>75</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_COAST</TerrainType>
-					<iTerrainAttack>50</iTerrainAttack>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<iTerrainDefense>50</iTerrainDefense>
+					<iTerrainDefense>75</iTerrainDefense>
 				</TerrainDefense>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<iTerrainDefense>50</iTerrainDefense>
+					<iTerrainDefense>75</iTerrainDefense>
 				</TerrainDefense>
 					<TerrainDefense>
 					<TerrainType>TERRAIN_COAST</TerrainType>
-				<iTerrainDefense>50</iTerrainDefense>
+				<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<UnitCombats>
@@ -1392,9 +1410,8 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
-			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1402,6 +1419,9 @@
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionOverwrites>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
+			</PromotionExcludes>
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
 			<TerrainAttacks>
 				<TerrainAttack>
@@ -1522,11 +1542,10 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
-			<TechPrereq>TECH_TRADE</TechPrereq>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
 			<iAirCombat>2</iAirCombat>
 			<iAirCombatLimitBoost>15</iAirCombatLimitBoost>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1534,6 +1553,9 @@
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionOverwrites>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
+			</PromotionExcludes>
 			<iAirRangeChange>1</iAirRangeChange>
 			<iWithdrawalChange>15</iWithdrawalChange>
 			<iFirstStrikesChange>1</iFirstStrikesChange>
@@ -1678,9 +1700,8 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
-			<TechPrereq>TECH_HUNTING</TechPrereq>
+			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
-			<iGoldCost>100</iGoldCost>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1692,6 +1713,7 @@
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FERAL</Promotion>
 				<Promotion>PROMOTION_SEAKIN</Promotion>
+				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
@@ -2537,6 +2559,80 @@
 			</UnitCombats>
 			<Button>,Art/Interface/Buttons/Civics/Slavery.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,2</Button>
 		<bNoXP>1</bNoXP>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Jotnar Potential -->
+			<Type>PROMOTION_JOT_POTENTIAL</Type>
+			<Description>Kindred</Description>
+			<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_GIANTKIN</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<iMinLevel>-1</iMinLevel>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+			<bForceOverwrite>1</bForceOverwrite>
 		</PromotionInfo>
 		</PromotionInfos>
 </Civ4PromotionInfos>

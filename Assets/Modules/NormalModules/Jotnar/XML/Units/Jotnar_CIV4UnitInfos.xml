@@ -992,7 +992,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_CHAMPION</UnitClassUpgradeType>
 					<UnitClassUpgradeType>UNITCLASS_MAGE</UnitClassUpgradeType>
@@ -1269,7 +1268,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_MARKSMAN</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1321,6 +1319,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_HURLER</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -1488,6 +1490,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_SECONDARY_DEFENSIVE_MELEE</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -1512,7 +1518,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_JOT_MOUTH_OF_THE_DIVINE</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1584,6 +1589,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_SPIRIT_GUIDE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -1700,7 +1709,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_LONGBOWMAN</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1753,6 +1761,10 @@
 					<PromotionType>PROMOTION_HURLER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<iCombatDefense>7</iCombatDefense>
 			<iDefensiveStrikeChance>20</iDefensiveStrikeChance>
@@ -1794,7 +1806,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_AXEMAN</UnitClassUpgradeType>
 					<UnitClassUpgradeType>UNITCLASS_REAVER</UnitClassUpgradeType>
@@ -1850,6 +1861,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_SECONDARY_DEFENSIVE_MELEE</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -1871,7 +1886,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_IMMORTAL</UnitClassUpgradeType>
 					<UnitClassUpgradeType>UNITCLASS_BERSERKER</UnitClassUpgradeType>
@@ -1945,6 +1959,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_COURAGE</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -1971,7 +1989,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
@@ -2016,6 +2033,10 @@
 					<PromotionType>PROMOTION_BERSERK</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<iCombatDefense>8</iCombatDefense>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
@@ -2043,7 +2064,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
@@ -2275,6 +2295,10 @@
 					<PromotionType>PROMOTION_BLITZ</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<AllowPromotions>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
@@ -2425,6 +2449,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_REAVER</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -2687,7 +2715,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
@@ -2754,6 +2781,10 @@
 					<PromotionType>PROMOTION_GIANTKIN</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<iCombatDefense>16</iCombatDefense>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
@@ -2774,7 +2805,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_VOICE_OF_THE_DIVINE</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -2871,6 +2901,10 @@
 					<PromotionType>PROMOTION_JOT_GIANT_SPELLCASTER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<bFreeXP>1</bFreeXP>
 			<iCombatDefense>6</iCombatDefense>
@@ -2889,7 +2923,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 			<UnitClassUpgradeType>UNITCLASS_ARCHMAGE</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -3051,6 +3084,10 @@
 					<PromotionType>PROMOTION_JOT_GIANT_SPELLCASTER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<bFreeXP>1</bFreeXP>
 			<bNeverObsolete>1</bNeverObsolete>
@@ -3073,7 +3110,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_MAGE</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -3226,6 +3262,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_JOT_GIANT_SPELLCASTER</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -3686,7 +3726,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
@@ -3740,6 +3779,10 @@
 					<PromotionType>PROMOTION_HURLER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<iCombatDefense>16</iCombatDefense>
 			<iDefensiveStrikeChance>40</iDefensiveStrikeChance>
@@ -3783,7 +3826,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 				<UnitAIType>UNITAI_RESERVE</UnitAIType>
@@ -3951,6 +3993,10 @@
 					<PromotionType>PROMOTION_JOT_GIANT_SPELLCASTER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<bFreeXP>1</bFreeXP>
 			<iCombatDefense>8</iCombatDefense>
@@ -3971,7 +4017,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 				<UnitAIType>UNITAI_ATTACK</UnitAIType>
@@ -4032,6 +4077,10 @@
 					<PromotionType>PROMOTION_DIVINE_RIVALRY</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<bAutoRaze>1</bAutoRaze>
 			<bImmortal>1</bImmortal>
@@ -4064,7 +4113,6 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
@@ -4177,6 +4225,10 @@
 					<PromotionType>PROMOTION_JOT_GIANT_SPELLCASTER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<bFreeXP>1</bFreeXP>
 			<iCombatDefense>8</iCombatDefense>
@@ -4188,5 +4240,24 @@
 			<Type>UNIT_JOT_TROLL</Type>
 			<UpgradeCiv>CIVILIZATION_JOTNAR</UpgradeCiv>
 		</UnitInfo>
-	</UnitInfos>
+	    </UnitInfos>
+	    <UnitInfo>        <!-- Frost Giant - White Hand-->-->
+			<Class>UNITCLASS_FROST_GIANT</Class>
+			<Type>UNIT_FROST_GIANT</Type>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FROSTKIN</PromotionType>
+					<iNumApplied>1</iNumApplied>
+			    </FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>        <!-- Wilboman -->
+			<Class>UNITCLASS_WILBOMAN</Class>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FROSTKIN</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
 </Civ4UnitInfos>

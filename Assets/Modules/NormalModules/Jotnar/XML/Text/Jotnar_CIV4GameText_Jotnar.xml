@@ -1245,4 +1245,52 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 		<Italian>[ICON_BULLET]Sacrifice a Thrall Militia to heal the Giant</Italian>
 		<Spanish>[ICON_BULLET]Sacrifice a Thrall Militia to heal the Giant</Spanish>
 	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Tag>
+		<English>Trial of the Inferno</English>
+		<French>Trial of the Inferno</French>
+		<German>Trial of the Inferno</German>
+		<Italian>Trial of the Inferno</Italian>
+		<Spanish>Trial of the Inferno</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_SEAKIN</Tag>
+		<English>Trial of the Roil</English>
+		<French>Trial of the Roil</French>
+		<German>Trial of the Roil</German>
+		<Italian>Trial of the Roil</Italian>
+		<Spanish>Trial of the Roil</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Tag>
+		<English>Trial of the Mountain</English>
+		<French>Trial of the Mountain</French>
+		<German>Trial of the Mountain</German>
+		<Italian>Trial of the Mountain</Italian>
+		<Spanish>Trial of the Mountain</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_WOODKIN</Tag>
+		<English>Trial of the Old Ways</English>
+		<French>Trial of the Old Ways</French>
+		<German>Trial of the Old Ways</German>
+		<Italian>Trial of the Old Ways</Italian>
+		<Spanish>Trial of the Old Ways</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_STORMKIN</Tag>
+		<English>Trial of the Tempest</English>
+		<French>Trial of the Tempest</French>
+		<German>Trial of the Tempest</German>
+		<Italian>Trial of the Tempest</Italian>
+		<Spanish>Trial of the Tempest</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TRIAL_OF_FROSTKIN</Tag>
+		<English>Trial of the Frozen Heart</English>
+		<French>Trial of the Frozen Heart</French>
+		<German>Trial of the Frozen Heart</German>
+		<Italian>Trial of the Frozen Heart</Italian>
+		<Spanish>Trial of the Frozen Heart</Spanish>
+	</TEXT>	
 </Civ4GameText>
