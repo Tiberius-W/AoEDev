@@ -359,6 +359,7 @@ def doAzer(argsList):
 	if pPlot.isNone() == False:
 		bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_AZER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 
 # Scions start - "Pop" the minor heroes when the appropriate tech is gained.
 def doPopAlcinus(argsList):
@@ -855,6 +856,8 @@ def canTriggerPlotEmpty(argsList):
 		return False
 	if pPlot.getImprovementType()!=-1:
 		return False
+	if pPlot.isPeak():
+		return False
 	return True
 
 def canTriggerPlotEmptyBorder(argsList):
@@ -865,6 +868,8 @@ def canTriggerPlotEmptyBorder(argsList):
 	if pPlot.getNumUnits() > 0:
 		return False
 	if  pPlot.isCity():
+		return False
+	if pPlot.isPeak():
 		return False
 	for iX in range(kTriggeredData.iPlotX-1, kTriggeredData.iPlotX+2, 1):
 		for iY in range(kTriggeredData.iPlotY-1, kTriggeredData.iPlotY+2, 1):
@@ -881,6 +886,7 @@ def doFrostling(argsList):
 	if pPlot.isNone() == False:
 		bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_FROSTLING'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 
 def doWolfPack(argsList):
 	kTriggeredData = argsList[0]
@@ -889,6 +895,8 @@ def doWolfPack(argsList):
 		bPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_WOLF'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit2 = bPlayer.initUnit(getInfoType('UNIT_WOLF'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
+		newUnit2.finishMoves()
 
 def doHippogriffWeyr(argsList):
 	kTriggeredData = argsList[0]
@@ -903,6 +911,7 @@ def doGorillaBanana1	(argsList):
 	if pPlot.isNone() == False:
 		bPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_GORILLA'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 		pPlot.setBonusType(getInfoType("BONUS_BANANA"))
 
 def helpGorillaBanana1(argsList):
@@ -932,6 +941,7 @@ def doScout(argsList):
 	if pPlot.isNone() == False:
 		bPlayer = gc.getPlayer(gc.getORC_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_SCOUT'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 	
 
 def doGovernorAssassination(argsList):
@@ -1060,7 +1070,7 @@ def doGreatBeastLeviathan(argsList):
 		for i in range (CyMap().numPlots()):
 			pPlot = CyMap().plotByIndex(i)
 			iPlot = -1
-			if pPlot.isWater():
+			if pPlot.isWater() and not pPlot.isImpassable():
 				if pPlot.getNumUnits() == 0:
 					iPlot = CyGame().getSorenRandNum(500, "Leviathan")
 					iPlot = iPlot + (pPlot.area().getNumTiles() * 10)
@@ -1070,6 +1080,7 @@ def doGreatBeastLeviathan(argsList):
 		if iBestPlot != -1:
 			bPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 			newUnit = bPlayer.initUnit(iUnit, pBestPlot.getX(), pBestPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.finishMoves()
 
 def doGreatBeastMargalard(argsList):
 	kTriggeredData = argsList[0]
@@ -1480,6 +1491,9 @@ def doMistforms(argsList):
 	newUnit1 = bPlayer.initUnit(iMistform, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit2 = bPlayer.initUnit(iMistform, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit3 = bPlayer.initUnit(iMistform, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit1.finishMoves()
+	newUnit2.finishMoves()
+	newUnit3.finishMoves()
 
 def doMushrooms(argsList):
 	kTriggeredData = argsList[0]
@@ -1708,6 +1722,7 @@ def doPigGiant3(argsList):
 		bPlayer = gc.getPlayer(gc.getORC_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_HILL_GIANT'), pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(getInfoType('PROMOTION_COMMANDO'), True)
+		newUnit.finishMoves()
 
 def applyPronCapria(argsList):
 	iEvent = argsList[0]
@@ -2180,6 +2195,7 @@ def doSailorsDirge(argsList):
 			bPlayer.initUnit(iSkeleton, newUnit.getX(), newUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			bPlayer.initUnit(iSkeleton, newUnit.getX(), newUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			bPlayer.initUnit(iSkeleton, newUnit.getX(), newUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.finishMoves()
 
 # def doSailorsDirgeDefeated(argsList):
 	# kTriggeredData = argsList[0]
@@ -2199,6 +2215,7 @@ def applyShrineCamulos2(argsList):
 			bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 			newUnit = bPlayer.initUnit(getInfoType('UNIT_PIT_BEAST'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			newUnit.attack(pCity.plot(), False)
+			newUnit.finishMoves()
 
 def doSignAeron(argsList):
 	kTriggeredData = argsList[0]
@@ -2389,6 +2406,7 @@ def doSpiderMine3(argsList):
 		bPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_GIANT_SPIDER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		newUnit.setHasPromotion(getInfoType('PROMOTION_HIDDEN_NATIONALITY'), True)
+		newUnit.finishMoves()
 
 def applyTreasure1(argsList):
 	iEvent = argsList[0]
@@ -2403,6 +2421,7 @@ def doSpiderMine4(argsList):
 	if pPlot.getNumUnits() == 0:
 		pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 		newUnit = pPlayer.initUnit(getInfoType('UNIT_GIANT_SPIDER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 
 
 def canTriggerSwitchCivs(argsList):
@@ -2534,9 +2553,10 @@ def doSlaveRevolt(argsList):
 	plot = pUnit.plot()
 	pUnit.kill(False, -1)
 	bPlayer = gc.getPlayer(gc.getORC_PLAYER())
-	pNewUnit = bPlayer.initUnit(getInfoType('UNIT_WARRIOR'), plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
+	NewUnit = bPlayer.initUnit(getInfoType('UNIT_WARRIOR'), plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	if iRace != -1:
-		pNewUnit.setHasPromotion(iRace, True)
+		NewUnit.setHasPromotion(iRace, True)
 	CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_SLAVE_REVOLT", ()),'',1,'Art/Interface/Buttons/Units/Slave.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
 
 # def canApplyTraitAggressive(argsList):
@@ -3266,6 +3286,7 @@ def doWerewolf1(argsList):
 	if pPlot != -1:
 		bPlayer = gc.getPlayer(gc.getANIMAL_PLAYER())
 		newUnit = bPlayer.initUnit(getInfoType('UNIT_AXEMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.finishMoves()
 		newUnit.setHasPromotion(getInfoType('PROMOTION_WEREWOLF'), True)
 		CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_WEREWOLF_RELEASED", ()),'',1,'Art/Interface/Buttons/Units/Werewolf.dds',ColorTypes(7),pPlot.getX(),pPlot.getY(),True,True)
 
@@ -6558,6 +6579,7 @@ def applyShrineCamulos2(argsList):
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_SHRINE_CAMULOS",()),'',1,'Art/Interface/Buttons/Units/Pit Beast.dds',ColorTypes(8),pCity.getX(),pCity.getY(),True,True)
 			bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 			newUnit = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PIT_BEAST'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.finishMoves()
 			newUnit.attack(pCity.plot(), False)
 	
 # test: no famine event if dtesh
@@ -7042,9 +7064,13 @@ def doGoblinWaste3(argsList):
 	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	pOrcPlayer = gc.getPlayer(gc.getORC_PLAYER())
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 
 def helpGoblinWaste3(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_GOBLIN_WASTE_NEW_HELP_1", ())
@@ -7068,9 +7094,13 @@ def doGoblinWaste4(argsList):
 	pCityPlot = pCity.plot()
 	pOrcPlayer = gc.getPlayer(gc.getORC_PLAYER())
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pOrcPlayer.initUnit(gc.getInfoTypeForString('UNIT_MURIS_CLAN_WHELP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOBLIN_MURIS_CLAN"),pCityPlot.getX(),pCityPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 
 def canApplyGoblinWaste5(argsList):
 	iEvent = argsList[0]
@@ -7090,7 +7120,9 @@ def doGoblinWaste5(argsList):
 	pCityPlot = pCity.plot()
 	pOrcPlayer = gc.getPlayer(gc.getORC_PLAYER())
 	newUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOBLIN_MURIS_CLAN"),pCityPlot.getX(),pCityPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 	newUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOBLIN_MURIS_CLAN"),pCityPlot.getX(),pCityPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.finishMoves()
 
 # EVENT_GRAVEYARD_3
 def doGraveyard3(argsList):
