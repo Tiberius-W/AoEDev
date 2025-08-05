@@ -627,7 +627,7 @@
 			<iDelay>3</iDelay>
 			<Effect>EFFECT_SNOWFALL</Effect>
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Bosom.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/MarkoftheWarden.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Earthquake (Jotnar) -->
 			<Type>SPELL_JOT_EARTHQUAKE</Type>
@@ -1359,7 +1359,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Firekin 2 -->
@@ -1383,7 +1383,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1409,7 +1409,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1434,7 +1434,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Seakin 2 -->
@@ -1458,7 +1458,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1484,7 +1484,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1509,7 +1509,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Frostkin 2 -->
@@ -1533,7 +1533,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1559,7 +1559,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1584,7 +1584,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stonekin 2 -->
@@ -1608,7 +1608,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1634,7 +1634,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1659,7 +1659,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stormkin 2 -->
@@ -1683,7 +1683,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1709,7 +1709,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1734,7 +1734,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Woodkin 2 -->
@@ -1758,7 +1758,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1784,7 +1784,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
