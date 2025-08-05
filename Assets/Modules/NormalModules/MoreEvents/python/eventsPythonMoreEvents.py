@@ -2361,6 +2361,8 @@ def canTriggerPlotEmptyImprovement(argsList):
 		return False
 	if pPlot.getImprovementType() != -1:
 		return False
+	if pPlot.isPeak():
+		return False
 	return True
 
 # r361 xml to python unit spawn - Start

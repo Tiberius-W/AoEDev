@@ -99,19 +99,23 @@ def addUnit(iUnit, iPlayer):
 	for i in xrange(map.numPlots()):
 		pPlot = plotByIndex(i)
 		iPlot = -1
-		if pPlot.isWater() == False:
-			if pPlot.getNumUnits() == 0:
-				if pPlot.isCity() == False:
-					if pPlot.isImpassable() == False:
-						iPlot = randNum(500, "Add Unit")
-						iPlot = iPlot + (pPlot.area().getNumTiles() * 10)
-						if pPlot.isBarbarian():
-							iPlot = iPlot + 200
-						if pPlot.isOwned():
-							iPlot = iPlot / 2
-						if iPlot > iBestPlot:
-							iBestPlot = iPlot
-							pBestPlot = pPlot
+		if (pPlot.isWater() == False
+		and	pPlot.getNumUnits() == 0
+		and	pPlot.isCity() == False
+		and pPlot.isImpassable() == False
+		and	pPlot.isPeak() == False):
+
+			iPlot = randNum(500, "Add Unit")
+			iPlot = iPlot + (pPlot.area().getNumTiles() * 10)
+			# There are many more non-barb plots than barb plots,
+			# so weigh the barb plots much higher
+			if pPlot.isBarbarian():
+				iPlot = iPlot + 450
+			elif pPlot.isOwned():
+				iPlot = iPlot / 2
+			if iPlot > iBestPlot:
+				iBestPlot = iPlot
+				pBestPlot = pPlot
 	if iBestPlot != -1:
 		bPlayer = gc.getPlayer(iPlayer)
 		newUnit = bPlayer.initUnit(iUnit, pBestPlot.getX(), pBestPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
