@@ -222,6 +222,8 @@
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 
 		<ImprovementInfo>	<!-- Hippogriff Weyr t1 -->
@@ -328,6 +330,8 @@
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Roc Weyr t3 -->
 			<Type>IMPROVEMENT_ROC_WEYR</Type>
@@ -384,6 +388,8 @@
 					<iLairCreationWeightTech>20</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>2</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 
 		<ImprovementInfo>	<!-- Lion Den t1 -->
@@ -595,6 +601,8 @@
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 
 		<ImprovementInfo>	<!-- Spider Den t1 -->
@@ -829,6 +837,8 @@
 					<iLairCreationWeightTech>40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 
 		<ImprovementInfo>	<!-- Wolf Lair t1 -->
@@ -1076,6 +1086,8 @@
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 
 		<ImprovementInfo>	<!-- Scorpion Nest t1 -->
@@ -1254,6 +1266,8 @@
 					<iLairCreationWeightTech>50</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
