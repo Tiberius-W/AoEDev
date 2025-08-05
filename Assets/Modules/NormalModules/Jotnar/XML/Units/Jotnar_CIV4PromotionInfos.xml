@@ -47,7 +47,52 @@
 		<PromotionInfo>		<!-- GiantKin -->
 			<Type>PROMOTION_GIANTKIN</Type>
 			<Description>TXT_KEY_PROMOTION_GIANTKIN</Description>
-			<iExperiencePercent>-60</iExperiencePercent>=
+			<iExperiencePercent>-60</iExperiencePercent>
+			<bWaterWalking>1</bWaterWalking>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainAttack>-25</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
 		</PromotionInfo>
 	<PromotionInfo>        <!-- NO Cottage -->
             <Type>PROMOTION_COMMUNAL_TRADITIONS</Type>
