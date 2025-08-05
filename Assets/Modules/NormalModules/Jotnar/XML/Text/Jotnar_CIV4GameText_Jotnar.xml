@@ -1246,6 +1246,22 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 		<Spanish>[ICON_BULLET]Sacrifice a Thrall Militia to heal the Giant</Spanish>
 	</TEXT>	
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_EARTHS_BOSOM</Tag>
+		<English>Earth's Bosom</English>
+		<French>Earth's Bosom</French>
+		<German>Earth's Bosom</German>
+		<Italian>Earth's Bosom</Italian>
+		<Spanish>Earth's Bosom</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_EARTHS_BOSOM_HELP</Tag>
+		<English>Create a Hill</English>
+		<French>Create a Hill</French>
+		<German>Create a Hill</German>
+		<Italian>Create a Hill</Italian>
+		<Spanish>Create a Hill</Spanish>
+	</TEXT>	
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Tag>
 		<English>Trial of the Inferno</English>
 		<French>Trial of the Inferno</French>

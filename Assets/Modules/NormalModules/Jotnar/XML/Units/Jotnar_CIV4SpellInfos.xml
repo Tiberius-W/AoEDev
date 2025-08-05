@@ -615,7 +615,8 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Earth's Bosom (Jotnar)  -->
 			<Type>SPELL_BOSOM</Type>
-			<Description>Earth's Bosom</Description>
+			<Description>TXT_KEY_SPELL_EARTHS_BOSOM</Description>
+			<Help>TXT_KEY_SPELL_EARTHS_BOSOM_HELP</Help>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
 			<PromotionPrereq2>PROMOTION_STONE_KIN</PromotionPrereq2>
 			<bAllowAI>0</bAllowAI>
@@ -623,9 +624,10 @@
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellBosom(pCaster)</PyResult>
 			<PyRequirement>reqBosom(pCaster)</PyRequirement>
+			<iDelay>3</iDelay>
 			<Effect>EFFECT_SNOWFALL</Effect>
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
-			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Hill.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Bosom.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Earthquake (Jotnar) -->
 			<Type>SPELL_JOT_EARTHQUAKE</Type>
@@ -1357,7 +1359,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Firekin 2 -->
@@ -1381,7 +1383,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1408,7 +1410,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1433,7 +1435,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Seakin 2 -->
@@ -1457,7 +1459,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1484,7 +1486,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1509,7 +1511,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Frostkin 2 -->
@@ -1533,7 +1535,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1560,7 +1562,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1577,7 +1579,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bIgnoreHasCasted>1</bIgnoreHasCasted>
 			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
 			</AddPromotions>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
@@ -1585,7 +1587,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stonekin 2 -->
@@ -1601,7 +1603,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bIgnoreHasCasted>1</bIgnoreHasCasted>
 			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
 			</AddPromotions>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
@@ -1609,7 +1611,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1626,7 +1628,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bIgnoreHasCasted>1</bIgnoreHasCasted>
 			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
 			</AddPromotions>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
@@ -1636,83 +1638,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
-			<iDelay>6</iDelay>
-			<bGraphicalOnly>1</bGraphicalOnly>
-		</SpellInfo>
-		<SpellInfo>			<!-- Stonekin 1 -->
-			<Type>SPELL_TRIAL_OF_STONEKIN1</Type>
-			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
-			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
-			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
-			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
-			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
-			<ImprovementPrereq>IMPROVEMENT_ODIOS_PRISON</ImprovementPrereq>
-			<bAllowAI>1</bAllowAI>
-			<iAIWeight>300</iAIWeight>
-			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
-			<bIgnoreHasCasted>1</bIgnoreHasCasted>
-			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
-			</AddPromotions>
-			<RemovePromotions>
-				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
-			</RemovePromotions>
-			<bImmuneNeutral>1</bImmuneNeutral>
-			<bImmuneEnemy>1</bImmuneEnemy>
-			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
-			<iDelay>3</iDelay>
-		</SpellInfo>
-		<SpellInfo>			<!-- Stonekin 2 -->
-			<Type>SPELL_TRIAL_OF_STONEKIN2</Type>
-			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
-			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
-			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
-			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
-			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
-			<ImprovementPrereq>IMPROVEMENT_MOUNT_KALSHEKK</ImprovementPrereq>
-			<bAllowAI>1</bAllowAI>
-			<iAIWeight>300</iAIWeight>
-			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
-			<bIgnoreHasCasted>1</bIgnoreHasCasted>
-			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
-			</AddPromotions>
-			<RemovePromotions>
-				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
-			</RemovePromotions>
-			<bImmuneNeutral>1</bImmuneNeutral>
-			<bImmuneEnemy>1</bImmuneEnemy>
-			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
-			<iDelay>3</iDelay>
-			<bGraphicalOnly>1</bGraphicalOnly>
-		</SpellInfo>
-		<SpellInfo>			<!-- Stonekin 3 -->
-			<Type>SPELL_TRIAL_OF_STONEKIN3</Type>
-			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
-			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
-			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
-			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
-			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
-			<BuildingPrereq>BUILDING_HALL_OF_AUTUMN</BuildingPrereq>
-			<bAllowAI>1</bAllowAI>
-			<iAIWeight>300</iAIWeight>
-			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
-			<bIgnoreHasCasted>1</bIgnoreHasCasted>
-			<AddPromotions>
-				<AddPromotion>PROMOTION_STONEKIN</AddPromotion>
-			</AddPromotions>
-			<RemovePromotions>
-				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
-			</RemovePromotions>
-			<bImmuneNeutral>1</bImmuneNeutral>
-			<bImmuneEnemy>1</bImmuneEnemy>
-			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1737,7 +1663,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stormkin 2 -->
@@ -1761,7 +1687,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1788,7 +1714,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1813,7 +1739,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
 			<iDelay>3</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Woodkin 2 -->
@@ -1837,7 +1763,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1864,7 +1790,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>6</iCasterMinLevel>
 			<iCost>100</iCost>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
