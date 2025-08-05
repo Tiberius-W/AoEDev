@@ -14,7 +14,7 @@
 			<ArtStyleType>ARTSTYLE_WILDERNESS</ArtStyleType>
 			<UnitArtStyleType></UnitArtStyleType>
 			<bPlayable>1</bPlayable>
-			<bAIPlayable>0</bAIPlayable>
+			<bAIPlayable>1</bAIPlayable>
 			<DefaultRace>PROMOTION_GIANTKIN</DefaultRace>
 			<Cities>
 			<City>Jotunheim</City>

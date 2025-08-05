@@ -1408,8 +1408,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Inferno.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1484,8 +1483,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Roil.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1560,8 +1558,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/FrozenHeart.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1636,8 +1633,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Mountain.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1712,8 +1708,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Tempest.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1788,8 +1783,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<iCasterMinLevel>6</iCasterMinLevel>
-			<iCost>100</iCost>
+			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Modules/NormalModules/Jotnar/Art/Interface/Buttons/Spells/Oldways.dds</Button>
 			<iDelay>6</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>

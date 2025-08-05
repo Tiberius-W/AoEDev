@@ -1007,6 +1007,10 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
+					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -2071,6 +2075,10 @@
 				</UnitAI>
 			</UnitAIs>
 			<Builds>
+				<Build>
+					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
 					<bBuild>1</bBuild>
