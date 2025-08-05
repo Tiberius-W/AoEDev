@@ -27926,10 +27926,17 @@ void CvUnit::doDamage(int iDmg, int iDmgLimit, CvUnit* pAttacker, int iDmgType, 
 			{
 				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
 			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MAJOR_EVENT, GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
 			if (pAttacker != NULL)
 			{
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MAJOR_EVENT, GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+				// Only report successful damage to attacker if they can see the unit
+				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
+				{
+					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+				}
 				changeDamage(iDmg, pAttacker->getOwner());
 
 				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
@@ -28012,10 +28019,17 @@ void CvUnit::doDamageCity(int iDmg, int iDmgLimit, CvCity* pAttacker, int iDmgTy
 			{
 				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
 			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MAJOR_EVENT, GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
 			if (pAttacker != NULL)
 			{
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MAJOR_EVENT, GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+				// Only report successful damage to attacker if they can see the unit
+				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
+				{
+					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+				}
 				changeDamage(iDmg, pAttacker->getOwner());
 
 				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
