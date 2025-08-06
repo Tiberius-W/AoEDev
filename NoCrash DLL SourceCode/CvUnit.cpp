@@ -30659,7 +30659,7 @@ bool CvUnit::airStrike(CvPlot* pPlot)
 		getNameKey(),
 		pDefender->getNameKey(),
 		-(((iUnitDamage - pDefender->getDamage()) * 100 * GC.getDefineINT("HIT_POINT_FACTOR")) / pDefender->maxHitPoints()),
-		GET_PLAYER(getVisualOwner(pDefender->getTeam())).getCivilizationAdjectiveKey());
+		GET_PLAYER(pDefender->getVisualOwner(getTeam())).getCivilizationAdjectiveKey());
 	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_AIR_ATTACKED", MESSAGE_TYPE_INFO, pDefender->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
 	collateralCombat(pPlot, pDefender);
