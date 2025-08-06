@@ -2830,6 +2830,22 @@
 		<Spanish>Our control of the %s1 has produced a squad under the command of a %s2.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPAWNGROUP_SPAWN_UNIT</Tag>
+		<English>A %s1 has appeared on one of our plots.</English>
+		<French>A %s1 has appeared on one of our plots.</French>
+		<German>A %s1 has appeared on one of our plots.</German>
+		<Italian>A %s1 has appeared on one of our plots.</Italian>
+		<Spanish>A %s1 has appeared on one of our plots.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPAWNGROUP_SPAWN_GROUP</Tag>
+		<English>A squad under the command of %s1 has appeared on one of our plots.</English>
+		<French>A squad under the command of %s1 has appeared on one of our plots.</French>
+		<German>A squad under the command of %s1 has appeared on one of our plots.</German>
+		<Italian>A squad under the command of %s1 has appeared on one of our plots.</Italian>
+		<Spanish>A squad under the command of %s1 has appeared on one of our plots.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UF_NOTIFY_EXPLORE</Tag>
 		<English>Suspicious movements have been reported from the vicinity of the %s1...</English>
 		<French>Suspicious movements have been reported from the vicinity of the %s1...</French>
