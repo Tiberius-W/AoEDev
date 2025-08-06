@@ -8354,6 +8354,14 @@
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>7</iCombat>
 			<iXPValueAttack>32</iXPValueAttack>
@@ -8422,16 +8430,6 @@
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<Image>Art/Interface/Popups/Wilboman.dds</Image>
 			<Quote>TXT_KEY_POPUP_WILBOMAN_CREATION</Quote>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Yersinia -->
 			<Class>UNITCLASS_YERSINIA</Class>
@@ -36066,6 +36064,14 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
