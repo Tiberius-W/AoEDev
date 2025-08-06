@@ -293,6 +293,7 @@
 			<ImprovementUpgrade>IMPROVEMENT_PIRATE_STRONGHOLD</ImprovementUpgrade>
 			<iAppearanceProbability>80</iAppearanceProbability>
 			<SpawnUnitType>UNIT_GALLEY</SpawnUnitType>
+			<SpawnGroupType>SPAWN_GROUP_GALLEY</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_BOARDING_PARTY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -355,6 +356,7 @@
 			</TerrainMakesValids>
 			<ImprovementUpgrade>IMPROVEMENT_PIRATE_FREE_CITY</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_TRIREME</SpawnUnitType>
+			<SpawnGroupType>SPAWN_GROUP_GALLEON</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_BOARDING_PARTY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -581,11 +583,11 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_TITAN_TURTLE_SCALES</BonusConvert>
 			<iAppearanceProbability>20</iAppearanceProbability>
-			<SpawnUnitType>UNIT_GIANT_TORTOISE</SpawnUnitType>
+			<SpawnUnitType>UNIT_GIANT_TORTOISE_HATCHLING</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_TITAN_SHELL_TURTLE</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ANIMAL</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iCultureRange>4</iCultureRange>
 			<iCultureControlStrength>3</iCultureControlStrength>
 			<iCultureCenterBonus>2</iCultureCenterBonus>
@@ -634,7 +636,7 @@
 			<iAppearanceProbability>20</iAppearanceProbability>
 			<SpawnUnitType>UNIT_KRAKEN_SPAWN</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_HIGH_PRIEST_OF_THE_OVERLORDS</ImmediateSpawnUnitType>
-			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
+			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iCultureRange>4</iCultureRange>
