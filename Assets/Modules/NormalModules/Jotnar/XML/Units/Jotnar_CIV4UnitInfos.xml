@@ -1007,7 +1007,7 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
+					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -2076,7 +2076,7 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
+					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
