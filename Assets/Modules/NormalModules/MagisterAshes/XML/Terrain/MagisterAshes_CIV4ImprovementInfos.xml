@@ -68,7 +68,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iBasePlotCounterModify>40</iBasePlotCounterModify>
+			<iBasePlotCounterModify>50</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo>  <!--Wandering Castle of the Eternal Blizzard-->
 			<Type>IMPROVEMENT_BADBS_BLIZZARD</Type>
@@ -277,7 +277,7 @@
 			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
-			<iBasePlotCounterModify>40</iBasePlotCounterModify>
+			<iBasePlotCounterModify>50</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo> 	<!--Whispering Woods-->
 			<Type>IMPROVEMENT_WHISPERING_WOOD</Type>

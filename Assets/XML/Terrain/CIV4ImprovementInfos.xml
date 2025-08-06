@@ -2829,7 +2829,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iAppearanceProbability>50</iAppearanceProbability>
+			<iAppearanceProbability>45</iAppearanceProbability>
 			<iLairCreationWeight>45</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
@@ -3950,7 +3950,7 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<iAppearanceProbability>25</iAppearanceProbability>
-			<iLairCreationWeight>10</iLairCreationWeight>
+			<iLairCreationWeight>5</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lion Den -->
 			<Type>IMPROVEMENT_LION_DEN</Type>
@@ -4083,13 +4083,13 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<!-- Giants start with a high percent to spawn, but each tier is half as likely to appear -->
-			<iAppearanceProbability>80</iAppearanceProbability>
-			<iLairCreationWeight>60</iLairCreationWeight>
+			<!-- Giants start with a decent percent to spawn on mapgen, but each tier is half as likely to appear -->
+			<iAppearanceProbability>40</iAppearanceProbability>
+			<iLairCreationWeight>20</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CONSTRUCTION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-60</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-20</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -4199,11 +4199,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CONSTRUCTION</LairCreationWeightTechType>
-					<iLairCreationWeightTech>30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>10</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ENGINEERING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-30</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-10</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -4324,7 +4324,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_ENGINEERING</LairCreationWeightTechType>
-					<iLairCreationWeightTech>15</iLairCreationWeightTech>
+					<iLairCreationWeightTech>5</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<GuardianPromotions>
@@ -7467,7 +7467,7 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iBasePlotCounterModify>70</iBasePlotCounterModify>
+			<iBasePlotCounterModify>60</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bradeline's Well (Purified) -->
 			<Type>IMPROVEMENT_BRADELINES_WELL_PURIFIED</Type>
@@ -8226,7 +8226,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iBasePlotCounterModify>15</iBasePlotCounterModify>
+			<iBasePlotCounterModify>20</iBasePlotCounterModify>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
@@ -8246,7 +8246,7 @@
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_STYGIAN_GUARD</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iBasePlotCounterModify>20</iBasePlotCounterModify>
+			<iBasePlotCounterModify>30</iBasePlotCounterModify>
 			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
 			<iCultureRange>3</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
@@ -8670,7 +8670,7 @@
 			<BonusConvert>BONUS_MANA_DEATH</BonusConvert>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
-			<iBasePlotCounterModify>20</iBasePlotCounterModify>
+			<iBasePlotCounterModify>40</iBasePlotCounterModify>
 			<PythonAtRange>atRangeWellOfSouls(pCaster, pPlot)</PythonAtRange>
 			<GoodyClasses>
 				<GoodyClass>
