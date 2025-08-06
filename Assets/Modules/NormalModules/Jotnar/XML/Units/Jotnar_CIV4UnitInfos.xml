@@ -3444,7 +3444,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iCombat>15</iCombat>
+			<iCombat>13</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>10</iXPValueAttack>
 			<iXPValueDefense>20</iXPValueDefense>
@@ -3508,7 +3508,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>16</iCombatDefense>
+			<iCombatDefense>14</iCombatDefense>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<iTier>4</iTier>
@@ -3556,9 +3556,9 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iCombat>5</iCombat>
+			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
-			<iXPValueAttack>8</iXPValueAttack>
+			<iXPValueAttack>6</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
 			<iFirstStrikes>2</iFirstStrikes>
 			<iWithdrawalProb>15</iWithdrawalProb>
@@ -3613,7 +3613,6 @@
 				</FreePromotion>
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
-			<iCombatDefense>6</iCombatDefense>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<iTier>2</iTier>
@@ -3661,7 +3660,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iCombat>8</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
@@ -3714,7 +3713,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
-			<iCombatDefense>9</iCombatDefense>
+			<iCombatDefense>7</iCombatDefense>
 			<iExtraGoldSupport>2</iExtraGoldSupport>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<iTier>3</iTier>

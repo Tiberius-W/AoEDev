@@ -31,6 +31,7 @@
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
 			<iCost>35</iCost>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<AddPromotions>
 				<AddPromotion>PROMOTION_APTITUDE1</AddPromotion>
 				<AddPromotion>PROMOTION_GIANTKIN</AddPromotion>
