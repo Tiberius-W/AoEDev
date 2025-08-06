@@ -1543,7 +1543,7 @@
 		<Spanish>"Don't play with us !"[NEWLINE]"This is not gonna cut it..."[NEWLINE]"Unlike our knives !"</Spanish>
 	</TEXT>
 	<TEXT>	<!--NO_DEAL_AN_FUR-->
-		<Tag>AI_DIPLO_NO_DEAL_LEADER_WEEVIL</Tag>
+		<Tag>AI_DIPLO_NO_DEAL_FUR_LEADER_WEEVIL</Tag>
 		<English>"This is not enough !"[NEWLINE]"Well, it can be..."[NEWLINE]"Just add an hour or two of three-on-one playtime in there, and we'll accept !"</English>
 		<French>"C'est pas assez ![NEWLINE]- Enfin, ça pourrait le devenir...[NEWLINE]- Ajoutes juste une heure ou deux de jeu en tête à tête, et on acceptera !</French>
 		<German>"This is not enough !"[NEWLINE]"Well, it can be..."[NEWLINE]"Just add an hour or two of three on one playtime in there, and we'll accept !"</German>

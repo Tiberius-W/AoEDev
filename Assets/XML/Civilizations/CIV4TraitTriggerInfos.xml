@@ -5359,7 +5359,7 @@
 					<iModifier>100</iModifier>
 				</CounterChange>
 			</CounterChanges>
-			<TraitClassType>TRAITCLASS_PERSONALITY</TraitClassType>			
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>			
 			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
 			<PrereqBuildingClassType>BUILDINGCLASS_INFIRMARY</PrereqBuildingClassType>
 		</TraitTriggerInfo>
