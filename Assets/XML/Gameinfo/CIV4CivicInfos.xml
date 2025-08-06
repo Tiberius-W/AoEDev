@@ -23,7 +23,7 @@
 			<Description>TXT_KEY_CIVIC_CITY_STATES</Description>
 			<Button>Art/Interface/Buttons/Civics/Citystates.dds</Button>
 			<TechPrereq>TECH_CARTOGRAPHY</TechPrereq>
-			<iAIWeight>50</iAIWeight>
+			<iAIWeight>30</iAIWeight>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iDistanceMaintenanceModifier>-80</iDistanceMaintenanceModifier>
@@ -55,7 +55,7 @@
 			<Description>TXT_KEY_CIVIC_GOD_KING</Description>
 			<Button>Art/Interface/Buttons/Civics/Godking.dds</Button>
 			<TechPrereq>TECH_MYSTICISM</TechPrereq>
-			<iAIWeight>10</iAIWeight>
+			<iAIWeight>30</iAIWeight>
 			<iCrimePerTurn>-6</iCrimePerTurn>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>

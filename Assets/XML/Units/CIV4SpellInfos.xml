@@ -10718,6 +10718,7 @@
 			</PrereqTraits>
 			<bInCityOnly>1</bInCityOnly>
 			<bAllowAI>1</bAllowAI>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<bHasCasted>1</bHasCasted>
 			<bSacrificeCaster>1</bSacrificeCaster>
 			<ConvertUnitType>UNIT_SLUGA_V2</ConvertUnitType>
@@ -10789,6 +10790,7 @@
 			</PrereqTraits>
 			<bInCityOnly>1</bInCityOnly>
 			<bAllowAI>1</bAllowAI>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iAIWeight>150</iAIWeight>
 			<bHasCasted>1</bHasCasted>
 			<ConvertUnitType>UNIT_BATTLE_SLUGA_V2</ConvertUnitType>
@@ -10860,6 +10862,7 @@
 			<BuildingPrereq>BUILDING_SHAPER_CABAL</BuildingPrereq>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bAllowAI>1</bAllowAI>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iAIWeight>300</iAIWeight>
 			<iCost>300</iCost>
 			<UnitClassPrereq>UNITCLASS_SLAVE</UnitClassPrereq>

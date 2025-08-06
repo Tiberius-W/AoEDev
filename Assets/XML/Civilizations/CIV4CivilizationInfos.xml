@@ -8306,6 +8306,10 @@
 					<UnitClassType>UNITCLASS_SCOUT</UnitClassType>
 					<iFreeUnits>1</iFreeUnits>
 				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
 				<FreeBuildingClass>

@@ -29433,7 +29433,7 @@
 			</FreePromotions>
 			<iTier>2</iTier>
 			<iCombatDefense>4</iCombatDefense>
-			<PrereqBuildingClass>BUILDINGCLASS_HUNTING_LODGE</PrereqBuildingClass>
+			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
 			<DenyPromotions>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
@@ -29496,7 +29496,7 @@
 			<bNeverObsolete>1</bNeverObsolete>
 			<iTier>3</iTier>
 			<iCombatDefense>7</iCombatDefense>
-			<PrereqBuildingClass>BUILDINGCLASS_HUNTING_LODGE</PrereqBuildingClass>
+			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
 			<DenyPromotions>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
@@ -29565,7 +29565,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<PrereqBuildingClass>BUILDINGCLASS_HUNTERS_HALL</PrereqBuildingClass>
+			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
 			<AllowPromotions>
 				<Promotion>PROMOTION_GC_RANGE1</Promotion>
 				<Promotion>PROMOTION_GC_RANGE2</Promotion>
@@ -49224,7 +49224,7 @@
 			<Class>UNITCLASS_SCOUT</Class>
 			<Type>UNIT_JOT_TROLL</Type>
 			<Combat>UNITCOMBAT_RECON</Combat>
-			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<iExtraPerception>2</iExtraPerception>
 			<Description>TXT_KEY_UNIT_JOT_TROLL</Description>
 			<Civilopedia>TXT_KEY_UNIT_WILD_TROLL_PEDIA</Civilopedia>
@@ -49239,7 +49239,7 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>

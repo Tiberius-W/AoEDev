@@ -2281,6 +2281,7 @@
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_VIRTUOUS_PIRATE</Description>
 			<ShortDescription>TXT_KEY_TRAIT_VIRTUOUS_PIRATE_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_VIRTUOUS_PIRATE3_HELP</Help>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_NAVIGATION1</PromotionType>
