@@ -11490,7 +11490,7 @@ void CvGame::createSpawnGroup(SpawnGroupTypes eSpawnGroup, CvPlot* pPlot, Player
 			// Tell players something spawned for them
 			if (ePlayer != DEMON_PLAYER && ePlayer != ANIMAL_PLAYER && ePlayer != ORC_PLAYER && pPlot->getImprovementType() != NO_IMPROVEMENT)
 			{
-				szBuffer = gDLL->getText("TXT_KEY_IMPROVEMENT_SPAWN_GROUP", GC.getImprovementInfo(pPlot->getImprovementType()).getTextKeyWide(), pCommanderUnit->getName().GetCString());
+				szBuffer = gDLL->getText("TXT_KEY_SPAWNGROUP_SPAWN_GROUP",  pCommanderUnit->getName().GetCString());
 				gDLL->getInterfaceIFace()->addMessage(ePlayer, false, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_UNITGIFTED", MESSAGE_TYPE_INFO, pCommanderUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
 			}
 
@@ -11550,7 +11550,7 @@ void CvGame::createSpawnGroup(SpawnGroupTypes eSpawnGroup, CvPlot* pPlot, Player
 				}
 				else if (ePlayer != DEMON_PLAYER && ePlayer != ANIMAL_PLAYER && ePlayer != ORC_PLAYER && pPlot->getImprovementType() != NO_IMPROVEMENT)
 				{
-					szBuffer = gDLL->getText("TXT_KEY_IMPROVEMENT_SPAWN_UNIT", GC.getImprovementInfo(pPlot->getImprovementType()).getTextKeyWide(), pUnit->getName().GetCString());
+					szBuffer = gDLL->getText("TXT_KEY_SPAWNGROUP_SPAWN_UNIT", pUnit->getName().GetCString());
 					gDLL->getInterfaceIFace()->addMessage(ePlayer, false, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_UNITGIFTED", MESSAGE_TYPE_INFO, pUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), iK==0, iK==0);
 				}
 			}
