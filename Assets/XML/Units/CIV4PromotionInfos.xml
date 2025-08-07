@@ -7309,6 +7309,7 @@
 			<PromotionExcludes>
 				<Promotion>PROMOTION_SHATTERED_NERVE</Promotion>
 				<Promotion>PROMOTION_SPOOKED</Promotion>
+				<Promotion>PROMOTION_LION_BLOOD</Promotion>
 			</PromotionExcludes>
 			<iSameTileHealChange>10</iSameTileHealChange>
 			<UnitCombats>
