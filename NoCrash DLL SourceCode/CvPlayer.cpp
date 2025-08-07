@@ -7353,7 +7353,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == (CivilizationTypes)GC.getGoodyInfo(eGoody).getBarbarianCivilization())
 				{
-					GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)GC.getGoodyInfo(eGoody).getBarbarianSpawnGroup(), pPlot, (PlayerTypes)iI);
+					GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)GC.getGoodyInfo(eGoody).getBarbarianSpawnGroup(), pPlot, (PlayerTypes)iI, false);
 				}
 			}
 		}

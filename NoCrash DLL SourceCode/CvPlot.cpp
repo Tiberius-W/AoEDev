@@ -978,7 +978,8 @@ void CvPlot::doLairSpawn()
 		if (eSpawnPlayer != DEMON_PLAYER && eSpawnPlayer != ANIMAL_PLAYER && eSpawnPlayer != ORC_PLAYER)
 		{
 			szBuffer = gDLL->getText("TXT_KEY_IMPROVEMENT_SPAWN_UNIT", GC.getImprovementInfo(getImprovementType()).getTextKeyWide(), pUnit->getName().GetCString());
-			gDLL->getInterfaceIFace()->addMessage(eSpawnPlayer, false, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_UNITGIFTED", MESSAGE_TYPE_INFO, GC.getUnitInfo((UnitTypes)iUnit).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(eSpawnPlayer, false, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_UNITGIFTED", MESSAGE_TYPE_INFO,
+				GC.getUnitInfo((UnitTypes)iUnit).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 
 		if (bMissingGuard && GC.getImprovementInfo(getImprovementType()).getNumGuardianPromotions() > 0)
@@ -1003,7 +1004,7 @@ void CvPlot::doLairSpawn()
 	 && GC.getGameINLINE().getSorenRandNum(30000, "Spawn Unit") < iBaseChance * (100 + GC.getImprovementInfo(getImprovementType()).getSpawnGroupChancePercentMod()))
 	{
 		// Player notifications included in this func as well, in case
-		GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iSpawnGroup, this, eSpawnPlayer);
+		GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iSpawnGroup, this, eSpawnPlayer, true);
 	}
 }
 
@@ -7538,7 +7539,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 				}
 				if (iImmediateSpawnGroup != -1)
 				{
-					GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iImmediateSpawnGroup, this, eSpawnPlayer);
+					GC.getGameINLINE().createSpawnGroup((SpawnGroupTypes)iImmediateSpawnGroup, this, eSpawnPlayer, true);
 				}
 			}
 		}

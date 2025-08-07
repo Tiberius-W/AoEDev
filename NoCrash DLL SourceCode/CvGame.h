@@ -639,7 +639,7 @@ public:
 /**					New spawn mechanic, allowing us to customize stacks							**/
 /*************************************************************************************************/
 	bool isSpawnGroupValid(SpawnGroupTypes eSpawnGroup, CvPlot* pPlot, TeamTypes eTeam);
-	void createSpawnGroup(SpawnGroupTypes eSpawnGroup, CvPlot* pPlot, PlayerTypes ePlayer, UnitAITypes eUnitAI = NO_UNITAI);
+	void createSpawnGroup(SpawnGroupTypes eSpawnGroup, CvPlot* pPlot, PlayerTypes ePlayer, bool bFromLair, UnitAITypes eUnitAI = NO_UNITAI);
 /*************************************************************************************************/
 /**	Spawn Groups							END													**/
 /*************************************************************************************************/

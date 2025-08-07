@@ -304,7 +304,7 @@ void CyGamePythonInterface()
 /**					New spawn mechanic, allowing us to customize stacks							**/
 /*************************************************************************************************/
 		.def("isSpawnGroupValid", &CyGame::isSpawnGroupValid, "bool (int eSpawnGroup, CyPlot* pPlot, int eTeam)")
-		.def("createSpawnGroup", &CyGame::createSpawnGroup, "void (int eSpawnGroup, CyPlot* pPlot, int ePlayer, int eUnitAI)")
+		.def("createSpawnGroup", &CyGame::createSpawnGroup, "void (int eSpawnGroup, CyPlot* pPlot, int ePlayer, bool bFromLair, int eUnitAI)")
 /*************************************************************************************************/
 /**	Spawn Groups							END													**/
 /*************************************************************************************************/

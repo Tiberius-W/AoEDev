@@ -312,7 +312,7 @@ public:
 /**					New spawn mechanic, allowing us to customize stacks							**/
 /*************************************************************************************************/
 	bool isSpawnGroupValid(int eSpawnGroup, CyPlot* pPlot, int eTeam);
-	void createSpawnGroup(int eSpawnGroup, CyPlot* pPlot, int ePlayer, int eUnitAI);
+	void createSpawnGroup(int eSpawnGroup, CyPlot* pPlot, int ePlayer, bool bFromLair, int eUnitAI);
 /*************************************************************************************************/
 /**	Spawn Groups							END													**/
 /*************************************************************************************************/

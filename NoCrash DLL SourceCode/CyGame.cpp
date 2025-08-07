@@ -1265,8 +1265,8 @@ int CyGame::getGlobalCounter() const
 /**																								**/
 /**					New spawn mechanic, allowing us to customize stacks							**/
 /*************************************************************************************************/
-bool CyGame::isSpawnGroupValid(int eSpawnGroup, CyPlot* pPlot, int eTeam)						{return (NULL != m_pGame ? m_pGame->isSpawnGroupValid((SpawnGroupTypes)eSpawnGroup, pPlot->getPlot(), (TeamTypes)eTeam) : false);}
-void CyGame::createSpawnGroup(int eSpawnGroup, CyPlot* pPlot, int ePlayer, int eUnitAI)			{if (m_pGame) m_pGame->createSpawnGroup((SpawnGroupTypes)eSpawnGroup, pPlot->getPlot(), (PlayerTypes)ePlayer, (UnitAITypes)eUnitAI);}
+bool CyGame::isSpawnGroupValid(int eSpawnGroup, CyPlot* pPlot, int eTeam)								{return (NULL != m_pGame ? m_pGame->isSpawnGroupValid((SpawnGroupTypes)eSpawnGroup, pPlot->getPlot(), (TeamTypes)eTeam) : false);}
+void CyGame::createSpawnGroup(int eSpawnGroup, CyPlot* pPlot, int ePlayer, bool bFromLair, int eUnitAI)	{if (m_pGame) m_pGame->createSpawnGroup((SpawnGroupTypes)eSpawnGroup, pPlot->getPlot(), (PlayerTypes)ePlayer, bFromLair, (UnitAITypes)eUnitAI);}
 /*************************************************************************************************/
 /**	Spawn Groups							END													**/
 /*************************************************************************************************/
