@@ -29396,15 +29396,15 @@
 			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<iCost>60</iCost>
 			<iMoves>2</iMoves>
-			<iCombat>4</iCombat>
+			<iCombat>3</iCombat>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>45</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>45</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iAsset>4</iAsset>
@@ -29427,17 +29427,13 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_SLAVER</PromotionType>
+					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
 			<iTier>2</iTier>
-			<iCombatDefense>4</iCombatDefense>
+			<iCombatDefense>3</iCombatDefense>
 			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
-			<DenyPromotions>
-				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
-				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
-			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Slave Hunter -->
 			<Class>UNITCLASS_RANGER</Class>
@@ -29466,15 +29462,15 @@
 			<PrereqTech>TECH_CURRENCY</PrereqTech>
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
-			<iCombat>7</iCombat>
+			<iCombat>6</iCombat>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iAsset>10</iAsset>
@@ -29489,18 +29485,14 @@
 			</UnitMeshGroups>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_SLAVER</PromotionType>
+					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
 			<iTier>3</iTier>
-			<iCombatDefense>7</iCombatDefense>
+			<iCombatDefense>6</iCombatDefense>
 			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
-			<DenyPromotions>
-				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
-				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
-			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Raid Commander -->
 			<Class>UNITCLASS_BEASTMASTER</Class>
@@ -29533,15 +29525,15 @@
 			</TechTypes>
 			<iCost>240</iCost>
 			<iMoves>2</iMoves>
-			<iCombat>12</iCombat>
+			<iCombat>10</iCombat>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
+					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
+					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iAsset>28</iAsset>
@@ -29561,7 +29553,7 @@
 			<iCombatDefense>12</iCombatDefense>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_SLAVER</PromotionType>
+					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -29580,10 +29572,6 @@
 				<Promotion>PROMOTION_GC_ARCHERY_COMMANDER2</Promotion>
 				<Promotion>PROMOTION_GC_BATTLEFIELD_TACTICS</Promotion>
 			</AllowPromotions>
-			<DenyPromotions>
-				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
-				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
-			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Aspirant -->
 			<Class>UNITCLASS_ADVENTURER</Class>
@@ -29703,7 +29691,7 @@
 			</FreePromotions>
 			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
 			<bNeverObsolete>1</bNeverObsolete>
-			<iCombatDefense>4</iCombatDefense>
+			<iCombatDefense>2</iCombatDefense>
 			<iTier>3</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_THIEVES_DEN</PrereqBuildingClass>
 		</UnitInfo>
@@ -29798,7 +29786,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<PrereqTech>TECH_SANITATION</PrereqTech>
 			<iCost>140</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -29848,7 +29836,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_SORCERY</PrereqTech>
+			<PrereqTech>TECH_RELIGIOUS_LAW</PrereqTech>
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>6</iCombat>
@@ -31058,57 +31046,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-						<Builds>
+			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_FARM</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WORKSHOP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_LUMBERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINDMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WATERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PLANTATION</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_QUARRY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PASTURE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_CAMP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_COTTAGE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -31129,7 +31069,7 @@
 			<PrereqTech>TECH_ALTERATION</PrereqTech>
 			<iCost>90</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>5</iCombat>
+			<iCombat>4</iCombat>
 			<iAsset>4</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
@@ -31151,7 +31091,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iMinLevel>1</iMinLevel>
-			<iCombatDefense>5</iCombatDefense>
+			<iCombatDefense>4</iCombatDefense>
 			<iTier>2</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
@@ -31212,57 +31152,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-						<Builds>
+			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_FARM</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WORKSHOP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_LUMBERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINDMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WATERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PLANTATION</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_QUARRY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PASTURE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_CAMP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_COTTAGE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -31282,9 +31174,7 @@
 			<PrereqTech>TECH_SORCERY</PrereqTech>
 			<iCost>150</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>7</iCombat>
-			<iAirCombat>2</iAirCombat>
-			<iAirCombatLimit>20</iAirCombatLimit>
+			<iCombat>6</iCombat>
 			<iAsset>6</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
@@ -31306,7 +31196,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iMinLevel>1</iMinLevel>
-			<iCombatDefense>7</iCombatDefense>
+			<iCombatDefense>6</iCombatDefense>
 			<iTier>3</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
@@ -31443,8 +31333,6 @@
 			<iCollateralDamage>80</iCollateralDamage>
 			<iCollateralDamageLimit>40</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
-			<iAirCombat>3</iAirCombat>
-			<iAirCombatLimit>30</iAirCombatLimit>
 			<iAsset>8</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -31792,7 +31680,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<Flavors/>
-			<PrereqTech>TECH_ALTERATION</PrereqTech>
+			<PrereqTech>TECH_SORCERY</PrereqTech>
 			<iCost>180</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>5</iCombat>
@@ -31822,7 +31710,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iCombatDefense>5</iCombatDefense>
-			<iCommandLimit>3</iCommandLimit>
+			<iCommandLimit>2</iCommandLimit>
 			<iCommandRange>2</iCommandRange>
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<DenyPromotions>
