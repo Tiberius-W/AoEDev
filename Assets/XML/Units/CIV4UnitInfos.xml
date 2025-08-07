@@ -29550,7 +29550,7 @@
 			<iCommandLimit>2</iCommandLimit>
 			<iCommandRange>2</iCommandRange>
 			<iMinLevel>6</iMinLevel>
-			<iCombatDefense>12</iCombatDefense>
+			<iCombatDefense>10</iCombatDefense>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>
