@@ -1245,12 +1245,14 @@
 		<element type="GameTurnInfos"/>
 		<element type="iLairSpawnChance"/>
 		<element type="iTurnsPerLairCycle"/>
+		<element type="iBarbSpawnDelay"/>
 	</ElementType>
 	<ElementType name="GameSpeedInfos" content="eltOnly">
 		<element type="GameSpeedInfo" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iLairSpawnChance" content="textOnly" dt:type="int"/>
 	<ElementType name="iTurnsPerLairCycle" content="textOnly" dt:type="int"/>
+	<ElementType name="iBarbSpawnDelay" content="textOnly" dt:type="int"/>
 	<ElementType name="iBaseTime" content="textOnly" dt:type="int"/>
 	<ElementType name="iCityBonus" content="textOnly" dt:type="int"/>
 	<ElementType name="iUnitBonus" content="textOnly" dt:type="int"/>
