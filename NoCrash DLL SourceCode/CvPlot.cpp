@@ -881,8 +881,8 @@ void CvPlot::doLairSpawn()
 	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumSpawnsAlive() >= iSpawnLimit)
 		return;
 
-	// 2nd check: Mapgen lairs should wait a smidge before spitting out units
-	if ((3 * GC.getGameINLINE().getElapsedGameTurns() < (GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTurnsPerLairCycle()))
+	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
+	if ((3 * GC.getGameINLINE().getElapsedGameTurns() < (GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getBarbSpawnDelay()))
 	 || (GC.getGameINLINE().getNumCivCities() < GC.getGameINLINE().countCivPlayersAlive()))
 		return;
 

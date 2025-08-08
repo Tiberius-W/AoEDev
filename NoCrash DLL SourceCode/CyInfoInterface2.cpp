@@ -262,9 +262,7 @@ void CyInfoPythonInterface2()
 /*************************************************************************************************/
 		.def("getLairSpawnChance", &CvGameSpeedInfo::getLairSpawnChance, "int ()")
 		.def("getTurnsPerLairCycle", &CvGameSpeedInfo::getTurnsPerLairCycle, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		.def("getBarbSpawnDelay", &CvGameSpeedInfo::getBarbSpawnDelay, "int ()")
 
 		.def("getGameTurnInfo", &CvGameSpeedInfo::getGameTurnInfo, python::return_value_policy<python::reference_existing_object>(), "GameTurnInfo ()")
 		;

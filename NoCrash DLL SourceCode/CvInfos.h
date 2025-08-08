@@ -6025,9 +6025,7 @@ public:
 /*************************************************************************************************/
 	int getLairSpawnChance() const;
 	int getTurnsPerLairCycle() const;
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+	int getBarbSpawnDelay() const;
 
 	GameTurnInfo& getGameTurnInfo(int iIndex) const;				// Exposed to Python
 	void allocateGameTurnInfos(const int iSize);
@@ -6075,9 +6073,7 @@ protected:
 /*************************************************************************************************/
 	int m_iLairSpawnChance;
 	int m_iTurnsPerLairCycle;
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+	int m_iBarbSpawnDelay;
 
 	CvString m_szGameSpeedName;
 	GameTurnInfo* m_pGameTurnInfo;

@@ -28751,9 +28751,8 @@ m_iNumTurnIncrements(0),
 /*************************************************************************************************/
 m_iLairSpawnChance(0),
 m_iTurnsPerLairCycle(0),
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+m_iBarbSpawnDelay(0),
+
 m_pGameTurnInfo(NULL)
 {
 }
@@ -28886,9 +28885,7 @@ int CvGameSpeedInfo::getNumTurnIncrements() const
 /*************************************************************************************************/
 int CvGameSpeedInfo::getLairSpawnChance() const		{return m_iLairSpawnChance;}
 int CvGameSpeedInfo::getTurnsPerLairCycle() const	{return m_iTurnsPerLairCycle;}
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+int CvGameSpeedInfo::getBarbSpawnDelay() const		{return m_iBarbSpawnDelay;}
 
 GameTurnInfo& CvGameSpeedInfo::getGameTurnInfo(int iIndex) const
 {
@@ -28937,9 +28934,7 @@ bool CvGameSpeedInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(&m_iLairSpawnChance, "iLairSpawnChance");
 	pXML->GetChildXmlValByName(&m_iTurnsPerLairCycle, "iTurnsPerLairCycle");
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+	pXML->GetChildXmlValByName(&m_iBarbSpawnDelay, "iBarbSpawnDelay");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GameTurnInfos"))
 	{
@@ -29008,6 +29003,7 @@ void CvGameSpeedInfo::copyNonDefaults(CvGameSpeedInfo* pClassInfo, CvXMLLoadUtil
 	if (getVictoryDelayPercent()		== 0)		m_iVictoryDelayPercent			= pClassInfo->getVictoryDelayPercent();
 	if (getLairSpawnChance()			== 0)		m_iLairSpawnChance				= pClassInfo->getLairSpawnChance();
 	if (getTurnsPerLairCycle()			== 0)		m_iTurnsPerLairCycle			= pClassInfo->getTurnsPerLairCycle();
+	if (getBarbSpawnDelay()				== 0)		m_iBarbSpawnDelay				= pClassInfo->getBarbSpawnDelay();
 	if (getNumTurnIncrements()			== 0)
 	{
 													m_iNumTurnIncrements			= pClassInfo->getNumTurnIncrements();

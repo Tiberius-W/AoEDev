@@ -35,7 +35,7 @@
 			<iWaterTilesPerAnimal>130</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
 			<iTilesPerOrc>70</iTilesPerOrc> <!-- Applies to savages on land only -->
 			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
-			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity>
+			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity> <!-- Animosity fort->city barb mechanic does not obey this limit! -->
 			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo --> 
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
 			<iAnimalBonus>-30</iAnimalBonus>

@@ -10986,8 +10986,8 @@ void CvGame::createAnimals()
 	if (isOption(GAMEOPTION_NO_ANIMALS) || isOption(GAMEOPTION_NO_RANDOM_BARBARIANS))
 		return;
 
-	// Rando animals spawn slightly sooner than random lairs
-	if (getGameTurn() < 2 * GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
+	// Rando animals grace period for spawning
+	if (getGameTurn() < GC.getGameSpeedInfo(getGameSpeedType()).getBarbSpawnDelay() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
 		return;
 
 	// Animals weighting gets weird if a mountain is picked; best to simply not choose mountains
@@ -11122,8 +11122,8 @@ void CvGame::createBarbarianUnits()
 	if (lResult == 1)
 		return;
 
-	// Random barbs only spawn past lair start
-	if (getGameTurn() < 3 * GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
+	// Random barbs grace period for spawning
+	if (getGameTurn() < 2 * GC.getGameSpeedInfo(getGameSpeedType()).getBarbSpawnDelay() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)))
 		return;
 
 	// Random spawn can't be on 1-tile island I guess, nor in deep ocean. Weighting is also weird for peaks, so don't spawn on those
