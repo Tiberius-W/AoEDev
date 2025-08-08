@@ -1462,7 +1462,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>,Art/Interface/Buttons/BaseTerrain/Peak.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,7,1</Button>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
 			<iExtraCombatDefense>2</iExtraCombatDefense>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Stonekin - Spelunker -->
@@ -1949,7 +1949,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Units/BatteringRam.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/SpiritualHammer.dds</Button>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<BonusAffinities>
 				<BonusAffinity>

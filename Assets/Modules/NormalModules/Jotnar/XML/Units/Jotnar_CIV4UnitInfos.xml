@@ -1329,19 +1329,6 @@
 			<iExtraGoldSupport>2</iExtraGoldSupport>
 			<iTier>3</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
-			<AllowPromotions>
-				<PromotionType>PROMOTION_GRAPESHOT</PromotionType>
-				<PromotionType>PROMOTION_CANISTER_SHOT</PromotionType>
-				<PromotionType>PROMOTION_SIGHTED_SHOT</PromotionType>
-				<PromotionType>PROMOTION_FLAMING_SHOT</PromotionType>
-				<PromotionType>PROMOTION_PLAGUE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_EXPLOSIVE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_FINE</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_EXCELLENT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_SUPERIOR</PromotionType>
-				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
-				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
-			</AllowPromotions>
 			<TerrainImpassables>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
@@ -1768,19 +1755,6 @@
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>2</iTier>
 			<iWeaponTierMax>1</iWeaponTierMax>
-			<AllowPromotions>
-				<PromotionType>PROMOTION_GRAPESHOT</PromotionType>
-				<PromotionType>PROMOTION_CANISTER_SHOT</PromotionType>
-				<PromotionType>PROMOTION_SIGHTED_SHOT</PromotionType>
-				<PromotionType>PROMOTION_FLAMING_SHOT</PromotionType>
-				<PromotionType>PROMOTION_PLAGUE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_EXPLOSIVE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_FINE</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_EXCELLENT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_SUPERIOR</PromotionType>
-				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
-				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
-			</AllowPromotions>
 			<TerrainImpassables>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
@@ -3622,7 +3596,7 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>6</iCombat>
-			<iCityAttack>-20</iCityAttack>
+			<iCityAttack>-50</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
@@ -3749,19 +3723,6 @@
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
-			<AllowPromotions>
-				<PromotionType>PROMOTION_GRAPESHOT</PromotionType>
-				<PromotionType>PROMOTION_CANISTER_SHOT</PromotionType>
-				<PromotionType>PROMOTION_SIGHTED_SHOT</PromotionType>
-				<PromotionType>PROMOTION_FLAMING_SHOT</PromotionType>
-				<PromotionType>PROMOTION_PLAGUE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_EXPLOSIVE_SHOT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_FINE</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_EXCELLENT</PromotionType>
-				<PromotionType>PROMOTION_CRAFTMANSHIP_SUPERIOR</PromotionType>
-				<PromotionType>PROMOTION_DEADEYE_CREW</PromotionType>
-				<PromotionType>PROMOTION_POINT_DEFENSE</PromotionType>
-			</AllowPromotions>
 			<TerrainImpassables>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>

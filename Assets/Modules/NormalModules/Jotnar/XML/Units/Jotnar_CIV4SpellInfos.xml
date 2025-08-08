@@ -1365,7 +1365,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1390,7 +1390,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1416,7 +1416,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
 			<iDelay>6</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Seakin 1 -->
@@ -1440,7 +1440,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1465,7 +1465,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1491,7 +1491,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
 			<iDelay>6</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Frostkin 1 -->
@@ -1515,7 +1515,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1540,7 +1540,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1566,7 +1566,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
 			<iDelay>6</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stonekin 1 -->
@@ -1590,7 +1590,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1615,7 +1615,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1641,7 +1641,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
 			<iDelay>6</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Stormkin 1 -->
@@ -1665,7 +1665,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1690,7 +1690,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1716,7 +1716,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
 			<iDelay>6</iDelay>
 		</SpellInfo>
 		<SpellInfo>			<!-- Woodkin 1 -->
@@ -1740,7 +1740,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1765,7 +1765,7 @@
 			<bImmuneNeutral>1</bImmuneNeutral>
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
 			<iDelay>3</iDelay>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</SpellInfo>
@@ -1791,7 +1791,7 @@
 			<bImmuneEnemy>1</bImmuneEnemy>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
-			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
 			<iDelay>6</iDelay>]
 		</SpellInfo>
 	</SpellInfos>
