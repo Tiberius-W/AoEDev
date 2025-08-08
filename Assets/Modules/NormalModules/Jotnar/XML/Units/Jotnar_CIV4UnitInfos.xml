@@ -1179,8 +1179,8 @@
 			<iXPValueAttack>15</iXPValueAttack>
 			<iXPValueDefense>10</iXPValueDefense>
 			<iCollateralDamage>100</iCollateralDamage>
-			<iCollateralDamageLimit>20</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
+			<iCollateralDamageLimit>50</iCollateralDamageLimit>
+			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iBombardRate>20</iBombardRate>
 			<iAsset>32</iAsset>
 			<UnitMeshGroups>
