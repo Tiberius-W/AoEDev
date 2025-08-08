@@ -32888,8 +32888,8 @@
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/PsionicMastery.dds</Button>
 			<iMinLevel>12</iMinLevel>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Urban -->
-			<Type>TXT_KEY_ANIMALBLOCKER</Type>
+  <!-- <PromotionInfo>	-->	<!-- Urban -->
+       <!-- <Type>TXT_KEY_ANIMALBLOCKER</Type>
 			<Description>TXT_KEY_ANIMALBLOCKER</Description>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bEffectProm>0</bEffectProm>
@@ -32912,7 +32912,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/Urban.dds</Button>
-		</PromotionInfo>
+		</PromotionInfo> -->
 		<!--<PromotionInfo>     Lifedrinker
 				<Type>PROMOTION_LIFEDRINKER</Type>
 				<Description>TXT_KEY_PROMOTION_LIFEDRINKER</Description>
@@ -35494,8 +35494,8 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/MinionCombat5.dds</Button>
 			<iMinLevel>-1</iMinLevel>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iExtraCombatDefense>1</iExtraCombatDefense>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Overseer Precision Training -->
 			<Type>PROMOTION_OVERSEER_PRECISION_BASIC</Type>
@@ -35553,8 +35553,7 @@
 			<Description>TXT_KEY_PROMOTION_OVERSEER_PRECISION_1_UNIT</Description>
 			<PrereqPermission>1</PrereqPermission>
 			<iAirCombat>1</iAirCombat>
-			<iAirCombatLimitBoost>10</iAirCombatLimitBoost>
-			<iAirRangeChange>1</iAirRangeChange>
+			<iAirCombatLimitBoost>5</iAirCombatLimitBoost>
 		    <iWorkRateModify>40</iWorkRateModify>
 			<iCombatPercent>10</iCombatPercent>
 			<PrereqUnits>
@@ -35591,7 +35590,7 @@
 			<Description>TXT_KEY_PROMOTION_OVERSEER_PRECISION_2_UNIT</Description>
 			<PrereqPermission>1</PrereqPermission>
 			<iAirCombat>1</iAirCombat>
-			<iAirCombatLimitBoost>10</iAirCombatLimitBoost>
+			<iAirCombatLimitBoost>5</iAirCombatLimitBoost>
 		    <iWorkRateModify>40</iWorkRateModify>
 			<iCombatPercent>10</iCombatPercent>
 			<PrereqUnits>
@@ -35628,7 +35627,7 @@
 			<Description>TXT_KEY_PROMOTION_OVERSEER_PRECISION_3_UNIT</Description>
 			<PrereqPermission>1</PrereqPermission>
 			<iAirCombat>1</iAirCombat>
-			<iAirCombatLimitBoost>10</iAirCombatLimitBoost>
+			<iAirCombatLimitBoost>5</iAirCombatLimitBoost>
 		    <iWorkRateModify>40</iWorkRateModify>
 			<iCombatPercent>10</iCombatPercent>
 			<PrereqUnits>
@@ -35665,7 +35664,7 @@
 			<Description>TXT_KEY_PROMOTION_OVERSEER_PRECISION_MASTER_UNIT</Description>
 			<PrereqPermission>1</PrereqPermission>
 			<iAirCombat>2</iAirCombat>
-			<iAirCombatLimitBoost>15</iAirCombatLimitBoost>
+			<iAirCombatLimitBoost>10</iAirCombatLimitBoost>
 		    <iWorkRateModify>40</iWorkRateModify>
 			<iCombatPercent>10</iCombatPercent>
 			<PrereqUnits>
@@ -35879,7 +35878,7 @@
 			<Description>TXT_KEY_PROMOTION_KARAS_SLUGA_MASTER</Description>
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<PrereqPermission>1</PrereqPermission>
-			<iFirstStrikesChange>2</iFirstStrikesChange>
+			<iFirstStrikesChange>1</iFirstStrikesChange>
 			<iCollateralDamageProtection>20</iCollateralDamageProtection>
 			<PrereqUnits>
 				<PrereqUnit>UNIT_BATTLE_SLUGA_V2</PrereqUnit>
@@ -35888,8 +35887,6 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/MinionSlugaMaster.dds</Button>
 			<iMinLevel>-1</iMinLevel>
-			<iExtraCombatStr>1</iExtraCombatStr>
-			<iExtraCombatDefense>1</iExtraCombatDefense>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Scorch MEKARA -->                                      <!-- SLUGA TERRAFORM SPELLS -->
 			<Type>PROMOTION_OVERSEER_SCORCH_V2</Type>
