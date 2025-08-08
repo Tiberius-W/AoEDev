@@ -10281,7 +10281,7 @@
 			<iCombatHealPercent>10</iCombatHealPercent>
 			<iFreeXPFromCombat>1</iFreeXPFromCombat>
 			<iMinLevel>-1</iMinLevel>
-			<iSpellCasterXP>-50</iSpellCasterXP>
+			<iSpellCasterXP>-5</iSpellCasterXP>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Gnosling - Air -->
 			<Type>PROMOTION_GNOSLING_AIR</Type>

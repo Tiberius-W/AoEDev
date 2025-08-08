@@ -562,9 +562,6 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
 			<NewName>Longship</NewName>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
-			</PrereqCivilizations>
 			<PrereqTerrains>
 				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
 				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
@@ -584,8 +581,8 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/Galley.dds</Button>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<UnitArtStyleType>UNIT_ARTSTYLE_LONGSHIP</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Longship2 -->
@@ -602,9 +599,6 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
 			<NewName>Longship</NewName>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
-			</PrereqCivilizations>
 			<PrereqTerrains>
 				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
 				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
@@ -616,6 +610,8 @@
 			<iExtraPerception>1</iExtraPerception>
 			<iMovesChange>2</iMovesChange>
 			<iWithdrawalChange>15</iWithdrawalChange>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
@@ -623,8 +619,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/Pirate.dds</Button>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
 			<UnitArtStyleType>UNIT_ARTSTYLE_LONGSHIP</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Mirage -->
