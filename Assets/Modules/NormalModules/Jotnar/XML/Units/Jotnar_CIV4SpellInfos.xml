@@ -629,7 +629,7 @@
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellBosom(pCaster)</PyResult>
 			<PyRequirement>reqBosom(pCaster)</PyRequirement>
-			<iDelay>4</iDelay>
+			<iDelay>6</iDelay>
 			<Effect>EFFECT_SNOWFALL</Effect>
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
 			<Button>Art/Interface/Buttons/Promotions/MarkoftheWarden.dds</Button>
