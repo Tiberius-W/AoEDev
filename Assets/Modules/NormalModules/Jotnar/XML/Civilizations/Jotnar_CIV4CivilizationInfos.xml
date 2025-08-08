@@ -544,10 +544,6 @@
 					<bFreeTech>1</bFreeTech>
 				</FreeTech>
 				<FreeTech>
-					<TechType>TECH_EXPLORATION</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
-				<FreeTech>
 					<TechType>TECH_JO1</TechType>
 					<bFreeTech>1</bFreeTech>
 				</FreeTech>

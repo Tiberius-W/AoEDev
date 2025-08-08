@@ -385,11 +385,11 @@
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_FIRE</DamageType>
-					<iResist>100</iResist>
+					<iResist>35</iResist>
 				</DamageTypeResist>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_COLD</DamageType>
-					<iResist>-100</iResist>
+					<iResist>-50</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
 		</PromotionInfo>
@@ -488,11 +488,11 @@
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_FIRE</DamageType>
-					<iResist>-100</iResist>
+					<iResist>-50</iResist>
 				</DamageTypeResist>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_COLD</DamageType>
-					<iResist>100</iResist>
+					<iResist>35</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
 		</PromotionInfo>
@@ -503,14 +503,15 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_FROSTKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_TRACKING</TechPrereq>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<bRivalTerritoryExplore>1</bRivalTerritoryExplore>
-			<iInvisibleLevel>3</iInvisibleLevel>
+			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -546,7 +547,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Blizzard.dds</Button>
-			<iWorkRateModify>25</iWorkRateModify>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Longship -->
 			<Type>PROMOTION_LONGSHIP</Type>
@@ -634,8 +634,7 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<bRivalTerritoryExplore>1</bRivalTerritoryExplore>
-			<iInvisibleLevel>3</iInvisibleLevel>
+			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -681,10 +680,63 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_LION_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_WOLF_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_ELEPHANT_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_SPIDER_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_BEAR_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_TIGER_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_SCORPION_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_STAG_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_GRIFFON_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_RAT_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_BOAR_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_GORILLA_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_RAPTOR_BLOOD</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
 			<TechPrereq>TECH_HORSEBACK_RIDING</TechPrereq>
 			<bNoXP>1</bNoXP>
 			<iGoldCost>100</iGoldCost>
-			<iNoBadExplore>25</iNoBadExplore>
 			<NewName>Packmaster</NewName>
 			<PrereqBuildingANDs>
 				<PrereqBuilding>BUILDING_STABLE</PrereqBuilding>
@@ -700,38 +752,14 @@
 			</PrereqUnits>
 			<iExtraPerception>1</iExtraPerception>
 			<TempUnitCombat>UNITCOMBAT_MOUNTED</TempUnitCombat>
-			<bAlwaysHeal>1</bAlwaysHeal>
 			<iVisibilityChange>1</iVisibilityChange>
 			<iExtraPerception>1</iExtraPerception>
 			<iMovesChange>1</iMovesChange>
-			<iWithdrawalChange>25</iWithdrawalChange>
 			<iFirstStrikesChange>1</iFirstStrikesChange>
-			<iEnemyHealChange>10</iEnemyHealChange>
-			<iNeutralHealChange>10</iNeutralHealChange>
-			<iFriendlyHealChange>10</iFriendlyHealChange>
-			<iCityAttack>-25</iCityAttack>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<iCityAttack>-75</iCityAttack>
 			<Button>Art/Civs/Jotnar/buttons/jot_troll.dds</Button>
-			<iExtraCombatStr>0</iExtraCombatStr>
-			<iExtraCombatDefense>0</iExtraCombatDefense>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER</UnitArtStyleType>
-			
-			<PromotionCombatMods>
-				<PromotionCombatMod>
-					<PromotionType>PROMOTION_GOBLIN</PromotionType>
-					<iCombatMod>25</iCombatMod>
-				</PromotionCombatMod>			
-			</PromotionCombatMods>
-		</PromotionInfo>
+		</PromotionInfo>	
 		<PromotionInfo>		<!-- Packmaster1 -->
 			<Type>PROMOTION_PACKMASTER1</Type>
 			<Description>TXT_KEY_PROMOTION_PACKMASTER</Description>
@@ -764,30 +792,10 @@
 				<Promotion>PROMOTION_PACKMASTER6</Promotion>
 				<Promotion>PROMOTION_PACKMASTER7</Promotion>
 			</PromotionOverwrites>
-			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
-			<iMovesChange>2</iMovesChange>
 			<iWithdrawalChange>15</iWithdrawalChange>
-			<iFirstStrikesChange>2</iFirstStrikesChange>
-			<iEnemyHealChange>-5</iEnemyHealChange>
-			<iNeutralHealChange>-5</iNeutralHealChange>
-			<iFriendlyHealChange>-5</iFriendlyHealChange>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<iFirstStrikesChange>1</iFirstStrikesChange>
 			<Button>Art/Interface/Buttons/Units/Wolf.dds</Button>
-			<iExtraCombatStr>0</iExtraCombatStr>
-			<iExtraCombatDefense>-2</iExtraCombatDefense>
+			<iExtraCombatStr>1</iExtraCombatStr>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER1</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Packmaster2 -->
@@ -829,15 +837,9 @@
 				<Promotion>PROMOTION_PACKMASTER7</Promotion>
 			</PromotionOverwrites>
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
-			<iFirstStrikesChange>1</iFirstStrikesChange>
-			<iEnemyHealChange>-5</iEnemyHealChange>
-			<iNeutralHealChange>-5</iNeutralHealChange>
-			<iFriendlyHealChange>-5</iFriendlyHealChange>
-			<iSameTileHealChange>10</iSameTileHealChange>
 			<Button>Art/Interface/Buttons/Units/Lion.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
+			<iExtraCombatStr>1</iExtraCombatStr>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER2</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Packmaster3 -->
@@ -874,18 +876,15 @@
 				<Promotion>PROMOTION_PACKMASTER6</Promotion>
 				<Promotion>PROMOTION_PACKMASTER7</Promotion>
 			</PromotionOverwrites>
-			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>15</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<Button>Art/Interface/Buttons/Units/Bear.dds</Button>
-			<bFear>1</bFear>
-			<bImmuneToFear>1</bImmuneToFear>
-			<iExtraCombatStr>5</iExtraCombatStr>
-			<iExtraCombatDefense>5</iExtraCombatDefense>
+			<iExtraCombatStr>2</iExtraCombatStr>
+			<iExtraCombatDefense>2</iExtraCombatDefense>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER3</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Packmaster4 -->
@@ -925,29 +924,26 @@
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
 			<iVisibilityChange>2</iVisibilityChange>
 			<iExtraPerception>2</iExtraPerception>
-			<iMovesChange>2</iMovesChange>
-			<iWithdrawalChange>25</iWithdrawalChange>
-			<iFirstStrikesChange>3</iFirstStrikesChange>
-			<iSameTileHealChange>10</iSameTileHealChange>
+			<iMovesChange>1</iMovesChange>
+			<iWithdrawalChange>15</iWithdrawalChange>
+			<iFirstStrikesChange>1</iFirstStrikesChange>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>15</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>15</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
+					<iUnitCombatMod>-15</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<Button>Art/Interface/Buttons/Units/Griffon.dds</Button>
-			<bFlying>1</bFlying>
-			<bImmuneToFear>1</bImmuneToFear>
-			<iExtraCombatStr>6</iExtraCombatStr>
-			<iExtraCombatDefense>6</iExtraCombatDefense>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER4</UnitArtStyleType>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Packmaster5 -->
@@ -962,7 +958,6 @@
 			<TechPrereq>TECH_STIRRUPS</TechPrereq>
 			<bNoXP>1</bNoXP>
 			<iGoldCost>50</iGoldCost>
-			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqBuildingANDs>
 				<PrereqBuilding>BUILDING_SPIDER_WEB</PrereqBuilding>
 			</PrereqBuildingANDs>
@@ -980,11 +975,6 @@
 				<Promotion>PROMOTION_PACKMASTER6</Promotion>
 				<Promotion>PROMOTION_PACKMASTER7</Promotion>
 			</PromotionOverwrites>
-			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
-			<iFirstStrikesChange>2</iFirstStrikesChange>
-			<iEnemyHealChange>-5</iEnemyHealChange>
-			<iNeutralHealChange>-5</iNeutralHealChange>
-			<iFriendlyHealChange>-5</iFriendlyHealChange>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
@@ -993,12 +983,11 @@
 			</UnitCombatMods>
 			<Button>Art/Interface/Buttons/Units/Spider.dds</Button>
 			<bFear>1</bFear>
-			<iExtraCombatStr>1</iExtraCombatStr>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER5</UnitArtStyleType>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_POISON</DamageType>
-					<iCombat>2</iCombat>
+					<iCombat>1</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</PromotionInfo>
@@ -1032,29 +1021,9 @@
 				<Promotion>PROMOTION_PACKMASTER5</Promotion>
 				<Promotion>PROMOTION_PACKMASTER7</Promotion>
 			</PromotionOverwrites>
-			<iMovesChange>-2</iMovesChange>
-			<iEnemyHealChange>-5</iEnemyHealChange>
-			<iNeutralHealChange>-5</iNeutralHealChange>
-			<iFriendlyHealChange>-5</iFriendlyHealChange>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
 			<Button>Art/Interface/Buttons/Units/Elephant.dds</Button>
-			<bOnlyDefensive>1</bOnlyDefensive>
-			<bFear>1</bFear>
-			<iExtraCombatStr>6</iExtraCombatStr>
-			<iExtraCombatDefense>6</iExtraCombatDefense>
+			<iExtraCombatStr>3</iExtraCombatStr>
+			<iExtraCombatDefense>3</iExtraCombatDefense>
 			<iWorkRateModify>100</iWorkRateModify>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER6</UnitArtStyleType>
 		</PromotionInfo>
@@ -1089,28 +1058,10 @@
 				<Promotion>PROMOTION_PACKMASTER5</Promotion>
 				<Promotion>PROMOTION_PACKMASTER6</Promotion>
 			</PromotionOverwrites>
-			<iMovesChange>-2</iMovesChange>
-			<iEnemyHealChange>-5</iEnemyHealChange>
-			<iNeutralHealChange>-5</iNeutralHealChange>
-			<iFriendlyHealChange>-5</iFriendlyHealChange>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
 			<Button>Art/Interface/Buttons/Units/Mammoth.dds</Button>
 			<bFear>1</bFear>
-			<iExtraCombatStr>9</iExtraCombatStr>
-			<iExtraCombatDefense>9</iExtraCombatDefense>
+			<iExtraCombatStr>3</iExtraCombatStr>
+			<iExtraCombatDefense>3</iExtraCombatDefense>
 			<iWorkRateModify>100</iWorkRateModify>
 			<UnitArtStyleType>UNIT_ARTSTYLE_PACKMASTER7</UnitArtStyleType>
 		</PromotionInfo>
@@ -1134,7 +1085,6 @@
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
 			</PrereqCivilizations>
-			<iMovesChange>1</iMovesChange>
 			<iPillageChange>100</iPillageChange>
 			<UnitCombats>
 				<UnitCombat>
@@ -1208,10 +1158,6 @@
 					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
-				<PrereqPromotionOR>
-					<PromotionType>PROMOTION_TROLLKIN</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionOR>
 			</PrereqPromotionORs>
 			<TechPrereq>TECH_NEVER</TechPrereq>
 			<bNoXP>1</bNoXP>
@@ -1236,45 +1182,45 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<iTerrainAttack>75</iTerrainAttack>
+					<iTerrainAttack>50</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<iTerrainAttack>75</iTerrainAttack>
+					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_COAST</TerrainType>
-					<iTerrainAttack>75</iTerrainAttack>
+					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
-					<iTerrainAttack>75</iTerrainAttack>
+					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
-					<iTerrainAttack>75</iTerrainAttack>
+					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<iTerrainDefense>75</iTerrainDefense>
+					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<iTerrainDefense>75</iTerrainDefense>
+					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 					<TerrainDefense>
 					<TerrainType>TERRAIN_COAST</TerrainType>
-				<iTerrainDefense>75</iTerrainDefense>
+				<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
-					<iTerrainDefense>75</iTerrainDefense>
+					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
-					<iTerrainDefense>75</iTerrainDefense>
+					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<UnitCombats>
@@ -1315,12 +1261,12 @@
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_FIRE</DamageType>
-					<iResist>-100</iResist>
+					<iResist>-50</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Seakin - Swimmer -->
-			<Type>PROMOTION_SWIMMER</Type>
+   <!-- <PromotionInfo>	-->	<!-- Seakin - Swimmer -->
+	<!--    <Type>PROMOTION_SWIMMER</Type>
 			<Description>TXT_KEY_PROMOTION_SWIMMER</Description>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
@@ -1380,7 +1326,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/BigPinkBox.dds</Button>
-		</PromotionInfo>
+		</PromotionInfo> -->
 		<PromotionInfo>		<!-- Seakin - Sea Stealth -->
 			<Type>PROMOTION_SUBMERGE</Type>
 			<Description>TXT_KEY_PROMOTION_SUBMERGE</Description>
@@ -1388,14 +1334,15 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_SEAKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_SAILING</TechPrereq>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<bRivalTerritoryExplore>1</bRivalTerritoryExplore>
-			<iInvisibleLevel>3</iInvisibleLevel>
+			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1517,7 +1464,6 @@
 			</UnitCombats>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Peak.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,7,1</Button>
 			<iExtraCombatDefense>2</iExtraCombatDefense>
-			<iWorkRateModify>25</iWorkRateModify>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Stonekin - Spelunker -->
 			<Type>PROMOTION_SPELUNKER</Type>
@@ -1526,6 +1472,8 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_STONE_KIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_SANITATION</TechPrereq>
@@ -1533,7 +1481,7 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
 			<bRivalTerritoryExplore>1</bRivalTerritoryExplore>
-			<iInvisibleLevel>3</iInvisibleLevel>
+			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1569,7 +1517,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Improvements/Dungeon.dds</Button>
-			<iWorkRateModify>25</iWorkRateModify>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Stormkin -->
 			<Type>PROMOTION_STORMKIN</Type>
@@ -1636,7 +1583,7 @@
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_LIGHTNING</DamageType>
-					<iResist>100</iResist>
+					<iResist>35</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
 		</PromotionInfo>
@@ -1676,8 +1623,8 @@
 			<bImmuneToFear>1</bImmuneToFear>
 			<iExpireChance>100</iExpireChance>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Wizened Troll -->
-			<Type>PROMOTION_WIZENED_TROLL</Type>
+<!--    <PromotionInfo>	-->	<!-- Wizened Troll -->
+<!--    <Type>PROMOTION_WIZENED_TROLL</Type>
 			<Description>TXT_KEY_PROMOTION_CLEVER_TROLL</Description>
 			<TechPrereq>TECH_ANIMAL_MASTERY</TechPrereq>
 			<bAutoAcquire>1</bAutoAcquire>
@@ -1693,12 +1640,6 @@
 			<PromotionExcludes>
 			<Promotion>PROMOTION_FERAL</Promotion>
 			</PromotionExcludes>
-			<bAlwaysHeal>1</bAlwaysHeal>
-			<iMovesChange>1</iMovesChange>
-			<iWithdrawalChange>10</iWithdrawalChange>
-			<iEnemyHealChange>10</iEnemyHealChange>
-			<iNeutralHealChange>10</iNeutralHealChange>
-			<iFriendlyHealChange>10</iFriendlyHealChange>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
@@ -1706,8 +1647,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Jotnar/buttons/jot_troll.dds</Button>
-			<iCombatHealPercent>10</iCombatHealPercent>
-			
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_TROLLKIN</PromotionType>
@@ -1717,24 +1656,20 @@
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_POISON</DamageType>
-					<iResist>100</iResist>
+					<iResist>35</iResist>
 				</DamageTypeResist>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_FIRE</DamageType>
 					<iResist>-75</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
-		</PromotionInfo>
+		</PromotionInfo> -->
 		<PromotionInfo>		<!-- Woodkin -->
 			<Type>PROMOTION_WOODKIN</Type>
 			<Description>TXT_KEY_PROMOTION_WOODKIN</Description>
 			<PrereqPromotionORs>
 				<PrereqPromotionOR>
 					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionOR>
-				<PrereqPromotionOR>
-					<PromotionType>PROMOTION_TROLLKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
@@ -1791,6 +1726,12 @@
 					<iFeatureDefense>25</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -1830,13 +1771,14 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_WOODKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<bRivalTerritoryExplore>1</bRivalTerritoryExplore>
-			<iInvisibleLevel>3</iInvisibleLevel>
+			<iInvisibleLevel>1</iInvisibleLevel>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqFeatures>
 				<PrereqFeature>FEATURE_FOREST</PrereqFeature>
@@ -1875,15 +1817,9 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/ForestStealth.dds</Button>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_POISON</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Blackblade -->
-			<Type>PROMOTION_BLACKBLADE</Type>
+<!-- 	<PromotionInfo>	-->	<!-- Blackblade -->
+<!--    <Type>PROMOTION_BLACKBLADE</Type>
 			<Description>TXT_KEY_PROMOTION_BLACKBLADE</Description>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
@@ -1912,7 +1848,7 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-		</PromotionInfo>
+		</PromotionInfo> -->
 		<PromotionInfo>		<!-- Efreet -->
 			<Type>PROMOTION_EFREET</Type>
 			<Description>TXT_KEY_PROMOTION_EFREET</Description>
@@ -1927,7 +1863,6 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_RAGE</TechPrereq>
-			<NewName>Efreet</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -1964,6 +1899,12 @@
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Juggernaut -->
 			<Type>PROMOTION_JUGGERNAUT</Type>
@@ -1979,7 +1920,6 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_BLASTING_POWDER</TechPrereq>
-			<NewName>Juggernaut</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -2011,13 +1951,30 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/BatteringRam.dds</Button>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
-			<bImmuneToMagic>1</bImmuneToMagic>
 			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_EARTH</BonusType>
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iResist>35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>35</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Mulcarn's Chosen -->
 			<Type>PROMOTION_MULCARNS_CHOSEN</Type>
@@ -2033,7 +1990,6 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_THEOLOGY</TechPrereq>
-			<NewName>Mulcarn's Chosen</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -2070,6 +2026,12 @@
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Thunder -->
 			<Type>PROMOTION_THUNDER</Type>
@@ -2086,7 +2048,6 @@
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_MERCANTILISM</TechPrereq>
 			<iAirCombat>3</iAirCombat>
-			<NewName>Thunder</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -2127,6 +2088,12 @@
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Triton -->
 			<Type>PROMOTION_TRITON</Type>
@@ -2198,7 +2165,6 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_COMMUNE_WITH_NATURE</TechPrereq>
-			<NewName>Woodfather</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
@@ -2206,24 +2172,6 @@
 			<PromotionOverwrites>
 			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
 			</PromotionOverwrites>
-			<FeatureAttacks>
-				<FeatureAttack>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>25</iFeatureAttack>
-				</FeatureAttack>
-				<FeatureAttack>
-					<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
-					<iFeatureAttack>25</iFeatureAttack>
-				</FeatureAttack>
-				<FeatureDefense>
-					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
-					<iFeatureDefense>25</iFeatureDefense>
-				</FeatureDefense>
-				<FeatureDefense>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<iFeatureDefense>25</iFeatureDefense>
-				</FeatureDefense>
-			</FeatureAttacks>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -2257,6 +2205,12 @@
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Canister Shot -->
 			<Type>PROMOTION_CANISTER_SHOT</Type>
@@ -2271,7 +2225,7 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bEffectProm>1</bEffectProm>
 			<bNoXP>1</bNoXP>
-			<fCasterXPRate>0.70</fCasterXPRate>
+			<fCasterXPRate>0.25</fCasterXPRate>
 			<PrereqTraits>
 				<PrereqTrait>TRAIT_TREACHEROUS</PrereqTrait>
 			</PrereqTraits>
@@ -2286,8 +2240,8 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Jotnar/buttons/jot_worker.dds</Button>
-			<iCasterResistModify>-10</iCasterResistModify>
-			<iCombatHealPercent>20</iCombatHealPercent>
+			<iCasterResistModify>-5</iCasterResistModify>
+			<iCombatHealPercent>5</iCombatHealPercent>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Egrass -->
 			<Type>PROMOTION_EGRASS</Type>
@@ -2316,15 +2270,6 @@
 			</PrereqUnits>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Flying -->
-			<Type>PROMOTION_FLYING</Type>
-			<PrereqPromotionORs>
-				<PrereqPromotionOR>
-					<PromotionType>PROMOTION_STORMKIN</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionOR>
-			</PrereqPromotionORs>
-		</PromotionInfo>
-				<PromotionInfo>		<!-- Flying -->
 			<Type>PROMOTION_FLYING</Type>
 			<bForceOverwrite>1</bForceOverwrite>
 			<Description>TXT_KEY_PROMOTION_FLYING</Description>
@@ -2515,7 +2460,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			</PromotionInfo>		
-	<PromotionInfo>		<!-- Slaver -->
+	        <PromotionInfo>		<!-- Slaver -->
 			<Type>PROMOTION_SLAVER_CIVIC_JOTNAR</Type>
 			<Description>TXT_KEY_PROMOTION_SLAVER</Description>
 			<PrereqCivics>
