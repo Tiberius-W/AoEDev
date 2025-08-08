@@ -551,14 +551,18 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
 			<PromotionPrereq2>PROMOTION_WOODKIN</PromotionPrereq2>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_TERRAFORMING</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
 			<bAllowAI>1</bAllowAI>
 			<bInBordersOnly>1</bInBordersOnly>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<CreateFeatureType>FEATURE_FOREST_NEW</CreateFeatureType>
-			<iDelay>2</iDelay>
-			<PyResult>spellBloom(pCaster)</PyResult>
-			<PyRequirement>reqJotBloom(pCaster)</PyRequirement>
+			<iDelay>4</iDelay>
 			<Effect>EFFECT_BLOOM</Effect>
 			<Sound>AS3D_SPELL_BLOOM</Sound>
 			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
@@ -625,7 +629,7 @@
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellBosom(pCaster)</PyResult>
 			<PyRequirement>reqBosom(pCaster)</PyRequirement>
-			<iDelay>3</iDelay>
+			<iDelay>4</iDelay>
 			<Effect>EFFECT_SNOWFALL</Effect>
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
 			<Button>Art/Interface/Buttons/Promotions/MarkoftheWarden.dds</Button>
@@ -642,6 +646,7 @@
 			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
+			<iDelay>1</iDelay>
 			<PyResult>spellEarthquake(pCaster)</PyResult>
 			<PyRequirement>reqEarthquake(pCaster)</PyRequirement>
 			<Effect>EFFECT_SNOWFALL</Effect>
@@ -811,8 +816,8 @@
 			<PyRequirement>reqFreeze(pCaster)</PyRequirement>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Tundra.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,2</Button>
 		</SpellInfo> -->
-		<SpellInfo>			<!-- Part Water -->
-			<Type>SPELL_PART_WATER</Type>
+<!--    <SpellInfo>	-->		<!-- Part Water -->
+  <!-- <Type>SPELL_PART_WATER</Type>
 			<Description>Part Water</Description>
 			<Civilopedia>TXT_KEY_SPELL_WATER_WALKING_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_JOT_PROMINENT_GIANT</PromotionPrereq1>
@@ -827,7 +832,7 @@
 			<Effect>EFFECT_CREATION</Effect>
 			<Sound>AS3D_SPELL_WATER</Sound>
 			<Button>Art/Interface/Buttons/Promotions/Waterwalking.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Pillar of Fire (Jotnar) -->
 			<Type>SPELL_JOT_PILLAR_OF_FIRE</Type>
 			<Description>TXT_KEY_SPELL_PILLAR_OF_FIRE</Description>
@@ -886,7 +891,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds -->
 			<Type>SPELL_HOUNDS</Type>
-			<Description>Release the Hounds</Description>
+			<Description>TXT_KEY_SPELL_JOT_HOUNDS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER1</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -902,7 +907,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Arachnophobia) -->
 			<Type>SPELL_SPIDERS</Type>
-			<Description>Arachnophobia</Description>
+			<Description>TXT_KEY_SPELL_JOT_SPIDERS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER5</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -918,7 +923,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Da Bears) -->
 			<Type>SPELL_BEARS</Type>
-			<Description>Da Bears</Description>
+			<Description>TXT_KEY_SPELL_JOT_BEARS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER3</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -934,7 +939,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Elephant Stampede) -->
 			<Type>SPELL_ELEPHANTS</Type>
-			<Description>Elephant Stampede</Description>
+			<Description>TXT_KEY_SPELL_JOT_ELEPHANTS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER6</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -950,7 +955,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Face humping Bats) -->
 			<Type>SPELL_GRIFFONS</Type>
-			<Description>Face humping Bats</Description>
+			<Description>TXT_KEY_SPELL_JOT_GRIFFONS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER4</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -966,7 +971,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Mammoth Stampede) -->
 			<Type>SPELL_MAMMOTHS</Type>
-			<Description>Mammoth Stampede</Description>
+			<Description>TXT_KEY_SPELL_JOT_MAMMOTHS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER7</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -982,7 +987,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Release the Kittens) -->
 			<Type>SPELL_LIONS</Type>
-			<Description>Release the Kittens</Description>
+			<Description>TXT_KEY_SPELL_JOT_CATS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER2</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -1007,7 +1012,7 @@
 			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
-			<iDelay>2</iDelay>
+			<iDelay>4</iDelay>
 			<PyResult>spellScorch(pCaster)</PyResult>
 			<PyRequirement>reqScorch(pCaster)</PyRequirement>
 			<Effect>EFFECT_SCORCH</Effect>
@@ -1124,7 +1129,7 @@
 			<bIsAutoCastable>0</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
-			<iDelay>2</iDelay>
+			<iDelay>4</iDelay>
 			<PyResult>spellSpring(pCaster)</PyResult>
 			<PyRequirement>reqSpring(pCaster)</PyRequirement>
 			<Effect>EFFECT_SPRING</Effect>

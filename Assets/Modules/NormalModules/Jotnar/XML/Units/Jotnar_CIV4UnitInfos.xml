@@ -1175,7 +1175,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iCombat>2</iCombat>
+			<iCombat>4</iCombat>
 			<iXPValueAttack>15</iXPValueAttack>
 			<iXPValueDefense>10</iXPValueDefense>
 			<iCollateralDamage>100</iCollateralDamage>
@@ -1196,6 +1196,10 @@
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_FIREKIN</PromotionType>
 					<iNumApplied>1</iNumApplied>
@@ -1234,6 +1238,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_EGRASS</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_GIANTKIN</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

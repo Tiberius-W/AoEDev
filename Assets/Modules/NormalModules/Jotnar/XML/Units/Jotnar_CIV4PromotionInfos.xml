@@ -1225,7 +1225,6 @@
 			</PromotionAllows>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FERAL</Promotion>
-				<Promotion>PROMOTION_WOODKIN</Promotion>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
@@ -1751,7 +1750,6 @@
 			</PromotionAllows>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FERAL</Promotion>
-				<Promotion>PROMOTION_SEAKIN</Promotion>
 				<Promotion>PROMOTION_JOT_POTENTIAL</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
@@ -2144,7 +2142,6 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
-			<NewName>Triton</NewName>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>

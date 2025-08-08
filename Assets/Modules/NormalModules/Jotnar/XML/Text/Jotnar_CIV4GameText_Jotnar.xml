@@ -1311,4 +1311,60 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 		<Italian>Trial of the Frozen Heart</Italian>
 		<Spanish>Trial of the Frozen Heart</Spanish>
 	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_HOUNDS</Tag>
+		<English>Summon Wolf Pack</English>
+		<French>Summon Wolf Pack</French>
+		<German>Summon Wolf Pack</German>
+		<Italian>Summon Wolf Pack</Italian>
+		<Spanish>Summon Wolf Pack</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_CATS</Tag>
+		<English>Summon Lion Pride</English>
+		<French>Summon Lion Pride</French>
+		<German>Summon Lion Pride</German>
+		<Italian>Summon Lion Pride</Italian>
+		<Spanish>Summon Lion Pride</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_SPIDERS</Tag>
+		<English>Summon Giant Spider</English>
+		<French>Summon Giant Spider</French>
+		<German>Summon Giant Spider</German>
+		<Italian>Summon Giant Spider</Italian>
+		<Spanish>Summon Giant Spider</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_GRIFFONS</Tag>
+		<English>Summon Griffon</English>
+		<French>Summon Griffon</French>
+		<German>Summon Griffon</German>
+		<Italian>Summon Griffon</Italian>
+		<Spanish>Summon Griffon</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_BEARS</Tag>
+		<English>Summon Bear Group</English>
+		<French>Trad</French>
+		<German>Trad</German>
+		<Italian>Trad</Italian>
+		<Spanish>Trad</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_ELEPHANTS</Tag>
+		<English>Summon Elephant</English>
+		<French>Summon Elephant</French>
+		<German>Summon Elephant</German>
+		<Italian>Summon Elephant</Italian>
+		<Spanish>Summon Elephant</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_JOT_MAMMOTHS</Tag>
+		<English>Summon Mammoth</English>
+		<French>Summon Mammoth</French>
+		<German>Summon Mammoth</German>
+		<Italian>Summon Mammoth</Italian>
+		<Spanish>Summon Mammoth</Spanish>
+	</TEXT>	
 </Civ4GameText>
