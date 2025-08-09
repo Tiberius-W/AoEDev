@@ -7689,10 +7689,10 @@ void CvPlayer::found(int iX, int iY)
 	if (isBarbarian())
 	{
 		// Xienwolf - 06/18/09 - Prevents spawning of limited unit classes in automated functions
-		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR);
+		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR, true);
 
 		if (eDefenderUnit == NO_UNIT)
-			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR);
+			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR, true);
 
 		if (eDefenderUnit != NO_UNIT)
 		{
