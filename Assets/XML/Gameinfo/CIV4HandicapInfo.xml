@@ -31,10 +31,10 @@
 			<iAttitudeChange>2</iAttitudeChange>
 			<iNoTechTradeModifier>100</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
-			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- Applies to animals on land only -->
-			<iWaterTilesPerAnimal>130</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
-			<iTilesPerOrc>70</iTilesPerOrc> <!-- Applies to savages on land only -->
-			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
+			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- *UNOWNED* Tiles. Applies to animals on land only -->
+			<iWaterTilesPerAnimal>130</iWaterTilesPerAnimal> <!-- *UNOWNED* Tiles. Applies to animals on water only -->
+			<iTilesPerOrc>70</iTilesPerOrc> <!-- *UNOWNED* Tiles. Applies to savages on land only -->
+			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- *UNOWNED* Tiles. Applies to savages on water only -->
 			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity> <!-- Note this means completely unowned; lairs and barb cities own tiles, not just civs. 2x lower if raging. 3x lower if no civ-owned cities in area -->
 			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo, *random* barb cities can't spawn before this. Also requires all civs settle at least 1 city. --> 
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Chance per turn to spawn 1 city, mapsize & speed modulated. 2x higher if raging -->
@@ -108,7 +108,7 @@
 			<iAnimalEscalationTurnsElapsed>150</iAnimalEscalationTurnsElapsed> <!-- Ehh... leaving for now. -->
 			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
 			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
-			<iTilesPerLairDemon>100</iTilesPerLairDemon> <!-- Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
+			<iTilesPerLairDemon>100</iTilesPerLairDemon> <!-- *UNOWNED* Tiles. Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
 			<iDemonGlobalCounterFreeXPPercent>10</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
 			<iDemonPerTurnKnownTechsPercent>3</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
 			<iDemonBonus>-50</iDemonBonus>

@@ -5001,7 +5001,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				if (pPlot->getCultureControl((PlayerTypes) iI) > 0)
 				{
 					szString.append(NEWLINE);
-					szTempBuffer.Format(L"Culture réécrire 64384 Control (%s): %d (%d%%/%d%%)", GC.getCivilizationInfo(GET_PLAYER((PlayerTypes) iI).getCivilizationType()).getAdjective(), pPlot->getCultureControl((PlayerTypes) iI), pPlot->calculateCultureControlPercent((PlayerTypes) iI), pPlot->calculateTeamCultureControlPercent(GET_PLAYER((PlayerTypes) iI).getTeam()));
+					szTempBuffer.Format(L"Culture Control (%s): %d (%d%%/%d%%)", GC.getCivilizationInfo(GET_PLAYER((PlayerTypes) iI).getCivilizationType()).getAdjective(), pPlot->getCultureControl((PlayerTypes) iI), pPlot->calculateCultureControlPercent((PlayerTypes) iI), pPlot->calculateTeamCultureControlPercent(GET_PLAYER((PlayerTypes) iI).getTeam()));
 					szString.append(szTempBuffer);
 				}
 			}

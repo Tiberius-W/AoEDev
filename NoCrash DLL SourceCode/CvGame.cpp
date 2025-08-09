@@ -7215,9 +7215,9 @@ void CvGame::createBarbarianCities()
 		// Prioritize area that is the most claimed, in absolute terms
 		iValue *= pLoopPlot->area()->getNumOwnedTiles();
 
-		// 5x more likely to upgrade a fort if possible
+		// Much more likely to upgrade a fort if possible
 		if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-			iValue *= 5;
+			iValue *= 5000;
 
 		// This value does effectively nothing given the scale of .AI_foundValue. Should be renormalized/applied once a scale for the found value is established?
 		// iValue += (getSorenRandNum(50, "Barb City Found"));
@@ -10850,7 +10850,7 @@ void CvGame::createLairs()
 		}
 		// Lairs can only spawn if there's space for barbs to spawn; prevents wildly dense barb areas
 		// But, 1 valid lair/type can always spawn even if there's no space for a normal barb to spawn
-		else if (pArea != NULL && (std::max(1, calcTargetBarbs(pArea, true, ePlayer, true)) > pArea->getUnitsPerPlayer(ePlayer)))
+		else if (pArea != NULL && (std::max(1, calcTargetBarbs(pArea, ePlayer, true)) > pArea->getUnitsPerPlayer(ePlayer)))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
@@ -10885,7 +10885,7 @@ void CvGame::createDemons()
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
 		// Note: Demon spawnrate is artificially lowered at low #s of available spawn tiles, because of stupid syncRandPlot
-		iTargetDemons = calcTargetBarbs(pLoopArea, true, DEMON_PLAYER);
+		iTargetDemons = calcTargetBarbs(pLoopArea, DEMON_PLAYER);
 		iNeededDemons = iTargetDemons - pLoopArea->getUnitsPerPlayer(DEMON_PLAYER);
 		if (iNeededDemons < 1)
 			continue;
@@ -10992,7 +10992,7 @@ void CvGame::createAnimals()
 	for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
 		// Spawn at most 15% of the actual missing amount, gamespeed modulated. This prevents instant-replacement of killed units when near target threshold
-		iTargetAnimals = calcTargetBarbs(pLoopArea, false, ANIMAL_PLAYER);
+		iTargetAnimals = calcTargetBarbs(pLoopArea, ANIMAL_PLAYER);
 		iNeededAnimals = iTargetAnimals - pLoopArea->getUnitsPerPlayer(ANIMAL_PLAYER);
 		if (iNeededAnimals < 1)
 			continue;
@@ -11128,7 +11128,7 @@ void CvGame::createBarbarianUnits()
 	for (pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 	{
 		// Spawn at most 10% of the actual missing amount, gamespeed modulated. This prevents instant-replacement of killed animals when near target threshold
-		iTargetBarbs = calcTargetBarbs(pLoopArea, false, ORC_PLAYER);
+		iTargetBarbs = calcTargetBarbs(pLoopArea, ORC_PLAYER);
 		iNeededBarbs = iTargetBarbs - pLoopArea->getUnitsPerPlayer(ORC_PLAYER);
 		if (iNeededBarbs < 1)
 			continue;
@@ -11222,7 +11222,7 @@ void CvGame::createBarbarianUnits()
 // Each barb type has slightly different density limit calculation. All here for easy comparison.
 // Note that barbs can spawn as groups and so go over the limit on the turn spawned, but should not
 // be substantially over aside from happenstance of small limit and multiple large groups spawning.
-int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes ePlayer, bool bLairDemon) const
+int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn) const
 {
 	FAssertMsg(pArea != NULL, "Need passing valid area to calculated barb density");
 	FAssertMsg(ePlayer == ANIMAL_PLAYER || ePlayer == ORC_PLAYER || ePlayer == DEMON_PLAYER, "Need to calculate spawn for a barb team")
@@ -11232,7 +11232,7 @@ int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes eP
 
 	if (ePlayer == ANIMAL_PLAYER)
 	{
-		iAreaSize = (bCountOwnedPlots ? pArea->getNumTiles() : pArea->getNumUnownedTiles());
+		iAreaSize = pArea->getNumUnownedTiles();
 		int iDivisor = (pArea->isWater() ?
 			GC.getHandicapInfo(getHandicapType()).getWaterTilesPerAnimal() :
 			GC.getHandicapInfo(getHandicapType()).getTilesPerAnimal());
@@ -11243,7 +11243,7 @@ int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes eP
 	}
 	else if (ePlayer == ORC_PLAYER)
 	{
-		iAreaSize = (bCountOwnedPlots ? pArea->getNumTiles() : pArea->getNumUnownedTiles());
+		iAreaSize = pArea->getNumUnownedTiles();
 		int iDivisor = (pArea->isWater() ?
 			GC.getHandicapInfo(getHandicapType()).getWaterTilesPerOrc() :
 			GC.getHandicapInfo(getHandicapType()).getTilesPerOrc());
@@ -11253,10 +11253,10 @@ int CvGame::calcTargetBarbs(CvArea* pArea, bool bCountOwnedPlots, PlayerTypes eP
 	}
 	else
 	{
-		// Possible min value
+		// Possible min value if we're calculating based on lairs, instead of rand demon on hell terrain
 		int iMinDemons = 0;
-		if (bLairDemon)
-			iMinDemons = pArea->getNumTiles() / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
+		if (bLairSpawn)
+			iMinDemons = pArea->getNumUnownedTiles() / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
 
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();
