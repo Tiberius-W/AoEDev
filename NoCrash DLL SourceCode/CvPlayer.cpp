@@ -7632,7 +7632,8 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	if (!bTestVisible)
 	{
-		iRange = GC.getMIN_CITY_RANGE();
+		// Barbs should not found their cities v close to each other
+		iRange = isBarbarian() ? GC.getDefineINT("MIN_BARBARIAN_CITY_STARTING_DISTANCE") : GC.getMIN_CITY_RANGE();
 
 		for (iDX = -(iRange); iDX <= iRange; iDX++)
 		{
