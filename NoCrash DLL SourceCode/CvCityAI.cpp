@@ -3463,18 +3463,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 }
 
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Prevents spawning of limited unit classes in automated functions				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes eIgnoreAdvisor)
-/**								----  End Original Code  ----									**/
 UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes eIgnoreAdvisor, bool bIgnoreLimitedUnits)
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 {
 	UnitTypes eLoopUnit;
 	UnitTypes eBestUnit;
@@ -3515,46 +3504,31 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 
 	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 	{
-		//eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
 		eLoopUnit = ((UnitTypes)(getCityUnits(iI)));
 
-		if (eLoopUnit != NO_UNIT)
-		{
-			if ((eIgnoreAdvisor == NO_ADVISOR) || (GC.getUnitInfo(eLoopUnit).getAdvisorType() != eIgnoreAdvisor))
-			{
-				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
-				{
+		if (eLoopUnit == NO_UNIT)
+			continue;
 
-					if (!(bGrowMore && isFoodProduction(eLoopUnit)))
-					{
-						if (canTrain(eLoopUnit))
-						{
-							iOriginalValue = GET_PLAYER(getOwnerINLINE()).AI_unitValue(eLoopUnit, eUnitAI, area());
+		if (eIgnoreAdvisor != NO_ADVISOR && GC.getUnitInfo(eLoopUnit).getAdvisorType() == eIgnoreAdvisor)
+			continue;
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							06/18/09											**/
-/**																								**/
-/**				Prevents spawning of limited unit classes in automated functions				**/
-/*************************************************************************************************/
-							if (bIgnoreLimitedUnits)
-							{
-								if(isLimitedUnitClass((UnitClassTypes)(GC.getUnitInfo(eLoopUnit).getUnitClassType())))
-								{
-									iOriginalValue = 0;
-								}
-							}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-							if (iOriginalValue > iBestOriginalValue)
-							{
-								iBestOriginalValue = iOriginalValue;
-							}
-						}
-					}
-				}
-			}
-		}
+		if (isHuman() && GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() != eUnitAI)
+			continue;
+
+		if (bGrowMore && isFoodProduction(eLoopUnit))
+			continue;
+
+		if (!canTrain(eLoopUnit))
+			continue;
+
+		// Xienwolf - 06/18/09 - Prevents spawning of limited unit classes in automated functions
+		if (bIgnoreLimitedUnits && isLimitedUnitClass((UnitClassTypes)(GC.getUnitInfo(eLoopUnit).getUnitClassType())))
+			continue;
+
+		iOriginalValue = GET_PLAYER(getOwnerINLINE()).AI_unitValue(eLoopUnit, eUnitAI, area());
+
+		if (iOriginalValue > iBestOriginalValue)
+			iBestOriginalValue = iOriginalValue;
 	}
 
 	iBestValue = 0;
@@ -3562,186 +3536,164 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 
 	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 	{
-	//	eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
 		eLoopUnit = ((UnitTypes)(getCityUnits(iI)));
 
-		if (eLoopUnit != NO_UNIT)
+		if (eLoopUnit == NO_UNIT)
+			continue;
+
+		if (eIgnoreAdvisor != NO_ADVISOR && GC.getUnitInfo(eLoopUnit).getAdvisorType() == eIgnoreAdvisor)
+			continue;
+
+		if (isHuman() && GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() != eUnitAI)
+			continue;
+
+		if (bGrowMore && isFoodProduction(eLoopUnit))
+			continue;
+
+		if (!canTrain(eLoopUnit))
+			continue;
+
+		// Blaze - 08/2025 - Prevents spawning of limited unit classes in automated functions (needed extension of Xienwolf's above)
+		if (bIgnoreLimitedUnits && isLimitedUnitClass((UnitClassTypes)(GC.getUnitInfo(eLoopUnit).getUnitClassType())))
+			continue;
+
+		iValue = GET_PLAYER(getOwnerINLINE()).AI_unitValue(eLoopUnit, eUnitAI, area());
+
+		// AI_unitValue is examined IF it's either an explorer that's > 2/3 base, or value straight up greater than base
+		if (iValue <= iBestOriginalValue * 2 / 3 || (eUnitAI == UNITAI_EXPLORE && iValue < iBestOriginalValue))
+			continue;
+
+		iValue *= (getProductionExperience(eLoopUnit) + 10);
+		iValue /= 10;
+
+		//free promotions. slow?
+		//only 1 promotion per source is counted (ie protective isn't counted twice)
+		int iPromotionValue = 0;
+		//buildings
+		for (iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
 		{
-			if ((eIgnoreAdvisor == NO_ADVISOR) || (GC.getUnitInfo(eLoopUnit).getAdvisorType() != eIgnoreAdvisor))
+			if (isFreePromotion((PromotionTypes)iJ) && !GC.getUnitInfo(eLoopUnit).getFreePromotions((PromotionTypes)iJ))
 			{
-				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
+				if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getPromotionInfo((PromotionTypes)iJ).getUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
 				{
+					iPromotionValue += 15;
+					break;
+				}
+			}
+		}
 
-					if (!(bGrowMore && isFoodProduction(eLoopUnit)))
+		//special to the unit
+		for (iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
+		{
+			if (GC.getUnitInfo(eLoopUnit).getFreePromotions(iJ))
+			{
+				// Valkrionn - 1.4 - 03/28/11 - Ensures that stacked promotions are counted equally; Should have no gameplay change
+				int iStackMultiplier = GC.getUnitInfo(eLoopUnit).getNumFreePromotions(iJ);
+				iPromotionValue += 15 * iStackMultiplier;
+				break;
+			}
+		}
+
+		//traits
+		for (iJ = 0; iJ < GC.getNumTraitInfos(); iJ++)
+		{
+			if (hasTrait((TraitTypes)iJ))
+			{
+				for (iK = 0; iK < GC.getNumPromotionInfos(); iK++)
+				{
+					if (GC.getTraitInfo((TraitTypes) iJ).isFreePromotion(iK))
 					{
-						if (canTrain(eLoopUnit))
+						if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getTraitInfo((TraitTypes) iJ).isFreePromotionUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
 						{
-							iValue = GET_PLAYER(getOwnerINLINE()).AI_unitValue(eLoopUnit, eUnitAI, area());
-
-							if ((iValue > ((iBestOriginalValue * 2) / 3)) && ((eUnitAI != UNITAI_EXPLORE) || (iValue >= iBestOriginalValue)))
-							{
-								iValue *= (getProductionExperience(eLoopUnit) + 10);
-								iValue /= 10;
-
-								//free promotions. slow?
-								//only 1 promotion per source is counted (ie protective isn't counted twice)
-								int iPromotionValue = 0;
-								//buildings
-								for (iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-								{
-									if (isFreePromotion((PromotionTypes)iJ) && !GC.getUnitInfo(eLoopUnit).getFreePromotions((PromotionTypes)iJ))
-									{
-										if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getPromotionInfo((PromotionTypes)iJ).getUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
-										{
-											iPromotionValue += 15;
-											break;
-										}
-									}
-								}
-
-								//special to the unit
-								for (iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-								{
-									if (GC.getUnitInfo(eLoopUnit).getFreePromotions(iJ))
-									{
-/*************************************************************************************************/
-/**	1.4										03/28/11								Valkrionn	**/
-/**																								**/
-/**									New tags required for 1.4									**/
-/**		Ensures that stacked promotions are counted equally; Should have no gameplay change		**/
-/*************************************************************************************************/
-										int iStackMultiplier = GC.getUnitInfo(eLoopUnit).getNumFreePromotions(iJ);
-										iPromotionValue += 15 * iStackMultiplier;
-/*************************************************************************************************/
-/**												END												**/
-/*************************************************************************************************/
-										break;
-									}
-								}
-
-								//traits
-								for (iJ = 0; iJ < GC.getNumTraitInfos(); iJ++)
-								{
-									if (hasTrait((TraitTypes)iJ))
-									{
-										for (iK = 0; iK < GC.getNumPromotionInfos(); iK++)
-										{
-											if (GC.getTraitInfo((TraitTypes) iJ).isFreePromotion(iK))
-											{
-												if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getTraitInfo((TraitTypes) iJ).isFreePromotionUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
-												{
-													iPromotionValue += 15;
-													break;
-												}
-											}
-										}
-									}
-								}
-
-								iValue *= (iPromotionValue + 100);
-								iValue /= 100;
-
-								if (bAsync)
-								{
-									iValue *= (GC.getASyncRand().get(50, "AI Best Unit ASYNC") + 100);
-									iValue /= 100;
-								}
-								else
-								{
-									iValue *= (GC.getGameINLINE().getSorenRandNum(50, "AI Best Unit") + 100);
-									iValue /= 100;
-								}
-
-
-								int iBestHappy = 0;
-								for (int iHurry = 0; iHurry < GC.getNumHurryInfos(); ++iHurry)
-								{
-									if (canHurryUnit((HurryTypes)iHurry, eLoopUnit, true))
-									{
-										int iHappy = AI_getHappyFromHurry((HurryTypes)iHurry, eLoopUnit, true);
-										if (iHappy > iBestHappy)
-										{
-											iBestHappy = iHappy;
-										}
-									}
-								}
-
-								if (0 == iBestHappy)
-								{
-									iValue += getUnitProduction(eLoopUnit);
-								}
-								if (GC.getUnitInfo(eLoopUnit).getPopCost() > 0)
-								{
-									iValue -= 10 * (GC.getUnitInfo(eLoopUnit).getPopCost() * growthThreshold()) / (1+foodDifference() * getPopulation());
-								}
-/*************************************************************************************************/
-/**	Tweak							03/02/12								Snarko				**/
-/**																								**/
-/**			Don't make weak units in favor of strong ones just because we have a few			**/
-/**			In particular, don't make scouts instead of warriors unless it's explorers			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								iValue *= (GET_PLAYER(getOwnerINLINE()).getNumCities() * 2);
-								iValue /= (GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking((UnitClassTypes)iI) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
-/**								----  End Original Code  ----									**/
-								iValue *= (GET_PLAYER(getOwnerINLINE()).getNumCities() * 2);
-								iValue /= ((GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking((UnitClassTypes)iI)/2) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
-/*************************************************************************************************/
-/**	Tweak								END														**/
-/*************************************************************************************************/
-
-
-								FAssert((MAX_INT / 1000) > iValue);
-								iValue *= 1000;
-
-								bool bIsSuicide = GC.getUnitInfo(eLoopUnit).isSuicide();
-
-								if (bIsSuicide)
-								{
-									//much of this is compensated
-									iValue /= 3;
-								}
-
-								if (0 == iBestHappy)
-								{
-									iValue /= std::max(1, (getProductionTurnsLeft(eLoopUnit, 0) + (GC.getUnitInfo(eLoopUnit).isSuicide() ? 1 : 4)));
-								}
-								else
-								{
-									iValue *= (2 + 3 * iBestHappy);
-									iValue /= 100;
-								}
-/*************************************************************************************************/
-/**	Cutting								25/07/10										Snarko	**/
-/**																								**/
-/**				Removing rarely used/redundant stuff to improve speed.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-//FfH: Added by Kael 04/29/2009
-								if (GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getFavoriteUnitCombat() != NO_UNITCOMBAT)
-								{
-									if (GC.getUnitInfo(eLoopUnit).getUnitCombatType() == GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getFavoriteUnitCombat())
-									{
-										iValue += 100;
-									}
-								}
-//FfH: End Add
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Cutting									END													**/
-/*************************************************************************************************/
-								iValue = std::max(1, iValue);
-
-								if (iValue > iBestValue)
-								{
-									iBestValue = iValue;
-									eBestUnit = eLoopUnit;
-								}
-							}
+							iPromotionValue += 15;
+							break;
 						}
 					}
 				}
 			}
+		}
+
+		iValue *= (iPromotionValue + 100);
+		iValue /= 100;
+
+		if (bAsync)
+		{
+			iValue *= (GC.getASyncRand().get(50, "AI Best Unit ASYNC") + 100);
+			iValue /= 100;
+		}
+		else
+		{
+			iValue *= (GC.getGameINLINE().getSorenRandNum(50, "AI Best Unit") + 100);
+			iValue /= 100;
+		}
+
+
+		int iBestHappy = 0;
+		for (int iHurry = 0; iHurry < GC.getNumHurryInfos(); ++iHurry)
+		{
+			if (canHurryUnit((HurryTypes)iHurry, eLoopUnit, true))
+			{
+				int iHappy = AI_getHappyFromHurry((HurryTypes)iHurry, eLoopUnit, true);
+				if (iHappy > iBestHappy)
+				{
+					iBestHappy = iHappy;
+				}
+			}
+		}
+
+		if (0 == iBestHappy)
+		{
+			iValue += getUnitProduction(eLoopUnit);
+		}
+		if (GC.getUnitInfo(eLoopUnit).getPopCost() > 0)
+		{
+			iValue -= 10 * (GC.getUnitInfo(eLoopUnit).getPopCost() * growthThreshold()) / (1+foodDifference() * getPopulation());
+		}
+
+		iValue *= (GET_PLAYER(getOwnerINLINE()).getNumCities() * 2);
+		// Snarko - 03/02/12 - Don't make weak units in favor of strong ones just because we have a few
+		// In particular, don't make scouts instead of warriors unless it's explorers
+		// iValue /= (GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking((UnitClassTypes)iI) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
+		iValue /= ((GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking((UnitClassTypes)iI)/2) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
+
+
+		FAssert((MAX_INT / 1000) > iValue);
+		iValue *= 1000;
+
+		bool bIsSuicide = GC.getUnitInfo(eLoopUnit).isSuicide();
+
+		if (bIsSuicide)
+		{
+			//much of this is compensated
+			iValue /= 3;
+		}
+
+		if (0 == iBestHappy)
+		{
+			iValue /= std::max(1, (getProductionTurnsLeft(eLoopUnit, 0) + (GC.getUnitInfo(eLoopUnit).isSuicide() ? 1 : 4)));
+		}
+		else
+		{
+			iValue *= (2 + 3 * iBestHappy);
+			iValue /= 100;
+		}
+
+		// Snarko - 25/07/10 - Removing rarely used/redundant stuff to improve speed
+		// FfH: Added by Kael 04/29/2009
+		// if (GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getFavoriteUnitCombat() != NO_UNITCOMBAT)
+		// {
+		// 	if (GC.getUnitInfo(eLoopUnit).getUnitCombatType() == GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getFavoriteUnitCombat())
+		// 	{
+		// 		iValue += 100;
+		// 	}
+		// }
+
+		iValue = std::max(1, iValue);
+
+		if (iValue > iBestValue)
+		{
+			iBestValue = iValue;
+			eBestUnit = eLoopUnit;
 		}
 	}
 
