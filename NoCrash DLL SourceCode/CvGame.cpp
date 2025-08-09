@@ -10843,7 +10843,7 @@ void CvGame::createLairs()
 		pArea = pPlot->area();
 
 		// We need to prevent lairs that don't spawn units from clogging up every tile. Thus, large-ish range limits
-		if (bNoSpawns && !pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getRange(), false))
+		if (bNoSpawns && !pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), false))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
