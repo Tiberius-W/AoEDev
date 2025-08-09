@@ -4762,7 +4762,7 @@
 			<bHasCasted>1</bHasCasted>
 			<Effect>EFFECT_SPELL2</Effect>
 			<Sound>AS3D_SPELL_CONTAGION</Sound>
-			<PyRequirement>ReqAustrinCallFalcon(pCaster)</PyRequirement>
+			<PyRequirement>reqAustrinCallFalcon(pCaster)</PyRequirement>
 			<PyResult>spellAustrinCallFalcon(pCaster)</PyResult>
 			<Button>Art/Interface/Buttons/Units/Hawk.dds</Button>
 		</SpellInfo>
@@ -4776,7 +4776,7 @@
 			<bHasCasted>1</bHasCasted>
 			<Effect>EFFECT_SPELL2</Effect>
 			<Sound>AS3D_SPELL_CONTAGION</Sound>
-			<PyRequirement>ReqAustrinCallFalcon(pCaster)</PyRequirement>
+			<PyRequirement>reqAustrinCallFalcon(pCaster)</PyRequirement>
 			<PyResult>spellAustrinCallFalcon2(pCaster)</PyResult>
 			<Button>Art/Interface/Buttons/Units/Hawk.dds</Button>
 		</SpellInfo>

@@ -10648,7 +10648,7 @@
 				<UnitType>UNIT_KORRINA_BLACK_LADY</UnitType>
 				<UnitType>UNIT_GHOSTWALKER</UnitType>
 			</PrereqUnitTypesNOTOnTile>
-			<PythonOnRemove>HauntedLandsEffects(pCaster)</PythonOnRemove>
+			<PythonOnRemove>hauntedLandsEffects(pCaster)</PythonOnRemove>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
@@ -41000,7 +41000,7 @@
 			<bEffectProm>1</bEffectProm>
 			<Button>Art/Interface/Buttons/Promotions/Entropy1.dds</Button>
 			<iExpireChance>10</iExpireChance>
-			<PythonOnRemove>SpellDemonLairSpawn(pCaster)</PythonOnRemove>
+			<PythonOnRemove>spellDemonLairSpawn(pCaster)</PythonOnRemove>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Perceptive summon -->
 			<Type>PROMOTION_PERCEPTIVE_SUMMON</Type>

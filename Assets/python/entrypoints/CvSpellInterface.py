@@ -876,7 +876,7 @@ def babySpiderGrowth(pCaster, ePromotion):
 	newUnit = pPlayer.initUnit(iUnit, pCaster.getX(), pCaster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.convert(pCaster)
 
-def HauntedLandsEffects(pCaster):
+def hauntedLandsEffects(pCaster):
 	gc 				= CyGlobalContext()
 	iHaunted 		= getInfoType('PROMOTION_HAUNTED')
 	iSpooked 		= getInfoType('PROMOTION_SPOOKED')
@@ -1332,7 +1332,7 @@ def reqCrownOfBrillance(caster):
 		return False
 	return True
 
-def HyboremAI(caster):
+def hyboremAI(caster):
 	if caster.isHasPromotion(getInfoType('PROMOTION_IMMORTAL')):
 		return
 	else:
@@ -13415,7 +13415,7 @@ def exploreSlavers(argsList):
 			newUnit2	= pPlayer.initUnit(getInfoType('UNIT_SLAVE'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # GOODY_ENCHANTED_MAP
-def PrereqEnchantedMap(argsList):
+def reqEnchantedMap(argsList):
 	pUnit, pPlot		= argsList
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	if pPlayer.isHasTech(getInfoType('TECH_OMNISCIENCE')):

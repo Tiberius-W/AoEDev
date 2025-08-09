@@ -1691,7 +1691,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<PythonCallback>exploreEnchantedMap</PythonCallback>
-			<PythonPrereq>PrereqEnchantedMap</PythonPrereq>
+			<PythonPrereq>reqEnchantedMap</PythonPrereq>
 		</GoodyInfo>
 		<GoodyInfo> <!--Shadow					Lair	 Results Bandit     Bad  Major    -->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_SHADOW</Type>

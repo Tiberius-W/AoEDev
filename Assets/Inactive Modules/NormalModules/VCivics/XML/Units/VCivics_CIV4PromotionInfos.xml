@@ -33,7 +33,7 @@
 			<iSpellCasterXP>5</iSpellCasterXP>
 			<iUpgradeDiscount>50</iUpgradeDiscount>
 			<iResistMagic>5</iResistMagic>
-			<PythonOnRemove>VCivics_RemoveMinions(pCaster)</PythonOnRemove>
+			<PythonOnRemove>vCivics_RemoveMinions(pCaster)</PythonOnRemove>
 			<PromotionNextLevel>PROMOTION_ARCANE_AUTHORITY</PromotionNextLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Arcane Authority -->

@@ -360,7 +360,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDoCity>CanTriggerHellPortalCity</PythonCanDoCity>
+			<PythonCanDoCity>canTriggerHellPortalCity</PythonCanDoCity>
 			<PythonCallback>doHellPortal</PythonCallback>
 			<iPrereqGlobalCounter>75</iPrereqGlobalCounter>
 		</EventTriggerInfo>
@@ -612,7 +612,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>1</bShowPlot>
-			<PythonCanDoCity>CanTriggerUnfortunateAssassinCity</PythonCanDoCity>
+			<PythonCanDoCity>canTriggerUnfortunateAssassinCity</PythonCanDoCity>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_OVERCROWDED_DUNGEON</Type>
@@ -1153,7 +1153,7 @@
 			<bRecurring>1</bRecurring>
 			<bPickCity>1</bPickCity>
 			<bShowPlot>0</bShowPlot>
-			<PythonCanDoCity>CantriggerAssassinWar</PythonCanDoCity>
+			<PythonCanDoCity>cantriggerAssassinWar</PythonCanDoCity>
 		</EventTriggerInfo>
 		<EventTriggerInfo><!--New Muris Goblin-->
 			<Type>EVENTTRIGGER_GOBLIN_WASTE</Type>

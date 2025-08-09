@@ -4501,7 +4501,7 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-			<PyPerTurn>HyboremAI(pCaster)</PyPerTurn>
+			<PyPerTurn>hyboremAI(pCaster)</PyPerTurn>
 		</UnitInfo>
 		<UnitInfo>        <!-- Kahd -->
 			<Class>UNITCLASS_KAHD</Class>

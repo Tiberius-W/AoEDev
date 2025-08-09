@@ -1812,7 +1812,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_PLANAR_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PLANAR_GATE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PLANAR_GATE_HELP</Help>
-				<PyHelp>HelpPlanarGate</PyHelp>
+				<PyHelp>helpPlanarGate</PyHelp>
 		<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PLANAR_GATE</ArtDefineTag>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
@@ -8571,7 +8571,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_KAHDI_VAULT_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_KAHDI_VAULT_GATE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<PyHelp>HelpVaultGates</PyHelp>
+			<PyHelp>helpVaultGates</PyHelp>
 			<ArtDefineTag>ART_DEF_BUILDING_KAHDI_VAULT_GATE</ArtDefineTag>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -12156,7 +12156,7 @@
 			<Type>BUILDING_MASTER_SMITH</Type>
 			<Description>TXT_KEY_BUILDING_MASTER_SMITH</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MASTER_SMITH_PEDIA</Civilopedia>
-			<PyHelp>HelpMasterBuildings</PyHelp>
+			<PyHelp>helpMasterBuildings</PyHelp>
 			<Strategy>TXT_KEY_BUILDING_MASTER_SMITH_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MASTER_SMITH</ArtDefineTag>
@@ -12213,7 +12213,7 @@
 			<Type>BUILDING_MASTER_FLETCHER</Type>
 			<Description>TXT_KEY_BUILDING_MASTER_FLETCHER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MASTER_FLETCHER_PEDIA</Civilopedia>
-			<PyHelp>HelpMasterBuildings</PyHelp>
+			<PyHelp>helpMasterBuildings</PyHelp>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<Strategy>TXT_KEY_BUILDING_MASTER_FLETCHER_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_MASTER_FLETCHER</ArtDefineTag>
@@ -12270,7 +12270,7 @@
 			<Type>BUILDING_MASTER_OUTFITTER</Type>
 			<Description>TXT_KEY_BUILDING_MASTER_OUTFITTER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MASTER_OUTFITTER_PEDIA</Civilopedia>
-			<PyHelp>HelpMasterBuildings</PyHelp>
+			<PyHelp>helpMasterBuildings</PyHelp>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<Strategy>TXT_KEY_BUILDING_MASTER_OUTFITTER_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_MASTER_OUTFITTER</ArtDefineTag>
@@ -12327,7 +12327,7 @@
 			<Type>BUILDING_MASTER_BREEDER</Type>
 			<Description>TXT_KEY_BUILDING_MASTER_BREEDER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MASTER_BREEDER_PEDIA</Civilopedia>
-			<PyHelp>HelpMasterBuildings</PyHelp>
+			<PyHelp>helpMasterBuildings</PyHelp>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<Strategy>TXT_KEY_BUILDING_MASTER_BREEDER_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_MASTER_BREEDER</ArtDefineTag>
@@ -12692,7 +12692,7 @@
 			<Description>TXT_KEY_BUILDING_WIZARDS_HALL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WIZARDS_HALL_PEDIA</Civilopedia>
 			<Help>TXT_KEY_BUILDING_WIZARDS_HALL_HELP</Help>
-					<PyHelp>HelpWizardsHall</PyHelp>
+					<PyHelp>helpWizardsHall</PyHelp>
 		<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WIZARDS_HALL</ArtDefineTag>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
@@ -13578,7 +13578,7 @@
 			<Type>BUILDING_MASTER_SIEGE</Type>
 			<Description>TXT_KEY_BUILDING_MASTER_SIEGE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MASTER_SIEGE_PEDIA</Civilopedia>
-			<PyHelp>HelpMasterBuildings</PyHelp>
+			<PyHelp>helpMasterBuildings</PyHelp>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<Strategy>TXT_KEY_BUILDING_MASTER_SIEGE_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_SIEGE_WORKSHOP</ArtDefineTag>
