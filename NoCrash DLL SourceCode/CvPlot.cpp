@@ -947,20 +947,20 @@ void CvPlot::doLairSpawn()
 	if (!bValid || isVisibleEnemyUnit(eSpawnPlayer)  )
 		return;
 
+	// We can always spawn a lair guard if there's no linked spawns alive, regardless of density limits
+	bool bMissingGuard = (getNumSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
+
 	// 5th check: Don't spawn infinite barbs, there should be a limit : Snarko 20/10/12
-	if (eSpawnPlayer == DEMON_PLAYER || eSpawnPlayer == ANIMAL_PLAYER || eSpawnPlayer == ORC_PLAYER)
+	if (!bMissingGuard || eSpawnPlayer == DEMON_PLAYER || eSpawnPlayer == ANIMAL_PLAYER || eSpawnPlayer == ORC_PLAYER)
 	{
-		// Sets a limit based on barbs in the area. We check *total* number of tiles in the area instead of unowned, like the other limits check.
-		// This means lairs will keep spawning even when most of the world is within borders (Snarko)
 		// No matter how small the area (or how low the AC), lairs can always spawn up to 3 barb units. Continues tradition of dense offshore barb islands (Blazenclaw)
-		int iTargetBarbs = std::max(3, GC.getGameINLINE().calcTargetBarbs(area(), true, eSpawnPlayer, true));
+		int iTargetBarbs = std::max(3, GC.getGameINLINE().calcTargetBarbs(area(), eSpawnPlayer, true));
 		if (area()->getUnitsPerPlayer(eSpawnPlayer) >= iTargetBarbs)
 			return;
 	}
 
 	// Starting chance
 	int iBaseChance = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getLairSpawnChance();
-	bool bMissingGuard = (getNumSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
 	CvWString szBuffer;
 
 	// Check for spawn unit
