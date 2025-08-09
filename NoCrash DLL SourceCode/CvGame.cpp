@@ -10828,7 +10828,7 @@ void CvGame::createLairs()
 		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
 			continue;
 
-		// Check spawning criteria vs density requirements. Lairs that don't spawn might fill up tiles...
+		// Check spawning criteria vs density requirements.
 		bNoSpawns = false;
 		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
 			ePlayer = DEMON_PLAYER;
@@ -10841,14 +10841,15 @@ void CvGame::createLairs()
 
 		pArea = pPlot->area();
 
-		if (bNoSpawns)
+		// We need to prevent lairs that don't spawn units from clogging up every tile. Thus, large-ish range limits
+		if (bNoSpawns && !pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getRange(), false))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
 		}
 		// Lairs can only spawn if there's space for barbs to spawn; prevents wildly dense barb areas
 		// But, 1 valid lair/type can always spawn even if there's no space for a normal barb to spawn
-		else if (pArea != NULL && (calcTargetBarbs(pArea, true, ePlayer, true) >= pArea->getUnitsPerPlayer(ePlayer)))
+		else if (pArea != NULL && (std::max(1, calcTargetBarbs(pArea, true, ePlayer, true)) > pArea->getUnitsPerPlayer(ePlayer)))
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;

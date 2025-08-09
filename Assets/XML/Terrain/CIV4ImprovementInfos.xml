@@ -3214,8 +3214,9 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iAppearanceProbability>70</iAppearanceProbability>
-			<iLairCreationWeight>70</iLairCreationWeight>
+			<iAppearanceProbability>75</iAppearanceProbability>
+			<iLairCreationWeight>5</iLairCreationWeight>
+			<iMinimumDistance>5</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower -->
 			<Type>IMPROVEMENT_MAGE_TOWER</Type>
@@ -3295,6 +3296,7 @@
 			</GoodyClasses>
 			<iAppearanceProbability>20</iAppearanceProbability>
 			<iLairCreationWeight>40</iLairCreationWeight>
+			<iMinimumDistance>5</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower 2 -->
 			<Type>IMPROVEMENT_MAGE_TOWER_2</Type>
@@ -3398,6 +3400,7 @@
 					<iLairUpgradeTech>30</iLairUpgradeTech>
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
+			<iMinimumDistance>5</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower 3 -->
 			<Type>IMPROVEMENT_MAGE_TOWER_3</Type>
@@ -3511,6 +3514,7 @@
 					<iLairCreationWeightTech>40</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
+			<iMinimumDistance>5</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goblin Camp -->
 			<Type>IMPROVEMENT_GOBLIN_CAMP</Type>
@@ -3949,8 +3953,9 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iAppearanceProbability>25</iAppearanceProbability>
+			<iAppearanceProbability>75</iAppearanceProbability>
 			<iLairCreationWeight>5</iLairCreationWeight>
+			<iMinimumDistance>5</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lion Den -->
 			<Type>IMPROVEMENT_LION_DEN</Type>
@@ -4007,7 +4012,8 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<iAppearanceProbability>10</iAppearanceProbability>
-			<iLairCreationWeight>100</iLairCreationWeight>
+			<iLairCreationWeight>20</iLairCreationWeight>
+			<iMinimumDistance>10</iMinimumDistance>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Staedding -->
 			<Type>IMPROVEMENT_MARNOK_HILLGIANT_STEADING</Type>
