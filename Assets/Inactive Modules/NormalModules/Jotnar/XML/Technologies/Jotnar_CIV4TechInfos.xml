@@ -70,19 +70,5 @@
 			<iFirstToTechAlignmentModifier>0</iFirstToTechAlignmentModifier>
 			<iAlignmentModifier>0</iAlignmentModifier>
 		</TechInfo>
-		<TechInfo>		<!-- Mining -->
-			<Type>TECH_MINING</Type>
-			<OrPreReqs>
-					<PrereqTech>TECH_CRAFTING</PrereqTech>
-					<PrereqTech>TECH_JO1</PrereqTech>
-			</OrPreReqs>
-		</TechInfo>
-		<TechInfo>		<!-- Mysticism -->
-			<Type>TECH_MYSTICISM</Type>
-			<OrPreReqs>
-					<PrereqTech>TECH_ANCIENT_CHANTS</PrereqTech>
-					<PrereqTech>TECH_JO1</PrereqTech>
-			</OrPreReqs>
-		</TechInfo>
 	</TechInfos>
 </Civ4TechInfos>

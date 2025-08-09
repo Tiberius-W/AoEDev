@@ -37,7 +37,7 @@
 			</BuildingHappinessChanges>
 			<iEnslavementChance>20</iEnslavementChance>
 			<iFoodConsumptionPerPopulation>300</iFoodConsumptionPerPopulation>
-			<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+			<iCrimePerTurn>-10</iCrimePerTurn>
 		</CivicInfo>
 	</CivicInfos>
 </Civ4CivicInfos>

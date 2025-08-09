@@ -20,8 +20,8 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Spells/Mother Lode.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Convert Slave -->
-			<Type>SPELL_JOT_SLAVE_CONVERT</Type>
+        <SpellInfo>			<!-- Convert Giant Slave To Citizen --> 
+		<Type>SPELL_JOT_SLAVE_CONVERT</Type>
 			<Description>Giantkin Thrall</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -30,12 +30,20 @@
 			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
+			<iCost>35</iCost>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_APTITUDE1</AddPromotion>
+				<AddPromotion>PROMOTION_GIANTKIN</AddPromotion>
+				<AddPromotion>PROMOTION_JOT_POTENTIAL</AddPromotion>
+				<AddPromotion>PROMOTION_JOT_ALLEGIANCE</AddPromotion>
+			</AddPromotions>
 			<RemovePromotions>
 				<RemovePromotion>PROMOTION_JOT_CONVERT</RemovePromotion>
 				<RemovePromotion>PROMOTION_THRALL</RemovePromotion>
 			</RemovePromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
-			<ConvertUnitType>UNIT_JOT_SLAVE</ConvertUnitType>
+			<ConvertUnitType>UNIT_JOT_ADULT</ConvertUnitType>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Civics/Slavery.dds</Button>
@@ -64,8 +72,8 @@
 			<iCost>200</iCost>
 			<Button>Art/Interface/Buttons/Units/Eidolon.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Hurler-->
-			<Type>SPELL_HURLER</Type>
+<!-- <SpellInfo> -->			<!-- Hurler   Overpowered.-->
+	<!-- <Type>SPELL_HURLER</Type>
 			<Description>Hurler</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -86,7 +94,7 @@
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_MUTATION</Sound>
 			<Button>Art/Interface/Buttons/Units/Archer.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Jolly Roger -->
 			<Type>SPELL_JOLLY_ROGER</Type>
 			<Description>Jolly Roger</Description>
@@ -374,7 +382,7 @@
 			<Sound>AS3D_SPELL_MUTATION</Sound>
 			<Button>Art/Interface/Buttons/Projects/PrepareExpedition.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Steading (Hillgiant Steading) -->
+		<SpellInfo>			<!-- Steading (Hillgiant Steading) (does this do anything?, you can't own a staeding tile) -->
 			<Type>SPELL_STEADING2</Type>
 			<Description>Steading</Description>
 			<Civilopedia></Civilopedia>
@@ -429,8 +437,8 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Hill Giant.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Rally Thrall COnscript -->
-			<Type>SPELL_THRALL_CONSCRIPT</Type>
+<!--    <SpellInfo>	-->		<!-- Rally Thrall COnscript -->
+<!--    <Type>SPELL_THRALL_CONSCRIPT</Type>
 			<Description>Feed the Goblins</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -446,7 +454,7 @@
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Gretchin.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Blessed (Jotnar - Altar 1) -->			<!-- JOTNAR SPELLS -->
 			<Type>SPELL_JOT_BLESS1</Type>
 			<Description>Blessed</Description>
@@ -543,14 +551,18 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
 			<PromotionPrereq2>PROMOTION_WOODKIN</PromotionPrereq2>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_TERRAFORMING</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
 			<bAllowAI>1</bAllowAI>
 			<bInBordersOnly>1</bInBordersOnly>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<CreateFeatureType>FEATURE_FOREST_NEW</CreateFeatureType>
-			<iDelay>2</iDelay>
-			<PyResult>spellBloom(pCaster)</PyResult>
-			<PyRequirement>reqJotBloom(pCaster)</PyRequirement>
+			<iDelay>4</iDelay>
 			<Effect>EFFECT_BLOOM</Effect>
 			<Sound>AS3D_SPELL_BLOOM</Sound>
 			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
@@ -608,7 +620,8 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Earth's Bosom (Jotnar)  -->
 			<Type>SPELL_BOSOM</Type>
-			<Description>Earth's Bosom</Description>
+			<Description>TXT_KEY_SPELL_EARTHS_BOSOM</Description>
+			<Help>TXT_KEY_SPELL_EARTHS_BOSOM_HELP</Help>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
 			<PromotionPrereq2>PROMOTION_STONE_KIN</PromotionPrereq2>
 			<bAllowAI>0</bAllowAI>
@@ -616,9 +629,10 @@
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellBosom(pCaster)</PyResult>
 			<PyRequirement>reqBosom(pCaster)</PyRequirement>
+			<iDelay>6</iDelay>
 			<Effect>EFFECT_SNOWFALL</Effect>
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
-			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Hill.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/MarkoftheWarden.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Earthquake (Jotnar) -->
 			<Type>SPELL_JOT_EARTHQUAKE</Type>
@@ -632,6 +646,7 @@
 			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
+			<iDelay>1</iDelay>
 			<PyResult>spellEarthquake(pCaster)</PyResult>
 			<PyRequirement>reqEarthquake(pCaster)</PyRequirement>
 			<Effect>EFFECT_SNOWFALL</Effect>
@@ -677,8 +692,8 @@
 			<Sound>AS3D_SPELL_BLOOM</Sound>
 			<Button>Art/Interface/Buttons/Spells/Entangle.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Feed (Jotnar) -->
-			<Type>SPELL_JOT_FEED</Type>
+<!--    <SpellInfo>	-->		<!-- Feed (Jotnar) -->
+<!--    <Type>SPELL_JOT_FEED</Type>
 			<Description>TXT_KEY_SPELL_FEED</Description>
 			<Civilopedia>TXT_KEY_SPELL_FEED_PEDIA</Civilopedia>
 			<Help>TXT_KEY_SPELL_JOT_FEED_HELP</Help>
@@ -693,7 +708,7 @@
 			<Effect>EFFECT_SACRIFICE</Effect>
 			<Sound>AS3D_SPELL_FEED</Sound>
 			<Button>Art/Interface/Buttons/WorldBuilder/Pig.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Fireball (Jotnar) -->
 			<Type>SPELL_JOT_FIREBALL</Type>
 			<Description>TXT_KEY_SPELL_FIREBALL</Description>
@@ -801,8 +816,8 @@
 			<PyRequirement>reqFreeze(pCaster)</PyRequirement>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Tundra.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,2</Button>
 		</SpellInfo> -->
-		<SpellInfo>			<!-- Part Water -->
-			<Type>SPELL_PART_WATER</Type>
+<!--    <SpellInfo>	-->		<!-- Part Water -->
+  <!-- <Type>SPELL_PART_WATER</Type>
 			<Description>Part Water</Description>
 			<Civilopedia>TXT_KEY_SPELL_WATER_WALKING_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_JOT_PROMINENT_GIANT</PromotionPrereq1>
@@ -817,7 +832,7 @@
 			<Effect>EFFECT_CREATION</Effect>
 			<Sound>AS3D_SPELL_WATER</Sound>
 			<Button>Art/Interface/Buttons/Promotions/Waterwalking.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Pillar of Fire (Jotnar) -->
 			<Type>SPELL_JOT_PILLAR_OF_FIRE</Type>
 			<Description>TXT_KEY_SPELL_PILLAR_OF_FIRE</Description>
@@ -876,7 +891,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds -->
 			<Type>SPELL_HOUNDS</Type>
-			<Description>Release the Hounds</Description>
+			<Description>TXT_KEY_SPELL_JOT_HOUNDS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER1</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -892,7 +907,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Arachnophobia) -->
 			<Type>SPELL_SPIDERS</Type>
-			<Description>Arachnophobia</Description>
+			<Description>TXT_KEY_SPELL_JOT_SPIDERS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER5</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -908,7 +923,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Da Bears) -->
 			<Type>SPELL_BEARS</Type>
-			<Description>Da Bears</Description>
+			<Description>TXT_KEY_SPELL_JOT_BEARS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER3</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -924,7 +939,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Elephant Stampede) -->
 			<Type>SPELL_ELEPHANTS</Type>
-			<Description>Elephant Stampede</Description>
+			<Description>TXT_KEY_SPELL_JOT_ELEPHANTS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER6</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -940,7 +955,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Face humping Bats) -->
 			<Type>SPELL_GRIFFONS</Type>
-			<Description>Face humping Bats</Description>
+			<Description>TXT_KEY_SPELL_JOT_GRIFFONS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER4</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -956,7 +971,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Mammoth Stampede) -->
 			<Type>SPELL_MAMMOTHS</Type>
-			<Description>Mammoth Stampede</Description>
+			<Description>TXT_KEY_SPELL_JOT_MAMMOTHS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER7</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -972,7 +987,7 @@
 		</SpellInfo>
 		<SpellInfo>			<!-- Release the Hounds (Release the Kittens) -->
 			<Type>SPELL_LIONS</Type>
-			<Description>Release the Kittens</Description>
+			<Description>TXT_KEY_SPELL_JOT_CATS</Description>
 			<Civilopedia>TXT_KEY_UNIT_FIREBALL_PEDIA</Civilopedia>
 			<PromotionPrereq1>PROMOTION_PACKMASTER2</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
@@ -997,7 +1012,7 @@
 			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
-			<iDelay>2</iDelay>
+			<iDelay>4</iDelay>
 			<PyResult>spellScorch(pCaster)</PyResult>
 			<PyRequirement>reqScorch(pCaster)</PyRequirement>
 			<Effect>EFFECT_SCORCH</Effect>
@@ -1114,7 +1129,7 @@
 			<bIsAutoCastable>0</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
-			<iDelay>2</iDelay>
+			<iDelay>4</iDelay>
 			<PyResult>spellSpring(pCaster)</PyResult>
 			<PyRequirement>reqSpring(pCaster)</PyRequirement>
 			<Effect>EFFECT_SPRING</Effect>
@@ -1328,6 +1343,456 @@
 		<SpellInfo>			<!-- Summon Fire Elemental (Clan of Embers) -->
 			<Type>SPELL_CLAN_SUMMON_FIRE_ELEMENTAL</Type>
 			<CreateUnitPromotion>PROMOTION_FIREKIN</CreateUnitPromotion>
+		</SpellInfo>
+		<SpellInfo>			<!-- Firekin 1 -->
+			<Type>SPELL_TRIAL_OF_FIREKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_WARFARE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_PYRE_OF_THE_SERAPHIC</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FIREKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Firekin 2 -->
+			<Type>SPELL_TRIAL_OF_FIREKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_WARFARE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_DRAGON_BONES</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FIREKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Firekin 3 -->
+			<Type>SPELL_TRIAL_OF_FIREKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_WARFARE</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_SUMMER</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FIREKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Civs/Jotnar/buttons/jot_berserker.dds</Button>
+			<iDelay>6</iDelay>
+		</SpellInfo>
+		<SpellInfo>			<!-- Seakin 1 -->
+			<Type>SPELL_TRIAL_OF_SEAKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_SEAKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_RINWELL</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SEAKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Seakin 2 -->
+			<Type>SPELL_TRIAL_OF_SEAKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_SEAKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_AIFON_ISLE</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SEAKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Seakin 3 -->
+			<Type>SPELL_TRIAL_OF_SEAKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_SEAKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_YEARS</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SEAKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Civs/Jotnar/buttons/jot_water_troll.dds</Button>
+			<iDelay>6</iDelay>
+		</SpellInfo>
+		<SpellInfo>			<!-- Frostkin 1 -->
+			<Type>SPELL_TRIAL_OF_FROSTKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FROSTKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_LETUM_FRIGUS</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FROSTKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Frostkin 2 -->
+			<Type>SPELL_TRIAL_OF_FROSTKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FROSTKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_BADBS_BLIZZARD</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FROSTKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Frostkin 3 -->
+			<Type>SPELL_TRIAL_OF_FROSTKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_FROSTKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_WINTER</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_FROSTKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Interface/Buttons/Units/Wilboman.dds</Button>
+			<iDelay>6</iDelay>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stonekin 1 -->
+			<Type>SPELL_TRIAL_OF_STONEKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_ODIOS_PRISON</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stonekin 2 -->
+			<Type>SPELL_TRIAL_OF_STONEKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_MOUNT_KALSHEKK</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stonekin 3 -->
+			<Type>SPELL_TRIAL_OF_STONEKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STONEKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_CONSTRUCTION</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_AUTUMN</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STONE_KIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
+			<iDelay>6</iDelay>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stormkin 1 -->
+			<Type>SPELL_TRIAL_OF_STORMKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STORMKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_CLIFFS_OF_TALI</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STORMKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stormkin 2 -->
+			<Type>SPELL_TRIAL_OF_STORMKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STORMKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_MAELSTROM</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STORMKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Stormkin 3 -->
+			<Type>SPELL_TRIAL_OF_STORMKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_STORMKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_TRADE</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_YEARS</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_STORMKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Civs/Jotnar/buttons/jot_titan.dds</Button>
+			<iDelay>6</iDelay>
+		</SpellInfo>
+		<SpellInfo>			<!-- Woodkin 1 -->
+			<Type>SPELL_TRIAL_OF_WOODKIN1</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_WOODKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_HUNTING</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_STANDING_STONES</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_WOODKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Woodkin 2 -->
+			<Type>SPELL_TRIAL_OF_WOODKIN2</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_WOODKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_HUNTING</TechPrereq>
+			<ImprovementPrereq>IMPROVEMENT_YGGDRASIL</ImprovementPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_WOODKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
+			<iDelay>3</iDelay>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</SpellInfo>
+		<SpellInfo>			<!-- Woodkin 3 -->
+			<Type>SPELL_TRIAL_OF_WOODKIN3</Type>
+			<Description>TXT_KEY_SPELL_TRIAL_OF_WOODKIN</Description>
+			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
+			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
+			<TechPrereq>TECH_HUNTING</TechPrereq>
+			<BuildingPrereq>BUILDING_HALL_OF_SPRING</BuildingPrereq>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_WOODKIN</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_JOT_POTENTIAL</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<iCasterMinLevel>4</iCasterMinLevel>
+			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
+			<iDelay>6</iDelay>]
 		</SpellInfo>
 	</SpellInfos>
 </Civ4SpellInfos>

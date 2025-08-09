@@ -14481,7 +14481,7 @@
 			<Help>TXT_KEY_BUILDING_SLAVE_MARKET_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SLAVE_MARKET</ArtDefineTag>
-			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
+			<PrereqTech>TECH_TAXATION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_PAGAN_TEMPLE</FreeBuilding>
 			<FreePromotion/>
 			<iCost>200</iCost>
@@ -14492,8 +14492,8 @@
 			<fVisibilityPriority>100</fVisibilityPriority>
 			<YieldModifiers>
 				<iYield>0</iYield>
-				<iYield>25</iYield>
-				<iYield>10</iYield>
+				<iYield>15</iYield>
+				<iYield>5</iYield>
 			</YieldModifiers>
 			<Flavors>
 				<Flavor>

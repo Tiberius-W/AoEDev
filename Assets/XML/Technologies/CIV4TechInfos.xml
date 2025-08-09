@@ -719,7 +719,7 @@
 		<TechInfo>		<!-- Corruption of Spirit -->
 			<Type>TECH_CORRUPTION_OF_SPIRIT</Type>
 			<Description>TXT_KEY_TECH_CORRUPTION_OF_SPIRIT</Description>
-			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
+			<Strategy>TXT_KEY_TECH_CORRUPTION_OF_SPIRIT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>80</iAIWeight>
 			<iCost>900</iCost>
@@ -1615,7 +1615,7 @@
 		<TechInfo>		<!-- Infernal pact -->
 			<Type>TECH_INFERNAL_PACT</Type>
 			<Description>TXT_KEY_TECH_INFERNAL_PACT</Description>
-			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
+			<Strategy>TXT_KEY_TECH_INFERNAL_PACT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>100</iAIWeight>
 			<iCost>1350</iCost>

@@ -302,6 +302,14 @@
 		<Spanish>True power is always costly. However, I think I can safely say that the rewards far outweigh any of the possible costs. Who cares for sanity, when you can burn the people claiming you to be insane to cinders with a thought? Who cares for purity, when this taint is so much more vitalizing? Who cares about the soul, when the mind can break all boundaries without it?-Tebryn Arbandi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_CORRUPTION_OF_SPIRIT_STRATEGY</Tag>
+		<English>[NEWLINE][NEWLINE]When you have Ashen Veil as the state religion, the ritual [LINK=PROJECT_PAX_DIABOLIS]Pax Diabolis[\LINK] will become available in your cities.[NEWLINE]Completion of the Pax Diabolis ritual allows any unit in the city to [LINK=SPELL_PAX_DIABOLIS]fulfil the terms[\LINK] of the pact, sacrificing all citizens in the city and reducing it to ruins. Once this is done, Agares will be satisfied and your civilization will not be targetted further by the Demonic Barbarians.</English>
+		<French>[NEWLINE][NEWLINE]When you have Ashen Veil as the state religion, the ritual [LINK=PROJECT_PAX_DIABOLIS]Pax Diabolis[\LINK] will become available in your cities.[NEWLINE]Completion of the Pax Diabolis ritual allows any unit in the city to [LINK=SPELL_PAX_DIABOLIS]fulfil the terms[\LINK] of the pact, sacrificing all citizens in the city and reducing it to ruins. Once this is done, Agares will be satisfied and your civilization will not be targetted further by the Demonic Barbarians.</French>
+		<German>[NEWLINE][NEWLINE]When you have Ashen Veil as the state religion, the ritual [LINK=PROJECT_PAX_DIABOLIS]Pax Diabolis[\LINK] will become available in your cities.[NEWLINE]Completion of the Pax Diabolis ritual allows any unit in the city to [LINK=SPELL_PAX_DIABOLIS]fulfil the terms[\LINK] of the pact, sacrificing all citizens in the city and reducing it to ruins. Once this is done, Agares will be satisfied and your civilization will not be targetted further by the Demonic Barbarians.</German>
+		<Italian>[NEWLINE][NEWLINE]When you have Ashen Veil as the state religion, the ritual [LINK=PROJECT_PAX_DIABOLIS]Pax Diabolis[\LINK] will become available in your cities.[NEWLINE]Completion of the Pax Diabolis ritual allows any unit in the city to [LINK=SPELL_PAX_DIABOLIS]fulfil the terms[\LINK] of the pact, sacrificing all citizens in the city and reducing it to ruins. Once this is done, Agares will be satisfied and your civilization will not be targetted further by the Demonic Barbarians.</Italian>
+		<Spanish>[NEWLINE][NEWLINE]When you have Ashen Veil as the state religion, the ritual [LINK=PROJECT_PAX_DIABOLIS]Pax Diabolis[\LINK] will become available in your cities.[NEWLINE]Completion of the Pax Diabolis ritual allows any unit in the city to [LINK=SPELL_PAX_DIABOLIS]fulfil the terms[\LINK] of the pact, sacrificing all citizens in the city and reducing it to ruins. Once this is done, Agares will be satisfied and your civilization will not be targetted further by the Demonic Barbarians.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_CRAFTING</Tag>
 		<English>Crafting</English>
 		<French>Artisanat</French>
@@ -604,6 +612,14 @@
 		<German>Ich verpfände meinen Körper, um deine Stärke zu erlangen; ich verpfände meinen Geist, um deine Weitsicht zu bekommen; ich verpfände mein Herz, um deine Hingabe zu besitzen; ich verkaufe meine Seele, um mir deinen Gehorsam zu sichern. - Das Zauberbuch der Herbeirufung, Zweites Ritual</German>
 		<Italian>I pledge my body, to gain your strength; I pledge my mind, to gain your insight; I pledge my heart, to gain your devotion; I pledge my soul, to gain your obedience.-The Grimoire of Summoning, Second Ritual</Italian>
 		<Spanish>I pledge my body, to gain your strength; I pledge my mind, to gain your insight; I pledge my heart, to gain your devotion; I pledge my soul, to gain your obedience.-The Grimoire of Summoning, Second Ritual</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INFERNAL_PACT_STRATEGY</Tag>
+		<English>Researching the Infernal Pact will allow a contract to be formed between the civilization that researched it and the [LINK=CIVILIZATION_INFERNAL]Infernal Civilization[\LINK], both will gain a beneficial trait from signing the pact and the Infernals will be summoned into the plane of Erebus to spread corruption and misery.</English>
+		<French>Researching the Infernal Pact will allow a contract to be formed between the civilization that researched it and the [LINK=CIVILIZATION_INFERNAL]Infernal Civilization[\LINK], both will gain a beneficial trait from signing the pact and the Infernals will be summoned into the plane of Erebus to spread corruption and misery.</French>
+		<German>Researching the Infernal Pact will allow a contract to be formed between the civilization that researched it and the [LINK=CIVILIZATION_INFERNAL]Infernal Civilization[\LINK], both will gain a beneficial trait from signing the pact and the Infernals will be summoned into the plane of Erebus to spread corruption and misery.</German>
+		<Italian>Researching the Infernal Pact will allow a contract to be formed between the civilization that researched it and the [LINK=CIVILIZATION_INFERNAL]Infernal Civilization[\LINK], both will gain a beneficial trait from signing the pact and the Infernals will be summoned into the plane of Erebus to spread corruption and misery.</Italian>
+		<Spanish>Researching the Infernal Pact will allow a contract to be formed between the civilization that researched it and the [LINK=CIVILIZATION_INFERNAL]Infernal Civilization[\LINK], both will gain a beneficial trait from signing the pact and the Infernals will be summoned into the plane of Erebus to spread corruption and misery.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_IRON_WORKING_QUOTE</Tag>
