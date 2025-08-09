@@ -11,7 +11,7 @@
 			<Type>WORLDSIZE_DUEL</Type>
 			<Description>TXT_KEY_WORLD_DUEL</Description>
 			<Help>TXT_KEY_WORLD_DUEL_HELP</Help>
-			<iDefaultPlayers>2</iDefaultPlayers>
+			<iDefaultPlayers>2</iDefaultPlayers> <!-- Also used for lairs/cycle and modulating barb city spawnrate -->
 			<iUnitNameModifier>50</iUnitNameModifier>
 			<iTargetNumCities>4</iTargetNumCities>
 			<iNumFreeBuildingBonuses>1</iNumFreeBuildingBonuses>
@@ -59,7 +59,7 @@
 			<iAdvancedStartPointsMod>85</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>-1</iMaxCitiesMod>
 			<iUniqueFeatureChance>-30</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>25</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>20</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_SMALL</Type>

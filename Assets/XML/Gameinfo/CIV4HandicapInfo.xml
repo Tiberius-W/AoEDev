@@ -35,9 +35,9 @@
 			<iWaterTilesPerAnimal>130</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
 			<iTilesPerOrc>70</iTilesPerOrc> <!-- Applies to savages on land only -->
 			<iWaterTilesPerOrc>175</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
-			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity> <!-- Animosity fort->city barb mechanic does not obey this limit! -->
-			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo --> 
-			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
+			<iUnownedTilesPerBarbarianCity>90</iUnownedTilesPerBarbarianCity> <!-- Note this means completely unowned; lairs and barb cities own tiles, not just civs. 2x lower if raging. 3x lower if no civ-owned cities in area -->
+			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed> <!-- Modulated by iBarbPercent in GameSpeedInfo, *random* barb cities can't spawn before this. Also requires all civs settle at least 1 city. --> 
+			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Chance per turn to spawn 1 city, mapsize & speed modulated. 2x higher if raging -->
 			<iAnimalBonus>-30</iAnimalBonus>
 			<iBarbarianBonus>-30</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>

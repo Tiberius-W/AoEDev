@@ -1042,7 +1042,7 @@ void CvPlot::doImprovementCityWorking()
 
 		// First check for discovery. Should respect original placement rules, since we're "discovering" it
 		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iBonus);
-		if (iChance > 0 && canHaveBonus((BonusTypes)iBonus, true))
+		if (iChance > 0 && canHaveBonus((BonusTypes)iBonus))
 		{
 			iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
 			if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Discovery") == 0)

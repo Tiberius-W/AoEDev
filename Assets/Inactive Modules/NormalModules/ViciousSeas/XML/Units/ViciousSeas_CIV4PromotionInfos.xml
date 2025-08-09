@@ -429,7 +429,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Civs/Orc/Animosity1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Civs/Orc/Animosity2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- BAD KRAKEN -->
 			<Type>PROMOTION_BAD_KRAKEN</Type>

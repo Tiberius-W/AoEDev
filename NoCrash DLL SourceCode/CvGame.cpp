@@ -7113,25 +7113,79 @@ void CvGame::doDiploVote()
 }
 
 
-void CvGame::createBarbarianCities()
+// Called with null plot checks global restrictions, otherwise plot-specific elements only
+bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) const
 {
-	// MultiBarb edits; BARBARIAN_PLAYER -> ORC_PLAYER : Xienwolf 12/23/08
-
-	PROFILE("CvGame::createBarbarianCities");
-	CvPlot* pLoopPlot;
-	CvPlot* pBestPlot;
-	long lResult;
-	int iTargetCities;
-	int iValue;
-	int iBestValue;
-	int iI;
-
-	if (getMaxCityElimination() > 0)
+	// Global can spawn barb city checks
+	if (pPlot == NULL)
 	{
-		return;
+		if (getMaxCityElimination() > 0
+		 || isOption(GAMEOPTION_NO_BARBARIANS)
+		 || GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity() <= 0
+		 || getNumCivCities() < countCivPlayersAlive()
+		 || GC.getEraInfo(getCurrentEra()).isNoBarbCities()
+		 || getElapsedGameTurns() < (GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / 100))
+		{
+			return false;
+		}
+	}
+	// Requirements on a specific plot
+	else
+	{
+		if (pPlot->isWater()
+		 || pPlot->isCityRadius()
+		 || pPlot->isCity()
+		 || pPlot->isImpassable()) // Might be funny to see a stolen dwarf mountain fort be turned into a barb city...
+		{
+			return false;
+		}
+
+		// Improved tiles are nogo, unless a savage non-unique fort. Such a thing can also spawn in civ vision
+		if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+		{
+			if (pPlot->getOwner() != BARBARIAN_PLAYER
+			|| pPlot->getImprovementOwner() != BARBARIAN_PLAYER
+			|| pPlot->getOwnershipDuration() < GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS))
+			|| !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()
+			|| GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
+			{
+				return false;
+			}
+		}
+		else if (pPlot->isVisibleToCivTeam())
+			return false;
+
+
+		// Now, we check for density---
+		int iTargetCities = pPlot->area()->getNumUnownedTiles();
+
+		// Triple local limit, if there are no civ cities in this area
+		if (pPlot->area()->getNumCities() == pPlot->area()->getCitiesPerPlayer(ORC_PLAYER))
+			iTargetCities *= 3;
+
+		// Calculate actual target number of barb cities for this region
+		iTargetCities /= std::max(1, iUnownedTilesThreshold);
+
+		if (pPlot->area()->getCitiesPerPlayer(ORC_PLAYER) >= iTargetCities)
+			return false;
 	}
 
-	if (isOption(GAMEOPTION_NO_BARBARIANS))
+	return true;
+}
+
+void CvGame::createBarbarianCities()
+{
+	PROFILE("CvGame::createBarbarianCities");
+	long lResult;
+
+	if (!canSpawnBarbarianCity(NULL))
+		return;
+
+	// We need to adjust spawnrate based on speed but also world size, otherwise small maps may fill too fast, and large maps quite slow
+	if (getSorenRandNum(1000 / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)), "Barb City Creation")
+		>= std::max(1,
+		1000 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb() * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDefaultPlayers()
+		/ GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / GC.getWorldInfo((WorldSizeTypes)WORLDSIZE_STANDARD).getDefaultPlayers()))
 	{
 		return;
 	}
@@ -7139,105 +7193,43 @@ void CvGame::createBarbarianCities()
 	lResult = 0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "createBarbarianCities", NULL, &lResult);
 	if (lResult == 1)
-	{
 		return;
-	}
 
-	if (GC.getEraInfo(getCurrentEra()).isNoBarbCities())
-	{
-		return;
-	}
+	CvPlot* pLoopPlot;
+	CvPlot* pBestPlot = NULL;
+	int iValue;
+	int iBestValue = 0;
+	int iUnownedTilesThreshold = GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
 
-	if (GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity() <= 0)
-	{
-		return;
-	}
-
-	if (getNumCivCities() < (countCivPlayersAlive() * 2))
-	{
-		return;
-	}
-
-	if (getElapsedGameTurns() < (((GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent()) / 100) / std::max(getStartEra() + 1, 1)))
-	{
-		return;
-	}
-
-	if (getSorenRandNum(100, "Barb City Creation") >= GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb())
-	{
-		return;
-	}
-
-	iBestValue = 0;
-	pBestPlot = NULL;
-
-	int iTargetCitiesMultiplier = 100;
-	{
-		int iTargetBarbCities = (getNumCivCities() * 5 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb()) / 100;
-		int iBarbCities = GET_PLAYER(ORC_PLAYER).getNumCities();
-		if (iBarbCities < iTargetBarbCities)
-		{
-			iTargetCitiesMultiplier += (300 * (iTargetBarbCities - iBarbCities)) / iTargetBarbCities;
-		}
-
-		if (isOption(GAMEOPTION_RAGING_BARBARIANS))
-		{
-			iTargetCitiesMultiplier *= 3;
-			iTargetCitiesMultiplier /= 2;
-		}
-	}
-
-
-	for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (!(pLoopPlot->isWater()))
+		// Check for tile-specific restrictions
+		if (!canSpawnBarbarianCity(pLoopPlot, iUnownedTilesThreshold))
+			continue;
+
+		iValue = GET_PLAYER(ORC_PLAYER).AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getDefineINT("MIN_BARBARIAN_CITY_STARTING_DISTANCE"));
+
+		// Prioritize area that is the most claimed, in absolute terms
+		iValue *= pLoopPlot->area()->getNumOwnedTiles();
+
+		// 5x more likely to upgrade a fort if possible
+		if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
+			iValue *= 5;
+
+		// This value does effectively nothing given the scale of .AI_foundValue. Should be renormalized/applied once a scale for the found value is established?
+		// iValue += (getSorenRandNum(50, "Barb City Found"));
+
+		if (iValue > iBestValue)
 		{
-			if (!(pLoopPlot->isVisibleToCivTeam()))
-			{
-				iTargetCities = pLoopPlot->area()->getNumUnownedTiles();
-
-				if (pLoopPlot->area()->getNumCities() == pLoopPlot->area()->getCitiesPerPlayer(ORC_PLAYER))
-				{
-					iTargetCities *= 3;
-				}
-
-				int iUnownedTilesThreshold = GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity();
-
-				if (pLoopPlot->area()->getNumTiles() < (iUnownedTilesThreshold / 3))
-				{
-					iTargetCities *= iTargetCitiesMultiplier;
-					iTargetCities /= 100;
-				}
-
-				iTargetCities /= std::max(1, iUnownedTilesThreshold);
-
-				if (pLoopPlot->area()->getCitiesPerPlayer(ORC_PLAYER) < iTargetCities)
-				{
-					iValue = GET_PLAYER(ORC_PLAYER).AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getDefineINT("MIN_BARBARIAN_CITY_STARTING_DISTANCE"));
-
-					if (iTargetCitiesMultiplier > 100)
-					{
-						iValue *= pLoopPlot->area()->getNumOwnedTiles();
-					}
-
-					iValue += (getSorenRandNum(5, "Barb City Found"));
-
-					if (iValue > iBestValue)
-					{
-						iBestValue = iValue;
-						pBestPlot = pLoopPlot;
-					}
-				}
-			}
+			iBestValue = iValue;
+			pBestPlot = pLoopPlot;
 		}
 	}
 
 	if (pBestPlot != NULL)
-	{
 		GET_PLAYER(ORC_PLAYER).found(pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
-	}
 }
 
 

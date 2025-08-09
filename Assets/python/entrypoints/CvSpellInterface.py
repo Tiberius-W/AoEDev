@@ -8787,18 +8787,6 @@ def spellClanBlaze(caster):
 	else:
 		pPlot.setFeatureType(getInfoType('FEATURE_FOREST_BURNT'),1)
 
-def spellAnimosity(caster):
-	pPlot = caster.plot()
-	pPlayer = gc.getPlayer(gc.getORC_PLAYER())
-	if (not pPlot.isCity()
-		and not (pPlot.isOwned() and pPlot.getOwner() != caster.getOwner())
-		and not pPlot.isCityRadius()
-		and not (pPlot.getImprovementType() != -1 and gc.getImprovementInfo(pPlot.getImprovementType()).isUnique())
-		and not pPlot.isWater()):
-		pCity = pPlayer.initCity(pPlot.getX(),pPlot.getY())
-		CvEventInterface.getEventManager().onCityBuilt([pCity])
-		caster.kill(True,0)
-
 def reqRantineDomination(caster):
 	iOrc	= gc.getORC_PLAYER()
 	iHero	= getInfoType('PROMOTION_HERO')

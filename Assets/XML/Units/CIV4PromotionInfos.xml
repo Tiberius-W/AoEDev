@@ -3076,8 +3076,6 @@
 			</CityBonuses>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_TRIFORCE_ENABLER</Promotion>
-				<Promotion>PROMOTION_ANIMOSITY</Promotion>
-				<Promotion>PROMOTION_ANIMOSITY2</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_TRIFORCE_ENABLER</Promotion>
@@ -5974,47 +5972,6 @@
 			<iCollateralDamageProtection>100</iCollateralDamageProtection>
 			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
 			<iMinLevel>-1</iMinLevel>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- Animosity -->
-			<Type>PROMOTION_ANIMOSITY</Type>
-			<Description>TXT_KEY_PROMOTION_ANIMOSITY</Description>
-			<Help></Help>
-			<PrereqPromotionANDs>
-				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_INFLUENCE</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-			</PrereqPromotionANDs>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bEffectProm>1</bEffectProm>
-			<bNoXP>1</bNoXP>
-			<iPromotionRandomApplyChance>10</iPromotionRandomApplyChance>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_ORC</PrereqCivilization>
-			</PrereqCivilizations>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Civs/Orc/Animosity1.dds</Button>
-			<PromotionRandomApply>PROMOTION_ANIMOSITY2</PromotionRandomApply>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- Animosity2 -->
-			<Type>PROMOTION_ANIMOSITY2</Type>
-			<Description>TXT_KEY_PROMOTION_ANIMOSITY</Description>
-			<Help></Help>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Civs/Orc/Animosity2.dds</Button>
-			<bAIControl>1</bAIControl>
-			<iMinLevel>-1</iMinLevel>
-			<PyPerTurn>spellAnimosity(pCaster)</PyPerTurn>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Ambition -->
 			<Type>PROMOTION_AMBITION</Type>

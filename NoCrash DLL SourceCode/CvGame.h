@@ -832,6 +832,7 @@ protected:
 	void doVoteResults();
 	void doVoteSelection();
 
+	bool canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold = 0) const;
 	void createBarbarianCities();
 	void createBarbarianUnits();
 	void createAnimals();
