@@ -7122,6 +7122,7 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 		if (getMaxCityElimination() > 0
 		 || isOption(GAMEOPTION_NO_BARBARIANS)
 		 || GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity() <= 0
+		 || GET_PLAYER(ORC_PLAYER).getNumCities() > getNumCivCities()
 		 || getNumCivCities() < countCivPlayersAlive()
 		 || GC.getEraInfo(getCurrentEra()).isNoBarbCities()
 		 || getElapsedGameTurns() < (GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / 100))
