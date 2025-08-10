@@ -13435,8 +13435,10 @@ int CvPlot::calcTargetPlotCounter()
 	// Attenuation limit starts max (always attenuate!)
 	// Attenuation should be turned off (limited) in cicumstances that depend on AC + Tile owner + plot counter (checked limit value)
 	if (getOwner() == NO_PLAYER)
+	{
 		if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD"))
 			iAttenuationLimit = 100 - iAC;
+	}
 	else
 	{
 		if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION)
