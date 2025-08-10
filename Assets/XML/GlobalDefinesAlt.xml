@@ -765,4 +765,9 @@
 		<!-- Overriding BTS default of 5 -->
 		<iDefineIntVal>4</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>LAIR_AUTO_EXPLORE</DefineName>
+		<!-- 1 to enable, 0 to disable. Two alerts still trigger, but third (cultist summoning) will not -->
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
 </Civ4Defines>

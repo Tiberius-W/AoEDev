@@ -29060,7 +29060,7 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 
 	// Check for owned unique lairs, special consideration. Would rather roll the dice than have it always pop a bad result
 	// Logic dependent on CvPlot::doUniqueLairTimecheck()
-	if (pPlot->getTeam() == getTeam() && GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isUnique())
+	if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && pPlot->getTeam() == getTeam() && GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isUnique())
 	{
 		ImprovementTypes eImprovement = pPlot->getRevealedImprovementType(getTeam(), false);
 		int iCycleLength = GC.getImprovementInfo(eImprovement).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;

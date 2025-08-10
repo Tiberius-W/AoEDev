@@ -842,8 +842,8 @@ void CvPlot::doUniqueLairTimecheck()
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_EXPLORE_BUILDUP", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 	}
-	// You done fucked up now son!
-	else if (iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
+	// You done fucked up now son! If option enabled.
+	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_BUILDUP_COMPLETE", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
