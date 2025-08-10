@@ -335,8 +335,8 @@ public:
 	void setTempTerrainTypeFM(int eTerrain, int iTimer, bool bRecalculateAreas = true, bool bRebuildPlot = true);
 	void setTempFeatureType(int  eFeature, int iVariety, int iTimer);
 	void setTempBonusType(int  eBonus, int iTimer);
-	int getNumSpawnsAlive();
-	void changeNumSpawnsAlive(int iChange);
+	int getNumLairSpawnsAlive();
+	void changeNumLairSpawnsAlive(int iChange);
 
 	bool isNeedsRebuilding();
 	void setNeedsRebuilding(bool bNewValue);

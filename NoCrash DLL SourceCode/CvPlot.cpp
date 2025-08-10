@@ -285,7 +285,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iTempFeatureTimer = 0;
 	m_eRealBonusType = NO_BONUS;
 	m_iTempBonusTimer = 0;
-	m_iNumSpawnsAlive = 0;
+	m_iNumLairSpawnsAlive = 0;
 	m_bNeedsRebuilding = false;
 	//ClimateSystem:
 	m_eClimate = NO_CLIMATEZONE;
@@ -879,7 +879,7 @@ void CvPlot::doLairSpawn()
 
 	// LairGuardians code: Valkrion
 	// 1st check: Are we spawning at all, and if so are at limit for how many units can be spawned at a time?
-	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumSpawnsAlive() >= iSpawnLimit)
+	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumLairSpawnsAlive() >= iSpawnLimit)
 		return;
 
 	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
@@ -949,7 +949,8 @@ void CvPlot::doLairSpawn()
 		return;
 
 	// We can always spawn a lair guard if there's no linked spawns alive, regardless of density limits
-	bool bMissingGuard = (getNumSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
+	// Thus, an older lair that has upgraded can be denser, and have more guardians (though old guards/units are probably weak)
+	bool bMissingGuard = (getNumLairSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
 
 	// 5th check: Don't spawn infinite barbs, there should be a limit : Snarko 20/10/12
 	if (!bMissingGuard && (eSpawnPlayer == DEMON_PLAYER || eSpawnPlayer == ANIMAL_PLAYER || eSpawnPlayer == ORC_PLAYER))
@@ -972,7 +973,7 @@ void CvPlot::doLairSpawn()
 		if (bMissingGuard)
 			iUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
 
-		// Spawn the thang
+		// Spawn the thang. Only spawn unit and immediate unit are counted toward limit, NOT groups
 		CvUnit* pUnit=GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes)iUnit, getX_INLINE(), getY_INLINE(), (bMissingGuard ? NO_UNITAI: UNITAI_ATTACK));
 
 		// Tell players something spawned for them
@@ -1000,7 +1001,7 @@ void CvPlot::doLairSpawn()
 			}
 		}
 	}
-	// Check for spawn group. 1/3 chance to spawn a group as to spawn a unit. V low chance to spawn both unit and group, but why not.
+	// Check for spawn group. Not counted toward spawn limit! 1/3 chance to spawn a group as to spawn a unit. V low chance to spawn both unit and group, but why not.
 	if (iSpawnGroup != NO_SPAWNGROUP
 	 && GC.getGameINLINE().getSorenRandNum(30000, "Spawn Unit") < iBaseChance * (100 + GC.getImprovementInfo(getImprovementType()).getSpawnGroupChancePercentMod()))
 	{
@@ -7380,6 +7381,8 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 	}
 	if (eNewValue == NO_IMPROVEMENT)
 	{
+		// Not strictly necessary, but just for safety
+		changeNumLairSpawnsAlive(-getNumLairSpawnsAlive());
 		if (getExploreNextTurn() > 0)
 		{
 			setExploreNextTurn(0);
@@ -7431,10 +7434,8 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			kData.m_iImprovement = eOldImprovement;
 			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_GAIN_IMPROVEMENT, &kData);
 		}
-		// Clear any tracking from random/old lairs when a new lair spawns from nothing
-		// Upgrading lairs is intentionally kept; direct replacement from X to lair should be impossible.
-		if (eOldImprovement == NO_IMPROVEMENT)
-			changeNumSpawnsAlive(-getNumSpawnsAlive());
+		// Erase link to potential old lair spawns. Upgraded lairs thus may have more guards, if weaker
+		changeNumLairSpawnsAlive(-getNumLairSpawnsAlive());
 	}
 
 	updatePlotGroupBonus(true);
@@ -11635,7 +11636,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTempFeatureTimer);
 	pStream->Read(&m_eRealBonusType);
 	pStream->Read(&m_iTempBonusTimer);
-	pStream->Read(&m_iNumSpawnsAlive);
+	pStream->Read(&m_iNumLairSpawnsAlive);
 	pStream->Read(&m_bNeedsRebuilding);
 	//ClimateSystem:
 	pStream->Read(&m_eClimate);
@@ -11956,7 +11957,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTempFeatureTimer);
 	pStream->Write(m_eRealBonusType);
 	pStream->Write(m_iTempBonusTimer);
-	pStream->Write(m_iNumSpawnsAlive);
+	pStream->Write(m_iNumLairSpawnsAlive);
 	pStream->Write(m_bNeedsRebuilding);
 	//ClimateSystem:
 	pStream->Write(m_eClimate);
@@ -13841,13 +13842,13 @@ void CvPlot::changeTempBonusTimer(int iChange)
 	}
 }
 
-int CvPlot::getNumSpawnsAlive()
+int CvPlot::getNumLairSpawnsAlive()
 {
-	return m_iNumSpawnsAlive;
+	return m_iNumLairSpawnsAlive;
 }
-void CvPlot::changeNumSpawnsAlive(int iChange)
+void CvPlot::changeNumLairSpawnsAlive(int iChange)
 {
-	m_iNumSpawnsAlive += iChange;
+	m_iNumLairSpawnsAlive = std::max(0, m_iNumLairSpawnsAlive + iChange);
 }
 
 int CvPlot::getNumUnitType(UnitTypes eUnit, PlayerTypes ePlayer, TeamTypes eTeam) const

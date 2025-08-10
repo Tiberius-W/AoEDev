@@ -1289,14 +1289,14 @@ void CyPlot::setTempBonusType(int eBonus, int iTimer)
 		m_pPlot->setTempBonusType((BonusTypes)eBonus, iTimer);
 }
 
-int CyPlot::getNumSpawnsAlive()
+int CyPlot::getNumLairSpawnsAlive()
 {
-	return m_pPlot ? m_pPlot->getNumSpawnsAlive() : 0;
+	return m_pPlot ? m_pPlot->getNumLairSpawnsAlive() : 0;
 }
-void CyPlot::changeNumSpawnsAlive(int iChange)
+void CyPlot::changeNumLairSpawnsAlive(int iChange)
 {
 	if (m_pPlot != NULL)
-		m_pPlot->changeNumSpawnsAlive(iChange);
+		m_pPlot->changeNumLairSpawnsAlive(iChange);
 }
 
 bool CyPlot::isNeedsRebuilding()
