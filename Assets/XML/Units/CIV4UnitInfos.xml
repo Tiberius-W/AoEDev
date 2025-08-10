@@ -48366,7 +48366,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
 			<iCost>60</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>4</iCombat>
@@ -48707,7 +48707,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<iCost>120</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>200</iAdvancedStartCost>
