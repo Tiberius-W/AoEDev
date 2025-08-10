@@ -7469,6 +7469,8 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 }
 
 
+// Note: Barbs have larger min distance (different area avoids this). No founding on permanent improvements.
+// Animals and Demons can never found cities.
 bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 {
 	PROFILE_FUNC();
@@ -7478,18 +7480,10 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	bool bValid;
 	int iRange;
 	int iDX, iDY;
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
+
+	// Xienwolf - Multibarb - 12/23/08 - Animals and demons can never *found* cities
 	if (getID() == DEMON_PLAYER || getID() == ANIMAL_PLAYER)
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
@@ -7503,101 +7497,42 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotFoundCity", argsList.makeFunctionArgs(), &lResult);
 
 		if (lResult == 1)
-		{
 			return false;
-		}
 	}
 
 	if (GC.getGameINLINE().isFinalInitialized())
 	{
-		if (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman())
-		{
-			if (getNumCities() > 0)
-			{
-				return false;
-			}
-		}
-/*************************************************************************************************/
-/**	Speedup								26/10/12										Snarko	**/
-/**																								**/
-/**			Prevents settling cities with the No Settlers game option (beyond the first)		**/
-/**					Removes the need for the cannotFoundCity python call.						**/
-/*************************************************************************************************/
-		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_SETTLERS) && (getNumCities() > 0))
-		{
+		if (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman() && getNumCities() > 0)
 			return false;
-		}
-/*************************************************************************************************/
-/**	Speedup									END													**/
-/*************************************************************************************************/
+
+		// Speedup - Snarko - 26/10/12 - Removes the need for the cannotFoundCity python call
+		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_SETTLERS) && (getNumCities() > 0) && !isBarbarian())
+			return false;
 	}
 
 	if (pPlot->isImpassable())
-	{
 		return false;
-	}
 
-/*************************************************************************************************/
-/**	Mountain Mod 		 		expanded by Ahwaric	22.09.09		**/
-/*************************************************************************************************/
+	// Mountain Mod - Ahwaric - 22.09.09
 	if (pPlot->isPeak())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Mountain Mod END									**/
-/*************************************************************************************************/
 
-	if (pPlot->getFeatureType() != NO_FEATURE)
-	{
-		if (GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
-		{
-			return false;
-		}
-	}
+	if (pPlot->getFeatureType() != NO_FEATURE && GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
+		return false;
 
 	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()))
-	{
 		return false;
-	}
 
 	bValid = false;
 
-	if (!bValid)
+	if (GC.getTerrainInfo(pPlot->getTerrainType()).isFound()
+	 || (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundCoast() && pPlot->isCoastalLand())
+	 || (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundFreshWater() && pPlot->isFreshWater()))
 	{
-		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFound())
-		{
-			bValid = true;
-		}
+		bValid = true;
 	}
 
-	if (!bValid)
-	{
-		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundCoast())
-		{
-			if (pPlot->isCoastalLand())
-			{
-				bValid = true;
-			}
-		}
-	}
-
-	if (!bValid)
-	{
-		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundFreshWater())
-		{
-			if (pPlot->isFreshWater())
-			{
-				bValid = true;
-			}
-		}
-	}
-
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       02/16/10                    EmperorFool & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
+	// UNOFFICIAL_PATCH - EmperorFool & jdog5000 - 02/16/10
 	// EF: canFoundCitiesOnWater callback handling was incorrect and ignored isWater() if it returned true
 	if (pPlot->isWater())
 	{
@@ -7612,23 +7547,15 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 			gDLL->getPythonIFace()->callFunction(PYGameModule, "canFoundCitiesOnWater", argsList2.makeFunctionArgs(), &lResult);
 
 			if (lResult == 1)
-			{
 				bValid = true;
-			}
 		}
+
 		if (isAmphibian())
-		{
 			bValid = true;
-		}
 	}
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 
 	if (!bValid)
-	{
 		return false;
-	}
 
 	if (!bTestVisible)
 	{
@@ -7641,29 +7568,24 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 			{
 				pLoopPlot	= plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iDX, iDY);
 
-				if (pLoopPlot != NULL)
-				{
-					if (pLoopPlot->isCity())
-					{
-						if (pLoopPlot->area() == pPlot->area())
-						{
-							return false;
-						}
-					}
-				}
+				if (pLoopPlot == NULL)
+					continue;
+
+				if (!pLoopPlot->isCity())
+					continue;
+
+				if (pLoopPlot->area() == pPlot->area())
+					return false;
 			}
 		}
 	}
 
-//FfH: Added by Kael 09/28/2007
+	//FfH: Added by Kael 09/28/2007
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 	{
 		if (GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).isPermanent())
-		{
 			return false;
-		}
 	}
-//FfH: End Add
 
 	return true;
 }
