@@ -34,6 +34,7 @@
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_SIEGE_GOLEM</SpawnUnitType>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iSpawnUnitChancePercentMod>-80</iSpawnUnitChancePercentMod>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Letum Frigus -->
 			<Type>IMPROVEMENT_LETUM_FRIGUS</Type>
@@ -50,6 +51,7 @@
 			<SpawnUnitType>UNIT_LUNATIC</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<iSpawnUnitChancePercentMod>-50</iSpawnUnitChancePercentMod>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_LEASH_5</Promotion>
 			</SpawnPromotions>
@@ -89,6 +91,7 @@
 			<ImmediateSpawnUnitType>UNIT_MONK</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<iSpawnUnitChancePercentMod>-25</iSpawnUnitChancePercentMod>
 			<GuardianPromotions>
 				<Promotion>PROMOTION_LEASH_1</Promotion>
 			</GuardianPromotions>

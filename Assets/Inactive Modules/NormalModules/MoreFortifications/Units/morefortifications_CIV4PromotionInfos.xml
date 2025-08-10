@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- Formatted by Xienwolf -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Promotion Infos -->
+<Civ4PromotionInfos xmlns="x-schema:morefortifications_CIV4UnitSchema.xml">
+	<PromotionInfos>
+		<PromotionInfo>		<!-- Leash - 5 Range -->
+			<Type>PROMOTION_LEASH_5</Type>
+			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
+			<iLeashRange>5</iLeashRange>
+			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</PromotionInfo>
+	</PromotionInfos>
+</Civ4PromotionInfos>
