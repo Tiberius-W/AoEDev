@@ -8902,6 +8902,7 @@ public:
 	bool isHidden() const;
 	bool isSneakAttack() const;
 	bool isUpdateSight() const;
+	int getACPlotAttenuationMod() const;
 	int getGlobalCounterFound() const;
 	int getGlobalCounterSpread() const;
 	int getAlignment() const;
@@ -9002,6 +9003,7 @@ protected:
 	bool m_bHidden;
 	bool m_bSneakAttack;
 	bool m_bUpdateSight;
+	int m_iACPlotAttenuationMod;
 	int m_iGlobalCounterFound;
 	int m_iGlobalCounterSpread;
 	int m_iAlignment;

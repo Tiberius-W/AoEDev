@@ -38698,6 +38698,7 @@ m_iEthicalAlignmentShiftTowardsNeutral(-1),
 m_bHidden(false),
 m_bSneakAttack(false),
 m_bUpdateSight(false),
+m_iACPlotAttenuationMod(0),
 m_iGlobalCounterFound(0),
 m_iGlobalCounterSpread(0),
 m_iAlignment(NO_ALIGNMENT),
@@ -39066,6 +39067,11 @@ bool CvReligionInfo::isUpdateSight() const
 	return m_bUpdateSight;
 }
 
+int CvReligionInfo::getACPlotAttenuationMod() const
+{
+	return m_iACPlotAttenuationMod;
+}
+
 int CvReligionInfo::getGlobalCounterFound() const
 {
 	return m_iGlobalCounterFound;
@@ -39281,6 +39287,7 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bHidden, "bHidden");
 	pXML->GetChildXmlValByName(&m_bSneakAttack, "bSneakAttack");
 	pXML->GetChildXmlValByName(&m_bUpdateSight, "bUpdateSight");
+	pXML->GetChildXmlValByName(&m_iACPlotAttenuationMod, "iACPlotAttenuationMod");
 	pXML->GetChildXmlValByName(&m_iGlobalCounterFound, "iGlobalCounterFound");
 	pXML->GetChildXmlValByName(&m_iGlobalCounterSpread, "iGlobalCounterSpread");
 	pXML->GetChildXmlValByName(szTextVal, "Alignment");
@@ -39383,6 +39390,7 @@ void CvReligionInfo::copyNonDefaults(CvReligionInfo* pClassInfo, CvXMLLoadUtilit
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	if (getACPlotAttenuationMod()			== 0)				m_iACPlotAttenuationMod					= pClassInfo->getACPlotAttenuationMod();
 	if (getGlobalCounterFound()				== 0)				m_iGlobalCounterFound					= pClassInfo->getGlobalCounterFound();
 	if (getGlobalCounterSpread()			== 0)				m_iGlobalCounterSpread					= pClassInfo->getGlobalCounterSpread();
 	if (getTechButton()						== cDefault)		setTechButton(							pClassInfo->getTechButton());

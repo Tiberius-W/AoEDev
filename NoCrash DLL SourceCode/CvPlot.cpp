@@ -13418,7 +13418,7 @@ int CvPlot::calcTargetPlotCounter()
 		return 0;
 
 	// If we're here, it means: There is hell to spread or decay (or we're at steady state).
-	// The target value to reach for our plot counter is either:
+	// Conditions: The target value to reach for our plot counter is either:
 	//		1) the same as the source, if it is above the dynamic attenuation limit & source > us
 	//		2) ourselves, if we're over the attenuation limit and we're >= source
 	//		3) attenuated from the source
@@ -13430,21 +13430,27 @@ int CvPlot::calcTargetPlotCounter()
 	int iTargetCounter = 0;
 	int iAC = GC.getGameINLINE().getGlobalCounter();
 	int iAttenuationLimit = MAX_INT;
+	int iRelAdjust = 0;
 
-	// Attenuation limit depends on alignment and AC. If hell terrain is 'allowed' to spread, limit further depends on AC
-	// Otherwise, even infernal tiles (100 plot counter) won't spread more than a few tiles from their borders
-	if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
-	else if (iAC < GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD")) {}
-		// hell terrain "can't" spread if AC under unowned threshold
-	else if (getOwner() == NO_PLAYER)
-		iAttenuationLimit = 100 - iAC;
-	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_EVIL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_EVIL_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
-	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
+	// Attenuation limit starts max (always attenuate!)
+	// Attenuation should be turned off (limited) in cicumstances that depend on AC + Tile owner + plot counter (checked limit value)
+	if (getOwner() == NO_PLAYER)
+		if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD"))
+			iAttenuationLimit = 100 - iAC;
+	else
+	{
+		if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION)
+			iRelAdjust = GC.getReligionInfo(GET_PLAYER(getOwner()).getStateReligion()).getACPlotAttenuationMod();
 
-	// Attenuation has a flat source from mapsize, and an AC mapped source.
+		if (iAC + iRelAdjust > GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD")
+		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
+		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_EVIL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_EVIL_THRESHOLD")))
+		{
+			iAttenuationLimit = 100 - iAC;
+		}
+	}
+
+	// Attenuation penalty value has a flat source from mapsize, and an AC mapped source.
 	int iAttenuationPenalty = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMapsizePlotCounterAttenuation();
 	iAttenuationPenalty += std::max(0, GC.getDefineINT("PLOT_COUNTER_INITIAL_ATTENUATION") * (100 - 100 * iAC / GC.getDefineINT("PLOT_COUNTER_NO_ATTENUATION_AC")) / 100);
 

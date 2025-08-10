@@ -40,6 +40,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>0</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
@@ -109,6 +110,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>0</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
@@ -185,6 +187,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>3</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_EVIL</Alignment>
@@ -255,6 +258,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>0</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_GOOD</Alignment>
@@ -328,6 +332,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>20</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>5</iGlobalCounterFound>
 			<iGlobalCounterSpread>1</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_EVIL</Alignment>
@@ -399,6 +404,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>-10</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>0</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_GOOD</Alignment>
@@ -467,6 +473,7 @@
 			<bHidden>1</bHidden>
 			<bSneakAttack>1</bSneakAttack>
 			<bUpdateSight>1</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>0</iGlobalCounterFound>
 			<iGlobalCounterSpread>0</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
@@ -557,6 +564,7 @@
 			<bHidden>0</bHidden>
 			<bSneakAttack>0</bSneakAttack>
 			<bUpdateSight>0</bUpdateSight>
+			<iACPlotAttenuationMod>0</iACPlotAttenuationMod> <!-- Treat the AC as this much higher for attenuation purposes in plots of civs that follow this religion -->
 			<iGlobalCounterFound>-5</iGlobalCounterFound>
 			<iGlobalCounterSpread>-1</iGlobalCounterSpread>
 			<Alignment>ALIGNMENT_EVIL</Alignment>
