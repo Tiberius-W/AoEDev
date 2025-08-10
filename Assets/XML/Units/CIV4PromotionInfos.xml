@@ -15739,6 +15739,7 @@
 			<iMovesChange>2</iMovesChange>
 			<Button>Art/Interface/Buttons/Units/Settler.dds</Button>
 			<iMinLevel>-1</iMinLevel>
+			<iPromotionDuration>10</iPromotionDuration>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Stasis -->
 			<Type>PROMOTION_STASIS</Type>
