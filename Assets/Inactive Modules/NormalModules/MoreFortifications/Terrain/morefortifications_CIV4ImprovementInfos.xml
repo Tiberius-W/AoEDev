@@ -15,6 +15,9 @@
 			<SpawnUnitType>UNIT_MANES</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LEASH_5</Promotion>
+			</SpawnPromotions>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bradeline's Well (Purified) -->
 			<Type>IMPROVEMENT_BRADELINES_WELL_PURIFIED</Type>
@@ -47,6 +50,9 @@
 			<SpawnUnitType>UNIT_LUNATIC</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LEASH_5</Promotion>
+			</SpawnPromotions>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Well of Souls -->
 			<Type>IMPROVEMENT_WELL_OF_SOULS</Type>
@@ -83,6 +89,12 @@
 			<ImmediateSpawnUnitType>UNIT_MONK</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
+			<GuardianPromotions>
+				<Promotion>PROMOTION_LEASH_1</Promotion>
+			</GuardianPromotions>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LEASH_5</Promotion>
+			</SpawnPromotions>
 		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
