@@ -11010,11 +11010,11 @@ void CvPlot::doPlotEffect()
 		iProbability = GC.getPlotEffectInfo(getPlotEffectType()).getMoveChance();
 		if (iProbability > 0)
 		{
-			int dir = GC.getGameINLINE().getSorenRandNum(4, "PlotEffect MoveDirection");
+			int dir = GC.getGameINLINE().getMapRandNum(4, "PlotEffect MoveDirection");
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)dir));
 			if (pLoopPlot!=NULL && pLoopPlot->getPlotEffectType() == NO_PLOT_EFFECT && pLoopPlot->canHavePlotEffect(getPlotEffectType()))
 			{
-				if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Move") < iProbability)
+				if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Move") < iProbability)
 				{
 					pLoopPlot->setPlotEffectType(getPlotEffectType());
 					setPlotEffectType(NO_PLOT_EFFECT);
@@ -11025,7 +11025,7 @@ void CvPlot::doPlotEffect()
 		}
 		if (!bHasMoved && GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance() > 0)
 		{
-			if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Disappearance") < GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance())
+			if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Disappearance") < GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance())
 			{
 				setPlotEffectType(NO_PLOT_EFFECT);
 			}
@@ -11058,7 +11058,7 @@ void CvPlot::doPlotEffect()
 							}
 						}
 					}
-					if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Spawn") < iProbability)
+					if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Spawn") < iProbability)
 					{
 						setPlotEffectType((PlotEffectTypes)iI);
 					}
