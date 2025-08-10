@@ -29040,25 +29040,47 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 	|| !(pPlot->getExploreNextTurn() <= GC.getGame().getGameTurn()))
 		return false;
 
-	bool bGoodyClass = false;
-	for (int i = 0; i < GC.getNumGoodyClassTypes(); i++)
-	{
-		if (GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isGoodyClassType(i))
-		{
-			bGoodyClass = true;
-			break;
-		}
-	}
-	if (!bGoodyClass)
-		return false;
+	// // Don't explore unless there's a positive reward. Blaze: what would not have a positive reward?? We should explore even if not, to turn off spawners. Disabling.
+	// bool bGoodyClass = false;
+	// for (int i = 0; i < GC.getNumGoodyClassTypes(); i++)
+	// {
+	// 	if (GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isGoodyClassType(i))
+	// 	{
+	// 		bGoodyClass = true;
+	// 		break;
+	// 	}
+	// }
+	// if (!bGoodyClass)
+	// 	return false;
 
 	if (GET_PLAYER(getOwnerINLINE()).getNumCities() == 0)
 		return false;
 
+	bool bTierCheck = true;
+
+	// Check for owned unique lairs, special consideration. Would rather roll the dice than have it always pop a bad result
+	// Logic dependent on CvPlot::doUniqueLairTimecheck()
+	if (pPlot->getTeam() == getTeam() && GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isUnique())
+	{
+		ImprovementTypes eImprovement = pPlot->getRevealedImprovementType(getTeam(), false);
+		int iCycleLength = GC.getImprovementInfo(eImprovement).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
+		int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - pPlot->getExploreNextTurn();
+
+		// Bad things happen when the min of duration or unexplored turns hits 2x cycle length!
+		if (iTurnsLeftUnexplored >= iCycleLength * 3 / 2 && pPlot->getOwnershipDuration() >= iCycleLength * 3 / 2)
+			bTierCheck = false;
+	}
+
 	// The higher tier of lair, the higher tier of unit required. Modulate effective unit tier with noBadExplore; accounts for hypothetical negative luck, if added.
-	if (!(getUnitInfo().getTier() * 25 + getNoBadExplore() + getNoBadExploreImprovement(pPlot->getRevealedImprovementType(getTeam(), false))
-			>= 20 * GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).getLairTier()))
-		return false;
+	if (bTierCheck)
+	{
+		// Req 20, 40, 60 for T1, T2, T3 lair vs (NoBadExplore + 25/unit tier). Ex: Hunter with courage (25*2 + 10) sufficient for T3 (60).
+		if (20 * GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).getLairTier()
+	 	 > getUnitInfo().getTier() * 25 + getNoBadExplore() + getNoBadExploreImprovement(pPlot->getRevealedImprovementType(getTeam(), false)))
+		{
+			return false;
+		}
+	}
 
 	// Need minimum 2, maximum 5 defenders on nearest city to explore a lair
 	CvCity* pNearestCity = GC.getMap().findCity(getX_INLINE(), getY_INLINE(), NO_PLAYER, getTeam());
@@ -29070,11 +29092,9 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 		return false;
 
 	return true;
-
 }
-/*************************************************************************************************/
-/**	MISSION_EXPLORE_LAIR					END													**/
-/*************************************************************************************************/
+
+
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
 /*                                                                                              */

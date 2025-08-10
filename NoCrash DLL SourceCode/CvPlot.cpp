@@ -820,6 +820,7 @@ void CvPlot::doUniqueLairTimecheck()
 	 || !GC.getImprovementInfo(getImprovementType()).isExplorable())
 		return;
 
+	// Changes to the self-pop logic need to be applied in CvUnitAI::AI_canExploreLair as well
 	int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - getExploreNextTurn();
 
 	if (iTurnsLeftUnexplored < 0)
