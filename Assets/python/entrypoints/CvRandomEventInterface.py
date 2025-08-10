@@ -2553,10 +2553,10 @@ def doSlaveRevolt(argsList):
 	plot = pUnit.plot()
 	pUnit.kill(False, -1)
 	bPlayer = gc.getPlayer(gc.getORC_PLAYER())
-	NewUnit = bPlayer.initUnit(getInfoType('UNIT_WARRIOR'), plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_WARRIOR'), plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.finishMoves()
 	if iRace != -1:
-		NewUnit.setHasPromotion(iRace, True)
+		newUnit.setHasPromotion(iRace, True)
 	CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_SLAVE_REVOLT", ()),'',1,'Art/Interface/Buttons/Units/Slave.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
 
 # def canApplyTraitAggressive(argsList):

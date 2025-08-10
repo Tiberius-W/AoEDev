@@ -1519,7 +1519,7 @@
 			<iDamageLimit>50</iDamageLimit>
 			<bBad>1</bBad>
 			<PythonCallback>exploreEarthquake</PythonCallback>
-			<PythonPrereq>reqEarthquake</PythonPrereq>
+			<PythonPrereq>reqLairEarthquake</PythonPrereq>
 		</GoodyInfo>
 		<GoodyInfo>	<!-- Basilisk	 -->
 			<Type>GOODY_BASILISK</Type>

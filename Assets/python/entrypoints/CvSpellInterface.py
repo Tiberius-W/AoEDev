@@ -7678,7 +7678,7 @@ def reqSteading(caster):
 		return False
 
 	if not pPlayer.isHuman():
-		if pPlot.getFoundValue() < (pPlot.area().getBestFoundValue() * 2) / 3:
+		if pPlot.getFoundValue(pPlayer.getID()) < (pPlot.area().getBestFoundValue() * 2) / 3:
 			return False
 
 	return True
@@ -12670,7 +12670,7 @@ def exploreCaveIn(argsList):
 	pUnit.changeImmobileTimer(3)
 
 # GOODY_EARTHQUAKE
-def reqEarthquake(argsList):
+def reqLairEarthquake(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
 	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,0):

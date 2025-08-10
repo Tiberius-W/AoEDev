@@ -511,9 +511,9 @@ def postCombatLossOrphanedGoblin(pCaster, pOpponent):
 	iPlayer		= pOpponent.getOwner()
 	pPlayer		= gc.getPlayer(iPlayer)
 	iLostPlayer	= pCaster.getOwner()
-	pLostPlayer	= gc.getPlayer(iLostPlayer)
 	pCapital	= pPlayer.getCapitalCity()
 	iUnit		= pOpponent.getID()
+	pPlot		= pUnit.plot()
 	iRnd		= CyGame().getSorenRandNum(100,"OrphanedGoblin")
 	if iLostPlayer == gc.getORC_PLAYER() and iRnd < 2:
 		if pPlayer.getCivilizationType() == git("CIVILIZATION_DTESH"):
