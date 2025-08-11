@@ -28,6 +28,9 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<bGoody>0</bGoody> <!-- Used by mapgen to place using tribal village logic -->
+			<iGoodyRange>3</iGoodyRange> <!-- Closest approach to another of this improvement, but during mapgen. Should be merged with iMinimumDistance! -->
+			<iTilesPerGoody>60</iTilesPerGoody> <!-- Target density of goody (starts placing at half, e.g. 1/60 means first at 30, second at 90, etc) -->
 			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
 			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
 			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->
@@ -3895,7 +3898,6 @@
 				</FeatureMakesValid>
 			</FeatureMakesValids>
 			<WorldSoundscapeAudioScript>ASSS_FOREST_SELECT_AMB</WorldSoundscapeAudioScript>
-			<iLairCreationWeight>10</iLairCreationWeight>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Graveyard -->
 			<Type>IMPROVEMENT_GRAVEYARD</Type>
