@@ -67,19 +67,6 @@
 				</RouteYieldChange>
             </RouteYieldChanges>
 		</ImprovementInfo>
-		<ImprovementInfo>		<!-- Goody Hut -->
-			<Type>IMPROVEMENT_GOODY_HUT</Type>
-			<RouteYieldChanges>
-				<RouteYieldChange>
-					<RouteType>ROUTE_ROMANROAD</RouteType>
-					<RouteYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>5</iYield>
-					</RouteYields>
-				</RouteYieldChange>
-            </RouteYieldChanges>
-		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Guardian -->
 			<Type>IMPROVEMENT_GUARDIAN</Type>
 			<RouteYieldChanges>
