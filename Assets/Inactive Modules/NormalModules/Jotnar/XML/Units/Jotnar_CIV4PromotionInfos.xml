@@ -631,10 +631,10 @@
 					<PromotionType>PROMOTION_FIREKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
-				</PrereqPromotionAND>
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_CALENDAR</TechPrereq>
 			<bAutoAcquire>1</bAutoAcquire>
