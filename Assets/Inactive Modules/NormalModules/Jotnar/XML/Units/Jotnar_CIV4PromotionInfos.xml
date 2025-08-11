@@ -503,6 +503,8 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_FROSTKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
@@ -629,6 +631,10 @@
 					<PromotionType>PROMOTION_FIREKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_CALENDAR</TechPrereq>
 			<bAutoAcquire>1</bAutoAcquire>
@@ -1334,6 +1340,8 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_SEAKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
@@ -1472,6 +1480,8 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_STONE_KIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
@@ -1771,6 +1781,8 @@
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_WOODKIN</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_JOT_LEGENDARY_GIANT</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>

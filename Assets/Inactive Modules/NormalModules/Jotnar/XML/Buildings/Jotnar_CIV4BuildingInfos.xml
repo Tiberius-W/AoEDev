@@ -299,6 +299,11 @@
 			<FreeBuilding>BUILDINGCLASS_JOT_STAEDDING</FreeBuilding>
 			<bCapital>1</bCapital>
 			<iHealth>2</iHealth>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>160</iCost>
