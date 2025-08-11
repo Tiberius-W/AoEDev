@@ -285,7 +285,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iTempFeatureTimer = 0;
 	m_eRealBonusType = NO_BONUS;
 	m_iTempBonusTimer = 0;
-	m_iNumSpawnsAlive = 0;
+	m_iNumLairSpawnsAlive = 0;
 	m_bNeedsRebuilding = false;
 	//ClimateSystem:
 	m_eClimate = NO_CLIMATEZONE;
@@ -820,6 +820,7 @@ void CvPlot::doUniqueLairTimecheck()
 	 || !GC.getImprovementInfo(getImprovementType()).isExplorable())
 		return;
 
+	// Changes to the self-pop logic need to be applied in CvUnitAI::AI_canExploreLair as well
 	int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - getExploreNextTurn();
 
 	if (iTurnsLeftUnexplored < 0)
@@ -841,8 +842,8 @@ void CvPlot::doUniqueLairTimecheck()
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_EXPLORE_BUILDUP", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 	}
-	// You done fucked up now son!
-	else if (iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
+	// You done fucked up now son! If option enabled.
+	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_BUILDUP_COMPLETE", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
@@ -878,7 +879,7 @@ void CvPlot::doLairSpawn()
 
 	// LairGuardians code: Valkrion
 	// 1st check: Are we spawning at all, and if so are at limit for how many units can be spawned at a time?
-	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumSpawnsAlive() >= iSpawnLimit)
+	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumLairSpawnsAlive() >= iSpawnLimit)
 		return;
 
 	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
@@ -948,10 +949,11 @@ void CvPlot::doLairSpawn()
 		return;
 
 	// We can always spawn a lair guard if there's no linked spawns alive, regardless of density limits
-	bool bMissingGuard = (getNumSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
+	// Thus, an older lair that has upgraded can be denser, and have more guardians (though old guards/units are probably weak)
+	bool bMissingGuard = (getNumLairSpawnsAlive() == 0 && GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType() != NO_UNIT);
 
 	// 5th check: Don't spawn infinite barbs, there should be a limit : Snarko 20/10/12
-	if (!bMissingGuard || eSpawnPlayer == DEMON_PLAYER || eSpawnPlayer == ANIMAL_PLAYER || eSpawnPlayer == ORC_PLAYER)
+	if (!bMissingGuard && (eSpawnPlayer == DEMON_PLAYER || eSpawnPlayer == ANIMAL_PLAYER || eSpawnPlayer == ORC_PLAYER))
 	{
 		// No matter how small the area (or how low the AC), lairs can always spawn up to 3 barb units. Continues tradition of dense offshore barb islands (Blazenclaw)
 		int iTargetBarbs = std::max(3, GC.getGameINLINE().calcTargetBarbs(area(), eSpawnPlayer, true));
@@ -971,7 +973,7 @@ void CvPlot::doLairSpawn()
 		if (bMissingGuard)
 			iUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
 
-		// Spawn the thang
+		// Spawn the thang. Only spawn unit and immediate unit are counted toward limit, NOT groups
 		CvUnit* pUnit=GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes)iUnit, getX_INLINE(), getY_INLINE(), (bMissingGuard ? NO_UNITAI: UNITAI_ATTACK));
 
 		// Tell players something spawned for them
@@ -999,7 +1001,7 @@ void CvPlot::doLairSpawn()
 			}
 		}
 	}
-	// Check for spawn group. 1/3 chance to spawn a group as to spawn a unit. V low chance to spawn both unit and group, but why not.
+	// Check for spawn group. Not counted toward spawn limit! 1/3 chance to spawn a group as to spawn a unit. V low chance to spawn both unit and group, but why not.
 	if (iSpawnGroup != NO_SPAWNGROUP
 	 && GC.getGameINLINE().getSorenRandNum(30000, "Spawn Unit") < iBaseChance * (100 + GC.getImprovementInfo(getImprovementType()).getSpawnGroupChancePercentMod()))
 	{
@@ -7379,6 +7381,8 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 	}
 	if (eNewValue == NO_IMPROVEMENT)
 	{
+		// Not strictly necessary, but just for safety
+		changeNumLairSpawnsAlive(-getNumLairSpawnsAlive());
 		if (getExploreNextTurn() > 0)
 		{
 			setExploreNextTurn(0);
@@ -7430,10 +7434,8 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			kData.m_iImprovement = eOldImprovement;
 			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_GAIN_IMPROVEMENT, &kData);
 		}
-		// Clear any tracking from random/old lairs when a new lair spawns from nothing
-		// Upgrading lairs is intentionally kept; direct replacement from X to lair should be impossible.
-		if (eOldImprovement == NO_IMPROVEMENT)
-			changeNumSpawnsAlive(-getNumSpawnsAlive());
+		// Erase link to potential old lair spawns. Upgraded lairs thus may have more guards, if weaker
+		changeNumLairSpawnsAlive(-getNumLairSpawnsAlive());
 	}
 
 	updatePlotGroupBonus(true);
@@ -11009,11 +11011,11 @@ void CvPlot::doPlotEffect()
 		iProbability = GC.getPlotEffectInfo(getPlotEffectType()).getMoveChance();
 		if (iProbability > 0)
 		{
-			int dir = GC.getGameINLINE().getSorenRandNum(4, "PlotEffect MoveDirection");
+			int dir = GC.getGameINLINE().getMapRandNum(4, "PlotEffect MoveDirection");
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)dir));
 			if (pLoopPlot!=NULL && pLoopPlot->getPlotEffectType() == NO_PLOT_EFFECT && pLoopPlot->canHavePlotEffect(getPlotEffectType()))
 			{
-				if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Move") < iProbability)
+				if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Move") < iProbability)
 				{
 					pLoopPlot->setPlotEffectType(getPlotEffectType());
 					setPlotEffectType(NO_PLOT_EFFECT);
@@ -11024,7 +11026,7 @@ void CvPlot::doPlotEffect()
 		}
 		if (!bHasMoved && GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance() > 0)
 		{
-			if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Disappearance") < GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance())
+			if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Disappearance") < GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance())
 			{
 				setPlotEffectType(NO_PLOT_EFFECT);
 			}
@@ -11057,7 +11059,7 @@ void CvPlot::doPlotEffect()
 							}
 						}
 					}
-					if (GC.getGameINLINE().getSorenRandNum(10000, "PlotEffect Spawn") < iProbability)
+					if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Spawn") < iProbability)
 					{
 						setPlotEffectType((PlotEffectTypes)iI);
 					}
@@ -11634,7 +11636,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTempFeatureTimer);
 	pStream->Read(&m_eRealBonusType);
 	pStream->Read(&m_iTempBonusTimer);
-	pStream->Read(&m_iNumSpawnsAlive);
+	pStream->Read(&m_iNumLairSpawnsAlive);
 	pStream->Read(&m_bNeedsRebuilding);
 	//ClimateSystem:
 	pStream->Read(&m_eClimate);
@@ -11955,7 +11957,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTempFeatureTimer);
 	pStream->Write(m_eRealBonusType);
 	pStream->Write(m_iTempBonusTimer);
-	pStream->Write(m_iNumSpawnsAlive);
+	pStream->Write(m_iNumLairSpawnsAlive);
 	pStream->Write(m_bNeedsRebuilding);
 	//ClimateSystem:
 	pStream->Write(m_eClimate);
@@ -13418,7 +13420,7 @@ int CvPlot::calcTargetPlotCounter()
 		return 0;
 
 	// If we're here, it means: There is hell to spread or decay (or we're at steady state).
-	// The target value to reach for our plot counter is either:
+	// Conditions: The target value to reach for our plot counter is either:
 	//		1) the same as the source, if it is above the dynamic attenuation limit & source > us
 	//		2) ourselves, if we're over the attenuation limit and we're >= source
 	//		3) attenuated from the source
@@ -13430,21 +13432,29 @@ int CvPlot::calcTargetPlotCounter()
 	int iTargetCounter = 0;
 	int iAC = GC.getGameINLINE().getGlobalCounter();
 	int iAttenuationLimit = MAX_INT;
+	int iRelAdjust = 0;
 
-	// Attenuation limit depends on alignment and AC. If hell terrain is 'allowed' to spread, limit further depends on AC
-	// Otherwise, even infernal tiles (100 plot counter) won't spread more than a few tiles from their borders
-	if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
-	else if (iAC < GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD")) {}
-		// hell terrain "can't" spread if AC under unowned threshold
-	else if (getOwner() == NO_PLAYER)
-		iAttenuationLimit = 100 - iAC;
-	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_EVIL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_EVIL_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
-	else if (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
-		iAttenuationLimit = 100 - iAC;
+	// Attenuation limit starts max (always attenuate!)
+	// Attenuation should be turned off (limited) in cicumstances that depend on AC + Tile owner + plot counter (checked limit value)
+	if (getOwner() == NO_PLAYER)
+	{
+		if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD"))
+			iAttenuationLimit = 100 - iAC;
+	}
+	else
+	{
+		if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION)
+			iRelAdjust = GC.getReligionInfo(GET_PLAYER(getOwner()).getStateReligion()).getACPlotAttenuationMod();
 
-	// Attenuation has a flat source from mapsize, and an AC mapped source.
+		if (iAC + iRelAdjust > GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD")
+		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
+		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_EVIL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_EVIL_THRESHOLD")))
+		{
+			iAttenuationLimit = 100 - iAC;
+		}
+	}
+
+	// Attenuation penalty value has a flat source from mapsize, and an AC mapped source.
 	int iAttenuationPenalty = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMapsizePlotCounterAttenuation();
 	iAttenuationPenalty += std::max(0, GC.getDefineINT("PLOT_COUNTER_INITIAL_ATTENUATION") * (100 - 100 * iAC / GC.getDefineINT("PLOT_COUNTER_NO_ATTENUATION_AC")) / 100);
 
@@ -13832,13 +13842,13 @@ void CvPlot::changeTempBonusTimer(int iChange)
 	}
 }
 
-int CvPlot::getNumSpawnsAlive()
+int CvPlot::getNumLairSpawnsAlive()
 {
-	return m_iNumSpawnsAlive;
+	return m_iNumLairSpawnsAlive;
 }
-void CvPlot::changeNumSpawnsAlive(int iChange)
+void CvPlot::changeNumLairSpawnsAlive(int iChange)
 {
-	m_iNumSpawnsAlive += iChange;
+	m_iNumLairSpawnsAlive = std::max(0, m_iNumLairSpawnsAlive + iChange);
 }
 
 int CvPlot::getNumUnitType(UnitTypes eUnit, PlayerTypes ePlayer, TeamTypes eTeam) const

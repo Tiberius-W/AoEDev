@@ -4988,7 +4988,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(szTempBuffer);
 		}
 		szString.append(NEWLINE);
-		szTempBuffer.Format(L"Number Spawns Alive: %d", pPlot->getNumSpawnsAlive());
+		szTempBuffer.Format(L"Number Lair Spawns Alive: %d", pPlot->getNumLairSpawnsAlive());
 		szString.append(szTempBuffer);
 		
 /*************************************************************************************************/

@@ -715,8 +715,8 @@ public:
 	bool isHasTempFeature();
 	bool isHasTempBonus();
 
-	int getNumSpawnsAlive();
-	void changeNumSpawnsAlive(int iChange);
+	int getNumLairSpawnsAlive();
+	void changeNumLairSpawnsAlive(int iChange);
 
 	int getNumUnitType(UnitTypes eUnit, PlayerTypes ePlayer = NO_PLAYER, TeamTypes eTeam = NO_TEAM) const;
 	int getNumUnitClass(UnitClassTypes eUnitClass, PlayerTypes ePlayer = NO_PLAYER, TeamTypes eTeam = NO_TEAM) const;
@@ -976,7 +976,7 @@ protected:
 	int m_iRealFeatureVariety;
 	short m_eRealBonusType;
 
-	int m_iNumSpawnsAlive;
+	int m_iNumLairSpawnsAlive;
 
 	bool m_bNeedsRebuilding;
 

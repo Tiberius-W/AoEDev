@@ -68,7 +68,7 @@
 			<bSpawnOnlyForOwner>0</bSpawnOnlyForOwner> <!-- 1 means: Units and groups spawned from here will only go to SpawnUnitCiv, IF the current owner is not at war with SpawnUnitCiv. And: -->
 			<SpawnUnitCiv></SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
 			<SpawnUnitType></SpawnUnitType> <!-- What singular unit will spawn if conditions are met -->
-			<iSpawnAtOnceLimit>0</iSpawnAtOnceLimit> <!-- Special: A limit of 0 means it will never stop spawning. A limit of 1 means only 1 unit (immediate or regular spawn, not counting groups) can be spawned at a time, etc -->
+			<iSpawnAtOnceLimit>0</iSpawnAtOnceLimit> <!-- Special: A limit of 0 means it will never stop spawning (barbs still limited by density). Limit reset on upgrade. Only counts SpawnUnitType and ImmediateSpawnUnitType, NOT GROUPS -->
 			<iSpawnUnitChancePercentMod>0</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (0 means no change, -99 will spawn at 1% of base rate, 200 will spawn 2x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
 			<SpawnPromotions> <!-- List of promotions to give SpawnUnitType -->
 				<Promotion></Promotion>

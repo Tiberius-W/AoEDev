@@ -59,7 +59,7 @@
 			<iAdvancedStartPointsMod>85</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>-1</iMaxCitiesMod>
 			<iUniqueFeatureChance>-30</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>20</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>22</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_SMALL</Type>
@@ -86,7 +86,7 @@
 			<iAdvancedStartPointsMod>90</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>-1</iMaxCitiesMod>
 			<iUniqueFeatureChance>-15</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>15</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>20</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_STANDARD</Type>
@@ -113,7 +113,7 @@
 			<iAdvancedStartPointsMod>100</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>0</iMaxCitiesMod>
 			<iUniqueFeatureChance>0</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>15</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>18</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_LARGE</Type>
@@ -140,7 +140,7 @@
 			<iAdvancedStartPointsMod>110</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>1</iMaxCitiesMod>
 			<iUniqueFeatureChance>10</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>10</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>15</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_HUGE</Type>
@@ -167,7 +167,7 @@
 			<iAdvancedStartPointsMod>120</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>3</iMaxCitiesMod>
 			<iUniqueFeatureChance>20</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>10</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>12</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_HUGER</Type>
@@ -194,7 +194,7 @@
 			<iAdvancedStartPointsMod>120</iAdvancedStartPointsMod>
 			<iMaxCitiesMod>9</iMaxCitiesMod>
 			<iUniqueFeatureChance>40</iUniqueFeatureChance>
-			<iMapsizePlotCounterAttenuation>5</iMapsizePlotCounterAttenuation>
+			<iMapsizePlotCounterAttenuation>10</iMapsizePlotCounterAttenuation>
 		</WorldInfo>
 	</WorldInfos>
 </Civ4WorldInfo>

@@ -248,6 +248,7 @@
 	<ElementType name="bHidden" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSneakAttack" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bUpdateSight" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iACPlotAttenuationMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalCounterFound" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalCounterSpread" content="textOnly" dt:type="int"/>
 	<ElementType name="Alignment" content="textOnly"/>
@@ -316,6 +317,7 @@
 		<element type="bHidden"/>
 		<element type="bSneakAttack"/>
 		<element type="bUpdateSight"/>
+		<element type="iACPlotAttenuationMod"/>
 		<element type="iGlobalCounterFound"/>
 		<element type="iGlobalCounterSpread"/>
 		<element type="Alignment"/>

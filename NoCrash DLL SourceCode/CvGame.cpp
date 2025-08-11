@@ -7121,25 +7121,19 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 	{
 		if (getMaxCityElimination() > 0
 		 || isOption(GAMEOPTION_NO_BARBARIANS)
-		 || GC.getHandicapInfo(getHandicapType()).getUnownedTilesPerBarbarianCity() <= 0
-		 || GET_PLAYER(ORC_PLAYER).getNumCities() > getNumCivCities()
 		 || getNumCivCities() < countCivPlayersAlive()
-		 || GC.getEraInfo(getCurrentEra()).isNoBarbCities()
-		 || getElapsedGameTurns() < (GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / 100))
+		 || GET_PLAYER(ORC_PLAYER).getNumCities() >= std::max(countCivPlayersAlive(), getNumCivCities() * 5 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) / 100)
+		 || getElapsedGameTurns() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) < (GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / 100)
+		 || GC.getEraInfo(getCurrentEra()).isNoBarbCities())
 		{
 			return false;
 		}
 	}
-	// Requirements on a specific plot
+	// Requirements on a specific plot. 
 	else
 	{
-		if (pPlot->isWater()
-		 || pPlot->isCityRadius()
-		 || pPlot->isCity()
-		 || pPlot->isImpassable()) // Might be funny to see a stolen dwarf mountain fort be turned into a barb city...
-		{
+		if (!GET_PLAYER(ORC_PLAYER).canFound(pPlot->getX(), pPlot->getY()))
 			return false;
-		}
 
 		// Improved tiles are nogo, unless a savage non-unique fort. Such a thing can also spawn in civ vision
 		if (pPlot->getImprovementType() != NO_IMPROVEMENT)
@@ -7155,7 +7149,6 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 		}
 		else if (pPlot->isVisibleToCivTeam())
 			return false;
-
 
 		// Now, we check for density---
 		int iTargetCities = pPlot->area()->getNumUnownedTiles();
@@ -7183,7 +7176,8 @@ void CvGame::createBarbarianCities()
 		return;
 
 	// We need to adjust spawnrate based on speed but also world size, otherwise small maps may fill too fast, and large maps quite slow
-	if (getSorenRandNum(1000 / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)), "Barb City Creation")
+	// Raging, and no barb cities at all, each cause spawn to be 2x faster
+	if (getSorenRandNum(1000 / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) / (1 + (GET_PLAYER(ORC_PLAYER).getNumCities() == 0)), "Barb City Creation")
 		>= std::max(1,
 		1000 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb() * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDefaultPlayers()
 		/ GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / GC.getWorldInfo((WorldSizeTypes)WORLDSIZE_STANDARD).getDefaultPlayers()))
@@ -7211,15 +7205,15 @@ void CvGame::createBarbarianCities()
 			continue;
 
 		iValue = GET_PLAYER(ORC_PLAYER).AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getDefineINT("MIN_BARBARIAN_CITY_STARTING_DISTANCE"));
+		if (iValue == 0)
+			continue;
 
+		// TODO: Value adjustments need some degree of normalization factor wrt the foundValue; can't multiply blindly due to overflow
 		// Prioritize area that is the most claimed, in absolute terms
-		iValue *= pLoopPlot->area()->getNumOwnedTiles();
-
+		iValue += 100 * pLoopPlot->area()->getNumOwnedTiles();
 		// Much more likely to upgrade a fort if possible
 		if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-			iValue *= 5000;
-
-		// This value does effectively nothing given the scale of .AI_foundValue. Should be renormalized/applied once a scale for the found value is established?
+			iValue += 10000;
 		// iValue += (getSorenRandNum(50, "Barb City Found"));
 
 		if (iValue > iBestValue)

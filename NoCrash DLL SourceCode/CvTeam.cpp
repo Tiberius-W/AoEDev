@@ -1019,96 +1019,83 @@ void CvTeam::doTurn()
 	{
 		for (iI = 0; iI < GC.getNumTechInfos(); iI++)
 		{
-			if (!isHasTech((TechTypes)iI))
+			if (isHasTech((TechTypes)iI))
+				continue;
+
+			iCount = 0;
+			iPossibleCount = 0;
+
+			for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 			{
-				iCount = 0;
-				iPossibleCount = 0;
+				if (!GET_TEAM((TeamTypes)iJ).isAlive() || GET_TEAM((TeamTypes)iJ).isBarbarian())
+					continue;
 
-				for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
-				{
-					if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isBarbarian())
-					{
-						if (GET_TEAM((TeamTypes)iJ).isHasTech((TechTypes)iI))
-						{
-							iCount++;
-						}
+				if (GET_TEAM((TeamTypes)iJ).isHasTech((TechTypes)iI))
+					iCount++;
 
-						iPossibleCount++;
-					}
-				}
+				iPossibleCount++;
+			}
 
-				if (iCount > 0)
-				{
-					// Orcs gain FREE_TECH_PERCENT (35) of total cost per turn, multiplied by % of civs that know the tech, modulated by gamespeed.
-					// E.g. 2 of 10 teams know a tech, so orcs get 0.35 * 0.2 * (gamespeed modifier) of the tech each turn. [100 / FREE_TECH * # of civ teams] is the max turns of tech lag on standard.
-					if (getID() == ORC_TEAM)
-					{
-						changeResearchProgress((TechTypes)iI,
-							getResearchCost((TechTypes)iI) * GC.getDefineINT("BARBARIAN_FREE_TECH_PERCENT") * iCount / (iPossibleCount * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getResearchPercent()),
-							getLeaderID());
-					}
-					// Demons get a flat percent (per difficulty) for each team that knows; from 1% settler to 15% deity. [33] is the max turns of tech lag on standard noble.
-					else if (getID() == DEMON_TEAM)
-					{
-						changeResearchProgress(((TechTypes)iI),
-							getResearchCost((TechTypes)iI) * GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getDemonPerTurnKnownTechsPercent() * iCount / GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getResearchPercent(),
-							getLeaderID());
-					}
-				}
+			if (iCount == 0)
+				continue;
+
+			// Orcs gain FREE_TECH_PERCENT (35) of total cost per turn, multiplied by % of civs that know the tech, modulated by gamespeed.
+			// E.g. 2 of 10 teams know a tech, so orcs get 0.35 * 0.2 * (gamespeed modifier) of the tech each turn. [100 / FREE_TECH * # of civ teams] is the max turns of tech lag on standard.
+			if (getID() == ORC_TEAM)
+			{
+				changeResearchProgress((TechTypes)iI,
+					getResearchCost((TechTypes)iI) * GC.getDefineINT("BARBARIAN_FREE_TECH_PERCENT") * iCount / (iPossibleCount * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getResearchPercent()),
+					getLeaderID());
+			}
+			// Demons get a flat percent (per difficulty) for each team that knows; from 1% settler to 15% deity. [33] is the max turns of tech lag on standard noble.
+			else if (getID() == DEMON_TEAM)
+			{
+				changeResearchProgress(((TechTypes)iI),
+					getResearchCost((TechTypes)iI) * GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getDemonPerTurnKnownTechsPercent() * iCount / GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getResearchPercent(),
+					getLeaderID());
 			}
 		}
 	}
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		if (GET_TEAM((TeamTypes)iI).isAlive())
-		{
-			if (getStolenVisibilityTimer((TeamTypes)iI) > 0)
-			{
-				changeStolenVisibilityTimer(((TeamTypes)iI), -1);
-			}
+		if (!GET_TEAM((TeamTypes)iI).isAlive())
+			continue;
 
-			if (getCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI) > 0)
-			{
-				changeCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI, -1);
-			}
+		if (getStolenVisibilityTimer((TeamTypes)iI) > 0)
+			changeStolenVisibilityTimer(((TeamTypes)iI), -1);
 
-			if (getCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI) == 0)
-			{
-				setCounterespionageModAgainstTeam((TeamTypes) iI, 0);
-			}
-		}
+		if (getCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI) > 0)
+			changeCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI, -1);
+
+		if (getCounterespionageTurnsLeftAgainstTeam((TeamTypes) iI) == 0)
+			setCounterespionageModAgainstTeam((TeamTypes) iI, 0);
 	}
 
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
 	{
 		for (iI = 0; iI < GC.getNumTechInfos(); iI++)
-		{
 			setNoTradeTech(((TechTypes)iI), false);
-		}
-
 	}
 
 	// Per Turn Decay Functions : New Tag Defs ProjectInfos TeamInfos Xienwolf 09/12/08
 	if (getRevealAllBonuses() > 0)
-	{
 		changeRevealAllBonuses(-1);
-	}
+
 	if (getHideUnits() > 0)
-	{
 		changeHideUnits(-1);
-	}
+
 	if (getSeeInvisible() > 0)
-	{
 		changeSeeInvisible(-1);
-	}
+
 	if (getAtWarCount(true) == 0 && getBlockBonuses() > 0)
-	{
 		changeBlockBonuses(-getBlockBonuses());
-	}
+
 	for (iI=0;iI<GC.getNumProjectInfos();iI++)
 	{
-		if ((getProjectTimer((ProjectTypes)iI, 0) != -1) && (getProjectTimer((ProjectTypes)iI, 0) + (GC.getProjectInfo((ProjectTypes)iI).getCooldown() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 100)) < GC.getGameINLINE().getGameTurn())
+		if ((getProjectTimer((ProjectTypes)iI, 0) != -1)
+		 && (getProjectTimer((ProjectTypes)iI, 0) + (GC.getProjectInfo((ProjectTypes)iI).getCooldown() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 100))
+		 	< GC.getGameINLINE().getGameTurn())
 		{
 			clearProjectTimer((ProjectTypes)iI);
 		}

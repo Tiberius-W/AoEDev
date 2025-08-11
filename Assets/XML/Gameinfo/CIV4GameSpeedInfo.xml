@@ -39,9 +39,9 @@
 					<iTurnsPerIncrement>1800</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
-			<iLairSpawnChance>10</iLairSpawnChance> <!-- Default chance a lair will spit a unit out. 2x if raging barbs on. Also 3x the chance to spit out a group, and 1/3 of replace guardian. Individual results can be modulated in improvementInfos -->
-			<iTurnsPerLairCycle>30</iTurnsPerLairCycle> <!-- 1/2 this value if raging barbs on. 3x this value until additional lairs can spawn (and 1x +/- 10% thereafter, #=map default players). Also min duration for barb owned fort to turn to city (respecting all other spawn limits) -->
-			<iBarbSpawnDelay>30</iBarbSpawnDelay> <!-- 1/2 this value if raging barbs on. 1/3 of this value before lairs can spawn additional units. 1x before random animals spawn. 2x before random barbs. -->
+			<iLairSpawnChance>10</iLairSpawnChance> <!-- Default chance/turn for lair to spawn a unit. 2x if raging barbs. 1/3x to spit out a group, and 3x if no linked alive units. Individual results can be modulated in improvementInfos -->
+			<iTurnsPerLairCycle>40</iTurnsPerLairCycle> <!-- 1/2 this value if raging barbs. 3x until 1st lairs spawn (and 1x +/- 10% after, #=map default players). Also min duration for barb owned fort to turn to city (assuming limits met) -->
+			<iBarbSpawnDelay>30</iBarbSpawnDelay> <!-- 1/2 this value if raging barbs on. 1/3 of this value before mapgen lairs can spawn additional units. 1x before random animals spawn. 2x before random barbs. -->
 		</GameSpeedInfo>
 		<GameSpeedInfo>
 			<Type>GAMESPEED_EPIC</Type>
@@ -76,7 +76,7 @@
 				</GameTurnInfo>
 			</GameTurnInfos>
 			<iLairSpawnChance>15</iLairSpawnChance>
-			<iTurnsPerLairCycle>22</iTurnsPerLairCycle>
+			<iTurnsPerLairCycle>30</iTurnsPerLairCycle>
 			<iBarbSpawnDelay>22</iBarbSpawnDelay>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -112,7 +112,7 @@
 				</GameTurnInfo>
 			</GameTurnInfos>
 			<iLairSpawnChance>20</iLairSpawnChance>
-			<iTurnsPerLairCycle>15</iTurnsPerLairCycle>
+			<iTurnsPerLairCycle>20</iTurnsPerLairCycle>
 			<iBarbSpawnDelay>15</iBarbSpawnDelay>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -148,7 +148,7 @@
 				</GameTurnInfo>
 			</GameTurnInfos>
 			<iLairSpawnChance>30</iLairSpawnChance>
-			<iTurnsPerLairCycle>10</iTurnsPerLairCycle>
+			<iTurnsPerLairCycle>15</iTurnsPerLairCycle>
 			<iBarbSpawnDelay>10</iBarbSpawnDelay>
 		</GameSpeedInfo>
 	</GameSpeedInfos>

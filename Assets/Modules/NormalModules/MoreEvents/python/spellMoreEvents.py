@@ -511,7 +511,6 @@ def postCombatLossOrphanedGoblin(pCaster, pOpponent):
 	iPlayer		= pOpponent.getOwner()
 	pPlayer		= gc.getPlayer(iPlayer)
 	iLostPlayer	= pCaster.getOwner()
-	pLostPlayer	= gc.getPlayer(iLostPlayer)
 	pCapital	= pPlayer.getCapitalCity()
 	iUnit		= pOpponent.getID()
 	iRnd		= CyGame().getSorenRandNum(100,"OrphanedGoblin")
@@ -519,7 +518,7 @@ def postCombatLossOrphanedGoblin(pCaster, pOpponent):
 		if pPlayer.getCivilizationType() == git("CIVILIZATION_DTESH"):
 			newUnit = pPlayer.initUnit(git('UNIT_SLAVE_UNDEAD'), pCapital.getX(),pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			newUnit.setName(CyTranslator().getText("TXT_KEY_EVENT_ORPHANED_GOBLIN_DTESH_SLAVE_NAME", ()))
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_EVENT_ORPHANED_GOBLIN_DTESH", ()),'',3,'Art/Interface/Buttons/Promotions/Races/Goblin.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_EVENT_ORPHANED_GOBLIN_DTESH", ()),'',3,'Art/Interface/Buttons/Promotions/Races/Goblin.dds',ColorTypes(8),pCapital.getX(),pCapital.getY(),True,True)
 		elif pPlayer.isHuman():
 			popupInfo	= CyPopupInfo()
 			popupInfo.setOption2(True)

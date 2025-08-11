@@ -432,11 +432,8 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	{
 		changeImmuneToCapture(1);
 	}
-/*************************************************************************************************/
-/**	Better Affinity						01/30/11									Valkrionn	**/
-/**																								**/
-/**					Vastly improved Affinity system, open to many tags							**/
-/*************************************************************************************************/
+
+	// Better Affinity - Valkrionn - 01/30/11 - Vastly improved Affinity system, open to many tags
 	int iNumAffinities = m_pUnitInfo->getNumAffinities();
 	if (iNumAffinities != 0)
 	{
@@ -445,26 +442,15 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 			changeAffinities((AffinityTypes)m_pUnitInfo->getAffinities(iJ), 1);
 		}
 	}
-/*************************************************************************************************/
-/**	Better Affinity							END													**/
-/*************************************************************************************************/
 
 	AI_init(eUnitAI);
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/14/09											**/
-/**			Tracks Units Spawned from each Improvement to limit the potential spawns			**/
-/**					Grants some initial XP to the Demonic Barbarians based on AC				**/
-/*************************************************************************************************/
 	setSpawnPlot(GC.getMapINLINE().plotINLINE(iX, iY));
+
 	if (getCivilizationType() == (CivilizationTypes)GC.getDefineINT("DEMON_CIVILIZATION"))
-	{
 		changeExperience(GC.getGameINLINE().getGlobalCounter() * GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getDemonGlobalCounterFreeXPPercent());
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-//FfH Units: Added by Kael 04/18/2008
+
+	//FfH Units: Added by Kael 04/18/2008
 	if (m_pUnitInfo->getFreePromotionPick() > 0)
 	{
 		changeFreePromotionPick(m_pUnitInfo->getFreePromotionPick());
@@ -1962,8 +1948,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	{
 		changeNoSupply(-1);
 	}
+
 	// Spawn plot tracking for lair improvements (Xienwolf original implementation, Blaze edit 08/2025)
-	getSpawnPlot()->changeNumSpawnsAlive(-1);
+	if (getSpawnPlot()->getImprovementType() != NO_IMPROVEMENT)
+	{
+		if (GC.getImprovementInfo(getSpawnPlot()->getImprovementType()).getImmediateSpawnUnitType() == getUnitType()
+		 || GC.getImprovementInfo(getSpawnPlot()->getImprovementType()).getSpawnUnitType() == getUnitType())
+		{
+			getSpawnPlot()->changeNumLairSpawnsAlive(-1);
+		}
+	}
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{
@@ -18731,7 +18725,14 @@ CvPlot* CvUnit::getSpawnPlot() const
 }
 void CvUnit::setSpawnPlot(CvPlot* pPlot)
 {
-	pPlot->changeNumSpawnsAlive(1);
+	if (pPlot != NULL && pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
+		if (GC.getImprovementInfo(pPlot->getImprovementType()).getImmediateSpawnUnitType() == getUnitType()
+		 || GC.getImprovementInfo(pPlot->getImprovementType()).getSpawnUnitType() == getUnitType())
+		{
+			pPlot->changeNumLairSpawnsAlive(1);
+		}
+	}
 
 	m_iSpawnPlotX = pPlot->getX();
 	m_iSpawnPlotY = pPlot->getY();

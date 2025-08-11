@@ -605,19 +605,19 @@
 	</Define>
 	<Define> <!-- MUST BE > 0 !! At this AC, there is 0 dropoff from adjacent tiles due to AC. Does not apply to iMapsizePlotCounterAttenuation in worldInfo -->
 		<DefineName>PLOT_COUNTER_NO_ATTENUATION_AC</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>80</iDefineIntVal>
 	</Define>
 	<Define> <!-- The following 4 control at what AC levels hell terrain is allowed to penetrate without attenuation -->
 		<DefineName>PLOT_COUNTER_AC_UNOWNED_THRESHOLD</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PLOT_COUNTER_AC_EVIL_THRESHOLD</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>40</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PLOT_COUNTER_AC_NEUTRAL_THRESHOLD</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>60</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PLOT_COUNTER_AC_GOOD_THRESHOLD</DefineName>
@@ -764,5 +764,10 @@
 		<DefineName>RECON_VISIBILITY_RANGE</DefineName>
 		<!-- Overriding BTS default of 5 -->
 		<iDefineIntVal>4</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>LAIR_AUTO_EXPLORE</DefineName>
+		<!-- 1 to enable, 0 to disable. Two alerts still trigger, but third (cultist summoning) will not -->
+		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 </Civ4Defines>
