@@ -356,7 +356,7 @@
 			<Button>Art/Interface/Buttons/Religions/Runes.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Spread the Word - White Hand -->
-			<Type>SPELL_JOT_SPREAD_ROK</Type>
+			<Type>SPELL_JOT_SPREAD_HAND</Type>
 			<Description>TXT_KEY_SPELL_JOT_SPREAD_STATE</Description>
 			<Civilopedia>TXT_KEY_SPELL_JOT_SPREAD_STATE_PEDIA</Civilopedia>
 			<UnitCombatPrereq>UNITCOMBAT_DISCIPLE</UnitCombatPrereq>
@@ -372,7 +372,7 @@
 			<SpreadReligion>RELIGION_WHITE_HAND</SpreadReligion>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS2D_RUNES_DINK</Sound>
-			<Button>Art/Interface/Buttons/Religions/Runes.dds</Button>
+			<Button>Art/Civs/WhiteHand/hand.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Steading (Fortcommander) -->
 			<Type>SPELL_STEADING</Type>
