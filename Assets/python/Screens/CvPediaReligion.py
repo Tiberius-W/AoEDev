@@ -64,6 +64,7 @@ class CvPediaReligion:
 		self.placeSpecial()
 		self.placeHistory()
 		self.placeUnits()
+		self.placeStrategy()
 
 	def placeRequires(self):
 		screen = self.top.getScreen()
@@ -135,6 +136,19 @@ class CvPediaReligion:
 					if self.top.iActivePlayer != -1:
 						szButton = gc.getPlayer(self.top.iActivePlayer).getUnitButton(eLoopUnit)
 					screen.attachImageButton( panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False )
+
+	def placeStrategy(self):
+		screen = self.top.getScreen()
+		self.X_STRATEGY = self.X_UNIT_PANE
+		self.Y_STRATEGY = self.Y_UNIT_PANE + self.H_UNIT_PANE
+		self.W_STRATEGY = self.W_UNIT_PANE
+		self.H_STRATEGY = self.H_HISTORY - self.top.H_BLUE50_PANEL
+		StrategyPanel = self.top.getNextWidgetName()
+		screen.addPanel( StrategyPanel, localText.getText("TXT_KEY_STRATEGY", ()), "", true, true,self.X_STRATEGY, self.Y_STRATEGY, self.W_STRATEGY, self.H_STRATEGY, PanelStyles.PANEL_STYLE_BLUE50 )
+		StrategyTextPanel = self.top.getNextWidgetName()
+		screen.addPanel( StrategyTextPanel, "", "", true, true,self.X_STRATEGY+self.top.HM_TEXT, self.Y_STRATEGY+self.top.VM_TEXT, self.W_STRATEGY - 2 * self.top.HM_TEXT, self.H_STRATEGY - self.top.VM_TEXT, PanelStyles.PANEL_STYLE_EMPTY)
+		StrategyText = gc.getReligionInfo(self.iReligion).getStrategy()
+		screen.attachMultilineText( StrategyTextPanel, "", StrategyText,WidgetTypes.WIDGET_GENERAL,-1,-1, CvUtil.FONT_LEFT_JUSTIFY )
 
 	def placeLinks(self, bRedraw):
 		screen = self.top.getScreen()
