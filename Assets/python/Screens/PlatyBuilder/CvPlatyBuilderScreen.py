@@ -953,8 +953,8 @@ class CvWorldBuilderScreen:
 			screen.setImageButton("EditDiplomacy", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_DIPLOMACY_MODE_BUTTON, -1, -1)
 			screen.setStyle("EditDiplomacy", "Button_HUDAdvisorForeign_Style")
 			iX += iAdjust
-			screen.setImageButton("EditEspionage", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 22)
-			screen.setStyle("EditEspionage", "Button_HUDAdvisorEspionage_Style")
+#			screen.setImageButton("EditEspionage", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 22)
+#			screen.setStyle("EditEspionage", "Button_HUDAdvisorEspionage_Style")
 			iX += iAdjust
 			screen.setImageButton("TradeScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 34)
 			screen.setStyle("TradeScreen", "Button_HUDAdvisorFinance_Style")	
@@ -1871,8 +1871,8 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "EditCorporations":
 			WBCorporationScreen.WBCorporationScreen().interfaceScreen(self.m_iCurrentPlayer)
 
-		elif inputClass.getFunctionName() == "EditEspionage":
-			WBDiplomacyScreen.WBDiplomacyScreen().interfaceScreen(self.m_iCurrentPlayer, True)
+		elif inputClass.getFunctionName() == "EditDiplomacy":
+			WBDiplomacyScreen.WBDiplomacyScreen().interfaceScreen(self.m_iCurrentPlayer, False)
 
 		elif inputClass.getFunctionName() == "EditPlayerData":
 			WBPlayerScreen.WBPlayerScreen().interfaceScreen(self.m_iCurrentPlayer)
