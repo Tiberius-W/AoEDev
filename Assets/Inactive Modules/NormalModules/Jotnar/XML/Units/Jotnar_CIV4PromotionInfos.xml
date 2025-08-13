@@ -1563,15 +1563,14 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNonWarWeariness>1</bNonWarWeariness>
 			<bNoXP>1</bNoXP>
-			<NewName>Thrall</NewName>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
 			</PrereqCivilizations>
 			<PrereqUnits>
-			<PrereqUnit>UNIT_SLAVE</PrereqUnit>
+			<PrereqUnit>UNIT_THRALL</PrereqUnit>
+			<PrereqUnit>UNIT_JOTNAR_ULFR</PrereqUnit>
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Units/Slave.dds</Button>
-			<bOnlyDefensive>1</bOnlyDefensive>
 			<iBetterDefenderThanPercent>50</iBetterDefenderThanPercent>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Warsong -->

@@ -26,11 +26,11 @@
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>
-			<UnitPrereq>UNIT_SLAVE</UnitPrereq>
+			<UnitClassPrereq>UNITCLASS_SLAVE</UnitClassPrereq>
 			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
-			<iCost>35</iCost>
+			<iCost>5</iCost>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<AddPromotions>
 				<AddPromotion>PROMOTION_APTITUDE1</AddPromotion>

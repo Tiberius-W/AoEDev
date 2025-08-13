@@ -163,7 +163,14 @@
 					<UnitClassType>UNITCLASS_VOICE_OF_THE_DIVINE</UnitClassType>
 					<UnitType>UNIT_VOICE_OF_THE_DIVINE</UnitType>
 				</Unit>
-
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_THRALL</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_JOTNAR_ULFR</UnitClassType>
+					<UnitType>UNIT_JOTNAR_ULFR</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SCOUT</UnitClassType>
 					<UnitType>UNIT_JOT_TROLL</UnitType>

@@ -1248,6 +1248,56 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 		<Spanish>[ICON_BULLET]Sacrifice a Thrall Militia to heal the Giant</Spanish>
 	</TEXT>	
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_THRALL</Tag>
+		<English>Thrall</English>
+		<French>Thrall</French>
+		<German>Thrall</German>
+		<Italian>Thrall</Italian>
+		<Spanish>Thrall</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_THRALL_PEDIA</Tag>
+		<English>Taken prisoner as spoils of battle, the Giants only respect bravery or strength in their enemies.[NEWLINE][NEWLINE]"If you can not fight, then you will toil in the mud as the other worms do." - Father Kashgenal</English>
+		<French>Taken prisoner as spoils of battle, the Giants only respect bravery or strength in their enemies.[NEWLINE][NEWLINE]"If you can not fight, then you will toil in the mud as the other worms do." - Father Kashgenal</French>
+		<German>Taken prisoner as spoils of battle, the Giants only respect bravery or strength in their enemies.[NEWLINE][NEWLINE]"If you can not fight, then you will toil in the mud as the other worms do." - Father Kashgenal</German>
+		<Italian>Taken prisoner as spoils of battle, the Giants only respect bravery or strength in their enemies.[NEWLINE][NEWLINE]"If you can not fight, then you will toil in the mud as the other worms do." - Father Kashgenal</Italian>
+		<Spanish>Taken prisoner as spoils of battle, the Giants only respect bravery or strength in their enemies.[NEWLINE][NEWLINE]"If you can not fight, then you will toil in the mud as the other worms do." - Father Kashgenal</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_THRALL_STRATEGY</Tag>
+		<English>Thralls are Melee units, so even though they can build improvements, they will not gain worker promotions to get any better at it, or gain experience over time, that being said: they do start at a higher work rate then other slave units and have a meager strength that can be thrown in front of an oncoming army as a way to delay them.
+
+If a thrall manages to defeat an enemy, then the Jotnar will permit them the honor of a warrior and give them a weapon to defend the steading with.</English>
+		<French>Thralls are Melee units, so even though they can build improvements, they will not gain worker promotions to get any better at it, or gain experience over time, that being said: they do start at a higher work rate then other slave units and have a meager strength that can be thrown in front of an oncoming army as a way to delay them.
+
+If a thrall manages to defeat an enemy, then the Jotnar will permit them the honor of a warrior and give them a weapon to defend the steading with.</French>
+		<German>Thralls are Melee units, so even though they can build improvements, they will not gain worker promotions to get any better at it, or gain experience over time, that being said: they do start at a higher work rate then other slave units and have a meager strength that can be thrown in front of an oncoming army as a way to delay them.
+
+If a thrall manages to defeat an enemy, then the Jotnar will permit them the honor of a warrior and give them a weapon to defend the steading with.</German>
+		<Italian>Thralls are Melee units, so even though they can build improvements, they will not gain worker promotions to get any better at it, or gain experience over time, that being said: they do start at a higher work rate then other slave units and have a meager strength that can be thrown in front of an oncoming army as a way to delay them.
+
+If a thrall manages to defeat an enemy, then the Jotnar will permit them the honor of a warrior and give them a weapon to defend the steading with.</Italian>
+		<Spanish>Thralls are Melee units, so even though they can build improvements, they will not gain worker promotions to get any better at it, or gain experience over time, that being said: they do start at a higher work rate then other slave units and have a meager strength that can be thrown in front of an oncoming army as a way to delay them.
+
+If a thrall manages to defeat an enemy, then the Jotnar will permit them the honor of a warrior and give them a weapon to defend the steading with.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ULFR</Tag>
+		<English>Lítill Ulfr</English>
+		<French>Lítill Ulfr</French>
+		<German>Lítill Ulfr</German>
+		<Italian>Lítill Ulfr</Italian>
+		<Spanish>Lítill Ulfr</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ULFR_PEDIA</Tag>
+		<English>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</English>
+		<French>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</French>
+		<German>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</German>
+		<Italian>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</Italian>
+		<Spanish>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</Spanish>
+	</TEXT>	
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_EARTHS_BOSOM</Tag>
 		<English>Earth's Bosom</English>
 		<French>Earth's Bosom</French>
