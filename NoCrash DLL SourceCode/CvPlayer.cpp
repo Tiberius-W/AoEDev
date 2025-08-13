@@ -11143,9 +11143,10 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	else
 	{
 		iThreshold = ((GC.getDefineINT("GREAT_PEOPLE_THRESHOLD") * std::max(0, (getGreatPeopleThresholdModifier() + 100))) / 100);
-		if (isBarbarian())
-			iThreshold *= 4;
 	}
+
+	if (isBarbarian())
+		iThreshold *= 4;
 
 	iThreshold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGreatPeoplePercent();
 	if (bMilitary)
