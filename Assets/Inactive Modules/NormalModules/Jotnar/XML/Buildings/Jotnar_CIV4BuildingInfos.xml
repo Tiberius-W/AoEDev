@@ -300,7 +300,7 @@
 			<bCapital>1</bCapital>
 			<iHealth>2</iHealth>
 			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>

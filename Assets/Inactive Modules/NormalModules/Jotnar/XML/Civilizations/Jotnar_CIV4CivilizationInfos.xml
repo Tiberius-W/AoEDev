@@ -283,7 +283,7 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
-					<UnitType>NONE</UnitType>
+					<UnitType>UNIT_JOT_WORKBOAT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GALLEY</UnitClassType>

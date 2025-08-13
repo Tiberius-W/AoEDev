@@ -8354,14 +8354,6 @@
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>7</iCombat>
 			<iXPValueAttack>32</iXPValueAttack>
@@ -35956,14 +35948,6 @@
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>7</iCombat>
 			<TerrainAttacks>
@@ -48405,16 +48389,6 @@
 			<iTier>1</iTier>
 			<iWeaponTierMax>1</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Frostling -->
 			<Class>UNITCLASS_FROSTLING</Class>
@@ -48744,16 +48718,6 @@
 			<iTier>2</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 		</UnitInfo>
 		<UnitInfo>        <!-- Minotaur -->
 			<Class>UNITCLASS_MINOTAUR</Class>
@@ -50583,16 +50547,6 @@
 			</UnitAIs>
 			<iCost>-1</iCost>
 			<iMoves>2</iMoves>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 			<iCombat>7</iCombat>
 			<iCombatDefense>5</iCombatDefense>
 			<iCollateralDamage>100</iCollateralDamage>
@@ -50664,16 +50618,6 @@
 			<iAIWeight>8</iAIWeight>
 			<iCost>-1</iCost>
 			<iMoves>2</iMoves>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iBombardRate>15</iBombardRate>
@@ -54356,16 +54300,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>150</iWorkRate>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 			<iCombat>3</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>8</iXPValueAttack>
