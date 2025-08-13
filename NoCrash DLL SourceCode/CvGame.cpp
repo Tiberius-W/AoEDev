@@ -10823,6 +10823,10 @@ void CvGame::createLairs()
 		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
 			continue;
 
+		// TODO This should probably be integrated into canHaveImprovement, and carry thru testVisible from canBuild
+		if (pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), true))
+			continue;
+
 		// Check spawning criteria vs density requirements.
 		bNoSpawns = false;
 		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
@@ -10836,8 +10840,7 @@ void CvGame::createLairs()
 
 		pArea = pPlot->area();
 
-		// We need to prevent lairs that don't spawn units from clogging up every tile. Thus, large-ish range limits
-		if (bNoSpawns && !pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), false))
+		if (bNoSpawns)
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
