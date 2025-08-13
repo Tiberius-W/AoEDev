@@ -7667,23 +7667,6 @@ def spellWomb(caster):
 	if pPlot.isOwned():
 		startWar(caster.getOwner(), pPlot.getOwner(), WarPlanTypes.WARPLAN_TOTAL)
 
-def reqSteading(caster):
-	pPlot = caster.plot()
-	pPlayer = gc.getPlayer(caster.getOwner())
-
-	if pPlot.isOwned() and pPlot.getOwner() != caster.getOwner():
-		return False
-
-	if pPlot.isCityRadius():
-		return False
-
-	if not pPlayer.isHuman():
-		if pPlot.getFoundValue(pPlayer.getID()) < (pPlot.area().getBestFoundValue() * 2) / 3:
-			return False
-
-	return True
-
-
 # Vitalize
 
 baseVitalizeUpgrades = dict( ( getInfoType( start_terrain ), getInfoType( end_terrain ) )

@@ -56,12 +56,17 @@ def spellSteading(caster):
 
 def reqSteading(pCaster):
 	pPlot = pCaster.plot()
-	iImprovement = pPlot.getImprovementType()
-	if iImprovement != -1:
-		pImprovement = gc.getImprovementInfo(iImprovement)
-		if pImprovement.isUnique():
+	if pPlot.isWater() or pPlot.isCity() or pPlot.isCityRadius() or gc.getImprovementInfo(pPlot.getImprovementType()).isUnique():
+		return False
+
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	if pPlot.isOwned() and pPlot.getOwner() != pCaster.getOwner():
+		return False
+	if not pPlayer.isHuman():
+		if pPlot.getFoundValue(pPlayer.getID()) < (pPlot.area().getBestFoundValue(pPlayer.getID()) * 2) / 3:
 			return False
-	return not pPlot.isWater() and not pPlot.isCity()
+
+	return True
 
 def reqJotBloom(caster):
 	pPlot = caster.plot()
