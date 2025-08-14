@@ -36067,7 +36067,7 @@
 		<UnitArtInfo> <!-- UNIT_ICE_ELEMENTAL -->
 			<Type>ART_DEF_UNIT_ICE_ELEMENTAL</Type>
 			<Button>Art/Interface/Buttons/Units/Ice Elemental.dds</Button>
-			<fScale>0.48</fScale>
+			<fScale>0.78</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>

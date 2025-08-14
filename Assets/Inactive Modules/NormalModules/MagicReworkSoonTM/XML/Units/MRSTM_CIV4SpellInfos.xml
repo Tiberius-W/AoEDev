@@ -723,6 +723,7 @@
 		</SpellInfo>
 			<SpellInfo>			<!-- Breathe Fire -->					<!-- START OTHER ABILITIES -->
 			<Type>SPELL_BREATH_FIRE</Type>
+			<bForceOverwrite>1</bForceOverwrite>
 			<Description>TXT_KEY_SPELL_BREATH_FIRE</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<PromotionPrereq1>PROMOTION_MOLTEN_CORE</PromotionPrereq1>

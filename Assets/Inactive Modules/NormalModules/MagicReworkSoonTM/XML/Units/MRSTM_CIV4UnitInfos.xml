@@ -96,7 +96,7 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Chosen of D'Tesh -->
 			<Type>UNIT_CHOSEN_DTESH</Type>	
-			<iMagicalPower>120</iMagicalPower>
+			<iMagicalPower>150</iMagicalPower>
 		</UnitInfo>	
 		<UnitInfo>        <!-- Teopixki -->  
 			<Type>UNIT_TEOPIXKI</Type>	

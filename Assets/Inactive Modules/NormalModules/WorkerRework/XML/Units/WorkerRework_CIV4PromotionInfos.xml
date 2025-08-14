@@ -265,14 +265,14 @@
 			</UnitCombats>
 			<PrereqUnits>
 				<PrereqUnit>UNIT_GRETCHIN</PrereqUnit>
-				<PrereqUnit>UNIT_THRALL_MILITIA</PrereqUnit>
 			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
 			<Button>Art/Interface/Buttons/Promotions/StoneTools.dds</Button>
 			<bValidate>1</bValidate>
 		</PromotionInfo>
-		<PromotionInfo>        <!-- Jotnar Thrall Militia Dependency -->
+		<!-- Jotnar Thrall Militia Dependency 
+		<PromotionInfo>        
 			<Type>PROMOTION_GOBLIN_TOOLS</Type>
 			<bTypeDependency>1</bTypeDependency>
 			<AndDependencyTypes>
@@ -282,7 +282,7 @@
 				<PrereqUnit>UNIT_THRALL_MILITIA</PrereqUnit>
 			</PrereqUnits>
 		</PromotionInfo>
-	
+	-->
 			
 		<PromotionInfo>		<!-- Waterlogged tools only work with bezeri active -->
 			<Type>PROMOTION_WATERLOGGED_TOOLS</Type>

@@ -942,8 +942,8 @@
 	
 		
 		
-		
-		<UnitInfo>		<!-- Thrall Militia -->
+		<!-- Thrall Militia
+		<UnitInfo>		 
 			<bTypeDependency>1</bTypeDependency>
 			<AndDependencyTypes>
 				<DependencyType>MODULE_JOTNAR</DependencyType>
@@ -1080,7 +1080,7 @@
 			<iCombatDefense>2</iCombatDefense>
 			<iTier>1</iTier>
 		</UnitInfo>
-		
+		-->
 		
 		
 		<UnitInfo>        <!-- Khazad Worker -->

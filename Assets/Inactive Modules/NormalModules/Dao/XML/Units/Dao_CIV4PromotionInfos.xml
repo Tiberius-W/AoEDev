@@ -12,7 +12,6 @@
 			<Button>Art/Modules/Dao/Buttons/AncestryAir.dds</Button>
 			<Description>TXT_KEY_PROMOTION_ANCESTRY_AIR</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<bNotAlive>1</bNotAlive>
 			<PromotionExcludes>
 					<Promotion>PROMOTION_ANCESTRY_EARTH</Promotion>
 					<Promotion>PROMOTION_ANCESTRY_FIRE</Promotion>
@@ -75,7 +74,6 @@
 			<Button>Art/Modules/Dao/Buttons/AncestryEarth.dds</Button>
 			<Description>TXT_KEY_PROMOTION_ANCESTRY_EARTH</Description>
 		   <Sound>AS2D_IF_LEVELUP</Sound>
-			<bNotAlive>1</bNotAlive>
 			<PromotionExcludes>
 					<Promotion>PROMOTION_ANCESTRY_AIR</Promotion>
 					<Promotion>PROMOTION_ANCESTRY_FIRE</Promotion>
@@ -140,7 +138,6 @@
 			<Button>Art/Modules/Dao/Buttons/AncestryFire.dds</Button>
 			<Description>TXT_KEY_PROMOTION_ANCESTRY_FIRE</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<bNotAlive>1</bNotAlive>
 			<PromotionExcludes>
 					<Promotion>PROMOTION_ANCESTRY_AIR</Promotion>
 					<Promotion>PROMOTION_ANCESTRY_EARTH</Promotion>
@@ -207,7 +204,6 @@
 			<Button>Art/Modules/Dao/Buttons/AncestryWater.dds</Button>
 			<Description>TXT_KEY_PROMOTION_ANCESTRY_WATER</Description>
 			 <Sound>AS2D_IF_LEVELUP</Sound>
-			<bNotAlive>1</bNotAlive>
 			<PromotionExcludes>
 					<Promotion>PROMOTION_ANCESTRY_AIR</Promotion>
 					<Promotion>PROMOTION_ANCESTRY_EARTH</Promotion>

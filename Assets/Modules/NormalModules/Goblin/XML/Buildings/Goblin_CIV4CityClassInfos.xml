@@ -428,7 +428,7 @@
 	</Building>
 	<Building>
 		<BuildingClassType>BUILDINGCLASS_JOUSTING_TILT</BuildingClassType>
-		<BuildingType>NONE</BuildingType>
+		<BuildingType>BUILDING_JOUSTING_TILT</BuildingType>
 	</Building>
 	<Building>
 		<BuildingClassType>BUILDINGCLASS_MASTER_FLETCHER</BuildingClassType>
