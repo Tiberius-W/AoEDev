@@ -8,14 +8,14 @@ ViciousSeas
 ;Note: it have to be number, so only numberic characters and none or one period
 ;note: one line
 [version]
-1.5
+1.7
 ;
 ;
 ;RifE version - version of RifE for which is this module tested, checked, developed, etc
 ;Note: it have to be number, so only numberic characters and none or one period
 ;note: one line
 [rifeversion]
-378
+380
 ;
 ;
 ;Author - you
@@ -27,7 +27,7 @@ Tikumara
 ;Short description - text showed in contect menu
 ;note: one line
 [shortdesc]
-Added the Bezeri Civ and attempting to make the ocean more worthwhile with resources and sea fortresses as well as less random spawns.
+Added the Bezeri Civ and attempting to make the ocean more worthwhile with resources and sea fortresses.
 ;
 ;
 ;Description - text showed in message box
@@ -37,8 +37,6 @@ Added the Bezeri Civ and attempting to make the ocean more worthwhile with resou
 Added the Bezeri, an Aquatic Lizardman civ who tame sea monsters and settle the sea. check the strategy section of their Civilopedia page for further info.
 
 Ocean and deep ocean trade moved from Astronomy to Optics.
-
-Turned off random barbarian ship spawns; random animals still permitted(barbarian cities can still build them though!).
 
 Added pirate strongholds and drown lairs that pump out hostile ships and demons.
 
@@ -67,6 +65,13 @@ Ocean Forts are intended to be medium-medium hard difficulty; they do not respaw
 Trade routes become available at optics, the final tier of research (astronomy), is reserved for seeking greater naval strength.
 
 Bezeri are not supposed to be overpowered, if they are pulling an "illians" and stomping every game, let me know what you think is imbalanced about them so I can tackle it!
+
+V1.7
+- Kraken and Drown are feeling evil again (demonc faction)
+- Random ships are now able to spawn again - with all the spawn changes that have been done I wanted to see if the sea is more fun with random ships back on.
+- Monster Daycare: Titan Shell lairs are now guarded by Dragon Turtle Hatchlings(strength 6/7)
+- Some sea creatures can now mature - Kraken Spawns and Hatchlings can grow into Kraken and Dragon Turtles - Dragon turtles and Sea serpents can grow into Titans and Ancient Serpents.
+- Flavor Start settings added for Bezeri
 
 V1.6
 Drowned can become Drowned Callers at lvl 6, giving them Drowns on combat win and can create a Howling Burrow.
