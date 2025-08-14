@@ -10823,6 +10823,10 @@ void CvGame::createLairs()
 		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
 			continue;
 
+		// TODO This should probably be integrated into canHaveImprovement, and carry thru testVisible from canBuild
+		if (pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), true))
+			continue;
+
 		// Check spawning criteria vs density requirements.
 		bNoSpawns = false;
 		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
@@ -10836,8 +10840,7 @@ void CvGame::createLairs()
 
 		pArea = pPlot->area();
 
-		// We need to prevent lairs that don't spawn units from clogging up every tile. Thus, large-ish range limits
-		if (bNoSpawns && !pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), false))
+		if (bNoSpawns)
 		{
 			pPlot->setImprovementType(eLair);
 			iGoal--;
@@ -11224,6 +11227,9 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 	int iTargetBarbs = 0;
 	int iAreaSize = 0;
 
+	// Note: Densities want to be centered around the value instead of always lower or equal, so e.g:
+	// if target is 1/30, need to calculate target number as (size + divisor/2) / divisor -> (area + 15)/30.
+
 	if (ePlayer == ANIMAL_PLAYER)
 	{
 		iAreaSize = pArea->getNumUnownedTiles();
@@ -11243,14 +11249,14 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 			GC.getHandicapInfo(getHandicapType()).getTilesPerOrc());
 
 		// Originally had a max of 5 per body of water; will see if need to reduce
-		iTargetBarbs = iAreaSize / std::max(1, iDivisor);
+		iTargetBarbs = (iAreaSize + iDivisor/2) / std::max(1, iDivisor);
 	}
 	else
 	{
 		// Possible min value if we're calculating based on lairs, instead of rand demon on hell terrain
 		int iMinDemons = 0;
 		if (bLairSpawn)
-			iMinDemons = pArea->getNumUnownedTiles() / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
+			iMinDemons = (pArea->getNumUnownedTiles() + GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon() / 2) / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
 
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();

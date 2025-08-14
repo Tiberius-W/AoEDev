@@ -7390,6 +7390,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 }
 
 
+// Call when potential for collecting a tribal village / goody hut
 void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 {
 	CyPlot kGoodyPlot(pPlot);
@@ -7402,70 +7403,43 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 	long result=0;
 	bool ok = gDLL->getPythonIFace()->callFunction(PYGameModule, "doGoody", argsList.makeFunctionArgs(), &result);
 	if (ok && result)
-	{
 		return;
-	}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**		Must clear this AFTER validating Goody to account for new LEX enhancement function		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	pPlot->removeGoody();
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (!isBarbarian())
+
+	// Xienwolf - 02/01/09 - Don't clear until AFTER validating Goody to account for new LEX enhancement function
+	if (isBarbarian())
+		return;
+
+	if (GC.getHandicapInfo(getHandicapType()).getNumGoodies() > 0)
 	{
 		for (int iI = 0; iI < GC.getDefineINT("NUM_DO_GOODY_ATTEMPTS"); iI++)
 		{
-			if (GC.getHandicapInfo(getHandicapType()).getNumGoodies() > 0)
-			{
-				GoodyTypes eGoody = (GoodyTypes)GC.getHandicapInfo(getHandicapType()).getGoodies(GC.getGameINLINE().getSorenRandNum(GC.getHandicapInfo(getHandicapType()).getNumGoodies(), "Goodies"));
 
-				FAssert(eGoody >= 0);
-				FAssert(eGoody < GC.getNumGoodyInfos());
+			GoodyTypes eGoody = (GoodyTypes)GC.getHandicapInfo(getHandicapType()).getGoodies(GC.getGameINLINE().getSorenRandNum(GC.getHandicapInfo(getHandicapType()).getNumGoodies(), "Goodies"));
 
-				if (canReceiveGoody(pPlot, eGoody, pUnit))
-				{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/01/09											**/
-/**																								**/
-/**		Must clear this AFTER validating Goody to account for new LEX enhancement function		**/
-/*************************************************************************************************/
-					pPlot->removeGoody();
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-					receiveGoody(pPlot, eGoody, pUnit);
-					// DynTraits Start
-					TraitTriggeredData kTriggerData;
-					doTraitTriggers(TRAITHOOK_GOODY, &kTriggerData);
-					// DynTraits End
+			FAssert(eGoody >= 0);
+			FAssert(eGoody < GC.getNumGoodyInfos());
 
-					// Python Event
-					CvEventReporter::getInstance().goodyReceived(getID(), pPlot, pUnit, eGoody);
-					break;
-				}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							11/21/08											**/
-/**																								**/
-/**						Announces to the player that the GoodyHut was empty						**/
-/*************************************************************************************************/
-				else
-				{
-					if ((iI+1) == GC.getDefineINT("NUM_DO_GOODY_ATTEMPTS"))
-					{
-						gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_ABANDONED_VILLAGE").GetCString(), "AS2D_CIVDESTROYED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"));
-					}
-				}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-			}
+			if (!canReceiveGoody(pPlot, eGoody, pUnit))
+				continue;
+
+			pPlot->removeGoody();
+			receiveGoody(pPlot, eGoody, pUnit);
+
+			// DynTraits Start
+			TraitTriggeredData kTriggerData;
+			doTraitTriggers(TRAITHOOK_GOODY, &kTriggerData);
+			// DynTraits End
+
+			// Python Event
+			CvEventReporter::getInstance().goodyReceived(getID(), pPlot, pUnit, eGoody);
+			return;
 		}
 	}
+
+	// We only hit here if we failed to collect our goody, either due to none valid or none in XML
+	gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_ABANDONED_VILLAGE").GetCString(),
+		"AS2D_CIVDESTROYED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"));
+	pPlot->removeGoody();
 }
 
 
@@ -11169,9 +11143,10 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	else
 	{
 		iThreshold = ((GC.getDefineINT("GREAT_PEOPLE_THRESHOLD") * std::max(0, (getGreatPeopleThresholdModifier() + 100))) / 100);
-		if (isBarbarian())
-			iThreshold *= 4;
 	}
+
+	if (isBarbarian())
+		iThreshold *= 4;
 
 	iThreshold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGreatPeoplePercent();
 	if (bMilitary)
