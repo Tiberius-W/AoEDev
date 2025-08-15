@@ -1525,6 +1525,9 @@
 			<PromotionPrereq2>PROMOTION_JOT_POTENTIAL</PromotionPrereq2>
 			<CivilizationPrereq>CIVILIZATION_JOTNAR</CivilizationPrereq>
 			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_MAGISTER_ASHES</DependencyType>
+		     </AndDependencyTypes>
 			<ImprovementPrereq>IMPROVEMENT_BADBS_BLIZZARD</ImprovementPrereq>
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
