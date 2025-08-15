@@ -48,7 +48,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
-				<Tech>TECH_FISHING</Tech>
+				<Tech>TECH_SAILING</Tech>
 			</PrereqTechANDs>
 			<BlockTechANDs>
 				<Tech>TECH_OPTICS</Tech>

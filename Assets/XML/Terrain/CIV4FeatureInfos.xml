@@ -3224,72 +3224,6 @@
 			<Help>TXT_KEY_FEATURE_HAUNTED_LANDS_HELP</Help>
 			<Civilopedia>TXT_KEY_FEATURE_HAUNTED_LANDS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_HAUNTED_LANDS</ArtDefineTag>
-			<YieldChanges>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>2</iYieldChange>
-			</YieldChanges>
-			<RiverYieldChange/>
-			<HillsYieldChange/>
-			<iMovement>1</iMovement>
-			<iSeeThrough>0</iSeeThrough>
-			<iCultureDistance>1</iCultureDistance>
-			<iHealthPercent>-50</iHealthPercent>
-			<iDefense>0</iDefense>
-			<iAppearance>100</iAppearance>
-			<iDisappearance>0</iDisappearance>
-			<iGrowth>6</iGrowth>
-			<iTurnDamage>0</iTurnDamage>
-			<bNoCoast>0</bNoCoast>
-			<bNoRiver>0</bNoRiver>
-			<bNoAdjacent>0</bNoAdjacent>
-			<bRequiresFlatlands>0</bRequiresFlatlands>
-			<bRequiresRiver>0</bRequiresRiver>
-			<bAddsFreshWater>0</bAddsFreshWater>
-			<bImpassable>0</bImpassable>
-			<bNoCity>0</bNoCity>
-			<bNoImprovement>0</bNoImprovement>
-			<bVisibleAlways>0</bVisibleAlways>
-			<bNukeImmune>0</bNukeImmune>
-			<OnUnitChangeTo/>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_HILL</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_COAST</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<FootstepSounds>
 				<FootstepSound>
 					<FootstepAudioType>FOOTSTEP_AUDIO_HUMAN</FootstepAudioType>
@@ -3368,35 +3302,6 @@
 			<Civilopedia>TXT_KEY_FEATURE_MIST_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_MIST</ArtDefineTag>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<YieldChanges>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-			</YieldChanges>
-			<bMist>1</bMist>
-			<RiverYieldChange/>
-			<HillsYieldChange/>
-			<iMovement>1</iMovement>
-			<iSeeThrough>4</iSeeThrough>
-			<iHealthPercent>0</iHealthPercent>
-			<iDefense>0</iDefense>
-			<iAppearance>0</iAppearance>
-			<iDisappearance>0</iDisappearance>
-			<iGrowth>0</iGrowth>
-			<iTurnDamage>0</iTurnDamage>
-			<bNoCoast>0</bNoCoast>
-			<bNoRiver>0</bNoRiver>
-			<bNoAdjacent>0</bNoAdjacent>
-			<bRequiresFlatlands>0</bRequiresFlatlands>
-			<bRequiresRiver>0</bRequiresRiver>
-			<bAddsFreshWater>0</bAddsFreshWater>
-			<bImpassable>0</bImpassable>
-			<bNoCity>0</bNoCity>
-			<bNoImprovement>0</bNoImprovement>
-			<bVisibleAlways>0</bVisibleAlways>
-			<bNukeImmune>0</bNukeImmune>
-			<OnUnitChangeTo/>
-			<TerrainBooleans/>
 			<FootstepSounds>
 				<FootstepSound>
 					<FootstepAudioType>FOOTSTEP_AUDIO_HUMAN</FootstepAudioType>

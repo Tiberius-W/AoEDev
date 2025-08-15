@@ -11,6 +11,7 @@
 			<Description>TXT_KEY_RELIGION_FELLOWSHIP_OF_LEAVES</Description>
 			<Adjective>TXT_KEY_RELIGION_FELLOWSHIP_OF_LEAVES_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_LEAVES_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_LEAVES_STRATEGY</Strategy>
 			<TechPrereq>TECH_WAY_OF_THE_FORESTS</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_FELLOWSHIP_OF_LEAVES</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -81,6 +82,7 @@
 			<Description>TXT_KEY_RELIGION_THE_ORDER</Description>
 			<Adjective>TXT_KEY_RELIGION_THE_ORDER_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ORDER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_ORDER_STRATEGY</Strategy>
 			<TechPrereq>TECH_ORDERS_FROM_HEAVEN</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_THE_ORDER</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -158,6 +160,7 @@
 			<Description>TXT_KEY_RELIGION_OCTOPUS_OVERLORDS</Description>
 			<Adjective>TXT_KEY_RELIGION_OCTOPUS_OVERLORDS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_OVERLORDS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_OVERLORDS_STRATEGY</Strategy>
 			<TechPrereq>TECH_MESSAGE_FROM_THE_DEEP</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_OCTOPUS_OVERLORDS</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -229,6 +232,7 @@
 			<Description>TXT_KEY_RELIGION_RUNES_OF_KILMORPH</Description>
 			<Adjective>TXT_KEY_RELIGION_RUNES_OF_KILMORPH_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_RUNES_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_RUNES_STRATEGY</Strategy>
 			<TechPrereq>TECH_WAY_OF_THE_EARTHMOTHER</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_RUNES_OF_KILMORPH</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -303,6 +307,7 @@
 			<Description>TXT_KEY_RELIGION_THE_ASHEN_VEIL</Description>
 			<Adjective>TXT_KEY_RELIGION_THE_ASHEN_VEIL_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ASHEN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_ASHEN_STRATEGY</Strategy>
 			<TechPrereq>TECH_CORRUPTION_OF_SPIRIT</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_THE_ASHEN_VEIL</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -375,6 +380,7 @@
 			<Description>TXT_KEY_RELIGION_THE_EMPYREAN</Description>
 			<Adjective>TXT_KEY_RELIGION_THE_EMPYREAN_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_THE_EMPYREAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_THE_EMPYREAN_STRATEGY</Strategy>
 			<TechPrereq>TECH_HONOR</TechPrereq>
 			<FreeUnitClass>UNITCLASS_DISCIPLE_EMPYREAN</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -443,6 +449,7 @@
 			<Description>TXT_KEY_RELIGION_COUNCIL_OF_ESUS</Description>
 			<Adjective>TXT_KEY_RELIGION_COUNCIL_OF_ESUS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_COUNCIL_OF_ESUS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_COUNCIL_OF_ESUS_STRATEGY</Strategy>
 			<Help>TXT_KEY_RELIGION_COUNCIL_OF_ESUS_HELP</Help>
 			<TechPrereq>TECH_DECEPTION</TechPrereq>
 			<FreeUnitClass>UNITCLASS_NIGHTWATCH</FreeUnitClass>
@@ -509,6 +516,7 @@
 			<Description>TXT_KEY_RELIGION_WHITE_HAND</Description>
 			<Adjective>TXT_KEY_RELIGION_WHITE_HAND_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_WHITE_HAND_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_RELIGION_WHITE_HAND_STRATEGY</Strategy>
 			<TechPrereq>TECH_WHITE_HAND</TechPrereq>
 			<FreeUnitClass>UNITCLASS_FROSTLING</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
