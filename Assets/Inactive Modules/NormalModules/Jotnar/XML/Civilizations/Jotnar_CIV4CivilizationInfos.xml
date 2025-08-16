@@ -114,35 +114,6 @@
 			</Building>
 			</Buildings>
 			<Units>
-				<!--<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_SCIENTIST_JOT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_PROPHET_JOT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ENGINEER_JOT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ARTIST_JOT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_MERCHANT_JOT</UnitType>
-				</Unit>
-
-				<Unit>
-					<UnitClassType>UNITCLASS_COMMANDER</UnitClassType>
-					<UnitType>UNIT_COMMANDER_JOT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_HEALER</UnitClassType>
-					<UnitType>UNIT_HEALER_JOT</UnitType>
-			    </Unit> -->
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_JOT_ADULT</UnitType>

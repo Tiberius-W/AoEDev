@@ -3854,6 +3854,7 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Wilboman -->
 			<Class>UNITCLASS_WILBOMAN</Class>
+			<Type>UNIT_WILBOMAN</Type>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_FROSTKIN</PromotionType>
