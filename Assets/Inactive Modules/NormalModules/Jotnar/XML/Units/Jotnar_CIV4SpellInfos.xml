@@ -1794,7 +1794,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCasterMinLevel>4</iCasterMinLevel>
 			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
-			<iDelay>6</iDelay>]
+			<iDelay>6</iDelay>
 		</SpellInfo>
 	</SpellInfos>
 </Civ4SpellInfos>

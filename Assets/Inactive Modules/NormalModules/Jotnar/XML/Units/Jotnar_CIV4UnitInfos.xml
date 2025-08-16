@@ -3842,7 +3842,7 @@
 			<Type>UNIT_JOT_TROLL</Type>
 			<UpgradeCiv>CIVILIZATION_JOTNAR</UpgradeCiv>
 		</UnitInfo>
-	    <UnitInfo>        <!-- Frost Giant - White Hand-->-->
+	    <UnitInfo>        <!-- Frost Giant - White Hand-->
 			<Class>UNITCLASS_FROST_GIANT</Class>
 			<Type>UNIT_FROST_GIANT</Type>
 			<FreePromotions>
