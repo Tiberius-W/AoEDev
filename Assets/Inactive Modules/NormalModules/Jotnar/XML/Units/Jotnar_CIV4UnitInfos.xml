@@ -2172,6 +2172,7 @@
 			<AllowPromotions>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
+				<Promotion>PROMOTION_MARCH</Promotion>
 			</AllowPromotions>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
@@ -2251,7 +2252,7 @@
 			<iAdvancedStartCost>120</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>300</iWorkRate>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCollateralDamage>100</iCollateralDamage>
 			<iCollateralDamageLimit>50</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
@@ -2283,6 +2284,7 @@
 			<AllowPromotions>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
+				<Promotion>PROMOTION_MARCH</Promotion>
 			</AllowPromotions>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>2</iTier>

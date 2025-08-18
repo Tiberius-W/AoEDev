@@ -2303,9 +2303,25 @@
 			<Description>Fine armor</Description>
 			<bNoXP>1</bNoXP>
 			<bAutoAcquire>1</bAutoAcquire>
-			<iExtraCombatStr>1</iExtraCombatStr>
-			<iExtraCombatDefense>1</iExtraCombatDefense>
-			<iCombatPercent>5</iCombatPercent>
+			<iCombatPercent>15</iCombatPercent>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>15</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iResist>15</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>15</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>15</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<PrereqTraits>
 				<PrereqTrait>TRAIT_BLACKSMITH2</PrereqTrait>
 			</PrereqTraits>			
@@ -2364,9 +2380,9 @@
 			<Description>Elite armor</Description>
 			<bNoXP>1</bNoXP>
 			<bAutoAcquire>1</bAutoAcquire>
-			<iExtraCombatStr>2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
 			<iCombatPercent>10</iCombatPercent>
+			<iWithdrawalChange>15</iWithdrawalChange>
+			<iFirstStrikesChange>1</iFirstStrikesChange>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>

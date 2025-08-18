@@ -1193,19 +1193,19 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_BLACKSMITH2_HELP</Tag>
-		<English>[NEWLINE][ICON_BULLET]All armored units get fine armor promotion.</English>
-		<French>[NEWLINE][ICON_BULLET]All armored units get fine armor promotion.</French>
-		<German>[NEWLINE][ICON_BULLET]All armored units get fine armor promotion.</German>
-		<Italian>[NEWLINE][ICON_BULLET]All armored units get fine armor promotion.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]All armored units get fine armor promotion.</Spanish>
+		<English>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_FINE_ARMOR]Fine Armor[\LINK] promotion.</English>
+		<French>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_FINE_ARMOR]Fine Armor[\LINK] promotion.</French>
+		<German>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_FINE_ARMOR]Fine Armor[\LINK] promotion.</German>
+		<Italian>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_FINE_ARMOR]Fine Armor[\LINK] promotion.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_FINE_ARMOR]Fine Armor[\LINK] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_BLACKSMITH3_HELP</Tag>
-		<English>[NEWLINE][ICON_BULLET]All armored units get elite armor promotion.</English>
-		<French>[NEWLINE][ICON_BULLET]All armored units get elite armor promotion.</French>
-		<German>[NEWLINE][ICON_BULLET]All armored units get elite armor promotion.</German>
-		<Italian>[NEWLINE][ICON_BULLET]All armored units get elite armor promotion.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]All armored units get elite armor promotion.</Spanish>
+		<English>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_ELITE_ARMOR]Elite Armor[\LINK] promotion.</English>
+		<French>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_ELITE_ARMOR]Elite Armor[\LINK] promotion.</French>
+		<German>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_ELITE_ARMOR]Elite Armor[\LINK] promotion.</German>
+		<Italian>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_ELITE_ARMOR]Elite Armor[\LINK] promotion.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]All armored units get the [LINK=PROMOTION_ELITE_ARMOR]Elite Armor[\LINK] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PRETENDER</Tag>
@@ -1296,6 +1296,14 @@ If a thrall manages to defeat an enemy, then the Jotnar will permit them the hon
 		<German>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</German>
 		<Italian>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</Italian>
 		<Spanish>Having shown courage and defeated a foe with their bare hands, the Jotnar deem these thralls as worthy of honor once again.[NEWLINE]These Lítill Ulfr are afforded the right to carry a weapon and follow the teachings of the Skalds, which they take to with the fanaticism of a new convert.[NEWLINE][NEWLINE][NEWLINE] One of the tasks the skald will instruct the new Lítill Ulfr on, is to carve symbols of life and bounty into stones and leave them along the borders of the Jotnars steadings, to ward away malignant spirits that would despoil their home.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JOT_BARRACKS</Tag>
+		<English>Longhouse</English>
+		<French>Longhouse</French>
+		<German>Longhouse</German>
+		<Italian>Longhouse</Italian>
+		<Spanish>Longhouse</Spanish>
 	</TEXT>	
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_EARTHS_BOSOM</Tag>
