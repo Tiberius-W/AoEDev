@@ -26576,6 +26576,7 @@ bool CvUnit::isHeld() const
 
 void CvUnit::changeHeld(int iNewValue)
 {
+	int oldheld = m_iHeld;
 	if (iNewValue != 0)
 	{
 		m_iHeld += iNewValue;
@@ -26586,7 +26587,7 @@ void CvUnit::changeHeld(int iNewValue)
 /**																								**/
 /**					Don't allow grouping with immobile, or leashed, units						**/
 /*************************************************************************************************/
-	if (m_iHeld > 0)
+	if (m_iHeld > 0 && oldheld<=0)
 	{
 		joinGroup(NULL, true);
 	}
