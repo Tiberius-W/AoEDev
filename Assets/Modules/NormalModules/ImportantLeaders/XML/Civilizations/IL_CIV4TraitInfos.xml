@@ -335,6 +335,10 @@
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
+					<PromotionType>PROMOTION_MARAUTULE_POSSESSION</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_FEAR</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
