@@ -287,6 +287,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SWARM_OF_LOCUSTS</UnitClassType>
+					<UnitType>UNIT_SWARM_OF_LOCUSTS</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Ouzza -->
 			<Type>TRAIT_PACT_OUZZA</Type>
@@ -341,6 +347,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_MARAUTULE</UnitClassType>
+					<UnitType>UNIT_MARAUTULE</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Judecca -->
 			<Type>TRAIT_PACT_JUDECCA</Type>
@@ -395,12 +407,19 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ANGEL</UnitClassType>
+					<UnitType>UNIT_FALLEN_ANGEL</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Sallos -->
 			<Type>TRAIT_PACT_SALLOS</Type>
 			<Description>TXT_KEY_TRAIT_PACT_SALLOS</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_SALLOS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_SALLOS_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_SALLOS_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -422,6 +441,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SUCCUBUS</UnitClassType>
+					<UnitType>UNIT_SUCCUBUS</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 		
 	</TraitInfos>

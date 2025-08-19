@@ -7926,6 +7926,14 @@
 		<Spanish>Pact with the Duke of Lust</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_SALLOS_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</English>
+		<French>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</French>
+		<German>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</German>
+		<Italian>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PACT_STATIUS</Tag>
 		<English>Pact with the Redeemer</English>
 		<French>Pact with the Redeemer</French>

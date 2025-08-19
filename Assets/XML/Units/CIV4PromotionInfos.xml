@@ -41797,5 +41797,25 @@
 			<Description>TXT_KEY_PROMOTION_LEADING_CAMEL</Description>
 			<Button>Art/Interface/Buttons/WorldBuilder/Camel.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Marautule Influence -->
+			<Type>PROMOTION_CURSED_WORDS</Type>
+			<Description>TXT_KEY_PROMOTION_CURSED_WORDS</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyEnemy>1</bApplyEnemy>
+					<bApplyRival>1</bApplyRival>
+					<fHappy>-1</fHappy>
+					<fDiplo>-0.10</fDiplo>
+					<fCulture>-1</fCulture>
+					<fInfectCulture>2</fInfectCulture>
+					<iBonusRange>1</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_MARAUTULE</PrereqUnit>
+			</PrereqUnits>
+			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

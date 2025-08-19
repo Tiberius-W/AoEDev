@@ -4039,6 +4039,14 @@
 		<Spanish>Perceptive Summon</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_CURSED_WORDS</Tag>
+		<English>Cursed Words</English>
+		<French>Cursed Words</French>
+		<German>Cursed Words</German>
+		<Italian>Cursed Words</Italian>
+		<Spanish>Cursed Words</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_UNDEAD_EATER</Tag>
 		<English>Undead Eater</English>
 		<French>Undead Eater</French>

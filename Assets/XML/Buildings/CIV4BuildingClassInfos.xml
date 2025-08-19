@@ -4515,7 +4515,8 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_WINTER_PALACE_CRIME_EFFECT</DefaultBuilding>
 			<VictoryThresholds/>
-		</BuildingClassInfo>		<BuildingClassInfo>  <!-- Penal Colony Effect -->
+		</BuildingClassInfo>
+		<BuildingClassInfo>  <!-- Penal Colony Effect -->
 			<Type>BUILDINGCLASS_SUMMER_PALACE_CRIME_EFFECT</Type>
 			<Description>TXT_KEY_BUILDING_PENAL_COLONY_EFFECT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -4526,6 +4527,6 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_SUMMER_PALACE_CRIME_EFFECT</DefaultBuilding>
 			<VictoryThresholds/>
-		</BuildingClassInfo>	
+		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>

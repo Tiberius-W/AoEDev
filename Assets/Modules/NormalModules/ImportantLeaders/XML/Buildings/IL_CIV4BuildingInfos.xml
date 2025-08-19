@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Building Infos -->
+<Civ4BuildingInfos xmlns="x-schema:IL_CIV4BuildingsSchema.xml">
+	<BuildingInfos>	
+    	<BuildingInfo>		<!-- Pact Building  Duke Sallos  Den of Pleasure and Blood -->
+			<BuildingClass>BUILDINGCLASS_DEN_OF_PLEASURE</BuildingClass>
+			<Type>BUILDING_DEN_OF_PLEASURE</Type>
+			<Description>TXT_KEY_BUILDING_DEN_OF_PLEASURE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DEN_OF_PLEASURE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DEN_OF_PLEASURE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TAVERN</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_SALLOS</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<iHappiness>3</iHappiness>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_TOAD</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_GULAGARM</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<TrainXPCaps>
+				<TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<fTrainXPCap>5</fTrainXPCap>
+				</TrainXPCap>
+			</TrainXPCaps>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_GULAGARM</BonusType>
+					<CommerceModifiers>
+						<iCommerce>5</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_TOAD</BonusType>
+					<CommerceModifiers>
+						<iCommerce>5</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>5</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
+			
+		</BuildingInfo>
+		</BuildingInfos>
+</Civ4BuildingInfos>

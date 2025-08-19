@@ -4460,6 +4460,18 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<UnitType>UNIT_BALOR</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
+			<UnitClassPlayerInstancesChanges>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<iPlayerInstancesChange>4</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+			</UnitClassPlayerInstancesChanges>	
 		</TraitInfo>
 	</TraitInfos> 
 </Civ4TraitInfos>
