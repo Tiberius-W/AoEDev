@@ -307,47 +307,29 @@ The Infernal are the demonic forces of hell, they have come for only one reason 
 		<Spanish>Fallen Angel</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MARAUTULE</Tag>
-		<English>Marautule</English>
-		<French>Marautule</French>
-		<German>Marautule</German>
-		<Italian>Marautule</Italian>
-		<Spanish>Marautule</Spanish>
+		<Tag>TXT_KEY_UNIT_HAEGTESSE</Tag>
+		<English>Haegtesse</English>
+		<French>Haegtesse</French>
+		<German>Haegtesse</German>
+		<Italian>Haegtesse</Italian>
+		<Spanish>Haegtesse</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MARAUTULE_PEDIA</Tag>
-		<English>A marautule is a spider that slips into the victim's mouth while he sleeps and attaches to the victim's larynx.  When the victim awakes they will 
-begin to feel increasingly irritated.  Over the next few days this will eventually drive them to destroy all of their relationships, insulting and abusing 
-children and loved ones.  Telling secrets to cause others pain, and acting as emotionally destructive as possible (this may or may not include any physical 
-violence).  It will eventually end when someone finds out that the Marautule is inside them, someone kills the victim, or most commonly the victim kills 
-himself.</English>
-		<French>A marautule is a spider that slips into the victim's mouth while he sleeps and attaches to the victim's larynx.  When the victim awakes they will 
-begin to feel increasingly irritated.  Over the next few days this will eventually drive them to destroy all of their relationships, insulting and abusing 
-children and loved ones.  Telling secrets to cause others pain, and acting as emotionally destructive as possible (this may or may not include any physical 
-violence).  It will eventually end when someone finds out that the Marautule is inside them, someone kills the victim, or most commonly the victim kills 
-himself.</French>
-		<German>A marautule is a spider that slips into the victim's mouth while he sleeps and attaches to the victim's larynx.  When the victim awakes they will 
-begin to feel increasingly irritated.  Over the next few days this will eventually drive them to destroy all of their relationships, insulting and abusing 
-children and loved ones.  Telling secrets to cause others pain, and acting as emotionally destructive as possible (this may or may not include any physical 
-violence).  It will eventually end when someone finds out that the Marautule is inside them, someone kills the victim, or most commonly the victim kills 
-himself.</German>
-		<Italian>A marautule is a spider that slips into the victim's mouth while he sleeps and attaches to the victim's larynx.  When the victim awakes they will 
-begin to feel increasingly irritated.  Over the next few days this will eventually drive them to destroy all of their relationships, insulting and abusing 
-children and loved ones.  Telling secrets to cause others pain, and acting as emotionally destructive as possible (this may or may not include any physical 
-violence).  It will eventually end when someone finds out that the Marautule is inside them, someone kills the victim, or most commonly the victim kills 
-himself.</Italian>
-		<Spanish>A marautule is a spider that slips into the victim's mouth while he sleeps and attaches to the victim's larynx.  When the victim awakes they will 
-begin to feel increasingly irritated.  Over the next few days this will eventually drive them to destroy all of their relationships, insulting and abusing 
-children and loved ones.  Telling secrets to cause others pain, and acting as emotionally destructive as possible (this may or may not include any physical 
-violence).  It will eventually end when someone finds out that the Marautule is inside them, someone kills the victim, or most commonly the victim kills 
-himself.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_MARAUTULE_STRATEGY</Tag>
-		<English>Some things can never be unsaid. This is the power of the Marautule, spreading misery, broken trust, and worst of all: hideous truth. [NEWLINE][NEWLINE]These rantings cause the city haunted by a person possessed by the Marautule to become vulnerable to other civilizations influence...</English>
-		<French>Some things can never be unsaid. This is the power of the Marautule, spreading misery, broken trust, and worst of all: hideous truth. [NEWLINE][NEWLINE]These rantings cause the city haunted by a person possessed by the Marautule to become vulnerable to other civilizations influence...</French>
-		<German>Some things can never be unsaid. This is the power of the Marautule, spreading misery, broken trust, and worst of all: hideous truth. [NEWLINE][NEWLINE]These rantings cause the city haunted by a person possessed by the Marautule to become vulnerable to other civilizations influence...</German>
-		<Italian>Some things can never be unsaid. This is the power of the Marautule, spreading misery, broken trust, and worst of all: hideous truth. [NEWLINE][NEWLINE]These rantings cause the city haunted by a person possessed by the Marautule to become vulnerable to other civilizations influence...</Italian>
-		<Spanish>Some things can never be unsaid. This is the power of the Marautule, spreading misery, broken trust, and worst of all: hideous truth. [NEWLINE][NEWLINE]These rantings cause the city haunted by a person possessed by the Marautule to become vulnerable to other civilizations influence...</Spanish>
+		<Tag>TXT_KEY_UNIT_HAEGTESSE_PEDIA</Tag>
+		<English>Often simply referred to as Hags, these crones have the power to paralyze a sleeping man by sitting on his chest, and to give him nightmares so 
+traumatic that he will die from them.  They are also said to have strong prophetic powers, though they tend to mislead those asking for guidance.  Despite 
+their feeble appearance their claws are as strong as iron and they are stronger than most men. </English>
+		<French>Often simply referred to as Hags, these crones have the power to paralyze a sleeping man by sitting on his chest, and to give him nightmares so 
+traumatic that he will die from them.  They are also said to have strong prophetic powers, though they tend to mislead those asking for guidance.  Despite 
+their feeble appearance their claws are as strong as iron and they are stronger than most men. </French>
+		<German>Often simply referred to as Hags, these crones have the power to paralyze a sleeping man by sitting on his chest, and to give him nightmares so 
+traumatic that he will die from them.  They are also said to have strong prophetic powers, though they tend to mislead those asking for guidance.  Despite 
+their feeble appearance their claws are as strong as iron and they are stronger than most men. </German>
+		<Italian>Often simply referred to as Hags, these crones have the power to paralyze a sleeping man by sitting on his chest, and to give him nightmares so 
+traumatic that he will die from them.  They are also said to have strong prophetic powers, though they tend to mislead those asking for guidance.  Despite 
+their feeble appearance their claws are as strong as iron and they are stronger than most men. </Italian>
+		<Spanish>Often simply referred to as Hags, these crones have the power to paralyze a sleeping man by sitting on his chest, and to give him nightmares so 
+traumatic that he will die from them.  They are also said to have strong prophetic powers, though they tend to mislead those asking for guidance.  Despite 
+their feeble appearance their claws are as strong as iron and they are stronger than most men. </Spanish>
 	</TEXT>
 </Civ4GameText>

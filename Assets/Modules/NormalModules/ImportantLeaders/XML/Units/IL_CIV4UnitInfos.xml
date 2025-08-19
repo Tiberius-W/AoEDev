@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Unit Infos -->
+<Civ4UnitInfos xmlns="x-schema:IL_CIV4UnitSchema.xml">
+	<UnitInfos>
+		<UnitInfo>        <!-- Succubus -->
+			<Class>UNITCLASS_SUCCUBUS</Class>
+			<Type>UNIT_SUCCUBUS</Type>
+			<iCost>130</iCost>
+			<PrereqBuildingClass>BUILDINGCLASS_DEN_OF_PLEASURE</PrereqBuildingClass>
+		</UnitInfo>
+		<UnitInfo>        <!-- Locusts -->
+			<Class>UNITCLASS_SWARM_OF_LOCUSTS</Class>
+			<Type>UNIT_SWARM_OF_LOCUSTS</Type>
+			<PrereqBuildingClass>BUILDINGCLASS_DEMONS_ALTAR</PrereqBuildingClass>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Flesh Golem -->
+			<Class>UNITCLASS_FLESH_GOLEM</Class>
+			<Type>UNIT_FLESH_GOLEM</Type>
+			<iCost>200</iCost>
+			<PrereqBuildingClass>BUILDINGCLASS_DEMONS_ALTAR</PrereqBuildingClass>
+		</UnitInfo>
+</UnitInfos>
+</Civ4UnitInfos>

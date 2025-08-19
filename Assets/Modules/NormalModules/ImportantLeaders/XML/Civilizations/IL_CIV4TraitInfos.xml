@@ -320,6 +320,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_FLESH_GOLEM</UnitClassType>
+					<UnitType>UNIT_FLESH_GOLEM</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Lethe -->
 			<Type>TRAIT_PACT_LETHE</Type>
@@ -380,6 +386,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_HAG</UnitClassType>
+					<UnitType>UNIT_HAEGTESSE</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Statius -->
 			<Type>TRAIT_PACT_STATIUS</Type>

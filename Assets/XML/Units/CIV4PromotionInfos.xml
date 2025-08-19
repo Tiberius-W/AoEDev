@@ -23735,14 +23735,20 @@
 			<Description>TXT_KEY_PROMOTION_FLYING</Description>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_ANGEL</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_COMBAT5</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_FALLEN_ANGEL</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_ANGEL</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
@@ -41803,6 +41809,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CityBonuses>
 				<CityBonus>
+				    <bApplySelf>1</bApplySelf>
+				    <bApplyTeam>1</bApplyTeam>
 					<bApplyEnemy>1</bApplyEnemy>
 					<bApplyRival>1</bApplyRival>
 					<fHappy>-1</fHappy>
@@ -41812,9 +41820,6 @@
 					<iBonusRange>1</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
-			<PrereqUnits>
-				<PrereqUnit>UNIT_MARAUTULE</PrereqUnit>
-			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
