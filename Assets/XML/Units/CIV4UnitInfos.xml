@@ -55561,7 +55561,6 @@
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
 			<iAsset>6</iAsset>
-			<PrereqBuildingClass>BUILDINGCLASS_DEMONS_ALTAR</PrereqBuildingClass>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>

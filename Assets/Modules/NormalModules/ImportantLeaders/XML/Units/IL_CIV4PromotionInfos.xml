@@ -16,7 +16,9 @@
 				<Promotion>PROMOTION_COURAGE</Promotion>
 			</PromotionExcludes>
 			<bPrereqAlive>1</bPrereqAlive>
-			<iSameTileHealChange>-5</iSameTileHealChange>
+			<iEnemyHealChange>-5</iEnemyHealChange>
+			<iNeutralHealChange>-5</iNeutralHealChange>
+			<iFriendlyHealChange>-5</iFriendlyHealChange>
 			<iWithdrawalChange>-15</iWithdrawalChange>
 			<UnitCombats>
 				<UnitCombat>
@@ -247,6 +249,16 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Strong.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Demon -->
+			<Type>PROMOTION_DEMON</Type>
+			<Description>TXT_KEY_PROMOTION_DEMON</Description>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_PASSIONLESS</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_PASSIONLESS</Promotion>
+			</PromotionOverwrites>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
