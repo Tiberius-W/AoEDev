@@ -220,5 +220,76 @@
 			</YieldModifiers>
 			<FreePromotion>PROMOTION_ALTAR_GRAFT1</FreePromotion>
 		</BuildingInfo>
-		</BuildingInfos>
+		<BuildingInfo>		<!-- Pact Building  Lethe    -->
+			<BuildingClass>BUILDINGCLASS_TEMPLE_REST</BuildingClass>
+			<Type>BUILDING_TEMPLE_REST</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_REST</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_REST_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEMPLE_REST_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PAGAN_TEMPLE</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_LETHE</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SHEUT_STONE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_DEATH</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_RAZORWEED</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<TrainXPCaps>
+				<TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<fTrainXPCap>6</fTrainXPCap>
+				</TrainXPCap>
+			</TrainXPCaps>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_SHEUT_STONE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_RAZORWEED</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_DEATH</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
+			<FreePromotion>PROMOTION_ANGEL_SLAYING</FreePromotion>
+			
+		</BuildingInfo> 
+	</BuildingInfos>
 </Civ4BuildingInfos>

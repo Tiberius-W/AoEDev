@@ -441,6 +441,14 @@
 		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_LETHE_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPTY_HEART</Tag>
 		<English>Temple of the Empty Heart</English>
 		<French>Temple of the Empty Heart</French>
@@ -471,6 +479,14 @@
 		<German>Altar of the Fleshcaller</German>
 		<Italian>Altar of the Fleshcaller</Italian>
 		<Spanish>Altar of the Fleshcaller</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_REST</Tag>
+		<English>Temple of the Endless Rest</English>
+		<French>Temple of the Endless Rest</French>
+		<German>Temple of the Endless Rest</German>
+		<Italian>Temple of the Endless Rest</Italian>
+		<Spanish>Temple of the Endless Rest</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PASSIONLESS</Tag>

@@ -334,10 +334,11 @@
 			<Description>TXT_KEY_TRAIT_PACT_LETHE</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_LETHE_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_LETHE_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_LETHE_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_FEAR</PromotionType>
+					<PromotionType>PROMOTION_RAISE_THE_DEAD2</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 				<FreePromotion>
@@ -355,6 +356,18 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitType>UNIT_DEATH_KNIGHT</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
+			<UnitClassPlayerInstancesChanges>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<iPlayerInstancesChange>4</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+			</UnitClassPlayerInstancesChanges>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Judecca -->
 			<Type>TRAIT_PACT_JUDECCA</Type>

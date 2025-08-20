@@ -41805,31 +41805,5 @@
 			<Description>TXT_KEY_PROMOTION_LEADING_CAMEL</Description>
 			<Button>Art/Interface/Buttons/WorldBuilder/Camel.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Marautule Influence -->
-			<Type>PROMOTION_MARAUTULE_POSSESSION</Type>
-			<Description>TXT_KEY_PROMOTION_MARAUTULE_POSSESSION</Description>
-			<Civilopedia>TXT_KEY_PROMOTION_MARAUTULE_PEDIA</Civilopedia>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<bMustMaintain>1</bMustMaintain>
-			<bPrereqAlive>1</bPrereqAlive>
-			<iPromotionRandomApplyChance>3</iPromotionRandomApplyChance>
-			<iMinLevel>-1</iMinLevel>
-			<bPrereqAlive>1</bPrereqAlive>
-			<PromotionRandomApply>PROMOTION_ENRAGED</PromotionRandomApply>
-			<CityBonuses>
-				<CityBonus>
-				    <bApplySelf>1</bApplySelf>
-				    <bApplyTeam>1</bApplyTeam>
-					<bApplyEnemy>1</bApplyEnemy>
-					<bApplyRival>1</bApplyRival>
-					<fHappy>-1</fHappy>
-					<fDiplo>-0.10</fDiplo>
-					<fCulture>-1</fCulture>
-					<fInfectCulture>2</fInfectCulture>
-					<iBonusRange>1</iBonusRange>
-				</CityBonus>
-			</CityBonuses>
-			<Button>Art/Interface/Buttons/Promotions/SpiderRed.dds</Button>
-		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
