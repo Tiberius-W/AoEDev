@@ -13913,9 +13913,11 @@
 			<Description>TXT_KEY_PROMOTION_UNRAVELING</Description>
 			<Help>TXT_KEY_PROMOTION_UNRAVELING_HELP</Help>
 			<iCombatPercentGlobalCounter>50</iCombatPercentGlobalCounter>
+			<CaptureUnitClass>UNITCLASS_MANES</CaptureUnitClass>
+			<bPrereqAliveCapture>1</bPrereqAliveCapture>
+			<iSlaveGenerationChance>1</iSlaveGenerationChance>
 			<Button>Art/Interface/Buttons/Promotions/Plaguecarrier.dds</Button>
 			<iMinLevel>-1</iMinLevel>
-			<PythonPostCombatWon>postCombatAC(pCaster,pOpponent)</PythonPostCombatWon>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Plagued -->
 			<Type>PROMOTION_PLAGUED</Type>

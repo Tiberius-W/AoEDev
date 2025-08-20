@@ -16,13 +16,12 @@
 			<ArtDefineTag>ART_DEF_BUILDING_TAVERN</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_SALLOS</PrereqTrait>
 			<iAIWeight>20</iAIWeight>
-			<iCost>100</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
 			<iAsset>2</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>10</fVisibilityPriority>
-			<iHappiness>3</iHappiness>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
@@ -46,36 +45,180 @@
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<fTrainXPCap>5</fTrainXPCap>
+					<fTrainXPCap>6</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
 			<BonusCommerceModifiers>
 				<BonusCommerceModifier>
 					<BonusType>BONUS_GULAGARM</BonusType>
 					<CommerceModifiers>
-						<iCommerce>5</iCommerce>
-						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
 						<iCommerce>0</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 				<BonusCommerceModifier>
 					<BonusType>BONUS_TOAD</BonusType>
 					<CommerceModifiers>
-						<iCommerce>5</iCommerce>
-						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
 						<iCommerce>0</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 				<BonusCommerceModifier>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<CommerceModifiers>
-						<iCommerce>5</iCommerce>
-						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>6</iCommerce>
 						<iCommerce>0</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
 			
+		</BuildingInfo>
+		<BuildingInfo>		<!-- Pact Building  Judecca  Coven of Rust  -->
+			<BuildingClass>BUILDINGCLASS_COVEN_OF_RUST</BuildingClass>
+			<Type>BUILDING_COVEN_OF_RUST</Type>
+			<Description>TXT_KEY_BUILDING_COVEN_OF_RUST</Description>
+			<Civilopedia>TXT_KEY_BUILDING_COVEN_OF_RUST_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_COVEN_OF_RUST_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TAVERN</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_JUDECCA</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_EARTH</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_DIMENSIONAL</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<TrainXPCaps>
+				<TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<fTrainXPCap>15</fTrainXPCap>
+				</TrainXPCap>
+			</TrainXPCaps>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_DIMENSIONAL</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>12</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>12</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_EARTH</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>12</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
+			
+		</BuildingInfo> 
+		<BuildingInfo>		<!-- Pact Building  Statius   Temple of the Empty Heart -->
+			<BuildingClass>BUILDINGCLASS_EMPTY_HEART</BuildingClass>
+			<Type>BUILDING_EMPTY_HEART</Type>
+			<Description>TXT_KEY_BUILDING_EMPTY_HEART</Description>
+			<Civilopedia>TXT_KEY_BUILDING_EMPTY_HEART_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_EMPTY_HEART_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_GOVERNORS_MANOR</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_STATIUS</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<bNoUnhappiness>1</bNoUnhappiness>
+			<iHealth>-5</iHealth>
+			<FreePromotion>PROMOTION_PASSIONLESS</FreePromotion>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>-25</iYield>
+				<iYield>0</iYield>
+			</YieldModifiers>
+		</BuildingInfo>
+		<BuildingInfo>		<!-- Pact Building  Meresin   Temple of the Sallow Orphan -->
+			<BuildingClass>BUILDINGCLASS_TEMPLE_ORPHAN</BuildingClass>
+			<Type>BUILDING_TEMPLE_ORPHAN</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_ORPHAN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_ORPHAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEMPLE_ORPHAN_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_ASHEN</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_MERESIN</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<bNoUnhealthyPopulation>1</bNoUnhealthyPopulation>
+			<FreePromotion>PROMOTION_DISEASED</FreePromotion>
+			<iTradeRouteModifier>-50</iTradeRouteModifier>
+		</BuildingInfo>
+		<BuildingInfo>		<!-- Pact Building  Ouzza   Altar of the Fleshcaller -->
+			<BuildingClass>BUILDINGCLASS_ALTAR_FLESHCALLER</BuildingClass>
+			<Type>BUILDING_ALTAR_FLESHCALLER</Type>
+			<Description>TXT_KEY_BUILDING_ALTAR_FLESHCALLER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ALTAR_FLESHCALLER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ALTAR_FLESHCALLER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DEMONS_ALTAR</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_OUZZA</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<DomainFreeExperiences>
+				<DomainFreeExperience>
+					<DomainType>DOMAIN_LAND</DomainType>
+					<iExperience>6</iExperience>
+				</DomainFreeExperience>
+			</DomainFreeExperiences>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>-6</iYield>
+				<iYield>-6</iYield>
+			</YieldModifiers>
+			<FreePromotion>PROMOTION_ALTAR_GRAFT1</FreePromotion>
 		</BuildingInfo>
 		</BuildingInfos>
 </Civ4BuildingInfos>

@@ -7886,6 +7886,14 @@
 		<Spanish>Pact with the Lord of Balors</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_HYBOREM_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PACT_JUDECCA</Tag>
 		<English>Pact with the RustBringer</English>
 		<French>Pacte avec le PorteRouille</French>
@@ -7924,14 +7932,6 @@
 		<German>Pact with the Duke of Lust</German>
 		<Italian>Pact with the Duke of Lust</Italian>
 		<Spanish>Pact with the Duke of Lust</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TRAIT_PACT_SALLOS_HELP</Tag>
-		<English>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</English>
-		<French>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</French>
-		<German>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</German>
-		<Italian>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PACT_STATIUS</Tag>

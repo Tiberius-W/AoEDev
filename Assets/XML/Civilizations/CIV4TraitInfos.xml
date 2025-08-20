@@ -4439,6 +4439,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_HYBOREM</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_HYBOREM_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_HYBOREM_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_HYBOREM_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>

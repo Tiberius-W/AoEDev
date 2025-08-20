@@ -266,6 +266,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_MERESIN</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_MERESIN_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_MERESIN_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_MERESIN_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -299,6 +300,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_OUZZA</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_OUZZA_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_OUZZA_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_OUZZA_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -357,18 +359,13 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-			<ExtraUnitClasses>
-				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_MARAUTULE</UnitClassType>
-					<UnitType>UNIT_MARAUTULE</UnitType>
-				</ExtraUnitClass>
-			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Judecca -->
 			<Type>TRAIT_PACT_JUDECCA</Type>
 			<Description>TXT_KEY_TRAIT_PACT_JUDECCA</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_JUDECCA_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_JUDECCA_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_JUDECCA_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -402,6 +399,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_STATIUS</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_STATIUS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_STATIUS_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_STATIUS_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>

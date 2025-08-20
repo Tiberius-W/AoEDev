@@ -7652,6 +7652,62 @@
 				</TrainXPRate>
 			</TrainXPRates>
 		</BuildingInfo>
+		<BuildingInfo>		<!-- Pact Building  Hyborem  Temple of Unraveling  -->
+			<BuildingClass>BUILDINGCLASS_TEMPLE_UNRAVELING</BuildingClass>
+			<Type>BUILDING_TEMPLE_UNRAVELING</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_UNRAVELING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_UNRAVELING_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEMPLE_UNRAVELING_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_ASHEN</ArtDefineTag>
+			<PrereqTrait>TRAIT_PACT_HYBOREM</PrereqTrait>
+			<iAIWeight>20</iAIWeight>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>15</iYield>
+				<iYield>0</iYield>
+			</YieldModifiers>
+			<iWarWearinessModifier>-50</iWarWearinessModifier>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_NIGHTMARE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_SHEUT_STONE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>6</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
+			
+		</BuildingInfo> 
 		<BuildingInfo>		<!-- The Dragons Hoard                                          World Wonder -->
 			<BuildingClass>BUILDINGCLASS_THE_DRAGONS_HOARD</BuildingClass>
 			<Type>BUILDING_THE_DRAGONS_HOARD</Type>

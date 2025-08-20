@@ -18,5 +18,53 @@
 			<DefaultBuilding>BUILDING_DEN_OF_PLEASURE</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
+		<BuildingClassInfo>   <!-- Pact Buildings  Statius Temple of the Empty Heart  -->
+			<Type>BUILDINGCLASS_EMPTY_HEART</Type>
+			<Description>TXT_KEY_BUILDING_EMPTY_HEART</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_EMPTY_HEART</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>   <!-- Pact Buildings  Statius  Temple of the Sallow Orphan -->
+			<Type>BUILDINGCLASS_TEMPLE_ORPHAN</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_ORPHAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_TEMPLE_ORPHAN</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>   <!-- Pact Buildings  Judecca  Coven of Rust -->
+			<Type>BUILDINGCLASS_COVEN_OF_RUST</Type>
+			<Description>TXT_KEY_BUILDING_COVEN_OF_RUST</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_COVEN_OF_RUST</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>   <!-- Pact Buildings  Ouzza  Altar of the Fleshcaller -->
+			<Type>BUILDINGCLASS_ALTAR_FLESHCALLER</Type>
+			<Description>TXT_KEY_BUILDING_ALTAR_FLESHCALLER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_ALTAR_FLESHCALLER</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>
