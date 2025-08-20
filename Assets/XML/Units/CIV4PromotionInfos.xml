@@ -13911,7 +13911,6 @@
 		<PromotionInfo>		<!-- Unraveling -->
 			<Type>PROMOTION_UNRAVELING</Type>
 			<Description>TXT_KEY_PROMOTION_UNRAVELING</Description>
-			<Help>TXT_KEY_PROMOTION_UNRAVELING_HELP</Help>
 			<iCombatPercentGlobalCounter>50</iCombatPercentGlobalCounter>
 			<CaptureUnitClass>UNITCLASS_MANES</CaptureUnitClass>
 			<bPrereqAliveCapture>1</bPrereqAliveCapture>

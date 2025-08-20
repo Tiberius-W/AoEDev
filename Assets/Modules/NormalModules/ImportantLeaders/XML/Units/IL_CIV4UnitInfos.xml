@@ -15,7 +15,7 @@
 		<UnitInfo>        <!-- Locusts -->
 			<Class>UNITCLASS_SWARM_OF_LOCUSTS</Class>
 			<Type>UNIT_SWARM_OF_LOCUSTS</Type>
-			<PrereqBuildingClass>BUILDINGCLASS_TEMPLE_ORPHAN</PrereqBuildingClass>
+			<PrereqBuildingClass>BUILDINGCLASS_DEMONS_ALTAR</PrereqBuildingClass>
 		</UnitInfo>	
 		<UnitInfo>        <!-- Flesh Golem -->
 			<Class>UNITCLASS_FLESH_GOLEM</Class>
@@ -28,5 +28,10 @@
 			<Type>UNIT_HAEGTESSE</Type>
 			<PrereqBuildingClass>BUILDINGCLASS_COVEN_OF_RUST</PrereqBuildingClass>
 		</UnitInfo>	
+		<UnitInfo>        <!-- Death Knight -->
+			<Class>UNITCLASS_KNIGHT</Class>
+			<Type>UNIT_DEATH_KNIGHT</Type>
+			<PrereqBuilding>BUILDING_DEMONS_ALTAR</PrereqBuilding>
+		</UnitInfo>
 	</UnitInfos>
 </Civ4UnitInfos>

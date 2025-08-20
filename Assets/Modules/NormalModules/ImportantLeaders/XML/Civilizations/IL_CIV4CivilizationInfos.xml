@@ -336,6 +336,10 @@
 					<BuildingClassType>BUILDINGCLASS_EMPTY_HEART</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_TEMPLE_ORPHAN</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
 			</Buildings>
 			<Leaders>
 				<Leader>
