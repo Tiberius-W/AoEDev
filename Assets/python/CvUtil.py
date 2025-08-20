@@ -64,7 +64,7 @@ EventSolmniumAcceptGame = 5014
 EventSolmniumConcedeGame = 5015
 EventCheat = 5016
 # FfH Card Game: end
-
+EventReminder = 5060
 #FF: Added by Jean Elcard 12/14/2008
 EventSetTurnsAutoPlayPopup = 7050
 EventSetUnitPerTilePopup = 7051
