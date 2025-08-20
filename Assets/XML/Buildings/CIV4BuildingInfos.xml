@@ -687,6 +687,7 @@
 			</Flavors>
 			<iPrereqBroadAlignment>0</iPrereqBroadAlignment>
 			<iAlignmentModifier>-5</iAlignmentModifier>
+			<RemovePromotion>PROMOTION_ENRAGED</RemovePromotion>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Barracks -->
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
