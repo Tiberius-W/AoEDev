@@ -28604,10 +28604,10 @@
 			<iMoves>2</iMoves>
 			<iAirRange>1</iAirRange>
 			<iWorkRate>400</iWorkRate>
-			<iCombat>10</iCombat>
+			<iCombat>12</iCombat>
 			<iAirCombat>6</iAirCombat>
 			<iAirCombatLimit>40</iAirCombatLimit>
-			<iFirstStrikes>3</iFirstStrikes>
+			<iFirstStrikes>1</iFirstStrikes>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>28</iAsset>
 			<UnitMeshGroups>
@@ -28660,7 +28660,7 @@
 			<bFreeXP>1</bFreeXP>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
-			<iCombatDefense>10</iCombatDefense>
+			<iCombatDefense>7</iCombatDefense>
 			<bImmortal>1</bImmortal>
 			<iMinLevel>10</iMinLevel>
 			<iTier>4</iTier>
@@ -29324,8 +29324,9 @@
 			<iCombat>12</iCombat>
 			<iCombatDefense>7</iCombatDefense>
 			<iAirCombat>6</iAirCombat>
-			<iAirCombatLimit>30</iAirCombatLimit>
+			<iAirCombatLimit>40</iAirCombatLimit>
 			<iCultureGarrison>4</iCultureGarrison>
+			<iFirstStrikes>1</iFirstStrikes>
 			<iAsset>24</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -29343,6 +29344,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
