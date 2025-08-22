@@ -20965,7 +20965,7 @@
 			</Builds>
 			<iCost>100</iCost>
 			<iMoves>2</iMoves>
-			<iWorkRate>150</iWorkRate>
+			<iWorkRate>225</iWorkRate>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -28858,7 +28858,7 @@
 			<PrereqTech>TECH_IRON_WORKING</PrereqTech>
 			<iCost>120</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCityDefense>25</iCityDefense>
 			<iConscription>2</iConscription>
 			<iCultureGarrison>4</iCultureGarrison>
@@ -28938,6 +28938,7 @@
 			<iDefensiveStrikeDamage>10</iDefensiveStrikeDamage>
 			<iTier>2</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_COURTHOUSE</PrereqBuildingClass>
+			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Sharpshooter -->
 			<Class>UNITCLASS_LONGBOWMAN</Class>
@@ -28983,7 +28984,7 @@
 				<iRangedWaveSize>2</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_MARKSMAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_MILITIA_CROSSBOWMAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
@@ -28997,6 +28998,7 @@
 			<iDefensiveStrikeDamage>15</iDefensiveStrikeDamage>
 			<iTier>3</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_COURTHOUSE</PrereqBuildingClass>
+			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Mounted Militia -->
 			<Class>UNITCLASS_HORSEMAN</Class>

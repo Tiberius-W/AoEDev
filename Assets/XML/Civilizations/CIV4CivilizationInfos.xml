@@ -6972,6 +6972,10 @@
 					<UnitType>UNIT_WORKER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
+					<UnitType>UNIT_WORKBOAT</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
 					<UnitType>UNIT_ORC_FORT_COMMANDER</UnitType>
 				</Unit>
@@ -7498,7 +7502,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>UNIT_WORKER</UnitType>
+					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
@@ -8266,6 +8270,14 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PALADIN</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
