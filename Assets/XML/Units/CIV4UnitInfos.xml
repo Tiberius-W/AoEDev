@@ -28778,6 +28778,7 @@
 			</UnitMeshGroups>
 			<iCombatDefense>3</iCombatDefense>
 			<iTier>1</iTier>
+			<iWeaponTierMax>1</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Militia -->
 			<Class>UNITCLASS_AXEMAN</Class>
