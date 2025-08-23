@@ -8838,128 +8838,98 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (iNewValue >= 0 && getCultureControl(eIndex) != iNewValue)
+	if (iNewValue < 0 || getCultureControl(eIndex) == iNewValue)
+		return;
+
+	if(NULL == m_aiCultureControl)
 	{
-		if(NULL == m_aiCultureControl)
+		m_aiCultureControl = new int[MAX_PLAYERS];
+		for (int iI = 0; iI < MAX_PLAYERS; ++iI)
 		{
-			m_aiCultureControl = new int[MAX_PLAYERS];
-			for (int iI = 0; iI < MAX_PLAYERS; ++iI)
-			{
-				m_aiCultureControl[iI] = 0;
-			}
-		}
-
-		m_aiCultureControl[eIndex] = iNewValue;
-		FAssert(getCultureControl(eIndex) >= 0);
-
-		if (bUpdate)
-		{
-			updateCulture(true, bUpdatePlotGroups);
-		}
-
-		pCity = getPlotCity();
-
-		if (pCity != NULL)
-		{
-			pCity->AI_setAssignWorkDirty(true);
+			m_aiCultureControl[iI] = 0;
 		}
 	}
+
+	m_aiCultureControl[eIndex] = iNewValue;
+	FAssert(getCultureControl(eIndex) >= 0);
+
+	if (bUpdate)
+		updateCulture(true, bUpdatePlotGroups);
+
+	pCity = getPlotCity();
+
+	if (pCity != NULL)
+		pCity->AI_setAssignWorkDirty(true);
 }
 
 
 void CvPlot::changeCultureControl(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
-	if (iChange != 0)
-	{
-		if ((getCultureControl(eIndex) + iChange) >= 0)
-		{
-			setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
-		}
-		else
-		{
-			setCultureControl(eIndex, 0, bUpdate, true);
-		}
-	}
+	if (iChange == 0)
+		return;
+
+	if ((getCultureControl(eIndex) + iChange) >= 0)
+		setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
+	else
+		setCultureControl(eIndex, 0, bUpdate, true);
 }
 
 void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
-	if (ePlayer != NO_PLAYER && eImprovement != NO_IMPROVEMENT)
+	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+		return;
+
+	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
+	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
+	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
+	int iDX, iDY;
+	CvPlot* pLoopPlot;
+	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
-		if (GC.getImprovementInfo(eImprovement).getCultureControlStrength() > 0)
+		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
-			int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-			int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
-			int iDX, iDY;
-			CvPlot* pLoopPlot;
-			for (iDX = -iRange; iDX <= iRange; iDX++)
-			{
-				for (iDY = -iRange; iDY <= iRange; iDY++)
-				{
-					// This will make it skip the 4 corner Plots
-					if ((iRange > 1) && (iDX == iRange || iDX == -iRange) && (iDY == iRange || iDY == -iRange))
-					{
-						continue;
-					}
-					pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-					if (pLoopPlot != NULL)
-					{
-						if (iStrength > 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
-						}
-						if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
-						}
-					}
-				}
-			}
+			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
+				continue;
+
+			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (iStrength > 0)
+				pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
+
+			if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
+				pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
 		}
 	}
 }
 
 void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
-	if (ePlayer != NO_PLAYER && eImprovement != NO_IMPROVEMENT)
+	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+		return;
+
+	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
+	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
+	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
+	int iDX, iDY;
+	CvPlot* pLoopPlot;
+	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
-		if (GC.getImprovementInfo(eImprovement).getCultureControlStrength() > 0)
+		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
-			int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-			int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
-			int iDX, iDY;
-			CvPlot* pLoopPlot;
-			for (iDX = -iRange; iDX <= iRange; iDX++)
-			{
-				for (iDY = -iRange; iDY <= iRange; iDY++)
-				{
-					// This will make it skip the 4 corner Plots
-					if ((iRange > 1) && (iDX == iRange || iDX == -iRange) && (iDY == iRange || iDY == -iRange))
-					{
-						continue;
-					}
-					pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-					if (pLoopPlot != NULL)
-					{
-						if (iStrength > 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
-						}
-					//	if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-					//	{
-					//		pLoopPlot->changeCultureControl(ePlayer, -iCenterTileBonus*10, bUpdateInterface);
-					//	}
-					}
-				}
-			}
+			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
+				continue;
+
+			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (iStrength > 0)
+				pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
 		}
 	}
 }
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
 
 
 

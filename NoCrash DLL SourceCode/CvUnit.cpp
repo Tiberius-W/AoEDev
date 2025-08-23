@@ -32666,14 +32666,10 @@ bool CvUnit::claimFort(bool bBuilt)
 {
 	// Relying on fort building rules to avoid e.g. building a fort on a tile that already has one to get 2 commanders/fort
 	if (!canClaimFort(plot()) && !bBuilt)
-	{
 		return false;
-	}
 
 	if (!bBuilt && !isBarbarian())
-	{
 		GET_PLAYER(getOwnerINLINE()).changeGold(-GET_PLAYER(getOwnerINLINE()).getClaimFortCost());
-	}
 
 	CvUnit* pUnit;
 	int iUnitClass = GC.getDefineINT("FORT_COMMANDER_UNITCLASS");
@@ -32681,11 +32677,10 @@ bool CvUnit::claimFort(bool bBuilt)
 
 	//XXX this really shouldn't be done, fix it in the XML instead. I included it anyway because it was in the spell.
 	if (eUnit == NO_UNIT)
-	{
 		eUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iUnitClass).getDefaultUnitIndex();
-	}
 	pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
-	if (!bBuilt) pUnit->finishMoves();
+	if (!bBuilt)
+		pUnit->finishMoves();
 
 	//if (GC.getCivilizationInfo(getCivilizationType()).getDefaultRace() != NO_PROMOTION)
 	//{
@@ -32695,9 +32690,11 @@ bool CvUnit::claimFort(bool bBuilt)
 	//	}
 	//}
 
-	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), 1);
+	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), false);
 	plot()->setImprovementOwner(getOwnerINLINE());
-	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), 1);
+	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), false);
+	// Need a distinct call to update culture; above ones won't update if the improvement doesn't have culture control
+	plot()->updateCulture(true, true);
 
 	return true;
 }
