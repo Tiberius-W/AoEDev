@@ -60,7 +60,7 @@
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
 			<BonusYieldModifiers>
-			<BonusYieldModifier>
+				<BonusYieldModifier>
 					<BonusType>BONUS_JETEYE</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
@@ -69,7 +69,7 @@
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
-				<SpecialistCounts>
+			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
@@ -527,8 +527,8 @@
 			</PrereqBonuses>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_WATER_THIEVES</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_WATER_THIEVES</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<iAIWeight>90</iAIWeight>
@@ -1475,7 +1475,7 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<iCrime>2</iCrime>	
+			<iCrime>2</iCrime>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -1547,13 +1547,12 @@
 					<fTrainXPRate>0.50</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-				<TrainXPCaps>
+			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
 					<fTrainXPCap>10</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
-		
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Celestial Compass                                          World Wonder -->
 			<BuildingClass>BUILDINGCLASS_CELESTIAL_COMPASS</BuildingClass>
@@ -1812,8 +1811,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_PLANAR_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PLANAR_GATE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PLANAR_GATE_HELP</Help>
-				<PyHelp>helpPlanarGate</PyHelp>
-		<Advisor>ADVISOR_MILITARY</Advisor>
+			<PyHelp>helpPlanarGate</PyHelp>
+			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PLANAR_GATE</ArtDefineTag>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -2472,7 +2471,7 @@
 			<iAsset>2</iAsset>
 			<iPower>1</iPower>
 			<fVisibilityPriority>1</fVisibilityPriority>
-			<iCrime>-20</iCrime>			
+			<iCrime>-20</iCrime>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2509,7 +2508,7 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_VEIL</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -2645,7 +2644,6 @@
 			<iWarWearinessModifier>-25</iWarWearinessModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
-			
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2659,11 +2657,10 @@
 			<iCrime>-10</iCrime>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ARSON</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ARSON</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
-			
 			<iPrereqBroadAlignment>0</iPrereqBroadAlignment>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Dwarven Vault                                              Khazad UB -->
@@ -2832,7 +2829,7 @@
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iHappiness>3</iHappiness>
 			<iAsset>2</iAsset>
-			<iCrime>-10</iCrime>			
+			<iCrime>-10</iCrime>
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<YieldModifiers>
 				<iYield>0</iYield>
@@ -3006,7 +3003,6 @@
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>300</iCost>
-			<iCrime>-10</iCrime>
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iConquestProb>0</iConquestProb>
 			<iCitiesPrereq>8</iCitiesPrereq>
@@ -3623,7 +3619,8 @@
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAsset>12</iAsset>
 			<fVisibilityPriority>100</fVisibilityPriority>
-			<bOverflowProduction>1</bOverflowProduction> <!-- Enables the city it's in to build multiple things per turn if production suffices -->
+			<bOverflowProduction>1</bOverflowProduction> <!-- Enables the city it's in to build
+			multiple things per turn if production suffices -->
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -3986,7 +3983,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-		<Flavors>
+			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
@@ -4245,8 +4242,8 @@
 			<iAsset>2</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>15</fVisibilityPriority>
-			<BonusHealthChanges/>
-			<BonusHappinessChanges/>
+			<BonusHealthChanges />
+			<BonusHappinessChanges />
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -4558,7 +4555,7 @@
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Mana - Mind                                               Amurites Naxus UB -->
+		<BuildingInfo>		<!-- Mana - Mind												Amurites Naxus UB -->
 			<BuildingClass>BUILDINGCLASS_MANA_NODE</BuildingClass>
 			<Type>BUILDING_MANA_MIND</Type>
 			<Description>TXT_KEY_BONUS_MANA_MIND</Description>
@@ -4571,7 +4568,7 @@
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Mana - Water                                               Amurites Lorelei UB -->
+		<BuildingInfo>		<!-- Mana - Water												Amurites Lorelei UB -->
 			<BuildingClass>BUILDINGCLASS_MANA_NODE</BuildingClass>
 			<Type>BUILDING_MANA_WATER</Type>
 			<Description>TXT_KEY_BONUS_MANA_WATER</Description>
@@ -4981,7 +4978,7 @@
 			<Type>BUILDING_PACT_OF_THE_NILHORN</Type>
 			<Description>TXT_KEY_BUILDING_PACT_OF_THE_NILHORN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PACT_OF_THE_NILHORN_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Help>TXT_KEY_BUILDING_PACT_OF_THE_NILHORN_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PACT_OF_THE_NILHORN</ArtDefineTag>
@@ -5711,7 +5708,7 @@
 			<iCitiesPrereq>4</iCitiesPrereq>
 			<iHappiness>1</iHappiness>
 			<fVisibilityPriority>10000</fVisibilityPriority>
-			<GlobalSeaPlotYieldChanges/>
+			<GlobalSeaPlotYieldChanges />
 			<YieldChanges>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
@@ -6166,12 +6163,12 @@
 			</Flavors>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
-			<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_INSUBORDINATION</BuildingClassType>
-				<bExclude>1</bExclude>
+				<BuildingExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_INSUBORDINATION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<bNoCivicAnger>1</bNoCivicAnger>
@@ -6949,15 +6946,15 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
-		</BonusHealthChanges>
-		<BonusHappinessChanges>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_WINE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<iAsset>3</iAsset>
+			<iAsset>3</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<Flavors>
 				<Flavor>
@@ -6996,12 +6993,12 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<BonusHealthChanges>
+			<BonusHealthChanges>
 				<BonusHealthChange>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
-		</BonusHealthChanges>
+				</BonusHealthChange>
+			</BonusHealthChanges>
 			<BonusYieldModifiers>
 				<BonusYieldModifier>
 					<BonusType>BONUS_WINE</BonusType>
@@ -7037,7 +7034,7 @@
 				</Flavor>
 			</Flavors>
 			<iCrime>2</iCrime>
-		<TrainXPRates>
+			<TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.50</fTrainXPRate>
@@ -7050,7 +7047,7 @@
 				</TrainXPCap>
 			</TrainXPCaps>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- lanun Grigori Tavern                                             Grigori UB -->
+		<BuildingInfo>		<!-- lanun Grigori Tavern										Grigori UB -->
 			<BuildingClass>BUILDINGCLASS_TAVERN</BuildingClass>
 			<Type>BUILDING_TAVERN_GRIGORI</Type>
 			<Description>TXT_KEY_BUILDING_TAVERN_GRIGORI</Description>
@@ -7075,12 +7072,12 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<BonusHealthChanges>
+			<BonusHealthChanges>
 				<BonusHealthChange>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
-		</BonusHealthChanges>
+				</BonusHealthChange>
+			</BonusHealthChanges>
 			<BonusYieldModifiers>
 				<BonusYieldModifier>
 					<BonusType>BONUS_WINE</BonusType>
@@ -7163,15 +7160,15 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_BLEEDING_GOD_WINE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
-		</BonusHealthChanges>
-		<BonusHappinessChanges>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_WINE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-		<iAsset>3</iAsset>
+			<iAsset>3</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<Flavors>
 				<Flavor>
@@ -7198,8 +7195,8 @@
 			<iCost>200</iCost>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -7240,8 +7237,8 @@
 			<iCrime>-5</iCrime>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<CommerceChanges>
@@ -7478,11 +7475,10 @@
 			<iMilitaryProductionModifier>10</iMilitaryProductionModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>10</fVisibilityPriority>
-
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_DESERTION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_DESERTION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<CommerceModifiers>
@@ -7531,7 +7527,7 @@
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_THE_OVERLORDS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_THE_OVERLORDS_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OVERLORDS</ArtDefineTag>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
@@ -7743,7 +7739,7 @@
 				</Flavor>
 			</Flavors>
 			<iModifyGlobalCounter>3</iModifyGlobalCounter>
-					<TrainXPRates>
+			<TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
 					<fTrainXPRate>0.50</fTrainXPRate>
@@ -8564,7 +8560,7 @@
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Vault Gate          (Amurites Kahd)                         Event Building -->
+		<BuildingInfo>		<!-- Vault Gate				(Amurites Kahd)						Event Building -->
 			<BuildingClass>BUILDINGCLASS_KAHDI_GATE</BuildingClass>
 			<Type>BUILDING_KAHDI_VAULT_GATE</Type>
 			<Description>TXT_KEY_BUILDING_KAHDI_VAULT_GATE</Description>
@@ -8597,7 +8593,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Kahd's Project      (Amurites Kahd)                         Internal Mechanism -->
+		<BuildingInfo>		<!-- Kahd's Project			(Amurites Kahd)						Internal Mechanism -->
 			<BuildingClass>BUILDINGCLASS_KAHD_PROJECT</BuildingClass>
 			<Type>BUILDING_KAHD_PROJECT</Type>
 			<Description>TXT_KEY_BUILDING_KAHD_PROJECT</Description>
@@ -8667,7 +8663,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Monument To Avarice (Amurites Kahd)                         Internal Mechanism -->
+		<BuildingInfo>		<!-- Monument To Avarice	(Amurites Kahd)						Internal Mechanism -->
 			<BuildingClass>BUILDINGCLASS_MONUMENT_TO_AVARICE</BuildingClass>
 			<Type>BUILDING_MONUMENT_TO_AVARICE</Type>
 			<Description>TXT_KEY_BUILDING_MONUMENT_TO_AVARICE</Description>
@@ -8923,7 +8919,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Temple to Agruonn                                              Cualli UB -->
+		<BuildingInfo>		<!-- Temple to Agruonn											Cualli UB -->
 			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_TEMPLE_OF_AGRUONN</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
@@ -8957,7 +8953,7 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-<TrainXPRates>
+			<TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
 					<fTrainXPRate>0.4</fTrainXPRate>
@@ -8968,7 +8964,7 @@
 				</TrainXPRate>
 			</TrainXPRates>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Temple of bloodthirsty flame                                              Cualli UB -->
+		<BuildingInfo>		<!-- Temple of bloodthirsty flame								Cualli UB -->
 			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_TEMPLE_OF_BLOODTHIRSTY_FLAME</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
@@ -8985,13 +8981,13 @@
 			<iCrime>-5</iCrime>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
-						<SpecialistCounts>
+			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-<FreePromotion>PROMOTION_SAUROS_AFFINITY_ENABLER</FreePromotion>
+			<FreePromotion>PROMOTION_SAUROS_AFFINITY_ENABLER</FreePromotion>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -9190,7 +9186,7 @@
 				</TrainXPRate>
 			</TrainXPRates>
 		</BuildingInfo>
-		<BuildingInfo><!-- Palace Archos -->
+		<BuildingInfo>		<!-- Palace Archos -->
 			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
 			<Type>BUILDING_PALACE_ARCHOS</Type>
 			<Description>TXT_KEY_BUILDING_PALACE_ARCHOS</Description>
@@ -12692,8 +12688,8 @@
 			<Description>TXT_KEY_BUILDING_WIZARDS_HALL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WIZARDS_HALL_PEDIA</Civilopedia>
 			<Help>TXT_KEY_BUILDING_WIZARDS_HALL_HELP</Help>
-					<PyHelp>helpWizardsHall</PyHelp>
-		<Advisor>ADVISOR_MILITARY</Advisor>
+			<PyHelp>helpWizardsHall</PyHelp>
+			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WIZARDS_HALL</ArtDefineTag>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
 			<ProductionTraits>
@@ -12841,7 +12837,7 @@
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>0</bNukeImmune>
 			<PrereqOrTerrain>
-			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+				<TerrainType>TERRAIN_TUNDRA</TerrainType>
 			</PrereqOrTerrain>
 			<iCost>250</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
@@ -13347,7 +13343,8 @@
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
-			</Flavors>			<iFreePromotionPick>0</iFreePromotionPick>
+			</Flavors>
+			<iFreePromotionPick>0</iFreePromotionPick>
 			<iGlobalResistEnemyModify>0</iGlobalResistEnemyModify>
 			<iGlobalResistModify>0</iGlobalResistModify>
 			<FreeBonus2>NONE</FreeBonus2>
@@ -13726,11 +13723,10 @@
 			<iCrime>15</iCrime>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
-			
 			<iAlignmentModifier>-10</iAlignmentModifier>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Griffon Weyr                                               Animal Building -->
@@ -13988,7 +13984,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Goat Pen   -->                                                 
+		<BuildingInfo>		<!-- Goat Pen   -->
 			<BuildingClass>BUILDINGCLASS_GOAT_PEN</BuildingClass>
 			<Type>BUILDING_GOAT_PEN</Type>
 			<Description>TXT_KEY_BUILDING_GOAT_PEN</Description>
@@ -14166,7 +14162,7 @@
 			<FreePromotion>PROMOTION_DTESH_DEFENSE</FreePromotion>
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 		</BuildingInfo>
-		<BuildingInfo> 		<!-- Tree of life                                               Spell Master Alteration --> 
+		<BuildingInfo> 		<!-- Tree of life                                               Spell Master Alteration -->
 			<BuildingClass>BUILDINGCLASS_TREE_OF_LIFE</BuildingClass>
 			<Type>BUILDING_TREE_OF_LIFE</Type>
 			<Description>TXT_KEY_MULTI_TREE_OF_LIFE</Description>
@@ -14231,7 +14227,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>4</iCommerce>
 			</ObsoleteSafeCommerceChanges>
-
 			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>10</iYield>
@@ -14261,7 +14256,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1</iCommerce>
 			</CommerceChangeOriginalOwners>
-
 			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -14483,7 +14477,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SLAVE_MARKET</ArtDefineTag>
 			<PrereqTech>TECH_TAXATION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_PAGAN_TEMPLE</FreeBuilding>
-			<FreePromotion/>
+			<FreePromotion />
 			<iCost>200</iCost>
 			<iConquestProb>0</iConquestProb>
 			<iDomesticGreatGeneralRateModifier>0</iDomesticGreatGeneralRateModifier>
@@ -14651,7 +14645,7 @@
 				</ProductionTrait>
 			</ProductionTraits>
 		</BuildingInfo>
-		<!-- <BuildingInfo>	-->	<!-- Slave Pens                                                 Mekara UB -->
+		<!-- <BuildingInfo>	-->	<!-- Slave Pens												Mekara UB -->
 		<!--	<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_PAGAN_TEMPLE_MEKARA</Type>
 			<Description>TXT_KEY_BUILDING_PAGAN_TEMPLE_MEKARA</Description>
@@ -14705,7 +14699,7 @@
 				</TrainXPRate>
 			</TrainXPRates>
 		</BuildingInfo> -->
-		<BuildingInfo>		<!-- Slave Pens  V2                                               Mekara V2 UB -->
+		<BuildingInfo>		<!-- Slave Pens  V2												Mekara V2 UB -->
 			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_PAGAN_TEMPLE_MEKARA</Type>
 			<Description>TXT_KEY_BUILDING_PAGAN_TEMPLE_MEKARA</Description>
@@ -14715,7 +14709,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PAGAN_TEMPLE</ArtDefineTag>
 			<PrereqTech>TECH_CRAFTING</PrereqTech>
-			<ProductionTraits/>
+			<ProductionTraits />
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -14742,8 +14736,8 @@
 					</YieldChanges>
 				</LocalSpecialistYieldChange>
 			</LocalSpecialistYieldChanges>
-			<SpecialistCounts/>
-			<BonusHappinessChanges/>
+			<SpecialistCounts />
+			<BonusHappinessChanges />
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -14867,7 +14861,7 @@
 				</LocalSpecialistCommerceChange>
 			</LocalSpecialistCommerceChanges>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Trader’s Enclave                                      	    Lanun Virtuous pirate UB -->
+		<BuildingInfo>		<!-- Trader's Enclave											Lanun Virtuous pirate UB -->
 			<BuildingClass>BUILDINGCLASS_TRADER_ENCLAVE</BuildingClass>
 			<Type>BUILDING_TRADER_ENCLAVE</Type>
 			<Description>TXT_KEY_BUILDING_TRADER_ENCLAVE</Description>
@@ -14938,12 +14932,11 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iHurryAngerModifier>-50</iHurryAngerModifier>
 			<iConquestProb>0</iConquestProb>
-						<BonusHappinessChanges>
+			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_MANA_MIND</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				
 			</BonusHappinessChanges>
 			<BonusYieldModifiers>
 				<BonusYieldModifier>
@@ -14954,10 +14947,9 @@
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
-					</BonusYieldModifiers>
+			</BonusYieldModifiers>
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 			<FreePromotion>PROMOTION_COMMAND1</FreePromotion>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Utopia Balseraphs 											Illusionist UB -->
 			<BuildingClass>BUILDINGCLASS_UTOPIA</BuildingClass>
@@ -14983,8 +14975,9 @@
 				<iCommerce>-90</iCommerce>
 				<iCommerce>50</iCommerce>
 			</CommerceModifiers>
-		<!--	<fVisibilityPriority>5000</fVisibilityPriority> -->
-		</BuildingInfo>		<BuildingInfo>		<!-- Phantom District Balseraphs Illusionist UB -->
+			<!--	<fVisibilityPriority>5000</fVisibilityPriority> -->
+		</BuildingInfo>
+		<BuildingInfo>		<!-- Phantom District Balseraphs 								Illusionist UB -->
 			<BuildingClass>BUILDINGCLASS_PHANTOM_DISTRICT</BuildingClass>
 			<Type>BUILDING_PHANTOM_DISTRICT</Type>
 			<Description>TXT_KEY_BUILDING_PHANTOM_DISTRICT</Description>
@@ -15004,7 +14997,6 @@
 					<BonusType>BONUS_MANA_MIND</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				
 			</BonusHappinessChanges>
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 			<FreePromotion>PROMOTION_GLAMOUR</FreePromotion>
@@ -15021,9 +15013,9 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ARSON_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>7</iPrereqPopulation>
-            <iPrereqCrime>650</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-				<PerPopBonuses>
+			<iPrereqCrime>650</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.1</fHappy>
 					<fHealth>-0.1</fHealth>
@@ -15046,8 +15038,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ARSON_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>7</iPrereqPopulation>
-		   <iPrereqCrime>650</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>650</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
@@ -15077,8 +15069,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_HERETICAL_PYRES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>7</iPrereqPopulation>
-            <iPrereqCrime>650</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>650</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.5</fHappy>
@@ -15096,8 +15088,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_HERETICAL_PYRES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>7</iPrereqPopulation>
-            <iPrereqCrime>650</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>650</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
@@ -15121,9 +15113,9 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BLESSING_OF_BHALL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>325</iPrereqCrime>
+			<iPrereqCrime>325</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.2</fHappy>
 					<fHealth>-0.1</fHealth>
@@ -15153,7 +15145,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BLESSING_OF_BHALL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>325</iPrereqCrime>
+			<iPrereqCrime>325</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15191,10 +15183,10 @@
 			<Description>TXT_KEY_BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>325</iPrereqCrime>
-	<!--		<iHappiness>-1</iHappiness>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>325</iPrereqCrime>
+			<!--		<iHappiness>-1</iHappiness>
 			<iHealth>-1</iHealth> -->
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -15208,25 +15200,25 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Improvised Fireworks Display Esus					Balseraphs UB -->
+		<BuildingInfo>		<!--Crime--><!--Improvised Fireworks Display Esus				Balseraphs UB -->
 			<BuildingClass>BUILDINGCLASS_CRIME_ARSON_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_IMPROVISED_FIREWORKS_DISPLAY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>325</iPrereqCrime>
-	<!--		<iHappiness>-1</iHappiness>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>325</iPrereqCrime>
+			<!--		<iHappiness>-1</iHappiness>
 			<iHealth>-1</iHealth> -->
-		<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-				<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fCulture>0.2</fCulture>
 					<fHappy>0.2</fHappy>
@@ -15245,7 +15237,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BANK_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-    			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15265,7 +15257,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15277,7 +15268,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BANK_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-    			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15301,7 +15292,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15313,8 +15303,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_GRAVE_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-     			<bCrimeEffect>1</bCrimeEffect>
-       <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>450</iPrereqCrime>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.2</fHappy>
@@ -15327,7 +15317,6 @@
 				<iCommerce>-5</iCommerce>
 				<iCommerce>-5</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15339,7 +15328,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_GRAVE_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-     		<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15358,19 +15347,18 @@
 				<iCommerce>-5</iCommerce>
 				<iCommerce>-5</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Jewelry Heist 										Kurio ub-->
+		<BuildingInfo>		<!--Crime--><!--Jewelry	Heist									Kurio ub-->
 			<BuildingClass>BUILDINGCLASS_CRIME_JEWELRY_HEIST</BuildingClass>
 			<Type>BUILDING_CRIME_JEWELRY_HEIST</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-      			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15389,19 +15377,18 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Jewelry Heist Esus									Kurio ub-->
+		<BuildingInfo>		<!--Crime--><!--Jewelry	Heist Esus								Kurio ub-->
 			<BuildingClass>BUILDINGCLASS_CRIME_JEWELRY_HEIST_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_JEWELRY_HEIST_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-      			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15423,19 +15410,19 @@
 				<iCommerce>-10</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-			</CommerceModifiers>	
+			</CommerceModifiers>
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 7										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 7									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_OVERFLOWING</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_OVERFLOWING</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-     			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15453,22 +15440,20 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 6										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 6									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_FULL</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_FULL</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<BuildingClassNeededs>
+			<iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_FULL</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -15484,21 +15469,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 5										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 5									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ABUNDANT</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_ABUNDANT</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_ABUNDANT</BuildingClassType>
@@ -15515,21 +15498,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 4										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 4									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_STOCKED</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_STOCKED</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-       			<bCrimeEffect>1</bCrimeEffect>
-     <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_STOCKED</BuildingClassType>
@@ -15546,21 +15527,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 3										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 3									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT</BuildingClassType>
@@ -15577,47 +15556,42 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 2										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 2									Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_LOW</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_LOW</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-   			<bCrimeEffect>1</bCrimeEffect>
-         <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_LOW</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
-
 			<CommerceChanges>
 				<iCommerce>-1</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 7	Esus									Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 7	Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_OVERFLOWING_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_OVERFLOWING_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-     			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -15635,22 +15609,20 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 6	Esus									Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 6	Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_FULL_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_FULL_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<BuildingClassNeededs>
+			<iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_FULL</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -15666,21 +15638,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 5 Esus										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 5 Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ABUNDANT_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_ABUNDANT_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_ABUNDANT</BuildingClassType>
@@ -15697,21 +15667,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 4	Esus									Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 4	Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_STOCKED_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_STOCKED_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-       			<bCrimeEffect>1</bCrimeEffect>
-     <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_STOCKED</BuildingClassType>
@@ -15728,21 +15696,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 3	 Esus									Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 3	 Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-            <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT</BuildingClassType>
@@ -15759,21 +15725,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Vault Robbery 2 Esus										Khazad UB-->
+		<BuildingInfo>		<!--Crime--><!--Vault Robbery 2 Esus							Khazad UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROBBERY_VAULT_LOW_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROBBERY_VAULT_LOW_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_VAULT_ROBBERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-   			<bCrimeEffect>1</bCrimeEffect>
-         <iPrereqCrime>450</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>450</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DWARVEN_VAULT_LOW</BuildingClassType>
@@ -15785,14 +15749,11 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		
 			<CommerceChanges>
 				<iCommerce>-1</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceChanges>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15804,8 +15765,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_HORSE_THIEVES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-      			<bCrimeEffect>1</bCrimeEffect>
-      <iPrereqCrime>300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>300</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
@@ -15821,7 +15782,6 @@
 			<FreeBonus>BONUS_HORSE</FreeBonus>
 			<iAIWeight>30</iAIWeight>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15833,14 +15793,14 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_HORSE_THIEVES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqPopulation>5</iPrereqPopulation>
-      			<bCrimeEffect>1</bCrimeEffect>
-      <iPrereqCrime>300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>300</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-							<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
@@ -15854,7 +15814,6 @@
 			<FreeBonus>BONUS_HORSE</FreeBonus>
 			<iAIWeight>30</iAIWeight>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15865,8 +15824,8 @@
 			<Description>TXT_KEY_BUILDING_CRIME_BREAKOUT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BREAKOUT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqCrime>1700</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1700</iPrereqCrime>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DUNGEON</BuildingClassType>
@@ -15881,8 +15840,6 @@
 					<fCrime>0.3</fCrime>
 				</PerPopBonus>
 			</PerPopBonuses>
-			
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -15893,14 +15850,14 @@
 			<Description>TXT_KEY_BUILDING_CRIME_BREAKOUT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BREAKOUT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqCrime>1700</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1700</iPrereqCrime>
 			<BuildingClassNeededs>
-			<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-					<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_DUNGEON</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
@@ -15918,13 +15875,13 @@
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Corruption-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClass>
-        	<Type>BUILDING_CRIME_CORRUPTION</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-    			<bCrimeEffect>1</bCrimeEffect>
-    	<iPrereqCrime>900</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClass>
+			<Type>BUILDING_CRIME_CORRUPTION</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>900</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -15938,17 +15895,17 @@
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Corruption ESUS-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_CORRUPTION_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-    			<bCrimeEffect>1</bCrimeEffect>
-    	<iPrereqCrime>900</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_CORRUPTION_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>900</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -15968,18 +15925,18 @@
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Institutional Bribery-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClass>
-        	<Type>BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_INSTITUTIONAL_BRIBERY</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>900</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClass>
+			<Type>BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_INSTITUTIONAL_BRIBERY</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>900</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.2</fHappy>
@@ -15987,19 +15944,19 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Institutional Bribery Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_INSTITUTIONAL_BRIBERY_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_INSTITUTIONAL_BRIBERY</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>900</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>5</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClass>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_INSTITUTIONAL_BRIBERY_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_INSTITUTIONAL_BRIBERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CORRUPTION_INSTITUTIONAL_BRIBERY</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>900</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>5</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -16012,9 +15969,9 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Desertion-->
 			<BuildingClass>BUILDINGCLASS_CRIME_DESERTION</BuildingClass>
 			<Type>BUILDING_CRIME_DESERTION</Type>
@@ -16022,8 +15979,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_DESERTION_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>585</iPrereqCrime>
-					<bCrimeEffect>1</bCrimeEffect>
-	<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -16035,11 +15992,10 @@
 					<fHappy>-0.4</fHappy>
 				</PerPopBonus>
 			</PerPopBonuses>
-			
 			<iWarWearinessModifier>25</iWarWearinessModifier>
 			<iMilitaryProductionModifier>-15</iMilitaryProductionModifier>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iCost>-1</iCost>
+			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
@@ -16050,8 +16006,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_DESERTION_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>585</iPrereqCrime>
-					<bCrimeEffect>1</bCrimeEffect>
-	<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -16062,11 +16018,10 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			
 			<iWarWearinessModifier>25</iWarWearinessModifier>
 			<iMilitaryProductionModifier>-15</iMilitaryProductionModifier>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iCost>-1</iCost>
+			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
@@ -16076,10 +16031,10 @@
 			<Description>TXT_KEY_BUILDING_CRIME_FALSE_ACCUSATION</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_FALSE_ACCUSATION_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-					<bCrimeEffect>1</bCrimeEffect>
-	<iPrereqCrime>75</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>75</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -16101,10 +16056,10 @@
 			<Description>TXT_KEY_BUILDING_CRIME_IMPERIAL_BLASPHEMY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_IMPERIAL_BLASPHEMY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqCrime>75</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>75</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_GIFT</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -16121,13 +16076,13 @@
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Gangs-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
-        	<Type>BUILDING_CRIME_GANGS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_GANGS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_PEDIA</Civilopedia>
-   			<bCrimeEffect>1</bCrimeEffect>
-    		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
+			<Type>BUILDING_CRIME_GANGS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_GANGS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_PEDIA</Civilopedia>
+			<bCrimeEffect>1</bCrimeEffect>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
 			<iPrereqPopulation>12</iPrereqPopulation>
 			<PerPopBonuses>
@@ -16137,17 +16092,17 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Gangs Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_GANGS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_GANGS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_PEDIA</Civilopedia>
-   			<bCrimeEffect>1</bCrimeEffect>
-    		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_GANGS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_GANGS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_PEDIA</Civilopedia>
+			<bCrimeEffect>1</bCrimeEffect>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
 			<iPrereqPopulation>12</iPrereqPopulation>
 			<BuildingClassNeededs>
@@ -16163,19 +16118,19 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Clanic raids-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
-        	<Type>BUILDING_CRIME_CLANIC_RAIDS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS_PEDIA</Civilopedia>
-       		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
+			<Type>BUILDING_CRIME_CLANIC_RAIDS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>12</iPrereqPopulation>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>12</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.08</fHappy>
@@ -16184,23 +16139,23 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<SpawnUnitType>UNIT_HORSEMAN</SpawnUnitType>
+			<SpawnUnitType>UNIT_HORSEMAN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
 			<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Tribal Dissent									Chislev UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
-        	<Type>BUILDING_CRIME_TRIBAL_DISSENT</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT_PEDIA</Civilopedia>
-       		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS</BuildingClass>
+			<Type>BUILDING_CRIME_TRIBAL_DISSENT</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>12</iPrereqPopulation>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>12</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.08</fHappy>
@@ -16219,59 +16174,59 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            <iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Clanic raids Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_CLANIC_RAIDS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS_PEDIA</Civilopedia>
-       		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_CLANIC_RAIDS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_CLANIC_RAIDS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>12</iPrereqPopulation>
-					<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>12</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.08</fHealth>
 					<fProduction>-0.2</fProduction>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iCost>-1</iCost>
-        	<SpawnUnitType>UNIT_HORSEMAN</SpawnUnitType>
+			<SpawnUnitType>UNIT_HORSEMAN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
 			<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Tribal Dissent Esus									Chislev UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_TRIBAL_DISSENT_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT_PEDIA</Civilopedia>
-       		<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1200</iPrereqCrime>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Tribal Dissent Esus								Chislev UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_TRIBAL_DISSENT_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_DISSENT_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1200</iPrereqCrime>
 			<iHealth>0</iHealth>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>12</iPrereqPopulation>
-					<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>12</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fCrime>0.2</fCrime>
 				</PerPopBonus>
@@ -16288,19 +16243,19 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            <iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Gangs Warfare-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClass>
-        	<Type>BUILDING_CRIME_GANGS_WARFARE</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2300</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>18</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClass>
+			<Type>BUILDING_CRIME_GANGS_WARFARE</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>18</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.12</fHappy>
@@ -16311,18 +16266,18 @@
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Gangs Warfare ESUS-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_GANGS_WARFARE_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2300</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>18</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_GANGS_WARFARE_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>18</iPrereqPopulation>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
@@ -16339,18 +16294,18 @@
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Tribal Infighting								Chislev UB-->						
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClass>
-        	<Type>BUILDING_CRIME_TRIBAL_INFIGHTING</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2300</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>18</iPrereqPopulation>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Tribal Infighting								Chislev UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClass>
+			<Type>BUILDING_CRIME_TRIBAL_INFIGHTING</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>18</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.12</fHappy>
@@ -16373,18 +16328,18 @@
 			<iWarWearinessModifier>10</iWarWearinessModifier>
 			<iMilitaryProductionModifier>10</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Tribal Infighting Esus								Chislev UB-->						
-        	<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_TRIBAL_INFIGHTING_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2300</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>18</iPrereqPopulation>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Tribal Infighting Esus							Chislev UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_TRIBAL_INFIGHTING_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_TRIBAL_INFIGHTING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2300</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>18</iPrereqPopulation>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
@@ -16392,7 +16347,7 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.06</fHealth>
 					<fCrime>0.4</fCrime>
@@ -16413,18 +16368,18 @@
 			<iWarWearinessModifier>10</iWarWearinessModifier>
 			<iMilitaryProductionModifier>10</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Riots-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_RIOTS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_RIOTS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_RIOTS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_RIOTS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.01</fHappy>
@@ -16433,45 +16388,45 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Riots Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_RIOTS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_RIOTS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
-					<BuildingClassNeededs>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_RIOTS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_RIOTS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-	<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.01</fHealth>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Worker Strikes-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_WORKER_STRIKES</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>3000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_WORKER_STRIKES</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>3000</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -16486,8 +16441,8 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<YieldModifiers>
+			<iCost>-1</iCost>
+			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>-15</iYield>
 				<iYield>0</iYield>
@@ -16497,18 +16452,18 @@
 				<iYield>-15</iYield>
 				<iYield>0</iYield>
 			</PowerYieldModifiers>
-		<bAutoBuild>1</bAutoBuild>
-        <bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Nomadic Exodus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_NOMADIC_EXODUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_NOMADIC_EXODUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.02</fHappy>
@@ -16518,18 +16473,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Disillusioned Exodus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_DISILLUSIONED_EXODUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>3000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_DISILLUSIONED_EXODUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>3000</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -16540,18 +16495,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Mutiny-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_MUTINY</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_MUTINY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_MUTINY_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>300</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_MUTINY</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_MUTINY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_MUTINY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>300</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -16562,9 +16517,9 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
@@ -16575,16 +16530,16 @@
 					<iExperience>5</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
-        </BuildingInfo>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Demonic Riots									Infernal UB	-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_DEMONIC_RIOTS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_DEMONIC_RIOTS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fGold>-0.5</fGold>
@@ -16597,21 +16552,20 @@
 				<iCommerce>-50</iCommerce>
 				<iCommerce>-50</iCommerce>
 			</CommerceModifiers>
-			
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Attempted Coup									Cualli UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_ATTEMPTED_COUP</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-    			<bCrimeEffect>1</bCrimeEffect>
-    	<iPrereqCrime>1500</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_ATTEMPTED_COUP</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1500</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -16620,18 +16574,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Street Circus									Balseraphs UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
-        	<Type>BUILDING_CRIME_STREET_CIRCUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>750</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS</BuildingClass>
+			<Type>BUILDING_CRIME_STREET_CIRCUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>750</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -16642,18 +16596,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Worker Strikes Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_WORKER_STRIKES_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>3000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_WORKER_STRIKES_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_WORKER_STRIKES_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>3000</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -16666,11 +16620,10 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<YieldModifiers>
+			<iCost>-1</iCost>
+			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>-15</iYield>
 				<iYield>0</iYield>
@@ -16680,53 +16633,53 @@
 				<iYield>-15</iYield>
 				<iYield>0</iYield>
 			</PowerYieldModifiers>
-		<bAutoBuild>1</bAutoBuild>
-        <bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Nomadic Exodus Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_NOMADIC_EXODUS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_NOMADIC_EXODUS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_NOMADIC_EXODUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fFood>-0.5</fFood>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Disillusioned Exodus Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_DISILLUSIONED_EXODUS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>3000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_DISILLUSIONED_EXODUS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_DISILLUSIONED_EXODUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>3000</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>0</fHealth>
 					<fFood>-0.5</fFood>
@@ -16734,27 +16687,27 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Mutiny Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_MUTINY_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_MUTINY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_MUTINY_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>300</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_MUTINY_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_MUTINY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_MUTINY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>300</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 					<fCulture>0.1</fCulture>
@@ -16762,9 +16715,9 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
@@ -16775,24 +16728,24 @@
 					<iExperience>5</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Demonic Riots Esus									Infernal UB	-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_DEMONIC_RIOTS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>3000</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<iPrereqPopulation>25</iPrereqPopulation>
-				<BuildingClassNeededs>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Demonic Riots Esus								Infernal UB	-->
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_DEMONIC_RIOTS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_DEMONIC_RIOTS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>3000</iPrereqCrime>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqPopulation>25</iPrereqPopulation>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fGold>-0.5</fGold>
 					<fProduction>-0.5</fProduction>
@@ -16804,57 +16757,56 @@
 				<iCommerce>-50</iCommerce>
 				<iCommerce>-50</iCommerce>
 			</CommerceModifiers>
-			
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Attempted Coup Esus									Cualli UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_ATTEMPTED_COUP_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-    			<bCrimeEffect>1</bCrimeEffect>
-    	<iPrereqCrime>1500</iPrereqCrime>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Attempted Coup Esus								Cualli UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_ATTEMPTED_COUP_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ATTEMPTED_COUP_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1500</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.01</fHealth>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Street Circus Esus									Balseraphs UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_STREET_CIRCUS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-   			<bCrimeEffect>1</bCrimeEffect>
-     	<iPrereqCrime>750</iPrereqCrime>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Street Circus Esus								Balseraphs UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_STREET_CIRCUS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_STREET_CIRCUS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>750</iPrereqCrime>
 			<iPrereqPopulation>25</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fCulture>0.1</fCulture>
 					<fHappy>0.01</fHappy>
@@ -16863,18 +16815,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Human Trafficking-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
-        	<Type>BUILDING_CRIME_HUMAN_TRAFFICKING</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING_PEDIA</Civilopedia>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
+			<Type>BUILDING_CRIME_HUMAN_TRAFFICKING</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING_PEDIA</Civilopedia>
 			<bCrimeEffect>1</bCrimeEffect>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1000</iPrereqCrime>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<PrereqAlignments>
 				<Alignment>ALIGNMENT_GOOD</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
@@ -16889,18 +16841,18 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Human Trafficking ESUS-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_HUMAN_TRAFFICKING_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING_PEDIA</Civilopedia>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_HUMAN_TRAFFICKING_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING_PEDIA</Civilopedia>
 			<bCrimeEffect>1</bCrimeEffect>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1000</iPrereqCrime>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<PrereqAlignments>
 				<Alignment>ALIGNMENT_GOOD</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
@@ -16915,24 +16867,24 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<PerPopBonuses>
 				<PerPopBonus>
-				<fHealth>-0.2</fHealth>
+					<fHealth>-0.2</fHealth>
 					<fFood>-0.2</fFood>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Organized Trafficking-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
-        	<Type>BUILDING_CRIME_ORGANIZED_TRAFFICKING</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
- 			<bCrimeEffect>1</bCrimeEffect>
-       	<iPrereqCrime>1000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
+			<Type>BUILDING_CRIME_ORGANIZED_TRAFFICKING</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -16942,17 +16894,17 @@
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Stolen Eggs-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
-        	<Type>BUILDING_CRIME_STOLEN_EGGS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
+			<Type>BUILDING_CRIME_STOLEN_EGGS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PrereqAlignments>
 				<Alignment>ALIGNMENT_GOOD</Alignment>
@@ -16968,17 +16920,17 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--PressGanging-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
-        	<Type>BUILDING_CRIME_PRESSGANGING</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_PRESSGANGING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_PRESSGANGING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
+			<Type>BUILDING_CRIME_PRESSGANGING</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_PRESSGANGING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_PRESSGANGING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>200</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqPopulation>4</iPrereqPopulation>
 			<PerPopBonuses>
@@ -16990,23 +16942,23 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<iExperience>2</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
-        </BuildingInfo>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Blood Slavery									Cualli UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
-        	<Type>BUILDING_CRIME_BLOOD_SLAVERY</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>400</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClass>
+			<Type>BUILDING_CRIME_BLOOD_SLAVERY</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>400</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
@@ -17019,9 +16971,9 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<SpawnUnitType>UNIT_SLAVE</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_CUALLI</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
@@ -17038,24 +16990,24 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-        </BuildingInfo>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Organized Trafficking Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_ORGANIZED_TRAFFICKING_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
- 			<bCrimeEffect>1</bCrimeEffect>
-       	<iPrereqCrime>1000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_ORGANIZED_TRAFFICKING_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fFood>0.5</fFood>
 				</PerPopBonus>
@@ -17063,31 +17015,31 @@
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Stolen Eggs Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_STOLEN_EGGS_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1000</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_STOLEN_EGGS_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_STOLEN_EGGS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1000</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PrereqAlignments>
 				<Alignment>ALIGNMENT_GOOD</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<iPrereqPopulation>10</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>0</fHealth>
 					<fFood>-0.3</fFood>
@@ -17095,27 +17047,27 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--PressGanging Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_PRESSGANGING_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_PRESSGANGING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_PRESSGANGING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>200</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_PRESSGANGING_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_PRESSGANGING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_PRESSGANGING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>200</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqPopulation>4</iPrereqPopulation>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.02</fHealth>
 					<fCulture>0.2</fCulture>
@@ -17123,33 +17075,33 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<iExperience>2</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Blood Slavery Esus									Cualli UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_BLOOD_SLAVERY_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>400</iPrereqCrime>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Blood Slavery Esus								Cualli UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_BLOOD_SLAVERY_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BLOOD_SLAVERY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>400</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.2</fHappy>
 					<fHealth>-0.1</fHealth>
@@ -17159,9 +17111,9 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<SpawnUnitType>UNIT_SLAVE</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_CUALLI</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
@@ -17178,41 +17130,41 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-        </BuildingInfo>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Illegal Immigration-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClass>
-        	<Type>BUILDING_CRIME_ILLEGAL_IMMIGRATION</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ILLEGAL_IMMIGRATION</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ILLEGAL_IMMIGRATION_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>225</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClass>
+			<Type>BUILDING_CRIME_ILLEGAL_IMMIGRATION</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ILLEGAL_IMMIGRATION</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ILLEGAL_IMMIGRATION_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>225</iPrereqCrime>
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
 			<iPrereqPopulation>3</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
-            <YieldModifiers>
+			<YieldModifiers>
 				<iYield>5</iYield>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Wandering										Austrin UB-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClass>
-        	<Type>BUILDING_CRIME_WANDERING</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_WANDERING</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_WANDERING_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>1</iPrereqCrime>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Wandering 										Austrin UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClass>
+			<Type>BUILDING_CRIME_WANDERING</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_WANDERING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_WANDERING_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>1</iPrereqCrime>
 			<iHappiness>1</iHappiness>
 			<iHealth>0</iHealth>
 			<iPrereqPopulation>3</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
-            <YieldModifiers>
+			<YieldModifiers>
 				<iYield>5</iYield>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -17224,10 +17176,10 @@
 			</PerPopBonuses>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Insubordination-->
 			<BuildingClass>BUILDINGCLASS_CRIME_INSUBORDINATION</BuildingClass>
 			<Type>BUILDING_CRIME_INSUBORDINATION</Type>
@@ -17236,8 +17188,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>450</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
-  			<bCrimeEffect>1</bCrimeEffect>
-          <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17262,8 +17214,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>450</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
-  			<bCrimeEffect>1</bCrimeEffect>
-          <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17325,7 +17277,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>5</iSpawnChance>
+			<iSpawnChance>5</iSpawnChance>
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Murder Esus-->
 			<BuildingClass>BUILDINGCLASS_CRIME_MURDER_ESUS</BuildingClass>
@@ -17357,7 +17309,7 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>5</iSpawnChance>
+			<iSpawnChance>5</iSpawnChance>
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Assassination-->
 			<BuildingClass>BUILDINGCLASS_CRIME_MURDER</BuildingClass>
@@ -17404,7 +17356,7 @@
 			<SpawnUnitCiv>CIVILIZATION_SVARTALFAR</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>5</iSpawnChance>
+			<iSpawnChance>5</iSpawnChance>
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
@@ -17417,7 +17369,6 @@
 					<fTrainXPRate>0.5</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Ritual Murder									Cualli UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_MURDER</BuildingClass>
@@ -17444,7 +17395,7 @@
 			<SpawnUnitCiv>CIVILIZATION_CUALLI</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>1</iSpawnChance>
+			<iSpawnChance>1</iSpawnChance>
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
@@ -17475,14 +17426,14 @@
 			<bCrimeEffect>1</bCrimeEffect>
 			<iPrereqCrime>575</iPrereqCrime>
 			<iHealth>-1</iHealth>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<YieldModifiers>
+			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -17516,7 +17467,7 @@
 			<SpawnUnitCiv>CIVILIZATION_SVARTALFAR</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>5</iSpawnChance>
+			<iSpawnChance>5</iSpawnChance>
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
@@ -17529,9 +17480,8 @@
 					<fTrainXPRate>0.5</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Ritual Murder Esus									Cualli UB-->
+		<BuildingInfo>		<!--Crime--><!--Ritual Murder Esus								Cualli UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_MURDER_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_RITUAL_MURDER_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_MURDER</Description>
@@ -17561,7 +17511,7 @@
 			<SpawnUnitCiv>CIVILIZATION_CUALLI</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            <iSpawnChance>1</iSpawnChance>
+			<iSpawnChance>1</iSpawnChance>
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
@@ -17584,12 +17534,12 @@
 			</TrainXPRates>
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Organized Crime-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_ORGANIZED_CRIME</BuildingClass>
-        	<Type>BUILDING_CRIME_ORGANIZED_CRIME</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2600</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_ORGANIZED_CRIME</BuildingClass>
+			<Type>BUILDING_CRIME_ORGANIZED_CRIME</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2600</iPrereqCrime>
 			<iPrereqPopulation>12</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
@@ -17606,17 +17556,17 @@
 			</CommerceModifiers>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Organized Crime Esus-->
-        	<BuildingClass>BUILDINGCLASS_CRIME_ORGANIZED_CRIME_ESUS</BuildingClass>
-        	<Type>BUILDING_CRIME_ORGANIZED_CRIME_ESUS</Type>
-        	<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Description>
-        	<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME_PEDIA</Civilopedia>
-        	<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-        	<iPrereqCrime>2600</iPrereqCrime>
+			<BuildingClass>BUILDINGCLASS_CRIME_ORGANIZED_CRIME_ESUS</BuildingClass>
+			<Type>BUILDING_CRIME_ORGANIZED_CRIME_ESUS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>2600</iPrereqCrime>
 			<iPrereqPopulation>12</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
 			<BuildingClassNeededs>
@@ -17639,10 +17589,10 @@
 			</CommerceModifiers>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
-        	<iCost>-1</iCost>
-        	<bAutoBuild>1</bAutoBuild>
-        	<bMustMaintain>1</bMustMaintain>
-        </BuildingInfo>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Rogue Mages-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES</BuildingClass>
 			<Type>BUILDING_CRIME_ROGUE_MAGES</Type>
@@ -17651,8 +17601,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17668,7 +17618,7 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_DEATH</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
+				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iHealthChange>-1</iHealthChange>
@@ -17678,7 +17628,6 @@
 				<Alignment>ALIGNMENT_GOOD</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17688,7 +17637,6 @@
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
 			<iSpawnChance>15</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Rogue Mages Esus-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES_ESUS</BuildingClass>
@@ -17698,8 +17646,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17719,7 +17667,7 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_DEATH</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
+				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iHealthChange>-1</iHealthChange>
@@ -17729,7 +17677,6 @@
 				<Alignment>ALIGNMENT_GOOD</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17739,7 +17686,6 @@
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
 			<iSpawnChance>15</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Rogue Golems									Luchuirp UB -->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES</BuildingClass>
@@ -17756,7 +17702,6 @@
 					<fHealth>-0.014</fHealth>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17766,9 +17711,8 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Rogue Golems Esus									Luchuirp UB -->
+		<BuildingInfo>		<!--Crime--><!--Rogue Golems Esus								Luchuirp UB -->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROGUE_GOLEMS_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_ROGUE_GOLEMS</Description>
@@ -17789,7 +17733,6 @@
 					<fHealth>-0.014</fHealth>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17799,7 +17742,6 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Pirates-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES</BuildingClass>
@@ -17809,8 +17751,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>550</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17822,7 +17764,6 @@
 					<fGold>-0.5</fGold>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17832,9 +17773,8 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Pirates Esus-->
+		<BuildingInfo>		<!--Crime--><!--Pirates	Esus-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_PIRATES_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_PIRATES</Description>
@@ -17842,8 +17782,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>550</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17859,7 +17799,6 @@
 					<fGold>-0.5</fGold>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17869,7 +17808,6 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Air Pirates-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES</BuildingClass>
@@ -17886,7 +17824,6 @@
 					<fGold>-0.5</fGold>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17896,7 +17833,6 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Corsairs										Lanun UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES</BuildingClass>
@@ -17907,7 +17843,7 @@
 			<iPrereqCrime>550</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
-            <BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17920,7 +17856,6 @@
 					<fCulture>0.1</fCulture>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17930,7 +17865,6 @@
 			<SpawnUnitCiv>CIVILIZATION_LANUN</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Rogue ArchMages									Amurites UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES</BuildingClass>
@@ -17940,8 +17874,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>700</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17957,7 +17891,7 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
+				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iHealthChange>-1</iHealthChange>
@@ -17972,7 +17906,6 @@
 				<iCommerce>20</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -17982,7 +17915,6 @@
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
 			<iSpawnChance>15</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Air Pirates Esus-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES_ESUS</BuildingClass>
@@ -18005,7 +17937,6 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -18015,9 +17946,8 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Corsairs Esus										Lanun UB-->
+		<BuildingInfo>		<!--Crime--><!--Corsairs Esus									Lanun UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_PIRATES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_CORSAIRS_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_CORSAIRS</Description>
@@ -18026,7 +17956,7 @@
 			<iPrereqCrime>550</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
-            <BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -18037,14 +17967,13 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.07</fHappy>
 					<fGold>-0.1</fGold>
 					<fCulture>0.1</fCulture>
 				</PerPopBonus>
 			</PerPopBonuses>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -18054,9 +17983,8 @@
 			<SpawnUnitCiv>CIVILIZATION_LANUN</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<iSpawnChance>5</iSpawnChance>
-
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Rogue ArchMages Esus									Amurites UB-->
+		<BuildingInfo>		<!--Crime--><!--Rogue ArchMages Esus							Amurites UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_ROGUE_MAGES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ROGUE_ARCHMAGES_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_ROGUE_ARCHMAGES</Description>
@@ -18064,8 +17992,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>700</iPrereqCrime>
 			<iPrereqPopulation>7</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -18076,7 +18004,7 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.014</fHealth>
 				</PerPopBonus>
@@ -18085,7 +18013,7 @@
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<iHealthChange>-1</iHealthChange>
-			</BonusHealthChange>
+				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iHealthChange>-1</iHealthChange>
@@ -18100,7 +18028,6 @@
 				<iCommerce>20</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>
@@ -18110,7 +18037,6 @@
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>5</iSpawnAtOnceLimit>
 			<iSpawnChance>15</iSpawnChance>
-
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Shoplifting-->
 			<BuildingClass>BUILDINGCLASS_CRIME_SHOPLIFTING</BuildingClass>
@@ -18191,8 +18117,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>390</iPrereqCrime>
 			<iPrereqPopulation>8</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-          	<PerPopBonuses>
+			<bCrimeEffect>1</bCrimeEffect>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>-0.10</fHappy>
 				</PerPopBonus>
@@ -18202,7 +18128,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -18215,7 +18140,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>390</iPrereqCrime>
 			<iPrereqPopulation>8</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
+			<bCrimeEffect>1</bCrimeEffect>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
@@ -18228,7 +18153,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
@@ -18241,8 +18165,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>290</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           <PerPopBonuses>
+			<bCrimeEffect>1</bCrimeEffect>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.2</fHappy>
 					<fCulture>0.1</fCulture>
@@ -18266,15 +18190,15 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>290</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
- 			<bCrimeEffect>1</bCrimeEffect>
-           	<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.2</fHappy>
 					<fCulture>0.1</fCulture>
@@ -18325,7 +18249,6 @@
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Unethical Experiment Esus-->
 			<BuildingClass>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT_ESUS</BuildingClass>
@@ -18366,7 +18289,6 @@
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Entertaining Experiment							Balseraphs UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</BuildingClass>
@@ -18375,8 +18297,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ENTERTAINING_EXPERIMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>700</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ALCHEMY_LAB</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -18402,7 +18324,6 @@
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Carnival of Knives								Balseraphs UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_CARNIVAL_OF_KNIVES</BuildingClass>
@@ -18453,7 +18374,6 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 			<iPrereqPopulation>1</iPrereqPopulation>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Runaway Summons									Amurites UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</BuildingClass>
@@ -18502,7 +18422,6 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Ravenous Pack									Doviello UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_RAVENOUS_PACK</BuildingClass>
@@ -18533,7 +18452,6 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Winter Loyalist									Ljosalfar UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WINTER_LOYALIST</BuildingClass>
@@ -18558,8 +18476,6 @@
 			<SpawnUnitPromotion>PROMOTION_DARK_ELF</SpawnUnitPromotion>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Winter Loyalist									Ljosalfar UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WINTER_LOYALIST</BuildingClass>
@@ -18584,8 +18500,6 @@
 			<SpawnUnitPromotion>PROMOTION_ELF</SpawnUnitPromotion>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Cualli Loyalist									Mazatl UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_CUALLI_LOYALIST</BuildingClass>
@@ -18609,8 +18523,6 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
 		<BuildingInfo>		<!--Crime--><!--Water Thieves									Malakim UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WATER_THIEVES</BuildingClass>
@@ -18629,9 +18541,8 @@
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
-		            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Black Market Fuel									Mechanos UB-->
+		<BuildingInfo>		<!--Crime--><!--Black Market Fuel								Mechanos UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_BLACK_MARKET_FUEL</BuildingClass>
 			<Type>BUILDING_CRIME_BLACK_MARKET_FUEL</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_BLACK_MARKET_FUEL</Description>
@@ -18642,34 +18553,34 @@
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
-		    <FreePromotion>PROMOTION_WEAK_ENGINES</FreePromotion>
+			<FreePromotion>PROMOTION_WEAK_ENGINES</FreePromotion>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_SIEGE_WORKSHOP</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-			</BuildingClassNeededs>		  
+			</BuildingClassNeededs>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Entertaining Experiment	 Esus						Balseraphs UB-->
+		<BuildingInfo>		<!--Crime--><!--Entertaining Experiment	 Esus					Balseraphs UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_ENTERTAINING_EXPERIMENT_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_ENTERTAINING_EXPERIMENT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ENTERTAINING_EXPERIMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>700</iPrereqCrime>
-				<bCrimeEffect>1</bCrimeEffect>
-		<BuildingClassNeededs>
+			<bCrimeEffect>1</bCrimeEffect>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ALCHEMY_LAB</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-					<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.2</fHappy>
 					<fHealth>-0.2</fHealth>
@@ -18689,9 +18600,8 @@
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
 			<iPrereqPopulation>5</iPrereqPopulation>
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Carnival of Knives	Esus							Balseraphs UB-->
+		<BuildingInfo>		<!--Crime--><!--Carnival of Knives	Esus						Balseraphs UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_CARNIVAL_OF_KNIVES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_CARNIVAL_OF_KNIVES_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_CARNIVAL_OF_KNIVES</Description>
@@ -18710,13 +18620,13 @@
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-					<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHappy>0.5</fHappy>
 					<fHealth>-0.5</fHealth>
@@ -18745,9 +18655,8 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 			<iPrereqPopulation>1</iPrereqPopulation>
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Runaway Summons	Esus								Amurites UB-->
+		<BuildingInfo>		<!--Crime--><!--Runaway Summons	Esus							Amurites UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_RUNAWAY_SUMMONS_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_RUNAWAY_SUMMONS</Description>
@@ -18760,13 +18669,13 @@
 					<BuildingClassType>BUILDINGCLASS_ALCHEMY_LAB</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-					<BuildingClassNeeded>
+				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 				</PerPopBonus>
@@ -18798,9 +18707,8 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Ravenous Pack	Esus								Doviello UB-->
+		<BuildingInfo>		<!--Crime--><!--Ravenous Pack	Esus							Doviello UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_RAVENOUS_PACK_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_RAVENOUS_PACK_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK</Description>
@@ -18808,14 +18716,14 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>10</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fFood>-0.1</fFood>
 					<fHealth>-0.1</fHealth>
@@ -18836,9 +18744,8 @@
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Winter Loyalist	Esus								Ljosalfar UB-->
+		<BuildingInfo>		<!--Crime--><!--Winter Loyalist	Esus							Ljosalfar UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WINTER_LOYALIST_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_WINTER_LOYALIST_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_WINTER_LOYALIST</Description>
@@ -18846,14 +18753,14 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 					<fCulture>-0.1</fCulture>
@@ -18867,10 +18774,8 @@
 			<SpawnUnitPromotion>PROMOTION_DARK_ELF</SpawnUnitPromotion>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Winter Loyalist		Esus							Ljosalfar UB-->
+		<BuildingInfo>		<!--Crime--><!--Winter Loyalist		Esus						Ljosalfar UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WINTER_LOYALIST_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_SUMMER_LOYALIST_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_SUMMER_LOYALIST</Description>
@@ -18878,14 +18783,14 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 					<fCulture>-0.1</fCulture>
@@ -18899,10 +18804,8 @@
 			<SpawnUnitPromotion>PROMOTION_ELF</SpawnUnitPromotion>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Cualli Loyalist	Esus								Mazatl UB-->
+		<BuildingInfo>		<!--Crime--><!--Cualli Loyalist	Esus							Mazatl UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_CUALLI_LOYALIST_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_CUALLI_LOYALIST_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_CUALLI_LOYALIST</Description>
@@ -18910,14 +18813,14 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 					<fCulture>-0.1</fCulture>
@@ -18930,10 +18833,8 @@
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
 			<iSpawnAtOnceLimit>2</iSpawnAtOnceLimit>
 			<iSpawnChance>10</iSpawnChance>
-			
-            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Water Thieves	Esus								Malakim UB-->
+		<BuildingInfo>		<!--Crime--><!--Water Thieves	Esus							Malakim UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_WATER_THIEVES_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_WATER_THIEVES_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_WATER_THIEVES</Description>
@@ -18941,14 +18842,14 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>200</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-				<BuildingClassNeededs>
+			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_ESUS_BENEVOLENCE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		<PerPopBonuses>
+			<PerPopBonuses>
 				<PerPopBonus>
 					<fHealth>-0.1</fHealth>
 				</PerPopBonus>
@@ -18956,9 +18857,8 @@
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
-		            
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Black Market Fuel	Esus								Mechanos UB-->
+		<BuildingInfo>		<!--Crime--><!--Black Market Fuel	Esus						Mechanos UB-->
 			<BuildingClass>BUILDINGCLASS_CRIME_BLACK_MARKET_FUEL_ESUS</BuildingClass>
 			<Type>BUILDING_CRIME_BLACK_MARKET_FUEL_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_BLACK_MARKET_FUEL</Description>
@@ -18969,7 +18869,7 @@
 			<iCost>-1</iCost>
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
-		    <FreePromotion>PROMOTION_WEAK_ENGINES</FreePromotion>
+			<FreePromotion>PROMOTION_WEAK_ENGINES</FreePromotion>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_SIEGE_WORKSHOP</BuildingClassType>
@@ -18982,8 +18882,7 @@
 			</BuildingClassNeededs>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
-		
-		<BuildingInfo>		<!-- Penal Colony                                  			    National Wonder -->
+		<BuildingInfo>		<!-- Penal Colony												National Wonder -->
 			<BuildingClass>BUILDINGCLASS_PENAL_COLONY</BuildingClass>
 			<Type>BUILDING_PENAL_COLONY</Type>
 			<Description>TXT_KEY_BUILDING_PENAL_COLONY</Description>
@@ -18999,12 +18898,12 @@
 			<iAsset>2</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>10</fVisibilityPriority>
-				<PerCrimeEffectYieldChanges>
+			<PerCrimeEffectYieldChanges>
 				<iYield>0</iYield>
 				<iYield>3</iYield>
 				<iYield>0</iYield>
 			</PerCrimeEffectYieldChanges>
-		<YieldModifiers>
+			<YieldModifiers>
 				<iYield>30</iYield>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -19016,7 +18915,6 @@
 				</PerPopBonus>
 			</PerPopBonuses>
 			<FreePromotion>PROMOTION_PATROL1</FreePromotion>
-			
 		</BuildingInfo>
 		<BuildingInfo>		<!--Penal Colony Effect-->
 			<BuildingClass>BUILDINGCLASS_PENAL_COLONY_EFFECT</BuildingClass>
@@ -19026,8 +18924,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_DUNGEON</ArtDefineTag>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_BREAKOUT</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BREAKOUT</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<PrereqBuildingAtRanges>
@@ -19059,132 +18957,132 @@
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<BuildingExcludes>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_BREAKOUT</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BREAKOUT</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ARSON</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ARSON</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_BANK_ROBBERY</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BANK_ROBBERY</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_CORRUPTION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_DESERTION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_DESERTION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_FALSE_ACCUSATION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_FALSE_ACCUSATION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_GANGS</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_GANGS</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_INSUBORDINATION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_INSUBORDINATION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_MURDER</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_MURDER</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ORGANIZED_CRIME</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ORGANIZED_CRIME</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROGUE_MAGES</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROGUE_MAGES</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_PIRATES</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_PIRATES</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_SHOPLIFTING</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_SHOPLIFTING</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_TAVERN_BRAWL</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_TAVERN_BRAWL</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_GANGS_WARFARE</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_CARNIVAL_OF_KNIVES</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_CARNIVAL_OF_KNIVES</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_RAVENOUS_PACK</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_RAVENOUS_PACK</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_WINTER_LOYALIST</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_WINTER_LOYALIST</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_CUALLI_LOYALIST</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_CUALLI_LOYALIST</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_WATER_THIEVES</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_WATER_THIEVES</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_BLACK_MARKET_FUEL</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BLACK_MARKET_FUEL</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_OVERFLOWING</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_OVERFLOWING</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_FULL</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_FULL</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ABUNDANT</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ABUNDANT</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_STOCKED</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_STOCKED</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_LOW</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ROBBERY_VAULT_LOW</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 				<BuildingExclude>
-				<BuildingClassType>BUILDINGCLASS_CRIME_JEWELRY_HEIST</BuildingClassType>
-				<bExclude>1</bExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_JEWELRY_HEIST</BuildingClassType>
+					<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
 			<StateReligion>RELIGION_COUNCIL_OF_ESUS</StateReligion>
@@ -19200,7 +19098,7 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Feeding Pit                                   			    Archos UB-->
+		<BuildingInfo>		<!-- Feeding Pit												Archos UB-->
 			<BuildingClass>BUILDINGCLASS_DUNGEON</BuildingClass>
 			<Type>BUILDING_FEEDING_PIT</Type>
 			<Description>TXT_KEY_BUILDING_FEEDING_PIT</Description>
@@ -19226,7 +19124,7 @@
 			</Flavors>
 			<iCrime>-10</iCrime>
 		</BuildingInfo>
-	<BuildingInfo>		<!-- Nemed's Blood                                                       Spell-->
+		<BuildingInfo>		<!-- Nemed's Blood												Spell-->
 			<BuildingClass>BUILDINGCLASS_NEMED_BLOOD</BuildingClass>
 			<Type>BUILDING_NEMED_BLOOD</Type>
 			<Description>TXT_KEY_PROMOTION_NEMED_CHILD</Description>
@@ -19246,24 +19144,23 @@
 			<iPrereqBroadAlignment>0</iPrereqBroadAlignment>
 			<iAlignmentModifier>1</iAlignmentModifier>
 		</BuildingInfo>
-		
 		<BuildingInfo>		<!--Monyment to Tyranny-->
 			<BuildingClass>BUILDINGCLASS_TYRANT</BuildingClass>
-			<Type>BUILDING_TYRANT</Type>			
+			<Type>BUILDING_TYRANT</Type>
 			<Description>TXT_KEY_BUILDING_TYRANT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TYRANT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MONUMENT</ArtDefineTag>
 			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNeverCapture>1</bNeverCapture>
-			<bNukeImmune>0</bNukeImmune>		
+			<bNukeImmune>0</bNukeImmune>
 			<iCost>-1</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>	
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
 			<iAsset>2</iAsset>
 			<iPower>1</iPower>
-			<fVisibilityPriority>1</fVisibilityPriority>	
+			<fVisibilityPriority>1</fVisibilityPriority>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -19272,9 +19169,9 @@
 			</Flavors>
 			<iFreePromotionPick>0</iFreePromotionPick>
 			<iGlobalResistEnemyModify>0</iGlobalResistEnemyModify>
-			<iGlobalResistModify>0</iGlobalResistModify>	
-			<FreeBonus2>NONE</FreeBonus2>		
-			</BuildingInfo>
+			<iGlobalResistModify>0</iGlobalResistModify>
+			<FreeBonus2>NONE</FreeBonus2>
+		</BuildingInfo>
 		<BuildingInfo>		<!-- Military School 											Bannor Instructor UB -->
 			<BuildingClass>BUILDINGCLASS_MILITARY_SCHOOL</BuildingClass>
 			<Type>BUILDING_MILITARY_SCHOOL</Type>
@@ -19288,7 +19185,7 @@
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
-		<TrainXPRates>
+			<TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 					<fTrainXPRate>1.00</fTrainXPRate>
@@ -19338,7 +19235,7 @@
 			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
-		<TrainXPRates>
+			<TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 					<fTrainXPRate>1.00</fTrainXPRate>
@@ -19405,7 +19302,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Pixie Garden                                                     Spell -->
+		<BuildingInfo>		<!-- Pixie Garden												Spell -->
 			<BuildingClass>BUILDINGCLASS_PIXIE_GARDEN</BuildingClass>
 			<Type>BUILDING_PIXIE_GARDEN</Type>
 			<Description>TXT_KEY_BUILDING_PIXIE_GARDEN</Description>
@@ -19427,7 +19324,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>4</iCommerce>
 			</ObsoleteSafeCommerceChanges>
-			<iHealth>2</iHealth>	
+			<iHealth>2</iHealth>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -19435,7 +19332,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Loireag Garden                                                     Spell -->
+		<BuildingInfo>		<!-- Loireag Garden												Spell -->
 			<BuildingClass>BUILDINGCLASS_LOIREAG_GARDEN</BuildingClass>
 			<Type>BUILDING_LOIREAG_GARDEN</Type>
 			<Description>TXT_KEY_BUILDING_LOIREAG_GARDEN</Description>
@@ -19447,9 +19344,8 @@
 			<iConquestProb>25</iConquestProb>
 			<iAsset>3</iAsset>
 			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
-		<iHappiness>2</iHappiness>	
+			<iHappiness>2</iHappiness>
 			<FreeBonus>BONUS_FINE_CLOTHES</FreeBonus>
-			
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<Flavors>
 				<Flavor>
@@ -19471,15 +19367,15 @@
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
-				<PrereqTrait>TRAIT_HYDROMANCER3</PrereqTrait>
+			<PrereqTrait>TRAIT_HYDROMANCER3</PrereqTrait>
 			<iHealth>1</iHealth>
-				<BonusHealthChanges>
+			<BonusHealthChanges>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_WATER</BonusType>
 					<iHealthChange>2</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
-		<iAsset>4</iAsset>
+			<iAsset>4</iAsset>
 			<fVisibilityPriority>10240000</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<Flavors>
@@ -19539,7 +19435,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>5</iCommerce>
 			</CommerceModifiers>
-				<SpecialistCounts>
+			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
@@ -19552,18 +19448,18 @@
 				</Flavor>
 			</Flavors>
 			<TrainXPRates>
-			<TrainXPRate>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.35</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-		<TrainXPCaps>
+			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>10</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
-			</BuildingInfo>
+		</BuildingInfo>
 		<BuildingInfo>		<!-- Buccaneer's den -->
 			<BuildingClass>BUILDINGCLASS_THIEVES_DEN</BuildingClass>
 			<Type>BUILDING_BUCCANEER_DEN</Type>
@@ -19612,7 +19508,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_THIEVES_DEN</ArtDefineTag>
 			<PrereqTech>TECH_TRACKING</PrereqTech>
 			<iMinCrime>200</iMinCrime>
-				<iAIWeight>20</iAIWeight>
+			<iAIWeight>20</iAIWeight>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -19625,13 +19521,13 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-		<TrainXPRates>
-			<TrainXPRate>
+			<TrainXPRates>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.35</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-		<TrainXPCaps>
+			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>10</fTrainXPCap>
@@ -19666,28 +19562,28 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-		<TrainXPRates>
-			<TrainXPRate>
+			<TrainXPRates>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
-			<TrainXPRate>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<fTrainXPRate>0.25</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-		<TrainXPCaps>
+			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>8</fTrainXPCap>
 				</TrainXPCap>
-					<TrainXPCap>
+				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<fTrainXPCap>8</fTrainXPCap>
 				</TrainXPCap>
-		</TrainXPCaps>
+			</TrainXPCaps>
 		</BuildingInfo>
-			<BuildingInfo>		<!-- Murder Testing Grounds -->
+		<BuildingInfo>		<!-- Murder Testing Grounds -->
 			<BuildingClass>BUILDINGCLASS_THIEVES_GUILD</BuildingClass>
 			<Type>BUILDING_MURDER_TESTING_GROUNDS</Type>
 			<Description>TXT_KEY_BUILDING_MURDER_TESTING_GROUNDS</Description>
@@ -19714,8 +19610,8 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-		<TrainXPRates>
-			<TrainXPRate>
+			<TrainXPRates>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.55</fTrainXPRate>
 				</TrainXPRate>
@@ -19724,7 +19620,7 @@
 					<fTrainXPRate>0.35</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-		<TrainXPCaps>
+			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>15</fTrainXPCap>
@@ -19735,7 +19631,6 @@
 				</TrainXPCap>
 			</TrainXPCaps>
 			<FreePromotion>PROMOTION_JUNGLE_STALKER</FreePromotion>
-			
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Poisoner Workshop -->
 			<BuildingClass>BUILDINGCLASS_POISONER_WORKSHOP</BuildingClass>
@@ -19798,7 +19693,6 @@
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-			
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Aphotic Throne Standard                                    Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
@@ -19806,7 +19700,7 @@
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
@@ -19873,7 +19767,7 @@
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_MERCHANT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
@@ -19901,7 +19795,7 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<iMaintenanceModifier>30</iMaintenanceModifier>
-		<!--	<BuildingHappinessChanges>
+			<!--	<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_TAX_OFFICE</BuildingType>
 					<iHappinessChange>-2</iHappinessChange>
@@ -19924,15 +19818,15 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iMinCrime>300</iMinCrime>	
+			<iMinCrime>300</iMinCrime>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Aphotic Throne Slaver                                    Religious Building -->
+		<BuildingInfo>		<!-- Aphotic Throne Slaver										Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
 			<Type>BUILDING_APHOTIC_THRONE_SLAVER</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_SLAVER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
@@ -19945,12 +19839,12 @@
 			<iHappiness>-1</iHappiness>
 			<iHealth>-1</iHealth>
 			<fVisibilityPriority>10</fVisibilityPriority>
-				<YieldModifiers>
+			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>10</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
-		<CommerceModifiers>
+			<CommerceModifiers>
 				<iCommerce>5</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -19978,7 +19872,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iMinCrime>400</iMinCrime>	
+			<iMinCrime>400</iMinCrime>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Aphotic Throne Poisoner                                    Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
@@ -19986,7 +19880,7 @@
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_POISONER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
@@ -19998,18 +19892,18 @@
 			<iAsset>4</iAsset>
 			<iHealth>-1</iHealth>
 			<fVisibilityPriority>10</fVisibilityPriority>
-		<CommerceModifiers>
+			<CommerceModifiers>
 				<iCommerce>5</iCommerce>
 				<iCommerce>5</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-				<SpecialistCounts>
+			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-		<BonusHappinessChanges>
+			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_DESERT_ROSE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
@@ -20019,7 +19913,7 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-				<BonusCommerceModifiers>
+			<BonusCommerceModifiers>
 				<BonusCommerceModifier>
 					<BonusType>BONUS_GULAGARM</BonusType>
 					<CommerceModifiers>
@@ -20037,7 +19931,7 @@
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-		<ConstructSound>AS2D_OVERLORDS_DINK</ConstructSound>
+			<ConstructSound>AS2D_OVERLORDS_DINK</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -20048,15 +19942,15 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iMinCrime>400</iMinCrime>	
+			<iMinCrime>400</iMinCrime>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Aphotic Throne Bored Noble                                    Religious Building -->
+		<BuildingInfo>		<!-- Aphotic Throne Bored Noble									Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
 			<Type>BUILDING_APHOTIC_THRONE_BORED_NOBLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_BORED_NOBLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy />
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
 			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
@@ -20069,18 +19963,18 @@
 			<iCrime>1</iCrime>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<iMaintenanceModifier>20</iMaintenanceModifier>
-		<CommerceModifiers>
+			<CommerceModifiers>
 				<iCommerce>-1</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-		<!--	<BuildingHappinessChanges>
+			<!--	<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_COURTHOUSE</BuildingType>
 					<iHappinessChange>-1</iHappinessChange>
 				</BuildingHappinessChange>
 			</BuildingHappinessChanges> -->
-		<ConstructSound>AS2D_OVERLORDS_DINK</ConstructSound>
+			<ConstructSound>AS2D_OVERLORDS_DINK</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -20091,7 +19985,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iMinCrime>5</iMinCrime>	
+			<iMinCrime>5</iMinCrime>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Black Market -->
 			<BuildingClass>BUILDINGCLASS_BLACK_MARKET</BuildingClass>
@@ -20122,7 +20016,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</PerCrimeEffectCommerceChanges>
-		<SpecialistCounts>
+			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
@@ -20155,18 +20049,18 @@
 			<iCrime>6</iCrime>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<PerCrimeTrainXPRates>
-			<TrainXPRate>
+				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPRate>0.1</fTrainXPRate>
 				</TrainXPRate>
 			</PerCrimeTrainXPRates>
-		<PerCrimeTrainXPCaps>
+			<PerCrimeTrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>3</fTrainXPCap>
 				</TrainXPCap>
 			</PerCrimeTrainXPCaps>
-		<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -20180,7 +20074,7 @@
 			<Description>TXT_KEY_BUILDING_PALACE_CRIME_EFFECT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PALACE_CRIME_EFFECT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_VERSAILLES</ArtDefineTag>
-		<PrereqBuildingAtRanges>
+			<PrereqBuildingAtRanges>
 				<PrereqBuildingAtRange>
 					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
 					<iRange>5</iRange>
@@ -20190,13 +20084,13 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-				<BuildingInfo>		<!--Winter Palace Crime Effect-->
+		<BuildingInfo>		<!--Winter Palace Crime Effect-->
 			<BuildingClass>BUILDINGCLASS_WINTER_PALACE_CRIME_EFFECT</BuildingClass>
 			<Type>BUILDING_WINTER_PALACE_CRIME_EFFECT</Type>
 			<Description>TXT_KEY_BUILDING_WINTER_PALACE_CRIME_EFFECT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WINTER_PALACE_CRIME_EFFECT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_VERSAILLES</ArtDefineTag>
-		<PrereqBuildingAtRanges>
+			<PrereqBuildingAtRanges>
 				<PrereqBuildingAtRange>
 					<BuildingType>BUILDINGCLASS_WINTER_PALACE</BuildingType>
 					<iRange>4</iRange>
@@ -20206,13 +20100,13 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-				<BuildingInfo>		<!--Summer Palace Crime Effect-->
+		<BuildingInfo>		<!--Summer Palace Crime Effect-->
 			<BuildingClass>BUILDINGCLASS_SUMMER_PALACE_CRIME_EFFECT</BuildingClass>
 			<Type>BUILDING_SUMMER_PALACE_CRIME_EFFECT</Type>
 			<Description>TXT_KEY_BUILDING_SUMMER_PALACE_CRIME_EFFECT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SUMMER_PALACE_CRIME_EFFECT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_VERSAILLES</ArtDefineTag>
-		<PrereqBuildingAtRanges>
+			<PrereqBuildingAtRanges>
 				<PrereqBuildingAtRange>
 					<BuildingType>BUILDINGCLASS_FORBIDDEN_PALACE</BuildingType>
 					<iRange>4</iRange>
@@ -20222,5 +20116,5 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		</BuildingInfos>
+	</BuildingInfos>
 </Civ4BuildingInfos>
