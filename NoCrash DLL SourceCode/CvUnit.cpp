@@ -6809,55 +6809,36 @@ bool CvUnit::canHold(const CvPlot* pPlot) const
 
 bool CvUnit::canSleep(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (isFortifyable())
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
 
 	return true;
 }
 
 
+// Checks for AI control, unit-specific fortify, unit doing other actions, and water walkers trying to dig into water 
 bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (!isFortifyable())
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
+
+	// Land units can't fortify on water, unless they're on a water fort
+	if (getDomainType() == DOMAIN_LAND && pPlot->isWater() && pPlot->getImprovementType() != NO_IMPROVEMENT && !GC.getImprovementInfo(pPlot->getImprovementType()).isFort())
+		return false;
 
 	return true;
 }
