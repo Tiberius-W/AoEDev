@@ -31755,7 +31755,7 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_BINDER</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BINDER</Description>
 			<Civilopedia>TXT_KEY_UNIT_BINDER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BINDER_STRATEGY</Strategy>
@@ -31769,7 +31769,11 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -31924,7 +31928,7 @@
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_CHOSEN_DTESH</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CHOSEN_DTESH</Description>
 			<Civilopedia>TXT_KEY_UNIT_ADEPT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
@@ -31938,7 +31942,11 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32098,7 +32106,7 @@
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_COUNCIL_EIGHT</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_COUNCIL_EIGHT</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
@@ -32109,7 +32117,11 @@
 			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32284,7 +32296,7 @@
 			<Class>UNITCLASS_PIKEMAN</Class>
 			<Type>UNIT_DEATHS_HEAD</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DEATHS_HEAD</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
@@ -32297,7 +32309,15 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32556,7 +32576,7 @@
 			<Class>UNITCLASS_PHALANX</Class>
 			<Type>UNIT_HAND_OF_DTESH</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HAND_OF_DTESH</Description>
 			<Civilopedia>TXT_KEY_UNIT_HAND_OF_DTESH_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_HAND_OF_DTESH_STRATEGY</Strategy>
@@ -32567,7 +32587,15 @@
 			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32618,7 +32646,7 @@
 			<Class>UNITCLASS_SPEARMAN</Class>
 			<Type>UNIT_SENTINEL</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SENTINEL</Description>
 			<Civilopedia>TXT_KEY_UNIT_SENTINEL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SENTINEL_STRATEGY</Strategy>
@@ -32632,7 +32660,15 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
