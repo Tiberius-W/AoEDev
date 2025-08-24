@@ -152,6 +152,26 @@ inline int plotDistance(int iX1, int iY1, int iX2, int iY2)													// Expos
 	return (std::max(iDX, iDY) + (std::min(iDX, iDY) / 2));
 }
 
+// 4 | 4 | 3 | 3 | 3 | 4 | 4
+// -------------------------
+// 4 | 3 | 2 | 2 | 2 | 3 | 4
+// -------------------------
+// 3 | 2 | 1 | 1 | 1 | 2 | 3
+// -------------------------
+// 3 | 2 | 1 | 0 | 1 | 2 | 3
+// -------------------------
+// 3 | 2 | 1 | 1 | 1 | 2 | 3
+// -------------------------
+// 4 | 3 | 2 | 2 | 2 | 3 | 4
+// -------------------------
+// 4 | 4 | 3 | 3 | 3 | 4 | 4
+//
+// Overload for using two plots, returning distance according to the pattern above...
+inline int plotDistance(const CvPlot* pPlot1, const CvPlot* pPlot2)
+{
+	return (plotDistance(pPlot1->getX_INLINE(), pPlot1->getY_INLINE(), pPlot2->getX_INLINE(), pPlot2->getY_INLINE()));
+}
+
 // 3 | 3 | 3 | 3 | 3 | 3 | 3
 // -------------------------
 // 3 | 2 | 2 | 2 | 2 | 2 | 3

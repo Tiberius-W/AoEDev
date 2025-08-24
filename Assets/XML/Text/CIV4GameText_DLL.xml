@@ -2791,11 +2791,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_RANGE_DEFENSE_MODIFIER</Tag>
-		<English>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</English>
-		<French>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</French>
-		<German>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</German>
-		<Italian>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</Italian>
-		<Spanish>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</Spanish>
+		<English>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</English>
+		<French>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</French>
+		<German>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</German>
+		<Italian>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</Italian>
+		<Spanish>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_UNIQUE</Tag>

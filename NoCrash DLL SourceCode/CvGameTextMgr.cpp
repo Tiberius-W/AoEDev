@@ -4322,7 +4322,10 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				{
 					iModifier = pPlot->getRangeDefense(pDefender->getTeam(), 3, false, true);
 					if (iModifier > 0)
+					{
+						szString.append(L" ");
 						szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD_IMPROVEMENT", iModifier));
+					}
 				}
 			}
 

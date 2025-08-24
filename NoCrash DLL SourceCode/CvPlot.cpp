@@ -13498,13 +13498,13 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 		{
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
-			if (pLoopPlot == NULL || !pLoopPlot->isOwned() || plotDistance(iDX, iDY, getX(), getY() > iRange))
+			if (pLoopPlot == NULL || !pLoopPlot->isOwned())
 				continue;
 
 			eImprovement = pLoopPlot->getImprovementType();
 
 			// Tile must be friendly to the defending unit...
-			if (eImprovement == NO_IMPROVEMENT || (pLoopPlot->getTeam() != NO_TEAM && !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender)))
+			if (eImprovement == NO_IMPROVEMENT || !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender))
 				continue;
 			// And not be occupied by enemy forces
 			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
@@ -13524,7 +13524,7 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 				if (!bExcludeCenter)
 					iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
 			}
-			else
+			else if (plotDistance(pLoopPlot, this) <= GC.getImprovementInfo(eImprovement).getRange())
 				iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
 
 			if (iModifier > iBestModifier)
