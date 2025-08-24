@@ -12246,36 +12246,21 @@ int CvUnit::movesLeft() const
 
 bool CvUnit::canMove() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							03/27/09											**/
-/**																								**/
-/**									Blocks Movement of Marked Units								**/
-/*************************************************************************************************/
+	// Xienwolf - 03/27/09 - Blocks Movement of Marked Units
 	if (plot() == NULL)
-	{
 		return false;
-	}
+
 	if (isBlind() && (!plot()->isVisible(getTeam(), false) || !plot()->isRevealed(getTeam(), false)))
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (isDead())
-	{
 		return false;
-	}
 
 	if (getMoves() >= maxMoves())
-	{
 		return false;
-	}
 
 	if (getImmobileTimer() > 0)
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -14503,237 +14488,104 @@ bool CvUnit::flatMovementCost() const
 
 bool CvUnit::ignoreTerrainCost() const
 {
-
-//FfH Flying: Added by Kael 07/30/2007
+	//FfH Flying: Added by Kael 07/30/2007
 	if (isFlying())
-	{
 		return true;
-	}
-//FfH: End Add
-/*************************************************************************************************/
-/**	MoveBetter 								05/15/08								Xienwolf	**/
-/**																								**/
-/**								Simulates the UnitInfo Flag										**/
-/*************************************************************************************************/
+
+	// MoveBetter - Xienwolf - 05/15/08 - Simulates the UnitInfo Flag
 	if (isIgnoreTerrainCosts())
-	{
 		return true;
-	}
-/*************************************************************************************************/
-/**	MoveBetter 									END												**/
-/*************************************************************************************************/
 
 	return m_pUnitInfo->isIgnoreTerrainCost();
 }
 
 
+// Xienwolf - 09/27/08 - Checks against all kinds of invisibility
 bool CvUnit::isNeverInvisible() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							Allows Multiple Invisible types on a Unit							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (!alwaysInvisible() && (getInvisibleType() == NO_INVISIBLE));
-/**								----  End Original Code  ----									**/
 	return (!alwaysInvisible() && (getNumInvisibleTypes() == 0));
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 }
 
 
+// Checks if a unit is invisible to a given team while on its own tile
 bool CvUnit::isInvisible(TeamTypes eTeam, bool bDebug, bool bCheckCargo) const
 {
 	if (bDebug && GC.getGameINLINE().isDebugMode())
-	{
 		return false;
-	}
 
 	if (getTeam() == eTeam)
-	{
 		return false;
-	}
 
-//FfH: Added by Kael 04/11/2008
+	//FfH: Added by Kael 04/11/2008
 	if (plot() != NULL)
 	{
-		if (plot()->isCity())
-		{
-			if (getTeam() == plot()->getTeam())
-			{
-				return false;
-			}
-		}
-		if (plot()->isOwned())
-		{
-			if (plot()->getTeam() != getTeam())
-			{
-				if (GET_PLAYER(plot()->getOwnerINLINE()).isSeeInvisible())
-				{
-					return false;
-				}
-			}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							No Longer use this method for Esus Effect							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (plot()->getTeam() == getTeam())
-			{
-				if (GET_PLAYER(plot()->getOwnerINLINE()).isHideUnits() && !isIgnoreHide())
-				{
-					return true;
-				}
-			}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-		}
-	}
-//FfH: End Add
+		if (plot()->isCity() && getTeam() == plot()->getTeam())
+			return false;
 
-	if (alwaysInvisible())
-	{
-		return true;
-	}
-
-	if (bCheckCargo && isCargo())
-	{
-		return true;
-	}
-
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							Allows Multiple Invisible types on a Unit							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (getInvisibleType() == NO_INVISIBLE)
-	{
-		return false;
-	}
-
-//FfH: Added by Kael 01/16/2009
-	if (plot() == NULL)
-	{
-		return false;
-	}
-//FfH: End Add
-
-	return !(plot()->isInvisibleVisible(eTeam, getInvisibleType()));
-/**								----  End Original Code  ----									**/
-	if (getNumInvisibleTypes() == 0)
-	{
-		return false;
-	}
-
-/*************************************************************************************************/
-/**	Tweak					 	   11/04/10									Snarko				**/
-/**																								**/
-/**			If the plot is NULL then do not try to check if invisible are visible on it			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	bool bHidden = false;
-	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
-	{
-		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
-			bHidden = true;
-		}
-	}
-
-	if (plot() == NULL)
-	{
-		return false;
-	}
-/**								----  End Original Code  ----									**/
-	if (plot() == NULL)
-	{
-		return false;
-	}
-
-	bool bHidden = false;
-	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
-	{
-		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
-			bHidden = true;
-		}
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-
-	return bHidden;
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-}
-/*************************************************************************************************/
-/**	Tweak					 	   11/04/10									Snarko				**/
-/**																								**/
-/**				So we can check the plot we're moving into, instead of plot we're on			**/
-/*************************************************************************************************/
-bool CvUnit::isInvisible(TeamTypes eTeam, const CvPlot* pPlot) const
-{
-
-	if (getTeam() == eTeam)
-	{
-		return false;
-	}
-//FfH: Added by Kael 04/11/2008
-	if (pPlot->isCity())
-	{
-		if (getTeam() == pPlot->getTeam())
+		if (plot()->isOwned() && plot()->getTeam() != getTeam()
+		 && GET_PLAYER(plot()->getOwnerINLINE()).isSeeInvisible())
 		{
 			return false;
 		}
 	}
-	if (pPlot->isOwned())
-	{
-		if (pPlot->getTeam() != getTeam())
-		{
-			if (GET_PLAYER(pPlot->getOwnerINLINE()).isSeeInvisible())
-			{
-				return false;
-			}
-		}
-	}
-//FfH: End Add
 
 	if (alwaysInvisible())
-	{
 		return true;
-	}
 
-	if (isCargo())
-	{
+	if (bCheckCargo && isCargo())
 		return true;
-	}
 
 	if (getNumInvisibleTypes() == 0)
+		return false;
+
+	if (plot() == NULL)
+		return false;
+
+	bool bHidden = false;
+	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
+	{
+		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
+			bHidden = true;
+	}
+
+	return bHidden;
+}
+
+// Snarko - Checks if a unit will be invisible to a given team on a target plot (for purpose of moving onto that plot)
+bool CvUnit::isInvisible(TeamTypes eTeam, const CvPlot* pPlot) const
+{
+
+	if (getTeam() == eTeam)
+		return false;
+
+	//FfH: Added by Kael 04/11/2008
+	if (pPlot->isCity() && getTeam() == pPlot->getTeam())
+		return false;
+
+	if (pPlot->isOwned() && pPlot->getTeam() != getTeam()
+	 && GET_PLAYER(pPlot->getOwnerINLINE()).isSeeInvisible())
 	{
 		return false;
 	}
+
+	if (alwaysInvisible())
+		return true;
+
+	if (isCargo())
+		return true;
+
+	if (getNumInvisibleTypes() == 0)
+		return false;
 
 	bool bHidden = false;
 	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
 	{
 		if (!pPlot->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
 			bHidden = true;
-		}
 	}
 
 	return bHidden;
 }
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 
 bool CvUnit::isNukeImmune() const
 {
@@ -32678,51 +32530,50 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 
 	if (!canExploreLair(pPlot, false))
 		return false;
+
 	TraitTriggeredData kData;
 	kData.m_iImprovement = pPlot->getImprovementType();
 	GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_EXPLORE_LAIR, &kData);
 
 	GoodyTypes eGoody = GET_PLAYER(getOwnerINLINE()).doLair(pPlot, this);
 
-	if (eGoody != NO_GOODY) //If no possible goody was found this will return false
+	if (eGoody == NO_GOODY)
+		return false;
+
+	finishMoves();
+	changeExperience(100);
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getGameINLINE().getSorenRandNum(100, "Destroy Lair Chance") < GC.getGoodyInfo(eGoody).getDestroyLairChance())
 	{
-		finishMoves();
-		changeExperience(100);
-		if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getGameINLINE().getSorenRandNum(100, "Destroy Lair Chance") < GC.getGoodyInfo(eGoody).getDestroyLairChance())
+		if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT)
 		{
-			if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT)
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
+			pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
+			plot()->setImprovementOwner(NO_PLAYER);
+			pPlot->setImprovementType((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage());
+		}
+		else
+		{
+			if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
 			{
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
-				pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
-				plot()->setImprovementOwner(NO_PLAYER);
-				pPlot->setImprovementType((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage());
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				// +-10% on cycle length
+				pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
+																		* GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
 			}
 			else
 			{
-				if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
-				{
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
-					// +-10% on cycle length
-					pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
-																		  * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
-				}
-				else
-				{
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
-					pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
-					plot()->setImprovementOwner(NO_PLAYER);
-					pPlot->setImprovementType(NO_IMPROVEMENT);
-				}
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
+				plot()->setImprovementOwner(NO_PLAYER);
+				pPlot->setImprovementType(NO_IMPROVEMENT);
 			}
 		}
-		return true;
 	}
 
-	return false;
+	return true;
 }
-/*************************************************************************************************/
-/**	MISSION_CLAIM_FORT/MISSION_EXPLORE_LAIR	END													**/
-/*************************************************************************************************/
+
+
 /*************************************************************************************************/
 /**	Sidar Mist 								25/06/10								Grey Fox	**/
 /*************************************************************************************************/
