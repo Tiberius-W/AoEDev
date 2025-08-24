@@ -9205,7 +9205,13 @@
 		<PromotionInfo>		<!-- Fell Spirit -->
 			<Type>PROMOTION_FELL_SPIRIT</Type>
 			<Description>TXT_KEY_PROMOTION_FELL_SPIRIT</Description>
-			<iSlaveGenerationChance>20</iSlaveGenerationChance>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_WRETCHED</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_WRETCHED</Promotion>
+			</PromotionOverwrites>
+			<iSlaveGenerationChance>35</iSlaveGenerationChance>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/FellSpirit.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fellowship Forester -->
