@@ -1565,11 +1565,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_IM_AFEARED</Tag>
-		<English>%s1_UnitName is too afraid to attack.</English>
-		<French>%s1_UnitName est trop effrayé pour attaquer</French>
-		<German>%s1_UnitName hat zuviel Angst um anzugreifen</German>
-		<Italian>%s1_UnitName is too afraid to attack.</Italian>
-		<Spanish>%s1_UnitName is too afraid to attack.</Spanish>
+		<English>%s1_UnitName is too afraid to attack!</English>
+		<French>%s1_UnitName est trop effrayé pour attaquer!</French>
+		<German>%s1_UnitName hat zuviel Angst um anzugreifen!</German>
+		<Italian>%s1_UnitName is too afraid to attack!</Italian>
+		<Spanish>%s1_UnitName is too afraid to attack!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_INFERNAL_GRIMOIRE_BALOR</Tag>

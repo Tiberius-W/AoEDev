@@ -7889,7 +7889,7 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 	if (isAlwaysHeal()							== false)				m_bAlwaysHeal						= pClassInfo->isAlwaysHeal();
 	if (isHillsDoubleMove()						== false)				m_bHillsDoubleMove					= pClassInfo->isHillsDoubleMove();
 	if (isImmuneToFirstStrikes()				== false)				m_bImmuneToFirstStrikes				= pClassInfo->isImmuneToFirstStrikes();
-	if (isTradeDefender() == false)				m_bTradeDefender = pClassInfo->isTradeDefender();
+	if (isTradeDefender() 						== false)				m_bTradeDefender 					= pClassInfo->isTradeDefender();
 	if (isAIControl()							== false)				m_bAIControl						= pClassInfo->isAIControl();
 	if (isBoarding()							== false)				m_bBoarding							= pClassInfo->isBoarding();
 	if (isOnlyDefensive()						== false)				m_bOnlyDefensive					= pClassInfo->isOnlyDefensive();
@@ -7898,7 +7898,7 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 	if (isEquipment()							== false)				m_bEquipment						= pClassInfo->isEquipment();
 	if (isFear()								== false)				m_bFear								= pClassInfo->isFear();
 	if (isFlying()								== false)				m_bFlying							= pClassInfo->isFlying();
-	if (isPrereqAliveCapture() == false)				m_bPrereqAliveCapture = pClassInfo->isPrereqAliveCapture();
+	if (isPrereqAliveCapture() 					== false)				m_bPrereqAliveCapture 				= pClassInfo->isPrereqAliveCapture();
 	if (isHeld()								== false)				m_bHeld								= pClassInfo->isHeld();
 	if (isHiddenNationality()					== false)				m_bHiddenNationality				= pClassInfo->isHiddenNationality();
 	if (isIgnoreBuildingDefense()				== false)				m_bIgnoreBuildingDefense			= pClassInfo->isIgnoreBuildingDefense();
@@ -7938,10 +7938,10 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 /*************************************************************************************************/
 	if (isNotAlive()							== false)				m_bNotAlive							= pClassInfo->isNotAlive();
 	if (isPrereqAlive()							== false)				m_bPrereqAlive						= pClassInfo->isPrereqAlive();
-	if (isPrereqRevealed() == false)				m_bPrereqRevealed = pClassInfo->isPrereqRevealed();
-	if (isPrereqHidden() == false)				m_bPrereqHidden = pClassInfo->isPrereqHidden();
+	if (isPrereqRevealed() 						== false)				m_bPrereqRevealed 					= pClassInfo->isPrereqRevealed();
+	if (isPrereqHidden() 						== false)				m_bPrereqHidden 					= pClassInfo->isPrereqHidden();
 	if (isRace()								== false)				m_bRace								= pClassInfo->isRace();
-	if (isGraphicalAddOnPromotion() == false)				m_bGraphicalAddOnPromotion = pClassInfo->isGraphicalAddOnPromotion();
+	if (isGraphicalAddOnPromotion() 			== false)				m_bGraphicalAddOnPromotion 			= pClassInfo->isGraphicalAddOnPromotion();
 	if (isRemovedByCasting()					== false)				m_bRemovedByCasting					= pClassInfo->isRemovedByCasting();
 	if (isRemovedByCombat()						== false)				m_bRemovedByCombat					= pClassInfo->isRemovedByCombat();
 	if (isRemovedWhenHealed()					== false)				m_bRemovedWhenHealed				= pClassInfo->isRemovedWhenHealed();

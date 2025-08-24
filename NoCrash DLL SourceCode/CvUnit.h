@@ -2263,6 +2263,8 @@ protected:
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
 
+	int calcFearChance(const CvUnit* pFearUnit, const CvUnit* pFearingUnit) const;
+
 	int getBetrayalChance() const;
 	void changeBetrayalChance(int iChange);
 /************************************************************************************************/

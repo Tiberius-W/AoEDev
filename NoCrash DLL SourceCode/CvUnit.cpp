@@ -3482,21 +3482,15 @@ void CvUnit::updateCombat(bool bQuick)
 		changeCombatTimer(-1);
 
 		if (getCombatTimer() > 0)
-		{
 			return;
-		}
 		else
-		{
 			bFinish = true;
-		}
 	}
 
 	CvPlot* pPlot = getAttackPlot();
 
 	if (pPlot == NULL)
-	{
 		return;
-	}
 
 	if (getDomainType() == DOMAIN_AIR)
 	{
@@ -3506,13 +3500,9 @@ void CvUnit::updateCombat(bool bQuick)
 
 	CvUnit* pDefender = NULL;
 	if (bFinish)
-	{
 		pDefender = getCombatUnit();
-	}
 	else
-	{
 		pDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
-	}
 
 	if (pDefender == NULL)
 	{
@@ -3528,9 +3518,7 @@ void CvUnit::updateCombat(bool bQuick)
 
 	//check if quick combat
 	if (!bQuick)
-	{
 		bVisible = isCombatVisible(pDefender);
-	}
 
 	// PyPreCombat  By BI 07/24/11
 	if (!CvString(GC.getUnitInfo(getUnitType()).getPyPreCombat()).empty())
@@ -3559,31 +3547,21 @@ void CvUnit::updateCombat(bool bQuick)
 
 	//FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
 
-//FfH: Added by Kael 07/30/2007
+	//FfH: Added by Kael 07/30/2007
 	if (!isImmuneToDefensiveStrike())
-	{
 		pDefender->doDefensiveStrike(this);
-	}
-	if (pDefender->isFear())
+
+	if (pDefender->isFear() && !isImmuneToFear())
 	{
-		if (!isImmuneToFear())
+		if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(pDefender, this))
 		{
-			int iChance = baseCombatStr() + 20 + getLevel() - pDefender->baseCombatStr() - pDefender->getLevel();
-			if (iChance < 4)
-			{
-				iChance = 4;
-			}
-			if (GC.getGameINLINE().getSorenRandNum(40, "Im afeared!") > iChance)
-			{
-				setMadeAttack(true);
-				changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
-				szBuffer = gDLL->getText("TXT_KEY_MESSAGE_IM_AFEARED", getNameKey());
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, "Art/Interface/Buttons/Promotions/Fear.dds", (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				bFinish = true;
-			}
+			setMadeAttack(true);
+			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
+			szBuffer = gDLL->getText("TXT_KEY_MESSAGE_IM_AFEARED", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, "Art/Interface/Buttons/Promotions/Fear.dds", (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+			bFinish = true;
 		}
 	}
-//FfH: End Add
 
 	//if not finished and not fighting yet, set up combat damage and mission
 	if (!bFinish)
@@ -4003,25 +3981,19 @@ void CvUnit::updateCombat(bool bQuick)
 
 				if (bAdvance)
 				{
-					if (!isCannotCapture(true)
-
-//FfH: Added by Kael 11/14/2007
-					 || GC.getUnitInfo((UnitTypes)pDefender->getUnitType()).getEquipmentPromotion() != NO_PROMOTION
-//FfH: End Add
-
-					 )
+					//FfH: Added by Kael 11/14/2007
+					if (!isCannotCapture(true) || GC.getUnitInfo((UnitTypes)pDefender->getUnitType()).getEquipmentPromotion() != NO_PROMOTION)
 					{
 						pDefender->setCapturingPlayer(getOwnerINLINE());
 						//pDefender->setCombatUnit(this);
 					}
 				}
 
-
 				pDefender->kill(false);
 				pDefender = NULL;
 
-//FfH Fear: Added by Kael 07/30/2007
-				if (isFear() && pPlot->isCity() == false)
+				//FfH Fear: Added by Kael 07/30/2007
+				if (isFear() && pPlot->isCity(true) == false)
 				{
 					CvUnit* pLoopUnit;
 					CLLNode<IDInfo>* pUnitNode;
@@ -4030,21 +4002,18 @@ void CvUnit::updateCombat(bool bQuick)
 					{
 						pLoopUnit = ::getUnit(pUnitNode->m_data);
 						pUnitNode = pPlot->nextUnitNode(pUnitNode);
-						if (pLoopUnit->isEnemy(getTeam()))
+						if (pLoopUnit->isEnemy(getTeam()) && !pLoopUnit->isImmuneToFear())
 						{
-							if (!pLoopUnit->isImmuneToFear())
+							// Halved fear chance when checking against all units in stack
+							if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(this, pLoopUnit) / 2)
 							{
-								if (GC.getGameINLINE().getSorenRandNum(20, "Im afeared!") <= (baseCombatStr() + 10 - pLoopUnit->baseCombatStr()))
-								{
-									pLoopUnit->joinGroup(NULL);
-									pLoopUnit->jumpToNearestValidPlot();
-								}
+								pLoopUnit->joinGroup(NULL);
+								pLoopUnit->jumpToNearestValidPlot();
 							}
 						}
 					}
 				}
 				bAdvance = canAdvance(pPlot, 0);
-//FfH: End Add
 
 				if (!bAdvance)
 				{
@@ -4191,6 +4160,15 @@ void CvUnit::updateCombat(bool bQuick)
 //FfH: End Modify
 		}
 	}
+}
+
+// 10-75 range, baseline 50 to fear, modulated first by level/combat str, then multiplied by health percent of units
+int CvUnit::calcFearChance(const CvUnit* pFearUnit, const CvUnit* pFearingUnit) const
+{
+	int iFearChance = 50 + (pFearUnit->baseCombatStr() + pFearUnit->getLevel()) - (pFearingUnit->baseCombatStr() + pFearingUnit->getLevel());
+	iFearChance = iFearChance * pFearUnit->currHitPoints() * pFearingUnit->maxHitPoints() / std::max(1, pFearUnit->maxHitPoints() * pFearingUnit->currHitPoints());
+
+	return range(iFearChance, 10, 75);
 }
 
 void CvUnit::checkRemoveSelectionAfterAttack()
