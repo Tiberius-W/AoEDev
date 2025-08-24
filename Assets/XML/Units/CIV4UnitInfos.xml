@@ -29406,15 +29406,16 @@
 			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<iCost>60</iCost>
 			<iMoves>2</iMoves>
-			<iCombat>3</iCombat>
+			<iCombat>4</iCombat>
+			<iCityAttack>-20</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>45</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>45</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iAsset>4</iAsset>
@@ -29473,6 +29474,7 @@
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>6</iCombat>
+			<iCityAttack>-20</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -29561,6 +29563,7 @@
 			<iCommandRange>2</iCommandRange>
 			<iMinLevel>6</iMinLevel>
 			<iCombatDefense>10</iCombatDefense>
+			<iCityAttack>-20</iCityAttack>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>

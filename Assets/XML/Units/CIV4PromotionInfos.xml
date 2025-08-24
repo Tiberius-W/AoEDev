@@ -28765,6 +28765,9 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_ANIMAL_HUSBANDRY</TechPrereq>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_URBAN</Promotion>
+			</PromotionExcludes>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
@@ -28807,6 +28810,9 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_URBAN</Promotion>
+			</PromotionExcludes>
 			<TechPrereq>TECH_ANIMAL_MASTERY</TechPrereq>
 			<UnitCombatMods>
 				<UnitCombatMod>
@@ -32791,12 +32797,18 @@
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/PsionicMastery.dds</Button>
 			<iMinLevel>12</iMinLevel>
 		</PromotionInfo>
-  <!-- <PromotionInfo>	-->	<!-- Urban -->
-       <!-- <Type>TXT_KEY_ANIMALBLOCKER</Type>
+       <PromotionInfo>		<!-- Urban -->
+        <Type>PROMOTION_URBAN</Type>
 			<Description>TXT_KEY_ANIMALBLOCKER</Description>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bEffectProm>0</bEffectProm>
-			<bNoXP>1</bNoXP>
+			<iCityAttack>50</iCityAttack>
+			<bMustMaintain>1</bMustMaintain>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_COMBAT1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<TechPrereq>TECH_WARFARE</TechPrereq>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
@@ -32809,13 +32821,9 @@
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/Urban.dds</Button>
-		</PromotionInfo> -->
+		</PromotionInfo>
 		<!--<PromotionInfo>     Lifedrinker
 				<Type>PROMOTION_LIFEDRINKER</Type>
 				<Description>TXT_KEY_PROMOTION_LIFEDRINKER</Description>
