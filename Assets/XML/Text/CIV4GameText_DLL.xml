@@ -2791,11 +2791,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_RANGE_DEFENSE_MODIFIER</Tag>
-		<English>[ICON_BULLET]%D1% strength to all units within %D2 tiles</English>
-		<French>[ICON_BULLET]%D1% force à toutes les unités dans un rayon de  %D2 cases</French>
-		<German>[ICON_BULLET]%D1% Stärke für alle Einheiten innerhalb %D2 Geländefeldern</German>
-		<Italian>[ICON_BULLET]%D1% strength to all units within %D2 tiles</Italian>
-		<Spanish>[ICON_BULLET]%D1% de fuerza a todas las unidades a un alcance de %D2 casillas</Spanish>
+		<English>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</English>
+		<French>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</French>
+		<German>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</German>
+		<Italian>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</Italian>
+		<Spanish>[ICON_BULLET]%D1% defensive strength to units friendly with tile's owner within %D2 tiles, if it is not occupied by enemies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_UNIQUE</Tag>

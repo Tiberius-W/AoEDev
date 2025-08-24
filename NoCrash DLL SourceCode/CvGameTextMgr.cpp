@@ -4317,6 +4317,13 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD", iModifier));
 				}
+				// Addendum if some defense comes from a nearby improvement. See CvPlot::defenseModifier
+				if (pPlot->getPlotCity() == NULL && pDefender->getTeam() != NO_TEAM && (pPlot->getTeam() == NO_TEAM || GET_TEAM(pDefender->getTeam()).isFriendlyTerritory(pDefender->getTeam())))
+				{
+					iModifier = pPlot->getRangeDefense(pDefender->getTeam(), 3, false, true);
+					if (iModifier > 0)
+						szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD_IMPROVEMENT", iModifier));
+				}
 			}
 
 			iModifier = pDefender->fortifyModifier();

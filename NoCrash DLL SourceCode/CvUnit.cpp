@@ -31683,6 +31683,7 @@ int CvUnit::getRenderPriority(UnitSubEntityTypes eUnitSubEntity, int iMeshGroupT
 	}
 }
 
+// Checks for isNeverHostile, isHiddenNationality, isAttackNoWar, and conditionally if not on something acting as a city
 bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 {
 	// PeaceAndFlowers - Xienwolf - 03/27/09 - Makes all Combat Actions impossible for this type of Unit

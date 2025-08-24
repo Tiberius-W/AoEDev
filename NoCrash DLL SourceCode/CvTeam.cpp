@@ -6812,27 +6812,20 @@ void CvTeam::cancelDefensivePacts()
 }
 
 
+// Checks for team, vassal, and open borders
 bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 {
 	if (eTeam == NO_TEAM)
-	{
 		return false;
-	}
 
 	if (eTeam == getID())
-	{
 		return true;
-	}
 
 	if (GET_TEAM(eTeam).isVassal(getID()))
-	{
 		return true;
-	}
 
 	if (isVassal(eTeam) && isOpenBorders(eTeam))
-	{
 		return true;
-	}
 
 	return false;
 }

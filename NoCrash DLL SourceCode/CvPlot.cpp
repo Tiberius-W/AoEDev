@@ -531,13 +531,9 @@ float CvPlot::getSymbolOffsetY(int iOffset) const
 TeamTypes CvPlot::getTeam() const
 {
 	if (isOwned())
-	{
 		return GET_PLAYER(getOwnerINLINE()).getTeam();
-	}
 	else
-	{
 		return NO_TEAM;
-	}
 }
 
 
@@ -3806,36 +3802,20 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 	iModifier = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getDefenseModifier() : GC.getFeatureInfo(getFeatureType()).getDefenseModifier());
 
 	if (isHills())
-	{
 		iModifier += GC.getHILLS_EXTRA_DEFENSE();
-	}
 
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
 	if (isPeak())
-	{
 		iModifier += GC.getPEAK_EXTRA_DEFENSE();
-	}
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
 
 	if (bHelp)
-	{
 		eImprovement = getRevealedImprovementType(GC.getGameINLINE().getActiveTeam(), false);
-	}
 	else
-	{
 		eImprovement = getImprovementType();
-	}
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
 		if ( getTeam() == NO_TEAM|| eDefender == NO_TEAM || (eDefender != NO_TEAM && GET_TEAM(eDefender).isFriendlyTerritory(getTeam())))
-		{
 			iModifier += GC.getImprovementInfo(eImprovement).getDefenseModifier();
-		}
 	}
 
 	if (!bHelp)
@@ -3843,20 +3823,13 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 		pCity = getPlotCity();
 
 		if (pCity != NULL)
-		{
 			iModifier += pCity->getDefenseModifier(bIgnoreBuilding);
-		}
-
-//FfH: Added by Kael
+		//FfH: Added by Kael
 		else
 		{
 			if (eDefender != NO_TEAM && (getTeam() == NO_TEAM || GET_TEAM(eDefender).isFriendlyTerritory(getTeam())))
-			{
 				iModifier += getRangeDefense(eDefender, 3, false, true);
-			}
 		}
-//FfH: End Add
-
 	}
 
 	return iModifier;
@@ -13511,6 +13484,7 @@ bool CvPlot::isBuilding(BuildTypes eBuild, TeamTypes eTeam, int iRange, bool bEx
 	return false;
 }
 
+// Checks for if there are valid improvements within range providing additional tile defense. bFinal looks for potential upgrades.
 int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool bExcludeCenter) const
 {
 	int iModifier;
@@ -13529,9 +13503,10 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 
 			eImprovement = pLoopPlot->getImprovementType();
 
-			if (eImprovement == NO_IMPROVEMENT || pLoopPlot->getTeam() != eDefender)
+			// Tile must be friendly to the defending unit...
+			if (eImprovement == NO_IMPROVEMENT || (pLoopPlot->getTeam() != NO_TEAM && !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender)))
 				continue;
-
+			// And not be occupied by enemy forces
 			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
 				continue;
 
