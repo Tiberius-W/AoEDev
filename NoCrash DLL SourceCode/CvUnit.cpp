@@ -3553,7 +3553,7 @@ void CvUnit::updateCombat(bool bQuick)
 
 	if (pDefender->isFear() && !isImmuneToFear())
 	{
-		if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(pDefender, this))
+		if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < pDefender->calcFearChance(this))
 		{
 			setMadeAttack(true);
 			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
@@ -3993,7 +3993,7 @@ void CvUnit::updateCombat(bool bQuick)
 				pDefender = NULL;
 
 				//FfH Fear: Added by Kael 07/30/2007
-				if (isFear() && pPlot->isCity(true) == false)
+				if (isFear() && !pPlot->isCity(true))
 				{
 					CvUnit* pLoopUnit;
 					CLLNode<IDInfo>* pUnitNode;
@@ -4005,7 +4005,7 @@ void CvUnit::updateCombat(bool bQuick)
 						if (pLoopUnit->isEnemy(getTeam()) && !pLoopUnit->isImmuneToFear())
 						{
 							// Halved fear chance when checking against all units in stack
-							if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(this, pLoopUnit) / 2)
+							if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(pLoopUnit) / 2)
 							{
 								pLoopUnit->joinGroup(NULL);
 								pLoopUnit->jumpToNearestValidPlot();
@@ -4163,10 +4163,10 @@ void CvUnit::updateCombat(bool bQuick)
 }
 
 // 10-75 range, baseline 50 to fear, modulated first by level/combat str, then multiplied by health percent of units
-int CvUnit::calcFearChance(const CvUnit* pFearUnit, const CvUnit* pFearingUnit) const
+int CvUnit::calcFearChance(const CvUnit* pAfraidUnit) const
 {
-	int iFearChance = 50 + (pFearUnit->baseCombatStr() + pFearUnit->getLevel()) - (pFearingUnit->baseCombatStr() + pFearingUnit->getLevel());
-	iFearChance = iFearChance * pFearUnit->currHitPoints() * pFearingUnit->maxHitPoints() / std::max(1, pFearUnit->maxHitPoints() * pFearingUnit->currHitPoints());
+	int iFearChance = 50 + 2*(baseCombatStr() + getLevel()) - 2*(pAfraidUnit->baseCombatStr() + pAfraidUnit->getLevel());
+	iFearChance = iFearChance * currHitPoints() * pAfraidUnit->maxHitPoints() / std::max(1, maxHitPoints() * pAfraidUnit->currHitPoints());
 
 	return range(iFearChance, 10, 75);
 }

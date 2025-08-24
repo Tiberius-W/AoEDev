@@ -4011,10 +4011,24 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				//szString += NEWLINE + szTempBuffer;
 			}
 
-//FfH: Modified by Kael 09/02/2007
-//			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, NULL)));
+			if (pDefender->isFear() && !pAttacker->isImmuneToFear())
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_FEAR_ATTACKING", pDefender->calcFearChance(pAttacker)));
+				szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+			}
+			if (pAttacker->isFear() && !pPlot->isCity(true))
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_SCARE_DEFENDERS"));
+				szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+			}
+
+			//FfH: Modified by Kael 09/02/2007
+			// szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, NULL)));
 			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, pDefender)));
-//FfH: End Modify
 
 			szDefenseOdds.Format(L"%.2f", pDefender->currCombatStrFloat(pPlot, pAttacker));
 			szString.append(NEWLINE);

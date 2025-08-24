@@ -1537,6 +1537,7 @@ public:
 	void changeDoubleFortifyBonus(int iNewValue);
 	bool isFear() const;
 	void changeFear(int iNewValue);
+	int calcFearChance(const CvUnit* pAfraidUnit) const;
 	bool isFlying() const;
 	void changeFlying(int iNewValue);
 	bool isHeld() const;
@@ -2262,8 +2263,6 @@ protected:
 	void resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle);
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
-
-	int calcFearChance(const CvUnit* pFearUnit, const CvUnit* pFearingUnit) const;
 
 	int getBetrayalChance() const;
 	void changeBetrayalChance(int iChange);
