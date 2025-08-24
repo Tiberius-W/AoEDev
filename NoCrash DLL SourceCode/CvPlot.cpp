@@ -4500,6 +4500,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 }
 
 
+// Apply some function to all units on plot, of optional different player/team than eOwner/eTeam.
 void CvPlot::plotAction(PlotUnitFunc func, int iData1, int iData2, PlayerTypes eOwner, TeamTypes eTeam)
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4512,17 +4513,15 @@ void CvPlot::plotAction(PlotUnitFunc func, int iData1, int iData2, PlayerTypes e
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
-		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
-			{
-				func(pLoopUnit, iData1, iData2);
-			}
-		}
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			func(pLoopUnit, iData1, iData2);
 	}
 }
 
-
+// Count all units on plot against functions A of optional different player/team than eOwner/eTeam and optional function B; see PUFs. Use plotCheck instead to find if just 1 success.
 int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerTypes eOwner, TeamTypes eTeam, ConstPlotUnitFunc funcB, int iData1B, int iData2B) const
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4538,17 +4537,17 @@ int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerT
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if (eTeam != NO_TEAM && pLoopUnit->getTeam() != eTeam)
+			continue;
+
+		if ((funcA == NULL) || funcA(pLoopUnit, iData1A, iData2A))
 		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
 			{
-				if ((funcA == NULL) || funcA(pLoopUnit, iData1A, iData2A))
-				{
-					if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
-					{
-						iCount++;
-					}
-				}
+				iCount++;
 			}
 		}
 	}
@@ -4556,6 +4555,7 @@ int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerT
 	return iCount;
 }
 
+// Check all units on plot against functions A of optional different player/team than eOwner/eTeam and optional function B; see PUFs. Returns first success.
 CvUnit* CvPlot::plotCheck(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerTypes eOwner, TeamTypes eTeam, ConstPlotUnitFunc funcB, int iData1B, int iData2B) const
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4568,17 +4568,17 @@ CvUnit* CvPlot::plotCheck(ConstPlotUnitFunc funcA, int iData1A, int iData2A, Pla
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if (eTeam != NO_TEAM && pLoopUnit->getTeam() != eTeam)
+			continue;
+
+		if (funcA(pLoopUnit, iData1A, iData2A))
 		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
 			{
-				if (funcA(pLoopUnit, iData1A, iData2A))
-				{
-					if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
-					{
-						return pLoopUnit;
-					}
-				}
+				return pLoopUnit;
 			}
 		}
 	}
@@ -4595,50 +4595,28 @@ bool CvPlot::isOwned() const
 
 bool CvPlot::isBarbarian() const
 {
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getOwnerINLINE() == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
+	// MultiBarb - Xienwolf - 12/23/08 - Adds extra Barbarian Civilizations
 	return (getOwnerINLINE() == ORC_PLAYER || getOwnerINLINE() == ANIMAL_PLAYER || getOwnerINLINE() == DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
 }
 
 
 bool CvPlot::isRevealedBarbarian() const
 {
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
-	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ORC_PLAYER || getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ANIMAL_PLAYER || getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
+	// MultiBarb - Xienwolf - 12/23/08 - Adds extra Barbarian Civilizations
+	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ORC_PLAYER
+	|| getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ANIMAL_PLAYER
+	|| getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == DEMON_PLAYER);
 }
 
 
 bool CvPlot::isVisible(TeamTypes eTeam, bool bDebug) const
 {
 	if (bDebug && GC.getGameINLINE().isDebugMode())
-	{
 		return true;
-	}
 	else
 	{
 		if (eTeam == NO_TEAM)
-		{
 			return false;
-		}
 
 		return ((getVisibilityCount(eTeam) > 0) || (getStolenVisibilityCount(eTeam) > 0));
 	}
@@ -13535,69 +13513,47 @@ bool CvPlot::isBuilding(BuildTypes eBuild, TeamTypes eTeam, int iRange, bool bEx
 
 int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool bExcludeCenter) const
 {
-	int iModifier = 0;
+	int iModifier;
 	int iBestModifier = 0;
 	CvPlot* pLoopPlot;
 	ImprovementTypes eImprovement;
+
 	for (int iDX = -iRange; iDX <= iRange; iDX++)
 	{
 		for (int iDY = -iRange; iDY <= iRange; iDY++)
 		{
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-			if (pLoopPlot != NULL)
+
+			if (pLoopPlot == NULL || !pLoopPlot->isOwned() || plotDistance(iDX, iDY, getX(), getY() > iRange))
+				continue;
+
+			eImprovement = pLoopPlot->getImprovementType();
+
+			if (eImprovement == NO_IMPROVEMENT || pLoopPlot->getTeam() != eDefender)
+				continue;
+
+			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
+				continue;
+
+			if (bFinal && finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
 			{
-				if (pLoopPlot->isOwned())
-				{
-					eImprovement = pLoopPlot->getImprovementType();
-					iModifier = 0;
-					if (eImprovement != NO_IMPROVEMENT)
-					{
-						if (bFinal)
-						{
-							if (finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
-							{
-/*************************************************************************************************/
-/**	MyLand									04/04/09								Xienwolf	**/
-/**																								**/
-/**				Not every Civ can fully upgrade every improvement that they can build			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								eImprovement = finalImprovementUpgrade(eImprovement);
-/**								----  End Original Code  ----									**/
-								CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
-								eImprovement = finalImprovementUpgrade(eImprovement, eCiv);
-/*************************************************************************************************/
-/**	MyLand									END													**/
-/*************************************************************************************************/
-							}
-						}
-						if (pLoopPlot->getTeam() == eDefender)
-						{
-							if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false, NO_PLAYER, NO_TEAM, NULL) == NULL)
-							{
-								if (iDX == 0 && iDY == 0)
-								{
-									if (!bExcludeCenter)
-									{
-										iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
-									}
-								}
-								else
-								{
-									if (abs(iDX) <= GC.getImprovementInfo(eImprovement).getRange() && abs(iDY) <= GC.getImprovementInfo(eImprovement).getRange())
-									{
-										iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
-									}
-								}
-								if (iModifier > iBestModifier)
-								{
-									iBestModifier = iModifier;
-								}
-							}
-						}
-					}
-				}
+				// MyLand - Xienwolf - 04/04/09 - Civ-unique improvements
+				CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
+				eImprovement = finalImprovementUpgrade(eImprovement, eCiv);
 			}
+
+			iModifier = 0;
+
+			if (iDX == 0 && iDY == 0)
+			{
+				if (!bExcludeCenter)
+					iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
+			}
+			else
+				iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
+
+			if (iModifier > iBestModifier)
+				iBestModifier = iModifier;
 		}
 	}
 	return iBestModifier;

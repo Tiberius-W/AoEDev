@@ -31685,46 +31685,20 @@ int CvUnit::getRenderPriority(UnitSubEntityTypes eUnitSubEntity, int iMeshGroupT
 
 bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 {
-
-/*************************************************************************************************/
-/**	PeaceAndFlowers							03/27/09								Xienwolf	**/
-/**																								**/
-/**					Makes all Combat Actions impossible for this type of Unit					**/
-/*************************************************************************************************/
+	// PeaceAndFlowers - Xienwolf - 03/27/09 - Makes all Combat Actions impossible for this type of Unit
 	if (isNeverHostile())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	PeaceAndFlowers							END													**/
-/*************************************************************************************************/
-//FfH: Added by Kael 09/15/2007
+
+	//FfH: Added by Kael 09/15/2007
 	if (isHiddenNationality())
-	{
 		return true;
-	}
-//FfH: End Add
-/*************************************************************************************************/
-/**	Hostility 								05/15/08								Xienwolf	**/
-/**																								**/
-/**							Inclusion ofnew Promotion Tag in Validation							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
 
-	if (!m_pUnitInfo->isAlwaysHostile())
-/**								----  End Original Code  ----									**/
+	// Hostility - Xienwolf - 05/15/08 - add isAttackNoWar functionality
 	if (!(m_pUnitInfo->isAlwaysHostile() || isAttackNoWar()))
-/*************************************************************************************************/
-/**	Hostility 									END												**/
-/*************************************************************************************************/
-	{
 		return false;
-	}
 
-	if (NULL != pPlot && pPlot->isCity(true, getTeam()))
-	{
+	if (pPlot != NULL && pPlot->isCity(true, getTeam()))
 		return false;
-	}
 
 	return true;
 }

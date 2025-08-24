@@ -1455,6 +1455,7 @@ bool PUF_isOtherTeam(const CvUnit* pUnit, int iData1, int iData2)
 	return (pUnit->getTeam() != eTeam);
 }
 
+// Check if a given unit is hostile against team 1, or if can be hostile when passed data2
 bool PUF_isEnemy(const CvUnit* pUnit, int iData1, int iData2)
 {
 	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
@@ -1464,19 +1465,11 @@ bool PUF_isEnemy(const CvUnit* pUnit, int iData1, int iData2)
 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, pUnit->plot())).getTeam();
 
 	if (pUnit->canCoexistWithEnemyUnit(eOtherTeam))
-	{
 		return false;
-	}
 
-//FfH: Added by Kael 10/01/2007
-	if (eOtherTeam != eOurTeam)
-	{
-		if (pUnit->isAlwaysHostile(NULL))
-		{
-			return true;
-		}
-	}
-//FfH: End Add
+	//FfH: Added by Kael 10/01/2007
+	if (eOtherTeam != eOurTeam && pUnit->isAlwaysHostile(NULL))
+		return true;
 
 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
 }
