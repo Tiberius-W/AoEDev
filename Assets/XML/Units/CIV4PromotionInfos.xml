@@ -22179,7 +22179,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Demonslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Demonslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_DEMON</PromotionType>
@@ -23649,7 +23649,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Medic1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Firstaid.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Flanking I -->
 			<Type>PROMOTION_FLANKING1</Type>
@@ -29310,7 +29310,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Undeadslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Undeadslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_UNDEAD</PromotionType>
@@ -40449,7 +40449,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Demonslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Angelslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_ANGEL</PromotionType>
