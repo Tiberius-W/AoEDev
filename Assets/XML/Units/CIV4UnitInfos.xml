@@ -28934,6 +28934,10 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<AllowPromotions>
+				<Promotion>PROMOTION_GUARDSMAN</Promotion>
+				<Promotion>PROMOTION_GUARDSMAN2</Promotion>
+			</AllowPromotions>
 			<iCombatDefense>5</iCombatDefense>
 			<iDefensiveStrikeChance>20</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>10</iDefensiveStrikeDamage>
@@ -28988,6 +28992,10 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_MILITIA_CROSSBOWMAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<AllowPromotions>
+				<Promotion>PROMOTION_GUARDSMAN</Promotion>
+				<Promotion>PROMOTION_GUARDSMAN2</Promotion>
+			</AllowPromotions>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 			<FreePromotions>
 				<FreePromotion>

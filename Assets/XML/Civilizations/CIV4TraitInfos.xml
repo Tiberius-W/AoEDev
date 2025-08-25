@@ -1117,7 +1117,7 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 				<SpecialistCommerceChange>
@@ -1125,7 +1125,7 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 				<SpecialistCommerceChange>
@@ -1133,7 +1133,7 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 				<SpecialistCommerceChange>
@@ -1141,7 +1141,7 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 				<SpecialistCommerceChange>
@@ -1149,7 +1149,7 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 				<SpecialistCommerceChange>
@@ -1157,10 +1157,15 @@
 					<CommerceChanges>
 						<iCommerce>1</iCommerce>
 						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
+						<iCommerce>0</iCommerce>
 					</CommerceChanges>
 				</SpecialistCommerceChange>
 			</SpecialistCommerceChanges>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+			</CommerceChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- HemaPyroSyncretistic -->
 			<Type>TRAIT_HEMAPYROSYNCRETISTIC</Type>
@@ -2282,7 +2287,6 @@
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_VIRTUOUS_PIRATE</Description>
 			<ShortDescription>TXT_KEY_TRAIT_VIRTUOUS_PIRATE_SHORT</ShortDescription>
-			<Help>TXT_KEY_TRAIT_VIRTUOUS_PIRATE3_HELP</Help>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_NAVIGATION1</PromotionType>
@@ -2299,6 +2303,11 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<TradeYieldModifiers>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+			</TradeYieldModifiers>
 		</TraitInfo>
 		<TraitInfo>		<!-- Deathtouched -->								<!-- Ophelia's traits -->
 			<Type>TRAIT_DEATHTOUCHED</Type>
