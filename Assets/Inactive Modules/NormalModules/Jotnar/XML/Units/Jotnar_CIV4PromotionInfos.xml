@@ -2238,6 +2238,13 @@
 		<PromotionInfo>		<!-- Flying -->
 			<Type>PROMOTION_FLYING</Type>
 			<Description>TXT_KEY_PROMOTION_FLYING</Description>
+			<bForceOverwrite>1</bForceOverwrite>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_COMBAT5</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
 			<PrereqPromotionORs>
 				<PrereqPromotionOR>
 					<PromotionType>PROMOTION_FALLEN_ANGEL</PromotionType>
@@ -2252,6 +2259,56 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
+			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
+			<iMovesChange>1</iMovesChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/Flying.dds</Button>
+			<bFlying>1</bFlying>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fine Armor -->
 			<Type>PROMOTION_FINE_ARMOR</Type>
