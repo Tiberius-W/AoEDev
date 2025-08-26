@@ -38540,7 +38540,7 @@
 					<iBonusRange>0</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
-			<Button>Art\Interface\Buttons\handcuff.dds</Button>
+			<Button>Art\Interface\Buttons\handcuff2.dds</Button>
 			<PromotionNextLevel>PROMOTION_PATROL3</PromotionNextLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Patrol III -->
@@ -38568,7 +38568,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art\Interface\Buttons\handcuff.dds</Button>
+			<Button>Art\Interface\Buttons\handcuff3.dds</Button>
 			<CityBonuses>
 				<CityBonus>
 					<bApplySelf>1</bApplySelf>
