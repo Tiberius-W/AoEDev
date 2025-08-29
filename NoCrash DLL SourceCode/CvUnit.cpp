@@ -2395,70 +2395,35 @@ void CvUnit::doTurn()
 /*************************************************************************************************/
 	}
 	
-	if (getBetrayalChance() > 0)
+	if (getBetrayalChance() > 0
+	 && !isBarbarian()
+	 && GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
 	{
-		if (!isBarbarian())
+		if (isImmuneToCapture())
 		{
-			if (GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
+			CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO,
+				m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
+
+			for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
 			{
-				/*************************************************************************************************/
-				/**	Tweak								31/01/12										Snarko	**/
-				/**																								**/
-				/**								Stop needless looping											**/
-				/*************************************************************************************************/
-				/**								---- Start Original Code ----									**
-										bool bFinished = false;
-										if (isImmuneToCapture())
-										{
-											for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-											{
-												if (isHasPromotion((PromotionTypes)iJ))
-												{
-													if (GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
-													{
-														if (!bFinished)
-														{
-															CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
-															gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-															setHasPromotion(((PromotionTypes)iJ), false);
-															bFinished = true;
-														}
-													}
-												}
-											}
-										}
-				/**								----  End Original Code  ----									**/
-				if (isImmuneToCapture())
+				if (isHasPromotion((PromotionTypes)iJ) && GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
 				{
-					CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-					for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-					{
-						if (isHasPromotion((PromotionTypes)iJ))
-						{
-							if (GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
-							{
-								setHasPromotion(((PromotionTypes)iJ), false);
-								break;
-							}
-						}
-					}
-				}
-				/*************************************************************************************************/
-				/**	Tweak									END													**/
-				/*************************************************************************************************/
-				else if (GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
-				{
-					CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TO_DEATH", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-					kill(true);
-				}
-				else
-				{
-					betray(ORC_PLAYER);
+					setHasPromotion(((PromotionTypes)iJ), false);
+					break;
 				}
 			}
 		}
+		else if (GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
+		{
+			CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TO_DEATH", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO,
+				m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
+
+			kill(true);
+		}
+		else
+			betray(ORC_PLAYER);
 	}
 
 
@@ -6105,7 +6070,8 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 
 }
 
-// false if unit is killed
+
+// returns true if unit is relocated, false otherwise. If bKill is true, will immediately kill unit before returning false.
 bool CvUnit::jumpToNearestValidPlot(bool bKill)
 {
 	PROFILE_FUNC();
@@ -6129,84 +6095,52 @@ bool CvUnit::jumpToNearestValidPlot(bool bKill)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (pLoopPlot->isValidDomainForLocation(*this))
+		if (!pLoopPlot->isValidDomainForLocation(*this))
+			continue;
+
+		if (!canMoveInto(pLoopPlot))
+			continue;
+
+		if (!canEnterArea(pLoopPlot->getTeam(), pLoopPlot->area()) || isEnemy(pLoopPlot->getTeam(), pLoopPlot))
+			continue;
+
+		FAssertMsg(!atPlot(pLoopPlot), "atPlot(pLoopPlot) did not return false as expected");
+
+		if ((getDomainType() == DOMAIN_AIR) && !pLoopPlot->isFriendlyCity(*this, true))
+			continue;
+
+		if (!pLoopPlot->isRevealed(getTeam(), false))
+			continue;
+
+		iValue = (plotDistance(plot(), pLoopPlot) * 2);
+
+		if (pNearestCity != NULL)
+			iValue += plotDistance(pLoopPlot, pNearestCity->plot());
+
+		if (getDomainType() == DOMAIN_SEA && !plot()->isWater())
 		{
-			if (canMoveInto(pLoopPlot))
-			{
-				if (canEnterArea(pLoopPlot->getTeam(), pLoopPlot->area()) && !isEnemy(pLoopPlot->getTeam(), pLoopPlot))
-				{
-					FAssertMsg(!atPlot(pLoopPlot), "atPlot(pLoopPlot) did not return false as expected");
+			if (!pLoopPlot->isWater() || !pLoopPlot->isAdjacentToArea(area()))
+				iValue *= 3;
+		}
+		else if (pLoopPlot->area() != area())
+			iValue *= 3;
 
-					if ((getDomainType() != DOMAIN_AIR) || pLoopPlot->isFriendlyCity(*this, true))
-					{
-						if (pLoopPlot->isRevealed(getTeam(), false))
-						{
-							iValue = (plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()) * 2);
-
-							if (pNearestCity != NULL)
-							{
-								iValue += plotDistance(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
-							}
-
-							if (getDomainType() == DOMAIN_SEA && !plot()->isWater())
-							{
-								if (!pLoopPlot->isWater() || !pLoopPlot->isAdjacentToArea(area()))
-								{
-									iValue *= 3;
-								}
-							}
-							else
-							{
-								if (pLoopPlot->area() != area())
-								{
-									iValue *= 3;
-								}
-							}
-
-							if (iValue < iBestValue)
-							{
-								iBestValue = iValue;
-								pBestPlot = pLoopPlot;
-							}
-						}
-					}
-				}
-			}
+		if (iValue < iBestValue)
+		{
+			iBestValue = iValue;
+			pBestPlot = pLoopPlot;
 		}
 	}
 
-	bool bValid = true;
 	if (pBestPlot != NULL)
 	{
 		setXY(pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+		return true;
 	}
-/************************************************************************************************/
-/* Afforess					  Start		 06/13/10                                               */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
 	else if (bKill)
-/************************************************************************************************/
-/* Afforess						 END                                                            */
-/************************************************************************************************/
-	{
 		kill(false);
-		bValid = false;
-	}
-/************************************************************************************************/
-/* Afforess					  Start		 06/13/10                                               */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-	else
-	{
-		bValid = false;
-	}
-/************************************************************************************************/
-/* Afforess						 END                                                            */
-/************************************************************************************************/
 
-	return bValid;
+	return false;
 }
 
 
@@ -28891,24 +28825,23 @@ CvPlot* CvUnit::getOpenPlot() const
 	return pBestPlot;
 }
 
+// Convert to specified player
 void CvUnit::betray(PlayerTypes ePlayer)
 {
 	if (getOwnerINLINE() == ePlayer)
-	{
 		return;
-	}
+
 	CvPlot* pNewPlot = getOpenPlot();
-	if (pNewPlot != NULL)
-	{
-		CvUnit* pUnit = GET_PLAYER(ePlayer).initUnit((UnitTypes)getUnitType(), pNewPlot->getX(), pNewPlot->getY(), AI_getUnitAIType());
-		pUnit->convert(this);
-		if (pUnit->getDuration() > 0)
-		{
-			pUnit->setDuration(0);
-		}
-	}
+	if (pNewPlot == NULL)
+		return;
+
+	CvUnit* pUnit = GET_PLAYER(ePlayer).initUnit((UnitTypes)getUnitType(), pNewPlot->getX(), pNewPlot->getY(), AI_getUnitAIType());
+
+	pUnit->convert(this);
+
+	if (pUnit->getDuration() > 0)
+		pUnit->setDuration(0);
 }
-//FfH: End Add
 
 void CvUnit::read(FDataStreamBase* pStream)
 {
