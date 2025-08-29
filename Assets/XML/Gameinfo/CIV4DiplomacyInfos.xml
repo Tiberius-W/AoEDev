@@ -14621,7 +14621,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_4</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_4</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Valledia Friendly Pleased Cautious-->
@@ -14673,7 +14673,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_2</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_2</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Deirdra Friendly Pleased Cautious--> 				<!--Austrin-->
@@ -14933,7 +14933,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_6</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_6</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Sabathiel Friendly Pleased Cautious-->
@@ -14985,7 +14985,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_5</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_5</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Decius Friendly Pleased Cautious-->
@@ -15037,7 +15037,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_6</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_6</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Alexis Friendly Pleased Cautious--> 				<!--Calabim-->
@@ -15321,7 +15321,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_3</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Mahala Friendly Pleased Cautious-->
@@ -15373,7 +15373,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_2</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_2</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Einion Friendly Pleased Cautious--> 				<!--Elohim-->
@@ -15945,7 +15945,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_6</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_6</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Arturus Friendly Pleased Cautious--> 				<!--Khazad-->
@@ -15997,7 +15997,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_3</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Kandros Friendly Pleased Cautious-->
@@ -16049,7 +16049,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_1</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Cardith Friendly Pleased Cautious--> 				<!--Kuriotates-->
@@ -16101,7 +16101,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_1</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Casin Friendly Pleased Cautious--> 				<!--Lanun-->
@@ -17113,7 +17113,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FUR_3</Text>
+						<Text>AI_DIPLO_FUR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Faeryl Friendly Pleased Cautious--> 				<!--Svartalfar-->
