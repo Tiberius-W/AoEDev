@@ -3888,7 +3888,13 @@ def canTriggerChampionUnit(argsList):
 	if pUnit.getDamage() > 0:
 		return False
 
-	if pUnit.getExperience() < 3:
+	if pUnit.getExperience() < 10:
+		return False
+
+	if pUnit.getUnitCombatType() == -1:
+		return False
+
+	if pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS"):
 		return False
 
 	if pUnit.isHasPromotion(getInfoType('PROMOTION_HERO')):
