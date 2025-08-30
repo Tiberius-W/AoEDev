@@ -6757,7 +6757,7 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 }
 
 
-// Checks for AI control, unit-specific fortify, unit doing other actions, and water walkers trying to dig into water 
+// Checks for AI control, unit-specific fortify, unit doing other actions, if is cargo, and water walkers trying to dig into water 
 bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
@@ -6770,9 +6770,15 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 	if (isWaiting())
 		return false;
 
-	// Land units can't fortify on water, unless they're on a water fort
-	if (getDomainType() == DOMAIN_LAND && pPlot->isWater() && pPlot->getImprovementType() != NO_IMPROVEMENT && !GC.getImprovementInfo(pPlot->getImprovementType()).isFort())
+	if (isCargo())
 		return false;
+
+	// Land units can't fortify on water unless is water city, acts as city, or fort
+	if (getDomainType() == DOMAIN_LAND && pPlot->isWater())
+	{
+		if (!pPlot->isCity(true, getTeam()) && (pPlot->getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()))
+			return false
+	}
 
 	return true;
 }
@@ -6781,19 +6787,13 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 {
 	if (getDomainType() != DOMAIN_AIR)
-	{
 		return false;
-	}
 
 	if (!canAirDefend(pPlot))
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -6802,24 +6802,20 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 {
 	if (!pPlot->isWater())
-	{
 		return false;
-	}
 
 	if (getDomainType() != DOMAIN_SEA)
-	{
 		return false;
-	}
 
 	if (!canFight() || isOnlyDefensive())
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
+
+	// Bezeri pokeballs can't sea patrol while loaded up
+	if (isCargo())
+		return false;
 
 	return true;
 }
@@ -6828,16 +6824,12 @@ bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 void CvUnit::airCircle(bool bStart)
 {
 	if (!GC.IsGraphicsInitialized())
-	{
 		return;
-	}
 
 	if ((getDomainType() != DOMAIN_AIR) || (maxInterceptionProbability() == 0))
-	{
 		return;
-	}
 
-	//cancel previos missions
+	// cancel previous missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
 
 	if (bStart)
@@ -6854,83 +6846,42 @@ void CvUnit::airCircle(bool bStart)
 }
 
 
-bool CvUnit::canHeal(const CvPlot* pPlot) const
-{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
-		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (!isHurt())
-	{
-		return false;
-	}
-
-	if (isWaiting())
-	{
-		return false;
-	}
-
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/30/10                           LunarMongoose       */
-/*                                                                                               */
-/* Bugfix                                                                                        */
-/*************************************************************************************************/
-/* original bts code
-	if (healRate(pPlot) <= 0)
-	{
-		return false;
-	}
-*/
-	// Mongoose FeatureDamageFix
-	if (healTurns(pPlot) == MAX_INT)
-	{
-		return false;
-	}
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                         END                                                  */
-/*************************************************************************************************/
-
-
-	return true;
-}
-
-
 bool CvUnit::canSentry(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (!canDefend(pPlot))
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
 
 	return true;
 }
 
 
+bool CvUnit::canHeal(const CvPlot* pPlot) const
+{
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
+	if (isAIControl())
+		return false;
+
+	if (!isHurt())
+		return false;
+
+	if (isWaiting())
+		return false;
+
+	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
+	if (healTurns(pPlot) == MAX_INT)
+		return false;
+
+	return true;
+}
+
+// Returns percentile healing per turn, for this unit on given pPlot
 int CvUnit::healRate(const CvPlot* pPlot) const
 {
 	PROFILE_FUNC();
@@ -6944,18 +6895,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	int iBestHeal;
 	int iI;
 
-//FfH: Added by Kael 11/05/2008
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS))
-	{
-		if (isHuman())
-		{
-			if (isAlive())
-			{
-				return 0;
-			}
-		}
-	}
-//FfH: End Add
+	//FfH: Added by Kael 11/05/2008
+	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
+		return 0;
 
 	pCity = pPlot->getPlotCity();
 
@@ -6964,10 +6906,10 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	if (pPlot->isCity(true, getTeam()))
 	{
 		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE") + (GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()) ? getExtraFriendlyHeal() : getExtraNeutralHeal());
+
+		// Occupied cities don't get tile healing, instead relying on unit/faction-wide only
 		if (pCity && !pCity->isOccupation())
-		{
 			iTotalHeal += pCity->getHealRate();
-		}
 	}
 	else
 	{
@@ -6977,27 +6919,19 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 			{
 				iTotalHeal += (GC.getDefineINT("ENEMY_HEAL_RATE") + getExtraEnemyHeal());
 
-//FfH Mana Effects: Added by Kael 08/21/2007
+				//FfH Mana Effects: Added by Kael 08/21/2007
 				if (pPlot->getOwnerINLINE() != NO_PLAYER)
-				{
 					iTotalHeal += GET_PLAYER(pPlot->getOwnerINLINE()).getHealChangeEnemy();
-				}
-//FfH: End Add
-
 			}
 			else
-			{
 				iTotalHeal += (GC.getDefineINT("NEUTRAL_HEAL_RATE") + getExtraNeutralHeal());
-			}
 		}
 		else
 		{
 			iTotalHeal += (GC.getDefineINT("FRIENDLY_HEAL_RATE") + getExtraFriendlyHeal());
 
-//FfH Mana Effects: Added by Kael 08/21/2007
+			//FfH Mana Effects: Added by Kael 08/21/2007
 			iTotalHeal += GET_PLAYER(getOwnerINLINE()).getHealChange();
-//FfH: End Add
-
 		}
 	}
 
@@ -7016,103 +6950,79 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 			iHeal = pLoopUnit->getSameTileHeal();
 
 			if (iHeal > iBestHeal)
-			{
 				iBestHeal = iHeal;
-			}
 		}
 	}
 
+	// "Heal on adjacent tiles" literally means adjacent;
+	// unit design should always pair adjacent heal with an equal or greater "heal on same tile" effect
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 	{
 		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
 
-		if (pLoopPlot != NULL)
+		if (pLoopPlot == NULL)
+			continue;
+
+		if (pLoopPlot->area() != pPlot->area())
+			continue;
+
+		pUnitNode = pLoopPlot->headUnitNode();
+
+		while (pUnitNode != NULL)
 		{
-			if (pLoopPlot->area() == pPlot->area())
-			{
-				pUnitNode = pLoopPlot->headUnitNode();
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
 
-				while (pUnitNode != NULL)
-				{
-					pLoopUnit = ::getUnit(pUnitNode->m_data);
-					pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+			if (pLoopUnit->getTeam() != getTeam()) // XXX what about alliances?
+				continue;
 
-					if (pLoopUnit->getTeam() == getTeam()) // XXX what about alliances?
-					{
-						iHeal = pLoopUnit->getAdjacentTileHeal();
+			iHeal = pLoopUnit->getAdjacentTileHeal();
 
-						if (iHeal > iBestHeal)
-						{
-							iBestHeal = iHeal;
-						}
-					}
-				}
-			}
+			if (iHeal > iBestHeal)
+				iBestHeal = iHeal;
 		}
 	}
 
 	iTotalHeal += iBestHeal;
 	// XXX
 
-//FfH: Added by Kael 10/29/2007
+	//FfH: Added by Kael 10/29/2007
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
-	{
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
-	}
+
 	if (iTotalHeal < 0)
-	{
 		iTotalHeal = 0;
-	}
-//FfH: End Add
 
 	return iTotalHeal;
 }
 
-
+// Returns MAX_INT if never heals, calculates for healing on given pPlot
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
 	int iHeal;
 	int iTurns;
 
 	if (!isHurt())
-	{
 		return 0;
-	}
 
 	iHeal = healRate(pPlot);
 
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/02/10                           LunarMongoose       */
-/*                                                                                               */
-/* Bugfix                                                                                        */
-/*************************************************************************************************/
-	// Mongoose FeatureDamageFix
+	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
 	FeatureTypes eFeature = pPlot->getFeatureType();
 	if (eFeature != NO_FEATURE)
-	{
 		iHeal -= GC.getFeatureInfo(eFeature).getTurnDamage();
-	}
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                         END                                                  */
-/*************************************************************************************************/
 
 	if (iHeal > 0)
 	{
 		iTurns = (getDamage() / iHeal);
-
 		if ((getDamage() % iHeal) != 0)
-		{
 			iTurns++;
-		}
 
 		return iTurns;
 	}
 	else
-	{
 		return MAX_INT;
-	}
 }
-
 
 void CvUnit::doHeal()
 {
@@ -13880,35 +13790,14 @@ bool CvUnit::canAirAttack() const
 bool CvUnit::canAirDefend(const CvPlot* pPlot) const
 {
 	if (pPlot == NULL)
-	{
 		pPlot = plot();
-	}
 
 	if (maxInterceptionProbability() == 0)
-	{
 		return false;
-	}
 
-	if (getDomainType() != DOMAIN_AIR)
-	{
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       10/30/09                     Mongoose & jdog5000      */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-/* original bts code
-		if (!pPlot->isValidDomainForLocation(*this))
-*/
-		// From Mongoose SDK
-		// Land units which are cargo cannot intercept
-		if (!pPlot->isValidDomainForLocation(*this) || isCargo())
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
-		{
-			return false;
-		}
-	}
+	// UNOFFICIAL_PATCH - Mongoose & jdog5000 - 10/30/09 - Land units which are cargo cannot intercept
+	if (getDomainType() != DOMAIN_AIR && (!pPlot->isValidDomainForLocation(*this) || isCargo()))
+		return false;
 
 	return true;
 }

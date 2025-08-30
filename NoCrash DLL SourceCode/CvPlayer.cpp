@@ -25362,7 +25362,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 					pCity->setCultureTimes100(eNewPlayer, iCulture, false, false);
 				}
 
-//FfH: Added by Kael 01/16/2009 (to prevent CtD's when colony free units are dropped on top of hidden nationaliy units)
+				//FfH: Added by Kael 01/16/2009 (to prevent CtD's when colony free units are dropped on top of hidden nationaliy units)
 				CvUnit* pLoopUnit;
 				CLLNode<IDInfo>* pUnitNode;
 				pUnitNode = pPlot->headUnitNode();
@@ -25375,7 +25375,6 @@ bool CvPlayer::splitEmpire(int iAreaId)
 						pLoopUnit->jumpToNearestValidPlot();
 					}
 				}
-//FfH: End Add
 
 				for (int i = 0; i < GC.getDefineINT("COLONY_NUM_FREE_DEFENDERS"); ++i)
 				{

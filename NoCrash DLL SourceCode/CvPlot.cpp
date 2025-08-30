@@ -5383,9 +5383,7 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 bool CvPlot::isValidDomainForLocation(const CvUnit& unit) const
 {
 	if (isValidDomainForAction(unit))
-	{
 		return true;
-	}
 
 	return isCity(true, unit.getTeam());
 }
