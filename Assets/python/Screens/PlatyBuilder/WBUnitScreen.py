@@ -751,9 +751,9 @@ class WBUnitScreen:
 
 		elif sName.find("UnitDamage") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.changeDamage(iChange, -1)
+				pUnit.changeDamageReal(iChange, -1)
 			elif inputClass.getData1() == 1031:
-				pUnit.changeDamage(- min(iChange, pUnit.getDamage()), -1)
+				pUnit.changeDamageReal(- min(iChange, pUnit.getDamage()), -1)
 			self.placeStats()
 
 		elif sName.find("UnitMovesLeft") > -1:

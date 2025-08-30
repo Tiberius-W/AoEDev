@@ -1475,9 +1475,7 @@ void CvUnit::convert(CvUnit* pUnit)
 	setSpawnPlot(pUnit->getSpawnPlot());
 	changeStrBoost(pUnit->getStrBoost());
 	setSuppressImage(pUnit->isSuppressImage());
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+
 	if (pUnit->getReligion() != NO_RELIGION && getReligion() == NO_RELIGION)
 	{
 		setReligion(pUnit->getReligion());
@@ -1494,22 +1492,14 @@ void CvUnit::convert(CvUnit* pUnit)
 	{
 		setScenarioCounter(pUnit->getScenarioCounter());
 	}
-//FfH: End Modify
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	setDamage(pUnit->getDamage());
-/**								----  End Original Code  ----									**/
-	setDamageReal(pUnit->getDamageReal()-1);
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-	setMoves(pUnit->getMoves());
 
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
+	// Snarko set to be "pUnit->getDamageReal()-1"; why, I do not know!
+	setDamageReal(pUnit->getDamageReal());
+
+	setMoves(pUnit->getMoves());
 	setLevel(pUnit->getLevel());
 	int iOldModifier = std::max(1, 100 + GET_PLAYER(pUnit->getOwnerINLINE()).getLevelExperienceModifier());
 	int iOurModifier = std::max(1, 100 + GET_PLAYER(getOwnerINLINE()).getLevelExperienceModifier());
@@ -1518,12 +1508,9 @@ void CvUnit::convert(CvUnit* pUnit)
 	setName(pUnit->getNameNoDesc());
 	setLeaderUnitType(pUnit->getLeaderUnitType());
 
-//FfH: Added by Kael 10/03/2008
+	//FfH: Added by Kael 10/03/2008
 	if (!isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) && isWorldUnitClass((UnitClassTypes)(pUnit->getUnitClassType())))
-	{
 		setName(pUnit->getName());
-	}
-//FfH: End Add
 
 /*************************************************************************************************/
 /**	UnitStatistics							07/18/08	Written: Teg Navanis Imported: Xienwolf	**/
@@ -3332,19 +3319,9 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL")*100, pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian(), true);
 					pDefender->changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL")*100, maxXPValue(), true, pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE(), !isBarbarian(), true);
 					pDefender->setDamageReal(combatLimit(), getOwnerINLINE());
-					if (getCombatHealPercent() != 0)
-					{
-						int i = getCombatHealPercent();
 
-						if (i > getDamage())
-						{
-							i = getDamage();
-						}
-						if (i != 0)
-						{
-							changeDamage(-1 * i, NO_PLAYER);
-						}
-					}
+					if (pDefender->isAlive())
+						changeDamage(-getCombatHealPercent(), NO_PLAYER);
 
 					//FfH: Added by Kael 05/27/2008
 					setMadeAttack(true);
@@ -6777,7 +6754,7 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 	if (getDomainType() == DOMAIN_LAND && pPlot->isWater())
 	{
 		if (!pPlot->isCity(true, getTeam()) && (pPlot->getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()))
-			return false
+			return false;
 	}
 
 	return true;
@@ -7014,8 +6991,8 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 
 	if (iHeal > 0)
 	{
-		iTurns = (getDamage() / iHeal);
-		if ((getDamage() % iHeal) != 0)
+		iTurns = (getDamageReal() / (iHeal * GC.getDefineINT("HIT_POINT_FACTOR")));
+		if (getDamageReal() % (iHeal * GC.getDefineINT("HIT_POINT_FACTOR")) != 0)
 			iTurns++;
 
 		return iTurns;
@@ -10876,8 +10853,7 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 		//kTrigger.eEthicalAlignment = GET_PLAYER(getOwner()).getEthicalAlignment();
 		GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_UNIT_LEVEL_UP, &kTrigger);
 
-
-		changeDamage(-(getDamage() / 2));
+		changeDamageReal(-(getDamageReal() / 2));
 	}
 
 //FfH: Added by Kael 01/09/2008
@@ -12560,42 +12536,25 @@ int CvUnit::maxHitPoints() const
 }
 
 
+// Returns actual hit points (default 1000 hp scale)
 int CvUnit::currHitPoints()	const
 {
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (maxHitPoints() - getDamage());
-/**								----  End Original Code  ----									**/
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
 	return (maxHitPoints() - getDamageReal());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-
 }
 
 
+// Checks actual hp instead of rounding to a percent
 bool CvUnit::isHurt() const
 {
-	return (getDamage() > 0);
+	return (getDamageReal() > 0);
 }
 
 
 bool CvUnit::isDead() const
 {
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getDamage() >= maxHitPoints());
-/**								----  End Original Code  ----									**/
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
 	return (getDamageReal() >= maxHitPoints());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
 }
 
 
@@ -16234,58 +16193,13 @@ void CvUnit::setGameTurnCreated(int iNewValue)
 	FAssert(getGameTurnCreated() >= 0);
 }
 
-/*************************************************************************************************/
-/**	Higher hitpoints				31/01/11				Imported from wiser orcs by Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-int CvUnit::getDamage() const
-{
-	return m_iDamage;
-}
-
-
-void CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
-{
-	int iOldValue;
-
-	iOldValue = getDamage();
-
-	m_iDamage = range(iNewValue, 0, maxHitPoints());
-
-	FAssertMsg(currHitPoints() >= 0, "currHitPoints() is expected to be non-negative (invalid Index)");
-
-	if (iOldValue != getDamage())
-	{
-		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
-		{
-			NotifyEntity(MISSION_DAMAGE);
-		}
-
-		setInfoBarDirty(true);
-
-		if (IsSelected())
-		{
-			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-		}
-
-		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
-		{
-			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
-		}
-	}
-
-	if (isDead())
-	{
-		kill(true, ePlayer);
-	}
-}
-/**								----  End Original Code  ----									**/
+// Returns true damage (default 1000 hp scale)
 int CvUnit::getDamageReal() const
 {
 	return m_iDamage;
 }
 
+// Set true damage (default 1000 hp scale), kills if damage > max_hp
 void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
 {
 	int iOldValue;
@@ -16299,52 +16213,44 @@ void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntit
 	if (iOldValue != getDamageReal())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
-		{
 			NotifyEntity(MISSION_DAMAGE);
-		}
 
 		setInfoBarDirty(true);
 
 		if (IsSelected())
-		{
 			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-		}
 
 		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
-		{
 			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
-		}
 	}
 
 	if (isDead())
-	{
 		kill(true, ePlayer);
-	}
 }
 
+// change HP by true damage (default 1000 hp scale). Will kill(true) if damage > max hp
 void CvUnit::changeDamageReal(int iChange, PlayerTypes ePlayer)
 {
 	setDamageReal((getDamageReal() + iChange), ePlayer);
 }
 
+// Returns damage rounded to nearest percent
 int CvUnit::getDamage() const
 {
 	return getDamageReal() / GC.getDefineINT("HIT_POINT_FACTOR");
 }
 
-
+// Set damage to flat 1-100 percent
 void CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
 {
 	iNewValue *= GC.getDefineINT("HIT_POINT_FACTOR");
 	setDamageReal(iNewValue, ePlayer, bNotifyEntity);
 }
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
 
+// Change hp by a flat 1-100 percent. Will kill(true) if damage > max hp
 void CvUnit::changeDamage(int iChange, PlayerTypes ePlayer)
 {
-	setDamage((getDamage() + iChange), ePlayer);
+	setDamageReal((getDamageReal() + iChange * GC.getDefineINT("HIT_POINT_FACTOR")), ePlayer);
 }
 
 
@@ -21683,7 +21589,7 @@ int CvUnit::countHasPromotion(PromotionTypes eIndex) const
 void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 {
 /**								----  End Original Code  ----									**/
-void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupressEffects,bool bConvertUnit)
+void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupressEffects, bool bConvertUnit)
 {
 	CvPromotionInfo &kPromotion = GC.getPromotionInfo(eIndex);
 	bool bChange = false;
@@ -27503,6 +27409,7 @@ CvPlot* CvUnit::chooseSpellTarget(int iSpell)
 	}
 	return pBestPlot;
 }
+
 int CvUnit::getExtraSpellMove() const
 {
 	int iCount = 0;
@@ -27519,6 +27426,7 @@ int CvUnit::getExtraSpellMove() const
 	return iCount;
 }
 
+
 void CvUnit::doDamage(int iDmg, int iDmgLimit, CvUnit* pAttacker, int iDmgType, bool bStartWar)
 {
 	// Treasure chests immune to damage. Could be thematic, but... more often annoying : Blazenclaw 2025
@@ -27529,89 +27437,64 @@ void CvUnit::doDamage(int iDmg, int iDmgLimit, CvUnit* pAttacker, int iDmgType, 
 
 	iResist = baseCombatStrDefense() *2;
 	iResist += getLevel() * 2;
+
 	if (plot()->getPlotCity() != NULL)
-	{
 		iResist += (plot()->getPlotCity()->getDefenseModifier(false) / 4);
-	}
+
 	if (iDmgType != -1)
-	{
 		iResist += getDamageTypeResist((DamageTypes)iDmgType);
-	}
+
 	if (pAttacker != NULL && iDmgType != DAMAGE_PHYSICAL)
-	{
 		iDmg += pAttacker->getSpellDamageModify();
-	}
-	if (iResist < 100)
+
+	if (iResist >= 100)
+		return;
+
+	// From here on, using real damage instead of just percentile
+	iDmg *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
+	iDmg = iDmg * (100 - iResist) / 100;
+
+	if (iDmg + getDamageReal() > iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR"))
+		iDmg = iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR") - getDamageReal();
+
+	if (iDmg <= 0)
+		return;
+
+	if (iDmg + getDamageReal() >= GC.getMAX_HIT_POINTS())
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+	else
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg/GC.getDefineINT("HIT_POINT_FACTOR"), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+
+	gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+		GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
+	if (pAttacker != NULL)
 	{
-		iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
-		iDmg = iDmg * (100 - iResist) / 100;
-
-		if (iDmg + getDamage() > iDmgLimit)
+		// Only report successful damage to attacker if they can see the unit
+		if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
 		{
-			iDmg = iDmgLimit - getDamage();
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
 		}
-		if (iDmg > 0)
+
+		changeDamageReal(iDmg, pAttacker->getOwner());
+
+		// Blaze: There may be a weird interaction here if the user is at peace with savages, say, and there's a hidden nationality unit pretending to be one?
+		if (bStartWar && !pAttacker->isHiddenNationality() && !isHiddenNationality())
 		{
-			// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-			// if (iDmg + getDamage() >= GC.getMAX_HIT_POINTS())
-			if (iDmg + getDamage() >= (GC.getMAX_HIT_POINTS() / GC.getDefineINT("HIT_POINT_FACTOR")))
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			else
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-
-			if (pAttacker != NULL)
-			{
-				// Only report successful damage to attacker if they can see the unit
-				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
-				{
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-				changeDamage(iDmg, pAttacker->getOwner());
-
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,pAttacker->getOwner());
-				}
-				if (bStartWar)
-				{
-					// Prevents forcing war against Barbarians : Xienwolf 02/06/09
-					// if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()))
-					if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()) && !(pAttacker->isBarbarian() || isBarbarian()))
-					{
-						if (getTeam() != pAttacker->getTeam())
-						{
-							if (!GET_TEAM(pAttacker->getTeam()).isPermanentWarPeace(getTeam()))
-							{
-								GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				changeDamage(iDmg, NO_PLAYER);
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,NO_PLAYER);
-				}
-			}
+			if (GET_TEAM(pAttacker->getTeam()).canDeclareWar(getTeam()))
+				GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
 		}
 	}
+	else
+		changeDamageReal(iDmg, NO_PLAYER);
 }
 
 
+// The only difference between this and the above is the pAttacker pointer type here is CvCity* instead of CvUnit*
+// There's got to be a way to merge this cleanly, no? Also not sure if overloading works for python exposure
 void CvUnit::doDamageCity(int iDmg, int iDmgLimit, CvCity* pAttacker, int iDmgType, bool bStartWar)
 {
 	// Treasure chests immune to damage. Could be thematic, but... more often annoying : Blazenclaw 2025
@@ -27622,87 +27505,59 @@ void CvUnit::doDamageCity(int iDmg, int iDmgLimit, CvCity* pAttacker, int iDmgTy
 
 	iResist = baseCombatStrDefense() *2;
 	iResist += getLevel() * 2;
+
 	if (plot()->getPlotCity() != NULL)
-	{
 		iResist += (plot()->getPlotCity()->getDefenseModifier(false) / 4);
-	}
+
 	if (iDmgType != -1)
-	{
 		iResist += getDamageTypeResist((DamageTypes)iDmgType);
-	}
+
 	if (pAttacker != NULL && iDmgType != DAMAGE_PHYSICAL)
-	{
 		iDmg += pAttacker->getSpellDamageModify();
-	}
-	if (iResist < 100)
+
+	if (iResist >= 100)
+		return;
+
+	// From here on, using real damage instead of just percentile
+	iDmg *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
+	iDmg = iDmg * (100 - iResist) / 100;
+
+	if (iDmg + getDamageReal() > iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR"))
+		iDmg = iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR") - getDamageReal();
+
+	if (iDmg <= 0)
+		return;
+
+	if (iDmg + getDamageReal() >= GC.getMAX_HIT_POINTS())
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+	else
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg/GC.getDefineINT("HIT_POINT_FACTOR"), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+
+	gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+		GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
+	if (pAttacker != NULL)
 	{
-		iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
-		iDmg = iDmg * (100 - iResist) / 100;
-
-		if (iDmg + getDamage() > iDmgLimit)
+		// Only report successful damage to attacker if they can see the unit
+		if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
 		{
-			iDmg = iDmgLimit - getDamage();
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
 		}
-		if (iDmg > 0)
+
+		changeDamageReal(iDmg, pAttacker->getOwner());
+
+		// Blaze: There may be a weird interaction here if the user is at peace with savages, say, and there's a hidden nationality unit pretending to be one?
+		if (bStartWar && !pAttacker->isHiddenNationality() && !isHiddenNationality())
 		{
-			// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-			// if (iDmg + getDamage() >= GC.getMAX_HIT_POINTS())
-			if (iDmg + getDamage() >= (GC.getMAX_HIT_POINTS() / GC.getDefineINT("HIT_POINT_FACTOR")))
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			else
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-
-			if (pAttacker != NULL)
-			{
-				// Only report successful damage to attacker if they can see the unit
-				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
-				{
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-				changeDamage(iDmg, pAttacker->getOwner());
-
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,pAttacker->getOwner());
-				}
-				if (bStartWar)
-				{
-					// Prevents forcing war against Barbarians : Xienwolf 02/06/09
-					// if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()))
-					// TODO: This comment, the following line, and pAttacker pointer type are the only differences between CvUnit::doDamage() and CvUnit::doDamageCity(). Should be merged...
-					if (!(isHiddenNationality()) && !(pAttacker->isBarbarian() || isBarbarian()))
-					{
-						if (getTeam() != pAttacker->getTeam())
-						{
-							if (!GET_TEAM(pAttacker->getTeam()).isPermanentWarPeace(getTeam()))
-							{
-								GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				changeDamage(iDmg, NO_PLAYER);
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,NO_PLAYER);
-				}
-			}
+			if (GET_TEAM(pAttacker->getTeam()).canDeclareWar(getTeam()))
+				GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
 		}
 	}
+	else
+		changeDamageReal(iDmg, NO_PLAYER);
 }
 
 void CvUnit::doDefensiveStrike(CvUnit* pAttacker)
@@ -28036,22 +27891,10 @@ void CvUnit::combatWon(CvUnit* pLoser, bool bAttacking)
 /**	CommandingPresence						END													**/
 /*************************************************************************************************/
 	}
-	if (getCombatHealPercent() != 0)
-	{
-		if (pLoser->isAlive())
-		{
-			int i = getCombatHealPercent();
 
-			if (i > getDamage())
-			{
-				i = getDamage();
-			}
-			if (i != 0)
-			{
-				changeDamage(-1 * i, NO_PLAYER);
-			}
-		}
-	}
+	if (pLoser->isAlive())
+		changeDamage(-getCombatHealPercent(), NO_PLAYER);
+
 	if (m_pUnitInfo->isExplodeInCombat() && m_pUnitInfo->isSuicide())
 	{
 		if (bAttacking)

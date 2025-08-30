@@ -22125,3 +22125,9 @@ void CvCity::changeProductionToCrimeModifier(int iChange)
 
 	}
 }
+
+// Stupid placeholder (for now???) needed for CvUnit::doDamageCity
+bool CvCity::isHiddenNationality()
+{
+	return false;
+}

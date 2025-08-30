@@ -1327,11 +1327,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMBAT_HEAL_PERCENT</Tag>
-		<English>[ICON_BULLET]Heals %D1% after combat</English>
-		<French>[ICON_BULLET]Soigne %D1% suite au combat</French>
-		<German>[ICON_BULLET]Heilt %D1% nach dem er eine Einheit im Kampf getötet hat</German>
-		<Italian>[ICON_BULLET]Heals %D1% after combat</Italian>
-		<Spanish>[ICON_BULLET]Heals %D1% after combat</Spanish>
+		<English>[ICON_BULLET]Heals %D1% after combat vs living</English>
+		<French>[ICON_BULLET]Heals %D1% after combat vs living</French>
+		<German>[ICON_BULLET]Heals %D1% after combat vs living</German>
+		<Italian>[ICON_BULLET]Heals %D1% after combat vs living</Italian>
+		<Spanish>[ICON_BULLET]Heals %D1% after combat vs living</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMBAT_PERCENT_IN_BORDERS</Tag>
