@@ -572,16 +572,11 @@ public:
 
 	int getGameTurnCreated() const;																														// Exposed to Python
 	void setGameTurnCreated(int iNewValue);
-/*************************************************************************************************/
-/**	Higher hitpoints				31/01/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
+
 	int getDamageReal() const;																													// Exposed to Python
 	void setDamageReal(int iNewValue, PlayerTypes ePlayer = NO_PLAYER, bool bNotifyEntity = true);														// Exposed to Python
 	void changeDamageReal(int iChange, PlayerTypes ePlayer = NO_PLAYER);													// Exposed to Python
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
+
 	DllExport int getDamage() const;																													// Exposed to Python
 	void setDamage(int iNewValue, PlayerTypes ePlayer = NO_PLAYER, bool bNotifyEntity = true);														// Exposed to Python
 	void changeDamage(int iChange, PlayerTypes ePlayer = NO_PLAYER);													// Exposed to Python

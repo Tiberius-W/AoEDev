@@ -534,8 +534,8 @@ def fireSpreadToTile(iX, iY):
 
 
 def postCombatHeal50(pCaster, pOpponent):
-	if pCaster.getDamage() > 0:
-		pCaster.setDamage(pCaster.getDamage() / 2, pCaster.getOwner())
+	if pCaster.getDamageReal() > 0:
+		pCaster.setDamageReal(pCaster.getDamageReal() / 2, pCaster.getOwner())
 
 def postCombatIra(pCaster, pOpponent):
 	if pOpponent.isAlive():
@@ -1168,7 +1168,7 @@ def reqCallOfTheGrave(caster):
 			if pTeam.isAtWar(e2Team) == True:
 				return True
 			if pUnit.isHasPromotion(Race["Undead"]) == True:
-				if pUnit.getDamage() != 0:
+				if pUnit.isHurt():
 					return True
 			if pPlot.getImprovementType() == iGraveyard:
 				return True
@@ -1202,7 +1202,7 @@ def spellCallOfTheGrave(caster):
 				bValid = True
 			else:
 				if pUnit.isHasPromotion(Race["Undead"]) == True:
-					if pUnit.getDamage() != 0:
+					if pUnit.isHurt():
 						pUnit.setDamage(0, caster.getOwner())
 			if pPlot.getImprovementType() == iGraveyard:
 				pPlot.setImprovementType(-1)
@@ -1721,7 +1721,7 @@ def spellFeast(caster):
 	
 
 def reqFeed(caster):
-	if caster.getDamage() == 0: return False
+	if not caster.isHurt(): return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if not pPlayer.isHuman():
 		if caster.getDamage() < 20:
@@ -1842,7 +1842,7 @@ def reqHastursRazor(caster):
 		if not pPlot.isNone():
 			for i in range(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
-				if pUnit.getDamage() > 0:
+				if pUnit.isHurt():
 					if pPlayer.isHuman():
 						return True
 					if pUnit.getOwner() == caster.getOwner():
@@ -1861,25 +1861,25 @@ def spellHastursRazor(caster):
 		if not pPlot.isNone():
 			for i in xrange(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
-				listDamage.append(pUnit.getDamage())
+				listDamage.append(pUnit.getDamageReal())
 	for x, y in plotsInRange( iX, iY, iRange ):
 		pPlot = getPlot(x, y)
 		if not pPlot.isNone():
 			for i in xrange(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
 				iRnd = listDamage[CyGame().getSorenRandNum(len(listDamage), "Hastur's Razor")]
-				if iRnd != pUnit.getDamage():
+				if iRnd != pUnit.getDamageReal():
 					CyInterface().addMessage(pUnit.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_HASTURS_RAZOR",()),'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Hasturs Razor.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
 					if pUnit.getOwner() != caster.getOwner():
 						CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_HASTURS_RAZOR",()),'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Hasturs Razor.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
-					pUnit.setDamage(iRnd, caster.getOwner())
+					pUnit.setDamageReal(iRnd, caster.getOwner())
 
 def reqHeal(caster):
 	pPlot = caster.plot()
 	iPoisoned = getInfoType('PROMOTION_POISONED')
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
-		if (pUnit.isAlive() and pUnit.getDamage() > 0):
+		if (pUnit.isAlive() and pUnit.isHurt()):
 			return True
 		if pUnit.isHasPromotion(iPoisoned):
 			return True
@@ -1906,7 +1906,7 @@ def reqHealingSalve(caster):
 		return True
 	if caster.isHasPromotion(getInfoType('PROMOTION_WITHERED')):
 		return True
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isHuman() == False:
@@ -3152,7 +3152,7 @@ def reqRepair(caster):
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
 		if (pUnit.getUnitCombatType() == iSiege or pUnit.getUnitCombatType() == iNaval or pUnit.isHasPromotion(iGolem)):
-			if pUnit.getDamage() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
+			if pUnit.isHurt() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
 				return True
 	return False
 
@@ -3967,7 +3967,7 @@ def reqSironasTouch(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isFeatAccomplished(FeatTypes.FEAT_HEAL_UNIT_PER_TURN) == False:
 		return False
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	if pPlayer.isHuman() == False:
 		if caster.getDamage() < 15:
@@ -7042,7 +7042,7 @@ def postCombatWinWerewolf(pCaster, pOpponent):
 
 def postCombatLossWerewolf(pCaster, pOpponent):
 	if pOpponent.isAlive():
-		if pOpponent.getDamage() > 0:	#Must be hurt to be infected, better if we force it to require that the wolf itself hurt you, but this still works nicely.
+		if pOpponent.isHurt():	#Must be hurt to be infected, better if we force it to require that the wolf itself hurt you, but this still works nicely.
 			iInfectChance = 10
 			if CyGame().getSorenRandNum(100, "Werewolf Infection") < iInfectChance:	#Low rigid chance for now, will set something up for variability some other time
 				pOpponent.setHasPromotion(getInfoType('PROMOTION_WEREWOLF'), True)
@@ -10282,7 +10282,7 @@ def reqRepairGolem(caster):
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
 		if pUnit.isHasPromotion(iGolem):
-			if pUnit.getDamage() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
+			if pUnit.isHurt() and not pUnit.isHasPromotion(iHiddenNationality) :
 				return True
 	return False
 

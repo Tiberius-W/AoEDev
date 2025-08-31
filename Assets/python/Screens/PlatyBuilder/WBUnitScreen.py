@@ -451,7 +451,7 @@ class WBUnitScreen:
 		iY += 30
 		screen.setButtonGFC("UnitDamagePlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 		screen.setButtonGFC("UnitDamageMinus", "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-		sText = CyTranslator().getText("TXT_KEY_WB_DAMAGE", ()) + ": " + str(pUnit.getDamage())
+		sText = CyTranslator().getText("TXT_KEY_WB_DAMAGE", ()) + ": " + str(pUnit.getDamageReal())
 		screen.setLabel("UnitDamageText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 55, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		iY += 30
@@ -753,7 +753,7 @@ class WBUnitScreen:
 			if inputClass.getData1() == 1030:
 				pUnit.changeDamageReal(iChange, -1)
 			elif inputClass.getData1() == 1031:
-				pUnit.changeDamageReal(- min(iChange, pUnit.getDamage()), -1)
+				pUnit.changeDamageReal(- min(iChange, pUnit.getDamageReal()), -1)
 			self.placeStats()
 
 		elif sName.find("UnitMovesLeft") > -1:
@@ -988,7 +988,7 @@ class WBUnitScreen:
 			elif iChangeType == 2:
 				loopUnit.setBaseCombatStr(pUnit.baseCombatStr())
 			elif iChangeType == 3:
-				loopUnit.setDamage(pUnit.getDamage(), -1)
+				loopUnit.setDamageReal(pUnit.getDamageReal(), -1)
 			elif iChangeType == 4:
 				loopUnit.setMoves(pUnit.getMoves())
 			elif iChangeType == 5:

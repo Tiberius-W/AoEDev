@@ -2359,11 +2359,11 @@ def doSignSucellus(argsList):
 		if pUnit.isHasPromotion(iDiseased):
 			pUnit.setHasPromotion(iDiseased, False)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_DISEASED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Spells/Curedisease.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
-		if pUnit.isAlive() and pUnit.getDamage() > 0:# if unit alive and hurt, then heal
-			pUnit.setDamage(pUnit.getDamage() / 2, PlayerTypes.NO_PLAYER)
+		if pUnit.isAlive() and pUnit.getDamageReal() > 0:# if unit alive and hurt, then heal
+			pUnit.setDamageReal(pUnit.getDamageReal() / 2, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_HEALED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Spells/Heal.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
 		elif pUnit.isHasPromotion(iUndead) and pCity.getNumRealBuilding(getInfoType('BUILDING_BINDING_STONES')) == 0 and pPlayer.getCivilizationType() != iScions:# if undead and not protected by D'teshi binding stones and not Scions civ, then damage
-			pUnit.setDamage((100+pUnit.getDamage()) / 2, PlayerTypes.NO_PLAYER)
+			pUnit.setDamageReal((pUnit.maxHitPoints() + pUnit.getDamageReal()) / 2, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_UNDEAD_UNIT_DAMAGED",()),'',1,'Art/Interface/Buttons/Promotions/races/Undead.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
 
 def doSignTali(argsList):
@@ -3885,7 +3885,7 @@ def canTriggerChampionUnit(argsList):
 	if pUnit.isNone():
 		return False
 
-	if pUnit.getDamage() > 0:
+	if pUnit.isHurt():
 		return False
 
 	if pUnit.getExperience() < 10:

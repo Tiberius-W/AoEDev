@@ -6661,17 +6661,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 
 	if (GC.getGoodyInfo(eGoody).getDamagePrereq() > 0)
 	{
-/*************************************************************************************************/
-/**	Higher hitpoints				01/02/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if ((pUnit == NULL) || (pUnit->getDamage() < ((pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq()) / 100)))
-/**								----  End Original Code  ----									**/
-		if ((pUnit == NULL) || (pUnit->getDamageReal() < ((pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq()) / 100)))
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
+		if (pUnit == NULL || pUnit->getDamageReal() < pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq() / 100)
 		{
 			return false;
 		}

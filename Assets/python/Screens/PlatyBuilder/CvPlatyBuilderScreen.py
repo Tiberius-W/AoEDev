@@ -1733,7 +1733,7 @@ class CvWorldBuilderScreen:
 						pNewUnit.setBaseCombatStr(loopUnit.baseCombatStr())
 						for iPromotion in xrange(gc.getNumPromotionInfos()):
 							pNewUnit.setHasPromotion(iPromotion, loopUnit.isHasPromotion(iPromotion))
-						pNewUnit.setDamage(loopUnit.getDamage(), -1)
+						pNewUnit.setDamageReal(loopUnit.getDamageReal(), -1)
 						pNewUnit.setMoves(loopUnit.getMoves())
 						pNewUnit.setLeaderUnitType(loopUnit.getLeaderUnitType())
 						pNewUnit.changeCargoSpace(loopUnit.cargoSpace() - pNewUnit.cargoSpace())

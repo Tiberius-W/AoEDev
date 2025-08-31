@@ -91,7 +91,7 @@ def spellJotFeed(caster):
 		pVictim.kill(True, 0)
 
 def reqJotFeed(caster):
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isHuman() == False:

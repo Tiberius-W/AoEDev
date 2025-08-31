@@ -4466,7 +4466,7 @@ class CvEventManager:
 			if hasPromo(Promo["Aspect Unknown2"]):
 				game.setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_2'),False)
 				pUnit.setHasPromotion(Promo["Aspect Unknown2"], False)
-			
+
 		if iUnitType == Hero["Acheron"]:
 			pUnit.setHasPromotion(Promo["Acheron Leashed"], False)
 

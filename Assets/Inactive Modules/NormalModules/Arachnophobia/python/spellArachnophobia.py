@@ -255,7 +255,7 @@ def spellCannibalize(caster):
 def reqCannibalize(caster):
 	eligibleUnits = [getInfoType('UNIT_SPIDER'), getInfoType('UNIT_GIANT_SPIDER'), getInfoType('UNIT_NESTING_SPIDER'), getInfoType('UNIT_MOTHER_SPIDER')]
 	if caster.getUnitType() not in eligibleUnits: return False
-	if caster.getDamage() == 0: return False
+	if not caster.isHurt(): return False
 	
 	return True
 	

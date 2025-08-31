@@ -27962,7 +27962,7 @@ void CvUnit::combatWon(CvUnit* pLoser, bool bAttacking)
 	}
 	if (pLoser->getDamageTypeCombat(DAMAGE_POISON) > 0 && GC.getDefineINT("POISONED_PROMOTION") != -1)
 	{
-		if (isAlive() && getDamage() > 0)
+		if (isAlive() && isHurt())
 		{
 			if (GC.getGameINLINE().getSorenRandNum(100, "Poisoned") >= getDamageTypeResist(DAMAGE_POISON))
 			{
@@ -30913,7 +30913,7 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 
 	int iValue = 0;
 
-	if (0 == getDamage() && kTrigger.getUnitDamagedWeight() > 0)
+	if (!isHurt() && kTrigger.getUnitDamagedWeight() > 0)
 	{
 		return MIN_INT;
 	}

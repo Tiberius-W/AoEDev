@@ -3818,7 +3818,7 @@ void CvUnitAI::AI_attackCityMove()
 	{
 		// force heal if we in our own city and damaged
 		// can we remove this or call AI_heal here?
-		if ((getGroup()->getNumUnits() == 1) && (getDamage() > 0))
+		if ((getGroup()->getNumUnits() == 1) && (isHurt()))
 		{
 			getGroup()->pushMission(MISSION_HEAL);
 			return;
@@ -6212,7 +6212,7 @@ void CvUnitAI::AI_exploreMove()
 /**	Tweak									END													**/
 /*************************************************************************************************/
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
 		{
@@ -7943,7 +7943,7 @@ void CvUnitAI::AI_attackSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8240,7 +8240,7 @@ void CvUnitAI::AI_reserveSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8507,7 +8507,7 @@ void CvUnitAI::AI_escortSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8740,7 +8740,7 @@ void CvUnitAI::AI_exploreSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8827,7 +8827,7 @@ void CvUnitAI::AI_exploreSeaMove()
 		}
 	}
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
 		{
@@ -9009,7 +9009,7 @@ void CvUnitAI::AI_assaultSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -9726,7 +9726,7 @@ void CvUnitAI::AI_settlerSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10039,7 +10039,7 @@ void CvUnitAI::AI_missionarySeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10162,7 +10162,7 @@ void CvUnitAI::AI_spySeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10273,7 +10273,7 @@ void CvUnitAI::AI_carrierSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10406,7 +10406,7 @@ void CvUnitAI::AI_missileCarrierSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10558,7 +10558,7 @@ void CvUnitAI::AI_attackAirMove()
 		}
 		else if( iEnemyOffense > iOurDefense/3 )
 		{
-			if( getDamage() == 0 )
+			if( !isHurt() )
 			{
 				if( collateralDamage() == 0 && canAirDefend() )
 				{
@@ -10624,7 +10624,7 @@ void CvUnitAI::AI_attackAirMove()
 		}
 	}
 
-	if( getDamage() > 0 )
+	if( isHurt() )
 	{
 		if (((100*currHitPoints()) / maxHitPoints()) < 40)
 		{
@@ -10862,7 +10862,7 @@ void CvUnitAI::AI_defenseAirMove()
 		}
 		else if ( iEnemyOffense > iOurDefense/3 )
 		{
-			if (getDamage() > 0)
+			if (isHurt())
 			{
 				if( healTurns(plot()) > 1 + GC.getGameINLINE().getSorenRandNum(2, "AI Air Defense Move") )
 				{
@@ -10924,7 +10924,7 @@ void CvUnitAI::AI_defenseAirMove()
 /* 	BETTER_BTS_AI_MOD						END								*/
 /********************************************************************************/
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		getGroup()->pushMission(MISSION_SKIP);
 		return;
@@ -11147,7 +11147,7 @@ void CvUnitAI::AI_carrierAirMove()
 
 	// XXX maybe protect land troops?
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		getGroup()->pushMission(MISSION_SKIP);
 		return;
@@ -11872,7 +11872,7 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion, bool bSkipRandom, boo
 /*                                                                                              */
 /* Unit AI                                                                                      */
 /************************************************************************************************/
-	if ( getDamage() > 0 || ((AI_getBirthmark() % 8 == 0) && (AI_getUnitAIType() == UNITAI_COUNTER ||
+	if ( isHurt() || ((AI_getBirthmark() % 8 == 0) && (AI_getUnitAIType() == UNITAI_COUNTER ||
 															AI_getUnitAIType() == UNITAI_PILLAGE ||
 															AI_getUnitAIType() == UNITAI_ATTACK_CITY ||
 															AI_getUnitAIType() == UNITAI_RESERVE )) )
@@ -15313,7 +15313,7 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 
 	if (getGroup()->getNumUnits() == 1)
 	{
-		if (getDamage() > 0)
+		if (isHurt())
 		{
 			if (plot()->isCity() || (healTurns(plot()) == 1))
 			{
@@ -15347,7 +15347,7 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 			iDamageThreshold /= 2;
 		}
 
-		if (pLoopUnit->getDamage() > 0)
+		if (pLoopUnit->isHurt())
 		{
 			iHurtUnitCount++;
 		}
@@ -19335,7 +19335,7 @@ bool CvUnitAI::AI_pirateBlockade()
 
 	if (!bIsInDanger)
 	{
-		if (getDamage() > 0)
+		if (isHurt())
 		{
 			if (!plot()->isOwned() && !plot()->isAdjacentOwned())
 			{
@@ -25297,7 +25297,7 @@ bool CvUnitAI::AI_airDefensiveCity()
 	/* 																			*/
 	/* 	Air AI																	*/
 	/********************************************************************************/
-	if (canAirDefend() && getDamage() == 0)
+	if (canAirDefend() && !isHurt())
 	{
 		pCity = plot()->getPlotCity();
 
@@ -27185,7 +27185,7 @@ bool CvUnitAI::AI_airRetreatFromCityDanger()
 
 bool CvUnitAI::AI_airAttackDamagedSkip()
 {
-	if (getDamage() == 0)
+	if (!isHurt())
 	{
 		return false;
 	}
@@ -29559,7 +29559,7 @@ void CvUnitAI::AI_ConquestMove()
 
 	if (bInCity && plot()->getOwnerINLINE() == getOwnerINLINE())
 	{
-		if ((getGroup()->getNumUnits() == 1) && (getDamage() > 0))
+		if ((getGroup()->getNumUnits() == 1) && (isHurt()))
 		{
 			if (AI_heal())
 			{

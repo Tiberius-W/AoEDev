@@ -6301,7 +6301,7 @@ bool CvCityAI::AI_isAirDefended(bool bCountLand, int iExtra)
 					else
 					{
 						// Count air units which can air patrol
-						if( pLoopUnit->getDamage() == 0 && !pLoopUnit->hasMoved() )
+						if(!pLoopUnit->isHurt() && !pLoopUnit->hasMoved() )
 						{
 							if( pLoopUnit->AI_getUnitAIType() == UNITAI_DEFENSE_AIR )
 							{

@@ -3160,15 +3160,17 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 						// get average damage
 						int iAverageDamage = 0;
+						int iSumHP = 0;
 						CLLNode<IDInfo>* pUnitNode = pHeadGroup->headUnitNode();
 						while (pUnitNode != NULL)
 						{
 							CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 							pUnitNode = pHeadGroup->nextUnitNode(pUnitNode);
 
-							iAverageDamage += (pLoopUnit->getDamage() * pLoopUnit->maxHitPoints()) / 100;
+							iAverageDamage += pLoopUnit->getDamageReal();
+							iSumHP += pLoopUnit->maxHitPoints();
 						}
-						iAverageDamage /= pHeadGroup->getNumUnits();
+						iAverageDamage = 100 * iAverageDamage / iSumHP;
 						if (iAverageDamage > 0)
 						{
 							szString.append(CvWString::format(L" %d%%", 100 - iAverageDamage));
