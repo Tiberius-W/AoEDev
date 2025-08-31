@@ -136,15 +136,7 @@ public:
 	void attackForDamage(CvUnit *pDefender, int attackerDamageChange, int defenderDamageChange);
 	void fightInterceptor(const CvPlot* pPlot, bool bQuick);
 	void move(CvPlot* pPlot, bool bShow);
-/*************************************************************************************************/
-/**	xUPT								02/08/11									Afforess	**/
-/**																								**/
-/**						xUPT mechanic, ported and modified by Valkrionn							**/
-/*************************************************************************************************/
-	bool jumpToNearestValidPlot(bool bKill = true);																																// Exposed to Python
-/*************************************************************************************************/
-/**	xUPT									END													**/
-/*************************************************************************************************/
+	bool jumpToNearestValidPlot(bool bKill = true, bool bAdjacentOnly = false);																																// Exposed to Python
 
 	bool canAutomate(AutomateTypes eAutomate) const;																							// Exposed to Python
 	void automate(AutomateTypes eAutomate);

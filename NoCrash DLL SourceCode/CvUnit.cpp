@@ -1496,8 +1496,7 @@ void CvUnit::convert(CvUnit* pUnit)
 	setGameTurnCreated(pUnit->getGameTurnCreated());
 
 	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
-	// Snarko set to be "pUnit->getDamageReal()-1"; why, I do not know!
-	setDamageReal(pUnit->getDamageReal());
+	setDamageReal(pUnit->getDamageReal(), NO_PLAYER, false);
 
 	setMoves(pUnit->getMoves());
 	setLevel(pUnit->getLevel());
@@ -6048,8 +6047,9 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 }
 
 
-// returns true if unit is relocated, false otherwise. If bKill is true, will immediately kill unit before returning false.
-bool CvUnit::jumpToNearestValidPlot(bool bKill)
+// returns true if unit is relocated, false otherwise. AdjacentOnly defaults to false for e.g. sanctuary python effects
+// If bKill is true, will immediately kill unit before returning false. bADJACENTONLY IS WIP
+bool CvUnit::jumpToNearestValidPlot(bool bKill, bool bAdjacentOnly)
 {
 	PROFILE_FUNC();
 
@@ -26415,46 +26415,26 @@ void CvUnit::changeCombatHealPercent(int iChange)
 	}
 }
 
+// 
 void CvUnit::calcCombatLimit()
 {
 	int iBestValue = m_pUnitInfo->getCombatLimit();
 	int iValue = 0;
+
+	// Lethality - Xienwolf - 07/10/08 - Enhances the Combat Limit of a Unit
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		if (isHasPromotion((PromotionTypes)iI))
-		{
-			iValue = GC.getPromotionInfo((PromotionTypes)iI).getCombatLimit();
-			if (iValue != 0)
-			{
-				if (iValue < iBestValue)
-				{
-					iBestValue = iValue;
-				}
-			}
-		}
+		if (!isHasPromotion((PromotionTypes)iI))
+			continue;
+
+		iValue = GC.getPromotionInfo((PromotionTypes)iI).getCombatLimit();
+
+		if (iValue < iBestValue)
+			iBestValue = iValue;
 	}
-/*************************************************************************************************/
-/**	Lethality								07/10/08								Xienwolf	**/
-/**																								**/
-/**						Enhances the Combat Limit of a Unit										**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	m_iCombatLimit = iBestValue;
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Higher hitpoints				28/01/11				Imported from wiser orcs by Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	m_iCombatLimit = std::min(100, iBestValue + getCombatDmgCapBoost());
-/**								----  End Original Code  ----									**/
+
+	// Higher hitpoints - Imported from wiser orcs by Snarko
 	m_iCombatLimit = std::min(GC.getMAX_HIT_POINTS(), iBestValue + getCombatDmgCapBoost());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Lethality									END												**/
-/*************************************************************************************************/
 }
 
 int CvUnit::getCombatPercentInBorders() const

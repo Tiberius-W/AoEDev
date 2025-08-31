@@ -1441,10 +1441,9 @@ void CvPlot::verifyUnitValidPlot()
 	{
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
+
 		if (NULL != pLoopUnit)
-		{
 			aUnits.push_back(pLoopUnit);
-		}
 	}
 
 	bool bErased = false;
@@ -1455,9 +1454,21 @@ void CvPlot::verifyUnitValidPlot()
 
 		if (pLoopUnit == NULL
 		|| !pLoopUnit->atPlot(this)
-		|| pLoopUnit->isCombat()
-		|| pLoopUnit->isCargo())
+		|| pLoopUnit->isCombat())
 		{
+			++it;
+			continue;
+		}
+
+		// Check to catch instance where python does something silly to a transport unit without touching its cargo
+		if (pLoopUnit->isCargo())
+		{
+			if (pLoopUnit->getTransportUnit()->plot() != this && !pLoopUnit->jumpToNearestValidPlot())
+			{
+				it = aUnits.erase(it);
+				continue;
+			}
+
 			++it;
 			continue;
 		}
@@ -1485,57 +1496,30 @@ void CvPlot::verifyUnitValidPlot()
 			++it;
 	}
 
-	if (isOwned())
+	if (!isOwned())
+		return;
+
+	it = aUnits.begin();
+	while (it != aUnits.end())
 	{
-		it = aUnits.begin();
-		while (it != aUnits.end())
+		CvUnit* pLoopUnit = *it;
+		bool bErased = false;
+
+		if (pLoopUnit == NULL
+		 || !pLoopUnit->atPlot(this)
+		 || pLoopUnit->isCombat()
+		 || (pLoopUnit->getTeam() == getTeam() || (getTeam() != NO_TEAM && GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
+		 || !isVisibleEnemyUnit(pLoopUnit)
+		 //  Xienwolf - 05/31/09 - Added isHeld, isCommunalPropery checks to keep the HELD units from bouncing out of their cages
+		 || pLoopUnit->isInvisible(getTeam(), false) || pLoopUnit->isHeld() || pLoopUnit->isCommunalProperty())
 		{
-			CvUnit* pLoopUnit = *it;
-			bool bErased = false;
-
-			if (pLoopUnit != NULL)
-			{
-				if (pLoopUnit->atPlot(this))
-				{
-					if (!(pLoopUnit->isCombat()))
-					{
-						if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
-						{
-							if (isVisibleEnemyUnit(pLoopUnit))
-							{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							05/31/09											**/
-/**																								**/
-/**					Should keep the HELD units from bouncing out of their cages					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								if (!(pLoopUnit->isInvisible(getTeam(), false)))
-/**								----  End Original Code  ----									**/
-								if (!(pLoopUnit->isInvisible(getTeam(), false) || pLoopUnit->isHeld() || pLoopUnit->isCommunalProperty()))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-								{
-									if (!pLoopUnit->jumpToNearestValidPlot())
-									{
-										bErased = true;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-
-			if (bErased)
-			{
-				it = aUnits.erase(it);
-			}
-			else
-			{
-				++it;
-			}
+			++it;
 		}
+		// Unit may be deleted!
+		else if (!pLoopUnit->jumpToNearestValidPlot())
+			it = aUnits.erase(it);
+		else
+			++it;
 	}
 }
 
