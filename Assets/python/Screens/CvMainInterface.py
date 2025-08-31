@@ -281,6 +281,12 @@ mercenaryManager = CvMercenaryManager.CvMercenaryManager(CvScreenEnums.MERCENARY
 
 iBuildingsList = 0
 
+iPromotionsPerPage = 30
+iPromotionPage = 1
+iNumUnitPromotions = 0
+
+bSmallScoreboard = False
+
 class CvMainInterface:
 	"Main Interface Screen"
 # < Mercenaries Start >
@@ -418,7 +424,7 @@ class CvMainInterface:
 		screen.addMultilineText( "ManaToggleHelpText", szText, 102, 123, 167, 27, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.hide( "ManaToggleHelpText" )
 
-		screen.setImageButton("xUPTButton", "Art/Interface/Screens/xUPT.dds", xResolution - 58, 55, iEndOfTurnButtonSize, iEndOfTurnButtonSize, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		screen.setImageButton("xUPTButton", "Art/Interface/Screens/xUPT.dds", xResolution - 58, 52, iEndOfTurnButtonSize, iEndOfTurnButtonSize, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 		screen.hide( "xUPTButton" )
 
 		screen.addPanel( "SpawnOddsHelpTextPanel", u"", u"", True, True, 100, 88, 170, 30, PanelStyles.PANEL_STYLE_HUD_HELP )
@@ -1062,19 +1068,25 @@ class CvMainInterface:
 		# UNIT INFO ELEMENTS
 		# *********************************************************************************
 
-		i = 0
-		for i in xrange(gc.getNumPromotionInfos()):
-			szName = "PromotionButton" + str(i)
-			szName2 = szName + "Duration"
-			szName3 = szName + "Quantity"
-			screen.addDDSGFC( szName, gc.getPromotionInfo(i).getButton(), 180, yResolution - 18, 24, 24, WidgetTypes.WIDGET_ACTION, gc.getPromotionInfo(i).getActionInfoIndex(), -1 )
-			screen.setText( szName2, "Background", u"", CvUtil.FONT_RIGHT_JUSTIFY, 180, yResolution-18, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		# Promotions
+
+		for i in xrange(iPromotionsPerPage):
+			szName	= "PromotionButton" + str(i)
+			szName2	= szName + "Duration"
+			szName3	= szName + "Quantity"
+			screen.addDDSGFC( szName,"", 1, 1, 26, 26, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.setText( szName2, "Background", u"", CvUtil.FONT_RIGHT_JUSTIFY, 1, 1, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 			screen.setHitTest( szName2, HitTestTypes.HITTEST_NOHIT )
-			screen.setText( szName3, "Background", u"", CvUtil.FONT_RIGHT_JUSTIFY, 180, yResolution-18, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.setText( szName3, "Background", u"", CvUtil.FONT_RIGHT_JUSTIFY, 1, 1, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 			screen.setHitTest( szName3, HitTestTypes.HITTEST_NOHIT )
 			screen.hide( szName )
 			screen.hide( szName2 )
 			screen.hide( szName3 )
+
+		screen.setButtonGFC( "PromotionScrollPlus", u"", "", 264, yResolution - 58, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_ARROW_RIGHT )
+		screen.hide( "PromotionScrollPlus" )
+		screen.setButtonGFC( "PromotionScrollMinus", u"", "", 2, yResolution - 58, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_ARROW_LEFT )
+		screen.hide( "PromotionScrollMinus" )
 
 		# *********************************************************************************
 		# SCORES
@@ -1128,6 +1140,9 @@ class CvMainInterface:
 		self.ClearHUD()
 		#Xienwolf Religious HUDs Add End
 		return 0
+
+		screen.setButtonGFC( "SmallScoreToggle", u"", "", 0, 0, 20,20, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+		screen.hide("SmallScoreToggle")
 
 	# Will update the screen (every 250 MS)
 	def updateScreen(self):
@@ -2047,6 +2062,15 @@ class CvMainInterface:
 				else:
 					screen.addSpecificUnitGraphicGFC( "InterfaceUnitModel", CyInterface().getHeadSelectedUnit(), -20, yResolution - 200, 160, 198, WidgetTypes.WIDGET_UNIT_MODEL, CyInterface().getHeadSelectedUnit().getUnitType(), -1,  -20, 30, 1, False )
 				screen.moveToFront("SelectedUnitText")
+				screen.moveToFront("PromotionScrollMinus")
+				screen.moveToFront("PromotionScrollPlus")
+				for i in xrange(iPromotionsPerPage):
+					szName	= "PromotionButton" + str(i)
+					szName2 = szName + "Duration"
+					szName3 = szName + "Quantity"
+					screen.moveToFront(szName)
+					screen.moveToFront(szName2)
+					screen.moveToFront(szName3)
 				screen.moveToBack( "InterfaceUnitModel" )
 			else:
 				screen.hide( "InterfaceUnitModel" )
@@ -4424,6 +4448,9 @@ class CvMainInterface:
 	# Will update the info pane strings
 	def updateInfoPaneStrings( self ):
 
+		global iNumUnitPromotions
+		iNumUnitPromotions = 0
+
 		iRow = 0
 
 		screen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
@@ -4439,7 +4466,7 @@ class CvMainInterface:
 #FfH: Modified by Kael 07/01/2007
 #		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 140, 280, 130, PanelStyles.PANEL_STYLE_STANDARD )
 #		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 140, 200, 130, PanelStyles.PANEL_STYLE_STANDARD )	Changed r364
-		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 164, 200, 130, PanelStyles.PANEL_STYLE_STANDARD )
+		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 164, 200, 80, PanelStyles.PANEL_STYLE_STANDARD )
 #FfH: End Modify
 
 		screen.setStyle( "SelectedUnitPanel", "Panel_Game_HudStat_Style" )
@@ -4448,7 +4475,7 @@ class CvMainInterface:
 #FfH: Modified by Kael 07/01/2007
 #		screen.addTableControlGFC( "SelectedUnitText", 3, 10, yResolution - 109, 183, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 #		screen.addTableControlGFC( "SelectedUnitText", 3, 10, yResolution - 109, 153, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )	Changed r364
-		screen.addTableControlGFC( "SelectedUnitText", 3, 10, yResolution - 133, 153, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
+		screen.addTableControlGFC( "SelectedUnitText", 3, 5, yResolution - 135, 280, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 #FfH: End Modify
 
 
@@ -4461,13 +4488,16 @@ class CvMainInterface:
 		screen.setStyle( "SelectedCityText", "Table_EmptyScroll_Style" )
 		screen.hide( "SelectedCityText" )
 
-		for i in xrange(gc.getNumPromotionInfos()):
+		for i in xrange(iPromotionsPerPage):
 			szName = "PromotionButton" + str(i)
 			szName2 = szName + "Duration"
 			szName3 = szName + "Quantity"
 			screen.hide( szName )
 			screen.hide( szName2 )
 			screen.hide( szName3 )
+		
+		screen.hide( "PromotionScrollPlus" )
+		screen.hide( "PromotionScrollMinus" )
 
 		if CyEngine().isGlobeviewUp():
 			return
@@ -4517,9 +4547,9 @@ class CvMainInterface:
 #			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 100 )
 #			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 75 )
 #			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 10 )
-			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 75 )
-			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 105 )
-			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 10 )
+			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 290 )
+			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 5 )
+			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 5 )
 #FfH: End Modify
 
 			screen.setTableColumnRightJustify( "SelectedUnitText", 1 )
@@ -4576,187 +4606,143 @@ class CvMainInterface:
 					screen.show( "SelectedUnitText" )
 					screen.show( "SelectedUnitPanel" )
 
+					# [Movement] [Level] [XP] [Fortify]
+					# [Combat] [Ranged] [MP] [Work Rate]
+
+					szBuffer		= u""
+					szColorStart	= ''
+					szColorEnd		= ''
+					bShortStr		= False
+					bHurt			= pHeadSelectedUnit.isHurt()
+					szSeparator		= "  |  "
+					lRow1			= []
+					lRow2			= []
+					if bHurt:
+						szColorStart = localText.getText('[COLOR_RED]',())
+						szColorEnd = localText.getText('[COLOR_REVERT]',())
+
+					# Combat Str
+					if (pHeadSelectedUnit.canFight()):
+						szHP = ''
+						if not pHeadSelectedUnit.isFighting():
+							iStrength = pHeadSelectedUnit.baseCombatStr()
+							iDefStrength = pHeadSelectedUnit.baseCombatStrDefense()
+							if iStrength == iDefStrength:
+								bShortStr = True
+							if bHurt:
+								fCurrentHP = float(pHeadSelectedUnit.currHitPoints())
+								fMaxHP = float(pHeadSelectedUnit.maxHitPoints())
+								fHP = (fCurrentHP / fMaxHP) * 100
+								fHP = round(fHP, 1)
+								szHP = u" %g" %(fHP) + "%"
+								iStrength = float(iStrength) * (fCurrentHP / fMaxHP)
+								iStrength = round(iStrength, 1)
+								iDefStrength = float(iDefStrength) * (fCurrentHP / fMaxHP)
+								iDefStrength = round(iDefStrength, 1)
+							cStrength = CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR)
+							if bShortStr:
+								szCombat = szColorStart + u"%c%g" %(cStrength,iStrength) + szHP + szColorEnd
+							else:
+								szCombat = szColorStart + u"%c%g/%g" %(cStrength,iStrength,iDefStrength) + szHP + szColorEnd
+							lRow2.append(szCombat)
+
+					# Ranged Str
+					if (pHeadSelectedUnit.airBaseCombatStr() > 0):
+						iRangedStrength = pHeadSelectedUnit.airBaseCombatStr()
+						iRangedLimit = pHeadSelectedUnit.airCombatLimit()
+						if bHurt:
+							fCurrentHP = float(pHeadSelectedUnit.currHitPoints())
+							fMaxHP = float(pHeadSelectedUnit.maxHitPoints())
+							iRangedStrength = float(iRangedStrength) * (fCurrentHP / fMaxHP)
+							iRangedStrength = round(iRangedStrength, 1)
+						cRanged = CyGame().getSymbolID(FontSymbols.RANGED_CHAR)
+						szRanged = szColorStart + u"%c%d" %(cRanged,iRangedStrength) + szColorEnd + u", %d%%" %(iRangedLimit)
+						lRow2.append(szRanged)
+
+					# Magical Power
+					iMP = pHeadSelectedUnit.getMagicalPower()
+					if iMP > 0:
+						cMP = gc.getBonusInfo(gc.getInfoTypeForString("BONUS_MANA")).getChar()
+						szMP = u"%c%d" %(cMP,iMP)
+						lRow2.append(szMP)
+
+					# Work Rate
+					iWorkRate = pHeadSelectedUnit.workRate(True, -1, -1)
+					if iWorkRate > 0:
+						cWork = gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar()
+						szWorkRate = u"%c%d" %(cWork,iWorkRate)
+						lRow2.append(szWorkRate)
+
+					# Movement
+					fMoves = float(pHeadSelectedUnit.movesLeft())
+					fCurrMoves = (fMoves / gc.getMOVE_DENOMINATOR())
+					fCurrMoves = round(fCurrMoves, 2)
+					iBase = pHeadSelectedUnit.baseMoves()
+					cMoves = CyGame().getSymbolID(FontSymbols.MOVES_CHAR)
+					if (pHeadSelectedUnit.baseMoves() == fCurrMoves):
+						szMovement = u"%c%d" %(cMoves,iBase)
+					else:
+						szMovement = u"%c%g/%d" %(cMoves,fCurrMoves,iBase)
+					lRow1.append(szMovement)
+
+					# Level
+					iLevel = pHeadSelectedUnit.getLevel()
+					szLevel = localText.getText("TXT_KEY_INTERFACE_LEVEL", (iLevel,))
+					lRow1.append(szLevel)
+
+					# XP
+					fCurrentXP = pHeadSelectedUnit.getExperience()
+					fNeededXP = pHeadSelectedUnit.experienceNeeded()
+					szXP = localText.getText("TXT_KEY_INTERFACE_XP", ()) + u" %g/%g" %(fCurrentXP,fNeededXP)
+					lRow1.append(szXP)
+
+					# Fortify
+					if pHeadSelectedUnit.fortifyModifier() > 0:
+						iFort = pHeadSelectedUnit.fortifyModifier()
+						cFort = CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR)
+						szFortify = u"%c%d" %(cFort,iFort) + "%"
+						lRow1.append(szFortify)
+
+					for string in lRow1:
+						if lRow1.index(string) != len(lRow1) - 1:
+							szBuffer += string + szSeparator
+						else:
+							szBuffer += string
+
+					screen.appendTableRow( "SelectedUnitText" )
+					screen.setTableText( "SelectedUnitText", 0, iRow, szBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
+					iRow += 1
 					szBuffer = u""
 
-					szLeftBuffer = u""
-					szRightBuffer = u""
-
-					if (pHeadSelectedUnit.airBaseCombatStr() > 0):
-						szLeftBuffer = localText.getText("INTERFACE_PANE_AIR_STRENGTH", ())
-						if(pHeadSelectedUnit.airCombatLimit() == 100):
-							if (pHeadSelectedUnit.isFighting()):
-								szRightBuffer = u"?/%d%c" %(pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR))
-							elif (pHeadSelectedUnit.isHurt()):
-								szRightBuffer = u"%.1f/%d%c" %(((float(pHeadSelectedUnit.airBaseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR))
-							else:
-								szRightBuffer = u"%d%c" %(pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR))
+					for string in lRow2:
+						if lRow2.index(string) != len(lRow2) - 1:
+							szBuffer += string + szSeparator
 						else:
-							if (pHeadSelectedUnit.isFighting()):
-								szRightBuffer = u"?/%d%c<color=255,255,0>%d%%</color>" %(pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR),pHeadSelectedUnit.airCombatLimit())
-							elif (pHeadSelectedUnit.isHurt()):
-								szRightBuffer = u"%.1f/%d%c<color=255,255,0>%d%%</color>" %(((float(pHeadSelectedUnit.airBaseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR),pHeadSelectedUnit.airCombatLimit())
-							else:
-								szRightBuffer = u"%d%c<color=255,255,0>%d%%</color>" %(pHeadSelectedUnit.airBaseCombatStr(), CyGame().getSymbolID(FontSymbols.RANGED_CHAR),pHeadSelectedUnit.airCombatLimit())
-					if (len(szRightBuffer) > 6):
-						szRightBuffer = u"<font=1>" + szRightBuffer + u"</font>"
+							szBuffer += string
 
-					szBuffer = szLeftBuffer + szRightBuffer
-					if ( szBuffer ):
-						screen.appendTableRow( "SelectedUnitText" )
-						screen.setTableText( "SelectedUnitText", 1, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
-						screen.setTableText( "SelectedUnitText", 0, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY )
-						screen.show( "SelectedUnitText" )
-						screen.show( "SelectedUnitPanel" )
-						iRow += 1
-
-					szLeftBuffer = u""
-					szRightBuffer = u""
-
-					if (pHeadSelectedUnit.canFight()):
-						szLeftBuffer = localText.getText("INTERFACE_PANE_STRENGTH", ())
-						if(pHeadSelectedUnit.combatLimit() == gc.getMAX_HIT_POINTS()):
-							if (pHeadSelectedUnit.isFighting()):
-								szRightBuffer = u"?/%d%c" %(pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
-							elif (pHeadSelectedUnit.isHurt()):
-								if pHeadSelectedUnit.baseCombatStr() == pHeadSelectedUnit.baseCombatStrDefense():
-									szRightBuffer = u"%.1f/%d%c" %(((float(pHeadSelectedUnit.baseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
-								else:
-									szRightBuffer = u"%.1f/%.lf%c" %(((float(pHeadSelectedUnit.baseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), ((float(pHeadSelectedUnit.baseCombatStrDefense() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
-							else:
-								if pHeadSelectedUnit.baseCombatStr() == pHeadSelectedUnit.baseCombatStrDefense():
-									szRightBuffer = u"%d%c" %(pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
-								else:
-									szRightBuffer = u"%d/%d%c" %(pHeadSelectedUnit.baseCombatStr(), pHeadSelectedUnit.baseCombatStrDefense(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
-						else:
-							if (pHeadSelectedUnit.isFighting()):
-								szRightBuffer = u"?/%d%c<color=255,255,0>%d%%</color>" %(pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),pHeadSelectedUnit.combatLimit() / gc.getDefineINT("HIT_POINT_FACTOR"))
-							elif (pHeadSelectedUnit.isHurt()):
-								if pHeadSelectedUnit.baseCombatStr() == pHeadSelectedUnit.baseCombatStrDefense():
-									szRightBuffer = u"%.1f/%d%c<color=255,255,0>%d%%</color>" %(((float(pHeadSelectedUnit.baseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),pHeadSelectedUnit.combatLimit() / gc.getDefineINT("HIT_POINT_FACTOR"))
-								else:
-									szRightBuffer = u"%.1f/%.lf%c<color=255,255,0>%d%%</color>" %(((float(pHeadSelectedUnit.baseCombatStr() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), ((float(pHeadSelectedUnit.baseCombatStrDefense() * pHeadSelectedUnit.currHitPoints())) / (float(pHeadSelectedUnit.maxHitPoints()))), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),pHeadSelectedUnit.combatLimit() / gc.getDefineINT("HIT_POINT_FACTOR"))
-							else:
-								if pHeadSelectedUnit.baseCombatStr() == pHeadSelectedUnit.baseCombatStrDefense():
-									szRightBuffer = u"%d%c<color=255,255,0>%d%%</color>" %(pHeadSelectedUnit.baseCombatStr(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),pHeadSelectedUnit.combatLimit() / gc.getDefineINT("HIT_POINT_FACTOR"))
-								else:
-									szRightBuffer = u"%d/%d%c<color=255,255,0>%d%%</color>" %(pHeadSelectedUnit.baseCombatStr(), pHeadSelectedUnit.baseCombatStrDefense(), CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),pHeadSelectedUnit.combatLimit() / gc.getDefineINT("HIT_POINT_FACTOR"))
-					if (len(szRightBuffer) > 6):
-						szRightBuffer = u"<font=1>" + szRightBuffer + u"</font>"
-
-					szBuffer = szLeftBuffer + szRightBuffer
-					if ( szBuffer ):
-						screen.appendTableRow( "SelectedUnitText" )
-						screen.setTableText( "SelectedUnitText", 1, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
-						screen.setTableText( "SelectedUnitText", 0, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY )
-						screen.show( "SelectedUnitText" )
-						screen.show( "SelectedUnitPanel" )
-						iRow += 1
-
-					szLeftBuffer = u""
-					szRightBuffer = u""
-
-					if ( (pHeadSelectedUnit.movesLeft() % gc.getMOVE_DENOMINATOR()) > 0 ):
-						iDenom = 1
-					else:
-						iDenom = 0
-					iCurrMoves = ((pHeadSelectedUnit.movesLeft() / gc.getMOVE_DENOMINATOR()) + iDenom )
-					szLeftBuffer = localText.getText("INTERFACE_PANE_MOVEMENT", ())
-					if (pHeadSelectedUnit.baseMoves() == iCurrMoves):
-						szRightBuffer = u"%d%c" %(pHeadSelectedUnit.baseMoves(), CyGame().getSymbolID(FontSymbols.MOVES_CHAR) )
-					else:
-						szRightBuffer = u"%d/%d%c" %(iCurrMoves, pHeadSelectedUnit.baseMoves(), CyGame().getSymbolID(FontSymbols.MOVES_CHAR) )
-
-					szBuffer = szLeftBuffer + "  " + szRightBuffer
 					screen.appendTableRow( "SelectedUnitText" )
-					screen.setTableText( "SelectedUnitText", 1, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
-					screen.setTableText( "SelectedUnitText", 0, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY )
-					screen.show( "SelectedUnitText" )
-					screen.show( "SelectedUnitPanel" )
+					screen.setTableText( "SelectedUnitText", 0, iRow, szBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
 					iRow += 1
+					szBuffer = u""
 
-					if ((pHeadSelectedUnit.getExperience() > 0) and not pHeadSelectedUnit.isFighting()):
-						szLeftBuffer = localText.getText("INTERFACE_PANE_EXPERIENCE", ())
-						CurrXP = pHeadSelectedUnit.getExperienceTimes100()
-						fCurrXP = pHeadSelectedUnit.getExperience()
-						NeedXP = pHeadSelectedUnit.experienceNeededTimes100()
-						fNeedXP = pHeadSelectedUnit.experienceNeeded()
-						if (CurrXP%100 == 0):
-							if (NeedXP%100 == 0):
-								szRightBuffer = u"%.0f/%.0f" %(fCurrXP, fNeedXP)
-							elif (NeedXP%10 == 0):
-								szRightBuffer = u"%.0f/%.1f" %(fCurrXP, fNeedXP)
-							else:
-								szRightBuffer = u"%.0f/%.2f" %(fCurrXP, fNeedXP)
-						elif (CurrXP%10 == 0):
-							if (NeedXP%100 == 0):
-								szRightBuffer = u"%.1f/%.0f" %(fCurrXP, fNeedXP)
-							elif (NeedXP%10 == 0):
-								szRightBuffer = u"%.1f/%.1f" %(fCurrXP, fNeedXP)
-							else:
-								szRightBuffer = u"%.1f/%.2f" %(fCurrXP, fNeedXP)
-						else:
-							if (NeedXP%100 == 0):
-								szRightBuffer = u"%.2f/%.0f" %(fCurrXP, fNeedXP)
-							elif (NeedXP%10 == 0):
-								szRightBuffer = u"%.2f/%.1f" %(fCurrXP, fNeedXP)
-							else:
-								szRightBuffer = u"%.2f/%.2f" %(fCurrXP, fNeedXP)
-						if (len(szRightBuffer) > 9):
-							szRightBuffer = u"<font=1>" + szRightBuffer + u"</font>"
-						szBuffer = szLeftBuffer + "  " + szRightBuffer
-						screen.appendTableRow( "SelectedUnitText" )
-						screen.setTableText( "SelectedUnitText", 1, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
-						screen.setTableText( "SelectedUnitText", 0, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY )
-						screen.show( "SelectedUnitText" )
-						screen.show( "SelectedUnitPanel" )
-						iRow += 1
+				iPromotionCount = 0
+				lPromotionList = []
+				for iPromotion in xrange(gc.getNumPromotionInfos()):
+					iPromotionNext = gc.getPromotionInfo(iPromotion).getPromotionNextLevel()
+					if not pHeadSelectedUnit.isHasPromotion(iPromotion):
+						continue
+					if gc.getPromotionInfo(iPromotion).isEffectProm():
+						continue
+					if iPromotionNext != -1 and pHeadSelectedUnit.isHasPromotion(iPromotionNext):
+						continue
 
-					if (pHeadSelectedUnit.getLevel() > 0):
+					lPromotionList.append(iPromotion)
+					iPromotionCount += 1
 
-						szLeftBuffer = localText.getText("INTERFACE_PANE_LEVEL", ())
-						szRightBuffer = u"%d" %(pHeadSelectedUnit.getLevel())
+				iNumUnitPromotions = iPromotionCount
 
-						szBuffer = szLeftBuffer + "  " + szRightBuffer
-						screen.appendTableRow( "SelectedUnitText" )
-						screen.setTableText( "SelectedUnitText", 1, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
-						screen.setTableText( "SelectedUnitText", 0, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY )
-						screen.show( "SelectedUnitText" )
-						screen.show( "SelectedUnitPanel" )
-						iRow += 1
-
-					iPromotionCount = 0
-					i = 0
-					for i in xrange(gc.getNumPromotionInfos()):
-
-#FfH: Modified by Kael 08/17/2007
-#						if (pHeadSelectedUnit.isHasPromotion(i)):
-						iPromNext = gc.getPromotionInfo(i).getPromotionNextLevel()
-#Xienwolf Modify GM Action - 05/20/2008
-#						if (pHeadSelectedUnit.isHasPromotion(i) and (iPromNext == -1 or pHeadSelectedUnit.isHasPromotion(iPromNext) == False)):
-						if (pHeadSelectedUnit.isHasPromotion(i) and (iPromNext == -1 or pHeadSelectedUnit.isHasPromotion(iPromNext) == False) and (gc.getPromotionInfo(i).isEffectProm() == False or gc.getPromotionInfo(i).isEquipment())):
-#Xienwolf End Modify GM Action
-#FfH: End Modify
-
-							szName = "PromotionButton" + str(i)
-							szName2 = szName + "Duration"
-							szName3 = szName + "Quantity"
-							screen.setText( szName2, "Background", str(pHeadSelectedUnit.getPromotionDuration(i)), CvUtil.FONT_RIGHT_JUSTIFY, 180, yResolution-18, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-							screen.setHitTest( szName2, HitTestTypes.HITTEST_NOHIT )
-							screen.hide( szName2 )
-							screen.setText( szName3, "Background", u"<font=4><color=255,0,0>%d</color></font>" %(pHeadSelectedUnit.countHasPromotion(i)), CvUtil.FONT_RIGHT_JUSTIFY, 180, yResolution-18, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-							screen.setHitTest( szName3, HitTestTypes.HITTEST_NOHIT )
-							screen.hide( szName3 )
-							self.setPromotionButtonPosition( szName, iPromotionCount )
-							screen.moveToFront( szName )
-							screen.show( szName )
-							if (pHeadSelectedUnit.getPromotionDuration(i) > 0):
-								screen.moveToFront( szName2 )
-								screen.show( szName2 )
-							if (pHeadSelectedUnit.countHasPromotion(i) > 1):
-								screen.moveToFront( szName3 )
-								screen.show( szName3 )
-
-							iPromotionCount = iPromotionCount + 1
+				if lPromotionList:
+					self.setPromotionButtons(lPromotionList, pHeadSelectedUnit)
 
 			if (pSelectedGroup):
 
@@ -4795,6 +4781,7 @@ class CvMainInterface:
 		yResolution = screen.getYResolution()
 
 		screen.hide( "ScoreBackground" )
+		screen.hide( "SmallScoreToggle" )
 
 		for i in xrange( gc.getMAX_PLAYERS() ):
 			szName = "ScoreText" + str(i)
@@ -4824,7 +4811,6 @@ class CvMainInterface:
 
 		if ((CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY)):
 			if (CyInterface().isScoresVisible() and not CyInterface().isCityScreenUp() and CyEngine().isGlobeviewUp() == false):
-
 				i = gc.getMAX_CIV_TEAMS() - 1
 				while (i > -1):
 					iTeam = gc.getGame().getRankTeam(i)
@@ -4850,12 +4836,16 @@ class CvMainInterface:
 
 										if (not CyInterface().isFlashingPlayer(ePlayer) or CyInterface().shouldFlash(ePlayer)):
 											if (ePlayer == gc.getGame().getActivePlayer()):
-												if g_bScoreShowStateName:
+												if bSmallScoreboard:
+													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
+												elif g_bScoreShowStateName:
 													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getStateName())
 												else:
 													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
 											else:
-												if g_bScoreShowStateName:
+												if bSmallScoreboard:
+													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
+												elif g_bScoreShowStateName:
 													szTempBuffer = u"%d: <color=%d,%d,%d,%d>%s</color>" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getStateName())
 												else:
 													szTempBuffer = u"%d: <color=%d,%d,%d,%d>%s</color>" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
@@ -4950,31 +4940,7 @@ class CvMainInterface:
 												szTempBuffer = u"%c" %(gc.getCommerceInfo(CommerceTypes.COMMERCE_ESPIONAGE).getChar())
 												szBuffer = szBuffer + szTempBuffer
 
-#FfH Alignment: Added by Kael 08/09/2007
-											if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_BROADER_ALIGNMENTS):
-												if gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_CHAOTIC'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_EVIL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_ALIGNMENT_EVIL")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_NEUTRAL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_GOOD_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												elif gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_NEUTRAL'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_EVIL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_ALIGNMENT_EVIL")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_NEUTRAL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_GOOD_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												elif gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_LAWFUL'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_EVIL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_ALIGNMENT_EVIL")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_NEUTRAL_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_GOOD_BA", (gc.getPlayer(ePlayer).getBroadEthicalAlignment(), gc.getPlayer(ePlayer).getBroadAlignment(), ()), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												szBuffer = szBuffer + szTempBuffer
-											else:
+											if not bSmallScoreboard:
 												if gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_CHAOTIC'):
 													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
 														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_EVIL", (), gc.getInfoTypeForString("COLOR_RED")) + ")"
@@ -5009,28 +4975,28 @@ class CvMainInterface:
 												szTempBuffer = ""
 											szBuffer = szBuffer + szTempBuffer
 #LeaderStatus: End Add
+										if not bSmallScoreboard:
+											bEspionageCanSeeResearch = false
+											for iMissionLoop in xrange(gc.getNumEspionageMissionInfos()):
+												if (gc.getEspionageMissionInfo(iMissionLoop).isSeeResearch()):
+													bEspionageCanSeeResearch = gc.getPlayer(gc.getGame().getActivePlayer()).canDoEspionageMission(iMissionLoop, ePlayer, None, -1)
+													break
 
-										bEspionageCanSeeResearch = false
-										for iMissionLoop in xrange(gc.getNumEspionageMissionInfos()):
-											if (gc.getEspionageMissionInfo(iMissionLoop).isSeeResearch()):
-												bEspionageCanSeeResearch = gc.getPlayer(gc.getGame().getActivePlayer()).canDoEspionageMission(iMissionLoop, ePlayer, None, -1)
-												break
+											# If player's team owns eyes and ears network, then EspionageCanSeeResearch"
+											numEyesEarsNetwork = 0
+											ActiveTeam = gc.getTeam(gc.getPlayer(gc.getGame().getActivePlayer()).getTeam()).getID()
+											for iPlayerLoop in range(gc.getMAX_PLAYERS()): # for all players
+												pPlayer = gc.getPlayer(iPlayerLoop)
+												iPlayerTeam = pPlayer.getTeam()
+												if iPlayerTeam == ActiveTeam:
+													numEyesEarsNetwork += pPlayer.getNumBuilding(gc.getInfoTypeForString('BUILDING_EYES_AND_EARS_NETWORK'))
+											if numEyesEarsNetwork > 0:
+												bEspionageCanSeeResearch = True
 
-										# If player's team owns eyes and ears network, then EspionageCanSeeResearch"
-										numEyesEarsNetwork = 0
-										ActiveTeam = gc.getTeam(gc.getPlayer(gc.getGame().getActivePlayer()).getTeam()).getID()
-										for iPlayerLoop in range(gc.getMAX_PLAYERS()): # for all players
-											pPlayer = gc.getPlayer(iPlayerLoop)
-											iPlayerTeam = pPlayer.getTeam()
-											if iPlayerTeam == ActiveTeam:
-												numEyesEarsNetwork += pPlayer.getNumBuilding(gc.getInfoTypeForString('BUILDING_EYES_AND_EARS_NETWORK'))
-										if numEyesEarsNetwork > 0:
-											bEspionageCanSeeResearch = True
-
-										if (((gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam()) and (gc.getTeam(gc.getGame().getActiveTeam()).getNumMembers() > 1)) or (gc.getTeam(gc.getPlayer(ePlayer).getTeam()).isVassal(gc.getGame().getActiveTeam())) or gc.getGame().isDebugMode() or bEspionageCanSeeResearch):
-											if (gc.getPlayer(ePlayer).getCurrentResearch() != -1):
-												szTempBuffer = u"-%s (%d)" %(gc.getTechInfo(gc.getPlayer(ePlayer).getCurrentResearch()).getDescription(), gc.getPlayer(ePlayer).getResearchTurnsLeft(gc.getPlayer(ePlayer).getCurrentResearch(), True))
-												szBuffer = szBuffer + szTempBuffer
+											if (((gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam()) and (gc.getTeam(gc.getGame().getActiveTeam()).getNumMembers() > 1)) or (gc.getTeam(gc.getPlayer(ePlayer).getTeam()).isVassal(gc.getGame().getActiveTeam())) or gc.getGame().isDebugMode() or bEspionageCanSeeResearch):
+												if (gc.getPlayer(ePlayer).getCurrentResearch() != -1):
+													szTempBuffer = u"-%s (%d)" %(gc.getTechInfo(gc.getPlayer(ePlayer).getCurrentResearch()).getDescription(), gc.getPlayer(ePlayer).getResearchTurnsLeft(gc.getPlayer(ePlayer).getCurrentResearch(), True))
+													szBuffer = szBuffer + szTempBuffer
 										if (CyGame().isNetworkMultiPlayer()):
 											szBuffer = szBuffer + CyGameTextMgr().getNetStats(ePlayer)
 
@@ -5056,6 +5022,11 @@ class CvMainInterface:
 										iCount = iCount + 1
 							j = j - 1
 					i = i - 1
+
+				if not CyInterface().isScoresMinimized():
+					screen.setButtonGFC( "SmallScoreToggle", u"", "", xResolution - 18, yCoord - (iCount * iBtnHeight), 20,20, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+					iCount += 1
+					screen.show("SmallScoreToggle")
 
 				if ( CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW or CyInterface().isInAdvancedStart()):
 					yCoord = yResolution - 186
@@ -5360,27 +5331,57 @@ class CvMainInterface:
 		return 0
 
 	# Will set the promotion button position
-	def setPromotionButtonPosition( self, szName, iPromotionCount ):
-
+	def setPromotionButtons( self, lPromotionList, pHeadSelectedUnit):
+		global iPromotionPage
 		screen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
-
-		szName2 = szName + "Duration"
-		szName3 = szName + "Quantity"
-
-		# Find out our resolution
 		yResolution = screen.getYResolution()
 
-		if ( CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW ):
+		if len(lPromotionList) > iPromotionsPerPage:
+			screen.show( "PromotionScrollPlus" )
+			screen.moveToFront( "PromotionScrollPlus" )
+			screen.show( "PromotionScrollMinus" )
+			screen.moveToFront( "PromotionScrollMinus" )
 
-#FfH: Modified By Kael 07/17/2007
-#			screen.moveItem( szName, 266 - (24 * (iPromotionCount / 6)), yResolution - 144 + (24 * (iPromotionCount % 6)), -0.3 )
-#			screen.moveItem( szName, 216 - (24 * (iPromotionCount / 6)), yResolution - 144 + (24 * (iPromotionCount % 6)), -0.3 )			Changed r364
-#			screen.moveItem( szName2, 216 - (24 * (iPromotionCount / 6)) + 3, yResolution - 144 + (24 * (iPromotionCount % 6)) + 3, -0.3 )	Changed r364
-#			screen.moveItem( szName3, 213 - (24 * (iPromotionCount / 6)) + 3, yResolution - 150 + (24 * (iPromotionCount % 6)) + 3, -0.3 )	Changed r364
-			screen.moveItem( szName, 264 - (24 * (iPromotionCount / 7)), yResolution - 168 + (24 * (iPromotionCount % 7)), -0.3 )
-			screen.moveItem( szName2, 264 - (24 * (iPromotionCount / 7)) + 3, yResolution - 168 + (24 * (iPromotionCount % 7)) + 3, -0.3 )
-			screen.moveItem( szName3, 261 - (24 * (iPromotionCount / 7)) + 3, yResolution - 174 + (24 * (iPromotionCount % 7)) + 3, -0.3 )
-#FfH: End Modify
+		if len(lPromotionList) < (iPromotionPage - 1) * iPromotionsPerPage:
+			iPromotionPage = 1
+
+		offset			= 24
+		xStartingPos	= 25
+		yStartingPos	= yResolution - 80
+		iPromotionCount = 0
+		iNumPromColumn	= 10
+		iNumPromRow		= 3
+
+		if iPromotionPage == 1 and len(lPromotionList) <= iPromotionsPerPage:
+			xStartingPos	= 4
+			iNumPromColumn	= 11
+
+		iPromotionCount = 0
+		for iPromotion in lPromotionList:
+			if ((iPromotionPage - 1) * iPromotionsPerPage) <= iPromotionCount < (iPromotionPage * iPromotionsPerPage):
+				xPos	= iPromotionCount % iNumPromColumn * offset + xStartingPos
+				yPos	= ( iPromotionCount / iNumPromColumn ) % iNumPromRow * offset + yStartingPos
+				szName		= "PromotionButton" + str(iPromotionCount % iPromotionsPerPage)
+				szName2		= szName + "Duration"
+				szName3		= szName + "Quantity"
+				szArtPath	= gc.getPromotionInfo(iPromotion).getButton()
+				iDuration	= pHeadSelectedUnit.getPromotionDuration(iPromotion)
+				iQuantity	= pHeadSelectedUnit.countHasPromotion(iPromotion)
+
+				screen.addDDSGFC( szName, szArtPath, xPos, yPos, 26, 26, WidgetTypes.WIDGET_ACTION, gc.getPromotionInfo(iPromotion).getActionInfoIndex(), -1 )
+				screen.moveToFront( szName )
+
+				if iDuration > 0:
+					screen.setText( szName2, "Background", str(iDuration), CvUtil.FONT_RIGHT_JUSTIFY, xPos + 12, yPos + 3, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+					screen.moveToFront( szName2 )
+					screen.show( szName2 )
+
+				if iQuantity > 1:
+					screen.setText( szName3, "Background", str(iQuantity), CvUtil.FONT_RIGHT_JUSTIFY, xPos + 12, yPos + 6, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+					screen.moveToFront( szName3 )
+					screen.show( szName3 )
+
+			iPromotionCount += 1
 
 	# Will set the selection button position
 	def setResearchButtonPosition( self, szButtonID, iCount ):
@@ -5447,6 +5448,7 @@ class CvMainInterface:
 			else:
 				bHasOptions = False
 				screen.hide( "ScoreBackground" )
+				screen.hide( "SmallScoreToggle" )
 
 #FfH: Added by Kael 10/29/2007
 				screen.hide( "ManaBackground" )
@@ -5659,6 +5661,8 @@ class CvMainInterface:
 		global ishowManaBar
 		global isformershowManaBar
 		global iBuildingsList
+		global iPromotionPage
+		global bSmallScoreboard
 
 		if ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_ON and inputClass.getFunctionName() == "UnitStatsButton"):
 			screen.show("UNIT_INFO_TEXT")
@@ -5750,10 +5754,30 @@ class CvMainInterface:
 			self.updateCityScreen()
 			return 1
 
-#		if(inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "SpecialistLeft"):
-#			iBuildingsList = 5
-#			self.updateCityScreen()
-#			return 1
+		if(inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and (inputClass.getFunctionName() == "PromotionScrollMinus" or inputClass.getFunctionName() == "PromotionScrollPlus")):
+			iMaxPromotionPages = (iNumUnitPromotions - 1) / iPromotionsPerPage + 1
+			if inputClass.getFunctionName() == "PromotionScrollPlus":
+				if iPromotionPage < iMaxPromotionPages:
+					iPromotionPage += 1
+				else:
+					iPromotionPage = 1
+			else:
+				if iPromotionPage > 1:
+					iPromotionPage -= 1
+				else:
+					iPromotionPage = iMaxPromotionPages
+			self.updateInfoPaneStrings()
+			return 1
+
+		if(inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "SmallScoreToggle"):
+			print "Input Clicked on BG"
+			if not CyInterface().isScoresMinimized():
+				print "not minimized"
+				print bSmallScoreboard
+				bSmallScoreboard = not bSmallScoreboard
+				print bSmallScoreboard
+				self.updateScoreStrings()
+			return 1
 
 #/---unitstats addition 4/4-----------------------
 

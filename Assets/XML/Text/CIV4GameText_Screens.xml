@@ -83,4 +83,20 @@
 		<Italian>%s1:2</Italian>
 		<Spanish>%s1:2</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_LEVEL</Tag>
+		<English>Level: %d1</English>>
+		<French>Level: %d1</French>
+		<German>Level: %d1</German>
+		<Italian>Level: %d1</Italian>
+		<Spanish>Level: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_XP</Tag>
+		<English>XP:</English>>
+		<French>XP:</French>
+		<German>XP:</German>
+		<Italian>XP:</Italian>
+		<Spanish>XP:</Spanish>
+	</TEXT>
 </Civ4GameText>

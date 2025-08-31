@@ -1604,4 +1604,28 @@
 		<Italian>Technology Movement Cost</Italian>
 		<Spanish>Technology Movement Cost</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMINDER_HEADER</Tag>
+		<English>Enter number of turns until reminder goes off and reminder text</English>
+		<French>Enter number of turns until reminder goes off and reminder text</French>
+		<German>Enter number of turns until reminder goes off and reminder text</German>
+		<Italian>Enter number of turns until reminder goes off and reminder text</Italian>
+		<Spanish>Enter number of turns until reminder goes off and reminder text</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMINDER_ACTIVE</Tag>
+		<English>List of active reminders:</English>
+		<French>List of active reminders:</French>
+		<German>List of active reminders:</German>
+		<Italian>List of active reminders:</Italian>
+		<Spanish>List of active reminders:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMINDER_CLEAR_LIST</Tag>
+		<English>Clear Reminders</English>
+		<French>Clear Reminders</French>
+		<German>Clear Reminders</German>
+		<Italian>Clear Reminders</Italian>
+		<Spanish>Clear Reminders</Spanish>
+	</TEXT>
 </Civ4GameText>

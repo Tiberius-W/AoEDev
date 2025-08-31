@@ -102,6 +102,7 @@ import FoxDebug
 import FoxTools
 import time
 from BasicFunctions import *
+import SdToolKitAdvanced
 
 FoxGlobals = {
 	"USE_DEBUG_WINDOW" 		: False,
@@ -383,13 +384,15 @@ class CvEventManager:
 			4444 : ('WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin),
 			5555 : ('WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin),
 ## Platy Builder ##
-		
+			CvUtil.EventReminder : ('Reminder', self.__eventReminderApply, self.__eventReminderBegin),
 		}
 ## FfH Card Game: begin
 		self.Events[CvUtil.EventSelectSolmniumPlayer] = ('selectSolmniumPlayer', self.__EventSelectSolmniumPlayerApply, self.__EventSelectSolmniumPlayerBegin)
 		self.Events[CvUtil.EventSolmniumAcceptGame] = ('solmniumAcceptGame', self.__EventSolmniumAcceptGameApply, self.__EventSolmniumAcceptGameBegin)
 		self.Events[CvUtil.EventSolmniumConcedeGame] = ('solmniumConcedeGame', self.__EventSolmniumConcedeGameApply, self.__EventSolmniumConcedeGameBegin)
 ## FfH Card Game: end
+
+		self.reminders = []
 
 #################### EVENT STARTERS ######################
 	def handleEvent(self, argsList):
@@ -609,11 +612,17 @@ class CvEventManager:
 				if (not game.isUPTLock() or self.bAllowCheats):
 					cf.showUnitPerTilePopup()
 
+			# Alt+R creates a reminder
+			if (theKey == int(InputTypes.KB_R) and self.bAlt):
+				self.beginEvent(CvUtil.EventReminder)
+				return 1
+
 # Grey Fox Speed Tweaks: START
 			if ( self.bShift ):
 				if (theKey == int(InputTypes.KB_C)):
 					if FoxGlobals["USE_DEBUG_WINDOW"]:
 						self.DbgWnd.updateDebugPanel()
+						
 # END
 
 		## *******************
@@ -1657,6 +1666,13 @@ class CvEventManager:
 		CvAdvisorUtils.resetNoLiberateCities()
 		self.verifyLoaded(True)
 
+		# Reminders
+		self.reminders = []
+		if not gc.getGame().isGameMultiPlayer():
+			lReminders = SdToolKitAdvanced.sdGetGlobal("reminders","list")
+			if lReminders:
+				self.reminders = lReminders
+
 		## *******************
 		## Modular Python: ANW 29-may-2010
 
@@ -2115,6 +2131,9 @@ class CvEventManager:
 					newUnit = initUnit(iDiakonos, iX, iY, iNoAI, iSouth)
 					newUnit = initUnit(iDiakonos, iX, iY, iNoAI, iSouth)
 
+		# Reminders
+		self.reminders = []
+
 # FF end Wilderness
 
 		## *******************
@@ -2570,6 +2589,19 @@ class CvEventManager:
 					CvScreensInterface.effectRepublic(argsList) # based on iAIValue of events (always fair)
 
 		# Republic End
+
+		if (gc.getPlayer(iPlayer).isHuman()):
+			thisTurn = gc.getGame().getGameTurn() + 1
+			for i in xrange(len(self.reminders) -1, -1, -1):
+				if (self.reminders[i][0] == thisTurn):
+					message = self.reminders[i][1]
+					CyInterface().addMessage(iPlayer, True, 30, message, 'AS2D_SOMNIUM_DISCARD', 0, None, ColorTypes(11), 0, 0, False, False)
+					popupInfo = CyPopupInfo()
+					popupInfo.setText(message)
+					popupInfo.addPopup(iPlayer)
+					del self.reminders[i]
+					if not gc.getGame().isGameMultiPlayer():
+						SdToolKitAdvanced.sdSetGlobal("reminders", "list", self.reminders)
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -6919,3 +6951,38 @@ class CvEventManager:
 		WBPlotScreen.iCounter = 10
 		return
 ## Platy Builder ##
+
+	def __eventReminderBegin(self, argsList):
+		popup = PyPopup.PyPopup(CvUtil.EventReminder, EventContextTypes.EVENTCONTEXT_ALL)
+		popup.setHeaderString(localText.getText("TXT_KEY_REMINDER_HEADER", ()))
+		popup.createSpinBox(0, "", 0, 1, 100, 0)
+		popup.createEditBox("", 1)
+		szText = ""
+		if self.reminders:
+			szText = localText.getText("TXT_KEY_REMINDER_ACTIVE", ()) + "\n"
+		for i in range(len(self.reminders)):
+			szText += localText.getText("TXT_KEY_UNITSTATS_TURN", ()) + " %d: " % (self.reminders[i][0] + 1)
+			szText += self.reminders[i][1] + "\n"
+		popup.setBodyString(szText)
+		popup.addButton(localText.getText("TXT_KEY_REMINDER_CLEAR_LIST", ()))
+		popup.launch()
+
+	def __eventReminderApply(self, playerID, userData, popupReturn):
+		if popupReturn.getSpinnerWidgetValue(0) > 0:
+			reminderTurn = popupReturn.getSpinnerWidgetValue(0) + gc.getGame().getGameTurn()
+			reminderText = popupReturn.getEditBoxString(1)
+			newEntry = (reminderTurn, reminderText)
+			if gc.getGame().isGameMultiPlayer():
+				self.reminders.append(newEntry)
+			else:
+				lReminders = SdToolKitAdvanced.sdGetGlobal("reminders","list")
+				if lReminders:
+					lReminders.append(newEntry)
+				else:
+					lReminders = [newEntry]
+				SdToolKitAdvanced.sdSetGlobal("reminders", "list", lReminders)
+				self.reminders = lReminders
+		if popupReturn.getButtonClicked() == 0:
+			del self.reminders[:]
+			if not gc.getGame().isGameMultiPlayer():
+				SdToolKitAdvanced.sdDelGlobal("reminders","list")
