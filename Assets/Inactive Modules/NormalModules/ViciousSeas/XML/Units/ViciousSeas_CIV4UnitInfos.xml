@@ -559,6 +559,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_TRAWLING_BOATS_LANUN</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_TRAIL</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -1524,6 +1528,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
+			<iWorkRate>50</iWorkRate>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1537,6 +1542,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -1579,6 +1590,16 @@
 			</DamageTypeCombats>
 			<iAlignmentModifier>-1</iAlignmentModifier>
 			<bForceOverwrite>1</bForceOverwrite>
+		</UnitInfo>		<UnitInfo>        <!-- Stygian Guard -->
+			<Class>UNITCLASS_STYGIAN_GUARD</Class>
+			<Type>UNIT_STYGIAN_GUARD</Type>
+			<iWorkRate>50</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 		</UnitInfo>
 		<UnitInfo>        <!-- Malignant Flora Fort Commander -->
 			<Class>UNITCLASS_FORT_COMMANDER</Class>
@@ -1592,6 +1613,66 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>        <!-- Workboat -->
+			<Class>UNITCLASS_WORKBOAT</Class>
+			<Type>UNIT_WORKBOAT</Type>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_FISHING_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_TRAWLING_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+		</UnitInfo>
+		<UnitInfo>        <!-- WyrmFisher -->
+			<Class>UNITCLASS_WYRMFISHER</Class>
+			<Type>UNIT_WYRMFISHER</Type>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_TRAWLING_BOATS_LANUN</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Workboat (Lanun) -->
+			<Class>UNITCLASS_WORKBOAT</Class>
+			<Type>UNIT_WORKBOAT_LANUN</Type>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_PIRATE_COVE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_TRAWLING_BOATS_LANUN</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+		</UnitInfo>
+		<UnitInfo>        <!-- Funeral Barge -->
+			<Class>UNITCLASS_WORKBOAT</Class>
+			<Type>UNIT_FUNERAL_BARGE</Type>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_TRAWLING_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>
