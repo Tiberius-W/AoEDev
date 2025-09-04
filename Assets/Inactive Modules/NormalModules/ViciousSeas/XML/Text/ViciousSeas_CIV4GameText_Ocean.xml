@@ -697,6 +697,14 @@ Sometimes, a cultist will not be content worshiping on land. This marine shrine 
 		<Spanish>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_TRAWLING_BOATS</Tag>
+		<English>Trawling Boats</English>
+		<French>Trawling Boats</French>
+		<German>Trawling Boats</German>
+		<Italian>Trawling Boats</Italian>
+		<Spanish>Trawling Boats</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_TRAWLING_BOATS</Tag>
 		<English>Trawling Boats</English>
 		<French>Trawling Boats</French>

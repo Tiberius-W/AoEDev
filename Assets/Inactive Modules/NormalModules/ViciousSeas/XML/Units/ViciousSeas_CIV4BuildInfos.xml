@@ -66,11 +66,11 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Reefs.dds</Button>
 		</BuildInfo>
-		<BuildInfo> <!-- Fishing Boats Lanun -->
+		<BuildInfo> <!-- Trawling Boats Lanun -->
 			<Type>BUILD_TRAWLING_BOATS_LANUN</Type>
 			<Description>TXT_KEY_BUILD_TRAWLING_BOATS</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<iTime>400</iTime>
 			<iCost>0</iCost>
 			<ImprovementType>IMPROVEMENT_TRAWLING_BOATS</ImprovementType>
