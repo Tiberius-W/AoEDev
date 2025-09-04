@@ -5,7 +5,69 @@
 <!-- -->
 <!-- Promotion Infos -->
 <Civ4PromotionInfos xmlns="x-schema:ViciousSeas_CIV4UnitSchema.xml">
-	<PromotionInfos>
+	<PromotionInfos>	
+	<PromotionInfo>		<!-- Drowned Commander -->
+			<Type>PROMOTION_DROWNED_VS</Type>
+			<Description>TXT_KEY_PROMOTION_DROWNED_VS</Description>
+			<Help></Help>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_INFLUENCE</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<PrereqTerrains>
+				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_OCEAN_DEEP</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLIGHTED_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLACKWATER</PrereqTerrain>
+			</PrereqTerrains>
+			<PrereqReligions>
+				<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
+			</PrereqReligions>
+			<ReplaceArtType>ART_DEF_UNIT_MUIRIN</ReplaceArtType>
+			<iAirCombat>-5</iAirCombat>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iUnitCombatMod>80</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iUnitCombatMod>-80</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iUnitCombatMod>-120</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
+			<iCollateralExtraTargets>2</iCollateralExtraTargets>
+			<iCollateralLimitBoost>40</iCollateralLimitBoost>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/Sinking.dds</Button>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Leash - 5 Range decay 1 -->
 			<Type>PROMOTION_LEASH_5_1</Type>
 			<Description>TXT_KEY_PROMOTION_LEASH_5</Description>
@@ -407,29 +469,6 @@
 					<iResist>-25</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- SINKING -->
-			<Type>PROMOTION_SINKING_BEZERI</Type>
-			<Description>TXT_KEY_PROMOTION_SINKING</Description>
-			<Help></Help>
-			<PrereqPromotionANDs>
-				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_INFLUENCE</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-			</PrereqPromotionANDs>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bNoXP>1</bNoXP>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_BEZERI</PrereqCivilization>
-			</PrereqCivilizations>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Civs/Orc/Animosity2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- BAD KRAKEN -->
 			<Type>PROMOTION_BAD_KRAKEN</Type>

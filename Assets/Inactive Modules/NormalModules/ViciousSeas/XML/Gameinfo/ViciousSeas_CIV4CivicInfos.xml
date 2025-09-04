@@ -12,6 +12,7 @@
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
 			<bStateReligion>1</bStateReligion>
 			<iAnarchyLength>1</iAnarchyLength>
+			<iAIWeight>30</iAIWeight>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
 			<SpecialistExtraCommerces>
