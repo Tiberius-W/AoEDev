@@ -43882,7 +43882,6 @@
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
@@ -43963,15 +43962,11 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BLACK_DRAKE_FLIGHT</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
-			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>1</bAnimal>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<bNoDefensiveBonus>1</bNoDefensiveBonus>
-			<bCanMoveImpassable>1</bCanMoveImpassable>
-			<bIgnoreTerrainCost>1</bIgnoreTerrainCost>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
@@ -44134,7 +44129,7 @@
 			<Combat>UNITCOMBAT_BEAST</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BRASS_DRAKE_FLIGHT</Description>
-			<Civilopedia>TXT_KEY_UNIT_ACHERON_PEDIA</Civilopedia>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>1</bAnimal>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -44154,7 +44149,7 @@
 			</Buildings>
 			<iAIWeight>50</iAIWeight>
 			<iMoves>2</iMoves>
-			<iCombat>3</iCombat>
+			<iCombat>4</iCombat>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -44280,7 +44275,7 @@
 			<AppearanceTechs>
 				<AppearanceTech>
 					<AppearanceTechType>TECH_ELEMENTALISM</AppearanceTechType>
-					<iAppearanceTech>-101</iAppearanceTech>
+					<iAppearanceTech>101</iAppearanceTech>
 				</AppearanceTech>
 			</AppearanceTechs>
 		</UnitInfo>
@@ -44290,7 +44285,7 @@
 			<Combat>UNITCOMBAT_BEAST</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_RED_DRAKE_FLIGHT</Description>
-			<Civilopedia>TXT_KEY_UNIT_ACHERON_PEDIA</Civilopedia>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>1</bAnimal>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -44452,7 +44447,7 @@
 			<Combat>UNITCOMBAT_BEAST</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_WHITE_DRAKE_FLIGHT</Description>
-			<Civilopedia>TXT_KEY_UNIT_ACHERON_PEDIA</Civilopedia>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>1</bAnimal>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -47459,12 +47454,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Buildings>
-				<Building>
-					<BuildingType>BUILDING_CHAINED_WATER_DRAKES</BuildingType>
-					<bBuilding>1</bBuilding>
-				</Building>
-			</Buildings>
 			<iMoves>3</iMoves>
 			<iCombat>7</iCombat>
 			<TerrainNatives>
@@ -47783,6 +47772,12 @@
 			</UnitAIs>
 			<iMoves>4</iMoves>
 			<iCombat>12</iCombat>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_CHAINED_WATER_DRAKES</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -47832,6 +47827,10 @@
 			<AppearanceTechs>
 				<AppearanceTech>
 					<AppearanceTechType>TECH_ASTRONOMY</AppearanceTechType>
+					<iAppearanceTech>51</iAppearanceTech>
+				</AppearanceTech>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_ARCANE_LORE</AppearanceTechType>
 					<iAppearanceTech>50</iAppearanceTech>
 				</AppearanceTech>
 			</AppearanceTechs>
