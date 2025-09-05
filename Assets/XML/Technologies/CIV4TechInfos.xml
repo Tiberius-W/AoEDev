@@ -19,7 +19,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>18</iGridY>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -80,7 +80,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>20</iGridY>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -222,7 +222,7 @@
 			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>60</iAIWeight>
-			<iCost>1600</iCost>
+			<iCost>2000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_SCIENTIST</FirstFreeUnitClass>
@@ -1036,11 +1036,9 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
+				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 				<PrereqTech>TECH_ANCIENT_CHANTS</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_EDUCATION_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -2908,14 +2906,14 @@
 			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>70</iAIWeight>
-			<iCost>2000</iCost>
+			<iCost>1600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>

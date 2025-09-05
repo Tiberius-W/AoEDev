@@ -204,6 +204,10 @@
 			<Type>TECH_RELIGIOUS_LAW</Type>
 			<iCost>2500</iCost>
 		</TechInfo>
+		<TechInfo>		<!-- Sorcery -->
+			<Type>TECH_SORCERY</Type>
+			<iCost>2500</iCost>
+		</TechInfo>
 		<TechInfo>		<!-- Stirrups -->
 			<Type>TECH_STIRRUPS</Type>
 			<iCost>2500</iCost>
@@ -213,23 +217,19 @@
 			<iCost>2500</iCost>
 		</TechInfo>
 		<!-- Tier 5.5s (1600-3200 => 2500-7500) -->
+		<TechInfo>		<!-- Arcane Lore -->
+			<Type>TECH_ARCANE_LORE</Type>
+			<iCost>5000</iCost>
+		</TechInfo>
 		<TechInfo>		<!-- Bowyers -->
 			<Type>TECH_BOWYERS</Type>
 			<iCost>6000</iCost>
-		</TechInfo>
-		<TechInfo>		<!-- Sorcery -->
-			<Type>TECH_SORCERY</Type>
-			<iCost>5000</iCost>
 		</TechInfo>
 		<TechInfo>		<!-- Alchemy -->
 			<Type>TECH_ALCHEMY</Type>
 			<iCost>4000</iCost>
 		</TechInfo>
 		<!-- Tier 6s (3200 -> 7500) -->
-		<TechInfo>		<!-- Arcane Lore -->
-			<Type>TECH_ARCANE_LORE</Type>
-			<iCost>7500</iCost> <!-- Increased tier to 6 -->
-		</TechInfo>
 		<TechInfo>		<!-- Blasting Powder -->
 			<Type>TECH_BLASTING_POWDER</Type>
 			<iCost>7500</iCost>
