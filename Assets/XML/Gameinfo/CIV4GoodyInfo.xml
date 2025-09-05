@@ -4005,7 +4005,8 @@
 				<Promotion>PROMOTION_HAUNTED_BREATH</Promotion>
 			</PromotionAdds>
 		</GoodyInfo>
-		<GoodyInfo>	<!--Resurrect-->
+			<!-- Resurrect (Disabled for now, does nothing) -->
+		<!-- <GoodyInfo>
 			<Type>GOODY_EXPLORE_RESURRECT</Type>
 			<GoodyClasses>
 				<GoodyClass>
@@ -4019,7 +4020,7 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<PythonCallback>exploreLairResurrect</PythonCallback>
-		</GoodyInfo>
+		</GoodyInfo> -->
 		<GoodyInfo> <!--TaintedLandEvil-->
 			<Type>GOODY_TAINTED_LANDS_EVIL</Type>
 			<GoodyClasses>
