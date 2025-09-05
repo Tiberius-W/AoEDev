@@ -12417,6 +12417,60 @@
 				<Affinity>AFFINITY_MANA_REFINED</Affinity>
 			</Affinities>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Mechanos Warrior doesn't start with offensive weapons-->
+            <Type>PROMOTION_MECHANOSWARRIORNERF</Type>
+            <PrereqPromotionANDs>
+                <PrereqPromotionAND>
+                    <PromotionType>PROMOTION_BRONZE_WEAPONS</PromotionType>
+                    <iPrereqApplications>1</iPrereqApplications>
+                </PrereqPromotionAND>
+            </PrereqPromotionANDs>
+            <bAutoAcquire>1</bAutoAcquire>
+            <bEffectProm>1</bEffectProm>
+            <bMustMaintain>1</bMustMaintain>
+            <bNoXP>1</bNoXP>
+            <PrereqCivilizations>
+                <PrereqCivilization>CIVILIZATION_MECHANOS</PrereqCivilization>
+            </PrereqCivilizations>
+            <PrereqUnits>
+                <PrereqUnit>UNIT_WARRIOR</PrereqUnit>
+            </PrereqUnits>
+            <UnitCombats>
+                <UnitCombat>
+                    <UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+                    <iMaxApplications>0</iMaxApplications>
+                </UnitCombat>
+            </UnitCombats>
+            <Button>Art/Interface/Buttons/Promotions/Blank_promo.dds</Button>
+            <iExtraCombatStr>-1</iExtraCombatStr>
+        </PromotionInfo> 
+		<PromotionInfo>		<!-- Mechanos Warrior, removing nerf with bronze working -->
+            <Type>PROMOTION_MECHANOSWARRIORNERFREMOVE</Type>
+            <TechPrereq>TECH_BRONZE_WORKING</TechPrereq>
+            <PromotionExcludes>
+                <Promotion>PROMOTION_MECHANOSWARRIORNERF</Promotion>
+            </PromotionExcludes>
+            <PromotionOverwrites>
+                <Promotion>PROMOTION_MECHANOSWARRIORNERF</Promotion>
+            </PromotionOverwrites>
+            <bAutoAcquire>1</bAutoAcquire>
+            <bEffectProm>1</bEffectProm>
+            <bMustMaintain>1</bMustMaintain>
+            <bNoXP>1</bNoXP>
+            <PrereqCivilizations>
+                <PrereqCivilization>CIVILIZATION_MECHANOS</PrereqCivilization>
+            </PrereqCivilizations>
+            <PrereqUnits>
+                <PrereqUnit>UNIT_WARRIOR</PrereqUnit>
+            </PrereqUnits>
+            <UnitCombats>
+                <UnitCombat>
+                    <UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+                    <iMaxApplications>0</iMaxApplications>
+                </UnitCombat>
+            </UnitCombats>
+            <Button>Art/Interface/Buttons/Promotions/Blank_promo.dds</Button>
+        </PromotionInfo>
 		<PromotionInfo>		<!-- Medic I -->
 			<Type>PROMOTION_MEDIC1</Type>
 			<Description>TXT_KEY_PROMOTION_MEDIC1</Description>
