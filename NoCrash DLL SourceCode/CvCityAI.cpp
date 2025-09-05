@@ -694,7 +694,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 					BuildingTypes eBuilding = (BuildingTypes)getCityBuildings(iI);
 					if (NO_BUILDING != eBuilding)
 					{
-						if ((kUnitInfo.getForceBuildings(eBuilding)) || (kUnitInfo.getBuildings(eBuilding)))
+						if (kUnitInfo.getBuildings(eBuilding))
 						{
 							if (GET_PLAYER(getOwnerINLINE()).canConstruct(eBuilding, false, false, true))
 							{
@@ -746,8 +746,8 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 						{
 							int eBuilding = (int) GC.getGameINLINE().getShrineBuilding(iI, eReligion);
 
-							// if this unit builds or forceBuilds this building
-							if (GC.getUnitInfo(eGreatPeopleUnit).getBuildings(eBuilding) || GC.getUnitInfo(eGreatPeopleUnit).getForceBuildings(eBuilding))
+							// if this unit builds this building
+							if (GC.getUnitInfo(eGreatPeopleUnit).getBuildings(eBuilding))
 							{
 								bNeedProphet = true;
 								iBestSpreadValue = std::max(iBestSpreadValue, GC.getGameINLINE().countReligionLevels(eReligion));

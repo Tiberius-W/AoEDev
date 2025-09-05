@@ -180,7 +180,7 @@ class WBUnitScreen:
 						lData1.append(j)
 			elif sType == "MISSION_CONSTRUCT":
 				for j in xrange(gc.getNumBuildingInfos()):
-					if UnitInfo.getBuildings(j) or UnitInfo.getForceBuildings(j):
+					if UnitInfo.getBuildings(j):
 						lData1.append(j)
 			elif sType == "MISSION_GOLDEN_AGE":
 				lData1 = [-1]

@@ -288,14 +288,6 @@
 	<ElementType name="Buildings" content="eltOnly">
 		<element type="Building" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<ElementType name="bForceBuilding" content="textOnly" dt:type="boolean"/>
-	<ElementType name="ForceBuilding" content="eltOnly">
-		<element type="BuildingType"/>
-		<element type="bForceBuilding"/>
-	</ElementType>
-	<ElementType name="ForceBuildings" content="eltOnly">
-		<element type="ForceBuilding" minOccurs="0" maxOccurs="*"/>
-	</ElementType>
 	<ElementType name="HolyCity" content="textOnly"/>
 	<ElementType name="StateReligion" content="textOnly"/>
 	<ElementType name="PrereqReligion" content="textOnly"/>
@@ -899,7 +891,6 @@
 		<element type="CorporationSpreads"/>
 		<element type="GreatPeoples"/>
 		<element type="Buildings"/>
-		<element type="ForceBuildings"/>
 		<element type="HolyCity"/>
 		<element type="ReligionType"/>
 		<element type="StateReligion"/>

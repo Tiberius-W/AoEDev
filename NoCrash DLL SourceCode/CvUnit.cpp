@@ -9513,66 +9513,38 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 
 bool CvUnit::canConstruct(const CvPlot* pPlot, BuildingTypes eBuilding, bool bTestVisible) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	CvCity* pCity;
 
 	if (eBuilding == NO_BUILDING)
-	{
 		return false;
-	}
 
-//FfH: Added by Kael 08/18/2008
+	//FfH: Added by Kael 08/18/2008
 	if (isHasCasted())
-	{
 		return false;
-	}
-//FfH: End Add
 
 	pCity = pPlot->getPlotCity();
 
 	if (pCity == NULL)
-	{
 		return false;
-	}
 
 	if (getTeam() != pCity->getTeam())
-	{
 		return false;
-	}
 
 	if (pCity->getNumRealBuilding(eBuilding) > 0)
-	{
 		return false;
-	}
 
-	if (!(m_pUnitInfo->getForceBuildings(eBuilding)))
-	{
-		if (!(m_pUnitInfo->getBuildings(eBuilding)))
-		{
-			return false;
-		}
+	if (!(m_pUnitInfo->getBuildings(eBuilding)))
+		return false;
 
-		if (!(pCity->canConstruct(eBuilding, false, bTestVisible, true)))
-		{
-			return false;
-		}
-	}
+	if (!(pCity->canConstruct(eBuilding, false, bTestVisible, true)))
+		return false;
 
 	if (isDelayedDeath())
-	{
 		return false;
-	}
 
 	return true;
 }

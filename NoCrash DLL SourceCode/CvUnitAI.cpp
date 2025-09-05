@@ -188,7 +188,7 @@ bool CvUnitAI::AI_update()
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
 				if (NO_BUILDING != eBuilding)
 				{
-					if ((m_pUnitInfo->getForceBuildings(eBuilding)) || (m_pUnitInfo->getBuildings(eBuilding)))
+					if (m_pUnitInfo->getBuildings(eBuilding))
 					{
 						bDoesBuild = true;
 					}
@@ -16581,8 +16581,7 @@ bool CvUnitAI::AI_construct(int iMaxCount, int iMaxSingleBuildingCount, int iThr
 							if (NO_BUILDING != eBuilding)
 							{
 								bool bDoesBuild = false;
-								if ((m_pUnitInfo->getForceBuildings(eBuilding))
-									|| (m_pUnitInfo->getBuildings(eBuilding)))
+								if (m_pUnitInfo->getBuildings(eBuilding))
 								{
 									bDoesBuild = true;
 								}

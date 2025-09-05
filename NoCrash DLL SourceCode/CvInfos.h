@@ -3045,7 +3045,6 @@ public:
 	bool getBuilds(int i) const;						// Exposed to Python
 	bool getGreatPeoples(int i) const;			// Exposed to Python
 	bool getBuildings(int i) const;					// Exposed to Python
-	bool getForceBuildings(int i) const;		// Exposed to Python
 	bool getTerrainImpassable(int i) const;				// Exposed to Python
 	bool getFeatureImpassable(int i) const;				// Exposed to Python
 	bool getTerrainNative(int i) const;			// Exposed to Python
@@ -3552,7 +3551,6 @@ protected:
 	bool* m_pbBuilds;
 	bool* m_pbGreatPeoples;
 	bool* m_pbBuildings;
-	bool* m_pbForceBuildings;
 	bool* m_pbTerrainNative;
 	bool* m_pbFeatureNative;
 /*************************************************************************************************/

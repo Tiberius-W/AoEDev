@@ -69,7 +69,6 @@
 			<CorporationSpreads/>
 			<GreatPeoples/>
 			<Buildings/>
-			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
@@ -10341,13 +10340,11 @@
 					<BuildingType>BUILDING_STIGMATA_ON_THE_UNBORN</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
-			</Buildings>
-			<ForceBuildings>
-				<ForceBuilding>
+				<Building>
 					<BuildingType>BUILDING_ACADEMY</BuildingType>
-					<bForceBuilding>1</bForceBuilding>
-				</ForceBuilding>
-			</ForceBuildings>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -10471,12 +10468,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
-			<ForceBuildings>
-				<ForceBuilding>
+			<Buildings>
+				<Building>
 					<BuildingType>BUILDING_APOTHECARY</BuildingType>
-					<bForceBuilding>1</bForceBuilding>
-				</ForceBuilding>
-			</ForceBuildings>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>

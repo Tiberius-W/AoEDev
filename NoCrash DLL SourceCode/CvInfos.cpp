@@ -13088,7 +13088,6 @@ m_piTerrainPassableTech(NULL),
 m_piFeaturePassableTech(NULL),
 m_pbGreatPeoples(NULL),
 m_pbBuildings(NULL),
-m_pbForceBuildings(NULL),
 m_pbTerrainImpassable(NULL),
 m_pbFeatureImpassable(NULL),
 m_piPrereqAndTechs(NULL),
@@ -13344,7 +13343,6 @@ CvUnitInfo::~CvUnitInfo()
 	SAFE_DELETE_ARRAY(m_piFeaturePassableTech);
 	SAFE_DELETE_ARRAY(m_pbGreatPeoples);
 	SAFE_DELETE_ARRAY(m_pbBuildings);
-	SAFE_DELETE_ARRAY(m_pbForceBuildings);
 	SAFE_DELETE_ARRAY(m_pbTerrainImpassable);
 	SAFE_DELETE_ARRAY(m_pbFeatureImpassable);
 	SAFE_DELETE_ARRAY(m_piPrereqAndTechs);
@@ -14795,13 +14793,6 @@ bool CvUnitInfo::getBuildings(int i) const
 	return m_pbBuildings ? m_pbBuildings[i] : false;
 }
 
-bool CvUnitInfo::getForceBuildings(int i) const
-{
-	FAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_pbForceBuildings ? m_pbForceBuildings[i] : false;
-}
-
 bool CvUnitInfo::getTerrainImpassable(int i) const
 {
 	FAssertMsg(i < GC.getNumTerrainInfos(), "Index out of bounds");
@@ -15619,10 +15610,6 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	m_pbBuildings = new bool[GC.getNumBuildingInfos()];
 	stream->Read(GC.getNumBuildingInfos(), m_pbBuildings);
 
-	SAFE_DELETE_ARRAY(m_pbForceBuildings);
-	m_pbForceBuildings = new bool[GC.getNumBuildingInfos()];
-	stream->Read(GC.getNumBuildingInfos(), m_pbForceBuildings);
-
 	SAFE_DELETE_ARRAY(m_pbTerrainNative);
 	m_pbTerrainNative = new bool[GC.getNumTerrainInfos()];
 	stream->Read(GC.getNumTerrainInfos(), m_pbTerrainNative);
@@ -16135,7 +16122,6 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumFeatureInfos(), m_piFeaturePassableTech);
 	stream->Write(GC.getNumSpecialistInfos(), m_pbGreatPeoples);
 	stream->Write(GC.getNumBuildingInfos(), m_pbBuildings);
-	stream->Write(GC.getNumBuildingInfos(), m_pbForceBuildings);
 	stream->Write(GC.getNumTerrainInfos(), m_pbTerrainNative);
 	stream->Write(GC.getNumFeatureInfos(), m_pbFeatureNative);
 /*************************************************************************************************/
@@ -16368,7 +16354,6 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_pbGreatPeoples, "GreatPeoples", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 
 	pXML->SetVariableListTagPair(&m_pbBuildings, "Buildings", sizeof(GC.getBuildingInfo((BuildingTypes)0)), GC.getNumBuildingInfos());
-	pXML->SetVariableListTagPair(&m_pbForceBuildings, "ForceBuildings", sizeof(GC.getBuildingInfo((BuildingTypes)0)), GC.getNumBuildingInfos());
 
 	pXML->GetChildXmlValByName(szTextVal, "HolyCity");
 	m_iHolyCity = pXML->FindInInfoClass(szTextVal);
@@ -17383,7 +17368,6 @@ void CvUnitInfo::copyNonDefaults(CvUnitInfo* pClassInfo, CvXMLLoadUtility* pXML)
 	for ( int i = 0; i < GC.getNumBuildingInfos(); i++)
 	{
 		if(getBuildings(i)					== false)			m_pbBuildings[i]					= pClassInfo->getBuildings(i);
-		if(getForceBuildings(i)				== false)			m_pbForceBuildings[i]				= pClassInfo->getForceBuildings(i);
 	}
 	for ( int i = 0; i < GC.getNumReligionInfos(); i++)
 	{
