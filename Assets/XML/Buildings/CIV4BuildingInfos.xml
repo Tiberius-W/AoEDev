@@ -13736,16 +13736,14 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GRIFFIN_WEYR</ArtDefineTag>
 			<iConquestProb>25</iConquestProb>
-			<iAirlift>2</iAirlift>
+			<iAirlift>1</iAirlift>
 			<iHappiness>1</iHappiness>
-			<iTradeRoutes>1</iTradeRoutes>
-			<iDefense>25</iDefense>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
-				<iCommerce>3</iCommerce>
+				<iCommerce>1</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>3</iCommerce>
+				<iCommerce>1</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</BuildingInfo>
