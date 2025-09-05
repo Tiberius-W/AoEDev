@@ -6724,10 +6724,13 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 	if (isAIControl())
 		return false;
 
-	if (isFortifyable())
+	if (isWaiting())
 		return false;
 
-	if (isWaiting())
+	if (isCargo())
+		return true;
+
+	if (isFortifyable())
 		return false;
 
 	return true;
