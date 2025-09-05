@@ -94,6 +94,22 @@
 		<Spanish>Deepened Vision</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SLUMBERING_NAVIGATOR</Tag>
+		<English>Slumbering Navigator</English>
+		<French>Slumbering Navigator</French>
+		<German>Slumbering Navigator</German>
+		<Italian>Slumbering Navigator</Italian>
+		<Spanish>Slumbering Navigator</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GUARDIANSEASE</Tag>
+		<English>Guardians Ease</English>
+		<French>Guardians Ease</French>
+		<German>Guardians Ease</German>
+		<Italian>Guardians Ease</Italian>
+		<Spanish>Guardians Ease</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BAD_KRAKEN</Tag>
 		<English>Bad Kraken</English>
 		<French>Bad Kraken</French>

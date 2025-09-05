@@ -2322,5 +2322,43 @@
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
+		
+		<!-- OO leaders -->
+		<LeaderHeadInfo>		<!-- Hannah --><!-- Lanun leader -->
+			<Type>LEADER_HANNAH</Type>
+			<FavoriteCivic>CIVIC_SLUMBERING_COVEN</FavoriteCivic>
+			<ImprovementWeightModifiers>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_WATER</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_CHAOS</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_STYGIAN_SHRINE</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+			</ImprovementWeightModifiers>
+		</LeaderHeadInfo>
+		<LeaderHeadInfo>		<!-- Captain Blackheart --><!-- Lanun leader -->
+			<Type>LEADER_BLACKHEART</Type>
+			<FavoriteCivic>CIVIC_SLUMBERING_COVEN</FavoriteCivic>
+			<ImprovementWeightModifiers>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_WATER</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_CHAOS</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_STYGIAN_SHRINE</ImprovementType>
+					<iWeightModifier>40</iWeightModifier>
+				</ImprovementWeightModifier>
+			</ImprovementWeightModifiers>
+		</LeaderHeadInfo>
 	</LeaderHeadInfos>
 </Civ4LeaderHeadInfos>
