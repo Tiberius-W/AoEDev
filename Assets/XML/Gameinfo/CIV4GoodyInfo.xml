@@ -1118,8 +1118,8 @@
 			<bBad>0</bBad>
 			<PythonCallback>exploreNewChieftain</PythonCallback>
 		</GoodyInfo>
-		<GoodyInfo>	<!-- Temple Map -->
-			<Type>GOODY_TEMPLE_MAP</Type>
+		<GoodyInfo>	<!-- Unique Map -->
+			<Type>GOODY_UNIQUE_MAP</Type>
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_ORC_MINOR</GoodyClassType>
@@ -1127,12 +1127,12 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<iWeight>500</iWeight>
-			<Description>TXT_KEY_GOODY_TEMPLE_MAP</Description>
+			<Description>TXT_KEY_GOODY_UNIQUE_MAP</Description>
 			<Sound>AS2D_GOODY_GOLD</Sound>
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
-			<PythonCallback>exploreTempleMap</PythonCallback>
-			<PythonPrereq>reqTempleMap</PythonPrereq>
+			<PythonCallback>exploreUniqueMap</PythonCallback>
+			<PythonPrereq>reqUniqueMap</PythonPrereq>
 		</GoodyInfo>
 		<GoodyInfo> <!--Barb Weak				Thematic Results Orcish	 	Bad  Minor	   -->
 			<Type>GOODY_MARNOK_BARBARIANS_WEAK</Type>

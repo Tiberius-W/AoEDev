@@ -12473,30 +12473,39 @@ def exploreNewChieftain(argsList):
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_AXEMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_ORC'),True)
 
-# GOODY_TEMPLE_MAP
-def reqTempleMap(argsList):
+# GOODY_UNIQUE_MAP
+def reqUniqueMap(argsList):
 	pUnit, pPlot		= argsList
 	for i in range (CyMap().numPlots()):
 		iPlot = CyMap().plotByIndex(i)
-		if iPlot.getImprovementType() == getInfoType('IMPROVEMENT_PYRE_OF_THE_SERAPHIC'):
+		if iPlot == -1 or iPlot.getImprovementType() == -1:
+			continue
+		if iPlot.isRevealed(pUnit.getTeam(), False):
+			continue
+		if gc.getImprovementInfo(iPlot.getImprovementType()).isUnique():
 			return True
 	return False
 
-def exploreTempleMap(argsList):
+def exploreUniqueMap(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
-	pPlayer				= gc.getPlayer(pUnit.getOwner())
-	pTeam 				= pPlayer.getTeam()
-	for i in range (CyMap().numPlots()):
-		iPlot = CyMap().plotByIndex(i)
-		if iPlot.getImprovementType() == getInfoType('IMPROVEMENT_PYRE_OF_THE_SERAPHIC'):
+	pTeam				= pUnit.getTeam()
+	iNumPlots = CyMap().numPlots()
+	iOffset = CyGame().getSorenRandNum(iNumPlots, "Starting plot for random UF search")
+	for i in range (iOffset, iNumPlots):
+		iPlot = CyMap().plotByIndex(i % iNumPlots)
+		if iPlot == -1 or iPlot.getImprovementType() == -1:
+			continue
+		if iPlot.isRevealed(pTeam, False):
+			continue
+		if gc.getImprovementInfo(iPlot.getImprovementType()).isUnique():
 			iPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			for x, y in plotsInRange(iPlot.getX(),iPlot.getY(),1,1):
 				jPlot	= getPlot(x,y)
 				jPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			for x, y in plotsInRange(iPlot.getX(),iPlot.getY(),2,2):
 				jPlot	= getPlot(x,y)
-				iRnd	= CyGame().getSorenRandNum(100, "Temple Map Lair Result")
+				iRnd	= CyGame().getSorenRandNum(100, "Unique Map Lair Result")
 				if iRnd > 64:
 					jPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			break

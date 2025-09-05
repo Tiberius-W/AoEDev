@@ -6430,12 +6430,12 @@
 		<Spanish>By defeating the biggest orc in the lair, you've become their tribe's chieftain by complete accident. Their warriors now answer to you.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Temple Map -->
-		<Tag>TXT_KEY_GOODY_TEMPLE_MAP</Tag>
-		<English>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</English>
-		<French>Une carte rudimentaire trouvée dans le repaire des orques indique le chemin menant aux ruines du plus grand temple de Bhall.</French>
-		<German>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</German>
-		<Italian>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Italian>
-		<Spanish>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Spanish>
+		<Tag>TXT_KEY_GOODY_UNIQUE_MAP</Tag>
+		<English>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</English>
+		<French>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</French>
+		<German>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</German>
+		<Italian>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</Italian>
+		<Spanish>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Through Fire -->
 		<Tag>TXT_KEY_GOODY_THROUGH_FIRE</Tag>
