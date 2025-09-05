@@ -29,6 +29,10 @@
 			<Type>TECH_MASONRY</Type>
 			<iCost>200</iCost> <!-- Was 175, but walls ARE important, so deserves high cost? -->
 		</TechInfo>
+		<TechInfo>		<!-- Mysticism -->
+			<Type>TECH_MYSTICISM</Type>
+			<iGridY>25</iGridY> <!-- Can be bumped because religious ones are -->
+		</TechInfo>
 		<!-- Tier 2.5s (200-400 => 200-400) -->
 		<TechInfo>		<!-- Archery -->
 			<Type>TECH_ARCHERY</Type>
@@ -47,6 +51,7 @@
 		<TechInfo> <!-- Rel: Octopus Overlords -->
 			<Type>TECH_MESSAGE_FROM_THE_DEEP</Type>
 			<iCost>550</iCost>
+			<iGridY>29</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Military Strategy -->
 			<Type>TECH_MILITARY_STRATEGY</Type>
@@ -55,10 +60,12 @@
 		<TechInfo> <!-- Rel: Earthmother -->
 			<Type>TECH_WAY_OF_THE_EARTHMOTHER</Type>
 			<iCost>550</iCost>
+			<iGridY>33</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo> <!-- Rel: Forests-->
 			<Type>TECH_WAY_OF_THE_FORESTS</Type>
 			<iCost>550</iCost>
+			<iGridY>31</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_STEAM_POWER</Type>
@@ -72,6 +79,7 @@
 		<TechInfo>		<!-- Arete -->
 			<Type>TECH_ARETE</Type>
 			<iCost>1000</iCost>
+			<iGridY>33</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Currency -->
 			<Type>TECH_CURRENCY</Type>
@@ -96,6 +104,7 @@
 		<TechInfo>		<!-- Hidden Paths -->
 			<Type>TECH_HIDDEN_PATHS</Type>
 			<iCost>1000</iCost>
+			<iGridY>31</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Rel: Empyrian -->
 			<Type>TECH_HONOR</Type>
@@ -108,6 +117,7 @@
 		<TechInfo>		<!-- Mind Stapling -->
 			<Type>TECH_MIND_STAPLING</Type>
 			<iCost>1000</iCost>
+			<iGridY>29</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Necromancy -->
 			<Type>TECH_NECROMANCY</Type>
@@ -141,6 +151,7 @@
 		<TechInfo>     <!-- Rel: Ashen Veil -->
 			<Type>TECH_CORRUPTION_OF_SPIRIT</Type>
 			<iCost>1600</iCost>
+			<iGridX>3</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo>		<!-- Feudalism -->
 			<Type>TECH_FEUDALISM</Type>
@@ -149,10 +160,12 @@
 		<TechInfo>		<!-- Infernal pact -->
 			<Type>TECH_INFERNAL_PACT</Type>
 			<iCost>2300</iCost>
+			<iGridX>4</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo> <!-- Rel: Order -->
 			<Type>TECH_ORDERS_FROM_HEAVEN</Type>
 			<iCost>1600</iCost>
+			<iGridX>3</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo>		<!-- Smelting -->
 			<Type>TECH_SMELTING</Type>

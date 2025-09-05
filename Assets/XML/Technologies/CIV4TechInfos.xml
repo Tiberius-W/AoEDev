@@ -229,8 +229,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>10</iGridX>
-			<iGridY>34</iGridY>
+			<iGridX>9</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -727,8 +727,8 @@
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
-			<iGridX>1</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>2</iGridX>
+			<iGridY>34</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -944,10 +944,10 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
+				<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_THEOLOGY</PrereqTech>
+				<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_DIVINE_ESSENCE_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
@@ -1377,7 +1377,7 @@
 			<iAsset>64</iAsset>
 			<bRepeat>1</bRepeat>
 			<iGridX>13</iGridX>
-			<iGridY>32</iGridY>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1621,8 +1621,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>48</iAsset>
-			<iGridX>2</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>3</iGridX>
+			<iGridY>34</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -2341,7 +2341,7 @@
 			<iAsset>64</iAsset>
 			<bMapVisible>1</bMapVisible>
 			<iGridX>12</iGridX>
-			<iGridY>32</iGridY>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2421,8 +2421,8 @@
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
-			<iGridX>1</iGridX>
-			<iGridY>34</iGridY>
+			<iGridX>2</iGridX>
+			<iGridY>32</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2463,7 +2463,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>12</iGridX>
-			<iGridY>34</iGridY>
+			<iGridY>33</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3007,7 +3007,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>11</iGridX>
-			<iGridY>32</iGridY>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3553,8 +3553,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>32</iAsset>
-			<iGridX>1</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>26</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3569,9 +3569,9 @@
 					<iFlavor>20</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
+			<OrPreReqs>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-			</AndPreReqs>
+			</OrPreReqs>
 			<Quote>TXT_KEY_TECH_WHITE_HAND_QUOTE</Quote>
 			<bTrade>1</bTrade>
 			<Sound>AS2D_TECH_DING</Sound>
