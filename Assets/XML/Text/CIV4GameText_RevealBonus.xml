@@ -6399,11 +6399,11 @@
 	</TEXT>
 	<TEXT> <!-- Rose Water Pool -->
 		<Tag>TXT_KEY_GOODY_ROSE_WATER_POOL</Tag>
-		<English>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</English>
-		<French>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</French>
-		<German>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</German>
-		<Italian>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</Italian>
-		<Spanish>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</Spanish>
+		<English>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</English>
+		<French>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</French>
+		<German>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</German>
+		<Italian>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</Italian>
+		<Spanish>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</Spanish>
 	</TEXT>
 	<TEXT> <!-- Burned Lair -->
 		<Tag>TXT_KEY_GOODY_BURNED_LAIR</Tag>
@@ -6455,51 +6455,51 @@
 	</TEXT>
 	<TEXT> <!-- 21 Arguing Figures -->
 		<Tag>TXT_KEY_GOODY_TWENTY_ONE_ARGUING_FIGURES</Tag>
-		<English>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</English>
-		<French>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</French>
-		<German>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</German>
-		<Italian>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</Italian>
-		<Spanish>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</Spanish>
+		<English>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</English>
+		<French>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</French>
+		<German>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</German>
+		<Italian>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</Italian>
+		<Spanish>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror of Possibility -->
 		<Tag>TXT_KEY_GOODY_MIRROR_OF_POSSIBILITY</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Horrors of Future -->
 		<Tag>TXT_KEY_GOODY_HORRORS_OF_FUTURE</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (old) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_OLD</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (young) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_YOUNG</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (different) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_DIFFERENT</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Cave In -->
 		<Tag>TXT_KEY_GOODY_CAVE_IN</Tag>
