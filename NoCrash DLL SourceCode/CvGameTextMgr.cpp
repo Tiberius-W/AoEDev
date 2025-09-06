@@ -6508,9 +6508,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (iDamage > 0)
 		{
+			PlotEffectTypes ePlotEffect = pPlot->getPlotEffectType();
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage));
+			szString.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", iDamage, GC.getPlotEffectInfo(ePlotEffect).getDamageLimit(),
+				GC.getDamageTypeInfo((DamageTypes)GC.getPlotEffectInfo(ePlotEffect).getDamageType()).getTextKeyWide()));
 			szString.append(CvWString::format(ENDCOLR));
 		}
 	}
@@ -26521,6 +26523,13 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 		setYieldChangeHelp(szBuffer, L"", L"", L"", aiYields);
 	}
 
+	if (GC.getFeatureInfo(eFeature).getTurnDamage() > 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", GC.getFeatureInfo(eFeature).getTurnDamage()));
+	}
+
 /*************************************************************************************************/
 /**	CivPlotMods								03/31/09								Jean Elcard	**/
 /**																								**/
@@ -26680,7 +26689,8 @@ void CvGameTextMgr::setPlotEffectHelp(CvWStringBuffer& szBuffer, PlotEffectTypes
 	if (feature.getTurnDamage() > 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", feature.getTurnDamage(),feature.getDamageLimit(),GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
+		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
 	}
 	if (feature.getMaxPlotCounter() ==0)
 	{

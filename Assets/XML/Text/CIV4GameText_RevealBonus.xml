@@ -10755,11 +10755,11 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_THUNDERSTORM</Tag>
-		<English>ThunderStorm</English>
-		<French>ThunderStorm</French>
-		<German>ThunderStorm</German>
-		<Italian>ThunderStorm</Italian>
-		<Spanish>ThunderStorm</Spanish>
+		<English>Thunderstorm</English>
+		<French>Thunderstorm</French>
+		<German>Thunderstorm</German>
+		<Italian>Thunderstorm</Italian>
+		<Spanish>Thunderstorm</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PLOT_EFFECT</Tag>
@@ -10787,11 +10787,11 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_DAMAGE</Tag>
-		<English>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</English>
-		<French>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</French>
-		<German>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</German>
-		<Italian>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</Italian>
-		<Spanish>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</Spanish>
+		<English>%d1% %s3 Damage / Turn (Max %d2%)</English>
+		<French>%d1% %s3 Damage / Turn (Max %d2%)</French>
+		<German>%d1% %s3 Damage / Turn (Max %d2%)</German>
+		<Italian>%d1% %s3 Damage / Turn (Max %d2%)</Italian>
+		<Spanish>%d1% %s3 Damage / Turn (Max %d2%)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_HELL_BLOCK</Tag>
@@ -10835,11 +10835,11 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_SANDSTORM</Tag>
-		<English>Sand Storm</English>
-		<French>Sand Storm</French>
-		<German>Sand Storm</German>
-		<Italian>Sand Storm</Italian>
-		<Spanish>Sand Storm</Spanish>
+		<English>Sandstorm</English>
+		<French>Sandstorm</French>
+		<German>Sandstorm</German>
+		<Italian>Sandstorm</Italian>
+		<Spanish>Sandstorm</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACEMODE_TARGETED_SPELL</Tag>
