@@ -31,7 +31,7 @@
 #define PATH_STRAIGHT_WEIGHT    (2) // was 1
 #define PATH_ASYMMETRY_WEIGHT   (1) // K-Mod
 
-// #define PATH_DAMAGE_WEIGHT      (500) // K-Mod (disabled because it isn't used; see value in GlobalDefinesAlt instead)
+#define PATH_DAMAGE_WEIGHT      (100) // K-Mod ( * damage per turn in percent)
 #define PATH_COMBAT_WEIGHT      (300) // K-Mod. penalty for having to fight along the way.
 // Note: there will also be other combat penalties added, for example from defence weight and city weight.
 
@@ -2046,22 +2046,11 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 
 		// Damage caused by features (for mods)
 		// Doesn't account for units immune to damage... but oh well
-		if (0 != GC.getPATH_DAMAGE_WEIGHT())
-		{
-			if (pToPlot->getFeatureType() != NO_FEATURE)
-			{
-				iWorstCost += GC.getDefineINT("HIT_POINT_FACTOR") * GC.getPATH_DAMAGE_WEIGHT() *
-					std::max(0, GC.getFeatureInfo(pToPlot->getFeatureType()).getTurnDamage()) / GC.getMAX_HIT_POINTS();
-			}
+		if (pToPlot->getFeatureType() != NO_FEATURE)
+			iWorstCost += PATH_DAMAGE_WEIGHT * GC.getFeatureInfo(pToPlot->getFeatureType()).getTurnDamage();
+		if (pToPlot->getPlotEffectType() != NO_PLOT_EFFECT)
+			iWorstCost += PATH_DAMAGE_WEIGHT * GC.getPlotEffectInfo(pToPlot->getPlotEffectType()).getTurnDamage();
 
-			if (pToPlot->getPlotEffectType() != NO_PLOT_EFFECT)
-			{
-				iWorstCost += GC.getDefineINT("HIT_POINT_FACTOR") * GC.getPATH_DAMAGE_WEIGHT() *
-					std::max(0, GC.getPlotEffectInfo(pToPlot->getPlotEffectType()).getTurnDamage()) / GC.getMAX_HIT_POINTS();
-			}
-		}
-
-		// Previously was only checked if PATH_DAMAGE_WEIGHT was nonzero, which seems wrong (true for AoE though)
 		if (pToPlot->getExtraMovePathCost() > 0)
 			iWorstCost += (PATH_MOVEMENT_WEIGHT * pToPlot->getExtraMovePathCost());
 

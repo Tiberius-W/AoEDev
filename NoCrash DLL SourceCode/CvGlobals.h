@@ -1038,7 +1038,6 @@ public:
 	int getNUM_BUILDING_PREREQ_OR_BONUSES();
 	int getFOOD_CONSUMPTION_PER_POPULATION();
 	int getMAX_HIT_POINTS();
-	int getPATH_DAMAGE_WEIGHT();
 	int getHILLS_EXTRA_DEFENSE();
 /*************************************************************************************************/
 /**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/

@@ -3556,12 +3556,6 @@ int CvGlobals::getMAX_HIT_POINTS()
 	return m_iMAX_HIT_POINTS;
 }
 
-// 500 as PATH_DAMAGE_WEIGHT in GlobalDefinesAlt
-int CvGlobals::getPATH_DAMAGE_WEIGHT()
-{
-	return m_iPATH_DAMAGE_WEIGHT;
-}
-
 int CvGlobals::getHILLS_EXTRA_DEFENSE()
 {
 	return m_iHILLS_EXTRA_DEFENSE;

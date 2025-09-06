@@ -629,10 +629,6 @@
 		<DefineTextVal>PROMOTION_WINDED</DefineTextVal>
 	</Define>
 	<Define>
-		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>
-		<iDefineIntVal>500</iDefineIntVal>
-	</Define>
-	<Define>
 		<DefineName>PEAK_EXTRA_DEFENSE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
