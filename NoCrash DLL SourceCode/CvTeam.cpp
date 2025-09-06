@@ -7622,3 +7622,9 @@ bool CvTeam::isRevealBonus(BonusTypes eBonus) const
 	}
 	return false;
 }
+
+// Checks defensive pacts and vassalization, not just team status
+bool CvTeam::isMilitaryAlly(TeamTypes eTeam) const
+{
+	return (eTeam == getID() || isVassal(eTeam) || GET_TEAM(eTeam).isVassal(getID()) || isDefensivePact(eTeam));
+}
