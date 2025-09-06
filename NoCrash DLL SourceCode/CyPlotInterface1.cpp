@@ -49,7 +49,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 
 		.def("getNearestLandArea", &CyPlot::getNearestLandArea, "int ()")
 		.def("getNearestLandPlot", &CyPlot::getNearestLandPlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
-		.def("seeFromLevel", &CyPlot::seeFromLevel, "int (int eTeam)")
+		.def("seeFromLevel", &CyPlot::seeFromLevel, "int (int eTeam), bool bAerial")
 		.def("seeThroughLevel", &CyPlot::seeThroughLevel, "int ()")
 		.def("canHaveBonus", &CyPlot::canHaveBonus, "bool (int /*BonusTypes*/ eBonus, bool bIgnoreLatitude)")
 /*************************************************************************************************/

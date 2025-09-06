@@ -106,11 +106,11 @@ public:
 	int getNearestLandArea() const;																															// Exposed to Python
 	CvPlot* getNearestLandPlot() const;																													// Exposed to Python
 
-	int seeFromLevel(TeamTypes eTeam) const;																										// Exposed to Python
+	int seeFromLevel(TeamTypes eTeam, bool bAerial = false) const;																								// Exposed to Python
 	int seeThroughLevel() const;																																// Exposed to Python
 	void changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups);
 	bool canSeePlot(CvPlot *plot, TeamTypes eTeam, int iRange) const;
-	bool canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const;
+	bool canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool bOuterRing, bool bAerial = false) const;
 	void updateSight(bool bIncrement, bool bUpdatePlotGroups);
 	void updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups);
 

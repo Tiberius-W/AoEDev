@@ -2326,19 +2326,13 @@ CvPlot* CvPlot::getNearestLandPlot() const
 
 
 // "What level does a unit see when on this plot"
-int CvPlot::seeFromLevel(TeamTypes eTeam) const
+int CvPlot::seeFromLevel(TeamTypes eTeam, bool bAerial) const
 {
 	int iLevel;
 
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeFromLevel();
-
-	if (isPeak())
-		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
-
-	if (isHills())
-		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
 
 	if (isWater())
 	{
@@ -2347,6 +2341,16 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 		if (GET_TEAM(eTeam).isExtraWaterSeeFrom())
 			iLevel++;
 	}
+
+	// Flying units should always treated as if atop a peak
+	if (bAerial)
+		return iLevel + GC.getPEAK_SEE_FROM_CHANGE();
+
+	if (isPeak())
+		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
+
+	if (isHills())
+		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
 
 	return iLevel;
 }
@@ -2378,13 +2382,14 @@ int CvPlot::seeThroughLevel() const
 	return iLevel;
 }
 
-
 // Add or remove visibility count (bIncrement) to applicable tiles within iRange, given a pUnit
 void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups)
 {
 	int iDist;
+	bool bOuterRing;
 	bool bAerial = (pUnit != NULL && (pUnit->getDomainType() == DOMAIN_AIR || pUnit->isFlying()));
 
+	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
 
 	int iLoop = 0;
@@ -2398,13 +2403,13 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 		{
 			for (int dy = -iRange; dy <= iRange; dy++)
 			{
-				bool outerRing = false;
-				// Enable further sight only on straightaways
+				// This is the 'one tile further'
+				bOuterRing = false;
 				if ((abs(dx) == iRange) || (abs(dy) == iRange))
-					outerRing = true;
+					bOuterRing = true;
 
-				//check if anything blocking the plot
-				if (bAerial || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
+				//check if anything blocking the plot. Aerial avoid LoS except for outer ring
+				if ((bAerial && !bOuterRing) || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing, bAerial))
 				{
 					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 					if (NULL != pPlot)
@@ -2432,21 +2437,23 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 	int dx = xDistance(getX(), pPlot->getX());
 	int dy = yDistance(getY(), pPlot->getY());
 
-	bool outerRing = false;
+	bool bOuterRing = false;
 
 	// This is the 'one tile further'
 	if ((abs(dx) == iRange) || (abs(dy) == iRange))
-		outerRing = true;
+		bOuterRing = true;
 
 	//check if nothing blocking the plot
-	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
+	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing))
 		return true;
 
 	return false;
 }
 
-// wtf is this, surely needs better annotation
-bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const
+// some recursive magic. In short, counts backward to determine if this plot can see (dx, dy) but you gotta enter (dx, dy) in duplicate on initial call.
+// bfirstPlot should be called true when starting, bOuterRing for if the target is on 'the outer ring'; different see-from mechanics.
+// bAerial makes the starting see-from level be treated as if it were peak + 
+bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool bOuterRing, bool bAerial) const
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 	if (pPlot == NULL)
@@ -2469,7 +2476,7 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 	int closest = -1;
 	for (int i=0;i<3;i++)
 	{
-		//int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
+		// int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
 		allClosest[i] = abs(displacements[i][0] * dy - displacements[i][1] * dx); //cross product
 		if((closest == -1) || (allClosest[i] < closest))
 		{
@@ -2488,19 +2495,21 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		if(allClosest[i] != closest)
 			continue;
 
-		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false))
+		// Try the first closest; work our way backwards until either there is a chain that leads to first plot, or everything returns false
+		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false, bAerial))
 			continue;
 
-		int fromLevel = seeFromLevel(eTeam);
+		int fromLevel = seeFromLevel(eTeam, bAerial);
 		int throughLevel = pPlot->seeThroughLevel();
 
-		if(outerRing) //check strictly higher level
+		if(bOuterRing) //check strictly higher level
 		{
 			CvPlot *passThroughPlot = plotXY(getX_INLINE(), getY_INLINE(), nextDX, nextDY);
 			int passThroughLevel = passThroughPlot->seeThroughLevel();
 			if (fromLevel >= passThroughLevel)
 			{
-				if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel)) //either we can see through to it or it is high enough to see from far
+				//either we can see through to it || it is high enough to see from far
+				if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel))
 				{
 					return true;
 				}

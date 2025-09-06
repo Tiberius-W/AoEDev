@@ -188,6 +188,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 
 	//--------------------------------
 	// Init pre-setup() data
+	// KNOWN ISSUE: Since this is called before promotions are on the unit, LoS impacting ones will not take effect until the unit moves.
 	setXY(iX, iY, false, false);
 
 	//--------------------------------
@@ -11996,20 +11997,36 @@ bool CvUnit::isHidden() const
 }
 
 
+// accounts for plot improvements boosting units vision range. Flying and air domain get less benefit from improvements
 int CvUnit::visibilityRange() const
 {
 	// Needed to ensure no vision on blinded units
 	if (isBlind())
-	{
 		return -99;
-	}
 
 	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + getExtraVisibilityRange();
 
-	if (plot() != NULL && plot()->getImprovementType() != NO_IMPROVEMENT)
-		iRange += GC.getImprovementInfo((ImprovementTypes)plot()->getImprovementType()).getVisibilityChange();
+	if (plot() == NULL)
+		return iRange;
 
-	return iRange;
+	ImprovementTypes eImprovement = plot()->getImprovementType();
+
+	if (eImprovement == NO_IMPROVEMENT)
+		return iRange;
+
+	int iImprovementMod = GC.getImprovementInfo(eImprovement).getVisibilityChange();
+
+	// Guess an improvement could give a negative range value?
+	if (iImprovementMod <= 0)
+		return (iRange + iImprovementMod);
+
+	// Blaze 2025: Flying units (and domain air units) have a built-in +1 (or fixed) range,
+	// and should get less bonus from e.g. a tall tower helping them see further.
+	// Something like mirror of heaven or tower of eyes though still should give a buff.
+	if (isFlying() || getDomainType() == DOMAIN_AIR)
+		iImprovementMod = std::max(0, iImprovementMod - 2);
+	
+	return (iRange + iImprovementMod);
 }
 
 
