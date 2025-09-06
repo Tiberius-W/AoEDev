@@ -2233,6 +2233,8 @@
 			<iAppearance>500</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iTurnDamage>15</iTurnDamage>
+			<iDamageLimit>30</iDamageLimit>
+			<DamageType>DAMAGE_PHYSICAL</DamageType>
 			<bNoCoast>0</bNoCoast>
 			<bNoRiver>0</bNoRiver>
 			<bNoAdjacent>0</bNoAdjacent>
@@ -2466,6 +2468,8 @@
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
 			<iTurnDamage>10</iTurnDamage>
+			<iDamageLimit>50</iDamageLimit>
+			<DamageType>DAMAGE_PHYSICAL</DamageType>
 			<bNoCoast>0</bNoCoast>
 			<bNoRiver>0</bNoRiver>
 			<bNoAdjacent>0</bNoAdjacent>
@@ -2566,6 +2570,8 @@
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
 			<iTurnDamage>15</iTurnDamage>
+			<iDamageLimit>75</iDamageLimit>
+			<DamageType>DAMAGE_FIRE</DamageType>
 			<bNoCoast>0</bNoCoast>
 			<bNoRiver>0</bNoRiver>
 			<bNoAdjacent>0</bNoAdjacent>
