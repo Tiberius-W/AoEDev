@@ -2325,6 +2325,7 @@ CvPlot* CvPlot::getNearestLandPlot() const
 }
 
 
+// "What level does a unit see when on this plot"
 int CvPlot::seeFromLevel(TeamTypes eTeam) const
 {
 	int iLevel;
@@ -2334,29 +2335,23 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeFromLevel();
 
 	if (isPeak())
-	{
 		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
-	}
 
 	if (isHills())
-	{
 		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
-	}
 
 	if (isWater())
 	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
 
 		if (GET_TEAM(eTeam).isExtraWaterSeeFrom())
-		{
 			iLevel++;
-		}
 	}
 
 	return iLevel;
 }
 
-
+// "What level of sight is required to see across this plot". Adds feature and plot effect levels
 int CvPlot::seeThroughLevel() const
 {
 	int iLevel;
@@ -2366,48 +2361,37 @@ int CvPlot::seeThroughLevel() const
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel();
 
 	if (getFeatureType() != NO_FEATURE)
-	{
 		iLevel += GC.getFeatureInfo(getFeatureType()).getSeeThroughChange();
-	}
+
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
-	{
 		iLevel += GC.getPlotEffectInfo(getPlotEffectType()).getSeeThroughChange();
-	}
 
 	if (isPeak())
-	{
 		iLevel += GC.getPEAK_SEE_THROUGH_CHANGE();
-	}
 
 	if (isHills())
-	{
 		iLevel += GC.getHILLS_SEE_THROUGH_CHANGE();
-	}
 
 	if (isWater())
-	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
-	}
 
 	return iLevel;
 }
 
 
-// Add or remove visibility count to applicable tiles within range
+// Add or remove visibility count (bIncrement) to applicable tiles within iRange, given a pUnit
 void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups)
 {
 	int iDist;
-	bool bAerial = (pUnit != NULL && pUnit->getDomainType() == DOMAIN_AIR);
+	bool bAerial = (pUnit != NULL && (pUnit->getDomainType() == DOMAIN_AIR || pUnit->isFlying()));
 
-	//check one extra outer ring
-	if (!bAerial)
-		iRange++;
+	iRange++;
 
 	int iLoop = 0;
+
 	if (pUnit != NULL)
-	{
-		iLoop = std::max(iLoop,pUnit->getPerception());
-	}
+		iLoop = std::max(iLoop, pUnit->getPerception());
+
 	for (int i = -1; i < iLoop; i++)
 	{
 		for (int dx = -iRange; dx <= iRange; dx++)
@@ -2416,14 +2400,7 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 			{
 				bool outerRing = false;
 				// Enable further sight only on straightaways
-				// if ((abs(dx) == iRange) || (abs(dy) == iRange))
-				// 	outerRing = true;
-
-				// Enable further sight all-around
-				iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
-				if (iDist > iRange)
-					continue;
-				if (iDist == iRange)
+				if ((abs(dx) == iRange) || (abs(dy) == iRange))
 					outerRing = true;
 
 				//check if anything blocking the plot
@@ -2438,29 +2415,27 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 	}
 }
 
+// Checks if there is line-of-sight between this and pPlot for eTeam.
+// Does NOT account for improvements or unit type; see CvUnit::visibilityRange.
+// Returns true at step distance iRange+1 if pPlot is a higher level than this
 bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 {
 	if (pPlot == NULL)
 		return false;
 
-	// Units might be able to see one tile further, if that tile has a boosted see-from distance
+	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
+	if (iRange > stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()))
+		return false;
 
 	//find displacement
 	int dx = xDistance(getX(), pPlot->getX());
 	int dy = yDistance(getY(), pPlot->getY());
 
-	// Enable further sight all-around (same as plotDistance)
-	int iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
-	if (iDist > iRange)
-		return false;
-
 	bool outerRing = false;
-	// Enable further sight only on straightaways
-	// if ((abs(dx) == iRange) || (abs(dy) == iRange))
-	// 	outerRing = true;
 
-	if (iDist == iRange)
+	// This is the 'one tile further'
+	if ((abs(dx) == iRange) || (abs(dy) == iRange))
 		outerRing = true;
 
 	//check if nothing blocking the plot
@@ -2470,6 +2445,7 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 	return false;
 }
 
+// wtf is this, surely needs better annotation
 bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);

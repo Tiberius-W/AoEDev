@@ -5066,6 +5066,7 @@ TeamTypes CvUnit::getDeclareWarMove(const CvPlot* pPlot) const
 	return NO_TEAM;
 }
 
+
 bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 {
 	// Xienwolf - 03/27/09 - Blocks Movement of Marked Units
@@ -5081,6 +5082,7 @@ bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 			if (pLoopPlot == NULL)
 				continue;
 
+			// TODO: remove or fix this entire method; visibility range accounts for the unit's current tile, not pPlot
 			if (!pLoopPlot->isRevealed(getTeam(), false) && pPlot->canSeePlot(pLoopPlot, getTeam(), visibilityRange()))
 				return true;
 		}
@@ -5088,6 +5090,7 @@ bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 
 	return false;
 }
+
 
 /*************************************************************************************************/
 /**	AITweak							19/06/10								Snarko				**/
@@ -30188,53 +30191,30 @@ bool CvUnit::canRangeStrike(bool bTest) const
 	return true;
 }
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							04/15/09											**/
-/**																								**/
-/**				Allows AI and Automated units to check potential attackers						**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-bool CvUnit::canRangeStrikeAt(const CvPlot* pPlot, int iX, int iY) const
-{
-	if (!canRangeStrike())
-/**								----  End Original Code  ----									**/
+// Checks if this unit can air strike from pPlot to iX, iY
 bool CvUnit::canRangeStrikeAt(const CvPlot* pPlot, int iX, int iY, bool bTest) const
 {
+	// Xienwolf - 04/15/09 - Added bTest to allow AI and Automated units to check potential attackers
 	if (!canRangeStrike(bTest))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	{
 		return false;
-	}
 
 	CvPlot* pTargetPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
 	if (NULL == pTargetPlot)
-	{
 		return false;
-	}
 
 	if (!pPlot->isVisible(getTeam(), false))
-	{
 		return false;
-	}
 
-	if (plotDistance(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE()) > airRange())
-	{
+	if (plotDistance(pPlot, pTargetPlot) > airRange())
 		return false;
-	}
 
 	CvUnit* pDefender = airStrikeTarget(pTargetPlot);
 	if (NULL == pDefender)
-	{
 		return false;
-	}
 
 	if (!pPlot->canSeePlot(pTargetPlot, getTeam(), airRange()))
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -32905,21 +32885,15 @@ bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 		return false;
 
 	if (!pTarget->isVisible(getTeam(), false))
-	{
 		return false;
-	}
 
 	int iRange = getSpellTargetRange(iI);//GC.getSpellInfo((SpellTypes)iI).getTargetRange();
 
+	if (plotDistance(plot(), pTarget) > iRange)
+		return false;
+
 	if (!plot()->canSeePlot(pTarget, getTeam(), iRange))
-	{
 		return false;
-	}
-	
-	if (plotDistance(getX_INLINE(), getY_INLINE(), pTarget->getX_INLINE(), pTarget->getY_INLINE()) > iRange)
-	{
-		return false;
-	}
 
 	return true;
 }

@@ -136,7 +136,7 @@ bool CvSelectionGroup::sentryAlert() const
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		int iRange = pLoopUnit->visibilityRange() + 1;
+		int iRange = pLoopUnit->visibilityRange();
 
 		if (iRange > iMaxRange)
 		{
@@ -150,6 +150,9 @@ bool CvSelectionGroup::sentryAlert() const
 
 	CvPlot* pPlot;
 
+	// We can actually see one tile further due to height level checks in canSeePlot
+	++iMaxRange;
+
 	for (int iX = -iMaxRange; iX <= iMaxRange; ++iX)
 	{
 		for (int iY = -iMaxRange; iY <= iMaxRange; ++iY)
@@ -158,13 +161,11 @@ bool CvSelectionGroup::sentryAlert() const
 			if (pPlot == NULL)
 				continue;
 
-			if (pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange - 1))
-			{
-				if (pPlot->isVisibleEnemyUnit(pHeadUnit))
-				{
-					return true;
-				}
-			}
+			if (!pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange))
+				continue;
+
+			if (pPlot->isVisibleEnemyUnit(pHeadUnit))
+				return true;
 		}
 	}
 

@@ -106,11 +106,13 @@ inline int wrapCoordDifference(int iDiff, int iRange, bool bWrap)
 	return iDiff;
 }
 
+// absolute diff in x, accounting for game wrap
 inline int xDistance(int iFromX, int iToX)
 {
 	return coordDistance(iFromX, iToX, GC.getMapINLINE().getGridWidthINLINE(), GC.getMapINLINE().isWrapXINLINE());
 }
 
+// absolute diff in y, accounting for game wrap
 inline int yDistance(int iFromY, int iToY)
 {
 	return coordDistance(iFromY, iToY, GC.getMapINLINE().getGridHeightINLINE(), GC.getMapINLINE().isWrapYINLINE());
