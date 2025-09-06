@@ -33372,6 +33372,8 @@ m_iGrowthProbability(0),
 m_iDefenseModifier(0),
 m_iAdvancedStartRemoveCost(0),
 m_iTurnDamage(0),
+m_iDamageLimit(0),
+m_iDamageType(NO_DAMAGE),
 m_bNoCoast(false),
 m_bNoRiver(false),
 m_bNoAdjacent(false),
@@ -33485,6 +33487,16 @@ int CvFeatureInfo::getAdvancedStartRemoveCost() const
 int CvFeatureInfo::getTurnDamage() const
 {
 	return m_iTurnDamage;
+}
+
+const int CvFeatureInfo::getDamageLimit() const
+{
+	return m_iDamageLimit;
+}
+
+const int CvFeatureInfo::getDamageType() const
+{
+	return m_iDamageType;
 }
 
 bool CvFeatureInfo::isNoCoast() const
@@ -33743,6 +33755,9 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartRemoveCost, "iAdvancedStartRemoveCost");
 	pXML->GetChildXmlValByName(&m_iTurnDamage, "iTurnDamage");
+	pXML->GetChildXmlValByName(&m_iDamageLimit, "iDamageLimit");
+	pXML->GetChildXmlValByName(szTextVal, "DamageType");
+	m_iDamageType = pXML->FindInInfoClass(szTextVal);
 	pXML->GetChildXmlValByName(&m_iAppearanceProbability, "iAppearance");
 	pXML->GetChildXmlValByName(&m_iDisappearanceProbability, "iDisappearance");
 	pXML->GetChildXmlValByName(&m_iGrowthProbability, "iGrowth");
@@ -33861,6 +33876,8 @@ void CvFeatureInfo::copyNonDefaults(CvFeatureInfo* pClassInfo, CvXMLLoadUtility*
 	if (getDefenseModifier()						== 0)			m_iDefenseModifier					= pClassInfo->getDefenseModifier();
 	if (getAdvancedStartRemoveCost()				== 0)			m_iAdvancedStartRemoveCost			= pClassInfo->getAdvancedStartRemoveCost();
 	if (getTurnDamage()								== 0)			m_iTurnDamage						= pClassInfo->getTurnDamage();
+	if (getDamageLimit()							== 0)			m_iDamageLimit 						= pClassInfo->getDamageLimit();
+	if (getDamageType()								== NO_DAMAGE)	m_iDamageType						= pClassInfo->getDamageType();
 	if (getAppearanceProbability()					== 0)			m_iAppearanceProbability			= pClassInfo->getAppearanceProbability();
 	if (getDisappearanceProbability()				== 0)			m_iDisappearanceProbability			= pClassInfo->getDisappearanceProbability();
 	if (getGrowthProbability()						== 0)			m_iGrowthProbability				= pClassInfo->getGrowthProbability();
@@ -52434,11 +52451,11 @@ CvPlotEffectInfo::CvPlotEffectInfo() :
 	m_iDefaultFeatureGraphics(NO_FEATURE),
 	m_iTurnDamage(0),
 	m_iDamageLimit(0),
+	m_iDamageType(NO_DAMAGE),
 	m_iHealthPercent(0),
 	m_bDispellable(false),
 	m_iPerceptionCost(0),
 	m_iSeeThroughChange(0),
-	m_iDamageType(NO_DAMAGE),
 	m_iMaxPlotCounter(-1),
 	m_iSpawnChance(0),
 	m_iSpreadChance(0),
@@ -52472,6 +52489,14 @@ const int CvPlotEffectInfo::getTurnDamage() const
 {
 	return m_iTurnDamage;
 }
+const int CvPlotEffectInfo::getDamageLimit() const
+{
+	return m_iDamageLimit;
+}
+const int CvPlotEffectInfo::getDamageType() const
+{
+	return m_iDamageType;
+}
 const int CvPlotEffectInfo::getHealthPercent() const
 {
 	return m_iHealthPercent;
@@ -52479,10 +52504,6 @@ const int CvPlotEffectInfo::getHealthPercent() const
 const bool CvPlotEffectInfo::isDispellable() const
 {
 	return m_bDispellable;
-}
-const int CvPlotEffectInfo::getDamageLimit() const
-{
-	return m_iDamageLimit;
 }
 const int CvPlotEffectInfo::getPerceptionCost() const
 {
@@ -52511,10 +52532,6 @@ const int CvPlotEffectInfo::getDisappearChance() const
 const int CvPlotEffectInfo::getMoveChance() const
 {
 	return m_iMoveChance;
-}
-const int CvPlotEffectInfo::getDamageType() const
-{
-	return m_iDamageType;
 }
 const TCHAR* CvPlotEffectInfo::getPythonOnMove() const
 {
@@ -52563,6 +52580,8 @@ bool CvPlotEffectInfo::read(CvXMLLoadUtility* pXML)
 	m_iDefaultFeatureGraphics = pXML->FindInInfoClass(szTextVal);
 	
 	pXML->GetChildXmlValByName(&m_iTurnDamage, "iTurnDamage");
+	pXML->GetChildXmlValByName(&m_iDamageLimit, "iDamageLimit");
+	pXML->GetChildXmlValByName(szTextVal, "DamageType");
 	pXML->GetChildXmlValByName(&m_iHealthPercent, "iHealthPercent");
 	pXML->GetChildXmlValByName(&m_iMaxPlotCounter, "iMaxPlotCounter",-1);
 	pXML->GetChildXmlValByName(&m_iSpawnChance, "iSpawnChance");
@@ -52570,10 +52589,8 @@ bool CvPlotEffectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iSpreadChance, "iSpreadChance");
 	pXML->GetChildXmlValByName(&m_iDisappearChance, "iDisappearChance");
 	pXML->GetChildXmlValByName(&m_iMoveChance, "iMoveChance");
-	pXML->GetChildXmlValByName(&m_iDamageLimit, "iDamageLimit");
 	pXML->GetChildXmlValByName(&m_iPerceptionCost, "iPerceptionCost");
 	pXML->GetChildXmlValByName(&m_iSeeThroughChange, "iSeeThrough");
-	pXML->GetChildXmlValByName(szTextVal, "DamageType");
 	// call the find in list function to return either -1 if no value is found
 	// or the index in the list the match is found at
 	m_iDamageType = pXML->FindInInfoClass(szTextVal);
@@ -52597,21 +52614,21 @@ void CvPlotEffectInfo::copyNonDefaults(CvPlotEffectInfo* pClassInfo, CvXMLLoadUt
 
 	CvInfoBase::copyNonDefaults(pClassInfo, pXML);
 
-	if (getDefaultFeatureGraphics() == NO_FEATURE)				m_iDefaultFeatureGraphics = (pClassInfo->getDefaultFeatureGraphics());
-	if (getMaxPlotCounter() == -1)				m_iMaxPlotCounter = (pClassInfo->getMaxPlotCounter());
-	if (isDispellable() == false)				m_bDispellable = (pClassInfo->isDispellable());
-	if (getSpawnChance() == 0)				m_iSpawnChance = (pClassInfo->getSpawnChance());
-	if (getSpreadChance() == 0)				m_iSpreadChance = (pClassInfo->getSpreadChance());
-	if (getDisappearChance() == 0)				m_iDisappearChance = (pClassInfo->getDisappearChance());
-	if (getMoveChance() == 0)				m_iMoveChance = (pClassInfo->getMoveChance());
-	if (getTurnDamage() == 0)				m_iTurnDamage = (pClassInfo->getTurnDamage());
-	if (getDamageLimit() == 0)				m_iDamageLimit = (pClassInfo->getDamageLimit());
-	if (getHealthPercent() == 0)				m_iHealthPercent = (pClassInfo->getHealthPercent());
-	if (getPerceptionCost() == 0)				m_iPerceptionCost = (pClassInfo->getPerceptionCost());
-	if (getSeeThroughChange() == 0)				m_iSeeThroughChange = (pClassInfo->getSeeThroughChange());
-	if (getDamageType() == NO_DAMAGE)				m_iDamageType = (pClassInfo->getDamageType());
-	if (getPythonOnMove() == cDefault)		m_szPythonOnMove = pClassInfo->getPythonOnMove();
-	if (getPythonPerTurn() == cDefault)		m_szPythonPerTurn = pClassInfo->getPythonPerTurn();
+	if (getDefaultFeatureGraphics() 		== NO_FEATURE)		m_iDefaultFeatureGraphics 	= (pClassInfo->getDefaultFeatureGraphics());
+	if (getMaxPlotCounter() 				== -1)				m_iMaxPlotCounter 			= (pClassInfo->getMaxPlotCounter());
+	if (isDispellable() 					== false)			m_bDispellable 				= (pClassInfo->isDispellable());
+	if (getSpawnChance() 					== 0)				m_iSpawnChance 				= (pClassInfo->getSpawnChance());
+	if (getSpreadChance() 					== 0)				m_iSpreadChance 			= (pClassInfo->getSpreadChance());
+	if (getDisappearChance() 				== 0)				m_iDisappearChance 			= (pClassInfo->getDisappearChance());
+	if (getMoveChance() 					== 0)				m_iMoveChance 				= (pClassInfo->getMoveChance());
+	if (getTurnDamage() 					== 0)				m_iTurnDamage 				= (pClassInfo->getTurnDamage());
+	if (getDamageLimit() 					== 0)				m_iDamageLimit 				= (pClassInfo->getDamageLimit());
+	if (getDamageType() 					== NO_DAMAGE)		m_iDamageType 				= (pClassInfo->getDamageType());
+	if (getHealthPercent() 					== 0)				m_iHealthPercent 			= (pClassInfo->getHealthPercent());
+	if (getPerceptionCost() 				== 0)				m_iPerceptionCost 			= (pClassInfo->getPerceptionCost());
+	if (getSeeThroughChange()				== 0)				m_iSeeThroughChange 		= (pClassInfo->getSeeThroughChange());
+	if (getPythonOnMove() 					== cDefault)		m_szPythonOnMove 			= pClassInfo->getPythonOnMove();
+	if (getPythonPerTurn() 					== cDefault)		m_szPythonPerTurn 			= pClassInfo->getPythonPerTurn();
 	for (int i = 0; i < NUM_YIELD_TYPES; i++)
 	{
 		if (getYieldChange(i) == 0)					m_piYieldChange[i] = pClassInfo->getYieldChange(i);

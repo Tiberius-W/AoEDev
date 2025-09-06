@@ -10786,7 +10786,7 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<Spanish>Smoke</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLOT_EFFECT_DAMAGE</Tag>
+		<Tag>TXT_KEY_PLOT_DAMAGE</Tag>
 		<English>%d1% %s3 Damage / Turn (Max %d2%)</English>
 		<French>%d1% %s3 Damage / Turn (Max %d2%)</French>
 		<German>%d1% %s3 Damage / Turn (Max %d2%)</German>

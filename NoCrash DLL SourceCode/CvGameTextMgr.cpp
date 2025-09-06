@@ -6496,9 +6496,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (iDamage > 0)
 		{
+			FeatureTypes eFeature = pPlot->getFeatureType();
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage));
+			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage, GC.getFeatureInfo(eFeature).getDamageLimit(),
+				GC.getDamageTypeInfo((DamageTypes)GC.getFeatureInfo(eFeature).getDamageType()).getTextKeyWide()));
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}
@@ -6511,7 +6513,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			PlotEffectTypes ePlotEffect = pPlot->getPlotEffectType();
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", iDamage, GC.getPlotEffectInfo(ePlotEffect).getDamageLimit(),
+			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage, GC.getPlotEffectInfo(ePlotEffect).getDamageLimit(),
 				GC.getDamageTypeInfo((DamageTypes)GC.getPlotEffectInfo(ePlotEffect).getDamageType()).getTextKeyWide()));
 			szString.append(CvWString::format(ENDCOLR));
 		}
@@ -26527,7 +26529,7 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", GC.getFeatureInfo(eFeature).getTurnDamage()));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
 	}
 
 /*************************************************************************************************/
@@ -26690,7 +26692,7 @@ void CvGameTextMgr::setPlotEffectHelp(CvWStringBuffer& szBuffer, PlotEffectTypes
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
 	}
 	if (feature.getMaxPlotCounter() ==0)
 	{
