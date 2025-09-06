@@ -32,6 +32,9 @@
 			<Help>TXT_KEY_FEATURE_HAUNTED_LANDS_HELP</Help>
 			<Civilopedia>TXT_KEY_FEATURE_HAUNTED_LANDS_PEDIA</Civilopedia>
 			<DefaultFeatureGraphics>FEATURE_HAUNTED_LANDS</DefaultFeatureGraphics>
+			<iTurnDamage>5</iTurnDamage>
+			<iDamageLimit>50</iDamageLimit>
+			<DamageType>DAMAGE_POISON</DamageType>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
