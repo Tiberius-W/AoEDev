@@ -18697,9 +18697,9 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	}
 	
 
-	setYieldChangeHelp(szBuffer, L", ", L"", gDLL->getText("TXT_KEY_CIVIC_FROM_CRIME").GetCString(), kBuilding.getPerCrimeEffectYieldChangeArray(), false, true);
+	setYieldChangeHelp(szBuffer, L" ", L"", gDLL->getText("TXT_KEY_CIVIC_FROM_CRIME").GetCString(), kBuilding.getPerCrimeEffectYieldChangeArray(), false, true);
 
-	setCommerceChangeHelp(szBuffer, L", ", L"", gDLL->getText("TXT_KEY_CIVIC_FROM_CRIME").GetCString(), kBuilding.getPerCrimeEffectCommerceChangeArray(), false, true);
+	setCommerceChangeHelp(szBuffer, L" ", L"", gDLL->getText("TXT_KEY_CIVIC_FROM_CRIME").GetCString(), kBuilding.getPerCrimeEffectCommerceChangeArray(), false, true);
 
 /*************************************************************************************************/
 /**	New Tag Defs	(BuildingInfos)			05/15/08								Xienwolf	**/
