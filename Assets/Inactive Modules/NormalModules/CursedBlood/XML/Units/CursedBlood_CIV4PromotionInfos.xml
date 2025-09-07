@@ -35,7 +35,7 @@
 			<bAllowAttacks>1</bAllowAttacks>
 			<bFreeUnit>1</bFreeUnit>
 			<bNoSupply>1</bNoSupply>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<iVisibilityChange>2</iVisibilityChange>
 			<PromotionDegradesTo>
 				<Promotion>PROMOTION_WEREWOLF_FORM3</Promotion>
@@ -350,7 +350,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Units/duck.dds</Button>
-			<bAIControl>0</bAIControl>
+			<bEnraged>0</bEnraged>
 			<bBoarding>0</bBoarding>
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bDispellable>0</bDispellable>

@@ -5088,12 +5088,12 @@ bool CvSelectionGroup::isAutomated()
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/04/09											**/
 /**																								**/
-/**					Keeps the game from trying to select AIControls for you						**/
+/**					Keeps the game from trying to select Enrageds for you						**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
 	return (getAutomateType() != NO_AUTOMATE);
 /**								----  End Original Code  ----									**/
-	return ((getAutomateType() != NO_AUTOMATE) || isAIControl());
+	return ((getAutomateType() != NO_AUTOMATE) || isEnraged());
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -6058,25 +6058,24 @@ void CvSelectionGroup::deactivateHeadMission()
 	}
 }
 
+// Checks if any unit in the group is enraged
 //FfH: Added by Kael 12/28/2008
-bool CvSelectionGroup::isAIControl() const
+bool CvSelectionGroup::isEnraged() const
 {
-	if (getNumUnits() > 0)
+	if (getNumUnits() == 0)
+		return false;
+
+	CLLNode<IDInfo>* pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
 	{
-		CLLNode<IDInfo>* pUnitNode = headUnitNode();
-		while (pUnitNode != NULL)
-		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = nextUnitNode(pUnitNode);
-			if (pLoopUnit->isAIControl())
-			{
-				return true;
-			}
-		}
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		if (pLoopUnit->isEnraged())
+			return true;
 	}
 	return false;
 }
-//FfH: End Add
+
 /*************************************************************************************************/
 /**	Alertness								11/30/08	Written: Pep		Imported: Xienwolf	**/
 /**																								**/

@@ -271,7 +271,7 @@ bool CvSelectionGroupAI::AI_update()
 
 //FfH: Modified by Kael 12/28/2008
 //	if (!AI_isControlled())
-	if (!AI_isControlled() && !isAIControl())
+	if (!AI_isControlled() && !isEnraged())
 //FfH: End Modify
 
 	{

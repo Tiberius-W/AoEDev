@@ -2886,7 +2886,7 @@ void CvGame::selectUnit(CvUnit* pUnit, bool bClear, bool bToggle, bool bSound) c
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/04/09											**/
 /**				Prevents control of units you cannot actually see the location of				**/
-/**					Prevents control of AIControl Units by the human COMPLETELY					**/
+/**					Prevents control of Enraged Units by the human COMPLETELY					**/
 //Might be able to re-write this slightly so that instead of just returning, it will cycle to the next unit
 //in the stack.  If that unit is not selectable (or NULL) return, otherwise, allow that unit to be selected
 /*************************************************************************************************/
@@ -2894,7 +2894,7 @@ void CvGame::selectUnit(CvUnit* pUnit, bool bClear, bool bToggle, bool bSound) c
 	{
 		return;
 	}
-	if (pUnit->isAIControl())
+	if (pUnit->isEnraged())
 	{
 		return;
 	}

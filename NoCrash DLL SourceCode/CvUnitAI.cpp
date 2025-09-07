@@ -211,7 +211,7 @@ bool CvUnitAI::AI_update()
 	/**								---- Start Original Code ----									**
 	if (isHuman())
 	{
-		if (getGroup()->getHeadUnit()->isAIControl())
+		if (getGroup()->getHeadUnit()->isEnraged())
 		{
 			if (AI_anyAttack(3, 20))
 			{
@@ -221,7 +221,7 @@ bool CvUnitAI::AI_update()
 		}
 	}
 	/**								----  End Original Code  ----									**/
-	if (getGroup()->getHeadUnit()->isAIControl())
+	if (getGroup()->getHeadUnit()->isEnraged())
 	{
 		if (AI_anyAttack(1, 90))
 		{

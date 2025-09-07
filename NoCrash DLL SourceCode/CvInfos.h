@@ -1178,7 +1178,7 @@ public:
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	bool isAIControl() const;
+	bool isEnraged() const;
 	bool isBoarding() const;
 	bool isOnlyDefensive() const;
 	bool isDispellable() const;
@@ -1799,7 +1799,7 @@ protected:
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	bool m_bAIControl;
+	bool m_bEnraged;
 	bool m_bBoarding;
 	bool m_bOnlyDefensive;
 	bool m_bDispellable;

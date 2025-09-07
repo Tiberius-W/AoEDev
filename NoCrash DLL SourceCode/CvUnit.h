@@ -1511,8 +1511,8 @@ public:
 /*************************************************************************************************/
 	bool isAlive() const;
 	void changeAlive(int iNewValue);
-	bool isAIControl() const;
-	void changeAIControl(int iNewValue);
+	bool isEnraged() const;
+	void changeEnraged(int iNewValue);
 	bool isBoarding() const;
 	void changeBoarding(int iNewValue);
 	void changeDefensiveStrikeChance(int iChange);
@@ -2062,7 +2062,7 @@ protected:
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	int m_iAlive;
-	int m_iAIControl;
+	int m_iEnraged;
 	int m_iBoarding;
 	int m_iDefensiveStrikeChance;
 	int m_iDefensiveStrikeDamage;

@@ -3394,7 +3394,7 @@ m_iNoBadExplore(0),
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-m_bAIControl(false),
+m_bEnraged(false),
 m_bBoarding(false),
 m_bOnlyDefensive(false),
 m_bDispellable(false),
@@ -4421,9 +4421,9 @@ int CvPromotionInfo::getNoBadExplore() const							{return m_iNoBadExplore;}
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-bool CvPromotionInfo::isAIControl() const
+bool CvPromotionInfo::isEnraged() const
 {
-	return m_bAIControl;
+	return m_bEnraged;
 }
 
 bool CvPromotionInfo::isBoarding() const
@@ -5863,7 +5863,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	stream->Read(&m_bAIControl);
+	stream->Read(&m_bEnraged);
 	stream->Read(&m_bBoarding);
 	stream->Read(&m_bOnlyDefensive);
 	stream->Read(&m_bDispellable);
@@ -6617,7 +6617,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	stream->Write(m_bAIControl);
+	stream->Write(m_bEnraged);
 	stream->Write(m_bBoarding);
 	stream->Write(m_bOnlyDefensive);
 	stream->Write(m_bDispellable);
@@ -7318,7 +7318,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	pXML->GetChildXmlValByName(&m_bAIControl, "bAIControl");
+	pXML->GetChildXmlValByName(&m_bEnraged, "bEnraged");
 	pXML->GetChildXmlValByName(&m_bBoarding, "bBoarding");
 	pXML->GetChildXmlValByName(&m_bOnlyDefensive, "bOnlyDefensive");
 	pXML->GetChildXmlValByName(&m_bDispellable, "bDispellable");
@@ -7890,7 +7890,7 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 	if (isHillsDoubleMove()						== false)				m_bHillsDoubleMove					= pClassInfo->isHillsDoubleMove();
 	if (isImmuneToFirstStrikes()				== false)				m_bImmuneToFirstStrikes				= pClassInfo->isImmuneToFirstStrikes();
 	if (isTradeDefender() 						== false)				m_bTradeDefender 					= pClassInfo->isTradeDefender();
-	if (isAIControl()							== false)				m_bAIControl						= pClassInfo->isAIControl();
+	if (isEnraged()							== false)				m_bEnraged						= pClassInfo->isEnraged();
 	if (isBoarding()							== false)				m_bBoarding							= pClassInfo->isBoarding();
 	if (isOnlyDefensive()						== false)				m_bOnlyDefensive					= pClassInfo->isOnlyDefensive();
 	if (isDispellable()							== false)				m_bDispellable						= pClassInfo->isDispellable();

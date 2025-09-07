@@ -6998,7 +6998,7 @@ def postCombatWinWerewolf(pCaster, pOpponent):
 	if pOpponent.isAlive() and pOpponent.canDefend(pOpponent.plot()):                                       #Can only convert Living Combat Units
 		if pCaster.baseCombatStr() < gc.getUnitInfo(pCaster.getUnitType()).getCombat() * 3 / 2:             # If the werewolf has not attained maximal strength (50% bonus)
 			iGrowChance = pOpponent.baseCombatStr() * 5                                                     # There is a chance to strengthen the werewolf (proportional to the strength of the vanquished enemy)
-			if pCaster.isAIControl():
+			if pCaster.isEnraged():
 				iGrowChance = iGrowChance * 2
 			if CyGame().getSorenRandNum(100, "Werewolf Growth") < iGrowChance:                              # If the roll is successful
 				pCaster.changeStrBoost(1)                                                                   # we strengthen the werewolf by +1

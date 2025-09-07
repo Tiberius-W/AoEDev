@@ -968,7 +968,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 /**	Tweak									END													**/
 /*************************************************************************************************/
 	m_iAlive = 0;
-	m_iAIControl = 0;
+	m_iEnraged = 0;
 	m_iBoarding = 0;
 	m_iDefensiveStrikeChance = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getDefensiveStrikeChance() : 0;
 	m_iDefensiveStrikeDamage = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getDefensiveStrikeDamage() : 0;
@@ -2256,7 +2256,7 @@ void CvUnit::doTurn()
 					}
 				}
 			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).isAIControl())
+			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
 			{
 				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
 				{
@@ -6661,8 +6661,8 @@ bool CvUnit::canHold(const CvPlot* pPlot) const
 
 bool CvUnit::canSleep(const CvPlot* pPlot) const
 {
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (isAIControl())
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
 
 	if (isWaiting())
@@ -6681,8 +6681,8 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 // Checks for AI control, unit-specific fortify, unit doing other actions, if is cargo, and water walkers trying to dig into water 
 bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (isAIControl())
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
 
 	if (!isFortifyable())
@@ -6770,8 +6770,8 @@ void CvUnit::airCircle(bool bStart)
 // Used for checking whether the sentry mission is valid
 bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 {
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (isAIControl())
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
 
 	if (!canDefend(pPlot))
@@ -6786,8 +6786,8 @@ bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 // Used for checking whether the heal mission is valid
 bool CvUnit::canHealMission(const CvPlot* pPlot) const
 {
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (isAIControl())
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
 
 	if (!isHurt())
@@ -6936,7 +6936,7 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 		return MAX_INT;
 
 	// Add 1 to turns if won't heal on this turn
-	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isAIControl()));
+	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isEnraged()));
 	int iThisTurnDamageReal = pPlot->calcTurnDamageReal(this, true, (1 - iTurns) * iHealReal);
 
 	// Unit might die before being able to heal!
@@ -6957,8 +6957,8 @@ bool CvUnit::isTurnHealBlocked() const
 {
 	// Blaze 2025: Duplicated logic in healTurns, probably elsewhere... be aware if changing.
 
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isAIControl()))
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isEnraged()))
 		return true;
 
 	return false;
@@ -9478,8 +9478,8 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 
 bool CvUnit::canConstruct(const CvPlot* pPlot, BuildingTypes eBuilding, bool bTestVisible) const
 {
-	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
-	if (isAIControl())
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
 
 	CvCity* pCity;
@@ -9580,9 +9580,9 @@ bool CvUnit::canDiscover(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -9682,9 +9682,9 @@ bool CvUnit::canHurry(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -9813,9 +9813,9 @@ bool CvUnit::canTrade(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -9901,9 +9901,9 @@ bool CvUnit::canGreatWork(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10293,9 +10293,9 @@ bool CvUnit::canGoldenAge(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10356,9 +10356,9 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10907,9 +10907,9 @@ int CvUnit::canLead(const CvPlot* pPlot, int iUnitId) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10962,9 +10962,9 @@ int CvUnit::canGiveExperience(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -11268,9 +11268,9 @@ bool CvUnit::isReadyForUpgrade() const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -12066,9 +12066,9 @@ bool CvUnit::canBuildRoute() const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -14835,7 +14835,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 		/*************************************************************************************************/
 		/**								---- Start Original Code ----									**
 		//FfH: Added by Kael 11/14/2007
-		if (isAIControl())
+		if (isEnraged())
 		{
 			return false;
 		}
@@ -14850,7 +14850,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 			{
 				return false;
 			}
-			if (pHeadUnit->isAIControl())
+			if (pHeadUnit->isEnraged())
 			{
 				return false;
 			}
@@ -14864,7 +14864,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 			{
 				return false;
 			}
-			if (pHeadUnit->isAIControl() != isAIControl())
+			if (pHeadUnit->isEnraged() != isEnraged())
 			{
 				return false;
 			}
@@ -21583,7 +21583,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		{
 			return;
 		}
-		if (kPromotion.isAIControl())
+		if (kPromotion.isEnraged())
 		{
 			if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
 			{
@@ -22290,7 +22290,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 /*************************************************************************************************/
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
-		changeAIControl((kPromotion.isAIControl()) ? iChange : 0);
+		changeEnraged((kPromotion.isEnraged()) ? iChange : 0);
 		changeAlive((kPromotion.isNotAlive()) ? iChange : 0);
 		changeBaseCombatStr(kPromotion.getExtraCombatStr() * iChange);
 		changeBaseCombatStrDefense(kPromotion.getExtraCombatDefense() * iChange);
@@ -25951,7 +25951,7 @@ void CvUnit::changeAlive(int iNewValue)
 	}
 }
 
-bool CvUnit::isAIControl() const
+bool CvUnit::isEnraged() const
 {
 /*************************************************************************************************/
 /**	Xienwolf Tweak							12/27/08											**/
@@ -25965,14 +25965,14 @@ bool CvUnit::isAIControl() const
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
-	return m_iAIControl == 0 ? false : true;
+	return m_iEnraged == 0 ? false : true;
 }
 
-void CvUnit::changeAIControl(int iNewValue)
+void CvUnit::changeEnraged(int iNewValue)
 {
 	if (iNewValue != 0)
 	{
-		m_iAIControl += iNewValue;
+		m_iEnraged += iNewValue;
 /*************************************************************************************************/
 /**	Xienwolf Tweak							12/27/08											**/
 /**																								**/
@@ -28881,7 +28881,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	pStream->Read(&m_iAlive);
-	pStream->Read(&m_iAIControl);
+	pStream->Read(&m_iEnraged);
 	pStream->Read(&m_iBoarding);
 	pStream->Read(&m_iDefensiveStrikeChance);
 	pStream->Read(&m_iDefensiveStrikeDamage);
@@ -29391,7 +29391,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	pStream->Write(m_iAlive);
-	pStream->Write(m_iAIControl);
+	pStream->Write(m_iEnraged);
 	pStream->Write(m_iBoarding);
 	pStream->Write(m_iDefensiveStrikeChance);
 	pStream->Write(m_iDefensiveStrikeDamage);

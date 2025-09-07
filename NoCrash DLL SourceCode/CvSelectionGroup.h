@@ -190,7 +190,7 @@ public:
 	void setForceUpdate(bool bNewValue);
 
 //FfH: Added by Kael 12/28/2008
-	bool isAIControl() const;
+	bool isEnraged() const;
 //FfH: End Add
 
 	DllExport PlayerTypes getOwner() const;																															// Exposed to Python

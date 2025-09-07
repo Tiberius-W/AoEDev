@@ -615,7 +615,7 @@ public:
 	int getCommandXPShareRate() const;
 	int getPreviousOwner() const;
 	void setPreviousOwner(int eNewOwner);
-	bool isAIControl() const;
+	bool isEnraged() const;
 	bool isImmuneToCapture() const;
 	bool isCommunalProperty() const;
 	bool isNeverHostile() const;

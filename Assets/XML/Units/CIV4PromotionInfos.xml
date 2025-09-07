@@ -308,7 +308,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Units/duck.dds</Button>
-			<bAIControl>0</bAIControl>
+			<bEnraged>0</bEnraged>
 			<bBoarding>0</bBoarding>
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bDispellable>0</bDispellable>
@@ -8965,7 +8965,7 @@
 			<iMovesChange>1</iMovesChange>
 			<iCombatPercent>60</iCombatPercent>
 			<Button>Art/Interface/Buttons/Promotions/Enraged.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<bRemovedByCombat>1</bRemovedByCombat>
 			<iCombatPercentDefense>-100</iCombatPercentDefense>
 			<iMinLevel>-1</iMinLevel>
@@ -9826,7 +9826,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/FreelancerEffect.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<bRemovedByCombat>1</bRemovedByCombat>
 			<iCombatPercent>60</iCombatPercent>
 			<bImmortal>1</bImmortal>
@@ -17544,7 +17544,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Werewolf.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Whip -->
