@@ -840,14 +840,14 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			break;
 
 		case MISSION_HEAL:
-			if (pLoopUnit->canHeal(pPlot))
+			if (pLoopUnit->canHealMission(pPlot))
 			{
 				return true;
 			}
 			break;
 
 		case MISSION_SENTRY:
-			if (pLoopUnit->canSentry(pPlot))
+			if (pLoopUnit->canSentryMission(pPlot))
 			{
 				return true;
 			}

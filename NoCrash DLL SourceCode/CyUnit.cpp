@@ -179,14 +179,14 @@ bool CyUnit::canSeaPatrol(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canSeaPatrol(pPlot->getPlot()) : false;
 }
 
-bool CyUnit::canHeal(CyPlot* pPlot)
+bool CyUnit::canHealMission(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canHeal(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canHealMission(pPlot->getPlot()) : false;
 }
 
-bool CyUnit::canSentry(CyPlot* pPlot)
+bool CyUnit::canSentryMission(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canSentry(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canSentryMission(pPlot->getPlot()) : false;
 }
 
 bool CyUnit::canAirlift(CyPlot* pPlot)

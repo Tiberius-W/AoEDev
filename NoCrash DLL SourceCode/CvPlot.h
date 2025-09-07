@@ -653,7 +653,7 @@ public:
 	DllExport bool shouldDisplayBridge(CvPlot* pToPlot, PlayerTypes ePlayer) const;
 	DllExport bool checkLateEra() const;
 
-//FfH: Added by Kael 08/15/2007
+	//FfH: Added by Kael 08/15/2007
 	bool isAdjacentToWater() const;
 	bool isBuilding(BuildTypes eBuild, TeamTypes eTeam, int iRange, bool bExcludeCenter) const;
 
@@ -686,7 +686,7 @@ public:
 	void setTempTerrainType(TerrainTypes eNewValue, int iTimer);
 	int getTempTerrainTimer() const;
 	void changeTempTerrainTimer(int iChange);
-//FfH: End Add
+
 
 /*************************************************************************************************/
 /**	New Tag Defs	(TerrainInfos)			09/19/08								Jean Elcard	**/
@@ -787,20 +787,14 @@ public:
 	void setCurrentOutgoingAirlift(int iNewValue);
 	void changeCurrentOutgoingAirlift(int iNewValue);
 	int getMaxOutgoingAirlift() const;
-	/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/************************************************************************************************/
-/* Influence Driven War                   06/06/10                                 Valkrionn    */
-/*                                                                                              */
-/* Original Author Moctezuma              End                                                   */
-/************************************************************************************************/
+
+	// Influence Driven War - Valkrionn, Moctezuma - 06/06/10
 	bool canBeInfluenced();
 	bool isFixedBorders();
 	void setFixedBorders(bool bNewValue);
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+
+	int calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iIncomingHealing = 0) const;
+
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 

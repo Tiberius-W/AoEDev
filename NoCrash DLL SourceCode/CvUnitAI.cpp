@@ -15277,30 +15277,9 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 	int iHurtUnitCount;
 	bool bRetreat;
 
-	if (plot()->getFeatureType() != NO_FEATURE)
-	{
-		if (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() != 0)
-		{
-			//Pass through
-			//(actively seeking a safe spot may result in unit getting stuck)
-			return false;
-		}
-	}
-	if (plot()->getPlotEffectType() != NO_PLOT_EFFECT)
-	{
-		if (GC.getPlotEffectInfo(plot()->getPlotEffectType()).getTurnDamage() != 0)
-		{
-			//Pass through
-			//(actively seeking a safe spot may result in unit getting stuck)
-			return false;
-		}
-	}
-//FfH: Added by Kael 10/01/2007 (so the AI won't try to sit and heal in areas where they cant heal)
+	//FfH: Added by Kael 10/01/2007 (so the AI won't try to sit and heal in areas where they cant heal)
 	if (healRate(plot()) <= 0)
-	{
 		return false;
-	}
-//FfH: End Add
 
 	pGroup = getGroup();
 
@@ -15311,6 +15290,7 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 
 	bRetreat = false;
 
+	// Solitary non-march units can heal if in a city or it only takes 1 turn
 	if (getGroup()->getNumUnits() == 1)
 	{
 		if (isHurt())

@@ -763,20 +763,6 @@ void CvPlot::doTurn()
 
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
 	{
-		if (GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getTurnDamage() != 0)
-		{
-			CLLNode<IDInfo>* pUnitNode;
-			CvUnit* pLoopUnit;
-
-			pUnitNode = headUnitNode();
-
-			while (pUnitNode != NULL)
-			{
-				pLoopUnit = ::getUnit(pUnitNode->m_data);
-				pUnitNode = nextUnitNode(pUnitNode);
-				pLoopUnit->doDamage(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getTurnDamage(), GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getDamageLimit(), NULL, GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getDamageType(), false);
-			}
-		}
 		// XXX
 		if (getPlotEffectType() != NO_PLOT_EFFECT && !CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPythonPerTurn()).empty())
 		{
@@ -14674,4 +14660,66 @@ int CvPlot::getMaxOutgoingAirlift() const
 		return GC.getImprovementInfo((ImprovementTypes)getImprovementType()).getMaxOutgoingAirlift();
 	}
 	return 0;
+}
+
+// Returns real damage that will be suffered by pUnit on next turn start if it ends its turn on this plot
+int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iIncomingHealing) const
+{
+	int iFeatureDamage = 0;
+	int iPlotEffectDamage = 0;
+	FeatureTypes eFeature = getFeatureType();
+	PlotEffectTypes ePlotEffect = getPlotEffectType();
+
+	// Negative feature damage... I guess you could have roving 'heal storms', or >100 resist that turns into healing, but that's not supported at this time.
+	if (eFeature != NO_FEATURE)
+		iFeatureDamage = std::max(0, GC.getFeatureInfo(eFeature).getTurnDamage() * (100 - pUnit->getDamageTypeResist((DamageTypes)GC.getFeatureInfo(eFeature).getDamageType())) / 100);
+	if (ePlotEffect != NO_PLOT_EFFECT)
+		iPlotEffectDamage = std::max(0, GC.getPlotEffectInfo(ePlotEffect).getTurnDamage() * (100 - pUnit->getDamageTypeResist((DamageTypes)GC.getPlotEffectInfo(ePlotEffect).getDamageType())) / 100);
+
+	// Common exits
+	if (iFeatureDamage == 0 && iPlotEffectDamage == 0)
+		return 0;
+	if (!bCheckDamageLimits)
+		return (iFeatureDamage + iPlotEffectDamage) * GC.getDefineINT("HIT_POINT_FACTOR");
+
+	// Start working with real damage instead of percentile
+	// Note this can be negative if incoming healing is high; we need to account for it though, otherwise heals too much if near limit
+	int iRealDamageTaken = pUnit->getDamageReal() - iIncomingHealing;
+	int iFeatureLimit;
+	int iPlotEffectLimit;
+
+	iFeatureDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
+	iPlotEffectDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	// Still hopeful for easy solution (we've only one damage limit to deal with; apply the lesser of itself, or >0 diff from limit)
+	if (iFeatureDamage == 0)
+	{
+		iPlotEffectLimit = GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
+		return (std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken)));
+	}
+	if (iPlotEffectDamage == 0)
+	{
+		iFeatureLimit = GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
+		return (std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken)));
+	}
+
+	// Ugh. Ok, calculating them in the right order is necessary to avoid weird instances of getting unexpectedly reduced damage when near a threshold
+	int iRealDamage = 0;
+	iFeatureLimit = GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
+	iPlotEffectLimit = GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
+
+	// Case 1: Apply plot effect first
+	if (iFeatureLimit >= iPlotEffectLimit)
+	{
+		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken));
+		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken));
+		return iRealDamage;
+	}
+	// Case 2: We're doing feature first
+	else
+	{
+		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken));
+		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken));
+		return iRealDamage;
+	}
 }

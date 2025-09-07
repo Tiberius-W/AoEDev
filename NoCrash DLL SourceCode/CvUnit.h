@@ -168,12 +168,13 @@ public:
 
 	bool canSeaPatrol(const CvPlot* pPlot) const;																									// Exposed to Python
 
-	bool canHeal(const CvPlot* pPlot) const;																											// Exposed to Python
-	bool canSentry(const CvPlot* pPlot) const;																										// Exposed to Python
+	bool canHealMission(const CvPlot* pPlot) const;																											// Exposed to Python
+	bool canSentryMission(const CvPlot* pPlot) const;																										// Exposed to Python
 
 	int healRate(const CvPlot* pPlot) const;
 	int healTurns(const CvPlot* pPlot) const;
-	void doHeal();
+	bool isTurnHealBlocked() const;
+	int calcTurnHealthChangeReal() const;
 
 	bool canAirlift(const CvPlot* pPlot) const;																										// Exposed to Python
 	bool canAirliftAt(const CvPlot* pPlot, int iX, int iY) const;																	// Exposed to Python

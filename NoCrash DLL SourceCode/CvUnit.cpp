@@ -2082,11 +2082,9 @@ void CvUnit::doTurn()
 	FAssertMsg(!isDead(), "isDead did not return false as expected");
 	FAssertMsg(getGroup() != NULL, "getGroup() is not expected to be equal with NULL");
 
-/*************************************************************************************************/
-/**	EquipRedux								05/31/09								Xienwolf	**/
-/**			Cleanup function for cases where somehow the container is empty and alive			**/
-/**		Removes the need to add units for each equipment item introduced into the game			**/
-/*************************************************************************************************/
+	// EquipRedux - Xienwolf - 05/31/09
+	// Cleanup function for cases where somehow the container is empty and alive
+	// Removes the need to add units for each equipment item introduced into the game
 	if(getUnitType() == GC.getDefineINT("EQUIPMENT_HOLDER"))
 	{
 		if(getNumPromotions() < 1)
@@ -2097,14 +2095,8 @@ void CvUnit::doTurn()
 		//No reason to run any functions found in this routine for containers, most should be blocked anyway, those which are not would cause issues.
 	}
 	validateCommanderMinion();
-/*************************************************************************************************/
-/**	EquipRedux								END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	PyPromote								04/08/08	Written: Grey Fox	Imported: Xienwolf	**/
-/**																								**/
-/**						Allows Python Functions to be run each Turn								**/
-/*************************************************************************************************/
+
+	// PyPromote - Grey Fox, Xienwolf - 04/08/08 - Allows Python Functions to be run each Turn
 	if (!CvString(GC.getUnitInfo(getUnitType()).getPyPerTurn()).empty())
 	{
 		CyUnit* pyUnit = new CyUnit(this);
@@ -2114,42 +2106,17 @@ void CvUnit::doTurn()
 		gDLL->getPythonIFace()->callFunction(PYSpellModule, "effectUnits", argsList.makeFunctionArgs()); //, &lResult
 		delete pyUnit; // python fxn must not hold on to this pointer
 	}
-/*************************************************************************************************/
-/**	PyPromote								END													**/
-/*************************************************************************************************/
-//FfH Spell System: Added by Kael 07/23/2007
+
+	// NOTE: It may be possible, if xml is altered, for the unit to be killed by DoT on terrain / plot effects!
+	// This method takes into account healing and turn DoT effects both
+	changeDamageReal(-calcTurnHealthChangeReal());
+
+	if (!hasMoved() && !isCargo())
+		changeFortifyTurns(1);
+
 	int iI;
 	CvPlot* pPlot = plot();
-	if (hasMoved())
-	{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if (isAlwaysHeal() || isBarbarian())
-/**								----  End Original Code  ----									**/
-		if (isAlwaysHeal() || isBarbarian() || isAIControl())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-		{
-			doHeal();
-		}
-	}
-	else
-	{
-		if (isHurt())
-		{
-			doHeal();
-		}
 
-		if (!isCargo())
-		{
-			changeFortifyTurns(1);
-		}
-	}
 /*************************************************************************************************/
 /**	NonAbandon 								05/15/08								Xienwolf	**/
 /**							Blocks Abandonment Check from Happening								**/
@@ -2609,52 +2576,22 @@ void CvUnit::doTurn()
 		collectBlockadeGold();
 	}
 
-//FfH: Modified by Kael 02/03/2009 (spy intercept and feature damage commented out for performance, healing moved to earlier in the function)
-//	if (isSpy() && isIntruding() && !isCargo())
-//	{
-//		TeamTypes eTeam = plot()->getTeam();
-//		if (NO_TEAM != eTeam)
-//		{
-//			if (GET_TEAM(getTeam()).isOpenBorders(eTeam))
-//			{
-//				testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_NO_INTRUDE_INTERCEPT_MOD"));
-//			}
-//			else
-//			{
-//				testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_INTERCEPT_MOD"));
-//			}
-//		}
-//	}
-//	if (baseCombatStr() > 0)
-//	{
-//		FeatureTypes eFeature = plot()->getFeatureType();
-//		if (NO_FEATURE != eFeature)
-//		{
-//			if (0 != GC.getFeatureInfo(eFeature).getTurnDamage())
-//			{
-//				changeDamage(GC.getFeatureInfo(eFeature).getTurnDamage(), NO_PLAYER);
-//			}
-//		}
-//	}
-//	if (hasMoved())
-//	{
-//		if (isAlwaysHeal())
-//		{
-//			doHeal();
-//		}
-//	}
-//	else
-//	{
-//		if (isHurt())
-//		{
-//			doHeal();
-//		}
-//		if (!isCargo())
-//		{
-//			changeFortifyTurns(1);
-//		}
-//	}
-//FfH:End Modify
+	// FfH: Modified by Kael 02/03/2009 (spy intercept and feature damage commented out for performance, healing moved to earlier in the function)
+	// if (isSpy() && isIntruding() && !isCargo())
+	// {
+	// 	TeamTypes eTeam = plot()->getTeam();
+	// 	if (NO_TEAM != eTeam)
+	// 	{
+	// 		if (GET_TEAM(getTeam()).isOpenBorders(eTeam))
+	// 		{
+	// 			testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_NO_INTRUDE_INTERCEPT_MOD"));
+	// 		}
+	// 		else
+	// 		{
+	// 			testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_INTERCEPT_MOD"));
+	// 		}
+	// 	}
+	// }
 
 /*************************************************************************************************/
 /**	MobileCage								 6/17/2009								Cyther		**/
@@ -6830,7 +6767,8 @@ void CvUnit::airCircle(bool bStart)
 }
 
 
-bool CvUnit::canSentry(const CvPlot* pPlot) const
+// Used for checking whether the sentry mission is valid
+bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
@@ -6845,8 +6783,8 @@ bool CvUnit::canSentry(const CvPlot* pPlot) const
 	return true;
 }
 
-
-bool CvUnit::canHeal(const CvPlot* pPlot) const
+// Used for checking whether the heal mission is valid
+bool CvUnit::canHealMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (isAIControl())
@@ -6865,28 +6803,31 @@ bool CvUnit::canHeal(const CvPlot* pPlot) const
 	return true;
 }
 
-// Returns percentile healing per turn, for this unit on given pPlot
+
+// Returns percentile healing per turn, for this unit on given pPlot.
+// Does NOT account for whether unit cannot heal due to e.g. movement.
+// Does NOT account for damage from tile; use CvPlot::calcTurnDamage for that.
 int CvUnit::healRate(const CvPlot* pPlot) const
 {
 	PROFILE_FUNC();
-
-	CLLNode<IDInfo>* pUnitNode;
-	CvCity* pCity;
-	CvUnit* pLoopUnit;
-	CvPlot* pLoopPlot;
-	int iTotalHeal;
-	int iHeal;
-	int iBestHeal;
-	int iI;
 
 	//FfH: Added by Kael 11/05/2008
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
 		return 0;
 
-	pCity = pPlot->getPlotCity();
+	// Blaze: Shortcut for perf, since this is an expensive function to run in full on every unit:
+	if (pPlot->calcTurnDamageReal(this, false) == 0 && !isHurt())
+		return 0;
 
-	iTotalHeal = 0;
+	CLLNode<IDInfo>* pUnitNode;
+	CvCity* pCity = pPlot->getPlotCity();
+	CvUnit* pLoopUnit;
+	CvPlot* pLoopPlot;
+	int iTotalHeal = 0;
+	int iHeal;
+	int iBestHeal;
 
+	// City or tile heal rates. Includes impacts from promotions here
 	if (pPlot->isCity(true, getTeam()))
 	{
 		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE") + (GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()) ? getExtraFriendlyHeal() : getExtraNeutralHeal());
@@ -6920,16 +6861,17 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	}
 
 	// XXX optimize this (save it?)
+	// Blaze: Can make a cache in CvPlot that updates on turn start, but 
+	// it will be invalidated during unit move, so you'd need an additional arg
+	// to track if this method is being called during turn start, or for UI reasons
 	iBestHeal = 0;
-
 	pUnitNode = pPlot->headUnitNode();
-
 	while (pUnitNode != NULL)
 	{
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = pPlot->nextUnitNode(pUnitNode);
 
-		if (pLoopUnit->getTeam() == getTeam()) // XXX what about alliances?
+		if (GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
 		{
 			iHeal = pLoopUnit->getSameTileHeal();
 
@@ -6937,10 +6879,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 				iBestHeal = iHeal;
 		}
 	}
-
 	// "Heal on adjacent tiles" literally means adjacent;
 	// unit design should always pair adjacent heal with an equal or greater "heal on same tile" effect
-	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 	{
 		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
 
@@ -6957,7 +6898,7 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 			pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
 
-			if (pLoopUnit->getTeam() != getTeam()) // XXX what about alliances?
+			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
 				continue;
 
 			iHeal = pLoopUnit->getAdjacentTileHeal();
@@ -6966,53 +6907,63 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 				iBestHeal = iHeal;
 		}
 	}
-
 	iTotalHeal += iBestHeal;
-	// XXX
 
-	//FfH: Added by Kael 10/29/2007
+	//FfH: Added by Kael 10/29/2007 (improvement heal rates)
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
 
+	// Promotions cannot make heal rate negative... for now.
 	if (iTotalHeal < 0)
 		iTotalHeal = 0;
 
 	return iTotalHeal;
 }
 
-// Returns MAX_INT if never heals, calculates for healing on given pPlot
+// Returns MAX_INT if never heals. Assumes unit can heal this turn on the tile (march/has not moved).
+// Of simplicity, does not account for damage limits from tile damage effects; this can thus overestimate heal turns in some cases.
+// However it can also underestimate heal turns if the unit moves onto a damaging tile, and does not heal but is instead wounded on 1st turn.
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
-	int iHeal;
+	int iHealReal;
 	int iTurns;
 
 	if (!isHurt())
 		return 0;
 
-	iHeal = healRate(pPlot);
+	iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
+	iHealReal -= pPlot->calcTurnDamageReal(this, false);
 
-	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
-	FeatureTypes eFeature = pPlot->getFeatureType();
-	if (eFeature != NO_FEATURE)
-		iHeal -= GC.getFeatureInfo(eFeature).getTurnDamage();
-
-	if (iHeal > 0)
-	{
-		iTurns = (getDamageReal() / (iHeal * GC.getDefineINT("HIT_POINT_FACTOR")));
-		if (getDamageReal() % (iHeal * GC.getDefineINT("HIT_POINT_FACTOR")) != 0)
-			iTurns++;
-
-		return iTurns;
-	}
-	else
+	if (iHealReal <= 0)
 		return MAX_INT;
+
+	iTurns = (getDamageReal() / (iHealReal));
+	if (getDamageReal() % (iHealReal) != 0)
+		iTurns++;
+
+	return iTurns;
 }
 
-void CvUnit::doHeal()
+// Checks whether this can't heal due to move
+bool CvUnit::isTurnHealBlocked() const
 {
-	changeDamage(-(healRate(plot())));
+	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
+	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isAIControl()))
+		return true;
+
+	return false;
 }
 
+// Given the current state of the unit, how much should the unit's health change (real damage) on turn start?
+// Incorporates healing and feature/plot effect damage
+int CvUnit::calcTurnHealthChangeReal() const
+{
+	int iHealReal = isTurnHealBlocked() ? 0 : healRate(plot()) * GC.getDefineINT("HIT_POINT_FACTOR");
+	int iDamageRealIncoming = plot()->calcTurnDamageReal(this, true, iHealReal);
+
+	// Can't report overhealing; cap the positive result to that which is our actual health lost
+	return (std::min(getDamageReal(), iHealReal - iDamageRealIncoming));
+}
 
 bool CvUnit::canAirlift(const CvPlot* pPlot) const
 {
@@ -16229,7 +16180,7 @@ void CvUnit::changeDamageReal(int iChange, PlayerTypes ePlayer)
 	setDamageReal((getDamageReal() + iChange), ePlayer);
 }
 
-// Returns damage rounded to nearest percent
+// Returns damage rounded down to nearest whole percent
 int CvUnit::getDamage() const
 {
 	return getDamageReal() / GC.getDefineINT("HIT_POINT_FACTOR");
