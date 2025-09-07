@@ -14663,7 +14663,7 @@ int CvPlot::getMaxOutgoingAirlift() const
 }
 
 // Returns real damage that will be suffered by pUnit on next turn start if it ends its turn on this plot
-int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iIncomingHealing) const
+int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealing) const
 {
 	int iFeatureDamage = 0;
 	int iPlotEffectDamage = 0;
@@ -14683,43 +14683,54 @@ int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int
 		return (iFeatureDamage + iPlotEffectDamage) * GC.getDefineINT("HIT_POINT_FACTOR");
 
 	// Start working with real damage instead of percentile
-	// Note this can be negative if incoming healing is high; we need to account for it though, otherwise heals too much if near limit
-	int iRealDamageTaken = pUnit->getDamageReal() - iIncomingHealing;
-	int iFeatureLimit;
-	int iPlotEffectLimit;
-
 	iFeatureDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
 	iPlotEffectDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
 
-	// Still hopeful for easy solution (we've only one damage limit to deal with; apply the lesser of itself, or >0 diff from limit)
+	// The damage upper limit comes from tile properties, but lower limit on damage output only applies if damage > healing
+	// This way units can't "heal up" to a damage threshold and then sit there; they either will A) eventually fully heal or B) not heal / be damaged
+	if (iFeatureDamage + iPlotEffectDamage <= iMaxIncomingHealing)
+		return (iFeatureDamage + iPlotEffectDamage);
+
+	// Note this can be negative; we need to account for max potential healing though
+	int iDamageRealTaken = pUnit->getDamageReal() - iMaxIncomingHealing;
+
+	// Bit squirrly, but we need either or both
+	int iFeatureLimit = eFeature == NO_FEATURE ? 0 : GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
+	int iPlotEffectLimit = ePlotEffect == NO_PLOT_EFFECT ? 0 : GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
+
+	// Still hopeful for easy solution (we've only one damage limit to deal with, and we know damage > healing for that type)
+	// iDamageRealTaken accounts for incoming healing already; so our damage might be limited to (0 or whatever gets us down to the limit, after healing)
 	if (iFeatureDamage == 0)
-	{
-		iPlotEffectLimit = GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
-		return (std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken)));
-	}
+		return (std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken)));
 	if (iPlotEffectDamage == 0)
-	{
-		iFeatureLimit = GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
-		return (std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken)));
-	}
+		return (std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken)));
 
-	// Ugh. Ok, calculating them in the right order is necessary to avoid weird instances of getting unexpectedly reduced damage when near a threshold
+	// Ugh. Ok, calculating them in the right order is necessary to avoid weird instances of getting unexpectedly altered damage when near a threshold
 	int iRealDamage = 0;
-	iFeatureLimit = GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
-	iPlotEffectLimit = GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
 
-	// Case 1: Apply plot effect first
-	if (iFeatureLimit >= iPlotEffectLimit)
+	// We need to calculate damage from the source with a lower limit first
+	if (iPlotEffectLimit <= iFeatureLimit)
 	{
-		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken));
-		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken));
+		// We need to apply full damage to first check if it's gonna be outhealed
+		if (iPlotEffectDamage <= iMaxIncomingHealing)
+			iRealDamage += iPlotEffectDamage;
+		// Otherwise, the damage output of first might be limited to however much will take us to its limit
+		else 
+			iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken));
+
+		// We know here the net is greater than healing, but need to account for damage calculated above in our upper limit
+		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken - iRealDamage));
 		return iRealDamage;
 	}
-	// Case 2: We're doing feature first
+	// Mirror of above
 	else
 	{
-		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iRealDamageTaken));
-		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iRealDamageTaken));
+		if (iFeatureDamage <= iMaxIncomingHealing)
+			iRealDamage += iFeatureDamage;
+		else
+			iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken));
+
+		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken - iRealDamage));
 		return iRealDamage;
 	}
 }
