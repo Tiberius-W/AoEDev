@@ -175,7 +175,7 @@ public:
 	int healRate(const CvPlot* pPlot) const;
 	int healTurns(const CvPlot* pPlot) const;
 	bool isTurnHealBlocked() const;
-	int calcTurnHealthChangeReal() const;
+	int calcTurnHealthChangeReal() const;																							// Exposed to Python
 
 	bool canAirlift(const CvPlot* pPlot) const;																										// Exposed to Python
 	bool canAirliftAt(const CvPlot* pPlot, int iX, int iY) const;																	// Exposed to Python

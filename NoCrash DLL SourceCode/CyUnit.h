@@ -61,6 +61,8 @@ public:
 	bool canHealMission(CyPlot* pPlot);
 	bool canSentryMission(CyPlot* pPlot);
 
+	int calcTurnHealthChangeReal() const;
+
 	bool canAirlift(CyPlot* pPlot);
 	bool canAirliftAt(CyPlot* pPlot, int iX, int iY);
 

@@ -189,6 +189,11 @@ bool CyUnit::canSentryMission(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canSentryMission(pPlot->getPlot()) : false;
 }
 
+int CyUnit::calcTurnHealthChangeReal() const
+{
+	return m_pUnit ? m_pUnit->calcTurnHealthChangeReal() : 0;
+}
+
 bool CyUnit::canAirlift(CyPlot* pPlot)
 {
 	return m_pUnit ? m_pUnit->canAirlift(pPlot->getPlot()) : false;

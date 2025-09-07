@@ -3549,9 +3549,9 @@ def reqSacrificeSlaveCualli(caster):
 		pUnit = pPlot.getUnit(i)
 		if pUnit.getUnitType() == getInfoType('UNIT_SLAVE'):
 			return True
-	
-	return False			
-	
+
+	return False
+
 def spellSacrificeSlaveCualli(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pPlot = caster.plot()
@@ -3574,7 +3574,7 @@ def spellSacrificeSlaveCualli(caster):
 	iLevel=iLevel/2
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
-		
+
 		if pUnit.getUnitCombatType()==getInfoType("UNITCOMBAT_DISCIPLE"):
 			iEmpower1 = getInfoType('PROMOTION_SACRIFICIAL_BLOOD_1')
 			iEmpower2 = getInfoType('PROMOTION_SACRIFICIAL_BLOOD_2')
@@ -3607,7 +3607,6 @@ def spellSacrificeSlaveCualli(caster):
 				pUnit.setHasPromotion(iEmpowerDivine, True)
 			if(bBrigit and bSauros):
 				pUnit.setHasPromotion(iEmpowerFire,True)
-			
 
 			return
 			
@@ -3637,7 +3636,6 @@ def reqPurify(caster):
 	pPlot = caster.plot()
 	if reqSanctify(caster):
 		return True
-
 
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
