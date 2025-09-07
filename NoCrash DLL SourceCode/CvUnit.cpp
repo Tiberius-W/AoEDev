@@ -188,7 +188,6 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 
 	//--------------------------------
 	// Init pre-setup() data
-	// KNOWN ISSUE: Since this is called before promotions are on the unit, LoS impacting ones will not take effect until the unit moves.
 	setXY(iX, iY, false, false);
 
 	//--------------------------------
@@ -26060,10 +26059,13 @@ bool CvUnit::isFlying() const
 
 void CvUnit::changeFlying(int iNewValue)
 {
-	if (iNewValue != 0)
-	{
-		m_iFlying += iNewValue;
-	}
+	if (iNewValue == 0)
+		return;
+
+	plot()->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
+	m_iFlying += iNewValue;
+	plot()->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true);
+
 }
 
 bool CvUnit::isHeld() const
