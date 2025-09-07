@@ -171,6 +171,7 @@ public:
 	bool canHealMission(const CvPlot* pPlot) const;																											// Exposed to Python
 	bool canSentryMission(const CvPlot* pPlot) const;																										// Exposed to Python
 
+	int getHealBonusFromUnits(const CvPlot* pPlot) const;
 	int healRate(const CvPlot* pPlot) const;
 	int healTurns(const CvPlot* pPlot) const;
 	bool isTurnHealBlocked() const;

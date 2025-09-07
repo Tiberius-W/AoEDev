@@ -2520,13 +2520,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_HEAL)
 			{
 				iTurns = 0;
-
 				pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
 
 				while (pSelectedUnitNode != NULL)
 				{
 					pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
-					iTurns = std::max(iTurns, pSelectedUnit->healTurns(pMissionPlot));
+					iI = pSelectedUnit->healTurns(pMissionPlot);
+					// If a unit can't heal on this tile, show the time for the longest one that can
+					iTurns = std::max(iTurns, iI == MAX_INT ? 0 : iI);
 
 					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
 				}

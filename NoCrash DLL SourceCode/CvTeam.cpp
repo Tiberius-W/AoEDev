@@ -4464,6 +4464,8 @@ void CvTeam::setForcePeace(TeamTypes eIndex, bool bNewValue)
 	}
 }
 
+
+// Returns true if this team **is a vassal of** argument eIndex team
 bool CvTeam::isVassal(TeamTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -6816,6 +6818,12 @@ void CvTeam::cancelDefensivePacts()
 }
 
 
+// Checks defensive pacts and vassalization, not just team status
+bool CvTeam::isMilitaryAlly(TeamTypes eTeam) const
+{
+	return (eTeam == getID() || isVassal(eTeam) || GET_TEAM(eTeam).isVassal(getID()) || isDefensivePact(eTeam));
+}
+
 // Checks for team, vassal, and open borders
 bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 {
@@ -6833,6 +6841,7 @@ bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 
 	return false;
 }
+
 
 int CvTeam::getEspionagePointsAgainstTeam(TeamTypes eIndex) const
 {
@@ -7621,10 +7630,4 @@ bool CvTeam::isRevealBonus(BonusTypes eBonus) const
 		}
 	}
 	return false;
-}
-
-// Checks defensive pacts and vassalization, not just team status
-bool CvTeam::isMilitaryAlly(TeamTypes eTeam) const
-{
-	return (eTeam == getID() || isVassal(eTeam) || GET_TEAM(eTeam).isVassal(getID()) || isDefensivePact(eTeam));
 }

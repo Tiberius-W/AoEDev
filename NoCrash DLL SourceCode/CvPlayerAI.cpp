@@ -3941,6 +3941,7 @@ bool CvPlayerAI::AI_isCommercePlot(CvPlot* pPlot) const
 // The border cache is done by team and works for all game types.  The border cache is reset for all
 // plots when war or peace are declared, and reset over a limited range whenever a ownership over a plot
 // changes.
+// ^^ OK cool. Does this return true if plot has danger within range, or false? What does testMoves do (recursive check?)
 bool CvPlayerAI::AI_getAnyPlotDanger(CvPlot* pPlot, int iRange, bool bTestMoves) const
 {
 	PROFILE_FUNC();

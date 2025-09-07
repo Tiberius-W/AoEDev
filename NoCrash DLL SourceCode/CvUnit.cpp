@@ -4129,15 +4129,10 @@ bool CvUnit::isActionRecommended(int iAction)
 
 	if (GC.getActionInfo(iAction).getMissionType() == MISSION_HEAL)
 	{
-		if (isHurt())
+		if (isHurt() && !isTurnHealBlocked())
 		{
-			if (!hasMoved())
-			{
-				if ((pPlot->getTeam() == getTeam()) || (healTurns(pPlot) < 4))
-				{
-					return true;
-				}
-			}
+			if (GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()) || healTurns(pPlot) <= 4)
+				return true;
 		}
 	}
 
@@ -6804,7 +6799,67 @@ bool CvUnit::canHealMission(const CvPlot* pPlot) const
 }
 
 
+// Returns the healrate provided by units on this and adjacent tiles
+int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
+{
+	// XXX optimize this (save it?)
+	// Blaze: Can make a cache in CvPlot that updates on turn start, but 
+	// it will be invalidated during unit move, so you'd need an additional arg
+	// to track if this method is being called during turn start, or for UI/other reasons
+
+	int iHeal;
+	int iBestHeal = 0;
+	CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
+	CvUnit* pLoopUnit;
+	CvPlot* pLoopPlot;
+
+	while (pUnitNode != NULL)
+	{
+		pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = pPlot->nextUnitNode(pUnitNode);
+
+		if (GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+		{
+			iHeal = pLoopUnit->getSameTileHeal();
+
+			if (iHeal > iBestHeal)
+				iBestHeal = iHeal;
+		}
+	}
+	// "Heal on adjacent tiles" literally means adjacent;
+	// unit design should thus always pair adjacent heal with an equal or greater "heal on same tile" effect
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+	{
+		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pLoopPlot == NULL)
+			continue;
+
+		if (pLoopPlot->area() != pPlot->area())
+			continue;
+
+		pUnitNode = pLoopPlot->headUnitNode();
+
+		while (pUnitNode != NULL)
+		{
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+
+			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+				continue;
+
+			iHeal = pLoopUnit->getAdjacentTileHeal();
+
+			if (iHeal > iBestHeal)
+				iBestHeal = iHeal;
+		}
+	}
+
+	return iBestHeal;
+}
+
 // Returns percentile healing per turn, for this unit on given pPlot.
+// Accounts for this unit promos, other units, empire and location effects.
 // Does NOT account for whether unit cannot heal due to e.g. movement.
 // Does NOT account for damage from tile; use CvPlot::calcTurnDamage for that.
 int CvUnit::healRate(const CvPlot* pPlot) const
@@ -6815,17 +6870,12 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
 		return 0;
 
-	// Blaze: Shortcut for perf, since this is an expensive function to run in full on every unit:
+	// Blaze: Shortcut for perf, since this is an expensive method to run in full on every unit:
 	if (pPlot->calcTurnDamageReal(this, false) == 0 && !isHurt())
 		return 0;
 
-	CLLNode<IDInfo>* pUnitNode;
 	CvCity* pCity = pPlot->getPlotCity();
-	CvUnit* pLoopUnit;
-	CvPlot* pLoopPlot;
 	int iTotalHeal = 0;
-	int iHeal;
-	int iBestHeal;
 
 	// City or tile heal rates. Includes impacts from promotions here
 	if (pPlot->isCity(true, getTeam()))
@@ -6860,64 +6910,14 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 		}
 	}
 
-	// XXX optimize this (save it?)
-	// Blaze: Can make a cache in CvPlot that updates on turn start, but 
-	// it will be invalidated during unit move, so you'd need an additional arg
-	// to track if this method is being called during turn start, or for UI reasons
-	iBestHeal = 0;
-	pUnitNode = pPlot->headUnitNode();
-	while (pUnitNode != NULL)
-	{
-		pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = pPlot->nextUnitNode(pUnitNode);
-
-		if (GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
-		{
-			iHeal = pLoopUnit->getSameTileHeal();
-
-			if (iHeal > iBestHeal)
-				iBestHeal = iHeal;
-		}
-	}
-	// "Heal on adjacent tiles" literally means adjacent;
-	// unit design should always pair adjacent heal with an equal or greater "heal on same tile" effect
-	for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
-	{
-		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
-
-		if (pLoopPlot == NULL)
-			continue;
-
-		if (pLoopPlot->area() != pPlot->area())
-			continue;
-
-		pUnitNode = pLoopPlot->headUnitNode();
-
-		while (pUnitNode != NULL)
-		{
-			pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
-
-			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
-				continue;
-
-			iHeal = pLoopUnit->getAdjacentTileHeal();
-
-			if (iHeal > iBestHeal)
-				iBestHeal = iHeal;
-		}
-	}
-	iTotalHeal += iBestHeal;
+	iTotalHeal += getHealBonusFromUnits(pPlot);
 
 	//FfH: Added by Kael 10/29/2007 (improvement heal rates)
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
 
 	// Promotions cannot make heal rate negative... for now.
-	if (iTotalHeal < 0)
-		iTotalHeal = 0;
-
-	return iTotalHeal;
+	return std::max(0, iTotalHeal);
 }
 
 // Returns MAX_INT if never heals, or will die to DoT before healing.
