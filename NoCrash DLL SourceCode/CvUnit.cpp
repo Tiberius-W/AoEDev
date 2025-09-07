@@ -23768,6 +23768,7 @@ bool CvUnit::canCastTargetPlot(int spell, bool bTestVisible, CvPlot* pTargetPlot
 
 	return true;
 }
+
 int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const {
 	int iValue = 0;
 
@@ -23789,7 +23790,7 @@ int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iD
 		if (iDmgType != -1)
 		{
 			iValue *= 100;
-			iValue /= std::max(1, 100 + pLoopUnit->getDamageTypeResist((DamageTypes)iDmgType));
+			iValue /= std::max(1, 100 - pLoopUnit->getDamageTypeResist((DamageTypes)iDmgType));
 		}
 		iValue = std::max(iValue, 3);
 	}
