@@ -6,7 +6,6 @@
 <!-- Basic Infos -->
 <Civ4BasicInfos xmlns="x-schema:DynRel_CIV4BasicInfoSchema.xml">
 	<ConceptInfos>
-
 		<ConceptInfo>
 			<Type>CONCEPT_DYNREL</Type>
 			<Description>TXT_KEY_CONCEPT_DYNREL</Description>

@@ -368,5 +368,10 @@
 			<Description>TXT_KEY_CONCEPT_DICTIONARY</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_DICTIONARY_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_UNIT_VISION</Type>
+			<Description>TXT_KEY_CONCEPT_UNIT_VISION</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_UNIT_VISION_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

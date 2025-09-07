@@ -371,11 +371,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_WHAT_IS_FALL_FROM_HEAVEN</Tag>
-		<English>What is Fall from Heaven?</English>
-		<French>Qu'est ce que Fall From Heaven?</French>
-		<German>Was ist Fall from Heaven</German>
-		<Italian>What is Fall from Heaven?</Italian>
-		<Spanish>¿Qué es Fall from Heaven?</Spanish>
+		<English>-- What is Fall from Heaven? --</English>
+		<French>-- Qu'est ce que Fall From Heaven? --</French>
+		<German>-- Was ist Fall from Heaven --</German>
+		<Italian>-- What is Fall from Heaven? --</Italian>
+		<Spanish>-- ¿Qué es Fall from Heaven? --</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_WHAT_IS_FALL_FROM_HEAVEN_PEDIA</Tag>
@@ -1104,9 +1104,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_DICTIONARY_PEDIA</Tag>
-		<English>TODO (copy+translate from French)</English>
-		<French>
-		[H1]ICONS[\H1]
+		<English>TODO (copy+translate from French)[NEWLINE][H1]ICONS[\H1]
 [ICON_ANGRYPOP] = ICON_ANGRYPOP
 [ICON_BAD_FOOD] = ICON_BAD_FOOD
 [ICON_BAD_GOLD] = ICON_BAD_GOLD
@@ -1136,10 +1134,56 @@
 [ICON_STRENGTH] = ICON_STRENGTH
 [ICON_TRADE] = ICON_TRADE
 [ICON_UNHAPPY] = ICON_UNHAPPY
-[ICON_UNHEALTHY] = ICON_UNHEALTHY
-</French>
+[ICON_UNHEALTHY] = ICON_UNHEALTHY</English>
+		<French>[H1]ICONS[\H1]
+[ICON_ANGRYPOP] = ICON_ANGRYPOP
+[ICON_BAD_FOOD] = ICON_BAD_FOOD
+[ICON_BAD_GOLD] = ICON_BAD_GOLD
+[ICON_BULLET] = ICON_BULLET
+[ICON_COMMERCE] = ICON_COMMERCE
+[ICON_CULTURE] = ICON_CULTURE
+[ICON_DEFENSE] = ICON_DEFENSE
+[ICON_DEFENSIVEPACT] = ICON_DEFENSIVEPACT
+[ICON_EATENFOOD] = ICON_EATENFOOD
+[ICON_ESPIONAGE] = ICON_ESPIONAGE, unused in Ashes of Erebus
+[ICON_FOOD] = ICON_FOOD
+[ICON_GOLD] = ICON_GOLD
+[ICON_GOLDENAGE] = ICON_GOLDENAGE
+[ICON_GREATPEOPLE] = ICON_GREATPEOPLE
+[ICON_HAPPY] = ICON_HAPPY
+[ICON_HEALTHY] = ICON_HEALTHY
+[ICON_MAP] = ICON_MAP
+[ICON_MOVES] = ICON_MOVES
+[ICON_OCCUPATION] = ICON_OCCUPATION
+[ICON_OPENBORDERS] = ICON_OPENBORDERS
+[ICON_POWER] = ICON_POWER
+[ICON_PRODUCTION] = ICON_PRODUCTION
+[ICON_RELIGION] = ICON_RELIGION
+[ICON_RESEARCH] = ICON_RESEARCH
+[ICON_SILVER_STAR] = ICON_SILVER_STAR
+[ICON_STAR] = ICON_STAR
+[ICON_STRENGTH] = ICON_STRENGTH
+[ICON_TRADE] = ICON_TRADE
+[ICON_UNHAPPY] = ICON_UNHAPPY
+[ICON_UNHEALTHY] = ICON_UNHEALTHY</French>
 		<German>TODO (copy+translate from French)</German>
 		<Italian>TODO (copy+translate from French)</Italian>
 		<Spanish>TODO (copy+translate from French)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_UNIT_VISION</Tag>
+		<English>Vision, Perception, and Invisibility</English>
+		<French>Vision, Perception, and Invisibility</French>
+		<German>Vision, Perception, and Invisibility</German>
+		<Italian>Vision, Perception, and Invisibility</Italian>
+		<Spanish>Vision, Perception, and Invisibility</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_UNIT_VISION_PEDIA</Tag>
+		<English>[H1]Vision[\H1][NEWLINE]In Ashes of Erebus, there are more effects that can change unit vision than baseline Civ 4. By default, most units can "see" with a range of 1 tile. However, i</English>
+		<French>Dictionnaire</French>
+		<German>Dictionary</German>
+		<Italian>Dictionary</Italian>
+		<Spanish>Dictionary</Spanish>
 	</TEXT>
 </Civ4GameText>
