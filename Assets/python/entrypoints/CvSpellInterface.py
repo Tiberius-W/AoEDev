@@ -4144,10 +4144,9 @@ def reqSprint(caster):
 
 def reqStasis(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-	if pPlayer.isHuman() == False:
-		if pPlayer.getNumCities() < 5:
-			return False
-	return True
+	if pPlayer.isHasTech(getInfoType('TECH_KNOWLEDGE_OF_THE_ETHER')):
+		return True
+	return False
 
 def spellStasis(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
