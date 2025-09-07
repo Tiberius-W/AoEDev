@@ -3729,7 +3729,13 @@ def spellSanctify(caster):
 	if pPlot.getImprovementType() == Lair["Graveyard"]:
 		pPlot.setImprovementType(-1)
 		pPlayer.changeGlobalCounterContrib(-1)
-		newUnit = pPlayer.initUnit(getInfoType('UNIT_TOMB_WARDEN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		if pPlayer.isHasTech(getInfoType('TECH_DIVINATION')):
+			newUnit = pPlayer.initUnit(getInfoType('UNIT_TOMB_WARDEN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		else:
+			newUnit = pPlayer.initUnit(getInfoType('UNIT_SPEARMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.setHasPromotion(getInfoType('PROMOTION_ANGEL'), True)
+			newUnit.setHasPromotion(getInfoType('PROMOTION_MEDIC1'), True)
+
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_PLOT_COUNTER):
 		for x,y in plotsInCircularRange( caster.getX(), caster.getY(), iRange ):
 			bSwapped = False
