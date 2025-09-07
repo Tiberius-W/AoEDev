@@ -793,7 +793,7 @@ public:
 	bool isFixedBorders();
 	void setFixedBorders(bool bNewValue);
 
-	int calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealing = 0) const;
+	int calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealReal = 0) const;
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);

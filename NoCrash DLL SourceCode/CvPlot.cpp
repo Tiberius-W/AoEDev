@@ -14663,7 +14663,7 @@ int CvPlot::getMaxOutgoingAirlift() const
 }
 
 // Returns real damage that will be suffered by pUnit on next turn start if it ends its turn on this plot
-int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealing) const
+int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealReal) const
 {
 	int iFeatureDamage = 0;
 	int iPlotEffectDamage = 0;
@@ -14688,11 +14688,11 @@ int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int
 
 	// The damage upper limit comes from tile properties, but lower limit on damage output only applies if damage > healing
 	// This way units can't "heal up" to a damage threshold and then sit there; they either will A) eventually fully heal or B) not heal / be damaged
-	if (iFeatureDamage + iPlotEffectDamage <= iMaxIncomingHealing)
+	if (iFeatureDamage + iPlotEffectDamage <= iMaxIncomingHealReal)
 		return (iFeatureDamage + iPlotEffectDamage);
 
 	// Note this can be negative; we need to account for max potential healing though
-	int iDamageRealTaken = pUnit->getDamageReal() - iMaxIncomingHealing;
+	int iDamageRealTaken = pUnit->getDamageReal() - iMaxIncomingHealReal;
 
 	// Bit squirrly, but we need either or both
 	int iFeatureLimit = eFeature == NO_FEATURE ? 0 : GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
@@ -14712,7 +14712,7 @@ int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int
 	if (iPlotEffectLimit <= iFeatureLimit)
 	{
 		// We need to apply full damage to first check if it's gonna be outhealed
-		if (iPlotEffectDamage <= iMaxIncomingHealing)
+		if (iPlotEffectDamage <= iMaxIncomingHealReal)
 			iRealDamage += iPlotEffectDamage;
 		// Otherwise, the damage output of first might be limited to however much will take us to its limit
 		else 
@@ -14725,7 +14725,7 @@ int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int
 	// Mirror of above
 	else
 	{
-		if (iFeatureDamage <= iMaxIncomingHealing)
+		if (iFeatureDamage <= iMaxIncomingHealReal)
 			iRealDamage += iFeatureDamage;
 		else
 			iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken));

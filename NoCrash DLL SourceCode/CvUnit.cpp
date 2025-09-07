@@ -6920,33 +6920,43 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	return iTotalHeal;
 }
 
-// Returns MAX_INT if never heals. Assumes unit can heal this turn on the tile (march/has not moved).
-// Of simplicity, does not account for damage limits from tile damage effects; this can thus overestimate heal turns in some cases.
-// However it can also underestimate heal turns if the unit moves onto a damaging tile, and does not heal but is instead wounded on 1st turn.
+// Returns MAX_INT if never heals, or will die to DoT before healing.
+// Accounts for unit movement, including getting to a different tile.
+// Doesn't account for edge cases such as teleport without using move... but oh well.
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
-	int iHealReal;
-	int iTurns;
-
 	if (!isHurt())
 		return 0;
 
-	iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
-	iHealReal -= pPlot->calcTurnDamageReal(this, false);
+	int iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
+	int iTurnDamageReal = pPlot->calcTurnDamageReal(this, false);
 
-	if (iHealReal <= 0)
+	// Quick check to see if damage outstrips healing
+	if (iTurnDamageReal >= iHealReal)
 		return MAX_INT;
 
-	iTurns = (getDamageReal() / (iHealReal));
-	if (getDamageReal() % (iHealReal) != 0)
-		iTurns++;
+	// Add 1 to turns if won't heal on this turn
+	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isAIControl()));
+	int iThisTurnDamageReal = pPlot->calcTurnDamageReal(this, true, (1 - iTurns) * iHealReal);
+
+	// Unit might die before being able to heal!
+	if (getDamageReal() + iThisTurnDamageReal >= maxHitPoints())
+		return MAX_INT;
+
+	int iEffectiveDamageReal = getDamageReal() + iThisTurnDamageReal;
+
+	iTurns += iEffectiveDamageReal / (iHealReal - iTurnDamageReal);
+	if (iEffectiveDamageReal % (iHealReal - iTurnDamageReal) != 0)
+		++iTurns;
 
 	return iTurns;
 }
 
-// Checks whether this can't heal due to move
+// Checks whether this can't heal due to move.
 bool CvUnit::isTurnHealBlocked() const
 {
+	// Blaze 2025: Duplicated logic in healTurns, probably elsewhere... be aware if changing.
+
 	// Xienwolf - 01/19/09 - Prevents inappropriate AIControl Actions
 	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isAIControl()))
 		return true;
