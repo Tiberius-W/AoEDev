@@ -2416,7 +2416,7 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 
 	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
-	if (iRange > stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()))
+	if (stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) > iRange)
 		return false;
 
 	//find displacement
