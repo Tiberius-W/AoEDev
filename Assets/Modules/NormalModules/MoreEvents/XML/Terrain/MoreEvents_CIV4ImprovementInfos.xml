@@ -96,7 +96,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Tomb of Sucellus -->
 			<Type>IMPROVEMENT_TOMB_OF_SUCELLUS</Type>
-			<PythonOnMove>onMoveTombofSucellus(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveTombOfSucellus2(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Yggdrasil -->
 			<Type>IMPROVEMENT_YGGDRASIL</Type>

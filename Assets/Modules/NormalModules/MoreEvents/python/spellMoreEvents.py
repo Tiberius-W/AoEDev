@@ -287,7 +287,7 @@ def onMoveTowerofEyes(pCaster, pPlot):
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOWER_OF_EYES')):
 		doTreasureHunterNewSearch(iPlayer,iImprovement)
 
-def onMoveTombofSucellus2(pCaster, pPlot):
+def onMoveTombOfSucellus2(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	git				= gc.getInfoTypeForString
