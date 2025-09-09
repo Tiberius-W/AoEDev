@@ -8161,8 +8161,6 @@
 				<BonusType>BONUS_MANA_SHADOW</BonusType>
 				<BonusType>BONUS_MANA_DIMENSIONAL</BonusType>
 			</PrereqBonuses>
-			<FreeBonus>BONUS_MANA_DEATH</FreeBonus>
-			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bNeverCapture>1</bNeverCapture>
 			<iAIWeight>50</iAIWeight>
 			<iCost>800</iCost>
