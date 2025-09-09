@@ -16,7 +16,7 @@
 			<bPermanent>1</bPermanent>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<BonusType>BONUS_MANA_CHAOS</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -39,7 +39,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_ENTROPY</BonusConvert>
+			<BonusConvert>BONUS_MANA_CHAOS</BonusConvert>
 			<bExplorable>1</bExplorable>
 			<iExploreDelay>75</iExploreDelay> 
 			<GoodyClasses>
