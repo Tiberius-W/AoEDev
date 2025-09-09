@@ -8468,7 +8468,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENCHANTMENT</BonusType>
+					<BonusType>BONUS_MANA_FORCE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8491,7 +8491,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_ENCHANTMENT</BonusConvert>
+			<BonusConvert>BONUS_MANA_FORCE</BonusConvert>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sirona's Beacon -->
 			<Type>IMPROVEMENT_SIRONAS_BEACON</Type>
