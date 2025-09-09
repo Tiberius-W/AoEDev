@@ -1,0 +1,19 @@
+[name]
+Great Engineer Rework
+[version]
+1.0 
+[rifeversion]
+381
+[author]
+Aledeth
+[dependency]
+;Ashes of Erebus
+[compatible]
+;everything
+[shortdesc]
+Reworks how Great Engineers construct the Masters Hall and other Master Buildings with balance changes
+[desc]
+Changes the Great Engineer to build the Masters Hall instead of the various Master Buildings
+changes the other Master Buildings to require the Masters Hall to be built first in their city
+Rebalances the Masters Hall since its much easier to get 
+The production bonus of the Masters Hall Master Buildings have been reduced but no longer penalize military production

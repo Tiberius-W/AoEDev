@@ -17121,7 +17121,7 @@ bool CvUnitAI::AI_patrol()
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (AI_plotValid(pAdjacentPlot))
+			if (AI_plotValid(pAdjacentPlot) && canMoveInto(pAdjacentPlot))
 			{
 				if (!(pAdjacentPlot->isVisibleEnemyUnit(this)))
 				{

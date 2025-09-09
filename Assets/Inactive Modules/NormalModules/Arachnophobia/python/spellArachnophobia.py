@@ -240,7 +240,7 @@ def reqSmearPoison(caster):
 	iPoisonedBlade = getInfoType('PROMOTION_POISONED_BLADE')
 	pPoisonedBlade = gc.getPromotionInfo(iPoisonedBlade)
 	if caster.isHasPromotion(iPoisonedBlade): return False
-	if not pPoisonedBlade.getUnitCombat(caster.getUnitCombatType()): return False
+	if caster.getUnitCombatType()==-1 or not pPoisonedBlade.getUnitCombat(caster.getUnitCombatType()): return False
 	
 	return True
 	

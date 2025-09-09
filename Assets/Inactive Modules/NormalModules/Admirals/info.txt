@@ -1,0 +1,13 @@
+[name]
+Admirals
+[version]
+0.1
+[rifeversion]
+379
+TiberiusW
+[dependency]
+;
+[compatible]
+;
+[desc]
+Allows to merge GC with naval units.
