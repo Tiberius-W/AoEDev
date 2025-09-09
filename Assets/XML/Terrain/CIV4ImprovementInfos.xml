@@ -8155,9 +8155,23 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_CREATION</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<BonusConvert>BONUS_MANA_CREATION</BonusConvert>
 			<bUnique>1</bUnique>
-			<iHealRateChange>50</iHealRateChange>
-			<PythonOnMove>onMovePoolOfTears(pCaster, pPlot)</PythonOnMove>
+			<iHealRateChange>10</iHealRateChange>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pyre of the Seraphic -->
 			<Type>IMPROVEMENT_PYRE_OF_THE_SERAPHIC</Type>
@@ -8705,8 +8719,9 @@
 				</BonusTypeStruct>
 			</BonusTypeStructs>
 			<bUnique>1</bUnique>
-			<iHealRateChange>25</iHealRateChange>
+			<iHealRateChange>30</iHealRateChange>
 			<BonusConvert>BONUS_MANA_LIFE</BonusConvert>
+			<PythonOnMove>onMoveTombOfSucellus(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Yggdrasil -->
 			<Type>IMPROVEMENT_YGGDRASIL</Type>

@@ -1756,38 +1756,6 @@
 		<Spanish>Creature entered your city through the Planar Gate</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_POOL_OF_TEARS_DISEASED</Tag>
-		<English>Unit cured of Disease</English>
-		<French>Unit cured of Disease</French>
-		<German>Der See der Tränen hat eine erkrankte Einheit geheilt</German>
-		<Italian>Unit cured of Disease</Italian>
-		<Spanish>Unit cured of Disease</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_POOL_OF_TEARS_PLAGUED</Tag>
-		<English>Unit cured of the Plague</English>
-		<French>Unit cured of the Plague</French>
-		<German>Der See der Tränen hat eine verseuchte Einheit geheilt</German>
-		<Italian>Unit cured of the Plague</Italian>
-		<Spanish>Unit cured of the Plague</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_POOL_OF_TEARS_POISONED</Tag>
-		<English>Unit cured of Poison</English>
-		<French>Unit cured of Poison</French>
-		<German>Der See der Tränen hat eine vergiftete Einheit geheilt</German>
-		<Italian>Unit cured of Poison</Italian>
-		<Spanish>Unit cured of Poison</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_POOL_OF_TEARS_WITHERED</Tag>
-		<English>Unit cured of Withering</English>
-		<French>Unit cured of Withering</French>
-		<German>Der See der Tränen hat eine Einheit von Atrophie geheilt</German>
-		<Italian>Unit cured of Withering</Italian>
-		<Spanish>Unit cured of Withering</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_POPULATION_REDUCED</Tag>
 		<English>The population of your city has been reduced by an Angel of Death</English>
 		<French>The population of your city has been reduced by an Angel of Death</French>

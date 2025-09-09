@@ -5159,22 +5159,18 @@ def onMoveMaelstrom(pCaster, pPlot):
 			pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
-def onMovePoolOfTears(pCaster, pPlot):
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_DISEASED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_DISEASED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_DISEASED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_PLAGUED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_PLAGUED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_PLAGUED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_POISONED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_POISONED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_POISONED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_WITHERED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_WITHERED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_WITHERED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
+def onMoveTombOfSucellus(pCaster, pPlot):
+	iPlayer			= pCaster.getOwner()
+	pPlayer			= gc.getPlayer(iPlayer)
+	git				= gc.getInfoTypeForString
+	lIllness		= [git("PROMOTION_DISEASED"),git("PROMOTION_PLAGUED"),git("PROMOTION_POISONED"),git("PROMOTION_WITHERED")]
+	for iPromotion in lIllness:
+		if pCaster.isHasPromotion(iPromotion):
+			pCaster.setHasPromotion(iPromotion, false)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_TOMB_OF_SUCELLUS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/tombofsucellus.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-
+	# Remnants from somme Elohim lore things?
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
 	 #if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_POOL_OF_TEARS) == False:
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_POOL_OF_TEARS_ELOHIM')
