@@ -5279,7 +5279,7 @@
 		<Spanish>Your traits have changed: %s1, %s2, %s3.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_TOMB_OF_SUCELLUS_CURED</Tag>
+		<Tag>TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED</Tag>
 		<English>%s1 is cured of %s2</English>
 		<French>%s1 is cured of %s2</French>
 		<German>%s1 is cured of %s2</German>

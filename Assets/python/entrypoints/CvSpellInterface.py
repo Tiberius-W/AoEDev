@@ -5159,7 +5159,7 @@ def onMoveMaelstrom(pCaster, pPlot):
 			pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
-def onMoveTombOfSucellus(pCaster, pPlot):
+def onMovePoolOfTears(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	git				= gc.getInfoTypeForString
@@ -5167,7 +5167,7 @@ def onMoveTombOfSucellus(pCaster, pPlot):
 	for iPromotion in lIllness:
 		if pCaster.isHasPromotion(iPromotion):
 			pCaster.setHasPromotion(iPromotion, false)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_TOMB_OF_SUCELLUS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/tombofsucellus.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 
 	# Remnants from somme Elohim lore things?
 	# pPlayer = gc.getPlayer(pCaster.getOwner())

@@ -2360,7 +2360,7 @@ def doSignSucellus(argsList):
 	for pUnit in apUnitList:
 		if pUnit.isHasPromotion(iDiseased):
 			pUnit.setHasPromotion(iDiseased, False)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_TOMB_OF_SUCELLUS_CURED",(gc.getUnitInfo(pUnit.getUnitType()).getTextKey(),gc.getPromotionInfo(iDiseased).getTextKey())),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/tombofsucellus.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pUnit.getUnitType()).getTextKey(),gc.getPromotionInfo(iDiseased).getTextKey())),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
 		if pUnit.isAlive() and pUnit.getDamageReal() > 0:# if unit alive and hurt, then heal
 			pUnit.setDamageReal(pUnit.getDamageReal() / 2, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_HEALED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Spells/Heal.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
