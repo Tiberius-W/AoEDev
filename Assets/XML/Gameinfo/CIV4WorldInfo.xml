@@ -13,8 +13,8 @@
 			<Help>TXT_KEY_WORLD_DUEL_HELP</Help>
 			<iDefaultPlayers>2</iDefaultPlayers> <!-- Also used for lairs/cycle and modulating barb city spawnrate -->
 			<iUnitNameModifier>50</iUnitNameModifier>
-			<iTargetNumCities>4</iTargetNumCities>
-			<iNumFreeBuildingBonuses>1</iNumFreeBuildingBonuses>
+			<iTargetNumCities>4</iTargetNumCities> <!-- Used for "largest X cities", and to a small extent min starting distance  -->
+			<iNumFreeBuildingBonuses>1</iNumFreeBuildingBonuses> <!-- Default number of free bonuses, if number left unspecified -->
 			<iBuildingClassPrereqModifier>0</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>-50</iMaxConscriptModifier>
 			<iWarWearinessModifier>50</iWarWearinessModifier>
@@ -30,7 +30,7 @@
 			<iCorporationMaintenancePercent>200</iCorporationMaintenancePercent>
 			<iNumCitiesAnarchyPercent>11</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>80</iAdvancedStartPointsMod>
-			<iMaxCitiesMod>-2</iMaxCitiesMod>
+			<iMaxCitiesMod>-2</iMaxCitiesMod> <!-- For Kuriotates; adjustment to default # of max cities -->
 			<iUniqueFeatureChance>-45</iUniqueFeatureChance>
 			<iMapsizePlotCounterAttenuation>25</iMapsizePlotCounterAttenuation> <!-- Plot counter sources *may* lose this much each adjacent tile. Effect constant per AC; see PLOT_COUNTER_NO_ATTENUATION_AC -->
 		</WorldInfo>
@@ -65,7 +65,7 @@
 			<Type>WORLDSIZE_SMALL</Type>
 			<Description>TXT_KEY_WORLD_SMALL</Description>
 			<Help>TXT_KEY_WORLD_SMALL_HELP</Help>
-			<iDefaultPlayers>5</iDefaultPlayers>
+			<iDefaultPlayers>4</iDefaultPlayers>
 			<iUnitNameModifier>30</iUnitNameModifier>
 			<iTargetNumCities>5</iTargetNumCities>
 			<iNumFreeBuildingBonuses>3</iNumFreeBuildingBonuses>
@@ -146,7 +146,7 @@
 			<Type>WORLDSIZE_HUGE</Type>
 			<Description>TXT_KEY_WORLD_HUGE</Description>
 			<Help>TXT_KEY_WORLD_HUGE_HELP</Help>
-			<iDefaultPlayers>11</iDefaultPlayers>
+			<iDefaultPlayers>14</iDefaultPlayers>
 			<iUnitNameModifier>0</iUnitNameModifier>
 			<iTargetNumCities>6</iTargetNumCities>
 			<iNumFreeBuildingBonuses>7</iNumFreeBuildingBonuses>
@@ -173,7 +173,7 @@
 			<Type>WORLDSIZE_HUGER</Type>
 			<Description>TXT_KEY_WORLD_HUGER</Description>
 			<Help>TXT_KEY_WORLD_HUGER_HELP</Help>
-			<iDefaultPlayers>25</iDefaultPlayers>
+			<iDefaultPlayers>26</iDefaultPlayers>
 			<iUnitNameModifier>0</iUnitNameModifier>
 			<iTargetNumCities>7</iTargetNumCities>
 			<iNumFreeBuildingBonuses>8</iNumFreeBuildingBonuses>
