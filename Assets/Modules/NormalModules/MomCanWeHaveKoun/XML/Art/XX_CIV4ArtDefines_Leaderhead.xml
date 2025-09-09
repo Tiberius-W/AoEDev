@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Bart Muzzin (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leaderhead art path information -->
+<Civ4ArtDefines xmlns="x-schema:XX_CIV4ArtDefinesSchema.xml">
+	<LeaderheadArtInfos>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_THEKOUNT</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/TheKountButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/TheKount.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KOUNITH_LORDA</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KounithLordaButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KounithLorda.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KOUNROY</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KounroyLockheartButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KounroyLockheart.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KTESH</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KteshButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/Ktesh.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_VIKOUNIA</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/VikouniaButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/Vikounia.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+	</LeaderheadArtInfos>
+</Civ4ArtDefines>

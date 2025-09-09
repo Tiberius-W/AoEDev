@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Handicap Infos -->
+<Civ4HandicapInfo xmlns="x-schema:XX_CIV4GameInfoSchema.xml">
+	<HandicapInfos>
+		<HandicapInfo>
+			<Type>HANDICAP_SETTLER</Type>
+			<Description>TXT_KEY_HANDICAP_SETTLER</Description>
+			<Help>TXT_KEY_HANDICAP_SETTLER_HELP</Help>
+			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
+			<iAnimalAttackProb>25</iAnimalAttackProb>
+			<iStartingLocPercent>10</iStartingLocPercent>
+			<iAdvancedStartPointsMod>150</iAdvancedStartPointsMod>
+			<iGold>0</iGold>
+			<iFreeUnits>48</iFreeUnits>
+			<iUnitCostPercent>20</iUnitCostPercent>
+			<iResearchPercent>80</iResearchPercent>
+			<iDistanceMaintenancePercent>45</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>40</iNumCitiesMaintenancePercent>
+			<iMaxNumCitiesMaintenance>4</iMaxNumCitiesMaintenance>
+			<iColonyMaintenancePercent>60</iColonyMaintenancePercent>
+			<iMaxColonyMaintenance>100</iMaxColonyMaintenance>
+			<iCorporationMaintenancePercent>60</iCorporationMaintenancePercent>
+			<iCivicUpkeepPercent>50</iCivicUpkeepPercent>
+			<iInflationPercent>50</iInflationPercent>
+			<iHealthBonus>8</iHealthBonus>
+			<iHappyBonus>6</iHappyBonus>
+			<iAttitudeChange>2</iAttitudeChange>
+			<iNoTechTradeModifier>100</iNoTechTradeModifier>
+			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
+			<iTilesPerAnimal>60</iTilesPerAnimal> <!-- Applies to animals on land only -->
+			<iWaterTilesPerAnimal>100</iWaterTilesPerAnimal> <!-- Applies to animals on water only -->
+			<iTilesPerOrc>80</iTilesPerOrc> <!-- Applies to savages on land only -->
+			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- Applies to savages on water only -->
+			<iUnownedTilesPerBarbarianCity>105</iUnownedTilesPerBarbarianCity>
+			<iBarbarianCreationTurnsElapsed>50</iBarbarianCreationTurnsElapsed> <!-- Unused; calculated as a function of GameSpeedInfo iTurnsPerLairCycle instead  -->
+			<iBarbarianCityCreationTurnsElapsed>55</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb> <!-- Both chance per turn AND *5 for max limit (i.e. at 4, barb city limit is 20% of # of civ cities) -->
+			<iAnimalBonus>-30</iAnimalBonus>
+			<iBarbarianBonus>-30</iBarbarianBonus>
+			<iAIAnimalBonus>0</iAIAnimalBonus>
+			<iAIBarbarianBonus>0</iAIBarbarianBonus>
+			<iStartingDefenseUnits>0</iStartingDefenseUnits>
+			<iStartingWorkerUnits>0</iStartingWorkerUnits>
+			<iStartingExploreUnits>0</iStartingExploreUnits>
+			<iAIStartingUnitMultiplier>0</iAIStartingUnitMultiplier>
+			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
+			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
+			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
+			<iBarbarianDefenders>0</iBarbarianDefenders>
+			<iAIDeclareWarProb>45</iAIDeclareWarProb>
+			<iAIWorkRateModifier>0</iAIWorkRateModifier>
+			<iAIGrowthPercent>160</iAIGrowthPercent>
+			<iAITrainPercent>160</iAITrainPercent>
+			<iAIWorldTrainPercent>160</iAIWorldTrainPercent>
+			<iAIConstructPercent>100</iAIConstructPercent>
+			<iAIWorldConstructPercent>160</iAIWorldConstructPercent>
+			<iAICreatePercent>160</iAICreatePercent>
+			<iAIWorldCreatePercent>160</iAIWorldCreatePercent>
+			<iAICivicUpkeepPercent>100</iAICivicUpkeepPercent>
+			<iAIUnitCostPercent>100</iAIUnitCostPercent>
+			<iAIUnitSupplyPercent>50</iAIUnitSupplyPercent>
+			<iAIUnitUpgradePercent>145</iAIUnitUpgradePercent>
+			<iAIInflationPercent>80</iAIInflationPercent>
+			<iAIWarWearinessPercent>100</iAIWarWearinessPercent>
+			<iAIPerEraModifier>0</iAIPerEraModifier>
+			<iAIAdvancedStartPercent>100</iAIAdvancedStartPercent>
+			<Goodies>
+				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
+				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
+				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
+				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
+				<GoodyType>GOODY_LOW_GOLD</GoodyType>
+				<GoodyType>GOODY_LOW_GOLD</GoodyType>
+				<GoodyType>GOODY_MAP</GoodyType>
+				<GoodyType>GOODY_SETTLER</GoodyType>
+				<GoodyType>GOODY_SETTLER</GoodyType>
+				<GoodyType>GOODY_WARRIOR</GoodyType>
+				<GoodyType>GOODY_WARRIOR</GoodyType>
+				<GoodyType>GOODY_SCOUT</GoodyType>
+				<GoodyType>GOODY_WORKER</GoodyType>
+				<GoodyType>GOODY_WORKER</GoodyType>
+				<GoodyType>GOODY_EXPERIENCE</GoodyType>
+				<GoodyType>GOODY_HEALING</GoodyType>
+				<GoodyType>GOODY_TECH</GoodyType>
+				<GoodyType>GOODY_TECH</GoodyType>
+				<GoodyType>GOODY_TECH</GoodyType>
+				<GoodyType>GOODY_TECH</GoodyType>
+			</Goodies>
+			<FreeTechs>
+				<FreeTech>
+					<TechType>TECH_EXPLORATION</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+				<FreeTech>
+					<TechType>TECH_AGRICULTURE</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+				<FreeTech>
+					<TechType>TECH_CRAFTING</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+			</FreeTechs>
+			<AIFreeTechs>
+			</AIFreeTechs>
+			<iAnimalEscalationTurnsElapsed>150</iAnimalEscalationTurnsElapsed> <!-- Ehh... leaving for now. -->
+			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
+			<iMinimumTilesPerDemon>100</iMinimumTilesPerDemon> <!-- Minimum lower bound for demon density, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
+			<iDemonGlobalCounterFreeXPPercent>0</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
+			<iDemonPerTurnKnownTechsPercent>1</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
+			<iDemonBonus>-50</iDemonBonus>
+			<iAIDemonBonus>-10</iAIDemonBonus>
+		</HandicapInfo>
+	</HandicapInfos>
+</Civ4HandicapInfo>

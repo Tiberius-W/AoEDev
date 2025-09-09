@@ -1,0 +1,27 @@
+[name]
+MomCanWeHaveKoun
+[version]
+1.0 
+[rifeversion]
+382
+[author]
+Tikumara
+[dependency]
+;Ashes of Erebus
+[compatible]
+;everything
+[shortdesc]
+Unrestricted Leaders option recommended
+[desc]
+Minister Koun is a master of disguise, he is so good in fact that he has assumed control of every civilization that has settled the plane Erebus!
+
+Select one of his many faces to assume the civilization features and traits of his disguised civilization(or most of them...)
+Select The Kounperor and be able to build Scion units and features as any civilization!
+Select The Klouwn and be able to build Balseraph units and features as any civilization!
+Select The Kount and be able to build Calabim units and features as any civilization!
+
+You get the idea, go have fun!
+(Use the custom game option "Unrestricted Leaders" if you wish to spread the kounsanity)
+(No, it isn't balanced at all.)
+
+(If your game crashes and this module is in your active modules list, the Devs are not going to help you fix your save)
