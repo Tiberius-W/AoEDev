@@ -7830,6 +7830,21 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_STONE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<BonusConvert>BONUS_STONE</BonusConvert>
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveFoxford(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
@@ -8305,7 +8320,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_MANA_LAW</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8336,7 +8351,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_STONE</BonusConvert>
+			<BonusConvert>BONUS_MANA_LAW</BonusConvert>
 			<PythonOnMove>onMoveRemnantsOfPatria(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ring of Carcer -->
