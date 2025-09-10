@@ -503,7 +503,7 @@ class CvPediaPromotion:
 		screen.attachLabel(panelName, "", "  ")
 
 		for iUnit in range(gc.getNumUnitInfos()):
-			if gc.getUnitInfo(iUnit).getFreePromotions(self.iPromotion):
+			if gc.getUnitInfo(iUnit).getFreePromotions(self.iPromotion) and not gc.getUnitInfo(iUnit).isGraphicalOnly():
 				szButton = gc.getUnitInfo(iUnit).getButton()
 				screen.attachImageButton( panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False )
 		
