@@ -18222,6 +18222,7 @@ CvPlot* CvUnit::getSpawnPlot() const
 {
 	return GC.getMapINLINE().plotINLINE(m_iSpawnPlotX, m_iSpawnPlotY);
 }
+// adds to the numLairSpawnAlive on plot if fitting for immediate or regular spawn type for a valid improvmeent
 void CvUnit::setSpawnPlot(CvPlot* pPlot)
 {
 	if (pPlot != NULL && pPlot->getImprovementType() != NO_IMPROVEMENT)
