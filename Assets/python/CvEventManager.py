@@ -4007,8 +4007,10 @@ class CvEventManager:
 						pUnit.setHasPromotion(getInfoType("PROMOTION_CAMEL"),True)
 
 		if iUnitType == getInfoType('UNIT_CARNIVEAN'):
-			pUnit.setLevel(17)
+			pUnit.setLevel(15)
 			pUnit.setExperienceTimes100(10000, 10000)
+			pUnit.setGameTurnCreated(-100)
+			# TODO: Change his start-with promos and intrinsic stats (FS, etc) to mutation ones. Expand possibilities for mutation?
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

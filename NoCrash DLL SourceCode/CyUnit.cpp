@@ -1227,6 +1227,10 @@ int CyUnit::getGameTurnCreated()
 {
 	return m_pUnit ? m_pUnit->getGameTurnCreated() : -1;
 }
+void CyUnit::setGameTurnCreated(int iNewValue)
+{
+	return m_pUnit ? m_pUnit->setGameTurnCreated(iNewValue) : -1;
+}
 
 int CyUnit::getDamage()
 {

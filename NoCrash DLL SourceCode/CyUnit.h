@@ -334,6 +334,7 @@ public:
 	void setReconPlot(CyPlot* pNewValue);
 
 	int getGameTurnCreated();
+	void setGameTurnCreated(int iNewValue);
 
 	int getDamage();
 	void setDamage(int iNewValue, int /*PlayerTypes*/ ePlayer);

@@ -318,6 +318,7 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("setReconPlot", &CyUnit::setReconPlot, "void (CyPlot)")
 
 		.def("getGameTurnCreated", &CyUnit::getGameTurnCreated, "int ()")
+		.def("setGameTurnCreated", &CyUnit::setGameTurnCreated, "void (int iNewValue)")
 
 		.def("getDamage", &CyUnit::getDamage, "int ()")
 		.def("setDamage", &CyUnit::setDamage, "void (int iNewValue, int /*PlayerTypes*/ ePlayer)")
