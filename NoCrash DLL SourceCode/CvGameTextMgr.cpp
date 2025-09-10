@@ -6239,36 +6239,18 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 /*************************************************************************************************/
 /**	GreyFoxMod								END													**/
 /*************************************************************************************************/
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/06/08											**/
-/**																								**/
-/**				Ensures that Tech for Connecting Improvement is shown until researched			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if ((pPlot->getImprovementType() == NO_IMPROVEMENT) || !(GC.getImprovementInfo(pPlot->getImprovementType()).isImprovementBonusTrade(eBonus)))
-/**								----  End Original Code  ----									**/
-			if ((pPlot->getImprovementType() == NO_IMPROVEMENT) || !(GC.getImprovementInfo(pPlot->getImprovementType()).isImprovementBonusTrade(eBonus)) || !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade())))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
+			// Xienwolf - 09/06/08 - Ensures that Tech for Connecting Improvement is shown until researched
+			TechTypes eTechTrade = (TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade();
+			if ((pPlot->getImprovementType() == NO_IMPROVEMENT) || !(GC.getImprovementInfo(pPlot->getImprovementType()).isImprovementBonusTrade(eBonus)) || !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech(eTechTrade)))
 			{
-				if (!(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade())) && !GC.getTechInfo((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade()).isDisable())
+				if (!(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech(eTechTrade)) && eTechTrade != NO_TECH && !GC.getTechInfo(eTechTrade).isDisable())
 				{
-					szString.append(gDLL->getText("TXT_KEY_PLOT_RESEARCH", GC.getTechInfo((TechTypes) GC.getBonusInfo(eBonus).getTechCityTrade()).getTextKeyWide()));
+					szString.append(gDLL->getText("TXT_KEY_PLOT_RESEARCH", GC.getTechInfo(eTechTrade).getTextKeyWide()));
 				}
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/06/08											**/
-/**																								**/
-/**				Blocks Display of Improvement Requirement if already Improved					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				if (!pPlot->isCity())
-/**								----  End Original Code  ----									**/
+				// Xienwolf - 09/06/08 - Blocks Display of Improvement Requirement if already Improved
 				if (!pPlot->isCity() && (pPlot->getImprovementType() == NO_IMPROVEMENT || !(GC.getImprovementInfo(pPlot->getImprovementType()).isImprovementBonusTrade(eBonus))))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 				{
 					for (iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 					{
@@ -6277,21 +6259,15 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 							CvImprovementInfo& kImprovementInfo = GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo((BuildTypes) iI).getImprovement());
 							if (kImprovementInfo.isImprovementBonusTrade(eBonus))
 							{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**		Use the player version of this method to account for player-specific natural yields.	**/
-/*************************************************************************************************/
+								// CivPlotMods - Jean Elcard - 04/02/09 - Use the player version of this method to account for player-specific natural yields
 								if (pPlot->canHaveImprovement(((ImprovementTypes)(GC.getBuildInfo((BuildTypes) iI).getImprovement())), GC.getGameINLINE().getActivePlayer(), true))
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
 								{
 									if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes) iI).getTechPrereq()))
 									{
 										szString.append(gDLL->getText("TXT_KEY_PLOT_REQUIRES", kImprovementInfo.getTextKeyWide()));
 									}
-									else if (GC.getBonusInfo(eBonus).getTechCityTrade() != GC.getBuildInfo((BuildTypes) iI).getTechPrereq() && !GC.getTechInfo((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade()).isDisable())
+									else if (eTechTrade != GC.getBuildInfo((BuildTypes)iI).getTechPrereq()
+									 && eTechTrade != NO_TECH && !GC.getTechInfo(eTechTrade).isDisable())
 									{
 										szString.append(gDLL->getText("TXT_KEY_PLOT_RESEARCH", GC.getTechInfo((TechTypes) GC.getBuildInfo((BuildTypes) iI).getTechPrereq()).getTextKeyWide()));
 									}
