@@ -746,6 +746,7 @@ public:
 	bool isDenyPromotion(int ePromotion) const; //(PromotionTypes)
 	bool isDisablePyDeath() const;
 	void setDisablePyDeath(bool bNewValue);
+	void setSpawnPlot(CyPlot* pPlot) const;
 	CyPlot* getSpawnPlot();
 	int getStrBoost();
 	void changeStrBoost(int iChange);
