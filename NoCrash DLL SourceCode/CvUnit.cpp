@@ -14354,40 +14354,44 @@ int CvUnit::evasionProbability() const
 	return std::max(0, m_pUnitInfo->getEvasionProbability() + getExtraEvasion());
 }
 
-
+// Base chance to withdraw when losing an attack, NOT accounting for the defending unit
 int CvUnit::withdrawalProbability() const
 {
 	if (getDomainType() == DOMAIN_LAND && plot()->isWater() && !canMoveAllTerrain())
-	{
 		return 0;
-	}
 
-//FfH: Added by Kael 04/06/2009
+	//FfH: Added by Kael 04/06/2009
 	if (getImmobileTimer() > 0)
-	{
 		return 0;
-	}
-//FfH: End Add
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/06/09											**/
-/**																								**/
-/**			Allows units to purchase withdraw beyond the cap but enforces the cap still			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
-/**								----  End Original Code  ----									**/
-	return std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal())));
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+	// Xienwolf - 02/06/09 - Allows units to purchase withdraw beyond the cap but enforces the cap still
+	return range(m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
 }
-int CvUnit::enemyWithdrawalProbability()const{
+
+// Modifier to enemy withdrawal chance when fighting this unit
+int CvUnit::enemyWithdrawalProbability() const
+{
 	return m_pUnitInfo->getEnemyWithdrawalProbability();
 }
 
-int CvUnit::combatWithdrawalProbability(CvUnit* Defender){
-	return std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (withdrawalProbability() + Defender->enemyWithdrawalProbability()+ Defender->getExtraEnemyWithdrawal())));
+// When attacking against Defender, what's the chance of successfully withdrawing
+int CvUnit::combatWithdrawalProbability(CvUnit* Defender)
+{
+	return range(withdrawalProbability() + Defender->enemyWithdrawalProbability() + Defender->getExtraEnemyWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
+}
+// When attacking against Defender, what's the chance of successfully withdrawing (duplicate of above but const overload so CvUnitAI can use it)
+int CvUnit::combatWithdrawalProbability(CvUnit* Defender) const
+{
+	return range(withdrawalProbability() + Defender->enemyWithdrawalProbability() + Defender->getExtraEnemyWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
+}
+
+// When defending against pAttacker, what's the chance of us successfully withdrawing instead of dying
+int CvUnit::getWithdrawlProbDefensive(CvUnit* pAttacker) const
+{
+	if (getImmobileTimer() > 0)
+		return 0;
+
+	return range(m_pUnitInfo->getWithdrawlProbDefensive() + getExtraWithdrawal() + pAttacker->getExtraEnemyWithdrawal() + pAttacker->enemyWithdrawalProbability(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
 }
 
 int CvUnit::collateralDamage() const
@@ -26701,15 +26705,6 @@ void CvUnit::mutate()
 /**	DynamicMutation								END												**/
 /*************************************************************************************************/
 
-int CvUnit::getWithdrawlProbDefensive(CvUnit* pAttacker) const
-{
-	if (getImmobileTimer() > 0)
-	{
-		return 0;
-	}
-
-	return std::max(0, (m_pUnitInfo->getWithdrawlProbDefensive() + getExtraWithdrawal() +pAttacker->getExtraEnemyWithdrawal()+pAttacker->enemyWithdrawalProbability()));
-}
 
 /*************************************************************************************************/
 /**	CandyMan								04/04/09								Xienwolf	**/

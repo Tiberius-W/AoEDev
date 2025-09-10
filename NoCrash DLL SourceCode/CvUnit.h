@@ -471,6 +471,7 @@ public:
 	int withdrawalProbability() const;																			// Exposed to Python
 	int enemyWithdrawalProbability() const;																			// Exposed to Python
 	int combatWithdrawalProbability(CvUnit* Defender);																			// Exposed to Python
+	int combatWithdrawalProbability(CvUnit* Defender) const;
 
 	int collateralDamage() const;																						// Exposed to Python
 	int collateralDamageLimit() const;																								// Exposed to Python

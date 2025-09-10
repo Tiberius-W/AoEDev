@@ -1368,19 +1368,16 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 		iOurStrength *= (1 - iRoundsDiff);
 	}
 
-	int iOdds = (((iOurStrength * 100) / (iOurStrength + iTheirStrength)));
-	iOdds += ((100 - iOdds) * std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (withdrawalProbability() + pDefender->enemyWithdrawalProbability() + pDefender->getExtraEnemyWithdrawal())))) / 100;
+	int iOdds = 100 * iOurStrength / (iOurStrength + iTheirStrength);
+	iOdds += (100 - iOdds) * combatWithdrawalProbability(pDefender) / 100;
 	iOdds += GET_PLAYER(getOwnerINLINE()).AI_getAttackOddsChange();
 
-//FfH: Added by Kael 04/11/2008
+	//FfH: Added by Kael 04/11/2008
 	if (isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) || getSpellCasterXP() > 0)
 	{
 		if (iOdds < 95)
-		{
 			iOdds = 0;
-		}
 	}
-//FfH: End Add
 
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      10/30/09                      Mongoose & jdog5000     */

@@ -1028,12 +1028,12 @@
 			<bRace>1</bRace>
 			<NoBadExploreImprovements>
 				<NoBadExploreImprovement>
-				<ImprovementType>IMPROVEMENT_TOWER_OF_EYES</ImprovementType>
-				<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
+					<ImprovementType>IMPROVEMENT_TOWER_OF_EYES</ImprovementType>
+					<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
 				</NoBadExploreImprovement>
 				<NoBadExploreImprovement>
-				<ImprovementType>IMPROVEMENT_CLOCKWORK_TOWER</ImprovementType>
-				<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
+					<ImprovementType>IMPROVEMENT_CLOCKWORK_TOWER</ImprovementType>
+					<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
 				</NoBadExploreImprovement>
 			</NoBadExploreImprovements>
 			<DamageTypeResists>

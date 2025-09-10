@@ -65,7 +65,7 @@ def spellUnleashApophis(caster):
 			pUnit.kill()
 	
 	newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-	
+
 def spellUnleashArs(caster):
 	pPlot = caster.plot()
 	iUnit = getInfoType('UNIT_ARS')
@@ -79,12 +79,12 @@ def spellUnleashStephanos(caster):
 	newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	pPlot.getPlotCity().setNumRealBuilding(gc.getInfoTypeForString("BUILDING_HERON_THRONE"), 0)
 
-	
-	
+
+
 def postCombatBadb(pCaster, pOpponent):
 	pPlayer = gc.getPlayer(pOpponent.getOwner())
 	gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_DEAD_BADB'),True)
-		
+
 def exploreLairUmberguardHostile(argsList):
 	pUnit, pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
@@ -94,13 +94,13 @@ def exploreLairUmberguardHostile(argsList):
 	newUnit.setHasPromotion(getInfoType('PROMOTION_UMBERGUARD'),True)
 	newUnit1 = bPlayer.initUnit(getInfoType('UNIT_DWARVEN_DEFENDER'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit1.setHasPromotion(getInfoType('PROMOTION_UMBERGUARD'),True)
-	
+
 def exploreLairUmberguardFriend(argsList):
 	pUnit, pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_DWARVEN_DEFENDER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_UMBERGUARD'),True)
-	
+
 def reqDiscoverOnceElves(argsList):
 	pUnit, pPlot = argsList
 	return not (pUnit.isHasPromotion(getInfoType("PROMOTION_SUN3")) or pUnit.isHasPromotion(getInfoType("PROMOTION_METAMAGIC3")))

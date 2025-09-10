@@ -31,9 +31,41 @@
 			<bGoody>0</bGoody> <!-- Used by mapgen to place using tribal village logic -->
 			<iGoodyRange>3</iGoodyRange> <!-- Closest approach to another of this improvement, but during mapgen. Should be merged with iMinimumDistance! -->
 			<iTilesPerGoody>60</iTilesPerGoody> <!-- Target density of goody (starts placing at half, e.g. 1/60 means first at 30, second at 90, etc) -->
-			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
-			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
-			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->
+			<!-- Start of improvement placement fields; first, "And" conditions ("requires X") must be met-->
+			<bRequiresPeak>0</bRequiresPeak> <!-- Must be on a peak, cannot be on anything else. Note that peaks require either this or the later bPeaksMakeValid in order to be valid -->
+			<bWater>0</bWater> <!-- Can only be on water if 1, and can only be on land if 0 -->
+			<!-- If there is a bonus with bBonusMakesValid, it will then ignore all other checks aside from the above two -->
+			<bNoFreshWater>0</bNoFreshWater> <!-- Freshwater makes *invalid* -->
+			<bRequiresFlatlands>0</bRequiresFlatlands> <!-- Can only be on flat land (not hills) -->
+			<bRequiresFeature>0</bRequiresFeature> <!-- Requires *any* feature on tile, if done by itself -->
+			<bRequiresRiverSide>0</bRequiresRiverSide> <!-- Requires river adjacency, and moreover cannot be opposite the river from another of the same improvement -->
+			<!-- In order for an improvement to be valid, at least one of the following "Or" conditions ("XMakesValid") checks must be met -->
+			<bPeakMakesValid>0</bPeakMakesValid> <!-- Tile is a peak. Reminder, peaks will only allow an improvement if this or bPeakMakesValid -->
+			<bHillsMakesValid>0</bHillsMakesValid> <!-- Tile is a hill -->
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid> <!-- Tile has fresh water, including irrigation spreading -->
+			<bRiverSideMakesValid>1</bRiverSideMakesValid> <!-- Tile has a river in a cardinal direction. Superfluous if also bRequiresRiverside -->
+			<!-- Any of these terrains being met makes valid -->
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<!-- Any of these features being met makes valid. No direct relation with bRequiresFeature. Note this also allows an improvement to bypass the "noImprovement" field of that feature -->
+			<FeatureMakesValids>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+			</FeatureMakesValids>
+			<!-- End of improvement placement requirements -->
+			<!-- The "AllowsFeature" field allows a feature (forest, haunted lands...) to naturally propagate on a tile with an existing improvement (crypt, camp...) -->
+			<AllowsFeatures>
+				<AllowsFeature>
+					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</AllowsFeature>
+			</AllowsFeatures>
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
 			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
 			<iUpgradeTime>0</iUpgradeTime> <!-- How many turns it takes to upgrade the improvement. If 0, will only upgrade if the upgrade has weights > 0 (I think?) -->
@@ -74,7 +106,7 @@
 			<SpawnUnitCiv></SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
 			<SpawnUnitType></SpawnUnitType> <!-- What singular unit will spawn if conditions are met -->
 			<iSpawnAtOnceLimit>0</iSpawnAtOnceLimit> <!-- Special: A limit of 0 means it will never stop spawning (barbs still limited by density). Limit reset on upgrade. Only counts SpawnUnitType and ImmediateSpawnUnitType, NOT GROUPS -->
-			<iSpawnUnitChancePercentMod>0</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (0 means no change, -99 will spawn at 1% of base rate, 200 will spawn 2x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
+			<iSpawnUnitChancePercentMod>0</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (100 means no change, -99 will spawn at 1% of base rate, 200 will spawn 3x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
 			<SpawnPromotions> <!-- List of promotions to give SpawnUnitType -->
 				<Promotion></Promotion>
 			</SpawnPromotions>
@@ -1872,7 +1904,6 @@
 				<iYieldChange>2</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
-			<bRiverSideMakesValid>1</bRiverSideMakesValid>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bRequiresRiverSide>1</bRequiresRiverSide>
 			<iAdvancedStartCost>48</iAdvancedStartCost>

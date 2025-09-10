@@ -13001,12 +13001,12 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	if (GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange() > 0)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT", GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT", GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
 	}
 	if (GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange() < 0)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT", (-1*GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange())));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT", -1 * GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
 	}
 
 	if (GC.getPromotionInfo(ePromotion).getCargoChange() != 0)
@@ -16888,15 +16888,15 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WITHDRAWL_PROBABILITY", GC.getUnitInfo(eUnit).getWithdrawalProbability()));
 	}
-	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() > 0)
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT", GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
-	}
 	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() < 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT", (-1*GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability())));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT", -1 * GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
+	}
+	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() > 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT", GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
 	}
 
 /*************************************************************************************************/

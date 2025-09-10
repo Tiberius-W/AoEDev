@@ -185,20 +185,20 @@
 		<Spanish>[NEWLINE][ICON_BULLET]+%d3 %F2_commerce for %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT</Tag>
-		<English>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</English>
-		<French>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</French>
-		<German>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</German>
-		<Italian>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</Spanish>
+		<Tag>TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT</Tag>
+		<English>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</English>
+		<French>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</French>
+		<German>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</German>
+		<Italian>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</Italian>
+		<Spanish>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT</Tag>
-		<English>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</English>
-		<French>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</French>
-		<German>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</German>
-		<Italian>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</Spanish>
+		<Tag>TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT</Tag>
+		<English>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</English>
+		<French>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</French>
+		<German>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</German>
+		<Italian>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</Italian>
+		<Spanish>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INT</Tag>

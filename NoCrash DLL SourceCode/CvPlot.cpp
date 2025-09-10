@@ -2764,24 +2764,16 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 
 	// Mountain Mod - Ahwaric - 19.09.09
-	if (isPeak())
-	{
-		// (special early true return for peaks?)
-		if (GC.getImprovementInfo(eImprovement).isPeakMakesValid() || GC.getImprovementInfo(eImprovement).isRequiresPeak())
-			return true;
-
+	if (GC.getImprovementInfo(eImprovement).isRequiresPeak() && !isPeak())
 		return false;
-	}
-	else if (GC.getImprovementInfo(eImprovement).isRequiresPeak())
+	// Peak must have either of these to be valid
+	if (isPeak() && !(GC.getImprovementInfo(eImprovement).isRequiresPeak() || GC.getImprovementInfo(eImprovement).isPeakMakesValid()))
 		return false;
 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
 		return false;
 
-	// Special check for bonuses making improvements valid; lower priority than peaks and water
-	if ((getBonusType(eTeam) != NO_BONUS) && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam)))
-		return true;
-
+	// Check backwards; does a feature on this tile prevent improvements?
 	if (getFeatureType() != NO_FEATURE)
 	{
 		// Xienwolf - 12/27/08 - Allows for some unique Improvement/Feature combinations
@@ -2792,6 +2784,10 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 			return false;
 		}
 	}
+
+	// Special check for bonuses making improvements permissible, outside of regular restrictions
+	if ((getBonusType(eTeam) != NO_BONUS) && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam)))
+		return true;
 
 	if (GC.getImprovementInfo(eImprovement).isNoFreshWater() && isFreshWater())
 		return false;
@@ -2825,20 +2821,17 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s
-
-	if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
+	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
 		bValid = true;
-
-	if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
+	else if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
 		bValid = true;
-
-	if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
+	else if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
 		bValid = true;
-
-	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+	else if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
 		bValid = true;
-
-	if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+	else if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+		bValid = true;
+	else if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
 		bValid = true;
 
 	if (!bValid)
