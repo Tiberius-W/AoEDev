@@ -385,12 +385,140 @@
 		<Spanish>Duke Sallos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DEN_OF_PLEASURE</Tag>
+		<English>Den of Pleasure and Blood</English>
+		<French>Den of Pleasure and Blood</French>
+		<German>Den of Pleasure and Blood</German>
+		<Italian>Den of Pleasure and Blood</Italian>
+		<Spanish>Den of Pleasure and Blood</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_STATIUS</Tag>
 		<English>Statius the Redeemer</English>
 		<French>Statius the Redeemer</French>
 		<German>Statius the Redeemer</German>
 		<Italian>Statius the Redeemer</Italian>
 		<Spanish>Statius el Redentor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_SALLOS_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</English>
+		<French>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</French>
+		<German>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</German>
+		<Italian>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET] Can build [LINK=BUILDING_DEN_OF_PLEASURE]Dens of Pleasure and Blood[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_STATIUS_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_EMPTY_HEART]Temple of the Empty Heart[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_EMPTY_HEART]Temple of the Empty Heart[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_EMPTY_HEART]Temple of the Empty Heart[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_EMPTY_HEART]Temple of the Empty Heart[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_EMPTY_HEART]Temple of the Empty Heart[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_MERESIN_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_ORPHAN]Temple of the Sallow Orphan[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_ORPHAN]Temple of the Sallow Orphan[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_ORPHAN]Temple of the Sallow Orphan[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_ORPHAN]Temple of the Sallow Orphan[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_ORPHAN]Temple of the Sallow Orphan[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_JUDECCA_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_COVEN_OF_RUST]Coven of Rust[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_COVEN_OF_RUST]Coven of Rust[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_COVEN_OF_RUST]Coven of Rust[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_COVEN_OF_RUST]Coven of Rust[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_COVEN_OF_RUST]Coven of Rust[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_OUZZA_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_ALTAR_FLESHCALLER]Altar of the Fleshcaller[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_LETHE_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_REST]Temple of the Endless Rest[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMPTY_HEART</Tag>
+		<English>Temple of the Empty Heart</English>
+		<French>Temple of the Empty Heart</French>
+		<German>Temple of the Empty Heart</German>
+		<Italian>Temple of the Empty Heart</Italian>
+		<Spanish>Temple of the Empty Heart</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COVEN_OF_RUST</Tag>
+		<English>Coven of Rust</English>
+		<French>Coven of Rust</French>
+		<German>Coven of Rust</German>
+		<Italian>Coven of Rust</Italian>
+		<Spanish>Coven of Rust</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_ORPHAN</Tag>
+		<English>Temple of the Sallow Orphan</English>
+		<French>Temple of the Sallow Orphan</French>
+		<German>Temple of the Sallow Orphan</German>
+		<Italian>Temple of the Sallow Orphan</Italian>
+		<Spanish>Temple of the Sallow Orphan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ALTAR_FLESHCALLER</Tag>
+		<English>Altar of the Fleshcaller</English>
+		<French>Altar of the Fleshcaller</French>
+		<German>Altar of the Fleshcaller</German>
+		<Italian>Altar of the Fleshcaller</Italian>
+		<Spanish>Altar of the Fleshcaller</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_REST</Tag>
+		<English>Temple of the Endless Rest</English>
+		<French>Temple of the Endless Rest</French>
+		<German>Temple of the Endless Rest</German>
+		<Italian>Temple of the Endless Rest</Italian>
+		<Spanish>Temple of the Endless Rest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PASSIONLESS</Tag>
+		<English>Passionless</English>
+		<French>Passionless</French>
+		<German>Passionless</German>
+		<Italian>Passionless</Italian>
+		<Spanish>Passionless</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ALTAR_GRAFT1</Tag>
+		<English>Altar Graft I</English>
+		<French>Altar Graft I</French>
+		<German>Altar Graft I</German>
+		<Italian>Altar Graft I</Italian>
+		<Spanish>Altar Graft I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ALTAR_GRAFT2</Tag>
+		<English>Altar Graft II</English>
+		<French>Altar Graft II</French>
+		<German>Altar Graft II</German>
+		<Italian>Altar Graft II</Italian>
+		<Spanish>Altar Graft II</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ALTAR_GRAFT3</Tag>
+		<English>Altar Graft III</English>
+		<French>Altar Graft III</French>
+		<German>Altar Graft III</German>
+		<Italian>Altar Graft III</Italian>
+		<Spanish>Altar Graft III</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_EMMA</Tag>

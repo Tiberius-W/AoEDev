@@ -4006,4 +4006,20 @@
 		<Italian>Sacrifice the Wolf</Italian>
 		<Spanish>Sacrifice the Wolf</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_MISLEADING_PROPHECY</Tag>
+		<English>Misleading Prophecy</English>
+		<French>Misleading Prophecy</French>
+		<German>Misleading Prophecy</German>
+		<Italian>Misleading Prophecy</Italian>
+		<Spanish>Misleading Prophecy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_SLEEP_PARALYSIS</Tag>
+		<English>Sleep Paralysis</English>
+		<French>Sleep Paralysis</French>
+		<German>Sleep Paralysis</German>
+		<Italian>Sleep Paralysis</Italian>
+		<Spanish>Sleep Paralysis</Spanish>
+	</TEXT>
 </Civ4GameText>

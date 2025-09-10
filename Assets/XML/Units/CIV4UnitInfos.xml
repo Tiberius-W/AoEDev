@@ -50925,6 +50925,7 @@
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iBombardRate>10</iBombardRate>
 			<iCultureGarrison>3</iCultureGarrison>
+			<iCost>35</iCost>
 			<iAsset>0</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -55619,6 +55620,109 @@
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<iPowerMult>3</iPowerMult>
+		</UnitInfo>
+		<UnitInfo>        <!-- Fallen Angel -->                         <!-- Statius Trait -->
+			<Class>UNITCLASS_ANGEL</Class>
+			<Type>UNIT_FALLEN_ANGEL</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_FALLEN_ANGEL</Description>
+			<Civilopedia>TXT_KEY_UNIT_ANGEL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_FALLEN_ANGEL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>130</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>4</iCombat>
+			<iAsset>6</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>2.25</fMaxSpeed>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_FALLEN_ANGEL</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FALLEN_ANGEL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<AllowPromotions>
+				<Promotion>PROMOTION_COMMAND1</Promotion>
+				<Promotion>PROMOTION_COMMAND2</Promotion>
+				<Promotion>PROMOTION_COMMAND3</Promotion>
+			</AllowPromotions>
+			<iTier>3</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+		</UnitInfo>
+		<UnitInfo>        <!-- Haegtesse -->                         <!-- Judecca Trait -->
+			<Class>UNITCLASS_HAG</Class>
+			<Type>UNIT_HAEGTESSE</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_WARWIZARD</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_HAEGTESSE</Description>
+			<Civilopedia>TXT_KEY_UNIT_HAEGTESSE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MARAUTULE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>130</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>6</iCombat>
+			<iAsset>6</iAsset>
+			<PrereqBuildingClass>BUILDINGCLASS_DEMONS_ALTAR</PrereqBuildingClass>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>2.25</fMaxSpeed>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_HAEGTESSE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMON</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>3</iTier>
 		</UnitInfo>
 	</UnitInfos>
 </Civ4UnitInfos>

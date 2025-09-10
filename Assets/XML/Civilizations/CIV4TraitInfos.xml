@@ -4446,6 +4446,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_HYBOREM</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_HYBOREM_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_HYBOREM_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_HYBOREM_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -4467,6 +4468,18 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<UnitType>UNIT_BALOR</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
+			<UnitClassPlayerInstancesChanges>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<iPlayerInstancesChange>4</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+			</UnitClassPlayerInstancesChanges>	
 		</TraitInfo>
 	</TraitInfos> 
 </Civ4TraitInfos>

@@ -266,6 +266,7 @@
 			<Description>TXT_KEY_TRAIT_PACT_MERESIN</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_MERESIN_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_MERESIN_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_MERESIN_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -287,12 +288,19 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SWARM_OF_LOCUSTS</UnitClassType>
+					<UnitType>UNIT_SWARM_OF_LOCUSTS</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Ouzza -->
 			<Type>TRAIT_PACT_OUZZA</Type>
 			<Description>TXT_KEY_TRAIT_PACT_OUZZA</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_OUZZA_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_OUZZA_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_OUZZA_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -314,16 +322,23 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_FLESH_GOLEM</UnitClassType>
+					<UnitType>UNIT_FLESH_GOLEM</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Lethe -->
 			<Type>TRAIT_PACT_LETHE</Type>
 			<Description>TXT_KEY_TRAIT_PACT_LETHE</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_LETHE_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_LETHE_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_LETHE_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_FEAR</PromotionType>
+					<PromotionType>PROMOTION_RAISE_THE_DEAD2</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 				<FreePromotion>
@@ -341,12 +356,25 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitType>UNIT_DEATH_KNIGHT</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
+			<UnitClassPlayerInstancesChanges>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<iPlayerInstancesChange>4</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+			</UnitClassPlayerInstancesChanges>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Judecca -->
 			<Type>TRAIT_PACT_JUDECCA</Type>
 			<Description>TXT_KEY_TRAIT_PACT_JUDECCA</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_JUDECCA_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_JUDECCA_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_JUDECCA_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -368,12 +396,19 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_HAG</UnitClassType>
+					<UnitType>UNIT_HAEGTESSE</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Statius -->
 			<Type>TRAIT_PACT_STATIUS</Type>
 			<Description>TXT_KEY_TRAIT_PACT_STATIUS</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_STATIUS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_STATIUS_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_STATIUS_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -395,12 +430,19 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ANGEL</UnitClassType>
+					<UnitType>UNIT_FALLEN_ANGEL</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 			<TraitInfo>		<!-- Pact with Sallos -->
 			<Type>TRAIT_PACT_SALLOS</Type>
 			<Description>TXT_KEY_TRAIT_PACT_SALLOS</Description>
 			<Civilopedia>TXT_KEY_TRAIT_PACT_SALLOS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_PACT_SALLOS_SHORT</ShortDescription>
+			<Help>TXT_KEY_TRAIT_PACT_SALLOS_HELP</Help>
 			<TraitClass>TRAITCLASS_DEMON_PACT</TraitClass>
 			<FreePromotions>
 				<FreePromotion>
@@ -422,6 +464,12 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+			<ExtraUnitClasses>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SUCCUBUS</UnitClassType>
+					<UnitType>UNIT_SUCCUBUS</UnitType>
+				</ExtraUnitClass>
+			</ExtraUnitClasses>	
 		</TraitInfo>
 		
 	</TraitInfos>

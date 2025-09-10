@@ -1522,6 +1522,7 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_FLESH_GOLEM</DefaultUnit>
+			<bUnique>1</bUnique>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- AIR_ELEMENTAL -->
@@ -4133,6 +4134,7 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SWARM_OF_LOCUSTS</DefaultUnit>
+			<bUnique>1</bUnique>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- MECH DRAGON -->
@@ -4508,6 +4510,17 @@
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<bUnique>1</bUnique>
 			<DefaultUnit>UNIT_GOBLIN_SAPPER</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- MARAUTULE -->
+			<Type>UNITCLASS_HAG</Type>
+			<Description>TXT_KEY_UNIT_HAEGTESSE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HAEGTESSE</DefaultUnit>
+			<bUnique>1</bUnique>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		</UnitClassInfos>

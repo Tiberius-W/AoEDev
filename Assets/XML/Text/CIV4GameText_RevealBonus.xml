@@ -7886,6 +7886,14 @@
 		<Spanish>Pact with the Lord of Balors</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_PACT_HYBOREM_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to the [LINK=BUILDING_TEMPLE_UNRAVELING]Temple of Unraveling[\LINK] building</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PACT_JUDECCA</Tag>
 		<English>Pact with the RustBringer</English>
 		<French>Pacte avec le PorteRouille</French>
