@@ -38,18 +38,18 @@
 			<iCultureGarrison>16</iCultureGarrison>
 			<iAsset>26</iAsset>
 			<UnitMeshGroups>
-			<iGroupSize>1</iGroupSize>
-			<fMaxSpeed>1.75</fMaxSpeed>
-			<fPadTime>1</fPadTime>
-			<iMeleeWaveSize>1</iMeleeWaveSize>
-			<iRangedWaveSize>0</iRangedWaveSize>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_ABADDON_2</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<HotKey/>
+			<HotKey />
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_DEMON</PromotionType>
@@ -91,7 +91,6 @@
 					<PromotionType>PROMOTION_ENTROPY3</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
-
 			</FreePromotions>
 			<bAutoRaze>1</bAutoRaze>
 			<bNeverObsolete>1</bNeverObsolete>
@@ -110,7 +109,7 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_BADB</Class>
 			<Type>UNIT_BADB</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
@@ -135,10 +134,8 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
-
 			<PrereqTech>TECH_STRENGTH_OF_WILL</PrereqTech>
 			<BonusType>BONUS_MANA_ICE</BonusType>
-
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMoves>1</iMoves>
@@ -149,18 +146,18 @@
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
 			<UnitMeshGroups>
-			<iGroupSize>1</iGroupSize>
-			<fMaxSpeed>1.25</fMaxSpeed>
-			<fPadTime>1</fPadTime>
-			<iMeleeWaveSize>1</iMeleeWaveSize>
-			<iRangedWaveSize>1</iRangedWaveSize>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.25</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_BADB</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<HotKey/>
+			<HotKey />
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<FreePromotions>
 				<FreePromotion>
@@ -228,6 +225,141 @@
 			</BonusAffinities>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_CARNIVEAN</Class>
+			<Type>UNIT_CARNIVEAN</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_CARNIVEAN</Description>
+			<Civilopedia>TXT_KEY_UNIT_CARNIVEAN_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>-1</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iExtraPerception>6</iExtraPerception>
+			<iDefensiveStrikeChance>100</iDefensiveStrikeChance>
+			<iDefensiveStrikeDamage>25</iDefensiveStrikeDamage>
+			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
+			<iFirstStrikes>4</iFirstStrikes>
+			<iEnemyWithdrawalProb>-50</iEnemyWithdrawalProb>
+			<iWithdrawalProb>100</iWithdrawalProb>
+			<iWithdrawlProbDefensive>50</iWithdrawlProbDefensive>
+			<iMoves>2</iMoves>
+			<iCombat>1</iCombat>
+			<iCombatDefense>1</iCombatDefense>
+			<bImmuneToCapture>1</bImmuneToCapture>
+			<iXPValueAttack>8</iXPValueAttack>
+			<iXPValueDefense>4</iXPValueDefense>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.25</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CARNIVEAN</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHAOS1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHAOS2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<!-- Oh god, the noise. It... makes sense to have, but I cannot stand it. -->
+				<!-- <FreePromotion>
+					<PromotionType>PROMOTION_CHAOS3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion> -->
+				<FreePromotion>
+					<PromotionType>PROMOTION_ENERVATED</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CANNIBALIZE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMMANDO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_BLITZ</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_POISON_RESISTANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_LIGHTNING_RESISTANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FIRE_RESISTANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COLD_RESISTANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MAGIC_RESISTANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_RING_OF_STRIKING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<bNeverObsolete>1</bNeverObsolete>
+			<iTier>4</iTier>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_CHAOS</BonusType>
+					<iAffinity>1</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+			<bNeverObsolete>1</bNeverObsolete>
+			<iPowerMult>5</iPowerMult>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</UnitInfo>
+
+
+
+		<UnitInfo>
 			<Class>UNITCLASS_ODIO</Class>
 			<Type>UNIT_ODIO</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
@@ -259,18 +391,18 @@
 			<iCultureGarrison>16</iCultureGarrison>
 			<iAsset>66</iAsset>
 			<UnitMeshGroups>
-			<iGroupSize>1</iGroupSize>
-			<fMaxSpeed>1.75</fMaxSpeed>
-			<fPadTime>1</fPadTime>
-			<iMeleeWaveSize>1</iMeleeWaveSize>
-			<iRangedWaveSize>0</iRangedWaveSize>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_ODIO</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<HotKey/>
+			<HotKey />
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_WATER_WALKING</PromotionType>
@@ -385,18 +517,18 @@
 			<iCultureGarrison>16</iCultureGarrison>
 			<iAsset>26</iAsset>
 			<UnitMeshGroups>
-			<iGroupSize>1</iGroupSize>
-			<fMaxSpeed>1.75</fMaxSpeed>
-			<fPadTime>1</fPadTime>
-			<iMeleeWaveSize>1</iMeleeWaveSize>
-			<iRangedWaveSize>0</iRangedWaveSize>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_APOPHIS</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<HotKey/>
+			<HotKey />
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_DEMON</PromotionType>
@@ -446,7 +578,6 @@
 					<PromotionType>PROMOTION_APOPHIS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
-
 			</FreePromotions>
 			<bAutoRaze>1</bAutoRaze>
 			<bNeverObsolete>1</bNeverObsolete>
@@ -463,6 +594,5 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</UnitInfo>
-	
-		</UnitInfos>
+	</UnitInfos>
 </Civ4UnitInfos>

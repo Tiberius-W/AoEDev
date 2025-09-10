@@ -1111,6 +1111,8 @@ def doTraveller2 (argsList):
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_MAJENS_WORKSHOP') :
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_CARNIVEANS_CAMP') :
+					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 
 def doTraveller3 (argsList):
 	iEvent = argsList[0]
@@ -1218,6 +1220,8 @@ def canDoTraveller2(argsList):
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_GRAVE_OF_ASMODAY') :
 					return True
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_MAJENS_WORKSHOP') :
+					return True
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_CARNIVEANS_CAMP') :
 					return True
 	return False
 

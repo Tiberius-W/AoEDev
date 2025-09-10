@@ -5,8 +5,8 @@
 <!-- -->
 <!-- Unit art path information -->
 <Civ4ArtDefines xmlns="x-schema:MagisterAshes_CIV4ArtDefinesSchema.xml">
-<ImprovementArtInfos>
-	<ImprovementArtInfo>
+	<ImprovementArtInfos>
+		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_ABADDONS_PIT</Type>
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>0.22</fScale>
@@ -23,6 +23,15 @@
 			<NIF>Art/Modules/MagisterAshes/Improvements/BadbsBlizzard/BadbsBlizzard.nif</NIF>
 			<KFM/>
 			<Button>Art/Modules/MagisterAshes/Buttons/BadbsBlizzard.dds</Button>
+		</ImprovementArtInfo>
+			<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_CARNIVEANS_CAMP</Type>
+			<bExtraAnimations>1</bExtraAnimations>
+			<fScale>.30</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Freak Show/fest_alb_tentround.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/FreakShow.dds</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_GRAVE_OF_ASMODAY</Type>

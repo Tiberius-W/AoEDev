@@ -869,6 +869,10 @@ void CvPlot::doLairSpawn()
 	 || (GC.getGameINLINE().getNumCivCities() < GC.getGameINLINE().countCivPlayersAlive()))
 		return;
 
+	// 2.5 check; is this a world unit that can no longer spawn?
+	if (iUnit != NO_UNIT && iSpawnGroup == NO_SPAWNGROUP && GC.getGameINLINE().isUnitClassMaxedOut((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iUnit).getUnitClassType())))
+		return;
+
 	bool bValid = false;
 	int iCiv = GC.getImprovementInfo(getImprovementType()).getSpawnUnitCiv();
 	PlayerTypes eSpawnPlayer = NO_PLAYER;
