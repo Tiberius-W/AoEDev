@@ -252,7 +252,6 @@
 			<iMoves>2</iMoves>
 			<iCombat>1</iCombat>
 			<iCombatDefense>1</iCombatDefense>
-			<bImmuneToCapture>1</bImmuneToCapture>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
 			<UnitMeshGroups>
@@ -266,6 +265,7 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_CARNIVEAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<!-- No Chaos III because the noise is horrible... -->
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHAOS1</PromotionType>
@@ -275,11 +275,6 @@
 					<PromotionType>PROMOTION_CHAOS2</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
-				<!-- Oh god, the noise. It... makes sense to have, but I cannot stand it. -->
-				<!-- <FreePromotion>
-					<PromotionType>PROMOTION_CHAOS3</PromotionType>
-					<iNumApplied>1</iNumApplied>
-				</FreePromotion> -->
 				<FreePromotion>
 					<PromotionType>PROMOTION_ENERVATED</PromotionType>
 					<iNumApplied>1</iNumApplied>
@@ -356,9 +351,6 @@
 			<iPowerMult>5</iPowerMult>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
-
-
-
 		<UnitInfo>
 			<Class>UNITCLASS_ODIO</Class>
 			<Type>UNIT_ODIO</Type>
