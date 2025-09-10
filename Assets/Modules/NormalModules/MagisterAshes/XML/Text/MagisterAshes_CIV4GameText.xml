@@ -121,6 +121,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP</Tag>
+		<English>Majen's Workshop</English>
+		<French>Majen's Workshop</French>
+		<German>Majen's Workshop</German>
+		<Italian>Majen's Workshop</Italian>
+		<Spanish>Majen's Workshop</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP_PEDIA</Tag>
+		<English>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</English>
+		<French>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</French>
+		<German>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</German>
+		<Italian>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</Italian>
+		<Spanish>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY</Tag>
 		<English>Grave of Asmoday</English>
 		<French>Tombeau d'Asmoday</French>
@@ -159,6 +175,14 @@
 		<German>Keepers of the Lord of Dust's Tomb</German>
 		<Italian>Keepers of the Lord of Dust's Tomb</Italian>
 		<Spanish>Keepers of the Lord of Dust's Tomb</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KEEPERS_MAJEN</Tag>
+		<English>Keepers of the Tinker's Trove</English>
+		<French>Keepers of the Tinker's Trove</French>
+		<German>Keepers of the Tinker's Trove</German>
+		<Italian>Keepers of the Tinker's Trove</Italian>
+		<Spanish>Keepers of the Tinker's Trove</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_KEEPERS_ASMODAY_FALLEN</Tag>

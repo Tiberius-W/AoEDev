@@ -78,6 +78,16 @@
 			<bFort>1</bFort>
 			<iDefenseModifier>-50</iDefenseModifier>
 		</ImprovementInfo>
+		<ImprovementInfo><!-- Majen's Workshop -->
+			<Type>IMPROVEMENT_MAJENS_WORKSHOP</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_MAGISTER_ASHES</DependencyType>
+			</AndDependencyTypes>
+			<bOutsideBorders>1</bOutsideBorders>
+			<bFort>1</bFort>
+			<iDefenseModifier>40</iDefenseModifier>
+		</ImprovementInfo>
 		<ImprovementInfo><!-- Pit of Abaddon -->
 			<Type>IMPROVEMENT_ABADDONS_PIT</Type>
 			<bTypeDependency>1</bTypeDependency>
@@ -86,6 +96,7 @@
 			</AndDependencyTypes>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
+			<iDefenseModifier>20</iDefenseModifier>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_MONK</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_MONK</ImmediateSpawnUnitType>

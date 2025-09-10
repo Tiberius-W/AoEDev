@@ -51,6 +51,18 @@
 				<TraitHookType>TRAITHOOK_GAIN_PLOT_OWNERSHIP</TraitHookType>
 			<PrereqImprovementType>IMPROVEMENT_GRAVE_OF_ASMODAY</PrereqImprovementType>
 		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Gain plot           Majen's Workshop    			                Keepers -->
+			<Type>TRAITTRIGGER_GAIN_PLOT_MAJEN</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_KEEPERS_MAJEN</TraitType>
+					<iModifier>2000</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_KEEPERS</TraitClassType>
+				<TraitHookType>TRAITHOOK_GAIN_PLOT_OWNERSHIP</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_MAJENS_WORKSHOP</PrereqImprovementType>
+		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Gain plot           Whispering Wood    			                Keepers -->
 			<Type>TRAITTRIGGER_GAIN_PLOT_WHISPERING</Type>
 			<CounterChanges>
@@ -111,6 +123,18 @@
 			<TraitClassType>TRAITCLASS_KEEPERS</TraitClassType>
 				<TraitHookType>TRAITHOOK_LOSE_PLOT_OWNERSHIP</TraitHookType>
 			<PrereqImprovementType>IMPROVEMENT_GRAVE_OF_ASMODAY</PrereqImprovementType>
+		</TraitTriggerInfo>	
+		<TraitTriggerInfo> <!-- Lose plot           Majen's Workshop                      		Keepers -->
+			<Type>TRAITTRIGGER_LOSE_PLOT_MAJEN</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_KEEPERS_MAJEN</TraitType>
+					<iModifier>-2000</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_KEEPERS</TraitClassType>
+				<TraitHookType>TRAITHOOK_LOSE_PLOT_OWNERSHIP</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_MAJENS_WORKSHOP</PrereqImprovementType>
 		</TraitTriggerInfo>	
 		<TraitTriggerInfo> <!-- Lose plot           Whispering Wood    			                Keepers -->
 			<Type>TRAITTRIGGER_LOSE_PLOT_WHISPERING</Type>
