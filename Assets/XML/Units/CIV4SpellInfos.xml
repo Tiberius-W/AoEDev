@@ -11416,8 +11416,7 @@
 			<PrereqTrait>TRAIT_ILLUSIONIST3</PrereqTrait>
 			</PrereqTraits>
 			<bCityAction>1</bCityAction>
-			<bAllowAI>1</bAllowAI>
-			<iAIWeight>100</iAIWeight>
+			<bAllowAI>0</bAllowAI>
 			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellCreateUtopia(pCaster)</PyResult>

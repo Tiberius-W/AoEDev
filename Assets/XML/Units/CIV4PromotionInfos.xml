@@ -9205,7 +9205,13 @@
 		<PromotionInfo>		<!-- Fell Spirit -->
 			<Type>PROMOTION_FELL_SPIRIT</Type>
 			<Description>TXT_KEY_PROMOTION_FELL_SPIRIT</Description>
-			<iSlaveGenerationChance>20</iSlaveGenerationChance>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_WRETCHED</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_WRETCHED</Promotion>
+			</PromotionOverwrites>
+			<iSlaveGenerationChance>35</iSlaveGenerationChance>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/FellSpirit.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fellowship Forester -->
@@ -22173,7 +22179,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Demonslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Demonslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_DEMON</PromotionType>
@@ -23643,7 +23649,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Medic1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Firstaid.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Flanking I -->
 			<Type>PROMOTION_FLANKING1</Type>
@@ -28765,6 +28771,9 @@
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
 			<TechPrereq>TECH_ANIMAL_HUSBANDRY</TechPrereq>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_URBAN</Promotion>
+			</PromotionExcludes>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
@@ -28807,6 +28816,9 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_URBAN</Promotion>
+			</PromotionExcludes>
 			<TechPrereq>TECH_ANIMAL_MASTERY</TechPrereq>
 			<UnitCombatMods>
 				<UnitCombatMod>
@@ -29298,7 +29310,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Undeadslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Undeadslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_UNDEAD</PromotionType>
@@ -32791,12 +32803,18 @@
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/PsionicMastery.dds</Button>
 			<iMinLevel>12</iMinLevel>
 		</PromotionInfo>
-  <!-- <PromotionInfo>	-->	<!-- Urban -->
-       <!-- <Type>TXT_KEY_ANIMALBLOCKER</Type>
+       <PromotionInfo>		<!-- Urban -->
+        <Type>PROMOTION_URBAN</Type>
 			<Description>TXT_KEY_ANIMALBLOCKER</Description>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bEffectProm>0</bEffectProm>
-			<bNoXP>1</bNoXP>
+			<iCityAttack>50</iCityAttack>
+			<bMustMaintain>1</bMustMaintain>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_COMBAT1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<TechPrereq>TECH_WARFARE</TechPrereq>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_SUBDUE_ANIMAL</Promotion>
 				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
@@ -32809,13 +32827,9 @@
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/Urban.dds</Button>
-		</PromotionInfo> -->
+		</PromotionInfo>
 		<!--<PromotionInfo>     Lifedrinker
 				<Type>PROMOTION_LIFEDRINKER</Type>
 				<Description>TXT_KEY_PROMOTION_LIFEDRINKER</Description>
@@ -38526,7 +38540,7 @@
 					<iBonusRange>0</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
-			<Button>Art\Interface\Buttons\handcuff.dds</Button>
+			<Button>Art\Interface\Buttons\handcuff2.dds</Button>
 			<PromotionNextLevel>PROMOTION_PATROL3</PromotionNextLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Patrol III -->
@@ -38554,7 +38568,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art\Interface\Buttons\handcuff.dds</Button>
+			<Button>Art\Interface\Buttons\handcuff3.dds</Button>
 			<CityBonuses>
 				<CityBonus>
 					<bApplySelf>1</bApplySelf>
@@ -40435,7 +40449,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Demonslaying.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Angelslicer.dds</Button>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
 					<PromotionType>PROMOTION_ANGEL</PromotionType>

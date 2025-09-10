@@ -20965,7 +20965,7 @@
 			</Builds>
 			<iCost>100</iCost>
 			<iMoves>2</iMoves>
-			<iWorkRate>150</iWorkRate>
+			<iWorkRate>225</iWorkRate>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -28604,10 +28604,10 @@
 			<iMoves>2</iMoves>
 			<iAirRange>1</iAirRange>
 			<iWorkRate>400</iWorkRate>
-			<iCombat>10</iCombat>
+			<iCombat>12</iCombat>
 			<iAirCombat>6</iAirCombat>
 			<iAirCombatLimit>40</iAirCombatLimit>
-			<iFirstStrikes>3</iFirstStrikes>
+			<iFirstStrikes>1</iFirstStrikes>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>28</iAsset>
 			<UnitMeshGroups>
@@ -28660,7 +28660,7 @@
 			<bFreeXP>1</bFreeXP>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
-			<iCombatDefense>10</iCombatDefense>
+			<iCombatDefense>7</iCombatDefense>
 			<bImmortal>1</bImmortal>
 			<iMinLevel>10</iMinLevel>
 			<iTier>4</iTier>
@@ -28778,6 +28778,7 @@
 			</UnitMeshGroups>
 			<iCombatDefense>3</iCombatDefense>
 			<iTier>1</iTier>
+			<iWeaponTierMax>1</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Militia -->
 			<Class>UNITCLASS_AXEMAN</Class>
@@ -28858,7 +28859,7 @@
 			<PrereqTech>TECH_IRON_WORKING</PrereqTech>
 			<iCost>120</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCityDefense>25</iCityDefense>
 			<iConscription>2</iConscription>
 			<iCultureGarrison>4</iCultureGarrison>
@@ -28933,11 +28934,16 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<AllowPromotions>
+				<Promotion>PROMOTION_GUARDSMAN</Promotion>
+				<Promotion>PROMOTION_GUARDSMAN2</Promotion>
+			</AllowPromotions>
 			<iCombatDefense>5</iCombatDefense>
 			<iDefensiveStrikeChance>20</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>10</iDefensiveStrikeDamage>
 			<iTier>2</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_COURTHOUSE</PrereqBuildingClass>
+			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Sharpshooter -->
 			<Class>UNITCLASS_LONGBOWMAN</Class>
@@ -28983,9 +28989,13 @@
 				<iRangedWaveSize>2</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_MARKSMAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_MILITIA_CROSSBOWMAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<AllowPromotions>
+				<Promotion>PROMOTION_GUARDSMAN</Promotion>
+				<Promotion>PROMOTION_GUARDSMAN2</Promotion>
+			</AllowPromotions>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 			<FreePromotions>
 				<FreePromotion>
@@ -28997,6 +29007,7 @@
 			<iDefensiveStrikeDamage>15</iDefensiveStrikeDamage>
 			<iTier>3</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_COURTHOUSE</PrereqBuildingClass>
+			<iWeaponTierMax>3</iWeaponTierMax>
 		</UnitInfo>
 		<UnitInfo>        <!-- Mounted Militia -->
 			<Class>UNITCLASS_HORSEMAN</Class>
@@ -29324,8 +29335,9 @@
 			<iCombat>12</iCombat>
 			<iCombatDefense>7</iCombatDefense>
 			<iAirCombat>6</iAirCombat>
-			<iAirCombatLimit>30</iAirCombatLimit>
+			<iAirCombatLimit>40</iAirCombatLimit>
 			<iCultureGarrison>4</iCultureGarrison>
+			<iFirstStrikes>1</iFirstStrikes>
 			<iAsset>24</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -29343,6 +29355,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -29398,15 +29414,16 @@
 			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<iCost>60</iCost>
 			<iMoves>2</iMoves>
-			<iCombat>3</iCombat>
+			<iCombat>4</iCombat>
+			<iCityAttack>-20</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>45</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iUnitCombatMod>45</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iAsset>4</iAsset>
@@ -29465,6 +29482,7 @@
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>6</iCombat>
+			<iCityAttack>-20</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -29553,6 +29571,7 @@
 			<iCommandRange>2</iCommandRange>
 			<iMinLevel>6</iMinLevel>
 			<iCombatDefense>10</iCombatDefense>
+			<iCityAttack>-20</iCityAttack>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_TRAIT_RUTHLESS</PromotionType>
@@ -29869,6 +29888,18 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_VAMPIRE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -31732,7 +31763,7 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_BINDER</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BINDER</Description>
 			<Civilopedia>TXT_KEY_UNIT_BINDER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BINDER_STRATEGY</Strategy>
@@ -31746,7 +31777,11 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -31901,7 +31936,7 @@
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_CHOSEN_DTESH</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CHOSEN_DTESH</Description>
 			<Civilopedia>TXT_KEY_UNIT_ADEPT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
@@ -31915,7 +31950,11 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32075,7 +32114,7 @@
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_COUNCIL_EIGHT</Type>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_COUNCIL_EIGHT</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
@@ -32086,7 +32125,11 @@
 			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32261,7 +32304,7 @@
 			<Class>UNITCLASS_PIKEMAN</Class>
 			<Type>UNIT_DEATHS_HEAD</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DEATHS_HEAD</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
@@ -32274,7 +32317,15 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32533,7 +32584,7 @@
 			<Class>UNITCLASS_PHALANX</Class>
 			<Type>UNIT_HAND_OF_DTESH</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HAND_OF_DTESH</Description>
 			<Civilopedia>TXT_KEY_UNIT_HAND_OF_DTESH_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_HAND_OF_DTESH_STRATEGY</Strategy>
@@ -32544,7 +32595,15 @@
 			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -32595,7 +32654,7 @@
 			<Class>UNITCLASS_SPEARMAN</Class>
 			<Type>UNIT_SENTINEL</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SENTINEL</Description>
 			<Civilopedia>TXT_KEY_UNIT_SENTINEL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SENTINEL_STRATEGY</Strategy>
@@ -32609,7 +32668,15 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -42191,6 +42258,22 @@
 			<bFood>1</bFood>
 			<UnitAIs>
 				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
@@ -42284,6 +42367,10 @@
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_UNDEAD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FREE_UNIT</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

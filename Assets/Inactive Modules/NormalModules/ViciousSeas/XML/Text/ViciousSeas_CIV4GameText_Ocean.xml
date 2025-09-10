@@ -94,6 +94,22 @@
 		<Spanish>Deepened Vision</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SLUMBERING_NAVIGATOR</Tag>
+		<English>Slumbering Navigator</English>
+		<French>Slumbering Navigator</French>
+		<German>Slumbering Navigator</German>
+		<Italian>Slumbering Navigator</Italian>
+		<Spanish>Slumbering Navigator</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GUARDIANSEASE</Tag>
+		<English>Guardians Ease</English>
+		<French>Guardians Ease</French>
+		<German>Guardians Ease</German>
+		<Italian>Guardians Ease</Italian>
+		<Spanish>Guardians Ease</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BAD_KRAKEN</Tag>
 		<English>Bad Kraken</English>
 		<French>Bad Kraken</French>
@@ -166,12 +182,56 @@
 		<Spanish>[TAB]Giant kelp found growing within the lairs of ancient sea serpents are able to grow to truly monolithic proportions thanks to a healthy diet of sea serpent waste and sunlight reflecting off their dazzling scales. When harvested, as long as the kelp trunks are kept in contact with water, they will continue to slowly grow and heal. This allows ships constructed of this material to quickly repair their hulls at sea from even the most severe storm or monster attack. As well as this, while not having the same regenerative property on dry land, this kelp still makes for excellent building material.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLUMBERING_COVEN</Tag>
+		<English>Slumbering Coven</English>
+		<French>Slumbering Coven</French>
+		<German>Slumbering Coven</German>
+		<Italian>Slumbering Coven</Italian>
+		<Spanish>Slumbering Coven</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLUMBERING_COVEN_PEDIA</Tag>
+		<English>Unlike most other religions, the Overlords are not content simply working or co-habilitating with the state that houses their cults. Far more fanatical than a typical theocracy, a polity ruled by a Slumbering Coven sees a chosen cult's cultists and Speakers embedded on even the highest echelons of government, and their influence is felt far and wide - a populace whipped into a frenzy through mad preaching find themselves much more willing to continue fighting.
+
+Key to a Slumbering Coven is a group of seven Dreamers - the finest and most valued of the ruling cult. While conveying contradictory messages most of the time, every now and then, they speak in unison, and the Speakers are wise to heed their commands.
+
+Such governance, however, comes with severe repercussions beyond the obvious mercuriality of the Dreamers: the priestly class is the only one that can thrive in such an irrational regime, with trades demanding clear thinking finding themselves utterly stifled by the environment. But at least the bounties of the sea will be given priority, helping fishermen make a very safe, very good living out of such.</English>
+		<French>Unlike most other religions, the Overlords are not content simply working or co-habilitating with the state that houses their cults. Far more fanatical than a typical theocracy, a polity ruled by a Slumbering Coven sees a chosen cult's cultists and Speakers embedded on even the highest echelons of government, and their influence is felt far and wide - a populace whipped into a frenzy through mad preaching find themselves much more willing to continue fighting.
+
+Key to a Slumbering Coven is a group of seven Dreamers - the finest and most valued of the ruling cult. While conveying contradictory messages most of the time, every now and then, they speak in unison, and the Speakers are wise to heed their commands.
+
+Such governance, however, comes with severe repercussions beyond the obvious mercuriality of the Dreamers: the priestly class is the only one that can thrive in such an irrational regime, with trades demanding clear thinking finding themselves utterly stifled by the environment. But at least the bounties of the sea will be given priority, helping fishermen make a very safe, very good living out of such.</French>
+		<German>Unlike most other religions, the Overlords are not content simply working or co-habilitating with the state that houses their cults. Far more fanatical than a typical theocracy, a polity ruled by a Slumbering Coven sees a chosen cult's cultists and Speakers embedded on even the highest echelons of government, and their influence is felt far and wide - a populace whipped into a frenzy through mad preaching find themselves much more willing to continue fighting.
+
+Key to a Slumbering Coven is a group of seven Dreamers - the finest and most valued of the ruling cult. While conveying contradictory messages most of the time, every now and then, they speak in unison, and the Speakers are wise to heed their commands.
+
+Such governance, however, comes with severe repercussions beyond the obvious mercuriality of the Dreamers: the priestly class is the only one that can thrive in such an irrational regime, with trades demanding clear thinking finding themselves utterly stifled by the environment. But at least the bounties of the sea will be given priority, helping fishermen make a very safe, very good living out of such.</German>
+		<Italian>Unlike most other religions, the Overlords are not content simply working or co-habilitating with the state that houses their cults. Far more fanatical than a typical theocracy, a polity ruled by a Slumbering Coven sees a chosen cult's cultists and Speakers embedded on even the highest echelons of government, and their influence is felt far and wide - a populace whipped into a frenzy through mad preaching find themselves much more willing to continue fighting.
+
+Key to a Slumbering Coven is a group of seven Dreamers - the finest and most valued of the ruling cult. While conveying contradictory messages most of the time, every now and then, they speak in unison, and the Speakers are wise to heed their commands.
+
+Such governance, however, comes with severe repercussions beyond the obvious mercuriality of the Dreamers: the priestly class is the only one that can thrive in such an irrational regime, with trades demanding clear thinking finding themselves utterly stifled by the environment. But at least the bounties of the sea will be given priority, helping fishermen make a very safe, very good living out of such.</Italian>
+		<Spanish>Unlike most other religions, the Overlords are not content simply working or co-habilitating with the state that houses their cults. Far more fanatical than a typical theocracy, a polity ruled by a Slumbering Coven sees a chosen cult's cultists and Speakers embedded on even the highest echelons of government, and their influence is felt far and wide - a populace whipped into a frenzy through mad preaching find themselves much more willing to continue fighting.
+
+Key to a Slumbering Coven is a group of seven Dreamers - the finest and most valued of the ruling cult. While conveying contradictory messages most of the time, every now and then, they speak in unison, and the Speakers are wise to heed their commands.
+
+Such governance, however, comes with severe repercussions beyond the obvious mercuriality of the Dreamers: the priestly class is the only one that can thrive in such an irrational regime, with trades demanding clear thinking finding themselves utterly stifled by the environment. But at least the bounties of the sea will be given priority, helping fishermen make a very safe, very good living out of such.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_CORAL_REEF</Tag>
 		<English>Coral</English>
 		<French>Coral</French>
 		<German>Coral</German>
 		<Italian>Coral</Italian>
 		<Spanish>Coral</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DROWNED_VS</Tag>
+		<English>Drowned Commander</English>
+		<French>Drowned Commander</French>
+		<German>Drowned Commander</German>
+		<Italian>Drowned Commander</Italian>
+		<Spanish>Drowned Commander</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CORAL_REEF_PEDIA</Tag>
@@ -231,11 +291,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_DROWNED_LAIR</Tag>
-		<English>Drowned Lair</English>
-		<French>Drowned Lair</French>
-		<German>Drowned Lair</German>
-		<Italian>Drowned Lair</Italian>
-		<Spanish>Drowned Lair</Spanish>
+		<English>Drowned Lair (I)</English>
+		<French>Drowned Lair (I)</French>
+		<German>Drowned Lair (I)</German>
+		<Italian>Drowned Lair (I)</Italian>
+		<Spanish>Drowned Lair (I)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DROWNED_LAIR_PEDIA</Tag>
@@ -247,27 +307,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_DREDGE_HEEP</Tag>
-		<English>Dredge Heep</English>
-		<French>Dredge Heep</French>
-		<German>Dredge Heep</German>
-		<Italian>Dredge Heep</Italian>
-		<Spanish>Dredge Heep</Spanish>
+		<English>Dredge Heep (II)</English>
+		<French>Dredge Heep (II)</French>
+		<German>Dredge Heep (II)</German>
+		<Italian>Dredge Heep (II)</Italian>
+		<Spanish>Dredge Heep (II)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_HOWLING_REEF</Tag>
-		<English>Howling Reef</English>
-		<French>Howling Reef</French>
-		<German>Howling Reef</German>
-		<Italian>Howling Reef</Italian>
-		<Spanish>Howling Reef</Spanish>
+		<English>Howling Reef (III)</English>
+		<French>Howling Reef (III)</French>
+		<German>Howling Reef (III)</German>
+		<Italian>Howling Reef (III)</Italian>
+		<Spanish>Howling Reef (III)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_DEN</Tag>
-		<English>Pirate Den</English>
-		<French>Pirate Den</French>
-		<German>Pirate Den</German>
-		<Italian>Pirate Den</Italian>
-		<Spanish>Pirate Den</Spanish>
+		<English>Pirate Den (I)</English>
+		<French>Pirate Den (I)</French>
+		<German>Pirate Den (I)</German>
+		<Italian>Pirate Den (I)</Italian>
+		<Spanish>Pirate Den (I)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_DEN_PEDIA</Tag>
@@ -309,11 +369,11 @@ These scum have created a den to organize their raids from and store the booty o
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_STRONGHOLD</Tag>
-		<English>Pirate Stronghold</English>
-		<French>Pirate Stronghold</French>
-		<German>Pirate Stronghold</German>
-		<Italian>Pirate Stronghold</Italian>
-		<Spanish>Pirate Stronghold</Spanish>
+		<English>Pirate Stronghold (II)</English>
+		<French>Pirate Stronghold (II)</French>
+		<German>Pirate Stronghold (II)</German>
+		<Italian>Pirate Stronghold (II)</Italian>
+		<Spanish>Pirate Stronghold (II)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_STRONGHOLD_PEDIA</Tag>
@@ -355,11 +415,11 @@ forming a naval military structure and stockpiling looted weaponry, these pirate
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_FREE_CITY</Tag>
-		<English>Pirate Free City</English>
-		<French>Pirate Free City</French>
-		<German>Pirate Free City</German>
-		<Italian>Pirate Free City</Italian>
-		<Spanish>Pirate Free City</Spanish>
+		<English>Pirate Free City (III)</English>
+		<French>Pirate Free City (III)</French>
+		<German>Pirate Free City (III)</German>
+		<Italian>Pirate Free City (III)</Italian>
+		<Spanish>Pirate Free City (III)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PIRATE_FREE_CITY_PEDIA</Tag>
@@ -566,6 +626,107 @@ The Marionette was the prized flagship of the Balserath city-states, and now it 
 		<German>[TAB]The nest of an ancient sea serpent, the stones ground smooth, as if polished marble, by slicked scales over a millennia, kelp the size of old-growth trees twisting and roping into one another a hundred times until the tangle is so firm a castle could be built upon it.</German>
 		<Italian>[TAB]The nest of an ancient sea serpent, the stones ground smooth, as if polished marble, by slicked scales over a millennia, kelp the size of old-growth trees twisting and roping into one another a hundred times until the tangle is so firm a castle could be built upon it.</Italian>
 		<Spanish>[TAB]The nest of an ancient sea serpent, the stones ground smooth, as if polished marble, by slicked scales over a millennia, kelp the size of old-growth trees twisting and roping into one another a hundred times until the tangle is so firm a castle could be built upon it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STYGIAN_SHRINE</Tag>
+		<English>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE</Tag>
+		<English>Stygian Shrine (I)</English>
+		<French>Stygian Shrine (I)</French>
+		<German>Stygian Shrine (I)</German>
+		<Italian>Stygian Shrine (I)</Italian>
+		<Spanish>Stygian Shrine (I)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE</Tag>
+		<English>Stygian Temple (II)</English>
+		<French>Stygian Temple (II)</French>
+		<German>Stygian Temple (II)</German>
+		<Italian>Stygian Temple (II)</Italian>
+		<Spanish>Stygian Temple (II)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL</Tag>
+		<English>Stygian Cathedral (III)</English>
+		<French>Stygian Cathedral (III)</French>
+		<German>Stygian Cathedral (III)</German>
+		<Italian>Stygian Cathedral (III)</Italian>
+		<Spanish>Stygian Cathedral (III)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE</Tag>
+		<English>Stygian Grand Spire (IV)</English>
+		<French>Stygian Grand Spire (IV)</French>
+		<German>Stygian Grand Spire (IV)</German>
+		<Italian>Stygian Grand Spire (IV)</Italian>
+		<Spanish>Stygian Grand Spire (IV)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE_PEDIA</Tag>
+		<English>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</English>
+		<French>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</French>
+		<German>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</German>
+		<Italian>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Italian>
+		<Spanish>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE_PEDIA</Tag>
+		<English>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</English>
+		<French>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</French>
+		<German>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</German>
+		<Italian>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Italian>
+		<Spanish>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL_PEDIA</Tag>
+		<English>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</English>
+		<French>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</French>
+		<German>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</German>
+		<Italian>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Italian>
+		<Spanish>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE_PEDIA</Tag>
+		<English>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</English>
+		<French>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</French>
+		<German>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</German>
+		<Italian>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Italian>
+		<Spanish>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAWLING_BOATS</Tag>
+		<English>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</English>
+		<French>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</French>
+		<German>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</German>
+		<Italian>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</Italian>
+		<Spanish>Create [LINK=IMPROVEMENT_TRAWLING_BOATS]Trawling Boats[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_TRAWLING_BOATS</Tag>
+		<English>Trawling Boats</English>
+		<French>Trawling Boats</French>
+		<German>Trawling Boats</German>
+		<Italian>Trawling Boats</Italian>
+		<Spanish>Trawling Boats</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_TRAWLING_BOATS</Tag>
+		<English>Trawling Boats</English>
+		<French>Trawling Boats</French>
+		<German>Trawling Boats</German>
+		<Italian>Trawling Boats</Italian>
+		<Spanish>Trawling Boats</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GIANT_TURTLE</Tag>

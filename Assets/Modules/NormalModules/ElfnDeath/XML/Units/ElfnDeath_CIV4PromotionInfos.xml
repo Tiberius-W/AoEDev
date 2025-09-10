@@ -100,6 +100,10 @@
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
 			</UnitCombats>
 			<Button>Modules/NormalModules/ElfnDeath/Art/Interface/Buttons/Promotions/LastRite.dds</Button>
 			<PromotionCombatMods>

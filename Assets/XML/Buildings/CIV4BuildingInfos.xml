@@ -687,6 +687,7 @@
 			</Flavors>
 			<iPrereqBroadAlignment>0</iPrereqBroadAlignment>
 			<iAlignmentModifier>-5</iAlignmentModifier>
+			<RemovePromotion>PROMOTION_ENRAGED</RemovePromotion>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Barracks -->
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
@@ -14867,8 +14868,8 @@
 				</LocalSpecialistCommerceChange>
 			</LocalSpecialistCommerceChanges>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Trader’s Enclave                                      	    Lanun Virtuous pirate UB -->
-			<BuildingClass>BUILDINGCLASS_TRADER_ENCLAVE</BuildingClass>
+<!--   <BuildingInfo> -->		<!-- Trader’s Enclave                                      	    Lanun Virtuous pirate UB -->
+  <!-- <BuildingClass>BUILDINGCLASS_TRADER_ENCLAVE</BuildingClass>
 			<Type>BUILDING_TRADER_ENCLAVE</Type>
 			<Description>TXT_KEY_BUILDING_TRADER_ENCLAVE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRADER_ENCLAVE_PEDIA</Civilopedia>
@@ -14879,19 +14880,19 @@
 			<bWater>1</bWater>
 			<iAIWeight>35</iAIWeight>
 			<iCost>300</iCost>
-			<TradeYieldModifiers>
-				<iYield>50</iYield><!--  food bonus from trade -->
-				<iYield>50</iYield><!-- hammers bonus from trade -->
-				<iYield>50</iYield><!-- commerce bonus from trade -->
+			<TradeYieldModifiers> 
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
 			</TradeYieldModifiers>
 			<TradeCommerceModifiers>
-				<iCommerce>50</iCommerce><!-- gold? bonus from trade -->
-				<iCommerce>50</iCommerce><!-- research bonus from trade -->
-				<iCommerce>50</iCommerce><!-- culture bonus from trade -->
+				<iCommerce>50</iCommerce>
+				<iCommerce>50</iCommerce>
+				<iCommerce>50</iCommerce>
 			</TradeCommerceModifiers>
 			<iTradeRouteModifier>1</iTradeRouteModifier>
 			<iCoastalTradeRoutes>1</iCoastalTradeRoutes>
-		</BuildingInfo>
+		</BuildingInfo> -->
 		<BuildingInfo>		<!-- Altar of the Flame 										Clan of Embers Scorched Earth UB -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_FLAME</BuildingClass>
 			<Type>BUILDING_ALTAR_FLAME</Type>

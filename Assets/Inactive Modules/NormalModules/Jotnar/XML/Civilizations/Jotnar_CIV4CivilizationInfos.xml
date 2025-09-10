@@ -65,7 +65,7 @@
 			</Cities>
 			<Buildings>
 			<Building>
-				<BuildingClassType>BUILDINGCLASS_JOT_HOUSE_OF_THE_ANCESTORS</BuildingClassType>
+				<BuildingClassType>BUILDINGCLASS_ELDER_COUNCIL</BuildingClassType>
 				<BuildingType>BUILDING_JOT_HOUSE_OF_THE_ANCESTORS</BuildingType>
 			</Building>
 			<Building>
@@ -75,10 +75,6 @@
 			<Building>
 				<BuildingClassType>BUILDINGCLASS_JOT_STAEDDING</BuildingClassType>
 				<BuildingType>BUILDING_JOT_STAEDDING</BuildingType>
-			</Building>
-			<Building>
-				<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-				<BuildingType>BUILDING_JOT_MONUMENT</BuildingType>
 			</Building>
 			<Building>
 				<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>

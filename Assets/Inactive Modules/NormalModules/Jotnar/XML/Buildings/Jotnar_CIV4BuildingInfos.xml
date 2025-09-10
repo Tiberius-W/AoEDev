@@ -18,6 +18,7 @@
 			<iConquestProb>0</iConquestProb>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>10</fVisibilityPriority>
+			<bNoCivicAnger>1</bNoCivicAnger>
 			<YieldChanges>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -46,7 +47,7 @@
 			<FreeBonus2>NONE</FreeBonus2>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_JOT_HOUSE_OF_THE_ANCESTORS</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ELDER_COUNCIL</BuildingClass>
 			<Type>BUILDING_JOT_HOUSE_OF_THE_ANCESTORS</Type>
 			<Description>TXT_KEY_BUILDING_JOT_HOUSE_OF_THE_ANCESTORS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_JOT_HOUSE_OF_THE_ANCESTORS_PEDIA</Civilopedia>
@@ -67,7 +68,7 @@
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bNeverCapture>0</bNeverCapture>
 			<bNukeImmune>0</bNukeImmune>
-			<iCost>100</iCost>
+			<iCost>65</iCost>
 			<iHurryCostModifier>20</iHurryCostModifier>
 			<iAdvancedStartCost>20</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
@@ -95,10 +96,11 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<iCrime>-2</iCrime>
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -122,7 +124,6 @@
 			</ProductionTraits>
 			<FreeBonus>BONUS_MANA_FIRE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
@@ -143,7 +144,7 @@
 			</CommerceModifiers>
 			<SpecialistCounts>
 				<SpecialistCount>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 				<SpecialistCount>
@@ -151,6 +152,12 @@
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
@@ -185,7 +192,6 @@
 			<FreeBonus>BONUS_MANA_EARTH</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bTeamShare>1</bTeamShare>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
@@ -216,9 +222,15 @@
 				</SpecialistCount>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -241,8 +253,8 @@
 			<iGlobalResistModify>0</iGlobalResistModify>
 			<FreeBonus2>NONE</FreeBonus2>
 		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+   <!-- <BuildingInfo> -->
+       <!-- <BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
 			<Type>BUILDING_JOT_MONUMENT</Type>
 			<Description>TXT_KEY_BUILDING_MONUMENT</Description>
 			<Civilopedia>TXT_KEY_LORE_BELTANE_CYCLE_3_PEDIA</Civilopedia>
@@ -286,7 +298,7 @@
 			<iGlobalResistEnemyModify>0</iGlobalResistEnemyModify>
 			<iGlobalResistModify>0</iGlobalResistModify>
 			<FreeBonus2>NONE</FreeBonus2>
-		</BuildingInfo>
+		</BuildingInfo> -->
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
 			<Type>BUILDING_JOT_PALACE</Type>
@@ -295,6 +307,8 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JOT_PALACE</ArtDefineTag>
 			<FreeBonus>BONUS_MANA_BODY</FreeBonus>
+			<FreeBonus2>BONUS_MANA_LAW</FreeBonus2>
+			<FreeBonus3>BONUS_MANA_ENCHANTMENT</FreeBonus3>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<FreeBuilding>BUILDINGCLASS_JOT_STAEDDING</FreeBuilding>
 			<bCapital>1</bCapital>
@@ -329,16 +343,14 @@
 			</Flavors>
 			<iCrime>-10</iCrime>
 			<iFreePromotionPick>0</iFreePromotionPick>
-			<FreeBonus2>BONUS_MANA_CHAOS</FreeBonus2>
-			<FreeBonus3>BONUS_MANA_ENCHANTMENT</FreeBonus3>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
 			<Type>BUILDING_JOT_BARRACKS</Type>
-			<Description>TXT_KEY_BUILDING_BARRACKS</Description>
+			<Description>TXT_KEY_BUILDING_JOT_BARRACKS</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PALACE_DOVIELLO</ArtDefineTag>
 			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -353,15 +365,19 @@
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
-			<iMaintenanceModifier>10</iMaintenanceModifier>
 			<iHappiness>1</iHappiness>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>2</fVisibilityPriority>
 			<YieldModifiers>
 				<iYield>5</iYield>
 				<iYield>5</iYield>
-				<iYield>5</iYield>
+				<iYield>0</iYield>
 			</YieldModifiers>
+			<CommerceModifiers>
+				<iCommerce>5</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceModifiers>
 			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -390,7 +406,6 @@
 			<FreeBonus>BONUS_MANA_ICE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bTeamShare>1</bTeamShare>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
@@ -422,6 +437,12 @@
 					<iSpecialistCount>3</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -460,7 +481,6 @@
 			<FreeBonus>BONUS_MANA_NATURE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bTeamShare>1</bTeamShare>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
@@ -495,6 +515,12 @@
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -519,9 +545,9 @@
 			<ArtDefineTag>ART_DEF_BUILDING_VERSAILLES</ArtDefineTag>
 			<PrereqTech>TECH_TRADE</PrereqTech>
 			<FreeBonus>BONUS_MANA_AIR</FreeBonus>
+			<FreeBonus2>BONUS_MANA_WATER</FreeBonus2>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bTeamShare>1</bTeamShare>
-			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>800</iCost>
@@ -557,6 +583,12 @@
 					<iSpecialistCount>3</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -568,7 +600,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<FreeBonus2>BONUS_MANA_WATER</FreeBonus2>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WINDTALKER</BuildingClass>
