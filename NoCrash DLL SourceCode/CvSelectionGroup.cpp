@@ -136,7 +136,7 @@ bool CvSelectionGroup::sentryAlert() const
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		int iRange = pLoopUnit->visibilityRange() + 1;
+		int iRange = pLoopUnit->visibilityRange();
 
 		if (iRange > iMaxRange)
 		{
@@ -150,6 +150,9 @@ bool CvSelectionGroup::sentryAlert() const
 
 	CvPlot* pPlot;
 
+	// We can actually see one tile further due to height level checks in canSeePlot
+	++iMaxRange;
+
 	for (int iX = -iMaxRange; iX <= iMaxRange; ++iX)
 	{
 		for (int iY = -iMaxRange; iY <= iMaxRange; ++iY)
@@ -158,13 +161,11 @@ bool CvSelectionGroup::sentryAlert() const
 			if (pPlot == NULL)
 				continue;
 
-			if (pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange - 1))
-			{
-				if (pPlot->isVisibleEnemyUnit(pHeadUnit))
-				{
-					return true;
-				}
-			}
+			if (!pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange))
+				continue;
+
+			if (pPlot->isVisibleEnemyUnit(pHeadUnit))
+				return true;
 		}
 	}
 
@@ -839,14 +840,14 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			break;
 
 		case MISSION_HEAL:
-			if (pLoopUnit->canHeal(pPlot))
+			if (pLoopUnit->canHealMission(pPlot))
 			{
 				return true;
 			}
 			break;
 
 		case MISSION_SENTRY:
-			if (pLoopUnit->canSentry(pPlot))
+			if (pLoopUnit->canSentryMission(pPlot))
 			{
 				return true;
 			}
@@ -5087,12 +5088,12 @@ bool CvSelectionGroup::isAutomated()
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/04/09											**/
 /**																								**/
-/**					Keeps the game from trying to select AIControls for you						**/
+/**					Keeps the game from trying to select Enrageds for you						**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
 	return (getAutomateType() != NO_AUTOMATE);
 /**								----  End Original Code  ----									**/
-	return ((getAutomateType() != NO_AUTOMATE) || isAIControl());
+	return ((getAutomateType() != NO_AUTOMATE) || isEnraged());
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -6057,25 +6058,24 @@ void CvSelectionGroup::deactivateHeadMission()
 	}
 }
 
+// Checks if any unit in the group is enraged
 //FfH: Added by Kael 12/28/2008
-bool CvSelectionGroup::isAIControl() const
+bool CvSelectionGroup::isEnraged() const
 {
-	if (getNumUnits() > 0)
+	if (getNumUnits() == 0)
+		return false;
+
+	CLLNode<IDInfo>* pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
 	{
-		CLLNode<IDInfo>* pUnitNode = headUnitNode();
-		while (pUnitNode != NULL)
-		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = nextUnitNode(pUnitNode);
-			if (pLoopUnit->isAIControl())
-			{
-				return true;
-			}
-		}
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		if (pLoopUnit->isEnraged())
+			return true;
 	}
 	return false;
 }
-//FfH: End Add
+
 /*************************************************************************************************/
 /**	Alertness								11/30/08	Written: Pep		Imported: Xienwolf	**/
 /**																								**/

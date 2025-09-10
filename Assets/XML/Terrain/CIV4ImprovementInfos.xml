@@ -31,9 +31,41 @@
 			<bGoody>0</bGoody> <!-- Used by mapgen to place using tribal village logic -->
 			<iGoodyRange>3</iGoodyRange> <!-- Closest approach to another of this improvement, but during mapgen. Should be merged with iMinimumDistance! -->
 			<iTilesPerGoody>60</iTilesPerGoody> <!-- Target density of goody (starts placing at half, e.g. 1/60 means first at 30, second at 90, etc) -->
-			<bHillsMakesValid>0</bHillsMakesValid> <!-- Bypasses terrain requirement checks on hill tiles -->
-			<bPeakMakesValid>0</bPeakMakesValid> <!-- Bypasses terrain requirement checks on peaks -->
-			<bRequiresPeak>0</bRequiresPeak> <!-- As bPeakMakesValid, but prevents spawning on flat/hill/water tiles as well -->
+			<!-- Start of improvement placement fields; first, "And" conditions ("requires X") must be met-->
+			<bRequiresPeak>0</bRequiresPeak> <!-- Must be on a peak, cannot be on anything else. Note that peaks require either this or the later bPeaksMakeValid in order to be valid -->
+			<bWater>0</bWater> <!-- Can only be on water if 1, and can only be on land if 0 -->
+			<!-- If there is a bonus with bBonusMakesValid, it will then ignore all other checks aside from the above two -->
+			<bNoFreshWater>0</bNoFreshWater> <!-- Freshwater makes *invalid* -->
+			<bRequiresFlatlands>0</bRequiresFlatlands> <!-- Can only be on flat land (not hills) -->
+			<bRequiresFeature>0</bRequiresFeature> <!-- Requires *any* feature on tile, if done by itself -->
+			<bRequiresRiverSide>0</bRequiresRiverSide> <!-- Requires river adjacency, and moreover cannot be opposite the river from another of the same improvement -->
+			<!-- In order for an improvement to be valid, at least one of the following "Or" conditions ("XMakesValid") checks must be met -->
+			<bPeakMakesValid>0</bPeakMakesValid> <!-- Tile is a peak. Reminder, peaks will only allow an improvement if this or bPeakMakesValid -->
+			<bHillsMakesValid>0</bHillsMakesValid> <!-- Tile is a hill -->
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid> <!-- Tile has fresh water, including irrigation spreading -->
+			<bRiverSideMakesValid>1</bRiverSideMakesValid> <!-- Tile has a river in a cardinal direction. Superfluous if also bRequiresRiverside -->
+			<!-- Any of these terrains being met makes valid -->
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<!-- Any of these features being met makes valid. No direct relation with bRequiresFeature. Note this also allows an improvement to bypass the "noImprovement" field of that feature -->
+			<FeatureMakesValids>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+			</FeatureMakesValids>
+			<!-- End of improvement placement requirements -->
+			<!-- The "AllowsFeature" field allows a feature (forest, haunted lands...) to naturally propagate on a tile with an existing improvement (crypt, camp...) -->
+			<AllowsFeatures>
+				<AllowsFeature>
+					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</AllowsFeature>
+			</AllowsFeatures>
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
 			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
 			<iUpgradeTime>0</iUpgradeTime> <!-- How many turns it takes to upgrade the improvement. If 0, will only upgrade if the upgrade has weights > 0 (I think?) -->
@@ -66,13 +98,15 @@
 				</LairUpgradeTech>
 			</LairUpgradeTechs>
 			<bFort>0</bFort> <!-- 1 means this is can be claimed with a fort commander -->
+			<iRange>0</iRange> <!-- How far to apply additional optional tile defensive strength -->
+			<iRangeDefenseModifier>0</iRangeDefenseModifier> <!-- Apply this defensive strength to units of the same team within range > 0, so long as the tile is owned and has no enemy on it -->
 			<bActsAsCity>0</bActsAsCity> <!-- 1 means water units can pass thru as if water, and land units can pass thru as if land. Exploits all revealed resources on the tile. Treated as city in many ways. -->
 			<bOutsideBorders>0</bOutsideBorders> <!-- 1 means the improvement gets automatically owned by whichever is set in SpawnUnitCiv, and upgrades by itself if unowned. Claiming via bFort overrides this IF the fort is claimed -->
 			<bSpawnOnlyForOwner>0</bSpawnOnlyForOwner> <!-- 1 means: Units and groups spawned from here will only go to SpawnUnitCiv, IF the current owner is not at war with SpawnUnitCiv. And: -->
 			<SpawnUnitCiv></SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
 			<SpawnUnitType></SpawnUnitType> <!-- What singular unit will spawn if conditions are met -->
 			<iSpawnAtOnceLimit>0</iSpawnAtOnceLimit> <!-- Special: A limit of 0 means it will never stop spawning (barbs still limited by density). Limit reset on upgrade. Only counts SpawnUnitType and ImmediateSpawnUnitType, NOT GROUPS -->
-			<iSpawnUnitChancePercentMod>0</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (0 means no change, -99 will spawn at 1% of base rate, 200 will spawn 2x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
+			<iSpawnUnitChancePercentMod>0</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (100 means no change, -99 will spawn at 1% of base rate, 200 will spawn 3x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
 			<SpawnPromotions> <!-- List of promotions to give SpawnUnitType -->
 				<Promotion></Promotion>
 			</SpawnPromotions>
@@ -953,6 +987,8 @@
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 			<iMaxAirlift>1</iMaxAirlift>
+			<iRange>1</iRange>
+			<iRangeDefenseModifier>5</iRangeDefenseModifier>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hamlet-->
 			<Type>IMPROVEMENT_HAMLET</Type>
@@ -1868,7 +1904,6 @@
 				<iYieldChange>2</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
-			<bRiverSideMakesValid>1</bRiverSideMakesValid>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bRequiresRiverSide>1</bRequiresRiverSide>
 			<iAdvancedStartCost>48</iAdvancedStartCost>
@@ -7281,10 +7316,25 @@
 			<iExploreDelay>75</iExploreDelay>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<TerrainType>TERRAIN_COAST</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_WATER</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<BonusConvert>BONUS_MANA_WATER</BonusConvert>
 			<bUnique>1</bUnique>
 			<bExplorable>1</bExplorable>
 			<iLairTier>3</iLairTier>
@@ -7599,6 +7649,158 @@
 				</GoodyClass>
 			</GoodyClasses>
 		</ImprovementInfo>
+		<ImprovementInfo><!-- Cliffs of Kelle -->
+			<Type>IMPROVEMENT_CLIFFS_OF_TALI</Type>
+			<Description>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE	</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLIFFS_OF_KELLE</ArtDefineTag>
+			<bHillsMakesValid>1</bHillsMakesValid>
+			<bPermanent>1</bPermanent>
+			<iHappiness>100</iHappiness>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_AIR</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<bUnique>1</bUnique>
+			<BonusConvert>BONUS_MANA_AIR</BonusConvert>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- Clockwork Tower -->
+			<Type>IMPROVEMENT_CLOCKWORK_TOWER</Type>
+			<Description>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLOCKWORK_TOWER</ArtDefineTag>
+			<iDefenseModifier>100</iDefenseModifier>
+			<bPermanent>1</bPermanent>
+			<iHappiness>100</iHappiness>
+			<iExploreDelay>75</iExploreDelay>
+			<bRequiresFlatlands>1</bRequiresFlatlands>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_ENCHANTMENT</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<bUnique>1</bUnique>
+			<BonusConvert>BONUS_MANA_ENCHANTMENT</BonusConvert>
+			<bExplorable>1</bExplorable>
+			<iLairTier>3</iLairTier>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_LIVING_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SPIRIT_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_MAGIC_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_CLOCKWORK</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>		
+		</ImprovementInfo>
 		<ImprovementInfo><!-- Dragon Bones -->
 			<Type>IMPROVEMENT_DRAGON_BONES</Type>
 			<Description>TXT_KEY_IMPROVEMENT_DRAGON_BONES</Description>
@@ -7674,6 +7876,21 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_STONE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<BonusConvert>BONUS_STONE</BonusConvert>
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveFoxford(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
@@ -8135,7 +8352,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_MANA_LAW</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8166,7 +8383,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_STONE</BonusConvert>
+			<BonusConvert>BONUS_MANA_LAW</BonusConvert>
 			<PythonOnMove>onMoveRemnantsOfPatria(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ring of Carcer -->
@@ -8283,7 +8500,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENCHANTMENT</BonusType>
+					<BonusType>BONUS_MANA_FORCE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8306,7 +8523,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_ENCHANTMENT</BonusConvert>
+			<BonusConvert>BONUS_MANA_FORCE</BonusConvert>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sirona's Beacon -->
 			<Type>IMPROVEMENT_SIRONAS_BEACON</Type>
@@ -8707,7 +8924,7 @@
 			<iBasePlotCounterModify>-100</iBasePlotCounterModify>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_SPIRIT</BonusType>
+					<BonusType>BONUS_MANA_LIFE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8731,7 +8948,7 @@
 			</TechYieldChanges>
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_SPIRIT</BonusConvert>
+			<BonusConvert>BONUS_MANA_LIFE</BonusConvert>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Air Mana Node -->                 <!-- Mana Nodes -->
 			<Type>IMPROVEMENT_MANA_AIR</Type>
@@ -9476,157 +9693,5 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_MANA_WATER</BonusConvert>
 		</ImprovementInfo>
-		<ImprovementInfo><!-- Cliffs of Kelle -->
-			<Type>IMPROVEMENT_CLIFFS_OF_TALI</Type>
-			<Description>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE	</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLIFFS_OF_KELLE</ArtDefineTag>
-			<bHillsMakesValid>1</bHillsMakesValid>
-			<bPermanent>1</bPermanent>
-			<iHappiness>100</iHappiness>
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
-			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_AIR</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-			</BonusTypeStructs>
-			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_AIR</BonusConvert>
-		</ImprovementInfo>
-		<ImprovementInfo><!-- Clockwork Tower -->
-			<Type>IMPROVEMENT_CLOCKWORK_TOWER</Type>
-			<Description>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLOCKWORK_TOWER</ArtDefineTag>
-			<iDefenseModifier>100</iDefenseModifier>
-			<bPermanent>1</bPermanent>
-			<iHappiness>100</iHappiness>
-			<iExploreDelay>75</iExploreDelay>
-			<bRequiresFlatlands>1</bRequiresFlatlands>
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
-			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENCHANTMENT</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-			</BonusTypeStructs>
-			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_ENCHANTMENT</BonusConvert>
-			<bExplorable>1</bExplorable>
-			<iLairTier>3</iLairTier>
-			<GoodyClasses>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_LIVING_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_SPIRIT_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_MAGIC_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_CLOCKWORK</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-			</GoodyClasses>		
-		</ImprovementInfo>		
 	</ImprovementInfos>
 </Civ4ImprovementInfos>

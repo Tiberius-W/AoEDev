@@ -967,7 +967,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 /**	Tweak									END													**/
 /*************************************************************************************************/
 	m_iAlive = 0;
-	m_iAIControl = 0;
+	m_iEnraged = 0;
 	m_iBoarding = 0;
 	m_iDefensiveStrikeChance = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getDefensiveStrikeChance() : 0;
 	m_iDefensiveStrikeDamage = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getDefensiveStrikeDamage() : 0;
@@ -1475,9 +1475,7 @@ void CvUnit::convert(CvUnit* pUnit)
 	setSpawnPlot(pUnit->getSpawnPlot());
 	changeStrBoost(pUnit->getStrBoost());
 	setSuppressImage(pUnit->isSuppressImage());
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+
 	if (pUnit->getReligion() != NO_RELIGION && getReligion() == NO_RELIGION)
 	{
 		setReligion(pUnit->getReligion());
@@ -1494,22 +1492,13 @@ void CvUnit::convert(CvUnit* pUnit)
 	{
 		setScenarioCounter(pUnit->getScenarioCounter());
 	}
-//FfH: End Modify
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	setDamage(pUnit->getDamage());
-/**								----  End Original Code  ----									**/
-	setDamageReal(pUnit->getDamageReal()-1);
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-	setMoves(pUnit->getMoves());
 
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
+	setDamageReal(pUnit->getDamageReal(), NO_PLAYER, false);
+
+	setMoves(pUnit->getMoves());
 	setLevel(pUnit->getLevel());
 	int iOldModifier = std::max(1, 100 + GET_PLAYER(pUnit->getOwnerINLINE()).getLevelExperienceModifier());
 	int iOurModifier = std::max(1, 100 + GET_PLAYER(getOwnerINLINE()).getLevelExperienceModifier());
@@ -1518,12 +1507,9 @@ void CvUnit::convert(CvUnit* pUnit)
 	setName(pUnit->getNameNoDesc());
 	setLeaderUnitType(pUnit->getLeaderUnitType());
 
-//FfH: Added by Kael 10/03/2008
+	//FfH: Added by Kael 10/03/2008
 	if (!isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) && isWorldUnitClass((UnitClassTypes)(pUnit->getUnitClassType())))
-	{
 		setName(pUnit->getName());
-	}
-//FfH: End Add
 
 /*************************************************************************************************/
 /**	UnitStatistics							07/18/08	Written: Teg Navanis Imported: Xienwolf	**/
@@ -2095,11 +2081,9 @@ void CvUnit::doTurn()
 	FAssertMsg(!isDead(), "isDead did not return false as expected");
 	FAssertMsg(getGroup() != NULL, "getGroup() is not expected to be equal with NULL");
 
-/*************************************************************************************************/
-/**	EquipRedux								05/31/09								Xienwolf	**/
-/**			Cleanup function for cases where somehow the container is empty and alive			**/
-/**		Removes the need to add units for each equipment item introduced into the game			**/
-/*************************************************************************************************/
+	// EquipRedux - Xienwolf - 05/31/09
+	// Cleanup function for cases where somehow the container is empty and alive
+	// Removes the need to add units for each equipment item introduced into the game
 	if(getUnitType() == GC.getDefineINT("EQUIPMENT_HOLDER"))
 	{
 		if(getNumPromotions() < 1)
@@ -2110,14 +2094,8 @@ void CvUnit::doTurn()
 		//No reason to run any functions found in this routine for containers, most should be blocked anyway, those which are not would cause issues.
 	}
 	validateCommanderMinion();
-/*************************************************************************************************/
-/**	EquipRedux								END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	PyPromote								04/08/08	Written: Grey Fox	Imported: Xienwolf	**/
-/**																								**/
-/**						Allows Python Functions to be run each Turn								**/
-/*************************************************************************************************/
+
+	// PyPromote - Grey Fox, Xienwolf - 04/08/08 - Allows Python Functions to be run each Turn
 	if (!CvString(GC.getUnitInfo(getUnitType()).getPyPerTurn()).empty())
 	{
 		CyUnit* pyUnit = new CyUnit(this);
@@ -2127,42 +2105,17 @@ void CvUnit::doTurn()
 		gDLL->getPythonIFace()->callFunction(PYSpellModule, "effectUnits", argsList.makeFunctionArgs()); //, &lResult
 		delete pyUnit; // python fxn must not hold on to this pointer
 	}
-/*************************************************************************************************/
-/**	PyPromote								END													**/
-/*************************************************************************************************/
-//FfH Spell System: Added by Kael 07/23/2007
+
+	// NOTE: It may be possible, if xml is altered, for the unit to be killed by DoT on terrain / plot effects!
+	// This method takes into account healing and turn DoT effects both
+	changeDamageReal(-calcTurnHealthChangeReal());
+
+	if (!hasMoved() && !isCargo())
+		changeFortifyTurns(1);
+
 	int iI;
 	CvPlot* pPlot = plot();
-	if (hasMoved())
-	{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if (isAlwaysHeal() || isBarbarian())
-/**								----  End Original Code  ----									**/
-		if (isAlwaysHeal() || isBarbarian() || isAIControl())
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-		{
-			doHeal();
-		}
-	}
-	else
-	{
-		if (isHurt())
-		{
-			doHeal();
-		}
 
-		if (!isCargo())
-		{
-			changeFortifyTurns(1);
-		}
-	}
 /*************************************************************************************************/
 /**	NonAbandon 								05/15/08								Xienwolf	**/
 /**							Blocks Abandonment Check from Happening								**/
@@ -2302,7 +2255,7 @@ void CvUnit::doTurn()
 					}
 				}
 			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).isAIControl())
+			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
 			{
 				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
 				{
@@ -2395,70 +2348,35 @@ void CvUnit::doTurn()
 /*************************************************************************************************/
 	}
 	
-	if (getBetrayalChance() > 0)
+	if (getBetrayalChance() > 0
+	 && !isBarbarian()
+	 && GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
 	{
-		if (!isBarbarian())
+		if (isImmuneToCapture())
 		{
-			if (GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
+			CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO,
+				m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
+
+			for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
 			{
-				/*************************************************************************************************/
-				/**	Tweak								31/01/12										Snarko	**/
-				/**																								**/
-				/**								Stop needless looping											**/
-				/*************************************************************************************************/
-				/**								---- Start Original Code ----									**
-										bool bFinished = false;
-										if (isImmuneToCapture())
-										{
-											for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-											{
-												if (isHasPromotion((PromotionTypes)iJ))
-												{
-													if (GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
-													{
-														if (!bFinished)
-														{
-															CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
-															gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-															setHasPromotion(((PromotionTypes)iJ), false);
-															bFinished = true;
-														}
-													}
-												}
-											}
-										}
-				/**								----  End Original Code  ----									**/
-				if (isImmuneToCapture())
+				if (isHasPromotion((PromotionTypes)iJ) && GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
 				{
-					CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TRIGGERED", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-					for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
-					{
-						if (isHasPromotion((PromotionTypes)iJ))
-						{
-							if (GC.getPromotionInfo((PromotionTypes)iJ).isImmuneToCapture())
-							{
-								setHasPromotion(((PromotionTypes)iJ), false);
-								break;
-							}
-						}
-					}
-				}
-				/*************************************************************************************************/
-				/**	Tweak									END													**/
-				/*************************************************************************************************/
-				else if (GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
-				{
-					CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TO_DEATH", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO, m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
-					kill(true);
-				}
-				else
-				{
-					betray(ORC_PLAYER);
+					setHasPromotion(((PromotionTypes)iJ), false);
+					break;
 				}
 			}
 		}
+		else if (GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
+		{
+			CvWString szBuffer = gDLL->getText("TXT_KEY_LOYAL_TO_DEATH", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_INFO,
+				m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
+
+			kill(true);
+		}
+		else
+			betray(ORC_PLAYER);
 	}
 
 
@@ -2657,52 +2575,22 @@ void CvUnit::doTurn()
 		collectBlockadeGold();
 	}
 
-//FfH: Modified by Kael 02/03/2009 (spy intercept and feature damage commented out for performance, healing moved to earlier in the function)
-//	if (isSpy() && isIntruding() && !isCargo())
-//	{
-//		TeamTypes eTeam = plot()->getTeam();
-//		if (NO_TEAM != eTeam)
-//		{
-//			if (GET_TEAM(getTeam()).isOpenBorders(eTeam))
-//			{
-//				testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_NO_INTRUDE_INTERCEPT_MOD"));
-//			}
-//			else
-//			{
-//				testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_INTERCEPT_MOD"));
-//			}
-//		}
-//	}
-//	if (baseCombatStr() > 0)
-//	{
-//		FeatureTypes eFeature = plot()->getFeatureType();
-//		if (NO_FEATURE != eFeature)
-//		{
-//			if (0 != GC.getFeatureInfo(eFeature).getTurnDamage())
-//			{
-//				changeDamage(GC.getFeatureInfo(eFeature).getTurnDamage(), NO_PLAYER);
-//			}
-//		}
-//	}
-//	if (hasMoved())
-//	{
-//		if (isAlwaysHeal())
-//		{
-//			doHeal();
-//		}
-//	}
-//	else
-//	{
-//		if (isHurt())
-//		{
-//			doHeal();
-//		}
-//		if (!isCargo())
-//		{
-//			changeFortifyTurns(1);
-//		}
-//	}
-//FfH:End Modify
+	// FfH: Modified by Kael 02/03/2009 (spy intercept and feature damage commented out for performance, healing moved to earlier in the function)
+	// if (isSpy() && isIntruding() && !isCargo())
+	// {
+	// 	TeamTypes eTeam = plot()->getTeam();
+	// 	if (NO_TEAM != eTeam)
+	// 	{
+	// 		if (GET_TEAM(getTeam()).isOpenBorders(eTeam))
+	// 		{
+	// 			testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_NO_INTRUDE_INTERCEPT_MOD"));
+	// 		}
+	// 		else
+	// 		{
+	// 			testSpyIntercepted(plot()->getOwnerINLINE(), GC.getDefineINT("ESPIONAGE_SPY_INTERCEPT_MOD"));
+	// 		}
+	// 	}
+	// }
 
 /*************************************************************************************************/
 /**	MobileCage								 6/17/2009								Cyther		**/
@@ -3367,19 +3255,9 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL")*100, pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian(), true);
 					pDefender->changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL")*100, maxXPValue(), true, pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE(), !isBarbarian(), true);
 					pDefender->setDamageReal(combatLimit(), getOwnerINLINE());
-					if (getCombatHealPercent() != 0)
-					{
-						int i = getCombatHealPercent();
 
-						if (i > getDamage())
-						{
-							i = getDamage();
-						}
-						if (i != 0)
-						{
-							changeDamage(-1 * i, NO_PLAYER);
-						}
-					}
+					if (pDefender->isAlive())
+						changeDamage(-getCombatHealPercent(), NO_PLAYER);
 
 					//FfH: Added by Kael 05/27/2008
 					setMadeAttack(true);
@@ -3482,21 +3360,15 @@ void CvUnit::updateCombat(bool bQuick)
 		changeCombatTimer(-1);
 
 		if (getCombatTimer() > 0)
-		{
 			return;
-		}
 		else
-		{
 			bFinish = true;
-		}
 	}
 
 	CvPlot* pPlot = getAttackPlot();
 
 	if (pPlot == NULL)
-	{
 		return;
-	}
 
 	if (getDomainType() == DOMAIN_AIR)
 	{
@@ -3506,13 +3378,9 @@ void CvUnit::updateCombat(bool bQuick)
 
 	CvUnit* pDefender = NULL;
 	if (bFinish)
-	{
 		pDefender = getCombatUnit();
-	}
 	else
-	{
 		pDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
-	}
 
 	if (pDefender == NULL)
 	{
@@ -3528,9 +3396,7 @@ void CvUnit::updateCombat(bool bQuick)
 
 	//check if quick combat
 	if (!bQuick)
-	{
 		bVisible = isCombatVisible(pDefender);
-	}
 
 	// PyPreCombat  By BI 07/24/11
 	if (!CvString(GC.getUnitInfo(getUnitType()).getPyPreCombat()).empty())
@@ -3559,31 +3425,21 @@ void CvUnit::updateCombat(bool bQuick)
 
 	//FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
 
-//FfH: Added by Kael 07/30/2007
+	//FfH: Added by Kael 07/30/2007
 	if (!isImmuneToDefensiveStrike())
-	{
 		pDefender->doDefensiveStrike(this);
-	}
-	if (pDefender->isFear())
+
+	if (pDefender->isFear() && !isImmuneToFear())
 	{
-		if (!isImmuneToFear())
+		if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < pDefender->calcFearChance(this))
 		{
-			int iChance = baseCombatStr() + 20 + getLevel() - pDefender->baseCombatStr() - pDefender->getLevel();
-			if (iChance < 4)
-			{
-				iChance = 4;
-			}
-			if (GC.getGameINLINE().getSorenRandNum(40, "Im afeared!") > iChance)
-			{
-				setMadeAttack(true);
-				changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
-				szBuffer = gDLL->getText("TXT_KEY_MESSAGE_IM_AFEARED", getNameKey());
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, "Art/Interface/Buttons/Promotions/Fear.dds", (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				bFinish = true;
-			}
+			setMadeAttack(true);
+			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
+			szBuffer = gDLL->getText("TXT_KEY_MESSAGE_IM_AFEARED", getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szBuffer, "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, "Art/Interface/Buttons/Promotions/Fear.dds", (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+			bFinish = true;
 		}
 	}
-//FfH: End Add
 
 	//if not finished and not fighting yet, set up combat damage and mission
 	if (!bFinish)
@@ -4003,25 +3859,19 @@ void CvUnit::updateCombat(bool bQuick)
 
 				if (bAdvance)
 				{
-					if (!isCannotCapture(true)
-
-//FfH: Added by Kael 11/14/2007
-					 || GC.getUnitInfo((UnitTypes)pDefender->getUnitType()).getEquipmentPromotion() != NO_PROMOTION
-//FfH: End Add
-
-					 )
+					//FfH: Added by Kael 11/14/2007
+					if (!isCannotCapture(true) || GC.getUnitInfo((UnitTypes)pDefender->getUnitType()).getEquipmentPromotion() != NO_PROMOTION)
 					{
 						pDefender->setCapturingPlayer(getOwnerINLINE());
 						//pDefender->setCombatUnit(this);
 					}
 				}
 
-
 				pDefender->kill(false);
 				pDefender = NULL;
 
-//FfH Fear: Added by Kael 07/30/2007
-				if (isFear() && pPlot->isCity() == false)
+				//FfH Fear: Added by Kael 07/30/2007
+				if (isFear() && !pPlot->isCity(true))
 				{
 					CvUnit* pLoopUnit;
 					CLLNode<IDInfo>* pUnitNode;
@@ -4030,21 +3880,18 @@ void CvUnit::updateCombat(bool bQuick)
 					{
 						pLoopUnit = ::getUnit(pUnitNode->m_data);
 						pUnitNode = pPlot->nextUnitNode(pUnitNode);
-						if (pLoopUnit->isEnemy(getTeam()))
+						if (pLoopUnit->isEnemy(getTeam()) && !pLoopUnit->isImmuneToFear())
 						{
-							if (!pLoopUnit->isImmuneToFear())
+							// Halved fear chance when checking against all units in stack
+							if (GC.getGameINLINE().getSorenRandNum(100, "Im afeared!") < calcFearChance(pLoopUnit) / 2)
 							{
-								if (GC.getGameINLINE().getSorenRandNum(20, "Im afeared!") <= (baseCombatStr() + 10 - pLoopUnit->baseCombatStr()))
-								{
-									pLoopUnit->joinGroup(NULL);
-									pLoopUnit->jumpToNearestValidPlot();
-								}
+								pLoopUnit->joinGroup(NULL);
+								pLoopUnit->jumpToNearestValidPlot();
 							}
 						}
 					}
 				}
 				bAdvance = canAdvance(pPlot, 0);
-//FfH: End Add
 
 				if (!bAdvance)
 				{
@@ -4193,6 +4040,15 @@ void CvUnit::updateCombat(bool bQuick)
 	}
 }
 
+// 10-75 range, baseline 50 to fear, modulated first by level/combat str, then multiplied by health percent of units
+int CvUnit::calcFearChance(const CvUnit* pAfraidUnit) const
+{
+	int iFearChance = 50 + 2*(baseCombatStr() + getLevel()) - 2*(pAfraidUnit->baseCombatStr() + pAfraidUnit->getLevel());
+	iFearChance = iFearChance * currHitPoints() * pAfraidUnit->maxHitPoints() / std::max(1, maxHitPoints() * pAfraidUnit->currHitPoints());
+
+	return range(iFearChance, 10, 75);
+}
+
 void CvUnit::checkRemoveSelectionAfterAttack()
 {
 	if (!canMove() || !isBlitz())
@@ -4272,15 +4128,10 @@ bool CvUnit::isActionRecommended(int iAction)
 
 	if (GC.getActionInfo(iAction).getMissionType() == MISSION_HEAL)
 	{
-		if (isHurt())
+		if (isHurt() && !isTurnHealBlocked())
 		{
-			if (!hasMoved())
-			{
-				if ((pPlot->getTeam() == getTeam()) || (healTurns(pPlot) < 4))
-				{
-					return true;
-				}
-			}
+			if (GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()) || healTurns(pPlot) <= 4)
+				return true;
 		}
 	}
 
@@ -5147,6 +4998,7 @@ TeamTypes CvUnit::getDeclareWarMove(const CvPlot* pPlot) const
 	return NO_TEAM;
 }
 
+
 bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 {
 	// Xienwolf - 03/27/09 - Blocks Movement of Marked Units
@@ -5162,6 +5014,7 @@ bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 			if (pLoopPlot == NULL)
 				continue;
 
+			// TODO: remove or fix this entire method; visibility range accounts for the unit's current tile, not pPlot
 			if (!pLoopPlot->isRevealed(getTeam(), false) && pPlot->canSeePlot(pLoopPlot, getTeam(), visibilityRange()))
 				return true;
 		}
@@ -5169,6 +5022,7 @@ bool CvUnit::willRevealByMove(const CvPlot* pPlot) const
 
 	return false;
 }
+
 
 /*************************************************************************************************/
 /**	AITweak							19/06/10								Snarko				**/
@@ -6127,8 +5981,10 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 
 }
 
-// false if unit is killed
-bool CvUnit::jumpToNearestValidPlot(bool bKill)
+
+// returns true if unit is relocated, false otherwise. AdjacentOnly defaults to false for e.g. sanctuary python effects
+// If bKill is true, will immediately kill unit before returning false. bADJACENTONLY IS WIP
+bool CvUnit::jumpToNearestValidPlot(bool bKill, bool bAdjacentOnly)
 {
 	PROFILE_FUNC();
 
@@ -6151,84 +6007,52 @@ bool CvUnit::jumpToNearestValidPlot(bool bKill)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (pLoopPlot->isValidDomainForLocation(*this))
+		if (!pLoopPlot->isValidDomainForLocation(*this))
+			continue;
+
+		if (!canMoveInto(pLoopPlot))
+			continue;
+
+		if (!canEnterArea(pLoopPlot->getTeam(), pLoopPlot->area()) || isEnemy(pLoopPlot->getTeam(), pLoopPlot))
+			continue;
+
+		FAssertMsg(!atPlot(pLoopPlot), "atPlot(pLoopPlot) did not return false as expected");
+
+		if ((getDomainType() == DOMAIN_AIR) && !pLoopPlot->isFriendlyCity(*this, true))
+			continue;
+
+		if (!pLoopPlot->isRevealed(getTeam(), false))
+			continue;
+
+		iValue = (plotDistance(plot(), pLoopPlot) * 2);
+
+		if (pNearestCity != NULL)
+			iValue += plotDistance(pLoopPlot, pNearestCity->plot());
+
+		if (getDomainType() == DOMAIN_SEA && !plot()->isWater())
 		{
-			if (canMoveInto(pLoopPlot))
-			{
-				if (canEnterArea(pLoopPlot->getTeam(), pLoopPlot->area()) && !isEnemy(pLoopPlot->getTeam(), pLoopPlot))
-				{
-					FAssertMsg(!atPlot(pLoopPlot), "atPlot(pLoopPlot) did not return false as expected");
+			if (!pLoopPlot->isWater() || !pLoopPlot->isAdjacentToArea(area()))
+				iValue *= 3;
+		}
+		else if (pLoopPlot->area() != area())
+			iValue *= 3;
 
-					if ((getDomainType() != DOMAIN_AIR) || pLoopPlot->isFriendlyCity(*this, true))
-					{
-						if (pLoopPlot->isRevealed(getTeam(), false))
-						{
-							iValue = (plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()) * 2);
-
-							if (pNearestCity != NULL)
-							{
-								iValue += plotDistance(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
-							}
-
-							if (getDomainType() == DOMAIN_SEA && !plot()->isWater())
-							{
-								if (!pLoopPlot->isWater() || !pLoopPlot->isAdjacentToArea(area()))
-								{
-									iValue *= 3;
-								}
-							}
-							else
-							{
-								if (pLoopPlot->area() != area())
-								{
-									iValue *= 3;
-								}
-							}
-
-							if (iValue < iBestValue)
-							{
-								iBestValue = iValue;
-								pBestPlot = pLoopPlot;
-							}
-						}
-					}
-				}
-			}
+		if (iValue < iBestValue)
+		{
+			iBestValue = iValue;
+			pBestPlot = pLoopPlot;
 		}
 	}
 
-	bool bValid = true;
 	if (pBestPlot != NULL)
 	{
 		setXY(pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+		return true;
 	}
-/************************************************************************************************/
-/* Afforess					  Start		 06/13/10                                               */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
 	else if (bKill)
-/************************************************************************************************/
-/* Afforess						 END                                                            */
-/************************************************************************************************/
-	{
 		kill(false);
-		bValid = false;
-	}
-/************************************************************************************************/
-/* Afforess					  Start		 06/13/10                                               */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-	else
-	{
-		bValid = false;
-	}
-/************************************************************************************************/
-/* Afforess						 END                                                            */
-/************************************************************************************************/
 
-	return bValid;
+	return false;
 }
 
 
@@ -6831,54 +6655,44 @@ bool CvUnit::canHold(const CvPlot* pPlot) const
 
 bool CvUnit::canSleep(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (isFortifyable())
-	{
-		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
+
+	if (isCargo())
+		return true;
+
+	if (isFortifyable())
+		return false;
 
 	return true;
 }
 
 
+// Checks for AI control, unit-specific fortify, unit doing other actions, if is cargo, and water walkers trying to dig into water 
 bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (!isFortifyable())
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
+
+	if (isCargo())
+		return false;
+
+	// Land units can't fortify on water unless is water city, acts as city, or fort
+	if (getDomainType() == DOMAIN_LAND && pPlot->isWater())
+	{
+		if (!pPlot->isCity(true, getTeam()) && (pPlot->getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()))
+			return false;
 	}
 
 	return true;
@@ -6888,19 +6702,13 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 {
 	if (getDomainType() != DOMAIN_AIR)
-	{
 		return false;
-	}
 
 	if (!canAirDefend(pPlot))
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -6909,24 +6717,20 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 {
 	if (!pPlot->isWater())
-	{
 		return false;
-	}
 
 	if (getDomainType() != DOMAIN_SEA)
-	{
 		return false;
-	}
 
 	if (!canFight() || isOnlyDefensive())
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
+
+	// Bezeri pokeballs can't sea patrol while loaded up
+	if (isCargo())
+		return false;
 
 	return true;
 }
@@ -6935,16 +6739,12 @@ bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 void CvUnit::airCircle(bool bStart)
 {
 	if (!GC.IsGraphicsInitialized())
-	{
 		return;
-	}
 
 	if ((getDomainType() != DOMAIN_AIR) || (maxInterceptionProbability() == 0))
-	{
 		return;
-	}
 
-	//cancel previos missions
+	// cancel previous missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
 
 	if (bStart)
@@ -6961,120 +6761,129 @@ void CvUnit::airCircle(bool bStart)
 }
 
 
-bool CvUnit::canHeal(const CvPlot* pPlot) const
+// Used for checking whether the sentry mission is valid
+bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (!isHurt())
-	{
-		return false;
-	}
 
-	if (isWaiting())
-	{
-		return false;
-	}
-
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/30/10                           LunarMongoose       */
-/*                                                                                               */
-/* Bugfix                                                                                        */
-/*************************************************************************************************/
-/* original bts code
-	if (healRate(pPlot) <= 0)
-	{
-		return false;
-	}
-*/
-	// Mongoose FeatureDamageFix
-	if (healTurns(pPlot) == MAX_INT)
-	{
-		return false;
-	}
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                         END                                                  */
-/*************************************************************************************************/
-
-
-	return true;
-}
-
-
-bool CvUnit::canSentry(const CvPlot* pPlot) const
-{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
-		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	if (!canDefend(pPlot))
-	{
 		return false;
-	}
 
 	if (isWaiting())
-	{
 		return false;
-	}
+
+	return true;
+}
+
+// Used for checking whether the heal mission is valid
+bool CvUnit::canHealMission(const CvPlot* pPlot) const
+{
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
+		return false;
+
+	if (!isHurt())
+		return false;
+
+	if (isWaiting())
+		return false;
+
+	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
+	if (healTurns(pPlot) == MAX_INT)
+		return false;
 
 	return true;
 }
 
 
+// Returns the healrate provided by units on this and adjacent tiles
+int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
+{
+	// XXX optimize this (save it?)
+	// Blaze: Can make a cache in CvPlot that updates on turn start, but 
+	// it will be invalidated during unit move, so you'd need an additional arg
+	// to track if this method is being called during turn start, or for UI/other reasons
+
+	int iHeal;
+	int iBestHeal = 0;
+	CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
+	CvUnit* pLoopUnit;
+	CvPlot* pLoopPlot;
+
+	while (pUnitNode != NULL)
+	{
+		pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = pPlot->nextUnitNode(pUnitNode);
+
+		if (GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+		{
+			iHeal = pLoopUnit->getSameTileHeal();
+
+			if (iHeal > iBestHeal)
+				iBestHeal = iHeal;
+		}
+	}
+	// "Heal on adjacent tiles" literally means adjacent;
+	// unit design should thus always pair adjacent heal with an equal or greater "heal on same tile" effect
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+	{
+		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pLoopPlot == NULL)
+			continue;
+
+		if (pLoopPlot->area() != pPlot->area())
+			continue;
+
+		pUnitNode = pLoopPlot->headUnitNode();
+
+		while (pUnitNode != NULL)
+		{
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+
+			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+				continue;
+
+			iHeal = pLoopUnit->getAdjacentTileHeal();
+
+			if (iHeal > iBestHeal)
+				iBestHeal = iHeal;
+		}
+	}
+
+	return iBestHeal;
+}
+
+// Returns percentile healing per turn, for this unit on given pPlot.
+// Accounts for this unit promos, other units, empire and location effects.
+// Does NOT account for whether unit cannot heal due to e.g. movement.
+// Does NOT account for damage from tile; use CvPlot::calcTurnDamage for that.
 int CvUnit::healRate(const CvPlot* pPlot) const
 {
 	PROFILE_FUNC();
 
-	CLLNode<IDInfo>* pUnitNode;
-	CvCity* pCity;
-	CvUnit* pLoopUnit;
-	CvPlot* pLoopPlot;
-	int iTotalHeal;
-	int iHeal;
-	int iBestHeal;
-	int iI;
+	//FfH: Added by Kael 11/05/2008
+	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
+		return 0;
 
-//FfH: Added by Kael 11/05/2008
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS))
-	{
-		if (isHuman())
-		{
-			if (isAlive())
-			{
-				return 0;
-			}
-		}
-	}
-//FfH: End Add
+	// Blaze: Shortcut for perf, since this is an expensive method to run in full on every unit:
+	if (pPlot->calcTurnDamageReal(this, false) == 0 && !isHurt())
+		return 0;
 
-	pCity = pPlot->getPlotCity();
+	CvCity* pCity = pPlot->getPlotCity();
+	int iTotalHeal = 0;
 
-	iTotalHeal = 0;
-
+	// City or tile heal rates. Includes impacts from promotions here
 	if (pPlot->isCity(true, getTeam()))
 	{
 		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE") + (GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()) ? getExtraFriendlyHeal() : getExtraNeutralHeal());
+
+		// Occupied cities don't get tile healing, instead relying on unit/faction-wide only
 		if (pCity && !pCity->isOccupation())
-		{
 			iTotalHeal += pCity->getHealRate();
-		}
 	}
 	else
 	{
@@ -7084,148 +6893,86 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 			{
 				iTotalHeal += (GC.getDefineINT("ENEMY_HEAL_RATE") + getExtraEnemyHeal());
 
-//FfH Mana Effects: Added by Kael 08/21/2007
+				//FfH Mana Effects: Added by Kael 08/21/2007
 				if (pPlot->getOwnerINLINE() != NO_PLAYER)
-				{
 					iTotalHeal += GET_PLAYER(pPlot->getOwnerINLINE()).getHealChangeEnemy();
-				}
-//FfH: End Add
-
 			}
 			else
-			{
 				iTotalHeal += (GC.getDefineINT("NEUTRAL_HEAL_RATE") + getExtraNeutralHeal());
-			}
 		}
 		else
 		{
 			iTotalHeal += (GC.getDefineINT("FRIENDLY_HEAL_RATE") + getExtraFriendlyHeal());
 
-//FfH Mana Effects: Added by Kael 08/21/2007
+			//FfH Mana Effects: Added by Kael 08/21/2007
 			iTotalHeal += GET_PLAYER(getOwnerINLINE()).getHealChange();
-//FfH: End Add
-
 		}
 	}
 
-	// XXX optimize this (save it?)
-	iBestHeal = 0;
+	iTotalHeal += getHealBonusFromUnits(pPlot);
 
-	pUnitNode = pPlot->headUnitNode();
-
-	while (pUnitNode != NULL)
-	{
-		pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = pPlot->nextUnitNode(pUnitNode);
-
-		if (pLoopUnit->getTeam() == getTeam()) // XXX what about alliances?
-		{
-			iHeal = pLoopUnit->getSameTileHeal();
-
-			if (iHeal > iBestHeal)
-			{
-				iBestHeal = iHeal;
-			}
-		}
-	}
-
-	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
-	{
-		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
-
-		if (pLoopPlot != NULL)
-		{
-			if (pLoopPlot->area() == pPlot->area())
-			{
-				pUnitNode = pLoopPlot->headUnitNode();
-
-				while (pUnitNode != NULL)
-				{
-					pLoopUnit = ::getUnit(pUnitNode->m_data);
-					pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
-
-					if (pLoopUnit->getTeam() == getTeam()) // XXX what about alliances?
-					{
-						iHeal = pLoopUnit->getAdjacentTileHeal();
-
-						if (iHeal > iBestHeal)
-						{
-							iBestHeal = iHeal;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	iTotalHeal += iBestHeal;
-	// XXX
-
-//FfH: Added by Kael 10/29/2007
+	//FfH: Added by Kael 10/29/2007 (improvement heal rates)
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
-	{
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
-	}
-	if (iTotalHeal < 0)
-	{
-		iTotalHeal = 0;
-	}
-//FfH: End Add
 
-	return iTotalHeal;
+	// Promotions cannot make heal rate negative... for now.
+	return std::max(0, iTotalHeal);
 }
 
-
+// Returns MAX_INT if never heals, or will die to DoT before healing.
+// Accounts for unit movement, including getting to a different tile.
+// Doesn't account for edge cases such as teleport without using move... but oh well.
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
-	int iHeal;
-	int iTurns;
-
 	if (!isHurt())
-	{
 		return 0;
-	}
 
-	iHeal = healRate(pPlot);
+	int iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
+	int iTurnDamageReal = pPlot->calcTurnDamageReal(this, false);
 
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/02/10                           LunarMongoose       */
-/*                                                                                               */
-/* Bugfix                                                                                        */
-/*************************************************************************************************/
-	// Mongoose FeatureDamageFix
-	FeatureTypes eFeature = pPlot->getFeatureType();
-	if (eFeature != NO_FEATURE)
-	{
-		iHeal -= GC.getFeatureInfo(eFeature).getTurnDamage();
-	}
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                         END                                                  */
-/*************************************************************************************************/
-
-	if (iHeal > 0)
-	{
-		iTurns = (getDamage() / iHeal);
-
-		if ((getDamage() % iHeal) != 0)
-		{
-			iTurns++;
-		}
-
-		return iTurns;
-	}
-	else
-	{
+	// Quick check to see if damage outstrips healing
+	if (iTurnDamageReal >= iHealReal)
 		return MAX_INT;
-	}
+
+	// Add 1 to turns if won't heal on this turn
+	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isEnraged()));
+	int iThisTurnDamageReal = pPlot->calcTurnDamageReal(this, true, (1 - iTurns) * iHealReal);
+
+	// Unit might die before being able to heal!
+	if (getDamageReal() + iThisTurnDamageReal >= maxHitPoints())
+		return MAX_INT;
+
+	int iEffectiveDamageReal = getDamageReal() + iThisTurnDamageReal;
+
+	iTurns += iEffectiveDamageReal / (iHealReal - iTurnDamageReal);
+	if (iEffectiveDamageReal % (iHealReal - iTurnDamageReal) != 0)
+		++iTurns;
+
+	return iTurns;
 }
 
-
-void CvUnit::doHeal()
+// Checks whether this can't heal due to move.
+bool CvUnit::isTurnHealBlocked() const
 {
-	changeDamage(-(healRate(plot())));
+	// Blaze 2025: Duplicated logic in healTurns, probably elsewhere... be aware if changing.
+
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isEnraged()))
+		return true;
+
+	return false;
 }
 
+// Given the current state of the unit, how much should the unit's health change (real damage) on turn start?
+// Incorporates healing and feature/plot effect damage
+int CvUnit::calcTurnHealthChangeReal() const
+{
+	int iHealReal = isTurnHealBlocked() ? 0 : healRate(plot()) * GC.getDefineINT("HIT_POINT_FACTOR");
+	int iDamageRealIncoming = plot()->calcTurnDamageReal(this, true, iHealReal);
+
+	// Can't report overhealing; cap the positive result to that which is our actual health lost
+	return (std::min(getDamageReal(), iHealReal - iDamageRealIncoming));
+}
 
 bool CvUnit::canAirlift(const CvPlot* pPlot) const
 {
@@ -9730,66 +9477,38 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 
 bool CvUnit::canConstruct(const CvPlot* pPlot, BuildingTypes eBuilding, bool bTestVisible) const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
-/*************************************************************************************************/
-	if (isAIControl())
-	{
+	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
+	if (isEnraged())
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	CvCity* pCity;
 
 	if (eBuilding == NO_BUILDING)
-	{
 		return false;
-	}
 
-//FfH: Added by Kael 08/18/2008
+	//FfH: Added by Kael 08/18/2008
 	if (isHasCasted())
-	{
 		return false;
-	}
-//FfH: End Add
 
 	pCity = pPlot->getPlotCity();
 
 	if (pCity == NULL)
-	{
 		return false;
-	}
 
 	if (getTeam() != pCity->getTeam())
-	{
 		return false;
-	}
 
 	if (pCity->getNumRealBuilding(eBuilding) > 0)
-	{
 		return false;
-	}
 
-	if (!(m_pUnitInfo->getForceBuildings(eBuilding)))
-	{
-		if (!(m_pUnitInfo->getBuildings(eBuilding)))
-		{
-			return false;
-		}
+	if (!(m_pUnitInfo->getBuildings(eBuilding)))
+		return false;
 
-		if (!(pCity->canConstruct(eBuilding, false, bTestVisible, true)))
-		{
-			return false;
-		}
-	}
+	if (!(pCity->canConstruct(eBuilding, false, bTestVisible, true)))
+		return false;
 
 	if (isDelayedDeath())
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -9860,9 +9579,9 @@ bool CvUnit::canDiscover(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -9962,9 +9681,9 @@ bool CvUnit::canHurry(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10093,9 +9812,9 @@ bool CvUnit::canTrade(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10181,9 +9900,9 @@ bool CvUnit::canGreatWork(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10573,9 +10292,9 @@ bool CvUnit::canGoldenAge(const CvPlot* pPlot, bool bTestVisible) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -10636,9 +10355,9 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -11073,8 +10792,7 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 		//kTrigger.eEthicalAlignment = GET_PLAYER(getOwner()).getEthicalAlignment();
 		GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_UNIT_LEVEL_UP, &kTrigger);
 
-
-		changeDamage(-(getDamage() / 2));
+		changeDamageReal(-(getDamageReal() / 2));
 	}
 
 //FfH: Added by Kael 01/09/2008
@@ -11188,9 +10906,9 @@ int CvUnit::canLead(const CvPlot* pPlot, int iUnitId) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -11243,9 +10961,9 @@ int CvUnit::canGiveExperience(const CvPlot* pPlot) const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -11549,9 +11267,9 @@ bool CvUnit::isReadyForUpgrade() const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -12239,20 +11957,36 @@ bool CvUnit::isHidden() const
 }
 
 
+// accounts for plot improvements boosting units vision range. Flying and air domain get less benefit from improvements
 int CvUnit::visibilityRange() const
 {
 	// Needed to ensure no vision on blinded units
 	if (isBlind())
-	{
 		return -99;
-	}
 
 	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + getExtraVisibilityRange();
 
-	if (plot() != NULL && plot()->getImprovementType() != NO_IMPROVEMENT)
-		iRange += GC.getImprovementInfo((ImprovementTypes)plot()->getImprovementType()).getVisibilityChange();
+	if (plot() == NULL)
+		return iRange;
 
-	return iRange;
+	ImprovementTypes eImprovement = plot()->getImprovementType();
+
+	if (eImprovement == NO_IMPROVEMENT)
+		return iRange;
+
+	int iImprovementMod = GC.getImprovementInfo(eImprovement).getVisibilityChange();
+
+	// Guess an improvement could give a negative range value?
+	if (iImprovementMod <= 0)
+		return (iRange + iImprovementMod);
+
+	// Blaze 2025: Flying units (and domain air units) have a built-in +1 (or fixed) range,
+	// and should get less bonus from e.g. a tall tower helping them see further.
+	// Something like mirror of heaven or tower of eyes though still should give a buff.
+	if (isFlying() || getDomainType() == DOMAIN_AIR)
+		iImprovementMod = std::max(0, iImprovementMod - 2);
+	
+	return (iRange + iImprovementMod);
 }
 
 
@@ -12287,36 +12021,21 @@ int CvUnit::movesLeft() const
 
 bool CvUnit::canMove() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							03/27/09											**/
-/**																								**/
-/**									Blocks Movement of Marked Units								**/
-/*************************************************************************************************/
+	// Xienwolf - 03/27/09 - Blocks Movement of Marked Units
 	if (plot() == NULL)
-	{
 		return false;
-	}
+
 	if (isBlind() && (!plot()->isVisible(getTeam(), false) || !plot()->isRevealed(getTeam(), false)))
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (isDead())
-	{
 		return false;
-	}
 
 	if (getMoves() >= maxMoves())
-	{
 		return false;
-	}
 
 	if (getImmobileTimer() > 0)
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -12346,9 +12065,9 @@ bool CvUnit::canBuildRoute() const
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/19/09											**/
 /**																								**/
-/**							Prevents inappropriate AIControl Actions							**/
+/**							Prevents inappropriate Enraged Actions							**/
 /*************************************************************************************************/
-	if (isAIControl())
+	if (isEnraged())
 	{
 		return false;
 	}
@@ -12772,42 +12491,25 @@ int CvUnit::maxHitPoints() const
 }
 
 
+// Returns actual hit points (default 1000 hp scale)
 int CvUnit::currHitPoints()	const
 {
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (maxHitPoints() - getDamage());
-/**								----  End Original Code  ----									**/
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
 	return (maxHitPoints() - getDamageReal());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-
 }
 
 
+// Checks actual hp instead of rounding to a percent
 bool CvUnit::isHurt() const
 {
-	return (getDamage() > 0);
+	return (getDamageReal() > 0);
 }
 
 
 bool CvUnit::isDead() const
 {
-/*************************************************************************************************/
-/**	Higher hitpoints				07/04/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getDamage() >= maxHitPoints());
-/**								----  End Original Code  ----									**/
+	// Snarko - Higher hitpoints - 07/04/11 - Makes higher values than 100 HP possible.
 	return (getDamageReal() >= maxHitPoints());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
 }
 
 
@@ -14002,35 +13704,14 @@ bool CvUnit::canAirAttack() const
 bool CvUnit::canAirDefend(const CvPlot* pPlot) const
 {
 	if (pPlot == NULL)
-	{
 		pPlot = plot();
-	}
 
 	if (maxInterceptionProbability() == 0)
-	{
 		return false;
-	}
 
-	if (getDomainType() != DOMAIN_AIR)
-	{
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       10/30/09                     Mongoose & jdog5000      */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-/* original bts code
-		if (!pPlot->isValidDomainForLocation(*this))
-*/
-		// From Mongoose SDK
-		// Land units which are cargo cannot intercept
-		if (!pPlot->isValidDomainForLocation(*this) || isCargo())
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
-		{
-			return false;
-		}
-	}
+	// UNOFFICIAL_PATCH - Mongoose & jdog5000 - 10/30/09 - Land units which are cargo cannot intercept
+	if (getDomainType() != DOMAIN_AIR && (!pPlot->isValidDomainForLocation(*this) || isCargo()))
+		return false;
 
 	return true;
 }
@@ -14544,237 +14225,104 @@ bool CvUnit::flatMovementCost() const
 
 bool CvUnit::ignoreTerrainCost() const
 {
-
-//FfH Flying: Added by Kael 07/30/2007
+	//FfH Flying: Added by Kael 07/30/2007
 	if (isFlying())
-	{
 		return true;
-	}
-//FfH: End Add
-/*************************************************************************************************/
-/**	MoveBetter 								05/15/08								Xienwolf	**/
-/**																								**/
-/**								Simulates the UnitInfo Flag										**/
-/*************************************************************************************************/
+
+	// MoveBetter - Xienwolf - 05/15/08 - Simulates the UnitInfo Flag
 	if (isIgnoreTerrainCosts())
-	{
 		return true;
-	}
-/*************************************************************************************************/
-/**	MoveBetter 									END												**/
-/*************************************************************************************************/
 
 	return m_pUnitInfo->isIgnoreTerrainCost();
 }
 
 
+// Xienwolf - 09/27/08 - Checks against all kinds of invisibility
 bool CvUnit::isNeverInvisible() const
 {
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							Allows Multiple Invisible types on a Unit							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (!alwaysInvisible() && (getInvisibleType() == NO_INVISIBLE));
-/**								----  End Original Code  ----									**/
 	return (!alwaysInvisible() && (getNumInvisibleTypes() == 0));
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 }
 
 
+// Checks if a unit is invisible to a given team while on its own tile
 bool CvUnit::isInvisible(TeamTypes eTeam, bool bDebug, bool bCheckCargo) const
 {
 	if (bDebug && GC.getGameINLINE().isDebugMode())
-	{
 		return false;
-	}
 
 	if (getTeam() == eTeam)
-	{
 		return false;
-	}
 
-//FfH: Added by Kael 04/11/2008
+	//FfH: Added by Kael 04/11/2008
 	if (plot() != NULL)
 	{
-		if (plot()->isCity())
-		{
-			if (getTeam() == plot()->getTeam())
-			{
-				return false;
-			}
-		}
-		if (plot()->isOwned())
-		{
-			if (plot()->getTeam() != getTeam())
-			{
-				if (GET_PLAYER(plot()->getOwnerINLINE()).isSeeInvisible())
-				{
-					return false;
-				}
-			}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							No Longer use this method for Esus Effect							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (plot()->getTeam() == getTeam())
-			{
-				if (GET_PLAYER(plot()->getOwnerINLINE()).isHideUnits() && !isIgnoreHide())
-				{
-					return true;
-				}
-			}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-		}
-	}
-//FfH: End Add
+		if (plot()->isCity() && getTeam() == plot()->getTeam())
+			return false;
 
-	if (alwaysInvisible())
-	{
-		return true;
-	}
-
-	if (bCheckCargo && isCargo())
-	{
-		return true;
-	}
-
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/27/08											**/
-/**																								**/
-/**							Allows Multiple Invisible types on a Unit							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (getInvisibleType() == NO_INVISIBLE)
-	{
-		return false;
-	}
-
-//FfH: Added by Kael 01/16/2009
-	if (plot() == NULL)
-	{
-		return false;
-	}
-//FfH: End Add
-
-	return !(plot()->isInvisibleVisible(eTeam, getInvisibleType()));
-/**								----  End Original Code  ----									**/
-	if (getNumInvisibleTypes() == 0)
-	{
-		return false;
-	}
-
-/*************************************************************************************************/
-/**	Tweak					 	   11/04/10									Snarko				**/
-/**																								**/
-/**			If the plot is NULL then do not try to check if invisible are visible on it			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	bool bHidden = false;
-	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
-	{
-		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
-			bHidden = true;
-		}
-	}
-
-	if (plot() == NULL)
-	{
-		return false;
-	}
-/**								----  End Original Code  ----									**/
-	if (plot() == NULL)
-	{
-		return false;
-	}
-
-	bool bHidden = false;
-	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
-	{
-		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
-			bHidden = true;
-		}
-	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-
-	return bHidden;
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-}
-/*************************************************************************************************/
-/**	Tweak					 	   11/04/10									Snarko				**/
-/**																								**/
-/**				So we can check the plot we're moving into, instead of plot we're on			**/
-/*************************************************************************************************/
-bool CvUnit::isInvisible(TeamTypes eTeam, const CvPlot* pPlot) const
-{
-
-	if (getTeam() == eTeam)
-	{
-		return false;
-	}
-//FfH: Added by Kael 04/11/2008
-	if (pPlot->isCity())
-	{
-		if (getTeam() == pPlot->getTeam())
+		if (plot()->isOwned() && plot()->getTeam() != getTeam()
+		 && GET_PLAYER(plot()->getOwnerINLINE()).isSeeInvisible())
 		{
 			return false;
 		}
 	}
-	if (pPlot->isOwned())
-	{
-		if (pPlot->getTeam() != getTeam())
-		{
-			if (GET_PLAYER(pPlot->getOwnerINLINE()).isSeeInvisible())
-			{
-				return false;
-			}
-		}
-	}
-//FfH: End Add
 
 	if (alwaysInvisible())
-	{
 		return true;
-	}
 
-	if (isCargo())
-	{
+	if (bCheckCargo && isCargo())
 		return true;
-	}
 
 	if (getNumInvisibleTypes() == 0)
+		return false;
+
+	if (plot() == NULL)
+		return false;
+
+	bool bHidden = false;
+	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
+	{
+		if (!plot()->isInvisibleVisible(eTeam, getInvisibleType(iI)))
+			bHidden = true;
+	}
+
+	return bHidden;
+}
+
+// Snarko - Checks if a unit will be invisible to a given team on a target plot (for purpose of moving onto that plot)
+bool CvUnit::isInvisible(TeamTypes eTeam, const CvPlot* pPlot) const
+{
+
+	if (getTeam() == eTeam)
+		return false;
+
+	//FfH: Added by Kael 04/11/2008
+	if (pPlot->isCity() && getTeam() == pPlot->getTeam())
+		return false;
+
+	if (pPlot->isOwned() && pPlot->getTeam() != getTeam()
+	 && GET_PLAYER(pPlot->getOwnerINLINE()).isSeeInvisible())
 	{
 		return false;
 	}
+
+	if (alwaysInvisible())
+		return true;
+
+	if (isCargo())
+		return true;
+
+	if (getNumInvisibleTypes() == 0)
+		return false;
 
 	bool bHidden = false;
 	for (int iI = 0; iI < getNumInvisibleTypes(); iI++)
 	{
 		if (!pPlot->isInvisibleVisible(eTeam, getInvisibleType(iI)))
-		{
 			bHidden = true;
-		}
 	}
 
 	return bHidden;
 }
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 
 bool CvUnit::isNukeImmune() const
 {
@@ -14806,40 +14354,44 @@ int CvUnit::evasionProbability() const
 	return std::max(0, m_pUnitInfo->getEvasionProbability() + getExtraEvasion());
 }
 
-
+// Base chance to withdraw when losing an attack, NOT accounting for the defending unit
 int CvUnit::withdrawalProbability() const
 {
 	if (getDomainType() == DOMAIN_LAND && plot()->isWater() && !canMoveAllTerrain())
-	{
 		return 0;
-	}
 
-//FfH: Added by Kael 04/06/2009
+	//FfH: Added by Kael 04/06/2009
 	if (getImmobileTimer() > 0)
-	{
 		return 0;
-	}
-//FfH: End Add
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							02/06/09											**/
-/**																								**/
-/**			Allows units to purchase withdraw beyond the cap but enforces the cap still			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
-/**								----  End Original Code  ----									**/
-	return std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal())));
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+	// Xienwolf - 02/06/09 - Allows units to purchase withdraw beyond the cap but enforces the cap still
+	return range(m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
 }
-int CvUnit::enemyWithdrawalProbability()const{
+
+// Modifier to enemy withdrawal chance when fighting this unit
+int CvUnit::enemyWithdrawalProbability() const
+{
 	return m_pUnitInfo->getEnemyWithdrawalProbability();
 }
 
-int CvUnit::combatWithdrawalProbability(CvUnit* Defender){
-	return std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (withdrawalProbability() + Defender->enemyWithdrawalProbability()+ Defender->getExtraEnemyWithdrawal())));
+// When attacking against Defender, what's the chance of successfully withdrawing
+int CvUnit::combatWithdrawalProbability(CvUnit* Defender)
+{
+	return range(withdrawalProbability() + Defender->enemyWithdrawalProbability() + Defender->getExtraEnemyWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
+}
+// When attacking against Defender, what's the chance of successfully withdrawing (duplicate of above but const overload so CvUnitAI can use it)
+int CvUnit::combatWithdrawalProbability(CvUnit* Defender) const
+{
+	return range(withdrawalProbability() + Defender->enemyWithdrawalProbability() + Defender->getExtraEnemyWithdrawal(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
+}
+
+// When defending against pAttacker, what's the chance of us successfully withdrawing instead of dying
+int CvUnit::getWithdrawlProbDefensive(CvUnit* pAttacker) const
+{
+	if (getImmobileTimer() > 0)
+		return 0;
+
+	return range(m_pUnitInfo->getWithdrawlProbDefensive() + getExtraWithdrawal() + pAttacker->getExtraEnemyWithdrawal() + pAttacker->enemyWithdrawalProbability(), 0, GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"));
 }
 
 int CvUnit::collateralDamage() const
@@ -15286,7 +14838,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 		/*************************************************************************************************/
 		/**								---- Start Original Code ----									**
 		//FfH: Added by Kael 11/14/2007
-		if (isAIControl())
+		if (isEnraged())
 		{
 			return false;
 		}
@@ -15301,7 +14853,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 			{
 				return false;
 			}
-			if (pHeadUnit->isAIControl())
+			if (pHeadUnit->isEnraged())
 			{
 				return false;
 			}
@@ -15315,7 +14867,7 @@ bool CvUnit::canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup
 			{
 				return false;
 			}
-			if (pHeadUnit->isAIControl() != isAIControl())
+			if (pHeadUnit->isEnraged() != isEnraged())
 			{
 				return false;
 			}
@@ -16600,58 +16152,13 @@ void CvUnit::setGameTurnCreated(int iNewValue)
 	FAssert(getGameTurnCreated() >= 0);
 }
 
-/*************************************************************************************************/
-/**	Higher hitpoints				31/01/11				Imported from wiser orcs by Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-int CvUnit::getDamage() const
-{
-	return m_iDamage;
-}
-
-
-void CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
-{
-	int iOldValue;
-
-	iOldValue = getDamage();
-
-	m_iDamage = range(iNewValue, 0, maxHitPoints());
-
-	FAssertMsg(currHitPoints() >= 0, "currHitPoints() is expected to be non-negative (invalid Index)");
-
-	if (iOldValue != getDamage())
-	{
-		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
-		{
-			NotifyEntity(MISSION_DAMAGE);
-		}
-
-		setInfoBarDirty(true);
-
-		if (IsSelected())
-		{
-			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-		}
-
-		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
-		{
-			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
-		}
-	}
-
-	if (isDead())
-	{
-		kill(true, ePlayer);
-	}
-}
-/**								----  End Original Code  ----									**/
+// Returns true damage (default 1000 hp scale)
 int CvUnit::getDamageReal() const
 {
 	return m_iDamage;
 }
 
+// Set true damage (default 1000 hp scale), kills if damage > max_hp
 void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
 {
 	int iOldValue;
@@ -16665,52 +16172,44 @@ void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntit
 	if (iOldValue != getDamageReal())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
-		{
 			NotifyEntity(MISSION_DAMAGE);
-		}
 
 		setInfoBarDirty(true);
 
 		if (IsSelected())
-		{
 			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-		}
 
 		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
-		{
 			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
-		}
 	}
 
 	if (isDead())
-	{
 		kill(true, ePlayer);
-	}
 }
 
+// change HP by true damage (default 1000 hp scale). Will kill(true) if damage > max hp
 void CvUnit::changeDamageReal(int iChange, PlayerTypes ePlayer)
 {
 	setDamageReal((getDamageReal() + iChange), ePlayer);
 }
 
+// Returns damage rounded down to nearest whole percent
 int CvUnit::getDamage() const
 {
 	return getDamageReal() / GC.getDefineINT("HIT_POINT_FACTOR");
 }
 
-
+// Set damage to flat 1-100 percent
 void CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntity)
 {
 	iNewValue *= GC.getDefineINT("HIT_POINT_FACTOR");
 	setDamageReal(iNewValue, ePlayer, bNotifyEntity);
 }
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
 
+// Change hp by a flat 1-100 percent. Will kill(true) if damage > max hp
 void CvUnit::changeDamage(int iChange, PlayerTypes ePlayer)
 {
-	setDamage((getDamage() + iChange), ePlayer);
+	setDamageReal((getDamageReal() + iChange * GC.getDefineINT("HIT_POINT_FACTOR")), ePlayer);
 }
 
 
@@ -18723,6 +18222,7 @@ CvPlot* CvUnit::getSpawnPlot() const
 {
 	return GC.getMapINLINE().plotINLINE(m_iSpawnPlotX, m_iSpawnPlotY);
 }
+// adds to the numLairSpawnAlive on plot if fitting for immediate or regular spawn type for a valid improvmeent
 void CvUnit::setSpawnPlot(CvPlot* pPlot)
 {
 	if (pPlot != NULL && pPlot->getImprovementType() != NO_IMPROVEMENT)
@@ -22049,7 +21549,7 @@ int CvUnit::countHasPromotion(PromotionTypes eIndex) const
 void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 {
 /**								----  End Original Code  ----									**/
-void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupressEffects,bool bConvertUnit)
+void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupressEffects, bool bConvertUnit)
 {
 	CvPromotionInfo &kPromotion = GC.getPromotionInfo(eIndex);
 	bool bChange = false;
@@ -22087,7 +21587,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		{
 			return;
 		}
-		if (kPromotion.isAIControl())
+		if (kPromotion.isEnraged())
 		{
 			if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
 			{
@@ -22794,7 +22294,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 /*************************************************************************************************/
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
-		changeAIControl((kPromotion.isAIControl()) ? iChange : 0);
+		changeEnraged((kPromotion.isEnraged()) ? iChange : 0);
 		changeAlive((kPromotion.isNotAlive()) ? iChange : 0);
 		changeBaseCombatStr(kPromotion.getExtraCombatStr() * iChange);
 		changeBaseCombatStrDefense(kPromotion.getExtraCombatDefense() * iChange);
@@ -24233,6 +23733,7 @@ bool CvUnit::canCastTargetPlot(int spell, bool bTestVisible, CvPlot* pTargetPlot
 
 	return true;
 }
+
 int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const {
 	int iValue = 0;
 
@@ -24254,7 +23755,7 @@ int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iD
 		if (iDmgType != -1)
 		{
 			iValue *= 100;
-			iValue /= std::max(1, 100 + pLoopUnit->getDamageTypeResist((DamageTypes)iDmgType));
+			iValue /= std::max(1, 100 - pLoopUnit->getDamageTypeResist((DamageTypes)iDmgType));
 		}
 		iValue = std::max(iValue, 3);
 	}
@@ -26454,7 +25955,7 @@ void CvUnit::changeAlive(int iNewValue)
 	}
 }
 
-bool CvUnit::isAIControl() const
+bool CvUnit::isEnraged() const
 {
 /*************************************************************************************************/
 /**	Xienwolf Tweak							12/27/08											**/
@@ -26468,14 +25969,14 @@ bool CvUnit::isAIControl() const
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
-	return m_iAIControl == 0 ? false : true;
+	return m_iEnraged == 0 ? false : true;
 }
 
-void CvUnit::changeAIControl(int iNewValue)
+void CvUnit::changeEnraged(int iNewValue)
 {
 	if (iNewValue != 0)
 	{
-		m_iAIControl += iNewValue;
+		m_iEnraged += iNewValue;
 /*************************************************************************************************/
 /**	Xienwolf Tweak							12/27/08											**/
 /**																								**/
@@ -26563,10 +26064,13 @@ bool CvUnit::isFlying() const
 
 void CvUnit::changeFlying(int iNewValue)
 {
-	if (iNewValue != 0)
-	{
-		m_iFlying += iNewValue;
-	}
+	if (iNewValue == 0)
+		return;
+
+	plot()->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
+	m_iFlying += iNewValue;
+	plot()->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true);
+
 }
 
 bool CvUnit::isHeld() const
@@ -26875,46 +26379,26 @@ void CvUnit::changeCombatHealPercent(int iChange)
 	}
 }
 
+// 
 void CvUnit::calcCombatLimit()
 {
 	int iBestValue = m_pUnitInfo->getCombatLimit();
 	int iValue = 0;
+
+	// Lethality - Xienwolf - 07/10/08 - Enhances the Combat Limit of a Unit
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		if (isHasPromotion((PromotionTypes)iI))
-		{
-			iValue = GC.getPromotionInfo((PromotionTypes)iI).getCombatLimit();
-			if (iValue != 0)
-			{
-				if (iValue < iBestValue)
-				{
-					iBestValue = iValue;
-				}
-			}
-		}
+		if (!isHasPromotion((PromotionTypes)iI))
+			continue;
+
+		iValue = GC.getPromotionInfo((PromotionTypes)iI).getCombatLimit();
+
+		if (iValue < iBestValue)
+			iBestValue = iValue;
 	}
-/*************************************************************************************************/
-/**	Lethality								07/10/08								Xienwolf	**/
-/**																								**/
-/**						Enhances the Combat Limit of a Unit										**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	m_iCombatLimit = iBestValue;
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Higher hitpoints				28/01/11				Imported from wiser orcs by Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	m_iCombatLimit = std::min(100, iBestValue + getCombatDmgCapBoost());
-/**								----  End Original Code  ----									**/
+
+	// Higher hitpoints - Imported from wiser orcs by Snarko
 	m_iCombatLimit = std::min(GC.getMAX_HIT_POINTS(), iBestValue + getCombatDmgCapBoost());
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Lethality									END												**/
-/*************************************************************************************************/
 }
 
 int CvUnit::getCombatPercentInBorders() const
@@ -27222,15 +26706,6 @@ void CvUnit::mutate()
 /**	DynamicMutation								END												**/
 /*************************************************************************************************/
 
-int CvUnit::getWithdrawlProbDefensive(CvUnit* pAttacker) const
-{
-	if (getImmobileTimer() > 0)
-	{
-		return 0;
-	}
-
-	return std::max(0, (m_pUnitInfo->getWithdrawlProbDefensive() + getExtraWithdrawal() +pAttacker->getExtraEnemyWithdrawal()+pAttacker->enemyWithdrawalProbability()));
-}
 
 /*************************************************************************************************/
 /**	CandyMan								04/04/09								Xienwolf	**/
@@ -27869,6 +27344,7 @@ CvPlot* CvUnit::chooseSpellTarget(int iSpell)
 	}
 	return pBestPlot;
 }
+
 int CvUnit::getExtraSpellMove() const
 {
 	int iCount = 0;
@@ -27885,6 +27361,7 @@ int CvUnit::getExtraSpellMove() const
 	return iCount;
 }
 
+
 void CvUnit::doDamage(int iDmg, int iDmgLimit, CvUnit* pAttacker, int iDmgType, bool bStartWar)
 {
 	// Treasure chests immune to damage. Could be thematic, but... more often annoying : Blazenclaw 2025
@@ -27895,89 +27372,64 @@ void CvUnit::doDamage(int iDmg, int iDmgLimit, CvUnit* pAttacker, int iDmgType, 
 
 	iResist = baseCombatStrDefense() *2;
 	iResist += getLevel() * 2;
+
 	if (plot()->getPlotCity() != NULL)
-	{
 		iResist += (plot()->getPlotCity()->getDefenseModifier(false) / 4);
-	}
+
 	if (iDmgType != -1)
-	{
 		iResist += getDamageTypeResist((DamageTypes)iDmgType);
-	}
+
 	if (pAttacker != NULL && iDmgType != DAMAGE_PHYSICAL)
-	{
 		iDmg += pAttacker->getSpellDamageModify();
-	}
-	if (iResist < 100)
+
+	if (iResist >= 100)
+		return;
+
+	// From here on, using real damage instead of just percentile
+	iDmg *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
+	iDmg = iDmg * (100 - iResist) / 100;
+
+	if (iDmg + getDamageReal() > iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR"))
+		iDmg = iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR") - getDamageReal();
+
+	if (iDmg <= 0)
+		return;
+
+	if (iDmg + getDamageReal() >= GC.getMAX_HIT_POINTS())
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+	else
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg/GC.getDefineINT("HIT_POINT_FACTOR"), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+
+	gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+		GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
+	if (pAttacker != NULL)
 	{
-		iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
-		iDmg = iDmg * (100 - iResist) / 100;
-
-		if (iDmg + getDamage() > iDmgLimit)
+		// Only report successful damage to attacker if they can see the unit
+		if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
 		{
-			iDmg = iDmgLimit - getDamage();
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
 		}
-		if (iDmg > 0)
+
+		changeDamageReal(iDmg, pAttacker->getOwner());
+
+		// Blaze: There may be a weird interaction here if the user is at peace with savages, say, and there's a hidden nationality unit pretending to be one?
+		if (bStartWar && !pAttacker->isHiddenNationality() && !isHiddenNationality())
 		{
-			// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-			// if (iDmg + getDamage() >= GC.getMAX_HIT_POINTS())
-			if (iDmg + getDamage() >= (GC.getMAX_HIT_POINTS() / GC.getDefineINT("HIT_POINT_FACTOR")))
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			else
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-
-			if (pAttacker != NULL)
-			{
-				// Only report successful damage to attacker if they can see the unit
-				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
-				{
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-				changeDamage(iDmg, pAttacker->getOwner());
-
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,pAttacker->getOwner());
-				}
-				if (bStartWar)
-				{
-					// Prevents forcing war against Barbarians : Xienwolf 02/06/09
-					// if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()))
-					if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()) && !(pAttacker->isBarbarian() || isBarbarian()))
-					{
-						if (getTeam() != pAttacker->getTeam())
-						{
-							if (!GET_TEAM(pAttacker->getTeam()).isPermanentWarPeace(getTeam()))
-							{
-								GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				changeDamage(iDmg, NO_PLAYER);
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,NO_PLAYER);
-				}
-			}
+			if (GET_TEAM(pAttacker->getTeam()).canDeclareWar(getTeam()))
+				GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
 		}
 	}
+	else
+		changeDamageReal(iDmg, NO_PLAYER);
 }
 
 
+// The only difference between this and the above is the pAttacker pointer type here is CvCity* instead of CvUnit*
+// There's got to be a way to merge this cleanly, no? Also not sure if overloading works for python exposure
 void CvUnit::doDamageCity(int iDmg, int iDmgLimit, CvCity* pAttacker, int iDmgType, bool bStartWar)
 {
 	// Treasure chests immune to damage. Could be thematic, but... more often annoying : Blazenclaw 2025
@@ -27988,87 +27440,59 @@ void CvUnit::doDamageCity(int iDmg, int iDmgLimit, CvCity* pAttacker, int iDmgTy
 
 	iResist = baseCombatStrDefense() *2;
 	iResist += getLevel() * 2;
+
 	if (plot()->getPlotCity() != NULL)
-	{
 		iResist += (plot()->getPlotCity()->getDefenseModifier(false) / 4);
-	}
+
 	if (iDmgType != -1)
-	{
 		iResist += getDamageTypeResist((DamageTypes)iDmgType);
-	}
+
 	if (pAttacker != NULL && iDmgType != DAMAGE_PHYSICAL)
-	{
 		iDmg += pAttacker->getSpellDamageModify();
-	}
-	if (iResist < 100)
+
+	if (iResist >= 100)
+		return;
+
+	// From here on, using real damage instead of just percentile
+	iDmg *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
+	iDmg = iDmg * (100 - iResist) / 100;
+
+	if (iDmg + getDamageReal() > iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR"))
+		iDmg = iDmgLimit * GC.getDefineINT("HIT_POINT_FACTOR") - getDamageReal();
+
+	if (iDmg <= 0)
+		return;
+
+	if (iDmg + getDamageReal() >= GC.getMAX_HIT_POINTS())
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+	else
+		szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg/GC.getDefineINT("HIT_POINT_FACTOR"), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
+
+	gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+		GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+
+	if (pAttacker != NULL)
 	{
-		iDmg = GC.getGameINLINE().getSorenRandNum(iDmg, "Damage") + GC.getGameINLINE().getSorenRandNum(iDmg, "Damage");
-		iDmg = iDmg * (100 - iResist) / 100;
-
-		if (iDmg + getDamage() > iDmgLimit)
+		// Only report successful damage to attacker if they can see the unit
+		if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
 		{
-			iDmg = iDmgLimit - getDamage();
+			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
+				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
 		}
-		if (iDmg > 0)
+
+		changeDamageReal(iDmg, pAttacker->getOwner());
+
+		// Blaze: There may be a weird interaction here if the user is at peace with savages, say, and there's a hidden nationality unit pretending to be one?
+		if (bStartWar && !pAttacker->isHiddenNationality() && !isHiddenNationality())
 		{
-			// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-			// if (iDmg + getDamage() >= GC.getMAX_HIT_POINTS())
-			if (iDmg + getDamage() >= (GC.getMAX_HIT_POINTS() / GC.getDefineINT("HIT_POINT_FACTOR")))
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_KILLED_BY", m_pUnitInfo->getDescription(), GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			else
-			{
-				szMessage = gDLL->getText("TXT_KEY_MESSAGE_DAMAGED_BY", m_pUnitInfo->getDescription(), iDmg, GC.getDamageTypeInfo((DamageTypes)iDmgType).getDescription());
-			}
-			gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-				GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-
-			if (pAttacker != NULL)
-			{
-				// Only report successful damage to attacker if they can see the unit
-				if (plot()->isVisible(pAttacker->getTeam(), false) && !isInvisible(pAttacker->getTeam(), false, false))
-				{
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)pAttacker->getOwner()), true, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "", MESSAGE_TYPE_MINOR_EVENT,
-						GC.getDamageTypeInfo((DamageTypes)iDmgType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-				changeDamage(iDmg, pAttacker->getOwner());
-
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,pAttacker->getOwner());
-				}
-				if (bStartWar)
-				{
-					// Prevents forcing war against Barbarians : Xienwolf 02/06/09
-					// if (!(pAttacker->isHiddenNationality()) && !(isHiddenNationality()))
-					// TODO: This comment, the following line, and pAttacker pointer type are the only differences between CvUnit::doDamage() and CvUnit::doDamageCity(). Should be merged...
-					if (!(isHiddenNationality()) && !(pAttacker->isBarbarian() || isBarbarian()))
-					{
-						if (getTeam() != pAttacker->getTeam())
-						{
-							if (!GET_TEAM(pAttacker->getTeam()).isPermanentWarPeace(getTeam()))
-							{
-								GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				changeDamage(iDmg, NO_PLAYER);
-				// Makes higher values than 100 HP possible : Higher hitpoints Imported from wiser orcs by Snarko 31/01/11
-				// if (getDamage() >= GC.getMAX_HIT_POINTS())
-				if (isDead())
-				{
-					kill(true,NO_PLAYER);
-				}
-			}
+			if (GET_TEAM(pAttacker->getTeam()).canDeclareWar(getTeam()))
+				GET_TEAM(pAttacker->getTeam()).declareWar(getTeam(), false, WARPLAN_TOTAL);
 		}
 	}
+	else
+		changeDamageReal(iDmg, NO_PLAYER);
 }
 
 void CvUnit::doDefensiveStrike(CvUnit* pAttacker)
@@ -28402,22 +27826,10 @@ void CvUnit::combatWon(CvUnit* pLoser, bool bAttacking)
 /**	CommandingPresence						END													**/
 /*************************************************************************************************/
 	}
-	if (getCombatHealPercent() != 0)
-	{
-		if (pLoser->isAlive())
-		{
-			int i = getCombatHealPercent();
 
-			if (i > getDamage())
-			{
-				i = getDamage();
-			}
-			if (i != 0)
-			{
-				changeDamage(-1 * i, NO_PLAYER);
-			}
-		}
-	}
+	if (pLoser->isAlive())
+		changeDamage(-getCombatHealPercent(), NO_PLAYER);
+
 	if (m_pUnitInfo->isExplodeInCombat() && m_pUnitInfo->isSuicide())
 	{
 		if (bAttacking)
@@ -28485,7 +27897,7 @@ void CvUnit::combatWon(CvUnit* pLoser, bool bAttacking)
 	}
 	if (pLoser->getDamageTypeCombat(DAMAGE_POISON) > 0 && GC.getDefineINT("POISONED_PROMOTION") != -1)
 	{
-		if (isAlive() && getDamage() > 0)
+		if (isAlive() && isHurt())
 		{
 			if (GC.getGameINLINE().getSorenRandNum(100, "Poisoned") >= getDamageTypeResist(DAMAGE_POISON))
 			{
@@ -29080,24 +28492,23 @@ CvPlot* CvUnit::getOpenPlot() const
 	return pBestPlot;
 }
 
+// Convert to specified player
 void CvUnit::betray(PlayerTypes ePlayer)
 {
 	if (getOwnerINLINE() == ePlayer)
-	{
 		return;
-	}
+
 	CvPlot* pNewPlot = getOpenPlot();
-	if (pNewPlot != NULL)
-	{
-		CvUnit* pUnit = GET_PLAYER(ePlayer).initUnit((UnitTypes)getUnitType(), pNewPlot->getX(), pNewPlot->getY(), AI_getUnitAIType());
-		pUnit->convert(this);
-		if (pUnit->getDuration() > 0)
-		{
-			pUnit->setDuration(0);
-		}
-	}
+	if (pNewPlot == NULL)
+		return;
+
+	CvUnit* pUnit = GET_PLAYER(ePlayer).initUnit((UnitTypes)getUnitType(), pNewPlot->getX(), pNewPlot->getY(), AI_getUnitAIType());
+
+	pUnit->convert(this);
+
+	if (pUnit->getDuration() > 0)
+		pUnit->setDuration(0);
 }
-//FfH: End Add
 
 void CvUnit::read(FDataStreamBase* pStream)
 {
@@ -29468,7 +28879,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	pStream->Read(&m_iAlive);
-	pStream->Read(&m_iAIControl);
+	pStream->Read(&m_iEnraged);
 	pStream->Read(&m_iBoarding);
 	pStream->Read(&m_iDefensiveStrikeChance);
 	pStream->Read(&m_iDefensiveStrikeDamage);
@@ -29978,7 +29389,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	pStream->Write(m_iAlive);
-	pStream->Write(m_iAIControl);
+	pStream->Write(m_iEnraged);
 	pStream->Write(m_iBoarding);
 	pStream->Write(m_iDefensiveStrikeChance);
 	pStream->Write(m_iDefensiveStrikeDamage);
@@ -30757,53 +30168,30 @@ bool CvUnit::canRangeStrike(bool bTest) const
 	return true;
 }
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							04/15/09											**/
-/**																								**/
-/**				Allows AI and Automated units to check potential attackers						**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-bool CvUnit::canRangeStrikeAt(const CvPlot* pPlot, int iX, int iY) const
-{
-	if (!canRangeStrike())
-/**								----  End Original Code  ----									**/
+// Checks if this unit can air strike from pPlot to iX, iY
 bool CvUnit::canRangeStrikeAt(const CvPlot* pPlot, int iX, int iY, bool bTest) const
 {
+	// Xienwolf - 04/15/09 - Added bTest to allow AI and Automated units to check potential attackers
 	if (!canRangeStrike(bTest))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	{
 		return false;
-	}
 
 	CvPlot* pTargetPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
 	if (NULL == pTargetPlot)
-	{
 		return false;
-	}
 
 	if (!pPlot->isVisible(getTeam(), false))
-	{
 		return false;
-	}
 
-	if (plotDistance(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE()) > airRange())
-	{
+	if (plotDistance(pPlot, pTargetPlot) > airRange())
 		return false;
-	}
 
 	CvUnit* pDefender = airStrikeTarget(pTargetPlot);
 	if (NULL == pDefender)
-	{
 		return false;
-	}
 
 	if (!pPlot->canSeePlot(pTargetPlot, getTeam(), airRange()))
-	{
 		return false;
-	}
 
 	return true;
 }
@@ -31437,7 +30825,7 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 
 	int iValue = 0;
 
-	if (0 == getDamage() && kTrigger.getUnitDamagedWeight() > 0)
+	if (!isHurt() && kTrigger.getUnitDamagedWeight() > 0)
 	{
 		return MIN_INT;
 	}
@@ -31683,48 +31071,23 @@ int CvUnit::getRenderPriority(UnitSubEntityTypes eUnitSubEntity, int iMeshGroupT
 	}
 }
 
+// Checks for isNeverHostile, isHiddenNationality, isAttackNoWar, and conditionally if not on something acting as a city
 bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 {
-
-/*************************************************************************************************/
-/**	PeaceAndFlowers							03/27/09								Xienwolf	**/
-/**																								**/
-/**					Makes all Combat Actions impossible for this type of Unit					**/
-/*************************************************************************************************/
+	// PeaceAndFlowers - Xienwolf - 03/27/09 - Makes all Combat Actions impossible for this type of Unit
 	if (isNeverHostile())
-	{
 		return false;
-	}
-/*************************************************************************************************/
-/**	PeaceAndFlowers							END													**/
-/*************************************************************************************************/
-//FfH: Added by Kael 09/15/2007
+
+	//FfH: Added by Kael 09/15/2007
 	if (isHiddenNationality())
-	{
 		return true;
-	}
-//FfH: End Add
-/*************************************************************************************************/
-/**	Hostility 								05/15/08								Xienwolf	**/
-/**																								**/
-/**							Inclusion ofnew Promotion Tag in Validation							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
 
-	if (!m_pUnitInfo->isAlwaysHostile())
-/**								----  End Original Code  ----									**/
+	// Hostility - Xienwolf - 05/15/08 - add isAttackNoWar functionality
 	if (!(m_pUnitInfo->isAlwaysHostile() || isAttackNoWar()))
-/*************************************************************************************************/
-/**	Hostility 									END												**/
-/*************************************************************************************************/
-	{
 		return false;
-	}
 
-	if (NULL != pPlot && pPlot->isCity(true, getTeam()))
-	{
+	if (pPlot != NULL && pPlot->isCity(true, getTeam()))
 		return false;
-	}
 
 	return true;
 }
@@ -32666,14 +32029,10 @@ bool CvUnit::claimFort(bool bBuilt)
 {
 	// Relying on fort building rules to avoid e.g. building a fort on a tile that already has one to get 2 commanders/fort
 	if (!canClaimFort(plot()) && !bBuilt)
-	{
 		return false;
-	}
 
 	if (!bBuilt && !isBarbarian())
-	{
 		GET_PLAYER(getOwnerINLINE()).changeGold(-GET_PLAYER(getOwnerINLINE()).getClaimFortCost());
-	}
 
 	CvUnit* pUnit;
 	int iUnitClass = GC.getDefineINT("FORT_COMMANDER_UNITCLASS");
@@ -32681,11 +32040,10 @@ bool CvUnit::claimFort(bool bBuilt)
 
 	//XXX this really shouldn't be done, fix it in the XML instead. I included it anyway because it was in the spell.
 	if (eUnit == NO_UNIT)
-	{
 		eUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iUnitClass).getDefaultUnitIndex();
-	}
 	pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
-	if (!bBuilt) pUnit->finishMoves();
+	if (!bBuilt)
+		pUnit->finishMoves();
 
 	//if (GC.getCivilizationInfo(getCivilizationType()).getDefaultRace() != NO_PROMOTION)
 	//{
@@ -32695,9 +32053,11 @@ bool CvUnit::claimFort(bool bBuilt)
 	//	}
 	//}
 
-	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), 1);
+	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), false);
 	plot()->setImprovementOwner(getOwnerINLINE());
-	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), 1);
+	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), false);
+	// Need a distinct call to update culture; above ones won't update if the improvement doesn't have culture control
+	plot()->updateCulture(true, true);
 
 	return true;
 }
@@ -32747,51 +32107,50 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 
 	if (!canExploreLair(pPlot, false))
 		return false;
+
 	TraitTriggeredData kData;
 	kData.m_iImprovement = pPlot->getImprovementType();
 	GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_EXPLORE_LAIR, &kData);
 
 	GoodyTypes eGoody = GET_PLAYER(getOwnerINLINE()).doLair(pPlot, this);
 
-	if (eGoody != NO_GOODY) //If no possible goody was found this will return false
+	if (eGoody == NO_GOODY)
+		return false;
+
+	finishMoves();
+	changeExperience(100);
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getGameINLINE().getSorenRandNum(100, "Destroy Lair Chance") < GC.getGoodyInfo(eGoody).getDestroyLairChance())
 	{
-		finishMoves();
-		changeExperience(100);
-		if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getGameINLINE().getSorenRandNum(100, "Destroy Lair Chance") < GC.getGoodyInfo(eGoody).getDestroyLairChance())
+		if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT)
 		{
-			if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT)
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
+			pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
+			plot()->setImprovementOwner(NO_PLAYER);
+			pPlot->setImprovementType((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage());
+		}
+		else
+		{
+			if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
 			{
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
-				pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
-				plot()->setImprovementOwner(NO_PLAYER);
-				pPlot->setImprovementType((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage());
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				// +-10% on cycle length
+				pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
+																		* GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
 			}
 			else
 			{
-				if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
-				{
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
-					// +-10% on cycle length
-					pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
-																		  * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
-				}
-				else
-				{
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
-					pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
-					plot()->setImprovementOwner(NO_PLAYER);
-					pPlot->setImprovementType(NO_IMPROVEMENT);
-				}
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
+				plot()->setImprovementOwner(NO_PLAYER);
+				pPlot->setImprovementType(NO_IMPROVEMENT);
 			}
 		}
-		return true;
 	}
 
-	return false;
+	return true;
 }
-/*************************************************************************************************/
-/**	MISSION_CLAIM_FORT/MISSION_EXPLORE_LAIR	END													**/
-/*************************************************************************************************/
+
+
 /*************************************************************************************************/
 /**	Sidar Mist 								25/06/10								Grey Fox	**/
 /*************************************************************************************************/
@@ -33505,21 +32864,15 @@ bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 		return false;
 
 	if (!pTarget->isVisible(getTeam(), false))
-	{
 		return false;
-	}
 
 	int iRange = getSpellTargetRange(iI);//GC.getSpellInfo((SpellTypes)iI).getTargetRange();
 
+	if (plotDistance(plot(), pTarget) > iRange)
+		return false;
+
 	if (!plot()->canSeePlot(pTarget, getTeam(), iRange))
-	{
 		return false;
-	}
-	
-	if (plotDistance(getX_INLINE(), getY_INLINE(), pTarget->getX_INLINE(), pTarget->getY_INLINE()) > iRange)
-	{
-		return false;
-	}
 
 	return true;
 }

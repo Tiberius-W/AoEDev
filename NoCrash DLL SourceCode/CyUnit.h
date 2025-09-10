@@ -58,8 +58,10 @@ public:
 	bool canPlunder(CyPlot* pPlot);
 	bool canAirPatrol(CyPlot* pPlot);
 	bool canSeaPatrol(CyPlot* pPlot);
-	bool canHeal(CyPlot* pPlot);
-	bool canSentry(CyPlot* pPlot);
+	bool canHealMission(CyPlot* pPlot);
+	bool canSentryMission(CyPlot* pPlot);
+
+	int calcTurnHealthChangeReal() const;
 
 	bool canAirlift(CyPlot* pPlot);
 	bool canAirliftAt(CyPlot* pPlot, int iX, int iY);
@@ -615,7 +617,7 @@ public:
 	int getCommandXPShareRate() const;
 	int getPreviousOwner() const;
 	void setPreviousOwner(int eNewOwner);
-	bool isAIControl() const;
+	bool isEnraged() const;
 	bool isImmuneToCapture() const;
 	bool isCommunalProperty() const;
 	bool isNeverHostile() const;

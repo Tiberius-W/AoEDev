@@ -1178,7 +1178,7 @@ public:
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	bool isAIControl() const;
+	bool isEnraged() const;
 	bool isBoarding() const;
 	bool isOnlyDefensive() const;
 	bool isDispellable() const;
@@ -1799,7 +1799,7 @@ protected:
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 //FfH: Added by Kael 07/30/2007
-	bool m_bAIControl;
+	bool m_bEnraged;
 	bool m_bBoarding;
 	bool m_bOnlyDefensive;
 	bool m_bDispellable;
@@ -3045,7 +3045,6 @@ public:
 	bool getBuilds(int i) const;						// Exposed to Python
 	bool getGreatPeoples(int i) const;			// Exposed to Python
 	bool getBuildings(int i) const;					// Exposed to Python
-	bool getForceBuildings(int i) const;		// Exposed to Python
 	bool getTerrainImpassable(int i) const;				// Exposed to Python
 	bool getFeatureImpassable(int i) const;				// Exposed to Python
 	bool getTerrainNative(int i) const;			// Exposed to Python
@@ -3552,7 +3551,6 @@ protected:
 	bool* m_pbBuilds;
 	bool* m_pbGreatPeoples;
 	bool* m_pbBuildings;
-	bool* m_pbForceBuildings;
 	bool* m_pbTerrainNative;
 	bool* m_pbFeatureNative;
 /*************************************************************************************************/
@@ -7240,6 +7238,8 @@ public:
 	int getDefenseModifier() const;						// Exposed to Python
 	int getAdvancedStartRemoveCost() const;						// Exposed to Python
 	int getTurnDamage() const;						// Exposed to Python
+	const int getDamageLimit() const;
+	const int getDamageType() const;
 
 	bool isNoCoast() const;						// Exposed to Python
 	bool isNoRiver() const;						// Exposed to Python
@@ -7326,6 +7326,8 @@ protected:
 	int m_iDefenseModifier;
 	int m_iAdvancedStartRemoveCost;
 	int m_iTurnDamage;
+	int m_iDamageLimit;
+	int m_iDamageType;
 
 	bool m_bNoCoast;
 	bool m_bNoRiver;
@@ -12814,6 +12816,8 @@ public:
 	const TCHAR* getPythonPerTurn() const;
 	const int getDefaultFeatureGraphics() const;
 	const int getTurnDamage()const;
+	const int getDamageLimit()const;
+	const int getDamageType()const;
 	const bool isDispellable()const;
 	const int getHealthPercent()const;
 	const int getMaxPlotCounter()const;
@@ -12821,10 +12825,8 @@ public:
 	const int getSpreadChance()const;
 	const int getDisappearChance()const;
 	const int getMoveChance()const;
-	const int getDamageLimit()const;
 	const int getPerceptionCost()const;
 	const int getSeeThroughChange()const;
-	const int getDamageType()const;
 	const int* getYieldChangeArray()const;
 	int getYieldChange(int i)const;
 	bool isTerrain(int i) const;				// Exposed to Python
@@ -12838,6 +12840,8 @@ protected:
 	CvString m_szPythonPerTurn;
 	int m_iDefaultFeatureGraphics;
 	int m_iTurnDamage;
+	int m_iDamageLimit;
+	int m_iDamageType;
 	int m_iHealthPercent;
 	bool m_bDispellable;
 	int m_iMaxPlotCounter;
@@ -12845,10 +12849,8 @@ protected:
 	int m_iSpreadChance;
 	int m_iDisappearChance;
 	int m_iMoveChance;
-	int m_iDamageLimit;
 	int m_iPerceptionCost;
 	int m_iSeeThroughChange;
-	int m_iDamageType;
 	int* m_piYieldChange;
 	bool* m_pbTerrain;
 

@@ -1224,18 +1224,12 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		return false;
 	}
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/14/09											**/
-/**																								**/
-/**						Prevents War Declarations against the Barbarians						**/
-/*************************************************************************************************/
+
+	// Xienwolf - 01/14/09 - Prevents War Declarations against the Barbarians
 	if (eTeam == ORC_TEAM || eTeam == ANIMAL_TEAM || eTeam == DEMON_TEAM)
 	{
 		return false;
 	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 
 	if (!(isAlive()) || !(GET_TEAM(eTeam).isAlive()))
 	{
@@ -1316,6 +1310,12 @@ bool CvTeam::canEventuallyDeclareWar(TeamTypes eTeam) const
 		return false;
 	}
 
+	// Xienwolf - 01/14/09 - Prevents War Declarations against the Barbarians
+	if (eTeam == ORC_TEAM || eTeam == ANIMAL_TEAM || eTeam == DEMON_TEAM)
+	{
+		return false;
+	}
+
 	if (!(isAlive()) || !(GET_TEAM(eTeam).isAlive()))
 	{
 		return false;
@@ -1376,6 +1376,10 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 	FAssertMsg(eTeam != getID(), "eTeam is not expected to be equal with getID()");
+
+	// Blaze 2025 - Stronger protection against declaring war against barbs. Horde trait failing (turning into 'civilized') means barbs declare on player
+	if (eTeam == ORC_TEAM || eTeam == ANIMAL_TEAM || eTeam == DEMON_TEAM)
+		return;
 
 	if (!isAtWar(eTeam))
 	{
@@ -4460,6 +4464,8 @@ void CvTeam::setForcePeace(TeamTypes eIndex, bool bNewValue)
 	}
 }
 
+
+// Returns true if this team **is a vassal of** argument eIndex team
 bool CvTeam::isVassal(TeamTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -6812,30 +6818,30 @@ void CvTeam::cancelDefensivePacts()
 }
 
 
+// Checks defensive pacts and vassalization, not just team status
+bool CvTeam::isMilitaryAlly(TeamTypes eTeam) const
+{
+	return (eTeam == getID() || isVassal(eTeam) || GET_TEAM(eTeam).isVassal(getID()) || isDefensivePact(eTeam));
+}
+
+// Checks for team, vassal, and open borders
 bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 {
 	if (eTeam == NO_TEAM)
-	{
 		return false;
-	}
 
 	if (eTeam == getID())
-	{
 		return true;
-	}
 
 	if (GET_TEAM(eTeam).isVassal(getID()))
-	{
 		return true;
-	}
 
 	if (isVassal(eTeam) && isOpenBorders(eTeam))
-	{
 		return true;
-	}
 
 	return false;
 }
+
 
 int CvTeam::getEspionagePointsAgainstTeam(TeamTypes eIndex) const
 {

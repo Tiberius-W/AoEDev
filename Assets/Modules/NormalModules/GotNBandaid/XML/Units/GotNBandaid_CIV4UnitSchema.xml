@@ -288,14 +288,6 @@
 	<ElementType name="Buildings" content="eltOnly">
 		<element type="Building" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<ElementType name="bForceBuilding" content="textOnly" dt:type="boolean"/>
-	<ElementType name="ForceBuilding" content="eltOnly">
-		<element type="BuildingType"/>
-		<element type="bForceBuilding"/>
-	</ElementType>
-	<ElementType name="ForceBuildings" content="eltOnly">
-		<element type="ForceBuilding" minOccurs="0" maxOccurs="*"/>
-	</ElementType>
 	<ElementType name="HolyCity" content="textOnly"/>
 	<ElementType name="StateReligion" content="textOnly"/>
 	<ElementType name="PrereqReligion" content="textOnly"/>
@@ -899,7 +891,6 @@
 		<element type="CorporationSpreads"/>
 		<element type="GreatPeoples"/>
 		<element type="Buildings"/>
-		<element type="ForceBuildings"/>
 		<element type="HolyCity"/>
 		<element type="ReligionType"/>
 		<element type="StateReligion"/>
@@ -1529,7 +1520,7 @@
 	<ElementType name="PlotEffectDoubleMoves" content="eltOnly">
 		<element type="PlotEffectDoubleMove" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<ElementType name="bAIControl" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bEnraged" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bBoarding" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDispellable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDoubleFortifyBonus" content="textOnly" dt:type="boolean"/>
@@ -1923,7 +1914,7 @@
 		<element type="bGraphicalOnly"/>
 		<element type="iHotKeyPriority"/>
 		<element type="Button"/>
-		<element type="bAIControl"/>
+		<element type="bEnraged"/>
 		<element type="bBoarding"/>
 		<element type="bOnlyDefensive"/>
 		<element type="bDispellable"/>

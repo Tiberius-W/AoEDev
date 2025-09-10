@@ -78,7 +78,6 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-
 		</TraitInfo> 			
 		<TraitInfo>		<!-- Keepers of the Eternal Blizzard (Badb's Wandering Castle ) -->
 			<Type>TRAIT_KEEPERS_BADB</Type>
@@ -177,7 +176,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-				<TerrainYieldChanges>
+			<TerrainYieldChanges>
 				<TerrainYieldChange>
 					<TerrainType>TERRAIN_WASTELAND</TerrainType>
 					<TerrainYields>
@@ -203,8 +202,23 @@
 					</TerrainYields>
 				</TerrainYieldChange>
 			</TerrainYieldChanges>
-		</TraitInfo> 	
-	<TraitInfo>		<!-- Keepers of the Veil of Shadows (Whispering Woods) -->
+		</TraitInfo>
+		<TraitInfo>		<!-- Keepers of the Tinker's Trove (Majen's Workshop) -->
+			<Type>TRAIT_KEEPERS_MAJEN</Type>
+			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
+			<iMinRequiredPoints>500</iMinRequiredPoints>
+			<bCanBeLost>1</bCanBeLost>
+			<Description>TXT_KEY_TRAIT_KEEPERS_MAJEN</Description>
+			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_MAJEN_SHORT</ShortDescription>
+			<iHappiness>1</iHappiness>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</CommerceChanges>
+		</TraitInfo>
+		<TraitInfo>		<!-- Keepers of the Veil of Shadows (Whispering Woods) -->
 			<Type>TRAIT_KEEPERS_WHISPERING</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
 			<iMinRequiredPoints>500</iMinRequiredPoints>

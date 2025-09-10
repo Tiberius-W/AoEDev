@@ -1538,6 +1538,14 @@
 		<Spanish>[ICON_BULLET]%D1_Bonus%% Defensive Strength</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_PLOT_TILE_MOD_IMPROVEMENT</Tag>
+		<English>(%D1%% from a nearby improvement)</English>
+		<French>(%D1%% from a nearby improvement)</French>
+		<German>(%D1%% from a nearby improvement)</German>
+		<Italian>(%D1%% from a nearby improvement)</Italian>
+		<Spanish>(%D1%% from a nearby improvement)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_BIRTH_PEDIA_HELP</Tag>
 		<English>[ICON_BULLET]Increases the population of the city by 1, up to a limit of 8</English>
 		<French>[ICON_BULLET]Accroît la population de la ville de 1, à concurrence de 8</French>

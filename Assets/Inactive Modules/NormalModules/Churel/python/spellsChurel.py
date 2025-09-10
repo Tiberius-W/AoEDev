@@ -30,7 +30,7 @@ def reqFeastGraveleech(caster):
 def reqFeedGraveleech(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.hasTrait(getInfoType('TRAIT_GRAVELEECH')): return False
-	if caster.getDamage() == 0: return False
+	if not caster.isHurt(): return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if not pPlayer.isHuman():
 		if caster.getDamage() < 20:
@@ -51,7 +51,7 @@ def spellFeedUndeadGraveyard(caster):
 	
 def reqFeedUndead(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-	if caster.getDamage() == 0: return False
+	if not caster.isHurt(): return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if not pPlayer.isHuman():
 		if caster.getDamage() < 20:

@@ -185,20 +185,20 @@
 		<Spanish>[NEWLINE][ICON_BULLET]+%d3 %F2_commerce for %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT</Tag>
-		<English>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</English>
-		<French>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</French>
-		<German>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</German>
-		<Italian>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1</Spanish>
+		<Tag>TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT</Tag>
+		<English>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</English>
+		<French>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</French>
+		<German>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</German>
+		<Italian>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</Italian>
+		<Spanish>[ICON_BULLET]Decreases an Enemy Unit's Withdrawal chance by %d1%</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT</Tag>
-		<English>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</English>
-		<French>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</French>
-		<German>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</German>
-		<Italian>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1</Spanish>
+		<Tag>TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT</Tag>
+		<English>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</English>
+		<French>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</French>
+		<German>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</German>
+		<Italian>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</Italian>
+		<Spanish>[ICON_BULLET]Increases an Enemy Unit's Withdrawal chance by %d1%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INT</Tag>
@@ -6399,11 +6399,11 @@
 	</TEXT>
 	<TEXT> <!-- Rose Water Pool -->
 		<Tag>TXT_KEY_GOODY_ROSE_WATER_POOL</Tag>
-		<English>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</English>
-		<French>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</French>
-		<German>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</German>
-		<Italian>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</Italian>
-		<Spanish>You come upon a rosewater pool deep in the dungeon.  Upon it you encounter three lamiae, who give you their "blessing".</Spanish>
+		<English>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</English>
+		<French>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</French>
+		<German>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</German>
+		<Italian>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</Italian>
+		<Spanish>You come upon a rosewater pool deep in the dungeon. Upon it you encounter three lamiae, who give you their "blessing".</Spanish>
 	</TEXT>
 	<TEXT> <!-- Burned Lair -->
 		<Tag>TXT_KEY_GOODY_BURNED_LAIR</Tag>
@@ -6430,12 +6430,12 @@
 		<Spanish>By defeating the biggest orc in the lair, you've become their tribe's chieftain by complete accident. Their warriors now answer to you.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Temple Map -->
-		<Tag>TXT_KEY_GOODY_TEMPLE_MAP</Tag>
-		<English>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</English>
-		<French>Une carte rudimentaire trouvée dans le repaire des orques indique le chemin menant aux ruines du plus grand temple de Bhall.</French>
-		<German>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</German>
-		<Italian>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Italian>
-		<Spanish>A crude map in the orcs' lair shows the way to the remains of Bhall's greatest temple.</Spanish>
+		<Tag>TXT_KEY_GOODY_UNIQUE_MAP</Tag>
+		<English>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</English>
+		<French>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</French>
+		<German>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</German>
+		<Italian>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</Italian>
+		<Spanish>A crude map in the orcs' lair shows the way to the remains of a wonderous landmark.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Through Fire -->
 		<Tag>TXT_KEY_GOODY_THROUGH_FIRE</Tag>
@@ -6455,51 +6455,51 @@
 	</TEXT>
 	<TEXT> <!-- 21 Arguing Figures -->
 		<Tag>TXT_KEY_GOODY_TWENTY_ONE_ARGUING_FIGURES</Tag>
-		<English>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</English>
-		<French>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</French>
-		<German>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</German>
-		<Italian>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</Italian>
-		<Spanish>Your scouts found a crystal ball. Looking at it grants them vision of blurred figures loudly arguing near giant pines, vision ends after a sudden burst of light. The crystal ball lays on a floor, shattered.</Spanish>
+		<English>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</English>
+		<French>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</French>
+		<German>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</German>
+		<Italian>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</Italian>
+		<Spanish>Your scouts found a crystal ball. Looking at it grants them a blurred vision of figures loudly arguing near giant pines, but the it ends in a sudden burst of light. They find the crystal ball laying on the floor, shattered, but also new power at their fingertips...</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror of Possibility -->
 		<Tag>TXT_KEY_GOODY_MIRROR_OF_POSSIBILITY</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a thousands upon thousands copies of himself, all slightly different, walking in different directions. He blinks and now it's only him in a mirror.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see thousands upon thousands of copies of themself, all slightly different, walking in different directions. They blink, and then there's only a single figure in the mirror.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Horrors of Future -->
 		<Tag>TXT_KEY_GOODY_HORRORS_OF_FUTURE</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they sees a grim future. His family is dead, home burned, he's taken as slave. Trying to shake the vision off he closes his eyes and now it's only him in a mirror.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (old) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_OLD</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much older. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much older. They touch the mirror, but instead of a reflective surface, they feels an old hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (young) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_YOUNG</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but much younger. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but much younger. They touch the mirror, but instead of a reflective surface, they feel a young hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Mirror, Mirror, (different) -->
 		<Tag>TXT_KEY_GOODY_MIRROR_MIRROR_DIFFERENT</Tag>
-		<English>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</English>
-		<French>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</French>
-		<German>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</German>
-		<Italian>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</Italian>
-		<Spanish>Room is absolutely empty except for the full height mirror. When your scout looks at it he sees himself but different. He touches the mirror but instead of reflective surface he feels hand.</Spanish>
+		<English>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</English>
+		<French>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</French>
+		<German>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</German>
+		<Italian>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</Italian>
+		<Spanish>The room is absolutely empty except for the full height mirror. When your scout looks at it they see themselves but different. They touch the mirror, but instead of a reflective surface, they feel a warped hand.</Spanish>
 	</TEXT>
 	<TEXT> <!-- Cave In -->
 		<Tag>TXT_KEY_GOODY_CAVE_IN</Tag>
@@ -10611,35 +10611,35 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
     </TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INVISIBLE_1</Tag>
-		<English>Natural Stealth (I)</English>
-		<French>Natural Stealth (I)</French>
-		<German>Natural Stealth (I)</German>
-		<Italian>Natural Stealth (I)</Italian>
-		<Spanish>Natural Stealth (I)</Spanish>
+		<English>Basic Stealth (I)</English>
+		<French>Basic Stealth (I)</French>
+		<German>Basic Stealth (I)</German>
+		<Italian>Basic Stealth (I)</Italian>
+		<Spanish>Basic Stealth (I)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INVISIBLE_2</Tag>
-		<English>Trained Stealth (II)</English>
-		<French>Trained Stealth (II)</French>
-		<German>Trained Stealth (II)</German>
-		<Italian>Trained Stealth (II)</Italian>
-		<Spanish>Trained Stealth (II)</Spanish>
+		<English>Natural Stealth (II)</English>
+		<French>Natural Stealth (II)</French>
+		<German>Natural Stealth (II)</German>
+		<Italian>Natural Stealth (II)</Italian>
+		<Spanish>Natural Stealth (II)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INVISIBLE_3</Tag>
-		<English>Expert Stealth (III)</English>
-		<French>Expert Stealth (III)</French>
-		<German>Expert Stealth (III)</German>
-		<Italian>Expert Stealth (III)</Italian>
-		<Spanish>Expert Stealth (III)</Spanish>
+		<English>Trained Stealth (III)</English>
+		<French>Trained Stealth (III)</French>
+		<German>Trained Stealth (III)</German>
+		<Italian>Trained Stealth (III)</Italian>
+		<Spanish>Trained Stealth (III)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INVISIBLE_4</Tag>
-		<English>Shadowy Stealth (IV)</English>
-		<French>Shadowy Stealth (IV)</French>
-		<German>Shadowy Stealth (IV)</German>
-		<Italian>Shadowy Stealth (IV)</Italian>
-		<Spanish>Shadowy Stealth (IV)</Spanish>
+		<English>Expert Stealth (IV)</English>
+		<French>Expert Stealth (IV)</French>
+		<German>Expert Stealth (IV)</German>
+		<Italian>Expert Stealth (IV)</Italian>
+		<Spanish>Expert Stealth (IV)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INVISIBLE_5</Tag>
@@ -10763,11 +10763,11 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_THUNDERSTORM</Tag>
-		<English>ThunderStorm</English>
-		<French>ThunderStorm</French>
-		<German>ThunderStorm</German>
-		<Italian>ThunderStorm</Italian>
-		<Spanish>ThunderStorm</Spanish>
+		<English>Thunderstorm</English>
+		<French>Thunderstorm</French>
+		<German>Thunderstorm</German>
+		<Italian>Thunderstorm</Italian>
+		<Spanish>Thunderstorm</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PLOT_EFFECT</Tag>
@@ -10794,12 +10794,12 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 		<Spanish>Smoke</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLOT_EFFECT_DAMAGE</Tag>
-		<English>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</English>
-		<French>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</French>
-		<German>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</German>
-		<Italian>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</Italian>
-		<Spanish>[ICON_BULLET]inflicts %d1 % %s3 Damage per turn, up to %d2 %</Spanish>
+		<Tag>TXT_KEY_PLOT_DAMAGE</Tag>
+		<English>%d1% %s3 Damage / Turn (Max %d2%)</English>
+		<French>%d1% %s3 Damage / Turn (Max %d2%)</French>
+		<German>%d1% %s3 Damage / Turn (Max %d2%)</German>
+		<Italian>%d1% %s3 Damage / Turn (Max %d2%)</Italian>
+		<Spanish>%d1% %s3 Damage / Turn (Max %d2%)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_HELL_BLOCK</Tag>
@@ -10843,11 +10843,11 @@ Exposure to others minds often causes befuddlement or confusion in the practitio
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EFFECT_SANDSTORM</Tag>
-		<English>Sand Storm</English>
-		<French>Sand Storm</French>
-		<German>Sand Storm</German>
-		<Italian>Sand Storm</Italian>
-		<Spanish>Sand Storm</Spanish>
+		<English>Sandstorm</English>
+		<French>Sandstorm</French>
+		<German>Sandstorm</German>
+		<Italian>Sandstorm</Italian>
+		<Spanish>Sandstorm</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACEMODE_TARGETED_SPELL</Tag>

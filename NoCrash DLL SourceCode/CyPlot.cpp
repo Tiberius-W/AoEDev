@@ -148,9 +148,9 @@ CyPlot* CyPlot::getNearestLandPlot()
 	return m_pPlot ? new CyPlot(m_pPlot->getNearestLandPlot()) : NULL;
 }
 
-int CyPlot::seeFromLevel(int /*TeamTypes*/ eTeam)
+int CyPlot::seeFromLevel(int /*TeamTypes*/ eTeam, bool bAerial)
 {
-	return m_pPlot ? m_pPlot->seeFromLevel((TeamTypes)eTeam) : -1;
+	return m_pPlot ? m_pPlot->seeFromLevel((TeamTypes)eTeam, bAerial) : -1;
 }
 
 int CyPlot::seeThroughLevel()

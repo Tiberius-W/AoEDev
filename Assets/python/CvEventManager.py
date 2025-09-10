@@ -2251,6 +2251,8 @@ class CvEventManager:
 						continue
 					if pTargetPlot.getBonusType(-1) != -1:
 						continue
+					if pTargetPlot.isCity():
+						continue
 					iValue = 0
 					iImp = pTargetPlot.getImprovementType()
 					if iImp == -1:
@@ -4464,7 +4466,7 @@ class CvEventManager:
 			if hasPromo(Promo["Aspect Unknown2"]):
 				game.setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_2'),False)
 				pUnit.setHasPromotion(Promo["Aspect Unknown2"], False)
-			
+
 		if iUnitType == Hero["Acheron"]:
 			pUnit.setHasPromotion(Promo["Acheron Leashed"], False)
 

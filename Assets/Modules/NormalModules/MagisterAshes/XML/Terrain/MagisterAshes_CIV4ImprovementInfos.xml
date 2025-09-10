@@ -70,6 +70,250 @@
 			</GoodyClasses>
 			<iBasePlotCounterModify>50</iBasePlotCounterModify>
 		</ImprovementInfo>
+		<ImprovementInfo> <!-- Carnivaen's Camp -->
+			<Type>IMPROVEMENT_CARNIVEANS_CAMP</Type>
+			<Description>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_CARNIVEANS_CAMP</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+			</YieldChanges>
+			<bPermanent>1</bPermanent>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_CHAOS</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TRADE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_NECROMANCY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
+			<SpawnUnitType>UNIT_CARNIVEAN</SpawnUnitType> <!-- What singular unit will spawn if conditions are met -->
+			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit> <!-- Special: A limit of 0 means it will never stop spawning (barbs still limited by density). Limit reset on upgrade. Only counts SpawnUnitType and ImmediateSpawnUnitType, NOT GROUPS -->
+			<iSpawnUnitChancePercentMod>400</iSpawnUnitChancePercentMod> <!-- Percentage multiplier (0 means no change, -99 will spawn at 1% of base rate, 200 will spawn 3x as often, etc). Baseline is iLairSpawnChance in GameSpeedInfo -->
+			<SpawnPromotions> <!-- List of promotions to give SpawnUnitType -->
+				<Promotion>PROMOTION_LEASH_1</Promotion>
+			</SpawnPromotions>
+			<bUnique>1</bUnique>
+			<BonusConvert>BONUS_MANA_CHAOS</BonusConvert>
+		</ImprovementInfo>
+		<ImprovementInfo> <!-- Grave of Asmoday -->
+			<Type>IMPROVEMENT_GRAVE_OF_ASMODAY</Type>
+			<Description>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_GRAVE_OF_ASMODAY</ArtDefineTag>
+			<bNoFreshWater>1</bNoFreshWater>
+			<bPermanent>1</bPermanent>
+			<bExplorable>1</bExplorable>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_UNDEAD_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_DEMONIC_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_MAGIC_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_ASMODAY</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iExploreDelay>75</iExploreDelay>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iHappiness>-2</iHappiness>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_SHEUT_STONE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<bUnique>1</bUnique>
+			<iHealRateChange>-50</iHealRateChange>
+			<BonusConvert>BONUS_SHEUT_STONE</BonusConvert>
+			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
+			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
+			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
+			<iBasePlotCounterModify>50</iBasePlotCounterModify>
+		</ImprovementInfo>
+		<ImprovementInfo> <!-- Majen's Workshop -->
+			<Type>IMPROVEMENT_MAJENS_WORKSHOP</Type>
+			<Description>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAJENS_WORKSHOP</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<bRequiresFlatlands>1</bRequiresFlatlands>
+			<bRequiresRiverSide>1</bRequiresRiverSide>
+			<bPermanent>1</bPermanent>
+			<iHappiness>100</iHappiness>
+			<FeatureMakesValids>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+			</FeatureMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_CREATION</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_SMELTING</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<bUnique>1</bUnique>
+			<iHealRateChange>10</iHealRateChange>
+			<BonusConvert>BONUS_MANA_CREATION</BonusConvert>
+		</ImprovementInfo>
 		<ImprovementInfo>  <!--Wandering Castle of the Eternal Blizzard-->
 			<Type>IMPROVEMENT_BADBS_BLIZZARD</Type>
 			<Description>TXT_KEY_BADBS_BLIZZARD</Description>
@@ -108,6 +352,7 @@
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
@@ -125,8 +370,6 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
-			<RouteYieldChanges>
-			</RouteYieldChanges>
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveBlizzard(pCaster, pPlot)</PythonOnMove>
 			<bExplorable>1</bExplorable>
@@ -153,131 +396,6 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>				
 			</GoodyClasses>
-		</ImprovementInfo>
-		<ImprovementInfo> <!-- Grave of Asmoday -->
-			<Type>IMPROVEMENT_GRAVE_OF_ASMODAY</Type>
-			<Description>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY_PEDIA</Civilopedia>
-			<Help/>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_GRAVE_OF_ASMODAY</ArtDefineTag>
-			<bActsAsCity>0</bActsAsCity>
-			<bHillsMakesValid>0</bHillsMakesValid>
-			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
-			<bRiverSideMakesValid>0</bRiverSideMakesValid>
-			<bNoFreshWater>1</bNoFreshWater>
-			<bRequiresFlatlands>0</bRequiresFlatlands>
-			<bRequiresRiverSide>0</bRequiresRiverSide>
-			<bRequiresIrrigation>0</bRequiresIrrigation>
-			<bCarriesIrrigation>0</bCarriesIrrigation>
-			<bRequiresFeature>0</bRequiresFeature>
-			<bWater>0</bWater>
-			<bGoody>0</bGoody>
-			<bPermanent>1</bPermanent>
-			<bExplorable>1</bExplorable>
-			<GoodyClasses>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_GENERIC_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_UNDEAD_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_DEMONIC_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_MAGIC_MAJOR</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-				<GoodyClass>
-					<GoodyClassType>GOODYCLASS_ASMODAY</GoodyClassType>
-					<bGoodyClass>1</bGoodyClass>
-				</GoodyClass>
-			</GoodyClasses>
-			<iExploreDelay>75</iExploreDelay>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iTilesPerGoody>0</iTilesPerGoody>
-			<iGoodyRange>0</iGoodyRange>
-			<iFeatureGrowth>0</iFeatureGrowth>
-			<iUpgradeTime>0</iUpgradeTime>
-			<iAirBombDefense>0</iAirBombDefense>
-			<iDefenseModifier>0</iDefenseModifier>
-			<iHappiness>-2</iHappiness>
-			<iPillageGold>0</iPillageGold>
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_COAST</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
-			<FeatureMakesValids>
-			</FeatureMakesValids>
-			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENTROPY</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-			</BonusTypeStructs>
-			<ImprovementPillage/>
-			<ImprovementUpgrade/>
-			<TechYieldChanges>
-			</TechYieldChanges>
-			<RouteYieldChanges>
-			</RouteYieldChanges>
-			<bGraphicalOnly>0</bGraphicalOnly>
-			<bRequiresPeak>0</bRequiresPeak>
-			<bUnique>1</bUnique>
-			<iHealRateChange>-50</iHealRateChange>
-			<iRange>0</iRange>
-			<iRangeDefenseModifier>0</iRangeDefenseModifier>
-			<iVisibilityChange>0</iVisibilityChange>
-			<BonusConvert>BONUS_MANA_ENTROPY</BonusConvert>
-			<FeatureUpgrade></FeatureUpgrade>
-			<PrereqCivilization>NONE</PrereqCivilization>
-			<PythonAtRange/>
-			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
-			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
-			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
-			<iBasePlotCounterModify>50</iBasePlotCounterModify>
 		</ImprovementInfo>
 		<ImprovementInfo> 	<!--Whispering Woods-->
 			<Type>IMPROVEMENT_WHISPERING_WOOD</Type>
@@ -362,6 +480,7 @@
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>

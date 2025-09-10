@@ -3550,14 +3550,10 @@ int CvGlobals::getFOOD_CONSUMPTION_PER_POPULATION()
 	return m_iFOOD_CONSUMPTION_PER_POPULATION;
 }
 
+// 1000, unless someone changes MAX_HIT_POINTS (100) * HIT_POINT_FACTOR (10)
 int CvGlobals::getMAX_HIT_POINTS()
 {
 	return m_iMAX_HIT_POINTS;
-}
-
-int CvGlobals::getPATH_DAMAGE_WEIGHT()
-{
-	return m_iPATH_DAMAGE_WEIGHT;
 }
 
 int CvGlobals::getHILLS_EXTRA_DEFENSE()

@@ -234,6 +234,11 @@
 			<Civilopedia>TXT_KEY_CONCEPT_HEROES_PEDIA</Civilopedia>
 		</ConceptInfo>
 		<ConceptInfo>
+			<Type>CONCEPT_LAIRS</Type>
+			<Description>TXT_KEY_CONCEPT_LAIRS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_LAIRS_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
 			<Type>CONCEPT_MANA</Type>
 			<Description>TXT_KEY_CONCEPT_MANA</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_MANA_PEDIA</Civilopedia>
@@ -362,6 +367,11 @@
 			<Type>CONCEPT_DICTIONARY</Type>
 			<Description>TXT_KEY_CONCEPT_DICTIONARY</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_DICTIONARY_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_UNIT_VISION</Type>
+			<Description>TXT_KEY_CONCEPT_UNIT_VISION</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_UNIT_VISION_PEDIA</Civilopedia>
 		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

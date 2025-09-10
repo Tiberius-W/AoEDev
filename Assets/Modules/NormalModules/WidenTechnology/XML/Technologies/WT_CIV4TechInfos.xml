@@ -7,586 +7,306 @@
 <Civ4TechInfos xmlns="x-schema:WT_CIV4TechnologiesSchema.xml">
 	<TechInfos>
 		<!-- Tier0s (free starting techs) -->
-		<TechInfo>		<!-- Desert People -->
-			<Type>TECH_DESERTPEOPLE</Type>
-			<iGridX>1</iGridX>
-			<iGridY>16</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Swampdwelling -->
-			<Type>TECH_SWAMPDWELLING</Type>
-			<iGridX>1</iGridX>
-			<iGridY>14</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- The Gift -->
-			<Type>TECH_THE_GIFT</Type>
-			<iGridX>1</iGridX>
-			<iGridY>12</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Seafaring -->
-			<Type>TECH_SEAFARING</Type>
-			<iGridX>1</iGridX>
-			<iGridY>10</iGridY>
-		</TechInfo>
-		<TechInfo> <!-- Dark Secrets -->
-			<Type>TECH_DARK_SECRETS</Type>
-			<iGridX>1</iGridX>
-			<iGridY>2</iGridY>
-		</TechInfo>
 		<!-- Tier 1s (125 -> 100) -->
 		<TechInfo>		<!-- Agriculture -->
 			<Type>TECH_AGRICULTURE</Type>
 			<iCost>100</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>18</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Crafting -->
 			<Type>TECH_CRAFTING</Type>
 			<iCost>100</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>5</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Ancient Chants -->
 			<Type>TECH_ANCIENT_CHANTS</Type>
 			<iCost>100</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>20</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Exploration -->
 			<Type>TECH_EXPLORATION</Type>
 			<iCost>100</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>8</iGridY>
 		</TechInfo>
 		<!-- Tier 2s (200 -> 200) -->
-		<TechInfo>		<!-- Animal Husbandry -->
-			<Type>TECH_ANIMAL_HUSBANDRY</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>13</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Calendar -->
-			<Type>TECH_CALENDAR</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>18</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Cartography -->
-			<Type>TECH_CARTOGRAPHY</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>6</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Festivals -->
-			<Type>TECH_FESTIVALS</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>16</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Fishing -->
-			<Type>TECH_FISHING</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>10</iGridY>
-		</TechInfo>
 		<TechInfo>		<!-- Masonry -->
 			<Type>TECH_MASONRY</Type>
 			<iCost>200</iCost> <!-- Was 175, but walls ARE important, so deserves high cost? -->
-			<iGridX>2</iGridX>
-			<iGridY>2</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Mining -->
-			<Type>TECH_MINING</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>4</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mysticism -->
 			<Type>TECH_MYSTICISM</Type>
-			<!-- <iCost>200</iCost> -->
-			<iGridX>2</iGridX>
-			<iGridY>24</iGridY>
+			<iGridY>25</iGridY> <!-- Can be bumped because religious ones are -->
 		</TechInfo>
 		<!-- Tier 2.5s (200-400 => 200-400) -->
 		<TechInfo>		<!-- Archery -->
 			<Type>TECH_ARCHERY</Type>
-			<OrPreReqs>
-				<PrereqTech>TECH_CRAFTING</PrereqTech>
-			</OrPreReqs>
 			<iCost>350</iCost> <!-- Was 360 -->
-			<iGridX>3</iGridX>
-			<iGridY>5</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Education -->
-			<Type>TECH_EDUCATION</Type>
-			<!-- <iCost>250</iCost> -->
-			<iGridX>3</iGridX>
-			<iGridY>20</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Horseback Riding -->
 			<Type>TECH_HORSEBACK_RIDING</Type>
 			<iCost>350</iCost> <!-- Was 360 -->
-			<iGridX>3</iGridX>
-			<iGridY>13</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Hunting -->
 			<Type>TECH_HUNTING</Type>
 			<iCost>350</iCost> <!-- Was 360 -->
-			<iGridX>3</iGridX>
-			<iGridY>8</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Warfare -->
-			<Type>TECH_WARFARE</Type>
-			<!-- <iCost>350</iCost> -->
-			<iGridX>3</iGridX>
-			<iGridY>22</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Way of the Wicked -->
-			<Type>TECH_WAY_OF_THE_WICKED</Type>
-			<!-- <iCost>300</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>27</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Way of the Wise -->
-			<Type>TECH_WAY_OF_THE_WISE</Type>
-			<!-- <iCost>300</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>23</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Writing -->
-			<Type>TECH_WRITING</Type>
-			<!-- <iCost>300</iCost> -->
-			<iGridX>3</iGridX>
-			<iGridY>18</iGridY>
 		</TechInfo>
 		<!-- Tier 3s (400 -> 400) -->
-		<TechInfo>		<!-- Bronze Working -->
-			<Type>TECH_BRONZE_WORKING</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>4</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Code of Laws -->
-			<Type>TECH_CODE_OF_LAWS</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>20</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Construction -->
-			<Type>TECH_CONSTRUCTION</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>2</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Knowledge of the Ether -->
-			<Type>TECH_KNOWLEDGE_OF_THE_ETHER</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>31</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Philosophy -->
-			<Type>TECH_PHILOSOPHY</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>25</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Sailing -->
-			<Type>TECH_SAILING</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>10</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Tracking -->
-			<Type>TECH_TRACKING</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>8</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Trade -->
-			<Type>TECH_TRADE</Type>
-			<!-- <iCost>400</iCost> -->
-			<iGridX>4</iGridX>
-			<iGridY>13</iGridY>
-		</TechInfo>
 		<!-- Tier 3.5s (400-800 => 400-1000) -->
 		<TechInfo> <!-- Rel: Octopus Overlords -->
 			<Type>TECH_MESSAGE_FROM_THE_DEEP</Type>
 			<iCost>550</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>26</iGridY>
+			<iGridY>29</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Military Strategy -->
 			<Type>TECH_MILITARY_STRATEGY</Type>
 			<iCost>750</iCost>
-			<iGridX>5</iGridX>
-			<iGridY>22</iGridY>
 		</TechInfo>
 		<TechInfo> <!-- Rel: Earthmother -->
 			<Type>TECH_WAY_OF_THE_EARTHMOTHER</Type>
 			<iCost>550</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>30</iGridY>
+			<iGridY>33</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo> <!-- Rel: Forests-->
 			<Type>TECH_WAY_OF_THE_FORESTS</Type>
 			<iCost>550</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>28</iGridY>
+			<iGridY>31</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_STEAM_POWER</Type>
 			<iCost>750</iCost>
-			<iGridX>5</iGridX>
-			<iGridY>27</iGridY>
 		</TechInfo>
 		<!-- Tier 4s (800 -> 1000) -->
 		<TechInfo>		<!-- Alteration -->
 			<Type>TECH_ALTERATION</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>30</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Arete -->
 			<Type>TECH_ARETE</Type>
 			<iCost>1000</iCost>
-			<iGridX>2</iGridX>
-			<iGridY>30</iGridY>
+			<iGridY>33</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Currency -->
 			<Type>TECH_CURRENCY</Type>
 			<iCost>1000</iCost> <!-- Was tier 4.5 (900) -->
-			<iGridX>6</iGridX>
-			<iGridY>20</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Deception -->
 			<Type>TECH_DECEPTION</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>14</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Divination -->
 			<Type>TECH_DIVINATION</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>28</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Drama -->
 			<Type>TECH_DRAMA</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>16</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Elementalism -->
 			<Type>TECH_ELEMENTALISM</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>32</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Hidden Paths -->
 			<Type>TECH_HIDDEN_PATHS</Type>
 			<iCost>1000</iCost>
-			<iGridX>2</iGridX>
-			<iGridY>28</iGridY>
+			<iGridY>31</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Rel: Empyrian -->
 			<Type>TECH_HONOR</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>12</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mathematics -->
 			<Type>TECH_MATHEMATICS</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>18</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mind Stapling -->
 			<Type>TECH_MIND_STAPLING</Type>
 			<iCost>1000</iCost>
-			<iGridX>2</iGridX>
-			<iGridY>26</iGridY>
+			<iGridY>29</iGridY> <!-- Bumping down -->
 		</TechInfo>
 		<TechInfo>		<!-- Necromancy -->
 			<Type>TECH_NECROMANCY</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>34</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Optics -->
 			<Type>TECH_OPTICS</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>10</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Poisons -->
 			<Type>TECH_POISONS</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>6</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Priesthood -->
 			<Type>TECH_PRIESTHOOD</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>24</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Sanitation -->
 			<Type>TECH_SANITATION</Type>
 			<iCost>1000</iCost>
-			<iGridX>6</iGridX>
-			<iGridY>2</iGridY>
 		</TechInfo>
 		<TechInfo> <!-- Rel: White Hand -->
 			<Type>TECH_WHITE_HAND</Type>
 			<iCost>1000</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>24</iGridY>
 		</TechInfo>
 		<!-- Tier 4.5 (800-1600 => 1000-2500) -->
 		<TechInfo>		<!-- Animal Handling -->
 			<Type>TECH_ANIMAL_HANDLING</Type>
 			<iCost>1600</iCost>
-			<iGridX>7</iGridX>
-			<iGridY>8</iGridY>
 		</TechInfo>
 		<TechInfo>     <!-- Rel: Ashen Veil -->
 			<Type>TECH_CORRUPTION_OF_SPIRIT</Type>
 			<iCost>1600</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>3</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo>		<!-- Feudalism -->
 			<Type>TECH_FEUDALISM</Type>
 			<iCost>2300</iCost>
-			<iGridX>7</iGridX>
-			<iGridY>19</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Infernal pact -->
 			<Type>TECH_INFERNAL_PACT</Type>
 			<iCost>2300</iCost>
-			<iGridX>2</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>4</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo> <!-- Rel: Order -->
 			<Type>TECH_ORDERS_FROM_HEAVEN</Type>
 			<iCost>1600</iCost>
-			<iGridX>1</iGridX>
-			<iGridY>34</iGridY>
+			<iGridX>3</iGridX> <!-- Bumping right -->
 		</TechInfo>
 		<TechInfo>		<!-- Smelting -->
 			<Type>TECH_SMELTING</Type>
 			<iCost>2000</iCost>
-			<iGridX>7</iGridX>
-			<iGridY>4</iGridY>
 		</TechInfo>
 		<!-- Tier 5s (1600 -> 2500) -->
 		<TechInfo>		<!-- Animal Mastery -->
 			<Type>TECH_ANIMAL_MASTERY</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>6</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Astronomy -->
 			<Type>TECH_ASTRONOMY</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>10</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Engineering -->
 			<Type>TECH_ENGINEERING</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>15</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Fanaticism -->
 			<Type>TECH_FANATICISM</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>28</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Feral Bond -->
 			<Type>TECH_FERAL_BOND</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>8</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Iron Working -->
 			<Type>TECH_IRON_WORKING</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>4</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Medicine -->
 			<Type>TECH_MEDICINE</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>2</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Religious Law -->
 			<Type>TECH_RELIGIOUS_LAW</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>22</iGridY>
+		</TechInfo>
+		<TechInfo>		<!-- Sorcery -->
+			<Type>TECH_SORCERY</Type>
+			<iCost>2500</iCost>
 		</TechInfo>
 		<TechInfo>		<!-- Stirrups -->
 			<Type>TECH_STIRRUPS</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>13</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Taxation -->
 			<Type>TECH_TAXATION</Type>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
-			<iGridY>20</iGridY>
 		</TechInfo>
 		<!-- Tier 5.5s (1600-3200 => 2500-7500) -->
+		<TechInfo>		<!-- Arcane Lore -->
+			<Type>TECH_ARCANE_LORE</Type>
+			<iCost>5000</iCost>
+		</TechInfo>
 		<TechInfo>		<!-- Bowyers -->
 			<Type>TECH_BOWYERS</Type>
 			<iCost>6000</iCost>
-			<iGridX>9</iGridX>
-			<iGridY>5</iGridY>
-		</TechInfo>
-		<TechInfo>		<!-- Sorcery -->
-			<Type>TECH_SORCERY</Type>
-			<iCost>5000</iCost>
-			<iGridX>9</iGridX>
-			<iGridY>31</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Alchemy -->
 			<Type>TECH_ALCHEMY</Type>
 			<iCost>4000</iCost>
-			<iGridX>9</iGridX>
-			<iGridY>17</iGridY>
 		</TechInfo>
 		<!-- Tier 6s (3200 -> 7500) -->
-		<TechInfo>		<!-- Arcane Lore -->
-			<Type>TECH_ARCANE_LORE</Type>
-			<iCost>7500</iCost> <!-- Increased tier to 6 -->
-			<iGridX>10</iGridX>
-			<iGridY>34</iGridY>
-		</TechInfo>
 		<TechInfo>		<!-- Blasting Powder -->
 			<Type>TECH_BLASTING_POWDER</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>13</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Commune with Nature -->
 			<Type>TECH_COMMUNE_WITH_NATURE</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>24</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Guilds -->
 			<Type>TECH_GUILDS</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>18</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Machinery -->
 			<Type>TECH_MACHINERY</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>15</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Malevolent Designs -->
 			<Type>TECH_MALEVOLENT_DESIGNS</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>30</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mercantilism -->
 			<Type>TECH_MERCANTILISM</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>20</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Rage -->
 			<Type>TECH_RAGE</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>28</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Righteousness -->
 			<Type>TECH_RIGHTEOUSNESS</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>26</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Theology -->
 			<Type>TECH_THEOLOGY</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>22</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Warhorses -->
 			<Type>TECH_WARHORSES</Type>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>11</iGridY>
 		</TechInfo>
 		<!-- Tier 7s (6400 -> 15625) -->
 		<TechInfo>		<!-- Armored Cavalry -->
 			<Type>TECH_ARMORED_CAVALRY</Type>
 			<iCost>22500</iCost>
-			<iGridX>11</iGridX>
-			<iGridY>11</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Precision -->
 			<Type>TECH_PRECISION</Type>
 			<iCost>22500</iCost>
-			<iGridX>11</iGridX>
-			<iGridY>5</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Strength of Will -->
 			<Type>TECH_STRENGTH_OF_WILL</Type>
 			<iCost>22500</iCost>
-			<iGridX>11</iGridX>
-			<iGridY>32</iGridY>
 		</TechInfo>
 		<!-- Tier 7.5s (6400-12800 => 22500-90000) -->
 		<TechInfo>		<!-- Divine Essence -->
 			<Type>TECH_DIVINE_ESSENCE</Type>
 			<iCost>30000</iCost>
-			<iGridX>12</iGridX>
-			<iGridY>22</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mithril Working -->
 			<Type>TECH_MITHRIL_WORKING</Type>
 			<iCost>25000</iCost>
-			<iGridX>12</iGridX>
-			<iGridY>4</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Omniscience -->
 			<Type>TECH_OMNISCIENCE</Type>
 			<iCost>35000</iCost>
-			<iGridX>12</iGridX>
-			<iGridY>32</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Pass Through the Ether -->
 			<Type>TECH_PASS_THROUGH_THE_ETHER</Type>
 			<iCost>30000</iCost>
-			<iGridX>12</iGridX>
-			<iGridY>34</iGridY>
 		</TechInfo>
 		<!-- Tier 8s (12800 -> 90000) -->
 		<TechInfo>		<!-- Future Tech -->
 			<Type>TECH_FUTURE_TECH</Type>
 			<iCost>90000</iCost> <!-- Increased tier to 8 -->
-			<iGridX>13</iGridX>
-			<iGridY>32</iGridY>
 		</TechInfo>
 		<!-- Patching other modules: -->
 		<!-- Vcivics -->
-		<TechInfo>		<!-- Alchemy -->
-			<Type>TECH_ALCHEMY</Type>
-			<bTypeDependency>1</bTypeDependency>
-			<AndDependencyTypes>
-				<DependencyType>MODULE_VCIVICS</DependencyType>
-			</AndDependencyTypes>
-			<iGridX>9</iGridX>
-			<iGridY>25</iGridY>
-		</TechInfo>
 		<TechInfo>		<!-- Engineering -->
 			<Type>TECH_ENGINEERING</Type>
 			<bTypeDependency>1</bTypeDependency>
@@ -594,7 +314,6 @@
 				<DependencyType>MODULE_VCIVICS</DependencyType>
 			</AndDependencyTypes>
 			<iCost>4500</iCost>
-			<iGridX>9</iGridX>
 		</TechInfo>
 		<TechInfo>		<!-- Industry -->
 			<Type>TECH_INDUSTRY</Type>
@@ -603,8 +322,6 @@
 				<DependencyType>MODULE_VCIVICS</DependencyType>
 			</AndDependencyTypes>
 			<iCost>20000</iCost>
-			<iGridX>12</iGridX>
-			<iGridY>15</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Machinery -->
 			<Type>TECH_MACHINERY</Type>
@@ -613,8 +330,6 @@
 				<DependencyType>MODULE_VCIVICS</DependencyType>
 			</AndDependencyTypes>
 			<iCost>7500</iCost>
-			<iGridX>10</iGridX>
-			<iGridY>15</iGridY>
 		</TechInfo>
 		<TechInfo>		<!-- Mathematics -->
 			<Type>TECH_MATHEMATICS</Type>
@@ -623,7 +338,6 @@
 				<DependencyType>MODULE_VCIVICS</DependencyType>
 			</AndDependencyTypes>
 			<iCost>2500</iCost>
-			<iGridX>8</iGridX>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_STEAM_POWER</Type>
@@ -632,18 +346,6 @@
 				<DependencyType>MODULE_VCIVICS</DependencyType>
 			</AndDependencyTypes>
 			<iCost>700</iCost>
-			<iGridX>5</iGridX>
-			<iGridY>27</iGridY>
-		</TechInfo>
-		<!-- Jotnar -->
-		<TechInfo>		<!-- Tradition -->
-			<Type>TECH_JO1</Type>
-			<bTypeDependency>1</bTypeDependency>
-			<AndDependencyTypes>
-				<DependencyType>MODULE_JOTNAR</DependencyType>
-			</AndDependencyTypes>
-			<iGridX>1</iGridX>
-			<iGridY>22</iGridY>
 		</TechInfo>
 		<!-- DynRel religious techs -->
 		<TechInfo>		<!-- Corruption of Spirit -->

@@ -532,6 +532,22 @@
 		<Spanish>+ %s1 % vs. %s2</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_FEAR_ATTACKING</Tag>
+		<English>%D1%% chance to refuse attack!</English>
+		<French>%D1%% chance to refuse attack!</French>
+		<German>%D1%% chance to refuse attack!</German>
+		<Italian>%D1%% chance to refuse attack!</Italian>
+		<Spanish>%D1%% chance to refuse attack!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMBAT_SCARE_DEFENDERS</Tag>
+		<English>Defending units may flee in fear.</English>
+		<French>Defending units may flee in fear.</French>
+		<German>Defending units may flee in fear.</German>
+		<Italian>Defending units may flee in fear.</Italian>
+		<Spanish>Defending units may flee in fear.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CULTURE_CONTROL</Tag>
 		<English>%s1 Culture control</English>
 		<French>contrôle culturel %s1</French>
@@ -2791,11 +2807,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_RANGE_DEFENSE_MODIFIER</Tag>
-		<English>[ICON_BULLET]%D1% strength to all units within %D2 tiles</English>
-		<French>[ICON_BULLET]%D1% force à toutes les unités dans un rayon de  %D2 cases</French>
-		<German>[ICON_BULLET]%D1% Stärke für alle Einheiten innerhalb %D2 Geländefeldern</German>
-		<Italian>[ICON_BULLET]%D1% strength to all units within %D2 tiles</Italian>
-		<Spanish>[ICON_BULLET]%D1% de fuerza a todas las unidades a un alcance de %D2 casillas</Spanish>
+		<English>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</English>
+		<French>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</French>
+		<German>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</German>
+		<Italian>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</Italian>
+		<Spanish>[ICON_BULLET]Provides %D1% defensive strength to friendly units within %D2 tiles outside a city or fort, if this improvement is not occupied by enemies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_UNIQUE</Tag>

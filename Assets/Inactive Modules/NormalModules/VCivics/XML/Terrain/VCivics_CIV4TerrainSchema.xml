@@ -198,6 +198,8 @@
 		<element type="TerrainConvert"/>
 		<element type="bRequiresFreshwater"/>
 		<element type="iTurnDamage"/>
+		<element type="iDamageLimit"/>
+		<element type="DamageType"/>
 		<element type="bNoCoast"/>
 		<element type="bNoRiver"/>
 		<element type="bNoAdjacent"/>
@@ -756,6 +758,8 @@
 		<element type="PythonOnMove"/>
 		<element type="PythonPerTurn"/>
 		<element type="iTurnDamage"/>
+		<element type="iDamageLimit"/>
+		<element type="DamageType"/>
 		<element type="iSeeThrough"/>
 		<element type="TerrainBooleans"/>
 		<element type="iMaxPlotCounter"/>
@@ -763,9 +767,7 @@
 		<element type="iSpreadChance"/>
 		<element type="iDisappearChance"/>
 		<element type="iMoveChance"/>
-		<element type="iDamageLimit"/>
 		<element type="iPerceptionCost"/>
-		<element type="DamageType"/>
 		<element type="bDispellable"/>
 		<element type="YieldChanges"/>
 		<element type="iHealthPercent"/>

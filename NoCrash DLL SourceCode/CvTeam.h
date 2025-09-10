@@ -275,14 +275,14 @@ public:
 
 	bool isCapitulated() const;
 
-//FfH Traits: Added by Kael 08/02/2007
+	bool isMilitaryAlly(TeamTypes eTeam) const;
+
+	//FfH Traits: Added by Kael 08/02/2007
 	bool isBarbarianAlly() const;
 	void setBarbarianAlly(bool bNewValue);
 	bool isNoCivicAnger() const;
 	void setNoCivicAnger(bool bNewValue);
 	bool isRevealBonus(BonusTypes eBonus) const;
-
-//FfH: End Add
 
 	int getRouteChange(RouteTypes eIndex) const;																				// Exposed to Python
 	void changeRouteChange(RouteTypes eIndex, int iChange);												// Exposed to Python

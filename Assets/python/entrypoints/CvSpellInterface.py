@@ -534,8 +534,8 @@ def fireSpreadToTile(iX, iY):
 
 
 def postCombatHeal50(pCaster, pOpponent):
-	if pCaster.getDamage() > 0:
-		pCaster.setDamage(pCaster.getDamage() / 2, pCaster.getOwner())
+	if pCaster.getDamageReal() > 0:
+		pCaster.setDamageReal(pCaster.getDamageReal() / 2, pCaster.getOwner())
 
 def postCombatIra(pCaster, pOpponent):
 	if pOpponent.isAlive():
@@ -1168,7 +1168,7 @@ def reqCallOfTheGrave(caster):
 			if pTeam.isAtWar(e2Team) == True:
 				return True
 			if pUnit.isHasPromotion(Race["Undead"]) == True:
-				if pUnit.getDamage() != 0:
+				if pUnit.isHurt():
 					return True
 			if pPlot.getImprovementType() == iGraveyard:
 				return True
@@ -1202,7 +1202,7 @@ def spellCallOfTheGrave(caster):
 				bValid = True
 			else:
 				if pUnit.isHasPromotion(Race["Undead"]) == True:
-					if pUnit.getDamage() != 0:
+					if pUnit.isHurt():
 						pUnit.setDamage(0, caster.getOwner())
 			if pPlot.getImprovementType() == iGraveyard:
 				pPlot.setImprovementType(-1)
@@ -1721,7 +1721,7 @@ def spellFeast(caster):
 	
 
 def reqFeed(caster):
-	if caster.getDamage() == 0: return False
+	if not caster.isHurt(): return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if not pPlayer.isHuman():
 		if caster.getDamage() < 20:
@@ -1842,7 +1842,7 @@ def reqHastursRazor(caster):
 		if not pPlot.isNone():
 			for i in range(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
-				if pUnit.getDamage() > 0:
+				if pUnit.isHurt():
 					if pPlayer.isHuman():
 						return True
 					if pUnit.getOwner() == caster.getOwner():
@@ -1861,25 +1861,25 @@ def spellHastursRazor(caster):
 		if not pPlot.isNone():
 			for i in xrange(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
-				listDamage.append(pUnit.getDamage())
+				listDamage.append(pUnit.getDamageReal())
 	for x, y in plotsInRange( iX, iY, iRange ):
 		pPlot = getPlot(x, y)
 		if not pPlot.isNone():
 			for i in xrange(pPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
 				iRnd = listDamage[CyGame().getSorenRandNum(len(listDamage), "Hastur's Razor")]
-				if iRnd != pUnit.getDamage():
+				if iRnd != pUnit.getDamageReal():
 					CyInterface().addMessage(pUnit.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_HASTURS_RAZOR",()),'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Hasturs Razor.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
 					if pUnit.getOwner() != caster.getOwner():
 						CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_HASTURS_RAZOR",()),'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Hasturs Razor.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
-					pUnit.setDamage(iRnd, caster.getOwner())
+					pUnit.setDamageReal(iRnd, caster.getOwner())
 
 def reqHeal(caster):
 	pPlot = caster.plot()
 	iPoisoned = getInfoType('PROMOTION_POISONED')
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
-		if (pUnit.isAlive() and pUnit.getDamage() > 0):
+		if (pUnit.isAlive() and pUnit.isHurt()):
 			return True
 		if pUnit.isHasPromotion(iPoisoned):
 			return True
@@ -1906,7 +1906,7 @@ def reqHealingSalve(caster):
 		return True
 	if caster.isHasPromotion(getInfoType('PROMOTION_WITHERED')):
 		return True
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isHuman() == False:
@@ -3152,7 +3152,7 @@ def reqRepair(caster):
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
 		if (pUnit.getUnitCombatType() == iSiege or pUnit.getUnitCombatType() == iNaval or pUnit.isHasPromotion(iGolem)):
-			if pUnit.getDamage() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
+			if pUnit.isHurt() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
 				return True
 	return False
 
@@ -3549,9 +3549,9 @@ def reqSacrificeSlaveCualli(caster):
 		pUnit = pPlot.getUnit(i)
 		if pUnit.getUnitType() == getInfoType('UNIT_SLAVE'):
 			return True
-	
-	return False			
-	
+
+	return False
+
 def spellSacrificeSlaveCualli(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pPlot = caster.plot()
@@ -3574,7 +3574,7 @@ def spellSacrificeSlaveCualli(caster):
 	iLevel=iLevel/2
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
-		
+
 		if pUnit.getUnitCombatType()==getInfoType("UNITCOMBAT_DISCIPLE"):
 			iEmpower1 = getInfoType('PROMOTION_SACRIFICIAL_BLOOD_1')
 			iEmpower2 = getInfoType('PROMOTION_SACRIFICIAL_BLOOD_2')
@@ -3607,7 +3607,6 @@ def spellSacrificeSlaveCualli(caster):
 				pUnit.setHasPromotion(iEmpowerDivine, True)
 			if(bBrigit and bSauros):
 				pUnit.setHasPromotion(iEmpowerFire,True)
-			
 
 			return
 			
@@ -3637,7 +3636,6 @@ def reqPurify(caster):
 	pPlot = caster.plot()
 	if reqSanctify(caster):
 		return True
-
 
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
@@ -3729,7 +3727,13 @@ def spellSanctify(caster):
 	if pPlot.getImprovementType() == Lair["Graveyard"]:
 		pPlot.setImprovementType(-1)
 		pPlayer.changeGlobalCounterContrib(-1)
-		newUnit = pPlayer.initUnit(getInfoType('UNIT_TOMB_WARDEN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		if pPlayer.isHasTech(getInfoType('TECH_DIVINATION')):
+			newUnit = pPlayer.initUnit(getInfoType('UNIT_TOMB_WARDEN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		else:
+			newUnit = pPlayer.initUnit(getInfoType('UNIT_SPEARMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.setHasPromotion(getInfoType('PROMOTION_ANGEL'), True)
+			newUnit.setHasPromotion(getInfoType('PROMOTION_MEDIC1'), True)
+
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_PLOT_COUNTER):
 		for x,y in plotsInCircularRange( caster.getX(), caster.getY(), iRange ):
 			bSwapped = False
@@ -3967,7 +3971,7 @@ def reqSironasTouch(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if pPlayer.isFeatAccomplished(FeatTypes.FEAT_HEAL_UNIT_PER_TURN) == False:
 		return False
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	if pPlayer.isHuman() == False:
 		if caster.getDamage() < 15:
@@ -4138,10 +4142,9 @@ def reqSprint(caster):
 
 def reqStasis(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-	if pPlayer.isHuman() == False:
-		if pPlayer.getNumCities() < 5:
-			return False
-	return True
+	if pPlayer.isHasTech(getInfoType('TECH_KNOWLEDGE_OF_THE_ETHER')):
+		return True
+	return False
 
 def spellStasis(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
@@ -5157,21 +5160,17 @@ def onMoveMaelstrom(pCaster, pPlot):
 			CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
 def onMovePoolOfTears(pCaster, pPlot):
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_DISEASED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_DISEASED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_DISEASED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_PLAGUED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_PLAGUED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_PLAGUED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_POISONED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_POISONED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_POISONED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
-	if pCaster.isHasPromotion(getInfoType('PROMOTION_WITHERED')):
-		pCaster.setHasPromotion(getInfoType('PROMOTION_WITHERED'), False)
-		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_WITHERED",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
+	iPlayer			= pCaster.getOwner()
+	pPlayer			= gc.getPlayer(iPlayer)
+	git				= gc.getInfoTypeForString
+	lIllness		= [git("PROMOTION_DISEASED"),git("PROMOTION_PLAGUED"),git("PROMOTION_POISONED"),git("PROMOTION_WITHERED")]
+	for iPromotion in lIllness:
+		if pCaster.isHasPromotion(iPromotion):
+			pCaster.setHasPromotion(iPromotion, false)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-
+	# Remnants from somme Elohim lore things?
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
 	 #if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_POOL_OF_TEARS) == False:
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_POOL_OF_TEARS_ELOHIM')
@@ -6992,7 +6991,7 @@ def postCombatWinWerewolf(pCaster, pOpponent):
 	if pOpponent.isAlive() and pOpponent.canDefend(pOpponent.plot()):                                       #Can only convert Living Combat Units
 		if pCaster.baseCombatStr() < gc.getUnitInfo(pCaster.getUnitType()).getCombat() * 3 / 2:             # If the werewolf has not attained maximal strength (50% bonus)
 			iGrowChance = pOpponent.baseCombatStr() * 5                                                     # There is a chance to strengthen the werewolf (proportional to the strength of the vanquished enemy)
-			if pCaster.isAIControl():
+			if pCaster.isEnraged():
 				iGrowChance = iGrowChance * 2
 			if CyGame().getSorenRandNum(100, "Werewolf Growth") < iGrowChance:                              # If the roll is successful
 				pCaster.changeStrBoost(1)                                                                   # we strengthen the werewolf by +1
@@ -7042,7 +7041,7 @@ def postCombatWinWerewolf(pCaster, pOpponent):
 
 def postCombatLossWerewolf(pCaster, pOpponent):
 	if pOpponent.isAlive():
-		if pOpponent.getDamage() > 0:	#Must be hurt to be infected, better if we force it to require that the wolf itself hurt you, but this still works nicely.
+		if pOpponent.isHurt():	#Must be hurt to be infected, better if we force it to require that the wolf itself hurt you, but this still works nicely.
 			iInfectChance = 10
 			if CyGame().getSorenRandNum(100, "Werewolf Infection") < iInfectChance:	#Low rigid chance for now, will set something up for variability some other time
 				pOpponent.setHasPromotion(getInfoType('PROMOTION_WEREWOLF'), True)
@@ -10282,7 +10281,7 @@ def reqRepairGolem(caster):
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
 		if pUnit.isHasPromotion(iGolem):
-			if pUnit.getDamage() > 0 and not pUnit.isHasPromotion(iHiddenNationality) :
+			if pUnit.isHurt() and not pUnit.isHasPromotion(iHiddenNationality) :
 				return True
 	return False
 
@@ -12473,30 +12472,39 @@ def exploreNewChieftain(argsList):
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_AXEMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_ORC'),True)
 
-# GOODY_TEMPLE_MAP
-def reqTempleMap(argsList):
+# GOODY_UNIQUE_MAP
+def reqUniqueMap(argsList):
 	pUnit, pPlot		= argsList
 	for i in range (CyMap().numPlots()):
 		iPlot = CyMap().plotByIndex(i)
-		if iPlot.getImprovementType() == getInfoType('IMPROVEMENT_PYRE_OF_THE_SERAPHIC'):
+		if iPlot == -1 or iPlot.getImprovementType() == -1:
+			continue
+		if iPlot.isRevealed(pUnit.getTeam(), False):
+			continue
+		if gc.getImprovementInfo(iPlot.getImprovementType()).isUnique():
 			return True
 	return False
 
-def exploreTempleMap(argsList):
+def exploreUniqueMap(argsList):
 	pUnit, pPlot		= argsList
 	getPlot				= CyMap().plot
-	pPlayer				= gc.getPlayer(pUnit.getOwner())
-	pTeam 				= pPlayer.getTeam()
-	for i in range (CyMap().numPlots()):
-		iPlot = CyMap().plotByIndex(i)
-		if iPlot.getImprovementType() == getInfoType('IMPROVEMENT_PYRE_OF_THE_SERAPHIC'):
+	pTeam				= pUnit.getTeam()
+	iNumPlots = CyMap().numPlots()
+	iOffset = CyGame().getSorenRandNum(iNumPlots, "Starting plot for random UF search")
+	for i in range (iOffset, iNumPlots):
+		iPlot = CyMap().plotByIndex(i % iNumPlots)
+		if iPlot == -1 or iPlot.getImprovementType() == -1:
+			continue
+		if iPlot.isRevealed(pTeam, False):
+			continue
+		if gc.getImprovementInfo(iPlot.getImprovementType()).isUnique():
 			iPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			for x, y in plotsInRange(iPlot.getX(),iPlot.getY(),1,1):
 				jPlot	= getPlot(x,y)
 				jPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			for x, y in plotsInRange(iPlot.getX(),iPlot.getY(),2,2):
 				jPlot	= getPlot(x,y)
-				iRnd	= CyGame().getSorenRandNum(100, "Temple Map Lair Result")
+				iRnd	= CyGame().getSorenRandNum(100, "Unique Map Lair Result")
 				if iRnd > 64:
 					jPlot.setRevealed(pTeam, True, False, TeamTypes.NO_TEAM)
 			break

@@ -2082,7 +2082,7 @@
 		<English>You! I do not wish to see you here, mortal. I hope you have something serious to discuss, otherwise your usefulness as a bargaining partner will soon be surpassed by the merits of your bodily nectar.</English>
 		<French>Vous ! Je ne souhaite pas vous voir ici, mortel. J'espère que vous avez une raison sérieuse, sans quoi votre utilité comme partenaire commercial sera vite surpassée par l'intérêt de votre nectar corporel.</French>
 		<German>Ihr... Ich wünsche nicht, Euch hier zu sehen, Sterblicher. Hoffentlich habt Ihr etwas von Substanz zu besprechen, sonst wird Eure Nützlichkeit als Handelspartner für mich bald vom Geschmack Eures Blutes übertroffen.</German>
-		<Italian>You… I do not wish to see you here, mortal. I hope you have something serious to discuss, otherwise your usefulness as a bargaining partner will soon be surpassed by the merits of your bodily nectar.</Italian>
+		<Italian>You... I do not wish to see you here, mortal. I hope you have something serious to discuss, otherwise your usefulness as a bargaining partner will soon be surpassed by the merits of your bodily nectar.</Italian>
 		<Spanish>Tú...no deseo veros aquí, mortal. Espero que tengáis algo serio sobre lo que discutir, en otro caso vuestra utilidad como compañero de negocios será eclipsada por los méritos de vuestro néctar corporal.</Spanish>
 	</TEXT>
 	<TEXT>	<!--ACCEPT-->
@@ -6093,7 +6093,7 @@
 		<English>So we are at peace? all well and good? can you please leave me to my experiments now?</English>
 		<French>Donc nous sommes en paix ? Tout est bien qui finit bien ? Pouvez-vous me laisser à mes expériences maintenant ?</French>
 		<German>Also herrscht jetzt Frieden... schön und gut. Könntet Ihr mich nun wieder meinen Experimenten überlassen?</German>
-		<Italian>So we are at peace… all well and good… can you please leave me to my experiments now?</Italian>
+		<Italian>So we are at peace... all well and good... can you please leave me to my experiments now?</Italian>
 		<Spanish>Así que estamos en paz... todo bien y viento en popa... ¿ahora podríais, por favor, dejarme con mis experimentos?</Spanish>
 	</TEXT>
 	<TEXT>	<!--NO_PEACE-->
@@ -6260,10 +6260,10 @@
 	</TEXT>
 	<TEXT>	<!--GREETINGS_AN_FUR-->
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MALAKIM</Tag>
-		<English>Hmm… it seems a shadow is cast in this room, blocking out the sun. I wonder what it will take for it to go away.</English>
+		<English>Hmm... it seems a shadow is cast in this room, blocking out the sun. I wonder what it will take for it to go away.</English>
 		<French>Hmm... Il semble qu'une ombre est projetée dans cette pièce, obstruant le soleil. Je me demande ce qu'il faudrait pour la faire partir.</French>
 		<German>Hmmm... es scheint, ein Schatten legt sich über diesen Raum und verdeckt die Sonne. Ich frage mich, was nötig ist, damit er verschwindet.</German>
-		<Italian>Hmm… it seems a shadow is cast in this room, blocking out the sun. I wonder what it will take for it to go away.</Italian>
+		<Italian>Hmm... it seems a shadow is cast in this room, blocking out the sun. I wonder what it will take for it to go away.</Italian>
 		<Spanish>Hmm... parece que se ha convocado una sombra en esta habitación, tapando el sol. Espero que éste se encargue de ella y haga que se vaya.</Spanish>
 	</TEXT>
 	<TEXT>	<!--ACCEPT-->

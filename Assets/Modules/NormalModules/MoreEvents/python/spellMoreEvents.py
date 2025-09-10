@@ -287,7 +287,7 @@ def onMoveTowerofEyes(pCaster, pPlot):
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOWER_OF_EYES')):
 		doTreasureHunterNewSearch(iPlayer,iImprovement)
 
-def onMoveTombofSucellus(pCaster, pPlot):
+def onMoveTombOfSucellus2(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	iImprovement	= pPlot.getImprovementType()
@@ -328,12 +328,11 @@ def onMovePoolOfTears2(pCaster, pPlot):
 	pPlayer			= gc.getPlayer(iPlayer)
 	git				= gc.getInfoTypeForString
 	iImprovement	= pPlot.getImprovementType()
-	iCaster			= pCaster.getID()
 	lIllness		= [git("PROMOTION_DISEASED"),git("PROMOTION_PLAGUED"),git("PROMOTION_POISONED"),git("PROMOTION_WITHERED")]
 	for iPromotion in lIllness:
 		if pCaster.isHasPromotion(iPromotion):
 			pCaster.setHasPromotion(iPromotion, false)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey(),)),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_POOL_OF_TEARS')):
 		doTreasureHunterNewSearch(iPlayer,iImprovement)
 	elif ((pCaster.isHasPromotion(getInfoType('PROMOTION_GELA'))) and (not (pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_INFERNAL"))) ):

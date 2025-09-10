@@ -1069,7 +1069,6 @@ def doTraveller1 (argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-	implist = []
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1086,13 +1085,12 @@ def doTraveller1 (argsList):
 			if gc.getInfoTypeForString("MODULE_MAGISTER_ASHES")!=-1:
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_WHISPERING_WOOD') :
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
-			
+
 def doTraveller2 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-	implist = []
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1111,14 +1109,16 @@ def doTraveller2 (argsList):
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_GRAVE_OF_ASMODAY') :
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
-			
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_MAJENS_WORKSHOP') :
+					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_CARNIVEANS_CAMP') :
+					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 
 def doTraveller3 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-	implist = []
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1137,13 +1137,12 @@ def doTraveller3 (argsList):
 			if gc.getInfoTypeForString("MODULE_MAGISTER_ASHES")!=-1:
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_ABADDONS_PIT') :
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
-			
+
 def doTraveller4 (argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-	implist = []
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1167,7 +1166,6 @@ def doTraveller5 (argsList):
 	for iPlayer in range(gc.getMAX_PLAYERS()):
 		pPlayer = gc.getPlayer(iPlayer)
 		if pPlayer.isAlive():
-
 			for pyCity in PyPlayer(iPlayer).getCityList() :
 				pCity = pyCity.GetCy()
 				if pCity.getPopulation() > maxpop:
@@ -1180,7 +1178,6 @@ def canDoTraveller1(argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1204,7 +1201,6 @@ def canDoTraveller2(argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1223,7 +1219,10 @@ def canDoTraveller2(argsList):
 					return True
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_GRAVE_OF_ASMODAY') :
 					return True
-					
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_MAJENS_WORKSHOP') :
+					return True
+				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_CARNIVEANS_CAMP') :
+					return True
 	return False
 
 def canDoTraveller3(argsList):
@@ -1231,7 +1230,6 @@ def canDoTraveller3(argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):
@@ -1250,7 +1248,6 @@ def canDoTraveller3(argsList):
 			if gc.getInfoTypeForString("MODULE_MAGISTER_ASHES")!=-1:
 				if pPlot.getImprovementType()==gc.getInfoTypeForString('IMPROVEMENT_ABADDONS_PIT') :
 					return True
-	
 	return False
 
 def canDoTraveller4(argsList):
@@ -1258,7 +1255,6 @@ def canDoTraveller4(argsList):
 	kTriggeredData = argsList[1]
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	iTeam = pPlayer.getTeam()
-
 	for i in range (CyMap().numPlots()):
 		pPlot = CyMap().plotByIndex(i)
 		if (pPlot.getImprovementType()!=-1):

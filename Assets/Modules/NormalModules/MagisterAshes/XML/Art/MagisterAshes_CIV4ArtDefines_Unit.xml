@@ -6,7 +6,7 @@
 <!-- Unit art path information -->
 <Civ4ArtDefines xmlns="x-schema:MagisterAshes_CIV4ArtDefinesSchema.xml">
 	<UnitArtInfos>
-	<UnitArtInfo>
+		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ABADDON_2</Type>
 			<Button>Art/Interface/Buttons/Units/Manticore.dds</Button>
 			<fScale>1.7</fScale>
@@ -15,23 +15,22 @@
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Modules/MagisterAshes/Units/Abaddon/Lion.nif</NIF>
 			<KFM>Art/animations/Lion/Lion blood.kfm</KFM>
-			
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/LionShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine1</ShadowAttachNode>
 				<fShadowScale>1</fShadowScale>
 			</ShadowDef>
-				<fBattleDistance>0.35</fBattleDistance>
-				<fRangedDeathTime>0.28</fRangedDeathTime>
-				<bActAsRanged>0</bActAsRanged>
-				<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
+				<AudioRunTypeLoop />
+				<AudioRunTypeEnd />
 			</AudioRunSounds>
 			<SelectionSound>AS3D_LION_SELECT</SelectionSound>
 		</UnitArtInfo>
-			<UnitArtInfo>
+		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BADB</Type>
 			<Button>Art/Modules/MagisterAshes/Units/Badb/Badb_button.dds</Button>
 			<fScale>.8</fScale>
@@ -44,6 +43,30 @@
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>0.95</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop />
+				<AudioRunTypeEnd />
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_CARNIVEAN</Type>
+			<Button>Art/Modules/MagisterAshes/Units/Carnivean/Carnivean.dds</Button>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>.5</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Modules/MagisterAshes/Units/Carnivean/Carnivean.nif</NIF>
+			<!-- <KFM>Art/Units/Swordsman/Swordsman blood.kfm</KFM> -->
+			<KFM>Art/Units/Maceman/Maceman.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.5</fShadowScale>
 			</ShadowDef>
 				<fBattleDistance>0.35</fBattleDistance>
 				<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -68,15 +91,14 @@
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>1</fShadowScale>
 			</ShadowDef>
-				<fBattleDistance>0.35</fBattleDistance>
-				<fRangedDeathTime>0.31</fRangedDeathTime>
-				<bActAsRanged>0</bActAsRanged>
-				<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
+				<AudioRunTypeLoop />
+				<AudioRunTypeEnd />
 			</AudioRunSounds>
 		</UnitArtInfo>
-	
-		</UnitArtInfos>
+	</UnitArtInfos>
 </Civ4ArtDefines>

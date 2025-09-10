@@ -2860,17 +2860,17 @@ class CvGameUtils:
 			iImprovement = pPlot.getImprovementType()
 			if iImprovement != -1:
 				if (iImprovement == Lair["Barrow"] or iImprovement == Lair["Ruins"] or iImprovement == Improvement["Hellfire"]):
-					if pUnit.getDamage() == 0:
+					if not pUnit.isHurt():
 						if not bAnimal:
 							if iNumUnits - pPlot.getNumAnimalUnits() == 1:
 								return 1
 				if (iImprovement == Lair["Bear Den"] or iImprovement == Lair["Lion Den"]):
-					if pUnit.getDamage() == 0:
+					if not pUnit.isHurt():
 						if bAnimal:
 							if pPlot.getNumAnimalUnits() == 1:
 								return 1
 				if iImprovement == Lair["Goblin Camp"]:
-					if pUnit.getDamage() == 0:
+					if not pUnit.isHurt():
 						if not bAnimal:
 							if iNumUnits - pPlot.getNumAnimalUnits() <= 3:
 								return 1

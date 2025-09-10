@@ -10,8 +10,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_ORDER_SHORT</ShortDescription>
 			<Help>TXT_KEY_TRAIT_ORDER_HELP</Help>
-		
-		</TraitInfo> 
+		</TraitInfo>
 		<TraitInfo>		<!-- Veil -->
 			<Type>TRAIT_VEIL</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -20,7 +19,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_VEIL_SHORT</ShortDescription>
 			<Help>TXT_KEY_TRAIT_VEIL_HELP</Help>
-		</TraitInfo> 
+		</TraitInfo>
 		<TraitInfo>		<!-- Overlords -->
 			<Type>TRAIT_OVERLORDS</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -29,7 +28,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_OVERLORDS_SHORT</ShortDescription>
 			<Help>TXT_KEY_TRAIT_OVERLORDS_HELP</Help>
-		</TraitInfo> 
+		</TraitInfo>
 		<TraitInfo>		<!-- Runes -->
 			<Type>TRAIT_RUNES</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -37,8 +36,8 @@
 			<Description>TXT_KEY_TRAIT_RUNES</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_RUNES_SHORT</ShortDescription>
-		<Help>TXT_KEY_TRAIT_RUNES_HELP</Help>
-		</TraitInfo> 
+			<Help>TXT_KEY_TRAIT_RUNES_HELP</Help>
+		</TraitInfo>
 		<TraitInfo>		<!-- Fellowship -->
 			<Type>TRAIT_FELLOWSHIP</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -46,8 +45,8 @@
 			<Description>TXT_KEY_TRAIT_FELLOWSHIP</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_FELLOWSHIP_SHORT</ShortDescription>
-		<Help>TXT_KEY_TRAIT_FELLOWSHIP_HELP</Help>
-		</TraitInfo> 
+			<Help>TXT_KEY_TRAIT_FELLOWSHIP_HELP</Help>
+		</TraitInfo>
 		<TraitInfo>		<!-- Empyrean -->
 			<Type>TRAIT_EMPYREAN</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -55,8 +54,8 @@
 			<Description>TXT_KEY_TRAIT_EMPYREAN</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_EMPYREAN_SHORT</ShortDescription>
-		<Help>TXT_KEY_TRAIT_EMPYREAN_HELP</Help>
-		</TraitInfo> 
+			<Help>TXT_KEY_TRAIT_EMPYREAN_HELP</Help>
+		</TraitInfo>
 		<TraitInfo>		<!-- Esus -->
 			<Type>TRAIT_ESUS</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -64,8 +63,8 @@
 			<Description>TXT_KEY_TRAIT_ESUS</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_ESUS_SHORT</ShortDescription>
-		<Help>TXT_KEY_TRAIT_ESUS_HELP</Help>
-		</TraitInfo> 
+			<Help>TXT_KEY_TRAIT_ESUS_HELP</Help>
+		</TraitInfo>
 		<TraitInfo>		<!-- White Hand -->
 			<Type>TRAIT_WHITE_HAND</Type>
 			<TraitClass>TRAITCLASS_RELIGION</TraitClass>
@@ -73,7 +72,7 @@
 			<Description>TXT_KEY_TRAIT_WHITE_HAND</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DYN_REL_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_WHITE_HAND_SHORT</ShortDescription>
-		<Help>TXT_KEY_TRAIT_WHITE_HAND_HELP</Help>
-		</TraitInfo> 			
+			<Help>TXT_KEY_TRAIT_WHITE_HAND_HELP</Help>
+		</TraitInfo>
 	</TraitInfos>
 </Civ4TraitInfos>

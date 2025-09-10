@@ -1327,11 +1327,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMBAT_HEAL_PERCENT</Tag>
-		<English>[ICON_BULLET]Heals %D1% after combat</English>
-		<French>[ICON_BULLET]Soigne %D1% suite au combat</French>
-		<German>[ICON_BULLET]Heilt %D1% nach dem er eine Einheit im Kampf getötet hat</German>
-		<Italian>[ICON_BULLET]Heals %D1% after combat</Italian>
-		<Spanish>[ICON_BULLET]Heals %D1% after combat</Spanish>
+		<English>[ICON_BULLET]Heals %D1% after combat vs living</English>
+		<French>[ICON_BULLET]Heals %D1% after combat vs living</French>
+		<German>[ICON_BULLET]Heals %D1% after combat vs living</German>
+		<Italian>[ICON_BULLET]Heals %D1% after combat vs living</Italian>
+		<Spanish>[ICON_BULLET]Heals %D1% after combat vs living</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMBAT_PERCENT_IN_BORDERS</Tag>
@@ -1871,11 +1871,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEAR_PEDIA</Tag>
-		<English>[ICON_BULLET]Causes fear, scattering units in tiles it attacks[NEWLINE][ICON_BULLET]Can stop enemy attacks on him.[NEWLINE][ICON_BULLET]Chance depends on strength and experience of both units.</English>
-		<French>[ICON_BULLET]Peut disperser les unités ennemies présentes sur la case qu'il attaque[NEWLINE][ICON_BULLET]Peut stopper les unités qui l'attaquent[NEWLINE][ICON_BULLET]L'efficacité dépend des forces et expériences relatives.</French>
-		<German>[ICON_BULLET]Angreifer dieser Einheit brechen möglicherweise ihren Angriff ab und fliehen.[NEWLINE][ICON_BULLET]Can stop enemy attacks on him.[NEWLINE][ICON_BULLET]Chance depends on strength and experience of both units.</German>
-		<Italian>[ICON_BULLET]Causes fear, scattering units in tiles it attacks[NEWLINE][ICON_BULLET]Can stop enemy attacks on him.[NEWLINE][ICON_BULLET]Chance depends on strength and experience of both units.</Italian>
-		<Spanish>[ICON_BULLET]Causes fear, scattering units in tiles it attacks[NEWLINE][ICON_BULLET]Can stop enemy attacks on him.[NEWLINE][ICON_BULLET]Chance depends on strength and experience of both units.</Spanish>
+		<English>[ICON_BULLET]Causes fear, scattering units in non-city non-fort tiles it attacks.[NEWLINE][ICON_BULLET]Can stop enemy attacks on it.[NEWLINE][ICON_BULLET]Chance depends on strength, level, and health of both units.</English>
+		<French>[ICON_BULLET]Causes fear, scattering units in non-city non-fort tiles it attacks.[NEWLINE][ICON_BULLET]Can stop enemy attacks on it.[NEWLINE][ICON_BULLET]Chance depends on strength, level, and health of both units.</French>
+		<German>[ICON_BULLET]Causes fear, scattering units in non-city non-fort tiles it attacks.[NEWLINE][ICON_BULLET]Can stop enemy attacks on it.[NEWLINE][ICON_BULLET]Chance depends on strength, level, and health of both units.</German>
+		<Italian>[ICON_BULLET]Causes fear, scattering units in non-city non-fort tiles it attacks.[NEWLINE][ICON_BULLET]Can stop enemy attacks on it.[NEWLINE][ICON_BULLET]Chance depends on strength, level, and health of both units.</Italian>
+		<Spanish>[ICON_BULLET]Causes fear, scattering units in non-city non-fort tiles it attacks.[NEWLINE][ICON_BULLET]Can stop enemy attacks on it.[NEWLINE][ICON_BULLET]Chance depends on strength, level, and health of both units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FIRE_RESISTANCE</Tag>

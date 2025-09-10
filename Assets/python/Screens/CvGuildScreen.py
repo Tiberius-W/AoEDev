@@ -254,7 +254,7 @@ class CvGuildScreen:
 				if (gc.getBuildingInfo(iBuilding).getFoundsCorporation() == i):
 					break
 			for iUnit in range(gc.getNumUnitInfos()):
-				if gc.getUnitInfo(iUnit).getBuildings(iBuilding) or gc.getUnitInfo(iUnit).getForceBuildings(iBuilding):
+				if gc.getUnitInfo(iUnit).getBuildings(iBuilding):
 					szGreatPerson = gc.getUnitInfo(iUnit).getDescription()
 					break
 			screen.setLabelAt("", "CivicList", szGreatPerson, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_GREAT_PERSON, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)

@@ -43,6 +43,8 @@ def onBeginGameTurn(self, argsList):
 						continue
 					if pTargetPlot.getBonusType(-1) != -1:
 						continue
+					if pTargetPlot.isCity():
+						continue
 					iValue = 0
 					iImp = pTargetPlot.getImprovementType()
 					if iImp == -1:

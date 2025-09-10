@@ -188,7 +188,7 @@ bool CvUnitAI::AI_update()
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
 				if (NO_BUILDING != eBuilding)
 				{
-					if ((m_pUnitInfo->getForceBuildings(eBuilding)) || (m_pUnitInfo->getBuildings(eBuilding)))
+					if (m_pUnitInfo->getBuildings(eBuilding))
 					{
 						bDoesBuild = true;
 					}
@@ -211,7 +211,7 @@ bool CvUnitAI::AI_update()
 	/**								---- Start Original Code ----									**
 	if (isHuman())
 	{
-		if (getGroup()->getHeadUnit()->isAIControl())
+		if (getGroup()->getHeadUnit()->isEnraged())
 		{
 			if (AI_anyAttack(3, 20))
 			{
@@ -221,7 +221,7 @@ bool CvUnitAI::AI_update()
 		}
 	}
 	/**								----  End Original Code  ----									**/
-	if (getGroup()->getHeadUnit()->isAIControl())
+	if (getGroup()->getHeadUnit()->isEnraged())
 	{
 		if (AI_anyAttack(1, 90))
 		{
@@ -1368,19 +1368,16 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 		iOurStrength *= (1 - iRoundsDiff);
 	}
 
-	int iOdds = (((iOurStrength * 100) / (iOurStrength + iTheirStrength)));
-	iOdds += ((100 - iOdds) * std::min(GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"), std::max(0, (withdrawalProbability() + pDefender->enemyWithdrawalProbability() + pDefender->getExtraEnemyWithdrawal())))) / 100;
+	int iOdds = 100 * iOurStrength / (iOurStrength + iTheirStrength);
+	iOdds += (100 - iOdds) * combatWithdrawalProbability(pDefender) / 100;
 	iOdds += GET_PLAYER(getOwnerINLINE()).AI_getAttackOddsChange();
 
-//FfH: Added by Kael 04/11/2008
+	//FfH: Added by Kael 04/11/2008
 	if (isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) || getSpellCasterXP() > 0)
 	{
 		if (iOdds < 95)
-		{
 			iOdds = 0;
-		}
 	}
-//FfH: End Add
 
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      10/30/09                      Mongoose & jdog5000     */
@@ -3818,7 +3815,7 @@ void CvUnitAI::AI_attackCityMove()
 	{
 		// force heal if we in our own city and damaged
 		// can we remove this or call AI_heal here?
-		if ((getGroup()->getNumUnits() == 1) && (getDamage() > 0))
+		if ((getGroup()->getNumUnits() == 1) && (isHurt()))
 		{
 			getGroup()->pushMission(MISSION_HEAL);
 			return;
@@ -6188,98 +6185,59 @@ void CvUnitAI::AI_exploreMove()
 	if (!isHuman() && canAttack())
 	{
 		if (AI_cityAttack(1, 60))
-		{
 			return;
-		}
 
 		if (AI_anyAttack(1, 70))
-		{
 			return;
-		}
 	}
-/*************************************************************************************************/
-/**	Tweak							04/05/11								Snarko				**/
-/**			Making ranged attacks cost a movement point and adjusting the AI.					**/
-/*************************************************************************************************/
+
+	// Snarko - 04/05/11 - Making ranged attacks cost a movement point and adjusting the AI.
 	if (!isHuman())
 	{
 		if (AI_rangeAttack(airRange(), 30))
-		{
 			return;
-		}
 	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 
-	if (getDamage() > 0)
+	int iHealTurns = healTurns(plot());
+	if (isHurt() && iHealTurns < MAX_INT)
 	{
-		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
+		// Speedup - Snarko - 11/02/12 - use AI_getAnyPlotDanger instead of AI_getPlotDanger where possible
+		if (GET_PLAYER(getOwnerINLINE()).AI_getAnyPlotDanger(plot()))
 		{
-/*************************************************************************************************/
-/**	HealRight								04/18/09								Xienwolf	**/
-/**																								**/
-/**		Units will not attempt to heal in a location which will make such a thing impossible	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			getGroup()->pushMission(MISSION_HEAL);
-			return;
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Speedup								11/02/12										Snarko	**/
-/**																								**/
-/**				Use the must faster getAnyPlotDanger where possible								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			int iDangerLevel = GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot());
-			if(iDangerLevel == 0)
-/**								----  End Original Code  ----									**/
-			if (GET_PLAYER(getOwnerINLINE()).AI_getAnyPlotDanger(plot()))
-/*************************************************************************************************/
-/**	Speedup									END													**/
-/*************************************************************************************************/
+			// Lightly wounded or healing fast
+			if(iHealTurns <= 4)
 			{
-				if(healRate(plot()) > 5)
-				{
-					getGroup()->pushMission(MISSION_HEAL);
-					return;
-				}
-				else
-				{
-					if(getDamage() > 40)
-					{
-						if (AI_retreatToCity())
-						{
-							return;
-						}
-
-						if (AI_safety())
-						{
-							return;
-						}
-						getGroup()->pushMission(MISSION_HEAL);
-						return;
-					}
-				}
+				getGroup()->pushMission(MISSION_HEAL);
+				return;
 			}
 			else
 			{
-				if(getDamage() > 20)
+				// Retreat if heavily wounded / healing slowly
+				if(iHealTurns >= 10)
 				{
 					if (AI_retreatToCity())
-					{
 						return;
-					}
 
 					if (AI_safety())
-					{
 						return;
-					}
+
+					getGroup()->pushMission(MISSION_HEAL);
+					return;
 				}
 			}
-/*************************************************************************************************/
-/**	HealRight								END													**/
-/*************************************************************************************************/
+		}
+		// Only retreat to safety if moderately wounded and no danger?
+		// Erebus is dangerous, we probably should keep explorers healed rather than push until more wounded...
+		else
+		{
+			if(getDamage() > 20)
+			{
+				if (AI_retreatToCity())
+					return;
+
+				if (AI_safety())
+					return;
+			}
 		}
 	}
 
@@ -7943,7 +7901,7 @@ void CvUnitAI::AI_attackSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8240,7 +8198,7 @@ void CvUnitAI::AI_reserveSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8507,7 +8465,7 @@ void CvUnitAI::AI_escortSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8740,7 +8698,7 @@ void CvUnitAI::AI_exploreSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -8827,68 +8785,47 @@ void CvUnitAI::AI_exploreSeaMove()
 		}
 	}
 
-	if (getDamage() > 0)
+	int iHealTurns = healTurns(plot());
+	if (isHurt() && iHealTurns < MAX_INT)
 	{
-		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
+		// Speedup - Snarko - 11/02/12 - use AI_getAnyPlotDanger instead of AI_getPlotDanger where possible
+		if (GET_PLAYER(getOwnerINLINE()).AI_getAnyPlotDanger(plot()))
 		{
-/*************************************************************************************************/
-/**	HealRight								04/18/09								Xienwolf	**/
-/**																								**/
-/**		Units will not attempt to heal in a location which will make such a thing impossible	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			getGroup()->pushMission(MISSION_HEAL);
-			return;
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Speedup								11/02/12										Snarko	**/
-/**																								**/
-/**				Use the must faster getAnyPlotDanger where possible								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if(GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 1) == 0)
-/**								----  End Original Code  ----									**/
-			if (GET_PLAYER(getOwnerINLINE()).AI_getAnyPlotDanger(plot(), 1))
-/*************************************************************************************************/
-/**	Speedup									END													**/
-/*************************************************************************************************/
+			// Lightly wounded or healing fast
+			if(iHealTurns <= 4)
 			{
-				if(healRate(plot()) > 5)
-				{
-					getGroup()->pushMission(MISSION_HEAL);
-					return;
-				}
-				else
-				{
-					if(getDamage() > 40)
-					{
-						if (AI_retreatToCity())
-						{
-							return;
-						}
-						getGroup()->pushMission(MISSION_HEAL);
-						return;
-					}
-				}
+				getGroup()->pushMission(MISSION_HEAL);
+				return;
 			}
 			else
 			{
-				if(getDamage() > 20)
+				// Retreat if heavily wounded / healing slowly
+				if(iHealTurns >= 10)
 				{
 					if (AI_retreatToCity())
-					{
 						return;
-					}
 
-					if (AI_safety())
-					{
-						return;
-					}
+					getGroup()->pushMission(MISSION_HEAL);
+					return;
 				}
 			}
-/*************************************************************************************************/
-/**	HealRight								END													**/
-/*************************************************************************************************/
+		}
+		// Only retreat to safety if moderately wounded and no danger?
+		// Erebus is dangerous, we probably should keep explorers healed rather than push until more wounded...
+		else
+		{
+			if(getDamage() > 20)
+			{
+				if (AI_retreatToCity())
+				{
+					return;
+				}
+
+				if (AI_safety())
+				{
+					return;
+				}
+			}
 		}
 	}
 
@@ -9009,7 +8946,7 @@ void CvUnitAI::AI_assaultSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -9726,7 +9663,7 @@ void CvUnitAI::AI_settlerSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10039,7 +9976,7 @@ void CvUnitAI::AI_missionarySeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10162,7 +10099,7 @@ void CvUnitAI::AI_spySeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10273,7 +10210,7 @@ void CvUnitAI::AI_carrierSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10406,7 +10343,7 @@ void CvUnitAI::AI_missileCarrierSeaMove()
 		int iOurDefense = GET_TEAM(getTeam()).AI_getOurPlotStrength(plot(),0,true,false,true);
 		int iEnemyOffense = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(),2,false,false);
 
-		if( getDamage() > 0 )	// extra risk to leaving when wounded
+		if( isHurt() )	// extra risk to leaving when wounded
 		{
 			iOurDefense *= 2;
 		}
@@ -10558,7 +10495,7 @@ void CvUnitAI::AI_attackAirMove()
 		}
 		else if( iEnemyOffense > iOurDefense/3 )
 		{
-			if( getDamage() == 0 )
+			if( !isHurt() )
 			{
 				if( collateralDamage() == 0 && canAirDefend() )
 				{
@@ -10604,7 +10541,7 @@ void CvUnitAI::AI_attackAirMove()
 				}
 			}
 
-			if( healTurns(plot()) > 1 )
+			if( healTurns(plot()) > 2 )
 			{
 				// If very damaged, no sense staying in risky place
 				if (AI_airOffensiveCity())
@@ -10624,7 +10561,7 @@ void CvUnitAI::AI_attackAirMove()
 		}
 	}
 
-	if( getDamage() > 0 )
+	if( isHurt() )
 	{
 		if (((100*currHitPoints()) / maxHitPoints()) < 40)
 		{
@@ -10862,9 +10799,9 @@ void CvUnitAI::AI_defenseAirMove()
 		}
 		else if ( iEnemyOffense > iOurDefense/3 )
 		{
-			if (getDamage() > 0)
+			if (isHurt())
 			{
-				if( healTurns(plot()) > 1 + GC.getGameINLINE().getSorenRandNum(2, "AI Air Defense Move") )
+				if( healTurns(plot()) > 2 + GC.getGameINLINE().getSorenRandNum(2, "AI Air Defense Move") )
 				{
 					// Can't help current situation, only risk losing unit
 					if (AI_airDefensiveCity())
@@ -10924,7 +10861,7 @@ void CvUnitAI::AI_defenseAirMove()
 /* 	BETTER_BTS_AI_MOD						END								*/
 /********************************************************************************/
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		getGroup()->pushMission(MISSION_SKIP);
 		return;
@@ -11147,7 +11084,7 @@ void CvUnitAI::AI_carrierAirMove()
 
 	// XXX maybe protect land troops?
 
-	if (getDamage() > 0)
+	if (isHurt())
 	{
 		getGroup()->pushMission(MISSION_SKIP);
 		return;
@@ -11867,19 +11804,12 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion, bool bSkipRandom, boo
 		iValue += (iTemp / 8);
 	}
 
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      04/26/10                                jdog5000      */
-/*                                                                                              */
-/* Unit AI                                                                                      */
-/************************************************************************************************/
-	if ( getDamage() > 0 || ((AI_getBirthmark() % 8 == 0) && (AI_getUnitAIType() == UNITAI_COUNTER ||
+	// BETTER_BTS_AI_MOD - jdog5000 - 04/26/10 - Unit AI - ???????
+	if ( isHurt() || ((AI_getBirthmark() % 8 == 0) && (AI_getUnitAIType() == UNITAI_COUNTER ||
 															AI_getUnitAIType() == UNITAI_PILLAGE ||
 															AI_getUnitAIType() == UNITAI_ATTACK_CITY ||
 															AI_getUnitAIType() == UNITAI_RESERVE )) )
 	{
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 		iTemp = kPromotion.getSameTileHealChange() + getSameTileHeal();
 		iExtra = getSameTileHeal();
 
@@ -11888,20 +11818,18 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion, bool bSkipRandom, boo
 
 		if (iTemp > 0)
 		{
-			if (healRate(plot()) < iTemp)
-			{
+			// Value is way higher if it increases the healing rate of our stack
+			if (getHealBonusFromUnits(plot()) < iTemp)
 				iValue += iTemp * ((getGroup()->getNumUnits() > 4) ? 4 : 2);
-			}
 			else
-			{
 				iValue += (iTemp / 8);
-			}
 		}
 
 		iTemp = kPromotion.getAdjacentTileHealChange();
 		iExtra = getAdjacentTileHeal();
 		iTemp *= (100 + iExtra * 5);
 		iTemp /= 100;
+		// Blaze 2025: I think this is backwards, but not sure
 		if (getSameTileHeal() >= iTemp)
 		{
 			iValue += (iTemp * ((getGroup()->getNumUnits() > 9) ? 4 : 2));
@@ -15266,6 +15194,7 @@ bool CvUnitAI::AI_chokeDefend()
 // Returns true if a mission was pushed...
 bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 {
+	// Blaze 2025: (This method?) should probably take advantage of healTurns(plot) new ability to accurately count at range
 	PROFILE_FUNC();
 
 	CLLNode<IDInfo>* pEntityNode;
@@ -15277,45 +15206,25 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 	int iHurtUnitCount;
 	bool bRetreat;
 
-	if (plot()->getFeatureType() != NO_FEATURE)
-	{
-		if (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() != 0)
-		{
-			//Pass through
-			//(actively seeking a safe spot may result in unit getting stuck)
-			return false;
-		}
-	}
-	if (plot()->getPlotEffectType() != NO_PLOT_EFFECT)
-	{
-		if (GC.getPlotEffectInfo(plot()->getPlotEffectType()).getTurnDamage() != 0)
-		{
-			//Pass through
-			//(actively seeking a safe spot may result in unit getting stuck)
-			return false;
-		}
-	}
-//FfH: Added by Kael 10/01/2007 (so the AI won't try to sit and heal in areas where they cant heal)
-	if (healRate(plot()) <= 0)
-	{
+	//FfH: Kael 10/01/2007: so the AI won't try to sit and heal in areas where they cant heal. Blaze 2025 updated
+	if (healTurns(plot()) == MAX_INT)
 		return false;
-	}
-//FfH: End Add
 
 	pGroup = getGroup();
 
+	// ???
 	if (iDamagePercent == 0)
-	{
 		iDamagePercent = 10;
-	}
 
 	bRetreat = false;
 
+	// Solitary non-march units can heal if in a city or it only takes 1 turn
 	if (getGroup()->getNumUnits() == 1)
 	{
-		if (getDamage() > 0)
+		if (isHurt())
 		{
-			if (plot()->isCity() || (healTurns(plot()) == 1))
+			// healTurns accounts for already moving this turn
+			if (plot()->isCity() || (healTurns(plot()) <= 2))
 			{
 				if (!(isAlwaysHeal()))
 				{
@@ -15327,7 +15236,7 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 		return false;
 	}
 
-	iMaxPath = std::min(iMaxPath, 2);
+	iMaxPath = std::min(iMaxPath, 3);
 
 	pEntityNode = getGroup()->headUnitNode();
 
@@ -15347,27 +15256,12 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 			iDamageThreshold /= 2;
 		}
 
-		if (pLoopUnit->getDamage() > 0)
+		if (pLoopUnit->isHurt())
 		{
 			iHurtUnitCount++;
 		}
-/*************************************************************************************************/
-/**	Higher hitpoints				01/02/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		iTotalDamage += pLoopUnit->getDamage();
-		iTotalHitpoints += pLoopUnit->maxHitPoints();
-
-		if (pLoopUnit->getDamage() > iDamageThreshold)
-/**								----  End Original Code  ----									**/
-		//iTotalDamage += pLoopUnit->getDamageReal(); //Isn't used?!?
-		//iTotalHitpoints += pLoopUnit->maxHitPoints(); //Isn't used?!?
 
 		if (pLoopUnit->getDamageReal() > iDamageThreshold)
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
 		{
 			bRetreat = true;
 
@@ -15417,36 +15311,14 @@ bool CvUnitAI::AI_heal(int iDamagePercent, int iMaxPath)
 		{
 			return true;
 		}
-		else if (healRate(plot()) > 10)
+		else if (healTurns(plot()) <= 10)
 		{
-/*************************************************************************************************/
-/**	HealRight								04/18/09								Xienwolf	**/
-/**																								**/
-/**		Units will not attempt to heal in a location which will make such a thing impossible	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			pGroup->pushMission(MISSION_HEAL);
-			return true;
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Speedup								11/02/12										Snarko	**/
-/**																								**/
-/**				Use the must faster getAnyPlotDanger where possible								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if(GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) == 0)
-/**								----  End Original Code  ----									**/
+			// Speedup - Snarko - 11/02/12 - Use the must faster getAnyPlotDanger where possible
 			if (GET_PLAYER(getOwnerINLINE()).AI_getAnyPlotDanger(plot()))
-/*************************************************************************************************/
-/**	Speedup									END													**/
-/*************************************************************************************************/
 			{
 				pGroup->pushMission(MISSION_HEAL);
 				return true;
 			}
-/*************************************************************************************************/
-/**	HealRight								END													**/
-/*************************************************************************************************/
 		}
 	}
 
@@ -16581,8 +16453,7 @@ bool CvUnitAI::AI_construct(int iMaxCount, int iMaxSingleBuildingCount, int iThr
 							if (NO_BUILDING != eBuilding)
 							{
 								bool bDoesBuild = false;
-								if ((m_pUnitInfo->getForceBuildings(eBuilding))
-									|| (m_pUnitInfo->getBuildings(eBuilding)))
+								if (m_pUnitInfo->getBuildings(eBuilding))
 								{
 									bDoesBuild = true;
 								}
@@ -19335,7 +19206,7 @@ bool CvUnitAI::AI_pirateBlockade()
 
 	if (!bIsInDanger)
 	{
-		if (getDamage() > 0)
+		if (isHurt())
 		{
 			if (!plot()->isOwned() && !plot()->isAdjacentOwned())
 			{
@@ -25297,7 +25168,7 @@ bool CvUnitAI::AI_airDefensiveCity()
 	/* 																			*/
 	/* 	Air AI																	*/
 	/********************************************************************************/
-	if (canAirDefend() && getDamage() == 0)
+	if (canAirDefend() && !isHurt())
 	{
 		pCity = plot()->getPlotCity();
 
@@ -27185,7 +27056,7 @@ bool CvUnitAI::AI_airRetreatFromCityDanger()
 
 bool CvUnitAI::AI_airAttackDamagedSkip()
 {
-	if (getDamage() == 0)
+	if (!isHurt())
 	{
 		return false;
 	}
@@ -29559,7 +29430,7 @@ void CvUnitAI::AI_ConquestMove()
 
 	if (bInCity && plot()->getOwnerINLINE() == getOwnerINLINE())
 	{
-		if ((getGroup()->getNumUnits() == 1) && (getDamage() > 0))
+		if ((getGroup()->getNumUnits() == 1) && (isHurt()))
 		{
 			if (AI_heal())
 			{

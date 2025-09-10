@@ -383,11 +383,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_AFFINITY_COMBAT_HEAL_PERCENT</Tag>
-		<English>[ICON_BULLET]Heals %s1% after Combat</English>
-		<French>[ICON_BULLET]Soigne %s1% de dégâts après un Combat</French>
-		<German>[ICON_BULLET]Heilt %s1% nach einem Gefecht</German>
-		<Italian>[ICON_BULLET]Cura il %s1% dopo il combattimento</Italian>
-		<Spanish>[ICON_BULLET]Heals %s1% after Combat</Spanish>
+		<English>[ICON_BULLET]Heals %s1% after combat vs living</English>
+		<French>[ICON_BULLET]Heals %s1% after combat vs living</French>
+		<German>[ICON_BULLET]Heals %s1% after combat vs living</German>
+		<Italian>[ICON_BULLET]Heals %s1% after combat vs living</Italian>
+		<Spanish>[ICON_BULLET]Heals %s1% after combat vs living</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_AFFINITY_ENEMY_HEAL_CHANGE</Tag>

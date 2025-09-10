@@ -121,6 +121,54 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVEAN</Tag>
+		<English>Carnivean</English>
+		<French>Carnivean</French>
+		<German>Carnivean</German>
+		<Italian>Carnivean</Italian>
+		<Spanish>Carnivean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVEAN_PEDIA</Tag>
+		<English>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</English>
+		<French>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</French>
+		<German>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</German>
+		<Italian>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</Italian>
+		<Spanish>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP</Tag>
+		<English>Carnivean's Camp</English>
+		<French>Carnivean's Camp</French>
+		<German>Carnivean's Camp</German>
+		<Italian>Carnivean's Camp</Italian>
+		<Spanish>Carnivean's Camp</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP_PEDIA</Tag>
+		<English>[TAB]What mysteries and treasures lay inside the domain of [LINK=UNIT_CARNIVEAN]someone[\LINK] who weathered the Age of Ice?</English>
+		<French>[TAB]What mysteries and treasures lay inside the domain of [LINK=UNIT_CARNIVEAN]someone[\LINK] who weathered the Age of Ice?</French>
+		<German>[TAB]What mysteries and treasures lay inside the domain of [LINK=UNIT_CARNIVEAN]someone[\LINK] who weathered the Age of Ice?</German>
+		<Italian>[TAB]What mysteries and treasures lay inside the domain of [LINK=UNIT_CARNIVEAN]someone[\LINK] who weathered the Age of Ice?</Italian>
+		<Spanish>[TAB]What mysteries and treasures lay inside the domain of [LINK=UNIT_CARNIVEAN]someone[\LINK] who weathered the Age of Ice?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP</Tag>
+		<English>Majen's Workshop</English>
+		<French>Majen's Workshop</French>
+		<German>Majen's Workshop</German>
+		<Italian>Majen's Workshop</Italian>
+		<Spanish>Majen's Workshop</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP_PEDIA</Tag>
+		<English>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</English>
+		<French>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</French>
+		<German>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</German>
+		<Italian>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</Italian>
+		<Spanish>[TAB]Majen was a master toy maker, whose creations were as delightful as they were impossible. A music box that always played a new song. Fantastic animals fashioned only of living paints and incredible growing plants made of shining metal. Board games that played themselves. Bejeweled puzzle boxes that held wonderful gardens inside. Intricate dollhouses and even miniature cities came complete with people living out their lives within them; such was his power.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY</Tag>
 		<English>Grave of Asmoday</English>
 		<French>Tombeau d'Asmoday</French>
@@ -159,6 +207,14 @@
 		<German>Keepers of the Lord of Dust's Tomb</German>
 		<Italian>Keepers of the Lord of Dust's Tomb</Italian>
 		<Spanish>Keepers of the Lord of Dust's Tomb</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KEEPERS_MAJEN</Tag>
+		<English>Keepers of the Tinker's Trove</English>
+		<French>Keepers of the Tinker's Trove</French>
+		<German>Keepers of the Tinker's Trove</German>
+		<Italian>Keepers of the Tinker's Trove</Italian>
+		<Spanish>Keepers of the Tinker's Trove</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_KEEPERS_ASMODAY_FALLEN</Tag>

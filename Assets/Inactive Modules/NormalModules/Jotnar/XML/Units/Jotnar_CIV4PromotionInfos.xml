@@ -2264,6 +2264,12 @@
 				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
 				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
 			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<iVisibilityChange>1</iVisibilityChange>

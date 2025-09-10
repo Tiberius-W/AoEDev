@@ -6661,17 +6661,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 
 	if (GC.getGoodyInfo(eGoody).getDamagePrereq() > 0)
 	{
-/*************************************************************************************************/
-/**	Higher hitpoints				01/02/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if ((pUnit == NULL) || (pUnit->getDamage() < ((pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq()) / 100)))
-/**								----  End Original Code  ----									**/
-		if ((pUnit == NULL) || (pUnit->getDamageReal() < ((pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq()) / 100)))
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
+		if (pUnit == NULL || pUnit->getDamageReal() < pUnit->maxHitPoints() * GC.getGoodyInfo(eGoody).getDamagePrereq() / 100)
 		{
 			return false;
 		}
@@ -7219,14 +7209,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	{
 		iBarbCount = 0;
 
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		eUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(BARBARIAN_PLAYER).getCivilizationType()).getCivilizationUnits(GC.getGoodyInfo(eGoody).getBarbarianUnitClass());
-/**								----  End Original Code  ----									**/
+		// Xienwolf - 12/23/08 - MultiBarb
 		for (iI = MAX_PLAYERS-1; iI > -1; iI--)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
@@ -7238,102 +7221,65 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 				}
 			}
 		}
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
 
 		if (eUnit != NO_UNIT)
 		{
 			for (iPass = 0; iPass < 2; iPass++)
 			{
-				if (iBarbCount < GC.getGoodyInfo(eGoody).getMinBarbarians())
+				if (iBarbCount >= GC.getGoodyInfo(eGoody).getMinBarbarians())
+					continue;
+
+				for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 				{
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+					pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
+
+					if (pLoopPlot == NULL)
+						continue;
+					if (pLoopPlot->getArea() != pPlot->getArea())
+						continue;
+					if (pLoopPlot->isImpassable() || pLoopPlot->isPeak())
+						continue;
+					if (pLoopPlot->getNumUnits() != 0)
+						continue;
+
+					if ((iPass > 0) || (GC.getGameINLINE().getSorenRandNum(100, "Goody Barbs") < GC.getGoodyInfo(eGoody).getBarbarianUnitProb()))
 					{
-						pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
+						for (iJ = MAX_PLAYERS-1; iJ > -1; iJ--)
 						{
-							if (pLoopPlot->getArea() == pPlot->getArea())
+							if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getCivilizationType() == (CivilizationTypes)GC.getGoodyInfo(eGoody).getBarbarianCivilization())
 							{
-/*************************************************************************************************/
-/**	Mountain Mod 		 		expanded by Ahwaric	22.09.09		**/
-/*************************************************************************************************/
-/**				---- Start Original Code ----					**
-								if (!(pLoopPlot->isImpassable()))
-/**				----  End Original Code  ----					**/
-								if ((!(pLoopPlot->isImpassable()) && (!(pLoopPlot->isPeak()))))
-/*************************************************************************************************/
-/**	Mountain Mod END									**/
-/*************************************************************************************************/
+								pNewUnit = GET_PLAYER((PlayerTypes)iJ).initUnit(eUnit, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((pLoopPlot->isWater()) ? UNITAI_ATTACK_SEA : UNITAI_ATTACK));
+								pNewUnit->setSpawnPlot(pPlot);
+								// Units that get leashed to their tile (dungeon ones probably) should be leashed to the core tile, not one-tile-off
+								if (pNewUnit->getLeashX() != INVALID_PLOT_COORD)
 								{
-									if (pLoopPlot->getNumUnits() == 0)
-									{
-										if ((iPass > 0) || (GC.getGameINLINE().getSorenRandNum(100, "Goody Barbs") < GC.getGoodyInfo(eGoody).getBarbarianUnitProb()))
-										{
-
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-//FfH: Modified by Kael 08/31/2008
-//											GET_PLAYER(BARBARIAN_PLAYER).initUnit(eUnit, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((pLoopPlot->isWater()) ? UNITAI_ATTACK_SEA : UNITAI_ATTACK));
-											pNewUnit = GET_PLAYER(BARBARIAN_PLAYER).initUnit(eUnit, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((pLoopPlot->isWater()) ? UNITAI_ATTACK_SEA : UNITAI_ATTACK));
-/**								----  End Original Code  ----									**/
-											for (iJ = MAX_PLAYERS-1; iJ > -1; iJ--)
-											{
-												if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-												{
-													if (GET_PLAYER((PlayerTypes)iJ).getCivilizationType() == (CivilizationTypes)GC.getGoodyInfo(eGoody).getBarbarianCivilization())
-													{
-														pNewUnit = GET_PLAYER((PlayerTypes)iJ).initUnit(eUnit, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((pLoopPlot->isWater()) ? UNITAI_ATTACK_SEA : UNITAI_ATTACK));
-														break;
-													}
-												}
-											}
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
-											pNewUnit->changeExperience(GC.getGoodyInfo(eGoody).getExperience());
-/*************************************************************************************************/
-/**	New Tag Defs	(GoodyInfos)			02/09/09								Xienwolf	**/
-/**																								**/
-/**							Applies Goody Effects to newly created Units						**/
-/*************************************************************************************************/
-											iLoop = GC.getGoodyInfo(eGoody).getNumPromotionAdds();
-											if (iLoop > 0)
-											{
-												for (iJ = 0; iJ < iLoop; iJ++)
-												{
-													pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionAdd(iJ), true);
-												}
-											}
-											iLoop = GC.getGoodyInfo(eGoody).getNumPromotionRemoves();
-											if (iLoop > 0)
-											{
-												for (iJ = 0; iJ < iLoop; iJ++)
-												{
-													pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionRemove(iJ), false);
-												}
-											}
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-//FfH: End Modify
-
-											iBarbCount++;
-
-											if ((iPass > 0) && (iBarbCount == GC.getGoodyInfo(eGoody).getMinBarbarians()))
-											{
-												break;
-											}
-										}
-									}
+									pNewUnit->setLeashX(pPlot->getX());
+									pNewUnit->setLeashY(pPlot->getY());
 								}
+								break;
 							}
 						}
+						pNewUnit->changeExperience(GC.getGoodyInfo(eGoody).getExperience());
+
+						// Xienwolf - 02/09/09 - Applies Goody Effects to newly created Units
+						iLoop = GC.getGoodyInfo(eGoody).getNumPromotionAdds();
+						if (iLoop > 0)
+						{
+							for (iJ = 0; iJ < iLoop; iJ++)
+								pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionAdd(iJ), true);
+						}
+
+						iLoop = GC.getGoodyInfo(eGoody).getNumPromotionRemoves();
+						if (iLoop > 0)
+						{
+							for (iJ = 0; iJ < iLoop; iJ++)
+								pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionRemove(iJ), false);
+						}
+
+						++iBarbCount;
+
+						if (iPass > 0 && iBarbCount == GC.getGoodyInfo(eGoody).getMinBarbarians())
+							break;
 					}
 				}
 			}
@@ -25362,7 +25308,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 					pCity->setCultureTimes100(eNewPlayer, iCulture, false, false);
 				}
 
-//FfH: Added by Kael 01/16/2009 (to prevent CtD's when colony free units are dropped on top of hidden nationaliy units)
+				//FfH: Added by Kael 01/16/2009 (to prevent CtD's when colony free units are dropped on top of hidden nationaliy units)
 				CvUnit* pLoopUnit;
 				CLLNode<IDInfo>* pUnitNode;
 				pUnitNode = pPlot->headUnitNode();
@@ -25375,7 +25321,6 @@ bool CvPlayer::splitEmpire(int iAreaId)
 						pLoopUnit->jumpToNearestValidPlot();
 					}
 				}
-//FfH: End Add
 
 				for (int i = 0; i < GC.getDefineINT("COLONY_NUM_FREE_DEFENDERS"); ++i)
 				{

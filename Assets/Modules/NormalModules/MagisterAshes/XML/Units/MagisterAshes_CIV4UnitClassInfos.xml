@@ -7,7 +7,7 @@
 <!-- UnitClass Schema -->
 <Civ4UnitClassInfos xmlns="x-schema:MagisterAshes_CIV4UnitSchema.xml">
 	<UnitClassInfos>
-			<UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_ABADDON</Type>
 			<Description>TXT_KEY_UNIT_ABADDON</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -16,7 +16,7 @@
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ABADDON</DefaultUnit>
 		</UnitClassInfo>
-			<UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_APOPHIS</Type>
 			<Description>TXT_KEY_UNIT_APOPHIS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -33,6 +33,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BADB</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_CARNIVEAN</Type>
+			<Description>TXT_KEY_UNIT_CARNIVEAN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVEAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_ODIO</Type>

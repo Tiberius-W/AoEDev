@@ -136,15 +136,7 @@ public:
 	void attackForDamage(CvUnit *pDefender, int attackerDamageChange, int defenderDamageChange);
 	void fightInterceptor(const CvPlot* pPlot, bool bQuick);
 	void move(CvPlot* pPlot, bool bShow);
-/*************************************************************************************************/
-/**	xUPT								02/08/11									Afforess	**/
-/**																								**/
-/**						xUPT mechanic, ported and modified by Valkrionn							**/
-/*************************************************************************************************/
-	bool jumpToNearestValidPlot(bool bKill = true);																																// Exposed to Python
-/*************************************************************************************************/
-/**	xUPT									END													**/
-/*************************************************************************************************/
+	bool jumpToNearestValidPlot(bool bKill = true, bool bAdjacentOnly = false);																																// Exposed to Python
 
 	bool canAutomate(AutomateTypes eAutomate) const;																							// Exposed to Python
 	void automate(AutomateTypes eAutomate);
@@ -176,12 +168,14 @@ public:
 
 	bool canSeaPatrol(const CvPlot* pPlot) const;																									// Exposed to Python
 
-	bool canHeal(const CvPlot* pPlot) const;																											// Exposed to Python
-	bool canSentry(const CvPlot* pPlot) const;																										// Exposed to Python
+	bool canHealMission(const CvPlot* pPlot) const;																											// Exposed to Python
+	bool canSentryMission(const CvPlot* pPlot) const;																										// Exposed to Python
 
+	int getHealBonusFromUnits(const CvPlot* pPlot) const;
 	int healRate(const CvPlot* pPlot) const;
 	int healTurns(const CvPlot* pPlot) const;
-	void doHeal();
+	bool isTurnHealBlocked() const;
+	int calcTurnHealthChangeReal() const;																							// Exposed to Python
 
 	bool canAirlift(const CvPlot* pPlot) const;																										// Exposed to Python
 	bool canAirliftAt(const CvPlot* pPlot, int iX, int iY) const;																	// Exposed to Python
@@ -477,6 +471,7 @@ public:
 	int withdrawalProbability() const;																			// Exposed to Python
 	int enemyWithdrawalProbability() const;																			// Exposed to Python
 	int combatWithdrawalProbability(CvUnit* Defender);																			// Exposed to Python
+	int combatWithdrawalProbability(CvUnit* Defender) const;
 
 	int collateralDamage() const;																						// Exposed to Python
 	int collateralDamageLimit() const;																								// Exposed to Python
@@ -572,16 +567,11 @@ public:
 
 	int getGameTurnCreated() const;																														// Exposed to Python
 	void setGameTurnCreated(int iNewValue);
-/*************************************************************************************************/
-/**	Higher hitpoints				31/01/11											Snarko	**/
-/**						Makes higher values than 100 HP possible.								**/
-/*************************************************************************************************/
+
 	int getDamageReal() const;																													// Exposed to Python
 	void setDamageReal(int iNewValue, PlayerTypes ePlayer = NO_PLAYER, bool bNotifyEntity = true);														// Exposed to Python
 	void changeDamageReal(int iChange, PlayerTypes ePlayer = NO_PLAYER);													// Exposed to Python
-/*************************************************************************************************/
-/**	Higher hitpoints						END													**/
-/*************************************************************************************************/
+
 	DllExport int getDamage() const;																													// Exposed to Python
 	void setDamage(int iNewValue, PlayerTypes ePlayer = NO_PLAYER, bool bNotifyEntity = true);														// Exposed to Python
 	void changeDamage(int iChange, PlayerTypes ePlayer = NO_PLAYER);													// Exposed to Python
@@ -1523,8 +1513,8 @@ public:
 /*************************************************************************************************/
 	bool isAlive() const;
 	void changeAlive(int iNewValue);
-	bool isAIControl() const;
-	void changeAIControl(int iNewValue);
+	bool isEnraged() const;
+	void changeEnraged(int iNewValue);
 	bool isBoarding() const;
 	void changeBoarding(int iNewValue);
 	void changeDefensiveStrikeChance(int iChange);
@@ -1537,6 +1527,7 @@ public:
 	void changeDoubleFortifyBonus(int iNewValue);
 	bool isFear() const;
 	void changeFear(int iNewValue);
+	int calcFearChance(const CvUnit* pAfraidUnit) const;
 	bool isFlying() const;
 	void changeFlying(int iNewValue);
 	bool isHeld() const;
@@ -2073,7 +2064,7 @@ protected:
 /**	BeenThereDoneThat						END													**/
 /*************************************************************************************************/
 	int m_iAlive;
-	int m_iAIControl;
+	int m_iEnraged;
 	int m_iBoarding;
 	int m_iDefensiveStrikeChance;
 	int m_iDefensiveStrikeDamage;

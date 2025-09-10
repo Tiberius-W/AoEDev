@@ -2886,7 +2886,7 @@ void CvGame::selectUnit(CvUnit* pUnit, bool bClear, bool bToggle, bool bSound) c
 /*************************************************************************************************/
 /**	Xienwolf Tweak							01/04/09											**/
 /**				Prevents control of units you cannot actually see the location of				**/
-/**					Prevents control of AIControl Units by the human COMPLETELY					**/
+/**					Prevents control of Enraged Units by the human COMPLETELY					**/
 //Might be able to re-write this slightly so that instead of just returning, it will cycle to the next unit
 //in the stack.  If that unit is not selectable (or NULL) return, otherwise, allow that unit to be selected
 /*************************************************************************************************/
@@ -2894,7 +2894,7 @@ void CvGame::selectUnit(CvUnit* pUnit, bool bClear, bool bToggle, bool bSound) c
 	{
 		return;
 	}
-	if (pUnit->isAIControl())
+	if (pUnit->isEnraged())
 	{
 		return;
 	}
@@ -7119,10 +7119,11 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 	// Global can spawn barb city checks
 	if (pPlot == NULL)
 	{
+		// Orcs can't spawn cities if there are too many relative to civs (see iBarbarianCityCreationProb)
 		if (getMaxCityElimination() > 0
 		 || isOption(GAMEOPTION_NO_BARBARIANS)
 		 || getNumCivCities() < countCivPlayersAlive()
-		 || GET_PLAYER(ORC_PLAYER).getNumCities() >= std::max(countCivPlayersAlive(), getNumCivCities() * 5 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) / 100)
+		 || GET_PLAYER(ORC_PLAYER).getNumCities() >= std::max(countCivPlayersAlive(), getNumCivCities() * 3 * GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationProb() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) / 100)
 		 || getElapsedGameTurns() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS)) < (GC.getHandicapInfo(getHandicapType()).getBarbarianCityCreationTurnsElapsed() * GC.getGameSpeedInfo(getGameSpeedType()).getBarbPercent() / 100)
 		 || GC.getEraInfo(getCurrentEra()).isNoBarbCities())
 		{
@@ -7132,7 +7133,7 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 	// Requirements on a specific plot. 
 	else
 	{
-		if (!GET_PLAYER(ORC_PLAYER).canFound(pPlot->getX(), pPlot->getY()))
+		if (iUnownedTilesThreshold <= 0 || !GET_PLAYER(ORC_PLAYER).canFound(pPlot->getX(), pPlot->getY()))
 			return false;
 
 		// Improved tiles are nogo, unless a savage non-unique fort. Such a thing can also spawn in civ vision
@@ -7151,14 +7152,18 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 			return false;
 
 		// Now, we check for density---
-		int iTargetCities = pPlot->area()->getNumUnownedTiles();
+		int iTargetCities = pPlot->area()->getNumUnownedTiles() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
 
 		// Triple local limit, if there are no civ cities in this area
 		if (pPlot->area()->getNumCities() == pPlot->area()->getCitiesPerPlayer(ORC_PLAYER))
 			iTargetCities *= 3;
 
-		// Calculate actual target number of barb cities for this region
-		iTargetCities /= std::max(1, iUnownedTilesThreshold);
+		// Can always spawn 1 city if at least 1/10 the modulated threshold
+		if (iTargetCities * 10 < iUnownedTilesThreshold)
+			return false;
+
+		// Calculate actual target number of barb cities for this region, min 1 given the above
+		iTargetCities = std::max(1, iTargetCities / iUnownedTilesThreshold);
 
 		if (pPlot->area()->getCitiesPerPlayer(ORC_PLAYER) >= iTargetCities)
 			return false;
@@ -8248,7 +8253,7 @@ int CvGame::calculateSyncChecksum()
 				{
 					iMultiplier += (pLoopUnit->getX_INLINE() * 876543);
 					iMultiplier += (pLoopUnit->getY_INLINE() * 985310);
-					iMultiplier += (pLoopUnit->getDamage() * 736373);
+					iMultiplier += (pLoopUnit->getDamageReal() * 736373);
 					iMultiplier += (pLoopUnit->getExperience() * 820622);
 					iMultiplier += (pLoopUnit->getLevel() * 367291);
 				}

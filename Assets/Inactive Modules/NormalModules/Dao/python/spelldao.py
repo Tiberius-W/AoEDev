@@ -62,7 +62,7 @@ def spellElementalSwarm(caster):
 
 def reqElementalUnity(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-	if caster.getDamage() == 0:
+	if not caster.isHurt():
 		return False
 	if pPlayer.isHuman() == False:
 		if caster.getDamage() < 25:

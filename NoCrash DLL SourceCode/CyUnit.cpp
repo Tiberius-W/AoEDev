@@ -179,14 +179,19 @@ bool CyUnit::canSeaPatrol(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canSeaPatrol(pPlot->getPlot()) : false;
 }
 
-bool CyUnit::canHeal(CyPlot* pPlot)
+bool CyUnit::canHealMission(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canHeal(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canHealMission(pPlot->getPlot()) : false;
 }
 
-bool CyUnit::canSentry(CyPlot* pPlot)
+bool CyUnit::canSentryMission(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canSentry(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canSentryMission(pPlot->getPlot()) : false;
+}
+
+int CyUnit::calcTurnHealthChangeReal() const
+{
+	return m_pUnit ? m_pUnit->calcTurnHealthChangeReal() : 0;
 }
 
 bool CyUnit::canAirlift(CyPlot* pPlot)
@@ -2310,7 +2315,7 @@ int CyUnit::getCommandRange() const					{return m_pUnit ? m_pUnit->getCommandRan
 int CyUnit::getCommandXPShareRate() const			{return m_pUnit ? m_pUnit->getCommandXPShareRate() : 0;}
 int CyUnit::getPreviousOwner() const				{return m_pUnit ? m_pUnit->getPreviousOwner() : NO_PLAYER;}
 void CyUnit::setPreviousOwner(int eNewOwner)		{if (m_pUnit != NULL)	m_pUnit->setPreviousOwner((PlayerTypes)eNewOwner);}
-bool CyUnit::isAIControl() const					{return m_pUnit ? m_pUnit->isAIControl() : false;}
+bool CyUnit::isEnraged() const					{return m_pUnit ? m_pUnit->isEnraged() : false;}
 bool CyUnit::isImmuneToCapture() const				{return m_pUnit ? m_pUnit->isImmuneToCapture() : false;}
 bool CyUnit::isCommunalProperty() const				{return m_pUnit ? m_pUnit->isCommunalProperty() : false;}
 bool CyUnit::isNeverHostile() const					{return m_pUnit ? m_pUnit->isNeverHostile() : false;}

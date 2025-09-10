@@ -106,11 +106,11 @@ public:
 	int getNearestLandArea() const;																															// Exposed to Python
 	CvPlot* getNearestLandPlot() const;																													// Exposed to Python
 
-	int seeFromLevel(TeamTypes eTeam) const;																										// Exposed to Python
+	int seeFromLevel(TeamTypes eTeam, bool bAerial = false) const;																								// Exposed to Python
 	int seeThroughLevel() const;																																// Exposed to Python
 	void changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups);
 	bool canSeePlot(CvPlot *plot, TeamTypes eTeam, int iRange) const;
-	bool canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const;
+	bool canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool bOuterRing, bool bAerial = false) const;
 	void updateSight(bool bIncrement, bool bUpdatePlotGroups);
 	void updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups);
 
@@ -653,7 +653,7 @@ public:
 	DllExport bool shouldDisplayBridge(CvPlot* pToPlot, PlayerTypes ePlayer) const;
 	DllExport bool checkLateEra() const;
 
-//FfH: Added by Kael 08/15/2007
+	//FfH: Added by Kael 08/15/2007
 	bool isAdjacentToWater() const;
 	bool isBuilding(BuildTypes eBuild, TeamTypes eTeam, int iRange, bool bExcludeCenter) const;
 
@@ -686,7 +686,7 @@ public:
 	void setTempTerrainType(TerrainTypes eNewValue, int iTimer);
 	int getTempTerrainTimer() const;
 	void changeTempTerrainTimer(int iChange);
-//FfH: End Add
+
 
 /*************************************************************************************************/
 /**	New Tag Defs	(TerrainInfos)			09/19/08								Jean Elcard	**/
@@ -787,20 +787,14 @@ public:
 	void setCurrentOutgoingAirlift(int iNewValue);
 	void changeCurrentOutgoingAirlift(int iNewValue);
 	int getMaxOutgoingAirlift() const;
-	/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/************************************************************************************************/
-/* Influence Driven War                   06/06/10                                 Valkrionn    */
-/*                                                                                              */
-/* Original Author Moctezuma              End                                                   */
-/************************************************************************************************/
+
+	// Influence Driven War - Valkrionn, Moctezuma - 06/06/10
 	bool canBeInfluenced();
 	bool isFixedBorders();
 	void setFixedBorders(bool bNewValue);
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+
+	int calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealReal = 0) const;
+
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 

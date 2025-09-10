@@ -1480,6 +1480,8 @@ public:
 
 	int getBestYieldAvailable(YieldTypes eYield) const;
 
+	bool isHiddenNationality();
+
 protected:
 
 	int m_iID;

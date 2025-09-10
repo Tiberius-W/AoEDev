@@ -3160,15 +3160,17 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 						// get average damage
 						int iAverageDamage = 0;
+						int iSumHP = 0;
 						CLLNode<IDInfo>* pUnitNode = pHeadGroup->headUnitNode();
 						while (pUnitNode != NULL)
 						{
 							CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 							pUnitNode = pHeadGroup->nextUnitNode(pUnitNode);
 
-							iAverageDamage += (pLoopUnit->getDamage() * pLoopUnit->maxHitPoints()) / 100;
+							iAverageDamage += pLoopUnit->getDamageReal();
+							iSumHP += pLoopUnit->maxHitPoints();
 						}
-						iAverageDamage /= pHeadGroup->getNumUnits();
+						iAverageDamage = 100 * iAverageDamage / iSumHP;
 						if (iAverageDamage > 0)
 						{
 							szString.append(CvWString::format(L" %d%%", 100 - iAverageDamage));
@@ -4011,10 +4013,24 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				//szString += NEWLINE + szTempBuffer;
 			}
 
-//FfH: Modified by Kael 09/02/2007
-//			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, NULL)));
+			if (pDefender->isFear() && !pAttacker->isImmuneToFear())
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_FEAR_ATTACKING", pDefender->calcFearChance(pAttacker)));
+				szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+			}
+			if (pAttacker->isFear() && !pPlot->isCity(true))
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_SCARE_DEFENDERS"));
+				szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+			}
+
+			//FfH: Modified by Kael 09/02/2007
+			// szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, NULL)));
 			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, pDefender)));
-//FfH: End Modify
 
 			szDefenseOdds.Format(L"%.2f", pDefender->currCombatStrFloat(pPlot, pAttacker));
 			szString.append(NEWLINE);
@@ -4316,6 +4332,16 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD", iModifier));
+				}
+				// Addendum if some defense comes from a nearby improvement. See CvPlot::defenseModifier
+				if (pPlot->getPlotCity() == NULL && pDefender->getTeam() != NO_TEAM && (pPlot->getTeam() == NO_TEAM || GET_TEAM(pDefender->getTeam()).isFriendlyTerritory(pDefender->getTeam())))
+				{
+					iModifier = pPlot->getRangeDefense(pDefender->getTeam(), 3, false, true);
+					if (iModifier > 0)
+					{
+						szString.append(L" ");
+						szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD_IMPROVEMENT", iModifier));
+					}
 				}
 			}
 
@@ -6226,7 +6252,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 /**	Tweak									END													**/
 /*************************************************************************************************/
 			{
-				if (!(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade())))
+				if (!(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade())) && !GC.getTechInfo((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade()).isDisable())
 				{
 					szString.append(gDLL->getText("TXT_KEY_PLOT_RESEARCH", GC.getTechInfo((TechTypes) GC.getBonusInfo(eBonus).getTechCityTrade()).getTextKeyWide()));
 				}
@@ -6265,7 +6291,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 									{
 										szString.append(gDLL->getText("TXT_KEY_PLOT_REQUIRES", kImprovementInfo.getTextKeyWide()));
 									}
-									else if (GC.getBonusInfo(eBonus).getTechCityTrade() != GC.getBuildInfo((BuildTypes) iI).getTechPrereq()) // TODO Ronkhar : do not show anything if raw mana
+									else if (GC.getBonusInfo(eBonus).getTechCityTrade() != GC.getBuildInfo((BuildTypes) iI).getTechPrereq() && !GC.getTechInfo((TechTypes)GC.getBonusInfo(eBonus).getTechCityTrade()).isDisable())
 									{
 										szString.append(gDLL->getText("TXT_KEY_PLOT_RESEARCH", GC.getTechInfo((TechTypes) GC.getBuildInfo((BuildTypes) iI).getTechPrereq()).getTextKeyWide()));
 									}
@@ -6470,9 +6496,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (iDamage > 0)
 		{
+			FeatureTypes eFeature = pPlot->getFeatureType();
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage));
+			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage, GC.getFeatureInfo(eFeature).getDamageLimit(),
+				GC.getDamageTypeInfo((DamageTypes)GC.getFeatureInfo(eFeature).getDamageType()).getTextKeyWide()));
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}
@@ -6482,9 +6510,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (iDamage > 0)
 		{
+			PlotEffectTypes ePlotEffect = pPlot->getPlotEffectType();
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage));
+			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage, GC.getPlotEffectInfo(ePlotEffect).getDamageLimit(),
+				GC.getDamageTypeInfo((DamageTypes)GC.getPlotEffectInfo(ePlotEffect).getDamageType()).getTextKeyWide()));
 			szString.append(CvWString::format(ENDCOLR));
 		}
 	}
@@ -12971,12 +13001,12 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	if (GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange() > 0)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT", GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT", GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
 	}
 	if (GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange() < 0)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT", (-1*GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange())));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT", -1 * GC.getPromotionInfo(ePromotion).getEnemyWithdrawalChange()));
 	}
 
 	if (GC.getPromotionInfo(ePromotion).getCargoChange() != 0)
@@ -16558,7 +16588,7 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); ++iI)
 	{
-		if (GC.getUnitInfo(eUnit).getBuildings(iI) || GC.getUnitInfo(eUnit).getForceBuildings(iI))
+		if (GC.getUnitInfo(eUnit).getBuildings(iI))
 		{
 			szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_UNIT_CAN_CONSTRUCT").c_str());
 			CvWString szBuildingLink = CvWString::format(L"<link=literal>%s</link>", GC.getBuildingInfo((BuildingTypes) iI).getDescription());
@@ -16858,15 +16888,15 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WITHDRAWL_PROBABILITY", GC.getUnitInfo(eUnit).getWithdrawalProbability()));
 	}
-	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() > 0)
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_ENNEMY_WITHDRAWAL_TEXT", GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
-	}
 	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() < 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENNEMY_WITHDRAWAL_TEXT", (-1*GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability())));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DECREASE_ENEMY_WITHDRAWAL_TEXT", -1 * GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
+	}
+	if (GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability() > 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_INCREASE_ENEMY_WITHDRAWAL_TEXT", GC.getUnitInfo(eUnit).getEnemyWithdrawalProbability()));
 	}
 
 /*************************************************************************************************/
@@ -20406,7 +20436,7 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); ++iI)
 	{
-		if (GC.getUnitInfo((UnitTypes)iI).getBuildings(eBuilding) || GC.getUnitInfo((UnitTypes)iI).getForceBuildings(eBuilding))
+		if (GC.getUnitInfo((UnitTypes)iI).getBuildings(eBuilding))
 		{
 			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_UNIT_REQUIRED_TO_BUILD").c_str());
 			szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo((UnitTypes)iI).getDescription());
@@ -26495,6 +26525,13 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 		setYieldChangeHelp(szBuffer, L"", L"", L"", aiYields);
 	}
 
+	if (GC.getFeatureInfo(eFeature).getTurnDamage() > 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
+	}
+
 /*************************************************************************************************/
 /**	CivPlotMods								03/31/09								Jean Elcard	**/
 /**																								**/
@@ -26654,7 +26691,8 @@ void CvGameTextMgr::setPlotEffectHelp(CvWStringBuffer& szBuffer, PlotEffectTypes
 	if (feature.getTurnDamage() > 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DAMAGE", feature.getTurnDamage(),feature.getDamageLimit(),GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
+		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", feature.getTurnDamage(), feature.getDamageLimit(), GC.getDamageTypeInfo((DamageTypes)feature.getDamageType()).getTextKeyWide()));
 	}
 	if (feature.getMaxPlotCounter() ==0)
 	{

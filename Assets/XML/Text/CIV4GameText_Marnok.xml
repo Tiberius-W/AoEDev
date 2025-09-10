@@ -63,11 +63,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_ENRAGED</Tag>
-		<English>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in his way</English>
-		<French>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in his way</French>
+		<English>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in its way!</English>
+		<French>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in its way!</French>
 		<German>Niemand weiß, wohin Eure Einheit rennt, aber es ist klar, dass sie IHM nicht in die Quere kommen will.</German>
-		<Italian>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in his way</Italian>
-		<Spanish>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in his way</Spanish>
+		<Italian>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in its way!</Italian>
+		<Spanish>Nobody is sure where your unit is running to, but everyone is sure they don't want to get in its way!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_SPIDER</Tag>
@@ -199,19 +199,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_FAWN</Tag>
-		<English>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known</English>
-		<French>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known</French>
+		<English>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known.</English>
+		<French>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known.</French>
 		<German>Oftmals für zahm gehalten, versetzen Euer Missgeschick im Unterschlupf und der Versuch, auf der uralten roten Eiche Eure Initialen einzuritzen, diese jämmerliche Bestie in eine Raserei, wie sie noch nicht bei vielen Rehkitzen beobachtet werden konnte.</German>
-		<Italian>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known</Italian>
-		<Spanish>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known</Spanish>
+		<Italian>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known.</Italian>
+		<Spanish>Often considered docile, your misadventures in the lair and attempt to carve on an ancient Red Oak have awoken in this humble beast a rage for which few Fawns are known.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_DEATH_KNIGHT</Tag>
-		<English>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed</English>
-		<French>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed</French>
+		<English>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed.</English>
+		<French>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed.</French>
 		<German>Der Todesritter - seiner Aufgabe sogar über den Ruf des Grabes hinaus verpflichtet - erweist sich als unerbittlicher Gegner, der Störenfrieden nicht eben freundlich entgegentritt.</German>
-		<Italian>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed</Italian>
-		<Spanish>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed</Spanish>
+		<Italian>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed.</Italian>
+		<Spanish>Dedicated to his task beyond even the call of the grave, the Death Knight is a relentless adversary who doesn't take kindly to being disturbed.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_PITBEAST</Tag>
@@ -231,11 +231,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_WITHERED</Tag>
-		<English>Your unit faces a sorceror in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken it's toll.</English>
-		<French>Your unit faces a sorceror in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken it's toll.</French>
+		<English>Your unit faces a sorcerer in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken its toll.</English>
+		<French>Your unit faces a sorcerer in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken its toll.</French>
 		<German>Eure Einheit sieht sich einem Hexenmeister gegenüber. Obwohl Eure Truppen siegreich sind, fordert die beschworene Schwarze Magie ihren Tribut.</German>
-		<Italian>Your unit faces a sorceror in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken it's toll.</Italian>
-		<Spanish>Your unit faces a sorceror in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken it's toll.</Spanish>
+		<Italian>Your unit faces a sorcerer in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken its toll.</Italian>
+		<Spanish>Your unit faces a sorcerer in his chamber. Though your forces are victorious, the dark magic cast against your unit has taken its toll.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_ENERVATED</Tag>
@@ -423,7 +423,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_VEHEM_PROPER_BURIAL_ELOHIM</Tag>
-		<English>Your unit happens upon the scattered remains of an old adventuring party, long lost in the dungeon. As soon as the last of the lair's inhabitants are defeated, your men perform a proper burial for those who came before you. </English>
+		<English>Your unit happens upon the scattered remains of an old adventuring party, long lost in the dungeon. As soon as the last of the lair's inhabitants are defeated, your men perform a proper burial for those who came before you.</English>
 		<French>Your unit happens upon the scattered remains of an old adventuring party, long lost in the dungeon. As soon as the last of the lair's inhabitants are defeated, your men perform a proper burial for those who came before you.</French>
 		<German>Eure Einheit stößt auf die verstreuten &#220;berreste einer früheren Abenteurergruppe, lange schon verschollen in dem Dungeon. Sobald der Letzte der Bewohner des Unterschlupfes niedergemacht ist, bestatten Eure Männer diejenigen, die vor Euch kamen, in Würde.</German>
 		<Italian>Your unit happens upon the scattered remains of an old adventuring party, long lost in the dungeon. As soon as the last of the lair's inhabitants are defeated, your men perform a proper burial for those who came before you.</Italian>

@@ -19,7 +19,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>7</iGridY>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -47,8 +47,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>23</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>30</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -80,7 +80,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>20</iGridY>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -113,8 +113,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>13</iGridY>
+			<iGridX>7</iGridX>
+			<iGridY>8</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -153,7 +153,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
-			<iGridY>8</iGridY>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -189,8 +189,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>14</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>6</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -222,15 +222,15 @@
 			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>60</iAIWeight>
-			<iCost>1600</iCost>
+			<iCost>2000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_SCIENTIST</FirstFreeUnitClass>
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>9</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -264,7 +264,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>3</iGridX>
-			<iGridY>12</iGridY>
+			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -279,9 +279,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
+			<OrPreReqs>
 				<PrereqTech>TECH_CRAFTING</PrereqTech>
-			</AndPreReqs>
+			</OrPreReqs>
 			<Quote>TXT_KEY_TECH_ARCHERY_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -336,8 +336,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>8</iGridX>
-			<iGridY>8</iGridY>
+			<iGridX>11</iGridX>
+			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -371,7 +371,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>10</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
@@ -422,8 +422,8 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>19</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -458,8 +458,8 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>12</iGridY>
+			<iGridX>9</iGridX>
+			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -499,8 +499,8 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>2</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>4</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -532,7 +532,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
-			<iGridY>6</iGridY>
+			<iGridY>18</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -574,7 +574,7 @@
 			<bMapTrading>1</bMapTrading>
 			<bOpenBordersTrading>1</bOpenBordersTrading>
 			<iGridX>2</iGridX>
-			<iGridY>12</iGridY>
+			<iGridY>6</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -613,8 +613,8 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>18</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -654,8 +654,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>31</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>24</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -700,8 +700,8 @@
 			<bGoodyTech>1</bGoodyTech>
 			<bBridgeBuilding>1</bBridgeBuilding>
 			<bIrrigation>1</bIrrigation>
-			<iGridX>3</iGridX>
-			<iGridY>4</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>2</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -727,8 +727,8 @@
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
-			<iGridX>1</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>2</iGridX>
+			<iGridY>34</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -765,7 +765,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>3</iGridY>
+			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -795,8 +795,8 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bGoldTrading>1</bGoldTrading>
-			<iGridX>4</iGridX>
-			<iGridY>17</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -831,8 +831,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>9</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>14</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -868,7 +868,7 @@
 			<Era>ERA_ANCIENT</Era>
 			<bDisable>1</bDisable>
 			<iGridX>1</iGridX>
-			<iGridY>14</iGridY>
+			<iGridY>16</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -894,8 +894,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>21</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>28</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -927,8 +927,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>2</iGridY>
+			<iGridX>12</iGridX>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -944,10 +944,10 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
+				<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_THEOLOGY</PrereqTech>
+				<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_DIVINE_ESSENCE_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
@@ -967,8 +967,8 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>6</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>16</iGridY>
 			<CommerceFlexible>
 				<bFlexible>0</bFlexible>
 				<bFlexible>0</bFlexible>
@@ -1011,8 +1011,8 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
-			<iGridY>18</iGridY>
+			<iGridX>3</iGridX>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -1036,11 +1036,9 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
+				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 				<PrereqTech>TECH_ANCIENT_CHANTS</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_EDUCATION_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -1058,8 +1056,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>25</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>32</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -1077,7 +1075,6 @@
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Elementalism.dds</Button>
-
 		</TechInfo>
 		<TechInfo>		<!-- Engineering -->
 			<Type>TECH_ENGINEERING</Type>
@@ -1091,8 +1088,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>20</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>15</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -1131,7 +1128,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>1</iGridX>
-			<iGridY>12</iGridY>
+			<iGridY>8</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -1176,8 +1173,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>33</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>28</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -1211,8 +1208,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>14</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>8</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -1247,8 +1244,8 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>6</iGridY>
+			<iGridX>2</iGridX>
+			<iGridY>16</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1286,7 +1283,7 @@
 			<bDefensivePactTrading>1</bDefensivePactTrading>
 			<bPermanentAllianceTrading>1</bPermanentAllianceTrading>
 			<bVassalTrading>1</bVassalTrading>
-			<iGridX>4</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>19</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1377,8 +1374,8 @@
 			<iHappiness>1</iHappiness>
 			<iAsset>64</iAsset>
 			<bRepeat>1</bRepeat>
-			<iGridX>9</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>13</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1434,7 +1431,7 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>18</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1510,8 +1507,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>7</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>12</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1552,7 +1549,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>3</iGridX>
-			<iGridY>8</iGridY>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1588,8 +1585,8 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
-			<iGridY>14</iGridY>
+			<iGridX>3</iGridX>
+			<iGridY>8</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1622,8 +1619,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>48</iAsset>
-			<iGridX>2</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>3</iGridX>
+			<iGridY>34</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -1671,8 +1668,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>2</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>4</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -1704,8 +1701,8 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1747,8 +1744,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>8</iGridX>
-			<iGridY>20</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>15</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1784,8 +1781,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>32</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>30</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1828,7 +1825,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
-			<iGridY>4</iGridY>
+			<iGridY>2</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1867,8 +1864,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>20</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>18</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1904,8 +1901,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>4</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>2</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1948,8 +1945,8 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>17</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2027,8 +2024,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>16</iGridY>
+			<iGridX>5</iGridX>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2110,7 +2107,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
-			<iGridY>2</iGridY>
+			<iGridY>4</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2146,8 +2143,8 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>2</iGridY>
+			<iGridX>12</iGridX>
+			<iGridY>4</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2190,7 +2187,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
-			<iGridY>22</iGridY>
+			<iGridY>24</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2233,8 +2230,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>27</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>34</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -2308,7 +2305,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_ANCIENT</Era>
 			<iGridX>1</iGridX>
-			<iGridY>18</iGridY>
+			<iGridY>14</iGridY>
 			<Quote>TXT_KEY_TECH_SWAMPDWELLING_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -2324,7 +2321,7 @@
 			<Era>ERA_ANCIENT</Era>
 			<bDisable>1</bDisable>
 			<iGridX>1</iGridX>
-			<iGridY>16</iGridY>
+			<iGridY>12</iGridY>
 			<Quote>TXT_KEY_TECH_THE_GIFT_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -2341,8 +2338,8 @@
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>64</iAsset>
 			<bMapVisible>1</bMapVisible>
-			<iGridX>8</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>12</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2382,7 +2379,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bExtraWaterSeeFrom>1</bExtraWaterSeeFrom>
-			<iGridX>4</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>10</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2422,8 +2419,8 @@
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
-			<iGridX>1</iGridX>
-			<iGridY>34</iGridY>
+			<iGridX>2</iGridX>
+			<iGridY>32</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2463,8 +2460,8 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>25</iGridY>
+			<iGridX>12</iGridX>
+			<iGridY>33</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2499,8 +2496,8 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>31</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>25</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2536,8 +2533,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>15</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>6</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2577,8 +2574,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>12</iGridY>
+			<iGridX>11</iGridX>
+			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2621,8 +2618,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>31</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>24</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2657,8 +2654,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>33</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>28</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -2688,8 +2685,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>29</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2724,8 +2721,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>34</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>26</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2767,7 +2764,7 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>10</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
@@ -2815,8 +2812,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>4</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>2</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2879,8 +2876,8 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
-			<iGridY>2</iGridY>
+			<iGridX>7</iGridX>
+			<iGridY>4</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2909,15 +2906,15 @@
 			<Strategy>TEXT_MUST_BE_WRITTEN</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>70</iAIWeight>
-			<iCost>2000</iCost>
+			<iCost>1600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>40</iAsset>
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2963,8 +2960,8 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>8</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -3007,8 +3004,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>23</iGridY>
+			<iGridX>11</iGridX>
+			<iGridY>31</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3043,8 +3040,8 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>5</iGridX>
-			<iGridY>17</iGridY>
+			<iGridX>8</iGridX>
+			<iGridY>20</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -3083,8 +3080,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
-			<iGridY>29</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3120,8 +3117,8 @@
 			<iPower>8</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
-			<iGridY>14</iGridY>
+			<iGridX>4</iGridX>
+			<iGridY>8</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3168,7 +3165,7 @@
 			<bMercenaryUnlock>1</bMercenaryUnlock>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>4</iGridX>
-			<iGridY>8</iGridY>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3207,7 +3204,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>3</iGridX>
-			<iGridY>16</iGridY>
+			<iGridY>22</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -3241,8 +3238,8 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>8</iGridY>
+			<iGridX>10</iGridX>
+			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -3350,7 +3347,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>4</iGridX>
-			<iGridY>29</iGridY>
+			<iGridY>27</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3391,7 +3388,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>4</iGridX>
-			<iGridY>33</iGridY>
+			<iGridY>23</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3431,7 +3428,7 @@
 			<bTrade>1</bTrade>
 			<bTechTrading>1</bTechTrading>
 			<iGridX>3</iGridX>
-			<iGridY>20</iGridY>
+			<iGridY>18</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -3474,7 +3471,7 @@
 			<Era>ERA_ANCIENT</Era>
 			<bDisable>1</bDisable>
 			<iGridX>1</iGridX>
-			<iGridY>22</iGridY>
+			<iGridY>2</iGridY>
 			<Quote>TXT_KEY_TECH_DARK_SECRETS_QUOTE</Quote>
 			<Sound>AS2D_TECH_DING</Sound>
 			<SoundMP>AS2D_TECH_DING</SoundMP>
@@ -3492,8 +3489,8 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>7</iGridX>
-			<iGridY>21</iGridY>
+			<iGridX>9</iGridX>
+			<iGridY>17</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -3528,8 +3525,8 @@
 			<iCost>600</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_ANCIENT</Era>
-			<iGridX>3</iGridX>
-			<iGridY>26</iGridY>
+			<iGridX>5</iGridX>
+			<iGridY>27</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -3554,8 +3551,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>32</iAsset>
-			<iGridX>1</iGridX>
-			<iGridY>24</iGridY>
+			<iGridX>6</iGridX>
+			<iGridY>26</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3570,9 +3567,9 @@
 					<iFlavor>20</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
+			<OrPreReqs>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-			</AndPreReqs>
+			</OrPreReqs>
 			<Quote>TXT_KEY_TECH_WHITE_HAND_QUOTE</Quote>
 			<bTrade>1</bTrade>
 			<Sound>AS2D_TECH_DING</Sound>

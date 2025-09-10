@@ -21,8 +21,8 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Description>TXT_KEY_FEATURE_FLAMES</Description>
 			<DefaultFeatureGraphics>FEATURE_FLAMES</DefaultFeatureGraphics>
-			<iTurnDamage>10</iTurnDamage>
-			<iDamageLimit>50</iDamageLimit>
+			<iTurnDamage>15</iTurnDamage>
+			<iDamageLimit>60</iDamageLimit>
 			<DamageType>DAMAGE_FIRE</DamageType>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Flames.dds</Button>
 		</PlotEffectInfo>
@@ -32,6 +32,9 @@
 			<Help>TXT_KEY_FEATURE_HAUNTED_LANDS_HELP</Help>
 			<Civilopedia>TXT_KEY_FEATURE_HAUNTED_LANDS_PEDIA</Civilopedia>
 			<DefaultFeatureGraphics>FEATURE_HAUNTED_LANDS</DefaultFeatureGraphics>
+			<iTurnDamage>5</iTurnDamage>
+			<iDamageLimit>50</iDamageLimit>
+			<DamageType>DAMAGE_POISON</DamageType>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -138,6 +141,9 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Description>TXT_KEY_FEATURE_SMOKE</Description>
 			<DefaultFeatureGraphics>FEATURE_MIST</DefaultFeatureGraphics>
+			<iTurnDamage>5</iTurnDamage>
+			<iDamageLimit>10</iDamageLimit>
+			<DamageType>DAMAGE_FIRE</DamageType>
 			<Button>Art/Interface/Buttons/Improvements/Smoke.dds</Button>
 		</PlotEffectInfo>
 		<PlotEffectInfo>		<!-- Blessed Lands -->

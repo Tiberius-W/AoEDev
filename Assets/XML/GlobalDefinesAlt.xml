@@ -629,10 +629,6 @@
 		<DefineTextVal>PROMOTION_WINDED</DefineTextVal>
 	</Define>
 	<Define>
-		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>
-		<iDefineIntVal>500</iDefineIntVal>
-	</Define>
-	<Define>
 		<DefineName>PEAK_EXTRA_DEFENSE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
@@ -762,8 +758,8 @@
 	</Define>
 	<Define>
 		<DefineName>RECON_VISIBILITY_RANGE</DefineName>
-		<!-- Overriding BTS default of 5 -->
-		<iDefineIntVal>4</iDefineIntVal>
+		<!-- Overriding BTS default of 5 (note we get effective +1 from some changes to LoS code for aerial units) -->
+		<iDefineIntVal>3</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>LAIR_AUTO_EXPLORE</DefineName>

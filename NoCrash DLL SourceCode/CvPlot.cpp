@@ -531,13 +531,9 @@ float CvPlot::getSymbolOffsetY(int iOffset) const
 TeamTypes CvPlot::getTeam() const
 {
 	if (isOwned())
-	{
 		return GET_PLAYER(getOwnerINLINE()).getTeam();
-	}
 	else
-	{
 		return NO_TEAM;
-	}
 }
 
 
@@ -767,20 +763,6 @@ void CvPlot::doTurn()
 
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
 	{
-		if (GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getTurnDamage() != 0)
-		{
-			CLLNode<IDInfo>* pUnitNode;
-			CvUnit* pLoopUnit;
-
-			pUnitNode = headUnitNode();
-
-			while (pUnitNode != NULL)
-			{
-				pLoopUnit = ::getUnit(pUnitNode->m_data);
-				pUnitNode = nextUnitNode(pUnitNode);
-				pLoopUnit->doDamage(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getTurnDamage(), GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getDamageLimit(), NULL, GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getDamageType(), false);
-			}
-		}
 		// XXX
 		if (getPlotEffectType() != NO_PLOT_EFFECT && !CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPythonPerTurn()).empty())
 		{
@@ -885,6 +867,10 @@ void CvPlot::doLairSpawn()
 	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
 	if ((3 * GC.getGameINLINE().getElapsedGameTurns() < (GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getBarbSpawnDelay()))
 	 || (GC.getGameINLINE().getNumCivCities() < GC.getGameINLINE().countCivPlayersAlive()))
+		return;
+
+	// 2.5 check; is this a world unit that can no longer spawn?
+	if (iUnit != NO_UNIT && iSpawnGroup == NO_SPAWNGROUP && GC.getGameINLINE().isUnitClassMaxedOut((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iUnit).getUnitClassType())))
 		return;
 
 	bool bValid = false;
@@ -1445,10 +1431,9 @@ void CvPlot::verifyUnitValidPlot()
 	{
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
+
 		if (NULL != pLoopUnit)
-		{
 			aUnits.push_back(pLoopUnit);
-		}
 	}
 
 	bool bErased = false;
@@ -1459,9 +1444,21 @@ void CvPlot::verifyUnitValidPlot()
 
 		if (pLoopUnit == NULL
 		|| !pLoopUnit->atPlot(this)
-		|| pLoopUnit->isCombat()
-		|| pLoopUnit->isCargo())
+		|| pLoopUnit->isCombat())
 		{
+			++it;
+			continue;
+		}
+
+		// Check to catch instance where python does something silly to a transport unit without touching its cargo
+		if (pLoopUnit->isCargo())
+		{
+			if (pLoopUnit->getTransportUnit()->plot() != this && !pLoopUnit->jumpToNearestValidPlot())
+			{
+				it = aUnits.erase(it);
+				continue;
+			}
+
 			++it;
 			continue;
 		}
@@ -1489,57 +1486,30 @@ void CvPlot::verifyUnitValidPlot()
 			++it;
 	}
 
-	if (isOwned())
+	if (!isOwned())
+		return;
+
+	it = aUnits.begin();
+	while (it != aUnits.end())
 	{
-		it = aUnits.begin();
-		while (it != aUnits.end())
+		CvUnit* pLoopUnit = *it;
+		bool bErased = false;
+
+		if (pLoopUnit == NULL
+		 || !pLoopUnit->atPlot(this)
+		 || pLoopUnit->isCombat()
+		 || (pLoopUnit->getTeam() == getTeam() || (getTeam() != NO_TEAM && GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
+		 || !isVisibleEnemyUnit(pLoopUnit)
+		 //  Xienwolf - 05/31/09 - Added isHeld, isCommunalPropery checks to keep the HELD units from bouncing out of their cages
+		 || pLoopUnit->isInvisible(getTeam(), false) || pLoopUnit->isHeld() || pLoopUnit->isCommunalProperty())
 		{
-			CvUnit* pLoopUnit = *it;
-			bool bErased = false;
-
-			if (pLoopUnit != NULL)
-			{
-				if (pLoopUnit->atPlot(this))
-				{
-					if (!(pLoopUnit->isCombat()))
-					{
-						if (pLoopUnit->getTeam() != getTeam() && (getTeam() == NO_TEAM || !GET_TEAM(getTeam()).isVassal(pLoopUnit->getTeam())))
-						{
-							if (isVisibleEnemyUnit(pLoopUnit))
-							{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							05/31/09											**/
-/**																								**/
-/**					Should keep the HELD units from bouncing out of their cages					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								if (!(pLoopUnit->isInvisible(getTeam(), false)))
-/**								----  End Original Code  ----									**/
-								if (!(pLoopUnit->isInvisible(getTeam(), false) || pLoopUnit->isHeld() || pLoopUnit->isCommunalProperty()))
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-								{
-									if (!pLoopUnit->jumpToNearestValidPlot())
-									{
-										bErased = true;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-
-			if (bErased)
-			{
-				it = aUnits.erase(it);
-			}
-			else
-			{
-				++it;
-			}
+			++it;
 		}
+		// Unit may be deleted!
+		else if (!pLoopUnit->jumpToNearestValidPlot())
+			it = aUnits.erase(it);
+		else
+			++it;
 	}
 }
 
@@ -2345,7 +2315,8 @@ CvPlot* CvPlot::getNearestLandPlot() const
 }
 
 
-int CvPlot::seeFromLevel(TeamTypes eTeam) const
+// "What level does a unit see when on this plot"
+int CvPlot::seeFromLevel(TeamTypes eTeam, bool bAerial) const
 {
 	int iLevel;
 
@@ -2353,30 +2324,28 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeFromLevel();
 
-	if (isPeak())
-	{
-		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
-	}
-
-	if (isHills())
-	{
-		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
-	}
-
 	if (isWater())
 	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
 
 		if (GET_TEAM(eTeam).isExtraWaterSeeFrom())
-		{
 			iLevel++;
-		}
 	}
+
+	// Flying units should always treated as if atop a peak
+	if (bAerial)
+		return iLevel + GC.getPEAK_SEE_FROM_CHANGE();
+
+	if (isPeak())
+		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
+
+	if (isHills())
+		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
 
 	return iLevel;
 }
 
-
+// "What level of sight is required to see across this plot". Adds feature and plot effect levels
 int CvPlot::seeThroughLevel() const
 {
 	int iLevel;
@@ -2386,68 +2355,51 @@ int CvPlot::seeThroughLevel() const
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel();
 
 	if (getFeatureType() != NO_FEATURE)
-	{
 		iLevel += GC.getFeatureInfo(getFeatureType()).getSeeThroughChange();
-	}
+
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
-	{
 		iLevel += GC.getPlotEffectInfo(getPlotEffectType()).getSeeThroughChange();
-	}
 
 	if (isPeak())
-	{
 		iLevel += GC.getPEAK_SEE_THROUGH_CHANGE();
-	}
 
 	if (isHills())
-	{
 		iLevel += GC.getHILLS_SEE_THROUGH_CHANGE();
-	}
 
 	if (isWater())
-	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
-	}
 
 	return iLevel;
 }
 
-
-// Add or remove visibility count to applicable tiles within range
+// Add or remove visibility count (bIncrement) to applicable tiles within iRange, given a pUnit
 void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, CvUnit* pUnit, bool bUpdatePlotGroups)
 {
 	int iDist;
-	bool bAerial = (pUnit != NULL && pUnit->getDomainType() == DOMAIN_AIR);
+	bool bOuterRing;
+	bool bAerial = (pUnit != NULL && (pUnit->getDomainType() == DOMAIN_AIR || pUnit->isFlying()));
 
-	//check one extra outer ring
-	if (!bAerial)
-		iRange++;
+	// Might be able to see one tile further, if that tile has a boosted see-from distance
+	iRange++;
 
 	int iLoop = 0;
+
 	if (pUnit != NULL)
-	{
-		iLoop = std::max(iLoop,pUnit->getPerception());
-	}
+		iLoop = std::max(iLoop, pUnit->getPerception());
+
 	for (int i = -1; i < iLoop; i++)
 	{
 		for (int dx = -iRange; dx <= iRange; dx++)
 		{
 			for (int dy = -iRange; dy <= iRange; dy++)
 			{
-				bool outerRing = false;
-				// Enable further sight only on straightaways
-				// if ((abs(dx) == iRange) || (abs(dy) == iRange))
-				// 	outerRing = true;
+				// This is the 'one tile further'
+				bOuterRing = false;
+				if ((abs(dx) == iRange) || (abs(dy) == iRange))
+					bOuterRing = true;
 
-				// Enable further sight all-around
-				iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
-				if (iDist > iRange)
-					continue;
-				if (iDist == iRange)
-					outerRing = true;
-
-				//check if anything blocking the plot
-				if (bAerial || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
+				//check if anything blocking the plot. Aerial avoid LoS except for outer ring
+				if ((bAerial && !bOuterRing) || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing, bAerial))
 				{
 					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 					if (NULL != pPlot)
@@ -2458,39 +2410,40 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 	}
 }
 
+// Checks if there is line-of-sight between this and pPlot for eTeam.
+// Does NOT account for improvements or unit type; see CvUnit::visibilityRange.
+// Returns true at step distance iRange+1 if pPlot is a higher level than this
 bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 {
 	if (pPlot == NULL)
 		return false;
 
-	// Units might be able to see one tile further, if that tile has a boosted see-from distance
+	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
+	if (stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) > iRange)
+		return false;
 
 	//find displacement
 	int dx = xDistance(getX(), pPlot->getX());
 	int dy = yDistance(getY(), pPlot->getY());
 
-	// Enable further sight all-around (same as plotDistance)
-	int iDist = std::max(dx, dy) + (std::min(dx, dy) / 2);
-	if (iDist > iRange)
-		return false;
+	bool bOuterRing = false;
 
-	bool outerRing = false;
-	// Enable further sight only on straightaways
-	// if ((abs(dx) == iRange) || (abs(dy) == iRange))
-	// 	outerRing = true;
-
-	if (iDist == iRange)
-		outerRing = true;
+	// This is the 'one tile further'
+	if ((abs(dx) == iRange) || (abs(dy) == iRange))
+		bOuterRing = true;
 
 	//check if nothing blocking the plot
-	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, outerRing))
+	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing))
 		return true;
 
 	return false;
 }
 
-bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool outerRing) const
+// some recursive magic. In short, counts backward to determine if this plot can see (dx, dy) but you gotta enter (dx, dy) in duplicate on initial call.
+// bfirstPlot should be called true when starting, bOuterRing for if the target is on 'the outer ring'; different see-from mechanics.
+// bAerial makes the starting see-from level be treated as if it were peak + 
+bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int originalDX, int originalDY, bool firstPlot, bool bOuterRing, bool bAerial) const
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 	if (pPlot == NULL)
@@ -2513,7 +2466,7 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 	int closest = -1;
 	for (int i=0;i<3;i++)
 	{
-		//int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
+		// int tempClosest = abs(displacements[i][0] * originalDX - displacements[i][1] * originalDY); //more accurate, but less structured on a grid
 		allClosest[i] = abs(displacements[i][0] * dy - displacements[i][1] * dx); //cross product
 		if((closest == -1) || (allClosest[i] < closest))
 		{
@@ -2532,19 +2485,21 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		if(allClosest[i] != closest)
 			continue;
 
-		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false))
+		// Try the first closest; work our way backwards until either there is a chain that leads to first plot, or everything returns false
+		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false, bAerial))
 			continue;
 
-		int fromLevel = seeFromLevel(eTeam);
+		int fromLevel = seeFromLevel(eTeam, bAerial);
 		int throughLevel = pPlot->seeThroughLevel();
 
-		if(outerRing) //check strictly higher level
+		if(bOuterRing) //check strictly higher level
 		{
 			CvPlot *passThroughPlot = plotXY(getX_INLINE(), getY_INLINE(), nextDX, nextDY);
 			int passThroughLevel = passThroughPlot->seeThroughLevel();
 			if (fromLevel >= passThroughLevel)
 			{
-				if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel)) //either we can see through to it or it is high enough to see from far
+				//either we can see through to it || it is high enough to see from far
+				if((fromLevel > passThroughLevel) || (pPlot->seeFromLevel(eTeam) > fromLevel))
 				{
 					return true;
 				}
@@ -2803,39 +2758,30 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
+	// --- First check for things that outright make the improvement invalid, or valid ---
+
 	// Xienwolf - 12/13/08 - Attempt to keep Unique Features from being removed on Mapgen
 	if (isCity() || (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isPermanent()))
-	{
 		return false;
-	}
 
 	if (isImpassable())
-	{
 		return false;
-	}
 
 	// Mountain Mod - Ahwaric - 19.09.09
-	if (isPeak())
-	{
-		if (GC.getImprovementInfo(eImprovement).isPeakMakesValid() || GC.getImprovementInfo(eImprovement).isRequiresPeak())
-		{
-			return true;
-		}
+	if (GC.getImprovementInfo(eImprovement).isRequiresPeak() && !isPeak())
 		return false;
-	}
-	else if (GC.getImprovementInfo(eImprovement).isRequiresPeak())
-	{
+	// Peak must have either of these to be valid
+	if (isPeak() && !(GC.getImprovementInfo(eImprovement).isRequiresPeak() || GC.getImprovementInfo(eImprovement).isPeakMakesValid()))
 		return false;
-	}
 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
-	{
 		return false;
-	}
 
+	// Check backwards; does a feature on this tile prevent improvements?
 	if (getFeatureType() != NO_FEATURE)
 	{
 		// Xienwolf - 12/27/08 - Allows for some unique Improvement/Feature combinations
+		// Allows to bypass features' "no improvement" IF we require that feature
 		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement()
 		&& !(GC.getImprovementInfo(eImprovement).isRequiresFeature() && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType())))
 		{
@@ -2843,115 +2789,58 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		}
 	}
 
+	// Special check for bonuses making improvements permissible, outside of regular restrictions
 	if ((getBonusType(eTeam) != NO_BONUS) && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam)))
-	{
 		return true;
-	}
 
 	if (GC.getImprovementInfo(eImprovement).isNoFreshWater() && isFreshWater())
-	{
 		return false;
-	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
-	{
 		return false;
-	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFeature() && (getFeatureType() == NO_FEATURE))
-	{
 		return false;
-	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresRiverSide())
 	{
-		bValid = false;
-
 		for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
 		{
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
 
-			if (pLoopPlot != NULL)
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (isRiverCrossing(directionXY(this, pLoopPlot)) && pLoopPlot->getImprovementType() != eImprovement)
 			{
-				if (isRiverCrossing(directionXY(this, pLoopPlot)))
-				{
-					if (pLoopPlot->getImprovementType() != eImprovement)
-					{
-						bValid = true;
-						break;
-					}
-				}
+				bValid = true;
+				break;
 			}
 		}
 
 		if (!bValid)
-		{
 			return false;
-		}
+		// Gotta reset bValid...
+		bValid = false;
 	}
 
-
-	if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
-	{
+	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s
+	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
 		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
-	{
+	else if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
 		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
-	{
+	else if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
 		bValid = true;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
-	{
+	else if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
 		bValid = true;
-	}
-
-	/* Blaze - Disabled; runs risk of hellfire spontaneously creating hell terrain, don't see the upside/purpose in AoE.
-
-	// Xienwolf - 02/01/09 - Validates Improvements against what the terrain will be after they are placed
-	if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() != 0)
-	{
-		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
-		{
-			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain()))
-			{
-				bValid = true;
-			}
-		}
-
-		if (GC.getImprovementInfo(eImprovement).getBasePlotCounterModify() + getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
-		{
-			if ((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain() != NO_TERRAIN && GC.getImprovementInfo(eImprovement).getTerrainMakesValid((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain()))
-			{
-				bValid = true;
-			}
-		}
-	}
-	*/
-
-	if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
-	{
+	else if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
 		bValid = true;
-	}
+	else if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+		bValid = true;
 
 	if (!bValid)
-	{
 		return false;
-	}
 
-	// Jean Elcard - CivPlotMods - 04/02/09 - Moved to Player-specific canHaveImprovement method.
-	// for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
-	// {
-	// 	if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI))
-	// 	{
-	// 		return false;
-	// 	}
-	// }
 
 	// ????
 	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
@@ -3806,36 +3695,20 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 	iModifier = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getDefenseModifier() : GC.getFeatureInfo(getFeatureType()).getDefenseModifier());
 
 	if (isHills())
-	{
 		iModifier += GC.getHILLS_EXTRA_DEFENSE();
-	}
 
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
 	if (isPeak())
-	{
 		iModifier += GC.getPEAK_EXTRA_DEFENSE();
-	}
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
 
 	if (bHelp)
-	{
 		eImprovement = getRevealedImprovementType(GC.getGameINLINE().getActiveTeam(), false);
-	}
 	else
-	{
 		eImprovement = getImprovementType();
-	}
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
 		if ( getTeam() == NO_TEAM|| eDefender == NO_TEAM || (eDefender != NO_TEAM && GET_TEAM(eDefender).isFriendlyTerritory(getTeam())))
-		{
 			iModifier += GC.getImprovementInfo(eImprovement).getDefenseModifier();
-		}
 	}
 
 	if (!bHelp)
@@ -3843,20 +3716,13 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 		pCity = getPlotCity();
 
 		if (pCity != NULL)
-		{
 			iModifier += pCity->getDefenseModifier(bIgnoreBuilding);
-		}
-
-//FfH: Added by Kael
+		//FfH: Added by Kael
 		else
 		{
 			if (eDefender != NO_TEAM && (getTeam() == NO_TEAM || GET_TEAM(eDefender).isFriendlyTerritory(getTeam())))
-			{
 				iModifier += getRangeDefense(eDefender, 3, false, true);
-			}
 		}
-//FfH: End Add
-
 	}
 
 	return iModifier;
@@ -4500,6 +4366,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 }
 
 
+// Apply some function to all units on plot, of optional different player/team than eOwner/eTeam.
 void CvPlot::plotAction(PlotUnitFunc func, int iData1, int iData2, PlayerTypes eOwner, TeamTypes eTeam)
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4512,17 +4379,15 @@ void CvPlot::plotAction(PlotUnitFunc func, int iData1, int iData2, PlayerTypes e
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
-		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
-			{
-				func(pLoopUnit, iData1, iData2);
-			}
-		}
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			func(pLoopUnit, iData1, iData2);
 	}
 }
 
-
+// Count all units on plot against functions A of optional different player/team than eOwner/eTeam and optional function B; see PUFs. Use plotCheck instead to find if just 1 success.
 int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerTypes eOwner, TeamTypes eTeam, ConstPlotUnitFunc funcB, int iData1B, int iData2B) const
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4538,17 +4403,17 @@ int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerT
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if (eTeam != NO_TEAM && pLoopUnit->getTeam() != eTeam)
+			continue;
+
+		if ((funcA == NULL) || funcA(pLoopUnit, iData1A, iData2A))
 		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
 			{
-				if ((funcA == NULL) || funcA(pLoopUnit, iData1A, iData2A))
-				{
-					if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
-					{
-						iCount++;
-					}
-				}
+				iCount++;
 			}
 		}
 	}
@@ -4556,6 +4421,7 @@ int CvPlot::plotCount(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerT
 	return iCount;
 }
 
+// Check all units on plot against functions A of optional different player/team than eOwner/eTeam and optional function B; see PUFs. Returns first success.
 CvUnit* CvPlot::plotCheck(ConstPlotUnitFunc funcA, int iData1A, int iData2A, PlayerTypes eOwner, TeamTypes eTeam, ConstPlotUnitFunc funcB, int iData1B, int iData2B) const
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -4568,17 +4434,17 @@ CvUnit* CvPlot::plotCheck(ConstPlotUnitFunc funcA, int iData1A, int iData2A, Pla
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
+		if (eOwner != NO_PLAYER && pLoopUnit->getOwnerINLINE() != eOwner)
+			continue;
+
+		if (eTeam != NO_TEAM && pLoopUnit->getTeam() != eTeam)
+			continue;
+
+		if (funcA(pLoopUnit, iData1A, iData2A))
 		{
-			if ((eTeam == NO_TEAM) || (pLoopUnit->getTeam() == eTeam))
+			if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
 			{
-				if (funcA(pLoopUnit, iData1A, iData2A))
-				{
-					if ((funcB == NULL) || funcB(pLoopUnit, iData1B, iData2B))
-					{
-						return pLoopUnit;
-					}
-				}
+				return pLoopUnit;
 			}
 		}
 	}
@@ -4595,50 +4461,28 @@ bool CvPlot::isOwned() const
 
 bool CvPlot::isBarbarian() const
 {
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getOwnerINLINE() == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
+	// MultiBarb - Xienwolf - 12/23/08 - Adds extra Barbarian Civilizations
 	return (getOwnerINLINE() == ORC_PLAYER || getOwnerINLINE() == ANIMAL_PLAYER || getOwnerINLINE() == DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
 }
 
 
 bool CvPlot::isRevealedBarbarian() const
 {
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08									Xienwolf	**/
-/**																								**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
-	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ORC_PLAYER || getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ANIMAL_PLAYER || getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
+	// MultiBarb - Xienwolf - 12/23/08 - Adds extra Barbarian Civilizations
+	return (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ORC_PLAYER
+	|| getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == ANIMAL_PLAYER
+	|| getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) == DEMON_PLAYER);
 }
 
 
 bool CvPlot::isVisible(TeamTypes eTeam, bool bDebug) const
 {
 	if (bDebug && GC.getGameINLINE().isDebugMode())
-	{
 		return true;
-	}
 	else
 	{
 		if (eTeam == NO_TEAM)
-		{
 			return false;
-		}
 
 		return ((getVisibilityCount(eTeam) > 0) || (getStolenVisibilityCount(eTeam) > 0));
 	}
@@ -5432,9 +5276,7 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 bool CvPlot::isValidDomainForLocation(const CvUnit& unit) const
 {
 	if (isValidDomainForAction(unit))
-	{
 		return true;
-	}
 
 	return isCity(true, unit.getTeam());
 }
@@ -8838,128 +8680,98 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (iNewValue >= 0 && getCultureControl(eIndex) != iNewValue)
+	if (iNewValue < 0 || getCultureControl(eIndex) == iNewValue)
+		return;
+
+	if(NULL == m_aiCultureControl)
 	{
-		if(NULL == m_aiCultureControl)
+		m_aiCultureControl = new int[MAX_PLAYERS];
+		for (int iI = 0; iI < MAX_PLAYERS; ++iI)
 		{
-			m_aiCultureControl = new int[MAX_PLAYERS];
-			for (int iI = 0; iI < MAX_PLAYERS; ++iI)
-			{
-				m_aiCultureControl[iI] = 0;
-			}
-		}
-
-		m_aiCultureControl[eIndex] = iNewValue;
-		FAssert(getCultureControl(eIndex) >= 0);
-
-		if (bUpdate)
-		{
-			updateCulture(true, bUpdatePlotGroups);
-		}
-
-		pCity = getPlotCity();
-
-		if (pCity != NULL)
-		{
-			pCity->AI_setAssignWorkDirty(true);
+			m_aiCultureControl[iI] = 0;
 		}
 	}
+
+	m_aiCultureControl[eIndex] = iNewValue;
+	FAssert(getCultureControl(eIndex) >= 0);
+
+	if (bUpdate)
+		updateCulture(true, bUpdatePlotGroups);
+
+	pCity = getPlotCity();
+
+	if (pCity != NULL)
+		pCity->AI_setAssignWorkDirty(true);
 }
 
 
 void CvPlot::changeCultureControl(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
-	if (iChange != 0)
-	{
-		if ((getCultureControl(eIndex) + iChange) >= 0)
-		{
-			setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
-		}
-		else
-		{
-			setCultureControl(eIndex, 0, bUpdate, true);
-		}
-	}
+	if (iChange == 0)
+		return;
+
+	if ((getCultureControl(eIndex) + iChange) >= 0)
+		setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
+	else
+		setCultureControl(eIndex, 0, bUpdate, true);
 }
 
 void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
-	if (ePlayer != NO_PLAYER && eImprovement != NO_IMPROVEMENT)
+	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+		return;
+
+	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
+	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
+	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
+	int iDX, iDY;
+	CvPlot* pLoopPlot;
+	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
-		if (GC.getImprovementInfo(eImprovement).getCultureControlStrength() > 0)
+		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
-			int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-			int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
-			int iDX, iDY;
-			CvPlot* pLoopPlot;
-			for (iDX = -iRange; iDX <= iRange; iDX++)
-			{
-				for (iDY = -iRange; iDY <= iRange; iDY++)
-				{
-					// This will make it skip the 4 corner Plots
-					if ((iRange > 1) && (iDX == iRange || iDX == -iRange) && (iDY == iRange || iDY == -iRange))
-					{
-						continue;
-					}
-					pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-					if (pLoopPlot != NULL)
-					{
-						if (iStrength > 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
-						}
-						if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
-						}
-					}
-				}
-			}
+			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
+				continue;
+
+			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (iStrength > 0)
+				pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
+
+			if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
+				pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
 		}
 	}
 }
 
 void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
-	if (ePlayer != NO_PLAYER && eImprovement != NO_IMPROVEMENT)
+	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+		return;
+
+	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
+	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
+	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
+	int iDX, iDY;
+	CvPlot* pLoopPlot;
+	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
-		if (GC.getImprovementInfo(eImprovement).getCultureControlStrength() > 0)
+		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
-			int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-			int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
-			int iDX, iDY;
-			CvPlot* pLoopPlot;
-			for (iDX = -iRange; iDX <= iRange; iDX++)
-			{
-				for (iDY = -iRange; iDY <= iRange; iDY++)
-				{
-					// This will make it skip the 4 corner Plots
-					if ((iRange > 1) && (iDX == iRange || iDX == -iRange) && (iDY == iRange || iDY == -iRange))
-					{
-						continue;
-					}
-					pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-					if (pLoopPlot != NULL)
-					{
-						if (iStrength > 0)
-						{
-							pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
-						}
-					//	if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-					//	{
-					//		pLoopPlot->changeCultureControl(ePlayer, -iCenterTileBonus*10, bUpdateInterface);
-					//	}
-					}
-				}
-			}
+			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
+				continue;
+
+			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			if (pLoopPlot == NULL)
+				continue;
+
+			if (iStrength > 0)
+				pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
 		}
 	}
 }
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
 
 
 
@@ -13563,71 +13375,51 @@ bool CvPlot::isBuilding(BuildTypes eBuild, TeamTypes eTeam, int iRange, bool bEx
 	return false;
 }
 
+// Checks for if there are valid improvements within range providing additional tile defense. bFinal looks for potential upgrades.
 int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool bExcludeCenter) const
 {
-	int iModifier = 0;
+	int iModifier;
 	int iBestModifier = 0;
 	CvPlot* pLoopPlot;
 	ImprovementTypes eImprovement;
+
 	for (int iDX = -iRange; iDX <= iRange; iDX++)
 	{
 		for (int iDY = -iRange; iDY <= iRange; iDY++)
 		{
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-			if (pLoopPlot != NULL)
+
+			if (pLoopPlot == NULL || !pLoopPlot->isOwned())
+				continue;
+
+			eImprovement = pLoopPlot->getImprovementType();
+
+			// Tile must be friendly to the defending unit...
+			if (eImprovement == NO_IMPROVEMENT || !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender))
+				continue;
+			// And not be occupied by enemy forces
+			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
+				continue;
+
+			if (bFinal && finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
 			{
-				if (pLoopPlot->isOwned())
-				{
-					eImprovement = pLoopPlot->getImprovementType();
-					iModifier = 0;
-					if (eImprovement != NO_IMPROVEMENT)
-					{
-						if (bFinal)
-						{
-							if (finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
-							{
-/*************************************************************************************************/
-/**	MyLand									04/04/09								Xienwolf	**/
-/**																								**/
-/**				Not every Civ can fully upgrade every improvement that they can build			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								eImprovement = finalImprovementUpgrade(eImprovement);
-/**								----  End Original Code  ----									**/
-								CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
-								eImprovement = finalImprovementUpgrade(eImprovement, eCiv);
-/*************************************************************************************************/
-/**	MyLand									END													**/
-/*************************************************************************************************/
-							}
-						}
-						if (pLoopPlot->getTeam() == eDefender)
-						{
-							if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false, NO_PLAYER, NO_TEAM, NULL) == NULL)
-							{
-								if (iDX == 0 && iDY == 0)
-								{
-									if (!bExcludeCenter)
-									{
-										iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
-									}
-								}
-								else
-								{
-									if (abs(iDX) <= GC.getImprovementInfo(eImprovement).getRange() && abs(iDY) <= GC.getImprovementInfo(eImprovement).getRange())
-									{
-										iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
-									}
-								}
-								if (iModifier > iBestModifier)
-								{
-									iBestModifier = iModifier;
-								}
-							}
-						}
-					}
-				}
+				// MyLand - Xienwolf - 04/04/09 - Civ-unique improvements
+				CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
+				eImprovement = finalImprovementUpgrade(eImprovement, eCiv);
 			}
+
+			iModifier = 0;
+
+			if (iDX == 0 && iDY == 0)
+			{
+				if (!bExcludeCenter)
+					iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
+			}
+			else if (plotDistance(pLoopPlot, this) <= GC.getImprovementInfo(eImprovement).getRange())
+				iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
+
+			if (iModifier > iBestModifier)
+				iBestModifier = iModifier;
 		}
 	}
 	return iBestModifier;
@@ -14806,4 +14598,77 @@ int CvPlot::getMaxOutgoingAirlift() const
 		return GC.getImprovementInfo((ImprovementTypes)getImprovementType()).getMaxOutgoingAirlift();
 	}
 	return 0;
+}
+
+// Returns real damage that will be suffered by pUnit on next turn start if it ends its turn on this plot
+int CvPlot::calcTurnDamageReal(const CvUnit* pUnit, bool bCheckDamageLimits, int iMaxIncomingHealReal) const
+{
+	int iFeatureDamage = 0;
+	int iPlotEffectDamage = 0;
+	FeatureTypes eFeature = getFeatureType();
+	PlotEffectTypes ePlotEffect = getPlotEffectType();
+
+	// Negative feature damage... I guess you could have roving 'heal storms', or >100 resist that turns into healing, but that's not supported at this time.
+	if (eFeature != NO_FEATURE)
+		iFeatureDamage = std::max(0, GC.getFeatureInfo(eFeature).getTurnDamage() * (100 - pUnit->getDamageTypeResist((DamageTypes)GC.getFeatureInfo(eFeature).getDamageType())) / 100);
+	if (ePlotEffect != NO_PLOT_EFFECT)
+		iPlotEffectDamage = std::max(0, GC.getPlotEffectInfo(ePlotEffect).getTurnDamage() * (100 - pUnit->getDamageTypeResist((DamageTypes)GC.getPlotEffectInfo(ePlotEffect).getDamageType())) / 100);
+
+	// Common exits
+	if (iFeatureDamage == 0 && iPlotEffectDamage == 0)
+		return 0;
+	if (!bCheckDamageLimits)
+		return (iFeatureDamage + iPlotEffectDamage) * GC.getDefineINT("HIT_POINT_FACTOR");
+
+	// Start working with real damage instead of percentile
+	iFeatureDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
+	iPlotEffectDamage *= GC.getDefineINT("HIT_POINT_FACTOR");
+
+	// The damage upper limit comes from tile properties, but lower limit on damage output only applies if damage > healing
+	// This way units can't "heal up" to a damage threshold and then sit there; they either will A) eventually fully heal or B) not heal / be damaged
+	if (iFeatureDamage + iPlotEffectDamage <= iMaxIncomingHealReal)
+		return (iFeatureDamage + iPlotEffectDamage);
+
+	// Note this can be negative; we need to account for max potential healing though
+	int iDamageRealTaken = pUnit->getDamageReal() - iMaxIncomingHealReal;
+
+	// Bit squirrly, but we need either or both
+	int iFeatureLimit = eFeature == NO_FEATURE ? 0 : GC.getFeatureInfo(eFeature).getDamageLimit() * pUnit->maxHitPoints() / 100;
+	int iPlotEffectLimit = ePlotEffect == NO_PLOT_EFFECT ? 0 : GC.getPlotEffectInfo(ePlotEffect).getDamageLimit() * pUnit->maxHitPoints() / 100;
+
+	// Still hopeful for easy solution (we've only one damage limit to deal with, and we know damage > healing for that type)
+	// iDamageRealTaken accounts for incoming healing already; so our damage might be limited to (0 or whatever gets us down to the limit, after healing)
+	if (iFeatureDamage == 0)
+		return (std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken)));
+	if (iPlotEffectDamage == 0)
+		return (std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken)));
+
+	// Ugh. Ok, calculating them in the right order is necessary to avoid weird instances of getting unexpectedly altered damage when near a threshold
+	int iRealDamage = 0;
+
+	// We need to calculate damage from the source with a lower limit first
+	if (iPlotEffectLimit <= iFeatureLimit)
+	{
+		// We need to apply full damage to first check if it's gonna be outhealed
+		if (iPlotEffectDamage <= iMaxIncomingHealReal)
+			iRealDamage += iPlotEffectDamage;
+		// Otherwise, the damage output of first might be limited to however much will take us to its limit
+		else 
+			iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken));
+
+		// We know here the net is greater than healing, but need to account for damage calculated above in our upper limit
+		iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken - iRealDamage));
+		return iRealDamage;
+	}
+	// Mirror of above
+	else
+	{
+		if (iFeatureDamage <= iMaxIncomingHealReal)
+			iRealDamage += iFeatureDamage;
+		else
+			iRealDamage += std::min(iFeatureDamage, std::max(0, iFeatureLimit - iDamageRealTaken));
+
+		iRealDamage += std::min(iPlotEffectDamage, std::max(0, iPlotEffectLimit - iDamageRealTaken - iRealDamage));
+		return iRealDamage;
+	}
 }

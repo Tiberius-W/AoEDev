@@ -308,7 +308,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Units/duck.dds</Button>
-			<bAIControl>0</bAIControl>
+			<bEnraged>0</bEnraged>
 			<bBoarding>0</bBoarding>
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bDispellable>0</bDispellable>
@@ -1028,12 +1028,12 @@
 			<bRace>1</bRace>
 			<NoBadExploreImprovements>
 				<NoBadExploreImprovement>
-				<ImprovementType>IMPROVEMENT_TOWER_OF_EYES</ImprovementType>
-				<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
+					<ImprovementType>IMPROVEMENT_TOWER_OF_EYES</ImprovementType>
+					<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
 				</NoBadExploreImprovement>
 				<NoBadExploreImprovement>
-				<ImprovementType>IMPROVEMENT_CLOCKWORK_TOWER</ImprovementType>
-				<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
+					<ImprovementType>IMPROVEMENT_CLOCKWORK_TOWER</ImprovementType>
+					<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
 				</NoBadExploreImprovement>
 			</NoBadExploreImprovements>
 			<DamageTypeResists>
@@ -8965,7 +8965,7 @@
 			<iMovesChange>1</iMovesChange>
 			<iCombatPercent>60</iCombatPercent>
 			<Button>Art/Interface/Buttons/Promotions/Enraged.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<bRemovedByCombat>1</bRemovedByCombat>
 			<iCombatPercentDefense>-100</iCombatPercentDefense>
 			<iMinLevel>-1</iMinLevel>
@@ -9832,7 +9832,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/FreelancerEffect.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<bRemovedByCombat>1</bRemovedByCombat>
 			<iCombatPercent>60</iCombatPercent>
 			<bImmortal>1</bImmortal>
@@ -12423,6 +12423,60 @@
 				<Affinity>AFFINITY_MANA_REFINED</Affinity>
 			</Affinities>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Mechanos Warrior doesn't start with offensive weapons-->
+            <Type>PROMOTION_MECHANOSWARRIORNERF</Type>
+            <PrereqPromotionANDs>
+                <PrereqPromotionAND>
+                    <PromotionType>PROMOTION_BRONZE_WEAPONS</PromotionType>
+                    <iPrereqApplications>1</iPrereqApplications>
+                </PrereqPromotionAND>
+            </PrereqPromotionANDs>
+            <bAutoAcquire>1</bAutoAcquire>
+            <bEffectProm>1</bEffectProm>
+            <bMustMaintain>1</bMustMaintain>
+            <bNoXP>1</bNoXP>
+            <PrereqCivilizations>
+                <PrereqCivilization>CIVILIZATION_MECHANOS</PrereqCivilization>
+            </PrereqCivilizations>
+            <PrereqUnits>
+                <PrereqUnit>UNIT_WARRIOR</PrereqUnit>
+            </PrereqUnits>
+            <UnitCombats>
+                <UnitCombat>
+                    <UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+                    <iMaxApplications>0</iMaxApplications>
+                </UnitCombat>
+            </UnitCombats>
+            <Button>Art/Interface/Buttons/Promotions/Blank_promo.dds</Button>
+            <iExtraCombatStr>-1</iExtraCombatStr>
+        </PromotionInfo> 
+		<PromotionInfo>		<!-- Mechanos Warrior, removing nerf with bronze working -->
+            <Type>PROMOTION_MECHANOSWARRIORNERFREMOVE</Type>
+            <TechPrereq>TECH_BRONZE_WORKING</TechPrereq>
+            <PromotionExcludes>
+                <Promotion>PROMOTION_MECHANOSWARRIORNERF</Promotion>
+            </PromotionExcludes>
+            <PromotionOverwrites>
+                <Promotion>PROMOTION_MECHANOSWARRIORNERF</Promotion>
+            </PromotionOverwrites>
+            <bAutoAcquire>1</bAutoAcquire>
+            <bEffectProm>1</bEffectProm>
+            <bMustMaintain>1</bMustMaintain>
+            <bNoXP>1</bNoXP>
+            <PrereqCivilizations>
+                <PrereqCivilization>CIVILIZATION_MECHANOS</PrereqCivilization>
+            </PrereqCivilizations>
+            <PrereqUnits>
+                <PrereqUnit>UNIT_WARRIOR</PrereqUnit>
+            </PrereqUnits>
+            <UnitCombats>
+                <UnitCombat>
+                    <UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+                    <iMaxApplications>0</iMaxApplications>
+                </UnitCombat>
+            </UnitCombats>
+            <Button>Art/Interface/Buttons/Promotions/Blank_promo.dds</Button>
+        </PromotionInfo>
 		<PromotionInfo>		<!-- Medic I -->
 			<Type>PROMOTION_MEDIC1</Type>
 			<Description>TXT_KEY_PROMOTION_MEDIC1</Description>
@@ -17497,7 +17551,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Werewolf.dds</Button>
-			<bAIControl>1</bAIControl>
+			<bEnraged>1</bEnraged>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Whip -->
@@ -23761,6 +23815,12 @@
 				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
 				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
 			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<iVisibilityChange>1</iVisibilityChange>
