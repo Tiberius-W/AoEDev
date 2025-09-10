@@ -236,7 +236,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<BonusType>BONUS_SHEUT_STONE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -250,7 +250,7 @@
 			</BonusTypeStructs>
 			<bUnique>1</bUnique>
 			<iHealRateChange>-50</iHealRateChange>
-			<BonusConvert>BONUS_MANA_ENTROPY</BonusConvert>
+			<BonusConvert>BONUS_SHEUT_STONE</BonusConvert>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<SpawnUnitType>UNIT_SCORPION</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
