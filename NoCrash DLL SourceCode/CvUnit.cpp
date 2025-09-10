@@ -33259,6 +33259,7 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 	int iNew = NO_UNIT;
 	CvUnit* pUnit;
 	bool bConvert = false;
+	CvPlot* pLoserPlot = pLoser->plot();
 	if (pLoser->getDuration() > 0)
 	{
 		return;
@@ -33354,17 +33355,6 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			|| GC.getUnitInfo((UnitTypes)pLoser->getUnitType()).getEquipmentPromotion() != NO_PROMOTION)
 		{
 			pUnit = GET_PLAYER(getOwnerINLINE()).initUnit((UnitTypes)iUnit, plot()->getX_INLINE(), plot()->getY_INLINE());
-			if (!plot()->isValidDomainForLocation(*pUnit))
-			{
-				if (!pLoser->plot()->isValidDomainForLocation(*pUnit))
-				{
-					pUnit->jumpToNearestValidPlot();
-				}
-				else
-				{
-					pUnit->setXY(pLoser->plot()->getX(), pLoser->plot()->getY());
-				}
-			}
 			/*************************************************************************************************/
 			/**	Xienwolf Tweak							09/06/08											**/
 			/**						Doesn't make much sense for Duration to be passed on					**/
@@ -33458,6 +33448,18 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			}
 		}
 	}
+	if (iUnit!=NO_UNIT && !plot()->isValidDomainForLocation(*pUnit))
+	{
+		if (!pLoserPlot->isValidDomainForLocation(*pUnit))
+		{
+			pUnit->jumpToNearestValidPlot();
+		}
+		else
+		{
+			pUnit->setXY(pLoserPlot->getX(), pLoserPlot->getY());
+		}
+	}
+
 	/*************************************************************************************************/
 	/**	Xienwolf Tweak							09/06/08											**/
 	/**																								**/
