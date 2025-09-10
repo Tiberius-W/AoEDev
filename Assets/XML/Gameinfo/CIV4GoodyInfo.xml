@@ -729,7 +729,7 @@
 			<Description>TXT_KEY_MESSAGE_EXPLORE_DUNGEON</Description>
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
 			<iDestroyLairChance>0</iDestroyLairChance>
-		<PythonCallback>exploreLairDungeon</PythonCallback>
+			<PythonCallback>exploreLairDungeon</PythonCallback>
 		</GoodyInfo>	
 		<GoodyInfo> <!--Graveyard-->
 			<Type>GOODY_EXPLORE_LAIR_GRAVEYARD</Type>
@@ -4052,7 +4052,7 @@
 			<iExperience>20</iExperience>
 			<bBad>0</bBad>
 			<BarbarianCivilization>NONE</BarbarianCivilization>
-	<PythonCallback>exploreLairArmageddonDecrease</PythonCallback>
+			<PythonCallback>exploreLairArmageddonDecrease</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--RingofUnlife-->
 			<Type>GOODY_EXPLORE_LAIR_ITEM_RING_OF_UNLIFE</Type>
@@ -4214,7 +4214,8 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<PythonCallback>exploreTradeShip</PythonCallback>
-		</GoodyInfo>		<GoodyInfo> <!--Drown					Lair	 Results Water      Bad  Minor	  -->
+		</GoodyInfo>
+		<GoodyInfo> <!--Drown					Lair	 Results Water      Bad  Minor	  -->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_DROWN</Type>
 			<GoodyClasses>
 				<GoodyClass>
@@ -4325,7 +4326,7 @@
 			<iDestroyLairChance>60</iDestroyLairChance>
 			<bBad>1</bBad>
 			<PythonCallback>exploreLairKraken</PythonCallback>
-			</GoodyInfo>
+		</GoodyInfo>
 		<GoodyInfo> <!--Stygian Guard-->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_STYGIAN</Type>
 			<GoodyClasses>
@@ -4434,7 +4435,7 @@
 			<bAnyPromotion>1</bAnyPromotion>
 			<bUnique>1</bUnique>
 			<bBad>0</bBad>
-		<PromotionAdds>
+			<PromotionAdds>
 				<Promotion>PROMOTION_TAPESTRY_HOUSE_TRINKET</Promotion>
 			</PromotionAdds>
 			</GoodyInfo>
@@ -4489,7 +4490,7 @@
 			</PromotionAdds>
 			<bUnique>1</bUnique>
 			<bBad>0</bBad>
-	<PythonCallback>exploreLairBreakBair</PythonCallback>
+			<PythonCallback>exploreLairBreakBair</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--ChaosMarauder			ULair	 Results Bair       Bad           -->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_CHAOS_MARAUDER</Type>
@@ -4504,7 +4505,6 @@
 			<iDestroyLairChance>60</iDestroyLairChance>
 			<bBad>1</bBad>
 			<PythonCallback>exploreLairChaosMarauder</PythonCallback>
-
 		</GoodyInfo>
 		<GoodyInfo> <!--Manticore-->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_MANTICORE</Type>

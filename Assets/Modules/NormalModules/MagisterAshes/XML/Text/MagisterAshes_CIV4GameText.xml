@@ -137,6 +137,14 @@
 		<Spanish>Carnivean was a rogue and swordsman, with his chaos affinity manifesting as incredible luck benefitting him and crushing his opposition. If there was ever a favored son in creation, it would be him; bridges collapsed under his enemies, even as he would run with perfect footing across the falling rubble.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_CARNIVEAN_CREATION</Tag>
+		<English>You hear tales of an old man wandering the roads, of uneven temperment but wielding kingly treasures...</English>
+		<French>You hear tales of an old man wandering the roads, of uneven temperment but wielding kingly treasures...</French>
+		<German>You hear tales of an old man wandering the roads, of uneven temperment but wielding kingly treasures...</German>
+		<Italian>You hear tales of an old man wandering the roads, of uneven temperment but wielding kingly treasures...</Italian>
+		<Spanish>You hear tales of an old man wandering the roads, of uneven temperment but wielding kingly treasures...</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP</Tag>
 		<English>Carnivean's Camp</English>
 		<French>Carnivean's Camp</French>

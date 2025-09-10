@@ -201,7 +201,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LEASH_0</PromotionType>
+					<PromotionType>PROMOTION_LEASH_1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -210,7 +210,7 @@
 			<iCombatDefense>4</iCombatDefense>
 			<iMiscastChance>-55</iMiscastChance>
 			<iTier>5</iTier>
-			<PythonPostCombatLost>postCombatBadb(pCaster,pOpponent)</PythonPostCombatLost>
+			<PythonOnDeath>postCombatBadb(pCaster,pOpponent)</PythonOnDeath>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_COLD</DamageType>
@@ -280,6 +280,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_WEAK</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_CANNIBALIZE</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -319,6 +323,18 @@
 					<PromotionType>PROMOTION_RING_OF_STRIKING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_STRENGTH</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_DEFENSE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<bNeverObsolete>1</bNeverObsolete>
@@ -349,6 +365,8 @@
 			</BonusAffinities>
 			<bNeverObsolete>1</bNeverObsolete>
 			<iPowerMult>5</iPowerMult>
+			<PythonOnDeath>postCombatCarnivean(pCaster,pOpponent)</PythonOnDeath>
+			<Quote>TXT_KEY_POPUP_CARNIVEAN_CREATION</Quote>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
