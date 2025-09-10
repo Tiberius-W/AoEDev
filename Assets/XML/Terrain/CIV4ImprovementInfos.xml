@@ -7878,7 +7878,7 @@
 			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_FUR</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8924,7 +8924,7 @@
 			<iBasePlotCounterModify>-100</iBasePlotCounterModify>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA_LIFE</BonusType>
+					<BonusType>BONUS_MANA_SPIRIT</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -8948,7 +8948,7 @@
 			</TechYieldChanges>
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<bUnique>1</bUnique>
-			<BonusConvert>BONUS_MANA_LIFE</BonusConvert>
+			<BonusConvert>BONUS_MANA_SPIRIT</BonusConvert>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Air Mana Node -->                 <!-- Mana Nodes -->
 			<Type>IMPROVEMENT_MANA_AIR</Type>
