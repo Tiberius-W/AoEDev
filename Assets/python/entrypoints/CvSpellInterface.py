@@ -7789,9 +7789,8 @@ def spellGiftEssence(caster):
 	iXP = (caster.getLevel() * 100)
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
-		iXP = pUnit.getExperienceTimes100() + iXP
-		if pUnit.getUnitType() == getInfoType('UNIT_DTESHI_COMMANDER') or pUnit.getUnitType() == getInfoType('UNIT_COMMANDER_FALLEN'):
-			pUnit.setExperienceTimes100(iXP, -1)
+		if pUnit.getUnitType() == getInfoType('UNIT_DTESHI_COMMANDER'):
+			pUnit.changeExperienceTimes100(iXP, -1, False, False, False)
 			break
 
 def reqDarkEmpowerment(caster):

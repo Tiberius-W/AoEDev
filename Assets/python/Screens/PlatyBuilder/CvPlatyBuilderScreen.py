@@ -1006,6 +1006,7 @@ class CvWorldBuilderScreen:
 
 	def refreshSideMenu(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
+		szSearch = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN).getEditBoxString("WBUnitSearch")
 		CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_WORLD_BUILDER)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
@@ -1232,7 +1233,7 @@ class CvWorldBuilderScreen:
 			else:
 				screen.deleteWidget("WorldBuilderBackgroundBottomPanel")
 			self.setCurrentModeCheckbox()
-			self.setSelectionTable()
+			self.setSelectionTable(szSearch)
 
 	def setCurrentModeCheckbox(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
@@ -1265,7 +1266,7 @@ class CvWorldBuilderScreen:
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
 
-	def setSelectionTable(self):
+	def setSelectionTable(self, search = ""):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
 		iWidth = 200
 		iCivilization = gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType()
@@ -1278,6 +1279,16 @@ class CvWorldBuilderScreen:
 			for iCombatClass in xrange(gc.getNumUnitCombatInfos()):
 				screen.addPullDownString("WBSelectClass", gc.getUnitCombatInfo(iCombatClass).getDescription(), iCombatClass, iCombatClass, iCombatClass == self.iSelectClass)
 
+			iY += 30
+			screen.addEditBoxGFC("WBUnitSearch", 3, iY, 97, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+			screen.setEditBoxString("WBUnitSearch", search)
+			screen.setActivation("WBUnitSearch", ActivationTypes.ACTIVATE_NORMAL)
+			screen.setEditBoxMaxCharCount("WBUnitSearch", 32, 32)
+
+			screen.setButtonGFC("WBUnitSearchButton", "Search", "", 100, iY + 3, 95, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+
+			szLCsearch = search.lower()
+
 			lItems = []
 			for i in xrange(gc.getNumUnitInfos()):
 				ItemInfo = gc.getUnitInfo(i)
@@ -1285,10 +1296,11 @@ class CvWorldBuilderScreen:
 					iClass = ItemInfo.getUnitClassType()
 					if gc.getCivilizationInfo(iCivilization).getCivilizationUnits(iClass) != i: continue
 				if ItemInfo.getUnitCombatType() != self.iSelectClass and self.iSelectClass > -2: continue
+				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1:continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
-			iY += 30
+			iY += 35
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
 			screen.addTableControlGFC("WBSelectItem", 1, 0, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
 			screen.setTableColumnHeader("WBSelectItem", 0, "", iWidth)
@@ -1312,6 +1324,16 @@ class CvWorldBuilderScreen:
 			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_TEAM_WONDER", ()), 3, 3, 3 == self.iSelectClass)
 			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_WORLD_WONDER", ()), 4, 4, 4 == self.iSelectClass)
 
+			iY += 30
+			screen.addEditBoxGFC("WBUnitSearch", 3, iY, 97, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+			screen.setEditBoxString("WBUnitSearch", search)
+			screen.setActivation("WBUnitSearch", ActivationTypes.ACTIVATE_NORMAL)
+			screen.setEditBoxMaxCharCount("WBUnitSearch", 32, 32)
+
+			screen.setButtonGFC("WBUnitSearchButton", "Search", "", 100, iY + 3, 95, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+
+			szLCsearch = search.lower()
+
 			lItems = []
 			for i in xrange(gc.getNumBuildingInfos()):
 				ItemInfo = gc.getBuildingInfo(i)
@@ -1326,6 +1348,7 @@ class CvWorldBuilderScreen:
 					if not isTeamWonderClass(iClass): continue
 				elif self.iSelectClass == 4:
 					if not isWorldWonderClass(iClass): continue
+				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1:continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
@@ -2017,4 +2040,8 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "SensibilityCheck":
 			self.bSensibility = not self.bSensibility
 			self.setCurrentModeCheckbox()
+
+		elif  inputClass.getFunctionName() == "WBUnitSearchButton":
+			self.refreshSideMenu()
+
 		return 1
