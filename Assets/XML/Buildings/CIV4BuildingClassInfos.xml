@@ -3068,7 +3068,7 @@
 			<DefaultBuilding>BUILDING_SLAVE_MARKET</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>
+		<!-- <BuildingClassInfo>
 			<Type>BUILDINGCLASS_TRADER_ENCLAVE</Type>
 			<Description>TXT_KEY_BUILDING_TRADER_ENCLAVE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -3079,7 +3079,7 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_TRADER_ENCLAVE</DefaultBuilding>
 			<VictoryThresholds/>
-		</BuildingClassInfo>
+		</BuildingClassInfo> -->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MANA_NODE</Type>
 			<Description>TXT_KEY_BONUS_MANA</Description>
