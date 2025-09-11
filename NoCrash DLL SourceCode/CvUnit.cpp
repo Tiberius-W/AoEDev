@@ -386,13 +386,9 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 	}
 
+	//FfH: Added by Kael 11/05/2007
 	if (isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType()))
-
-		//FfH: Added by Kael 11/05/2007
-		&& GC.getGameINLINE().getUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) == 1
-		//FfH: End Add
-
-		)
+		&& GC.getGameINLINE().getUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) == 1)
 	{
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
