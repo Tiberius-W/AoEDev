@@ -7890,7 +7890,7 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<BonusConvert>BONUS_STONE</BonusConvert>
+			<BonusConvert>BONUS_FUR</BonusConvert>
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveFoxford(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
