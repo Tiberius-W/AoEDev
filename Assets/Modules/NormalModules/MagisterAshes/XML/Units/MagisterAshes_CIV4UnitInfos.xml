@@ -260,6 +260,14 @@
 			<!-- No Chaos III because the noise is horrible... -->
 			<FreePromotions>
 				<FreePromotion>
+					<PromotionType>PROMOTION_SECONDARY_ARCANE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SECONDARY_ROGUE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_CHAOS1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
