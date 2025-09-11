@@ -4009,6 +4009,8 @@ class CvEventManager:
 		if iUnitType == getInfoType('UNIT_CARNIVEAN'):
 			pUnit.setLevel(15)
 			pUnit.setExperienceTimes100(10000, 10000)
+			# Giving mutated now, after he spawns with a minimum of good ones, to enforce limits
+			pUnit.setHasPromotion(getInfoType("PROMOTION_MUTATED"),True)
 			# Funny, but maybe can cause issues.
 			# pUnit.setGameTurnCreated(-100)
 

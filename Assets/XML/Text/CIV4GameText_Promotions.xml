@@ -3414,6 +3414,14 @@
 		<Spanish>golemicist hidden</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_MUTATION_FLYING</Tag>
+		<English>Mutation Flying</English>
+		<French>Mutation Flying</French>
+		<German>Mutation Flying</German>
+		<Italian>Mutation Flying</Italian>
+		<Spanish>Mutation Flying</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MUTATION_STRENGTH_PERCENT</Tag>
 		<English>Mutation Percent Strength</English>
 		<French>Mutation Percent Strength</French>
