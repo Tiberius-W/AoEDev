@@ -4009,8 +4009,9 @@ class CvEventManager:
 		if iUnitType == getInfoType('UNIT_CARNIVEAN'):
 			pUnit.setLevel(15)
 			pUnit.setExperienceTimes100(10000, 10000)
-			pUnit.setGameTurnCreated(-100)
-			# TODO: Change his start-with promos and intrinsic stats (FS, etc) to mutation ones. Expand possibilities for mutation?
+			# Funny, but maybe can cause issues.
+			# pUnit.setGameTurnCreated(-100)
+
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

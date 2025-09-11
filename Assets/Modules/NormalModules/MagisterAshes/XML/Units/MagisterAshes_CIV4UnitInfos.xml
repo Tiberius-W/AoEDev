@@ -241,15 +241,14 @@
 			</UnitAIs>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iExtraPerception>6</iExtraPerception>
-			<iDefensiveStrikeChance>100</iDefensiveStrikeChance>
-			<iDefensiveStrikeDamage>25</iDefensiveStrikeDamage>
+			<iExtraPerception>4</iExtraPerception>
+			<iDefensiveStrikeChance>75</iDefensiveStrikeChance>
 			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
-			<iFirstStrikes>4</iFirstStrikes>
-			<iEnemyWithdrawalProb>-50</iEnemyWithdrawalProb>
-			<iWithdrawalProb>100</iWithdrawalProb>
+			<iEnemyWithdrawalProb>-25</iEnemyWithdrawalProb>
+			<!-- Max 90, and -100 after the first -->
+			<iWithdrawalProb>145</iWithdrawalProb>
 			<iWithdrawlProbDefensive>50</iWithdrawlProbDefensive>
-			<iMoves>2</iMoves>
+			<iMoves>1</iMoves>
 			<iCombat>1</iCombat>
 			<iCombatDefense>1</iCombatDefense>
 			<iXPValueAttack>8</iXPValueAttack>
@@ -265,6 +264,11 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_CARNIVEAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<!-- Applying the raw mutation is required to show the results of the others, but also causes random rolls I don't want. Hmm. -->
+				<!-- <FreePromotion>
+					<PromotionType>PROMOTION_MUTATED</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion> -->
 			<!-- No Chaos III because the noise is horrible... -->
 			<FreePromotions>
 				<FreePromotion>
@@ -276,6 +280,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_CURSED</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_ENERVATED</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -284,8 +292,20 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_CANNIBALIZE</PromotionType>
+					<PromotionType>PROMOTION_MUTATION_HEALING_COMBAT</PromotionType>
+					<iNumApplied>10</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_STRENGTH</PromotionType>
 					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE</PromotionType>
+					<iNumApplied>3</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_DEFENSIVE_STRIKE</PromotionType>
+					<iNumApplied>5</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
@@ -321,6 +341,14 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_RING_OF_STRIKING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_RING_OF_PERCEPTION</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SWIFT_BOOTS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -366,6 +394,8 @@
 			<bNeverObsolete>1</bNeverObsolete>
 			<iPowerMult>5</iPowerMult>
 			<PythonOnDeath>postCombatCarnivean(pCaster,pOpponent)</PythonOnDeath>
+			<!-- TODO add an image, purty please? -->
+			<Image></Image>
 			<Quote>TXT_KEY_POPUP_CARNIVEAN_CREATION</Quote>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
