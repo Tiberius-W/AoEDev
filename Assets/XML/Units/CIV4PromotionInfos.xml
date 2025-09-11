@@ -31,7 +31,6 @@
 			<bCommunalProperty>0</bCommunalProperty>
 			<bEffectProm>0</bEffectProm>
 			<bFlatMoveCost>0</bFlatMoveCost>
-			<bFirstStrikeVulnerable>0</bFirstStrikeVulnerable>
 			<bFreeUnit>0</bFreeUnit>
 			<bGetCasterXP>0</bGetCasterXP>
 			<bIgnoreTerrainCosts>0</bIgnoreTerrainCosts>
@@ -186,7 +185,6 @@
 			<PythonOnRemove/>
 			<PythonPostCombatLost/>
 			<PythonPostCombatWon/>
-			<iExtraPerception>2</iExtraPerception>
 			<SlavePromotions/>
 			<TempUnitCombat>UNITCOMBAT_MOUNTED</TempUnitCombat>
 			<YieldsForLoss>
@@ -204,7 +202,6 @@
 			<bEnemyRoute>0</bEnemyRoute>
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>0</bHillsDoubleMove>
-			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
 			<iVisibilityChange>0</iVisibilityChange>
 			<iExtraPerception>0</iExtraPerception>
 			<iMovesChange>400</iMovesChange>
@@ -217,8 +214,13 @@
 			<iCargoChange>0</iCargoChange>
 			<iCollateralDamageChange>0</iCollateralDamageChange>
 			<iBombardRateChange>0</iBombardRateChange>
+			<bFirstStrikeVulnerable>0</bFirstStrikeVulnerable>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
 			<iFirstStrikesChange>0</iFirstStrikesChange>
 			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<bImmuneToDefensiveStrike>0</bImmuneToDefensiveStrike>
+			<iDefensiveStrikeChance>0</iDefensiveStrikeChance>
+			<iDefensiveStrikeDamage>0</iDefensiveStrikeDamage>
 			<iEnemyHealChange>0</iEnemyHealChange>
 			<iNeutralHealChange>0</iNeutralHealChange>
 			<iFriendlyHealChange>0</iFriendlyHealChange>
@@ -315,7 +317,7 @@
 			<bDoubleFortifyBonus>0</bDoubleFortifyBonus>
 			<bEquipment>0</bEquipment>
 			<bFear>0</bFear>
-			<bFlying>1</bFlying>
+			<bFlying>0</bFlying> <!-- Try to use the PROMOTION_FLYING promo if possible -->
 			<bHiddenNationality>0</bHiddenNationality>
 			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
 			<bImmortal>0</bImmortal>
@@ -12046,6 +12048,20 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/Flying.dds</Button>
 			<bFlying>1</bFlying>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Machine Spirit -->
@@ -13583,6 +13599,20 @@
 			<iMovesChange>2</iMovesChange>
 			<Button>Art/Interface/Buttons/promotions/mounts/Mount_Pegasus.dds</Button>
 			<bFlying>1</bFlying>
+			<!-- <PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes> -->
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iGroupSize>1</iGroupSize>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
@@ -30986,6 +31016,20 @@
 			<iMutationWeight>20</iMutationWeight>
 			<iMutationMin>1</iMutationMin>
 			<iMutationMax>1</iMutationMax>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMutationMaxApplications>1</iMutationMaxApplications>
 			<Button>Art/Interface/Buttons/Promotions/Races/Golem.dds</Button>
 			<iMinLevel>-1</iMinLevel>
@@ -33582,6 +33626,7 @@
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMovesChange>1</iMovesChange>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FLYING</Promotion>
@@ -33592,6 +33637,16 @@
 			<UnitCombats/>
 			<Button>Art/Interface/Buttons/Promotions/Races/Golem.dds</Button>
 			<bFlying>1</bFlying>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Shaper Experiments -->

@@ -308,7 +308,7 @@
 			<Button>Art/modules/magisterashes/Buttons/BoneCirclet.dds</Button>
 			<bEquipment>1</bEquipment>
 			<PyPerTurn>effectBoneCirclet(pCaster)</PyPerTurn>
-				<BonusAffinities>
+			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iAffinity>1</iAffinity>
@@ -339,7 +339,7 @@
 					<iCombat>1</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-				<BonusAffinities>
+			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<iAffinity>1</iAffinity>
