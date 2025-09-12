@@ -3161,164 +3161,244 @@
 		<Spanish>Open the Chest!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_ABADDONS_PIT</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The end of the world lays locked in this hole;[NEWLINE]Dare not open it, lest it swallow us whole!"</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The end of the world lays locked in this hole;[NEWLINE]Dare not open it, lest it swallow us whole!"</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The end of the world lays locked in this hole;[NEWLINE]Dare not open it, lest it swallow us whole!"</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The end of the world lays locked in this hole;[NEWLINE]Dare not open it, lest it swallow us whole!"</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The end of the world lays locked in this hole;[NEWLINE]Dare not open it, lest it swallow us whole!"</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_AIFON_ISLE</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]That which was once the ocean's pride."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]That which was once the ocean's pride."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]That which was once the ocean's pride."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Tot jenseits allen Todes, in keiner Gruft wohnt es;[NEWLINE]was einst der Stolz des Ozeans war."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]That which was once the ocean's pride."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]That which was once the ocean's pride."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]Here is that which was once the ocean's pride."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]Here is that which was once the ocean's pride."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]Here is that which was once the ocean's pride."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Tot jenseits allen Todes, in keiner Gruft wohnt es;[NEWLINE]was einst der Stolz des Ozeans war.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]Here is that which was once the ocean's pride."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Dead beyond dead, in no vault does it reside;[NEWLINE]Here is that which was once the ocean's pride."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BADBS_BLIZZARD</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BAIR_OF_LACUNA</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here, She who seeks death made her lair[NEWLINE]Here were raised the most terrible pair"  </English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here, She who seeks death made her lair[NEWLINE]Here were raised the most terrible pair"</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Here, She who seeks death made her lair[NEWLINE]Here were raised the most terrible pair"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier hat sie, die den Tod sucht, sich eingerichtet[NEWLINE]hier, wo das schrecklichste aller Paare aufgezogen wurde."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here, She who seeks death made her lair[NEWLINE]Here were raised the most terrible pair"</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here, She who seeks death made her lair[NEWLINE]Here were raised the most terrible pair"</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here, She who seeks death made her lair;[NEWLINE]Here were raised the most terrible pair."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here, She who seeks death made her lair;[NEWLINE]Here were raised the most terrible pair."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Here, She who seeks death made her lair;[NEWLINE]Here were raised the most terrible pair."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier hat sie, die den Tod sucht, sich eingerichtet;[NEWLINE]hier, wo das schrecklichste aller Paare aufgezogen wurde.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here, She who seeks death made her lair;[NEWLINE]Here were raised the most terrible pair."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here, She who seeks death made her lair;[NEWLINE]Here were raised the most terrible pair."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Carved into the earth is this terrible gate.[NEWLINE]Between life and death is a mysterious fate."  </English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Carved into the earth is this terrible gate.[NEWLINE]Between life and death is a mysterious fate."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Carved into the earth is this terrible gate.[NEWLINE]Between life and death is a mysterious fate."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Diese furchtbare Portal ist in den Erdboden gemeißelt[NEWLINE]Zwischen Leben und Tod, das ist ein geheimnisvolles Geschick."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Carved into the earth is this terrible gate.[NEWLINE]Between life and death is a mysterious fate."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Carved into the earth is this terrible gate.[NEWLINE]Between life and death is a mysterious fate."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Carved into the earth is this terrible gate;[NEWLINE]Between life and death is a mysterious fate."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Carved into the earth is this terrible gate;[NEWLINE]Between life and death is a mysterious fate."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Carved into the earth is this terrible gate;[NEWLINE]Between life and death is a mysterious fate."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Diese furchtbare Portal ist in den Erdboden gemeißelt[NEWLINE]Zwischen Leben und Tod, das ist ein geheimnisvolles Geschick.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Carved into the earth is this terrible gate;[NEWLINE]Between life and death is a mysterious fate."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Carved into the earth is this terrible gate;[NEWLINE]Between life and death is a mysterious fate."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BROKEN_SEPULCHER</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"The old wizard sealed his student within.[NEWLINE]This place still echoes with his sin."  </English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"The old wizard sealed his student within.[NEWLINE]This place still echoes with his sin."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"The old wizard sealed his student within.[NEWLINE]This place still echoes with his sin."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Der alte Zauberer schloss seine Studenten hier ein[NEWLINE]Dieser Ort trägt noch immer das Echo dieser Sünde."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"The old wizard sealed his student within.[NEWLINE]This place still echoes with his sin."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"The old wizard sealed his student within.[NEWLINE]This place still echoes with his sin."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The old wizard sealed his student within;[NEWLINE]This place still echoes with his sin."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The old wizard sealed his student within;[NEWLINE]This place still echoes with his sin."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"The old wizard sealed his student within;[NEWLINE]This place still echoes with his sin."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Der alte Zauberer schloss seine Studenten hier ein[NEWLINE]Dieser Ort trägt noch immer das Echo dieser Sünde.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The old wizard sealed his student within;[NEWLINE]This place still echoes with his sin."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The old wizard sealed his student within;[NEWLINE]This place still echoes with his sin."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_CARNIVEANS_CAMP</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was Creation's most tumultuous son;[NEWLINE]Now here he rests, either dead or yet to pass on."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was Creation's most tumultuous son;[NEWLINE]Now here he rests, either dead or yet to pass on."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was Creation's most tumultuous son;[NEWLINE]Now here he rests, either dead or yet to pass on."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was Creation's most tumultuous son;[NEWLINE]Now here he rests, either dead or yet to pass on."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was Creation's most tumultuous son;[NEWLINE]Now here he rests, either dead or yet to pass on."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_CLIFFS_OF_TALI</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here reigns the thunder's call,[NEWLINE]Forever mourning her devoted fall."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here reigns the thunder's call,[NEWLINE]Forever mourning her devoted fall."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here reigns the thunder's call,[NEWLINE]Forever mourning her devoted fall."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here reigns the thunder's call,[NEWLINE]Forever mourning her devoted fall."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here reigns the thunder's call,[NEWLINE]Forever mourning her devoted fall."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_CLOCKWORK_CITY</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_DRAGON_BONES</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Its fire lies quenched, its fury is dim.[NEWLINE]What you seek is this monument grim."  </English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Its fire lies quenched, its fury is dim.[NEWLINE]What you seek is this monument grim."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Its fire lies quenched, its fury is dim.[NEWLINE]What you seek is this monument grim."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Sein Feuer ist erloschen, seine Wut ist ermattet.[NEWLINE][NEWLINE]Was du suchst, ist dieses grimmige Monument."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Its fire lies quenched, its fury is dim.[NEWLINE]What you seek is this monument grim."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Its fire lies quenched, its fury is dim.[NEWLINE]What you seek is this monument grim."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Its fire lies quenched, its fury dim;[NEWLINE]What you seek is this monument grim."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Its fire lies quenched, its fury dim;[NEWLINE]What you seek is this monument grim."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Its fire lies quenched, its fury dim;[NEWLINE]What you seek is this monument grim."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Sein Feuer ist erloschen, seine Wut ist ermattet;[NEWLINE][NEWLINE]Was du suchst, ist dieses grimmige Monument.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Its fire lies quenched, its fury dim;[NEWLINE]What you seek is this monument grim."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Its fire lies quenched, its fury dim;[NEWLINE]What you seek is this monument grim."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_FOXFORD</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Wicked wolves hunger for the flesh of peasants[NEWLINE]Will you slay them, or accept their dark presents?"</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Wicked wolves hunger for the flesh of peasants[NEWLINE]Will you slay them, or accept their dark presents?"</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants[NEWLINE]Will you slay them, or accept their dark presents?"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Verschlagene Wölfe hungern nach dem Fleisch der einfachen Leute[NEWLINE]Wirst du sie erschlagen oder ihre dunlen Geschenke annehmen?"</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Wicked wolves hunger for the flesh of peasants[NEWLINE]Will you slay them, or accept their dark presents?"</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Wicked wolves hunger for the flesh of peasants[NEWLINE]Will you slay them, or accept their dark presents?"</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Verschlagene Wölfe hungern nach dem Fleisch der einfachen Leute[NEWLINE]Wirst du sie erschlagen oder ihre dunlen Geschenke annehmen?")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_GUARDIAN</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_LETUM_FRIGUS</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"It all ended here, and thus it began[NEWLINE]Across ages the echoes span."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"It all ended here, and thus it began[NEWLINE]Across ages the echoes span."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"It all ended here, and thus it began[NEWLINE]Across ages the echoes span."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier endete es alles, und dadurch begann es[NEWLINE]Die Echos erstrecken sich über mehrere Zeitalter."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"It all ended here, and thus it began[NEWLINE]Across ages the echoes span."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"It all ended here, and thus it began[NEWLINE]Across ages the echoes span."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"It all ended here, and thus it began;[NEWLINE]Across ages, these echoes span."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"It all ended here, and thus it began;[NEWLINE]Across ages, these echoes span."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"It all ended here, and thus it began;[NEWLINE]Across ages, these echoes span."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier endete es alles, und dadurch begann es;[NEWLINE]Die Echos erstrecken sich über mehrere Zeitalter.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"It all ended here, and thus it began;[NEWLINE]Across ages, these echoes span."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"It all ended here, and thus it began;[NEWLINE]Across ages, these echoes span."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_MAJENS_WORKSHOP</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The fruit of labor comes light and swift,[NEWLINE]Where here does joyous laughter drift."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The fruit of labor comes light and swift,[NEWLINE]Where here does joyous laughter drift."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The fruit of labor comes light and swift,[NEWLINE]Where here does joyous laughter drift."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The fruit of labor comes light and swift,[NEWLINE]Where here does joyous laughter drift."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The fruit of labor comes light and swift,[NEWLINE]Where here does joyous laughter drift."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_MIRROR_OF_HEAVEN</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Gaze up or gaze down, it's all the same[NEWLINE]At this place, a ruler earned his acclaim."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Gaze up or gaze down, it's all the same[NEWLINE]At this place, a ruler earned his acclaim."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Gaze up or gaze down, it's all the same[NEWLINE]At this place, a ruler earned his acclaim."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Blick hinauf, blick hinunter, ganz gleich[NEWLINE]An diesem Ort hat ein Herrscher seinen Beifall gefunden."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Gaze up or gaze down, it's all the same[NEWLINE]At this place, a ruler earned his acclaim."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Gaze up or gaze down, it's all the same[NEWLINE]At this place, a ruler earned his acclaim."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Gaze up or gaze down, it's all the same;[NEWLINE]At this place, a ruler earned his acclaim."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Gaze up or gaze down, it's all the same;[NEWLINE]At this place, a ruler earned his acclaim."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Gaze up or gaze down, it's all the same;[NEWLINE]At this place, a ruler earned his acclaim."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Blick hinauf, blick hinunter, ganz gleich[NEWLINE]An diesem Ort hat ein Herrscher seinen Beifall gefunden.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Gaze up or gaze down, it's all the same;[NEWLINE]At this place, a ruler earned his acclaim."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Gaze up or gaze down, it's all the same;[NEWLINE]At this place, a ruler earned his acclaim."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_MOUNT_KALSHEKK</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]The ice has now thawed, and they may yet thrive"</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]The ice has now thawed, and they may yet thrive"</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]The ice has now thawed, and they may yet thrive"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Ihre Wärme hielt die verlorenen Völker am Leben[NEWLINE]Das Eis ist nun geschmolzen und diese können gedeihen."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]The ice has now thawed, and they may yet thrive"</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]The ice has now thawed, and they may yet thrive"</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Her warmth kept the lost people alive;[NEWLINE]With ice now thawed, they may yet thrive."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Her warmth kept the lost people alive;[NEWLINE]With ice now thawed, they may yet thrive."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Her warmth kept the lost people alive[NEWLINE]With ice now thawed, they may yet thrive."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Ihre Wärme hielt die verlorenen Völker am Leben[NEWLINE]Das Eis ist nun geschmolzen und diese können gedeihen.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Her warmth kept the lost people alive;[NEWLINE]With ice now thawed, they may yet thrive."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Her warmth kept the lost people alive;[NEWLINE]With ice now thawed, they may yet thrive."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_ODIOS_PRISON</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]Anger and wrath were once let free,[NEWLINE]but now it is nothing but debris."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Anger and wrath were once let free,[NEWLINE]but now it is nothing but debris."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Anger and wrath were once let free,[NEWLINE]but now it is nothing but debris."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Wut und Zorn wurden einst freigesetzt[NEWLINE]Doch nun sind nur noch Bruchücke vorhanden."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Anger and wrath were once let free,[NEWLINE]but now it is nothing but debris."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Anger and wrath were once let free,[NEWLINE]but now it is nothing but debris."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Anger and wrath were once let free;[NEWLINE]But now it is nothing but debris."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Anger and wrath were once let free;[NEWLINE]But now it is nothing but debris."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Anger and wrath were once let free;[NEWLINE]But now it is nothing but debris."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Wut und Zorn wurden einst freigesetzt[NEWLINE]Doch nun sind nur noch Bruchücke vorhanden.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Anger and wrath were once let free;[NEWLINE]But now it is nothing but debris."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Anger and wrath were once let free;[NEWLINE]But now it is nothing but debris."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_POOL_OF_TEARS</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here was formed the first of us all,[NEWLINE]Here began that great, terrible fall."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here was formed the first of us all,[NEWLINE]Here began that great, terrible fall."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Here was formed the first of us all,[NEWLINE]Here began that great, terrible fall."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier wurde der Erste von uns allen geformt.[NEWLINE]Hier begann der große und furchtbare Fall."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here was formed the first of us all,[NEWLINE]Here began that great, terrible fall."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Here was formed the first of us all,[NEWLINE]Here began that great, terrible fall."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here was formed the first of us all;[NEWLINE]Here began that great, terrible fall."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here was formed the first of us all;[NEWLINE]Here began that great, terrible fall."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Here was formed the first of us all;[NEWLINE]Here began that great, terrible fall."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Hier wurde der Erste von uns allen geformt.[NEWLINE]Hier begann der große und furchtbare Fall.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here was formed the first of us all;[NEWLINE]Here began that great, terrible fall."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Here was formed the first of us all;[NEWLINE]Here began that great, terrible fall."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Fools rush in where angels dare not tread.[NEWLINE]A savage monument to destruction and dread."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Fools rush in where angels dare not tread.[NEWLINE]A savage monument to destruction and dread."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Fools rush in where angels dare not tread.[NEWLINE]A savage monument to destruction and dread."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Narren rennen hinein, wohin Engel sich nicht wagen[NEWLINE]Ein wildes Mahnmal der Zerstörung und der Furcht."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Fools rush in where angels dare not tread.[NEWLINE]A savage monument to destruction and dread."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Fools rush in where angels dare not tread.[NEWLINE]A savage monument to destruction and dread."</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"A lost isle in the depths of the seas[NEWLINE]Here the undead do as they please"</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"A lost isle in the depths of the seas[NEWLINE]Here the undead do as they please"</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"A lost isle in the depths of the seas[NEWLINE]Here the undead do as they please"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Eine verlorene Insel in den Tiefen der See[NEWLINE]Hier machen die Untoten, was sie wollen."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"A lost isle in the depths of the seas[NEWLINE]Here the undead do as they please"</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"A lost isle in the depths of the seas[NEWLINE]Here the undead do as they please"</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_SEVEN_PINES</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Peace was made here, at long last.[NEWLINE]Deep within our earliest past."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Peace was made here, at long last.[NEWLINE]Deep within our earliest past."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE][NEWLINE]"Peace was made here, at long last.[NEWLINE]Deep within our earliest past."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Frieden wurde hier beschlossen, vor langer Zeit.[NEWLINE]Tief in unserer eigenen, frühesten Vergangenheit."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Peace was made here, at long last.[NEWLINE]Deep within our earliest past."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Peace was made here, at long last.[NEWLINE]Deep within our earliest past."</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_SIRONAS_BEACON</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Hope is not dead at this sacred tower[NEWLINE]A monument to goodness' power."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Hope is not dead at this sacred tower[NEWLINE]A monument to goodness' power."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Hope is not dead at this sacred tower[NEWLINE]A monument to goodness' power."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Die Hoffnung ist nicht gestorben in diesem heiligen Turm.[NEWLINE]Ein Denkmal an die Macht einer Göttin."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Hope is not dead at this sacred tower[NEWLINE]A monument to goodness' power."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Hope is not dead at this sacred tower[NEWLINE]A monument to goodness' power."</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_STANDING_STONES</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Set up by the creatures of stones[NEWLINE]Who in this world have left nothing but bones"</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Set up by the creatures of stones[NEWLINE]Who in this world have left nothing but bones"</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Set up by the creatures of stones[NEWLINE]Who in this world have left nothing but bones"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Errichtet von Wesen aus Steinen[NEWLINE]die in dieser Welt nichts hinterlassen haben als Steine."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Set up by the creatures of stones[NEWLINE]Who in this world have left nothing but bones"</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Set up by the creatures of stones[NEWLINE]Who in this world have left nothing but bones"</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"So many voices so utterly pained[NEWLINE]A dark lord was here once chained."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"So many voices so utterly pained[NEWLINE]A dark lord was here once chained."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"So many voices so utterly pained[NEWLINE]A dark lord was here once chained."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"So viele Stimmen in so vollkommenem Schmerz[NEWLINE]Ein dunkler Lord war hier einst gefangen."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"So many voices so utterly pained[NEWLINE]A dark lord was here once chained."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"So many voices so utterly pained[NEWLINE]A dark lord was here once chained."</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOMB_OF_SUCELLUS</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once he was dead, but not any more.[NEWLINE]Though he was not as he was before."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once he was dead, but not any more.[NEWLINE]Though he was not as he was before."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Once he was dead, but not any more.[NEWLINE]Though he was not as he was before."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Einst war er tot, doch jetzt nicht mehr[NEWLINE]Auch wenn er nicht mehr so ist, wie er einst war."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once he was dead, but not any more.[NEWLINE]Though he was not as he was before."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once he was dead, but not any more.[NEWLINE]Though he was not as he was before."</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_YGGDRASIL</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Those who hunger shall find themselves fed.[NEWLINE]Across all of time this great bounty is spread."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Those who hunger shall find themselves fed.[NEWLINE]Across all of time this great bounty is spread."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Those who hunger shall find themselves fed.[NEWLINE]Across all of time this great bounty is spread."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Die, die hungern, werden satt werden[NEWLINE]Durch alle Zeiten ist dieser große Schatz getrieben."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Those who hunger shall find themselves fed.[NEWLINE]Across all of time this great bounty is spread."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Those who hunger shall find themselves fed.[NEWLINE]Across all of time this great bounty is spread."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Fools pray where angels dare not tread,[NEWLINE]At this savage monument to destruction and dread."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Fools pray where angels dare not tread,[NEWLINE]At this savage monument to destruction and dread."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Fools pray where angels dare not tread,[NEWLINE]At this savage monument to destruction and dread."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Narren rennen hinein, wohin Engel sich nicht wagen[NEWLINE]Ein wildes Mahnmal der Zerstörung und der Furcht.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Fools pray where angels dare not tread,[NEWLINE]At this savage monument to destruction and dread."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Fools pray where angels dare not tread,[NEWLINE]At this savage monument to destruction and dread."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_REMNANTS_OF_PATRIA</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once these people spanned all the world[NEWLINE]Until ice came, and their empire unfurled."</English>
-		<French>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once these people spanned all the world[NEWLINE]Until ice came, and their empire unfurled."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Once these people spanned all the world[NEWLINE]Until ice came, and their empire unfurled."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Einst umspannte dieses Volk die ganze Welt[NEWLINE]Bis das Eis kam, und ihr Reich aufrollte."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once these people spanned all the world[NEWLINE]Until ice came, and their empire unfurled."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus :[NEWLINE]"Once these people spanned all the world[NEWLINE]Until ice came, and their empire unfurled."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once these people spanned all the world,[NEWLINE]Until ice came, and their empire unfurled."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once these people spanned all the world,[NEWLINE]Until ice came, and their empire unfurled."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Once these people spanned all the world,[NEWLINE]Until ice came, and their empire unfurled."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Einst umspannte dieses Volk die ganze Welt[NEWLINE]Bis das Eis kam, und ihr Reich aufrollte.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once these people spanned all the world,[NEWLINE]Until ice came, and their empire unfurled."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once these people spanned all the world,[NEWLINE]Until ice came, and their empire unfurled."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"A lost isle in the depths of the seas;[NEWLINE]Here the undead do as they please"</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"A lost isle in the depths of the seas;[NEWLINE]Here the undead do as they please"</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"A lost isle in the depths of the seas;[NEWLINE]Here the undead do as they please"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Eine verlorene Insel in den Tiefen der See[NEWLINE]Hier machen die Untoten, was sie wollen.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"A lost isle in the depths of the seas;[NEWLINE]Here the undead do as they please"</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"A lost isle in the depths of the seas;[NEWLINE]Here the undead do as they please"</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_SEVEN_PINES</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Peace was made here, at long last;[NEWLINE]Deep within our earliest past."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Peace was made here, at long last;[NEWLINE]Deep within our earliest past."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE][NEWLINE]"Peace was made here, at long last;[NEWLINE]Deep within our earliest past."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Frieden wurde hier beschlossen, vor langer Zeit.[NEWLINE]Tief in unserer eigenen, frühesten Vergangenheit.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Peace was made here, at long last;[NEWLINE]Deep within our earliest past."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Peace was made here, at long last;[NEWLINE]Deep within our earliest past."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_SIRONAS_BEACON</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Hope is not dead at this sacred tower;[NEWLINE]A monument to goodness' power."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Hope is not dead at this sacred tower;[NEWLINE]A monument to goodness' power."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Hope is not dead at this sacred tower;[NEWLINE]A monument to goodness' power."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Die Hoffnung ist nicht gestorben in diesem heiligen Turm.[NEWLINE]Ein Denkmal an die Macht einer Göttin.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Hope is not dead at this sacred tower;[NEWLINE]A monument to goodness' power."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Hope is not dead at this sacred tower;[NEWLINE]A monument to goodness' power."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_STANDING_STONES</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Errichtet von Wesen aus Steinen[NEWLINE]die in dieser Welt nichts hinterlassen haben als Steine.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"So viele Stimmen in so vollkommenem Schmerz[NEWLINE]Ein dunkler Lord war hier einst gefangen.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOMB_OF_SUCELLUS</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was here dead, but not any more;[NEWLINE]Though he was not as he was before."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was here dead, but not any more;[NEWLINE]Though he was not as he was before."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Once he was dead, but not any more;[NEWLINE]Though he was not as he was before."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Einst war er tot, doch jet zt nicht mehr[NEWLINE]Auch wenn er nicht mehr so ist, wie er einst war.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was dead, but not any more;[NEWLINE]Though he was not as he was before."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was dead, but not any more;[NEWLINE]Though he was not as he was before."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_WHISPERING_WOODS</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_YGGDRASIL</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Those who hunger shall find themselves fed;[NEWLINE]Across all of time this great bounty is spread."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Those who hunger shall find themselves fed;[NEWLINE]Across all of time this great bounty is spread."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"Those who hunger shall find themselves fed;[NEWLINE]Across all of time this great bounty is spread."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Die, die hungern, werden satt werden[NEWLINE]Durch alle Zeiten ist dieser große Schatz getrieben.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Those who hunger shall find themselves fed;[NEWLINE]Across all of time this great bounty is spread."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Those who hunger shall find themselves fed;[NEWLINE]Across all of time this great bounty is spread."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_END</Tag>
