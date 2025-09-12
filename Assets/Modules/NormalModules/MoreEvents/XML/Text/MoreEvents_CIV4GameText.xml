@@ -3146,11 +3146,11 @@
 	</TEXT>
 	<TEXT> <!--Treasure Hunter-->
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_INITIATE</Tag>
-		<English>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do ?</English>
-		<French>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do ?</French>
+		<English>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do?</English>
+		<French>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do?</French>
 		<German>Eure Einheit hat auf einem fremden Markt eine kleine, verschlossene Kiste erstanden. Sie trägt das Zeichen der Drei! Was soll sie damit tun?</German>
-		<Italian>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do ?</Italian>
-		<Spanish>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do ?</Spanish>
+		<Italian>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do?</Italian>
+		<Spanish>While wandering in a foreign market, your unit bought a little locked chest with the Mark of the Three. What do you want to do?</Spanish>
 	</TEXT>
 	<TEXT> <!--Treasure Hunter-->
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_INITIATE_1</Tag>
