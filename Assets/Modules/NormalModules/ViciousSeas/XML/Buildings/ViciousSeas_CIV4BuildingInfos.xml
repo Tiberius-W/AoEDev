@@ -6,7 +6,7 @@
 <!-- Building Infos -->
 <Civ4BuildingInfos xmlns="x-schema:ViciousSeas_CIV4BuildingsSchema.xml">
 	<BuildingInfos>
-		<BuildingInfo>		<!-- Giant Kelp Lumber                                                    D'tesh UB -->
+		<BuildingInfo>		<!-- Giant Kelp Lumber                                                   Special Resource -->
 			<BuildingClass>BUILDINGCLASS_KELP</BuildingClass>
 			<Type>BUILDING_GIANT_KELP_LUMBER</Type>
 			<Description>TXT_KEY_BUILDING_GIANT_KELP_LUMBER</Description>
@@ -29,7 +29,7 @@
 			<FreePromotion>PROMOTION_SHIP_MARCH</FreePromotion>
 		     <bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Titan Turtle Scales                                                   D'tesh UB -->
+		<BuildingInfo>		<!-- Titan Turtle Scales                                                   Special Resource -->
 			<BuildingClass>BUILDINGCLASS_TITAN</BuildingClass>
 			<Type>BUILDING_TITAN_TURTLE_SCALES</Type>
 			<Description>TXT_KEY_BUILDING_TITAN_TURTLE_SCALES</Description>
@@ -58,7 +58,7 @@
 			<FreePromotion>PROMOTION_TITAN_SCALE_PLATING</FreePromotion>
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Giant Kraken Eyes                                                    D'tesh UB -->
+		<BuildingInfo>		<!-- Giant Kraken Eyes                                                    Special Resource -->
 			<BuildingClass>BUILDINGCLASS_KRAKEN</BuildingClass>
 			<Type>BUILDING_KRAKEN_EYES</Type>
 			<Description>TXT_KEY_BUILDING_GIANT_KRAKEN_EYE</Description>
@@ -168,7 +168,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Austrin Settlement                                         Austrin UB -->
+		<BuildingInfo>		<!-- Temu Austrin Settlement                                         Bezeri -->
 			<BuildingClass>BUILDINGCLASS_AUSTRIN_SETTLEMENT</BuildingClass>
 			<Type>BUILDING_BEZERI_OCEAN_CITY</Type>
 			<Description>TXT_KEY_BUILDING_BEZERI_OCEAN_CITY</Description>
@@ -236,6 +236,47 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+		</BuildingInfo>	
+		<BuildingInfo>		<!-- Monument -->
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_MONUMENT_DREAM_OF_JOY</Type>
+			<Description>TXT_KEY_BUILDING_DREAM_OF_JOY</Description>
+			<Civilopedia>TXT_KEY_LORE_BELTANE_CYCLE_3_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MONUMENT</ArtDefineTag>
+			<PrereqTech>TECH_ANCIENT_CHANTS</PrereqTech>
+			<ProductionTraits>
+				<ProductionTrait>
+					<ProductionTraitType>TRAIT_CREATIVE</ProductionTraitType>
+					<iProductionTrait>100</iProductionTrait>
+				</ProductionTrait>
+			</ProductionTraits>
+			<bCenterInCity>1</bCenterInCity>
+			<bNoUnhappiness>1</bNoUnhappiness>
+			<iAIWeight>300</iAIWeight>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>2</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 		</BuildingInfo>
 		</BuildingInfos>
 </Civ4BuildingInfos>
