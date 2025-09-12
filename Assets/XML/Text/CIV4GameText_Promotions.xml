@@ -662,6 +662,14 @@
 		<Spanish>Bear Blood</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_TOAD_BLOOD</Tag>
+		<English>Toad Blood</English>
+		<French>Sang d'Crapaud</French>
+		<German>Krötenblut</German>
+		<Italian>Toad Blood</Italian>
+		<Spanish>Toad Blood</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BOAR_BLOOD</Tag>
 		<English>Boar Blood</English>
 		<French>Sang de Sanglier</French>
@@ -4073,5 +4081,13 @@ himself.</Spanish>
 		<German>Undead Eater</German>
 		<Italian>Undead Eater</Italian>
 		<Spanish>Undead Eater</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_MISERY_INFLUENCE</Tag>
+		<English>Misery and Bad Fortune</English>
+		<French>Misery and Bad Fortune</French>
+		<German>Misery and Bad Fortune</German>
+		<Italian>Misery and Bad Fortune</Italian>
+		<Spanish>Misery and Bad Fortune</Spanish>
 	</TEXT>
 </Civ4GameText>

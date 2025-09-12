@@ -7171,6 +7171,18 @@
 			<Buildings/>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_TOAD</UnitClassType>
+					<UnitType>UNIT_TOAD</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_BIG_TOAD</UnitClassType>
+					<UnitType>UNIT_BIG_TOAD</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_OYKAMON</UnitClassType>
+					<UnitType>UNIT_OYKAMON</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_BEAR</UnitClassType>
 					<UnitType>UNIT_BEAR</UnitType>
 				</Unit>
@@ -7501,8 +7513,8 @@
 			<Buildings/>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>NONE</UnitType>
+					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
+					<UnitType>UNIT_GYRE_CARLIN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>

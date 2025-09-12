@@ -2285,6 +2285,39 @@
 			<DefaultUnit>UNIT_FENRIS</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Toad -->
+			<Type>UNITCLASS_TOAD</Type>
+			<Description>TXT_KEY_UNIT_TOAD</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_TOAD</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- BIG Toad -->
+			<Type>UNITCLASS_BIG_TOAD</Type>
+			<Description>TXT_KEY_UNIT_BIG_TOAD</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_BIG_TOAD</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- OYKAMON -->
+			<Type>UNITCLASS_OYKAMON</Type>
+			<Description>TXT_KEY_UNIT_OYKAMON</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_OYKAMON</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- rat -->
 			<Type>UNITCLASS_RAT</Type>
 			<Description>TXT_KEY_UNIT_RAT</Description>
@@ -4512,7 +4545,7 @@
 			<DefaultUnit>UNIT_GOBLIN_SAPPER</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
-		<UnitClassInfo>		<!-- MARAUTULE -->
+		<UnitClassInfo>		<!-- Haegetesse -->
 			<Type>UNITCLASS_HAG</Type>
 			<Description>TXT_KEY_UNIT_HAEGTESSE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -4520,6 +4553,17 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HAEGTESSE</DefaultUnit>
+			<bUnique>1</bUnique>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Gyr Carlin -->
+			<Type>UNITCLASS_GYRE_CARLIN</Type>
+			<Description>TXT_KEY_UNIT_GYRE_CARLIN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_GYRE_CARLIN</DefaultUnit>
 			<bUnique>1</bUnique>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
