@@ -23561,7 +23561,7 @@
 			<TechTypes>
 			</TechTypes>
 			<iAIWeight>0</iAIWeight>
-			<iCost>180</iCost>
+			<iCost>240</iCost>
 			<iMoves>1</iMoves>
 			<iWorkRate>300</iWorkRate>
 			<iCombat>7</iCombat>
@@ -50848,7 +50848,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_DEATH1</PromotionType>
+					<PromotionType>PROMOTION_DEATH2</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>

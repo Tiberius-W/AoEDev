@@ -8783,7 +8783,7 @@
 			<bInBordersOnly>1</bInBordersOnly>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bInCityOnly>1</bInCityOnly>
-			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<iChangePopulation>-1</iChangePopulation>
 			<PyResult>spellIgnitePyre(pCaster)</PyResult>
