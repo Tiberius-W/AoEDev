@@ -1164,7 +1164,9 @@ void CvPlot::doImprovementUpgrade()
 void CvPlot::updateCulture(bool bBumpUnits, bool bUpdatePlotGroups)
 {
 	if (isCity())
+	{
 		return;
+	}
 
 	// Improvements will sometimes overwrite cultural border : Improvements Mods expanded by Ahwaric	21.09.09
 	// Original: setOwner(calculateCulturalOwner(), bBumpUnits, bUpdatePlotGroups);
@@ -8681,7 +8683,9 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
 	if (iNewValue < 0 || getCultureControl(eIndex) == iNewValue)
+	{
 		return;
+	}
 
 	if(NULL == m_aiCultureControl)
 	{
@@ -8696,30 +8700,42 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssert(getCultureControl(eIndex) >= 0);
 
 	if (bUpdate)
+	{
 		updateCulture(true, bUpdatePlotGroups);
+	}
 
 	pCity = getPlotCity();
 
 	if (pCity != NULL)
+	{
 		pCity->AI_setAssignWorkDirty(true);
+	}
 }
 
 
 void CvPlot::changeCultureControl(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
 	if (iChange == 0)
+	{
 		return;
+	}
 
 	if ((getCultureControl(eIndex) + iChange) >= 0)
+	{
 		setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
+	}
 	else
+	{
 		setCultureControl(eIndex, 0, bUpdate, true);
+	}
 }
 
 void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
 	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+	{
 		return;
+	}
 
 	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
 	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
@@ -8730,18 +8746,26 @@ void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovemen
 	{
 		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
-				continue;
-
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
+
+			if (plotDistance(this, pLoopPlot) > iRange)
+			{
+				continue;
+			}
 
 			if (iStrength > 0)
+			{
 				pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
+			}
 
 			if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
+			{
 				pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
+			}
 		}
 	}
 }
@@ -8749,7 +8773,9 @@ void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovemen
 void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
 	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+	{
 		return;
+	}
 
 	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
 	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
@@ -8760,15 +8786,22 @@ void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovem
 	{
 		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
-				continue;
-
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
+
+			if (plotDistance(this, pLoopPlot) > iRange)
+			{
+				continue;
+			}
 
 			if (iStrength > 0)
+			{
 				pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
+			}
 		}
 	}
 }

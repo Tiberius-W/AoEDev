@@ -16168,19 +16168,27 @@ void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntit
 	if (iOldValue != getDamageReal())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
+		{
 			NotifyEntity(MISSION_DAMAGE);
+		}
 
 		setInfoBarDirty(true);
 
 		if (IsSelected())
+		{
 			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+		}
 
 		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
+		{
 			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
+		}
 	}
 
 	if (isDead())
+	{
 		kill(true, ePlayer);
+	}
 }
 
 // change HP by true damage (default 1000 hp scale). Will kill(true) if damage > max hp
@@ -31982,13 +31990,19 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 
 	// Gold relevant if not barb. Show option even if can't pay gold.
 	if (!bTestVisible && !isBarbarian() && GET_PLAYER(getOwnerINLINE()).getGold() < GET_PLAYER(getOwnerINLINE()).getClaimFortCost())
+	{
 		return false;
+	}
 
 	if (NO_IMPROVEMENT == pPlot->getImprovementType() || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort())
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	CvUnit* pLoopUnit;
 	CLLNode<IDInfo>* pUnitNode;
@@ -32005,15 +32019,20 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 	if (pPlot->isOwned()
 	 && pPlot->getOwner() != getOwnerINLINE()
 	 && !GET_TEAM(getTeam()).isAtWar(pPlot->getTeam()))
+	{
 		return false;
-
+	}
 	// Barbs can't claim unowned naval forts.
 	else if (isBarbarian() && pPlot->isWater() && !pPlot->isOwned())
+	{
 		return false;
+	}
 
 	// Can't set up commander if adjacent enemy combatants
 	if (countUnitsWithinRange(1, true, false, false, true, true) > 0)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32022,10 +32041,14 @@ bool CvUnit::claimFort(bool bBuilt)
 {
 	// Relying on fort building rules to avoid e.g. building a fort on a tile that already has one to get 2 commanders/fort
 	if (!canClaimFort(plot()) && !bBuilt)
+	{
 		return false;
+	}
 
 	if (!bBuilt && !isBarbarian())
+	{
 		GET_PLAYER(getOwnerINLINE()).changeGold(-GET_PLAYER(getOwnerINLINE()).getClaimFortCost());
+	}
 
 	CvUnit* pUnit;
 	int iUnitClass = GC.getDefineINT("FORT_COMMANDER_UNITCLASS");
@@ -32033,10 +32056,14 @@ bool CvUnit::claimFort(bool bBuilt)
 
 	//XXX this really shouldn't be done, fix it in the XML instead. I included it anyway because it was in the spell.
 	if (eUnit == NO_UNIT)
+	{
 		eUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iUnitClass).getDefaultUnitIndex();
+	}
 	pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
 	if (!bBuilt)
+	{
 		pUnit->finishMoves();
+	}
 
 	//if (GC.getCivilizationInfo(getCivilizationType()).getDefaultRace() != NO_PROMOTION)
 	//{
