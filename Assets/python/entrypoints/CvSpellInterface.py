@@ -6923,6 +6923,26 @@ def spellAustrinRemoteFound(caster):
 	CvEventInterface.getEventManager().onCityBuilt([pCity])
 	pPlayer.setFeatAccomplished(FeatTypes.FEAT_EXPEDITION_READY, False)
 
+def onDeathToad(pCaster):
+        pPlot = pCaster.plot()
+        iRnd = CyGame().getSorenRandNum(100, "Toadify")
+	if pPlot.getBonusType(-1) != -1:                                        # can't cast if bonus
+		return False
+        if pPlot.getRealBonusType() != -1:                                      # can't cast if hidden bonus
+		return False
+        if pPlot.isWater() != -1:                                               # can't cast if on water
+		return False
+        if pPlot.pPlot.isPeak() != -1:                                          # can't cast if on peaks
+		return False
+        if pPlot.getTerrainType() == getInfoType('TERRAIN_DESERT'):             # can't cast if on desert
+                return False
+        if pPlot.getTerrainType() == getInfoType('TERRAIN_GLACIER'):            # can't cast if on glacier
+                return False
+        if pPlot.getTerrainType() == getInfoType('TERRAIN_TUNDRA'):             # can't cast if on tundra
+                return False
+        if iRnd < 10:
+                pPlot.setBonusType(Bonus["Toad"])
+
 def onDeathForestCreeper(pCaster):
 	 iForest = getInfoType('FEATURE_FOREST')
 	# iNewForest = getInfoType('FEATURE_FOREST_NEW')

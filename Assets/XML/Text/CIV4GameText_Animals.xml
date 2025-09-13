@@ -418,6 +418,22 @@
 		<Spanish>Tyrant</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOAD</Tag>
+		<English>Toad</English>
+		<French>Toad</French>
+		<German>Toad</German>
+		<Italian>Toad</Italian>
+		<Spanish>Toad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BIG_TOAD</Tag>
+		<English>Toad Knot</English>
+		<French>Toad Knot</French>
+		<German>Toad Knot</German>
+		<Italian>Toad Knot</Italian>
+		<Spanish>Toad Knot</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_SEA_SERPENT</Tag>
 		<English>Sea Serpent</English>
 		<French>

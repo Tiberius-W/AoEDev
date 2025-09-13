@@ -1528,7 +1528,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
-			<iWorkRate>50</iWorkRate>
+			<iWorkRate>75</iWorkRate>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1590,10 +1590,11 @@
 			</DamageTypeCombats>
 			<iAlignmentModifier>-1</iAlignmentModifier>
 			<bForceOverwrite>1</bForceOverwrite>
-		</UnitInfo>		<UnitInfo>        <!-- Stygian Guard -->
+		</UnitInfo>
+		<UnitInfo>        <!-- Stygian Guard -->
 			<Class>UNITCLASS_STYGIAN_GUARD</Class>
 			<Type>UNIT_STYGIAN_GUARD</Type>
-			<iWorkRate>50</iWorkRate>
+			<iWorkRate>150</iWorkRate>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>

@@ -6402,6 +6402,12 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_MITHRIL_GOLEM</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MITHRIL</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MAGIC_IMMUNE</PromotionType>
@@ -8742,6 +8748,68 @@
 			<iCommandLimit>5</iCommandLimit>
 			<iCommandRange>3</iCommandRange>
 			<iPowerMult>1</iPowerMult>
+		</UnitInfo>
+		<UnitInfo>        <!-- Gyre Carlin -->
+			<Class>UNITCLASS_GYRE_CARLIN</Class>
+			<Type>UNIT_GYRE_CARLIN</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_PILLAGE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_GYRE_CARLIN</Description>
+			<Civilopedia>TXT_KEY_UNIT_GYRE_CARLIN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_GYRE_CARLIN_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<iInvisibleLevel>1</iInvisibleLevel>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>-1</iCost>
+			<iMoves>3</iMoves>
+			<iCombat>6</iCombat>
+			<iCombatDefense>8</iCombatDefense>
+			<iAsset>6</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>2.25</fMaxSpeed>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GYRE_CARLIN</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMON</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MISERY_INFLUENCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>4</iTier>
+			<iAppearanceProb>-1</iAppearanceProb>
+			<AppearanceTechs>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_WAY_OF_THE_WICKED</AppearanceTechType>
+					<iAppearanceTech>10001</iAppearanceTech>
+				</AppearanceTech>
+			</AppearanceTechs>
 		</UnitInfo>
 		<UnitInfo>        <!-- Adventurer 90-->                                                            <!-- BEGIN GREAT PEOPLE LIST -->
 			<Class>UNITCLASS_ADVENTURER</Class>
@@ -20554,7 +20622,13 @@
 			</UnitAIs>
 			<PrereqTech>TECH_DIVINE_ESSENCE</PrereqTech>
 			<BonusType>BONUS_IVORY</BonusType>
-			<iCost>360</iCost>
+			<iCost>260</iCost>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IVORY</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iMoves>1</iMoves>
 			<iCombat>13</iCombat>
 			<iCombatDefense>9</iCombatDefense>
@@ -20614,7 +20688,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<iCost>360</iCost>
+			<iCost>270</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>15</iCombat>
 			<iCollateralDamage>40</iCollateralDamage>
@@ -20622,6 +20696,16 @@
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>30</iAsset>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>20</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_COPPER</BonusType>
+					<iProductonModifier>20</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -20670,14 +20754,15 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<iCost>180</iCost>
+			<iCost>120</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>6</iCombat>
+			<iCombatDefense>7</iCombatDefense>
 			<iCityDefense>25</iCityDefense>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>25</iProductonModifier>
+					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<iCultureGarrison>6</iCultureGarrison>
@@ -20736,9 +20821,19 @@
 				<BonusType>BONUS_IRON</BonusType>
 				<BonusType>BONUS_MITHRIL</BonusType>
 			</PrereqBonuses>
-			<iCost>180</iCost>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>25</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MITHRIL</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<iCost>150</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>10</iCombat>
+			<iCombat>12</iCombat>
 			<iCombatDefense>6</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>15</iAsset>
@@ -20785,6 +20880,16 @@
 			</UnitAIs>
 		<PrereqBuilding>BUILDING_SIEGE_WORKSHOP</PrereqBuilding>
 			<PrereqTech>TECH_BLASTING_POWDER</PrereqTech>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>25</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GUNPOWDER</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -20846,9 +20951,20 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_MARBLE</BonusType>
 			</PrereqBonuses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>30</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>6</iCombat>
+			<iCombat>8</iCombat>
+			<iCombatDefense>10</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>15</iAsset>
 			<UnitMeshGroups>
@@ -21014,11 +21130,15 @@
 			<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
 			<iCost>240</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>13</iCombat>
+			<iCombat>15</iCombat>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>25</iProductonModifier>
+					<iProductonModifier>45</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MANA_METAMAGIC</BonusType>
+					<iProductonModifier>30</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<iCultureGarrison>4</iCultureGarrison>
@@ -21077,12 +21197,18 @@
 			</UnitAIs>
 			<PrereqBuilding>BUILDING_SCULPTORS_STUDIO</PrereqBuilding>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<iCost>90</iCost>
+			<iCost>70</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>6</iCombat>
-			<iCombatDefense>3</iCombatDefense>
+			<iCombat>7</iCombat>
+			<iCombatDefense>4</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>6</iAsset>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MANA_NATURE</BonusType>
+					<iProductonModifier>35</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -21099,6 +21225,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_GOLEM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MARCH</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -23431,7 +23561,7 @@
 			<TechTypes>
 			</TechTypes>
 			<iAIWeight>0</iAIWeight>
-			<iCost>180</iCost>
+			<iCost>240</iCost>
 			<iMoves>1</iMoves>
 			<iWorkRate>300</iWorkRate>
 			<iCombat>7</iCombat>
@@ -46716,6 +46846,329 @@
 			</AppearanceTechs>
 			<iPowerMult>5</iPowerMult>
 		</UnitInfo>
+		<UnitInfo>        <!-- Toad T1 -->                    <!-- Toads -->
+			<Class>UNITCLASS_TOAD</Class>
+			<Type>UNIT_TOAD</Type>
+			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_TOAD</Description>
+			<Strategy>TXT_KEY_UNIT_TOAD_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_TOAD_PEDIA</Civilopedia>
+			<Advisor>NONE</Advisor>
+			<bAnimal>1</bAnimal>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ANIMAL</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>1</iMoves>
+			<iCombat>2</iCombat>
+			<iCityAttack>-25</iCityAttack>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureDefense>25</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
+			<TerrainNatives>
+				<TerrainNative>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+			</TerrainNatives>
+			<FeatureNatives>
+				<FeatureNative>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+			</FeatureNatives>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>4</iGroupSize>
+				<iMeleeWaveSize>4</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>4</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_TOAD</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_TOAD_BLOOD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>1</iTier>
+			<iAppearanceProb>100</iAppearanceProb>
+			<AppearanceTechs>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_TRACKING</AppearanceTechType>
+					<iAppearanceTech>-101</iAppearanceTech>
+				</AppearanceTech>
+			</AppearanceTechs>
+			<PythonOnDeath>onDeathToad(pCaster)</PythonOnDeath>
+		</UnitInfo>
+		<UnitInfo>        <!-- Toad T2 -->
+			<Class>UNITCLASS_BIG_TOAD</Class>
+			<Type>UNIT_BIG_TOAD</Type>
+			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_BIG_TOAD</Description>
+			<Strategy>TXT_KEY_UNIT_TOAD_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_TOAD_PEDIA</Civilopedia>
+			<Advisor>NONE</Advisor>
+			<bAnimal>1</bAnimal>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ANIMAL</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>1</iMoves>
+			<iCombat>3</iCombat>
+			<iCityAttack>-25</iCityAttack>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureDefense>25</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
+			<TerrainNatives>
+				<TerrainNative>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+			</TerrainNatives>
+			<FeatureNatives>
+				<FeatureNative>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+			</FeatureNatives>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BIG_TOAD</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_TOAD</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_TOAD_BLOOD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>2</iTier>
+			<iAppearanceProb>-1</iAppearanceProb>
+			<AppearanceTechs>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_TRACKING</AppearanceTechType>
+					<iAppearanceTech>101</iAppearanceTech>
+				</AppearanceTech>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_FERAL_BOND</AppearanceTechType>
+					<iAppearanceTech>-50</iAppearanceTech>
+				</AppearanceTech>
+			</AppearanceTechs>
+			<PythonOnDeath>onDeathToad(pCaster)</PythonOnDeath>
+		</UnitInfo>
+		<UnitInfo>        <!-- Toad Hero Oykamon T4 -->
+			<Class>UNITCLASS_OYKAMON</Class>
+			<Type>UNIT_OYKAMON</Type>
+			<Combat>UNITCOMBAT_BEAST</Combat>
+			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_OYKAMON</Description>
+			<Strategy>TXT_KEY_UNIT_OYKAMON_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_OYKAMON_PEDIA</Civilopedia>
+			<Advisor>NONE</Advisor>
+			<bAnimal>1</bAnimal>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ANIMAL</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>4</iMoves>
+			<iCombat>10</iCombat>
+			<iCityAttack>-25</iCityAttack>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainAttack>75</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainDefense>75</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureDefense>25</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
+			<TerrainNatives>
+				<TerrainNative>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+			</TerrainNatives>
+			<FeatureNatives>
+				<FeatureNative>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+			</FeatureNatives>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ANGEL_TOAD</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CANNIBALIZE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FEAR</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MONSTROUS_CREATURE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_IMMUNE_DISEASE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_TOAD_BLOOD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>4</iTier>
+			<iAppearanceProb>-1</iAppearanceProb>
+			<AppearanceTechs>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_SANITATION</AppearanceTechType>
+					<iAppearanceTech>10001</iAppearanceTech>
+				</AppearanceTech>
+			</AppearanceTechs>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<iPowerMult>5</iPowerMult>
+			<PythonOnDeath>onDeathToad(pCaster)</PythonOnDeath>
+		</UnitInfo>
 		<UnitInfo>        <!-- Rat T1 550-->                    <!-- Rats -->
 			<Class>UNITCLASS_RAT</Class>
 			<Type>UNIT_RAT</Type>
@@ -46737,7 +47190,7 @@
 			</UnitAIs>
 			<iMoves>1</iMoves>
 			<iCombat>2</iCombat>
-			<iCityAttack>-25</iCityAttack>
+			<iCityAttack>25</iCityAttack>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -46793,7 +47246,7 @@
 			</UnitAIs>
 			<iMoves>2</iMoves>
 			<iCombat>3</iCombat>
-			<iCityAttack>-25</iCityAttack>
+			<iCityAttack>25</iCityAttack>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -46861,7 +47314,7 @@
 			</UnitAIs>
 			<iMoves>2</iMoves>
 			<iCombat>6</iCombat>
-			<iCityAttack>-25</iCityAttack>
+			<iCityAttack>25</iCityAttack>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -46932,7 +47385,7 @@
 			<iMoves>3</iMoves>
 			<iCombat>9</iCombat>
 			<iWithdrawalProb>65</iWithdrawalProb>
-			<iCityAttack>-25</iCityAttack>
+			<iCityAttack>25</iCityAttack>
 			<TerrainNatives>
 				<TerrainNative>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -50395,7 +50848,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_DEATH1</PromotionType>
+					<PromotionType>PROMOTION_DEATH2</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -55687,6 +56140,7 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
+			<PrereqTech>TECH_CORRUPTION_OF_SPIRIT</PrereqTech>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_COUNTER</UnitAIType>
@@ -55719,6 +56173,6 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iTier>3</iTier>
-		</UnitInfo>
+		</UnitInfo>	
 	</UnitInfos>
 </Civ4UnitInfos>

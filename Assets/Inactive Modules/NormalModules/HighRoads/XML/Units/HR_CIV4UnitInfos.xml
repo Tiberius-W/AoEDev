@@ -78,6 +78,16 @@
 				</Build>
 			</Builds>
 		</UnitInfo>
+		<UnitInfo>        <!-- Thrall -->
+			<Class>UNITCLASS_SLAVE</Class>
+			<Type>UNIT_THRALL</Type>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_IMPERIAL_ROAD</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+		</UnitInfo>
 	
 		</UnitInfos>
 </Civ4UnitInfos>
