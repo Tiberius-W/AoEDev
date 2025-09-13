@@ -38,7 +38,7 @@ def canDoHellRefugees(argsList):
 		if (pPlayer2.isAlive()):
 			if pPlayer2.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_INFERNAL'):
 				return True
-	return false
+	return False
 
 def doHellRefugees3(argsList):
 	kTriggeredData = argsList[1]
@@ -60,7 +60,7 @@ def helpHellRefugees3(argsList):
 def canDoHellRefugees4(argsList):
 	if CyGame().getGlobalCounter() >35 :
 		return True
-	return false
+	return False
 
 def doHellRefugees4(argsList):
 	iEvent         = argsList[0]
@@ -439,7 +439,7 @@ def canDoAshCough2 (argsList):
 		return True
 	if (pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_KURIOTATES")):
 		return True
-	return false
+	return False
 
 def canDoAshCough4 (argsList):
 	iEvent = argsList[0]
@@ -447,7 +447,7 @@ def canDoAshCough4 (argsList):
 	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
 	pCity = pPlayer.getCity(kTriggeredData.iCityId)
 	if pCity.getNumRealBuilding(gc.getInfoTypeForString('BUILDING_MAGE_GUILD')) == 0:
-		return false
+		return False
 	return True
 
 def doAshCough4 (argsList):
@@ -475,7 +475,7 @@ def canTriggerInfernalFilter(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	pPlayer = gc.getPlayer(iPlayer)
 	if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_INFERNAL'):
-		return false
+		return False
 	else:
 		return True
 
@@ -910,7 +910,7 @@ def canTriggerThatKindOfDay(argsList):
 									if not isWorldUnitClass(pUnit2.getUnitClassType()):
 										return True
 
-	return false
+	return False
 
 def canDoThatKindOfDay4(argsList):
 	iEvent = argsList[0]
@@ -1689,97 +1689,8 @@ def canDoAssassinWar4 (argsList):
 		pUnit = pPlayer.getUnit(i)
 		if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_AERONS_CHOSEN')) == True :
 			return True
-	return false
+	return False
 
-def canTriggerTreasureHunter(argsList):
-	kTriggeredData = argsList[0]
-	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
-	bBool=False
-	if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_LANUN'):
-		bBool= True
-	return bBool
-
-def calcTreasureHunterCleanLists(pPlayer, iSearchedImp):
-	"""
-	Returns [(flag1, text1), (flag2, text2), ...] of improvements available to search
-
-	:iSearchedImp: use -1 for no prior, or improvement index if we just searched that one and need to update and filter searched flags
-	"""
-
-	git				= gc.getInfoTypeForString
-
-	lSearchableUFs	= ["ABADDONS_PIT", "AIFON_ISLE", "BADBS_BLIZZARD", "BAIR_OF_LACUNA", "BRADELINES_WELL", "BROKEN_SEPULCHER", "CARNIVEANS_CAMP", "CLIFFS_OF_TALI", "CLOCKWORK_CITY", "DRAGON_BONES", "FOXFORD", "GRAVE_OF_ASMODAY", "GUARDIAN", "LETUM_FRIGUS", "MAJENS_WORKSHOP", "MIRROR_OF_HEAVEN", "MOUNT_KALSHEKK", "ODIOS_PRISON", "POOL_OF_TEARS", "PYRE_OF_THE_SERAPHIC", "REMNANTS_OF_PATRIA", "RINWELL", "SEVEN_PINES", "SIRONAS_BEACON", "STANDING_STONES", "TOMB_OF_SUCELLUS", "TOWER_OF_EYES", "WELL_OF_SOULS", "WHISPERING_WOODS", "YGGDRASIL"]
-
-	lDirtyImp		= [git("IMPROVEMENT_" + sImp) for sImp in lSearchableUFs]
-	lDirtyImpFlags  = [git("FLAG_TREASURE_HUNTER_" + sImp) for sImp in lSearchableUFs]
-	lDirtySearched  = [git("FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED") for sImp in lSearchableUFs]
-	lDirtyTexts		= ["TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp for sImp in lSearchableUFs]
-
-	# Now to correct the above for the few special UFs we have...
-	lDirtyImp.append(git("IMPROVEMENT_BRADELINES_WELL_PURIFIED"),git("IMPROVEMENT_RINWELL2"),git("IMPROVEMENT_RINWELL3"),git("IMPROVEMENT_WELL_OF_SOULS_OPEN"))
-	lDirtyImpFlags.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS"))
-	lDirtySearched.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),)
-	lDirtyTexts.append("TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS")
-
-	# [(flag1, text1), (flag2, text2), ...]
-	lCleanImps		= []
-
-	# Set searched flag and remove active search flag
-	if iSearchedImp != -1:
-		iSearchedIndex = lDirtyImp.index(iSearchedImp)
-		pPlayer.setHasFlag(lDirtyImpFlags[iSearchedIndex], False)
-		pPlayer.setHasFlag(lDirtySearched[iSearchedIndex], True)
-
-	# Assemble Clean Improvement lists, based on if UF is present on a map *at this time*!
-	# Quest will quietly fail if the UF *mysteriously* vanishes while we're searching for it...
-	# TODO hook into python removeImprovement to check for if any players are searching for that UF, and do something if so.
-	for i in xrange(CyMap().numPlots()):
-		loopPlot = CyMap().plotByIndex(i)
-		if loopPlot.getImprovementType() == -1:
-			continue
-		iLoopImp = loopPlot.getImprovementType()
-		if not gc.getImprovementInfo(iLoopImp).isUnique():
-			continue
-		if iLoopImp not in lDirtyImp:
-			continue
-		iImpIndex = lDirtyImp.index(iLoopImp)
-		if iSearchedImp != -1 and pPlayer.isHasFlag(lDirtySearched[iImpIndex]):
-			continue
-		lCleanImps.append((lDirtyImpFlags[iImpIndex], lDirtyTexts[iImpIndex]))
-	return lCleanImps
-
-
-def doTreasureHunterStart(argsList):
-	iPlayer			= argsList[1].ePlayer
-	git				= gc.getInfoTypeForString
-	pPlayer			= gc.getPlayer(iPlayer)
-	pHaven			= pPlayer.getCapitalCity()
-
-	# [(flag1, text1), (flag2, text2), ...]
-	lCleanImps = calcTreasureHunterCleanLists(pPlayer, -1)
-
-	# If Clean list contains at least one improvement start a new search
-	if lCleanImps:
-		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, First Search")
-		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
-		if pPlayer.isHuman():
-			popupInfo	= CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-			popupInfo.addPopup(iPlayer)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
-	# If the clean list is empty, there are no UFs on a map. Spawn Patrian anyway.
-	else:
-		pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_1'), False)
-		newUnit = pPlayer.initUnit(git('UNIT_THE_FLYING_PATRIAN'), pHaven.getX(), pHaven.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		newUnit.setHasPromotion(git('PROMOTION_SPIRIT_GUIDE'), True)
-		if pPlayer.isHuman():
-			popupInfo	= CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_END", ()))
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-			popupInfo.addPopup(iPlayer)
 
 # def doTreasureHunterSearched(argsList):
 	# iEvent = argsList[0]
@@ -2263,7 +2174,7 @@ def doTreasureHunterStart(argsList):
 						# py = PyPlayer(iPlayer2)
 						# for pUnit2 in py.getUnitList():
 							# if pUnit2.isAlive():
-								# pUnit2.doDamageNoCaster(10, 100, gc.getInfoTypeForString('DAMAGE_DEATH'), false)
+								# pUnit2.doDamageNoCaster(10, 100, gc.getInfoTypeForString('DAMAGE_DEATH'), False)
 	# else:
 		# if CyGame().getSorenRandNum(100, "Plague") <= 50:
 			# CyInterface().addMessage(pUnit.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_TEARS_GELA_PLAGUE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
@@ -2279,7 +2190,7 @@ def doTreasureHunterStart(argsList):
 						# py = PyPlayer(iPlayer2)
 						# for pUnit2 in py.getUnitList():
 							# if pUnit2.isAlive():
-								# pUnit2.doDamageNoCaster(10, 100, gc.getInfoTypeForString('DAMAGE_DEATH'), false)
+								# pUnit2.doDamageNoCaster(10, 100, gc.getInfoTypeForString('DAMAGE_DEATH'), False)
 
 # def doGelaMirrorOfHeaven(argsList):
 	# iEvent = argsList[0]
@@ -2303,7 +2214,7 @@ def doTreasureHunterStart(argsList):
 				# pDemonPlayer = pPlayer2
 				# enemyTeam = pDemonPlayer.getTeam()
 				# pTeam = gc.getTeam(pPlayer.getTeam())
-				# pTeam.declareWar(enemyTeam, true, WarPlanTypes.WARPLAN_TOTAL)
+				# pTeam.declareWar(enemyTeam, True, WarPlanTypes.WARPLAN_TOTAL)
 	# for iiX in range(iX-2, iX+3, 1):
 		# for iiY in range(iY-2, iY+3, 1):
 			# pPlot2 = CyMap().plot(iiX,iiY)

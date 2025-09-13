@@ -327,7 +327,7 @@ def onMovePoolOfTears2(pCaster, pPlot):
 	lIllness		= [git("PROMOTION_DISEASED"),git("PROMOTION_PLAGUED"),git("PROMOTION_POISONED"),git("PROMOTION_WITHERED")]
 	for iPromotion in lIllness:
 		if pCaster.isHasPromotion(iPromotion):
-			pCaster.setHasPromotion(iPromotion, false)
+			pCaster.setHasPromotion(iPromotion, False)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_POOL_OF_TEARS')):
 		doTreasureHunterNewSearch(iPlayer,iImprovement)
@@ -492,13 +492,13 @@ def onMoveMaelstrom2(pCaster, pPlot):
 				pTargetPlot = CyMap().plotByIndex(i)
 				if pTargetPlot.getTerrainType() == iOcean:
 					iValue = CyGame().getSorenRandNum(1000, "Maelstrom")
-					if pTargetPlot.isOwned() == false:
+					if pTargetPlot.isOwned() == False:
 						iValue += 1000
 					if iValue > iBestValue:
 						iBestValue = iValue
 						pBestPlot = pTargetPlot
 			if pBestPlot != -1:
-				pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), false, True, True)
+				pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
 				pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 				CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
@@ -567,51 +567,164 @@ def effectOrphanedGoblin(argsList):
 		pUnit.changeExperience(-1,-1,False,False,False)
 		newUnit = pPlayer.initUnit(git('UNIT_GOBLIN'), pPlot.getX(),pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-def doTreasureHunterNewSearch(iPlayer,iSearchedImp):
+
+def canTriggerTreasureHunter(argsList):
+	kTriggeredData = argsList[0]
+	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
+	if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_LANUN'):
+		return True
+	return False
+
+def getSearchableUFList():
+	return(["ABADDONS_PIT", "AIFON_ISLE", "BADBS_BLIZZARD", "BAIR_OF_LACUNA", "BRADELINES_WELL", "BROKEN_SEPULCHER", "CARNIVEANS_CAMP", "CLIFFS_OF_TALI", "CLOCKWORK_CITY", "DRAGON_BONES", "FOXFORD", "GRAVE_OF_ASMODAY", "GUARDIAN", "LETUM_FRIGUS", "MAJENS_WORKSHOP", "MIRROR_OF_HEAVEN", "MOUNT_KALSHEKK", "ODIOS_PRISON", "POOL_OF_TEARS", "PYRE_OF_THE_SERAPHIC", "REMNANTS_OF_PATRIA", "RINWELL", "SEVEN_PINES", "SIRONAS_BEACON", "STANDING_STONES", "TOMB_OF_SUCELLUS", "TOWER_OF_EYES", "WELL_OF_SOULS", "WHISPERING_WOODS", "YGGDRASIL"])
+
+def calcTreasureHunterCleanLists(pPlayer, iSearchedImp):
+	"""
+	Returns [(flag1, text1), (flag2, text2), ...] of improvements available to search
+
+	:iSearchedImp: use -1 for no prior, or improvement index if we just searched that one and need to update and filter searched flags
+	"""
+
 	git				= gc.getInfoTypeForString
-	pPlayer			= gc.getPlayer(iPlayer)
-	pHaven			= pPlayer.getCapitalCity()
-	# Every dirty list item has a common improvement within an equal index.
-	lDirtyImp		= [git("IMPROVEMENT_ABADDONS_PIT"),git("IMPROVEMENT_AIFON_ISLE"),git("IMPROVEMENT_BADBS_BLIZZARD"),git("IMPROVEMENT_BAIR_OF_LACUNA"),git("IMPROVEMENT_BRADELINES_WELL"),git("IMPROVEMENT_BRADELINES_WELL_PURIFIED"),git("IMPROVEMENT_BROKEN_SEPULCHER"),git("IMPROVEMENT_CARNIVEANS_CAMP"),git("IMPROVEMENT_CLIFFS_OF_TALI"),git("IMPROVEMENT_CLOCKWORK_CITY"),git("IMPROVEMENT_DRAGON_BONES"),git("IMPROVEMENT_FOXFORD"),git("IMPROVEMENT_GRAVE_OF_ASMODAY"),git("IMPROVEMENT_GUARDIAN"),git("IMPROVEMENT_LETUM_FRIGUS"),git("IMPROVEMENT_MAJENS_WORKSHOP"),git("IMPROVEMENT_MIRROR_OF_HEAVEN"),git("IMPROVEMENT_MOUNT_KALSHEKK"),git("IMPROVEMENT_ODIOS_PRISON"),git("IMPROVEMENT_POOL_OF_TEARS"),git("IMPROVEMENT_PYRE_OF_THE_SERAPHIC"),git("IMPROVEMENT_REMNANTS_OF_PATRIA"),git("IMPROVEMENT_RINWELL"),git("IMPROVEMENT_RINWELL2"),git("IMPROVEMENT_RINWELL3"),git("IMPROVEMENT_SEVEN_PINES"),git("IMPROVEMENT_SIRONAS_BEACON"),git("IMPROVEMENT_STANDING_STONES"),git("IMPROVEMENT_TOMB_OF_SUCELLUS"),git("IMPROVEMENT_TOWER_OF_EYES"),git("IMPROVEMENT_WELL_OF_SOULS"),git("IMPROVEMENT_WELL_OF_SOULS_OPEN"),git("IMPROVEMENT_WHISPERING_WOODS"),git("IMPROVEMENT_YGGDRASIL")]
-	lDirtyImpFlags	= [git("FLAG_TREASURE_HUNTER_ABADDONS_PIT"),git("FLAG_TREASURE_HUNTER_AIFON_ISLE"),git("FLAG_TREASURE_HUNTER_BADBS_BLIZZARD"),git("FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA"),git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER"),git("FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP"),git("FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI"),git("FLAG_TREASURE_HUNTER_CLOCKWORK_CITY"),git("FLAG_TREASURE_HUNTER_DRAGON_BONES"),git("FLAG_TREASURE_HUNTER_FOXFORD"),git("FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY"),git("FLAG_TREASURE_HUNTER_GUARDIAN"),git("FLAG_TREASURE_HUNTER_LETUM_FRIGUS"),git("FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP"),git("FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN"),git("FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK"),git("FLAG_TREASURE_HUNTER_ODIOS_PRISON"),git("FLAG_TREASURE_HUNTER_POOL_OF_TEARS"),git("FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC"),git("FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_SEVEN_PINES"),git("FLAG_TREASURE_HUNTER_SIRONAS_BEACON"),git("FLAG_TREASURE_HUNTER_STANDING_STONES"),git("FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS"),git("FLAG_TREASURE_HUNTER_TOWER_OF_EYES"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS"),git("FLAG_TREASURE_HUNTER_WHISPERING_WOODS"),git("FLAG_TREASURE_HUNTER_YGGDRASIL"),git(""),git("")]
-	lDirtySearched	= [git("FLAG_TREASURE_HUNTER_ABADDONS_PIT_SEARCHED"),git("FLAG_TREASURE_HUNTER_AIFON_ISLE_SEARCHED"),git("FLAG_TREASURE_HUNTER_BADBS_BLIZZARD_SEARCHED"),git("FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA_SEARCHED"),git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER_SEARCHED"),git("FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP_SEARCHED"),git("FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI_SEARCHED"),git("FLAG_TREASURE_HUNTER_CLOCKWORK_CITY_SEARCHED"),git("FLAG_TREASURE_HUNTER_DRAGON_BONES_SEARCHED"),git("FLAG_TREASURE_HUNTER_FOXFORD_SEARCHED"),git("FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY_SEARCHED"),git("FLAG_TREASURE_HUNTER_GUARDIAN_SEARCHED"),git("FLAG_TREASURE_HUNTER_LETUM_FRIGUS_SEARCHED"),git("FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP_SEARCHED"),git("FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN_SEARCHED"),git("FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK_SEARCHED"),git("FLAG_TREASURE_HUNTER_ODIOS_PRISON_SEARCHED"),git("FLAG_TREASURE_HUNTER_POOL_OF_TEARS_SEARCHED"),git("FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC_SEARCHED"),git("FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_SEVEN_PINES_SEARCHED"),git("FLAG_TREASURE_HUNTER_SIRONAS_BEACON_SEARCHED"),git("FLAG_TREASURE_HUNTER_STANDING_STONES_SEARCHED"),git("FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS_SEARCHED"),git("FLAG_TREASURE_HUNTER_TOWER_OF_EYES_SEARCHED"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED"),git("FLAG_TREASURE_HUNTER_WHISPERING_WOODS_SEARCHED"),git("FLAG_TREASURE_HUNTER_YGGDRASIL_SEARCHED")]
-	lDirtyTexts		= ["TXT_KEY_EVENT_TREASURE_HUNTER_ABADDONS_PIT","TXT_KEY_EVENT_TREASURE_HUNTER_AIFON_ISLE","TXT_KEY_EVENT_TREASURE_HUNTER_BADBS_BLIZZARD","TXT_KEY_EVENT_TREASURE_HUNTER_BAIR_OF_LACUNA","TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL","TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL","TXT_KEY_EVENT_TREASURE_HUNTER_BROKEN_SEPULCHER","TXT_KEY_EVENT_TREASURE_HUNTER_CARNIVEANS_CAMP","TXT_KEY_EVENT_TREASURE_HUNTER_CLIFFS_OF_TALI","TXT_KEY_EVENT_TREASURE_HUNTER_CLOCKWORK_CITY","TXT_KEY_EVENT_TREASURE_HUNTER_DRAGON_BONES","TXT_KEY_EVENT_TREASURE_HUNTER_FOXFORD","TXT_KEY_EVENT_TREASURE_HUNTER_GRAVE_OF_ASMODAY","TXT_KEY_EVENT_TREASURE_HUNTER_GUARDIAN","TXT_KEY_EVENT_TREASURE_HUNTER_LETUM_FRIGUS","TXT_KEY_EVENT_TREASURE_HUNTER_MAJENS_WORKSHOP","TXT_KEY_EVENT_TREASURE_HUNTER_MIRROR_OF_HEAVEN","TXT_KEY_EVENT_TREASURE_HUNTER_MOUNT_KALSHEKK","TXT_KEY_EVENT_TREASURE_HUNTER_ODIOS_PRISON","TXT_KEY_EVENT_TREASURE_HUNTER_POOL_OF_TEARS","TXT_KEY_EVENT_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC","TXT_KEY_EVENT_TREASURE_HUNTER_REMNANTS_OF_PATRIA","TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL","TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL","TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL","TXT_KEY_EVENT_TREASURE_HUNTER_SEVEN_PINES","TXT_KEY_EVENT_TREASURE_HUNTER_SIRONAS_BEACON","TXT_KEY_EVENT_TREASURE_HUNTER_STANDING_STONES","TXT_KEY_EVENT_TREASURE_HUNTER_TOMB_OF_SUCELLUS","TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES","TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS","TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS","TXT_KEY_EVENT_TREASURE_HUNTER_WHISPERING_WOODS","TXT_KEY_EVENT_TREASURE_HUNTER_YGGDRASIL"]
-	lCounterFlags	= [git("FLAG_TREASURE_HUNTER_5"),git("FLAG_TREASURE_HUNTER_4"),git("FLAG_TREASURE_HUNTER_3"),git("FLAG_TREASURE_HUNTER_2"),git("FLAG_TREASURE_HUNTER_1")]
-	lCleanImpTexts	= []
-	lCleanImpFlags	= []
-	if pPlayer.isHasFlag(git("FLAG_TREASURE_HUNTER_5")):		# Spawn Patrian, clean up flags
-		doSpawnPatrian(iPlayer)
-		return
-	for iCounter in lCounterFlags:								# Add next counter flag to the player every time function is called
-		if pPlayer.isHasFlag(iCounter):
-			iNextFlag = lCounterFlags.index(iCounter) - 1
-			pPlayer.setHasFlag(lCounterFlags[iNextFlag], True)
-	if iSearchedImp != -1:										# Set searched flag and remove active search flag
+
+	lSearchableUFs	= getSearchableUFList()
+
+	# Generate an index-matching list of improvements, flags, search flags, and text strings for the set of searchable UFs
+	lDirtyImp		= [git("IMPROVEMENT_" + sImp) for sImp in lSearchableUFs]
+	lDirtyImpFlags  = [git("FLAG_TREASURE_HUNTER_" + sImp) for sImp in lSearchableUFs]
+	lDirtySearched  = [git("FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED") for sImp in lSearchableUFs]
+	lDirtyTexts		= ["TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp for sImp in lSearchableUFs]
+
+	# Now to correct the above for the few special UFs we have...
+	lDirtyImp.append(git("IMPROVEMENT_BRADELINES_WELL_PURIFIED"),git("IMPROVEMENT_RINWELL2"),git("IMPROVEMENT_RINWELL3"),git("IMPROVEMENT_WELL_OF_SOULS_OPEN"))
+	lDirtyImpFlags.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS"))
+	lDirtySearched.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED"))
+	lDirtyTexts.append("TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS")
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps		= []
+
+	# Set searched flag and remove active search flag
+	if iSearchedImp != -1:
 		iSearchedIndex = lDirtyImp.index(iSearchedImp)
 		pPlayer.setHasFlag(lDirtyImpFlags[iSearchedIndex], False)
 		pPlayer.setHasFlag(lDirtySearched[iSearchedIndex], True)
-	for i in xrange(CyMap().numPlots()):							# Assemble Clean Improvement lists, based on if UF is present on a map
+
+	# Assemble Clean Improvement lists, based on if UF is present on a map *at this time*!
+	# Quest will quietly fail if the UF *mysteriously* vanishes while we're searching for it...
+	# TODO hook into python removeImprovement to check for if any players are searching for that UF, and do something if so.
+	for i in xrange(CyMap().numPlots()):
 		loopPlot = CyMap().plotByIndex(i)
-		if loopPlot.getImprovementType() != -1:
-			iLoopImp = loopPlot.getImprovementType()
-			if gc.getImprovementInfo(iLoopImp).isUnique() == True:
-				if iLoopImp in lDirtyImp:
-					iImpIndex = lDirtyImp.index(iLoopImp)
-					if not pPlayer.isHasFlag(lDirtySearched[iImpIndex]):
-						lCleanImpTexts.append(lDirtyTexts[iImpIndex])
-						lCleanImpFlags.append(lDirtyImpFlags[iImpIndex])
-	if lCleanImpFlags:											# If Clean list contains at least one improvement start a new search
-		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImpFlags), "Treasure Hunter, New Search")
-		pPlayer.setHasFlag(lCleanImpFlags[iNewSearchIndex], True)
+		if loopPlot.getImprovementType() == -1:
+			continue
+		iLoopImp = loopPlot.getImprovementType()
+		if not gc.getImprovementInfo(iLoopImp).isUnique():
+			continue
+		# Gotta exclude Ring of Carcer and Maelstrom
+		if iLoopImp not in lDirtyImp:
+			continue
+		iImpIndex = lDirtyImp.index(iLoopImp)
+		# Don't add any already searched ones, if we are continuing a search
+		if iSearchedImp != -1 and pPlayer.isHasFlag(lDirtySearched[iImpIndex]):
+			continue
+		lCleanImps.append((lDirtyImpFlags[iImpIndex], lDirtyTexts[iImpIndex]))
+
+	return lCleanImps
+
+def doTreasureHunterStart(argsList):
+	iPlayer			= argsList[1].ePlayer
+	git				= gc.getInfoTypeForString
+	pPlayer			= gc.getPlayer(iPlayer)
+	pHaven			= pPlayer.getCapitalCity()
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps = calcTreasureHunterCleanLists(pPlayer, -1)
+
+	# If Clean list contains at least one improvement start a new search
+	if lCleanImps:
+		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, First Search")
+		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
 		if pPlayer.isHuman():
 			popupInfo	= CyPopupInfo()
 			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText(lCleanImpTexts[iNewSearchIndex], ()))
+			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
 			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
 			popupInfo.addPopup(iPlayer)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImpTexts[iNewSearchIndex], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
-	else:														# If Clean list is empty but counter is not reached (small maps) spawn a Patrian
-		doSpawnPatrian(iPlayer)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
+	# If the clean list is empty, there are no UFs on a map. Spawn Patrian anyway.
+	else:
+		doSpawnPatrian(iPlayer, pPlayer)
+
+def doSpawnPatrian(iPlayer, pPlayer):
+	git			= gc.getInfoTypeForString
+	pCapital	= pPlayer.getCapitalCity()
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_1'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_2'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_3'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_4'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_5'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_DONE'), True)
+	newUnit		= pPlayer.initUnit(git('UNIT_THE_FLYING_PATRIAN'), pCapital.getX(), pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	if pPlayer.isHuman():
+		popupInfo	= CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_END", ()))
+		popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+		popupInfo.addPopup(iPlayer)
+
+def doTreasureHunterNewSearch(iPlayer, iSearchedImp):
+	pPlayer			= gc.getPlayer(iPlayer)
+	pHaven			= pPlayer.getCapitalCity()
+	git				= gc.getInfoTypeForString
+
+	# Spawn Patrian, clean up flags
+	if pPlayer.isHasFlag(git("FLAG_TREASURE_HUNTER_5")):
+		doSpawnPatrian(iPlayer, pPlayer)
+		return
+
+	lCounterFlags	= [git("FLAG_TREASURE_HUNTER_5"),git("FLAG_TREASURE_HUNTER_4"),git("FLAG_TREASURE_HUNTER_3"),git("FLAG_TREASURE_HUNTER_2"),git("FLAG_TREASURE_HUNTER_1")]
+	# Add next counter flag to the player every time function is called
+	for iCounter in lCounterFlags:
+		if pPlayer.isHasFlag(iCounter):
+			iNextFlag = lCounterFlags.index(iCounter) - 1
+			pPlayer.setHasFlag(lCounterFlags[iNextFlag], True)
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps = calcTreasureHunterCleanLists(pPlayer, iSearchedImp)
+
+	# If Clean list contains at least one improvement start a new search
+	if lCleanImps:
+		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, New Search")
+		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
+		if pPlayer.isHuman():
+			popupInfo	= CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
+			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+			popupInfo.addPopup(iPlayer)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
+	# If Clean list is empty but counter is not reached (small maps) spawn a Patrian
+	else:
+		doSpawnPatrian(iPlayer, pPlayer)
+
+def reqCheckLanunQuest(pCaster):
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	FlagList = ["FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED" for sImp in getSearchableUFList()]
+	for sFlag in FlagList:
+		if pPlayer.isHasFlag(getInfoType(sFlag)):
+			return True
+	return False
+
+def spellCheckLanunQuest(pCaster):
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	if pCaster == -1 or pCaster.isNone():
+		return
+	iPlayer = pCaster.getOwner()
+	for sImp in getSearchableUFList():
+		if pPlayer.isHasFlag(getInfoType("FLAG_TREASURE_HUNTER_" + sImp)):
+			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp, ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
+			return
+
 
 def perTurnGela(pCaster):
 	pPlayer = gc.getPlayer(pCaster.getOwner())
@@ -623,25 +736,6 @@ def perTurnGela(pCaster):
 			popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_GELA", ()))
 			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
 			popupInfo.addPopup(pCaster.getOwner())
-
-def doSpawnPatrian(iPlayer):
-	git			= gc.getInfoTypeForString
-	pPlayer		= gc.getPlayer(iPlayer)
-	pCapital	= pPlayer.getCapitalCity()
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_1'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_2'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_3'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_4'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_5'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_DONE'), True)
-	newUnit		= pPlayer.initUnit(git('UNIT_THE_FLYING_PATRIAN'), pCapital.getX(), pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-	newUnit.setHasPromotion(git('PROMOTION_SPIRIT_GUIDE'), True)
-	if pPlayer.isHuman():
-		popupInfo	= CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_END", ()))
-		popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-		popupInfo.addPopup(iPlayer)
 
 def effectHumanGelaImprovement(argsList):
 	iButtonId		= argsList[0]
@@ -683,7 +777,7 @@ def effectGelaImprovement(argsList):
 					pDemonPlayer = pPlayer2
 					enemyTeam = pDemonPlayer.getTeam()
 					pTeam = gc.getTeam(pPlayer.getTeam())
-					pTeam.declareWar(enemyTeam, true, WarPlanTypes.WARPLAN_TOTAL)
+					pTeam.declareWar(enemyTeam, True, WarPlanTypes.WARPLAN_TOTAL)
 		for iiX in range(pUnit.getX()-2, pUnit.getX()+3, 1):
 			for iiY in range(pUnit.getY()-2, pUnit.getY()+3, 1):
 				pPlot2 = CyMap().plot(iiX,iiY)
@@ -717,7 +811,7 @@ def effectGelaImprovement(argsList):
 						py = PyPlayer(iPlayer2)
 						for pUnit2 in py.getUnitList():
 							if pUnit2.isAlive():
-								pUnit2.doDamageNoCaster(10, 100, git('DAMAGE_DEATH'), false)
+								pUnit2.doDamageNoCaster(10, 100, git('DAMAGE_DEATH'), False)
 	elif iImprovement == git("IMPROVEMENT_PYRE_OF_THE_SERAPHIC"):
 		pUnit.setHasPromotion(git('PROMOTION_GELA'), False)
 		pPlot.setImprovementType(-1)
@@ -761,63 +855,5 @@ def effectGelaImprovement(argsList):
 						newUnit.setUnitAIType(git('UNITAI_ANIMAL'))
 						newUnit.setHasPromotion(git('PROMOTION_WATER_WALKING'), True)
 			CyInterface().addMessage(pUnit.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_GELA_2",()),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
-
-def reqCheckLanunQuest(pCaster):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	FlagList = ["FLAG_TREASURE_HUNTER_ABADDONS_PIT_SEARCHED","FLAG_TREASURE_HUNTER_AIFON_ISLE_SEARCHED","FLAG_TREASURE_HUNTER_BADBS_BLIZZARD_SEARCHED","FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA_SEARCHED","FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED","FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER_SEARCHED","FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP_SEARCHED","FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI_SEARCHED","FLAG_TREASURE_HUNTER_CLOCKWORK_CITY_SEARCHED","FLAG_TREASURE_HUNTER_DRAGON_BONES_SEARCHED","FLAG_TREASURE_HUNTER_FOXFORD_SEARCHED","FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY_SEARCHED","FLAG_TREASURE_HUNTER_GUARDIAN_SEARCHED","FLAG_TREASURE_HUNTER_LETUM_FRIGUS_SEARCHED","FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP_SEARCHED","FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN_SEARCHED","FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK_SEARCHED","FLAG_TREASURE_HUNTER_ODIOS_PRISON_SEARCHED","FLAG_TREASURE_HUNTER_POOL_OF_TEARS_SEARCHED","FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC_SEARCHED","FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED","FLAG_TREASURE_HUNTER_RINWELL_SEARCHED","FLAG_TREASURE_HUNTER_RINWELL_SEARCHED","FLAG_TREASURE_HUNTER_RINWELL_SEARCHED","FLAG_TREASURE_HUNTER_SEVEN_PINES_SEARCHED","FLAG_TREASURE_HUNTER_SIRONAS_BEACON_SEARCHED","FLAG_TREASURE_HUNTER_STANDING_STONES_SEARCHED","FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS_SEARCHED","FLAG_TREASURE_HUNTER_TOWER_OF_EYES_SEARCHED","FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED","FLAG_TREASURE_HUNTER_WHISPERING_WOODS_SEARCHED","FLAG_TREASURE_HUNTER_YGGDRASIL_SEARCHED"]
-	for Flag in FlagList:
-		if pPlayer.isHasFlag(getInfoType(Flag)) == True:
-			return True
-	return False
-
-def spellCheckLanunQuest(pCaster):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	szHelp = ""
-	if pCaster == -1 or pCaster.isNone():
-		szHelp = ""
-	else:
-		iPlayer 	= pCaster.getOwner()
-		if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_ABADDONS_PIT_SEARCHED')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_AIFON_ISLE", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_AIFON_ISLE')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_AIFON_ISLE", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_BAIR_OF_LACUNA", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BRADELINES_WELL')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_BROKEN_SEPULCHER", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_DRAGON_BONES')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_DRAGON_BONES", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_FOXFORD')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_FOXFORD", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_LETUM_FRIGUS')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_LETUM_FRIGUS", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_MIRROR_OF_HEAVEN", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_MOUNT_KALSHEKK", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_ODIOS_PRISON')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_ODIOS_PRISON", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_POOL_OF_TEARS')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_POOL_OF_TEARS", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_RINWELL')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_SEVEN_PINES')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_SEVEN_PINES", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_SIRONAS_BEACON')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_SIRONAS_BEACON", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_STANDING_STONES')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_STANDING_STONES", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOWER_OF_EYES')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_TOMB_OF_SUCELLUS", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_YGGDRASIL')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_YGGDRASIL", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-		elif pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA')) == True:
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_REMNANTS_OF_PATRIA", ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
 
 CvScreensInterface.effectHumanGelaImprovement	= effectHumanGelaImprovement

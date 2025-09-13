@@ -62,6 +62,10 @@
 					<PromotionType>PROMOTION_NORMAL_CREW</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SPIRIT_GUIDE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<iTier>3</iTier>
 			<Image>Art/Interface/Popups/Sailor's Dirge.dds</Image>
