@@ -862,6 +862,30 @@
 		<Spanish>Diseased Corpses</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPAWN_GROUP_HAEGETESSE_COVEN</Tag>
+		<English>Coven of Hags</English>
+		<French>Coven of Hags</French>
+		<German>Coven of Hags</German>
+		<Italian>Coven of Hags</Italian>
+		<Spanish>Coven of Hags</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>SPAWN_GROUP_HAEGETESSE_FAMILIARS</Tag>
+		<English>Hags Familiars</English>
+		<French>Hags Familiars</French>
+		<German>Hags Familiars</German>
+		<Italian>Hags Familiars</Italian>
+		<Spanish>Hags Familiars</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>SPAWN_GROUP_GHOSTWALKERS</Tag>
+		<English>Ghostwalkers</English>
+		<French>Ghostwalkers</French>
+		<German>Ghostwalkers</German>
+		<Italian>Ghostwalkers</Italian>
+		<Spanish>Ghostwalkers</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPAWN_GROUP_FALLEN_ANGELS</Tag>
 		<English>Fallen Angels</English>
 		<French>Anges déchus</French>
@@ -991,11 +1015,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER</Tag>
-		<English>Rogue Necromancer</English>
-		<French>Nécromancien rebelle</French>
-		<German>Rogue Necromancer</German>
-		<Italian>Rogue Necromancer</Italian>
-		<Spanish>Rogue Necromancer</Spanish>
+		<English>Rogue Necromancer I</English>
+		<French>Nécromancien rebelle I</French>
+		<German>Rogue Necromancer I</German>
+		<Italian>Rogue Necromancer I</Italian>
+		<Spanish>Rogue Necromancer I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_II</Tag>
+		<English>Rogue Necromancer II</English>
+		<French>Nécromancien rebelle II</French>
+		<German>Rogue Necromancer II</German>
+		<Italian>Rogue Necromancer II</Italian>
+		<Spanish>Rogue Necromancer II</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_II</Tag>
+		<English>Rogue Necromancer III</English>
+		<French>Nécromancien rebelle III</French>
+		<German>Rogue Necromancer III</German>
+		<Italian>Rogue Necromancer III</Italian>
+		<Spanish>Rogue Necromancer III</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPAWN_GROUP_RAMPAGING_BEASTMEN</Tag>
