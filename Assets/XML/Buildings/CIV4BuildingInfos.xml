@@ -14914,7 +14914,7 @@
 				</LocalSpecialistCommerceChange>
 			</LocalSpecialistCommerceChanges>
 		</BuildingInfo>
-<!--   <BuildingInfo> 		 Trader’s Enclave                                      	    Lanun Virtuous pirate UB 
+		<!--   <BuildingInfo> 		 Trader’s Enclave                                      	    Lanun Virtuous pirate UB 
 			<BuildingClass>BUILDINGCLASS_TRADER_ENCLAVE</BuildingClass>
 			<Type>BUILDING_TRADER_ENCLAVE</Type>
 			<Description>TXT_KEY_BUILDING_TRADER_ENCLAVE</Description>

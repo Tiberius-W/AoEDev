@@ -2249,20 +2249,18 @@ class CvEventManager:
 
 							newUnit4 = initUnit(Unit["Wolf Rider"], iX, iY, iNoAI, iSouth)
 							pUnit.addMinion(newUnit4)
-		
+
 		bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 		if (iGameTurn + 1) % (40- 5*CyGame().getGameSpeedType()) == 0 and not bPlayer.isHasFlag(gc.getInfoTypeForString('FLAG_CONTROLED_LACUNA')):
-			iRnd = 4 - CyGame().getGameSpeedType()
-			iBB = gc.getInfoTypeForString('IMPROVEMENT_BAIR_OF_LACUNA')
-			lBB = cf.findImprovements(iBB)
-			if len(lBB) > 0:
-				pPlotBB = lBB[0]
-				iIce = gc.getInfoTypeForString('BONUS_MANA_DIMENSIONAL')
+			iBL = gc.getInfoTypeForString('IMPROVEMENT_BAIR_OF_LACUNA')
+			lBL = cf.findImprovements(iBL)
+			if len(lBL) > 0:
+				pPlotBL = lBL[0]
 				iBestValue = 0
 				pBestPlot = -1
 				for i in xrange (CyMap().numPlots()):
 					pTargetPlot = CyMap().plotByIndex(i)
-					if pTargetPlot == pPlotBB:
+					if pTargetPlot == pPlotBL:
 						continue
 					if pTargetPlot.isPeak():
 						continue
@@ -2270,7 +2268,11 @@ class CvEventManager:
 						continue
 					if pTargetPlot.getBonusType(-1) != -1:
 						continue
+					if pTargetPlot.getRealBonusType() != -1:
+						continue
 					if pTargetPlot.isCity():
+						continue
+					if pTargetPlot.getNumUnits() > 0:
 						continue
 					iValue = 0
 					iImp = pTargetPlot.getImprovementType()
@@ -2278,45 +2280,32 @@ class CvEventManager:
 						iValue += 1000
 					elif gc.getImprovementInfo(iImp).isPermanent():
 						continue
-					iValue += CyGame().getSorenRandNum(1000, "Bair move ")
 					if not pTargetPlot.isOwned():
 						iValue += 500
+					if pTargetPlot.getRouteType() == -1:
+						iValue += 500
+					iValue += CyGame().getSorenRandNum(1000, "Bair move ")
 					if iValue > iBestValue:
 						iBestValue = iValue
 						pBestPlot = pTargetPlot
+
 				if pBestPlot != -1:
-				#   For the Guardian
-				#	iBadb = gc.getInfoTypeForString('UNIT_BADB')
-				#	for i in xrange(pPlotBB.getNumUnits()):
-				#		pUnit = pPlotBB.getUnit(i)
-				#		if iBadb in [pUnit.getUnitType()]:
-				#			pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
-				#			break
+					# Place new improvement
+					pBestPlot.setImprovementType(iBL) #this spawns dimension mana, we know there's no current bonus present
 
-					iBonusReal = pPlotBB.getRealBonusType()
-					if iBonusReal == iIce:
-						pPlotBB.setBonusType(-1)
-					else:
-						pPlotBB.setBonusType(iBonusReal)
-				#	if (pPlotBB.getTempTerrainTimer()>0):
-				#		pPlotBB.changeTempTerrainTimer(1-pPlotBB.getTempTerrainTimer())
-				#	iReal = pPlotBB.getRealImprovementType()
-				#	if iReal == iBB:
-					pPlotBB.setImprovementType(-1)
-				#	else:
-				#		pPlotBB.setImprovementType(iReal)
+					# Copy over values from old improvement
+					pBestPlot.setExploreNextTurn(pPlotBL.getExploreNextTurn())
+					pBestPlot.setRouteType(pPlotBL.getRouteType())
 
-					pBestPlot.setTempBonusType(iIce, iRnd)
-					pBestPlot.setExploreNextTurn(pPlotBB.getExploreNextTurn())
-					pPlotBB.setExploreNextTurn(0)
+					# Remove old improvement
+					pPlotBL.setImprovementType(-1)
+					pPlotBL.setBonusType(-1)
+					pPlotBL.setRouteType(-1)
+					pPlotBL.setExploreNextTurn(0)
 
-					pBestPlot.setImprovementType(iBB)
-					pBestPlot.setBonusType(iIce)
-				#	pBestPlot.setFeatureType(iBl, 0)
-
-# FfH Card Game: begin
+		# FfH Card Game: begin
 		cs.doTurn()
-# FfH Card Game: end
+		# FfH Card Game: end
 
 		cf.doFFTurn()
 		if game.getWBMapScript():
@@ -4016,6 +4005,16 @@ class CvEventManager:
 						pUnit.setHasPromotion(getInfoType("PROMOTION_HYAPON"),True)
 					elif pPlayer.hasBonus(getInfoType("BONUS_CAMEL")) and pPlayer.getCivilizationType()==getInfoType("CIVILIZATION_MALAKIM"):
 						pUnit.setHasPromotion(getInfoType("PROMOTION_CAMEL"),True)
+
+		if iUnitType == getInfoType('UNIT_CARNIVEAN'):
+			pUnit.setLevel(15)
+			pUnit.setExperienceTimes100(10000, 10000)
+			# Giving mutated now, after he spawns with a minimum of good ones, to enforce limits
+			pUnit.setHasPromotion(getInfoType("PROMOTION_MUTATED"),True)
+			# Funny, but maybe can cause issues.
+			# pUnit.setGameTurnCreated(-100)
+
+
 		## *******************
 		## Modular Python: ANW 29-may-2010
 

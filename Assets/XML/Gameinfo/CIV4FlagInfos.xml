@@ -268,6 +268,10 @@
 			<Description>TXT_KEY_FLAG_DEAD_BADB</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_DEAD_CARNIVEAN</Type>
+			<Description>TXT_KEY_FLAG_DEAD_CARNIVEAN</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_CONTROLED_LACUNA</Type>
 			<Description>TXT_KEY_FLAG_CONTROLED_LACUNA</Description>
 		</FlagInfo>

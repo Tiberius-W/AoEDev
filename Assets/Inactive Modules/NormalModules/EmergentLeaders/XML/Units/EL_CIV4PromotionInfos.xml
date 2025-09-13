@@ -20,6 +20,13 @@
 				<Promotion>PROMOTION_FLYING</Promotion>
 				<Promotion>PROMOTION_MARCH</Promotion>
 			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<iVisibilityChange>1</iVisibilityChange>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<iExtraPerception>1</iExtraPerception>

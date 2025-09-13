@@ -4746,6 +4746,7 @@ def spellWildHunt(caster):
 				newUnit.setHasPromotion(getInfoType('PROMOTION_HEROIC_STRENGTH'), True)
 
 def spellWonder(caster):
+	bFavored = caster.isHasPromotion(getInfoType('PROMOTION_FAVORED_SON'))
 	iCount = CyGame().getSorenRandNum(3, "Wonder") + 3
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pPlot = caster.plot()
@@ -4759,13 +4760,13 @@ def spellWonder(caster):
 		iRnd = CyGame().getSorenRandNum(66, "Wonder")
 		iUnit = -1
 		if iRnd == 0:
-			caster.cast(getInfoType('SPELL_BLAZE'))
+			caster.cast(getInfoType('SPELL_BLAZE')) #gonna say this cancels out with bloom for bFavored
 		elif iRnd == 1:
 			caster.cast(getInfoType('SPELL_BLESS'))
 		elif iRnd == 2:
 			caster.cast(getInfoType('SPELL_BLINDING_LIGHT'))
 		elif iRnd == 3:
-			caster.cast(getInfoType('SPELL_BLOOM'))
+			caster.cast(getInfoType('SPELL_BLOOM')) #gonna say this cancels out with blaze for bFavored
 		elif iRnd == 4:
 			caster.cast(getInfoType('SPELL_BLUR'))
 		elif iRnd == 5:
@@ -4785,28 +4786,39 @@ def spellWonder(caster):
 		elif iRnd == 12:
 			caster.cast(getInfoType('SPELL_ENCHANTED_BLADE'))
 		elif iRnd == 13:
-			CyEngine().triggerEffect(getInfoType('EFFECT_SPELL1'),point)
-			CyAudioGame().Play3DSound("AS3D_SPELL_DEFILE",point.x,point.y,point.z)
-			getPlot = CyMap().plot
-			iRange = 1 + caster.getSpellExtraRange()
-			for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
-				pLoopPlot = CyMap().plot(x, y)
-				if not pLoopPlot.isNone():
-					pLoopPlot.changePlotCounter(80)
+			if not bFavored:
+				CyEngine().triggerEffect(getInfoType('EFFECT_SPELL1'),point)
+				CyAudioGame().Play3DSound("AS3D_SPELL_DEFILE",point.x,point.y,point.z)
+				getPlot = CyMap().plot
+				iRange = 1 + caster.getSpellExtraRange()
+				for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
+					pLoopPlot = CyMap().plot(x, y)
+					if not pLoopPlot.isNone():
+						pLoopPlot.changePlotCounter(80)
+			else:
+				caster.cast(getInfoType('SPELL_ENTANGLE'))
 		elif iRnd == 14:
 			caster.cast(getInfoType('SPELL_ENTANGLE'))
 		elif iRnd == 15:
-			caster.cast(getInfoType('SPELL_ESCAPE'))
+			if not bFavored:
+				caster.cast(getInfoType('SPELL_ESCAPE'))
+			else:
+				caster.cast(getInfoType('SPELL_FIREBALL'))
 		elif iRnd == 16:
 			caster.cast(getInfoType('SPELL_FIREBALL'))
 		elif iRnd == 17:
 			caster.cast(getInfoType('SPELL_FLAMING_ARROWS'))
 		elif iRnd == 18:
-			caster.cast(getInfoType('SPELL_FLOATING_EYE'))
+			if not bFavored:
+				caster.cast(getInfoType('SPELL_FLOATING_EYE'))
+			else:
+				caster.cast(getInfoType('SPELL_MORALE'))
 		elif iRnd == 19:
 			caster.cast(getInfoType('SPELL_HASTE'))
 		elif iRnd == 20:
 			caster.cast(getInfoType('SPELL_HASTURS_RAZOR'))
+			if bFavored:
+				caster.cast(getInfoType('SPELL_HEAL'))
 		elif iRnd == 21:
 			caster.cast(getInfoType('SPELL_HEAL'))
 		elif iRnd == 22:
@@ -4832,13 +4844,19 @@ def spellWonder(caster):
 		elif iRnd == 32:
 			caster.cast(getInfoType('SPELL_SANCTIFY'))
 		elif iRnd == 33:
-			caster.cast(getInfoType('SPELL_SCORCH'))
+			if not bFavored:
+				caster.cast(getInfoType('SPELL_SCORCH'))
+			else:
+				caster.cast(getInfoType('SPELL_RUST'))
 		elif iRnd == 34:
 			caster.cast(getInfoType('SPELL_SHADOWWALK'))
 		elif iRnd == 35:
 			caster.cast(getInfoType('SPELL_SPORES'))
 		elif iRnd == 36:
-			caster.cast(getInfoType('SPELL_SPRING'))
+			if not bFavored:
+				caster.cast(getInfoType('SPELL_SPRING'))
+			else:
+				caster.cast(getInfoType('SPELL_STONESKIN'))
 		elif iRnd == 37:
 			caster.cast(getInfoType('SPELL_STONESKIN'))
 		elif iRnd == 38:
@@ -4878,11 +4896,14 @@ def spellWonder(caster):
 		elif iRnd == 55:
 			caster.cast(getInfoType('SPELL_VALOR'))
 		elif iRnd == 56:
-			caster.cast(getInfoType('SPELL_VITALIZE'))
+			if not bFavored:
+				caster.cast(getInfoType('SPELL_VITALIZE'))
+			else:
+				caster.cast(getInfoType('SPELL_SUMMON_MISTFORM'))
 		elif iRnd == 57:
 			caster.cast(getInfoType('SPELL_WITHER'))
 		elif iRnd == 58:
-			if bCity == False:
+			if not bFavored or bCity == False:
 				iImprovement = pPlot.getImprovementType()
 				bValid = True
 				if iImprovement != -1 :
@@ -4891,8 +4912,10 @@ def spellWonder(caster):
 				if bValid :
 					pPlot.setImprovementType(getInfoType('IMPROVEMENT_PENGUINS'))
 					CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_WONDER_PENGUINS", ()),'',1,'Art/Interface/Buttons/Improvements/Penguins.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
+			else:
+				caster.cast(getInfoType('SPELL_SWARM_OF_LOCUSTS'))
 		elif iRnd == 59:
-			if bCity == False:
+			if not bFavored or bCity == False:
 				iImprovement = pPlot.getImprovementType()
 				bValid = True
 				if iImprovement != -1 :
@@ -4901,26 +4924,35 @@ def spellWonder(caster):
 				if bValid :
 					pPlot.setImprovementType(getInfoType('IMPROVEMENT_MUSHROOMS'))
 					CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_WONDER_MUSHROOMS", ()),'',1,'Art/Interface/Buttons/Improvements/Mushrooms.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
+			else:
+				caster.cast(getInfoType('SPELL_STARE'))
 		elif iRnd == 60:
-			for iProm in range(gc.getNumPromotionInfos()):
-				if caster.isHasPromotion(iProm):
-					if gc.getPromotionInfo(iProm).isRace():
-						caster.setHasPromotion(iProm, False)
-			caster.setUnitArtStyleType(getInfoType('UNIT_ARTSTYLE_BABOON'))
-			CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_WONDER_BABOON", ()),'',1,'Art/Interface/Buttons/Units/Margalard.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
-			if pPlayer.isHuman():
-				t = "TROPHY_FEAT_BABOON"
-				if not CyGame().isHasTrophy(t):
-					CyGame().changeTrophyValue(t, 1)
+			if not bFavored:
+				for iProm in range(gc.getNumPromotionInfos()):
+					if caster.isHasPromotion(iProm):
+						if gc.getPromotionInfo(iProm).isRace():
+							caster.setHasPromotion(iProm, False)
+				caster.setUnitArtStyleType(getInfoType('UNIT_ARTSTYLE_BABOON'))
+				CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_WONDER_BABOON", ()),'',1,'Art/Interface/Buttons/Units/Margalard.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
+				if pPlayer.isHuman():
+					t = "TROPHY_FEAT_BABOON"
+					if not CyGame().isHasTrophy(t):
+						CyGame().changeTrophyValue(t, 1)
+			else:
+				# oh god, he goes again! Roughly 1/15 chance to trigger, so doesn't go infinitely, but...
+				caster.cast(getInfoType('SPELL_WONDER'))
 		elif iRnd == 61:
-			CyEngine().triggerEffect(getInfoType('EFFECT_SPELL1'),point)
-			CyAudioGame().Play3DSound("AS3D_SPELL_SANCTIFY",point.x,point.y,point.z)
-			getPlot = CyMap().plot
-			iRange = 2 + caster.getSpellExtraRange()
-			for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
-				pLoopPlot = CyMap().plot(x, y)
-				if pLoopPlot.isNone() == False:
-					pLoopPlot.setPlotCounter(0)
+			if not bFavored:
+				CyEngine().triggerEffect(getInfoType('EFFECT_SPELL1'),point)
+				CyAudioGame().Play3DSound("AS3D_SPELL_SANCTIFY",point.x,point.y,point.z)
+				getPlot = CyMap().plot
+				iRange = 2 + caster.getSpellExtraRange()
+				for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
+					pLoopPlot = CyMap().plot(x, y)
+					if pLoopPlot.isNone() == False:
+						pLoopPlot.setPlotCounter(0)
+			else:
+				caster.cast(getInfoType('SPELL_BREATH_LIGHTNING'))
 		elif iRnd == 62:
 			caster.cast(getInfoType('SPELL_SEVER_SOUL'))
 		elif iRnd == 63:

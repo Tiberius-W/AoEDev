@@ -78,7 +78,32 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 			
+		</TraitInfo>
+		<TraitInfo>		<!-- Keepers of the Long Odds (Carnivean's Camp) -->
+			<Type>TRAIT_KEEPERS_CARNIVEAN</Type>
+			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
+			<iMinRequiredPoints>500</iMinRequiredPoints>
+			<bCanBeLost>1</bCanBeLost>
+			<Description>TXT_KEY_TRAIT_KEEPERS_CARNIVEAN</Description>
+			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_CARNIVEAN_SHORT</ShortDescription>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_KEEPERS_CARNIVEAN</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Eternal Blizzard (Badb's Wandering Castle ) -->
 			<Type>TRAIT_KEEPERS_BADB</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>

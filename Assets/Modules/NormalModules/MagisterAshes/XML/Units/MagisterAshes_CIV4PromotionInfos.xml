@@ -164,6 +164,28 @@
 				</UnitCombat>
 			</UnitCombats>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Keepers of the Long Odds -->					<!-- For Elohim -->
+			<Type>PROMOTION_KEEPERS_CARNIVEAN</Type>
+			<Description>TXT_KEY_TRAIT_KEEPERS_CARNIVEAN</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<Button>Art/Interface/Buttons/Buildings/FreakShow.dds</Button>
+			<iWithdrawalChange>25</iWithdrawalChange>
+			<PrereqTraits>
+				<PrereqTrait>TRAIT_KEEPERS_CARNIVEAN</PrereqTrait>
+			</PrereqTraits>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Keepers of the Locusts' Jail (Evil)-->
 			<Type>PROMOTION_KEEPERS_ABADDON_FALLEN</Type>
 			<Description>TXT_KEY_TRAIT_KEEPERS_ABADDON_FALLEN</Description>
@@ -286,7 +308,7 @@
 			<Button>Art/modules/magisterashes/Buttons/BoneCirclet.dds</Button>
 			<bEquipment>1</bEquipment>
 			<PyPerTurn>effectBoneCirclet(pCaster)</PyPerTurn>
-				<BonusAffinities>
+			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_ENTROPY</BonusType>
 					<iAffinity>1</iAffinity>
@@ -317,7 +339,7 @@
 					<iCombat>1</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-				<BonusAffinities>
+			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<iAffinity>1</iAffinity>

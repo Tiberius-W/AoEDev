@@ -79,10 +79,10 @@ def spellUnleashStephanos(caster):
 	newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	pPlot.getPlotCity().setNumRealBuilding(gc.getInfoTypeForString("BUILDING_HERON_THRONE"), 0)
 
+def postCombatCarnivean(pCaster):
+	gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_DEAD_CARNIVEAN'),True)
 
-
-def postCombatBadb(pCaster, pOpponent):
-	pPlayer = gc.getPlayer(pOpponent.getOwner())
+def postCombatBadb(pCaster):
 	gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_DEAD_BADB'),True)
 
 def exploreLairUmberguardHostile(argsList):

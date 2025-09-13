@@ -31,7 +31,6 @@
 			<bCommunalProperty>0</bCommunalProperty>
 			<bEffectProm>0</bEffectProm>
 			<bFlatMoveCost>0</bFlatMoveCost>
-			<bFirstStrikeVulnerable>0</bFirstStrikeVulnerable>
 			<bFreeUnit>0</bFreeUnit>
 			<bGetCasterXP>0</bGetCasterXP>
 			<bIgnoreTerrainCosts>0</bIgnoreTerrainCosts>
@@ -186,7 +185,6 @@
 			<PythonOnRemove/>
 			<PythonPostCombatLost/>
 			<PythonPostCombatWon/>
-			<iExtraPerception>2</iExtraPerception>
 			<SlavePromotions/>
 			<TempUnitCombat>UNITCOMBAT_MOUNTED</TempUnitCombat>
 			<YieldsForLoss>
@@ -204,7 +202,6 @@
 			<bEnemyRoute>0</bEnemyRoute>
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>0</bHillsDoubleMove>
-			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
 			<iVisibilityChange>0</iVisibilityChange>
 			<iExtraPerception>0</iExtraPerception>
 			<iMovesChange>400</iMovesChange>
@@ -217,8 +214,13 @@
 			<iCargoChange>0</iCargoChange>
 			<iCollateralDamageChange>0</iCollateralDamageChange>
 			<iBombardRateChange>0</iBombardRateChange>
+			<bFirstStrikeVulnerable>0</bFirstStrikeVulnerable>
+			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
 			<iFirstStrikesChange>0</iFirstStrikesChange>
 			<iChanceFirstStrikesChange>0</iChanceFirstStrikesChange>
+			<bImmuneToDefensiveStrike>0</bImmuneToDefensiveStrike>
+			<iDefensiveStrikeChance>0</iDefensiveStrikeChance>
+			<iDefensiveStrikeDamage>0</iDefensiveStrikeDamage>
 			<iEnemyHealChange>0</iEnemyHealChange>
 			<iNeutralHealChange>0</iNeutralHealChange>
 			<iFriendlyHealChange>0</iFriendlyHealChange>
@@ -315,7 +317,7 @@
 			<bDoubleFortifyBonus>0</bDoubleFortifyBonus>
 			<bEquipment>0</bEquipment>
 			<bFear>0</bFear>
-			<bFlying>1</bFlying>
+			<bFlying>0</bFlying> <!-- Try to use the PROMOTION_FLYING promo if possible -->
 			<bHiddenNationality>0</bHiddenNationality>
 			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
 			<bImmortal>0</bImmortal>
@@ -917,7 +919,6 @@
 			</TerrainDefenses>
 			<Button>Art/Interface/Buttons/Races/Race_Frostling.dds</Button>
 			<bRace>1</bRace>
-			
 			<PromotionExcludes>
 				<Promotion>PROMOTION_WINTERED</Promotion>
 			</PromotionExcludes>
@@ -2195,7 +2196,7 @@
 		<PromotionInfo>		<!-- Uror Band -->
 			<Type>PROMOTION_UROR_BAND</Type>
 			<Description>TXT_KEY_EQUIPMENT_UROR_BAND</Description>
-				<Civilopedia>TXT_KEY_EQUIPMENT_UROR_BAND_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_EQUIPMENT_UROR_BAND_PEDIA</Civilopedia>
 			<Button>Art/Interface/Buttons/Equipment/uror-band.dds</Button>
 			<bEquipment>1</bEquipment>
 			<iAIWeight>-1000</iAIWeight>
@@ -12046,6 +12047,20 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/Flying.dds</Button>
 			<bFlying>1</bFlying>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Machine Spirit -->
@@ -13583,6 +13598,20 @@
 			<iMovesChange>2</iMovesChange>
 			<Button>Art/Interface/Buttons/promotions/mounts/Mount_Pegasus.dds</Button>
 			<bFlying>1</bFlying>
+			<!-- <PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes> -->
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iGroupSize>1</iGroupSize>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
@@ -14413,7 +14442,7 @@
 				<Promotion>PROMOTION_CHANNELING2</Promotion>
 			</PromotionAllows>
 			<PromotionOverwrites>
-			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
+				<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
 			</PromotionOverwrites>
 			<bAlwaysHeal>1</bAlwaysHeal>
 			<iMovesChange>2</iMovesChange>
@@ -30930,7 +30959,7 @@
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Mutation % Strength -->				<!-- Mutation Start -->
+		<PromotionInfo>		<!-- Mutation % Strength -->				<!-- Mutation Start (If changing, see Favored Son (for Carnivean)) -->
 			<Type>PROMOTION_MUTATION_STRENGTH_PERCENT</Type>
 			<Description>TXT_KEY_PROMOTION_MUTATION_STRENGTH_PERCENT</Description>
 			<Help></Help>
@@ -30986,6 +31015,20 @@
 			<iMutationWeight>20</iMutationWeight>
 			<iMutationMin>1</iMutationMin>
 			<iMutationMax>1</iMutationMax>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMutationMaxApplications>1</iMutationMaxApplications>
 			<Button>Art/Interface/Buttons/Promotions/Races/Golem.dds</Button>
 			<iMinLevel>-1</iMinLevel>
@@ -33582,6 +33625,7 @@
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<iVisibilityChange>1</iVisibilityChange>
+			<iExtraPerception>1</iExtraPerception>
 			<iMovesChange>1</iMovesChange>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FLYING</Promotion>
@@ -33592,6 +33636,16 @@
 			<UnitCombats/>
 			<Button>Art/Interface/Buttons/Promotions/Races/Golem.dds</Button>
 			<bFlying>1</bFlying>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_AMPHIBIOUS</Promotion>
+				<Promotion>PROMOTION_MOUNTAINEER</Promotion>
+			</PromotionExcludes>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_LIGHTNING</DamageType>
+					<iResist>-10</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Shaper Experiments -->
@@ -41876,6 +41930,46 @@
 		<PromotionInfo>		<!-- Leading Camel -->
 			<Type>PROMOTION_LEADING_CAMEL</Type>
 			<Description>TXT_KEY_PROMOTION_LEADING_CAMEL</Description>
+			<Button>Art/Interface/Buttons/WorldBuilder/Camel.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Favored Son (for Carnivean) -->
+			<Type>PROMOTION_FAVORED_SON</Type>
+			<Description>TXT_KEY_PROMOTION_FAVORED_SON</Description>
+			<PromotionExcludes>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_PERCENT_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_PERCENT_ATTACK_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_MOVEMENT_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE_CHANCE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_DEFENSIVE_STRIKE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_DEFENSE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_HEALING_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_CRAZED</PromotionType>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_PERCENT_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_PERCENT_ATTACK_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_MOVEMENT_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE_CHANCE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_DEFENSIVE_STRIKE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_STRENGTH_DEFENSE_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_HEALING_BAD</PromotionType>
+				<PromotionType>PROMOTION_MUTATION_CRAZED</PromotionType>
+			</PromotionOverwrites>
+			<iExtraPerception>3</iExtraPerception>
+			<iFirstStrikesChange>3</iFirstStrikesChange>
+			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
+			<iDefensiveStrikeChance>50</iDefensiveStrikeChance>
+			<iDefensiveStrikeDamage>10</iDefensiveStrikeDamage>
+			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
+			<!-- 90% max on first, and 45% thereafter. Lucky sob! -->
+			<iWithdrawalChange>145</iWithdrawalChange>
+			<iEnemyWithdrawalChange>-25</iEnemyWithdrawalChange>
+			<iCollateralDamageProtection>100</iCollateralDamageProtection>
+			<iResistMagic>10</iResistMagic>
 			<Button>Art/Interface/Buttons/WorldBuilder/Camel.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>

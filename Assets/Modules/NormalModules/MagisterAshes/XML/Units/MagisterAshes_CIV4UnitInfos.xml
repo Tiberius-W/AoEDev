@@ -201,7 +201,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LEASH_0</PromotionType>
+					<PromotionType>PROMOTION_LEASH_1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -210,7 +210,7 @@
 			<iCombatDefense>4</iCombatDefense>
 			<iMiscastChance>-55</iMiscastChance>
 			<iTier>5</iTier>
-			<PythonPostCombatLost>postCombatBadb(pCaster,pOpponent)</PythonPostCombatLost>
+			<PythonOnDeath>postCombatBadb(pCaster)</PythonOnDeath>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_COLD</DamageType>
@@ -241,17 +241,9 @@
 			</UnitAIs>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iExtraPerception>6</iExtraPerception>
-			<iDefensiveStrikeChance>100</iDefensiveStrikeChance>
-			<iDefensiveStrikeDamage>25</iDefensiveStrikeDamage>
-			<bImmuneToDefensiveStrike>1</bImmuneToDefensiveStrike>
-			<iFirstStrikes>4</iFirstStrikes>
-			<iEnemyWithdrawalProb>-50</iEnemyWithdrawalProb>
-			<iWithdrawalProb>100</iWithdrawalProb>
-			<iWithdrawlProbDefensive>50</iWithdrawlProbDefensive>
-			<iMoves>2</iMoves>
-			<iCombat>1</iCombat>
-			<iCombatDefense>1</iCombatDefense>
+			<iMoves>1</iMoves>
+			<iCombat>0</iCombat>
+			<iCombatDefense>0</iCombatDefense>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
 			<UnitMeshGroups>
@@ -268,6 +260,14 @@
 			<!-- No Chaos III because the noise is horrible... -->
 			<FreePromotions>
 				<FreePromotion>
+					<PromotionType>PROMOTION_SECONDARY_ARCANE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SECONDARY_ROGUE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_CHAOS1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -276,11 +276,35 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_CURSED</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_ENERVATED</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_CANNIBALIZE</PromotionType>
+					<PromotionType>PROMOTION_WEAK</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_HEALING_COMBAT</PromotionType>
+					<iNumApplied>3</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_FIRST_STRIKE</PromotionType>
+					<iNumApplied>2</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MUTATION_DEFENSIVE_STRIKE</PromotionType>
+					<iNumApplied>3</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FAVORED_SON</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FANATIC</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -316,31 +340,61 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_RING_OF_STRIKING</PromotionType>
+					<PromotionType>PROMOTION_ENCHANTED_BLADE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_POISONED_BLADE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SHEUT_STONE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MITHRIL_WEAPONS</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HIGH_QUALITY_MITHRIL_MELEE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEART_AMULET</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_RING_OF_PERCEPTION</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SWIFT_BOOTS</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_STRENGTH</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_STRENGTH2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_DEFENSE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HEROIC_DEFENSE2</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<bNeverObsolete>1</bNeverObsolete>
 			<iTier>4</iTier>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_COLD</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_FIRE</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_LIGHTNING</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_POISON</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
 			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_CHAOS</BonusType>
@@ -349,6 +403,10 @@
 			</BonusAffinities>
 			<bNeverObsolete>1</bNeverObsolete>
 			<iPowerMult>5</iPowerMult>
+			<PythonOnDeath>postCombatCarnivean(pCaster)</PythonOnDeath>
+			<!-- TODO add an image, purty please? -->
+			<Image></Image>
+			<Quote>TXT_KEY_POPUP_CARNIVEAN_CREATION</Quote>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
