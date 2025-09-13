@@ -1155,22 +1155,22 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
 					<PrereqTech>NONE</PrereqTech>
-					<iTime>200</iTime>
-					<iProduction>10</iProduction>
+					<iTime>100</iTime>
+					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
 					<PrereqTech>NONE</PrereqTech>
-					<iTime>200</iTime>
-					<iProduction>10</iProduction>
+					<iTime>250</iTime>
+					<iProduction>15</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
 					<PrereqTech>NONE</PrereqTech>
 					<iTime>1000</iTime>
-					<iProduction>30</iProduction>
+					<iProduction>45</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
