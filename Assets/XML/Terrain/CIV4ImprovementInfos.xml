@@ -101,7 +101,7 @@
 			<iRange>0</iRange> <!-- How far to apply additional optional tile defensive strength -->
 			<iRangeDefenseModifier>0</iRangeDefenseModifier> <!-- Apply this defensive strength to units of the same team within range > 0, so long as the tile is owned and has no enemy on it -->
 			<bActsAsCity>0</bActsAsCity> <!-- 1 means water units can pass thru as if water, and land units can pass thru as if land. Exploits all revealed resources on the tile. Treated as city in many ways. -->
-			<bOutsideBorders>0</bOutsideBorders> <!-- 1 means the improvement gets automatically owned by whichever is set in SpawnUnitCiv, and upgrades by itself if unowned. Claiming via bFort overrides this IF the fort is claimed -->
+			<bOutsideBorders>0</bOutsideBorders> <!-- 1 means the improvement gets automatically owned by whichever is set in SpawnUnitCiv, and upgrades by itself if unowned. Claiming via e.g. bFort can change the owner -->
 			<bSpawnOnlyForOwner>0</bSpawnOnlyForOwner> <!-- 1 means: Units and groups spawned from here will only go to SpawnUnitCiv, IF the current owner is not at war with SpawnUnitCiv. And: -->
 			<SpawnUnitCiv></SpawnUnitCiv> <!-- If SpawnUnitCiv is not set, spawns will go to whoever owns the tile. See bSpawnOnlyForOwner and bOutsideBorders. If multiple players of same civ, goes to who is first in list -->
 			<SpawnUnitType></SpawnUnitType> <!-- What singular unit will spawn if conditions are met -->

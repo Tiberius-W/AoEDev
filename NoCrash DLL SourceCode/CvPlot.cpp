@@ -1172,7 +1172,7 @@ void CvPlot::updateCulture(bool bBumpUnits, bool bUpdatePlotGroups)
 	// Original: setOwner(calculateCulturalOwner(), bBumpUnits, bUpdatePlotGroups);
 	if (getImprovementType() != NO_IMPROVEMENT
 	 && getImprovementOwner() != NO_PLAYER
-	 && GC.getImprovementInfo(getImprovementType()).isOutsideBorders())
+	 && (GC.getImprovementInfo(getImprovementType()).isOutsideBorders() || (GC.getImprovementInfo(getImprovementType()).isFort())))
 	{
 		setOwner(getImprovementOwner(), bBumpUnits, bUpdatePlotGroups);
 	}
@@ -2331,18 +2331,26 @@ int CvPlot::seeFromLevel(TeamTypes eTeam, bool bAerial) const
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
 
 		if (GET_TEAM(eTeam).isExtraWaterSeeFrom())
+		{
 			iLevel++;
+		}
 	}
 
 	// Flying units should always treated as if atop a peak
 	if (bAerial)
+	{
 		return iLevel + GC.getPEAK_SEE_FROM_CHANGE();
+	}
 
 	if (isPeak())
+	{
 		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
+	}
 
 	if (isHills())
+	{
 		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
+	}
 
 	return iLevel;
 }
@@ -2357,19 +2365,29 @@ int CvPlot::seeThroughLevel() const
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel();
 
 	if (getFeatureType() != NO_FEATURE)
+	{
 		iLevel += GC.getFeatureInfo(getFeatureType()).getSeeThroughChange();
+	}
 
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
+	{
 		iLevel += GC.getPlotEffectInfo(getPlotEffectType()).getSeeThroughChange();
+	}
 
 	if (isPeak())
+	{
 		iLevel += GC.getPEAK_SEE_THROUGH_CHANGE();
+	}
 
 	if (isHills())
+	{
 		iLevel += GC.getHILLS_SEE_THROUGH_CHANGE();
+	}
 
 	if (isWater())
+	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
+	}
 
 	return iLevel;
 }
@@ -2387,7 +2405,9 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 	int iLoop = 0;
 
 	if (pUnit != NULL)
+	{
 		iLoop = std::max(iLoop, pUnit->getPerception());
+	}
 
 	for (int i = -1; i < iLoop; i++)
 	{
@@ -2398,14 +2418,18 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 				// This is the 'one tile further'
 				bOuterRing = false;
 				if ((abs(dx) == iRange) || (abs(dy) == iRange))
+				{
 					bOuterRing = true;
+				}
 
 				//check if anything blocking the plot. Aerial avoid LoS except for outer ring
 				if ((bAerial && !bOuterRing) || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing, bAerial))
 				{
 					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 					if (NULL != pPlot)
+					{
 						pPlot->changeVisibilityCount(eTeam, ((bIncrement) ? 1 : -1), (InvisibleTypes)i, bUpdatePlotGroups);
+					}
 				}
 			}
 		}
@@ -2418,12 +2442,16 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 {
 	if (pPlot == NULL)
+	{
 		return false;
+	}
 
 	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
 	if (stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) > iRange)
+	{
 		return false;
+	}
 
 	//find displacement
 	int dx = xDistance(getX(), pPlot->getX());
@@ -2433,11 +2461,15 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 
 	// This is the 'one tile further'
 	if ((abs(dx) == iRange) || (abs(dy) == iRange))
+	{
 		bOuterRing = true;
+	}
 
 	//check if nothing blocking the plot
 	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing))
+	{
 		return true;
+	}
 
 	return false;
 }
@@ -2449,11 +2481,15 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 	if (pPlot == NULL)
+	{
 		return false;
+	}
 
 	//base case is current plot
 	if((dx == 0) && (dy == 0))
+	{
 		return true;
+	}
 
 	//find closest of three points (1, 2, 3) to original line from Start (S) to End (E)
 	//The diagonal is computed first as that guarantees a change in position
@@ -2482,14 +2518,20 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		int nextDX = displacements[i][0];
 		int nextDY = displacements[i][1];
 		if((nextDX == dx) && (nextDY == dy)) //make sure we change plots
+		{
 			continue;
+		}
 
 		if(allClosest[i] != closest)
+		{
 			continue;
+		}
 
 		// Try the first closest; work our way backwards until either there is a chain that leads to first plot, or everything returns false
 		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false, bAerial))
+		{
 			continue;
+		}
 
 		int fromLevel = seeFromLevel(eTeam, bAerial);
 		int throughLevel = pPlot->seeThroughLevel();
@@ -2510,10 +2552,14 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		else
 		{
 			if(fromLevel >= throughLevel) //we can clearly see this level
+			{
 				return true;
+			}
 
 			if(firstPlot) //we can also see it if it is the first plot that is too tall
+			{
 				return true;
+			}
 		}
 	}
 
@@ -2617,7 +2663,9 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot != NULL)
+			{
 				pLoopPlot->updateSight(bIncrement, bUpdatePlotGroups);
+			}
 		}
 	}
 }
@@ -2764,20 +2812,30 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	// Xienwolf - 12/13/08 - Attempt to keep Unique Features from being removed on Mapgen
 	if (isCity() || (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isPermanent()))
+	{
 		return false;
+	}
 
 	if (isImpassable())
+	{
 		return false;
+	}
 
 	// Mountain Mod - Ahwaric - 19.09.09
 	if (GC.getImprovementInfo(eImprovement).isRequiresPeak() && !isPeak())
+	{
 		return false;
+	}
 	// Peak must have either of these to be valid
 	if (isPeak() && !(GC.getImprovementInfo(eImprovement).isRequiresPeak() || GC.getImprovementInfo(eImprovement).isPeakMakesValid()))
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
+	{
 		return false;
+	}
 
 	// Check backwards; does a feature on this tile prevent improvements?
 	if (getFeatureType() != NO_FEATURE)
@@ -2793,16 +2851,24 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	// Special check for bonuses making improvements permissible, outside of regular restrictions
 	if ((getBonusType(eTeam) != NO_BONUS) && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam)))
+	{
 		return true;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isNoFreshWater() && isFreshWater())
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFeature() && (getFeatureType() == NO_FEATURE))
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresRiverSide())
 	{
@@ -2828,20 +2894,34 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s
 	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
+	{
 		bValid = true;
+	}
 	else if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
+	{
 		bValid = true;
+	}
 	else if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
+	{
 		bValid = true;
+	}
 	else if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
+	{
 		bValid = true;
+	}
 	else if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+	{
 		bValid = true;
+	}
 	else if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+	{
 		bValid = true;
+	}
 
 	if (!bValid)
+	{
 		return false;
+	}
 
 
 	// ????
@@ -6167,7 +6247,9 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 	PROFILE_FUNC();
 	
 	if (getOwnerINLINE() == eNewValue)
+	{
 		return;
+	}
 
 	CLLNode<IDInfo>* pUnitNode;
 	CvCity* pOldCity;
@@ -8720,14 +8802,7 @@ void CvPlot::changeCultureControl(PlayerTypes eIndex, int iChange, bool bUpdate)
 		return;
 	}
 
-	if ((getCultureControl(eIndex) + iChange) >= 0)
-	{
-		setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
-	}
-	else
-	{
-		setCultureControl(eIndex, 0, bUpdate, true);
-	}
+	setCultureControl(eIndex, std::max(0, (getCultureControl(eIndex) + iChange)), bUpdate, true);
 }
 
 void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
@@ -8737,9 +8812,10 @@ void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovemen
 		return;
 	}
 
+	changeCultureControl(ePlayer, GC.getImprovementInfo(eImprovement).getCultureCenterBonus(), bUpdateInterface);
+
 	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
 	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
 	int iDX, iDY;
 	CvPlot* pLoopPlot;
 	for (iDX = -iRange; iDX <= iRange; iDX++)
@@ -8760,11 +8836,6 @@ void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovemen
 			if (iStrength > 0)
 			{
 				pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
-			}
-
-			if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-			{
-				pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
 			}
 		}
 	}

@@ -32073,9 +32073,9 @@ bool CvUnit::claimFort(bool bBuilt)
 	//	}
 	//}
 
-	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), false);
+	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), true);
 	plot()->setImprovementOwner(getOwnerINLINE());
-	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), false);
+	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), true);
 	// Need a distinct call to update culture; above ones won't update if the improvement doesn't have culture control
 	plot()->updateCulture(true, true);
 
