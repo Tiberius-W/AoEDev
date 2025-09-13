@@ -32612,6 +32612,7 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 	CvUnit* pUnit;
 	bool bConvert = false;
 	CvPlot* pLoserPlot = pLoser->plot();
+	int pLoserOwner = pLoser->getOwner();
 	if (pLoser->getDuration() > 0)
 	{
 		return;
@@ -32707,6 +32708,17 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			|| GC.getUnitInfo((UnitTypes)pLoser->getUnitType()).getEquipmentPromotion() != NO_PROMOTION)
 		{
 			pUnit = GET_PLAYER(getOwnerINLINE()).initUnit((UnitTypes)iUnit, plot()->getX_INLINE(), plot()->getY_INLINE());
+			if (!plot()->isValidDomainForLocation(*pUnit))
+			{
+				if (!pLoserPlot->isValidDomainForLocation(*pUnit))
+				{
+					pUnit->jumpToNearestValidPlot();
+				}
+				else
+				{
+					pUnit->setXY(pLoserPlot->getX(), pLoserPlot->getY());
+				}
+			}
 			/*************************************************************************************************/
 			/**	Xienwolf Tweak							09/06/08											**/
 			/**						Doesn't make much sense for Duration to be passed on					**/
@@ -32772,8 +32784,8 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			kTriggerData.m_bKilledUndead = pUnit->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_UNDEAD"));
 			kTriggerData.m_bKilledHero = pUnit->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_HERO"));
 			kTriggerData.m_bKilledHiddenNationality = pUnit->isHiddenNationality();
-			kTriggerData.m_bKilledInBorders = pLoser->getOwner() == pLoser->plot()->getOwner();
-			kTriggerData.m_bKilledOutsideBorders = pLoser->getOwner() != pLoser->plot()->getOwner();
+			kTriggerData.m_bKilledInBorders = pLoserOwner == pLoserPlot->getOwner();
+			kTriggerData.m_bKilledOutsideBorders = pLoserOwner != pLoserPlot->getOwner();
 
 			GET_PLAYER(getOwner()).doTraitTriggers(TRAITHOOK_CAPTURE_UNIT, &kTriggerData);
 
@@ -32800,18 +32812,7 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			}
 		}
 	}
-	if (iUnit!=NO_UNIT && !plot()->isValidDomainForLocation(*pUnit))
-	{
-		if (!pLoserPlot->isValidDomainForLocation(*pUnit))
-		{
-			pUnit->jumpToNearestValidPlot();
-		}
-		else
-		{
-			pUnit->setXY(pLoserPlot->getX(), pLoserPlot->getY());
-		}
-	}
-
+	
 	/*************************************************************************************************/
 	/**	Xienwolf Tweak							09/06/08											**/
 	/**																								**/
