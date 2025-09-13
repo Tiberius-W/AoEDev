@@ -6402,6 +6402,12 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_MITHRIL_GOLEM</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MITHRIL</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MAGIC_IMMUNE</PromotionType>
@@ -20616,7 +20622,13 @@
 			</UnitAIs>
 			<PrereqTech>TECH_DIVINE_ESSENCE</PrereqTech>
 			<BonusType>BONUS_IVORY</BonusType>
-			<iCost>360</iCost>
+			<iCost>260</iCost>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IVORY</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iMoves>1</iMoves>
 			<iCombat>13</iCombat>
 			<iCombatDefense>9</iCombatDefense>
@@ -20676,7 +20688,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<iCost>360</iCost>
+			<iCost>270</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>15</iCombat>
 			<iCollateralDamage>40</iCollateralDamage>
@@ -20684,6 +20696,16 @@
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>30</iAsset>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>20</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_COPPER</BonusType>
+					<iProductonModifier>20</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -20732,14 +20754,15 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<iCost>180</iCost>
+			<iCost>120</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>6</iCombat>
+			<iCombatDefense>7</iCombatDefense>
 			<iCityDefense>25</iCityDefense>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>25</iProductonModifier>
+					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<iCultureGarrison>6</iCultureGarrison>
@@ -20798,9 +20821,19 @@
 				<BonusType>BONUS_IRON</BonusType>
 				<BonusType>BONUS_MITHRIL</BonusType>
 			</PrereqBonuses>
-			<iCost>180</iCost>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>25</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MITHRIL</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<iCost>150</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>10</iCombat>
+			<iCombat>12</iCombat>
 			<iCombatDefense>6</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>15</iAsset>
@@ -20847,6 +20880,16 @@
 			</UnitAIs>
 		<PrereqBuilding>BUILDING_SIEGE_WORKSHOP</PrereqBuilding>
 			<PrereqTech>TECH_BLASTING_POWDER</PrereqTech>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>25</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GUNPOWDER</BonusType>
+					<iProductonModifier>40</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -20908,9 +20951,20 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_MARBLE</BonusType>
 			</PrereqBonuses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_IRON</BonusType>
+					<iProductonModifier>30</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>6</iCombat>
+			<iCombat>8</iCombat>
+			<iCombatDefense>10</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>15</iAsset>
 			<UnitMeshGroups>
@@ -21076,11 +21130,15 @@
 			<PrereqTech>TECH_MITHRIL_WORKING</PrereqTech>
 			<iCost>240</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>13</iCombat>
+			<iCombat>15</iCombat>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>25</iProductonModifier>
+					<iProductonModifier>45</iProductonModifier>
+				</BonusProductionModifier>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MANA_METAMAGIC</BonusType>
+					<iProductonModifier>30</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<iCultureGarrison>4</iCultureGarrison>
@@ -21139,12 +21197,18 @@
 			</UnitAIs>
 			<PrereqBuilding>BUILDING_SCULPTORS_STUDIO</PrereqBuilding>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<iCost>90</iCost>
+			<iCost>70</iCost>
 			<iMoves>1</iMoves>
-			<iCombat>6</iCombat>
-			<iCombatDefense>3</iCombatDefense>
+			<iCombat>7</iCombat>
+			<iCombatDefense>4</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>6</iAsset>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MANA_NATURE</BonusType>
+					<iProductonModifier>35</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -21161,6 +21225,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_GOLEM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MARCH</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
