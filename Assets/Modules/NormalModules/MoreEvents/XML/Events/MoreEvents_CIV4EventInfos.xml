@@ -1922,7 +1922,7 @@
 		<EventInfo> <!--Treasure Hunter-->
 			<Type>EVENT_TREASURE_HUNTER_INITIATE_1</Type>
 			<Description>TXT_KEY_EVENT_TREASURE_HUNTER_INITIATE_1</Description>
-			<PythonCallback>doTreasureHunter</PythonCallback>
+			<PythonCallback>doTreasureHunterStart</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 		</EventInfo>
 		<EventInfo> <!-- Gela-->

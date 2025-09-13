@@ -3178,11 +3178,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BADBS_BLIZZARD</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</English>
-		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</French>
-		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and wilderness patrolled."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and peregrine cold."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and peregrine cold."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and peregrine cold."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and peregrine cold."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Lost is the one here repeating tragedies of old;[NEWLINE]Lost in madness and peregrine cold."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_BAIR_OF_LACUNA</Tag>
@@ -3226,11 +3226,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_CLOCKWORK_CITY</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</English>
-		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</French>
-		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder, to end all magicking."</Spanish>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder to end all magicking."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder to end all magicking."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder to end all magicking."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder to end all magicking."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this world of metal heart ticking,[NEWLINE]Slumbers a dragon, a wonder to end all magicking."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_DRAGON_BONES</Tag>
@@ -3249,20 +3249,20 @@
 		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Wicked wolves hunger for the flesh of peasants,[NEWLINE]Who may be saved, or offered for dark presents."</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_GUARDIAN</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</English>
-		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</French>
-		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Tag>
 		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</English>
 		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</French>
 		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</German>
 		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</Italian>
 		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"The Lord of Dust rests in this desolate land;[NEWLINE]His soul long lost, to a horned horny band."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_GUARDIAN</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Beware the three forces that descend;[NEWLINE]But this site may yet forge the end."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_LETUM_FRIGUS</Tag>
@@ -3361,14 +3361,6 @@
 		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"This monument erected by creatures 'ere thrones;[NEWLINE]Who in this world left naught else but bones."</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</English>
-		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</French>
-		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"So viele Stimmen in so vollkommenem Schmerz[NEWLINE]Ein dunkler Lord war hier einst gefangen.")</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOMB_OF_SUCELLUS</Tag>
 		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was here dead, but not any more;[NEWLINE]Though he was not as he was before."</English>
 		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was here dead, but not any more;[NEWLINE]Though he was not as he was before."</French>
@@ -3377,12 +3369,12 @@
 		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"Once he was dead, but not any more;[NEWLINE]Though he was not as he was before."</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_WHISPERING_WOODS</Tag>
-		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</English>
-		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</French>
-		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</German>
-		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</Italian>
-		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden dance, until its presence stun."</Spanish>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_TOWER_OF_EYES</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</French>
+		<German>In der Kiste findet Ihr einen Hinweis auf das nächste Versteck von Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"So viele Stimmen in so vollkommenem Schmerz[NEWLINE]Ein dunkler Lord war hier einst gefangen.")</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"So many voices so utterly pained;[NEWLINE]A dark lord was here once chained."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS</Tag>
@@ -3391,6 +3383,14 @@
 		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</German>
 		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</Italian>
 		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"All of our journeys must come to a close;[NEWLINE]Yet in this spot one sought to deny us repose."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_WHISPERING_WOODS</Tag>
+		<English>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden watch, until its presence stun."</English>
+		<French>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden watch, until its presence stun."</French>
+		<German>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden watch, until its presence stun."</German>
+		<Italian>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden watch, until its presence stun."</Italian>
+		<Spanish>In the chest you find a clue to the next hideout of Malus:[NEWLINE]"In this quiet land of the fading sun,[NEWLINE]The hidden watch, until its presence stun."</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_YGGDRASIL</Tag>
@@ -3404,7 +3404,7 @@
 		<Tag>TXT_KEY_EVENT_TREASURE_HUNTER_END</Tag>
 		<English>What you found in the little chest was a simple scroll, covered with glyphs. Your mages explain that it's a summoning scroll, usable by anyone who knows the calling words. Once they gave you the words and what was supposed to be summoned. You go to the creek where your ship is anchored.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE]Once those words were said, the skies darkened, forcing you to take shelter. At the worst of the tempest, the seas seemed to split , opening the way for a mighty shadow. Once it was done, you saw something you'd never have thought possible. A ship had appeared in the creek, but not on the seas, it was waiting for its new captain , dozens of feet over the ground.[NEWLINE][NEWLINE]The Legendary Vessel , The Flying Patrian was reborn.</English>
 		<French>What you found in the little chest was a simple scroll, covered with glyphs. Your mages explain that it's a summoning scroll, usable by anyone who knows the calling words. Once they gave you the words and what was supposed to be summoned. You go to the creek where your ship is anchored.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE]Once those words were said, the skies darkened, forcing you to take shelter. At the worst of the tempest, the seas seemed to split , opening the way for a mighty shadow. Once it was done, you saw something you'd never have thought possible. A ship had appeared in the creek, but not on the seas, it was waiting for its new captain , dozens of feet over the ground.[NEWLINE][NEWLINE]The Legendary Vessel , The Flying Patrian was reborn.</French>
-		<German>In der kleinen Kiste findet Ihr eine einfache, mit Schriftzeichen beschrieben Schriftrolle. Eure Magier erklären Euch, dass es sich um einen Beschwörungszauber, von jedem zu verwenden, der die Beschwörungsformel kennt. Dann geben sie Euch diese Formel, deren Worte und erläutern, was damit beschworen werden kann. Ihr kehrt zu der Bucht zurück, wo Euer Schiff vor Anker liegt.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Im Himmel wie in der Hölle, Ich werde keinen Meister als die endlose See anerkennen,[NEWLINE]Im Leben wie im Tod, Ich werden keinem Führer folgen als den ewig wechselnden Winden, [NEWLINE]Im Frieden wie im Krieg, Ich werde keinem anderem Banner folgen als dem meines Schiffes,[NEWLINE]&#220;ber Land und See werde ich segeln, leben und sterben an Bord des 'Fliegenden Patrianers'!" [NEWLINE][NEWLINE]Sobal diese Worte gesprochen sind, verdunkelt sich der Himmel, und Ihr sucht Schutz. Am Höhepunkt des Unwetters, öffnet sich die See und öffnet damit den Weg für einen mächtigen Schatten. Nachdem es vollbracht ist, erblickt Ihr etwas, von dem Ihr dachtet, das es nicht existieren kann. Ein Schiff erscheint in der Bucht, doch nicht im Wasser, es wartet auf seinen neuen Kapitän, Dutzende Meter über dem Boden.[NEWLINE][NEWLINE]Das legendäre Schiff, Der Fliegende Patrianer wurde geboren.</German>
+		<German>In der kleinen Kiste findet Ihr eine einfache, mit Schriftzeichen beschrieben Schriftrolle. Eure Magier erklären Euch, dass es sich um einen Beschwörungszauber, von jedem zu verwenden, der die Beschwörungsformel kennt. Dann geben sie Euch diese Formel, deren Worte und erläutern, was damit beschworen werden kann. Ihr kehrt zu der Bucht zurück, wo Euer Schiff vor Anker liegt.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE](Auf deutsch frei übersetzt:[NEWLINE][NEWLINE]"Im Himmel wie in der Hölle, Ich werde keinen Meister als die endlose See anerkennen,[NEWLINE]Im Leben wie im Tod, Ich werden keinem Führer folgen als den ewig wechselnden Winden, [NEWLINE]Im Frieden wie im Krieg, Ich werde keinem anderem Banner folgen als dem meines Schiffes,[NEWLINE]&#220;ber Land und See werde ich segeln, leben und sterben an Bord des 'Fliegenden Patrianers'!" [NEWLINE][NEWLINE]Sobal diese Worte gesprochen sind, verdunkelt sich der Himmel, und Ihr sucht Schutz. Am Höhepunkt des Unwetters, öffnet sich die See und öffnet damit den Weg für einen mächtigen Schatten. Nachdem es vollbracht ist, erblickt Ihr etwas, von dem Ihr dachtet, das es nicht existieren kann. Ein Schiff erscheint in der Bucht, doch nicht im Wasser, es wartet auf seinen neuen Kapitän, Dutzende Meter über dem Boden.[NEWLINE][NEWLINE]Das legendäre Schiff, Der Fliegende Patrianer wurde geboren.)</German>
 		<Italian>What you found in the little chest was a simple scroll, covered with glyphs. Your mages explain that it's a summoning scroll, usable by anyone who knows the calling words. Once they gave you the words and what was supposed to be summoned. You go to the creek where your ship is anchored.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE]Once those words were said, the skies darkened, forcing you to take shelter. At the worst of the tempest, the seas seemed to split , opening the way for a mighty shadow. Once it was done, you saw something you'd never have thought possible. A ship had appeared in the creek, but not on the seas, it was waiting for its new captain , dozens of feet over the ground.[NEWLINE][NEWLINE]The Legendary Vessel , The Flying Patrian was reborn.</Italian>
 		<Spanish>What you found in the little chest was a simple scroll, covered with glyphs. Your mages explain that it's a summoning scroll, usable by anyone who knows the calling words. Once they gave you the words and what was supposed to be summoned. You go to the creek where your ship is anchored.[NEWLINE][NEWLINE]"In Heaven or in Hell , I shall know no other master than the endless seas,[NEWLINE]In Life or in Death , I shall follow no other guide than the ever-changing winds,[NEWLINE]In Peace or in War, I shall trust no other flag than the one crowning my ship,[NEWLINE]Over Lands and Seas, I shall sail , live and die on The Flying Patrian!"[NEWLINE][NEWLINE]Once those words were said, the skies darkened, forcing you to take shelter. At the worst of the tempest, the seas seemed to split , opening the way for a mighty shadow. Once it was done, you saw something you'd never have thought possible. A ship had appeared in the creek, but not on the seas, it was waiting for its new captain , dozens of feet over the ground.[NEWLINE][NEWLINE]The Legendary Vessel , The Flying Patrian was reborn.</Spanish>
 	</TEXT>

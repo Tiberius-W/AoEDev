@@ -12,8 +12,16 @@
 			<Description>TXT_KEY_FLAG_DRAW</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_ABADDONS_PIT_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_ABADDONS_PIT_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_AIFON_ISLE_SEARCHED</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_AIFON_ISLE_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_BADBS_BLIZZARD_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_BADBS_BLIZZARD_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA_SEARCHED</Type>
@@ -28,12 +36,28 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CLOCKWORK_CITY_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CLOCKWORK_CITY_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_DRAGON_BONES_SEARCHED</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_DRAGON_BONES_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_FOXFORD_SEARCHED</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_FOXFORD_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_GUARDIAN_SEARCHED</Type>
@@ -44,8 +68,8 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_LETUM_FRIGUS_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_MAELSTROM_SEARCHED</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_MAELSTROM_SEARCHED</Description>
+			<Type>FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN_SEARCHED</Type>
@@ -68,8 +92,8 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_RING_OF_CARCER_SEARCHED</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_RING_OF_CARCER_SEARCHED</Description>
+			<Type>FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_RINWELL_SEARCHED</Type>
@@ -92,16 +116,20 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_TOWER_OF_EYES_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_WHISPERING_WOODS_SEARCHED</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_WHISPERING_WOODS_SEARCHED</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS_SEARCHED</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_YGGDRASIL_SEARCHED</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_YGGDRASIL_SEARCHED</Description>
-		</FlagInfo>
-		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA_SEARCHED</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_1</Type>
@@ -124,8 +152,16 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_5</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_ABADDONS_PIT</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_ABADDONS_PIT</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_AIFON_ISLE</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_AIFON_ISLE</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_BADBS_BLIZZARD</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_BADBS_BLIZZARD</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA</Type>
@@ -140,12 +176,28 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER</Description>
 		</FlagInfo>
 		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CARNIVEANS_CAMP</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CLIFFS_OF_TALI</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_CLOCKWORK_CITY</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_CLOCKWORK_CITY</Description>
+		</FlagInfo>
+		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_DRAGON_BONES</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_DRAGON_BONES</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_FOXFORD</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_FOXFORD</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_GRAVE_OF_ASMODAY</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_GUARDIAN</Type>
@@ -156,8 +208,8 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_LETUM_FRIGUS</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_MAELSTROM</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_MAELSTROM</Description>
+			<Type>FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_MAJENS_WORKSHOP</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN</Type>
@@ -180,8 +232,8 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_RING_OF_CARCER</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_RING_OF_CARCER</Description>
+			<Type>FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_RINWELL</Type>
@@ -200,20 +252,24 @@
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_STANDING_STONES</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_TOWER_OF_EYES</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_TOWER_OF_EYES</Description>
-		</FlagInfo>
-		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS</Type>
 			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_YGGDRASIL</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_YGGDRASIL</Description>
+			<Type>FLAG_TREASURE_HUNTER_TOWER_OF_EYES</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_TOWER_OF_EYES</Description>
 		</FlagInfo>
 		<FlagInfo>
-			<Type>FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA</Type>
-			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA</Description>
+			<Type>FLAG_TREASURE_HUNTER_WELL_OF_SOULS</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_WELL_OF_SOULS</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_WHISPERING_WOODS</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_WHISPERING_WOODS</Description>
+		</FlagInfo>
+		<FlagInfo>
+			<Type>FLAG_TREASURE_HUNTER_YGGDRASIL</Type>
+			<Description>TXT_KEY_FLAG_TREASURE_HUNTER_YGGDRASIL</Description>
 		</FlagInfo>
 		<FlagInfo>
 			<Type>FLAG_TREASURE_HUNTER_DONE</Type>
