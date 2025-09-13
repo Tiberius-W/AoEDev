@@ -3116,14 +3116,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 						PromotionTypes ePromotion = (PromotionTypes)iPromotionIndex;
 						if (pHeadUnit->isHasPromotion(ePromotion))
 						{
-/*************************************************************************************************/
-/**	GM Action								05/20/08								Xienwolf	**/
-/**																								**/
-/**					Hides the small icon from showing in Unit Mouseover							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							szString.append(CvWString::format(L"<img=%S size=16></img>", GC.getPromotionInfo(ePromotion).getButton()));
-/**								----  End Original Code  ----									**/
+ 							// GM Action - Xienwolf - 05/20/08 - Hides the small icon from showing in Unit Mouseover
 							if (!GC.getPromotionInfo(ePromotion).isEffectProm())
 							{
 								if(pHeadUnit->countHasPromotion(ePromotion) == 1)
@@ -3135,9 +3128,6 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 									szString.append(CvWString::format(L"<img=%S size=16></img>(%d)", GC.getPromotionInfo(ePromotion).getButton(), pHeadUnit->countHasPromotion(ePromotion)));
 								}
 							}
-/*************************************************************************************************/
-/**	GM Action									END												**/
-/*************************************************************************************************/
 						}
 					}
 
@@ -3690,18 +3680,8 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 				for (int iJ = 0; iJ < numPromotionInfos; iJ++)
 				{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							07/20/09											**/
-/**																								**/
-/**	Proper Counting of promotions on the stack, since a unit may have more than 1 of a Prom		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-					if (pLoopUnit->isHasPromotion((PromotionTypes)iJ))
-/**								----  End Original Code  ----									**/
+					// Xienwolf - 07/20/09 - Proper Counting of promotions on the stack, since a unit may have more than 1 of a Prom
 					for (int iK=0;iK<pLoopUnit->countHasPromotion((PromotionTypes)iJ);++iK)
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 					{
 						++m_apbPromotion[iIndex][iJ];
 					}
@@ -4900,6 +4880,10 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		szString.append(CvWString::format(L"\n Plot Counter = %d", pPlot->getPlotCounter()));
 		szString.append(CvWString::format(L"\n Evil Tiles in this Area: %d", GC.getMapINLINE().getArea(pPlot->getArea())->getNumEvilTiles()));
 		szString.append(CvWString::format(L"\n Tiles in this Area: %d", GC.getMapINLINE().getArea(pPlot->getArea())->getNumTiles()));
+		szString.append(CvWString::format(L"\n Base visibility count: %d", pPlot->getVisibilityCount(GC.getGameINLINE().getActiveTeam())));
+		szString.append(CvWString::format(L"\n P0-%d, P1-%d, P2-%d, P3-%d, P4-%d", pPlot->getInvisibleVisibilityCount(GC.getGameINLINE().getActiveTeam(), (InvisibleTypes)0),
+			pPlot->getInvisibleVisibilityCount(GC.getGameINLINE().getActiveTeam(), (InvisibleTypes)1), pPlot->getInvisibleVisibilityCount(GC.getGameINLINE().getActiveTeam(), (InvisibleTypes)2),
+			pPlot->getInvisibleVisibilityCount(GC.getGameINLINE().getActiveTeam(), (InvisibleTypes)3), pPlot->getInvisibleVisibilityCount(GC.getGameINLINE().getActiveTeam(), (InvisibleTypes)4)));
 
 		FAssert((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvInterface::updateHelpStrings");
 		for (iI = 0; iI < GC.getNumBonusInfos(); ++iI)
