@@ -7513,6 +7513,10 @@
 			<Buildings/>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_HAG</UnitClassType>
+					<UnitType>UNIT_HAEGTESSE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
 					<UnitType>UNIT_GYRE_CARLIN</UnitType>
 				</Unit>
