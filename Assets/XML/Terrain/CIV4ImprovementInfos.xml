@@ -428,6 +428,21 @@
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
 			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -501,6 +516,21 @@
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
 			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -983,6 +1013,16 @@
 			<bOutsideBorders>1</bOutsideBorders>
 			<iMinimumDistance>1</iMinimumDistance>
 			<bFort>1</bFort>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -3959,7 +3999,7 @@
 			<Description>TXT_KEY_IMPROVEMENT_GOBLIN_FORT_CLEARED</Description>
 			<Civilopedia>TXT_KEY_SCORPION_CLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOBLIN_CAMP</ArtDefineTag>
-			<iUpgradeTime>20</iUpgradeTime>
+			<iUpgradeTime>10</iUpgradeTime>
 			<iDefenseModifier>10</iDefenseModifier>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
@@ -5182,7 +5222,22 @@
 			<iPillageGold>20</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<iMinimumDistance>0</iMinimumDistance>
+			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
@@ -6109,11 +6164,21 @@
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_LESSER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_FORT</ArtDefineTag>
-			<iUpgradeTime>10</iUpgradeTime>
+			<iUpgradeTime>20</iUpgradeTime>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<iMinimumDistance>1</iMinimumDistance>
 			<bFort>1</bFort>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_SORCERY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -6171,10 +6236,25 @@
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_CASTLE</ArtDefineTag>
-			<iUpgradeTime>25</iUpgradeTime>
+			<iUpgradeTime>40</iUpgradeTime>
 			<iPillageGold>25</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_SORCERY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<bFort>1</bFort>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
@@ -6242,6 +6322,21 @@
 			<iPillageGold>50</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_SORCERY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<bFort>1</bFort>
 			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>

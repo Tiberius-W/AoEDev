@@ -144,7 +144,7 @@
 				</TechBuildDiscount>
 			</TechBuildDiscounts>
 		</BuildInfo>
-		<BuildInfo> <!-- Ciaidel -->
+		<BuildInfo> <!-- Citadel -->
 			<Type>BUILD_CITADEL</Type>
 			<Description>TXT_KEY_BUILD_CITADEL</Description>
 			<Help/>

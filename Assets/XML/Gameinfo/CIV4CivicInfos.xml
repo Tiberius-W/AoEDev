@@ -101,6 +101,38 @@
 						<iYield>2</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CASTLE</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CITADEL_OF_LIGHT</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 			<iWorkerSpeedModifier>25</iWorkerSpeedModifier>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
@@ -130,12 +162,11 @@
 				</SpecialistUnlimited>
 			</SpecialistUnlimiteds>
 			<SpecialistCrimeChanges>
-			<SpecialistCrimeChange>
-			<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-			<iCrimeChange>-4</iCrimeChange>
-			</SpecialistCrimeChange>
+				<SpecialistCrimeChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iCrimeChange>-4</iCrimeChange>
+				</SpecialistCrimeChange>
 			</SpecialistCrimeChanges>
-			
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_PRIME_MINISTER</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>		<!-- Republic -->

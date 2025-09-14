@@ -98,12 +98,78 @@
 						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CASTLE</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CITADEL_OF_LIGHT</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 			<iWorkerSpeedModifier>25</iWorkerSpeedModifier>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 			<bForceOverwrite>1</bForceOverwrite>
 		</CivicInfo>
-		<CivicInfo>		<!-- Imperium  -->
+		<CivicInfo>		<!-- Aristocracy -->
+			<CivicOptionType>CIVICOPTION_GOVERNMENT</CivicOptionType>
+			<Type>CIVIC_ARISTOCRACY</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_ARACHNOPHOBIA</DependencyType>
+			</AndDependencyTypes>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NESTING_GROUND</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_INFESTED_FORTRESS</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_DEEP_NEST</ImprovementType>
+					<ImprovementYields>
+						<iYield>2</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
+		</CivicInfo>
+		<CivicInfo>		<!-- Imperium -->
 			<CivicOptionType>CIVICOPTION_GOVERNMENT</CivicOptionType>
 			<Type>CIVIC_IMPERIUM</Type>
 			<Description>TXT_KEY_CIVIC_IMPERIUM</Description>
@@ -144,10 +210,10 @@
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
 			<SpecialistCrimeChanges>
-			<SpecialistCrimeChange>
-			<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-			<iCrimeChange>-4</iCrimeChange>
-			</SpecialistCrimeChange>
+				<SpecialistCrimeChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iCrimeChange>-4</iCrimeChange>
+				</SpecialistCrimeChange>
 			</SpecialistCrimeChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
@@ -158,7 +224,7 @@
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_HIGH_PRIEST</WeLoveTheKing>
 			<bForceOverwrite>1</bForceOverwrite>
 		</CivicInfo>
-		<CivicInfo>		<!-- Magocracy  -->
+		<CivicInfo>		<!-- Magocracy -->
 			<CivicOptionType>CIVICOPTION_GOVERNMENT</CivicOptionType>
 			<Type>CIVIC_MAGOCRACY</Type>
 			<Description>TXT_KEY_CIVIC_MAGOCRACY</Description>
