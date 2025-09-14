@@ -32087,7 +32087,9 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 	// Changes may need to be mirrored in CvUnitAI::AI_canExploreLair
 
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (pPlot->getImprovementType() == NO_IMPROVEMENT
  		|| isBarbarian()
@@ -32096,14 +32098,20 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_SPELL")
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_BIRD")
 		|| isOnlyDefensive())
+	{
 		return false;
+	}
 
 	if (!GC.getImprovementInfo(pPlot->getImprovementType()).isExplorable()
 		|| pPlot->getExploreNextTurn() > GC.getGame().getGameTurn())
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	bool bGoodyClass = false;
 	for (int i = 0; i < GC.getNumGoodyClassTypes(); i++)
@@ -32115,7 +32123,9 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 		}
 	}
 	if (!bGoodyClass)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32123,10 +32133,14 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 bool CvUnit::exploreLair(CvPlot* pPlot)
 {
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (!canExploreLair(pPlot, false))
+	{
 		return false;
+	}
 
 	TraitTriggeredData kData;
 	kData.m_iImprovement = pPlot->getImprovementType();
@@ -32135,7 +32149,9 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 	GoodyTypes eGoody = GET_PLAYER(getOwnerINLINE()).doLair(pPlot, this);
 
 	if (eGoody == NO_GOODY)
+	{
 		return false;
+	}
 
 	finishMoves();
 	changeExperience(100);
