@@ -17,7 +17,7 @@
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_PATRIAN_ARTIFACTS</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid> <!-- If the presence of this resource should override plot terrain/feature/type requirements -->
+					<bBonusMakesValid>1</bBonusMakesValid> <!-- If the presence of this resource should override plot terrain/feature/type requirements, EXCEPT bRequriesPeak and bWater -->
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>3000</iDiscoverRand> <!-- 1 in this # speed-modulated chance/turn when worked to DISCOVER this resource under the improvement. Resource must be able to be seen by civ, does not override hidden resource -->
 					<iSpreadRand>1750</iSpreadRand> <!-- 1 in this # speed-modulated chance/turn when worked to ADD this resource under the improvement, provided you have access to it already. Does not override a hidden resource -->
@@ -31,35 +31,85 @@
 			<bGoody>0</bGoody> <!-- Used by mapgen to place using tribal village logic -->
 			<iGoodyRange>3</iGoodyRange> <!-- Closest approach to another of this improvement, but during mapgen. Should be merged with iMinimumDistance! -->
 			<iTilesPerGoody>60</iTilesPerGoody> <!-- Target density of goody (starts placing at half, e.g. 1/60 means first at 30, second at 90, etc) -->
-			<!-- Start of improvement placement fields; first, "And" conditions ("requires X") must be met-->
+			<!-- Start of improvement placement fields; first, "And" conditions ("requires X") must be met. Note Impassible (volcano, ice) is always disallowed -->
 			<bRequiresPeak>0</bRequiresPeak> <!-- Must be on a peak, cannot be on anything else. Note that peaks require either this or the later bPeaksMakeValid in order to be valid -->
 			<bWater>0</bWater> <!-- Can only be on water if 1, and can only be on land if 0 -->
-			<!-- If there is a bonus with bBonusMakesValid, it will then ignore all other checks aside from the above two -->
+			<PrereqNatureYields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+			</PrereqNatureYields>
+			<!-- NOTE: If there is a met bonus with bBonusMakesValid, it will then ignore all other requres/makesvalid checks aside from the above three -->
+			<bRequiresIrrigation>0</bRequiresIrrigation> <!-- This can be bypassed by team-level effects that cause to ignore irrigation i.e. tech... of which AoE has none... -->
 			<bNoFreshWater>0</bNoFreshWater> <!-- Freshwater makes *invalid* -->
 			<bRequiresFlatlands>0</bRequiresFlatlands> <!-- Can only be on flat land (not hills) -->
-			<bRequiresFeature>0</bRequiresFeature> <!-- Requires *any* feature on tile, if done by itself -->
 			<bRequiresRiverSide>0</bRequiresRiverSide> <!-- Requires river adjacency, and moreover cannot be opposite the river from another of the same improvement -->
-			<!-- In order for an improvement to be valid, at least one of the following "Or" conditions ("XMakesValid") checks must be met -->
+			<bRequiresFeature>0</bRequiresFeature> <!-- NOTE: If set, changes FeatureMakesValids to effectively "FeatureRequired" i.e. one of them is required. If no FeatureMakesValid are set, then just any feature will fill this requirement. -->
+			<!-- In order for an improvement to be valid, at least one of the following "Or" conditions ("XMakesValid") checks must be met. To be clear: There MUST be at least on thing that "makes valid" (can be bBonusMakesValid) -->
 			<bPeakMakesValid>0</bPeakMakesValid> <!-- Tile is a peak. Reminder, peaks will only allow an improvement if this or bPeakMakesValid -->
 			<bHillsMakesValid>0</bHillsMakesValid> <!-- Tile is a hill -->
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid> <!-- Tile has fresh water, including irrigation spreading -->
 			<bRiverSideMakesValid>1</bRiverSideMakesValid> <!-- Tile has a river in a cardinal direction. Superfluous if also bRequiresRiverside -->
-			<!-- Any of these terrains being met makes valid -->
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
-			<!-- Any of these features being met makes valid. No direct relation with bRequiresFeature. Note this also allows an improvement to bypass the "noImprovement" field of that feature -->
+			<!-- If bRequiresFeature is off, any of these features being met makes valid (if bRequiresFeature is on, one of these MUST be met). Independently, this also allows an improvement to bypass the "noImprovement" field of that feature -->
 			<FeatureMakesValids>
 				<FeatureMakesValid>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<!-- Any of these terrains being met makes valid -->
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
 			<!-- End of improvement placement requirements -->
-			<!-- The "AllowsFeature" field allows a feature (forest, haunted lands...) to naturally propagate on a tile with an existing improvement (crypt, camp...) -->
+			<!-- The "AllowsFeature" field allows a feature to naturally propagate on a tile with an existing improvement (crypt, camp...) -->
 			<AllowsFeatures>
 				<AllowsFeature>
 					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
@@ -1079,6 +1129,45 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<!-- Valid on most tiles, so real restriction is bRequiresFeature -->
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
@@ -1678,6 +1767,8 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+			<!-- Maybe? -->
+			<!-- <iAppearanceProbability>1</iAppearanceProbability> -->
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Swamp -->
 			<Type>IMPROVEMENT_SWAMP</Type>
@@ -1906,6 +1997,8 @@
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bRequiresRiverSide>1</bRequiresRiverSide>
+			<!-- We need at least one "valid" source -->
+			<bRiverSideMakesValid>1</bRiverSideMakesValid>
 			<iAdvancedStartCost>48</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>10</iPillageGold>
@@ -1950,6 +2043,7 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
+						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -8095,6 +8189,23 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<!-- In case the jungle burns down or something, it can regrow -->
+			<AllowsFeatures>
+				<AllowsFeature>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</AllowsFeature>
+			</AllowsFeatures>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_EARTH</BonusType>

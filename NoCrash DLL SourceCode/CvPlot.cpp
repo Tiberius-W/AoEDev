@@ -2798,6 +2798,7 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 }
 
 
+// Prefer the player version if you can (this one doesn't check for player nature yield requirements)
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, bool bPotential) const
 {
 	PROFILE("CvPlot::canHaveImprovement");
@@ -2826,6 +2827,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	{
 		return false;
 	}
+
 	// Peak must have either of these to be valid
 	if (isPeak() && !(GC.getImprovementInfo(eImprovement).isRequiresPeak() || GC.getImprovementInfo(eImprovement).isPeakMakesValid()))
 	{
@@ -2855,17 +2857,21 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return true;
 	}
 
+	// If the plot is unowned OR team doesn't ignore irrigation due to the basegame civ4 tech refrigeration.... sigh....
+	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
+	{
+		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
+		{
+			return false;
+		}
+	}
+
 	if (GC.getImprovementInfo(eImprovement).isNoFreshWater() && isFreshWater())
 	{
 		return false;
 	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
-	{
-		return false;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).isRequiresFeature() && (getFeatureType() == NO_FEATURE))
 	{
 		return false;
 	}
@@ -2877,7 +2883,9 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
 
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
 
 			if (isRiverCrossing(directionXY(this, pLoopPlot)) && pLoopPlot->getImprovementType() != eImprovement)
 			{
@@ -2887,13 +2895,34 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		}
 
 		if (!bValid)
+		{
 			return false;
+		}
 		// Gotta reset bValid...
 		bValid = false;
 	}
 
-	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s
+	// If bRequiresFeature is set, change FeaturesMakesValid to effectively FeaturesRequired; without FeaturesMakesValid, just requires any feature
+	if (GC.getImprovementInfo(eImprovement).isRequiresFeature())
+	{
+		if (getFeatureType() == NO_FEATURE)
+		{
+			return false;
+		}
+
+		if (GC.getImprovementInfo(eImprovement).hasFeatureMakesValid() && !GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+		{
+			return false;
+		}
+	}
+
+	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s ---
 	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
+	{
+		bValid = true;
+	}
+	// If bRequiresFeature is set, change FeaturesMakesValid to effectively FeaturesRequired; if bRequiresFeature not set, then FeaturesMakeValid work as an 'or' condition
+	else if (!GC.getImprovementInfo(eImprovement).isRequiresFeature() && getFeatureType() != NO_FEATURE && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
 	{
 		bValid = true;
 	}
@@ -2913,24 +2942,10 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	{
 		bValid = true;
 	}
-	else if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
-	{
-		bValid = true;
-	}
 
 	if (!bValid)
 	{
 		return false;
-	}
-
-
-	// ????
-	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
-	{
-		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
-		{
-			return false;
-		}
 	}
 
 	return true;
@@ -3039,12 +3054,11 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 {
 	PROFILE("CvPlot::canBuild");
 
-//FfH: Added by Kael 11/10/2008
+	//FfH: Added by Kael 11/10/2008
 	if (isBuildDisabled())
 	{
 		return false;
 	}
-//FfH: End Add
 
 	ImprovementTypes eImprovement;
 	ImprovementTypes eFinalImprovementType;
@@ -3078,18 +3092,8 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**		Use the player version of this method to account for player-specific natural yields.	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if (!canHaveImprovement(eImprovement, GET_PLAYER(ePlayer).getTeam(), bTestVisible))
-/**								----  End Original Code  ----									**/
+		// CivPlotMods - Jean Elcard - 04/02/09 - Use the player version of this method to account for player-specific natural yields.
 		if (!canHaveImprovement(eImprovement, ePlayer, bTestVisible))
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
 		{
 			return false;
 		}
@@ -3105,28 +3109,13 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 			{
 				return false;
 			}
-
-/*************************************************************************************************/
-/**	MyLand									04/04/09								Xienwolf	**/
-/**																								**/
-/**				Not every Civ can fully upgrade every improvement that they can build			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			eFinalImprovementType = finalImprovementUpgrade(getImprovementType());
-
-			if (eFinalImprovementType != NO_IMPROVEMENT)
-			{
-				if (eFinalImprovementType == finalImprovementUpgrade(eImprovement))
-/**								----  End Original Code  ----									**/
+			// MyLand - Xienwolf - 04/04/09 - Not every Civ can fully upgrade every improvement that they can build
 			CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
 			eFinalImprovementType = finalImprovementUpgrade(getImprovementType(), eCiv);
 
 			if (eFinalImprovementType != NO_IMPROVEMENT)
 			{
 				if (eFinalImprovementType == finalImprovementUpgrade(eImprovement, eCiv))
-/*************************************************************************************************/
-/**	MyLand									END													**/
-/*************************************************************************************************/
 				{
 					return false;
 				}
@@ -3135,9 +3124,9 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 		if (!bTestVisible)
 		{
-/*************************************************************************************************/
-/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-/*************************************************************************************************/
+			/*************************************************************************************************/
+			/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+			/*************************************************************************************************/
 			if (eImprovement != NO_IMPROVEMENT)
 			{
 				if (GC.getImprovementInfo(eImprovement).getMinimumDistance() > 0)
@@ -3148,9 +3137,6 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 					}
 				}
 			}
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
 
 			if (GET_PLAYER(ePlayer).getTeam() != getTeam())
 			{
@@ -3176,11 +3162,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 	if (eRoute != NO_ROUTE)
 	{
-/*************************************************************************************************/
-/**	Tweak							18/02/12								Snarko				**/
-/**																								**/
-/**				To prevent Malakim from building roads on deserts								**/
-/*************************************************************************************************/
+		// Snarko - 18/02/12 - To prevent Malakim from building roads on deserts
 		if (ePlayer != NO_PLAYER)
 		{
 			if (isNetworkTerrain(GET_PLAYER(ePlayer).getTeam()))
@@ -3188,9 +3170,6 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				return false;
 			}
 		}
-/*************************************************************************************************/
-/**	Tweak								END														**/
-/*************************************************************************************************/
 
 		if (getRouteType() != NO_ROUTE)
 		{
@@ -3238,17 +3217,19 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	{
 		if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()))
 		{
+			//FfH: Added by Kael 04/24/2008 (isMaintainFeatures)
 			if (isOwned() && (GET_PLAYER(ePlayer).getTeam() != getTeam()) && !atWar(GET_PLAYER(ePlayer).getTeam(), getTeam())
-
-//FfH: Added by Kael 04/24/2008
-			  && !GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(getFeatureType())
-//FfH: End Add
-
-			)
+			  && !GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(getFeatureType()))
 			{
 				return false;
 			}
 
+			// Can't chop features on UFs that rely on a feature
+			if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isUnique()
+			 && GC.getImprovementInfo(getImprovementType()).isRequiresFeature())
+			{
+				return false;
+			}
 			bValid = true;
 		}
 	}
@@ -6979,7 +6960,9 @@ PlotEffectTypes CvPlot::getPlotEffectType() const
 void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
 {
 	if (m_ePlotEffectType == eNewValue)
+	{
 		return;
+	}
 
 	bool bUpdateSight = false;
 
@@ -8108,6 +8091,7 @@ int CvPlot::calculateTotalBestNatureYield(PlayerTypes ePlayer) const
 	return (calculateBestNatureYield(YIELD_FOOD, ePlayer) + calculateBestNatureYield(YIELD_PRODUCTION, ePlayer) + calculateBestNatureYield(YIELD_COMMERCE, ePlayer));
 }
 
+// Call this function (player version; includes check for prereq nature yield!)
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, PlayerTypes ePlayer, bool bPotential) const
 {
 	if (!canHaveImprovement(eImprovement, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM), bPotential))
@@ -8125,9 +8109,6 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, PlayerTypes ePlay
 
 	return true;
 }
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      10/06/09                                jdog5000      */

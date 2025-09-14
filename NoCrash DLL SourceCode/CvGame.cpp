@@ -10717,10 +10717,14 @@ void CvGame::createLairs()
 	ImprovementTypes eLair = NO_IMPROVEMENT;
 
 	if (isOption(GAMEOPTION_NO_LAIRS))
+	{
 		return;
+	}
 
 	if (getElapsedGameTurns() < getNextLairCycle())
+	{
 		return;
+	}
 
 	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
 	if (getGameTurn() == 0)
@@ -10729,10 +10733,15 @@ void CvGame::createLairs()
 		return;
 	}
 	else
+	{
 		setNextLairCycle(getElapsedGameTurns() + 11 * iLairCycleLength / 10 - getSorenRandNum(iLairCycleLength/5, "~ +-10% Randomization in cycle length"));
+	}
 
 	iGoal = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDefaultPlayers();
-	if (iGoal <= 0) return;
+	if (iGoal <= 0)
+	{
+		return;
+	}
 
 	// Calculate the net of all possible positive weights on all lairs
 	iNetWeight = 0;
@@ -10746,27 +10755,41 @@ void CvGame::createLairs()
 			// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 			iWeight = GC.getImprovementInfo((ImprovementTypes)iI).getLairCreationWeight();
 			for (int iJ = 0; iJ < GC.getNumTechInfos(); iJ++)
+			{
 				iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iJ)) * countKnownTechNumTeams((TechTypes)iJ) / countTeamsAlive();
+			}
 
 			// Total weight for this lair might be negative; don't include if so
 			if (iWeight > 0)
+			{
 				iNetWeight += iWeight;
+			}
 		}
 	}
 
 	// Setting up the static flags. Passable = not ice/volcano/walls
 	iFlags = RANDPLOT_PASSIBLE | RANDPLOT_NOT_CITY | RANDPLOT_NOT_IMPROVED | RANDPLOT_UNOCCUPIED | RANDPLOT_ADJACENT_UNOWNED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
+	{
 		iFlags |= RANDPLOT_NOT_VISIBLE_TO_CIV;
+	}
 
 	if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_DEMON_ALLY;
+	}
 	else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_ORC_ALLY;
+	}
 	else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_ANIMAL_ALLY;
+	}
 	else
+	{
 		iFlags |= RANDPLOT_UNOWNED;
+	}
 
 	for (int iI = 0; iI < iGoal * 20; iI++)
 	{
@@ -10782,11 +10805,15 @@ void CvGame::createLairs()
 				// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 				iWeight = GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeight();
 				for (int iK = 0; iK < GC.getNumTechInfos(); iK++)
+				{
 					iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iK)) * countKnownTechNumTeams((TechTypes)iK) / countTeamsAlive();
+				}
 
 				// Total weight for this lair might be negative; don't include if so
 				if (iWeight > 0)
+				{
 					iTargetWeight -= iWeight;
+				}
 
 				if (iTargetWeight <= 0)
 				{
@@ -10798,14 +10825,22 @@ void CvGame::createLairs()
 
 		iLairFlags = iFlags;
 		if (GC.getImprovementInfo(eLair).isWater())
+		{
 			iLairFlags |= RANDPLOT_WATER;
+		}
 		else
+		{
 			iLairFlags |= RANDPLOT_LAND;
+		}
 
 		if (GC.getImprovementInfo(eLair).isRequiresPeak())
+		{
 			iLairFlags |= RANDPLOT_PEAK;
+		}
 		else if (!GC.getImprovementInfo(eLair).isPeakMakesValid())
+		{
 			iLairFlags |= RANDPLOT_NOT_PEAK;
+		}
 
 		// Checking to see if *only* valid on hell terrain
 		bEvilValid = false;
@@ -10815,33 +10850,51 @@ void CvGame::createLairs()
 			if (GC.getImprovementInfo(eLair).getTerrainMakesValid(iJ))
 			{
 				if (GC.getTerrainInfo((TerrainTypes)iJ).isHell())
+				{
 					bEvilValid = true;
+				}
 				else
+				{
 					bNormalValid = true;
+				}
 			}
 		}
 		if (bEvilValid && !bNormalValid)
+		{
 			iLairFlags |= RANDPLOT_EVIL;
+		}
 
 		pPlot = GC.getMapINLINE().syncRandPlot(iLairFlags);
 
 		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
+		{
 			continue;
+		}
 
 		// TODO This should probably be integrated into canHaveImprovement, and carry thru testVisible from canBuild
 		if (pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), true))
+		{
 			continue;
+		}
 
 		// Check spawning criteria vs density requirements.
 		bNoSpawns = false;
 		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
+		{
 			ePlayer = DEMON_PLAYER;
+		}
 		else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
+		{
 			ePlayer = ORC_PLAYER;
+		}
 		else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
+		{
 			ePlayer = ANIMAL_PLAYER;
+		}
 		else
+		{
 			bNoSpawns = true;
+		}
 
 		pArea = pPlot->area();
 
@@ -10858,7 +10911,10 @@ void CvGame::createLairs()
 			iGoal--;
 		}
 
-		if (iGoal <= 0) return;
+		if (iGoal <= 0)
+		{
+			return;
+		}
 	}
 }
 
