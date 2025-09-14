@@ -13244,7 +13244,9 @@ int CvPlot::getPlotCounter() const
 void CvPlot::changePlotCounter(int iChange)
 {
 	if (iChange == 0 || GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
+	{
 		return;
+	}
 
 	bool bEvilPre = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
@@ -13259,11 +13261,13 @@ void CvPlot::changePlotCounter(int iChange)
 	bool bEvilPost = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
 	if (bEvilPre == bEvilPost)
+	{
 		return;
+	}
 
 	// Climate System - 11/16/09 - Hell Terrain type is now handled in TerrainClass
 	GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
-	if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+	if (bEvilPost)
 	{
 		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, true);
 		// If we want to move hellification of resources into dll, this would be the place.
@@ -13291,11 +13295,15 @@ int CvPlot::calcTargetPlotCounter()
 {
 	// Infernals always have max counter in their territory
 	if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+	{
 		return 100;
+	}
 
 	// Improvements that modify the plot tile counter are locked into place from turn-based modification
 	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).getBasePlotCounterModify() != 0)
+	{
 		return getPlotCounter();
+	}
 
 	int iHighestAdjCounter = 0;
 	int iPlotCounter = getPlotCounter();
@@ -13306,15 +13314,21 @@ int CvPlot::calcTargetPlotCounter()
 	{
 		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 		if (pAdjacentPlot == NULL)
+		{
 			continue;
+		}
 		iHighestAdjCounter = std::max(iHighestAdjCounter, pAdjacentPlot->getPlotCounter());
 		if (iHighestAdjCounter == 100)
+		{
 			break;
+		}
 	}
 
 	// Common exit case. Anything else might need attenuation decay
 	if (iHighestAdjCounter == 0 && iPlotCounter == 0)
+	{
 		return 0;
+	}
 
 	// If we're here, it means: There is hell to spread or decay (or we're at steady state).
 	// Conditions: The target value to reach for our plot counter is either:
@@ -13336,12 +13350,16 @@ int CvPlot::calcTargetPlotCounter()
 	if (getOwner() == NO_PLAYER)
 	{
 		if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD"))
+		{
 			iAttenuationLimit = 100 - iAC;
+		}
 	}
 	else
 	{
 		if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION)
+		{
 			iRelAdjust = GC.getReligionInfo(GET_PLAYER(getOwner()).getStateReligion()).getACPlotAttenuationMod();
+		}
 
 		if (iAC + iRelAdjust > GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD")
 		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
@@ -13371,19 +13389,25 @@ int CvPlot::calcTargetPlotCounter()
 
 		// Condition 3, steady state
 		if (iPlotCounter == iTargetCounter)
+		{
 			return iPlotCounter;
+		}
 
 		// Condition 4 or 3 and decay; decay to the attenuation penalty or by a max of the penalty
 		// This technically means bigger maps decay more slowly at same AC.... but whatever man.
 		// They're also hurt more by AC changes around a steady state, so I guess it's a wash.
 		if (iPlotCounter > iTargetCounter)
+		{
 			return iTargetCounter;
+		}
 	}
 
 	// When growing, do a random chance per plot to both break up straight walls of hell and modulate speed
 	int iSpreadChance = std::min(100, GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getHurryPercent() * iAC / GC.getDefineINT("PLOT_COUNTER_FULL_SPREAD_AT_AC"));
 	if (GC.getGameINLINE().getMapRandNum(100, "Chance hell doesn't grow") >= iSpreadChance)
+	{
 		return iPlotCounter;
+	}
 
 	// Some terrain is slower for hell to spread through, assuming not directly owned by infernals
 	int iGain = iHighestAdjCounter * iAC / 100 / (1 + 9*isPeak() + 3*isWater());
@@ -13475,16 +13499,22 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot == NULL || !pLoopPlot->isOwned())
+			{
 				continue;
+			}
 
 			eImprovement = pLoopPlot->getImprovementType();
 
 			// Tile must be friendly to the defending unit...
 			if (eImprovement == NO_IMPROVEMENT || !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender))
+			{
 				continue;
+			}
 			// And not be occupied by enemy forces
 			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
+			{
 				continue;
+			}
 
 			if (bFinal && finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
 			{
@@ -13498,13 +13528,19 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 			if (iDX == 0 && iDY == 0)
 			{
 				if (!bExcludeCenter)
+				{
 					iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
+				}
 			}
 			else if (plotDistance(pLoopPlot, this) <= GC.getImprovementInfo(eImprovement).getRange())
+			{
 				iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
+			}
 
 			if (iModifier > iBestModifier)
+			{
 				iBestModifier = iModifier;
+			}
 		}
 	}
 	return iBestModifier;
