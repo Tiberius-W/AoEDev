@@ -222,14 +222,14 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<ImprovementYieldChanges>
-			<ImprovementYieldChange>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
-			<ImprovementYields>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+					<ImprovementYields>
 						<iYield>1</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</ImprovementYields>
-			</ImprovementYieldChange>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- Hunter -->
@@ -265,14 +265,14 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<ImprovementYieldChanges>
-			<ImprovementYieldChange>
-				<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
-			<ImprovementYields>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
 						<iYield>1</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</ImprovementYields>
-			</ImprovementYieldChange>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- Imperialist -->
@@ -639,20 +639,20 @@
 			<bIgnoreFood>1</bIgnoreFood>
 			<bIgnoreHealth>1</bIgnoreHealth>
 		</TraitInfo>
-		<TraitInfo>		<!--Scion Fallow -  Scions, need a bettername-->
+		<TraitInfo>		<!--Scion Fallow - Scions, need a bettername-->
 			<Type>TRAIT_FALLOW_SCION</Type>
 			<TraitClass>TRAITCLASS_CIVILIZATION</TraitClass>
 			<Description>TXT_KEY_TRAIT_FALLOW</Description>
 			<Civilopedia>TXT_KEY_TRAIT_FALLOW_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_FALLOW_SHORT</ShortDescription>
 			<bIgnoreFood>1</bIgnoreFood>
-		<PlotEffectSpawnChances>
+			<PlotEffectSpawnChances>
 				<PlotEffectSpawnChance>
 					<PlotEffectType>PLOT_EFFECT_HAUNTED_LANDS</PlotEffectType>
 					<iSpawnChance>5</iSpawnChance>
 				</PlotEffectSpawnChance>
 			</PlotEffectSpawnChances>
-			</TraitInfo>
+		</TraitInfo>
 		<TraitInfo>		<!-- Feral - Archos, Doviello -->
 			<Type>TRAIT_FERAL</Type>
 			<TraitClass>TRAITCLASS_CIVILIZATION</TraitClass>
@@ -882,7 +882,7 @@
 			<Description>TXT_KEY_TRAIT_UNDYING</Description>
 			<Civilopedia>TXT_KEY_TRAIT_UNDYING_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_UNDYING_SHORT</ShortDescription>
-			<Help/>
+			<Help />
 			<bIgnoreFood>1</bIgnoreFood>
 			<bIgnoreHealth>1</bIgnoreHealth>
 			<iInitialCityCap>6</iInitialCityCap>
@@ -929,7 +929,7 @@
 					<iSpawnChance>1000</iSpawnChance>
 				</PlotEffectSpawnChance>
 			</PlotEffectSpawnChances>
-			
+
 		</TraitInfo>
 		<!-- Emergent traits -->
 		<TraitInfo>		<!-- Craftmaster -->
@@ -974,7 +974,7 @@
 			<Description>TXT_KEY_TRAIT_DOMINANT</Description>
 			<Civilopedia>TXT_KEY_TRAIT_DOMINANT_PEDIA</Civilopedia>
 			<Help>TXT_KEY_TRAIT_DOMINANT_HELP</Help>
-			
+
 			<ShortDescription>TXT_KEY_TRAIT_DOMINANT_SHORT</ShortDescription>
 			<FreePromotions>
 				<FreePromotion>
@@ -1007,7 +1007,7 @@
 			<NextTrait>TRAIT_DOMINANT3</NextTrait>
 			<Civilopedia>TXT_KEY_TRAIT_DOMINANT_PEDIA</Civilopedia>
 			<Help>TXT_KEY_TRAIT_DOMINANT2_HELP</Help>
-			
+
 			<iLevel>2</iLevel>
 			<iMinRequiredPoints>300</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
@@ -1019,7 +1019,7 @@
 			<ParentTrait>TRAIT_DOMINANT</ParentTrait>
 			<Civilopedia>TXT_KEY_TRAIT_DOMINANT_PEDIA</Civilopedia>
 			<Help>TXT_KEY_TRAIT_DOMINANT3_HELP</Help>
-			
+
 			<iLevel>3</iLevel>
 			<iMinRequiredPoints>1500</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
@@ -1032,7 +1032,7 @@
 			<NextTrait>TRAIT_EGALITARIAN2</NextTrait>
 			<iLevel>1</iLevel>
 			<Civilopedia>TXT_KEY_TRAIT_EGALITARIAN_PEDIA</Civilopedia>
-			
+
 			<Description>TXT_KEY_TRAIT_EGALITARIAN</Description>
 			<ShortDescription>TXT_KEY_TRAIT_EGALITARIAN_SHORT</ShortDescription>
 			<iHappiness>3</iHappiness>
@@ -1053,7 +1053,7 @@
 			<ParentTrait>TRAIT_EGALITARIAN</ParentTrait>
 			<iLevel>2</iLevel>
 			<Civilopedia>TXT_KEY_TRAIT_EGALITARIAN_PEDIA</Civilopedia>
-			
+
 			<iMinRequiredPoints>300</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_EGALITARIAN</Description>
@@ -1080,7 +1080,7 @@
 			<ParentTrait>TRAIT_EGALITARIAN</ParentTrait>
 			<iLevel>3</iLevel>
 			<Civilopedia>TXT_KEY_TRAIT_EGALITARIAN_PEDIA</Civilopedia>
-			
+
 			<iMinRequiredPoints>1500</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_EGALITARIAN</Description>
@@ -1185,7 +1185,7 @@
 			<iLevel>2</iLevel>
 			<Help>TXT_KEY_TRAIT_HEMAPYROSYNCRETISTIC2_HELP</Help>
 			<iMinRequiredPoints>300</iMinRequiredPoints>
-				<FreePromotions>
+			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MOBILITY1</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
@@ -1204,7 +1204,7 @@
 					<UnitClassType>UNITCLASS_PRIEST_OF_AGRUONN</UnitClassType>
 					<UnitType>UNIT_LIZARD_PRIEST_OF_AGRUONN</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- HemaPyroSyncretistic 3 -->
 			<Type>TRAIT_HEMAPYROSYNCRETISTIC3</Type>
@@ -1225,14 +1225,14 @@
 					<UnitClassType>UNITCLASS_HIGH_PRIESTESS_OF_BHALL</UnitClassType>
 					<UnitType>UNIT_HIGH_PRIESTESS_OF_BHALL</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- Hydromancer -->
 			<Type>TRAIT_HYDROMANCER</Type>
 			<NextTrait>TRAIT_HYDROMANCER2</NextTrait>
 			<iLevel>1</iLevel>
 			<Civilopedia>TXT_KEY_TRAIT_HYDROMANCER_PEDIA</Civilopedia>
-			
+
 			<Help>TXT_KEY_TRAIT_HYDROMANCER_INFO_HELP</Help>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_HYDROMANCER</Description>
@@ -1277,7 +1277,7 @@
 					<UnitClassType>UNITCLASS_WATER_ELEMENTAL</UnitClassType>
 					<UnitType>UNIT_WATER_ELEMENTAL</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- Hydromancer 3 -->
 			<Type>TRAIT_HYDROMANCER3</Type>
@@ -1306,14 +1306,14 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<ImprovementYieldChanges>
-			<ImprovementYieldChange>
-			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
-			<ImprovementYields>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 						<iYield>1</iYield>
 					</ImprovementYields>
-			</ImprovementYieldChange>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- Illusionist -->
@@ -1324,7 +1324,7 @@
 			<Description>TXT_KEY_TRAIT_ILLUSIONIST</Description>
 			<ShortDescription>TXT_KEY_TRAIT_ILLUSIONIST_SHORT</ShortDescription>
 			<Civilopedia>TXT_KEY_TRAIT_ILLUSIONIST_PEDIA</Civilopedia>
-			
+
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_ILLUSIONIST</PromotionType>
@@ -1390,7 +1390,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-			
+
 		</TraitInfo>
 		<TraitInfo>		<!-- Instructor 3-->
 			<Type>TRAIT_INSTRUCTOR3</Type>
@@ -1413,7 +1413,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-			
+
 		</TraitInfo>
 		<TraitInfo>		<!-- Lycanthropic -->
 			<Type>TRAIT_LYCANTHROPIC</Type>
@@ -1601,7 +1601,7 @@
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
 			<Description>TXT_KEY_TRAIT_RECKLESS</Description>
 			<ShortDescription>TXT_KEY_TRAIT_RECKLESS_SHORT</ShortDescription>
-					<Civilopedia>TXT_KEY_TRAIT_RECKLESS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_TRAIT_RECKLESS_PEDIA</Civilopedia>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_UNREADY</PromotionType>
@@ -2409,7 +2409,7 @@
 			<NextTrait>TRAIT_HAUNTED_STRATEGIST3</NextTrait>
 			<iMinRequiredPoints>300</iMinRequiredPoints>
 			<iGreatGeneralRateModifier>50</iGreatGeneralRateModifier>
-				<iUpgradeCostModifier>-25</iUpgradeCostModifier>
+			<iUpgradeCostModifier>-25</iUpgradeCostModifier>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
 			<iLevel>2</iLevel>
 		</TraitInfo>
@@ -2675,7 +2675,7 @@
 					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
 					<UnitType>UNIT_SKIRMISHER</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MILITIA</PromotionType>
@@ -2753,7 +2753,7 @@
 					<UnitClassType>UNITCLASS_CARETAKER_MATRON</UnitClassType>
 					<UnitType>UNIT_CARETAKER_MATRON</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- Caretaker II -->
 			<Type>TRAIT_ZARIA_INFO2</Type>
@@ -2770,7 +2770,7 @@
 				<FreeBonus>
 					<BonusType>BONUS_MANA_MIND</BonusType>
 					<bFreeBonus>1</bFreeBonus>
-				</FreeBonus>			
+				</FreeBonus>
 			</FreeBonuses>
 			<FreePromotions>
 				<FreePromotion>
@@ -2780,14 +2780,14 @@
 				<FreePromotion>
 					<PromotionType>PROMOTION_MIND2</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
-				</FreePromotion>			
+				</FreePromotion>
 			</FreePromotions>
 			<FreePromotionUnitCombats>
 				<FreePromotionUnitCombat>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
-			</FreePromotionUnitCombats>			
+			</FreePromotionUnitCombats>
 		</TraitInfo>
 		<TraitInfo>		<!-- Caretaker III-->
 			<Type>TRAIT_ZARIA_INFO3</Type>
@@ -2803,13 +2803,13 @@
 					<SpecialistType>SPECIALIST_HEALER</SpecialistType>
 					<bFreeSpecialistStateReligion>1</bFreeSpecialistStateReligion>
 				</FreeSpecialistStateReligion>
-			</FreeSpecialistsStateReligion>			
+			</FreeSpecialistsStateReligion>
 			<SpecialistHappinessChanges>
 				<SpecialistHappinessChange>
 					<SpecialistType>SPECIALIST_HEALER</SpecialistType>
 					<iHappiness>1</iHappiness>
 				</SpecialistHappinessChange>
-			</SpecialistHappinessChanges>			
+			</SpecialistHappinessChanges>
 			<UnitClassPlayerInstancesChanges>
 				<UnitClassPlayerInstancesChange>
 					<UnitClassType>UNITCLASS_SHADOW</UnitClassType>
@@ -2819,7 +2819,7 @@
 					<UnitClassType>UNITCLASS_CARETAKER_MATRON</UnitClassType>
 					<iPlayerInstancesChange>4</iPlayerInstancesChange>
 				</UnitClassPlayerInstancesChange>
-			</UnitClassPlayerInstancesChanges>			
+			</UnitClassPlayerInstancesChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- Master of the Mekara -->
 			<Type>TRAIT_JAMAL_INFO</Type>
@@ -2849,8 +2849,8 @@
 					<UnitClassType>UNITCLASS_COMBAT_OVERSEER_V2</UnitClassType>
 					<UnitType>UNIT_COMBAT_OVERSEER_V2</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
-						<FreePromotions>
+			</ExtraUnitClasses>
+			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_COM_OVERSEER_V2</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
@@ -2956,7 +2956,7 @@
 					<bFreeBonus>1</bFreeBonus>
 				</FreeBonus>
 			</FreeBonuses>
-		</TraitInfo> 
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Sacred Tree (Yggdrasil) -->					<!--Elohim UF Traits-->
 			<Type>TRAIT_KEEPERS_YGGDRASIL</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3047,7 +3047,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Nature's Grave(Tomb of Sucellus) -->
 			<Type>TRAIT_KEEPERS_SUCELLUS</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3120,7 +3120,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Earth's Memento (Standing Stones) -->
 			<Type>TRAIT_KEEPERS_STONES</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3134,7 +3134,7 @@
 				<iExtraYieldThreshold>3</iExtraYieldThreshold>
 				<iExtraYieldThreshold>0</iExtraYieldThreshold>
 			</ExtraYieldThresholds>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Mercy's Light (Sirona's beacon) -->
 			<Type>TRAIT_KEEPERS_SIRONA</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3155,7 +3155,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Lost Peace (Seven Pines) -->
 			<Type>TRAIT_KEEPERS_PINES</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3165,11 +3165,11 @@
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_PINES_SHORT</ShortDescription>
 			<PeaceCommerceModifiers>
-			<iCommerce>0</iCommerce>
-			<iCommerce>10</iCommerce>
-			<iCommerce>10</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+				<iCommerce>10</iCommerce>
 			</PeaceCommerceModifiers>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Dead Island (Rinwell) -->
 			<Type>TRAIT_KEEPERS_RINWELL</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3254,7 +3254,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Frozen Passion (Ring of Carcer) -->
 			<Type>TRAIT_KEEPERS_CARCER</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3327,7 +3327,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Mankind's Ruins (Remnant of Patria) -->
 			<Type>TRAIT_KEEPERS_PATRIA</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3337,7 +3337,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_PATRIA_SHORT</ShortDescription>
 			<iDistanceMaintenanceModifier>-20</iDistanceMaintenanceModifier>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Eternal Fire (Pyre of the Seraphic) -->
 			<Type>TRAIT_KEEPERS_PYRE</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3416,7 +3416,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Waters of Birth (Pool of Tears) -->
 			<Type>TRAIT_KEEPERS_POOL</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3482,7 +3482,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Contained Wrath (Odio's Prison) -->
 			<Type>TRAIT_KEEPERS_ODIO</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3492,8 +3492,8 @@
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_ODIO_SHORT</ShortDescription>
 			<iFreeXPFromCombat>1</iFreeXPFromCombat>
-		</TraitInfo> 	
-		<TraitInfo>		<!-- Keepers of Earth's Fiery Heart  (Mount Kalshekk) -->
+		</TraitInfo>
+		<TraitInfo>		<!-- Keepers of Earth's Fiery Heart (Mount Kalshekk) -->
 			<Type>TRAIT_KEEPERS_KALSHEKK</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
 			<iMinRequiredPoints>500</iMinRequiredPoints>
@@ -3511,7 +3511,7 @@
 					</FeatureYields>
 				</FeatureYieldChange>
 			</FeatureYieldChanges>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Heavenly Mirror (Mirror of Heaven) -->
 			<Type>TRAIT_KEEPERS_MIRROR</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3550,7 +3550,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Maelstrom (Maelstrom) -->
 			<Type>TRAIT_KEEPERS_MAELSTROM</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3575,7 +3575,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Winter's End (Letum frigus) -->
 			<Type>TRAIT_KEEPERS_LETUM</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3677,7 +3677,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Stone Guardians (Pristin pass) -->
 			<Type>TRAIT_KEEPERS_PRISTIN</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3743,7 +3743,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Howling Hamlet (Foxford) -->
 			<Type>TRAIT_KEEPERS_FOXFORD</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3772,7 +3772,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Giant Skull (Dragon Bones) -->
 			<Type>TRAIT_KEEPERS_BONES</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3797,7 +3797,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Storm's Crag(Cliff of Kelle) -->
 			<Type>TRAIT_KEEPERS_KELLE</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3826,7 +3826,7 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of Death's Shattered Jail (Broken Sepulcher) -->
 			<Type>TRAIT_KEEPERS_SEPULCHER</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -3895,7 +3895,7 @@
 			<Description>TXT_KEY_TRAIT_KEEPERS_SEPULCHER</Description>
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_SEPULCHER_SHORT</ShortDescription>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Underworld's Gate (Bradeline's Well) -->
 			<Type>TRAIT_KEEPERS_BRADELINE</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -4054,7 +4054,7 @@
 			<Description>TXT_KEY_TRAIT_KEEPERS_LACUNA</Description>
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_LACUNA_SHORT</ShortDescription>
-		</TraitInfo> 	
+		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Danalin's Sorrow (Aifon Isle) -->
 			<Type>TRAIT_KEEPERS_AIFON</Type>
 			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
@@ -4221,7 +4221,7 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<bGraphicalOnly>1</bGraphicalOnly>
-		</TraitInfo>	
+		</TraitInfo>
 		<TraitInfo>		<!-- Aggressive -->									<!-- Republic traits -->
 			<Type>TRAIT_AGGRESSIVE_REPUBLIC</Type>
 			<TraitClass>TRAITCLASS_REPUBLIC</TraitClass>
@@ -4424,7 +4424,7 @@
 					<UnitClassType>UNITCLASS_KAHD</UnitClassType>
 					<UnitType>UNIT_KAHD</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- Mammon - Kahd's traits -->
 			<Type>TRAIT_KAHD_MAMMON</Type>
@@ -4439,7 +4439,7 @@
 					<UnitClassType>UNITCLASS_KAHD</UnitClassType>
 					<UnitType>UNIT_KAHD</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 		</TraitInfo>
 		<TraitInfo>		<!-- Pact with Hyborem -->
 			<Type>TRAIT_PACT_HYBOREM</Type>
@@ -4473,13 +4473,13 @@
 					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
 					<UnitType>UNIT_BALOR</UnitType>
 				</ExtraUnitClass>
-			</ExtraUnitClasses>	
+			</ExtraUnitClasses>
 			<UnitClassPlayerInstancesChanges>
 				<UnitClassPlayerInstancesChange>
 					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
 					<iPlayerInstancesChange>4</iPlayerInstancesChange>
 				</UnitClassPlayerInstancesChange>
-			</UnitClassPlayerInstancesChanges>	
+			</UnitClassPlayerInstancesChanges>
 		</TraitInfo>
-	</TraitInfos> 
+	</TraitInfos>
 </Civ4TraitInfos>
