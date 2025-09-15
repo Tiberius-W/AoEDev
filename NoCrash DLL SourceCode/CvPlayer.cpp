@@ -29590,7 +29590,9 @@ int CvPlayer::doMultipleResearch(int iOverflow)
 	while (eCurrentTech != NO_TECH && ((100 * (GET_TEAM(getTeam()).getResearchCost(eCurrentTech) - GET_TEAM(getTeam()).getResearchProgress(eCurrentTech))) / std::max(1, calculateResearchModifier(eCurrentTech)) <= iOverflow))
 	{//The Future Tech can cause strange infinite loops
 		if (GC.getTechInfo(eCurrentTech).isRepeat())
+		{
 			break;
+		}
 		iOverflow -= (100 * (GET_TEAM(getTeam()).getResearchCost(eCurrentTech) - GET_TEAM(getTeam()).getResearchProgress(eCurrentTech))) / std::max(1, calculateResearchModifier(eCurrentTech));
 		GET_TEAM(getTeam()).setHasTech(eCurrentTech, true, getID(), true, true);
 		if (!GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && !GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
@@ -29639,7 +29641,9 @@ void CvPlayer::doAutoCastPost()
 GoodyTypes CvPlayer::doLair(CvPlot* pPlot, CvUnit* pUnit)
 {
 	if (pPlot->getImprovementType() == NO_IMPROVEMENT)
+	{
 		return NO_GOODY; //Just in case
+	}
 
 	bool bGood;
 	CvString szError;
@@ -29714,9 +29718,13 @@ int CvPlayer::getFlagValue(FlagTypes eFlag) const
 void CvPlayer::setHasFlag(FlagTypes eFlag, bool eChange)
 {
 	if (eChange)
+	{
 		m_pabPlayerFlags[eFlag] = 1;
+	}
 	else
+	{
 		m_pabPlayerFlags[eFlag] = 0;
+	}
 
 }
 
@@ -29810,7 +29818,9 @@ int CvPlayer::pickOtherPlayerFlags(EventTriggerTypes eTrigger)
 	for (int i = 0; i < MAX_CIV_PLAYERS; i++)
 	{
 		if ((PlayerTypes)i == getID())
+		{
 			break;
+		}
 		if (GET_PLAYER((PlayerTypes)i).canTrigger(eTrigger, getID(), eReligion))
 		{
 			bool bValidPlayer = true;
@@ -29835,7 +29845,9 @@ int CvPlayer::pickOtherPlayerFlags(EventTriggerTypes eTrigger)
 				}
 			}
 			if (bValidPlayer)
+			{
 				aePlayers.push_back(i);
+			}
 		}
 	}
 	if (aePlayers.size() > 0)
@@ -29863,7 +29875,9 @@ void CvPlayer::changeLeader(LeaderHeadTypes eNewLeader)
 	LeaderHeadTypes eOldLeader = getLeaderType();
 
 	if (eOldLeader == eNewLeader)
+	{
 		return;
+	}
 
 	// Clear old traits
 	const CvLeaderHeadInfo& kLeaderHead = GC.getLeaderHeadInfo(getLeaderType());
@@ -29873,7 +29887,6 @@ void CvPlayer::changeLeader(LeaderHeadTypes eNewLeader)
 	{
 		if (kLeaderHead.hasTrait(eTrait))
 		{
-
 			setHasTrait(eTrait, false);
 		}
 		if (GC.getCivilizationInfo(getCivilizationType()).getCivTrait() == eTrait)
@@ -29893,12 +29906,10 @@ void CvPlayer::changeLeader(LeaderHeadTypes eNewLeader)
 	{
 		if (knewLeaderHead.hasTrait(eTrait))
 		{
-
 			setHasTrait(eTrait, true);
 		}
 		if (GC.getCivilizationInfo(getCivilizationType()).getCivTrait() == eTrait)
 		{
-
 			setHasTrait(eTrait, true );
 		}
 	}

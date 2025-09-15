@@ -2409,13 +2409,14 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 		iLoop = std::max(iLoop, pUnit->getPerception());
 	}
 
+	// We don't need to do *each* visibility tier, only the highest... right?
 	for (int i = -1; i < iLoop; i++)
 	{
 		for (int dx = -iRange; dx <= iRange; dx++)
 		{
 			for (int dy = -iRange; dy <= iRange; dy++)
 			{
-				// This is the 'one tile further'
+				// Check if this is the 'one tile further'
 				bOuterRing = false;
 				if ((abs(dx) == iRange) || (abs(dy) == iRange))
 				{
@@ -2648,11 +2649,16 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 
 	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
 	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
+	{
 		iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
+	}
 
+	// Blaze 2025: This is needed to ensure "actual" accuracy ---
 	// for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
 	// iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
 	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
+	// --- I'm thinking it'd be perf friendlier to write it so that each plot keeps a list of which units see that plot...
+	// Though that would end up being quite a few units overlapping on quite a few tiles in lategame. Memory, or cpu...
 
 	iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
 
@@ -2685,34 +2691,21 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 		return false;
 	}
 
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
-/**					---- Start Original Code ----				**
-	if (isPeak())
-	{
-		return false;
-	}
-/**					----  End Original Code  ----				**/
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
-
 	if (getFeatureType() != NO_FEATURE)
 	{
-		if (!(GC.getBonusInfo(eBonus).isFeature(getFeatureType())))
+		if (!GC.getBonusInfo(eBonus).isFeature(getFeatureType()))
 		{
 			return false;
 		}
 
-		if (!(GC.getBonusInfo(eBonus).isFeatureTerrain(getTerrainType())))
+		if (!GC.getBonusInfo(eBonus).isFeatureTerrain(getTerrainType()))
 		{
 			return false;
 		}
 	}
 	else
 	{
-		if (!(GC.getBonusInfo(eBonus).isTerrain(getTerrainType())))
+		if (!GC.getBonusInfo(eBonus).isTerrain(getTerrainType()))
 		{
 			return false;
 		}
@@ -2720,28 +2713,21 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 
 	if (isHills())
 	{
-		if (!(GC.getBonusInfo(eBonus).isHills()))
+		if (!GC.getBonusInfo(eBonus).isHills())
 		{
 			return false;
 		}
 	}
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
 	else if (isPeak())
 	{
-		if (!(GC.getBonusInfo(eBonus).isPeaks()))
+		if (!GC.getBonusInfo(eBonus).isPeaks())
 		{
 			return false;
 		}
 	}
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
-
 	else if (isFlatlands())
 	{
-		if (!(GC.getBonusInfo(eBonus).isFlatlands()))
+		if (!GC.getBonusInfo(eBonus).isFlatlands())
 		{
 			return false;
 		}
@@ -2776,12 +2762,7 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 		}
 	}
 
-//	if (!isPotentialCityWork())
-//	{
-//		return false;
-//	}
-
-//FfH: Added by Kael 12/18/2008
+	//FfH: Added by Kael 12/18/2008
 	if (isCity())
 	{
 		if (GC.getDefineINT("BONUS_MANA") != -1)
@@ -2792,7 +2773,6 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 			}
 		}
 	}
-//FfH: End Add
 
 	return true;
 }
@@ -6552,48 +6532,137 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 	int iAreaCount;
 	int iI;
 
-	if (getPlotType() != eNewValue)
+	if (getPlotType() == eNewValue)
 	{
-		if ((getPlotType() == PLOT_OCEAN) || (eNewValue == PLOT_OCEAN))
+		return;
+	}
+
+	if ((getPlotType() == PLOT_OCEAN) || (eNewValue == PLOT_OCEAN))
+	{
+		eraseWaterChange();
+	}
+
+	bWasWater = isWater();
+
+	updateSeeFromSight(false, true);
+
+	m_ePlotType = eNewValue;
+
+	updateYield();
+	updatePlotGroup();
+
+	updateSeeFromSight(true, true);
+
+	if ((getTerrainType() == NO_TERRAIN) || (GC.getTerrainInfo(getTerrainType()).isWater() != isWater()))
+	{
+		if (isWater())
 		{
-			eraseWaterChange();
-		}
-
-		bWasWater = isWater();
-
-		updateSeeFromSight(false, true);
-
-		m_ePlotType = eNewValue;
-
-		updateYield();
-		updatePlotGroup();
-
-		updateSeeFromSight(true, true);
-
-		if ((getTerrainType() == NO_TERRAIN) || (GC.getTerrainInfo(getTerrainType()).isWater() != isWater()))
-		{
-			if (isWater())
+			if (isAdjacentToLand())
 			{
-				if (isAdjacentToLand())
-				{
-					setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
-				}
-				else
-				{
-					setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
-				}
+				setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 			}
 			else
 			{
-				setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+				setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+			}
+		}
+		else
+		{
+			setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+		}
+	}
+
+	GC.getMapINLINE().resetPathDistance();
+
+	if (bWasWater != isWater())
+	{
+		if (bRecalculate)
+		{
+			for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+			{
+				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+				if (pLoopPlot != NULL)
+				{
+					if (pLoopPlot->isWater())
+					{
+						if (pLoopPlot->isAdjacentToLand())
+						{
+							pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+						}
+						else
+						{
+							pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+						}
+					}
+				}
 			}
 		}
 
-		GC.getMapINLINE().resetPathDistance();
-
-		if (bWasWater != isWater())
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 		{
-			if (bRecalculate)
+			pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if (pLoopPlot != NULL)
+			{
+				pLoopPlot->updateYield();
+				pLoopPlot->updatePlotGroup();
+			}
+		}
+
+		for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+		{
+			pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
+
+			if (pLoopPlot != NULL)
+			{
+				pLoopPlot->updatePotentialCityWork();
+			}
+		}
+
+		GC.getMapINLINE().changeLandPlots((isWater()) ? -1 : 1);
+
+		if (getBonusType() != NO_BONUS)
+		{
+			GC.getMapINLINE().changeNumBonusesOnLand(getBonusType(), ((isWater()) ? -1 : 1));
+		}
+
+		if (isOwned())
+		{
+			GET_PLAYER(getOwnerINLINE()).changeTotalLand((isWater()) ? -1 : 1);
+			GET_TEAM(getTeam()).changeTotalLand((isWater()) ? -1 : 1);
+		}
+
+		if (bRecalculate)
+		{
+			pNewArea = NULL;
+			bRecalculateAreas = false;
+
+			// XXX might want to change this if we allow diagonal water movement...
+			if (isWater())
+			{
+				for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
+				{
+					pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
+
+					if (pLoopPlot != NULL)
+					{
+						if (pLoopPlot->area()->isWater())
+						{
+							if (pNewArea == NULL)
+							{
+								pNewArea = pLoopPlot->area();
+							}
+							else if (pNewArea != pLoopPlot->area())
+							{
+								bRecalculateAreas = true;
+								break;
+							}
+						}
+					}
+				}
+			}
+			else
 			{
 				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 				{
@@ -6601,186 +6670,99 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 
 					if (pLoopPlot != NULL)
 					{
-						if (pLoopPlot->isWater())
+						if (!(pLoopPlot->area()->isWater()))
 						{
-							if (pLoopPlot->isAdjacentToLand())
+							if (pNewArea == NULL)
 							{
-								pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+								pNewArea = pLoopPlot->area();
 							}
-							else
+							else if (pNewArea != pLoopPlot->area())
 							{
-								pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+								bRecalculateAreas = true;
+								break;
 							}
 						}
 					}
 				}
 			}
 
-			for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+			if (!bRecalculateAreas)
 			{
-				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)(NUM_DIRECTION_TYPES - 1)));
 
 				if (pLoopPlot != NULL)
 				{
-					pLoopPlot->updateYield();
-					pLoopPlot->updatePlotGroup();
-				}
-			}
-
-			for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
-			{
-				pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
-
-				if (pLoopPlot != NULL)
-				{
-					pLoopPlot->updatePotentialCityWork();
-				}
-			}
-
-			GC.getMapINLINE().changeLandPlots((isWater()) ? -1 : 1);
-
-			if (getBonusType() != NO_BONUS)
-			{
-				GC.getMapINLINE().changeNumBonusesOnLand(getBonusType(), ((isWater()) ? -1 : 1));
-			}
-
-			if (isOwned())
-			{
-				GET_PLAYER(getOwnerINLINE()).changeTotalLand((isWater()) ? -1 : 1);
-				GET_TEAM(getTeam()).changeTotalLand((isWater()) ? -1 : 1);
-			}
-
-			if (bRecalculate)
-			{
-				pNewArea = NULL;
-				bRecalculateAreas = false;
-
-				// XXX might want to change this if we allow diagonal water movement...
-				if (isWater())
-				{
-					for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
-					{
-						pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							if (pLoopPlot->area()->isWater())
-							{
-								if (pNewArea == NULL)
-								{
-									pNewArea = pLoopPlot->area();
-								}
-								else if (pNewArea != pLoopPlot->area())
-								{
-									bRecalculateAreas = true;
-									break;
-								}
-							}
-						}
-					}
+					pLastArea = pLoopPlot->area();
 				}
 				else
 				{
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-					{
-						pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							if (!(pLoopPlot->area()->isWater()))
-							{
-								if (pNewArea == NULL)
-								{
-									pNewArea = pLoopPlot->area();
-								}
-								else if (pNewArea != pLoopPlot->area())
-								{
-									bRecalculateAreas = true;
-									break;
-								}
-							}
-						}
-					}
+					pLastArea = NULL;
 				}
 
-				if (!bRecalculateAreas)
+				iAreaCount = 0;
+
+				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 				{
-					pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)(NUM_DIRECTION_TYPES - 1)));
+					pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 
 					if (pLoopPlot != NULL)
 					{
-						pLastArea = pLoopPlot->area();
+						pCurrArea = pLoopPlot->area();
 					}
 					else
 					{
-						pLastArea = NULL;
+						pCurrArea = NULL;
 					}
 
-					iAreaCount = 0;
-
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+					if (pCurrArea != pLastArea)
 					{
-						pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							pCurrArea = pLoopPlot->area();
-						}
-						else
-						{
-							pCurrArea = NULL;
-						}
-
-						if (pCurrArea != pLastArea)
-						{
-							iAreaCount++;
-						}
-
-						pLastArea = pCurrArea;
+						iAreaCount++;
 					}
 
-					if (iAreaCount > 2)
-					{
-						bRecalculateAreas = true;
-					}
+					pLastArea = pCurrArea;
 				}
 
-				if (bRecalculateAreas)
+				if (iAreaCount > 2)
 				{
-					GC.getMapINLINE().recalculateAreas();
-				}
-				else
-				{
-					setArea(FFreeList::INVALID_INDEX);
-
-					if ((area() != NULL) && (area()->getNumTiles() == 1))
-					{
-						GC.getMapINLINE().deleteArea(getArea());
-					}
-
-					if (pNewArea == NULL)
-					{
-						pNewArea = GC.getMapINLINE().addArea();
-						pNewArea->init(pNewArea->getID(), isWater());
-					}
-
-					setArea(pNewArea->getID());
+					bRecalculateAreas = true;
 				}
 			}
-		}
 
-		if (bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			//Update terrain graphical
-			gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(), true, true);
-			//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
-			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+			if (bRecalculateAreas)
+			{
+				GC.getMapINLINE().recalculateAreas();
+			}
+			else
+			{
+				setArea(FFreeList::INVALID_INDEX);
 
-			updateFeatureSymbol();
-			setLayoutDirty(true);
-			updateRouteSymbol(false, true);
-			updateRiverSymbol(false, true);
+				if ((area() != NULL) && (area()->getNumTiles() == 1))
+				{
+					GC.getMapINLINE().deleteArea(getArea());
+				}
+
+				if (pNewArea == NULL)
+				{
+					pNewArea = GC.getMapINLINE().addArea();
+					pNewArea->init(pNewArea->getID(), isWater());
+				}
+
+				setArea(pNewArea->getID());
+			}
 		}
+	}
+
+	if (bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		//Update terrain graphical
+		gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(), true, true);
+		//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
+		//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+
+		updateFeatureSymbol();
+		setLayoutDirty(true);
+		updateRouteSymbol(false, true);
+		updateRiverSymbol(false, true);
 	}
 }
 
@@ -9276,85 +9258,89 @@ void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes 
 	FAssertMsg(eTeam >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(eTeam < MAX_TEAMS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (iChange != 0)
+	// Don't need to update anything after all
+	if (iChange == 0)
 	{
-		if (NULL == m_aiVisibilityCount)
+		return;
+	}
+
+	if (NULL == m_aiVisibilityCount)
+	{
+		m_aiVisibilityCount = new short[MAX_TEAMS];
+		for (int iI = 0; iI < MAX_TEAMS; ++iI)
 		{
-			m_aiVisibilityCount = new short[MAX_TEAMS];
-			for (int iI = 0; iI < MAX_TEAMS; ++iI)
+			m_aiVisibilityCount[iI] = 0;
+		}
+	}
+
+	//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
+	if (m_aiVisibilityCount[eTeam] < 0)
+	{
+		m_aiVisibilityCount[eTeam] = 0;
+	}
+
+	bOldVisible = isVisible(eTeam, false);
+
+	m_aiVisibilityCount[eTeam] += iChange;
+	if (m_aiVisibilityCount[eTeam] < 0)
+	{
+		m_aiVisibilityCount[eTeam] = 0;
+	}
+	FAssert(getVisibilityCount(eTeam) >= 0, "visibility is negative?");
+
+	if (eSeeInvisible != NO_INVISIBLE)
+	{
+		changeInvisibleVisibilityCount(eTeam, eSeeInvisible, iChange);
+	}
+
+	if (bOldVisible == isVisible(eTeam, false))
+	{
+		return;
+	}
+
+	if (isVisible(eTeam, false))
+	{
+		setRevealed(eTeam, true, false, NO_TEAM, bUpdatePlotGroups);
+
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if (pAdjacentPlot != NULL)
 			{
-				m_aiVisibilityCount[iI] = 0;
+				pAdjacentPlot->updateRevealedOwner(eTeam);
 			}
 		}
 
-		//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
-		if (m_aiVisibilityCount[eTeam] < 0)
+		if (getTeam() != NO_TEAM)
 		{
-			m_aiVisibilityCount[eTeam] = 0;
+			GET_TEAM(getTeam()).meet(eTeam, true);
 		}
-		//FfH: End Add
+	}
 
-		bOldVisible = isVisible(eTeam, false);
+	pCity = getPlotCity();
 
-		m_aiVisibilityCount[eTeam] += iChange;
-		if (m_aiVisibilityCount[eTeam] < 0)
+	if (pCity != NULL)
+	{
+		pCity->setInfoDirty(true);
+	}
+
+	for (iI = 0; iI < MAX_TEAMS; ++iI)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
-			m_aiVisibilityCount[eTeam] = 0;
-		}
-		FAssert(getVisibilityCount(eTeam) >= 0);
-
-		if (eSeeInvisible != NO_INVISIBLE)
-		{
-			changeInvisibleVisibilityCount(eTeam, eSeeInvisible, iChange);
-		}
-
-		if (bOldVisible != isVisible(eTeam, false))
-		{
-			if (isVisible(eTeam, false))
+			if (GET_TEAM((TeamTypes)iI).isStolenVisibility(eTeam))
 			{
-				setRevealed(eTeam, true, false, NO_TEAM, bUpdatePlotGroups);
-
-				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-				{
-					pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-					if (pAdjacentPlot != NULL)
-					{
-						pAdjacentPlot->updateRevealedOwner(eTeam);
-					}
-				}
-
-				if (getTeam() != NO_TEAM)
-				{
-					GET_TEAM(getTeam()).meet(eTeam, true);
-				}
-			}
-
-			pCity = getPlotCity();
-
-			if (pCity != NULL)
-			{
-				pCity->setInfoDirty(true);
-			}
-
-			for (iI = 0; iI < MAX_TEAMS; ++iI)
-			{
-				if (GET_TEAM((TeamTypes)iI).isAlive())
-				{
-					if (GET_TEAM((TeamTypes)iI).isStolenVisibility(eTeam))
-					{
-						changeStolenVisibilityCount(((TeamTypes)iI), ((isVisible(eTeam, false)) ? 1 : -1));
-					}
-				}
-			}
-
-			if (eTeam == GC.getGameINLINE().getActiveTeam())
-			{
-				updateFog();
-				updateMinimapColor();
-				updateCenterUnit();
+				changeStolenVisibilityCount(((TeamTypes)iI), ((isVisible(eTeam, false)) ? 1 : -1));
 			}
 		}
+	}
+
+	if (eTeam == GC.getGameINLINE().getActiveTeam())
+	{
+		updateFog();
+		updateMinimapColor();
+		updateCenterUnit();
 	}
 }
 
