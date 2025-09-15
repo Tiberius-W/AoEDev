@@ -9272,20 +9272,20 @@ void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes 
 			m_aiVisibilityCount[iI] = 0;
 		}
 	}
-
-	//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
-	if (m_aiVisibilityCount[eTeam] < 0)
-	{
-		m_aiVisibilityCount[eTeam] = 0;
-	}
+	// Blaze: We MUST allow vision to go temporarily negative, otherwise chained removesight-removesight X addsight-addsight may end up increasing net vision!
+	// //FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
+	// if (m_aiVisibilityCount[eTeam] < 0)
+	// {
+	// 	m_aiVisibilityCount[eTeam] = 0;
+	// }
 
 	bOldVisible = isVisible(eTeam, false);
 
 	m_aiVisibilityCount[eTeam] += iChange;
-	if (m_aiVisibilityCount[eTeam] < 0)
-	{
-		m_aiVisibilityCount[eTeam] = 0;
-	}
+	// if (m_aiVisibilityCount[eTeam] < 0)
+	// {
+	// 	m_aiVisibilityCount[eTeam] = 0;
+	// }
 	FAssert(getVisibilityCount(eTeam) >= 0, "visibility is negative?");
 
 	if (eSeeInvisible != NO_INVISIBLE)
