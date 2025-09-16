@@ -2645,22 +2645,25 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
-	int iMaxImpRange = 0;
+	// int iMaxImpRange = 0;
 
-	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
-	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
-	{
-		iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
-	}
+	// int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
+	// for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
+	// {
+	// 	iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
+	// }
 
-	// Blaze 2025: This is needed to ensure "actual" accuracy ---
-	// for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
-	// iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
-	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
-	// --- I'm thinking it'd be perf friendlier to write it so that each plot keeps a list of which units see that plot...
-	// Though that would end up being quite a few units overlapping on quite a few tiles in lategame. Memory, or cpu...
+	// // Blaze 2025: This is needed to ensure "actual" accuracy ---
+	// // for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
+	// // iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
+	// // iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
+	// // --- I'm thinking it'd be perf friendlier to write it so that each plot keeps a list of which units see that plot...
+	// // Though that would end up being quite a few units overlapping on quite a few tiles in lategame. Memory, or cpu...
 
-	iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
+	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
+
+	// Blaze: The above was evaluating to thirty-four. That is FAR in excess of what is worth calculating...
+	int iRange = 10;
 
 	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
