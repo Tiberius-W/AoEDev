@@ -145,6 +145,8 @@ def canTriggerAppeleur(argsList):
 	iGood          = getInfoType('ALIGNMENT_GOOD')
 	if (pUnit.getUnitClassType() == gc.getDefineINT("FORT_COMMANDER_UNITCLASS") or pUnit.getUnitCombatType()==-1 or pUnit.getUnitCombatType()==getInfoType('UNITCOMBAT_WORKER')):
 		return False
+	if (pUnit.isLeashed()):
+		return False
 	return pUnit.isAlive() and not pUnit.isHasPromotion(getInfoType('PROMOTION_APPELEUR_COMPANION')) and (pPlayer.getAlignment()== iGood ) 
 
 def canTriggerHiddenOption(argsList):
