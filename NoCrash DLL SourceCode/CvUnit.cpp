@@ -15244,8 +15244,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		pOldPlot->removeUnit(this, bUpdate && !hasCargo());
 
-		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
-
 		pOldPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), -1);
 /*************************************************************************************************/
 /**	PromotionPower						12/13/08									Xienwolf	**/
@@ -15352,6 +15350,8 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 			}
 		}
 
+		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
+
 		if (pOldPlot->isActiveVisible(true))
 		{
 			pOldPlot->updateMinimapColor();
@@ -15389,6 +15389,8 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 /*************************************************************************************************/
 	if (pNewPlot != NULL)
 	{
+		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
+
 		pNewCity = pNewPlot->getPlotCity();
 
 		if (pNewCity != NULL)
@@ -15451,7 +15453,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 		setFortifyTurns(0);
 
-		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
 		pNewPlot->addUnit(this, bUpdate && !hasCargo());
 
 		pNewPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), 1);
