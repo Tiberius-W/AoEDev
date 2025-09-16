@@ -6544,14 +6544,13 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 
 	bWasWater = isWater();
 
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
 	updateSeeFromSight(false, true);
-
 	m_ePlotType = eNewValue;
+	updateSeeFromSight(true, true);
 
 	updateYield();
 	updatePlotGroup();
-
-	updateSeeFromSight(true, true);
 
 	if ((getTerrainType() == NO_TERRAIN) || (GC.getTerrainInfo(getTerrainType()).isWater() != isWater()))
 	{
@@ -6781,134 +6780,115 @@ TerrainTypes CvPlot::getTerrainType() const
 void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
 /**								----  End Original Code  ----									**/
 void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics, bool bDontResetClimate)
-/*************************************************************************************************/
-/**	Bugfix								END														**/
-/*************************************************************************************************/
 {
-	bool bUpdateSight;
-
-/*************************************************************************************************/
-/**	Flavour Mod								11/21/08								Jean Elcard	**/
-/**																								**/
-/**										Fixes a FfH bug.										**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Flavour Mod								11/21/08								Jean Elcard	**/
+	/**																								**/
+	/**										Fixes a FfH bug.										**/
+	/*************************************************************************************************/
+	// Remove temp terrain when reassigned due to other effect (including hell terrain... hmm)
 	if (getTempTerrainTimer() > 0)
 	{
 		changeTempTerrainTimer(-getTempTerrainTimer());
 		setRealTerrainType(NO_TERRAIN);
 	}
-/*************************************************************************************************/
-/**	Flavour Mod								END													**/
-/*************************************************************************************************/
-	if (getTerrainType() != eNewValue)
+
+	// Don't keep plot type placed "accurately" if direct assign thru e.g. worldbuilder(?) when "No Hell Terrain" is on
+	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
 	{
-		if ((getTerrainType() != NO_TERRAIN) &&
-			  (eNewValue != NO_TERRAIN) &&
-			  ((GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()) ||
-				 (GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel() != GC.getTerrainInfo(eNewValue).getSeeThroughLevel())))
+		// We need this reassignment check, otherwise terraforming spells can remove hell terrain(?)
+		if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD") && !GC.getTerrainInfo(eNewValue).isHell())
 		{
-			bUpdateSight = true;
+			eNewValue = (TerrainTypes)GC.getTerrainClassInfo((TerrainClassTypes)GC.getTerrainInfo(eNewValue).getTerrainClassType()).getHellTerrain();
 		}
-		else
+		else if (getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD") && GC.getTerrainInfo(eNewValue).isHell())
 		{
-			bUpdateSight = false;
+			eNewValue = (TerrainTypes)GC.getTerrainClassInfo((TerrainClassTypes)GC.getTerrainInfo(eNewValue).getTerrainClassType()).getNaturalTerrain();
 		}
+	}
 
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(false, true);
-		}
+	if (getTerrainType() == eNewValue)
+	{
+		return;
+	}
 
-		m_eTerrainType = eNewValue;
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**						Ensures Terrain Type and Tile Status remain linked						**/
-/*************************************************************************************************/
-		if ((getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && GC.getTerrainInfo(getTerrainType()).isHell())
-		{
-			m_eTerrainType = (TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain();
-		}
-		if ((getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && !GC.getTerrainInfo(getTerrainType()).isHell())
-		{
-			m_eTerrainType = (TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain();
-		}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+	bool bUpdateSight = false;
 
-		updateYield();
-		updatePlotGroup();
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
+	if (getTerrainType() != NO_TERRAIN
+	 && eNewValue != NO_TERRAIN
+	 && (GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()
+	 	|| GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel() != GC.getTerrainInfo(eNewValue).getSeeThroughLevel()))
+	{
+		bUpdateSight = true;
+		updateSeeFromSight(false, true);
+	}
+	m_eTerrainType = eNewValue;
+	if (bUpdateSight)
+	{
+		updateSeeFromSight(true, true);
+	}
 
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(true, true);
-		}
+	updateYield();
+	updatePlotGroup();
 
-		if (bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			//Update terrain graphics
-			gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(),false,true);
-			//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
-			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-		}
+	if (bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		//Update terrain graphics
+		gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(),false,true);
+		//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
+		//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	}
 
-/*************************************************************************************************/
-/**	FastRebuild								01/14/09								Jean Elcard **/
-/**																								**/
-/**							Delay rebuilding for performance reasons.							**/
-/*************************************************************************************************/
-		if (!bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			setNeedsRebuilding(true);
-		}
-/*************************************************************************************************/
-/**	FastRebuild								END													**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	FastRebuild								01/14/09								Jean Elcard **/
+	/**																								**/
+	/**							Delay rebuilding for performance reasons.							**/
+	/*************************************************************************************************/
+	if (!bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		setNeedsRebuilding(true);
+	}
+	/*************************************************************************************************/
+	/**	FastRebuild								END													**/
+	/*************************************************************************************************/
 
-//ClimateSystem: Change Climate according to just set Terrain.
-/*************************************************************************************************/
-/**	Bugfix							  11/06/13								Snarko				**/
-/**																								**/
-/**						Fixes a bug with temp terrain and climate								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
+	//ClimateSystem: Change Climate according to just set Terrain.
+	/*************************************************************************************************/
+	/**	Bugfix							  11/06/13								Snarko				**/
+	/**																								**/
+	/**						Fixes a bug with temp terrain and climate								**/
+	/*************************************************************************************************/
+	/**								---- Start Original Code ----									**
 
-		if (getClimate() == NO_CLIMATE)
-		{
-			resetClimateData();
-		}
-		else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
-		{
-			if (!isHasTempTerrain())
-			{
-				resetClimateData();
-			}
-		}
-/**								----  End Original Code  ----									**/
-		if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
-		{
-			setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
-		}
-		
-		if (!bDontResetClimate)
-		{
 			if (getClimate() == NO_CLIMATE)
 			{
 				resetClimateData();
 			}
 			else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
 			{
-				//To fix another bug we never have it set as temp terrain at this point, so no point checking if it's temp.
-				resetClimateData();
+				if (!isHasTempTerrain())
+				{
+					resetClimateData();
+				}
 			}
+	/**								----  End Original Code  ----									**/
+	if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
+	{
+		setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
+	}
+	
+	if (!bDontResetClimate)
+	{
+		if (getClimate() == NO_CLIMATE)
+		{
+			resetClimateData();
 		}
-/*************************************************************************************************/
-/**	Bugfix								END														**/
-/*************************************************************************************************/
-//FlavourMod: End Add
-
-		
+		else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
+		{
+			//To fix another bug we never have it set as temp terrain at this point, so no point checking if it's temp.
+			resetClimateData();
+		}
 	}
 }
 
@@ -6948,6 +6928,8 @@ void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
 
 	bool bUpdateSight = false;
 
+	
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
 	if ((m_ePlotEffectType == NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != 0)
 	 || (eNewValue == NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange() != 0)
 	 ||	(eNewValue != NO_PLOT_EFFECT && m_ePlotEffectType != NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange()))
@@ -6955,19 +6937,17 @@ void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
 		bUpdateSight = true;
 		updateSeeFromSight(false, true);
 	}
+	m_ePlotEffectType = eNewValue;
+	if (bUpdateSight)
+	{
+		updateSeeFromSight(true, true);
+	}	
 
 	// If the incoming plot effect reduces max possible hell terrain counter, actually apply that change
 	if (eNewValue != NO_PLOT_EFFECT)
 	{
 		changePlotCounter(std::min(0, GC.getPlotEffectInfo(eNewValue).getMaxPlotCounter() - getPlotCounter()));
 	}
-
-	m_ePlotEffectType = eNewValue;
-
-	if (bUpdateSight)
-	{
-		updateSeeFromSight(true, true);
-	}	
 
 	updateYield();
 
@@ -6982,47 +6962,39 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 	CvCity* pLoopCity;
 	CvPlot* pLoopPlot;
 	FeatureTypes eOldFeature;
-	bool bUpdateSight;
+	bool bUpdateSight = false;
 	int iI;
 
 	eOldFeature = getFeatureType();
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							12/22/08											**/
-/**																								**/
-/**			Prevents removal of Features which are required by Permanent Improvements			**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Xienwolf Tweak							12/22/08											**/
+	/**																								**/
+	/**			Prevents removal of Features which are required by Permanent Improvements			**/
+	/*************************************************************************************************/
 	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isRequiresFeature() && GC.getImprovementInfo(getImprovementType()).isPermanent() && (eNewValue == NO_FEATURE || !GC.getImprovementInfo(getImprovementType()).getFeatureMakesValid(eNewValue)))
 	{
 		return;
 	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Flavour Mod								06/23/08								Jean Elcard **/
-/**																								**/
-/**																								**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Flavour Mod								06/23/08								Jean Elcard **/
+	/**																								**/
+	/**																								**/
+	/*************************************************************************************************/
 	if (isHasTempFeature())
 	{
 		changeTempFeatureTimer(-getTempFeatureTimer());
 	}
-/*************************************************************************************************/
-/**	Flavour Mod								END													**/
-/*************************************************************************************************/
+
 	if (eNewValue != NO_FEATURE)
 	{
-/*************************************************************************************************/
-/**	Features expanded						Ahwaric	04/10/09	**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Features expanded						Ahwaric	04/10/09	**/
+	/*************************************************************************************************/
 		if (GC.getFeatureInfo(eNewValue).getTerrainConvert() != NO_TERRAIN)
 		{
 			setTerrainType((TerrainTypes)GC.getFeatureInfo(eNewValue).getTerrainConvert());
 		}
-/*************************************************************************************************/
-/**										END		**/
-/*************************************************************************************************/
 		if (iVariety == -1)
 		{
 			iVariety = ((GC.getFeatureInfo(eNewValue).getArtInfo()->getNumVarieties() * ((getLatitude() * 9) / 8)) / 90);
@@ -7037,32 +7009,22 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 
 	if ((eOldFeature != eNewValue) || (m_iFeatureVariety != iVariety))
 	{
+		// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
 		if ((eOldFeature == NO_FEATURE) ||
 			  (eNewValue == NO_FEATURE) ||
 			  (GC.getFeatureInfo(eOldFeature).getSeeThroughChange() != GC.getFeatureInfo(eNewValue).getSeeThroughChange()))
 		{
 			bUpdateSight = true;
-		}
-		else
-		{
-			bUpdateSight = false;
-		}
-
-		if (bUpdateSight)
-		{
 			updateSeeFromSight(false, true);
 		}
-
 		m_eFeatureType = eNewValue;
 		m_iFeatureVariety = iVariety;
-
-		updateYield();
-
 		if (bUpdateSight)
 		{
 			updateSeeFromSight(true, true);
 		}
 
+		updateYield();
 		updateFeatureSymbol();
 
 		if (((eOldFeature != NO_FEATURE) && (GC.getFeatureInfo(eOldFeature).getArtInfo()->isRiverArt())) ||
@@ -7293,14 +7255,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		}
 	}
 
-	// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
-	CLLNode<IDInfo>* pUnitNode = headUnitNode();
-	while (pUnitNode != NULL)
-	{
-		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = nextUnitNode(pUnitNode);
-		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
-	}
 
 	if (eOldImprovement != NO_IMPROVEMENT)
 	{
@@ -7315,7 +7269,25 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 	}
 
 	updatePlotGroupBonus(false);
+
+	// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
+	CLLNode<IDInfo>* pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
+	}
 	m_eImprovementType = eNewValue;
+	// Update plot visibility after improvement change
+	pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
+	}
+
 	if (eNewValue != NO_IMPROVEMENT)
 	{
 		changePlotCounter(GC.getImprovementInfo(eNewValue).getBasePlotCounterModify());
@@ -7331,14 +7303,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 
 	updatePlotGroupBonus(true);
 
-	// Update plot visibility after improvement change
-	pUnitNode = headUnitNode();
-	while (pUnitNode != NULL)
-	{
-		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = nextUnitNode(pUnitNode);
-		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
-	}
 	// Building an improvement shouldn't lock temp terrain in place
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER) && getTempTerrainTimer() < 0)
 	{
@@ -9272,21 +9236,11 @@ void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes 
 			m_aiVisibilityCount[iI] = 0;
 		}
 	}
-	// Blaze: We MUST allow vision to go temporarily negative, otherwise chained removesight-removesight X addsight-addsight may end up increasing net vision!
-	// //FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
-	// if (m_aiVisibilityCount[eTeam] < 0)
-	// {
-	// 	m_aiVisibilityCount[eTeam] = 0;
-	// }
 
 	bOldVisible = isVisible(eTeam, false);
 
 	m_aiVisibilityCount[eTeam] += iChange;
-	// if (m_aiVisibilityCount[eTeam] < 0)
-	// {
-	// 	m_aiVisibilityCount[eTeam] = 0;
-	// }
-	FAssert(getVisibilityCount(eTeam) >= 0, "visibility is negative?");
+	FAssertMsg(getVisibilityCount(eTeam) >= 0, "visibility is negative; means vision is being mis-tracked somewhere. Fix!");
 
 	if (eSeeInvisible != NO_INVISIBLE)
 	{
@@ -13251,8 +13205,9 @@ void CvPlot::changePlotCounter(int iChange)
 		return;
 	}
 
-	// Climate System - 11/16/09 - Hell Terrain type is now handled in TerrainClass
 	GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
+
+	// Explictly set terrain type here, in case NO_PLOT_COUNTER gameoption skips identical check in setTerrainType
 	if (bEvilPost)
 	{
 		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, true);
