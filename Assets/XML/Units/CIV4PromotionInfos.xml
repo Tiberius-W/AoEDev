@@ -27229,7 +27229,7 @@
 			<Description>TXT_KEY_PROMOTION_SENTRY</Description>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_COMBAT3</PromotionType>
+					<PromotionType>PROMOTION_COMBAT1</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
