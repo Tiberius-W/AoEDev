@@ -3457,12 +3457,12 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPELL_CHECK_LANUN_QUEST</Tag>
-		<English>Treasure Hunt Status</English>
-		<French>Treasure Hunt Status</French>
-		<German>Treasure Hunt Status</German>
-		<Italian>Treasure Hunt Status</Italian>
-		<Spanish>Treasure Hunt Status</Spanish>
+		<Tag>TXT_KEY_SPELL_REVIEW_TREASURE_HUNT_CLUE</Tag>
+		<English>Review Treasure Hunt Clue</English>
+		<French>Review Treasure Hunt Clue</French>
+		<German>Review Treasure Hunt Clue</German>
+		<Italian>Review Treasure Hunt Clue</Italian>
+		<Spanish>Review Treasure Hunt Clue</Spanish>
 	</TEXT>
 	<TEXT> <!-- EVEN MORE EVENTS STARTS -->
 		<Tag>TXT_KEY_EVENT_WANDERING_BARD1</Tag>

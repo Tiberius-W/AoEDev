@@ -5238,13 +5238,14 @@ def onMoveCarcer(pCaster, pPlot):
 					CyGame().changeTrophyValue(t, 1)
 
 def onMoveSironasBeacon(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON) == False:
 
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_SIRONAS_BEACON_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
 	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON, True)
+	return
 
 def onMoveMirrorOfHeaven(pCaster, pPlot):
 	if CyGame().getWBMapScript():
@@ -5303,21 +5304,23 @@ def onMoveRemnantsOfPatria(pCaster, pPlot):
 
 	
 def onMoveOdiosPrison(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_ODIOS_PRISON) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_ODIOS_PRISON) == False:
 
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_ODIOS_PRISON_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
+	return
 
 def onMoveBradelinesWell(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL) == False:
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_BRADELINES_WELL_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
 	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL, True)
 	#		pPlot.setImprovementType(getInfoType("IMPROVEMENT_BRADELINES_WELL_PURIFIED"))
+	return
 
 def onMoveFoxford(pCaster,pPlot):
 	iPlayer			= pCaster.getOwner()

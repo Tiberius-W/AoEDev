@@ -580,7 +580,7 @@ def doNecroCannibalism2(argsList):
 	iUnit = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(gc.getInfoTypeForString('UNITCLASS_WARRIOR'))
 	if iUnit != -1:
 		for i in range(0,iPop,1):
-#			iUnit = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(gc.getInfoTypeForString('UNITCLASS_WARRIOR'))
+			# iUnit = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(gc.getInfoTypeForString('UNITCLASS_WARRIOR'))
 			newUnit = pPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CANNIBALIZE'), True)
 
@@ -1354,9 +1354,9 @@ def doAncientBurial3 (argsList):
 	pPlot.setPlotType(PlotTypes.PLOT_LAND, True, True)
 	# r363 Tile Landmark
 	szLandmarkText	= "TEXT_KEY_LANDMARK_ANCIENT_BURIAL_3"
-#	szLandmarkText	= ""
-#	szText			= localText.getText("TEXT_KEY_LANDMARK_ANCIENT_BURIAL_3", ())
-#	szLandmarkText	+= szText + (u"%c" % CyGame().getSymbolID(FontSymbols.COMMERCE_CHAR)) ",-1" + (u"%c" % CyGame().getSymbolID(FontSymbols.FOOD_CHAR)) + "\n"
+	# szLandmarkText	= ""
+	# szText			= localText.getText("TEXT_KEY_LANDMARK_ANCIENT_BURIAL_3", ())
+	# szLandmarkText	+= szText + (u"%c" % CyGame().getSymbolID(FontSymbols.COMMERCE_CHAR)) ",-1" + (u"%c" % CyGame().getSymbolID(FontSymbols.FOOD_CHAR)) + "\n"
 	CyEngine().addLandmark(pPlot,szLandmarkText)
 	if CyGame().getSorenRandNum(100, "Skeleton")<90 :
 		pDemonPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
@@ -1690,6 +1690,31 @@ def canDoAssassinWar4 (argsList):
 		if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_AERONS_CHOSEN')) == True :
 			return True
 	return False
+
+
+def doTreasureHunterStart(argsList):
+	iPlayer			= argsList[1].ePlayer
+	pPlayer			= gc.getPlayer(iPlayer)
+	pHaven			= pPlayer.getCapitalCity()
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps = calcTreasureHunterCleanLists(pPlayer, -1)
+
+	# If Clean list contains at least one improvement start a new search
+	if lCleanImps:
+		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, First Search")
+		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
+		pPlayer.setHasFlag(gc.getInfoTypeForString("FLAG_TREASURE_HUNTER_1"), True)
+		if pPlayer.isHuman():
+			popupInfo	= CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
+			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+			popupInfo.addPopup(iPlayer)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
+	# If the clean list is empty, there are no UFs on a map. Spawn Patrian anyway.
+	else:
+		doSpawnPatrian(iPlayer, pPlayer)
 
 
 # def doTreasureHunterSearched(argsList):

@@ -177,20 +177,18 @@ def doSpawnWaterUndead(pPlot):
 						if Rand<=350:
 							newUnit = bDemonPlayer.initUnit(iStygian, pPlot2.getX(), pPlot2.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-
-def onMoveAifonIsle(pCaster, pPlot):
+def onMoveSearchableUF(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_AIFON_ISLE')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
-def onMoveBairofLacuna(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BAIR_OF_LACUNA')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+	# There's probably a cleaner way to pass the improvement name string somehow rather than a quick search, but not seeing it rn
+	for sImp in getSearchableUFList():
+		if iImprovement != gc.getInfoTypeForString("IMPROVEMENT_" + sImp):
+			continue
+		if not pPlayer.isHasFlag(getInfoType("FLAG_TREASURE_HUNTER_" + sImp)):
+			continue
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
+		return
 
 def onMoveBrokenSepulcher(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
@@ -198,7 +196,7 @@ def onMoveBrokenSepulcher(pCaster, pPlot):
 	iImprovement	= pPlot.getImprovementType()
 	iCaster			= pCaster.getID()
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BROKEN_SEPULCHER')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 		doSpawnUndead(pPlot)
 	if ((pCaster.isHasPromotion(getInfoType('PROMOTION_GELA'))) and (not (pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_INFERNAL"))) and (pPlayer.getAlignment() == getInfoType('ALIGNMENT_EVIL')) ):
 		if pPlayer.isHuman():
@@ -216,19 +214,12 @@ def onMoveBrokenSepulcher(pCaster, pPlot):
 			argsList = [0,iCaster,iPlayer,iImprovement]
 			effectGelaImprovement(argsList)
 
-def onMoveDragonBones(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_DRAGON_BONES')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
 def onMoveMountKalshekk(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	iImprovement	= pPlot.getImprovementType()
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_MOUNT_KALSHEKK')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 		doSpawnLizard(pPlot)
 
 def onMovePyreofTheSeraphic(pCaster, pPlot):
@@ -237,7 +228,7 @@ def onMovePyreofTheSeraphic(pCaster, pPlot):
 	iImprovement	= pPlot.getImprovementType()
 	iCaster			= pCaster.getID()
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_PYRE_OF_THE_SERAPHIC')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 		doSpawnOrc(pPlot)
 	if ((pCaster.isHasPromotion(getInfoType('PROMOTION_GELA'))) and (not (pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_INFERNAL")))):
 		if pPlayer.isHuman():
@@ -255,47 +246,12 @@ def onMovePyreofTheSeraphic(pCaster, pPlot):
 			argsList = [0,iCaster,iPlayer,iImprovement]
 			effectGelaImprovement(argsList)
 
-def onMoveRinwell(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_RINWELL')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
-def onMoveSevenPines(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_SEVEN_PINES')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
-def onMoveStandingStones(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_STANDING_STONES')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
-def onMoveTowerofEyes(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOWER_OF_EYES')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
-def onMoveTombOfSucellus2(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_TOMB_OF_SUCELLUS')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
-
 def onMoveYggdrasil(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	iImprovement	= pPlot.getImprovementType()
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_YGGDRASIL')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 		doSpawnBeast(pPlot)
 
 def onMoveLetumFrigus2(pCaster, pPlot):
@@ -304,7 +260,7 @@ def onMoveLetumFrigus2(pCaster, pPlot):
 	git				= gc.getInfoTypeForString
 	iImprovement	= pPlot.getImprovementType()
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_LETUM_FRIGUS')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 	elif not pPlayer.isHasFlag(git("FLAG_LETUM_FRIGUS_FIRST_TIME")):
 		pPlayer.setHasFlag(git("FLAG_LETUM_FRIGUS_FIRST_TIME"), True)
 		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_EVENT_LETUM_FRIGUS", ()),'',3,'Art/Interface/Buttons/Improvements/letumfrigus.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
@@ -330,7 +286,7 @@ def onMovePoolOfTears2(pCaster, pPlot):
 			pCaster.setHasPromotion(iPromotion, False)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_POOL_OF_TEARS_CURED",(gc.getUnitInfo(pCaster.getUnitType()).getTextKey(),gc.getPromotionInfo(iPromotion).getTextKey())),'AS2D_FEATUREGROWTH',3,'Art/Interface/Buttons/Improvements/pooloftears.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_POOL_OF_TEARS')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 	elif ((pCaster.isHasPromotion(getInfoType('PROMOTION_GELA'))) and (not (pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_INFERNAL"))) ):
 		if pPlayer.isHuman():
 			popupInfo = CyPopupInfo()
@@ -348,11 +304,14 @@ def onMovePoolOfTears2(pCaster, pPlot):
 			effectGelaImprovement(argsList)
 
 def onMoveSironasBeacon2(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_SIRONAS_BEACON')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON) == False:
+
+	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
+	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_SIRONAS_BEACON_ELOHIM')
+	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
+	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON, True)
+	onMoveSearchableUF(pCaster, pPlot)
 
 def onMoveMirrorOfHeaven2(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
@@ -361,7 +320,7 @@ def onMoveMirrorOfHeaven2(pCaster, pPlot):
 	iCaster			= pCaster.getID()
 	pCapital		= pPlayer.getCapitalCity()
 	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_MIRROR_OF_HEAVEN')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 	elif not pCapital.isNone() and pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_MIRROR_OF_HEAVEN) == False and pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_MALAKIM"):
 		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_MIRROR_OF_HEAVEN, True) # If set locally in another function, popups for human players will queue up
 		if pPlayer.isHuman():
@@ -403,7 +362,7 @@ def onMoveRemnantsOfPatria2(pCaster, pPlot):
 	git				= gc.getInfoTypeForString
 	iImprovement	= pPlot.getImprovementType()
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_REMNANTS_OF_PATRIA')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 	elif pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_REMNANTS_OF_PATRIA) == False:
 		if pPlayer.getCivilizationType() == git("CIVILIZATION_SCIONS"):
 			pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_REMNANTS_OF_PATRIA, True)
@@ -412,18 +371,23 @@ def onMoveRemnantsOfPatria2(pCaster, pPlot):
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_EVENT_REMNANTS_OF_PATRIA_SCIONS", ()),'',3,"Art/Interface/Buttons/Improvements/remnantsofpatria.dds",git("COLOR_GREEN"),pPlot.getX(),pPlot.getY(),True,True)
 
 def onMoveOdiosPrison2(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_ODIOS_PRISON')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_ODIOS_PRISON) == False:
+
+	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
+	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_ODIOS_PRISON_ELOHIM')
+	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
+	onMoveSearchableUF(pCaster, pPlot)
 
 def onMoveBradelinesWell2(pCaster, pPlot):
-	iPlayer			= pCaster.getOwner()
-	pPlayer			= gc.getPlayer(iPlayer)
-	iImprovement	= pPlot.getImprovementType()
-	if pPlayer.isHasFlag(getInfoType('FLAG_TREASURE_HUNTER_BRADELINES_WELL')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL) == False:
+	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
+	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_BRADELINES_WELL_ELOHIM')
+	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
+	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL, True)
+	#		pPlot.setImprovementType(getInfoType("IMPROVEMENT_BRADELINES_WELL_PURIFIED"))
+	onMoveSearchableUF(pCaster, pPlot)
 
 def onMoveFoxford2(pCaster, pPlot):
 	iPlayer			= pCaster.getOwner()
@@ -433,7 +397,7 @@ def onMoveFoxford2(pCaster, pPlot):
 	iCaster			= pCaster.getID()
 	pDemonPlayer	= gc.getPlayer(gc.getDEMON_PLAYER())
 	if pPlayer.isHasFlag(git('FLAG_TREASURE_HUNTER_FOXFORD')):
-		doTreasureHunterNewSearch(iPlayer,iImprovement)
+		doTreasureHunterNewSearch(iPlayer, pPlayer, iImprovement)
 	elif not pDemonPlayer.isHasFlag(git("FLAG_FOXFORD_FIRST_TIME")): # Flag is set globally, and even if a new player is presented to the game, the flag value for the demon player would be right
 		if not pPlayer.isBarbarian():
 			gc.getGame().setGlobalFlag(git("FLAG_FOXFORD_FIRST_TIME"),True) # If set locally in another function, popups for human players will queue up
@@ -502,6 +466,67 @@ def onMoveMaelstrom2(pCaster, pPlot):
 				pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 				CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
+# Core treasure hunter events
+def canTriggerTreasureHunter(argsList):
+	kTriggeredData = argsList[0]
+	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
+	if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_LANUN'):
+		return True
+	return False
+
+def doTreasureHunterNewSearch(iPlayer, pPlayer, iSearchedImp):
+	pHaven			= pPlayer.getCapitalCity()
+	git				= gc.getInfoTypeForString
+
+	# Spawn Patrian, clean up flags
+	if pPlayer.isHasFlag(git("FLAG_TREASURE_HUNTER_5")):
+		doSpawnPatrian(iPlayer, pPlayer)
+		return
+
+	lCounterFlags	= [git("FLAG_TREASURE_HUNTER_5"), git("FLAG_TREASURE_HUNTER_4"), git("FLAG_TREASURE_HUNTER_3"), git("FLAG_TREASURE_HUNTER_2"), git("FLAG_TREASURE_HUNTER_1")]
+	# Add next counter flag to the player every time function is called
+	for iCounter in lCounterFlags:
+		if pPlayer.isHasFlag(iCounter):
+			iNextFlag = lCounterFlags.index(iCounter) - 1
+			pPlayer.setHasFlag(lCounterFlags[iNextFlag], True)
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps = calcTreasureHunterCleanLists(pPlayer, iSearchedImp)
+
+	# If Clean list contains at least one improvement start a new search
+	if lCleanImps:
+		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, New Search")
+		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
+		if pPlayer.isHuman():
+			popupInfo	= CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
+			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+			popupInfo.addPopup(iPlayer)
+			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
+	# If Clean list is empty but counter is not reached (small maps) spawn a Patrian
+	else:
+		doSpawnPatrian(iPlayer, pPlayer)
+
+def reqReviewTreasureHuntClue(pCaster):
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	FlagList = ["FLAG_TREASURE_HUNTER_" + sImp for sImp in getSearchableUFList()]
+	for sFlag in FlagList:
+		if pPlayer.isHasFlag(gc.getInfoTypeForString(sFlag)):
+			return True
+	return False
+
+def spellReviewTreasureHuntClue(pCaster):
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	if pCaster == -1 or pCaster.isNone():
+		return
+	iPlayer = pCaster.getOwner()
+	for sImp in getSearchableUFList():
+		if pPlayer.isHasFlag(gc.getInfoTypeForString("FLAG_TREASURE_HUNTER_" + sImp)):
+			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp, ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
+			return
+
+# Orphaned Gobs
 def postCombatLossOrphanedGoblin(pCaster, pOpponent):
 	git			= gc.getInfoTypeForString
 	iPlayer		= pOpponent.getOwner()
@@ -567,165 +592,7 @@ def effectOrphanedGoblin(argsList):
 		pUnit.changeExperience(-1,-1,False,False,False)
 		newUnit = pPlayer.initUnit(git('UNIT_GOBLIN'), pPlot.getX(),pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-
-def canTriggerTreasureHunter(argsList):
-	kTriggeredData = argsList[0]
-	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
-	if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_LANUN'):
-		return True
-	return False
-
-def getSearchableUFList():
-	return(["ABADDONS_PIT", "AIFON_ISLE", "BADBS_BLIZZARD", "BAIR_OF_LACUNA", "BRADELINES_WELL", "BROKEN_SEPULCHER", "CARNIVEANS_CAMP", "CLIFFS_OF_TALI", "CLOCKWORK_CITY", "DRAGON_BONES", "FOXFORD", "GRAVE_OF_ASMODAY", "GUARDIAN", "LETUM_FRIGUS", "MAJENS_WORKSHOP", "MIRROR_OF_HEAVEN", "MOUNT_KALSHEKK", "ODIOS_PRISON", "POOL_OF_TEARS", "PYRE_OF_THE_SERAPHIC", "REMNANTS_OF_PATRIA", "RINWELL", "SEVEN_PINES", "SIRONAS_BEACON", "STANDING_STONES", "TOMB_OF_SUCELLUS", "TOWER_OF_EYES", "WELL_OF_SOULS", "WHISPERING_WOODS", "YGGDRASIL"])
-
-def calcTreasureHunterCleanLists(pPlayer, iSearchedImp):
-	"""
-	Returns [(flag1, text1), (flag2, text2), ...] of improvements available to search
-
-	:iSearchedImp: use -1 for no prior, or improvement index if we just searched that one and need to update and filter searched flags
-	"""
-
-	git				= gc.getInfoTypeForString
-
-	lSearchableUFs	= getSearchableUFList()
-
-	# Generate an index-matching list of improvements, flags, search flags, and text strings for the set of searchable UFs
-	lDirtyImp		= [git("IMPROVEMENT_" + sImp) for sImp in lSearchableUFs]
-	lDirtyImpFlags  = [git("FLAG_TREASURE_HUNTER_" + sImp) for sImp in lSearchableUFs]
-	lDirtySearched  = [git("FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED") for sImp in lSearchableUFs]
-	lDirtyTexts		= ["TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp for sImp in lSearchableUFs]
-
-	# Now to correct the above for the few special UFs we have...
-	lDirtyImp.append(git("IMPROVEMENT_BRADELINES_WELL_PURIFIED"),git("IMPROVEMENT_RINWELL2"),git("IMPROVEMENT_RINWELL3"),git("IMPROVEMENT_WELL_OF_SOULS_OPEN"))
-	lDirtyImpFlags.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS"))
-	lDirtySearched.append(git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED"))
-	lDirtyTexts.append("TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS")
-
-	# [(flag1, text1), (flag2, text2), ...]
-	lCleanImps		= []
-
-	# Set searched flag and remove active search flag
-	if iSearchedImp != -1:
-		iSearchedIndex = lDirtyImp.index(iSearchedImp)
-		pPlayer.setHasFlag(lDirtyImpFlags[iSearchedIndex], False)
-		pPlayer.setHasFlag(lDirtySearched[iSearchedIndex], True)
-
-	# Assemble Clean Improvement lists, based on if UF is present on a map *at this time*!
-	# Quest will quietly fail if the UF *mysteriously* vanishes while we're searching for it...
-	# TODO hook into python removeImprovement to check for if any players are searching for that UF, and do something if so.
-	for i in xrange(CyMap().numPlots()):
-		loopPlot = CyMap().plotByIndex(i)
-		if loopPlot.getImprovementType() == -1:
-			continue
-		iLoopImp = loopPlot.getImprovementType()
-		if not gc.getImprovementInfo(iLoopImp).isUnique():
-			continue
-		# Gotta exclude Ring of Carcer and Maelstrom
-		if iLoopImp not in lDirtyImp:
-			continue
-		iImpIndex = lDirtyImp.index(iLoopImp)
-		# Don't add any already searched ones, if we are continuing a search
-		if iSearchedImp != -1 and pPlayer.isHasFlag(lDirtySearched[iImpIndex]):
-			continue
-		lCleanImps.append((lDirtyImpFlags[iImpIndex], lDirtyTexts[iImpIndex]))
-
-	return lCleanImps
-
-def doTreasureHunterStart(argsList):
-	iPlayer			= argsList[1].ePlayer
-	git				= gc.getInfoTypeForString
-	pPlayer			= gc.getPlayer(iPlayer)
-	pHaven			= pPlayer.getCapitalCity()
-
-	# [(flag1, text1), (flag2, text2), ...]
-	lCleanImps = calcTreasureHunterCleanLists(pPlayer, -1)
-
-	# If Clean list contains at least one improvement start a new search
-	if lCleanImps:
-		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, First Search")
-		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
-		if pPlayer.isHuman():
-			popupInfo	= CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-			popupInfo.addPopup(iPlayer)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
-	# If the clean list is empty, there are no UFs on a map. Spawn Patrian anyway.
-	else:
-		doSpawnPatrian(iPlayer, pPlayer)
-
-def doSpawnPatrian(iPlayer, pPlayer):
-	git			= gc.getInfoTypeForString
-	pCapital	= pPlayer.getCapitalCity()
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_1'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_2'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_3'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_4'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_5'), False)
-	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_DONE'), True)
-	newUnit		= pPlayer.initUnit(git('UNIT_THE_FLYING_PATRIAN'), pCapital.getX(), pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-	if pPlayer.isHuman():
-		popupInfo	= CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_END", ()))
-		popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-		popupInfo.addPopup(iPlayer)
-
-def doTreasureHunterNewSearch(iPlayer, iSearchedImp):
-	pPlayer			= gc.getPlayer(iPlayer)
-	pHaven			= pPlayer.getCapitalCity()
-	git				= gc.getInfoTypeForString
-
-	# Spawn Patrian, clean up flags
-	if pPlayer.isHasFlag(git("FLAG_TREASURE_HUNTER_5")):
-		doSpawnPatrian(iPlayer, pPlayer)
-		return
-
-	lCounterFlags	= [git("FLAG_TREASURE_HUNTER_5"),git("FLAG_TREASURE_HUNTER_4"),git("FLAG_TREASURE_HUNTER_3"),git("FLAG_TREASURE_HUNTER_2"),git("FLAG_TREASURE_HUNTER_1")]
-	# Add next counter flag to the player every time function is called
-	for iCounter in lCounterFlags:
-		if pPlayer.isHasFlag(iCounter):
-			iNextFlag = lCounterFlags.index(iCounter) - 1
-			pPlayer.setHasFlag(lCounterFlags[iNextFlag], True)
-
-	# [(flag1, text1), (flag2, text2), ...]
-	lCleanImps = calcTreasureHunterCleanLists(pPlayer, iSearchedImp)
-
-	# If Clean list contains at least one improvement start a new search
-	if lCleanImps:
-		iNewSearchIndex = CyGame().getSorenRandNum(len(lCleanImps), "Treasure Hunter, New Search")
-		pPlayer.setHasFlag(lCleanImps[iNewSearchIndex][0], True)
-		if pPlayer.isHuman():
-			popupInfo	= CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()))
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
-			popupInfo.addPopup(iPlayer)
-			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText(lCleanImps[iNewSearchIndex][1], ()),'',3,'Art/Interface/Buttons/TechTree/Astronomy.dds',ColorTypes(8),pHaven.getX(),pHaven.getY(),True,True)
-	# If Clean list is empty but counter is not reached (small maps) spawn a Patrian
-	else:
-		doSpawnPatrian(iPlayer, pPlayer)
-
-def reqCheckLanunQuest(pCaster):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	FlagList = ["FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED" for sImp in getSearchableUFList()]
-	for sFlag in FlagList:
-		if pPlayer.isHasFlag(getInfoType(sFlag)):
-			return True
-	return False
-
-def spellCheckLanunQuest(pCaster):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	if pCaster == -1 or pCaster.isNone():
-		return
-	iPlayer = pCaster.getOwner()
-	for sImp in getSearchableUFList():
-		if pPlayer.isHasFlag(getInfoType("FLAG_TREASURE_HUNTER_" + sImp)):
-			CyInterface().addMessage(iPlayer, True, 25, CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp, ()), '', 3, '', ColorTypes(gc.getInfoTypeForString("COLOR_GREEN")), -1, -1, False, False)
-			return
-
-
+# Gela stuff
 def perTurnGela(pCaster):
 	pPlayer = gc.getPlayer(pCaster.getOwner())
 	if pPlayer.getCivilizationType() != gc.getInfoTypeForString("CIVILIZATION_INFERNAL") and pPlayer.isHuman():

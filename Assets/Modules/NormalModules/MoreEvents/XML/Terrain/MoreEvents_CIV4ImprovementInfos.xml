@@ -6,13 +6,21 @@
 <!-- Improvement Infos -->
 <Civ4ImprovementInfos xmlns="x-schema:MoreEvents_CIV4TerrainSchema.xml">
 	<ImprovementInfos>
-		<ImprovementInfo>		<!-- Aifon Isle -->					<!-- Uniques -->
+		<ImprovementInfo>		<!-- Abaddons Pit -->					<!-- Uniques -->
+			<Type>IMPROVEMENT_ABADDONS_PIT</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Aifon Isle -->
 			<Type>IMPROVEMENT_AIFON_ISLE</Type>
-			<PythonOnMove>onMoveAifonIsle(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Badb's Blizzard -->
+			<Type>IMPROVEMENT_BADBS_BLIZZARD</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Bair of Lacuna -->
 			<Type>IMPROVEMENT_BAIR_OF_LACUNA</Type>
-			<PythonOnMove>onMoveBairofLacuna(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Bradeline's Well -->
 			<Type>IMPROVEMENT_BRADELINES_WELL</Type>
@@ -26,18 +34,42 @@
 			<Type>IMPROVEMENT_BROKEN_SEPULCHER</Type>
 			<PythonOnMove>onMoveBrokenSepulcher(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Carnivean's Camp -->
+			<Type>IMPROVEMENT_CARNIVEANS_CAMP</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Cliffs of Tali -->
+			<Type>IMPROVEMENT_CLIFFS_OF_TALI</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Clockwork City -->
+			<Type>IMPROVEMENT_CLOCKWORK_TOWER</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Dragon Bones -->
 			<Type>IMPROVEMENT_DRAGON_BONES</Type>
-			<PythonOnMove>onMoveDragonBones(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Foxford -->
 			<Type>IMPROVEMENT_FOXFORD</Type>
 			<PythonOnMove>onMoveFoxford2(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Grave of Asmoday -->
+			<Type>IMPROVEMENT_GRAVE_OF_ASMODAY</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Guardian of Pristin Pass -->
+			<Type>IMPROVEMENT_GUARDIAN</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Letum Frigus -->
 			<Type>IMPROVEMENT_LETUM_FRIGUS</Type>
 			<PythonOnMove>onMoveLetumFrigus2(pCaster, pPlot)</PythonOnMove>
-		</ImprovementInfo> 
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Majen's Workshop -->
+			<Type>IMPROVEMENT_MAJENS_WORKSHOP</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Maelstrom -->
 			<Type>IMPROVEMENT_MAELSTROM</Type>
 			<PythonOnMove>onMoveMaelstrom2(pCaster, pPlot)</PythonOnMove>
@@ -68,19 +100,19 @@
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Rinwell -->
 			<Type>IMPROVEMENT_RINWELL</Type>
-			<PythonOnMove>onMoveRinwell(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Rinwell 2 -->
 			<Type>IMPROVEMENT_RINWELL2</Type>
-			<PythonOnMove>onMoveRinwell(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Rinwell 3 -->
 			<Type>IMPROVEMENT_RINWELL3</Type>
-			<PythonOnMove>onMoveRinwell(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Seven Pines -->
 			<Type>IMPROVEMENT_SEVEN_PINES</Type>
-			<PythonOnMove>onMoveSevenPines(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Sirona's Beacon -->
 			<Type>IMPROVEMENT_SIRONAS_BEACON</Type>
@@ -88,15 +120,27 @@
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Standing Stones -->
 			<Type>IMPROVEMENT_STANDING_STONES</Type>
-			<PythonOnMove>onMoveStandingStones(pCaster, pPlot)</PythonOnMove>
-		</ImprovementInfo>
-		<ImprovementInfo>		<!-- Tower of Eyes -->
-			<Type>IMPROVEMENT_TOWER_OF_EYES</Type>
-			<PythonOnMove>onMoveTowerofEyes(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Tomb of Sucellus -->
 			<Type>IMPROVEMENT_TOMB_OF_SUCELLUS</Type>
-			<PythonOnMove>onMoveTombOfSucellus2(pCaster, pPlot)</PythonOnMove>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Tower of Eyes -->
+			<Type>IMPROVEMENT_TOWER_OF_EYES</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Well of Souls -->
+			<Type>IMPROVEMENT_WELL_OF_SOULS</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Well of Souls (Open) -->
+			<Type>IMPROVEMENT_WELL_OF_SOULS_OPEN</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
+		</ImprovementInfo>
+		<ImprovementInfo>		<!-- Whispering Woods -->
+			<Type>IMPROVEMENT_WHISPERING_WOODS</Type>
+			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Yggdrasil -->
 			<Type>IMPROVEMENT_YGGDRASIL</Type>
