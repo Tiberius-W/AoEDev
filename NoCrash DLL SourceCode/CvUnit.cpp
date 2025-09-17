@@ -15365,6 +15365,8 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		}
 	}
 
+	// NOTE we need changeAdjacentSight to be as close to the action of setting new position in data as possilbe
+	// to avoid chaining negative sight and potentially losing track of sight data
 	if (pNewPlot != NULL)
 	{
 		m_iX = pNewPlot->getX_INLINE();
@@ -15375,18 +15377,17 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		m_iX = INVALID_PLOT_COORD;
 		m_iY = INVALID_PLOT_COORD;
 	}
-
 	FAssertMsg(plot() == pNewPlot, "plot is expected to equal pNewPlot");
+	if (pNewPlot != NULL)
+	{
+		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
+	}
+	// Keep sight update close!
 
-/*************************************************************************************************/
-/**	CommandingPresence						06/30/09								Xienwolf	**/
-/**				Needs to run AFTER assigning new plot for Cascade Effect of Promotions			**/
-/**					Enforces Range restriction of Command Promotions							**/
-/*************************************************************************************************/
+	// CommandingPresence - 06/30/09 - Xienwolf - Needs to run AFTER assigning new plot for Cascade Effect of Promotions
+	// Enforces Range restriction of Command Promotions. This could adjust vision, so needs doing after sight is re-added
 	validateCommandPromotions(pOldPlot, pNewPlot);
-/*************************************************************************************************/
-/**	CommandingPresence						END													**/
-/*************************************************************************************************/
+
 	if (pNewPlot != NULL)
 	{
 		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
