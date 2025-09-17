@@ -18,7 +18,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>10</iGridY>
 			<Flavors>
 				<Flavor>
@@ -60,7 +60,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bExtraWaterSeeFrom>1</bExtraWaterSeeFrom>
-			<iGridX>4</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>10</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
