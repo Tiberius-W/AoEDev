@@ -32019,7 +32019,9 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = pPlot->nextUnitNode(pUnitNode);
 		if (pLoopUnit->getUnitClassType() == GC.getDefineINT("FORT_COMMANDER_UNITCLASS"))
+		{
 			return false;
+		}
 	}
 
 	if (pPlot->isOwned()
@@ -32056,28 +32058,36 @@ bool CvUnit::claimFort(bool bBuilt)
 		GET_PLAYER(getOwnerINLINE()).changeGold(-GET_PLAYER(getOwnerINLINE()).getClaimFortCost());
 	}
 
-	CvUnit* pUnit;
+	CvUnit* pLoopUnit;
+	CLLNode<IDInfo>* pUnitNode = plot()->headUnitNode();
 	int iUnitClass = GC.getDefineINT("FORT_COMMANDER_UNITCLASS");
-	UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass)));
+	bool bCanSpawnCommander = true;
 
-	//XXX this really shouldn't be done, fix it in the XML instead. I included it anyway because it was in the spell.
-	if (eUnit == NO_UNIT)
+	// Don't spawn a fort commander if there's already one here
+	while (pUnitNode != NULL)
 	{
-		eUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iUnitClass).getDefaultUnitIndex();
-	}
-	pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
-	if (!bBuilt)
-	{
-		pUnit->finishMoves();
+		pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = plot()->nextUnitNode(pUnitNode);
+		if (pLoopUnit->getUnitClassType() == iUnitClass)
+		{
+			bCanSpawnCommander = false;
+			break;
+		}
 	}
 
-	//if (GC.getCivilizationInfo(getCivilizationType()).getDefaultRace() != NO_PROMOTION)
-	//{
-	//	if (pUnit->getRace() == NO_PROMOTION)
-	//	{
-	//		setHasPromotion((PromotionTypes)GC.getCivilizationInfo(getCivilizationType()).getDefaultRace(), true);
-	//	}
-	//}
+	if (bCanSpawnCommander)
+	{
+		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
+		
+		FAssertMsg(eUnit != NO_UNIT, "Missing fort commander entry for civ, aborting");
+
+		CvUnit* pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
+
+		if (!bBuilt)
+		{
+			pUnit->finishMoves();
+		}
+	}
 
 	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), true);
 	plot()->setImprovementOwner(getOwnerINLINE());
@@ -32493,25 +32503,37 @@ void CvUnit::changeInquisition(int iChange)
 bool CvUnit::canInquisition(CvPlot* pPlot, bool bTestVisible)
 {
 	if (!isInquisition())
+	{
 		return false;
+	}
 
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	CvCity* pCity = pPlot->getPlotCity();
 
 	if (pCity == NULL)
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	if (pCity->getOwner() != getOwnerINLINE())
 	{
 		if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION)
+		{
 			return false;
+		}
 		else if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != GET_PLAYER(pCity->getOwner()).getStateReligion())
+		{
 			return false;
+		}
 	}
 
 	bool bFound = false;
@@ -32530,10 +32552,14 @@ bool CvUnit::canInquisition(CvPlot* pPlot, bool bTestVisible)
 bool CvUnit::inquisition(CvPlot* pPlot)
 {
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (!canInquisition(pPlot, false))
+	{
 		return false;
+	}
 
 	int iRnd = GC.getGameINLINE().getSorenRandNum(4, "Inquisition");
 	CvCity* pCity = pPlot->getPlotCity();
@@ -32549,14 +32575,18 @@ bool CvUnit::inquisition(CvPlot* pPlot)
 				for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
 				{
 					if (GC.getBuildingInfo((BuildingTypes)iJ).getPrereqReligion() == iI)
+					{
 						pCity->setNumRealBuilding((BuildingTypes)iJ, 0);
+					}
 				}
 				iRnd += 1;
 			}
 		}
 	}
 	if (iRnd >= 1)
+	{
 		pCity->changeHurryAngerTimer(iRnd);
+	}
 
 	finishMoves();
 
@@ -32726,9 +32756,13 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 						if (isHasPromotion((PromotionTypes)iI))
 						{
 							if (GC.getPromotionInfo((PromotionTypes)iI).isPrereqAliveCapture() && !pLoser->isAlive())
+							{
 								return;
+							}
 							if (pLoser->getUnitCombatType()!=NO_UNITCOMBAT && GC.getPromotionInfo((PromotionTypes)iI).isUnitCombatNonCapture(pLoser->getUnitCombatType()))
+							{
 								return;
+							}
 							if (GC.getPromotionInfo((PromotionTypes)iI).getCaptureUnitClass() != NO_UNITCLASS)
 							{
 								iUnit = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits((UnitClassTypes)GC.getPromotionInfo((PromotionTypes)iI).getCaptureUnitClass());
@@ -32907,18 +32941,26 @@ void CvUnit::DeselectUnit()
 bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 {
 	if (pTarget == NULL)
+	{
 		return false;
+	}
 
 	if (!pTarget->isVisible(getTeam(), false))
+	{
 		return false;
+	}
 
 	int iRange = getSpellTargetRange(iI);//GC.getSpellInfo((SpellTypes)iI).getTargetRange();
 
 	if (plotDistance(plot(), pTarget) > iRange)
+	{
 		return false;
+	}
 
 	if (!plot()->canSeePlot(pTarget, getTeam(), iRange))
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32926,7 +32968,9 @@ bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 bool CvUnit::canSpellTargetSecondaryPlot(CvPlot* pMainTarget, CvPlot* pTarget, int iI)
 {
 	if (pTarget == NULL)
+	{
 		return false;
+	}
 
 	if (!pTarget->isVisible(getTeam(), false))
 	{
