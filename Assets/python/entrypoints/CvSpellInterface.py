@@ -7011,8 +7011,8 @@ def atRangeBlightedForest(pCaster, pPlot):
 		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_BLIGHTED_FOREST", (gc.getUnitInfo(pCaster.getUnitType()).getDescription(), )),'',1,'Art/Interface/Buttons/Improvements/blightedforest.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
 def effectWanderingCurse(caster):
-    if caster.isHasPromotion(gc.getInfoTypeForString("PROMOTION_MANA_GUARDIAN")):
-        return
+	if caster.isHasPromotion(gc.getInfoTypeForString("PROMOTION_MANA_GUARDIAN")):
+		return
 	pPlot = caster.plot()
 	pPlot2 = findClearPlot(caster, caster.plot())
 	if pPlot2 != -1:
@@ -10582,11 +10582,11 @@ def spellAscension(caster):
 	newUnit = pPlayer.initUnit(iUnit, caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	iVampiricStrength = getInfoType('PROMOTION_VAMPIRIC_STRENGTH')
 	iVampCount = caster.countHasPromotion(iVampiricStrength)
-        if caster.isHasPromotion(getInfoType('PROMOTION_ASPIRANT')):
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_1'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_2'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_3'),True)
+	if caster.isHasPromotion(getInfoType('PROMOTION_ASPIRANT')):
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_1'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_2'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_3'),True)
 	for iProm in range(gc.getNumPromotionInfos()):
 		if caster.isHasPromotion(iProm):
 			if gc.getPromotionInfo(iProm).isEquipment():

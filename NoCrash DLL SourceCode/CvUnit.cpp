@@ -6657,16 +6657,25 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	if (isCargo())
+	{
 		return true;
+	}
 
-	if (isFortifyable())
+	// Don't sleep if can fortify
+	if (canFortify(pPlot))
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6677,22 +6686,32 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!isFortifyable())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	if (isCargo())
+	{
 		return false;
+	}
 
 	// Land units can't fortify on water unless is water city, acts as city, or fort
 	if (getDomainType() == DOMAIN_LAND && pPlot->isWater())
 	{
 		if (!pPlot->isCity(true, getTeam()) && (pPlot->getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()))
+		{
 			return false;
+		}
 	}
 
 	return true;
@@ -6702,13 +6721,19 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 {
 	if (getDomainType() != DOMAIN_AIR)
+	{
 		return false;
+	}
 
 	if (!canAirDefend(pPlot))
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6717,20 +6742,30 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 {
 	if (!pPlot->isWater())
+	{
 		return false;
+	}
 
 	if (getDomainType() != DOMAIN_SEA)
+	{
 		return false;
+	}
 
 	if (!canFight() || isOnlyDefensive())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	// Bezeri pokeballs can't sea patrol while loaded up
 	if (isCargo())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6739,10 +6774,14 @@ bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 void CvUnit::airCircle(bool bStart)
 {
 	if (!GC.IsGraphicsInitialized())
+	{
 		return;
+	}
 
 	if ((getDomainType() != DOMAIN_AIR) || (maxInterceptionProbability() == 0))
+	{
 		return;
+	}
 
 	// cancel previous missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
@@ -6766,13 +6805,19 @@ bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!canDefend(pPlot))
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6782,17 +6827,25 @@ bool CvUnit::canHealMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!isHurt())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
 	if (healTurns(pPlot) == MAX_INT)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6822,7 +6875,9 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 			iHeal = pLoopUnit->getSameTileHeal();
 
 			if (iHeal > iBestHeal)
+			{
 				iBestHeal = iHeal;
+			}
 		}
 	}
 	// "Heal on adjacent tiles" literally means adjacent;
@@ -6832,10 +6887,14 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
 
 		if (pLoopPlot == NULL)
+		{
 			continue;
+		}
 
 		if (pLoopPlot->area() != pPlot->area())
+		{
 			continue;
+		}
 
 		pUnitNode = pLoopPlot->headUnitNode();
 
@@ -6845,12 +6904,16 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
 
 			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+			{
 				continue;
+			}
 
 			iHeal = pLoopUnit->getAdjacentTileHeal();
 
 			if (iHeal > iBestHeal)
+			{
 				iBestHeal = iHeal;
+			}
 		}
 	}
 
@@ -6867,11 +6930,15 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 	//FfH: Added by Kael 11/05/2008
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
+	{
 		return 0;
+	}
 
 	// Blaze: Shortcut for perf, since this is an expensive method to run in full on every unit:
 	if (pPlot->calcTurnDamageReal(this, false) == 0 && !isHurt())
+	{
 		return 0;
+	}
 
 	CvCity* pCity = pPlot->getPlotCity();
 	int iTotalHeal = 0;
@@ -6883,7 +6950,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 		// Occupied cities don't get tile healing, instead relying on unit/faction-wide only
 		if (pCity && !pCity->isOccupation())
+		{
 			iTotalHeal += pCity->getHealRate();
+		}
 	}
 	else
 	{
@@ -6895,10 +6964,14 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 				//FfH Mana Effects: Added by Kael 08/21/2007
 				if (pPlot->getOwnerINLINE() != NO_PLAYER)
+				{
 					iTotalHeal += GET_PLAYER(pPlot->getOwnerINLINE()).getHealChangeEnemy();
+				}
 			}
 			else
+			{
 				iTotalHeal += (GC.getDefineINT("NEUTRAL_HEAL_RATE") + getExtraNeutralHeal());
+			}
 		}
 		else
 		{
@@ -6913,7 +6986,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 	//FfH: Added by Kael 10/29/2007 (improvement heal rates)
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
+	}
 
 	// Promotions cannot make heal rate negative... for now.
 	return std::max(0, iTotalHeal);
@@ -6925,14 +7000,18 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
 	if (!isHurt())
+	{
 		return 0;
+	}
 
 	int iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
 	int iTurnDamageReal = pPlot->calcTurnDamageReal(this, false);
 
 	// Quick check to see if damage outstrips healing
 	if (iTurnDamageReal >= iHealReal)
+	{
 		return MAX_INT;
+	}
 
 	// Add 1 to turns if won't heal on this turn
 	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isEnraged()));
@@ -6940,13 +7019,17 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 
 	// Unit might die before being able to heal!
 	if (getDamageReal() + iThisTurnDamageReal >= maxHitPoints())
+	{
 		return MAX_INT;
+	}
 
 	int iEffectiveDamageReal = getDamageReal() + iThisTurnDamageReal;
 
 	iTurns += iEffectiveDamageReal / (iHealReal - iTurnDamageReal);
 	if (iEffectiveDamageReal % (iHealReal - iTurnDamageReal) != 0)
+	{
 		++iTurns;
+	}
 
 	return iTurns;
 }
@@ -6958,7 +7041,9 @@ bool CvUnit::isTurnHealBlocked() const
 
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isEnraged()))
+	{
 		return true;
+	}
 
 	return false;
 }
@@ -6990,25 +7075,28 @@ bool CvUnit::canAirlift(const CvPlot* pPlot) const
 
 	pCity = pPlot->getPlotCity();
 
-	if (pCity == NULL  && pPlot->getMaxOutgoingAirlift()<=0 )
+	if (pCity == NULL)
 	{
-		return false;
+		if (pPlot->getMaxOutgoingAirlift() <= 0)
+		{
+			return false;
+		}
+		if (pPlot->getCurrentOutgoingAirlift() >= pPlot->getMaxOutgoingAirlift())
+		{
+			return false;
+		}
 	}
-
-	if (pCity!=NULL && pCity->getCurrAirlift() >= pCity->getMaxAirlift())
+	else
 	{
-		return false;
+		if (pCity->getCurrAirlift() >= pCity->getMaxAirlift())
+		{
+			return false;
+		}
+		if (pCity->getTeam() != getTeam())
+		{
+			return false;
+		}
 	}
-
-	if (pCity != NULL && pCity->getTeam() != getTeam())
-	{
-		return false;
-	}
-	if (pCity == NULL && pPlot->getCurrentOutgoingAirlift() >= pPlot->getMaxOutgoingAirlift())
-	{
-		return false;
-	}
-	return true;
 }
 
 
@@ -7033,8 +7121,6 @@ bool CvUnit::canAirliftAt(const CvPlot* pPlot, int iX, int iY) const
 
 	if (pTargetCity != NULL)
 	{
-
-
 		if (pTargetCity->isAirliftTargeted())
 		{
 			return false;
@@ -7079,6 +7165,7 @@ bool CvUnit::airlift(int iX, int iY)
 	pTargetCity = pTargetPlot->getPlotCity();
 	//FAssert(pTargetCity != NULL);
 	FAssert(pCity != pTargetCity);
+
 	if (pCity != NULL)
 	{
 		pCity->changeCurrAirlift(1);
@@ -7087,6 +7174,7 @@ bool CvUnit::airlift(int iX, int iY)
 	{
 		plot()->changeCurrentOutgoingAirlift(1);
 	}
+
 	if (pTargetCity != NULL)
 	{
 		
@@ -7099,6 +7187,7 @@ bool CvUnit::airlift(int iX, int iY)
 	{
 		pTargetPlot->changeCurrentIncomingAirlift(1);
 	}
+
 	finishMoves();
 
 	setXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE());
