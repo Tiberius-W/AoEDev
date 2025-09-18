@@ -28851,7 +28851,9 @@ bool CvUnitAI::AI_exploreLair(int iRange, int iOddsThreshold)
 							{
 								iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
 								if (GC.getImprovementInfo(eRevealedImprovement).getSpawnUnitType() != -1)
+								{
 									iValue *= 10;
+								}
 
 								if (iValue >= AI_finalOddsThreshold(pLoopPlot, iOddsThreshold))
 								{
@@ -28889,14 +28891,10 @@ bool CvUnitAI::AI_exploreLair(int iRange, int iOddsThreshold)
 
 bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 {
-	// This does true check, not 'visible' check
-	// if (!canExploreLair(pPlot))
-	// {
-	// 	return false;
-	// }
-
 	if (pPlot == NULL)
+	{
 		return false;
+	}
 
 	if (pPlot->getRevealedImprovementType(getTeam(), false) == NO_IMPROVEMENT
 		|| isBarbarian()
@@ -28905,27 +28903,20 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_SPELL")
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_BIRD")
 		|| isOnlyDefensive())
+	{
 		return false;
+	}
 
 	if (!GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isExplorable()
 	|| !(pPlot->getExploreNextTurn() <= GC.getGame().getGameTurn()))
+	{
 		return false;
-
-	// // Don't explore unless there's a positive reward. Blaze: what would not have a positive reward?? We should explore even if not, to turn off spawners. Disabling.
-	// bool bGoodyClass = false;
-	// for (int i = 0; i < GC.getNumGoodyClassTypes(); i++)
-	// {
-	// 	if (GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isGoodyClassType(i))
-	// 	{
-	// 		bGoodyClass = true;
-	// 		break;
-	// 	}
-	// }
-	// if (!bGoodyClass)
-	// 	return false;
+	}
 
 	if (GET_PLAYER(getOwnerINLINE()).getNumCities() == 0)
+	{
 		return false;
+	}
 
 	bool bTierCheck = true;
 
@@ -28937,9 +28928,11 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 		int iCycleLength = GC.getImprovementInfo(eImprovement).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
 		int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - pPlot->getExploreNextTurn();
 
-		// Bad things happen when the min of duration or unexplored turns hits 2x cycle length!
-		if (iTurnsLeftUnexplored >= iCycleLength * 3 / 2 && pPlot->getOwnershipDuration() >= iCycleLength * 3 / 2)
+		// Bad things happen when the min of duration or unexplored turns hits 4x cycle length! At 3.5, say fuckit and roll the dice rather than guarantee negative
+		if (iTurnsLeftUnexplored >= iCycleLength * 7 / 2 && pPlot->getOwnershipDuration() >= iCycleLength * 7 / 2)
+		{
 			bTierCheck = false;
+		}
 	}
 
 	// The higher tier of lair, the higher tier of unit required. Modulate effective unit tier with noBadExplore; accounts for hypothetical negative luck, if added.
@@ -28956,11 +28949,15 @@ bool CvUnitAI::AI_canExploreLair(CvPlot* pPlot)
 	// Need minimum 2, maximum 5 defenders on nearest city to explore a lair
 	CvCity* pNearestCity = GC.getMap().findCity(getX_INLINE(), getY_INLINE(), NO_PLAYER, getTeam());
 	if (pNearestCity == NULL)
+	{
 		return true; //No city on this area
+	}
 	int iCityDist = plotDistance(getX_INLINE(), getY_INLINE(), pNearestCity->getX(), pNearestCity->getY());
 	int iNumDefenders = pNearestCity->plot()->getNumDefenders(pNearestCity->getOwner()); //XXX take into account other players units? Blaze: Shouldn't be necessary given the #s involved
 	if (range(18/std::max(1,iCityDist), 2, 5) > iNumDefenders)
+	{
 		return false;
+	}
 
 	return true;
 }

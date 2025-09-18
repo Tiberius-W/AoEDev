@@ -800,13 +800,17 @@ void CvPlot::doUniqueLairTimecheck()
 	 || GET_PLAYER(getOwner()).isBarbarian()
 	 || !GC.getImprovementInfo(getImprovementType()).isUnique()
 	 || !GC.getImprovementInfo(getImprovementType()).isExplorable())
+	{
 		return;
+	}
 
 	// Changes to the self-pop logic need to be applied in CvUnitAI::AI_canExploreLair as well
 	int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - getExploreNextTurn();
 
 	if (iTurnsLeftUnexplored < 0)
+	{
 		return;
+	}
 
 	CvWString szBuffer;
 	int iCycleLength = GC.getImprovementInfo(getImprovementType()).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
@@ -818,17 +822,19 @@ void CvPlot::doUniqueLairTimecheck()
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), getX_INLINE(), getY_INLINE(), true, true);
 	}
 	// Evil plots to summon beasties can't progress if the thing is outside owned territory... I guess? For balance. Otherwise it can trigger if the tile is acquired after being unowned for a long time
-	else if ((iTurnsLeftUnexplored == iCycleLength && getOwnershipDuration() >= iCycleLength)
-		  || (iTurnsLeftUnexplored >= iCycleLength && getOwnershipDuration() == iCycleLength))
+	else if ((iTurnsLeftUnexplored == iCycleLength * 2 && getOwnershipDuration() >= iCycleLength * 2)
+		  || (iTurnsLeftUnexplored >= iCycleLength * 2 && getOwnershipDuration() == iCycleLength * 2))
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_EXPLORE_BUILDUP", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
-		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT,
+			GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 	}
-	// You done fucked up now son! If option enabled.
-	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
+	// You done fucked up now son! If xml enabled.
+	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 4 * iCycleLength && getOwnershipDuration() >= 4 * iCycleLength)
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_BUILDUP_COMPLETE", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
-		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT,
+			GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 
 		CyUnit* pyCaster;
 		pyCaster = new CyUnit(NULL);
@@ -843,8 +849,10 @@ void CvPlot::doUniqueLairTimecheck()
 		delete pyCaster;
 
 		// reset exploration timer
-		setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
-						 * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
+		int iExploreDelay = GC.getImprovementInfo(getImprovementType()).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
+		iExploreDelay = iExploreDelay * 11 / 10 - GC.getGameINLINE().getSorenRandNum(iExploreDelay / 5, " +- 10% randomization to lair cycle length");
+
+		setExploreNextTurn(GC.getGame().getGameTurn() + iExploreDelay);
 	}
 }
 
