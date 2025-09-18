@@ -2114,18 +2114,8 @@ void CvUnit::doTurn()
 	int iI;
 	CvPlot* pPlot = plot();
 
-/*************************************************************************************************/
-/**	NonAbandon 								05/15/08								Xienwolf	**/
-/**							Blocks Abandonment Check from Happening								**/
-/**						This is called before promotions can Wear off							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (m_pUnitInfo->isAbandon())
-/**								----  End Original Code  ----									**/
-	if (m_pUnitInfo->isAbandon() && !(isNonAbandon()))
-/*************************************************************************************************/
-/**	NonAbandon 									END												**/
-/*************************************************************************************************/
+	// NonAbandon - Xienwolf - 05/15/08 - Blocks Abandonment Check from Happening before promos wear off
+	if (m_pUnitInfo->isAbandon() && !isNonAbandon())
 	{
 		if (!isBarbarian())
 		{
@@ -2163,189 +2153,22 @@ void CvUnit::doTurn()
 				GC.getGameINLINE().decrementUnitCreatedCount(getUnitType());
 				GC.getGameINLINE().decrementUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType()));
 				return;
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/06/08											**/
-/**																								**/
-/**				These steps are already completed as a part of "kill(true);"					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				GET_TEAM(getTeam()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), -1);
-				GET_PLAYER(getOwnerINLINE()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), -1);
-				GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(m_pUnitInfo->getExtraCost() * -1);
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 			}
 		}
 	}
+
 	if (getSpellCasterXP() > 0)
 	{
-		/*************************************************************************************************/
-		/**	DecimalXP							11/21/08									Xienwolf	**/
-		/**																								**/
-		/**					XP Values carried as Floats now in XML, 100x value in DLL					**/
-		/*************************************************************************************************/
+		// DecimalXP - Xienwolf - 11/21/08 - XP Values carried as Floats now in XML, 100x value in DLL
 		if (getSpellCasterXP() > getExperience())
 		{
 			int iXPGain = (int)((10000 * (1 + getCasterXPRate())) / ((GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 50) * (getExperience() + 100)));
 			changeExperience(std::max((int)(5 * (1 + getCasterXPRate())), iXPGain), -1, false, false, false);
-			/*************************************************************************************************/
-			/**	DecimalXP									END												**/
-			/*************************************************************************************************/
 		}
 	}
 
-	for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
-	{
-		if (isHasPromotion((PromotionTypes)iI))
-		{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							11/21/08											**/
-/**				Prevents exploitation of Puppets with Summoner Trait Feedback					**/
-/**							Ensures that risky spells are always SOME risk						**/
-/**								Prevents pointless AI Control Sessions							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0)
-			{
-				if (getExperience() < GC.getDefineINT("FREE_XP_MAX"))
-				{
-					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn(), -1, false, false, false);
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
-			{
-				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= 3)
-					{
-						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
-					}
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getBetrayalChance() != 0)
-			{
-				if (!isImmuneToCapture() && !isBarbarian() && !GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= GC.getPromotionInfo((PromotionTypes)iI).getBetrayalChance())
-					{
-						betray(BARBARIAN_PLAYER);
-					}
-				}
-			}
-/**								----  End Original Code  ----									**/
-			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0 && getDuration() == 0)
-			{
-				if (getExperience() < getFreeXPCap())
-				{
-					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() * 100 / GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent(), -1, false, false, false);
-				}
-			}
-			
-			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
-			{
-				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= GC.getPromotionInfo((PromotionTypes)iI).getRandomApplyChance())
-					{
-						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
-					}
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
-			{
-				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	TickTock							11/04/08									Xienwolf	**/
-/**																								**/
-/**				Establishes set duration and allows chance of expiration after that time		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0)
-			{
-/**								----  End Original Code  ----									**/
-			int iPromDuration = getPromotionDuration((PromotionTypes)iI);
-			if (iPromDuration != 0)
-			{
-				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
-				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0)
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0 && getTruePromotionDuration((PromotionTypes)iI) == 0)
-			{
-/*************************************************************************************************/
-/**	TickTock									END												**/
-/*************************************************************************************************/
-				if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Expire") <= GC.getPromotionInfo((PromotionTypes)iI).getExpireChance())
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (!isHurt())
-			{
-				if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedWhenHealed())
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-/*************************************************************************************************/
-/**	AutoBots								07/16/08								Xienwolf	**/
-/**																								**/
-/**				Automatically applies/removes a Promotion when Unit meets conditions			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak								29/01/12										Snarko	**/
-/**																								**/
-/**		With so many promotions we don't want to check them all if we can avoid it.				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			testPromotionReady();
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-			if (isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isMustMaintain() && !canAcquirePromotion((PromotionTypes)iI,true) && !m_pUnitInfo->getFreePromotions(iI))
-			{
-				for(int k=0;k<countHasPromotion((PromotionTypes)iI);++k)
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (isHasPromotion((PromotionTypes)iI) && !CvString(GC.getPromotionInfo((PromotionTypes)iI).getPyPerTurn()).empty())
-			{
-				CyUnit* pyUnit = new CyUnit(this);
-				CyArgsList argsList;
-				argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
-				argsList.add(iI);//the promotion #
-				gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
-				delete pyUnit; // python fxn must not hold on to this pointer
-			}
-
-		}
-
-		if (GC.getPromotionInfo((PromotionTypes)iI).isAutoAcquire() && canPromote((PromotionTypes)iI, -1))
-		{
-			promote(((PromotionTypes)iI), -1);
-		}
-	
-/*************************************************************************************************/
-/**	AutoBots									END												**/
-/*************************************************************************************************/
-	}
-	
+	// Check for betray comes before loyalty (duration 1) expires, otherwise duration 1 betray and duration 1 loyalty each do nothing
+	// If causes issues, may need to pull anti and do-betray data from promos as they are parsed, then do sumation calculation after
 	if (getBetrayalChance() > 0
 	 && !isBarbarian()
 	 && GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
@@ -2379,36 +2202,102 @@ void CvUnit::doTurn()
 		}
 	}
 
-
-	setHasCasted(false);
-/*************************************************************************************************/
-/**	Xienwolf Tweak							10/07/08											**/
-/**						Allows Twincast to cast a seperate spell, and stack						**/
-/**						Gameoption to disable Automatic Worker XP gain							**/
-/*************************************************************************************************/
-	setCastingLimit(getTwincast());
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (getDuration() > 0)
+	// Blaze 2025 note: This sequence of promos may e.g. remove promo iI in one step then add it in another; might need some better checks?
+	for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-/*************************************************************************************************/
-/**	Renewing								05/19/08								Xienwolf	**/
-/**																								**/
-/**					Includes new variable with natural duration decay							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		changeDuration(-1);
-		if (getDuration() == 0)
+		if (isHasPromotion((PromotionTypes)iI))
 		{
-			if (isImmortal())
+			// XP per turn
+			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0 && getDuration() == 0)
 			{
-				changeImmortal(-1);
+				if (getExperience() < getFreeXPCap())
+				{
+					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() * 100 / GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent(), -1, false, false, false);
+				}
 			}
-			kill(true);
+
+			// Random apply other promo chance
+			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
+			{
+				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
+				{
+					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= GC.getPromotionInfo((PromotionTypes)iI).getRandomApplyChance())
+					{
+						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
+					}
+				}
+			}
+
+			// Enraged validity
+			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
+			{
+				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// TickTock - Xienwolf - 11/04/08 - Establishes set duration and allows chance of expiration after that time
+			int iPromDuration = getPromotionDuration((PromotionTypes)iI);
+			if (iPromDuration != 0)
+			{
+				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
+				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0)
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0 && getTruePromotionDuration((PromotionTypes)iI) == 0)
+			{
+				if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Expire") <= GC.getPromotionInfo((PromotionTypes)iI).getExpireChance())
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// Remove on full heal
+			if (!isHurt())
+			{
+				if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedWhenHealed())
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// AutoBots - Xienwolf - 07/16/08 - Automatically applies/removes a Promotion when Unit meets conditions
+			if (isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isMustMaintain() && !canAcquirePromotion((PromotionTypes)iI,true) && !m_pUnitInfo->getFreePromotions(iI))
+			{
+				for(int k=0;k<countHasPromotion((PromotionTypes)iI);++k)
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// Promo python
+			if (isHasPromotion((PromotionTypes)iI) && !CvString(GC.getPromotionInfo((PromotionTypes)iI).getPyPerTurn()).empty())
+			{
+				CyUnit* pyUnit = new CyUnit(this);
+				CyArgsList argsList;
+				argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
+				argsList.add(iI);//the promotion #
+				gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
+				delete pyUnit; // python fxn must not hold on to this pointer
+			}
+		}
+
+		if (GC.getPromotionInfo((PromotionTypes)iI).isAutoAcquire() && canPromote((PromotionTypes)iI, -1))
+		{
+			promote(((PromotionTypes)iI), -1);
 		}
 	}
-/**								----  End Original Code  ----									**/
+
+	setHasCasted(false);
+
+	// Xienwolf - 10/07/08 - Allows Twincast to cast a seperate spell, and stack Gameoption to disable Automatic Worker XP gain
+	setCastingLimit(getTwincast());
+
+	if (getDuration() > 0)
+	{
 		changeDuration(getDurationPerTurn() - 1);
 		if (getDuration() == 0)
 		{
@@ -2424,19 +2313,11 @@ void CvUnit::doTurn()
 	{
 		unloadAll();
 		kill(true);
-/*************************************************************************************************/
-/**	Tweak							09/05/10								Snarko				**/
-/**																								**/
-/**						The unit is dead, no need to continue here								**/
-/*************************************************************************************************/
+
+		// Snarko - Unit is dead, no need to continue
 		return;
-/*************************************************************************************************/
-/**	Tweak										END												**/
-/*************************************************************************************************/
 	}
-/*************************************************************************************************/
-/**	Renewing									END												**/
-/*************************************************************************************************/
+
 	if (pPlot->isCity())
 	{
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
@@ -2501,24 +2382,7 @@ void CvUnit::doTurn()
 /**	Tweak									END													**/
 /*************************************************************************************************/
 	}
-/*************************************************************************************************/
-/**	Tweak							11/05/10								Snarko				**/
-/**																								**/
-/**				No longer needed as spell casting is handled in a better way					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (!isHuman())
-	{
-		int iSpell = chooseSpell();
-		if (iSpell != NO_SPELL)
-		{
-			cast(iSpell);
-		}
-	}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (m_pUnitInfo->isImmortal())
 	{
 		if (!isImmortal())
@@ -2526,7 +2390,6 @@ void CvUnit::doTurn()
 			changeImmortal(1);
 		}
 	}
-//FfH: End Add
 
 /*************************************************************************************************/
 /**	Xienwolf Tweak							09/06/08											**/
@@ -2630,18 +2493,9 @@ void CvUnit::doTurn()
 			changeImmortal(1);
 		}
 	}
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Better Affinity						01/30/11									Valkrionn	**/
-/**																								**/
-/**					Vastly improved Affinity system, open to many tags							**/
-/*************************************************************************************************/
+
+	// Better Affinity - Valkrionn - 01/30/11
 	updateAffinity();
-/*************************************************************************************************/
-/**	Better Affinity							END													**/
-/*************************************************************************************************/
 
 	changeImmobileTimer(-1);
 
@@ -2651,11 +2505,8 @@ void CvUnit::doTurn()
 	setReconPlot(NULL);
 
 	setMoves(0);
-/*************************************************************************************************/
-/**	AutoCast								24/05/10									Snarko	**/
-/**																								**/
-/**						Making the human able to set units to autocast spells					**/
-/*************************************************************************************************/
+
+	// Autocast - Snarko - Making the human able to set units to autocast spells
 	if (isAutoCast(true))
 	{
 		if (canCast((int)getAutoCast(), false))
@@ -2663,10 +2514,6 @@ void CvUnit::doTurn()
 			cast((int)getAutoCast());
 		}
 	}
-
-/*************************************************************************************************/
-/**	Autocast								END													**/
-/*************************************************************************************************/
 }
 
 
