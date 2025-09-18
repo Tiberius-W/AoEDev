@@ -15390,8 +15390,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 	if (pNewPlot != NULL)
 	{
-		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
-
 		pNewCity = pNewPlot->getPlotCity();
 
 		if (pNewCity != NULL)
