@@ -860,26 +860,37 @@ void CvPlot::doLairSpawn()
 {
 	// Lairs spawn differently the turn they appear (immediateunit/group)
 	if (getImprovementType() == NO_IMPROVEMENT || getImprovementDuration() <= 0)
+	{
 		return;
+	}
 
 	int iUnit = GC.getImprovementInfo(getImprovementType()).getSpawnUnitType();
 	int iSpawnGroup = GC.getImprovementInfo(getImprovementType()).getSpawnGroupType();
 	int iSpawnLimit = GC.getImprovementInfo(getImprovementType()).getSpawnAtOnceLimit();
-	if (iSpawnLimit < 0) iSpawnLimit = MAX_INT;
+	if (iSpawnLimit < 0)
+	{
+		iSpawnLimit = MAX_INT;
+	}
 
 	// LairGuardians code: Valkrion
 	// 1st check: Are we spawning at all, and if so are at limit for how many units can be spawned at a time?
 	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumLairSpawnsAlive() >= iSpawnLimit)
+	{
 		return;
+	}
 
 	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
 	if ((3 * GC.getGameINLINE().getElapsedGameTurns() < (GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getBarbSpawnDelay()))
 	 || (GC.getGameINLINE().getNumCivCities() < GC.getGameINLINE().countCivPlayersAlive()))
+	{
 		return;
+	}
 
 	// 2.5 check; is this a world unit that can no longer spawn?
 	if (iUnit != NO_UNIT && iSpawnGroup == NO_SPAWNGROUP && GC.getGameINLINE().isUnitClassMaxedOut((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iUnit).getUnitClassType())))
+	{
 		return;
+	}
 
 	bool bValid = false;
 	int iCiv = GC.getImprovementInfo(getImprovementType()).getSpawnUnitCiv();
@@ -940,7 +951,9 @@ void CvPlot::doLairSpawn()
 
 	// 4th check: Can a spawned unit coexist on this tile with all already existing units on said tile
 	if (!bValid || isVisibleEnemyUnit(eSpawnPlayer)  )
+	{
 		return;
+	}
 
 	// We can always spawn a lair guard if there's no linked spawns alive, regardless of density limits
 	// Thus, an older lair that has upgraded can be denser, and have more guardians (though old guards/units are probably weak)
@@ -952,7 +965,9 @@ void CvPlot::doLairSpawn()
 		// No matter how small the area (or how low the AC), lairs can always spawn up to 3 barb units. Continues tradition of dense offshore barb islands (Blazenclaw)
 		int iTargetBarbs = std::max(3, GC.getGameINLINE().calcTargetBarbs(area(), eSpawnPlayer, true));
 		if (area()->getUnitsPerPlayer(eSpawnPlayer) >= iTargetBarbs)
+		{
 			return;
+		}
 	}
 
 	// Starting chance
@@ -965,7 +980,9 @@ void CvPlot::doLairSpawn()
 	{
 		// If we're entirely out of units spawned from here, respawn the guardian if exists. Guard won't respawn if there is a spawned unit wandered off somewhere; oh well.
 		if (bMissingGuard)
+		{
 			iUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
+		}
 
 		// Spawn the thang. Only spawn unit and immediate unit are counted toward limit, NOT groups
 		CvUnit* pUnit=GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes)iUnit, getX_INLINE(), getY_INLINE(), (bMissingGuard ? NO_UNITAI: UNITAI_ATTACK));
@@ -1011,10 +1028,14 @@ void CvPlot::doImprovementCityWorking()
 	PROFILE_FUNC();
 
 	if (getImprovementType() == NO_IMPROVEMENT)
+	{
 		return;
+	}
 
 	if (getBonusType() != NO_BONUS)
+	{
 		return;
+	}
 
 	FAssert(isBeingWorked() && isOwned());
 	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlot::doImprovementCityWorking");
@@ -1034,7 +1055,9 @@ void CvPlot::doImprovementCityWorking()
 
 		// Can't dowsing our way into patrician artifacts
 		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes)iBonus).getTechReveal())))
+		{
 			continue;
+		}
 
 		// First check for discovery. Should respect original placement rules, since we're "discovering" it
 		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iBonus);
@@ -1052,7 +1075,9 @@ void CvPlot::doImprovementCityWorking()
 		// Then try spread an already existing one (original implementation -> SpreadBonus : Opera 28/08/09)
 		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusSpreadRand(iBonus);
 		if (!GET_PLAYER(getOwnerINLINE()).hasBonus((BonusTypes)iBonus) || iChance <= 0)
+		{
 			continue;
+		}
 		iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
 		if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Spread") == 0)
 		{
@@ -1080,7 +1105,9 @@ void CvPlot::doImprovementCityWorking()
 void CvPlot::doImprovementUpgrade()
 {
 	if (getImprovementType() == NO_IMPROVEMENT)
+	{
 		return;
+	}
 
 	ImprovementTypes eImprovementUpgrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
 	if (eImprovementUpgrade == NO_IMPROVEMENT)
@@ -1088,7 +1115,9 @@ void CvPlot::doImprovementUpgrade()
 
 	// To upgrade, improvements must be A) worked or B) bOutsideBorders and not an unclaimed fort (on land due to Rinwell)
 	if (!(isBeingWorked() || (GC.getImprovementInfo(getImprovementType()).isOutsideBorders() && !(!isOwned() && !isWater() && GC.getImprovementInfo(getImprovementType()).isFort()))))
+	{
 		return;
+	}
 
 	// ? : Hinterlands Valkrionn 07/11/09
 	int iUpgradeTurns = GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType());

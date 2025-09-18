@@ -15,15 +15,15 @@
 			<Image>art/interface/popups/Decius.dds</Image>
 			<ArtDefineTag>ART_DEF_LEADER_DECIUS</ArtDefineTag>
 			<iWonderConstructRand>0</iWonderConstructRand>
-    <iBaseAttitude>0</iBaseAttitude>
+			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>0</iPeaceWeightRand>
 			<iWarmongerRespect>-2</iWarmongerRespect>
 			<iEspionageWeight>0</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>15</iRefuseToTalkWarThreshold>
-    <iNoTechTradeThreshold>3</iNoTechTradeThreshold>
-    <iTechTradeKnownPercent>35</iTechTradeKnownPercent>
-    <iMaxGoldTradePercent>15</iMaxGoldTradePercent>
+			<iNoTechTradeThreshold>3</iNoTechTradeThreshold>
+			<iTechTradeKnownPercent>35</iTechTradeKnownPercent>
+			<iMaxGoldTradePercent>15</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<VictoryAIs>
 				<VictoryAI>
@@ -52,17 +52,16 @@
 				</VictoryAI>
 			</VictoryAIs>
 			<iMaxWarRand>10</iMaxWarRand>
-    <iMaxWarNearbyPowerRatio>80</iMaxWarNearbyPowerRatio>
-    <iMaxWarDistantPowerRatio>40</iMaxWarDistantPowerRatio>
-    <iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
-    <iLimitedWarRand>70</iLimitedWarRand>
-
+			<iMaxWarNearbyPowerRatio>80</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>40</iMaxWarDistantPowerRatio>
+			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
+			<iLimitedWarRand>70</iLimitedWarRand>
 			<iLimitedWarPowerRatio>80</iLimitedWarPowerRatio>
-    <iDogpileWarRand>30</iDogpileWarRand>
-    <iMakePeaceRand>80</iMakePeaceRand>
-    <iDeclareWarTradeRand>40</iDeclareWarTradeRand>
-    <iDemandRebukedSneakProb>20</iDemandRebukedSneakProb>
-    <iDemandRebukedWarProb>30</iDemandRebukedWarProb>
+			<iDogpileWarRand>30</iDogpileWarRand>
+			<iMakePeaceRand>80</iMakePeaceRand>
+			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
+			<iDemandRebukedSneakProb>20</iDemandRebukedSneakProb>
+			<iDemandRebukedWarProb>30</iDemandRebukedWarProb>
 			<iRazeCityProb>20</iRazeCityProb>
 			<iBuildUnitProb>15</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
@@ -72,52 +71,52 @@
 			<fProximityMemoryDecaySpeed>0.5</fProximityMemoryDecaySpeed>
 			<iProximityMemoryDecayRand>75</iProximityMemoryDecayRand>
 			<iWorseRankDifferenceAttitudeChange>-2</iWorseRankDifferenceAttitudeChange>
-    <iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
-    <iCloseBordersAttitudeChange>-4</iCloseBordersAttitudeChange>
-    <iLostWarAttitudeChange>-2</iLostWarAttitudeChange>
+			<iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
+			<iCloseBordersAttitudeChange>-4</iCloseBordersAttitudeChange>
+			<iLostWarAttitudeChange>-2</iLostWarAttitudeChange>
 			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
-    <iAtWarAttitudeChangeLimit>10</iAtWarAttitudeChangeLimit>
+			<iAtWarAttitudeChangeLimit>10</iAtWarAttitudeChangeLimit>
 			<iAtPeaceAttitudeDivisor>50</iAtPeaceAttitudeDivisor>
-    <iAtPeaceAttitudeChangeLimit>6</iAtPeaceAttitudeChangeLimit>
-    <iSameReligionAttitudeChange>0</iSameReligionAttitudeChange>
-    <iSameReligionAttitudeDivisor>30</iSameReligionAttitudeDivisor>
-    <iSameReligionAttitudeChangeLimit>2</iSameReligionAttitudeChangeLimit>
-    <iDifferentReligionAttitudeChange>0</iDifferentReligionAttitudeChange>
+			<iAtPeaceAttitudeChangeLimit>6</iAtPeaceAttitudeChangeLimit>
+			<iSameReligionAttitudeChange>0</iSameReligionAttitudeChange>
+			<iSameReligionAttitudeDivisor>30</iSameReligionAttitudeDivisor>
+			<iSameReligionAttitudeChangeLimit>2</iSameReligionAttitudeChangeLimit>
+			<iDifferentReligionAttitudeChange>0</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-10</iDifferentReligionAttitudeDivisor>
-    <iDifferentReligionAttitudeChangeLimit>2</iDifferentReligionAttitudeChangeLimit>
+			<iDifferentReligionAttitudeChangeLimit>2</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
-    <iBonusTradeAttitudeChangeLimit>1</iBonusTradeAttitudeChangeLimit>
+			<iBonusTradeAttitudeChangeLimit>1</iBonusTradeAttitudeChangeLimit>
 			<iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor>
-    <iOpenBordersAttitudeChangeLimit>1</iOpenBordersAttitudeChangeLimit>
+			<iOpenBordersAttitudeChangeLimit>1</iOpenBordersAttitudeChangeLimit>
 			<iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
-    <iDefensivePactAttitudeChangeLimit>5</iDefensivePactAttitudeChangeLimit>
-    <iShareWarAttitudeChange>2</iShareWarAttitudeChange>
+			<iDefensivePactAttitudeChangeLimit>5</iDefensivePactAttitudeChangeLimit>
+			<iShareWarAttitudeChange>2</iShareWarAttitudeChange>
 			<iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
-    <iShareWarAttitudeChangeLimit>7</iShareWarAttitudeChangeLimit>
+			<iShareWarAttitudeChangeLimit>7</iShareWarAttitudeChangeLimit>
 			<iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
 			<iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
 			<iFavoriteCivicAttitudeChangeLimit>1</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
-    <NoGiveHelpAttitudeThreshold>ATTITUDE_PLEASED</NoGiveHelpAttitudeThreshold>
-    <TechRefuseAttitudeThreshold>ATTITUDE_PLEASED</TechRefuseAttitudeThreshold>
-    <StrategicBonusRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</StrategicBonusRefuseAttitudeThreshold>
-    <HappinessBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HappinessBonusRefuseAttitudeThreshold>
-    <HealthBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HealthBonusRefuseAttitudeThreshold>
-    <MapRefuseAttitudeThreshold>ATTITUDE_PLEASED</MapRefuseAttitudeThreshold>
+			<NoGiveHelpAttitudeThreshold>ATTITUDE_PLEASED</NoGiveHelpAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_PLEASED</TechRefuseAttitudeThreshold>
+			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</StrategicBonusRefuseAttitudeThreshold>
+			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HappinessBonusRefuseAttitudeThreshold>
+			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HealthBonusRefuseAttitudeThreshold>
+			<MapRefuseAttitudeThreshold>ATTITUDE_PLEASED</MapRefuseAttitudeThreshold>
 			<DeclareWarRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DeclareWarRefuseAttitudeThreshold>
 			<DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DeclareWarThemRefuseAttitudeThreshold>
-    <StopTradingRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingRefuseAttitudeThreshold>
-    <StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
-    <AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
+			<StopTradingRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingRefuseAttitudeThreshold>
+			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
+			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-    <OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
-    <VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
+			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>0</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
-			<Traits>			
+			<Traits>
 				<Trait>
 					<TraitType>TRAIT_GRAND_MARSHAL</TraitType>
 					<bTrait>1</bTrait>
@@ -125,7 +124,7 @@
 				<Trait>
 					<TraitType>TRAIT_ABIDER</TraitType>
 					<bTrait>1</bTrait>
-				</Trait>				
+				</Trait>
 				<Trait>
 					<TraitType>TRAIT_CONQUEROR</TraitType>
 					<bTrait>1</bTrait>
@@ -451,20 +450,20 @@
 			</MemoryAttitudePercents>
 			<NoWarAttitudeProbs>
 				<NoWarAttitudeProb>
-        <AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
-        <iNoWarProb>0</iNoWarProb>
-      </NoWarAttitudeProb>
-      <NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+					<iNoWarProb>0</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
-        <iNoWarProb>10</iNoWarProb>
+					<iNoWarProb>10</iNoWarProb>
 				</NoWarAttitudeProb>
 				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
-        <iNoWarProb>70</iNoWarProb>
+					<iNoWarProb>70</iNoWarProb>
 				</NoWarAttitudeProb>
 				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
-        <iNoWarProb>100</iNoWarProb>
+					<iNoWarProb>100</iNoWarProb>
 				</NoWarAttitudeProb>
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
@@ -591,20 +590,20 @@
 				<Trait>
 					<TraitType>TRAIT_DIVINER</TraitType>
 					<bTrait>1</bTrait>
-				</Trait>				
+				</Trait>
 			</Traits>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Braeden -->
 			<Type>LEADER_BRAEDEN</Type>
 			<bTypeDependency>1</bTypeDependency>
-		<AndDependencyTypes>
+			<AndDependencyTypes>
 				<DependencyType>MODULE_IMPORTANT_LEADERS</DependencyType>
 			</AndDependencyTypes>
 			<Traits>
 				<Trait>
 					<TraitType>TRAIT_RETURN_OF_WINTER</TraitType>
 					<bTrait>1</bTrait>
-				</Trait>				
+				</Trait>
 			</Traits>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Furia -->
@@ -613,21 +612,21 @@
 				<Trait>
 					<TraitType>TRAIT_THOUSAND_FACES</TraitType>
 					<bTrait>1</bTrait>
-				</Trait>				
+				</Trait>
 			</Traits>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Melisandre -->
 			<Type>LEADER_MELISANDRE</Type>
 			<bTypeDependency>1</bTypeDependency>
-		<AndDependencyTypes>
+			<AndDependencyTypes>
 				<DependencyType>MODULE_IMPORTANT_LEADERS</DependencyType>
 			</AndDependencyTypes>
 			<Traits>
 				<Trait>
 					<TraitType>TRAIT_PUPPETEER</TraitType>
 					<bTrait>1</bTrait>
-				</Trait>				
+				</Trait>
 			</Traits>
-		</LeaderHeadInfo>		
-	</LeaderHeadInfos>		
+		</LeaderHeadInfo>
+	</LeaderHeadInfos>
 </Civ4LeaderHeadInfos>

@@ -2484,466 +2484,466 @@
 			<FavoriteCivic>CIVIC_MILITARY_STATE</FavoriteCivic>
 			<!--<FavoriteReligion>NONE</FavoriteReligion>-->
 			<Traits>
-				 <Trait>
+				<Trait>
 					<TraitType>TRAIT_RANGED_TACTICIAN</TraitType>
 					<bTrait>1</bTrait>
-				 </Trait>
+				</Trait>
 			</Traits>
 			<Flavors>
-				 <Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>5</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>30</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>15</iFlavor>
-				 </Flavor>
+				</Flavor>
 			</Flavors>
 			<ContactRands>
-				 <ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactRand>10</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactRand>100</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactRand>1000</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactRand>2</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactRand>2</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
+				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
-				 <ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactDelay>10</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactDelay>30</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
+				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
-				 <MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryRand>200</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
 					<iMemoryRand>30</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryRand>1</iMemoryRand>
-				 </MemoryDecay>
+				</MemoryDecay>
 			</MemoryDecays>
 			<MemoryAttitudePercents>
-				 <MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR</MemoryType>
 					<iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
 					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryAttitudePercent>15</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
 					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryAttitudePercent>0</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
+				</MemoryAttitudePercent>
 			</MemoryAttitudePercents>
 			<NoWarAttitudeProbs>
-				 <NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
 					<iNoWarProb>10</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
 					<iNoWarProb>20</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
 					<iNoWarProb>80</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
 					<iNoWarProb>100</iNoWarProb>
-				 </NoWarAttitudeProb>
+				</NoWarAttitudeProb>
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
-				 <ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_NATURE</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_BODY</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
+				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicPeaceEra>
-				
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicPeaceEra>
-				
+				</DiploMusicPeaceEra>
+
 			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-			
+				</DiploMusicPeaceEra>
+
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicWarEra>
-			
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicWarEra>
-			
+				</DiploMusicWarEra>
+
 			</DiplomacyIntroMusicWar>
 			<DiplomacyMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicWarEra>
-		
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_LJOSALFAR</DiploScriptId>
-				 </DiploMusicWarEra>
-			
+				</DiploMusicWarEra>
+
 			</DiplomacyMusicWar>
 			<bFemale>1</bFemale>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -2965,18 +2965,18 @@
 			<FavoriteWonder>BUILDING_GUILD_OF_THE_NINE</FavoriteWonder>
 			<PermanentTrait>NONE</PermanentTrait>
 			<ReligionWeightModifiers>
-				 <ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
 					<iWeightModifier>25</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ORDER</ReligionType>
 					<iWeightModifier>10</iWeightModifier>
-				 </ReligionWeightModifier>
+				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Iridius Blackhand --><!-- Hippus & Sheaim leader -->
@@ -3065,462 +3065,462 @@
 			<FavoriteCivic>CIVIC_SLAVERY</FavoriteCivic>
 			<!-- <FavoriteReligion>NONE</FavoriteReligion> -->
 			<Traits>
-				 <Trait>
+				<Trait>
 					<TraitType>TRAIT_HELLRIDER</TraitType>
 					<bTrait>1</bTrait>
-				 </Trait>
+				</Trait>
 			</Traits>
 			<Flavors>
-				 <Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>35</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>5</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>10</iFlavor>
-				 </Flavor>
+				</Flavor>
 			</Flavors>
 			<ContactRands>
-				 <ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactRand>5</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactRand>5</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
+				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
-				 <ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactDelay>10</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactDelay>30</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
+				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
-				 <MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryRand>200</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
 					<iMemoryRand>30</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryRand>1</iMemoryRand>
-				 </MemoryDecay>
+				</MemoryDecay>
 			</MemoryDecays>
 			<MemoryAttitudePercents>
-				 <MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR</MemoryType>
 					<iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
 					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryAttitudePercent>10</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
 					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryAttitudePercent>0</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
+				</MemoryAttitudePercent>
 			</MemoryAttitudePercents>
 			<NoWarAttitudeProbs>
-				 <NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
 					<iNoWarProb>10</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
 					<iNoWarProb>50</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
 					<iNoWarProb>90</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
 					<iNoWarProb>100</iNoWarProb>
-				 </NoWarAttitudeProb>
+				</NoWarAttitudeProb>
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
-				 <ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_ENTROPY</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_DEATH</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_CHAOS</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
+				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicPeaceEra>
-				</DiplomacyIntroMusicPeace>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				</DiplomacyMusicPeace>
+				</DiploMusicPeaceEra>
+			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicWarEra>
+				</DiploMusicWarEra>
 			</DiplomacyIntroMusicWar>
 			<DiplomacyMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_SHEAIM</DiploScriptId>
-				 </DiploMusicWarEra>
+				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>0</bFemale>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -3542,28 +3542,28 @@
 			<FavoriteWonder>BUILDING_PROPHECY_OF_RAGNAROK</FavoriteWonder>
 			<PermanentTrait>NONE</PermanentTrait>
 			<ReligionWeightModifiers>
-				 <ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
 					<iWeightModifier>-30</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ASHEN_VEIL</ReligionType>
 					<iWeightModifier>35</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
 					<iWeightModifier>-50</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ORDER</ReligionType>
 					<iWeightModifier>-50</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_WHITE_HAND</ReligionType>
 					<iWeightModifier>-80</iWeightModifier>
-				 </ReligionWeightModifier>
-			 </ReligionWeightModifiers>
-		</LeaderHeadInfo>		
+				</ReligionWeightModifier>
+			</ReligionWeightModifiers>
+		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- KAS-3061 --><!-- Mechanos leader -->
 			<Type>LEADER_KAS</Type>
 			<Description>TXT_KEY_LEADER_KAS</Description>
@@ -4253,462 +4253,462 @@
 			<iFreedomAppreciation>0</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_APPRENTICESHIP</FavoriteCivic>
 			<Traits>
-				 <Trait>
+				<Trait>
 					<TraitType>TRAIT_NASTY</TraitType>
 					<bTrait>1</bTrait>
-				 </Trait>
+				</Trait>
 			</Traits>
 			<Flavors>
-				 <Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>25</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>15</iFlavor>
-				 </Flavor>
-				 <Flavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>10</iFlavor>
-				 </Flavor>
+				</Flavor>
 			</Flavors>
 			<ContactRands>
-				 <ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactRand>1000</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactRand>50</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactRand>500</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactRand>80</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactRand>1</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactRand>1</iContactRand>
-				 </ContactRand>
-				 <ContactRand>
+				</ContactRand>
+				<ContactRand>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactRand>20</iContactRand>
-				 </ContactRand>
+				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
-				 <ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_JOIN_WAR</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_STOP_TRADING</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_GIVE_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_PEACE_TREATY</ContactType>
 					<iContactDelay>10</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
 					<iContactDelay>30</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
 					<iContactDelay>20</iContactDelay>
-				 </ContactDelay>
-				 <ContactDelay>
+				</ContactDelay>
+				<ContactDelay>
 					<ContactType>CONTACT_TRADE_MAP</ContactType>
 					<iContactDelay>50</iContactDelay>
-				 </ContactDelay>
+				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
-				 <MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryRand>200</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
 					<iMemoryRand>150</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
 					<iMemoryRand>30</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryRand>100</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
 					<iMemoryRand>20</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryRand>10</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryRand>50</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryRand>0</iMemoryRand>
-				 </MemoryDecay>
-				 <MemoryDecay>
+				</MemoryDecay>
+				<MemoryDecay>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryRand>1</iMemoryRand>
-				 </MemoryDecay>
+				</MemoryDecay>
 			</MemoryDecays>
 			<MemoryAttitudePercents>
-				 <MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR</MemoryType>
 					<iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
 					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
 					<iMemoryAttitudePercent>20</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
 					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
 					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_POSITIVE</MemoryType>
 					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_NEGATIVE</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
-				 <MemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SOMNIUM_DELAY</MemoryType>
 					<iMemoryAttitudePercent>0</iMemoryAttitudePercent>
-				 </MemoryAttitudePercent>
+				</MemoryAttitudePercent>
 			</MemoryAttitudePercents>
 			<NoWarAttitudeProbs>
-				 <NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
 					<iNoWarProb>10</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
 					<iNoWarProb>40</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
 					<iNoWarProb>85</iNoWarProb>
-				 </NoWarAttitudeProb>
-				 <NoWarAttitudeProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
 					<iNoWarProb>99</iNoWarProb>
-				 </NoWarAttitudeProb>
+				</NoWarAttitudeProb>
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
-				 <ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_SHADOW</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_SPIRIT</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_MIND</ImprovementType>
 					<iWeightModifier>10</iWeightModifier>
-				 </ImprovementWeightModifier>
+				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
 			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
-				 <DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
-				 <DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicPeaceEra>
+				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-				 </DiploMusicWarEra>
+				</DiploMusicWarEra>
 			</DiplomacyIntroMusicWar>
 			<DiplomacyMusicWar>
-				 <DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicWarEra>
-				 <DiploMusicWarEra>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
 					<DiploScriptId>AS2D_DIPLO_SIDAR</DiploScriptId>
-				 </DiploMusicWarEra>
+				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>0</bFemale>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -4730,18 +4730,18 @@
 			<FavoriteWonder>BUILDING_FORM_OF_THE_TITAN</FavoriteWonder>
 			<PermanentTrait>NONE</PermanentTrait>
 			<ReligionWeightModifiers>
-				 <ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
 					<iWeightModifier>30</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_WHITE_HAND</ReligionType>
 					<iWeightModifier>-80</iWeightModifier>
-				 </ReligionWeightModifier>
-				 <ReligionWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
 					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
 					<iWeightModifier>10</iWeightModifier>
-				 </ReligionWeightModifier>
+				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Nelisha --><!-- Austrin leader -->
@@ -6376,7 +6376,7 @@
 				</MemoryAttitudePercent>
 			</MemoryAttitudePercents>
 			<NoWarAttitudeProbs>
-			<NoWarAttitudeProb>
+				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
 					<iNoWarProb>20</iNoWarProb>
 				</NoWarAttitudeProb>
@@ -6516,5 +6516,6 @@
 				<DependencyType>MODULE_DYNAMIC_RELIGION</DependencyType>
 			</AndDependencyTypes>
 			<LeaderClass>LEADERCLASS_EMERGENT_AGNOSTIC</LeaderClass>
-		</LeaderHeadInfo></LeaderHeadInfos>
+		</LeaderHeadInfo>
+	</LeaderHeadInfos>
 </Civ4LeaderHeadInfos>

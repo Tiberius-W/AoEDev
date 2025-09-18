@@ -11300,7 +11300,10 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 
 		iTargetBarbs = iAreaSize / std::max(1, iDivisor);
 
-		if (isOption(GAMEOPTION_DOUBLE_ANIMALS)) iTargetBarbs *= 2;
+		if (isOption(GAMEOPTION_DOUBLE_ANIMALS))
+		{
+			iTargetBarbs *= 2;
+		}
 	}
 	else if (ePlayer == ORC_PLAYER)
 	{
@@ -11317,7 +11320,9 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 		// Possible min value if we're calculating based on lairs, instead of rand demon on hell terrain
 		int iMinDemons = 0;
 		if (bLairSpawn)
+		{
 			iMinDemons = (pArea->getNumUnownedTiles() + GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon() / 2) / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
+		}
 
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();
@@ -11336,7 +11341,10 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 		iTargetBarbs = std::max(iTargetBarbs, iMinDemons);
 	}
 
-	if (isOption(GAMEOPTION_RAGING_BARBARIANS)) iTargetBarbs *= 2;
+	if (isOption(GAMEOPTION_RAGING_BARBARIANS))
+	{
+		iTargetBarbs *= 2;
+	}
 
 	// Min limit for spawning is handled per spawning type (random/group, lair)
 	return std::max(0, iTargetBarbs);
