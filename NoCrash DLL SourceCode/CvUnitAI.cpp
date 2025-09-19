@@ -28632,25 +28632,40 @@ bool CvUnitAI::AI_canClaimFort(CvPlot* pPlot)
 		pPlot = plot();
 	}
 
+	if (getGroup()->getHeadUnit()->isEnraged())
+	{
+		return false;
+	}
+
 	// Factor of 3 safety; ai shouldn't be out of gold when trekking out to claim a fort (unitai: will always claim if on tile, though)
 	if (!isBarbarian() && (GET_PLAYER(getOwnerINLINE())).getGold() < 3 * GET_PLAYER(getOwnerINLINE()).getClaimFortCost())
+	{
 		return false;
+	}
 
 	if (NO_IMPROVEMENT == pPlot->getRevealedImprovementType(getTeam(), false) || !GC.getImprovementInfo(pPlot->getRevealedImprovementType(getTeam(), false)).isFort())
+	{
 		return false;
+	}
 
 	// Barbs can't claim unowned naval forts.
 	else if (isBarbarian() && pPlot->isWater() && !pPlot->isOwned())
+	{
 		return false;
+	}
 
 	// If we don't think there's an owner, go for it
 	PlayerTypes eRevealedOwner = pPlot->getRevealedOwner(getTeam(), false);
 	if (eRevealedOwner == NO_PLAYER)
+	{
 		return true;
+	}
 
 	// If we're not at war with owner, can't claim
 	if (eRevealedOwner != getOwnerINLINE() && !GET_TEAM(getTeam()).isAtWar(pPlot->getRevealedTeam(getTeam(), false)))
+	{
 		return false;
+	}
 
 	// Check if we need to reappoint a commander to our fort. Can be expensive, but don't see how else to avoid.
 	if (pPlot->getImprovementOwner() == getOwnerINLINE())

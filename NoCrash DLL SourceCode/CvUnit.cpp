@@ -31928,6 +31928,11 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 		pPlot = plot();
 	}
 
+	if (isEnraged())
+	{
+		return false;
+	}
+
 	// Gold relevant if not barb. Show option even if can't pay gold.
 	if (!bTestVisible && !isBarbarian() && GET_PLAYER(getOwnerINLINE()).getGold() < GET_PLAYER(getOwnerINLINE()).getClaimFortCost())
 	{
