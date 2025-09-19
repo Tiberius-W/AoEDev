@@ -7227,20 +7227,30 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			for (iPass = 0; iPass < 2; iPass++)
 			{
 				if (iBarbCount >= GC.getGoodyInfo(eGoody).getMinBarbarians())
+				{
 					continue;
+				}
 
 				for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 				{
 					pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
 
 					if (pLoopPlot == NULL)
+					{
 						continue;
+					}
 					if (pLoopPlot->getArea() != pPlot->getArea())
+					{
 						continue;
+					}
 					if (pLoopPlot->isImpassable() || pLoopPlot->isPeak())
+					{
 						continue;
+					}
 					if (pLoopPlot->getNumUnits() != 0)
+					{
 						continue;
+					}
 
 					if ((iPass > 0) || (GC.getGameINLINE().getSorenRandNum(100, "Goody Barbs") < GC.getGoodyInfo(eGoody).getBarbarianUnitProb()))
 					{
@@ -7266,20 +7276,26 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 						if (iLoop > 0)
 						{
 							for (iJ = 0; iJ < iLoop; iJ++)
+							{
 								pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionAdd(iJ), true);
+							}
 						}
 
 						iLoop = GC.getGoodyInfo(eGoody).getNumPromotionRemoves();
 						if (iLoop > 0)
 						{
 							for (iJ = 0; iJ < iLoop; iJ++)
+							{
 								pNewUnit->setHasPromotion((PromotionTypes)GC.getGoodyInfo(eGoody).getPromotionRemove(iJ), false);
+							}
 						}
 
 						++iBarbCount;
 
 						if (iPass > 0 && iBarbCount == GC.getGoodyInfo(eGoody).getMinBarbarians())
+						{
 							break;
+						}
 					}
 				}
 			}
@@ -7349,11 +7365,15 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 	long result=0;
 	bool ok = gDLL->getPythonIFace()->callFunction(PYGameModule, "doGoody", argsList.makeFunctionArgs(), &result);
 	if (ok && result)
+	{
 		return;
+	}
 
 	// Xienwolf - 02/01/09 - Don't clear until AFTER validating Goody to account for new LEX enhancement function
 	if (isBarbarian())
+	{
 		return;
+	}
 
 	if (GC.getHandicapInfo(getHandicapType()).getNumGoodies() > 0)
 	{
@@ -7366,7 +7386,9 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 			FAssert(eGoody < GC.getNumGoodyInfos());
 
 			if (!canReceiveGoody(pPlot, eGoody, pUnit))
+			{
 				continue;
+			}
 
 			pPlot->removeGoody();
 			receiveGoody(pPlot, eGoody, pUnit);
@@ -7403,7 +7425,9 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	// Xienwolf - Multibarb - 12/23/08 - Animals and demons can never *found* cities
 	if (getID() == DEMON_PLAYER || getID() == ANIMAL_PLAYER)
+	{
 		return false;
+	}
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
@@ -7417,31 +7441,45 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotFoundCity", argsList.makeFunctionArgs(), &lResult);
 
 		if (lResult == 1)
+		{
 			return false;
+		}
 	}
 
 	if (GC.getGameINLINE().isFinalInitialized())
 	{
 		if (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman() && getNumCities() > 0)
+		{
 			return false;
+		}
 
 		// Speedup - Snarko - 26/10/12 - Removes the need for the cannotFoundCity python call
 		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_SETTLERS) && (getNumCities() > 0) && !isBarbarian())
+		{
 			return false;
+		}
 	}
 
 	if (pPlot->isImpassable())
+	{
 		return false;
+	}
 
 	// Mountain Mod - Ahwaric - 22.09.09
 	if (pPlot->isPeak())
+	{
 		return false;
+	}
 
 	if (pPlot->getFeatureType() != NO_FEATURE && GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
+	{
 		return false;
+	}
 
 	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()))
+	{
 		return false;
+	}
 
 	bValid = false;
 
@@ -7467,15 +7505,21 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 			gDLL->getPythonIFace()->callFunction(PYGameModule, "canFoundCitiesOnWater", argsList2.makeFunctionArgs(), &lResult);
 
 			if (lResult == 1)
+			{
 				bValid = true;
+			}
 		}
 
 		if (isAmphibian())
+		{
 			bValid = true;
+		}
 	}
 
 	if (!bValid)
+	{
 		return false;
+	}
 
 	if (!bTestVisible)
 	{
@@ -7489,13 +7533,19 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 				pLoopPlot	= plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iDX, iDY);
 
 				if (pLoopPlot == NULL)
+				{
 					continue;
+				}
 
 				if (!pLoopPlot->isCity())
+				{
 					continue;
+				}
 
 				if (pLoopPlot->area() == pPlot->area())
+				{
 					return false;
+				}
 			}
 		}
 	}
@@ -7504,7 +7554,9 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 	{
 		if (GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).isPermanent())
+		{
 			return false;
+		}
 	}
 
 	return true;
@@ -7519,7 +7571,9 @@ void CvPlayer::found(int iX, int iY)
 	int iI;
 
 	if (!canFound(iX, iY))
+	{
 		return;
+	}
 
 	pCity = initCity(iX, iY, true, true);
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
@@ -7535,12 +7589,16 @@ void CvPlayer::found(int iX, int iY)
 		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE, false, NO_ADVISOR, true);
 
 		if (eDefenderUnit == NO_UNIT)
+		{
 			eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_ATTACK, false, NO_ADVISOR, true);
+		}
 
 		if (eDefenderUnit != NO_UNIT)
 		{
 			for (iI = 0; iI < GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getBarbarianInitialDefenders(); iI++)
+			{
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
+			}
 		}
 	}
 

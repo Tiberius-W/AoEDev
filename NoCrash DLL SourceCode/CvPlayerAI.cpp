@@ -2430,13 +2430,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iSpecialProduction = 0;
 	int iSpecialCommerce = 0;
 
-//FfH: Added by Kael 11/18/2007
+	//FfH: Added by Kael 11/18/2007
 	int iNumCityPlots = 21;
 	if (isSprawling())
 	{
 		iNumCityPlots = 37;
 	}
-//FfH: End Add
 
 	bool bNeutralTerritory = true;
 
@@ -2484,11 +2483,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		if (!AI_isPlotCitySite(pPlot))
 		{
 
-//FfH: Modified by Kael 11/18/2007
-//			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			//FfH: Modified by Kael 11/18/2007
 			for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 			{
 				pLoopPlot = plotCity(iX, iY, iI);
 				if (pLoopPlot != NULL)
@@ -2544,11 +2540,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2561,11 +2554,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iOwnedTiles = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2582,80 +2572,35 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 	}
 
-//FfH: Modified by Kael 11/18/2007
-//	if (iOwnedTiles > (NUM_CITY_PLOTS / 3))
+	//FfH: Modified by Kael 11/18/2007
 	if (iOwnedTiles > (iNumCityPlots / 3))
-//FfH: End Modify
-
 	{
 		return 0;
 	}
 
 	iBadTile = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
 		if (iI != CITY_HOME_PLOT)
 		{
-/*************************************************************************************************/
-/**	Mountain Mod 		 		expanded by Ahwaric	22.09.09		**/
-/*************************************************************************************************/
-/**			---- Start Original Code ----						**
-			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable())
-/**			----  End Original Code  ----						**/
-/*************************************************************************************************/
-/**	AITweak								31/05/10							Snarko				**/
-/**																								**/
-/**								Copy/paste gone wrong?											**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable() || pLoopPlot->isImpassable())
-/**								----  End Original Code  ----									**/
+			// Mountain Mod - Ahwaric - 22.09.09
 			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable() || pLoopPlot->isPeak())
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Mountain Mod END									**/
-/*************************************************************************************************/
 			{
 				iBadTile += 2;
 			}
 			else if (!(pLoopPlot->isFreshWater()) && !(pLoopPlot->isHills()))
 			{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				if ((pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) == 0) || (pLoopPlot->calculateTotalBestNatureYield(getTeam()) <= 1))
-/**								----  End Original Code  ----									**/
+				// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 				if ((pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) == 0) || (pLoopPlot->calculateTotalBestNatureYield(getID()) <= 1))
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 				{
 					iBadTile += 2;
 				}
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				else if (pLoopPlot->isWater() && !bIsCoastal && (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) <= 1))
-/**								----  End Original Code  ----									**/
+				// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 				else if (pLoopPlot->isWater() && !bIsCoastal && (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) <= 1))
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 				{
 					iBadTile++;
 				}
@@ -2677,20 +2622,13 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	if (!bStartingLoc)
 	{
-
-//FfH: Modified by Kael 11/18/2007
-//		if ((iBadTile > (NUM_CITY_PLOTS / 2)) || (pArea->getNumTiles() <= 2))
+		//FfH: Modified by Kael 11/18/2007
 		if ((iBadTile > (iNumCityPlots / 2)) || (pArea->getNumTiles() <= 2))
-//FfH: End Modify
-
 		{
 			bHasGoodBonus = false;
 
-//FfH: Modified by Kael 11/18/2007
-//			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			//FfH: Modified by Kael 11/18/2007
 			for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 			{
 				pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2751,23 +2689,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iClaimThreshold = GC.getGameINLINE().getCultureThreshold((CultureLevelTypes)(std::min(2, (GC.getNumCultureLevelInfos() - 1))));
 	iClaimThreshold = std::max(1, iClaimThreshold);
 	iClaimThreshold *= (std::max(100, iGreed));
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       04/25/10                          denev & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
+
+	// UNOFFICIAL_PATCH - 04/25/10 - denev & jdog5000
 	// Was missing this
 	iClaimThreshold /= 100;
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 	int iYieldLostHere = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2782,18 +2711,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			if (abCitySiteRadius[iI])
 			{
 				iTeammateTakenTiles++;
-/*************************************************************************************************/
-/**	AITweak								05/07/10							Snarko				**/
-/**																								**/
-/**				This was only used to return later on, so we return here instead				**/
-/*************************************************************************************************/
+				// Snarko - 05/07/10 - This was only used to return later on, so we return here instead
 				if (iTeammateTakenTiles > 1)
 				{
 					return 0;
 				}
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
 			}
 		}
 		else
@@ -2857,15 +2779,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					if (eFeature != NO_FEATURE)
 					{
 						aiYield[eYield] -= GC.getFeatureInfo(eFeature).getYieldChange(eYield);
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**					Consider Civilization-specific Terrain Yield Modifications.					**/
-/*************************************************************************************************/
+						// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 						aiYield[eYield] -= getFeatureYieldChange(eFeature, eYield);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 						iBasePlotYield = std::max(iBasePlotYield, aiYield[eYield]);
 					}
 
@@ -2961,16 +2876,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 			if (pLoopPlot->isRiver())
 			{
-/*************************************************************************************************/
-/**	Orbis AI	Enhanced riverplot value		Ahwaric													**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				iTempValue += 10;
-/**								----  End Original Code  ----									**/
+				// Orbis AI - Ahwaric - river value increase from 10 to 100
 				iTempValue += 100;
-/*************************************************************************************************/
-/**	Orbis AI								END													**/
-/*************************************************************************************************/
 			}
 
 			if (iI == CITY_HOME_PLOT)
@@ -3000,19 +2907,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				{
 					if (iI != CITY_HOME_PLOT)
 					{
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**		Consider Civilization-specific Feature Health Percent Modifications for Founding.		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-						iHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
-/**								----  End Original Code  ----									**/
+						// CivPlotMods - Jean Elcard - 03/23/09 - Consider Civilization-specific Feature Health Percent Modifications for Founding
 						iHealth += getHealthPercent(eFeature);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
-
 						iSpecialFoodPlus += std::max(0, aiYield[YIELD_FOOD] - GC.getFOOD_CONSUMPTION_PER_POPULATION());
 					}
 				}
@@ -3046,18 +2942,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 						if (eBonusImprovement != NO_IMPROVEMENT)
 						{
 							int iSpecialFoodTemp;
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							iSpecialFoodTemp = pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_FOOD);
-/**								----  End Original Code  ----									**/
+							// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 							iSpecialFoodTemp = pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_FOOD);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 
 							iSpecialFood += iSpecialFoodTemp;
 
@@ -3065,36 +2951,16 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 							iSpecialFoodPlus += std::max(0,iSpecialFoodTemp);
 							iSpecialFoodMinus -= std::min(0,iSpecialFoodTemp);
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							iSpecialProduction += pLoopPlot->calculateBestNatureYield(YIELD_PRODUCTION, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_PRODUCTION);
-							iSpecialCommerce += pLoopPlot->calculateBestNatureYield(YIELD_COMMERCE, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_COMMERCE);
-/**								----  End Original Code  ----									**/
+
+							// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 							iSpecialProduction += pLoopPlot->calculateBestNatureYield(YIELD_PRODUCTION, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_PRODUCTION);
 							iSpecialCommerce += pLoopPlot->calculateBestNatureYield(YIELD_COMMERCE, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_COMMERCE);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 						}
 
 						if (eFeature != NO_FEATURE)
 						{
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**					Consider Civilization-specific Terrain Yield Modifications.					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							if (GC.getFeatureInfo(eFeature).getYieldChange(YIELD_FOOD) < 0)
-/**								----  End Original Code  ----									**/
+							// CivPlotMods - Jean Elcard - 03/23/09 - Consider Civilization-specific Terrain Yield Modifications
 							if ((GC.getFeatureInfo(eFeature).getYieldChange(YIELD_FOOD) + getFeatureYieldChange(eFeature, YIELD_FOOD)) < 0)
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 							{
 								iResourceValue -= 30;
 							}
@@ -3120,29 +2986,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iValue += std::max(0, iResourceValue);
 
-//FfH: Modified by Kael 11/18/2007
-//	if (iTakenTiles > (NUM_CITY_PLOTS / 3) && iResourceValue < 250)
+	//FfH: Modified by Kael 11/18/2007
 	if (iTakenTiles > (iNumCityPlots / 3) && iResourceValue < 250)
-//FfH: End Modify
-
 	{
 		return 0;
 	}
-
-/*************************************************************************************************/
-/**	AITweak								30/05/10							Snarko				**/
-/**																								**/
-/**		We set iTeammateTakenTiles long ago but return only here? Let's return earlier instead!	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (iTeammateTakenTiles > 1)
-	{
-		return 0;
-	}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
 
 	iValue += (iHealth / 5);
 
@@ -3254,18 +3102,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 								iGreaterBadTile += 2;
 								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-									if (pLoopPlot->calculateBestNatureYield(YIELD_FOOD,getTeam()) > 1)
-/**								----  End Original Code  ----									**/
+									// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 									if (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) > 1)
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 									{
 										iGreaterBadTile--;
 									}
@@ -3289,11 +3127,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 		int iWaterCount = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -3311,20 +3146,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		iWaterCount /= 2;
 
-//FfH: Modified by Kael 11/18/2007
-//		int iLandCount = (NUM_CITY_PLOTS - iWaterCount);
-//		if (iLandCount < (NUM_CITY_PLOTS / 2))
-//		{
-//			//discourage very water-heavy starts.
-//			iValue *= 1 + iLandCount;
-//			iValue /= (1 + (NUM_CITY_PLOTS / 2));
+		//FfH: Modified by Kael 11/18/2007
 		int iLandCount = (iNumCityPlots - iWaterCount);
 		if (iLandCount < (iNumCityPlots / 2))
 		{
 			iValue *= 1 + iLandCount;
 			iValue /= (1 + (iNumCityPlots / 2));
-//FfH: End Modify
-
 		}
 	}
 
@@ -3593,20 +3420,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= (1 + iDeadLockCount);
 	}
 
-//FfH: Modified by Kael 11/18/2007
-//	iValue /= (std::max(0, (iBadTile - (NUM_CITY_PLOTS / 4))) + 3);
-	iValue /= (std::max(0, (iBadTile - (iNumCityPlots / 4))) + 3);
-//FfH: End Modify
+	//FfH: Modified by Kael 11/18/2007
+	iValue /= (std::max(1, (iBadTile - (iNumCityPlots / 4))) + 3);
 
 	if (bStartingLoc)
 	{
 		iDifferentAreaTile = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -3616,11 +3438,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			}
 		}
 
-//FfH: Modified by Kael 11/18/2007
-//		iValue /= (std::max(0, (iDifferentAreaTile - ((NUM_CITY_PLOTS * 2) / 3))) + 2);
-		iValue /= (std::max(0, (iDifferentAreaTile - ((iNumCityPlots * 2) / 3))) + 2);
-//FfH: End Modify
-
+		//FfH: Modified by Kael 11/18/2007
+		iValue /= (std::max(1, (iDifferentAreaTile - ((iNumCityPlots * 2) / 3))) + 2);
 	}
 
 	return std::max(1, iValue);
