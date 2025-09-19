@@ -25684,6 +25684,26 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Misery Influence -->
+			<Type>PROMOTION_MISERY_INFLUENCE</Type>
+			<Description>TXT_KEY_PROMOTION_MISERY_INFLUENCE</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyEnemy>1</bApplyEnemy>
+					<bApplyRival>1</bApplyRival>
+					<fHappy>-3</fHappy>
+					<fCrime>10</fCrime>
+					<fFood>-5</fFood>
+					<fHealth>-3</fHealth>
+					<iBonusRange>5</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_GYRE_CARLIN</PrereqUnit>
+			</PrereqUnits>
+			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Malaise -->
 			<Type>PROMOTION_MALAISE</Type>
 			<Description>TXT_KEY_PROMOTION_MALAISE</Description>
@@ -30957,6 +30977,39 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Toad Blood -->
+			<Type>PROMOTION_TOAD_BLOOD</Type>
+			<Description>TXT_KEY_PROMOTION_TOAD_BLOOD</Description>
+			<bAmphib>1</bAmphib>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainAttack>15</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainAttack>15</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<iTerrainDefense>15</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<iTerrainDefense>15</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Units/Toad.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Mutation % Strength -->				<!-- Mutation Start (If changing, see Favored Son (for Carnivean)) -->

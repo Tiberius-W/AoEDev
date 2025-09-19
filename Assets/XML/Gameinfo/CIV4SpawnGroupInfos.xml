@@ -428,9 +428,10 @@
 				<Feature>FEATURE_FOREST_ANCIENT</Feature>
 				<Feature>FEATURE_FOREST_NEW</Feature>
 			</SpawnFeatures>
-			<PrereqTechANDs>
+			<PrereqTechORs>
+				<Tech>TECH_TRACKING</Tech>
 				<Tech>TECH_WAY_OF_THE_FORESTS</Tech>
-			</PrereqTechANDs>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Trolls-->
 			<Type>SPAWN_GROUP_TROLL</Type>
@@ -676,6 +677,10 @@
 			<PrereqTechANDs>
 				<Tech>TECH_CORRUPTION_OF_SPIRIT</Tech>
 			</PrereqTechANDs>
+			<PrereqTechORs>
+				<Tech>TECH_SORCERY</Tech>
+				<Tech>TECH_PRIESTHOOD</Tech>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Unseelie Enclave -->
 			<Type>SPAWN_GROUP_UNSEELIE_ENCLAVE</Type>
@@ -939,7 +944,7 @@
 			<iWeight>1000</iWeight>
 			<iPrereqMinAC>40</iPrereqMinAC>
 			<CommanderUnits>
-				<Unit>UNIT_ANGEL</Unit>
+				<Unit>UNIT_FALLEN_ANGEL</Unit>
 			</CommanderUnits>
 			<GroupUnitClasses>
 				<GroupUnitClass>
@@ -948,12 +953,74 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<GroupPromotions>
-				<Promotion>PROMOTION_HUMAN</Promotion>
+				<Promotion>PROMOTION_COMMAND1</Promotion>
 				<Promotion>PROMOTION_FALLEN_ANGEL</Promotion>
 			</GroupPromotions>
 			<CommanderPromotions>
 				<Promotion>PROMOTION_FALLEN_ANGELS_LEADER</Promotion>
 			</CommanderPromotions>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Ghostwalkers Emerge -->
+			<Type>SPAWN_GROUP_GHOSTWALKERS</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_GHOSTWALKERS</Description>
+			<iWeight>1000</iWeight>
+			<CommanderUnits>
+				<Unit>UNIT_GHOSTWALKER</Unit>
+			</CommanderUnits>
+			<GroupUnitClasses>
+				<GroupUnitClass>
+					<UnitClass>UNIT_GHOSTWALKER</UnitClass>
+					<iNumUnits>2</iNumUnits>
+				</GroupUnitClass>
+			</GroupUnitClasses>
+			<GroupPromotions>
+				<Promotion>PROMOTION_UNDEAD</Promotion>
+				<Promotion>PROMOTION_NO_ORC</Promotion>
+			</GroupPromotions>
+			<CommanderPromotions>
+				<Promotion>PROMOTION_UNDEAD</Promotion>
+				<Promotion>PROMOTION_NO_ORC</Promotion>
+			</CommanderPromotions>
+			<PrereqTechORs>
+				<Tech>TECH_TRACKING</Tech>
+				<Tech>TECH_NECROMANCY</Tech>
+			</PrereqTechORs>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Coven of Hags -->
+			<Type>SPAWN_GROUP_HAEGETESSE_COVEN</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_HAEGETESSE_COVEN</Description>
+			<iWeight>1000</iWeight>
+			<CommanderUnits>
+				<Unit>UNIT_HAEGETESSE</Unit>
+			</CommanderUnits>
+			<GroupUnitClasses>
+				<GroupUnitClass>
+					<UnitClass>UNITCLASS_HAG</UnitClass>
+					<iNumUnits>4</iNumUnits>
+				</GroupUnitClass>
+			</GroupUnitClasses>
+			<PrereqTechORs>
+				<Tech>TECH_MATHEMATICS</Tech>
+				<Tech>TECH_PRIESTHOOD</Tech>
+			</PrereqTechORs>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Haegetesse Familiars -->
+			<Type>SPAWN_GROUP_HAEGETESSE_FAMILIARS</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_HAEGETESSE_FAMILIARS</Description>
+			<iWeight>1000</iWeight>
+			<CommanderUnits>
+				<Unit>UNIT_HAEGETESSE</Unit>
+			</CommanderUnits>
+			<GroupUnitClasses>
+				<GroupUnitClass>
+					<UnitClass>UNITCLASS_BIG_TOAD</UnitClass>
+					<iNumUnits>4</iNumUnits>
+				</GroupUnitClass>
+			</GroupUnitClasses>
+			<PrereqTechORs>
+				<Tech>TECH_TRACKING</Tech>
+				<Tech>TECH_PRIESTHOOD</Tech>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Doviello Raiding Party -->
 			<Type>SPAWN_GROUP_DOVIELLO_RAIDING_PARTY</Type>
@@ -1048,10 +1115,10 @@
 			<GroupPromotions>
 				<Promotion>PROMOTION_NO_ORC</Promotion>
 			</GroupPromotions>
-			<PrereqTechANDs>
+			<PrereqTechORs>
 				<Tech>TECH_MIND_STAPLING</Tech>
-				<Tech>TECH_KNOWLEDGE_OF_THE_ETHER</Tech>
-			</PrereqTechANDs>
+				<Tech>TECH_SORCERY</Tech>
+			</PrereqTechORs>
 			<PyOnSpawn>spellIlusionRandom</PyOnSpawn>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Lunatics -->
@@ -1064,9 +1131,10 @@
 					<iNumUnits>4</iNumUnits>
 				</GroupUnit>
 			</GroupUnits>
-			<PrereqTechANDs>
+			<PrereqTechORs>
+				<Tech>TECH_FANATICISM</Tech>
 				<Tech>TECH_MESSAGE_FROM_THE_DEEP</Tech>
-			</PrereqTechANDs>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Savage Horde -->
 			<Type>SPAWN_GROUP_SAVAGE_HORDE</Type>
@@ -1341,9 +1409,10 @@
 			<GroupPromotions>
 				<Promotion>PROMOTION_NO_ORC</Promotion>
 			</GroupPromotions>
-			<PrereqTechANDs>
+			<PrereqTechORs>
+				<Tech>TECH_BOWYERS</Tech>
 				<Tech>TECH_DECEPTION</Tech>
-			</PrereqTechANDs>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Rogue Necromaner -->
 			<Type>SPAWN_GROUP_ROGUE_NECROMANCER</Type>
@@ -1364,6 +1433,55 @@
 			<CommanderPromotions>
 				<Promotion>PROMOTION_DEATH1</Promotion>
 			</CommanderPromotions>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Rogue Necromaner II -->
+			<Type>SPAWN_GROUP_ROGUE_NECROMANCER_II</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_II</Description>
+			<iWeight>1000</iWeight>
+			<CommanderUnits>
+				<Unit>UNIT_NECROMANCER</Unit>
+			</CommanderUnits>
+			<GroupUnits>
+				<GroupUnit>
+					<Unit>UNIT_SPECTRE</Unit>
+					<iNumUnits>3</iNumUnits>
+				</GroupUnit>
+			</GroupUnits>
+			<GroupPromotions>
+				<Promotion>PROMOTION_NO_ORC</Promotion>
+			</GroupPromotions>
+			<CommanderPromotions>
+				<Promotion>PROMOTION_DEATH1</Promotion>
+				<Promotion>PROMOTION_DEATH2</Promotion>
+			</CommanderPromotions>
+			<PrereqTechANDs>
+				<Tech>TECH_NECROMANCY</Tech>
+			</PrereqTechANDs>
+		</SpawnGroupInfo>
+		<SpawnGroupInfo>	<!--  Rogue Necromaner III -->
+			<Type>SPAWN_GROUP_ROGUE_NECROMANCER_III</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_III</Description>
+			<iWeight>1000</iWeight>
+			<CommanderUnits>
+				<Unit>UNIT_WRAITH_LORD</Unit>
+			</CommanderUnits>
+			<GroupUnits>
+				<GroupUnit>
+					<Unit>UNIT_WRAITH</Unit>
+					<iNumUnits>3</iNumUnits>
+				</GroupUnit>
+			</GroupUnits>
+			<GroupPromotions>
+				<Promotion>PROMOTION_NO_ORC</Promotion>
+			</GroupPromotions>
+			<CommanderPromotions>
+				<Promotion>PROMOTION_DEATH1</Promotion>
+				<Promotion>PROMOTION_DEATH2</Promotion>
+				<Promotion>PROMOTION_CANNIBALIZE</Promotion>
+			</CommanderPromotions>
+			<PrereqTechANDs>
+				<Tech>TECH_ARCANE_LORE</Tech>
+			</PrereqTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Muris Clan -->
 			<Type>SPAWN_GROUP_MURIS_CLAN</Type>
@@ -1431,9 +1549,10 @@
 			<CommanderPromotions>
 				<Promotion>PROMOTION_INQUISITOR</Promotion>
 			</CommanderPromotions>
-			<PrereqTechANDs>
+			<PrereqTechORs>
 				<Tech>TECH_ORDERS_FROM_HEAVEN</Tech>
-			</PrereqTechANDs>
+				<Tech>TECH_RELIGIOUS_LAW</Tech>
+			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Voracious Ghosts -->
 			<Type>SPAWN_GROUP_VORACIOUS_GHOSTS</Type>
@@ -1471,9 +1590,10 @@
 			<CommanderPromotions>
 				<Promotion>PROMOTION_LEADER3</Promotion>
 			</CommanderPromotions>
-			<PrereqTechANDs>
+			<PrereqTechORs>
 				<Tech>TECH_MESSAGE_FROM_THE_DEEP</Tech>
-			</PrereqTechANDs>
+				<Tech>TECH_FANATICISM</Tech>
+			</PrereqTechORs>
 			<SpawnTerrains>
 				<Terrain>TERRAIN_COAST</Terrain>
 			</SpawnTerrains>
