@@ -10938,9 +10938,11 @@
 			<PromotionExcludes>
 				<Promotion>PROMOTION_DEADLY_MISHAP</Promotion>
 				<Promotion>PROMOTION_HEROIC</Promotion>
+			    <Promotion>PROMOTION_MILITIA</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_HEROIC</Promotion>
+			    <Promotion>PROMOTION_MILITIA</Promotion>
 			</PromotionOverwrites>
 			<iGroupSize>1</iGroupSize>
 		</PromotionInfo>
@@ -10952,7 +10954,11 @@
 			<PromotionExcludes>
 				<Promotion>PROMOTION_HEROIC_DEFENSE2</Promotion>
 				<Promotion>PROMOTION_HEROIC_STRENGTH2</Promotion>
+			    <Promotion>PROMOTION_MILITIA</Promotion>
 			</PromotionExcludes>
+			<PromotionOverwrites>
+			    <Promotion>PROMOTION_MILITIA</Promotion>
+			</PromotionOverwrites>
 			<PromotionReplacedBy>
 				<Promotion>PROMOTION_HERO</Promotion>
 			</PromotionReplacedBy>

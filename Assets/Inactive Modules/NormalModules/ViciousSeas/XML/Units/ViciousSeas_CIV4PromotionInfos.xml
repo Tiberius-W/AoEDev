@@ -219,6 +219,10 @@
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
 			</UnitCombats>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/Sinking.dds</Button>
 		</PromotionInfo>
