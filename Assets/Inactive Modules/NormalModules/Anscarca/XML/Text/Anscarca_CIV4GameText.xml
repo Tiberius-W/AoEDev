@@ -1899,30 +1899,28 @@ Units have been mostly replaced by promotions/buildings/improvements. Here are s
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_NOBLE_ANSCARCA</Tag>
-		<English>Noble-Anscarca</English>
-		<French>Noble-Anscarca</French>
-		<German>Noble-Anscarca</German>
-		<Italian>Noble-Anscarca</Italian>
-		<Spanish>Noble-Anscarca</Spanish>
+		<English>Noble - Anscarca Only</English>
+		<French>Noble - Anscarca Only</French>
+		<German>Noble - Anscarca Only</German>
+		<Italian>Noble - Anscarca Only</Italian>
+		<Spanish>Noble - Anscarca Only</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_EMPEROR_ANSCARCA</Tag>
-		<English>Noble-Emperor</English>
-		<French>Noble-Emperor</French>
-		<German>Noble-Emperor</German>
-		<Italian>Noble-Emperor</Italian>
-		<Spanish>Noble-Emperor</Spanish>
+		<English>Emperor - Anscarca Only</English>
+		<French>Emperor - Anscarca Only</French>
+		<German>Emperor - Anscarca Only</German>
+		<Italian>Emperor - Anscarca Only</Italian>
+		<Spanish>Emperor - Anscarca Only</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_IMMORTAL_ANSCARCA</Tag>
-		<English>Noble-Immortal</English>
-		<French>Noble-Immortal</French>
-		<German>Noble-Immortal</German>
-		<Italian>Noble-Immortal</Italian>
-		<Spanish>Noble-Immortal</Spanish>
+		<English>Immortal - Anscarca Only</English>
+		<French>Immortal - Anscarca Only</French>
+		<German>Immortal - Anscarca Only</German>
+		<Italian>Immortal - Anscarca Only</Italian>
+		<Spanish>Immortal - Anscarca Only</Spanish>
 	</TEXT>
-	
-	
 	<TEXT>
 		<Tag>TXT_KEY_ELDER_ANSCARCA</Tag>
 		<English>Elder</English>

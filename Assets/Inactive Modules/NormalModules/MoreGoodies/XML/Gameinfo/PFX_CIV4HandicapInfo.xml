@@ -8,7 +8,7 @@
 	<HandicapInfos>
 		<HandicapInfo>
 			<Type>HANDICAP_DEITY</Type>
-		<Goodies>
+			<Goodies>
 				<GoodyType>GOODY_LOW_GOLD</GoodyType>
 				<GoodyType>GOODY_HIGH_GOLD</GoodyType>
 				<GoodyType>GOODY_MAP</GoodyType>
