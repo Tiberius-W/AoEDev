@@ -49,16 +49,16 @@
 			<Button>Art/Interface/Buttons/Equipment/DragonsHoard.dds</Button>
 		</SpellInfo>
 		<SpellInfo>
-			<Type>SPELL_CHECK_LANUN_QUEST</Type>
-			<Description>TXT_KEY_SPELL_CHECK_LANUN_QUEST</Description>
+			<Type>SPELL_REVIEW_TREASURE_HUNT_CLUE</Type>
+			<Description>TXT_KEY_SPELL_REVIEW_TREASURE_HUNT_CLUE</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<CivilizationPrereq>CIVILIZATION_LANUN</CivilizationPrereq>
 			<bAllowAI>0</bAllowAI>
 			<bHasCasted>0</bHasCasted>
 			<bCityAction>1</bCityAction>
 			<bAbility>1</bAbility>
-			<PyRequirement>reqCheckLanunQuest(pCaster)</PyRequirement>
-			<PyResult>spellCheckLanunQuest(pCaster)</PyResult>
+			<PyRequirement>reqReviewTreasureHuntClue(pCaster)</PyRequirement>
+			<PyResult>spellReviewTreasureHuntClue(pCaster)</PyResult>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_OPEN_CHEST</Sound>
 			<bGraphicalOnly>1</bGraphicalOnly>

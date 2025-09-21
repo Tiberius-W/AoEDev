@@ -10,7 +10,6 @@
 #include "CvPlot.h"
 #include "CvGameAI.h"
 #include "CvTeamAI.h"
-#include "CvGameCoreUtils.h"
 #include "CvDiploParameters.h"
 #include "CvInitCore.h"
 #include "CyArgsList.h"
@@ -1747,249 +1746,225 @@ void CvPlayerAI::AI_makeProductionDirty()
 	}
 }
 
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      07/05/10                              jdog5000        */
-/*                                                                                              */
-/* War tactics AI                                                                               */
-/************************************************************************************************/
+
+// BETTER_BTS_AI_MOD - jdog5000 - 07/05/10 - War tactics AI
+// Chooses and does the action to either raze or keep pCity. CAN DELETE pCity POINTER!
 void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 {
-	bool bRaze = false;
-	int iRazeValue;
-	int iI;
-
-	if (canRaze(pCity))
+	if (!canRaze(pCity))
 	{
-		iRazeValue = 0;
-		int iCloseness = pCity->AI_playerCloseness(getID());
+		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
+	}
 
-		// Reasons to always raze
-		if( 2*pCity->getCulture(pCity->getPreviousOwner()) > pCity->getCultureThreshold(GC.getGameINLINE().culturalVictoryCultureLevel()) )
+	int iI;
+	int iRazeValue = 0;
+	int iCloseness = pCity->AI_playerCloseness(getID());
+	bool bRaze = false;
+
+	// Reasons to always raze
+	if( 2*pCity->getCulture(pCity->getPreviousOwner()) > pCity->getCultureThreshold(GC.getGameINLINE().culturalVictoryCultureLevel()) )
+	{
+		CvCity* pLoopCity;
+		int iLoop;
+		int iHighCultureCount = 1;
+
+		if( GET_TEAM(getTeam()).AI_getEnemyPowerPercent(false) > 75 )
 		{
-			CvCity* pLoopCity;
-			int iLoop;
-			int iHighCultureCount = 1;
-
-			if( GET_TEAM(getTeam()).AI_getEnemyPowerPercent(false) > 75 )
+			for( pLoopCity = GET_PLAYER(pCity->getPreviousOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(pCity->getPreviousOwner()).nextCity(&iLoop) )
 			{
-				for( pLoopCity = GET_PLAYER(pCity->getPreviousOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(pCity->getPreviousOwner()).nextCity(&iLoop) )
+				if( 2*pLoopCity->getCulture(pCity->getPreviousOwner()) > pLoopCity->getCultureThreshold(GC.getGameINLINE().culturalVictoryCultureLevel()) )
 				{
-					if( 2*pLoopCity->getCulture(pCity->getPreviousOwner()) > pLoopCity->getCultureThreshold(GC.getGameINLINE().culturalVictoryCultureLevel()) )
+					iHighCultureCount++;
+					if( iHighCultureCount >= GC.getGameINLINE().culturalVictoryNumCultureCities() )
 					{
-						iHighCultureCount++;
-						if( iHighCultureCount >= GC.getGameINLINE().culturalVictoryNumCultureCities() )
+						//Raze city enemy needs for cultural victory unless we greatly over power them
+						pCity->doTask(TASK_RAZE);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	// Reasons to not raze
+	if( (getNumCities() <= 1) || (getNumCities() < 5 && iCloseness > 0) )
+	{
+		// Don't raze, we could use any/this city
+	}
+	else if( AI_isDoVictoryStrategy(AI_VICTORY_DOMINATION, 3) && GET_TEAM(getTeam()).AI_isPrimaryArea(pCity->area()) )
+	{
+		// Do not raze, going for domination
+	}
+	else if( isBarbarian() )
+	{
+		// Barbs never raze holy cities or active world wonders
+		if ( !(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder()))
+		{
+			// Don't raze if recapturing original or recapturing a recently captured
+			if (!isBarb(pCity->getPreviousOwner()) && !isBarb(pCity->getOriginalOwner()))
+			{
+				iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
+				iRazeValue -= iCloseness;
+			}
+		}
+	}
+	else
+	{
+		bool bFinancialTrouble = AI_isFinancialTrouble();
+		bool bBarbCity = ((pCity->getPreviousOwner() == BARBARIAN_PLAYER || pCity->getPreviousOwner() != ANIMAL_PLAYER || pCity->getPreviousOwner() != DEMON_PLAYER) && (pCity->getOriginalOwner() == BARBARIAN_PLAYER || pCity->getOriginalOwner() != ANIMAL_PLAYER || pCity->getOriginalOwner() != DEMON_PLAYER));
+		bool bPrevOwnerBarb = (pCity->getPreviousOwner() == BARBARIAN_PLAYER || pCity->getPreviousOwner() != ANIMAL_PLAYER || pCity->getPreviousOwner() != DEMON_PLAYER);
+
+		if (GET_TEAM(getTeam()).countNumCitiesByArea(pCity->area()) == 0)
+		{
+			// Conquered city in new continent/island
+			int iBestValue;
+
+			if( pCity->area()->getNumCities() == 1 && AI_getNumAreaCitySites(pCity->area()->getID(), iBestValue) == 0 )
+			{
+				// Probably small island
+				if( iCloseness == 0 )
+				{
+					// Safe to raze these now that AI can do pick up ...
+					iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
+				}
+			}
+			else
+			{
+				// At least medium sized island
+				if( iCloseness < 10 )
+				{
+					if( bFinancialTrouble )
+					{
+						// Raze if we might start incuring colony maintenance
+						iRazeValue = 100;
+					}
+					else
+					{
+						if (pCity->getPreviousOwner() != NO_PLAYER && !bPrevOwnerBarb)
 						{
-							//Raze city enemy needs for cultural victory unless we greatly over power them
-							bRaze = true;
+							if (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
+							{
+								iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
+							}
 						}
 					}
 				}
 			}
 		}
-
-		if( !bRaze )
+		else
 		{
-			// Reasons to not raze
-			if( (getNumCities() <= 1) || (getNumCities() < 5 && iCloseness > 0) )
+			// Distance related aspects
+			if (iCloseness > 0)
 			{
-			}
-			else if( AI_isDoVictoryStrategy(AI_VICTORY_DOMINATION, 3) && GET_TEAM(getTeam()).AI_isPrimaryArea(pCity->area()) )
-			{
-				// Do not raze, going for domination
-			}
-			else if( isBarbarian() )
-			{
-				if ( !(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder()))
-				{
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08							original Xienwolf	**/
-/**																	merged with BBAI by Snarko	**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-					if( (pCity->getPreviousOwner() != BARBARIAN_PLAYER) && (pCity->getOriginalOwner() != BARBARIAN_PLAYER) )
-/**								----  End Original Code  ----									**/
-					if (pCity->getPreviousOwner() != ORC_PLAYER && (pCity->getOriginalOwner() != BARBARIAN_PLAYER) && pCity->getPreviousOwner() != ANIMAL_PLAYER && (pCity->getOriginalOwner() != ANIMAL_PLAYER) && pCity->getPreviousOwner() != DEMON_PLAYER && (pCity->getOriginalOwner() != DEMON_PLAYER))
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
-					{
-						iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
-						iRazeValue -= iCloseness;
-					}
-				}
+				iRazeValue -= iCloseness;
 			}
 			else
 			{
-				bool bFinancialTrouble = AI_isFinancialTrouble();
-/*************************************************************************************************/
-/**	MultiBarb							12/23/08							original Xienwolf	**/
-/**																	merged with BBAI by Snarko	**/
-/**							Adds extra Barbarian Civilizations									**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				bool bBarbCity = (pCity->getPreviousOwner() == BARBARIAN_PLAYER) && (pCity->getOriginalOwner() == BARBARIAN_PLAYER);
-				bool bPrevOwnerBarb = (pCity->getPreviousOwner() == BARBARIAN_PLAYER);
-/**								----  End Original Code  ----									**/
-				bool bBarbCity = ((pCity->getPreviousOwner() == BARBARIAN_PLAYER || pCity->getPreviousOwner() != ANIMAL_PLAYER || pCity->getPreviousOwner() != DEMON_PLAYER) && (pCity->getOriginalOwner() == BARBARIAN_PLAYER || pCity->getOriginalOwner() != ANIMAL_PLAYER || pCity->getOriginalOwner() != DEMON_PLAYER));
-				bool bPrevOwnerBarb = (pCity->getPreviousOwner() == BARBARIAN_PLAYER || pCity->getPreviousOwner() != ANIMAL_PLAYER || pCity->getPreviousOwner() != DEMON_PLAYER);
-/*************************************************************************************************/
-/**	MultiBarb								END													**/
-/*************************************************************************************************/
+				iRazeValue += 40;
 
-				if (GET_TEAM(getTeam()).countNumCitiesByArea(pCity->area()) == 0)
+				CvCity* pNearestTeamAreaCity = GC.getMapINLINE().findCity(pCity->getX_INLINE(), pCity->getY_INLINE(), NO_PLAYER, getTeam(), true, false, NO_TEAM, NO_DIRECTION, pCity);
+
+				if( pNearestTeamAreaCity == NULL )
 				{
-					// Conquered city in new continent/island
-					int iBestValue;
-
-					if( pCity->area()->getNumCities() == 1 && AI_getNumAreaCitySites(pCity->area()->getID(), iBestValue) == 0 )
-					{
-						// Probably small island
-						if( iCloseness == 0 )
-						{
-							// Safe to raze these now that AI can do pick up ...
-							iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
-						}
-					}
-					else
-					{
-						// At least medium sized island
-						if( iCloseness < 10 )
-						{
-							if( bFinancialTrouble )
-							{
-								// Raze if we might start incuring colony maintenance
-								iRazeValue = 100;
-							}
-							else
-							{
-								if (pCity->getPreviousOwner() != NO_PLAYER && !bPrevOwnerBarb)
-								{
-									if (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
-									{
-										iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
-									}
-								}
-							}
-						}
-					}
+					// Shouldn't happen
+					iRazeValue += 30;
 				}
 				else
 				{
-					// Distance related aspects
-					if (iCloseness > 0)
+					int iDistance = plotDistance(pCity->getX_INLINE(), pCity->getY_INLINE(), pNearestTeamAreaCity->getX_INLINE(), pNearestTeamAreaCity->getY_INLINE());
+					iDistance -= DEFAULT_PLAYER_CLOSENESS + 2;
+					if ( iDistance > 0 )
 					{
-						iRazeValue -= iCloseness;
+						iRazeValue += iDistance * (bBarbCity ? 8 : 5);
+					}
+				}
+			}
+
+			if (bFinancialTrouble)
+			{
+				iRazeValue += std::max(0, (70 - 15 * pCity->getPopulation()));
+			}
+
+			// Scale down distance/maintenance effects for organized
+			if( iRazeValue > 0 )
+			{
+				for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+				{
+					if (hasTrait((TraitTypes)iI))
+					{
+						iRazeValue *= (100 - (GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier()));
+						iRazeValue /= 100;
+
+					}
+				}
+			}
+
+			// Non-distance related aspects
+			iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
+
+			if (getStateReligion() != NO_RELIGION)
+			{
+				if (pCity->isHasReligion(getStateReligion()))
+				{
+					if (GET_TEAM(getTeam()).hasShrine(getStateReligion()))
+					{
+						iRazeValue -= 50;
 					}
 					else
 					{
-						iRazeValue += 40;
-
-						CvCity* pNearestTeamAreaCity = GC.getMapINLINE().findCity(pCity->getX_INLINE(), pCity->getY_INLINE(), NO_PLAYER, getTeam(), true, false, NO_TEAM, NO_DIRECTION, pCity);
-
-						if( pNearestTeamAreaCity == NULL )
-						{
-							// Shouldn't happen
-							iRazeValue += 30;
-						}
-						else
-						{
-							int iDistance = plotDistance(pCity->getX_INLINE(), pCity->getY_INLINE(), pNearestTeamAreaCity->getX_INLINE(), pNearestTeamAreaCity->getY_INLINE());
-							iDistance -= DEFAULT_PLAYER_CLOSENESS + 2;
-							if ( iDistance > 0 )
-							{
-								iRazeValue += iDistance * (bBarbCity ? 8 : 5);
-							}
-						}
+						iRazeValue -= 10;
 					}
-
-					if (bFinancialTrouble)
-					{
-						iRazeValue += std::max(0, (70 - 15 * pCity->getPopulation()));
-					}
-
-					// Scale down distance/maintenance effects for organized
-					if( iRazeValue > 0 )
-					{
-						for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
-						{
-							if (hasTrait((TraitTypes)iI))
-							{
-								iRazeValue *= (100 - (GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier()));
-								iRazeValue /= 100;
-
-							}
-						}
-					}
-
-					// Non-distance related aspects
-					iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
-
-					if (getStateReligion() != NO_RELIGION)
-					{
-						if (pCity->isHasReligion(getStateReligion()))
-						{
-							if (GET_TEAM(getTeam()).hasShrine(getStateReligion()))
-							{
-								iRazeValue -= 50;
-							}
-							else
-							{
-								iRazeValue -= 10;
-							}
-						}
-					}
-				}
-
-				for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
-				{
-					if (pCity->isHolyCity((ReligionTypes)iI))
-					{
-						if( getStateReligion() == iI )
-						{
-							iRazeValue -= 150;
-						}
-						else
-						{
-							iRazeValue -= 5 + GC.getGameINLINE().calculateReligionPercent((ReligionTypes)iI);
-						}
-					}
-				}
-
-				iRazeValue -= 25 * pCity->getNumActiveWorldWonders();
-
-				iRazeValue -= pCity->calculateTeamCulturePercent(getTeam());
-
-				CvPlot* pLoopPlot = NULL;
-				for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
-				{
-					pLoopPlot = plotCity(pCity->getX_INLINE(), pCity->getY_INLINE(), iI);
-
-					if (pLoopPlot != NULL)
-					{
-						if (pLoopPlot->getBonusType(getTeam()) != NO_BONUS)
-						{
-							iRazeValue -= std::max(2, AI_bonusVal(pLoopPlot->getBonusType(getTeam()))/2);
-						}
-					}
-				}
-
-				// More inclined to raze if we're unlikely to hold it
-				if( GET_TEAM(getTeam()).getPower(false)*10 < GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).getPower(true)*8 )
-				{
-					int iTempValue = 20;
-					iTempValue *= (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).getPower(true) - GET_TEAM(getTeam()).getPower(false));
-					iTempValue /= std::max( 100, GET_TEAM(getTeam()).getPower(false) );
-					iRazeValue += std::min( 75, iTempValue );
 				}
 			}
-			if (iRazeValue > 0)
+		}
+
+		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			if (pCity->isHolyCity((ReligionTypes)iI))
 			{
-				if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)
+				if( getStateReligion() == iI )
 				{
-					bRaze = true;
+					iRazeValue -= 150;
+				}
+				else
+				{
+					iRazeValue -= 5 + GC.getGameINLINE().calculateReligionPercent((ReligionTypes)iI);
 				}
 			}
+		}
+
+		iRazeValue -= 25 * pCity->getNumActiveWorldWonders();
+
+		iRazeValue -= pCity->calculateTeamCulturePercent(getTeam());
+
+		CvPlot* pLoopPlot = NULL;
+		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			pLoopPlot = plotCity(pCity->getX_INLINE(), pCity->getY_INLINE(), iI);
+
+			if (pLoopPlot != NULL)
+			{
+				if (pLoopPlot->getBonusType(getTeam()) != NO_BONUS)
+				{
+					iRazeValue -= std::max(2, AI_bonusVal(pLoopPlot->getBonusType(getTeam()))/2);
+				}
+			}
+		}
+
+		// More inclined to raze if we're unlikely to hold it
+		if( GET_TEAM(getTeam()).getPower(false)*10 < GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).getPower(true)*8 )
+		{
+			int iTempValue = 20;
+			iTempValue *= (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).getPower(true) - GET_TEAM(getTeam()).getPower(false));
+			iTempValue /= std::max( 100, GET_TEAM(getTeam()).getPower(false) );
+			iRazeValue += std::min( 75, iTempValue );
+		}
+	}
+	if (iRazeValue > 0)
+	{
+		if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)
+		{
+			bRaze = true;
 		}
 	}
 
@@ -1999,23 +1974,11 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 	}
 	else
 	{
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/14/09                       Maniac & jdog5000      */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-/* original bts code
-		CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
-*/
+		// UNOFFICIAL_PATCH - 06/14/09 - Maniac & jdog5000
+		// CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 	}
 }
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 
 
 bool CvPlayerAI::AI_acceptUnit(CvUnit* pUnit) const
@@ -2467,13 +2430,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iSpecialProduction = 0;
 	int iSpecialCommerce = 0;
 
-//FfH: Added by Kael 11/18/2007
+	//FfH: Added by Kael 11/18/2007
 	int iNumCityPlots = 21;
 	if (isSprawling())
 	{
 		iNumCityPlots = 37;
 	}
-//FfH: End Add
 
 	bool bNeutralTerritory = true;
 
@@ -2521,11 +2483,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		if (!AI_isPlotCitySite(pPlot))
 		{
 
-//FfH: Modified by Kael 11/18/2007
-//			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			//FfH: Modified by Kael 11/18/2007
 			for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 			{
 				pLoopPlot = plotCity(iX, iY, iI);
 				if (pLoopPlot != NULL)
@@ -2581,11 +2540,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2598,11 +2554,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iOwnedTiles = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2619,80 +2572,35 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 	}
 
-//FfH: Modified by Kael 11/18/2007
-//	if (iOwnedTiles > (NUM_CITY_PLOTS / 3))
+	//FfH: Modified by Kael 11/18/2007
 	if (iOwnedTiles > (iNumCityPlots / 3))
-//FfH: End Modify
-
 	{
 		return 0;
 	}
 
 	iBadTile = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
 		if (iI != CITY_HOME_PLOT)
 		{
-/*************************************************************************************************/
-/**	Mountain Mod 		 		expanded by Ahwaric	22.09.09		**/
-/*************************************************************************************************/
-/**			---- Start Original Code ----						**
-			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable())
-/**			----  End Original Code  ----						**/
-/*************************************************************************************************/
-/**	AITweak								31/05/10							Snarko				**/
-/**																								**/
-/**								Copy/paste gone wrong?											**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable() || pLoopPlot->isImpassable())
-/**								----  End Original Code  ----									**/
+			// Mountain Mod - Ahwaric - 22.09.09
 			if ((pLoopPlot == NULL) || pLoopPlot->isImpassable() || pLoopPlot->isPeak())
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Mountain Mod END									**/
-/*************************************************************************************************/
 			{
 				iBadTile += 2;
 			}
 			else if (!(pLoopPlot->isFreshWater()) && !(pLoopPlot->isHills()))
 			{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				if ((pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) == 0) || (pLoopPlot->calculateTotalBestNatureYield(getTeam()) <= 1))
-/**								----  End Original Code  ----									**/
+				// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 				if ((pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) == 0) || (pLoopPlot->calculateTotalBestNatureYield(getID()) <= 1))
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 				{
 					iBadTile += 2;
 				}
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				else if (pLoopPlot->isWater() && !bIsCoastal && (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) <= 1))
-/**								----  End Original Code  ----									**/
+				// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 				else if (pLoopPlot->isWater() && !bIsCoastal && (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) <= 1))
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 				{
 					iBadTile++;
 				}
@@ -2714,20 +2622,13 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	if (!bStartingLoc)
 	{
-
-//FfH: Modified by Kael 11/18/2007
-//		if ((iBadTile > (NUM_CITY_PLOTS / 2)) || (pArea->getNumTiles() <= 2))
+		//FfH: Modified by Kael 11/18/2007
 		if ((iBadTile > (iNumCityPlots / 2)) || (pArea->getNumTiles() <= 2))
-//FfH: End Modify
-
 		{
 			bHasGoodBonus = false;
 
-//FfH: Modified by Kael 11/18/2007
-//			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			//FfH: Modified by Kael 11/18/2007
 			for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 			{
 				pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2788,23 +2689,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iClaimThreshold = GC.getGameINLINE().getCultureThreshold((CultureLevelTypes)(std::min(2, (GC.getNumCultureLevelInfos() - 1))));
 	iClaimThreshold = std::max(1, iClaimThreshold);
 	iClaimThreshold *= (std::max(100, iGreed));
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       04/25/10                          denev & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
+
+	// UNOFFICIAL_PATCH - 04/25/10 - denev & jdog5000
 	// Was missing this
 	iClaimThreshold /= 100;
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 	int iYieldLostHere = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	//FfH: Modified by Kael 11/18/2007
 	for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
@@ -2819,18 +2711,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			if (abCitySiteRadius[iI])
 			{
 				iTeammateTakenTiles++;
-/*************************************************************************************************/
-/**	AITweak								05/07/10							Snarko				**/
-/**																								**/
-/**				This was only used to return later on, so we return here instead				**/
-/*************************************************************************************************/
+				// Snarko - 05/07/10 - This was only used to return later on, so we return here instead
 				if (iTeammateTakenTiles > 1)
 				{
 					return 0;
 				}
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
 			}
 		}
 		else
@@ -2894,15 +2779,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					if (eFeature != NO_FEATURE)
 					{
 						aiYield[eYield] -= GC.getFeatureInfo(eFeature).getYieldChange(eYield);
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**					Consider Civilization-specific Terrain Yield Modifications.					**/
-/*************************************************************************************************/
+						// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 						aiYield[eYield] -= getFeatureYieldChange(eFeature, eYield);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 						iBasePlotYield = std::max(iBasePlotYield, aiYield[eYield]);
 					}
 
@@ -2998,16 +2876,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 			if (pLoopPlot->isRiver())
 			{
-/*************************************************************************************************/
-/**	Orbis AI	Enhanced riverplot value		Ahwaric													**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				iTempValue += 10;
-/**								----  End Original Code  ----									**/
+				// Orbis AI - Ahwaric - river value increase from 10 to 100
 				iTempValue += 100;
-/*************************************************************************************************/
-/**	Orbis AI								END													**/
-/*************************************************************************************************/
 			}
 
 			if (iI == CITY_HOME_PLOT)
@@ -3037,19 +2907,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				{
 					if (iI != CITY_HOME_PLOT)
 					{
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**		Consider Civilization-specific Feature Health Percent Modifications for Founding.		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-						iHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
-/**								----  End Original Code  ----									**/
+						// CivPlotMods - Jean Elcard - 03/23/09 - Consider Civilization-specific Feature Health Percent Modifications for Founding
 						iHealth += getHealthPercent(eFeature);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
-
 						iSpecialFoodPlus += std::max(0, aiYield[YIELD_FOOD] - GC.getFOOD_CONSUMPTION_PER_POPULATION());
 					}
 				}
@@ -3083,18 +2942,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 						if (eBonusImprovement != NO_IMPROVEMENT)
 						{
 							int iSpecialFoodTemp;
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							iSpecialFoodTemp = pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_FOOD);
-/**								----  End Original Code  ----									**/
+							// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 							iSpecialFoodTemp = pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_FOOD);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 
 							iSpecialFood += iSpecialFoodTemp;
 
@@ -3102,36 +2951,16 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 							iSpecialFoodPlus += std::max(0,iSpecialFoodTemp);
 							iSpecialFoodMinus -= std::min(0,iSpecialFoodTemp);
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							iSpecialProduction += pLoopPlot->calculateBestNatureYield(YIELD_PRODUCTION, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_PRODUCTION);
-							iSpecialCommerce += pLoopPlot->calculateBestNatureYield(YIELD_COMMERCE, getTeam()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_COMMERCE);
-/**								----  End Original Code  ----									**/
+
+							// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 							iSpecialProduction += pLoopPlot->calculateBestNatureYield(YIELD_PRODUCTION, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_PRODUCTION);
 							iSpecialCommerce += pLoopPlot->calculateBestNatureYield(YIELD_COMMERCE, getID()) + GC.getImprovementInfo(eBonusImprovement).getImprovementBonusYield(eBonus, YIELD_COMMERCE);
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 						}
 
 						if (eFeature != NO_FEATURE)
 						{
-/*************************************************************************************************/
-/**	CivPlotMods								03/23/09								Jean Elcard	**/
-/**																								**/
-/**					Consider Civilization-specific Terrain Yield Modifications.					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-							if (GC.getFeatureInfo(eFeature).getYieldChange(YIELD_FOOD) < 0)
-/**								----  End Original Code  ----									**/
+							// CivPlotMods - Jean Elcard - 03/23/09 - Consider Civilization-specific Terrain Yield Modifications
 							if ((GC.getFeatureInfo(eFeature).getYieldChange(YIELD_FOOD) + getFeatureYieldChange(eFeature, YIELD_FOOD)) < 0)
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 							{
 								iResourceValue -= 30;
 							}
@@ -3157,29 +2986,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iValue += std::max(0, iResourceValue);
 
-//FfH: Modified by Kael 11/18/2007
-//	if (iTakenTiles > (NUM_CITY_PLOTS / 3) && iResourceValue < 250)
+	//FfH: Modified by Kael 11/18/2007
 	if (iTakenTiles > (iNumCityPlots / 3) && iResourceValue < 250)
-//FfH: End Modify
-
 	{
 		return 0;
 	}
-
-/*************************************************************************************************/
-/**	AITweak								30/05/10							Snarko				**/
-/**																								**/
-/**		We set iTeammateTakenTiles long ago but return only here? Let's return earlier instead!	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (iTeammateTakenTiles > 1)
-	{
-		return 0;
-	}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	AITweak									END													**/
-/*************************************************************************************************/
 
 	iValue += (iHealth / 5);
 
@@ -3291,18 +3102,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 								iGreaterBadTile += 2;
 								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-									if (pLoopPlot->calculateBestNatureYield(YIELD_FOOD,getTeam()) > 1)
-/**								----  End Original Code  ----									**/
+									// CivPlotMods - Jean Elcard - 04/02/09 - Calculate Player-specific Nature Yields
 									if (pLoopPlot->calculateBestNatureYield(YIELD_FOOD, getID()) > 1)
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 									{
 										iGreaterBadTile--;
 									}
@@ -3326,11 +3127,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 		int iWaterCount = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -3348,20 +3146,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		iWaterCount /= 2;
 
-//FfH: Modified by Kael 11/18/2007
-//		int iLandCount = (NUM_CITY_PLOTS - iWaterCount);
-//		if (iLandCount < (NUM_CITY_PLOTS / 2))
-//		{
-//			//discourage very water-heavy starts.
-//			iValue *= 1 + iLandCount;
-//			iValue /= (1 + (NUM_CITY_PLOTS / 2));
+		//FfH: Modified by Kael 11/18/2007
 		int iLandCount = (iNumCityPlots - iWaterCount);
 		if (iLandCount < (iNumCityPlots / 2))
 		{
 			iValue *= 1 + iLandCount;
 			iValue /= (1 + (iNumCityPlots / 2));
-//FfH: End Modify
-
 		}
 	}
 
@@ -3630,20 +3420,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= (1 + iDeadLockCount);
 	}
 
-//FfH: Modified by Kael 11/18/2007
-//	iValue /= (std::max(0, (iBadTile - (NUM_CITY_PLOTS / 4))) + 3);
-	iValue /= (std::max(0, (iBadTile - (iNumCityPlots / 4))) + 3);
-//FfH: End Modify
+	//FfH: Modified by Kael 11/18/2007
+	iValue /= (std::max(1, (iBadTile - (iNumCityPlots / 4))) + 3);
 
 	if (bStartingLoc)
 	{
 		iDifferentAreaTile = 0;
 
-//FfH: Modified by Kael 11/18/2007
-//		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		//FfH: Modified by Kael 11/18/2007
 		for (iI = 0; iI < iNumCityPlots; iI++)
-//FfH: End Modify
-
 		{
 			pLoopPlot = plotCity(iX, iY, iI);
 
@@ -3653,11 +3438,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			}
 		}
 
-//FfH: Modified by Kael 11/18/2007
-//		iValue /= (std::max(0, (iDifferentAreaTile - ((NUM_CITY_PLOTS * 2) / 3))) + 2);
-		iValue /= (std::max(0, (iDifferentAreaTile - ((iNumCityPlots * 2) / 3))) + 2);
-//FfH: End Modify
-
+		//FfH: Modified by Kael 11/18/2007
+		iValue /= (std::max(1, (iDifferentAreaTile - ((iNumCityPlots * 2) / 3))) + 2);
 	}
 
 	return std::max(1, iValue);

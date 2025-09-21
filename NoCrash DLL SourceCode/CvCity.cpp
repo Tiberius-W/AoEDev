@@ -19017,6 +19017,7 @@ bool CvCity::isAutoRaze() const
 			return true;
 		}
 
+		// ???
 		if (GC.getGameINLINE().getMaxCityElimination() > 0)
 		{
 			return true;
@@ -19028,12 +19029,11 @@ bool CvCity::isAutoRaze() const
 		return true;
 	}
 
-//FfH: Added by Kael 11/03/2008
+	//FfH: Added by Kael 11/03/2008
 	if (GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_RAZE))
 	{
 		return true;
 	}
-//FfH: End Add
 
 	return false;
 }

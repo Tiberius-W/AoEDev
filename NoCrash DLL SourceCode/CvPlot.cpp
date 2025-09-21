@@ -800,13 +800,17 @@ void CvPlot::doUniqueLairTimecheck()
 	 || GET_PLAYER(getOwner()).isBarbarian()
 	 || !GC.getImprovementInfo(getImprovementType()).isUnique()
 	 || !GC.getImprovementInfo(getImprovementType()).isExplorable())
+	{
 		return;
+	}
 
 	// Changes to the self-pop logic need to be applied in CvUnitAI::AI_canExploreLair as well
 	int iTurnsLeftUnexplored = GC.getGame().getGameTurn() - getExploreNextTurn();
 
 	if (iTurnsLeftUnexplored < 0)
+	{
 		return;
+	}
 
 	CvWString szBuffer;
 	int iCycleLength = GC.getImprovementInfo(getImprovementType()).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
@@ -818,17 +822,19 @@ void CvPlot::doUniqueLairTimecheck()
 		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_YELLOW"), getX_INLINE(), getY_INLINE(), true, true);
 	}
 	// Evil plots to summon beasties can't progress if the thing is outside owned territory... I guess? For balance. Otherwise it can trigger if the tile is acquired after being unowned for a long time
-	else if ((iTurnsLeftUnexplored == iCycleLength && getOwnershipDuration() >= iCycleLength)
-		  || (iTurnsLeftUnexplored >= iCycleLength && getOwnershipDuration() == iCycleLength))
+	else if ((iTurnsLeftUnexplored == iCycleLength * 2 && getOwnershipDuration() >= iCycleLength * 2)
+		  || (iTurnsLeftUnexplored >= iCycleLength * 2 && getOwnershipDuration() == iCycleLength * 2))
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_EXPLORE_BUILDUP", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
-		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_ENEMY_TROOPS", MESSAGE_TYPE_MINOR_EVENT,
+			GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 	}
-	// You done fucked up now son! If option enabled.
-	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 2 * iCycleLength && getOwnershipDuration() >= 2 * iCycleLength)
+	// You done fucked up now son! If xml enabled.
+	else if (GC.getDefineINT("LAIR_AUTO_EXPLORE") > 0 && iTurnsLeftUnexplored >= 4 * iCycleLength && getOwnershipDuration() >= 4 * iCycleLength)
 	{
 		szBuffer = gDLL->getText("TXT_KEY_UF_NOTIFY_BUILDUP_COMPLETE", GC.getImprovementInfo(getImprovementType()).getTextKeyWide());
-		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+		gDLL->getInterfaceIFace()->addMessage(getOwner(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer,  "AS2D_PILLAGED", MESSAGE_TYPE_MAJOR_EVENT,
+			GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 
 		CyUnit* pyCaster;
 		pyCaster = new CyUnit(NULL);
@@ -843,8 +849,10 @@ void CvPlot::doUniqueLairTimecheck()
 		delete pyCaster;
 
 		// reset exploration timer
-		setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
-						 * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
+		int iExploreDelay = GC.getImprovementInfo(getImprovementType()).getExploreDelay() * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100;
+		iExploreDelay = iExploreDelay * 11 / 10 - GC.getGameINLINE().getSorenRandNum(iExploreDelay / 5, " +- 10% randomization to lair cycle length");
+
+		setExploreNextTurn(GC.getGame().getGameTurn() + iExploreDelay);
 	}
 }
 
@@ -852,26 +860,37 @@ void CvPlot::doLairSpawn()
 {
 	// Lairs spawn differently the turn they appear (immediateunit/group)
 	if (getImprovementType() == NO_IMPROVEMENT || getImprovementDuration() <= 0)
+	{
 		return;
+	}
 
 	int iUnit = GC.getImprovementInfo(getImprovementType()).getSpawnUnitType();
 	int iSpawnGroup = GC.getImprovementInfo(getImprovementType()).getSpawnGroupType();
 	int iSpawnLimit = GC.getImprovementInfo(getImprovementType()).getSpawnAtOnceLimit();
-	if (iSpawnLimit < 0) iSpawnLimit = MAX_INT;
+	if (iSpawnLimit < 0)
+	{
+		iSpawnLimit = MAX_INT;
+	}
 
 	// LairGuardians code: Valkrion
 	// 1st check: Are we spawning at all, and if so are at limit for how many units can be spawned at a time?
 	if ((iUnit == NO_UNIT && iSpawnGroup == NO_SPAWNGROUP) || getNumLairSpawnsAlive() >= iSpawnLimit)
+	{
 		return;
+	}
 
 	// 2nd check: Mapgen lairs should wait a smidge before spitting out units (1/3 spawn delay)
 	if ((3 * GC.getGameINLINE().getElapsedGameTurns() < (GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getBarbSpawnDelay()))
 	 || (GC.getGameINLINE().getNumCivCities() < GC.getGameINLINE().countCivPlayersAlive()))
+	{
 		return;
+	}
 
 	// 2.5 check; is this a world unit that can no longer spawn?
 	if (iUnit != NO_UNIT && iSpawnGroup == NO_SPAWNGROUP && GC.getGameINLINE().isUnitClassMaxedOut((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iUnit).getUnitClassType())))
+	{
 		return;
+	}
 
 	bool bValid = false;
 	int iCiv = GC.getImprovementInfo(getImprovementType()).getSpawnUnitCiv();
@@ -932,7 +951,9 @@ void CvPlot::doLairSpawn()
 
 	// 4th check: Can a spawned unit coexist on this tile with all already existing units on said tile
 	if (!bValid || isVisibleEnemyUnit(eSpawnPlayer)  )
+	{
 		return;
+	}
 
 	// We can always spawn a lair guard if there's no linked spawns alive, regardless of density limits
 	// Thus, an older lair that has upgraded can be denser, and have more guardians (though old guards/units are probably weak)
@@ -944,7 +965,9 @@ void CvPlot::doLairSpawn()
 		// No matter how small the area (or how low the AC), lairs can always spawn up to 3 barb units. Continues tradition of dense offshore barb islands (Blazenclaw)
 		int iTargetBarbs = std::max(3, GC.getGameINLINE().calcTargetBarbs(area(), eSpawnPlayer, true));
 		if (area()->getUnitsPerPlayer(eSpawnPlayer) >= iTargetBarbs)
+		{
 			return;
+		}
 	}
 
 	// Starting chance
@@ -957,7 +980,9 @@ void CvPlot::doLairSpawn()
 	{
 		// If we're entirely out of units spawned from here, respawn the guardian if exists. Guard won't respawn if there is a spawned unit wandered off somewhere; oh well.
 		if (bMissingGuard)
+		{
 			iUnit = GC.getImprovementInfo(getImprovementType()).getImmediateSpawnUnitType();
+		}
 
 		// Spawn the thang. Only spawn unit and immediate unit are counted toward limit, NOT groups
 		CvUnit* pUnit=GET_PLAYER(eSpawnPlayer).initUnit((UnitTypes)iUnit, getX_INLINE(), getY_INLINE(), (bMissingGuard ? NO_UNITAI: UNITAI_ATTACK));
@@ -1003,10 +1028,14 @@ void CvPlot::doImprovementCityWorking()
 	PROFILE_FUNC();
 
 	if (getImprovementType() == NO_IMPROVEMENT)
+	{
 		return;
+	}
 
 	if (getBonusType() != NO_BONUS)
+	{
 		return;
+	}
 
 	FAssert(isBeingWorked() && isOwned());
 	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlot::doImprovementCityWorking");
@@ -1026,7 +1055,9 @@ void CvPlot::doImprovementCityWorking()
 
 		// Can't dowsing our way into patrician artifacts
 		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes)iBonus).getTechReveal())))
+		{
 			continue;
+		}
 
 		// First check for discovery. Should respect original placement rules, since we're "discovering" it
 		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusDiscoverRand(iBonus);
@@ -1044,7 +1075,9 @@ void CvPlot::doImprovementCityWorking()
 		// Then try spread an already existing one (original implementation -> SpreadBonus : Opera 28/08/09)
 		iChance = GC.getImprovementInfo(getImprovementType()).getImprovementBonusSpreadRand(iBonus);
 		if (!GET_PLAYER(getOwnerINLINE()).hasBonus((BonusTypes)iBonus) || iChance <= 0)
+		{
 			continue;
+		}
 		iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
 		if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Spread") == 0)
 		{
@@ -1072,7 +1105,9 @@ void CvPlot::doImprovementCityWorking()
 void CvPlot::doImprovementUpgrade()
 {
 	if (getImprovementType() == NO_IMPROVEMENT)
+	{
 		return;
+	}
 
 	ImprovementTypes eImprovementUpgrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
 	if (eImprovementUpgrade == NO_IMPROVEMENT)
@@ -1080,7 +1115,9 @@ void CvPlot::doImprovementUpgrade()
 
 	// To upgrade, improvements must be A) worked or B) bOutsideBorders and not an unclaimed fort (on land due to Rinwell)
 	if (!(isBeingWorked() || (GC.getImprovementInfo(getImprovementType()).isOutsideBorders() && !(!isOwned() && !isWater() && GC.getImprovementInfo(getImprovementType()).isFort()))))
+	{
 		return;
+	}
 
 	// ? : Hinterlands Valkrionn 07/11/09
 	int iUpgradeTurns = GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType());
@@ -1164,13 +1201,15 @@ void CvPlot::doImprovementUpgrade()
 void CvPlot::updateCulture(bool bBumpUnits, bool bUpdatePlotGroups)
 {
 	if (isCity())
+	{
 		return;
+	}
 
 	// Improvements will sometimes overwrite cultural border : Improvements Mods expanded by Ahwaric	21.09.09
 	// Original: setOwner(calculateCulturalOwner(), bBumpUnits, bUpdatePlotGroups);
 	if (getImprovementType() != NO_IMPROVEMENT
 	 && getImprovementOwner() != NO_PLAYER
-	 && GC.getImprovementInfo(getImprovementType()).isOutsideBorders())
+	 && (GC.getImprovementInfo(getImprovementType()).isOutsideBorders() || (GC.getImprovementInfo(getImprovementType()).isFort())))
 	{
 		setOwner(getImprovementOwner(), bBumpUnits, bUpdatePlotGroups);
 	}
@@ -2329,18 +2368,26 @@ int CvPlot::seeFromLevel(TeamTypes eTeam, bool bAerial) const
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
 
 		if (GET_TEAM(eTeam).isExtraWaterSeeFrom())
+		{
 			iLevel++;
+		}
 	}
 
 	// Flying units should always treated as if atop a peak
 	if (bAerial)
+	{
 		return iLevel + GC.getPEAK_SEE_FROM_CHANGE();
+	}
 
 	if (isPeak())
+	{
 		iLevel += GC.getPEAK_SEE_FROM_CHANGE();
+	}
 
 	if (isHills())
+	{
 		iLevel += GC.getHILLS_SEE_FROM_CHANGE();
+	}
 
 	return iLevel;
 }
@@ -2355,19 +2402,29 @@ int CvPlot::seeThroughLevel() const
 	iLevel = GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel();
 
 	if (getFeatureType() != NO_FEATURE)
+	{
 		iLevel += GC.getFeatureInfo(getFeatureType()).getSeeThroughChange();
+	}
 
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
+	{
 		iLevel += GC.getPlotEffectInfo(getPlotEffectType()).getSeeThroughChange();
+	}
 
 	if (isPeak())
+	{
 		iLevel += GC.getPEAK_SEE_THROUGH_CHANGE();
+	}
 
 	if (isHills())
+	{
 		iLevel += GC.getHILLS_SEE_THROUGH_CHANGE();
+	}
 
 	if (isWater())
+	{
 		iLevel += GC.getSEAWATER_SEE_FROM_CHANGE();
+	}
 
 	return iLevel;
 }
@@ -2385,25 +2442,32 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 	int iLoop = 0;
 
 	if (pUnit != NULL)
+	{
 		iLoop = std::max(iLoop, pUnit->getPerception());
+	}
 
+	// We don't need to do *each* visibility tier, only the highest... right?
 	for (int i = -1; i < iLoop; i++)
 	{
 		for (int dx = -iRange; dx <= iRange; dx++)
 		{
 			for (int dy = -iRange; dy <= iRange; dy++)
 			{
-				// This is the 'one tile further'
+				// Check if this is the 'one tile further'
 				bOuterRing = false;
 				if ((abs(dx) == iRange) || (abs(dy) == iRange))
+				{
 					bOuterRing = true;
+				}
 
 				//check if anything blocking the plot. Aerial avoid LoS except for outer ring
 				if ((bAerial && !bOuterRing) || canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing, bAerial))
 				{
 					CvPlot* pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 					if (NULL != pPlot)
+					{
 						pPlot->changeVisibilityCount(eTeam, ((bIncrement) ? 1 : -1), (InvisibleTypes)i, bUpdatePlotGroups);
+					}
 				}
 			}
 		}
@@ -2416,12 +2480,16 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 {
 	if (pPlot == NULL)
+	{
 		return false;
+	}
 
 	// Might be able to see one tile further, if that tile has a boosted see-from distance
 	iRange++;
 	if (stepDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) > iRange)
+	{
 		return false;
+	}
 
 	//find displacement
 	int dx = xDistance(getX(), pPlot->getX());
@@ -2431,11 +2499,15 @@ bool CvPlot::canSeePlot(CvPlot *pPlot, TeamTypes eTeam, int iRange) const
 
 	// This is the 'one tile further'
 	if ((abs(dx) == iRange) || (abs(dy) == iRange))
+	{
 		bOuterRing = true;
+	}
 
 	//check if nothing blocking the plot
 	if (canSeeDisplacementPlot(eTeam, dx, dy, dx, dy, true, bOuterRing))
+	{
 		return true;
+	}
 
 	return false;
 }
@@ -2447,11 +2519,15 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 {
 	CvPlot *pPlot = plotXY(getX_INLINE(), getY_INLINE(), dx, dy);
 	if (pPlot == NULL)
+	{
 		return false;
+	}
 
 	//base case is current plot
 	if((dx == 0) && (dy == 0))
+	{
 		return true;
+	}
 
 	//find closest of three points (1, 2, 3) to original line from Start (S) to End (E)
 	//The diagonal is computed first as that guarantees a change in position
@@ -2480,14 +2556,20 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		int nextDX = displacements[i][0];
 		int nextDY = displacements[i][1];
 		if((nextDX == dx) && (nextDY == dy)) //make sure we change plots
+		{
 			continue;
+		}
 
 		if(allClosest[i] != closest)
+		{
 			continue;
+		}
 
 		// Try the first closest; work our way backwards until either there is a chain that leads to first plot, or everything returns false
 		if(!canSeeDisplacementPlot(eTeam, nextDX, nextDY, originalDX, originalDY, false, false, bAerial))
+		{
 			continue;
+		}
 
 		int fromLevel = seeFromLevel(eTeam, bAerial);
 		int throughLevel = pPlot->seeThroughLevel();
@@ -2508,10 +2590,14 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 		else
 		{
 			if(fromLevel >= throughLevel) //we can clearly see this level
+			{
 				return true;
+			}
 
 			if(firstPlot) //we can also see it if it is the first plot that is too tall
+			{
 				return true;
+			}
 		}
 	}
 
@@ -2596,17 +2682,25 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 {
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
-	int iMaxImpRange = 0;
+	// int iMaxImpRange = 0;
 
-	int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
-	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
-		iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
+	// int iRange = GC.getDefineINT("UNIT_VISIBILITY_RANGE") + 1;
+	// for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
+	// {
+	// 	iRange += GC.getPromotionInfo((PromotionTypes)iPromotion).getVisibilityChange();
+	// }
 
-	// for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
-	// iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
-	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
+	// // Blaze 2025: This is needed to ensure "actual" accuracy ---
+	// // for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
+	// // iMaxImpRange = std::max(iMaxImpRange, GC.getImprovementInfo((ImprovementTypes)iImprovement).getVisibilityChange());
+	// // iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange + iMaxImpRange);
+	// // --- I'm thinking it'd be perf friendlier to write it so that each plot keeps a list of which units see that plot...
+	// // Though that would end up being quite a few units overlapping on quite a few tiles in lategame. Memory, or cpu...
 
-	iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
+	// iRange = std::max(GC.getDefineINT("RECON_VISIBILITY_RANGE") + 1, iRange);
+
+	// Blaze: The above was evaluating to thirty-four. That is FAR in excess of what is worth calculating...
+	int iRange = 10;
 
 	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
@@ -2615,7 +2709,9 @@ void CvPlot::updateSeeFromSight(bool bIncrement, bool bUpdatePlotGroups)
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot != NULL)
+			{
 				pLoopPlot->updateSight(bIncrement, bUpdatePlotGroups);
+			}
 		}
 	}
 }
@@ -2635,34 +2731,21 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 		return false;
 	}
 
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
-/**					---- Start Original Code ----				**
-	if (isPeak())
-	{
-		return false;
-	}
-/**					----  End Original Code  ----				**/
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
-
 	if (getFeatureType() != NO_FEATURE)
 	{
-		if (!(GC.getBonusInfo(eBonus).isFeature(getFeatureType())))
+		if (!GC.getBonusInfo(eBonus).isFeature(getFeatureType()))
 		{
 			return false;
 		}
 
-		if (!(GC.getBonusInfo(eBonus).isFeatureTerrain(getTerrainType())))
+		if (!GC.getBonusInfo(eBonus).isFeatureTerrain(getTerrainType()))
 		{
 			return false;
 		}
 	}
 	else
 	{
-		if (!(GC.getBonusInfo(eBonus).isTerrain(getTerrainType())))
+		if (!GC.getBonusInfo(eBonus).isTerrain(getTerrainType()))
 		{
 			return false;
 		}
@@ -2670,28 +2753,21 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 
 	if (isHills())
 	{
-		if (!(GC.getBonusInfo(eBonus).isHills()))
+		if (!GC.getBonusInfo(eBonus).isHills())
 		{
 			return false;
 		}
 	}
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
 	else if (isPeak())
 	{
-		if (!(GC.getBonusInfo(eBonus).isPeaks()))
+		if (!GC.getBonusInfo(eBonus).isPeaks())
 		{
 			return false;
 		}
 	}
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
-
 	else if (isFlatlands())
 	{
-		if (!(GC.getBonusInfo(eBonus).isFlatlands()))
+		if (!GC.getBonusInfo(eBonus).isFlatlands())
 		{
 			return false;
 		}
@@ -2726,12 +2802,7 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 		}
 	}
 
-//	if (!isPotentialCityWork())
-//	{
-//		return false;
-//	}
-
-//FfH: Added by Kael 12/18/2008
+	//FfH: Added by Kael 12/18/2008
 	if (isCity())
 	{
 		if (GC.getDefineINT("BONUS_MANA") != -1)
@@ -2742,12 +2813,12 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 			}
 		}
 	}
-//FfH: End Add
 
 	return true;
 }
 
 
+// Prefer the player version if you can (this one doesn't check for player nature yield requirements)
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, bool bPotential) const
 {
 	PROFILE("CvPlot::canHaveImprovement");
@@ -2762,20 +2833,31 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	// Xienwolf - 12/13/08 - Attempt to keep Unique Features from being removed on Mapgen
 	if (isCity() || (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isPermanent()))
+	{
 		return false;
+	}
 
 	if (isImpassable())
+	{
 		return false;
+	}
 
 	// Mountain Mod - Ahwaric - 19.09.09
 	if (GC.getImprovementInfo(eImprovement).isRequiresPeak() && !isPeak())
+	{
 		return false;
+	}
+
 	// Peak must have either of these to be valid
 	if (isPeak() && !(GC.getImprovementInfo(eImprovement).isRequiresPeak() || GC.getImprovementInfo(eImprovement).isPeakMakesValid()))
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
+	{
 		return false;
+	}
 
 	// Check backwards; does a feature on this tile prevent improvements?
 	if (getFeatureType() != NO_FEATURE)
@@ -2791,16 +2873,28 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	// Special check for bonuses making improvements permissible, outside of regular restrictions
 	if ((getBonusType(eTeam) != NO_BONUS) && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam)))
+	{
 		return true;
+	}
+
+	// If the plot is unowned OR team doesn't ignore irrigation due to the basegame civ4 tech refrigeration.... sigh....
+	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
+	{
+		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
+		{
+			return false;
+		}
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isNoFreshWater() && isFreshWater())
+	{
 		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
+	{
 		return false;
-
-	if (GC.getImprovementInfo(eImprovement).isRequiresFeature() && (getFeatureType() == NO_FEATURE))
-		return false;
+	}
 
 	if (GC.getImprovementInfo(eImprovement).isRequiresRiverSide())
 	{
@@ -2809,7 +2903,9 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
 
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
 
 			if (isRiverCrossing(directionXY(this, pLoopPlot)) && pLoopPlot->getImprovementType() != eImprovement)
 			{
@@ -2819,36 +2915,57 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		}
 
 		if (!bValid)
+		{
 			return false;
+		}
 		// Gotta reset bValid...
 		bValid = false;
 	}
 
-	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s
-	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
-		bValid = true;
-	else if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
-		bValid = true;
-	else if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
-		bValid = true;
-	else if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
-		bValid = true;
-	else if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
-		bValid = true;
-	else if ((getFeatureType() != NO_FEATURE) && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
-		bValid = true;
-
-	if (!bValid)
-		return false;
-
-
-	// ????
-	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
+	// If bRequiresFeature is set, change FeaturesMakesValid to effectively FeaturesRequired; without FeaturesMakesValid, just requires any feature
+	if (GC.getImprovementInfo(eImprovement).isRequiresFeature())
 	{
-		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
+		if (getFeatureType() == NO_FEATURE)
 		{
 			return false;
 		}
+
+		if (GC.getImprovementInfo(eImprovement).hasFeatureMakesValid() && !GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+		{
+			return false;
+		}
+	}
+
+	// --- Now we check that it passes all possible "or" conditions after meeting all possible "and"s ---
+	if (isPeak() && GC.getImprovementInfo(eImprovement).isPeakMakesValid())
+	{
+		bValid = true;
+	}
+	// If bRequiresFeature is set, change FeaturesMakesValid to effectively FeaturesRequired; if bRequiresFeature not set, then FeaturesMakeValid work as an 'or' condition
+	else if (!GC.getImprovementInfo(eImprovement).isRequiresFeature() && getFeatureType() != NO_FEATURE && GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
+	{
+		bValid = true;
+	}
+	else if (GC.getImprovementInfo(eImprovement).isHillsMakesValid() && isHills())
+	{
+		bValid = true;
+	}
+	else if (GC.getImprovementInfo(eImprovement).isFreshWaterMakesValid() && isFreshWater())
+	{
+		bValid = true;
+	}
+	else if (GC.getImprovementInfo(eImprovement).isRiverSideMakesValid() && isRiverSide())
+	{
+		bValid = true;
+	}
+	else if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+	{
+		bValid = true;
+	}
+
+	if (!bValid)
+	{
+		return false;
 	}
 
 	return true;
@@ -2957,12 +3074,11 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 {
 	PROFILE("CvPlot::canBuild");
 
-//FfH: Added by Kael 11/10/2008
+	//FfH: Added by Kael 11/10/2008
 	if (isBuildDisabled())
 	{
 		return false;
 	}
-//FfH: End Add
 
 	ImprovementTypes eImprovement;
 	ImprovementTypes eFinalImprovementType;
@@ -2996,18 +3112,8 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**		Use the player version of this method to account for player-specific natural yields.	**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		if (!canHaveImprovement(eImprovement, GET_PLAYER(ePlayer).getTeam(), bTestVisible))
-/**								----  End Original Code  ----									**/
+		// CivPlotMods - Jean Elcard - 04/02/09 - Use the player version of this method to account for player-specific natural yields.
 		if (!canHaveImprovement(eImprovement, ePlayer, bTestVisible))
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
 		{
 			return false;
 		}
@@ -3023,28 +3129,13 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 			{
 				return false;
 			}
-
-/*************************************************************************************************/
-/**	MyLand									04/04/09								Xienwolf	**/
-/**																								**/
-/**				Not every Civ can fully upgrade every improvement that they can build			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			eFinalImprovementType = finalImprovementUpgrade(getImprovementType());
-
-			if (eFinalImprovementType != NO_IMPROVEMENT)
-			{
-				if (eFinalImprovementType == finalImprovementUpgrade(eImprovement))
-/**								----  End Original Code  ----									**/
+			// MyLand - Xienwolf - 04/04/09 - Not every Civ can fully upgrade every improvement that they can build
 			CivilizationTypes eCiv = getWorkingCity() == NULL ? NO_CIVILIZATION : getWorkingCity()->getCivilizationType();
 			eFinalImprovementType = finalImprovementUpgrade(getImprovementType(), eCiv);
 
 			if (eFinalImprovementType != NO_IMPROVEMENT)
 			{
 				if (eFinalImprovementType == finalImprovementUpgrade(eImprovement, eCiv))
-/*************************************************************************************************/
-/**	MyLand									END													**/
-/*************************************************************************************************/
 				{
 					return false;
 				}
@@ -3053,9 +3144,9 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 		if (!bTestVisible)
 		{
-/*************************************************************************************************/
-/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-/*************************************************************************************************/
+			/*************************************************************************************************/
+			/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+			/*************************************************************************************************/
 			if (eImprovement != NO_IMPROVEMENT)
 			{
 				if (GC.getImprovementInfo(eImprovement).getMinimumDistance() > 0)
@@ -3066,9 +3157,6 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 					}
 				}
 			}
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
 
 			if (GET_PLAYER(ePlayer).getTeam() != getTeam())
 			{
@@ -3094,11 +3182,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 	if (eRoute != NO_ROUTE)
 	{
-/*************************************************************************************************/
-/**	Tweak							18/02/12								Snarko				**/
-/**																								**/
-/**				To prevent Malakim from building roads on deserts								**/
-/*************************************************************************************************/
+		// Snarko - 18/02/12 - To prevent Malakim from building roads on deserts
 		if (ePlayer != NO_PLAYER)
 		{
 			if (isNetworkTerrain(GET_PLAYER(ePlayer).getTeam()))
@@ -3106,9 +3190,6 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				return false;
 			}
 		}
-/*************************************************************************************************/
-/**	Tweak								END														**/
-/*************************************************************************************************/
 
 		if (getRouteType() != NO_ROUTE)
 		{
@@ -3156,17 +3237,19 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	{
 		if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()))
 		{
+			//FfH: Added by Kael 04/24/2008 (isMaintainFeatures)
 			if (isOwned() && (GET_PLAYER(ePlayer).getTeam() != getTeam()) && !atWar(GET_PLAYER(ePlayer).getTeam(), getTeam())
-
-//FfH: Added by Kael 04/24/2008
-			  && !GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(getFeatureType())
-//FfH: End Add
-
-			)
+			  && !GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(getFeatureType()))
 			{
 				return false;
 			}
 
+			// Can't chop features on UFs that rely on a feature
+			if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isUnique()
+			 && GC.getImprovementInfo(getImprovementType()).isRequiresFeature())
+			{
+				return false;
+			}
 			bValid = true;
 		}
 	}
@@ -6165,7 +6248,9 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 	PROFILE_FUNC();
 	
 	if (getOwnerINLINE() == eNewValue)
+	{
 		return;
+	}
 
 	CLLNode<IDInfo>* pUnitNode;
 	CvCity* pOldCity;
@@ -6487,48 +6572,136 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 	int iAreaCount;
 	int iI;
 
-	if (getPlotType() != eNewValue)
+	if (getPlotType() == eNewValue)
 	{
-		if ((getPlotType() == PLOT_OCEAN) || (eNewValue == PLOT_OCEAN))
+		return;
+	}
+
+	if ((getPlotType() == PLOT_OCEAN) || (eNewValue == PLOT_OCEAN))
+	{
+		eraseWaterChange();
+	}
+
+	bWasWater = isWater();
+
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
+	updateSeeFromSight(false, true);
+	m_ePlotType = eNewValue;
+	updateSeeFromSight(true, true);
+
+	updateYield();
+	updatePlotGroup();
+
+	if ((getTerrainType() == NO_TERRAIN) || (GC.getTerrainInfo(getTerrainType()).isWater() != isWater()))
+	{
+		if (isWater())
 		{
-			eraseWaterChange();
-		}
-
-		bWasWater = isWater();
-
-		updateSeeFromSight(false, true);
-
-		m_ePlotType = eNewValue;
-
-		updateYield();
-		updatePlotGroup();
-
-		updateSeeFromSight(true, true);
-
-		if ((getTerrainType() == NO_TERRAIN) || (GC.getTerrainInfo(getTerrainType()).isWater() != isWater()))
-		{
-			if (isWater())
+			if (isAdjacentToLand())
 			{
-				if (isAdjacentToLand())
-				{
-					setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
-				}
-				else
-				{
-					setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
-				}
+				setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 			}
 			else
 			{
-				setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+				setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+			}
+		}
+		else
+		{
+			setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+		}
+	}
+
+	GC.getMapINLINE().resetPathDistance();
+
+	if (bWasWater != isWater())
+	{
+		if (bRecalculate)
+		{
+			for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+			{
+				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+				if (pLoopPlot != NULL)
+				{
+					if (pLoopPlot->isWater())
+					{
+						if (pLoopPlot->isAdjacentToLand())
+						{
+							pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+						}
+						else
+						{
+							pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+						}
+					}
+				}
 			}
 		}
 
-		GC.getMapINLINE().resetPathDistance();
-
-		if (bWasWater != isWater())
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 		{
-			if (bRecalculate)
+			pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if (pLoopPlot != NULL)
+			{
+				pLoopPlot->updateYield();
+				pLoopPlot->updatePlotGroup();
+			}
+		}
+
+		for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+		{
+			pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
+
+			if (pLoopPlot != NULL)
+			{
+				pLoopPlot->updatePotentialCityWork();
+			}
+		}
+
+		GC.getMapINLINE().changeLandPlots((isWater()) ? -1 : 1);
+
+		if (getBonusType() != NO_BONUS)
+		{
+			GC.getMapINLINE().changeNumBonusesOnLand(getBonusType(), ((isWater()) ? -1 : 1));
+		}
+
+		if (isOwned())
+		{
+			GET_PLAYER(getOwnerINLINE()).changeTotalLand((isWater()) ? -1 : 1);
+			GET_TEAM(getTeam()).changeTotalLand((isWater()) ? -1 : 1);
+		}
+
+		if (bRecalculate)
+		{
+			pNewArea = NULL;
+			bRecalculateAreas = false;
+
+			// XXX might want to change this if we allow diagonal water movement...
+			if (isWater())
+			{
+				for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
+				{
+					pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
+
+					if (pLoopPlot != NULL)
+					{
+						if (pLoopPlot->area()->isWater())
+						{
+							if (pNewArea == NULL)
+							{
+								pNewArea = pLoopPlot->area();
+							}
+							else if (pNewArea != pLoopPlot->area())
+							{
+								bRecalculateAreas = true;
+								break;
+							}
+						}
+					}
+				}
+			}
+			else
 			{
 				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 				{
@@ -6536,186 +6709,99 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 
 					if (pLoopPlot != NULL)
 					{
-						if (pLoopPlot->isWater())
+						if (!(pLoopPlot->area()->isWater()))
 						{
-							if (pLoopPlot->isAdjacentToLand())
+							if (pNewArea == NULL)
 							{
-								pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+								pNewArea = pLoopPlot->area();
 							}
-							else
+							else if (pNewArea != pLoopPlot->area())
 							{
-								pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("DEEP_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+								bRecalculateAreas = true;
+								break;
 							}
 						}
 					}
 				}
 			}
 
-			for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+			if (!bRecalculateAreas)
 			{
-				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+				pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)(NUM_DIRECTION_TYPES - 1)));
 
 				if (pLoopPlot != NULL)
 				{
-					pLoopPlot->updateYield();
-					pLoopPlot->updatePlotGroup();
-				}
-			}
-
-			for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
-			{
-				pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
-
-				if (pLoopPlot != NULL)
-				{
-					pLoopPlot->updatePotentialCityWork();
-				}
-			}
-
-			GC.getMapINLINE().changeLandPlots((isWater()) ? -1 : 1);
-
-			if (getBonusType() != NO_BONUS)
-			{
-				GC.getMapINLINE().changeNumBonusesOnLand(getBonusType(), ((isWater()) ? -1 : 1));
-			}
-
-			if (isOwned())
-			{
-				GET_PLAYER(getOwnerINLINE()).changeTotalLand((isWater()) ? -1 : 1);
-				GET_TEAM(getTeam()).changeTotalLand((isWater()) ? -1 : 1);
-			}
-
-			if (bRecalculate)
-			{
-				pNewArea = NULL;
-				bRecalculateAreas = false;
-
-				// XXX might want to change this if we allow diagonal water movement...
-				if (isWater())
-				{
-					for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
-					{
-						pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							if (pLoopPlot->area()->isWater())
-							{
-								if (pNewArea == NULL)
-								{
-									pNewArea = pLoopPlot->area();
-								}
-								else if (pNewArea != pLoopPlot->area())
-								{
-									bRecalculateAreas = true;
-									break;
-								}
-							}
-						}
-					}
+					pLastArea = pLoopPlot->area();
 				}
 				else
 				{
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-					{
-						pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							if (!(pLoopPlot->area()->isWater()))
-							{
-								if (pNewArea == NULL)
-								{
-									pNewArea = pLoopPlot->area();
-								}
-								else if (pNewArea != pLoopPlot->area())
-								{
-									bRecalculateAreas = true;
-									break;
-								}
-							}
-						}
-					}
+					pLastArea = NULL;
 				}
 
-				if (!bRecalculateAreas)
+				iAreaCount = 0;
+
+				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 				{
-					pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)(NUM_DIRECTION_TYPES - 1)));
+					pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 
 					if (pLoopPlot != NULL)
 					{
-						pLastArea = pLoopPlot->area();
+						pCurrArea = pLoopPlot->area();
 					}
 					else
 					{
-						pLastArea = NULL;
+						pCurrArea = NULL;
 					}
 
-					iAreaCount = 0;
-
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+					if (pCurrArea != pLastArea)
 					{
-						pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-						if (pLoopPlot != NULL)
-						{
-							pCurrArea = pLoopPlot->area();
-						}
-						else
-						{
-							pCurrArea = NULL;
-						}
-
-						if (pCurrArea != pLastArea)
-						{
-							iAreaCount++;
-						}
-
-						pLastArea = pCurrArea;
+						iAreaCount++;
 					}
 
-					if (iAreaCount > 2)
-					{
-						bRecalculateAreas = true;
-					}
+					pLastArea = pCurrArea;
 				}
 
-				if (bRecalculateAreas)
+				if (iAreaCount > 2)
 				{
-					GC.getMapINLINE().recalculateAreas();
-				}
-				else
-				{
-					setArea(FFreeList::INVALID_INDEX);
-
-					if ((area() != NULL) && (area()->getNumTiles() == 1))
-					{
-						GC.getMapINLINE().deleteArea(getArea());
-					}
-
-					if (pNewArea == NULL)
-					{
-						pNewArea = GC.getMapINLINE().addArea();
-						pNewArea->init(pNewArea->getID(), isWater());
-					}
-
-					setArea(pNewArea->getID());
+					bRecalculateAreas = true;
 				}
 			}
-		}
 
-		if (bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			//Update terrain graphical
-			gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(), true, true);
-			//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
-			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+			if (bRecalculateAreas)
+			{
+				GC.getMapINLINE().recalculateAreas();
+			}
+			else
+			{
+				setArea(FFreeList::INVALID_INDEX);
 
-			updateFeatureSymbol();
-			setLayoutDirty(true);
-			updateRouteSymbol(false, true);
-			updateRiverSymbol(false, true);
+				if ((area() != NULL) && (area()->getNumTiles() == 1))
+				{
+					GC.getMapINLINE().deleteArea(getArea());
+				}
+
+				if (pNewArea == NULL)
+				{
+					pNewArea = GC.getMapINLINE().addArea();
+					pNewArea->init(pNewArea->getID(), isWater());
+				}
+
+				setArea(pNewArea->getID());
+			}
 		}
+	}
+
+	if (bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		//Update terrain graphical
+		gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(), true, true);
+		//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
+		//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+
+		updateFeatureSymbol();
+		setLayoutDirty(true);
+		updateRouteSymbol(false, true);
+		updateRiverSymbol(false, true);
 	}
 }
 
@@ -6734,134 +6820,115 @@ TerrainTypes CvPlot::getTerrainType() const
 void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
 /**								----  End Original Code  ----									**/
 void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics, bool bDontResetClimate)
-/*************************************************************************************************/
-/**	Bugfix								END														**/
-/*************************************************************************************************/
 {
-	bool bUpdateSight;
-
-/*************************************************************************************************/
-/**	Flavour Mod								11/21/08								Jean Elcard	**/
-/**																								**/
-/**										Fixes a FfH bug.										**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Flavour Mod								11/21/08								Jean Elcard	**/
+	/**																								**/
+	/**										Fixes a FfH bug.										**/
+	/*************************************************************************************************/
+	// Remove temp terrain when reassigned due to other effect (including hell terrain... hmm)
 	if (getTempTerrainTimer() > 0)
 	{
 		changeTempTerrainTimer(-getTempTerrainTimer());
 		setRealTerrainType(NO_TERRAIN);
 	}
-/*************************************************************************************************/
-/**	Flavour Mod								END													**/
-/*************************************************************************************************/
-	if (getTerrainType() != eNewValue)
+
+	// Don't keep plot type placed "accurately" if direct assign thru e.g. worldbuilder(?) when "No Hell Terrain" is on
+	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
 	{
-		if ((getTerrainType() != NO_TERRAIN) &&
-			  (eNewValue != NO_TERRAIN) &&
-			  ((GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()) ||
-				 (GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel() != GC.getTerrainInfo(eNewValue).getSeeThroughLevel())))
+		// We need this reassignment check, otherwise terraforming spells can remove hell terrain(?)
+		if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD") && !GC.getTerrainInfo(eNewValue).isHell())
 		{
-			bUpdateSight = true;
+			eNewValue = (TerrainTypes)GC.getTerrainClassInfo((TerrainClassTypes)GC.getTerrainInfo(eNewValue).getTerrainClassType()).getHellTerrain();
 		}
-		else
+		else if (getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD") && GC.getTerrainInfo(eNewValue).isHell())
 		{
-			bUpdateSight = false;
+			eNewValue = (TerrainTypes)GC.getTerrainClassInfo((TerrainClassTypes)GC.getTerrainInfo(eNewValue).getTerrainClassType()).getNaturalTerrain();
 		}
+	}
 
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(false, true);
-		}
+	if (getTerrainType() == eNewValue)
+	{
+		return;
+	}
 
-		m_eTerrainType = eNewValue;
-/*************************************************************************************************/
-/**	Xienwolf Tweak							01/19/09											**/
-/**																								**/
-/**						Ensures Terrain Type and Tile Status remain linked						**/
-/*************************************************************************************************/
-		if ((getPlotCounter() <= GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && GC.getTerrainInfo(getTerrainType()).isHell())
-		{
-			m_eTerrainType = (TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getNaturalTerrain();
-		}
-		if ((getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")) && !GC.getTerrainInfo(getTerrainType()).isHell())
-		{
-			m_eTerrainType = (TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain();
-		}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+	bool bUpdateSight = false;
 
-		updateYield();
-		updatePlotGroup();
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
+	if (getTerrainType() != NO_TERRAIN
+	 && eNewValue != NO_TERRAIN
+	 && (GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()
+	 	|| GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel() != GC.getTerrainInfo(eNewValue).getSeeThroughLevel()))
+	{
+		bUpdateSight = true;
+		updateSeeFromSight(false, true);
+	}
+	m_eTerrainType = eNewValue;
+	if (bUpdateSight)
+	{
+		updateSeeFromSight(true, true);
+	}
 
-		if (bUpdateSight)
-		{
-			updateSeeFromSight(true, true);
-		}
+	updateYield();
+	updatePlotGroup();
 
-		if (bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			//Update terrain graphics
-			gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(),false,true);
-			//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
-			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-		}
+	if (bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		//Update terrain graphics
+		gDLL->getEngineIFace()->RebuildPlot(getX_INLINE(), getY_INLINE(),false,true);
+		//gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true); //minimap does a partial update
+		//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	}
 
-/*************************************************************************************************/
-/**	FastRebuild								01/14/09								Jean Elcard **/
-/**																								**/
-/**							Delay rebuilding for performance reasons.							**/
-/*************************************************************************************************/
-		if (!bRebuildGraphics && GC.IsGraphicsInitialized())
-		{
-			setNeedsRebuilding(true);
-		}
-/*************************************************************************************************/
-/**	FastRebuild								END													**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	FastRebuild								01/14/09								Jean Elcard **/
+	/**																								**/
+	/**							Delay rebuilding for performance reasons.							**/
+	/*************************************************************************************************/
+	if (!bRebuildGraphics && GC.IsGraphicsInitialized())
+	{
+		setNeedsRebuilding(true);
+	}
+	/*************************************************************************************************/
+	/**	FastRebuild								END													**/
+	/*************************************************************************************************/
 
-//ClimateSystem: Change Climate according to just set Terrain.
-/*************************************************************************************************/
-/**	Bugfix							  11/06/13								Snarko				**/
-/**																								**/
-/**						Fixes a bug with temp terrain and climate								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
+	//ClimateSystem: Change Climate according to just set Terrain.
+	/*************************************************************************************************/
+	/**	Bugfix							  11/06/13								Snarko				**/
+	/**																								**/
+	/**						Fixes a bug with temp terrain and climate								**/
+	/*************************************************************************************************/
+	/**								---- Start Original Code ----									**
 
-		if (getClimate() == NO_CLIMATE)
-		{
-			resetClimateData();
-		}
-		else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
-		{
-			if (!isHasTempTerrain())
-			{
-				resetClimateData();
-			}
-		}
-/**								----  End Original Code  ----									**/
-		if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
-		{
-			setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
-		}
-		
-		if (!bDontResetClimate)
-		{
 			if (getClimate() == NO_CLIMATE)
 			{
 				resetClimateData();
 			}
 			else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
 			{
-				//To fix another bug we never have it set as temp terrain at this point, so no point checking if it's temp.
-				resetClimateData();
+				if (!isHasTempTerrain())
+				{
+					resetClimateData();
+				}
 			}
+	/**								----  End Original Code  ----									**/
+	if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
+	{
+		setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
+	}
+	
+	if (!bDontResetClimate)
+	{
+		if (getClimate() == NO_CLIMATE)
+		{
+			resetClimateData();
 		}
-/*************************************************************************************************/
-/**	Bugfix								END														**/
-/*************************************************************************************************/
-//FlavourMod: End Add
-
-		
+		else if (getTerrainClassType() != GC.getClimateZoneInfo(getClimate()).getTerrainClass())
+		{
+			//To fix another bug we never have it set as temp terrain at this point, so no point checking if it's temp.
+			resetClimateData();
+		}
 	}
 }
 
@@ -6895,10 +6962,14 @@ PlotEffectTypes CvPlot::getPlotEffectType() const
 void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
 {
 	if (m_ePlotEffectType == eNewValue)
+	{
 		return;
+	}
 
 	bool bUpdateSight = false;
 
+	
+	// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
 	if ((m_ePlotEffectType == NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != 0)
 	 || (eNewValue == NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange() != 0)
 	 ||	(eNewValue != NO_PLOT_EFFECT && m_ePlotEffectType != NO_PLOT_EFFECT && GC.getPlotEffectInfo(eNewValue).getSeeThroughChange() != GC.getPlotEffectInfo((PlotEffectTypes)m_ePlotEffectType).getSeeThroughChange()))
@@ -6906,19 +6977,17 @@ void CvPlot::setPlotEffectType(PlotEffectTypes eNewValue)
 		bUpdateSight = true;
 		updateSeeFromSight(false, true);
 	}
+	m_ePlotEffectType = eNewValue;
+	if (bUpdateSight)
+	{
+		updateSeeFromSight(true, true);
+	}	
 
 	// If the incoming plot effect reduces max possible hell terrain counter, actually apply that change
 	if (eNewValue != NO_PLOT_EFFECT)
 	{
 		changePlotCounter(std::min(0, GC.getPlotEffectInfo(eNewValue).getMaxPlotCounter() - getPlotCounter()));
 	}
-
-	m_ePlotEffectType = eNewValue;
-
-	if (bUpdateSight)
-	{
-		updateSeeFromSight(true, true);
-	}	
 
 	updateYield();
 
@@ -6933,47 +7002,39 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 	CvCity* pLoopCity;
 	CvPlot* pLoopPlot;
 	FeatureTypes eOldFeature;
-	bool bUpdateSight;
+	bool bUpdateSight = false;
 	int iI;
 
 	eOldFeature = getFeatureType();
 
-/*************************************************************************************************/
-/**	Xienwolf Tweak							12/22/08											**/
-/**																								**/
-/**			Prevents removal of Features which are required by Permanent Improvements			**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Xienwolf Tweak							12/22/08											**/
+	/**																								**/
+	/**			Prevents removal of Features which are required by Permanent Improvements			**/
+	/*************************************************************************************************/
 	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).isRequiresFeature() && GC.getImprovementInfo(getImprovementType()).isPermanent() && (eNewValue == NO_FEATURE || !GC.getImprovementInfo(getImprovementType()).getFeatureMakesValid(eNewValue)))
 	{
 		return;
 	}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Flavour Mod								06/23/08								Jean Elcard **/
-/**																								**/
-/**																								**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Flavour Mod								06/23/08								Jean Elcard **/
+	/**																								**/
+	/**																								**/
+	/*************************************************************************************************/
 	if (isHasTempFeature())
 	{
 		changeTempFeatureTimer(-getTempFeatureTimer());
 	}
-/*************************************************************************************************/
-/**	Flavour Mod								END													**/
-/*************************************************************************************************/
+
 	if (eNewValue != NO_FEATURE)
 	{
-/*************************************************************************************************/
-/**	Features expanded						Ahwaric	04/10/09	**/
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Features expanded						Ahwaric	04/10/09	**/
+	/*************************************************************************************************/
 		if (GC.getFeatureInfo(eNewValue).getTerrainConvert() != NO_TERRAIN)
 		{
 			setTerrainType((TerrainTypes)GC.getFeatureInfo(eNewValue).getTerrainConvert());
 		}
-/*************************************************************************************************/
-/**										END		**/
-/*************************************************************************************************/
 		if (iVariety == -1)
 		{
 			iVariety = ((GC.getFeatureInfo(eNewValue).getArtInfo()->getNumVarieties() * ((getLatitude() * 9) / 8)) / 90);
@@ -6988,32 +7049,22 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 
 	if ((eOldFeature != eNewValue) || (m_iFeatureVariety != iVariety))
 	{
+		// updateSeeFromSight must always wrap only the direct tile update itself, lest it chain removal
 		if ((eOldFeature == NO_FEATURE) ||
 			  (eNewValue == NO_FEATURE) ||
 			  (GC.getFeatureInfo(eOldFeature).getSeeThroughChange() != GC.getFeatureInfo(eNewValue).getSeeThroughChange()))
 		{
 			bUpdateSight = true;
-		}
-		else
-		{
-			bUpdateSight = false;
-		}
-
-		if (bUpdateSight)
-		{
 			updateSeeFromSight(false, true);
 		}
-
 		m_eFeatureType = eNewValue;
 		m_iFeatureVariety = iVariety;
-
-		updateYield();
-
 		if (bUpdateSight)
 		{
 			updateSeeFromSight(true, true);
 		}
 
+		updateYield();
 		updateFeatureSymbol();
 
 		if (((eOldFeature != NO_FEATURE) && (GC.getFeatureInfo(eOldFeature).getArtInfo()->isRiverArt())) ||
@@ -7244,14 +7295,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		}
 	}
 
-	// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
-	CLLNode<IDInfo>* pUnitNode = headUnitNode();
-	while (pUnitNode != NULL)
-	{
-		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = nextUnitNode(pUnitNode);
-		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
-	}
 
 	if (eOldImprovement != NO_IMPROVEMENT)
 	{
@@ -7266,7 +7309,25 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 	}
 
 	updatePlotGroupBonus(false);
+
+	// Ensures that Plot Visibility is properly maintained : Xienwolf 02/01/09
+	CLLNode<IDInfo>* pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), false, pLoopUnit, true);
+	}
 	m_eImprovementType = eNewValue;
+	// Update plot visibility after improvement change
+	pUnitNode = headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = nextUnitNode(pUnitNode);
+		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
+	}
+
 	if (eNewValue != NO_IMPROVEMENT)
 	{
 		changePlotCounter(GC.getImprovementInfo(eNewValue).getBasePlotCounterModify());
@@ -7282,14 +7343,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 
 	updatePlotGroupBonus(true);
 
-	// Update plot visibility after improvement change
-	pUnitNode = headUnitNode();
-	while (pUnitNode != NULL)
-	{
-		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = nextUnitNode(pUnitNode);
-		changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), true, pLoopUnit, true);
-	}
 	// Building an improvement shouldn't lock temp terrain in place
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER) && getTempTerrainTimer() < 0)
 	{
@@ -8024,6 +8077,7 @@ int CvPlot::calculateTotalBestNatureYield(PlayerTypes ePlayer) const
 	return (calculateBestNatureYield(YIELD_FOOD, ePlayer) + calculateBestNatureYield(YIELD_PRODUCTION, ePlayer) + calculateBestNatureYield(YIELD_COMMERCE, ePlayer));
 }
 
+// Call this function (player version; includes check for prereq nature yield!)
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, PlayerTypes ePlayer, bool bPotential) const
 {
 	if (!canHaveImprovement(eImprovement, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM), bPotential))
@@ -8041,9 +8095,6 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, PlayerTypes ePlay
 
 	return true;
 }
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
 
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      10/06/09                                jdog5000      */
@@ -8681,7 +8732,9 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
 	if (iNewValue < 0 || getCultureControl(eIndex) == iNewValue)
+	{
 		return;
+	}
 
 	if(NULL == m_aiCultureControl)
 	{
@@ -8696,52 +8749,61 @@ void CvPlot::setCultureControl(PlayerTypes eIndex, int iNewValue, bool bUpdate, 
 	FAssert(getCultureControl(eIndex) >= 0);
 
 	if (bUpdate)
+	{
 		updateCulture(true, bUpdatePlotGroups);
+	}
 
 	pCity = getPlotCity();
 
 	if (pCity != NULL)
+	{
 		pCity->AI_setAssignWorkDirty(true);
+	}
 }
 
 
 void CvPlot::changeCultureControl(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
 	if (iChange == 0)
+	{
 		return;
+	}
 
-	if ((getCultureControl(eIndex) + iChange) >= 0)
-		setCultureControl(eIndex, (getCultureControl(eIndex) + iChange), bUpdate, true);
-	else
-		setCultureControl(eIndex, 0, bUpdate, true);
+	setCultureControl(eIndex, std::max(0, (getCultureControl(eIndex) + iChange)), bUpdate, true);
 }
 
 void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
 	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+	{
 		return;
+	}
+
+	changeCultureControl(ePlayer, GC.getImprovementInfo(eImprovement).getCultureCenterBonus(), bUpdateInterface);
 
 	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
 	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
-	int iCenterTileBonus = GC.getImprovementInfo(eImprovement).getCultureCenterBonus();
 	int iDX, iDY;
 	CvPlot* pLoopPlot;
 	for (iDX = -iRange; iDX <= iRange; iDX++)
 	{
 		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
-				continue;
-
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
+
+			if (plotDistance(this, pLoopPlot) > iRange)
+			{
+				continue;
+			}
 
 			if (iStrength > 0)
+			{
 				pLoopPlot->changeCultureControl(ePlayer, iStrength, bUpdateInterface);
-
-			if (iCenterTileBonus > 0 && iDX == 0 && iDY == 0)
-				pLoopPlot->changeCultureControl(ePlayer, iCenterTileBonus, bUpdateInterface);
+			}
 		}
 	}
 }
@@ -8749,7 +8811,9 @@ void CvPlot::addCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovemen
 void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bUpdateInterface)
 {
 	if (ePlayer == NO_PLAYER || eImprovement == NO_IMPROVEMENT || GC.getImprovementInfo(eImprovement).getCultureControlStrength() <= 0)
+	{
 		return;
+	}
 
 	int iRange = GC.getImprovementInfo(eImprovement).getCultureRange();
 	int iStrength = GC.getImprovementInfo(eImprovement).getCultureControlStrength();
@@ -8760,15 +8824,22 @@ void CvPlot::clearCultureControl(PlayerTypes ePlayer, ImprovementTypes eImprovem
 	{
 		for (iDY = -iRange; iDY <= iRange; iDY++)
 		{
-			if (plotDistance(iDX, iDY, getX(), getY()) > iRange)
-				continue;
-
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
 			if (pLoopPlot == NULL)
+			{
 				continue;
+			}
+
+			if (plotDistance(this, pLoopPlot) > iRange)
+			{
+				continue;
+			}
 
 			if (iStrength > 0)
+			{
 				pLoopPlot->changeCultureControl(ePlayer, -pLoopPlot->getCultureControl(ePlayer), bUpdateInterface);
+			}
 		}
 	}
 }
@@ -9191,85 +9262,79 @@ void CvPlot::changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes 
 	FAssertMsg(eTeam >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(eTeam < MAX_TEAMS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (iChange != 0)
+	// Don't need to update anything after all
+	if (iChange == 0)
 	{
-		if (NULL == m_aiVisibilityCount)
+		return;
+	}
+
+	if (NULL == m_aiVisibilityCount)
+	{
+		m_aiVisibilityCount = new short[MAX_TEAMS];
+		for (int iI = 0; iI < MAX_TEAMS; ++iI)
 		{
-			m_aiVisibilityCount = new short[MAX_TEAMS];
-			for (int iI = 0; iI < MAX_TEAMS; ++iI)
+			m_aiVisibilityCount[iI] = 0;
+		}
+	}
+
+	bOldVisible = isVisible(eTeam, false);
+
+	m_aiVisibilityCount[eTeam] += iChange;
+	FAssertMsg(getVisibilityCount(eTeam) >= 0, "visibility is negative; means vision is being mis-tracked somewhere. Fix!");
+
+	if (eSeeInvisible != NO_INVISIBLE)
+	{
+		changeInvisibleVisibilityCount(eTeam, eSeeInvisible, iChange);
+	}
+
+	if (bOldVisible == isVisible(eTeam, false))
+	{
+		return;
+	}
+
+	if (isVisible(eTeam, false))
+	{
+		setRevealed(eTeam, true, false, NO_TEAM, bUpdatePlotGroups);
+
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if (pAdjacentPlot != NULL)
 			{
-				m_aiVisibilityCount[iI] = 0;
+				pAdjacentPlot->updateRevealedOwner(eTeam);
 			}
 		}
 
-		//FfH: Added by Kael 08/23/2008 (to fix an issue where visibility can get into the negatives)
-		if (m_aiVisibilityCount[eTeam] < 0)
+		if (getTeam() != NO_TEAM)
 		{
-			m_aiVisibilityCount[eTeam] = 0;
+			GET_TEAM(getTeam()).meet(eTeam, true);
 		}
-		//FfH: End Add
+	}
 
-		bOldVisible = isVisible(eTeam, false);
+	pCity = getPlotCity();
 
-		m_aiVisibilityCount[eTeam] += iChange;
-		if (m_aiVisibilityCount[eTeam] < 0)
+	if (pCity != NULL)
+	{
+		pCity->setInfoDirty(true);
+	}
+
+	for (iI = 0; iI < MAX_TEAMS; ++iI)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
-			m_aiVisibilityCount[eTeam] = 0;
-		}
-		FAssert(getVisibilityCount(eTeam) >= 0);
-
-		if (eSeeInvisible != NO_INVISIBLE)
-		{
-			changeInvisibleVisibilityCount(eTeam, eSeeInvisible, iChange);
-		}
-
-		if (bOldVisible != isVisible(eTeam, false))
-		{
-			if (isVisible(eTeam, false))
+			if (GET_TEAM((TeamTypes)iI).isStolenVisibility(eTeam))
 			{
-				setRevealed(eTeam, true, false, NO_TEAM, bUpdatePlotGroups);
-
-				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-				{
-					pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-					if (pAdjacentPlot != NULL)
-					{
-						pAdjacentPlot->updateRevealedOwner(eTeam);
-					}
-				}
-
-				if (getTeam() != NO_TEAM)
-				{
-					GET_TEAM(getTeam()).meet(eTeam, true);
-				}
-			}
-
-			pCity = getPlotCity();
-
-			if (pCity != NULL)
-			{
-				pCity->setInfoDirty(true);
-			}
-
-			for (iI = 0; iI < MAX_TEAMS; ++iI)
-			{
-				if (GET_TEAM((TeamTypes)iI).isAlive())
-				{
-					if (GET_TEAM((TeamTypes)iI).isStolenVisibility(eTeam))
-					{
-						changeStolenVisibilityCount(((TeamTypes)iI), ((isVisible(eTeam, false)) ? 1 : -1));
-					}
-				}
-			}
-
-			if (eTeam == GC.getGameINLINE().getActiveTeam())
-			{
-				updateFog();
-				updateMinimapColor();
-				updateCenterUnit();
+				changeStolenVisibilityCount(((TeamTypes)iI), ((isVisible(eTeam, false)) ? 1 : -1));
 			}
 		}
+	}
+
+	if (eTeam == GC.getGameINLINE().getActiveTeam())
+	{
+		updateFog();
+		updateMinimapColor();
+		updateCenterUnit();
 	}
 }
 
@@ -13159,7 +13224,9 @@ int CvPlot::getPlotCounter() const
 void CvPlot::changePlotCounter(int iChange)
 {
 	if (iChange == 0 || GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER))
+	{
 		return;
+	}
 
 	bool bEvilPre = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
@@ -13174,11 +13241,14 @@ void CvPlot::changePlotCounter(int iChange)
 	bool bEvilPost = (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"));
 
 	if (bEvilPre == bEvilPost)
+	{
 		return;
+	}
 
-	// Climate System - 11/16/09 - Hell Terrain type is now handled in TerrainClass
 	GC.getMapINLINE().getArea(getArea())->changeNumEvilTiles(bEvilPre ? -1 : 1);
-	if (getPlotCounter() > GC.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD"))
+
+	// Explictly set terrain type here, in case NO_PLOT_COUNTER gameoption skips identical check in setTerrainType
+	if (bEvilPost)
 	{
 		setTerrainType((TerrainTypes)GC.getTerrainClassInfo(getTerrainClassType()).getHellTerrain(), false, true);
 		// If we want to move hellification of resources into dll, this would be the place.
@@ -13206,11 +13276,15 @@ int CvPlot::calcTargetPlotCounter()
 {
 	// Infernals always have max counter in their territory
 	if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+	{
 		return 100;
+	}
 
 	// Improvements that modify the plot tile counter are locked into place from turn-based modification
 	if (getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType()).getBasePlotCounterModify() != 0)
+	{
 		return getPlotCounter();
+	}
 
 	int iHighestAdjCounter = 0;
 	int iPlotCounter = getPlotCounter();
@@ -13221,15 +13295,21 @@ int CvPlot::calcTargetPlotCounter()
 	{
 		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 		if (pAdjacentPlot == NULL)
+		{
 			continue;
+		}
 		iHighestAdjCounter = std::max(iHighestAdjCounter, pAdjacentPlot->getPlotCounter());
 		if (iHighestAdjCounter == 100)
+		{
 			break;
+		}
 	}
 
 	// Common exit case. Anything else might need attenuation decay
 	if (iHighestAdjCounter == 0 && iPlotCounter == 0)
+	{
 		return 0;
+	}
 
 	// If we're here, it means: There is hell to spread or decay (or we're at steady state).
 	// Conditions: The target value to reach for our plot counter is either:
@@ -13251,12 +13331,16 @@ int CvPlot::calcTargetPlotCounter()
 	if (getOwner() == NO_PLAYER)
 	{
 		if (iAC >= GC.getDefineINT("PLOT_COUNTER_AC_UNOWNED_THRESHOLD"))
+		{
 			iAttenuationLimit = 100 - iAC;
+		}
 	}
 	else
 	{
 		if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION)
+		{
 			iRelAdjust = GC.getReligionInfo(GET_PLAYER(getOwner()).getStateReligion()).getACPlotAttenuationMod();
+		}
 
 		if (iAC + iRelAdjust > GC.getDefineINT("PLOT_COUNTER_AC_GOOD_THRESHOLD")
 		 || (GET_PLAYER(getOwner()).getAlignment() == ALIGNMENT_NEUTRAL && iAC + iRelAdjust >= GC.getDefineINT("PLOT_COUNTER_AC_NEUTRAL_THRESHOLD"))
@@ -13286,19 +13370,25 @@ int CvPlot::calcTargetPlotCounter()
 
 		// Condition 3, steady state
 		if (iPlotCounter == iTargetCounter)
+		{
 			return iPlotCounter;
+		}
 
 		// Condition 4 or 3 and decay; decay to the attenuation penalty or by a max of the penalty
 		// This technically means bigger maps decay more slowly at same AC.... but whatever man.
 		// They're also hurt more by AC changes around a steady state, so I guess it's a wash.
 		if (iPlotCounter > iTargetCounter)
+		{
 			return iTargetCounter;
+		}
 	}
 
 	// When growing, do a random chance per plot to both break up straight walls of hell and modulate speed
 	int iSpreadChance = std::min(100, GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getHurryPercent() * iAC / GC.getDefineINT("PLOT_COUNTER_FULL_SPREAD_AT_AC"));
 	if (GC.getGameINLINE().getMapRandNum(100, "Chance hell doesn't grow") >= iSpreadChance)
+	{
 		return iPlotCounter;
+	}
 
 	// Some terrain is slower for hell to spread through, assuming not directly owned by infernals
 	int iGain = iHighestAdjCounter * iAC / 100 / (1 + 9*isPeak() + 3*isWater());
@@ -13390,16 +13480,22 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot == NULL || !pLoopPlot->isOwned())
+			{
 				continue;
+			}
 
 			eImprovement = pLoopPlot->getImprovementType();
 
 			// Tile must be friendly to the defending unit...
 			if (eImprovement == NO_IMPROVEMENT || !GET_TEAM(pLoopPlot->getTeam()).isFriendlyTerritory(eDefender))
+			{
 				continue;
+			}
 			// And not be occupied by enemy forces
 			if (pLoopPlot->plotCheck(PUF_isEnemy, pLoopPlot->getOwner(), false) != NULL)
+			{
 				continue;
+			}
 
 			if (bFinal && finalImprovementUpgrade(eImprovement) != NO_IMPROVEMENT)
 			{
@@ -13413,13 +13509,19 @@ int CvPlot::getRangeDefense(TeamTypes eDefender, int iRange, bool bFinal, bool b
 			if (iDX == 0 && iDY == 0)
 			{
 				if (!bExcludeCenter)
+				{
 					iModifier = GC.getImprovementInfo(eImprovement).getDefenseModifier();
+				}
 			}
 			else if (plotDistance(pLoopPlot, this) <= GC.getImprovementInfo(eImprovement).getRange())
+			{
 				iModifier = GC.getImprovementInfo(eImprovement).getRangeDefenseModifier();
+			}
 
 			if (iModifier > iBestModifier)
+			{
 				iBestModifier = iModifier;
+			}
 		}
 	}
 	return iBestModifier;

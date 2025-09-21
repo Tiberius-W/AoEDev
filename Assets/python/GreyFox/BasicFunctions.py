@@ -430,3 +430,79 @@ def wchoice(weighted_choices, log_message='Log message' ):
 			if subTotal > ballNumber:
 				return objects[ index ]
 	return choosing_function
+
+# Treasure hunter stuff
+def getSearchableUFList():
+	return(["ABADDONS_PIT", "AIFON_ISLE", "BADBS_BLIZZARD", "BAIR_OF_LACUNA", "BRADELINES_WELL", "BROKEN_SEPULCHER", "CARNIVEANS_CAMP", "CLIFFS_OF_TALI", "CLOCKWORK_CITY", "DRAGON_BONES", "FOXFORD", "GRAVE_OF_ASMODAY", "GUARDIAN", "LETUM_FRIGUS", "MAJENS_WORKSHOP", "MIRROR_OF_HEAVEN", "MOUNT_KALSHEKK", "ODIOS_PRISON", "POOL_OF_TEARS", "PYRE_OF_THE_SERAPHIC", "REMNANTS_OF_PATRIA", "RINWELL", "SEVEN_PINES", "SIRONAS_BEACON", "STANDING_STONES", "TOMB_OF_SUCELLUS", "TOWER_OF_EYES", "WELL_OF_SOULS", "WHISPERING_WOODS", "YGGDRASIL"])
+
+def calcTreasureHunterCleanLists(pPlayer, iSearchedImp):
+	"""
+	Returns [(flag1, text1), (flag2, text2), ...] of improvements available to search
+
+	:iSearchedImp: use -1 for no prior, or improvement index if we just searched that one and need to update and filter searched flags
+	"""
+
+	gc 			= CyGlobalContext() #Cause local variables are faster
+	git				= gc.getInfoTypeForString
+
+	lSearchableUFs	= getSearchableUFList()
+
+	# Generate an index-matching list of improvements, flags, search flags, and text strings for the set of searchable UFs
+	lDirtyImp		= [git("IMPROVEMENT_" + sImp) for sImp in lSearchableUFs]
+	lDirtyImpFlags  = [git("FLAG_TREASURE_HUNTER_" + sImp) for sImp in lSearchableUFs]
+	lDirtySearched  = [git("FLAG_TREASURE_HUNTER_" + sImp + "_SEARCHED") for sImp in lSearchableUFs]
+	lDirtyTexts		= ["TXT_KEY_EVENT_TREASURE_HUNTER_" + sImp for sImp in lSearchableUFs]
+
+	# Now to correct the above for the few special UFs we have...
+	lDirtyImp.append([git("IMPROVEMENT_BRADELINES_WELL_PURIFIED"),git("IMPROVEMENT_RINWELL2"),git("IMPROVEMENT_RINWELL3"),git("IMPROVEMENT_WELL_OF_SOULS_OPEN")])
+	lDirtyImpFlags.append([git("FLAG_TREASURE_HUNTER_BRADELINES_WELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_RINWELL"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS")])
+	lDirtySearched.append([git("FLAG_TREASURE_HUNTER_BRADELINES_WELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_RINWELL_SEARCHED"),git("FLAG_TREASURE_HUNTER_WELL_OF_SOULS_SEARCHED")])
+	lDirtyTexts.append(["TXT_KEY_EVENT_TREASURE_HUNTER_BRADELINES_WELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_RINWELL", "TXT_KEY_EVENT_TREASURE_HUNTER_WELL_OF_SOULS"])
+
+	# [(flag1, text1), (flag2, text2), ...]
+	lCleanImps		= []
+
+	# Set searched flag and remove active search flag
+	if iSearchedImp != -1:
+		iSearchedIndex = lDirtyImp.index(iSearchedImp)
+		pPlayer.setHasFlag(lDirtyImpFlags[iSearchedIndex], False)
+		pPlayer.setHasFlag(lDirtySearched[iSearchedIndex], True)
+
+	# Assemble Clean Improvement lists, based on if UF is present on a map *at this time*!
+	# Quest will quietly fail if the UF *mysteriously* vanishes while we're searching for it...
+	# TODO hook into python removeImprovement to check for if any players are searching for that UF, and do something if so.
+	for i in xrange(CyMap().numPlots()):
+		loopPlot = CyMap().plotByIndex(i)
+		if loopPlot.getImprovementType() == -1:
+			continue
+		iLoopImp = loopPlot.getImprovementType()
+		if not gc.getImprovementInfo(iLoopImp).isUnique():
+			continue
+		# Gotta exclude Ring of Carcer and Maelstrom
+		if iLoopImp not in lDirtyImp:
+			continue
+		iImpIndex = lDirtyImp.index(iLoopImp)
+		# Don't add any already searched ones, if we are continuing a search
+		if iSearchedImp != -1 and pPlayer.isHasFlag(lDirtySearched[iImpIndex]):
+			continue
+		lCleanImps.append((lDirtyImpFlags[iImpIndex], lDirtyTexts[iImpIndex]))
+
+	return lCleanImps
+
+def doSpawnPatrian(iPlayer, pPlayer):
+	gc 			= CyGlobalContext() #Cause local variables are faster
+	git			= gc.getInfoTypeForString
+	pCapital	= pPlayer.getCapitalCity()
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_1'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_2'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_3'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_4'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_5'), False)
+	pPlayer.setHasFlag(git('FLAG_TREASURE_HUNTER_DONE'), True)
+	newUnit		= pPlayer.initUnit(git('UNIT_THE_FLYING_PATRIAN'), pCapital.getX(), pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	if pPlayer.isHuman():
+		popupInfo	= CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_TREASURE_HUNTER_END", ()))
+		popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+		popupInfo.addPopup(iPlayer)

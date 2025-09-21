@@ -2965,7 +2965,7 @@ class CvEventManager:
 		'Plot Picked'
 		pPlot = argsList[0]
 		CvUtil.pyPrint('Plot was picked at %d, %d'
-			%(iX, iY))
+			%(pPlot.getX(), pPlot.getY()))
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -2980,7 +2980,7 @@ class CvEventManager:
 		'Nuke Explosion'
 		pPlot, pNukeUnit = argsList
 		CvUtil.pyPrint('Nuke detonated at %d, %d'
-			%(iX, iY))
+			%(pPlot.getX(), pPlot.getY()))
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

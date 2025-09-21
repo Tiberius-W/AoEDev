@@ -627,7 +627,7 @@
 		<French>Supprime le Terrain Infernal de la partie (le terrain infernal créé via le worldbuilder restera du terrain infernal).</French>
 		<German>Entfent das Höllengebiet aus dem Spiel (Höllengebiet das mit dem Weltenbauer erzeugt wurde bleibt)</German>
 		<Italian>Removes Hell Terrain from the game (hell terrain created with the worldbuilder will stay hell terrain)</Italian>
-		<Spanish>Quita el Terreno Infernal del juego (el terreno infernal creado en el editor de mundos permanecerá como tal</Spanish>
+		<Spanish>Quita el Terreno Infernal del juego (el terreno infernal creado en el editor de mundos permanecerá como tal)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_NO_RELIGION_0</Tag>

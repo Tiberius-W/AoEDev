@@ -142,7 +142,6 @@
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAZE_OF_WEBS_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_MAZE_OF_WEBS_HELP</Help>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAZE_OF_WEBS</ArtDefineTag>
-			<bRequiresFeature>1</bRequiresFeature>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>1</iPillageGold>
@@ -153,6 +152,7 @@
 					<bMakesValid>1</bMakesValid>
 				</AllowsFeature>
 			</AllowsFeatures>
+			<bRequiresFeature>1</bRequiresFeature>
 			<FeatureMakesValids>
 				<FeatureMakesValid>
 					<FeatureType>FEATURE_FOREST</FeatureType>
@@ -167,6 +167,40 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_SILK</BonusType>
@@ -209,6 +243,16 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FERAL_BOND</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -286,6 +330,16 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FERAL_BOND</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -364,6 +418,16 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FERAL_BOND</PrereqTech>
+					<TechYields>
+						<iYield>2</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>

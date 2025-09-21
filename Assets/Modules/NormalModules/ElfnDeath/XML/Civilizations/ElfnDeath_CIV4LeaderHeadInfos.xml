@@ -9,7 +9,7 @@
 		<LeaderHeadInfo>		<!-- Haerlond Gosam --><!-- Once Elves leader -->
 			<Type>LEADER_HAERLOND</Type>
 			<Civilopedia>TXT_KEY_LEADER_HAERLONDELFNDEATH_PEDIA</Civilopedia>
-        </LeaderHeadInfo>
+		</LeaderHeadInfo>
 		<LeaderHeadInfo>		<!-- Waldrun the Dubios --><!-- Well of Shadow leader -->
 			<Type>LEADER_WALDRUN</Type>
 			<Description>TXT_KEY_LEADER_WALDRUN</Description>
@@ -20,11 +20,11 @@
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>0</iPeaceWeightRand>
-    <iWarmongerRespect>-3</iWarmongerRespect>
+			<iWarmongerRespect>-3</iWarmongerRespect>
 			<iEspionageWeight>0</iEspionageWeight>
-    <iRefuseToTalkWarThreshold>20</iRefuseToTalkWarThreshold>
-    <iNoTechTradeThreshold>3</iNoTechTradeThreshold>
-    <iTechTradeKnownPercent>35</iTechTradeKnownPercent>
+			<iRefuseToTalkWarThreshold>20</iRefuseToTalkWarThreshold>
+			<iNoTechTradeThreshold>3</iNoTechTradeThreshold>
+			<iTechTradeKnownPercent>35</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<VictoryAIs>
@@ -42,15 +42,15 @@
 				</VictoryAI>
 			</VictoryAIs>
 			<iMaxWarRand>75</iMaxWarRand>
-    <iMaxWarNearbyPowerRatio>90</iMaxWarNearbyPowerRatio>
-    <iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
-    <iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
-    <iLimitedWarRand>15</iLimitedWarRand>
+			<iMaxWarNearbyPowerRatio>90</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
+			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
+			<iLimitedWarRand>15</iLimitedWarRand>
 			<iLimitedWarPowerRatio>80</iLimitedWarPowerRatio>
-    <iDogpileWarRand>5</iDogpileWarRand>
+			<iDogpileWarRand>5</iDogpileWarRand>
 			<iMakePeaceRand>60</iMakePeaceRand>
-    <iDeclareWarTradeRand>30</iDeclareWarTradeRand>
-    <iDemandRebukedSneakProb>75</iDemandRebukedSneakProb>
+			<iDeclareWarTradeRand>30</iDeclareWarTradeRand>
+			<iDemandRebukedSneakProb>75</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
 			<iRazeCityProb>20</iRazeCityProb>
 			<iBuildUnitProb>10</iBuildUnitProb>
@@ -60,45 +60,45 @@
 			<iProximityMemoryDecayDelay>2</iProximityMemoryDecayDelay>
 			<fProximityMemoryDecaySpeed>0.5</fProximityMemoryDecaySpeed>
 			<iProximityMemoryDecayRand>75</iProximityMemoryDecayRand>
-    <iWorseRankDifferenceAttitudeChange>-5</iWorseRankDifferenceAttitudeChange>
-    <iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
+			<iWorseRankDifferenceAttitudeChange>-5</iWorseRankDifferenceAttitudeChange>
+			<iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
 			<iCloseBordersAttitudeChange>-4</iCloseBordersAttitudeChange>
 			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
-    <iAtWarAttitudeDivisor>-3</iAtWarAttitudeDivisor>
+			<iAtWarAttitudeDivisor>-3</iAtWarAttitudeDivisor>
 			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
 			<iAtPeaceAttitudeDivisor>0</iAtPeaceAttitudeDivisor>
-    <iAtPeaceAttitudeChangeLimit>0</iAtPeaceAttitudeChangeLimit>
+			<iAtPeaceAttitudeChangeLimit>0</iAtPeaceAttitudeChangeLimit>
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
-    <iSameReligionAttitudeDivisor>20</iSameReligionAttitudeDivisor>
-    <iSameReligionAttitudeChangeLimit>1</iSameReligionAttitudeChangeLimit>
+			<iSameReligionAttitudeDivisor>20</iSameReligionAttitudeDivisor>
+			<iSameReligionAttitudeChangeLimit>1</iSameReligionAttitudeChangeLimit>
 			<iDifferentReligionAttitudeChange>-1</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-10</iDifferentReligionAttitudeDivisor>
-    <iDifferentReligionAttitudeChangeLimit>2</iDifferentReligionAttitudeChangeLimit>
+			<iDifferentReligionAttitudeChangeLimit>2</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
-    <iBonusTradeAttitudeChangeLimit>1</iBonusTradeAttitudeChangeLimit>
+			<iBonusTradeAttitudeChangeLimit>1</iBonusTradeAttitudeChangeLimit>
 			<iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor>
-    <iOpenBordersAttitudeChangeLimit>1</iOpenBordersAttitudeChangeLimit>
+			<iOpenBordersAttitudeChangeLimit>1</iOpenBordersAttitudeChangeLimit>
 			<iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
-    <iDefensivePactAttitudeChangeLimit>1</iDefensivePactAttitudeChangeLimit>
-    <iShareWarAttitudeChange>-1</iShareWarAttitudeChange>
-    <iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
-    <iShareWarAttitudeChangeLimit>2</iShareWarAttitudeChangeLimit>
+			<iDefensivePactAttitudeChangeLimit>1</iDefensivePactAttitudeChangeLimit>
+			<iShareWarAttitudeChange>-1</iShareWarAttitudeChange>
+			<iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
+			<iShareWarAttitudeChangeLimit>2</iShareWarAttitudeChangeLimit>
 			<iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
 			<iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
 			<iFavoriteCivicAttitudeChangeLimit>3</iFavoriteCivicAttitudeChangeLimit>
-    <DemandTributeAttitudeThreshold>ATTITUDE_PLEASED</DemandTributeAttitudeThreshold>
-    <NoGiveHelpAttitudeThreshold>ATTITUDE_PLEASED</NoGiveHelpAttitudeThreshold>
-    <TechRefuseAttitudeThreshold>ATTITUDE_PLEASED</TechRefuseAttitudeThreshold>
-    <StrategicBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</StrategicBonusRefuseAttitudeThreshold>
-    <HappinessBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HappinessBonusRefuseAttitudeThreshold>
-    <HealthBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HealthBonusRefuseAttitudeThreshold>
-    <MapRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</MapRefuseAttitudeThreshold>
-    <DeclareWarRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DeclareWarRefuseAttitudeThreshold>
-    <DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</DeclareWarThemRefuseAttitudeThreshold>
-    <StopTradingRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingRefuseAttitudeThreshold>
-    <StopTradingThemRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</StopTradingThemRefuseAttitudeThreshold>
-    <AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
-    <ConvertReligionRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</ConvertReligionRefuseAttitudeThreshold>
+			<DemandTributeAttitudeThreshold>ATTITUDE_PLEASED</DemandTributeAttitudeThreshold>
+			<NoGiveHelpAttitudeThreshold>ATTITUDE_PLEASED</NoGiveHelpAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_PLEASED</TechRefuseAttitudeThreshold>
+			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</StrategicBonusRefuseAttitudeThreshold>
+			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HappinessBonusRefuseAttitudeThreshold>
+			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_PLEASED</HealthBonusRefuseAttitudeThreshold>
+			<MapRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</MapRefuseAttitudeThreshold>
+			<DeclareWarRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DeclareWarRefuseAttitudeThreshold>
+			<DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</DeclareWarThemRefuseAttitudeThreshold>
+			<StopTradingRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingRefuseAttitudeThreshold>
+			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</StopTradingThemRefuseAttitudeThreshold>
+			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
+			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</ConvertReligionRefuseAttitudeThreshold>
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_PLEASED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
@@ -462,24 +462,24 @@
 					<iMemoryAttitudePercent>0</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 			</MemoryAttitudePercents>
-    <NoWarAttitudeProbs>
-      <NoWarAttitudeProb>
-        <AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
-        <iNoWarProb>0</iNoWarProb>
-      </NoWarAttitudeProb>
-      <NoWarAttitudeProb>
-        <AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
-        <iNoWarProb>0</iNoWarProb>
-      </NoWarAttitudeProb>
-      <NoWarAttitudeProb>
-        <AttitudeType>ATTITUDE_PLEASED</AttitudeType>
-        <iNoWarProb>0</iNoWarProb>
-      </NoWarAttitudeProb>
-      <NoWarAttitudeProb>
-        <AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
-        <iNoWarProb>0</iNoWarProb>
-      </NoWarAttitudeProb>
-    </NoWarAttitudeProbs>
+			<NoWarAttitudeProbs>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+					<iNoWarProb>0</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+					<iNoWarProb>0</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+					<iNoWarProb>0</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+					<iNoWarProb>0</iNoWarProb>
+				</NoWarAttitudeProb>
+			</NoWarAttitudeProbs>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_SHADOW</ImprovementType>
@@ -562,7 +562,7 @@
 			<iSomniumAggressiveness>65</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_EVIL</Alignment>
 			<LeaderClass>LEADERCLASS_EMERGENT</LeaderClass>
-			
+
 			<iAlignmentModifier>-360</iAlignmentModifier>
 			<EthicalAlignment>ETHICAL_ALIGNMENT_CHAOTIC</EthicalAlignment>
 			<iEthicalAlignmentModifier>-300</iEthicalAlignmentModifier>

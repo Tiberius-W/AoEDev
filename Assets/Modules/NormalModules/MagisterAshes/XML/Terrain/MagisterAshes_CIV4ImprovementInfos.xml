@@ -268,16 +268,29 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<bRequiresFlatlands>1</bRequiresFlatlands>
-			<bRequiresRiverSide>1</bRequiresRiverSide>
 			<bPermanent>1</bPermanent>
 			<iHappiness>100</iHappiness>
+			<bRequiresFlatlands>1</bRequiresFlatlands>
+			<bRequiresRiverSide>1</bRequiresRiverSide>
+			<bRequiresFeature>1</bRequiresFeature>
 			<FeatureMakesValids>
 				<FeatureMakesValid>
 					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<AllowsFeatures>
+				<AllowsFeature>
+					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</AllowsFeature>
+			</AllowsFeatures>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_CREATION</BonusType>

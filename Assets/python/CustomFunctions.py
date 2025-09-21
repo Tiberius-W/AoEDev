@@ -2658,11 +2658,8 @@ class CustomFunctions:
 		
 		if hasTrait(getInfoType("TRAIT_INDUSTRIOUS_REPUBLIC")):
 			setHasTrait(getInfoType("TRAIT_INDUSTRIOUS_REPUBLIC"),False)
-			
-			
 
-
-# Doviello Experience Share - MrUnderhill
+	# Doviello Experience Share - MrUnderhill
 	def inheritExperience(self, newUnit, fReturnRate):
 		if not newUnit.isAlive():
 			return
@@ -2797,7 +2794,7 @@ class CustomFunctions:
 				listImprovements.append(pPlot)
 		return listImprovements
 
-# Demon Lord Spawn
+	# Demon Lord Spawn
 	def spawnDemonLord(self,iLeader,iPlayer,bReassign = False):
 		iInfernalPlayer	= getOpenPlayer()
 		gc				= CyGlobalContext()
@@ -2905,7 +2902,7 @@ class CustomFunctions:
 			if bReassign:
 				CyMessageControl().sendModNetMessage(CvUtil.reassignPlayer, iPlayer, iInfernalPlayer, 0, 0)
 				
-# Check if equipment can`t be removed
+	# Check if equipment can`t be removed
 	def canRemoveEquipment(self,pHolder,pTaker,iPromotion):
 		gc				= CyGlobalContext()
 		git				= gc.getInfoTypeForString

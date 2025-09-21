@@ -7134,7 +7134,9 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 	else
 	{
 		if (iUnownedTilesThreshold <= 0 || !GET_PLAYER(ORC_PLAYER).canFound(pPlot->getX(), pPlot->getY()))
+		{
 			return false;
+		}
 
 		// Improved tiles are nogo, unless a savage non-unique fort. Such a thing can also spawn in civ vision
 		if (pPlot->getImprovementType() != NO_IMPROVEMENT)
@@ -7149,24 +7151,32 @@ bool CvGame::canSpawnBarbarianCity(CvPlot* pPlot, int iUnownedTilesThreshold) co
 			}
 		}
 		else if (pPlot->isVisibleToCivTeam())
+		{
 			return false;
+		}
 
 		// Now, we check for density---
-		int iTargetCities = pPlot->area()->getNumUnownedTiles() * (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
+		int iTargetCities = pPlot->area()->getNumUnownedTiles();
 
 		// Triple local limit, if there are no civ cities in this area
 		if (pPlot->area()->getNumCities() == pPlot->area()->getCitiesPerPlayer(ORC_PLAYER))
+		{
 			iTargetCities *= 3;
+		}
 
 		// Can always spawn 1 city if at least 1/10 the modulated threshold
 		if (iTargetCities * 10 < iUnownedTilesThreshold)
+		{
 			return false;
+		}
 
 		// Calculate actual target number of barb cities for this region, min 1 given the above
 		iTargetCities = std::max(1, iTargetCities / iUnownedTilesThreshold);
 
 		if (pPlot->area()->getCitiesPerPlayer(ORC_PLAYER) >= iTargetCities)
+		{
 			return false;
+		}
 	}
 
 	return true;
@@ -7178,7 +7188,9 @@ void CvGame::createBarbarianCities()
 	long lResult;
 
 	if (!canSpawnBarbarianCity(NULL))
+	{
 		return;
+	}
 
 	// We need to adjust spawnrate based on speed but also world size, otherwise small maps may fill too fast, and large maps quite slow
 	// Raging, and no barb cities at all, each cause spawn to be 2x faster
@@ -7193,7 +7205,9 @@ void CvGame::createBarbarianCities()
 	lResult = 0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "createBarbarianCities", NULL, &lResult);
 	if (lResult == 1)
+	{
 		return;
+	}
 
 	CvPlot* pLoopPlot;
 	CvPlot* pBestPlot = NULL;
@@ -7207,18 +7221,24 @@ void CvGame::createBarbarianCities()
 
 		// Check for tile-specific restrictions
 		if (!canSpawnBarbarianCity(pLoopPlot, iUnownedTilesThreshold))
+		{
 			continue;
+		}
 
 		iValue = GET_PLAYER(ORC_PLAYER).AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getDefineINT("MIN_BARBARIAN_CITY_STARTING_DISTANCE"));
 		if (iValue == 0)
+		{
 			continue;
+		}
 
 		// TODO: Value adjustments need some degree of normalization factor wrt the foundValue; can't multiply blindly due to overflow
 		// Prioritize area that is the most claimed, in absolute terms
-		iValue += 100 * pLoopPlot->area()->getNumOwnedTiles();
-		// Much more likely to upgrade a fort if possible
+		iValue += std::min(100000, 100 * pLoopPlot->area()->getNumOwnedTiles());
+		// Much more likely to upgrade a fort if possible (any improvement but a fort is precluded in canSpawnBarbarianCity)
 		if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-			iValue += 10000;
+		{
+			iValue += 100000;
+		}
 		// iValue += (getSorenRandNum(50, "Barb City Found"));
 
 		if (iValue > iBestValue)
@@ -7229,7 +7249,9 @@ void CvGame::createBarbarianCities()
 	}
 
 	if (pBestPlot != NULL)
+	{
 		GET_PLAYER(ORC_PLAYER).found(pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+	}
 }
 
 
@@ -10717,10 +10739,14 @@ void CvGame::createLairs()
 	ImprovementTypes eLair = NO_IMPROVEMENT;
 
 	if (isOption(GAMEOPTION_NO_LAIRS))
+	{
 		return;
+	}
 
 	if (getElapsedGameTurns() < getNextLairCycle())
+	{
 		return;
+	}
 
 	int iLairCycleLength = GC.getGameSpeedInfo(getGameSpeedType()).getTurnsPerLairCycle() / (1 + isOption(GAMEOPTION_RAGING_BARBARIANS));
 	if (getGameTurn() == 0)
@@ -10729,10 +10755,15 @@ void CvGame::createLairs()
 		return;
 	}
 	else
+	{
 		setNextLairCycle(getElapsedGameTurns() + 11 * iLairCycleLength / 10 - getSorenRandNum(iLairCycleLength/5, "~ +-10% Randomization in cycle length"));
+	}
 
 	iGoal = GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDefaultPlayers();
-	if (iGoal <= 0) return;
+	if (iGoal <= 0)
+	{
+		return;
+	}
 
 	// Calculate the net of all possible positive weights on all lairs
 	iNetWeight = 0;
@@ -10746,27 +10777,41 @@ void CvGame::createLairs()
 			// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 			iWeight = GC.getImprovementInfo((ImprovementTypes)iI).getLairCreationWeight();
 			for (int iJ = 0; iJ < GC.getNumTechInfos(); iJ++)
+			{
 				iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iJ)) * countKnownTechNumTeams((TechTypes)iJ) / countTeamsAlive();
+			}
 
 			// Total weight for this lair might be negative; don't include if so
 			if (iWeight > 0)
+			{
 				iNetWeight += iWeight;
+			}
 		}
 	}
 
 	// Setting up the static flags. Passable = not ice/volcano/walls
 	iFlags = RANDPLOT_PASSIBLE | RANDPLOT_NOT_CITY | RANDPLOT_NOT_IMPROVED | RANDPLOT_UNOCCUPIED | RANDPLOT_ADJACENT_UNOWNED;
 	if (isOption(GAMEOPTION_NO_VISIBLE_BARBARIANS))
+	{
 		iFlags |= RANDPLOT_NOT_VISIBLE_TO_CIV;
+	}
 
 	if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_DEMON_ALLY;
+	}
 	else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_ORC_ALLY;
+	}
 	else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
+	{
 		iFlags |= RANDPLOT_ANIMAL_ALLY;
+	}
 	else
+	{
 		iFlags |= RANDPLOT_UNOWNED;
+	}
 
 	for (int iI = 0; iI < iGoal * 20; iI++)
 	{
@@ -10782,11 +10827,15 @@ void CvGame::createLairs()
 				// LairCreationWeights adjusted(?) : Hinterlands Valkrionn 07/11/09
 				iWeight = GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeight();
 				for (int iK = 0; iK < GC.getNumTechInfos(); iK++)
+				{
 					iWeight += (GC.getImprovementInfo((ImprovementTypes)iJ).getLairCreationWeightTechs(iK)) * countKnownTechNumTeams((TechTypes)iK) / countTeamsAlive();
+				}
 
 				// Total weight for this lair might be negative; don't include if so
 				if (iWeight > 0)
+				{
 					iTargetWeight -= iWeight;
+				}
 
 				if (iTargetWeight <= 0)
 				{
@@ -10798,14 +10847,22 @@ void CvGame::createLairs()
 
 		iLairFlags = iFlags;
 		if (GC.getImprovementInfo(eLair).isWater())
+		{
 			iLairFlags |= RANDPLOT_WATER;
+		}
 		else
+		{
 			iLairFlags |= RANDPLOT_LAND;
+		}
 
 		if (GC.getImprovementInfo(eLair).isRequiresPeak())
+		{
 			iLairFlags |= RANDPLOT_PEAK;
+		}
 		else if (!GC.getImprovementInfo(eLair).isPeakMakesValid())
+		{
 			iLairFlags |= RANDPLOT_NOT_PEAK;
+		}
 
 		// Checking to see if *only* valid on hell terrain
 		bEvilValid = false;
@@ -10815,33 +10872,51 @@ void CvGame::createLairs()
 			if (GC.getImprovementInfo(eLair).getTerrainMakesValid(iJ))
 			{
 				if (GC.getTerrainInfo((TerrainTypes)iJ).isHell())
+				{
 					bEvilValid = true;
+				}
 				else
+				{
 					bNormalValid = true;
+				}
 			}
 		}
 		if (bEvilValid && !bNormalValid)
+		{
 			iLairFlags |= RANDPLOT_EVIL;
+		}
 
 		pPlot = GC.getMapINLINE().syncRandPlot(iLairFlags);
 
 		if (pPlot == NULL || !pPlot->canHaveImprovement(eLair))
+		{
 			continue;
+		}
 
 		// TODO This should probably be integrated into canHaveImprovement, and carry thru testVisible from canBuild
 		if (pPlot->isImprovementInRange(eLair, GC.getImprovementInfo(eLair).getMinimumDistance(), true))
+		{
 			continue;
+		}
 
 		// Check spawning criteria vs density requirements.
 		bNoSpawns = false;
 		if (iCiv == GC.getDefineINT("DEMON_CIVILIZATION"))
+		{
 			ePlayer = DEMON_PLAYER;
+		}
 		else if (iCiv == GC.getDefineINT("ORC_CIVILIZATION"))
+		{
 			ePlayer = ORC_PLAYER;
+		}
 		else if (iCiv == GC.getDefineINT("ANIMAL_CIVILIZATION"))
+		{
 			ePlayer = ANIMAL_PLAYER;
+		}
 		else
+		{
 			bNoSpawns = true;
+		}
 
 		pArea = pPlot->area();
 
@@ -10858,7 +10933,10 @@ void CvGame::createLairs()
 			iGoal--;
 		}
 
-		if (iGoal <= 0) return;
+		if (iGoal <= 0)
+		{
+			return;
+		}
 	}
 }
 
@@ -11244,7 +11322,10 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 
 		iTargetBarbs = iAreaSize / std::max(1, iDivisor);
 
-		if (isOption(GAMEOPTION_DOUBLE_ANIMALS)) iTargetBarbs *= 2;
+		if (isOption(GAMEOPTION_DOUBLE_ANIMALS))
+		{
+			iTargetBarbs *= 2;
+		}
 	}
 	else if (ePlayer == ORC_PLAYER)
 	{
@@ -11261,7 +11342,9 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 		// Possible min value if we're calculating based on lairs, instead of rand demon on hell terrain
 		int iMinDemons = 0;
 		if (bLairSpawn)
+		{
 			iMinDemons = (pArea->getNumUnownedTiles() + GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon() / 2) / GC.getHandicapInfo(getHandicapType()).getTilesPerLairDemon();
+		}
 
 		// Demons don't have an "unowned evil" tile calculation; need to add one in CvArea if desired
 		iAreaSize = pArea->getNumEvilTiles();
@@ -11280,7 +11363,10 @@ int CvGame::calcTargetBarbs(CvArea* pArea, PlayerTypes ePlayer, bool bLairSpawn)
 		iTargetBarbs = std::max(iTargetBarbs, iMinDemons);
 	}
 
-	if (isOption(GAMEOPTION_RAGING_BARBARIANS)) iTargetBarbs *= 2;
+	if (isOption(GAMEOPTION_RAGING_BARBARIANS))
+	{
+		iTargetBarbs *= 2;
+	}
 
 	// Min limit for spawning is handled per spawning type (random/group, lair)
 	return std::max(0, iTargetBarbs);

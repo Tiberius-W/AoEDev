@@ -474,4 +474,7 @@ int LFBgetCombatOdds(int iAttackerLowFS,	int iAttackerHighFS, int iDefenderLowFS
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
 
+bool isBarb(PlayerTypes ePlayer);
+bool isBarb(TeamTypes eTeam);
+
 #endif

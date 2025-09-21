@@ -104,6 +104,10 @@
 			<Value>1</Value>
 		</Preference>
 		<Preference>
+			<FlavourType>IMPROVEMENT_MAJENS_WORKSHOP</FlavourType>
+			<Value>4</Value>
+		</Preference>
+		<Preference>
 			<FlavourType>IMPROVEMENT_MIRROR_OF_HEAVEN</FlavourType>
 			<Value>4</Value>
 		</Preference>

@@ -1248,7 +1248,7 @@
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<PrereqNotFlags>
-			<PrereqFlag>FLAG_TREASURE_HUNTER_DONE</PrereqFlag>
+				<PrereqFlag>FLAG_TREASURE_HUNTER_DONE</PrereqFlag>
 			</PrereqNotFlags>
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<iPlotType>-1</iPlotType>

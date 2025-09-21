@@ -8015,7 +8015,6 @@
 			<UnitPrereq>UNIT_REDACTOR</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
 			<bIsAutoCastable>1</bIsAutoCastable>
-			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellHL(pCaster)</PyResult>
@@ -8033,7 +8032,6 @@
 			<UnitPrereq>UNIT_GHOSTWALKER</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
 			<bIsAutoCastable>1</bIsAutoCastable>
-			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<iDelay>6</iDelay>

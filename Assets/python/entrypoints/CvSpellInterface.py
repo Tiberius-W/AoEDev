@@ -5238,13 +5238,14 @@ def onMoveCarcer(pCaster, pPlot):
 					CyGame().changeTrophyValue(t, 1)
 
 def onMoveSironasBeacon(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON) == False:
 
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_SIRONAS_BEACON_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
 	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_SIRONAS_BEACON, True)
+	return
 
 def onMoveMirrorOfHeaven(pCaster, pPlot):
 	if CyGame().getWBMapScript():
@@ -5303,21 +5304,23 @@ def onMoveRemnantsOfPatria(pCaster, pPlot):
 
 	
 def onMoveOdiosPrison(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_ODIOS_PRISON) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_ODIOS_PRISON) == False:
 
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_ODIOS_PRISON_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
+	return
 
 def onMoveBradelinesWell(pCaster, pPlot):
-	pPlayer = gc.getPlayer(pCaster.getOwner())
-	#if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL) == False:
+	# pPlayer = gc.getPlayer(pCaster.getOwner())
+	# if pPlayer.isFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL) == False:
 	#	if pPlayer.getCivilizationType() == getInfoType("CIVILIZATION_ELOHIM"):
 	#		iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_BRADELINES_WELL_ELOHIM')
 	#		triggerData = pPlayer.initTriggeredData(iEvent, True, -1, pCaster.getX(), pCaster.getY(), -1, -1, -1, -1, -1, -1)
 	#		pPlayer.setFeatAccomplished(FeatTypes.FEAT_VISIT_BRADELINES_WELL, True)
 	#		pPlot.setImprovementType(getInfoType("IMPROVEMENT_BRADELINES_WELL_PURIFIED"))
+	return
 
 def onMoveFoxford(pCaster,pPlot):
 	iPlayer			= pCaster.getOwner()
@@ -5856,64 +5859,64 @@ def reqEmark(caster):
 		return False
 	return True
 
-# Redactor's Haunted Land creating spell.   - Doesn't change mountains, floodplinas.  Doesn't always work on forests, jungles.
+# Redactor's Haunted Land creating spell. AoE with reduced effectiveness as range increases
 def spellHL(caster):
-	pPlot = caster.plot()
-	if pPlot.isOwned():
-		startWar(caster.getOwner(), pPlot.getOwner(), WarPlanTypes.WARPLAN_LIMITED)
-
 	getPlot	= CyMap().plot
 	iRange = 1 + caster.getSpellExtraRange()
 	for x, y in plotsInRange( caster.getX(), caster.getY(), iRange ):
 		pPlot = getPlot(x, y)
-		if pPlot.isWater() == False:
-			if pPlot.isCity() == False:
-				if pPlot.isPeak() == False:
-					if (pPlot.getFeatureType() == getInfoType('FEATURE_VOLCANO')) == False:
-						if (pPlot.getFeatureType() == getInfoType('FEATURE_FLOOD_PLAINS')) == False:
-							if (pPlot.getFeatureType() == getInfoType('FEATURE_FOREST_ANCIENT') and (CyGame().getSorenRandNum(3, "HL destroy A_Forest Chance") > 0)) == False:
-								if (pPlot.getFeatureType() == getInfoType('FEATURE_FOREST') and (CyGame().getSorenRandNum(3, "HL destroy Forest Chance") == 0)) == False:
-									if (pPlot.getFeatureType() == getInfoType('FEATURE_JUNGLE') and (CyGame().getSorenRandNum(3, "HL destroy jungle Chance") == 0)) == False:
-										pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
+		if not plotValidForHL(pPlot):
+			continue
+		iDist = stepDistance(x, y, caster.getX(), caster.getY())
+		# Always center, 1/2 at range 1, 1/3 at range 2, etc
+		if CyGame().getSorenRandNum(iDist, "Reduced HL spread odds at range") == 0:
+			pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
+
 # Creeper's HL spell.
 def spellHL3(caster):
 	pPlot = caster.plot()
-	pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
+	if plotValidForHL(pPlot):
+		pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
 
 # Ghostwalker's HL spell.  Also creates Creepers.
 def spellHL2(caster):
-#	iCreeper = getInfoType('UNIT_CREEPER')
+	# iCreeper = getInfoType('UNIT_CREEPER')
 	pPlot = caster.plot()
-	pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
-	pPlayer = gc.getPlayer(caster.getOwner())
-#	iChance = CyGame().getSorenRandNum(3, "Create Creeper from HL spell Chance")
-#	if iChance == 0:
-#		newUnit = pPlayer.initUnit(getInfoType('UNIT_CREEPER'), caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-
-	if pPlot.isOwned():
-		startWar(caster.getOwner(), pPlot.getOwner(), WarPlanTypes.WARPLAN_LIMITED)
+	if plotValidForHL(pPlot):
+		pPlot.setPlotEffectType(getInfoType('PLOT_EFFECT_HAUNTED_LANDS'))
+	# pPlayer = gc.getPlayer(caster.getOwner())
+	# iChance = CyGame().getSorenRandNum(3, "Create Creeper from HL spell Chance")
+	# if iChance == 0:
+	# 	newUnit = pPlayer.initUnit(getInfoType('UNIT_CREEPER'), caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 # Creates Creepers when Ghostwalker killed.
 def spelldeadG(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-#	iChance = CyGame().getSorenRandNum(3, "Chance")
-#	if iChance == 1:
-#	caster.cast(getInfoType('SPELL_CREEPER'))
-#	caster.cast(getInfoType('SPELL_CREEPER'))
-#	newUnit = pPlayer.initUnit(getInfoType('UNIT_CREEPER'), caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	# iChance = CyGame().getSorenRandNum(3, "Chance")
+	# if iChance == 1:
+	# caster.cast(getInfoType('SPELL_CREEPER'))
+	# caster.cast(getInfoType('SPELL_CREEPER'))
+	# newUnit = pPlayer.initUnit(getInfoType('UNIT_CREEPER'), caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
-# Keeps HL spell from being cast on water or in a HL tile.
-def reqHL(caster):
-	iHaunted= getInfoType('PLOT_EFFECT_HAUNTED_LANDS')
-	pPlayer = gc.getPlayer(caster.getOwner())
-	pPlot = caster.plot()
-	if (pPlot.getPlotEffectType() == iHaunted):
+def plotValidForHL(pPlot):
+	if pPlot.isPeak():
 		return False
+	# HL can exist on water..... but this can confuse ghostwalkers, and IMO looks weird. Let it only naturally grow there
 	if pPlot.isWater():
 		return False
 	if pPlot.isCity():
 		return False
+	# Volcano, Ice
+	if pPlot.isImpassable():
+		return False
+	# Can't convert another plot effect
+	if pPlot.getPlotEffectType() != -1:
+		return False
 	return True
+
+# Keeps HL spell from being cast on water or in a HL tile.
+def reqHL(caster):
+	return plotValidForHL(caster.plot())
 
 # Req for Give Gift spell.
 def reqGiveGift(caster):
@@ -7028,8 +7031,8 @@ def atRangeBlightedForest(pCaster, pPlot):
 		CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_BLIGHTED_FOREST", (gc.getUnitInfo(pCaster.getUnitType()).getDescription(), )),'',1,'Art/Interface/Buttons/Improvements/blightedforest.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
 def effectWanderingCurse(caster):
-    if caster.isHasPromotion(gc.getInfoTypeForString("PROMOTION_MANA_GUARDIAN")):
-        return
+	if caster.isHasPromotion(gc.getInfoTypeForString("PROMOTION_MANA_GUARDIAN")):
+		return
 	pPlot = caster.plot()
 	pPlot2 = findClearPlot(caster, caster.plot())
 	if pPlot2 != -1:
@@ -10599,11 +10602,11 @@ def spellAscension(caster):
 	newUnit = pPlayer.initUnit(iUnit, caster.getX(), caster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	iVampiricStrength = getInfoType('PROMOTION_VAMPIRIC_STRENGTH')
 	iVampCount = caster.countHasPromotion(iVampiricStrength)
-        if caster.isHasPromotion(getInfoType('PROMOTION_ASPIRANT')):
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_1'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_2'),True)
-                newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_3'),True)
+	if caster.isHasPromotion(getInfoType('PROMOTION_ASPIRANT')):
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_1'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_2'),True)
+		newUnit.setHasPromotion(getInfoType('PROMOTION_ASPIRANT_3'),True)
 	for iProm in range(gc.getNumPromotionInfos()):
 		if caster.isHasPromotion(iProm):
 			if gc.getPromotionInfo(iProm).isEquipment():

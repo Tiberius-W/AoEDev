@@ -6713,6 +6713,7 @@ public:
 	int* getIrrigatedYieldChangeArray();				// For Moose - CvWidgetData XXX
 
 	bool getTerrainMakesValid(int i) const;				// Exposed to Python
+	bool hasFeatureMakesValid() const;
 	bool getFeatureMakesValid(int i) const;				// Exposed to Python
 /*************************************************************************************************/
 /**	Feature spread		 				Ahwaric	23.09.09		**/

@@ -5,7 +5,7 @@
 <!-- -->
 <!-- Leader Infos and AI Settings -->
 <Civ4LeaderHeadInfos xmlns="x-schema:ViciousSeas_CIV4CivilizationsSchema.xml">
-	<LeaderHeadInfos>	
+	<LeaderHeadInfos>
 		<LeaderHeadInfo>		<!-- TUNDOSS, Faithful Protector -->
 			<Type>LEADER_TUNDOSS_FAITHFUL_PROTECTOR</Type>
 			<Description>TXT_KEY_LEADER_TUNDOSS_FAITHFUL_PROTECTOR</Description>
@@ -575,8 +575,6 @@
 			<iSomniumAggressiveness>55</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			<LeaderClass>LEADERCLASS_VICTORIOUS_HISTORICAL</LeaderClass>
-			
-			
 			<iAlignmentModifier>30</iAlignmentModifier>
 			<EthicalAlignment>ETHICAL_ALIGNMENT_CHAOTIC</EthicalAlignment>
 			<iEthicalAlignmentModifier>-350</iEthicalAlignmentModifier>
@@ -1174,8 +1172,6 @@
 			<iSomniumAggressiveness>65</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_GOOD</Alignment>
 			<LeaderClass>LEADERCLASS_VICTORIOUS_IMPORTANT</LeaderClass>
-			
-			
 			<iAlignmentModifier>275</iAlignmentModifier>
 			<EthicalAlignment>ETHICAL_ALIGNMENT_CHAOTIC</EthicalAlignment>
 			<iEthicalAlignmentModifier>-570</iEthicalAlignmentModifier>
@@ -1228,7 +1224,7 @@
 					<iAIVictoryWeight>40</iAIVictoryWeight>
 				</VictoryAI>
 			</VictoryAIs>
-			 <iMaxWarRand>60</iMaxWarRand>
+			<iMaxWarRand>60</iMaxWarRand>
 			<iMaxWarNearbyPowerRatio>95</iMaxWarNearbyPowerRatio>
 			<iMaxWarDistantPowerRatio>70</iMaxWarDistantPowerRatio>
 			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
@@ -1765,8 +1761,6 @@
 			<iSomniumAggressiveness>80</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			<LeaderClass>LEADERCLASS_VICTORIOUS_HISTORICAL</LeaderClass>
-			
-			
 			<iAlignmentModifier>-235</iAlignmentModifier>
 			<EthicalAlignment>ETHICAL_ALIGNMENT_NEUTRAL</EthicalAlignment>
 			<iEthicalAlignmentModifier>-100</iEthicalAlignmentModifier>
@@ -2305,7 +2299,6 @@
 			<iSomniumAggressiveness>50</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_GOOD</Alignment>
 			<LeaderClass>LEADERCLASS_VICTORIOUS_HISTORICAL</LeaderClass>
-			
 			<iAlignmentModifier>0</iAlignmentModifier>
 			<EthicalAlignment>ETHICAL_ALIGNMENT_NEUTRAL</EthicalAlignment>
 			<iEthicalAlignmentModifier>-100</iEthicalAlignmentModifier>
@@ -2322,7 +2315,6 @@
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
-		
 		<!-- OO leaders -->
 		<LeaderHeadInfo>		<!-- Hannah --><!-- Lanun leader -->
 			<Type>LEADER_HANNAH</Type>

@@ -134,7 +134,7 @@
 			</GoodyClasses>
 			<!-- As 100% of civs have 1st advance, T2 takes over fully: But as 100% of civs have 2nd advance, stops spawning in favor of 3rd -->
 			<LairCreationWeightTechs>
-				<LairCreationWeightTech> 
+				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_BRONZE_WORKING</LairCreationWeightTechType>
 					<iLairCreationWeightTech>60</iLairCreationWeightTech>
 				</LairCreationWeightTech>

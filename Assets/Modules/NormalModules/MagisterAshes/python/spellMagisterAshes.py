@@ -216,7 +216,7 @@ def reqUnleashOdio(pCaster, eSpell=-1):
 def spellUnleashOdio(pCaster, eSpell=-1):
 	pPlayer = gc.getPlayer(pCaster.getOwner())
 	newUnit = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_ODIO'), pCaster.getX(), pCaster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-#	pPlayer.setAlignment(gc.getInfoTypeForString('ALIGNMENT_EVIL'))
+	# pPlayer.setAlignment(gc.getInfoTypeForString('ALIGNMENT_EVIL'))
 	pCaster.plot().setImprovementType(-1)
 	bPlayer=gc.getPlayer(gc.getANIMAL_PLAYER())
 	pNewPlot = findClearPlot(-1, pCaster.plot())

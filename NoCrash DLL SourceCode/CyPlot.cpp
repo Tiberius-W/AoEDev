@@ -1030,7 +1030,9 @@ int CyPlot::getVisibilityCount(int /*TeamTypes*/ eTeam)
 void CyPlot::changeVisibilityCount(int /*TeamTypes*/ eTeam, int iChange, int /*InvisibleTypes*/ eSeeInvisible)
 {
 	if (m_pPlot)
+	{
 		m_pPlot->changeVisibilityCount((TeamTypes) eTeam, iChange, (InvisibleTypes) eSeeInvisible, true);
+	}
 }
 
 int CyPlot::getStolenVisibilityCount(int /*TeamTypes*/ eTeam)

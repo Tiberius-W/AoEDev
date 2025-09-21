@@ -3315,6 +3315,15 @@ int LFBcalculateCombatOdds(int iFirstStrikes, int iNeededRoundsAttacker, int iNe
 
 	return iOdds;
 }
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
+
+
+// These two should be faster than doing e.g. GET_PLAYER().isBarbarian
+
+bool isBarb(PlayerTypes ePlayer)
+{
+	return (ePlayer == ORC_PLAYER || ePlayer == ANIMAL_PLAYER || ePlayer == DEMON_PLAYER);
+}
+bool isBarb(TeamTypes eTeam)
+{
+	return (eTeam == ORC_TEAM || eTeam == ANIMAL_TEAM || eTeam == DEMON_TEAM);
+}

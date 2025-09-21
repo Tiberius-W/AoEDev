@@ -2107,23 +2107,15 @@ void CvUnit::doTurn()
 	changeDamageReal(-calcTurnHealthChangeReal());
 
 	if (!hasMoved() && !isCargo())
+	{
 		changeFortifyTurns(1);
+	}
 
 	int iI;
 	CvPlot* pPlot = plot();
 
-/*************************************************************************************************/
-/**	NonAbandon 								05/15/08								Xienwolf	**/
-/**							Blocks Abandonment Check from Happening								**/
-/**						This is called before promotions can Wear off							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (m_pUnitInfo->isAbandon())
-/**								----  End Original Code  ----									**/
-	if (m_pUnitInfo->isAbandon() && !(isNonAbandon()))
-/*************************************************************************************************/
-/**	NonAbandon 									END												**/
-/*************************************************************************************************/
+	// NonAbandon - Xienwolf - 05/15/08 - Blocks Abandonment Check from Happening before promos wear off
+	if (m_pUnitInfo->isAbandon() && !isNonAbandon())
 	{
 		if (!isBarbarian())
 		{
@@ -2161,189 +2153,22 @@ void CvUnit::doTurn()
 				GC.getGameINLINE().decrementUnitCreatedCount(getUnitType());
 				GC.getGameINLINE().decrementUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType()));
 				return;
-/*************************************************************************************************/
-/**	Xienwolf Tweak							09/06/08											**/
-/**																								**/
-/**				These steps are already completed as a part of "kill(true);"					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-				GET_TEAM(getTeam()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), -1);
-				GET_PLAYER(getOwnerINLINE()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), -1);
-				GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(m_pUnitInfo->getExtraCost() * -1);
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 			}
 		}
 	}
+
 	if (getSpellCasterXP() > 0)
 	{
-		/*************************************************************************************************/
-		/**	DecimalXP							11/21/08									Xienwolf	**/
-		/**																								**/
-		/**					XP Values carried as Floats now in XML, 100x value in DLL					**/
-		/*************************************************************************************************/
+		// DecimalXP - Xienwolf - 11/21/08 - XP Values carried as Floats now in XML, 100x value in DLL
 		if (getSpellCasterXP() > getExperience())
 		{
 			int iXPGain = (int)((10000 * (1 + getCasterXPRate())) / ((GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 50) * (getExperience() + 100)));
 			changeExperience(std::max((int)(5 * (1 + getCasterXPRate())), iXPGain), -1, false, false, false);
-			/*************************************************************************************************/
-			/**	DecimalXP									END												**/
-			/*************************************************************************************************/
 		}
 	}
 
-	for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
-	{
-		if (isHasPromotion((PromotionTypes)iI))
-		{
-/*************************************************************************************************/
-/**	Xienwolf Tweak							11/21/08											**/
-/**				Prevents exploitation of Puppets with Summoner Trait Feedback					**/
-/**							Ensures that risky spells are always SOME risk						**/
-/**								Prevents pointless AI Control Sessions							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0)
-			{
-				if (getExperience() < GC.getDefineINT("FREE_XP_MAX"))
-				{
-					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn(), -1, false, false, false);
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
-			{
-				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= 3)
-					{
-						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
-					}
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getBetrayalChance() != 0)
-			{
-				if (!isImmuneToCapture() && !isBarbarian() && !GC.getGameINLINE().isOption(GAMEOPTION_NO_BARBARIANS))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= GC.getPromotionInfo((PromotionTypes)iI).getBetrayalChance())
-					{
-						betray(BARBARIAN_PLAYER);
-					}
-				}
-			}
-/**								----  End Original Code  ----									**/
-			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0 && getDuration() == 0)
-			{
-				if (getExperience() < getFreeXPCap())
-				{
-					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() * 100 / GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent(), -1, false, false, false);
-				}
-			}
-			
-			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
-			{
-				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
-				{
-					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= GC.getPromotionInfo((PromotionTypes)iI).getRandomApplyChance())
-					{
-						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
-					}
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
-			{
-				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	TickTock							11/04/08									Xienwolf	**/
-/**																								**/
-/**				Establishes set duration and allows chance of expiration after that time		**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0)
-			{
-/**								----  End Original Code  ----									**/
-			int iPromDuration = getPromotionDuration((PromotionTypes)iI);
-			if (iPromDuration != 0)
-			{
-				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
-				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0)
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0 && getTruePromotionDuration((PromotionTypes)iI) == 0)
-			{
-/*************************************************************************************************/
-/**	TickTock									END												**/
-/*************************************************************************************************/
-				if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Expire") <= GC.getPromotionInfo((PromotionTypes)iI).getExpireChance())
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (!isHurt())
-			{
-				if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedWhenHealed())
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-/*************************************************************************************************/
-/**	AutoBots								07/16/08								Xienwolf	**/
-/**																								**/
-/**				Automatically applies/removes a Promotion when Unit meets conditions			**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak								29/01/12										Snarko	**/
-/**																								**/
-/**		With so many promotions we don't want to check them all if we can avoid it.				**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-			testPromotionReady();
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-			if (isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isMustMaintain() && !canAcquirePromotion((PromotionTypes)iI,true) && !m_pUnitInfo->getFreePromotions(iI))
-			{
-				for(int k=0;k<countHasPromotion((PromotionTypes)iI);++k)
-				{
-					setHasPromotion(((PromotionTypes)iI), false);
-				}
-			}
-			if (isHasPromotion((PromotionTypes)iI) && !CvString(GC.getPromotionInfo((PromotionTypes)iI).getPyPerTurn()).empty())
-			{
-				CyUnit* pyUnit = new CyUnit(this);
-				CyArgsList argsList;
-				argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
-				argsList.add(iI);//the promotion #
-				gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
-				delete pyUnit; // python fxn must not hold on to this pointer
-			}
-
-		}
-
-		if (GC.getPromotionInfo((PromotionTypes)iI).isAutoAcquire() && canPromote((PromotionTypes)iI, -1))
-		{
-			promote(((PromotionTypes)iI), -1);
-		}
-	
-/*************************************************************************************************/
-/**	AutoBots									END												**/
-/*************************************************************************************************/
-	}
-	
+	// Check for betray comes before loyalty (duration 1) expires, otherwise duration 1 betray and duration 1 loyalty each do nothing
+	// If causes issues, may need to pull anti and do-betray data from promos as they are parsed, then do sumation calculation after
 	if (getBetrayalChance() > 0
 	 && !isBarbarian()
 	 && GC.getGameINLINE().getSorenRandNum(100, "Betrayal Chance") <= getBetrayalChance())
@@ -2372,39 +2197,107 @@ void CvUnit::doTurn()
 			kill(true);
 		}
 		else
-			betray(ORC_PLAYER);
-	}
-
-
-	setHasCasted(false);
-/*************************************************************************************************/
-/**	Xienwolf Tweak							10/07/08											**/
-/**						Allows Twincast to cast a seperate spell, and stack						**/
-/**						Gameoption to disable Automatic Worker XP gain							**/
-/*************************************************************************************************/
-	setCastingLimit(getTwincast());
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
-	if (getDuration() > 0)
-	{
-/*************************************************************************************************/
-/**	Renewing								05/19/08								Xienwolf	**/
-/**																								**/
-/**					Includes new variable with natural duration decay							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		changeDuration(-1);
-		if (getDuration() == 0)
 		{
-			if (isImmortal())
-			{
-				changeImmortal(-1);
-			}
-			kill(true);
+			betray(ORC_PLAYER);
 		}
 	}
-/**								----  End Original Code  ----									**/
+
+	// Blaze 2025 note: This sequence of promos may e.g. remove promo iI in one step then add it in another; might need some better checks?
+	for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+	{
+		if (isHasPromotion((PromotionTypes)iI))
+		{
+			// XP per turn
+			if (GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() != 0 && getDuration() == 0)
+			{
+				if (getExperience() < getFreeXPCap())
+				{
+					changeExperience(GC.getPromotionInfo((PromotionTypes)iI).getFreeXPPerTurn() * 100 / GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent(), -1, false, false, false);
+				}
+			}
+
+			// Random apply other promo chance
+			if (GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply() != NO_PROMOTION)
+			{
+				if (!isHasPromotion((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()))
+				{
+					if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Random Apply") <= GC.getPromotionInfo((PromotionTypes)iI).getRandomApplyChance())
+					{
+						setHasPromotion(((PromotionTypes)GC.getPromotionInfo((PromotionTypes)iI).getPromotionRandomApply()), true);
+					}
+				}
+			}
+
+			// Enraged validity
+			if (GC.getPromotionInfo((PromotionTypes)iI).isEnraged())
+			{
+				if (area()->getNumUnownedTiles() == 0 && area()->getNumCities() == area()->getCitiesPerPlayer(getOwner()))
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// TickTock - Xienwolf - 11/04/08 - Establishes set duration and allows chance of expiration after that time
+			int iPromDuration = getPromotionDuration((PromotionTypes)iI);
+			if (iPromDuration != 0)
+			{
+				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
+				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0)
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+			if (GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() != 0 && getTruePromotionDuration((PromotionTypes)iI) == 0)
+			{
+				if (GC.getGameINLINE().getSorenRandNum(100, "Promotion Expire") <= GC.getPromotionInfo((PromotionTypes)iI).getExpireChance())
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// Remove on full heal
+			if (!isHurt())
+			{
+				if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedWhenHealed())
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// AutoBots - Xienwolf - 07/16/08 - Automatically applies/removes a Promotion when Unit meets conditions
+			if (isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isMustMaintain() && !canAcquirePromotion((PromotionTypes)iI,true) && !m_pUnitInfo->getFreePromotions(iI))
+			{
+				for(int k=0;k<countHasPromotion((PromotionTypes)iI);++k)
+				{
+					setHasPromotion(((PromotionTypes)iI), false);
+				}
+			}
+
+			// Promo python
+			if (isHasPromotion((PromotionTypes)iI) && !CvString(GC.getPromotionInfo((PromotionTypes)iI).getPyPerTurn()).empty())
+			{
+				CyUnit* pyUnit = new CyUnit(this);
+				CyArgsList argsList;
+				argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
+				argsList.add(iI);//the promotion #
+				gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
+				delete pyUnit; // python fxn must not hold on to this pointer
+			}
+		}
+
+		if (GC.getPromotionInfo((PromotionTypes)iI).isAutoAcquire() && canPromote((PromotionTypes)iI, -1))
+		{
+			promote(((PromotionTypes)iI), -1);
+		}
+	}
+
+	setHasCasted(false);
+
+	// Xienwolf - 10/07/08 - Allows Twincast to cast a seperate spell, and stack Gameoption to disable Automatic Worker XP gain
+	setCastingLimit(getTwincast());
+
+	if (getDuration() > 0)
+	{
 		changeDuration(getDurationPerTurn() - 1);
 		if (getDuration() == 0)
 		{
@@ -2420,19 +2313,11 @@ void CvUnit::doTurn()
 	{
 		unloadAll();
 		kill(true);
-/*************************************************************************************************/
-/**	Tweak							09/05/10								Snarko				**/
-/**																								**/
-/**						The unit is dead, no need to continue here								**/
-/*************************************************************************************************/
+
+		// Snarko - Unit is dead, no need to continue
 		return;
-/*************************************************************************************************/
-/**	Tweak										END												**/
-/*************************************************************************************************/
 	}
-/*************************************************************************************************/
-/**	Renewing									END												**/
-/*************************************************************************************************/
+
 	if (pPlot->isCity())
 	{
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
@@ -2497,24 +2382,7 @@ void CvUnit::doTurn()
 /**	Tweak									END													**/
 /*************************************************************************************************/
 	}
-/*************************************************************************************************/
-/**	Tweak							11/05/10								Snarko				**/
-/**																								**/
-/**				No longer needed as spell casting is handled in a better way					**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-	if (!isHuman())
-	{
-		int iSpell = chooseSpell();
-		if (iSpell != NO_SPELL)
-		{
-			cast(iSpell);
-		}
-	}
-/**								----  End Original Code  ----									**/
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
+
 	if (m_pUnitInfo->isImmortal())
 	{
 		if (!isImmortal())
@@ -2522,7 +2390,6 @@ void CvUnit::doTurn()
 			changeImmortal(1);
 		}
 	}
-//FfH: End Add
 
 /*************************************************************************************************/
 /**	Xienwolf Tweak							09/06/08											**/
@@ -2615,29 +2482,20 @@ void CvUnit::doTurn()
 		int iImmortality = (getLevel() * 50);
 		if (iImmortality > 950)
 		{
-				iImmortality = 950;
+			iImmortality = 950;
 		}
 		if (isImmortal())
 		{
-				changeImmortal(-1);
+			changeImmortal(-1);
 		}
 		if (GC.getGameINLINE().getSorenRandNum(1000, "Death") < iImmortality)
 		{
-				changeImmortal(1);
+			changeImmortal(1);
 		}
 	}
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Better Affinity						01/30/11									Valkrionn	**/
-/**																								**/
-/**					Vastly improved Affinity system, open to many tags							**/
-/*************************************************************************************************/
+
+	// Better Affinity - Valkrionn - 01/30/11
 	updateAffinity();
-/*************************************************************************************************/
-/**	Better Affinity							END													**/
-/*************************************************************************************************/
 
 	changeImmobileTimer(-1);
 
@@ -2647,11 +2505,8 @@ void CvUnit::doTurn()
 	setReconPlot(NULL);
 
 	setMoves(0);
-/*************************************************************************************************/
-/**	AutoCast								24/05/10									Snarko	**/
-/**																								**/
-/**						Making the human able to set units to autocast spells					**/
-/*************************************************************************************************/
+
+	// Autocast - Snarko - Making the human able to set units to autocast spells
 	if (isAutoCast(true))
 	{
 		if (canCast((int)getAutoCast(), false))
@@ -2659,10 +2514,6 @@ void CvUnit::doTurn()
 			cast((int)getAutoCast());
 		}
 	}
-
-/*************************************************************************************************/
-/**	Autocast								END													**/
-/*************************************************************************************************/
 }
 
 
@@ -6653,16 +6504,25 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	if (isCargo())
+	{
 		return true;
+	}
 
-	if (isFortifyable())
+	// Don't sleep if can fortify
+	if (canFortify(pPlot))
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6673,22 +6533,32 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!isFortifyable())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	if (isCargo())
+	{
 		return false;
+	}
 
 	// Land units can't fortify on water unless is water city, acts as city, or fort
 	if (getDomainType() == DOMAIN_LAND && pPlot->isWater())
 	{
 		if (!pPlot->isCity(true, getTeam()) && (pPlot->getImprovementType() == NO_IMPROVEMENT || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort()))
+		{
 			return false;
+		}
 	}
 
 	return true;
@@ -6698,13 +6568,19 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 {
 	if (getDomainType() != DOMAIN_AIR)
+	{
 		return false;
+	}
 
 	if (!canAirDefend(pPlot))
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6713,20 +6589,30 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 {
 	if (!pPlot->isWater())
+	{
 		return false;
+	}
 
 	if (getDomainType() != DOMAIN_SEA)
+	{
 		return false;
+	}
 
 	if (!canFight() || isOnlyDefensive())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	// Bezeri pokeballs can't sea patrol while loaded up
 	if (isCargo())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6735,10 +6621,14 @@ bool CvUnit::canSeaPatrol(const CvPlot* pPlot) const
 void CvUnit::airCircle(bool bStart)
 {
 	if (!GC.IsGraphicsInitialized())
+	{
 		return;
+	}
 
 	if ((getDomainType() != DOMAIN_AIR) || (maxInterceptionProbability() == 0))
+	{
 		return;
+	}
 
 	// cancel previous missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
@@ -6762,13 +6652,19 @@ bool CvUnit::canSentryMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!canDefend(pPlot))
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6778,17 +6674,25 @@ bool CvUnit::canHealMission(const CvPlot* pPlot) const
 {
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (isEnraged())
+	{
 		return false;
+	}
 
 	if (!isHurt())
+	{
 		return false;
+	}
 
 	if (isWaiting())
+	{
 		return false;
+	}
 
 	// LunarMongoose - 06/02/10 - UNOFFICIAL_PATCH FeatureDamageFix
 	if (healTurns(pPlot) == MAX_INT)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -6818,7 +6722,9 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 			iHeal = pLoopUnit->getSameTileHeal();
 
 			if (iHeal > iBestHeal)
+			{
 				iBestHeal = iHeal;
+			}
 		}
 	}
 	// "Heal on adjacent tiles" literally means adjacent;
@@ -6828,10 +6734,14 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 		pLoopPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
 
 		if (pLoopPlot == NULL)
+		{
 			continue;
+		}
 
 		if (pLoopPlot->area() != pPlot->area())
+		{
 			continue;
+		}
 
 		pUnitNode = pLoopPlot->headUnitNode();
 
@@ -6841,12 +6751,16 @@ int CvUnit::getHealBonusFromUnits(const CvPlot* pPlot) const
 			pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
 
 			if (!GET_TEAM(pLoopUnit->getTeam()).isMilitaryAlly(getTeam()))
+			{
 				continue;
+			}
 
 			iHeal = pLoopUnit->getAdjacentTileHeal();
 
 			if (iHeal > iBestHeal)
+			{
 				iBestHeal = iHeal;
+			}
 		}
 	}
 
@@ -6863,11 +6777,15 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 	//FfH: Added by Kael 11/05/2008
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_HEALING_FOR_HUMANS) && isHuman() && isAlive())
+	{
 		return 0;
+	}
 
 	// Blaze: Shortcut for perf, since this is an expensive method to run in full on every unit:
 	if (pPlot->calcTurnDamageReal(this, false) == 0 && !isHurt())
+	{
 		return 0;
+	}
 
 	CvCity* pCity = pPlot->getPlotCity();
 	int iTotalHeal = 0;
@@ -6879,7 +6797,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 		// Occupied cities don't get tile healing, instead relying on unit/faction-wide only
 		if (pCity && !pCity->isOccupation())
+		{
 			iTotalHeal += pCity->getHealRate();
+		}
 	}
 	else
 	{
@@ -6891,10 +6811,14 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 				//FfH Mana Effects: Added by Kael 08/21/2007
 				if (pPlot->getOwnerINLINE() != NO_PLAYER)
+				{
 					iTotalHeal += GET_PLAYER(pPlot->getOwnerINLINE()).getHealChangeEnemy();
+				}
 			}
 			else
+			{
 				iTotalHeal += (GC.getDefineINT("NEUTRAL_HEAL_RATE") + getExtraNeutralHeal());
+			}
 		}
 		else
 		{
@@ -6909,7 +6833,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 	//FfH: Added by Kael 10/29/2007 (improvement heal rates)
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
 		iTotalHeal += GC.getImprovementInfo((ImprovementTypes)pPlot->getImprovementType()).getHealRateChange();
+	}
 
 	// Promotions cannot make heal rate negative... for now.
 	return std::max(0, iTotalHeal);
@@ -6921,14 +6847,18 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 int CvUnit::healTurns(const CvPlot* pPlot) const
 {
 	if (!isHurt())
+	{
 		return 0;
+	}
 
 	int iHealReal = healRate(pPlot) * GC.getDefineINT("HIT_POINT_FACTOR");
 	int iTurnDamageReal = pPlot->calcTurnDamageReal(this, false);
 
 	// Quick check to see if damage outstrips healing
 	if (iTurnDamageReal >= iHealReal)
+	{
 		return MAX_INT;
+	}
 
 	// Add 1 to turns if won't heal on this turn
 	int iTurns = isTurnHealBlocked() || (pPlot != plot() && !(isAlwaysHeal() || isBarbarian() || isEnraged()));
@@ -6936,13 +6866,17 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 
 	// Unit might die before being able to heal!
 	if (getDamageReal() + iThisTurnDamageReal >= maxHitPoints())
+	{
 		return MAX_INT;
+	}
 
 	int iEffectiveDamageReal = getDamageReal() + iThisTurnDamageReal;
 
 	iTurns += iEffectiveDamageReal / (iHealReal - iTurnDamageReal);
 	if (iEffectiveDamageReal % (iHealReal - iTurnDamageReal) != 0)
+	{
 		++iTurns;
+	}
 
 	return iTurns;
 }
@@ -6954,7 +6888,9 @@ bool CvUnit::isTurnHealBlocked() const
 
 	// Xienwolf - 01/19/09 - Prevents inappropriate Enraged Actions
 	if (hasMoved() && !(isAlwaysHeal() || isBarbarian() || isEnraged()))
+	{
 		return true;
+	}
 
 	return false;
 }
@@ -6986,25 +6922,28 @@ bool CvUnit::canAirlift(const CvPlot* pPlot) const
 
 	pCity = pPlot->getPlotCity();
 
-	if (pCity == NULL  && pPlot->getMaxOutgoingAirlift()<=0 )
+	if (pCity == NULL)
 	{
-		return false;
+		if (pPlot->getMaxOutgoingAirlift() <= 0)
+		{
+			return false;
+		}
+		if (pPlot->getCurrentOutgoingAirlift() >= pPlot->getMaxOutgoingAirlift())
+		{
+			return false;
+		}
 	}
-
-	if (pCity!=NULL && pCity->getCurrAirlift() >= pCity->getMaxAirlift())
+	else
 	{
-		return false;
+		if (pCity->getCurrAirlift() >= pCity->getMaxAirlift())
+		{
+			return false;
+		}
+		if (pCity->getTeam() != getTeam())
+		{
+			return false;
+		}
 	}
-
-	if (pCity != NULL && pCity->getTeam() != getTeam())
-	{
-		return false;
-	}
-	if (pCity == NULL && pPlot->getCurrentOutgoingAirlift() >= pPlot->getMaxOutgoingAirlift())
-	{
-		return false;
-	}
-	return true;
 }
 
 
@@ -7029,8 +6968,6 @@ bool CvUnit::canAirliftAt(const CvPlot* pPlot, int iX, int iY) const
 
 	if (pTargetCity != NULL)
 	{
-
-
 		if (pTargetCity->isAirliftTargeted())
 		{
 			return false;
@@ -7075,6 +7012,7 @@ bool CvUnit::airlift(int iX, int iY)
 	pTargetCity = pTargetPlot->getPlotCity();
 	//FAssert(pTargetCity != NULL);
 	FAssert(pCity != pTargetCity);
+
 	if (pCity != NULL)
 	{
 		pCity->changeCurrAirlift(1);
@@ -7083,6 +7021,7 @@ bool CvUnit::airlift(int iX, int iY)
 	{
 		plot()->changeCurrentOutgoingAirlift(1);
 	}
+
 	if (pTargetCity != NULL)
 	{
 		
@@ -7095,6 +7034,7 @@ bool CvUnit::airlift(int iX, int iY)
 	{
 		pTargetPlot->changeCurrentIncomingAirlift(1);
 	}
+
 	finishMoves();
 
 	setXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE());
@@ -15240,8 +15180,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		pOldPlot->removeUnit(this, bUpdate && !hasCargo());
 
-		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
-
 		pOldPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), -1);
 /*************************************************************************************************/
 /**	PromotionPower						12/13/08									Xienwolf	**/
@@ -15348,6 +15286,8 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 			}
 		}
 
+		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
+
 		if (pOldPlot->isActiveVisible(true))
 		{
 			pOldPlot->updateMinimapColor();
@@ -15361,6 +15301,8 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		}
 	}
 
+	// NOTE we need changeAdjacentSight to be as close to the action of setting new position in data as possilbe
+	// to avoid chaining negative sight and potentially losing track of sight data
 	if (pNewPlot != NULL)
 	{
 		m_iX = pNewPlot->getX_INLINE();
@@ -15371,18 +15313,17 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		m_iX = INVALID_PLOT_COORD;
 		m_iY = INVALID_PLOT_COORD;
 	}
-
 	FAssertMsg(plot() == pNewPlot, "plot is expected to equal pNewPlot");
+	if (pNewPlot != NULL)
+	{
+		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
+	}
+	// Keep sight update close!
 
-/*************************************************************************************************/
-/**	CommandingPresence						06/30/09								Xienwolf	**/
-/**				Needs to run AFTER assigning new plot for Cascade Effect of Promotions			**/
-/**					Enforces Range restriction of Command Promotions							**/
-/*************************************************************************************************/
+	// CommandingPresence - 06/30/09 - Xienwolf - Needs to run AFTER assigning new plot for Cascade Effect of Promotions
+	// Enforces Range restriction of Command Promotions. This could adjust vision, so needs doing after sight is re-added
 	validateCommandPromotions(pOldPlot, pNewPlot);
-/*************************************************************************************************/
-/**	CommandingPresence						END													**/
-/*************************************************************************************************/
+
 	if (pNewPlot != NULL)
 	{
 		pNewCity = pNewPlot->getPlotCity();
@@ -15447,7 +15388,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 		setFortifyTurns(0);
 
-		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
 		pNewPlot->addUnit(this, bUpdate && !hasCargo());
 
 		pNewPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), 1);
@@ -16168,19 +16108,27 @@ void CvUnit::setDamageReal(int iNewValue, PlayerTypes ePlayer, bool bNotifyEntit
 	if (iOldValue != getDamageReal())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
+		{
 			NotifyEntity(MISSION_DAMAGE);
+		}
 
 		setInfoBarDirty(true);
 
 		if (IsSelected())
+		{
 			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+		}
 
 		if (plot() == gDLL->getInterfaceIFace()->getSelectionPlot())
+		{
 			gDLL->getInterfaceIFace()->setDirty(PlotListButtons_DIRTY_BIT, true);
+		}
 	}
 
 	if (isDead())
+	{
 		kill(true, ePlayer);
+	}
 }
 
 // change HP by true damage (default 1000 hp scale). Will kill(true) if damage > max hp
@@ -31980,15 +31928,26 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 		pPlot = plot();
 	}
 
+	if (isEnraged())
+	{
+		return false;
+	}
+
 	// Gold relevant if not barb. Show option even if can't pay gold.
 	if (!bTestVisible && !isBarbarian() && GET_PLAYER(getOwnerINLINE()).getGold() < GET_PLAYER(getOwnerINLINE()).getClaimFortCost())
+	{
 		return false;
+	}
 
 	if (NO_IMPROVEMENT == pPlot->getImprovementType() || !GC.getImprovementInfo(pPlot->getImprovementType()).isFort())
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	CvUnit* pLoopUnit;
 	CLLNode<IDInfo>* pUnitNode;
@@ -31999,21 +31958,28 @@ bool CvUnit::canClaimFort(CvPlot* pPlot, bool bTestVisible)
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = pPlot->nextUnitNode(pUnitNode);
 		if (pLoopUnit->getUnitClassType() == GC.getDefineINT("FORT_COMMANDER_UNITCLASS"))
+		{
 			return false;
+		}
 	}
 
 	if (pPlot->isOwned()
 	 && pPlot->getOwner() != getOwnerINLINE()
 	 && !GET_TEAM(getTeam()).isAtWar(pPlot->getTeam()))
+	{
 		return false;
-
+	}
 	// Barbs can't claim unowned naval forts.
 	else if (isBarbarian() && pPlot->isWater() && !pPlot->isOwned())
+	{
 		return false;
+	}
 
 	// Can't set up commander if adjacent enemy combatants
 	if (countUnitsWithinRange(1, true, false, false, true, true) > 0)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32022,33 +31988,49 @@ bool CvUnit::claimFort(bool bBuilt)
 {
 	// Relying on fort building rules to avoid e.g. building a fort on a tile that already has one to get 2 commanders/fort
 	if (!canClaimFort(plot()) && !bBuilt)
+	{
 		return false;
+	}
 
 	if (!bBuilt && !isBarbarian())
+	{
 		GET_PLAYER(getOwnerINLINE()).changeGold(-GET_PLAYER(getOwnerINLINE()).getClaimFortCost());
+	}
 
-	CvUnit* pUnit;
+	CvUnit* pLoopUnit;
+	CLLNode<IDInfo>* pUnitNode = plot()->headUnitNode();
 	int iUnitClass = GC.getDefineINT("FORT_COMMANDER_UNITCLASS");
-	UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass)));
+	bool bCanSpawnCommander = true;
 
-	//XXX this really shouldn't be done, fix it in the XML instead. I included it anyway because it was in the spell.
-	if (eUnit == NO_UNIT)
-		eUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iUnitClass).getDefaultUnitIndex();
-	pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
-	if (!bBuilt)
-		pUnit->finishMoves();
+	// Don't spawn a fort commander if there's already one here
+	while (pUnitNode != NULL)
+	{
+		pLoopUnit = ::getUnit(pUnitNode->m_data);
+		pUnitNode = plot()->nextUnitNode(pUnitNode);
+		if (pLoopUnit->getUnitClassType() == iUnitClass)
+		{
+			bCanSpawnCommander = false;
+			break;
+		}
+	}
 
-	//if (GC.getCivilizationInfo(getCivilizationType()).getDefaultRace() != NO_PROMOTION)
-	//{
-	//	if (pUnit->getRace() == NO_PROMOTION)
-	//	{
-	//		setHasPromotion((PromotionTypes)GC.getCivilizationInfo(getCivilizationType()).getDefaultRace(), true);
-	//	}
-	//}
+	if (bCanSpawnCommander)
+	{
+		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
+		
+		FAssertMsg(eUnit != NO_UNIT, "Missing fort commander entry for civ, aborting");
 
-	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), false);
+		CvUnit* pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
+
+		if (!bBuilt)
+		{
+			pUnit->finishMoves();
+		}
+	}
+
+	plot()->clearCultureControl(plot()->getOwner(), plot()->getImprovementType(), true);
 	plot()->setImprovementOwner(getOwnerINLINE());
-	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), false);
+	plot()->addCultureControl(getOwnerINLINE(), plot()->getImprovementType(), true);
 	// Need a distinct call to update culture; above ones won't update if the improvement doesn't have culture control
 	plot()->updateCulture(true, true);
 
@@ -32060,7 +32042,9 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 	// Changes may need to be mirrored in CvUnitAI::AI_canExploreLair
 
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (pPlot->getImprovementType() == NO_IMPROVEMENT
  		|| isBarbarian()
@@ -32069,14 +32053,20 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_SPELL")
 		|| getSpecialUnitType() == GC.getDefineINT("SPECIALUNIT_BIRD")
 		|| isOnlyDefensive())
+	{
 		return false;
+	}
 
 	if (!GC.getImprovementInfo(pPlot->getImprovementType()).isExplorable()
 		|| pPlot->getExploreNextTurn() > GC.getGame().getGameTurn())
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	bool bGoodyClass = false;
 	for (int i = 0; i < GC.getNumGoodyClassTypes(); i++)
@@ -32088,7 +32078,9 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 		}
 	}
 	if (!bGoodyClass)
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32096,10 +32088,14 @@ bool CvUnit::canExploreLair(CvPlot* pPlot, bool bTestVisible)
 bool CvUnit::exploreLair(CvPlot* pPlot)
 {
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (!canExploreLair(pPlot, false))
+	{
 		return false;
+	}
 
 	TraitTriggeredData kData;
 	kData.m_iImprovement = pPlot->getImprovementType();
@@ -32108,7 +32104,9 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 	GoodyTypes eGoody = GET_PLAYER(getOwnerINLINE()).doLair(pPlot, this);
 
 	if (eGoody == NO_GOODY)
+	{
 		return false;
+	}
 
 	finishMoves();
 	changeExperience(100);
@@ -32125,14 +32123,17 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 		{
 			if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).isUnique())
 			{
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),
+					"AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
 				// +-10% on cycle length
-				pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + (GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() * 11 / 10 - GC.getGameINLINE().getSorenRandNum(GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay() / 5, "randomization to lair cycle length"))
-																		* GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
+				int iExploreDelay = GC.getImprovementInfo(pPlot->getImprovementType()).getExploreDelay();
+				iExploreDelay = iExploreDelay * 11 / 10 - GC.getGameINLINE().getSorenRandNum(iExploreDelay / 5, "randomization to lair cycle length");
+				pPlot->setExploreNextTurn(GC.getGame().getGameTurn() + iExploreDelay * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent() / 100);
 			}
 			else
 			{
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),
+					"AS2D_POSITIVE_DINK", MESSAGE_TYPE_DISPLAY_ONLY, "Art/Interface/Buttons/Spells/Rob Grave.dds", (ColorTypes)8, pPlot->getX(), pPlot->getY(), true, true);
 				pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
 				plot()->setImprovementOwner(NO_PLAYER);
 				pPlot->setImprovementType(NO_IMPROVEMENT);
@@ -32441,25 +32442,37 @@ void CvUnit::changeInquisition(int iChange)
 bool CvUnit::canInquisition(CvPlot* pPlot, bool bTestVisible)
 {
 	if (!isInquisition())
+	{
 		return false;
+	}
 
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	CvCity* pCity = pPlot->getPlotCity();
 
 	if (pCity == NULL)
+	{
 		return false;
+	}
 
 	if (bTestVisible)
+	{
 		return true;
+	}
 
 	if (pCity->getOwner() != getOwnerINLINE())
 	{
 		if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION)
+		{
 			return false;
+		}
 		else if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != GET_PLAYER(pCity->getOwner()).getStateReligion())
+		{
 			return false;
+		}
 	}
 
 	bool bFound = false;
@@ -32478,10 +32491,14 @@ bool CvUnit::canInquisition(CvPlot* pPlot, bool bTestVisible)
 bool CvUnit::inquisition(CvPlot* pPlot)
 {
 	if (pPlot == NULL)
+	{
 		pPlot = plot();
+	}
 
 	if (!canInquisition(pPlot, false))
+	{
 		return false;
+	}
 
 	int iRnd = GC.getGameINLINE().getSorenRandNum(4, "Inquisition");
 	CvCity* pCity = pPlot->getPlotCity();
@@ -32497,14 +32514,18 @@ bool CvUnit::inquisition(CvPlot* pPlot)
 				for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
 				{
 					if (GC.getBuildingInfo((BuildingTypes)iJ).getPrereqReligion() == iI)
+					{
 						pCity->setNumRealBuilding((BuildingTypes)iJ, 0);
+					}
 				}
 				iRnd += 1;
 			}
 		}
 	}
 	if (iRnd >= 1)
+	{
 		pCity->changeHurryAngerTimer(iRnd);
+	}
 
 	finishMoves();
 
@@ -32674,9 +32695,13 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 						if (isHasPromotion((PromotionTypes)iI))
 						{
 							if (GC.getPromotionInfo((PromotionTypes)iI).isPrereqAliveCapture() && !pLoser->isAlive())
+							{
 								return;
+							}
 							if (pLoser->getUnitCombatType()!=NO_UNITCOMBAT && GC.getPromotionInfo((PromotionTypes)iI).isUnitCombatNonCapture(pLoser->getUnitCombatType()))
+							{
 								return;
+							}
 							if (GC.getPromotionInfo((PromotionTypes)iI).getCaptureUnitClass() != NO_UNITCLASS)
 							{
 								iUnit = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits((UnitClassTypes)GC.getPromotionInfo((PromotionTypes)iI).getCaptureUnitClass());
@@ -32855,18 +32880,26 @@ void CvUnit::DeselectUnit()
 bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 {
 	if (pTarget == NULL)
+	{
 		return false;
+	}
 
 	if (!pTarget->isVisible(getTeam(), false))
+	{
 		return false;
+	}
 
 	int iRange = getSpellTargetRange(iI);//GC.getSpellInfo((SpellTypes)iI).getTargetRange();
 
 	if (plotDistance(plot(), pTarget) > iRange)
+	{
 		return false;
+	}
 
 	if (!plot()->canSeePlot(pTarget, getTeam(), iRange))
+	{
 		return false;
+	}
 
 	return true;
 }
@@ -32874,7 +32907,9 @@ bool CvUnit::canSpellTargetPlot(CvPlot* pTarget, int iI)
 bool CvUnit::canSpellTargetSecondaryPlot(CvPlot* pMainTarget, CvPlot* pTarget, int iI)
 {
 	if (pTarget == NULL)
+	{
 		return false;
+	}
 
 	if (!pTarget->isVisible(getTeam(), false))
 	{

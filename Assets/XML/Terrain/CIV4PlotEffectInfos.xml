@@ -11,6 +11,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Description>TXT_KEY_FEATURE_BLIZZARD</Description>
 			<DefaultFeatureGraphics>FEATURE_BLIZZARD</DefaultFeatureGraphics>
+			<iSeeThrough>1</iSeeThrough>
 			<iTurnDamage>10</iTurnDamage>
 			<iDamageLimit>50</iDamageLimit>
 			<DamageType>DAMAGE_COLD</DamageType>
@@ -21,8 +22,9 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Description>TXT_KEY_FEATURE_FLAMES</Description>
 			<DefaultFeatureGraphics>FEATURE_FLAMES</DefaultFeatureGraphics>
-			<iTurnDamage>15</iTurnDamage>
-			<iDamageLimit>60</iDamageLimit>
+			<iSeeThrough>2</iSeeThrough>
+			<iTurnDamage>25</iTurnDamage>
+			<iDamageLimit>75</iDamageLimit>
 			<DamageType>DAMAGE_FIRE</DamageType>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Flames.dds</Button>
 		</PlotEffectInfo>
@@ -33,7 +35,7 @@
 			<Civilopedia>TXT_KEY_FEATURE_HAUNTED_LANDS_PEDIA</Civilopedia>
 			<DefaultFeatureGraphics>FEATURE_HAUNTED_LANDS</DefaultFeatureGraphics>
 			<iTurnDamage>5</iTurnDamage>
-			<iDamageLimit>50</iDamageLimit>
+			<iDamageLimit>25</iDamageLimit>
 			<DamageType>DAMAGE_POISON</DamageType>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -45,6 +47,7 @@
 			<iSpreadChance>1</iSpreadChance>
 			<iDisappearChance>15</iDisappearChance>
 			<iHealthPercent>-50</iHealthPercent>
+			<!-- No hell terrain for HL? -->
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_WASTELAND</TerrainType>
@@ -141,6 +144,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Description>TXT_KEY_FEATURE_SMOKE</Description>
 			<DefaultFeatureGraphics>FEATURE_MIST</DefaultFeatureGraphics>
+			<iSeeThrough>1</iSeeThrough>
 			<iTurnDamage>5</iTurnDamage>
 			<iDamageLimit>10</iDamageLimit>
 			<DamageType>DAMAGE_FIRE</DamageType>
@@ -159,8 +163,9 @@
 			<Description>TXT_KEY_PLOT_EFFECT_THUNDERSTORM</Description>
 			<DefaultFeatureGraphics>FEATURE_STORM</DefaultFeatureGraphics>
 			<Button>Art/Interface/Buttons/Worldbuilder/storm.dds</Button>
-			<iTurnDamage>10</iTurnDamage>
-			<iDamageLimit>50</iDamageLimit>
+			<iSeeThrough>1</iSeeThrough>
+			<iTurnDamage>15</iTurnDamage>
+			<iDamageLimit>60</iDamageLimit>
 			<DamageType>DAMAGE_LIGHTNING</DamageType>
 			<iSpawnChance>25</iSpawnChance>
 			<iMoveChance>1000</iMoveChance>
@@ -182,9 +187,9 @@
 			<Description>TXT_KEY_PLOT_EFFECT_SANDSTORM</Description>
 			<DefaultFeatureGraphics>FEATURE_SANDSTORM</DefaultFeatureGraphics>
 			<Button>, ,Art/Interface/Buttons/Misc_Atlas3.dds,5,11</Button>
-			<iTurnDamage>5</iTurnDamage>
-			<iDamageLimit>50</iDamageLimit>
 			<iSeeThrough>2</iSeeThrough>
+			<iTurnDamage>10</iTurnDamage>
+			<iDamageLimit>50</iDamageLimit>
 			<DamageType>DAMAGE_PHYSICAL</DamageType>
 			<iSpawnChance>15</iSpawnChance>
 			<iMoveChance>1000</iMoveChance>
@@ -197,5 +202,5 @@
 				</TerrainBoolean>
 			</TerrainBooleans>
 		</PlotEffectInfo>
-		</PlotEffectInfos>
+	</PlotEffectInfos>
 </Civ4PlotEffectInfos>

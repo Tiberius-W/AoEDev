@@ -146,7 +146,9 @@ bool CvSelectionGroup::sentryAlert() const
 	}
 
 	if (pHeadUnit == NULL)
+	{
 		return false;
+	}
 
 	CvPlot* pPlot;
 
@@ -159,13 +161,19 @@ bool CvSelectionGroup::sentryAlert() const
 		{
 			pPlot = ::plotXY(pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), iX, iY);
 			if (pPlot == NULL)
+			{
 				continue;
+			}
 
 			if (!pHeadUnit->plot()->canSeePlot(pPlot, pHeadUnit->getTeam(), iMaxRange))
+			{
 				continue;
+			}
 
 			if (pPlot->isVisibleEnemyUnit(pHeadUnit))
+			{
 				return true;
+			}
 		}
 	}
 

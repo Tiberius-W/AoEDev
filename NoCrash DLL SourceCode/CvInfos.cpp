@@ -31159,6 +31159,11 @@ bool CvImprovementInfo::getTerrainMakesValid(int i) const
 	return m_pbTerrainMakesValid ? m_pbTerrainMakesValid[i] : false;
 }
 
+bool CvImprovementInfo::hasFeatureMakesValid() const
+{
+	return m_pbFeatureMakesValid ? true : false;
+}
+
 bool CvImprovementInfo::getFeatureMakesValid(int i) const
 {
 	FAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
