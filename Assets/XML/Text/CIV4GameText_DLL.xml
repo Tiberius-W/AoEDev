@@ -796,6 +796,14 @@
 		<Spanish>Ha aparecido [NUM1:un:una:unos:unas] %s1_FeatName cerca de %s2_CityName.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_PLOT_EFFECT_APPEAR_NEAR_CITY</Tag>
+		<English>A %s1_FeatName has appeared near %s2_CityName!</English>
+		<French>[NUM1:Un:Une:Des:Des] %s1_FeatName [NUM1:a:a:ont:ont] poussé près de %s2_CityName!</French>
+		<German>Die Gel&#228;ndeart %s1_FeatName ist nahe der Stadt %s2_CityName entstanden!</German>
+		<Italian>Vicino a %s2_CityName [NUM1:&#232; sorto:&#232; sorta] %s1_FeatName</Italian>
+		<Spanish>Ha aparecido [NUM1:un:una:unos:unas] %s1_FeatName cerca de %s2_CityName.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_GREAT_GENERAL</Tag>
 		<English>Great General: %s1_Curr/%s2_Need Experience</English>
 		<French>Général illustre : %s1_Curr/%s2_Need expérience</French>
