@@ -45,11 +45,11 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_MAJENS_WORKSHOP</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>2.0</fScale>
+			<fScale>20.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Improvements/Workshop/Workshop.nif</NIF>
-			<KFM>Art/Structures/Improvements/Workshop/Workshop.kfm</KFM>
-			<Button>Art/Interface/Buttons/Improvements/MajensWorkshop.dds</Button>
+			<NIF>Art/Structures/Improvements/Majens Workshop/harounfoundry.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/MajensWorkshopButton.dds</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
 			<Type>ART_DEF_WHISPERING_WOOD</Type>

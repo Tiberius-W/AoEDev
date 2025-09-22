@@ -42029,7 +42029,7 @@
 			<iEnemyWithdrawalChange>-25</iEnemyWithdrawalChange>
 			<iCollateralDamageProtection>100</iCollateralDamageProtection>
 			<iResistMagic>10</iResistMagic>
-			<Button>Art/Interface/Buttons/WorldBuilder/Camel.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/FavoredSon.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
