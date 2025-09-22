@@ -26,10 +26,10 @@
 		</ImprovementArtInfo>
 			<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_CARNIVEANS_CAMP</Type>
-			<bExtraAnimations>1</bExtraAnimations>
-			<fScale>.30</fScale>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>0.8</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Freak Show/fest_alb_tentround.nif</NIF>
+			<NIF>Art/Structures/Improvements/CarniveansCamp/CampsiteKultiras.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/FreakShow.dds</Button>
 		</ImprovementArtInfo>
