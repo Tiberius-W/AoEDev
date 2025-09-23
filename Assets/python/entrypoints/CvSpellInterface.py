@@ -7593,17 +7593,6 @@ def spellDeathsDominion(caster):
 		if pUnit.getUnitCombatType() != -1:
 			pUnit.setHasPromotion(iDominion, True)
 
-def checkFort(pCaster):
-	pPlot = pCaster.plot()
-	iPlayer = pPlot.getOwner()
-	iImprovement = pPlot.getImprovementType()
-	if iPlayer == -1:
-		pCaster.kill(True, PlayerTypes.NO_PLAYER)
-	if iPlayer != -1:
-		if iImprovement != -1:
-			if not gc.getImprovementInfo(iImprovement).isFort():
-				pCaster.kill(True, PlayerTypes.NO_PLAYER)
-
 def reqPioneer(caster):
 	pPlot = caster.plot()
 	if (pPlot.isOwned()
