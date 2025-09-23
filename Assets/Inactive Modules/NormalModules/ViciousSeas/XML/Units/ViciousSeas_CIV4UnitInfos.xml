@@ -1541,6 +1541,10 @@
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 			</UnitAIs>
 			<Builds>
 				<Build>
@@ -1595,6 +1599,20 @@
 			<Class>UNITCLASS_STYGIAN_GUARD</Class>
 			<Type>UNIT_STYGIAN_GUARD</Type>
 			<iWorkRate>150</iWorkRate>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>

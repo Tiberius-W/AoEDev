@@ -45,7 +45,7 @@
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<fTrainXPCap>6</fTrainXPCap>
+					<fTrainXPCap>12</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
 			<BonusCommerceModifiers>
@@ -115,7 +115,7 @@
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
-					<fTrainXPCap>15</fTrainXPCap>
+					<fTrainXPCap>12</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
 			<BonusCommerceModifiers>
@@ -188,6 +188,7 @@
 			<iPower>4</iPower>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<bNoUnhealthyPopulation>1</bNoUnhealthyPopulation>
+			<bBuildingOnlyHealthy>1</bBuildingOnlyHealthy>
 			<FreePromotion>PROMOTION_DISEASED</FreePromotion>
 			<iTradeRouteModifier>-50</iTradeRouteModifier>
 		</BuildingInfo>
@@ -259,7 +260,7 @@
 			<TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-					<fTrainXPCap>6</fTrainXPCap>
+					<fTrainXPCap>12</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
 			<BonusCommerceModifiers>
@@ -288,7 +289,6 @@
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-			<FreePromotion>PROMOTION_ANGEL_SLAYING</FreePromotion>
 			
 		</BuildingInfo> 
 	</BuildingInfos>

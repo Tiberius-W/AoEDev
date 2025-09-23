@@ -7667,10 +7667,10 @@
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<YieldModifiers>
 				<iYield>0</iYield>
-				<iYield>15</iYield>
+				<iYield>12</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
-			<iWarWearinessModifier>-50</iWarWearinessModifier>
+			<iWarWearinessModifier>-48</iWarWearinessModifier>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
