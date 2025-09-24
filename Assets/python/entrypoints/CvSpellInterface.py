@@ -3695,15 +3695,31 @@ def sanctifyResource(pPlot):
 	setBonus = pPlot.setBonusType
 	randNum = CyGame().getSorenRandNum
 	iImprovement = pPlot.getImprovementType()
-	if iBonus == Bonus["Toad"]:
-		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Sheep"])
-		else: setBonus(Bonus["Pig"])
-	if iBonus == Bonus["Nightmare"]:
-		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Horse"])
-		else: setBonus(Bonus["Cow"])
-	if iBonus == Bonus["Razorweed"]:
-		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Cotton"])
-		else: setBonus(Bonus["Silk"])
+	chance = randNum(100, "Hell Convert")
+	
+        if iBonus == Bonus["Toad"]:
+                if chance < 25: setBonus(Bonus["Sheep"])
+                elif chance < 50: setBonus(Bonus["Pig"])
+                elif chance < 75: setBonus(Bonus["Fur"])
+                else: setBonus(Bonus["Deer"])
+        if iBonus == Bonus["Nightmare"]:
+                if chance < 20: setBonus(Bonus["Horse"])
+                elif chance < 40: setBonus(Bonus["Hyapon"])
+                elif chance < 60: setBonus(Bonus["Ivory"])
+                elif chance < 80: setBonus(Bonus["Cow"])
+                else: setBonus(Bonus["Camel"])
+        if iBonus == getInfoType('BONUS_JETEYE'):
+                if chance < 34: setBonus(Bonus["Fish"])
+                elif chance < 66: setBonus(Bonus["Shrimp"])
+                else: setBonus(getInfoType('BONUS_WHALE'))
+        if iBonus == getInfoType('BONUS_BLEEDING_GOD_WINE'):
+                if chance < 34: setBonus(Bonus["Clam"])
+                elif chance < 66: setBonus(Bonus["Pearl"])
+                else: setBonus(Bonus["Crab"])
+        if iBonus == Bonus["Razorweed"]:
+                if chance < 34: setBonus(Bonus["Cotton"])
+                elif chance < 66: setBonus(Bonus["Silk"])
+                else: setBonus(Bonus["Wine"])
 	if iBonus == Bonus["Gulagarm"]:
 		if randNum(100, "Hell Convert") < 50: setBonus(Bonus["Banana"])
 		else: setBonus(Bonus["Sugar"])

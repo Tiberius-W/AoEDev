@@ -1038,15 +1038,21 @@ class CustomFunctions:
 
 		#### Hell Terrain Section
 			if not Option["No Plot Counter"]:
+                                gc          = CyGlobalContext()
+                                getInfoType = gc.getInfoTypeForString
 				iPlotCount = pPlot.getPlotCounter()
 				setBonus = pPlot.setBonusType
 				if iPlotCount > 9:
-					if (iBonus == Bonus["Sheep"] or iBonus == Bonus["Pig"]):
+					if (iBonus == Bonus["Sheep"] or iBonus == Bonus["Pig"] or iBonus == Bonus["Fur"] or iBonus == Bonus["Deer"]):
 						setBonus(Bonus["Toad"])
-					elif (iBonus == Bonus["Horse"] or iBonus == Bonus["Cow"]):
+					elif (iBonus == Bonus["Horse"] or iBonus == Bonus["Cow"] or iBonus == Bonus["Camel"] or iBonus == Bonus["Ivory"]):
 						setBonus(Bonus["Nightmare"])
-					elif (iBonus == Bonus["Cotton"] or iBonus == Bonus["Silk"]):
+					elif (iBonus == Bonus["Cotton"] or iBonus == Bonus["Silk"] or iBonus == Bonus["Wine"]):
 						setBonus(Bonus["Razorweed"])
+					elif (iBonus == Bonus["Fish"] or iBonus == Bonus["Shrimp"] or iBonus == getInfoType('BONUS_WHALE')):
+						setBonus(getInfoType('BONUS_JETEYE'))
+					elif (iBonus == Bonus["Clam"] or iBonus == Bonus["Crab"] or iBonus == Bonus["Pearl"]):
+						setBonus(getInfoType('BONUS_BLEEDING_GOD_WINE'))
 					elif (iBonus == Bonus["Banana"] or iBonus == Bonus["Sugar"]):
 						setBonus(Bonus["Gulagarm"])
 					elif (iBonus == Bonus["Marble"]): setBonus(Bonus["Sheut"])

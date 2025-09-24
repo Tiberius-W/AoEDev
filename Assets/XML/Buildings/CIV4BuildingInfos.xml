@@ -3916,6 +3916,16 @@
 					<iProductionModifier>25</iProductionModifier>
 				</DomainProductionModifier>
 			</DomainProductionModifiers>
+			<BonusYieldModifiers>
+				<BonusYieldModifier>
+					<BonusType>BONUS_PEARL</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>10</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+			</BonusYieldModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -5722,7 +5732,7 @@
 			</ObsoleteSafeCommerceChanges>
 			<iCrime>-10</iCrime>
 			<FreeBonus2>BONUS_MANA_CHAOS</FreeBonus2>
-			<FreeBonus3>BONUS_MANA_AIR</FreeBonus3>
+			<FreeBonus3>BONUS_MANA_AIR</FreeBonus3>	
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Palace Ljosalfar -->
 			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
@@ -11057,6 +11067,10 @@
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_REAGENTS</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_PATRIAN_ARTIFACTS</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>

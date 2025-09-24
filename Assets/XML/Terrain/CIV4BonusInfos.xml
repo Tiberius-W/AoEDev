@@ -1709,14 +1709,13 @@
 			<Civilopedia>TXT_KEY_BONUS_PATRIAN_ARTIFACTS_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PATRIAN_ARTIFACTS</ArtDefineTag>
-			<TechReveal>TECH_THE_GIFT</TechReveal>
-			<TechCityTrade>TECH_THE_GIFT</TechCityTrade>
+			<TechReveal>NONE</TechReveal>
+			<TechCityTrade>NONE</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
-			<iHappiness>1</iHappiness>
 			<iPlacementOrder>7</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
 			<iMinAreaSize>10</iMinAreaSize>
@@ -1758,12 +1757,12 @@
 			<Civilopedia>TXT_KEY_BONUS_PEARL_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PEARL</ArtDefineTag>
-			<TechReveal>TECH_SEAFARING</TechReveal>
-			<TechCityTrade>TECH_SEAFARING</TechCityTrade>
+			<TechReveal>NONE</TechReveal>
+			<TechCityTrade>NONE</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
-				<iYieldChange>2</iYieldChange>
+				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
 			<iPlacementOrder>6</iPlacementOrder>
