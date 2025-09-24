@@ -17430,6 +17430,7 @@
 			<iFriendlyHealChange>-5</iFriendlyHealChange>
 			<iCombatPercent>-10</iCombatPercent>
 			<iExperiencePercent>0</iExperiencePercent>
+			<iNoBadExplore>-25</iNoBadExplore>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>

@@ -172,6 +172,7 @@
 			<bNoXP>1</bNoXP>
 			<Button>Art/Interface/Buttons/Buildings/FreakShow.dds</Button>
 			<iWithdrawalChange>25</iWithdrawalChange>
+			<iNoBadExplore>10</iNoBadExplore>
 			<PrereqTraits>
 				<PrereqTrait>TRAIT_KEEPERS_CARNIVEAN</PrereqTrait>
 			</PrereqTraits>
