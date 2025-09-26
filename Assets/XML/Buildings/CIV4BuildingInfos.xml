@@ -14999,6 +14999,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iHurryAngerModifier>-50</iHurryAngerModifier>
 			<iConquestProb>0</iConquestProb>
+			<iCrime>-15</iCrime>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_MANA_MIND</BonusType>
