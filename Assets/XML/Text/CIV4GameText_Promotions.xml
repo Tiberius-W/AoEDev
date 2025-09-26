@@ -670,6 +670,14 @@
 		<Spanish>Toad Blood</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BAT_BLOOD</Tag>
+		<English>Bat Blood</English>
+		<French>Sang d'Chauve-souris</French>
+		<German>Fledermausblut</German>
+		<Italian>Bat Blood</Italian>
+		<Spanish>Bat Blood</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BOAR_BLOOD</Tag>
 		<English>Boar Blood</English>
 		<French>Sang de Sanglier</French>

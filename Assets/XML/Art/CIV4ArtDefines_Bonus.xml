@@ -689,9 +689,9 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_PATRIAN_ARTIFACTS</Type>
-			<fScale>0.6</fScale>
+			<fScale>0.5</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/patrian_artifacts/CircleStones.nif</NIF>
+			<NIF>Art/Terrain/Resources/patrian_artifacts/PatrianArtifacts.nif</NIF>
 			<KFM></KFM>
 			<Button>Art/Interface/Buttons/WorldBuilder/patrianartifacts.dds</Button>
 			<FontButtonIndex>61</FontButtonIndex>

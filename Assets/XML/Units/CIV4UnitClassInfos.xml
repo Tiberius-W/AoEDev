@@ -2318,6 +2318,17 @@
 			<DefaultUnit>UNIT_OYKAMON</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Batswarm -->
+			<Type>UNITCLASS_BATSWARM</Type>
+			<Description>TXT_KEY_UNIT_CHORT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_CHORT</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- rat -->
 			<Type>UNITCLASS_RAT</Type>
 			<Description>TXT_KEY_UNIT_RAT</Description>

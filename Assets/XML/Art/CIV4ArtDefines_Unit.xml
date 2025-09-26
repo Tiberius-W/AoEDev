@@ -34212,7 +34212,7 @@
 			<SelectionSound/>
 			<ActionSound/>
 		</UnitArtInfo>
-<UnitArtInfo>		<!--sea drake-->
+		<UnitArtInfo>		<!--sea drake-->
 			<Type>ART_DEF_UNIT_SEA_DRAKE</Type>
 			<Button>Art/units/animal/Drakes/black_drake/black_drake_btn.dds</Button>
 			<fScale>0.96</fScale>
@@ -34232,6 +34232,29 @@
 			<AudioRunSounds/>
 			<SelectionSound/>
 			<ActionSound/>
+		</UnitArtInfo>
+		<UnitArtInfo> <!-- Batswarm-->
+			<Type>ART_DEF_UNIT_BATSWARM</Type>
+			<Button>Art/Interface/Buttons/Units/Batty.dds</Button>
+			<fScale>0.3</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>1</bActAsAir>
+			<NIF>Art/Units/Animal/Batswarm/Batswarm2.nif</NIF>
+			<KFM>Art/animations/Wolf/Wolf.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
+				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
+				<fShadowScale>0.3</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
 		</UnitArtInfo>
 	<UnitArtInfo> <!-- Rat-->
 			<Type>ART_DEF_UNIT_RAT</Type>

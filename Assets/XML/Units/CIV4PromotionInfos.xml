@@ -30986,6 +30986,19 @@
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Bat Blood -->
+			<Type>PROMOTION_BAT_BLOOD</Type>
+			<Description>TXT_KEY_PROMOTION_BAT_BLOOD</Description>
+			<iCombatHealPercent>5</iCombatHealPercent>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Units/Batty.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Toad Blood -->
 			<Type>PROMOTION_TOAD_BLOOD</Type>
 			<Description>TXT_KEY_PROMOTION_TOAD_BLOOD</Description>

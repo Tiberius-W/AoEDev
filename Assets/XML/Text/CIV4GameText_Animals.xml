@@ -418,6 +418,30 @@
 		<Spanish>Tyrant</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHORT</Tag>
+		<English>Chort</English>
+		<French>Chort</French>
+		<German>Chort</German>
+		<Italian>Chort</Italian>
+		<Spanish>Chort</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHORT_STRATEGY</Tag>
+		<English>Chort are an early demon unit with flying, able to harass your lands that would otherwise be protected by lakes or mountains. If you know hell terrain is close by, make sure to assign extra defenders to your lone workers.</English>
+		<French>Chort are an early demon unit with flying, able to harass your lands that would otherwise be protected by lakes or mountains. If you know hell terrain is close by, make sure to assign extra defenders to your lone workers.</French>
+		<German>Chort are an early demon unit with flying, able to harass your lands that would otherwise be protected by lakes or mountains. If you know hell terrain is close by, make sure to assign extra defenders to your lone workers.</German>
+		<Italian>Chort are an early demon unit with flying, able to harass your lands that would otherwise be protected by lakes or mountains. If you know hell terrain is close by, make sure to assign extra defenders to your lone workers.</Italian>
+		<Spanish>Chort are an early demon unit with flying, able to harass your lands that would otherwise be protected by lakes or mountains. If you know hell terrain is close by, make sure to assign extra defenders to your lone workers.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHORT_PEDIA</Tag>
+		<English>Also known as vampire bats, Chorts are blood suckers that sometimes hunt in packs of thousands. </English>
+		<French>Also known as vampire bats, Chorts are blood suckers that sometimes hunt in packs of thousands. </French>
+		<German>Also known as vampire bats, Chorts are blood suckers that sometimes hunt in packs of thousands. </German>
+		<Italian>Also known as vampire bats, Chorts are blood suckers that sometimes hunt in packs of thousands. </Italian>
+		<Spanish>Also known as vampire bats, Chorts are blood suckers that sometimes hunt in packs of thousands. </Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TOAD</Tag>
 		<English>Toad</English>
 		<French>Toad</French>

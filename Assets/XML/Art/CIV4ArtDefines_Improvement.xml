@@ -198,9 +198,9 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_REMNANTS_OF_PATRIA</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>0.115</fScale>
+			<fScale>0.05.5</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Moai_Statues/Moai_Statutes.nif</NIF>
+			<NIF>Art/Structures/improvements/RemnantsofPatria/RemnantsofPatria.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Improvements/remnantsofpatria.dds</Button>
 		</ImprovementArtInfo>

@@ -3925,6 +3925,28 @@
 			<Sound>AS3D_BRAWL</Sound>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
 		</SpellInfo>
+		<SpellInfo>			<!-- Consume Blood - Bat -->
+			<Type>SPELL_CONSUME_BLOOD_BAT</Type>
+			<Description>TXT_KEY_SPELL_CONSUME_BLOOD_BAT</Description>
+			<Civilopedia></Civilopedia>
+			<Strategy></Strategy>
+			<PromotionPrereq1>PROMOTION_BAT_BLOOD</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_TAME</PromotionPrereq2>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>100</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_BAT_BLOOD</AddPromotion>
+			</AddPromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bSacrificeCaster>1</bSacrificeCaster>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_BRAWL</Sound>
+			<Button>Art/Interface/Buttons/Units/batty.dds</Button>
+		</SpellInfo>
 		<SpellInfo>			<!-- Consume Blood - Toad -->
 			<Type>SPELL_CONSUME_BLOOD_TOAD</Type>
 			<Description>TXT_KEY_SPELL_CONSUME_BLOOD_TOAD</Description>

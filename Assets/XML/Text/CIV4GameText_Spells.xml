@@ -3919,6 +3919,14 @@
 		<Spanish>Sacrifice the Rat</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_CONSUME_BLOOD_BAT</Tag>
+		<English>Sacrifice the Bat</English>
+		<French>Sacrifice the Bat</French>
+		<German>Sacrifice the Bat</German>
+		<Italian>Sacrifice the Bat</Italian>
+		<Spanish>Sacrifice the Bat</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_CONSUME_BLOOD_TOAD</Tag>
 		<English>Sacrifice the Toad</English>
 		<French>Sacrifier le Crapaud</French>

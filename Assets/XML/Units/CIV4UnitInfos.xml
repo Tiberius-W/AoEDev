@@ -55802,6 +55802,74 @@
 			<iAppearanceProb>-1</iAppearanceProb>
 			<PrereqTech>TECH_TRACKING</PrereqTech>
 		</UnitInfo>
+		<UnitInfo>        <!-- Bat Swarm - Chort -->
+			<Class>UNITCLASS_BATSWARM</Class>
+			<Type>UNIT_CHORT</Type>
+			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_CHORT</Description>
+			<Civilopedia>TXT_KEY_UNIT_CHORT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_CHORT_STRATEGY</Strategy>
+			<Advisor>NONE</Advisor>
+			<bAnimal>1</bAnimal>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>1</iMoves>
+			<iCombat>3</iCombat>
+			<iCityAttack>-25</iCityAttack>
+			<TerrainNatives>
+				<TerrainNative>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+			</TerrainNatives>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BATSWARM</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_ANIMAL</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_BAT_BLOOD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FLYING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bGraphicalOnly>0</bGraphicalOnly>
+			<iTier>1</iTier>
+		</UnitInfo>
 		<UnitInfo>        <!-- Sluagh -->
 			<Class>UNITCLASS_SLUAGH</Class>
 			<Type>UNIT_SLUAGH</Type>
