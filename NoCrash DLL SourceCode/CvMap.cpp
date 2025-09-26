@@ -362,6 +362,7 @@ void CvMap::doTurn()
 	int iNumPlots = numPlotsINLINE();
 	// Start at a random plot, otherwise barbs will be always denser closer to index 0.
 	int iOffset = GC.getGameINLINE().getMapRandNum(iNumPlots, "Rand Starting Plot");
+	bool bCalcHellTerrain = !GC.getGameINLINE().isOption(GAMEOPTION_NO_PLOT_COUNTER);
 
 	std::list<int> listPlotCounters;
 
@@ -369,8 +370,16 @@ void CvMap::doTurn()
 	{
 		iPlotIndex = iI % iNumPlots;
 		plotByIndexINLINE(iPlotIndex)->doTurn();
-		// Construct a list of what all the plot counters should be. Can't immediately apply due to ordering oddities
-		listPlotCounters.push_back(plotByIndexINLINE(iPlotIndex)->calcTargetPlotCounter());
+		if (bCalcHellTerrain)
+		{
+			// Construct a list of what all the plot counters should be. Can't immediately apply due to ordering oddities
+			listPlotCounters.push_back(plotByIndexINLINE(iPlotIndex)->calcTargetPlotCounter());
+		}
+	}
+
+	if (!bCalcHellTerrain)
+	{
+		return;
 	}
 
 	iPlotIndex = iOffset;
