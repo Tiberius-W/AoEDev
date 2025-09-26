@@ -34236,7 +34236,7 @@
 		<UnitArtInfo> <!-- Batswarm-->
 			<Type>ART_DEF_UNIT_BATSWARM</Type>
 			<Button>Art/Interface/Buttons/Units/Batty.dds</Button>
-			<fScale>0.3</fScale>
+			<fScale>0.25</fScale>
 			<fInterfaceScale>0.35</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>1</bActAsAir>

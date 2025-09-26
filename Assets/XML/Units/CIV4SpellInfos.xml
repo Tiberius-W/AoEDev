@@ -12549,6 +12549,7 @@
 			</SpellClasses>
 			<UnitPrereq>UNIT_OYKAMON</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<bCausesWar>1</bCausesWar>

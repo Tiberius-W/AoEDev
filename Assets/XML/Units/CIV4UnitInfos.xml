@@ -55845,6 +55845,18 @@
 					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
 					<bTerrainNative>1</bTerrainNative>
 				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
 			</TerrainNatives>
 			<iAsset>0</iAsset>
 			<UnitMeshGroups>
@@ -56208,7 +56220,7 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-			<PrereqTech>TECH_CORRUPTION_OF_SPIRIT</PrereqTech>
+			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_COUNTER</UnitAIType>
