@@ -6474,8 +6474,10 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 			}
 
 			// Immediately update hell tile for Infernals
-			if (eNewValue == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+			if (GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+			{
 				setPlotCounter(100);
+			}
 
 			for (iI = 0; iI < MAX_CIV_TEAMS; ++iI)
 			{
