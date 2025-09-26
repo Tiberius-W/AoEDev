@@ -987,11 +987,11 @@
 			</PrereqTechORs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Coven of Hags -->
-			<Type>SPAWN_GROUP_HAEGETESSE_COVEN</Type>
-			<Description>TXT_KEY_SPAWN_GROUP_HAEGETESSE_COVEN</Description>
+			<Type>SPAWN_GROUP_HAEGTESSE_COVEN</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_HAEGTESSE_COVEN</Description>
 			<iWeight>1000</iWeight>
 			<CommanderUnits>
-				<Unit>UNIT_HAEGETESSE</Unit>
+				<Unit>UNIT_HAEGTESSE</Unit>
 			</CommanderUnits>
 			<GroupUnitClasses>
 				<GroupUnitClass>
@@ -1004,12 +1004,12 @@
 				<Tech>TECH_PRIESTHOOD</Tech>
 			</PrereqTechORs>
 		</SpawnGroupInfo>
-		<SpawnGroupInfo>	<!--  Haegetesse Familiars -->
-			<Type>SPAWN_GROUP_HAEGETESSE_FAMILIARS</Type>
-			<Description>TXT_KEY_SPAWN_GROUP_HAEGETESSE_FAMILIARS</Description>
+		<SpawnGroupInfo>	<!--  Haegtesse Familiars -->
+			<Type>SPAWN_GROUP_HAEGTESSE_FAMILIARS</Type>
+			<Description>TXT_KEY_SPAWN_GROUP_HAEGTESSE_FAMILIARS</Description>
 			<iWeight>1000</iWeight>
 			<CommanderUnits>
-				<Unit>UNIT_HAEGETESSE</Unit>
+				<Unit>UNIT_HAEGTESSE</Unit>
 			</CommanderUnits>
 			<GroupUnitClasses>
 				<GroupUnitClass>

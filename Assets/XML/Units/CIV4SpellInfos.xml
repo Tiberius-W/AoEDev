@@ -8201,7 +8201,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<Button>Art/Interface/Buttons/Spells/BlindingFlash.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Weird Wrack for Haegetesse -->
+		<SpellInfo>			<!-- Weird Wrack for Haegtesse -->
 			<Type>SPELL_MISLEADING_PROPHECY</Type>
 			<Description>TXT_KEY_SPELL_MISLEADING_PROPHECY</Description>
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>

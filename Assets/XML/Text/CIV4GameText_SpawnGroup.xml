@@ -862,7 +862,7 @@
 		<Spanish>Diseased Corpses</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPAWN_GROUP_HAEGETESSE_COVEN</Tag>
+		<Tag>TXT_KEY_SPAWN_GROUP_HAEGTESSE_COVEN</Tag>
 		<English>Coven of Hags</English>
 		<French>Coven of Hags</French>
 		<German>Coven of Hags</German>
@@ -870,7 +870,7 @@
 		<Spanish>Coven of Hags</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>SPAWN_GROUP_HAEGETESSE_FAMILIARS</Tag>
+		<Tag>SPAWN_GROUP_HAEGTESSE_FAMILIARS</Tag>
 		<English>Hags Familiars</English>
 		<French>Hags Familiars</French>
 		<German>Hags Familiars</German>
