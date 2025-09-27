@@ -15,7 +15,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TAVERN</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_SALLOS</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -37,6 +37,18 @@
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
@@ -85,7 +97,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TAVERN</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_JUDECCA</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -108,7 +120,15 @@
 			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -155,7 +175,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GOVERNORS_MANOR</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_STATIUS</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -170,6 +190,12 @@
 				<iYield>-25</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Pact Building  Meresin   Temple of the Sallow Orphan -->
 			<BuildingClass>BUILDINGCLASS_TEMPLE_ORPHAN</BuildingClass>
@@ -180,7 +206,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_ASHEN</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_MERESIN</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -191,6 +217,16 @@
 			<bBuildingOnlyHealthy>1</bBuildingOnlyHealthy>
 			<FreePromotion>PROMOTION_DISEASED</FreePromotion>
 			<iTradeRouteModifier>-50</iTradeRouteModifier>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_HEALTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Pact Building  Ouzza   Altar of the Fleshcaller -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_FLESHCALLER</BuildingClass>
@@ -201,7 +237,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DEMONS_ALTAR</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_OUZZA</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -220,6 +256,12 @@
 				<iYield>-6</iYield>
 			</YieldModifiers>
 			<FreePromotion>PROMOTION_ALTAR_GRAFT1</FreePromotion>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Pact Building  Lethe    -->
 			<BuildingClass>BUILDINGCLASS_TEMPLE_REST</BuildingClass>
@@ -230,7 +272,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PAGAN_TEMPLE</ArtDefineTag>
 			<PrereqTrait>TRAIT_PACT_LETHE</PrereqTrait>
-			<iAIWeight>20</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iConquestProb>25</iConquestProb>
@@ -289,7 +331,20 @@
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-			
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo> 
 	</BuildingInfos>
 </Civ4BuildingInfos>

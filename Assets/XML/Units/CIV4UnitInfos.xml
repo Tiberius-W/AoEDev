@@ -8803,13 +8803,8 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iTier>4</iTier>
-			<iAppearanceProb>-1</iAppearanceProb>
-			<AppearanceTechs>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_WAY_OF_THE_WICKED</AppearanceTechType>
-					<iAppearanceTech>10001</iAppearanceTech>
-				</AppearanceTech>
-			</AppearanceTechs>
+			<Image>Art/Interface/Popups/GyreCarlinBanner.dds</Image>
+			<Quote>TXT_KEY_POPUP_GYRECARLIN_CREATION</Quote>
 		</UnitInfo>
 		<UnitInfo>        <!-- Adventurer 90-->                                                            <!-- BEGIN GREAT PEOPLE LIST -->
 			<Class>UNITCLASS_ADVENTURER</Class>

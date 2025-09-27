@@ -6968,6 +6968,14 @@
 			<Buildings/>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_HAG</UnitClassType>
+					<UnitType>UNIT_HAEGTESSE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
+					<UnitType>UNIT_GYRE_CARLIN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER</UnitType>
 				</Unit>
@@ -7515,14 +7523,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_BATSWARM</UnitClassType>
 					<UnitType>UNIT_CHORT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_HAG</UnitClassType>
-					<UnitType>UNIT_HAEGTESSE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
-					<UnitType>UNIT_GYRE_CARLIN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
