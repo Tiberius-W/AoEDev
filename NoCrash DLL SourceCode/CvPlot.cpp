@@ -10900,13 +10900,13 @@ void CvPlot::doPlotEffect()
 		}
 
 		// If still here, do pyPerTurn
-		if (!CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPythonPerTurn()).empty())
+		if (!CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPyPerTurn()).empty())
 		{
 			CyPlot* pyPlot = new CyPlot(this);
 			CyArgsList argsList;
 			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in unit class
-			argsList.add(getPlotEffectType());//the promotion #
-			gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
+			argsList.add(getPlotEffectType());//the plotEffect #
+			gDLL->getPythonIFace()->callFunction(PYSpellModule, "effectPlot", argsList.makeFunctionArgs()); //, &lResult
 			delete pyPlot; // python fxn must not hold on to this pointer
 		}
 	}

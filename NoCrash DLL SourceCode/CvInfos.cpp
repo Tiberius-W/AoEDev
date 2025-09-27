@@ -52542,9 +52542,9 @@ const TCHAR* CvPlotEffectInfo::getPythonOnMove() const
 {
 	return m_szPythonOnMove;
 }
-const TCHAR* CvPlotEffectInfo::getPythonPerTurn() const
+const TCHAR* CvPlotEffectInfo::getPyPerTurn() const
 {
-	return m_szPythonPerTurn;
+	return m_szPyPerTurn;
 }
 bool CvPlotEffectInfo::isTerrain(int i) const
 {
@@ -52577,7 +52577,7 @@ bool CvPlotEffectInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(m_szPythonOnMove, "PythonOnMove");
 
-	pXML->GetChildXmlValByName(m_szPythonPerTurn, "PythonPerTurn");
+	pXML->GetChildXmlValByName(m_szPyPerTurn, "PyPerTurn");
 	
 	pXML->GetChildXmlValByName(szTextVal, "DefaultFeatureGraphics");
 	// call the find in list function to return either -1 if no value is found
@@ -52633,7 +52633,7 @@ void CvPlotEffectInfo::copyNonDefaults(CvPlotEffectInfo* pClassInfo, CvXMLLoadUt
 	if (getPerceptionCost() 				== 0)				m_iPerceptionCost 			= (pClassInfo->getPerceptionCost());
 	if (getSeeThroughChange()				== 0)				m_iSeeThroughChange 		= (pClassInfo->getSeeThroughChange());
 	if (getPythonOnMove() 					== cDefault)		m_szPythonOnMove 			= pClassInfo->getPythonOnMove();
-	if (getPythonPerTurn() 					== cDefault)		m_szPythonPerTurn 			= pClassInfo->getPythonPerTurn();
+	if (getPyPerTurn() 						== cDefault)		m_szPyPerTurn 				= pClassInfo->getPyPerTurn();
 	for (int i = 0; i < NUM_YIELD_TYPES; i++)
 	{
 		if (getYieldChange(i) == 0)					m_piYieldChange[i] = pClassInfo->getYieldChange(i);

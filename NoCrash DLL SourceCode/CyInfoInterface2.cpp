@@ -19,15 +19,15 @@ void CyInfoPythonInterface2()
 
 		.def("isNoLimit", &CvBuildingClassInfo::isNoLimit, "bool ()")
 		.def("isMonument", &CvBuildingClassInfo::isMonument, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(BuildingClassInfos)	10/18/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(BuildingClassInfos)	10/18/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("isUnique", &CvBuildingClassInfo::isUnique, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 
 		// Arrays
 
@@ -57,11 +57,11 @@ void CyInfoPythonInterface2()
 
 		.def("isAIPlayable", &CvCivilizationInfo::isAIPlayable, "bool ()")
 		.def("isPlayable", &CvCivilizationInfo::isPlayable, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(CivilizationInfos)		01/12/09								Xienwolf	**/
-/**																								**/
-/**								Defines Function for Use in .cpp								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(CivilizationInfos)		01/12/09								Xienwolf	**/
+		/**																								**/
+		/**								Defines Function for Use in .cpp								**/
+		/*************************************************************************************************/
 		.def("setAIPlayable", &CvCivilizationInfo::isAIPlayable, "void (bool bPlayable)")
 		.def("setPlayable", &CvCivilizationInfo::isPlayable, "void (bool bPlayable)")
 		.def("isLimitedSelection", &CvCivilizationInfo::isLimitedSelection, "bool ()")
@@ -70,9 +70,9 @@ void CyInfoPythonInterface2()
 		.def("getFeatureYieldChanges", &CvCivilizationInfo::getFeatureYieldChanges, "int (int i, int j)")
 		.def("getImprovementYieldChanges", &CvCivilizationInfo::getImprovementYieldChanges, "int (int i, int j)")
 		.def("getTerrainYieldChanges", &CvCivilizationInfo::getTerrainYieldChanges, "int (int i, int j)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 
 		.def("getShortDescription", &CvCivilizationInfo::pyGetShortDescription, "wstring ()")
 		.def("getShortDescriptionKey", &CvCivilizationInfo::pyGetShortDescriptionKey, "wstring ()")
@@ -99,25 +99,25 @@ void CyInfoPythonInterface2()
 
 		.def("getCityNames", &CvCivilizationInfo::getCityNames, "string (int i)")
 
-//InterfaceUpgrade: Better Pedia - Added by Grey Fox 04/18/2008 (CyInfoInterface2.cpp)
+		// InterfaceUpgrade: Better Pedia - Added by Grey Fox 04/18/2008 (CyInfoInterface2.cpp)
 		.def("getHero", &CvCivilizationInfo::getHero, "int ()")
 		.def("getImage", &CvCivilizationInfo::getImage, "const TCHAR* ()")
-//InterfaceUpgrade: Better Pedia - End Add
+		// InterfaceUpgrade: Better Pedia - End Add
 
-//FfH: Added by Kael 05/27/2008
+		// FfH: Added by Kael 05/27/2008
 		.def("getDefaultRace", &CvCivilizationInfo::getDefaultRace, "int ()")
 		.def("isMaintainFeatures", &CvCivilizationInfo::isMaintainFeatures, "bool (int i)")
-//FfH: End Add
-/*************************************************************************************************/
-/**	Civilization Flavors				07/07/10										Snarko	**/
-/**																								**/
-/**							Making civilization flavors,										**/
-/**			for helping AI with things we can't really add in a non-hardcoded way				**/
-/*************************************************************************************************/
+		// FfH: End Add
+		/*************************************************************************************************/
+		/**	Civilization Flavors				07/07/10										Snarko	**/
+		/**																								**/
+		/**							Making civilization flavors,										**/
+		/**			for helping AI with things we can't really add in a non-hardcoded way				**/
+		/*************************************************************************************************/
 		.def("getCivFlavorValue", &CvCivilizationInfo::getCivFlavorValue, "int (int i)")
-/*************************************************************************************************/
-/**	Civilization Flavors					END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Civilization Flavors					END													**/
+		/*************************************************************************************************/
 		.def("getFlavorValue", &CvCivilizationInfo::getFlavorValue, "int (int i)")
 
 		;
@@ -207,11 +207,11 @@ void CyInfoPythonInterface2()
 		.def("getAIAdvancedStartPercent", &CvHandicapInfo::getAIAdvancedStartPercent, "int ()")
 		.def("getNumGoodies", &CvHandicapInfo::getNumGoodies, "int ()")
 
-/*************************************************************************************************/
-/**	New Tag Defs	(HandicapInfos)			12/27/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(HandicapInfos)			12/27/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getWaterTilesPerAnimal", &CvHandicapInfo::getWaterTilesPerAnimal, "int ()")
 		.def("getAnimalEscalationTurnsElapsed", &CvHandicapInfo::getAnimalEscalationTurnsElapsed, "int ()")
 		.def("getPercentDemonsPerEvilPlot", &CvHandicapInfo::getPercentDemonsPerEvilPlot, "int ()")
@@ -221,9 +221,9 @@ void CyInfoPythonInterface2()
 		.def("getDemonPerTurnKnownTechsPercent", &CvHandicapInfo::getDemonPerTurnKnownTechsPercent, "int ()")
 		.def("getDemonBonus", &CvHandicapInfo::getDemonBonus, "int ()")
 		.def("getAIDemonBonus", &CvHandicapInfo::getAIDemonBonus, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 
 		// Arrays
 
@@ -255,11 +255,11 @@ void CyInfoPythonInterface2()
 		.def("getInflationPercent", &CvGameSpeedInfo::getInflationPercent, "int ()")
 		.def("getVictoryDelayPercent", &CvGameSpeedInfo::getVictoryDelayPercent, "int ()")
 		.def("getNumTurnIncrements", &CvGameSpeedInfo::getNumTurnIncrements, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(GameSpeedInfos)		12/27/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(GameSpeedInfos)		12/27/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getLairSpawnChance", &CvGameSpeedInfo::getLairSpawnChance, "int ()")
 		.def("getTurnsPerLairCycle", &CvGameSpeedInfo::getTurnsPerLairCycle, "int ()")
 		.def("getBarbSpawnDelay", &CvGameSpeedInfo::getBarbSpawnDelay, "int ()")
@@ -292,23 +292,23 @@ void CyInfoPythonInterface2()
 		.def("getFeatureProduction", &CvBuildInfo::getFeatureProduction, "int (int i)")
 
 		.def("isFeatureRemove", &CvBuildInfo::isFeatureRemove, "bool (int i)")
-/*************************************************************************************************/
-/**	New Tag Defs	(BuildInfos)			12/07/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(BuildInfos)			12/07/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getTechDiscount", &CvBuildInfo::getTechDiscount, "int (int iI)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		;
 
 	python::class_<CvGoodyInfo, python::bases<CvInfoBase> >("CvGoodyInfo")
-/*************************************************************************************************/
-/**	MISSION_EXPLORE_LAIR				20/06/10										Snarko	**/
-/**																								**/
-/**							Moving explore lair results into SDK								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MISSION_EXPLORE_LAIR				20/06/10										Snarko	**/
+		/**																								**/
+		/**							Moving explore lair results into SDK								**/
+		/*************************************************************************************************/
 		.def("isGoodyClassType", &CvGoodyInfo::isGoodyClassType, "bool (int i)")
 		.def("getWeight", &CvGoodyInfo::getWeight, "int ()")
 		.def("getDamageType", &CvGoodyInfo::getDamageType, "int ()")
@@ -317,9 +317,9 @@ void CyInfoPythonInterface2()
 		.def("getPrereqAlignment", &CvGoodyInfo::getPrereqAlignment, "int ()")
 		.def("getDestroyLairChance", &CvGoodyInfo::getDestroyLairChance, "int ()")
 		.def("isAnyPromotion", &CvGoodyInfo::isAnyPromotion, "bool ()")
-/*************************************************************************************************/
-/**	MISSION_EXPLORE_LAIR					END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MISSION_EXPLORE_LAIR					END													**/
+		/*************************************************************************************************/
 		.def("getGold", &CvGoodyInfo::getGold, "int ()")
 		.def("getGoldRand1", &CvGoodyInfo::getGoldRand1, "int ()")
 		.def("getGoldRand2", &CvGoodyInfo::getGoldRand2, "int ()")
@@ -333,22 +333,22 @@ void CyInfoPythonInterface2()
 		.def("getMinBarbarians", &CvGoodyInfo::getMinBarbarians, "int ()")
 		.def("getUnitClassType", &CvGoodyInfo::getUnitClassType, "int ()")
 		.def("getBarbarianUnitClass", &CvGoodyInfo::getBarbarianUnitClass, "int ()")
-/*************************************************************************************************/
-/**	Spawn Groups						08/05/10									Valkrionn	**/
-/**																								**/
-/**					New spawn mechanic, allowing us to customize stacks							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Spawn Groups						08/05/10									Valkrionn	**/
+		/**																								**/
+		/**					New spawn mechanic, allowing us to customize stacks							**/
+		/*************************************************************************************************/
 		.def("getBarbarianSpawnGroup", &CvGoodyInfo::getBarbarianSpawnGroup, "int ()")
-/*************************************************************************************************/
-/**	Spawn Groups							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Spawn Groups							END													**/
+		/*************************************************************************************************/
 
 		.def("isTech", &CvGoodyInfo::isTech, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(GoodyInfos)			07/29/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(GoodyInfos)			07/29/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getScience", &CvGoodyInfo::getScience, "int ()")
 		.def("getScienceRand1", &CvGoodyInfo::getScienceRand1, "int ()")
 		.def("getScienceRand2", &CvGoodyInfo::getScienceRand2, "int ()")
@@ -359,20 +359,20 @@ void CyInfoPythonInterface2()
 		.def("getNumPromotionRemove", &CvGoodyInfo::getNumPromotionRemoves, "int ()")
 		.def("getMinTurnsElapsed", &CvGoodyInfo::getMinTurnsElapsed, "int ()")
 		.def("getMaxTurnsElapsed", &CvGoodyInfo::getMaxTurnsElapsed, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		.def("isBad", &CvGoodyInfo::isBad, "bool ()")
-/*************************************************************************************************/
-/**	Balancing							05/10/12										Snarko	**/
-/**																								**/
-/**					Making the more OP results require certain techs							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Balancing							05/10/12										Snarko	**/
+		/**																								**/
+		/**					Making the more OP results require certain techs							**/
+		/*************************************************************************************************/
 		.def("getPrereqTech", &CvGoodyInfo::getPrereqTech, "int ()")
 		.def("getPrereqEra", &CvGoodyInfo::getPrereqEra, "int ()")
-/*************************************************************************************************/
-/**	Balancing								END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Balancing								END													**/
+		/*************************************************************************************************/
 
 		.def("getSound", &CvGoodyInfo::getSound, "string ()")
 		;
@@ -409,41 +409,41 @@ void CyInfoPythonInterface2()
 		.def("getUpgradeTime", &CvImprovementInfo::getUpgradeTime, "int ()")
 		.def("getAirBombDefense", &CvImprovementInfo::getAirBombDefense, "int ()")
 		.def("getDefenseModifier", &CvImprovementInfo::getDefenseModifier, "int ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       02/12/10                             jdog5000         */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-/* original bts code
-		.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
-*/
+		/************************************************************************************************/
+		/* UNOFFICIAL_PATCH                       02/12/10                             jdog5000         */
+		/*                                                                                              */
+		/* Bugfix                                                                                       */
+		/************************************************************************************************/
+		/* original bts code
+				.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
+		*/
 		.def("getHappiness", &CvImprovementInfo::getHappiness, "int ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* UNOFFICIAL_PATCH                        END                                                  */
+		/************************************************************************************************/
 		.def("getPillageGold", &CvImprovementInfo::getPillageGold, "int ()")
 		.def("getImprovementPillage", &CvImprovementInfo::getImprovementPillage, "int ()")
 		.def("getImprovementUpgrade", &CvImprovementInfo::getImprovementUpgrade, "int ()")
 
-/*************************************************************************************************/
-/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+		/*************************************************************************************************/
 		.def("getCultureRange", &CvImprovementInfo::getCultureRange, "int ()")
 		.def("getCultureControlStrength", &CvImprovementInfo::getCultureControlStrength, "int ()")
 		.def("getCultureCenterBonus", &CvImprovementInfo::getCultureCenterBonus, "int ()")
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Improvements Mods	END								**/
+		/*************************************************************************************************/
 
 		.def("isActsAsCity", &CvImprovementInfo::isActsAsCity, "bool ()")
 		.def("isHillsMakesValid", &CvImprovementInfo::isHillsMakesValid, "bool ()")
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
+		/*************************************************************************************************/
 		.def("isPeakMakesValid", &CvImprovementInfo::isPeakMakesValid, "bool ()")
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Mountain Mod	END									**/
+		/*************************************************************************************************/
 		.def("isFreshWaterMakesValid", &CvImprovementInfo::isFreshWaterMakesValid, "bool ()")
 		.def("isRiverSideMakesValid", &CvImprovementInfo::isRiverSideMakesValid, "bool ()")
 		.def("isNoFreshWater", &CvImprovementInfo::isNoFreshWater, "bool ()")
@@ -456,72 +456,72 @@ void CyInfoPythonInterface2()
 		.def("isGoody", &CvImprovementInfo::isGoody, "bool ()")
 		.def("isPermanent", &CvImprovementInfo::isPermanent, "bool ()")
 		.def("isOutsideBorders", &CvImprovementInfo::isOutsideBorders, "bool ()")
-/*************************************************************************************************/
-/**	Improvements Mods by Jeckel	imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Improvements Mods by Jeckel	imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+		/*************************************************************************************************/
 		.def("getMinimumDistance", &CvImprovementInfo::getMinimumDistance, "int ()")
-/*************************************************************************************************/
-/**	Improvements Mods	END								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Improvements Mods	END								**/
+		/*************************************************************************************************/
 
 		.def("getArtDefineTag", &CvImprovementInfo::getArtDefineTag, "string ()")
 
-//InterfaceUpgrade: Better Pedia - Added by Grey Fox 04/18/2008
+		// InterfaceUpgrade: Better Pedia - Added by Grey Fox 04/18/2008
 		.def("getBonusConvert", &CvImprovementInfo::getBonusConvert, "int ()")
-/*************************************************************************************************/
-/**	Statesmen								02/05/10											**/
-/**																								**/
-/**						Allows improvements to grant specific specialists						**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Statesmen								02/05/10											**/
+		/**																								**/
+		/**						Allows improvements to grant specific specialists						**/
+		/*************************************************************************************************/
 		.def("getFreeSpecialist", &CvImprovementInfo::getFreeSpecialist, "int ()")
-/*************************************************************************************************/
-/**	Statesmen								END													**/
-/*************************************************************************************************/
-//Interface Upgrade: Better Pedia - End Add
+		/*************************************************************************************************/
+		/**	Statesmen								END													**/
+		/*************************************************************************************************/
+		// Interface Upgrade: Better Pedia - End Add
 
-//FfH: Added by Kael 09/27/2007
+		// FfH: Added by Kael 09/27/2007
 		.def("isUnique", &CvImprovementInfo::isUnique, "bool ()")
 		.def("getPythonAtRange", &CvImprovementInfo::getPythonAtRange, "string ()")
 		.def("getPythonOnMove", &CvImprovementInfo::getPythonOnMove, "string ()")
 		.def("getSpawnUnitType", &CvImprovementInfo::getSpawnUnitType, "int ()")
-/*************************************************************************************************/
-/**	LairGuardians							7/17/10									Valkrionn	**/
-/**																								**/
-/**				Allows for lairs to spawn a unit on creation, but spawn others normally			**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	LairGuardians							7/17/10									Valkrionn	**/
+		/**																								**/
+		/**				Allows for lairs to spawn a unit on creation, but spawn others normally			**/
+		/*************************************************************************************************/
 		.def("getImmediateSpawnUnitType", &CvImprovementInfo::getImmediateSpawnUnitType, "int ()")
 		.def("getSpawnGroupType", &CvImprovementInfo::getSpawnGroupType, "int ()")
 		.def("getImmediateSpawnGroupType", &CvImprovementInfo::getImmediateSpawnGroupType, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-//FfH: End Add
-/*************************************************************************************************/
-/**	New Tag Defs	(ImprovementInfos)		12/27/08								Xienwolf	**/
-/**								Added to by Valkrionn, 1/15/10									**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		// FfH: End Add
+		/*************************************************************************************************/
+		/**	New Tag Defs	(ImprovementInfos)		12/27/08								Xienwolf	**/
+		/**								Added to by Valkrionn, 1/15/10									**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getPrereqCivilization", &CvImprovementInfo::getPrereqCivilization, "int ()")
 		.def("getPythonOnMove", &CvImprovementInfo::getPythonOnMove, "string ()")
 		.def("getSpawnUnitCiv", &CvImprovementInfo::getSpawnUnitCiv, "int ()")
 		.def("getSpawnAtOnceLimit", &CvImprovementInfo::getSpawnAtOnceLimit, "int ()")
 		.def("getLairCreationWeight", &CvImprovementInfo::getLairCreationWeight, "int ()")
 		.def("isExplorable", &CvImprovementInfo::isExplorable, "bool ()")
-/*************************************************************************************************/
-/**	MISSION_EXPLORE_LAIR				20/06/10										Snarko	**/
-/**																								**/
-/**							Moving explore lair results into SDK								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MISSION_EXPLORE_LAIR				20/06/10										Snarko	**/
+		/**																								**/
+		/**							Moving explore lair results into SDK								**/
+		/*************************************************************************************************/
 		.def("isGoodyClassType", &CvImprovementInfo::isGoodyClassType, "bool (int i)")
-/*************************************************************************************************/
-/**	MISSION_EXPLORE_LAIR					END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MISSION_EXPLORE_LAIR					END													**/
+		/*************************************************************************************************/
 		.def("isFort", &CvImprovementInfo::isFort, "bool ()")
 		.def("isSpawnOnlyForOwner", &CvImprovementInfo::isSpawnOnlyForOwner, "bool ()")
 		.def("getBasePlotCounterModify", &CvImprovementInfo::getBasePlotCounterModify, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 
 		// Arrays
 
@@ -533,13 +533,13 @@ void CyInfoPythonInterface2()
 
 		.def("getTerrainMakesValid", &CvImprovementInfo::getTerrainMakesValid, "bool (int i)")
 		.def("getFeatureMakesValid", &CvImprovementInfo::getFeatureMakesValid, "bool (int i)")
-/*************************************************************************************************/
-/**	Feature spread		 				Ahwaric	23.09.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Feature spread		 				Ahwaric	23.09.09		**/
+		/*************************************************************************************************/
 		.def("getAllowsFeature", &CvImprovementInfo::getAllowsFeature, "bool (int i)")
-/*************************************************************************************************/
-/**	Feature spread	END									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Feature spread	END									**/
+		/*************************************************************************************************/
 
 		.def("getImprovementBonusYield", &CvImprovementInfo::getImprovementBonusYield, "int (int i, int j)")
 		.def("isImprovementBonusMakesValid", &CvImprovementInfo::isImprovementBonusMakesValid, "bool (int i)")
@@ -583,13 +583,13 @@ void CyInfoPythonInterface2()
 
 		.def("isOneArea", &CvBonusInfo::isOneArea, "bool ()")
 		.def("isHills", &CvBonusInfo::isHills, "bool ()")
-/*************************************************************************************************/
-/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
+		/*************************************************************************************************/
 		.def("isPeaks", &CvBonusInfo::isPeaks, "bool ()")
-/*************************************************************************************************/
-/**	Mountain Mod	END									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Mountain Mod	END									**/
+		/*************************************************************************************************/
 		.def("isFlatlands", &CvBonusInfo::isFlatlands, "bool ()")
 		.def("isNoRiverSide", &CvBonusInfo::isNoRiverSide, "bool ()")
 		.def("isNormalize", &CvBonusInfo::isNormalize, "bool ()")
@@ -605,7 +605,7 @@ void CyInfoPythonInterface2()
 		.def("isFeatureTerrain", &CvBonusInfo::isFeatureTerrain, "bool (int i)")
 
 		.def("getButton", &CvBonusInfo::getButton, "string ()")
-		.def("getArtInfo", &CvBonusInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoBonus ()")
+		.def("getArtInfo", &CvBonusInfo::getArtInfo, python::return_value_policy<python::reference_existing_object>(), "CvArtInfoBonus ()")
 		;
 
 	python::class_<CvFeatureInfo, python::bases<CvInfoBase> >("CvFeatureInfo")
@@ -625,13 +625,13 @@ void CyInfoPythonInterface2()
 		.def("isNoAdjacent", &CvFeatureInfo::isNoAdjacent, "bool ()")
 		.def("isRequiresFlatlands", &CvFeatureInfo::isRequiresFlatlands, "bool ()")
 		.def("isRequiresRiver", &CvFeatureInfo::isRequiresRiver, "bool ()")
-/*************************************************************************************************/
-/**	Features Expanded 					Ahwaric	04.10.09		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Features Expanded 					Ahwaric	04.10.09		**/
+		/*************************************************************************************************/
 		.def("isRequiresFreshwater", &CvFeatureInfo::isRequiresFreshwater, "bool ()")
-/*************************************************************************************************/
-/**			END									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**			END									**/
+		/*************************************************************************************************/
 		.def("isAddsFreshWater", &CvFeatureInfo::isAddsFreshWater, "bool ()")
 		.def("isImpassable", &CvFeatureInfo::isImpassable, "bool ()")
 		.def("isNoCity", &CvFeatureInfo::isNoCity, "bool ()")
@@ -639,9 +639,9 @@ void CyInfoPythonInterface2()
 		.def("isVisibleAlways", &CvFeatureInfo::isVisibleAlways, "bool ()")
 		.def("isNukeImmune", &CvFeatureInfo::isNukeImmune, "bool ()")
 
-//FfH: Added by Kael 09/27/2007
+		// FfH: Added by Kael 09/27/2007
 		.def("getPythonOnMove", &CvFeatureInfo::getPythonOnMove, "string ()")
-//FfH: End Add
+		// FfH: End Add
 
 		// Arrays
 
@@ -658,20 +658,21 @@ void CyInfoPythonInterface2()
 		.def("getSeeThroughChange", &CvPlotEffectInfo::getSeeThroughChange, "int ()")
 		.def("getYieldChange", &CvPlotEffectInfo::getYieldChange, "int (int i)")
 		.def("isTerrain", &CvPlotEffectInfo::isTerrain, "bool (int i)")
+		.def("getPyPerTurn", &CvPlotEffectInfo::getPyPerTurn, "string ()")
 		;
 
 	python::class_<CvCommerceInfo, python::bases<CvInfoBase> >("CvCommerceInfo")
 		.def("getChar", &CvCommerceInfo::getChar, "int ()")
 		.def("getInitialPercent", &CvCommerceInfo::getInitialPercent, "int ()")
-/*************************************************************************************************/
-/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
-/**																								**/
-/**									Allows trade to grant culture								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
+		/**																								**/
+		/**									Allows trade to grant culture								**/
+		/*************************************************************************************************/
 		.def("getTradeModifier", &CvCommerceInfo::getTradeModifier, "int ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("getInitialHappiness", &CvCommerceInfo::getInitialHappiness, "int ()")
 		.def("getAIWeightPercent", &CvCommerceInfo::getAIWeightPercent, "int ()")
 

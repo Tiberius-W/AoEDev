@@ -25,7 +25,6 @@ void CyInfoPythonInterface1()
 		.def("getStrategy", &CvInfoBase::pyGetStrategy, "wstring ()")
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
-
 		;
 
 	python::class_<CvScalableInfo>("CvScalableInfo")
@@ -98,45 +97,45 @@ void CyInfoPythonInterface1()
 
 		.def("isCommerceFlexible", &CvTechInfo::isCommerceFlexible, "bool (int i)")
 		.def("isTerrainTrade", &CvTechInfo::isTerrainTrade, "bool (int i)")
-/*************************************************************************************************/
-/**	New Tag Defs	(TechInfos)				05/15/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(TechInfos)				05/15/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getPrereqBroadAlignment", &CvTechInfo::getPrereqBroadAlignment, "int ()")
 		.def("getAlignmentModifier", &CvTechInfo::getAlignmentModifier, "int ()")
 		.def("getFirstToTechAlignmentModifier", &CvTechInfo::getFirstToTechAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
-/**																								**/
-/**							Adds a new alignment axis to the game								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
+		/**																								**/
+		/**							Adds a new alignment axis to the game								**/
+		/*************************************************************************************************/
 		.def("getPrereqBroadEthicalAlignment", &CvTechInfo::getPrereqBroadEthicalAlignment, "int ()")
 		.def("getEthicalAlignmentModifier", &CvTechInfo::getEthicalAlignmentModifier, "int ()")
 		.def("getFirstToTechEthicalAlignmentModifier", &CvTechInfo::getFirstToTechEthicalAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments					END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments					END												**/
+		/*************************************************************************************************/
 		.def("getBonusPrereq", &CvTechInfo::getBonusPrereq, "int ()")
 		.def("getTechCostShift", &CvTechInfo::getTechCostShift, "int (int i)")
 		.def("getBonusCostShift", &CvTechInfo::getBonusCostShift, "int (int i)")
 		.def("getTechCostMod", &CvTechInfo::getTechCostMod, "int (int i)")
 		.def("getBonusCostMod", &CvTechInfo::getBonusCostMod, "int (int i)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/************************************************************************************************/
-/* Influence Driven War                   06/07/10                                 Valkrionn    */
-/*                                                                                              */
-/*						Prevents IDW effects within specific borders                            */
-/************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		/************************************************************************************************/
+		/* Influence Driven War                   06/07/10                                 Valkrionn    */
+		/*                                                                                              */
+		/*						Prevents IDW effects within specific borders                            */
+		/************************************************************************************************/
 		.def("isInfluenceAllowed", &CvTechInfo::isInfluenceAllowed, "bool ()")
 		.def("getVictoryInfluenceModifier", &CvTechInfo::getVictoryInfluenceModifier, "int ()")
 		.def("getPillageInfluenceModifier", &CvTechInfo::getPillageInfluenceModifier, "int ()")
 		.def("getDefeatInfluenceModifier", &CvTechInfo::getDefeatInfluenceModifier, "int ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 
 		;
 
@@ -192,43 +191,43 @@ void CyInfoPythonInterface1()
 		.def("isDispellable", &CvPromotionInfo::isDispellable, "bool ()")
 
 		.def("getSound", &CvPromotionInfo::getSound, "string ()")
-/*************************************************************************************************/
-/**	MobileCage								01/28/2010								Valkrionn	**/
-/**																								**/
-/**										Leashes	a unit to a plot								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MobileCage								01/28/2010								Valkrionn	**/
+		/**																								**/
+		/**										Leashes	a unit to a plot								**/
+		/*************************************************************************************************/
 		.def("getLeashRange", &CvPromotionInfo::getLeashRange, "int ()")
 		.def("getLeashChance", &CvPromotionInfo::getLeashChance, "int ()")
 		.def("isLeashed", &CvPromotionInfo::isLeashed, "bool ()")
-/*************************************************************************************************/
-/**	MobileCage									END												**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/** Shades					  				07/30/10								Valkrionn	**/
-/**																								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	MobileCage									END												**/
+		/*************************************************************************************************/
+		/*************************************************************************************************/
+		/** Shades					  				07/30/10								Valkrionn	**/
+		/**																								**/
+		/*************************************************************************************************/
 		.def("isLeveledImmortality", &CvPromotionInfo::isLeveledImmortality, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	New Tag Defs	(PromotionInfos)		05/15/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
-/************************************************************************************************/
-/* Influence Driven War                   06/08/10                                 Valkrionn    */
-/*                                                                                              */
-/*						Prevents IDW effects within specific borders                            */
-/************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(PromotionInfos)		05/15/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
+		/************************************************************************************************/
+		/* Influence Driven War                   06/08/10                                 Valkrionn    */
+		/*                                                                                              */
+		/*						Prevents IDW effects within specific borders                            */
+		/************************************************************************************************/
 		.def("isNonInfluence", &CvPromotionInfo::isNonInfluence, "bool ()")
 		.def("isInfluence", &CvPromotionInfo::isInfluence, "bool ()")
 		.def("getVictoryInfluenceModifier", &CvPromotionInfo::getVictoryInfluenceModifier, "int ()")
 		.def("getDefeatInfluenceModifier", &CvPromotionInfo::getDefeatInfluenceModifier, "int ()")
 		.def("getPillageInfluenceModifier", &CvPromotionInfo::getPillageInfluenceModifier, "int ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("getCommandLimit", &CvPromotionInfo::getCommandLimit, "int ()")
 		.def("getCommandRange", &CvPromotionInfo::getCommandRange, "int ()")
 		.def("getCommandXPShareRate", &CvPromotionInfo::getCommandXPShareRate, "int ()")
@@ -242,13 +241,13 @@ void CyInfoPythonInterface1()
 		.def("getMasterPromotion", &CvPromotionInfo::getMasterPromotion, "int (int iI)")
 		.def("getPyPostCombatLost", &CvPromotionInfo::getPyPostCombatLost, "string ()")
 		.def("getPyPostCombatWon", &CvPromotionInfo::getPyPostCombatWon, "string ()")
-/*************************************************************************************************/
-/**	PyOnPromoTaken							   08/28/10								Valkrionn	**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	PyOnPromoTaken							   08/28/10								Valkrionn	**/
+		/*************************************************************************************************/
 		.def("getPyOnPromoTaken", &CvPromotionInfo::getPyOnPromoTaken, "string ()")
-/*************************************************************************************************/
-/**	END                                                                   						**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END                                                                   						**/
+		/*************************************************************************************************/
 		.def("getPyOnRemove", &CvPromotionInfo::getPyOnRemove, "string ()")
 		.def("isCommunalProperty", &CvPromotionInfo::isCommunalProperty, "bool ()")
 		.def("isNeverHostile", &CvPromotionInfo::isNeverHostile, "bool ()")
@@ -284,14 +283,14 @@ void CyInfoPythonInterface1()
 		.def("isAllowDefenseBonuses", &CvPromotionInfo::isAllowDefenseBonuses, "bool ()")
 		.def("isNonAbandon", &CvPromotionInfo::isNonAbandon, "bool ()")
 		.def("isIndependant", &CvPromotionInfo::isIndependant, "bool ()")
-		.def("isReligiousCommander", &CvPromotionInfo::isReligiousCommanderPromo, "bool ()") //ReligiousCommander by BI 07/24/11
+		.def("isReligiousCommander", &CvPromotionInfo::isReligiousCommanderPromo, "bool ()") // ReligiousCommander by BI 07/24/11
 		.def("isEffectProm", &CvPromotionInfo::isEffectProm, "bool ()")
 		.def("isStackEffect", &CvPromotionInfo::isStackEffect, "bool ()")
-/*************************************************************************************************/
-/**	1.4										03/28/11								Valkrionn	**/
-/**																								**/
-/**									New tags required for 1.4									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	1.4										03/28/11								Valkrionn	**/
+		/**																								**/
+		/**									New tags required for 1.4									**/
+		/*************************************************************************************************/
 		.def("getMaxApplications", &CvPromotionInfo::getMaxApplications, "int ()")
 		.def("getUnitCombatMaxApplications", &CvPromotionInfo::getUnitCombatMaxApplications, "int (int i)")
 		.def("getAntiWithdrawal", &CvPromotionInfo::getAntiWithdrawal, "int ()")
@@ -303,9 +302,9 @@ void CyInfoPythonInterface1()
 		.def("getRangedCombatPercent", &CvPromotionInfo::getCombatPercent, "int ()")
 		.def("getRangedCombatPercentGlobalCounter", &CvPromotionInfo::getRangedCombatPercentGlobalCounter, "int ()")
 		.def("getRangedCombatPercentInBorders", &CvPromotionInfo::getRangedCombatPercentInBorders, "int ()")
-/*************************************************************************************************/
-/**												END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**												END												**/
+		/*************************************************************************************************/
 		.def("isAutoAcquire", &CvPromotionInfo::isAutoAcquire, "bool ()")
 		.def("isMustMaintain", &CvPromotionInfo::isMustMaintain, "bool ()")
 		.def("isPrereqInCity", &CvPromotionInfo::isPrereqInCity, "bool ()")
@@ -318,19 +317,19 @@ void CyInfoPythonInterface1()
 		.def("isAllowNULLUnitCombat", &CvPromotionInfo::isAllowNULLUnitCombat, "bool ()")
 		.def("getRandomApplyChance", &CvPromotionInfo::getRandomApplyChance, "int ()")
 		.def("getAssetValue", &CvPromotionInfo::getAssetValue, "int ()")
-/*************************************************************************************************/
-/**	Unit power						17/02/12										Snarko		**/
-/**																								**/
-/**							Rewriting unit power system											**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		.def("getPowerValue", &CvPromotionInfo::getPowerValue, "int ()")
-/**								----  End Original Code  ----									**/
+		/*************************************************************************************************/
+		/**	Unit power						17/02/12										Snarko		**/
+		/**																								**/
+		/**							Rewriting unit power system											**/
+		/*************************************************************************************************/
+		/**								---- Start Original Code ----									**
+				.def("getPowerValue", &CvPromotionInfo::getPowerValue, "int ()")
+		/**								----  End Original Code  ----									**/
 		.def("getPowerAdd", &CvPromotionInfo::getPowerAdd, "int ()")
 		.def("getPowerMult", &CvPromotionInfo::getPowerMult, "int ()")
-/*************************************************************************************************/
-/**	Unit power						END															**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Unit power						END															**/
+		/*************************************************************************************************/
 		.def("getTempUnitCombat", &CvPromotionInfo::getTempUnitCombat, "int ()")
 		.def("getDamageOnRemove", &CvPromotionInfo::getDamageOnRemove, "int ()")
 		.def("getFreeXPCap", &CvPromotionInfo::getFreeXPCap, "int ()")
@@ -355,16 +354,16 @@ void CyInfoPythonInterface1()
 		.def("getCollateralTargetsLimit", &CvPromotionInfo::getCollateralTargetsLimit, "int ()")
 		.def("getCollateralExtraTargets", &CvPromotionInfo::getCollateralExtraTargets, "int ()")
 
-/*************************************************************************************************/
-/**	Updated Flanking						2011-10-30									Jheral	**/
-/**																								**/
-/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						2011-10-30									Jheral	**/
+		/**																								**/
+		/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
+		/*************************************************************************************************/
 		.def("getFlankingLimitBoost", &CvPromotionInfo::getFlankingLimitBoost, "int ()")
 		.def("getFlankingExtraTargets", &CvPromotionInfo::getFlankingExtraTargets, "int ()")
-/*************************************************************************************************/
-/**	Updated Flanking						END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						END													**/
+		/*************************************************************************************************/
 
 		.def("getHammerSacrifice", &CvPromotionInfo::getHammerSacrifice, "int ()")
 		.def("getExtraHammerPerPop", &CvPromotionInfo::getExtraHammerPerPop, "int ()")
@@ -407,37 +406,37 @@ void CyInfoPythonInterface1()
 		.def("getPrereqTechOR", &CvPromotionInfo::getPrereqTechOR, "int (int iI)")
 		.def("getNumPrereqAlignments", &CvPromotionInfo::getNumPrereqAlignments, "int ()")
 		.def("getPrereqAlignment", &CvPromotionInfo::getPrereqAlignment, "int (int iI)")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
-/**																								**/
-/**							Adds a new alignment axis to the game								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
+		/**																								**/
+		/**							Adds a new alignment axis to the game								**/
+		/*************************************************************************************************/
 		.def("getNumPrereqEthicalAlignments", &CvPromotionInfo::getNumPrereqEthicalAlignments, "int ()")
 		.def("getPrereqEthicalAlignment", &CvPromotionInfo::getPrereqEthicalAlignment, "int (int iI)")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments					END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments					END												**/
+		/*************************************************************************************************/
 		.def("getNumPrereqFeatures", &CvPromotionInfo::getNumPrereqFeatures, "int ()")
 		.def("getPrereqFeature", &CvPromotionInfo::getPrereqFeature, "int (int iI)")
-/*************************************************************************************************/
-/**	Second Job							08/28/10									Valkrionn	**/
-/**				Allows units to qualify for the promotions of other UnitCombats					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Second Job							08/28/10									Valkrionn	**/
+		/**				Allows units to qualify for the promotions of other UnitCombats					**/
+		/*************************************************************************************************/
 		.def("getNumSecondaryUnitCombats", &CvPromotionInfo::getNumSecondaryUnitCombats, "int ()")
 		.def("getSecondaryUnitCombats", &CvPromotionInfo::getSecondaryUnitCombats, "int (int iI)")
-/*************************************************************************************************/
-/**	TempCombat									END												**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/**	Better Affinity						01/30/11									Valkrionn	**/
-/**																								**/
-/**					Vastly improved Affinity system, open to many tags							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	TempCombat									END												**/
+		/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Better Affinity						01/30/11									Valkrionn	**/
+		/**																								**/
+		/**					Vastly improved Affinity system, open to many tags							**/
+		/*************************************************************************************************/
 		.def("getNumAffinities", &CvPromotionInfo::getNumAffinities, "int ()")
 		.def("getAffinities", &CvPromotionInfo::getAffinities, "int (int iI)")
-/*************************************************************************************************/
-/**	Better Affinity							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Better Affinity							END													**/
+		/*************************************************************************************************/
 		.def("getNumPrereqTerrains", &CvPromotionInfo::getNumPrereqTerrains, "int ()")
 		.def("getPrereqTerrain", &CvPromotionInfo::getPrereqTerrain, "int (int iI)")
 		.def("getNumPrereqBonusANDs", &CvPromotionInfo::getNumPrereqBonusANDs, "int ()")
@@ -482,39 +481,39 @@ void CyInfoPythonInterface1()
 		.def("getNumPrereqPromotionsOnTile", &CvPromotionInfo::getNumPrereqPromotionsOnTile, "int ()")
 		.def("getPrereqPromotionOnTile", &CvPromotionInfo::getPrereqPromotionOnTile, "int (int iI)")
 		.def("getNumPrereqUnitTypesNOTOnTile", &CvPromotionInfo::getNumPrereqUnitTypesNOTOnTile, "int ()")
-/*************************************************************************************************/
-/**	Workers Paradise						01/08/10											**/
-/**																								**/
-/**							Allows promotions to affect build orders							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Workers Paradise						01/08/10											**/
+		/**																								**/
+		/**							Allows promotions to affect build orders							**/
+		/*************************************************************************************************/
 		.def("getNumPromotionBuilds", &CvPromotionInfo::getNumPromotionBuilds, "int ()")
 		.def("getNumPromotionCannotBuilds", &CvPromotionInfo::getNumPromotionCannotBuilds, "int ()")
-/*************************************************************************************************/
-/**	Workers Paradise						END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Workers Paradise						END													**/
+		/*************************************************************************************************/
 		.def("getPrereqUnitTypeNOTOnTile", &CvPromotionInfo::getPrereqUnitTypeNOTOnTile, "int (int iI)")
 		.def("getNumPrereqUnitClassesNOTOnTile", &CvPromotionInfo::getNumPrereqUnitClassesNOTOnTile, "int ()")
 		.def("getPrereqUnitClassNOTOnTile", &CvPromotionInfo::getPrereqUnitClassNOTOnTile, "int (int iI)")
 		.def("getNumPrereqPromotionsNOTOnTile", &CvPromotionInfo::getNumPrereqPromotionsNOTOnTile, "int ()")
 		.def("getPrereqPromotionNOTOnTile", &CvPromotionInfo::getPrereqPromotionNOTOnTile, "int (int iI)")
 		.def("getNoBadExplore", &CvPromotionInfo::getNoBadExplore, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-//FfH: Added by Kael 08/17/2007
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		// FfH: Added by Kael 08/17/2007
 		.def("getBonusPrereq", &CvPromotionInfo::getBonusPrereq, "int ()")
 		.def("getMinLevel", &CvPromotionInfo::getMinLevel, "int ()")
-/*************************************************************************************************/
-/**	PrereqStrBoostSize						10/16/09								Valkrionn	**/
-/**																								**/
-/**					Allows a units StrBoost to be used as a promotion prereq					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	PrereqStrBoostSize						10/16/09								Valkrionn	**/
+		/**																								**/
+		/**					Allows a units StrBoost to be used as a promotion prereq					**/
+		/*************************************************************************************************/
 		.def("getPrereqStrBoostSize", &CvPromotionInfo::getPrereqStrBoostSize, "int ()")
-/*************************************************************************************************/
-/**	PrereqStrBoostSize							END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	PrereqStrBoostSize							END												**/
+		/*************************************************************************************************/
 
-		.def("getUnitReligionPrereq", &CvPromotionInfo::getUnitReligionPrereq, "int ()")// PrereqUnitReligion by BI 07/24/11
+		.def("getUnitReligionPrereq", &CvPromotionInfo::getUnitReligionPrereq, "int ()") // PrereqUnitReligion by BI 07/24/11
 		.def("getPromotionPrereqAnd", &CvPromotionInfo::getPromotionPrereqAnd, "int ()")
 		.def("getPromotionPrereqOr3", &CvPromotionInfo::getPromotionPrereqOr3, "int ()")
 		.def("getPromotionPrereqOr4", &CvPromotionInfo::getPromotionPrereqOr4, "int ()")
@@ -523,7 +522,7 @@ void CyInfoPythonInterface1()
 		.def("getUnitArtStyleType", &CvPromotionInfo::getUnitArtStyleType, "int ()")
 		.def("isEquipment", &CvPromotionInfo::isEquipment, "bool ()")
 		.def("isRace", &CvPromotionInfo::isRace, "bool ()")
-//FfH: End Add
+		// FfH: End Add
 
 		// Arrays
 
@@ -531,21 +530,21 @@ void CyInfoPythonInterface1()
 		.def("getTerrainDefensePercent", &CvPromotionInfo::getTerrainDefensePercent, "int (int i)")
 		.def("getFeatureAttackPercent", &CvPromotionInfo::getFeatureAttackPercent, "int (int i)")
 		.def("getFeatureDefensePercent", &CvPromotionInfo::getFeatureDefensePercent, "int (int i)")
-/*************************************************************************************************/
-/**	GWS										2010-08-23									Milaga	**/
-/**																								**/
-/**					Units can have movement modifiers for different terrain						**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	GWS										2010-08-23									Milaga	**/
+		/**																								**/
+		/**					Units can have movement modifiers for different terrain						**/
+		/*************************************************************************************************/
 		.def("getPromotionPeakCost", &CvPromotionInfo::getPromotionPeakCost, "int ()")
 		.def("getPromotionHillCost", &CvPromotionInfo::getPromotionHillCost, "int ()")
 		.def("getPromotionTerrainCost", &CvPromotionInfo::getPromotionTerrainCost, "int (int i)")
 		.def("getPromotionFeatureCost", &CvPromotionInfo::getPromotionFeatureCost, "int (int i)")
-/*************************************************************************************************/
-/**	GWS										END													**/
-/*************************************************************************************************/
-		.def("getPromotionClass",&CvPromotionInfo::getPromotionClass,"int()")
+		/*************************************************************************************************/
+		/**	GWS										END													**/
+		/*************************************************************************************************/
+		.def("getPromotionClass", &CvPromotionInfo::getPromotionClass, "int()")
 		.def("getUnitCombatModifierPercent", &CvPromotionInfo::getUnitCombatModifierPercent, "int (int i)")
-		.def("getUnitCombatCaptureRatePercent", &CvPromotionInfo::getUnitCombatCaptureRatePercent, "int (int i)") //Upgraded Capture Rate by BI 08/16/11
+		.def("getUnitCombatCaptureRatePercent", &CvPromotionInfo::getUnitCombatCaptureRatePercent, "int (int i)") // Upgraded Capture Rate by BI 08/16/11
 		.def("getDomainModifierPercent", &CvPromotionInfo::getDomainModifierPercent, "int (int i)")
 
 		.def("getTerrainDoubleMove", &CvPromotionInfo::getTerrainDoubleMove, "bool (int i)")
@@ -585,17 +584,17 @@ void CyInfoPythonInterface1()
 
 		.def("getAIWeight", &CvUnitInfo::getAIWeight, "int ()")
 		.def("getProductionCost", &CvUnitInfo::getProductionCost, "int ()")
-/*************************************************************************************************/
-/**	WeightedCost							 1/30/2010								Valkrionn	**/
-/**																								**/
-/**								Modifies Cost based on Population								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	WeightedCost							 1/30/2010								Valkrionn	**/
+		/**																								**/
+		/**								Modifies Cost based on Population								**/
+		/*************************************************************************************************/
 		.def("getCityPopCostModifier", &CvUnitInfo::getCityPopCostModifier, "int ()")
 		.def("getEmpirePopCostModifier", &CvUnitInfo::getEmpirePopCostModifier, "int ()")
 		.def("getNumCityCostModifier", &CvUnitInfo::getNumCityCostModifier, "int ()")
-/*************************************************************************************************/
-/**	WeightedCost								END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	WeightedCost								END												**/
+		/*************************************************************************************************/
 		.def("getHurryCostModifier", &CvUnitInfo::getHurryCostModifier, "int ()")
 		.def("getMinAreaSize", &CvUnitInfo::getMinAreaSize, "int ()")
 		.def("getMoves", &CvUnitInfo::getMoves, "int ()")
@@ -630,17 +629,17 @@ void CyInfoPythonInterface1()
 		.def("getCollateralDamageLimit", &CvUnitInfo::getCollateralDamageLimit, "int ()")
 		.def("getCollateralDamageMaxUnits", &CvUnitInfo::getCollateralDamageMaxUnits, "int ()")
 
-/*************************************************************************************************/
-/**	Updated Flanking						2011-10-30									Jheral	**/
-/**																								**/
-/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						2011-10-30									Jheral	**/
+		/**																								**/
+		/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
+		/*************************************************************************************************/
 		.def("getFlankingDamage", &CvUnitInfo::getFlankingDamage, "int ()")
 		.def("getFlankingDamageLimit", &CvUnitInfo::getFlankingDamageLimit, "int ()")
 		.def("getFlankingDamageMaxUnits", &CvUnitInfo::getFlankingDamageMaxUnits, "int ()")
-/*************************************************************************************************/
-/**	Updated Flanking						END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						END													**/
+		/*************************************************************************************************/
 
 		.def("getCityAttackModifier", &CvUnitInfo::getCityAttackModifier, "int ()")
 		.def("getCityDefenseModifier", &CvUnitInfo::getCityDefenseModifier, "int ()")
@@ -657,41 +656,41 @@ void CyInfoPythonInterface1()
 		.def("getCultureGarrisonValue", &CvUnitInfo::getCultureGarrisonValue, "int ()")
 		.def("getExtraCost", &CvUnitInfo::getExtraCost, "int ()")
 		.def("getAssetValue", &CvUnitInfo::getAssetValue, "int ()")
-/*************************************************************************************************/
-/**	Unit power						17/02/12										Snarko		**/
-/**																								**/
-/**							Rewriting unit power system											**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		.def("getPowerValue", &CvUnitInfo::getPowerValue, "int ()")
-/**								----  End Original Code  ----									**/
+		/*************************************************************************************************/
+		/**	Unit power						17/02/12										Snarko		**/
+		/**																								**/
+		/**							Rewriting unit power system											**/
+		/*************************************************************************************************/
+		/**								---- Start Original Code ----									**
+				.def("getPowerValue", &CvUnitInfo::getPowerValue, "int ()")
+		/**								----  End Original Code  ----									**/
 		.def("getPowerAdd", &CvUnitInfo::getPowerAdd, "int ()")
 		.def("getPowerMult", &CvUnitInfo::getPowerMult, "int ()")
-/*************************************************************************************************/
-/**	Unit power						END															**/
-/*************************************************************************************************/
-		
+		/*************************************************************************************************/
+		/**	Unit power						END															**/
+		/*************************************************************************************************/
+
 		.def("getMagicalPower", &CvUnitInfo::getMagicalPower, "int ()")
-	
+
 		.def("getUnitClassType", &CvUnitInfo::getUnitClassType, "int ()")
 		.def("getSpecialUnitType", &CvUnitInfo::getSpecialUnitType, "int ()")
 		.def("getUnitCaptureClassType", &CvUnitInfo::getUnitCaptureClassType, "int ()")
 		.def("getUnitCombatType", &CvUnitInfo::getUnitCombatType, "int ()")
 		.def("getDomainType", &CvUnitInfo::getDomainType, "int ()")
 		.def("getDefaultUnitAIType", &CvUnitInfo::getDefaultUnitAIType, "int ()")
-/*************************************************************************************************/
-/**	CandyMan								04/04/09								Xienwolf	**/
-/**																								**/
-/**							Allows Multiple Invisible types on a Unit							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		.def("getInvisibleType", &CvUnitInfo::getInvisibleType, "int ()")
-/**								----  End Original Code  ----									**/
+		/*************************************************************************************************/
+		/**	CandyMan								04/04/09								Xienwolf	**/
+		/**																								**/
+		/**							Allows Multiple Invisible types on a Unit							**/
+		/*************************************************************************************************/
+		/**								---- Start Original Code ----									**
+				.def("getInvisibleType", &CvUnitInfo::getInvisibleType, "int ()")
+		/**								----  End Original Code  ----									**/
 		.def("getNumInvisibleTypes", &CvUnitInfo::getNumSeeInvisibleTypes, "int ()")
 		.def("getInvisibleType", &CvUnitInfo::getSeeInvisibleType, "int (int)")
-/*************************************************************************************************/
-/**	CandyMan								END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	CandyMan								END													**/
+		/*************************************************************************************************/
 		.def("getNumSeeInvisibleTypes", &CvUnitInfo::getNumSeeInvisibleTypes, "int ()")
 		.def("getSeeInvisibleType", &CvUnitInfo::getSeeInvisibleType, "int (int)")
 		.def("getAdvisorType", &CvUnitInfo::getAdvisorType, "int ()")
@@ -713,23 +712,23 @@ void CyInfoPythonInterface1()
 		.def("isAnimal", &CvUnitInfo::isAnimal, "bool ()")
 		.def("isFoodProduction", &CvUnitInfo::isFoodProduction, "bool ()")
 		.def("isNoBadGoodies", &CvUnitInfo::isNoBadGoodies, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       03/20/10                       Afforess & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* UNOFFICIAL_PATCH                       03/20/10                       Afforess & jdog5000    */
+		/*                                                                                              */
+		/* Bugfix                                                                                       */
+		/************************************************************************************************/
 		.def("isOnlyDefensive", &CvUnitInfo::isOnlyDefensive, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* UNOFFICIAL_PATCH                        END                                                  */
+		/************************************************************************************************/
 		.def("isCannotCapture", &CvUnitInfo::isCannotCapture, "bool ()")
-			.def("isImmuneToCapture", &CvUnitInfo::isImmuneToCapture, "bool ()")
-			.def("isRivalTerritory", &CvUnitInfo::isRivalTerritory, "bool ()")
+		.def("isImmuneToCapture", &CvUnitInfo::isImmuneToCapture, "bool ()")
+		.def("isRivalTerritory", &CvUnitInfo::isRivalTerritory, "bool ()")
 		.def("isMilitaryHappiness", &CvUnitInfo::isMilitaryHappiness, "bool ()")
 		.def("isMilitarySupport", &CvUnitInfo::isMilitarySupport, "bool ()")
 		.def("isMilitaryProduction", &CvUnitInfo::isMilitaryProduction, "bool ()")
 		.def("isPillage", &CvUnitInfo::isPillage, "bool ()")
-		.def("isReligiousCommander", &CvUnitInfo::isReligiousCommander, "bool ()")//ReligiousCommander by BI 07/24/11
+		.def("isReligiousCommander", &CvUnitInfo::isReligiousCommander, "bool ()") // ReligiousCommander by BI 07/24/11
 		.def("isSpy", &CvUnitInfo::isSpy, "bool ()")
 		.def("isSabotage", &CvUnitInfo::isSabotage, "bool ()")
 		.def("isDestroy", &CvUnitInfo::isDestroy, "bool ()")
@@ -759,37 +758,37 @@ void CyInfoPythonInterface1()
 		.def("getUnitMaxSpeed", &CvUnitInfo::getUnitMaxSpeed, "float ()")
 		.def("getUnitPadTime", &CvUnitInfo::getUnitPadTime, "float ()")
 
-/*************************************************************************************************/
-/**	New Tag Defs	(UnitInfos)				05/15/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(UnitInfos)				05/15/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getMinLevel", &CvUnitInfo::getMinLevel, "int ()")
-/************************************************************************************************/
-/* Influence Driven War                   06/08/10                                 Valkrionn    */
-/*                                                                                              */
-/*						Prevents IDW effects within specific borders                            */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* Influence Driven War                   06/08/10                                 Valkrionn    */
+		/*                                                                                              */
+		/*						Prevents IDW effects within specific borders                            */
+		/************************************************************************************************/
 		.def("isNonInfluence", &CvUnitInfo::isNonInfluence, "bool ()")
 		.def("isInfluence", &CvUnitInfo::isInfluence, "bool ()")
 		.def("getVictoryInfluenceModifier", &CvUnitInfo::getVictoryInfluenceModifier, "int ()")
 		.def("getDefeatInfluenceModifier", &CvUnitInfo::getDefeatInfluenceModifier, "int ()")
 		.def("getPillageInfluenceModifier", &CvUnitInfo::getPillageInfluenceModifier, "int ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("getCommandLimit", &CvUnitInfo::getCommandLimit, "int ()")
 		.def("getCommandRange", &CvUnitInfo::getCommandRange, "int ()")
 		.def("isFreeUnit", &CvUnitInfo::isFreeUnit, "bool ()")
-/*************************************************************************************************/
-/**	Workers Paradise						01/08/10											**/
-/**																								**/
-/**							Allows promotions to affect build orders							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Workers Paradise						01/08/10											**/
+		/**																								**/
+		/**							Allows promotions to affect build orders							**/
+		/*************************************************************************************************/
 		.def("isPromotionBuild", &CvUnitInfo::isPromotionBuild, "bool ()")
-/*************************************************************************************************/
-/**	Workers Paradise						END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Workers Paradise						END													**/
+		/*************************************************************************************************/
 		.def("isNoSupply", &CvUnitInfo::isNoSupply, "bool ()")
 		.def("getUnitCreateFromCombat", &CvUnitInfo::getUnitCreateFromCombat, "int ()")
 		.def("isCommunalProperty", &CvUnitInfo::isCommunalProperty, "bool ()")
@@ -797,16 +796,16 @@ void CyInfoPythonInterface1()
 		.def("isBlind", &CvUnitInfo::isBlind, "bool ()")
 		.def("getPrereqBroadAlignment", &CvUnitInfo::getPrereqBroadAlignment, "int ()")
 		.def("getAlignmentModifier", &CvUnitInfo::getAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
-/**																								**/
-/**							Adds a new alignment axis to the game								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
+		/**																								**/
+		/**							Adds a new alignment axis to the game								**/
+		/*************************************************************************************************/
 		.def("getPrereqBroadEthicalAlignment", &CvUnitInfo::getPrereqBroadEthicalAlignment, "int ()")
 		.def("getEthicalAlignmentModifier", &CvUnitInfo::getEthicalAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments					END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments					END												**/
+		/*************************************************************************************************/
 		.def("getPyPerTurn", &CvUnitInfo::getPyPerTurn, "string ()")
 		.def("isAllowPromotion", &CvUnitInfo::isAllowPromotion, "bool (int /*PromotionTypes*/ ePromotion)")
 		.def("isDenyPromotion", &CvUnitInfo::isDenyPromotion, "bool (int /*PromotionTypes*/ ePromotion)")
@@ -817,91 +816,91 @@ void CyInfoPythonInterface1()
 		.def("getNumImages", &CvUnitInfo::getNumImages, "int ()")
 		.def("getImages", &CvUnitInfo::getImages, "string (int i)")
 		.def("isCanClimbPeaks", &CvUnitInfo::isCanClimbPeaks, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/** Feral Animals			  				10/19/09								Valkrionn	**/
-/**																								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		/*************************************************************************************************/
+		/** Feral Animals			  				10/19/09								Valkrionn	**/
+		/**																								**/
+		/*************************************************************************************************/
 		.def("getAppearanceProb", &CvUnitInfo::getAppearanceProb, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
-//FfH: Added by Kael 03/01/2008
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
+		// FfH: Added by Kael 03/01/2008
 		.def("getCombatDefense", &CvUnitInfo::getCombatDefense, "int ()")
 		.def("getEquipmentPromotion", &CvUnitInfo::getEquipmentPromotion, "int ()")
 		.def("getImage", &CvUnitInfo::getImage, "wstring ()")
 		.def("getPrereqBuildingClass", &CvUnitInfo::getPrereqBuildingClass, "int ()")
 		.def("getPrereqCivic", &CvUnitInfo::getPrereqCivic, "int ()")
-		//PyPreCombat by BI 07/24/11
+		// PyPreCombat by BI 07/24/11
 		.def("getPyPreCombat", &CvUnitInfo::getPyPreCombat, "string ()")
 
 		.def("getPyPostCombatLost", &CvUnitInfo::getPyPostCombatLost, "string ()")
 		.def("getPyPostCombatWon", &CvUnitInfo::getPyPostCombatWon, "string ()")
 		.def("getTier", &CvUnitInfo::getTier, "int ()")
-/*************************************************************************************************/
-/**	Tierable								04/04/09								Xienwolf	**/
-/**																								**/
-/**							Allows for Multiple sets of WeaponTiers								**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-		.def("getWeaponTier", &CvUnitInfo::getWeaponTier, "int ()")
-/**								----  End Original Code  ----									**/
+		/*************************************************************************************************/
+		/**	Tierable								04/04/09								Xienwolf	**/
+		/**																								**/
+		/**							Allows for Multiple sets of WeaponTiers								**/
+		/*************************************************************************************************/
+		/**								---- Start Original Code ----									**
+				.def("getWeaponTier", &CvUnitInfo::getWeaponTier, "int ()")
+		/**								----  End Original Code  ----									**/
 		.def("getWeaponTierMax", &CvUnitInfo::getWeaponTierMax, "int ()")
 		.def("getWeaponTierMin", &CvUnitInfo::getWeaponTierMin, "int ()")
-/*************************************************************************************************/
-/**	Tierable								END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Tierable								END													**/
+		/*************************************************************************************************/
 		.def("isAbandon", &CvUnitInfo::isAbandon, "bool ()")
 		.def("isDisableUpgradeTo", &CvUnitInfo::isDisableUpgradeTo, "bool ()")
-//FfH: End Add
+		// FfH: End Add
 
 		// Arrays
 
 		.def("getPrereqAndTechs", &CvUnitInfo::getPrereqAndTechs, "int (int i)")
 		.def("getPrereqOrBonuses", &CvUnitInfo::getPrereqOrBonuses, "int (int i)")
 		.def("getProductionTraits", &CvUnitInfo::getProductionTraits, "int (int i)")
-/*************************************************************************************************/
-/** Feral Animals			  				10/19/09								Valkrionn	**/
-/**																								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/** Feral Animals			  				10/19/09								Valkrionn	**/
+		/**																								**/
+		/*************************************************************************************************/
 		.def("getAppearanceTechs", &CvUnitInfo::getAppearanceTechs, "int (int i)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		.def("getFlavorValue", &CvUnitInfo::getFlavorValue, "int (int i)")
 		.def("getTerrainAttackModifier", &CvUnitInfo::getTerrainAttackModifier, "int (int i)")
 		.def("getTerrainDefenseModifier", &CvUnitInfo::getTerrainDefenseModifier, "int (int i)")
 		.def("getFeatureAttackModifier", &CvUnitInfo::getFeatureAttackModifier, "int (int i)")
 		.def("getFeatureDefenseModifier", &CvUnitInfo::getFeatureDefenseModifier, "int (int i)")
-/*************************************************************************************************/
-/**	GWS										2010-08-23									Milaga	**/
-/**																								**/
-/**					Units can have movement modifiers for different terrain						**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	GWS										2010-08-23									Milaga	**/
+		/**																								**/
+		/**					Units can have movement modifiers for different terrain						**/
+		/*************************************************************************************************/
 		.def("getUnitPeakCost", &CvUnitInfo::getUnitPeakCost, "int ()")
 		.def("getUnitHillCost", &CvUnitInfo::getUnitHillCost, "int ()")
 		.def("getUnitTerrainCost", &CvUnitInfo::getUnitTerrainCost, "int (int i)")
 		.def("getUnitFeatureCost", &CvUnitInfo::getUnitFeatureCost, "int (int i)")
-/*************************************************************************************************/
-/**	GWS										END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	GWS										END													**/
+		/*************************************************************************************************/
 		.def("getUnitClassAttackModifier", &CvUnitInfo::getUnitClassAttackModifier, "int (int i)")
 		.def("getUnitClassDefenseModifier", &CvUnitInfo::getUnitClassDefenseModifier, "int (int i)")
 		.def("getUnitCombatModifier", &CvUnitInfo::getUnitCombatModifier, "int (int i)")
 		.def("getDomainModifier", &CvUnitInfo::getDomainModifier, "int (int i)")
 		.def("getBonusProductionModifier", &CvUnitInfo::getBonusProductionModifier, "int (int i)")
 		.def("getUnitGroupRequired", &CvUnitInfo::getUnitGroupRequired, "int (int i)")
-/*************************************************************************************************/
-/**	Speedup								12/02/12										Snarko	**/
-/**																								**/
-/**			Only store the unitclasses we upgrade to, for faster looping						**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Speedup								12/02/12										Snarko	**/
+		/**																								**/
+		/**			Only store the unitclasses we upgrade to, for faster looping						**/
+		/*************************************************************************************************/
 		.def("getNumUpgradeUnitClass", &CvUnitInfo::getNumUpgradeUnitClass, "int ()")
-/*************************************************************************************************/
-/**	Speedup									END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Speedup									END													**/
+		/*************************************************************************************************/
 		.def("getUpgradeUnitClass", &CvUnitInfo::getUpgradeUnitClass, "bool (int i)")
 		.def("getTargetUnitClass", &CvUnitInfo::getTargetUnitClass, "bool (int i)")
 		.def("getTargetUnitCombat", &CvUnitInfo::getTargetUnitCombat, "bool (int i)")
@@ -914,42 +913,42 @@ void CyInfoPythonInterface1()
 		.def("getCorporationSpreads", &CvUnitInfo::getCorporationSpreads, "int (int i)")
 		.def("getTerrainPassableTech", &CvUnitInfo::getTerrainPassableTech, "int (int i)")
 		.def("getFeaturePassableTech", &CvUnitInfo::getFeaturePassableTech, "int (int i)")
-/*************************************************************************************************/
-/**	Updated Flanking						2011-10-30									Jheral	**/
-/**																								**/
-/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						2011-10-30									Jheral	**/
+		/**																								**/
+		/**					Flanking applies to UnitCombats, rather than UnitClasses					**/
+		/*************************************************************************************************/
 		// Old: .def("getFlankingStrikeUnitClass", &CvUnitInfo::getFlankingStrikeUnitClass, "int (int i)")
 		.def("getFlankingStrikeUnitCombat", &CvUnitInfo::getFlankingStrikeUnitCombat, "int (int i)")
-/*************************************************************************************************/
-/**	Updated Flanking						END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Updated Flanking						END													**/
+		/*************************************************************************************************/
 		.def("getGreatPeoples", &CvUnitInfo::getGreatPeoples, "bool (int i)")
 		.def("getBuildings", &CvUnitInfo::getBuildings, "bool (int i)")
 		.def("getTerrainImpassable", &CvUnitInfo::getTerrainImpassable, "bool (int i)")
 		.def("getFeatureImpassable", &CvUnitInfo::getFeatureImpassable, "bool (int i)")
 		.def("getTerrainNative", &CvUnitInfo::getTerrainNative, "bool (int i)")
 		.def("getFeatureNative", &CvUnitInfo::getFeatureNative, "bool (int i)")
-/*************************************************************************************************/
-/**	JRouteNative by Jeckel		imported by Valkrionn	09.28.09                        		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	JRouteNative by Jeckel		imported by Valkrionn	09.28.09                        		**/
+		/*************************************************************************************************/
 		.def("getRouteNative", &CvUnitInfo::getRouteNative, "bool (int iRouteType)")
 		.def("getRouteImpassable", &CvUnitInfo::getRouteImpassable, "bool (int iRouteType)")
 		.def("getRouteIgnore", &CvUnitInfo::getRouteIgnore, "bool (int iRouteType)")
 		.def("getRouteSubstitute", &CvUnitInfo::getRouteSubstitute, "int (int iRouteType)")
-/*************************************************************************************************/
-/**	JRouteNative    END                                                                   		**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	JRouteNative    END                                                                   		**/
+		/*************************************************************************************************/
 		.def("getFreePromotions", &CvUnitInfo::getFreePromotions, "bool (int i)")
-/*************************************************************************************************/
-/**	1.4										03/28/11								Valkrionn	**/
-/**																								**/
-/**									New tags required for 1.4									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	1.4										03/28/11								Valkrionn	**/
+		/**																								**/
+		/**									New tags required for 1.4									**/
+		/*************************************************************************************************/
 		.def("getNumFreePromotions", &CvUnitInfo::getNumFreePromotions, "int (int i)")
-/*************************************************************************************************/
-/**												END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**												END												**/
+		/*************************************************************************************************/
 		.def("getLeaderPromotion", &CvUnitInfo::getLeaderPromotion, "int ()")
 		.def("getLeaderExperience", &CvUnitInfo::getLeaderExperience, "int ()")
 
@@ -957,12 +956,12 @@ void CyInfoPythonInterface1()
 		.def("getLateArtDefineTag", &CvUnitInfo::getLateArtDefineTag, "string (int i, UnitArtStyleTypes eStyle)")
 		.def("getMiddleArtDefineTag", &CvUnitInfo::getMiddleArtDefineTag, "string (int i, UnitArtStyleTypes eStyle)")
 
-//FfH: Added by Kael 02/06/2009
+		// FfH: Added by Kael 02/06/2009
 		.def("getUnitStyleButton", &CvUnitInfo::getUnitStyleButton, "string (int iProm)")
-//FfH: End Add
+		// FfH: End Add
 
 		.def("getUnitNames", &CvUnitInfo::getUnitNames, "string (int i)")
-		.def("getArtInfo", &CvUnitInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, bool bLate)")
+		.def("getArtInfo", &CvUnitInfo::getArtInfo, python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, bool bLate)")
 		;
 
 	python::class_<CvSpecialUnitInfo, python::bases<CvInfoBase> >("CvSpecialUnitInfo")
@@ -971,14 +970,14 @@ void CyInfoPythonInterface1()
 
 		.def("isCarrierUnitAIType", &CvSpecialUnitInfo::isCarrierUnitAIType, "bool (int i)")
 		.def("getProductionTraits", &CvSpecialUnitInfo::getProductionTraits, "int (int i)")
-/*************************************************************************************************/
-/** Feral Animals			  				10/19/09								Valkrionn	**/
-/**																								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/** Feral Animals			  				10/19/09								Valkrionn	**/
+		/**																								**/
+		/*************************************************************************************************/
 		.def("getAppearanceTechs", &CvSpecialUnitInfo::getAppearanceTechs, "int (int i)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		;
 
 	python::class_<CvCivicOptionInfo, python::bases<CvInfoBase> >("CvCivicOptionInfo")
@@ -1025,19 +1024,19 @@ void CyInfoPythonInterface1()
 		.def("getExpInBorderModifier", &CvCivicInfo::getExpInBorderModifier, "bool ()")
 
 		.def("isMilitaryFoodProduction", &CvCivicInfo::isMilitaryFoodProduction, "bool ()")
-/************************************************************************************************/
-/* Influence Driven War                   06/07/10                                 Valkrionn    */
-/*                                                                                              */
-/*						Prevents IDW effects within specific borders                            */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* Influence Driven War                   06/07/10                                 Valkrionn    */
+		/*                                                                                              */
+		/*						Prevents IDW effects within specific borders                            */
+		/************************************************************************************************/
 		.def("isFixedBorders", &CvCivicInfo::isFixedBorders, "bool ()")
 		.def("isInfluenceAllowed", &CvCivicInfo::isInfluenceAllowed, "bool ()")
 		.def("getVictoryInfluenceModifier", &CvCivicInfo::getVictoryInfluenceModifier, "int ()")
 		.def("getPillageInfluenceModifier", &CvCivicInfo::getPillageInfluenceModifier, "int ()")
 		.def("getDefeatInfluenceModifier", &CvCivicInfo::getDefeatInfluenceModifier, "int ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("isNoUnhealthyPopulation", &CvCivicInfo::isNoUnhealthyPopulation, "bool ()")
 		.def("isBuildingOnlyHealthy", &CvCivicInfo::isBuildingOnlyHealthy, "bool ()")
 		.def("isNoForeignTrade", &CvCivicInfo::isNoForeignTrade, "bool ()")
@@ -1048,11 +1047,11 @@ void CyInfoPythonInterface1()
 
 		.def("pyGetWeLoveTheKing", &CvCivicInfo::pyGetWeLoveTheKing, "wstring ()")
 
-/*************************************************************************************************/
-/**	New Tag Defs	(CivicInfos)			05/15/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(CivicInfos)			05/15/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getAlignmentModifier", &CvCivicInfo::getAlignmentModifier, "int ()")
 		.def("isCompassionHigh", &CvCivicInfo::isCompassionHigh, "bool ()")
 		.def("isCompassionLow", &CvCivicInfo::isCompassionLow, "bool ()")
@@ -1065,37 +1064,37 @@ void CyInfoPythonInterface1()
 		.def("getFoodConsumptionPerPopulation", &CvCivicInfo::getFoodConsumptionPerPopulation, "int ()")
 		.def("getBlockAlignment", &CvCivicInfo::getBlockAlignment, "int ()")
 		.def("getPrereqAlignment", &CvCivicInfo::getPrereqAlignment, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
-/**																								**/
-/**							Adds a new alignment axis to the game								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
+		/**																								**/
+		/**							Adds a new alignment axis to the game								**/
+		/*************************************************************************************************/
 		.def("getBlockEthicalAlignment", &CvCivicInfo::getBlockEthicalAlignment, "int ()")
 		.def("getPrereqEthicalAlignment", &CvCivicInfo::getPrereqEthicalAlignment, "int ()")
 		.def("getEthicalAlignmentModifier", &CvCivicInfo::getEthicalAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments					END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments					END												**/
+		/*************************************************************************************************/
 		.def("getPrereqReligion", &CvCivicInfo::getPrereqReligion, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		// Arrays
 
 		.def("getYieldModifier", &CvCivicInfo::getYieldModifier, "int (int i)")
 		.def("getCapitalYieldModifier", &CvCivicInfo::getCapitalYieldModifier, "int (int i)")
 		.def("getTradeYieldModifier", &CvCivicInfo::getTradeYieldModifier, "int (int i)")
 		.def("getForeignTradeYieldModifier", &CvCivicInfo::getForeignTradeYieldModifier, "int (int i)")
-/*************************************************************************************************/
-/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
-/**																								**/
-/**									Allows trade to grant culture								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
+		/**																								**/
+		/**									Allows trade to grant culture								**/
+		/*************************************************************************************************/
 		.def("getTradeCommerceModifier", &CvCivicInfo::getTradeCommerceModifier, "int (int i)")
 		.def("getForeignTradeCommerceModifier", &CvCivicInfo::getForeignTradeCommerceModifier, "int (int i)")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("getCommerceChange", &CvCivicInfo::getCommerceChange, "int (int i)")
 		.def("getCommerceModifier", &CvCivicInfo::getCommerceModifier, "int (int i)")
 		.def("getCapitalCommerceModifier", &CvCivicInfo::getCapitalCommerceModifier, "int (int i)")
@@ -1110,9 +1109,9 @@ void CyInfoPythonInterface1()
 
 		.def("getImprovementYieldChanges", &CvCivicInfo::getImprovementYieldChanges, "int (int i, int j)")
 
-//FfH: Added by Kael 07/03/2009
+		// FfH: Added by Kael 07/03/2009
 		.def("getPrereqCivilization", &CvCivicInfo::getPrereqCivilization, "int ()")
-//FfH: End Add
+		// FfH: End Add
 
 		;
 
@@ -1120,26 +1119,26 @@ void CyInfoPythonInterface1()
 		.def("getMaxGlobalInstances", &CvUnitClassInfo::getMaxGlobalInstances, "int ()")
 		.def("getMaxTeamInstances", &CvUnitClassInfo::getMaxTeamInstances, "int ()")
 		.def("getMaxPlayerInstances", &CvUnitClassInfo::getMaxPlayerInstances, "int ()")
-/*************************************************************************************************/
-/**	WeightedCost							 1/30/2010								Valkrionn	**/
-/**																								**/
-/**						Modifies Cost based on Population and number of Cities					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	WeightedCost							 1/30/2010								Valkrionn	**/
+		/**																								**/
+		/**						Modifies Cost based on Population and number of Cities					**/
+		/*************************************************************************************************/
 		.def("isCountCitiesAsUnit", &CvUnitClassInfo::isCountCitiesAsUnit, "bool ()")
-/*************************************************************************************************/
-/**	WeightedCost								END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	WeightedCost								END												**/
+		/*************************************************************************************************/
 		.def("getInstanceCostModifier", &CvUnitClassInfo::getInstanceCostModifier, "int ()")
 		.def("getDefaultUnitIndex", &CvUnitClassInfo::getDefaultUnitIndex, "int ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(UnitClassInfos)		10/18/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(UnitClassInfos)		10/18/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("isUnique", &CvUnitClassInfo::isUnique, "bool ()")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 		;
 
 	python::class_<CvBuildingInfo, python::bases<CvInfoBase, CvScalableInfo> >("CvBuildingInfo")
@@ -1153,8 +1152,8 @@ void CyInfoPythonInterface1()
 		.def("getNoBonus", &CvBuildingInfo::getNoBonus, "int ()")
 		.def("getPowerBonus", &CvBuildingInfo::getPowerBonus, "int ()")
 		.def("getFreeBonus", &CvBuildingInfo::getFreeBonus, "int ()")
-		.def("getFreeBonus2", &CvBuildingInfo::getFreeBonus2, "int ()")//used to show palace free bonuses
-		.def("getFreeBonus3", &CvBuildingInfo::getFreeBonus3, "int ()")//used to show palace free bonuses
+		.def("getFreeBonus2", &CvBuildingInfo::getFreeBonus2, "int ()") // used to show palace free bonuses
+		.def("getFreeBonus3", &CvBuildingInfo::getFreeBonus3, "int ()") // used to show palace free bonuses
 		.def("getNumFreeBonuses", &CvBuildingInfo::getNumFreeBonuses, "int ()")
 		.def("getFreeBuildingClass", &CvBuildingInfo::getFreeBuildingClass, "int ()")
 		.def("getParentBuildingClass", &CvBuildingInfo::getParentBuildingClass, "int ()")
@@ -1247,15 +1246,15 @@ void CyInfoPythonInterface1()
 		.def("isGoldenAge", &CvBuildingInfo::isGoldenAge, "bool ()")
 		.def("isMapCentering", &CvBuildingInfo::isMapCentering, "bool ()")
 		.def("isNoUnhappiness", &CvBuildingInfo::isNoUnhappiness, "bool ()")
-/************************************************************************************************/
-/* Influence Driven War                   06/08/10                                 Valkrionn    */
-/*                                                                                              */
-/*						Prevents IDW effects within specific borders                            */
-/************************************************************************************************/
+		/************************************************************************************************/
+		/* Influence Driven War                   06/08/10                                 Valkrionn    */
+		/*                                                                                              */
+		/*						Prevents IDW effects within specific borders                            */
+		/************************************************************************************************/
 		.def("isFixedBorders", &CvBuildingInfo::isFixedBorders, "bool ()")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("isNoUnhealthyPopulation", &CvBuildingInfo::isNoUnhealthyPopulation, "bool ()")
 		.def("isBuildingOnlyHealthy", &CvBuildingInfo::isBuildingOnlyHealthy, "bool ()")
 		.def("isNeverCapture", &CvBuildingInfo::isNeverCapture, "bool ()")
@@ -1271,37 +1270,37 @@ void CyInfoPythonInterface1()
 		.def("getArtDefineTag", &CvBuildingInfo::getArtDefineTag, "string ()")
 		.def("getMovie", &CvBuildingInfo::getMovie, "string ()")
 		.def("getMovieDefineTag", &CvBuildingInfo::getMovieDefineTag, "string ()")
-/*************************************************************************************************/
-/**	New Tag Defs	(BuildingInfos)			05/15/08								Xienwolf	**/
-/**																								**/
-/**								Exposes the Functions to Python									**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs	(BuildingInfos)			05/15/08								Xienwolf	**/
+		/**																								**/
+		/**								Exposes the Functions to Python									**/
+		/*************************************************************************************************/
 		.def("getEquipmentPromotion", &CvBuildingInfo::getEquipmentPromotion, "int ()")
 		.def("getPrereqBroadAlignment", &CvBuildingInfo::getPrereqBroadAlignment, "int ()")
-/*************************************************************************************************/
-/**	Building prereq Alignments				07/04/10								Snarko		**/
-/**																								**/
-/**							Allows buildings to require alignments								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Building prereq Alignments				07/04/10								Snarko		**/
+		/**																								**/
+		/**							Allows buildings to require alignments								**/
+		/*************************************************************************************************/
 		.def("getNumPrereqAlignments", &CvBuildingInfo::getNumPrereqAlignments, "int ()")
 		.def("getPrereqAlignment", &CvBuildingInfo::getPrereqAlignment, "int (int iI)")
 		.def("getNumPrereqEthicalAlignments", &CvBuildingInfo::getNumPrereqEthicalAlignments, "int ()")
 		.def("getPrereqEthicalAlignment", &CvBuildingInfo::getPrereqEthicalAlignment, "int (int iI)")
-/*************************************************************************************************/
-/**	Building prereq Alignments					END												**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Building prereq Alignments					END												**/
+		/*************************************************************************************************/
 		.def("getAlignmentModifier", &CvBuildingInfo::getAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
-/**																								**/
-/**							Adds a new alignment axis to the game								**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments 				11/06/09								Valkrionn	**/
+		/**																								**/
+		/**							Adds a new alignment axis to the game								**/
+		/*************************************************************************************************/
 		.def("getPrereqBroadEthicalAlignment", &CvBuildingInfo::getPrereqBroadEthicalAlignment, "int ()")
 		.def("getEthicalAlignmentModifier", &CvBuildingInfo::getEthicalAlignmentModifier, "int ()")
-/*************************************************************************************************/
-/**	Lawful-Chaotic Alignments					END												**/
-/*************************************************************************************************/
-//Crime
+		/*************************************************************************************************/
+		/**	Lawful-Chaotic Alignments					END												**/
+		/*************************************************************************************************/
+		// Crime
 		.def("getPrereqCrime", &CvBuildingInfo::getPrereqCrime, "int ()")
 		.def("getMinCrime", &CvBuildingInfo::getMinCrime, "int ()")
 		.def("isAutoBuild", &CvBuildingInfo::isAutoBuild, "bool ()")
@@ -1309,7 +1308,6 @@ void CyInfoPythonInterface1()
 		.def("isCrimeEffect", &CvBuildingInfo::isCrimeEffect, "bool ()")
 		.def("getPerCrimeEffectCommerceChange", &CvBuildingInfo::getPerCrimeEffectCommerceChange, "int (int i)")
 		.def("getPerCrimeEffectYieldChange", &CvBuildingInfo::getPerCrimeEffectYieldChange, "int (int i)")
-
 
 		.def("getPotency", &CvBuildingInfo::getPotency, "int ()")
 		.def("getPotencyAffinity", &CvBuildingInfo::getPotencyAffinity, "float (int iI)")
@@ -1341,13 +1339,13 @@ void CyInfoPythonInterface1()
 		.def("getPrereqGlobalBuildingClassNOT", &CvBuildingInfo::getPrereqGlobalBuildingClassNOT, "int (int iI)")
 		.def("getNumPrereqGlobalBuildingClassORs", &CvBuildingInfo::getNumPrereqGlobalBuildingClassORs, "int ()")
 		.def("getPrereqGlobalBuildingClassOR", &CvBuildingInfo::getPrereqGlobalBuildingClassOR, "int (int iI)")
-/*************************************************************************************************/
-/**	New Tag Defs							END													**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	New Tag Defs							END													**/
+		/*************************************************************************************************/
 
-//FfH: Added by Kael 12/18/2007
+		// FfH: Added by Kael 12/18/2007
 		.def("isEquipment", &CvBuildingInfo::isEquipment, "bool ()")
-//FfH: End Add
+		// FfH: End Add
 
 		// Arrays
 
@@ -1355,16 +1353,16 @@ void CyInfoPythonInterface1()
 		.def("getYieldModifier", &CvBuildingInfo::getYieldModifier, "int (int i)")
 		.def("getPowerYieldModifier", &CvBuildingInfo::getPowerYieldModifier, "int (int i)")
 		.def("getGlobalYieldModifier", &CvBuildingInfo::getGlobalYieldModifier, "int (int i)")
-/*************************************************************************************************/
-/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
-/**																								**/
-/**						Allows buildings to modify trade Yield and Commerces					**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	TradeCommerceModifiers	 				09/05/10								Valkrionn	**/
+		/**																								**/
+		/**						Allows buildings to modify trade Yield and Commerces					**/
+		/*************************************************************************************************/
 		.def("getTradeYieldModifier", &CvBuildingInfo::getTradeYieldModifier, "int (int i)")
 		.def("getTradeCommerceModifier", &CvBuildingInfo::getTradeCommerceModifier, "int (int i)")
-/*************************************************************************************************/
-/**	END																							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	END																							**/
+		/*************************************************************************************************/
 		.def("getSeaPlotYieldChange", &CvBuildingInfo::getSeaPlotYieldChange, "int (int i)")
 		.def("getRiverPlotYieldChange", &CvBuildingInfo::getRiverPlotYieldChange, "int (int i)")
 		.def("getGlobalSeaPlotYieldChange", &CvBuildingInfo::getGlobalSeaPlotYieldChange, "int (int i)")
@@ -1376,18 +1374,18 @@ void CyInfoPythonInterface1()
 		.def("getStateReligionCommerce", &CvBuildingInfo::getStateReligionCommerce, "int (int i)")
 		.def("getCommerceHappiness", &CvBuildingInfo::getCommerceHappiness, "int (int i)")
 		.def("getReligionChange", &CvBuildingInfo::getReligionChange, "int (int i)")
-/*************************************************************************************************/
-/**	GWSLocalSpecialist																	Milaga	**/
-/** Buildings can change give bonuses to specialists in only one city							**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	GWSLocalSpecialist																	Milaga	**/
+		/** Buildings can change give bonuses to specialists in only one city							**/
+		/*************************************************************************************************/
 		.def("getLocalSpecialistCommerceChange", &CvBuildingInfo::getLocalSpecialistCommerceChange, "int (int iSpecialist, int iCommerce)")
 		.def("getLocalSpecialistYieldChange", &CvBuildingInfo::getLocalSpecialistYieldChange, "int (int iSpecialist, int iYield)")
 		.def("getLocalSpecialistHappinessChange", &CvBuildingInfo::getLocalSpecialistYieldChange, "int (int iSpecialist)")
 		.def("getLocalSpecialistHealthChange", &CvBuildingInfo::getLocalSpecialistYieldChange, "int (int iSpecialist)")
 		.def("getLocalSpecialistGPPChange", &CvBuildingInfo::getLocalSpecialistYieldChange, "int (int iSpecialist)")
-/*************************************************************************************************/
-/**	GWSLocalSpecialist																		END	**/
-/*************************************************************************************************/
+		/*************************************************************************************************/
+		/**	GWSLocalSpecialist																		END	**/
+		/*************************************************************************************************/
 		.def("getSpecialistCount", &CvBuildingInfo::getSpecialistCount, "int (int i)")
 		.def("getFreeSpecialistCount", &CvBuildingInfo::getFreeSpecialistCount, "int (int i)")
 		.def("getBonusHealthChanges", &CvBuildingInfo::getBonusHealthChanges, "int (int i)")
@@ -1402,9 +1400,9 @@ void CyInfoPythonInterface1()
 		.def("getHappinessTraits", &CvBuildingInfo::getHappinessTraits, "int (int i)")
 		.def("getBuildingHappinessChanges", &CvBuildingInfo::getBuildingHappinessChanges, "int (int i)")
 		.def("getPrereqNumOfBuildingClass", &CvBuildingInfo::getPrereqNumOfBuildingClass, "int (int i)")
-			.def("getPrereqAtRangeBuildingClass", &CvBuildingInfo::getPrereqBuildingClassAtRange, "int (int i)")
-			.def("getBuildingExclude", &CvBuildingInfo::getBuildingExclude, "int (int i)")
-			.def("getFlavorValue", &CvBuildingInfo::getFlavorValue, "int (int i)")
+		.def("getPrereqAtRangeBuildingClass", &CvBuildingInfo::getPrereqBuildingClassAtRange, "int (int i)")
+		.def("getBuildingExclude", &CvBuildingInfo::getBuildingExclude, "int (int i)")
+		.def("getFlavorValue", &CvBuildingInfo::getFlavorValue, "int (int i)")
 		.def("getImprovementFreeSpecialist", &CvBuildingInfo::getImprovementFreeSpecialist, "int (int i)")
 
 		.def("isCommerceFlexible", &CvBuildingInfo::isCommerceFlexible, "bool (int i)")
@@ -1415,7 +1413,7 @@ void CyInfoPythonInterface1()
 		.def("getBonusYieldModifier", &CvBuildingInfo::getBonusYieldModifier, "int (int i, int j)")
 		.def("getBonusCommerceModifier", &CvBuildingInfo::getBonusCommerceModifier, "int (int i, int j)")
 
-		.def("getArtInfo", &CvBuildingInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>())
+		.def("getArtInfo", &CvBuildingInfo::getArtInfo, python::return_value_policy<python::reference_existing_object>())
 		;
 
 	python::class_<CvSpecialBuildingInfo, python::bases<CvInfoBase> >("CvSpecialBuildingInfo")
