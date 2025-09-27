@@ -3281,15 +3281,15 @@
 			<DefaultUnit>UNIT_FISHINGBOAT</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
-		<UnitClassInfo>		<!-- MASQUERADE_GYPSY_WAGON -->
-			<Type>UNITCLASS_MASQUERADE_GYPSY_WAGON</Type>
-			<Description>TXT_KEY_UNIT_MASQUERADE_GYPSY_WAGON</Description>
+		<UnitClassInfo>		<!-- MASQUERADE_TRAVELLER_WAGON -->
+			<Type>UNITCLASS_MASQUERADE_TRAVELLING_WAGON</Type>
+			<Description>TXT_KEY_UNIT_MASQUERADE_TRAVELLING_WAGON</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>4</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<bUnique>0</bUnique>
-			<DefaultUnit>UNIT_MASQUERADE_GYPSY_WAGON</DefaultUnit>
+			<DefaultUnit>UNIT_MASQUERADE_TRAVELLING_WAGON</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- STONEFIRE_SMITH -->

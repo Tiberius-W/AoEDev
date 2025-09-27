@@ -3190,7 +3190,7 @@ class CvEventManager:
 
 		elif iBuildingType == Building["Fisher Guild"]:
 			pCity.setHasCorporation( self.Corporations["Fishermans"], True, True, False)
-		elif iBuildingType == Building["Masquerade Gypsy Camp"]:
+		elif iBuildingType == Building["Masquerade Troupe Camp"]:
 			pCity.setHasCorporation( self.Corporations["Masquerade"], True, True, False)
 		elif iBuildingType == Building["Fabricaforma"]:
 			pCity.setHasCorporation( self.Corporations["Fabricaforma"], True, True, False)

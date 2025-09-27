@@ -12480,13 +12480,13 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Guild Masquerade Gypsy Camp -->
-			<BuildingClass>BUILDINGCLASS_GUILD_MASQUERADE_GYPSY_CAMP</BuildingClass>
-			<Type>BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</Type>
-			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</Description>
-			<Civilopedia>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_HELP</Help>
+		<BuildingInfo>		<!-- Guild Masquerade Traveller Camp -->
+			<BuildingClass>BUILDINGCLASS_GUILD_MASQUERADE_TROUPE_CAMP</BuildingClass>
+			<Type>BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Type>
+			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MASQUERADE</ArtDefineTag>
 			<PrereqTech>TECH_FESTIVALS</PrereqTech>

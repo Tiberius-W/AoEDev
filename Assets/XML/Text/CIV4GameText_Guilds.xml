@@ -94,15 +94,15 @@
 		<Spanish>The Masquerade troupe is a travelling circus, infamous for their part in releasing Perpentach from his tower and influencing the nature of the Balseraph nation. They are as well known for their extravagant and brightly coloured costumes as they are for their stunning displays of acrobatics and petty magic.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]A city which is regularly visited by Masquerade will benefit from additional Culture and Commerce for each textile or dye resource you can provide them with. This guild is also required in order to build Carnival, Masquerade is automatically present in all cities that the Balseraphs found.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</Tag>
-		<English>Masquerade Gypsy Camp</English>
-		<French>Camp tsigane de la Mascarade</French>
+		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Tag>
+		<English>Masquerade Troupe Camp</English>
+		<French>Camp Troupe de la Mascarade</French>
 		<German>Lager der Maskerade</German>
-		<Italian>Masquerade Gypsy Camp</Italian>
-		<Spanish>Masquerade Gypsy Camp</Spanish>
+		<Italian>Masquerade Troupe Camp</Italian>
+		<Spanish>Masquerade Troupe Camp</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_PEDIA</Tag>
+		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_PEDIA</Tag>
 		<English>The campsite of Masquerade is a famously chaotic sight in which the performers practice their art. It is typically located close to the town, though locals are rarely welcomed.</English>
 		<French>The campsite of Masquerade is a famously chaotic sight in which the performers practice their art. It is typically located close to the town, though locals are rarely welcomed</French>
 		<German>Das Lager der Maskerade ist ein berühmt-berüchtigter und chaotischer Treffpunkt für die Künstler der Bewegung. Nahe der jeweiligen Stadt gelegen, dient sie der übung, der Suche nach Ideen und Besucher aus der Gegend sind - zumindest hier - selten willkommen.</German>
@@ -110,15 +110,15 @@
 		<Spanish>The campsite of Masquerade is a famously chaotic sight in which the performers practice their art. It is typically located close to the town, though locals are rarely welcomed</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_STRATEGY</Tag>
-		<English>Building the Masquerade Gypsy Camp allows the troupe to travel to your cities, via gypsy wagons.</English>
-		<French>Construire le camp tsigane de la Mascarade permet à la troupe de voyager vers vos autres villes, grâce à leurs caravanes.</French>
+		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_STRATEGY</Tag>
+		<English>Building the Masquerade Troupe Camp allows the troupe to travel to your cities, via travelling wagons.</English>
+		<French>Construire le camp Troupe de la Mascarade permet à la troupe de voyager vers vos autres villes, grâce à leurs caravanes.</French>
 		<German>Der Bau des Lagers der Maskerade macht es der Truppe möglich, mit Schaustellerwagen andere Städte anzufahren.</German>
-		<Italian>Building the Masquerade Gypsy Camp allows the troupe to travel to your cities, via gypsy wagons.</Italian>
-		<Spanish>Building the Masquerade Gypsy Camp allows the troupe to travel to your cities, via gypsy wagons.</Spanish>
+		<Italian>Building the Masquerade Troupe Camp allows the troupe to travel to your cities, via travelling wagons.</Italian>
+		<Spanish>Building the Masquerade Troupe Camp allows the troupe to travel to your cities, via travelling wagons.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP_HELP</Tag>
 		<English>[ICON_BULLET]Spreads "Masquerade" to city</English>
 		<French>[ICON_BULLET]Propage "Mascarade" à la ville.</French>
 		<German>[ICON_BULLET]Die "Maskerade" hat sich in der Stadt ausgebreitet</German>
@@ -126,15 +126,15 @@
 		<Spanish>[ICON_BULLET]Spreads "Masquerade" to city</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MASQUERADE_GYPSY_WAGON</Tag>
-		<English>Masquerade Gypsy Wagon</English>
-		<French>Caravane tsigane de la Mascarade</French>
+		<Tag>TXT_KEY_UNIT_MASQUERADE_TRAVELLING_WAGON</Tag>
+		<English>Masquerade Travelling Wagon</English>
+		<French>Caravane Voyager de la Mascarade</French>
 		<German>Schaustellerwagen der Maskerade</German>
-		<Italian>Masquerade Gypsy Wagon</Italian>
-		<Spanish>Masquerade Gypsy Wagon</Spanish>
+		<Italian>Masquerade Travelling Wagon</Italian>
+		<Spanish>Masquerade Travelling Wagon</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MASQUERADE_GYPSY_WAGON_PEDIA</Tag>
+		<Tag>TXT_KEY_UNIT_MASQUERADE_TRAVELLING_WAGON_PEDIA</Tag>
 		<English>Masquerade performers travel between cities in these wagons, which take many forms from a simple horse and cart to a mobile palace, depending on the success and tastes of the performers.</English>
 		<French>Masquerade performers travel between cities in these wagons, which take many forms from a simple horse and cart to a mobile palace, depending on the success and tastes of the performers.</French>
 		<German>Schausteller der Maskerade reisen in den Schaustellerwagen zwischen den Städten hin und her, wobei diese Wagen einfache Fuhrwerke oder aber auch fahrbare Paläste sein können, je nach Erfolg und Geschmack der Künstler.</German>
@@ -142,12 +142,12 @@
 		<Spanish>Masquerade performers travel between cities in these wagons, which take many forms from a simple horse and cart to a mobile palace, depending on the success and tastes of the performers.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MASQUERADE_GYPSY_WAGON_STRATEGY</Tag>
-		<English>You can use gypsy wagons to direct Masquerade to visit your cities.</English>
-		<French>You can use gypsy wagons to direct Masquerade to visit your cities.</French>
+		<Tag>TXT_KEY_UNIT_MASQUERADE_TRAVELLING_WAGON_STRATEGY</Tag>
+		<English>You can use travelling wagons to direct Masquerade to visit your cities.</English>
+		<French>You can use travelling wagons to direct Masquerade to visit your cities.</French>
 		<German>Ihr könnt Schaustellerwagen benutzen, um die Maskerade in Eure Städte zu locken.</German>
-		<Italian>You can use gypsy wagons to direct Masquerade to visit your cities.</Italian>
-		<Spanish>You can use gypsy wagons to direct Masquerade to visit your cities.</Spanish>
+		<Italian>You can use travelling wagons to direct Masquerade to visit your cities.</Italian>
+		<Spanish>You can use travelling wagons to direct Masquerade to visit your cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_FARMERS_GUILD</Tag>

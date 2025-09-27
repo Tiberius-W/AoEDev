@@ -2101,7 +2101,7 @@ class FoxTools:
 		Building["Tower of Divination"]     = git('BUILDING_TOWER_OF_DIVINATION')
 		# Guilds
 		Building["Fisher Guild"]            = git('BUILDING_GUILD_FISHER')
-		Building["Masquerade Gypsy Camp"]   = git('BUILDING_GUILD_MASQUERADE_GYPSY_CAMP')
+		Building["Masquerade Troupe Camp"]   = git('BUILDING_GUILD_MASQUERADE_TROUPE_CAMP')
 		Building["Fabricaforma"]            = git('BUILDING_GUILD_FABRICAFORMA')
 		Building["Farmers Guild"]           = git('BUILDING_GUILD_FARMERS_GUILD')
 		Building["Stonefire Guild"]         = git('BUILDING_GUILD_STONEFIRE')

@@ -2460,20 +2460,20 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GUILD_MASQUERADE_GYPSY_CAMP</Type>
-			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</Description>
+			<Type>BUILDINGCLASS_GUILD_MASQUERADE_TROUPE_CAMP</Type>
+			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</DefaultBuilding>
+			<DefaultBuilding>BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GUILD_FABRICAFORMA</Type>
-			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_GYPSY_CAMP</Description>
+			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>

@@ -997,8 +997,8 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-		<UnitArtInfo> <!-- UNIT_MASQUERADE_GYPSY_WAGON -->
-			<Type>ART_DEF_UNIT_GYPSY_WAGON</Type>
+		<UnitArtInfo> <!-- UNIT_MASQUERADE_TRAVELLING_WAGON -->
+			<Type>ART_DEF_UNIT_TRAVELLING_WAGON</Type>
 			<Button>Art/Interface/Buttons/Units/GypsyWagon.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
