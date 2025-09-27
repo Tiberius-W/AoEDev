@@ -11077,7 +11077,6 @@ void CvPlot::doFeature()
 								{
 									iProbability += GC.getFeatureInfo((FeatureTypes)iI).getGrowthProbability();
 									if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-
 									{
 										iProbability += GC.getImprovementInfo(pLoopPlot->getImprovementType()).getFeatureGrowthProbability();
 										if (getOwnerINLINE() != NO_PLAYER)
@@ -11089,11 +11088,13 @@ void CvPlot::doFeature()
 							}
 						}
 
+						// BtS +25
 						iProbability *= std::max(0, (GC.getFEATURE_GROWTH_MODIFIER() + 100));
 						iProbability /= 100;
 
 						if (isRoute())
 						{
+							// BtS -50
 							iProbability *= std::max(0, (GC.getROUTE_FEATURE_GROWTH_MODIFIER() + 100));
 							iProbability /= 100;
 						}
