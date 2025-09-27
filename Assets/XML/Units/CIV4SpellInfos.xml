@@ -8159,6 +8159,7 @@
 			<PromotionPrereq1>PROMOTION_HORNED_DREAD</PromotionPrereq1>
 			<UnitPrereq>UNIT_GHOSTWALKER</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<bResistable>1</bResistable>
@@ -8178,6 +8179,7 @@
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>
 			<UnitPrereq>UNIT_DOOMSAYER</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
@@ -8203,6 +8205,8 @@
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>
 			<UnitPrereq>UNIT_DOOMGIVER</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
+			<iAIWeight>50</iAIWeight>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
@@ -8229,6 +8233,7 @@
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>
 			<UnitPrereq>UNIT_HAEGTESSE</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
@@ -8253,6 +8258,7 @@
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>
 			<UnitPrereq>UNIT_GYRE_CARLIN</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
@@ -8279,6 +8285,7 @@
 			<Help>TXT_KEY_SPELL_TERRIFY_HELP</Help>
 			<UnitPrereq>UNIT_HAEGTESSE</UnitPrereq>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<bResistable>1</bResistable>
