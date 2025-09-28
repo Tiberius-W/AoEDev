@@ -1839,11 +1839,11 @@
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_FARM_PLOWS</Type>
 			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_FARM_PLOWS</Text>
+				<Text>TXT_KEY_EVENTTRIGGER_FARM_PLOWS_WORLD</Text>
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENTTRIGGER_FARM_PLOWS_1</Text>
+					<Text>TXT_KEY_EVENTTRIGGER_FARM_PLOWS_LOCAL</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
