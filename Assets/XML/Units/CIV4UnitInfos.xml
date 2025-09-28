@@ -1680,7 +1680,7 @@
 			<Class>UNITCLASS_AURIC</Class>
 			<Type>UNIT_AURIC</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
-			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_LEADER_AURIC</Description>
 			<Civilopedia>TXT_KEY_LEADER_AURIC_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
@@ -1693,11 +1693,7 @@
 			</UnitClassUpgrades>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
@@ -1735,7 +1731,7 @@
 		<UnitInfo>        <!-- Auric - Winter -->
 			<Class>UNITCLASS_AURIC_WINTER</Class>
 			<Type>UNIT_AURIC_WINTER</Type>
-			<Combat>UNITCOMBAT_COMMANDER</Combat>
+			<Combat>UNITAI_RESERVE</Combat>
 			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AURIC_WINTER</Description>
 			<Civilopedia>TXT_KEY_LEADER_AURIC_PEDIA</Civilopedia>
@@ -1746,10 +1742,6 @@
 			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
@@ -1758,7 +1750,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<UnitAIType>UNITCOMBAT_COMMANDER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
