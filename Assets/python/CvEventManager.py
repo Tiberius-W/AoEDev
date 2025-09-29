@@ -2250,6 +2250,23 @@ class CvEventManager:
 							newUnit4 = initUnit(Unit["Wolf Rider"], iX, iY, iNoAI, iSouth)
 							pUnit.addMinion(newUnit4)
 
+		iGyre = 120
+		iDemonPlayer 	= gc.getDEMON_PLAYER()
+		if not isMaxedOut(gc.getInfoTypeForString('UNITCLASS_GYRE_CARLIN'), 0):
+			if not isOption(self.GameOptions["No Orthus"]):
+				bGyre = False
+				if eSpeed == Speed["Quick"]:
+					if iGameTurn >= iGyre / 3 * 2: bGyre = True
+				elif eSpeed == Speed["Normal"]:
+					if iGameTurn >= iGyre: 		 bGyre = True
+				elif eSpeed == Speed["Epic"]:
+					if iGameTurn >= iGyre * 3 / 2: bGyre = True
+				elif eSpeed == Speed["Marathon"]:
+					if iGameTurn >= iGyre * 3: 	 bGyre = True
+				if bGyre:
+					addUnit(gc.getInfoTypeForString('UNIT_GYRE_CARLIN'), iDemonPlayer)
+
+
 		bPlayer = gc.getPlayer(gc.getDEMON_PLAYER())
 		if (iGameTurn + 1) % (40- 5*CyGame().getGameSpeedType()) == 0 and not bPlayer.isHasFlag(gc.getInfoTypeForString('FLAG_CONTROLED_LACUNA')):
 			iBL = gc.getInfoTypeForString('IMPROVEMENT_BAIR_OF_LACUNA')
