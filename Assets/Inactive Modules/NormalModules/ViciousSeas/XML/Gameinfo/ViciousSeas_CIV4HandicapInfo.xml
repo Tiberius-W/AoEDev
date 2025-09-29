@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Handicap Infos -->
+<Civ4HandicapInfo xmlns="x-schema:ViciousSeas_CIV4GameInfoSchema.xml">
+	<HandicapInfos>
+		<HandicapInfo>
+			<Type>HANDICAP_SETTLER</Type>
+			<iWaterTilesPerOrc>200</iWaterTilesPerOrc> <!-- *UNOWNED* Tiles. Applies to savages on water only -->			<iAnimalEscalationTurnsElapsed>155</iAnimalEscalationTurnsElapsed> <!-- Turns before an animal gains another point of str. At 5 points, turns into beast and can enter civ borders & attack -->
+			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
+			<iTilesPerLairDemon>40</iTilesPerLairDemon> <!-- *UNOWNED* Tiles. Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_CHIEFTAIN</Type>
+			<iWaterTilesPerOrc>175</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>2</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>8</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>30</iTilesPerLairDemon>
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_WARLORD</Type>
+			<iWaterTilesPerOrc>150</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>3</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>12</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>20</iTilesPerLairDemon>
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_NOBLE</Type>
+			<iWaterTilesPerOrc>125</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>4</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>16</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>10</iTilesPerLairDemon>
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_PRINCE</Type>
+			<iWaterTilesPerOrc>100</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>5</iTilesPerLairDemon>
+
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_MONARCH</Type>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>5</iTilesPerLairDemon>
+		</HandicapInfo>
+		<!-- Barbarian density stops increasing here (emperor+ is no different than monarch); instead, AI continues to get better bonuses vs barbs! -->
+		<HandicapInfo>
+			<Type>HANDICAP_EMPEROR</Type>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>5</iTilesPerLairDemon>
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_IMMORTAL</Type>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>5</iTilesPerLairDemon>
+		</HandicapInfo>
+		<HandicapInfo>
+			<Type>HANDICAP_DEITY</Type>
+			<iWaterTilesPerOrc>75</iWaterTilesPerOrc>
+			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>5</iTilesPerLairDemon>
+		</HandicapInfo>
+	</HandicapInfos>
+</Civ4HandicapInfo>

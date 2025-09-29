@@ -8743,6 +8743,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<iInvisibleLevel>1</iInvisibleLevel>
+			<bPillage>1</bPillage>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
