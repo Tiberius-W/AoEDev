@@ -173,8 +173,8 @@ def onUnitCreated(self, argsList):
 			if pPlayer.isHasTech( Tech["Bowyers"]):            GoblinChoice = [(getInfoType("UNIT_MURIS_CLAN_SAPPER"), 25), (getInfoType("UNIT_ARCHER_MURIS_CLAN"), 10)]
 			elif pPlayer.isHasTech( Tech["Archery"]):          GoblinChoice = [(getInfoType("UNIT_ARCHER_MURIS_CLAN"), 25)]
 			if pPlayer.isHasTech( Tech["Stirrups"]):           GoblinChoice = [(getInfoType("UNIT_MURIS_CLAN_WOLF_ARCHER"), 25), (getInfoType("UNIT_WOLF_RIDER_MURIS_CLAN"), 10)]
-			elif pPlayer.isHasTech( Tech["Horseback Riding"]): GoblinChoice = [(getInfoType("UNIT_WOLF_RIDER_MURIS_CLAN"), 25)]
-			if pPlayer.isHasTech( Tech["Construction"]):       GoblinChoice = [(getInfoType("UNIT_CHARIOT_MURIS_CLAN"), 25)]
+			elif pPlayer.isHasTech( Tech["Trade"]): GoblinChoice = [(getInfoType("UNIT_WOLF_RIDER_MURIS_CLAN"), 25)]
+			if pPlayer.isHasTech( Tech["Military Strategy"]):       GoblinChoice = [(getInfoType("UNIT_CHARIOT_MURIS_CLAN"), 25)]
 
 			getGoblin = wchoice( GoblinChoice, 'Goblin Whelp Upgrade' )
 			newUnit = initUnit(getGoblin(), iX, iY, iNoAI, iSouth)
