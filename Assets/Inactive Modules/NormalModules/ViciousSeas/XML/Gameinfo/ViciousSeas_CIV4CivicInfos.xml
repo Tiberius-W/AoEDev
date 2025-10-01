@@ -14,6 +14,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<iAIWeight>50</iAIWeight>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_THE_DREAMERS</WeLoveTheKing>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
 			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
@@ -130,6 +131,7 @@
 			<bStateReligion>1</bStateReligion>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_THE_DREAMERS</WeLoveTheKing>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
 			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>

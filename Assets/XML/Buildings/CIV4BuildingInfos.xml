@@ -3964,6 +3964,10 @@
 					<BonusType>BONUS_REAGENTS</BonusType>
 					<iHealthChange>2</iHealthChange>
 				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_MUSHROOMS</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
 			</BonusHealthChanges>
 			<Flavors>
 				<Flavor>
@@ -13102,7 +13106,7 @@
 			<Description>TXT_KEY_BUILDING_PALACE_DTESH</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PALACE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TOWER_OF_NECROMANCY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TOWER_OF_DTESH</ArtDefineTag>
 			<FreeBonus>BONUS_MANA_DEATH</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bCapital>1</bCapital>

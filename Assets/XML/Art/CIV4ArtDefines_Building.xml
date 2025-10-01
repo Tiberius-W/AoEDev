@@ -577,6 +577,16 @@
 			<Button>Art/Interface/Buttons/Buildings/Towerofnecromancy.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TOWER_OF_DTESH</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Tower of Necromancy/towerofnecromancy.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Towerofnecromancy.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_UNYIELDING_ORDER</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
