@@ -259,6 +259,11 @@
 			<iConquestProb>25</iConquestProb>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>2</fVisibilityPriority>
+			<SeaPlotYieldChanges>
+				<iYield>1</iYield>
+				<iYield>2</iYield>
+				<iYield>0</iYield>
+			</SeaPlotYieldChanges>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -277,6 +282,46 @@
 					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+		</BuildingInfo>	
+		<BuildingInfo>		<!-- Palace Dream of the Aifons -->
+			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+			<Type>BUILDING_PALACE_DREAM_AIFONS</Type>
+			<Description>TXT_KEY_BUILDING_PALACE_BEZERI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PALACE_BEZERI</Civilopedia>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PALACE_MAZATL</ArtDefineTag>
+			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bCapital>1</bCapital>
+			<iHealth>2</iHealth>
+			<SeaPlotYieldChanges>
+				<iYield>1</iYield>
+				<iYield>1</iYield>
+				<iYield>1</iYield>
+			</SeaPlotYieldChanges>
+			<bGovernmentCenter>1</bGovernmentCenter>
+			<bNeverCapture>1</bNeverCapture>
+			<bNukeImmune>1</bNukeImmune>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>160</iCost>
+			<iHurryCostModifier>50</iHurryCostModifier>
+			<iConquestProb>0</iConquestProb>
+			<iCitiesPrereq>4</iCitiesPrereq>
+			<iHappiness>1</iHappiness>
+			<fVisibilityPriority>10000</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>0</iYield>
+				<iYield>3</iYield>
+				<iYield>12</iYield>
+			</YieldChanges>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<iCrime>-10</iCrime>
+			<FreeBonus>BONUS_MANA_SHADOW</FreeBonus>
+			<FreeBonus2>BONUS_MANA_MIND</FreeBonus2>
+			<FreeBonus3>BONUS_MANA_SPIRIT</FreeBonus3>
 		</BuildingInfo>
 		</BuildingInfos>
 </Civ4BuildingInfos>

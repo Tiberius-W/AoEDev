@@ -1890,10 +1890,6 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_CORAL_FORT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
 					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -1994,7 +1990,6 @@
 			<Class>UNITCLASS_SETTLER</Class>
 			<Type>UNIT_SETTLER_DREAM_AIFON</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
-			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SETTLER</Description>
 			<Civilopedia>TXT_KEY_UNIT_SETTLER_PEDIA</Civilopedia>

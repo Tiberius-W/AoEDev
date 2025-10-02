@@ -441,7 +441,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
-					<BuildingType>BUILDING_PALACE_BEZERI</BuildingType>
+					<BuildingType>BUILDING_PALACE_DREAM_AIFONS</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HERON_THRONE</BuildingClassType>
@@ -542,6 +542,16 @@
 					<bFreeBuildingClass>1</bFreeBuildingClass>
 				</FreeBuildingClass>
 			</FreeBuildingClasses>
+			<FreeTechs>
+				<FreeTech>
+					<TechType>TECH_FISHING</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+				<FreeTech>
+					<TechType>TECH_ANCIENT_CHANTS</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+			</FreeTechs>
 			<DisableTechs>
 			</DisableTechs>
 			<InitialCivics>

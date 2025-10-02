@@ -1099,7 +1099,15 @@
 		<PromotionInfo>		<!-- Nightmare Aifon --> <!-- Dream of the Aifons start -->
 			<Type>PROMOTION_NIGHTMARE_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
-			<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFON</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PIRATE_PRINCE1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
@@ -1180,7 +1188,15 @@
 		<PromotionInfo>		<!-- Dreaming Aifon -->
 			<Type>PROMOTION_DREAMING_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM_AIFON</Description>
-			<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFON</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_PIRATE_PRINCE1</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
