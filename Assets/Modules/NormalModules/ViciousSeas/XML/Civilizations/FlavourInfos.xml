@@ -15,4 +15,16 @@
 		</Preference>
 		<iSearchAreaModifier>-1</iSearchAreaModifier>
 	</CivFlavourInfo>
+	<CivFlavourInfo>
+		<Civilization>CIVILIZATION_DREAM_AIFONS</Civilization>
+		<Preference>
+			<FlavourType>COASTAL_START</FlavourType>
+			<Value>10</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>IMPROVEMENT_AIFON_ISLE</FlavourType>
+			<Value>6</Value>
+		</Preference>
+		<iSearchAreaModifier>-1</iSearchAreaModifier>
+	</CivFlavourInfo>
 </CivFlavourInfos>

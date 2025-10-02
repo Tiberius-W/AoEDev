@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Feature -->
+<Civ4PlotEffectInfos xmlns="x-schema:ViciousSeas_CIV4TerrainSchema.xml">
+	<PlotEffectInfos>
+		<PlotEffectInfo>		<!-- Dreamworld -->
+			<Type>PLOT_EFFECT_DREAMWORLD</Type>
+			<Description>TXT_KEY_FEATURE_DREAMWORLD</Description>
+			<Button>Art/Civs/Sidar/mist.dds</Button>
+			<DefaultFeatureGraphics>FEATURE_DREAMWORLD</DefaultFeatureGraphics>
+			<bDispellable>1</bDispellable>
+			<iSeeThrough>2</iSeeThrough>
+			<iTurnDamage>1</iTurnDamage>
+			<iDamageLimit>25</iDamageLimit>
+			<DamageType>DAMAGE_UNHOLY</DamageType>
+			<TerrainBooleans>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+			</TerrainBooleans>
+		</PlotEffectInfo>
+	</PlotEffectInfos>
+</Civ4PlotEffectInfos>

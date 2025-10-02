@@ -510,8 +510,8 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>UNIT_WORKER_LIZARD_BEZERI</UnitType>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<UnitType>UNIT_SETTLER_DREAM_AIFON</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
@@ -560,7 +560,7 @@
 			</AnarchyCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_TUNDOSS_FAITHFUL_PROTECTOR</LeaderName>
+					<LeaderName>LEADER_MIRROR</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -569,7 +569,7 @@
 			<CivilizationActionSound>AS3D_LIZARDMAN_SELECT</CivilizationActionSound>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
-			<DefaultRace>PROMOTION_LIZARDMAN_BEZERI</DefaultRace>
+			<DefaultRace>PROMOTION_DREAM</DefaultRace>
 			<Hero>UNIT_SKAA_RAJ</Hero>
 			<TerrainCultureDistanceChanges>
 				<TerrainCultureDistanceChange>

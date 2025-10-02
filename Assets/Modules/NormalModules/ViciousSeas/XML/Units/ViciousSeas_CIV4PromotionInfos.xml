@@ -1174,12 +1174,11 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
-			<iExtraCombatStr>1</iExtraCombatStr>
-			<iExtraCombatDefense>1</iExtraCombatDefense>
+			<iCombatPercent>20</iCombatPercent>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Dream Aifon -->
-			<Type>PROMOTION_DREAM_AIFON</Type>
+		<PromotionInfo>		<!-- Dreaming Aifon -->
+			<Type>PROMOTION_DREAMING_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM_AIFON</Description>
 			<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
 			<bAutoAcquire>1</bAutoAcquire>
@@ -1257,7 +1256,43 @@
 				</CityBonus>
 			</CityBonuses>
 			<iExtraCombatStr>-2</iExtraCombatStr>
-			<iExtraCombatDefense>3</iExtraCombatDefense>
+			<iExtraCombatDefense>2</iExtraCombatDefense>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Dream -->						
+			<Type>PROMOTION_DREAM</Type>
+			<Description>TXT_KEY_PROMOTION_DREAM</Description>
+			<Button>Art/Interface/Buttons/Races/Race_Angel.dds</Button>
+			<bImmuneToFear>1</bImmuneToFear>
+			<bNotAlive>1</bNotAlive>
+			<bRace>1</bRace>
+			<bNeverResurrect>1</bNeverResurrect>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<bWaterWalking>1</bWaterWalking>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_DEATH</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iResist>-50</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<PromotionSummonPerk>PROMOTION_DREAM</PromotionSummonPerk>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Fear -->
+			<Type>PROMOTION_FEAR</Type>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

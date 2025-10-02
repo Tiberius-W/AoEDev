@@ -115,6 +115,12 @@
 			<bIgnoreHealth>1</bIgnoreHealth>
 			<iInitialCityCap>6</iInitialCityCap>
 			<bAmphibian>1</bAmphibian>
+			<PlotEffectSpawnChances>
+				<PlotEffectSpawnChance>
+					<PlotEffectType>PLOT_EFFECT_DREAMWORLD</PlotEffectType>
+					<iSpawnChance>1000</iSpawnChance>
+				</PlotEffectSpawnChance>
+			</PlotEffectSpawnChances>
 		</TraitInfo>
 		<TraitInfo>		<!-- Fisherman -->
 			<Type>TRAIT_FISHERMAN</Type>

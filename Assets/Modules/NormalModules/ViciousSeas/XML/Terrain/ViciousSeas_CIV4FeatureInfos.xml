@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Feature -->
+<Civ4FeatureInfos xmlns="x-schema:ViciousSeas_CIV4TerrainSchema.xml">
+	<FeatureInfos>
+		<FeatureInfo>		<!-- Kelp -->
+			<Type>FEATURE_KELP</Type>
+			<iMovement>2</iMovement>
+		</FeatureInfo>
+		<FeatureInfo>		<!-- Kelp Forest -->
+			<Type>FEATURE_KELP_FOREST</Type>
+			<iMovement>3</iMovement>
+		</FeatureInfo>
+		<FeatureInfo>		<!-- Reefs -->
+			<Type>FEATURE_REEFS</Type>
+			<iMovement>4</iMovement>
+		</FeatureInfo>
+		<FeatureInfo>		<!-- Dreamworld for PlotEffect Only -->
+			<Type>FEATURE_DREAMWORLD</Type>
+			<Description>TXT_KEY_FEATURE_WALLS</Description>
+			<Civilopedia>TXT_KEY_FEATURE_WALLS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_FEATURE_DREAMWORLD</ArtDefineTag>
+			<iMovement>1</iMovement>
+			<iSeeThrough>4</iSeeThrough>
+			<bImpassable>1</bImpassable>
+			<bGraphicalOnly>1</bGraphicalOnly>
+			<FootstepSounds>
+				<FootstepSound>
+					<FootstepAudioType>FOOTSTEP_AUDIO_HUMAN</FootstepAudioType>
+					<FootstepAudioScript>AS3D_UN_FOOT_UNIT_SNOW</FootstepAudioScript>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>FOOTSTEP_AUDIO_HUMAN_LOW</FootstepAudioType>
+					<FootstepAudioScript>AS3D_UN_FOOT_UNIT_LOW_SNOW</FootstepAudioScript>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>FOOTSTEP_AUDIO_ANIMAL</FootstepAudioType>
+					<FootstepAudioScript>AS3D_UN_ANIMAL_FOOT_LARGE_SNOW</FootstepAudioScript>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>FOOTSTEP_AUDIO_ANIMAL_LOW</FootstepAudioType>
+					<FootstepAudioScript>AS3D_UN_ANIMAL_FOOT_LARGE_LOW_SNOW</FootstepAudioScript>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>FOOTSTEP_AUDIO_HORSE</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_WHEELS</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_WHEELS</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_WHEELS_2</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_WHEELS_2</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_TANK</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_TANK</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_MOD_ARMOUR</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_MOD_ARMOUR</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_ARTILLERY</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_ARTILLERY</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>LOOPSTEP_WHEELS_3</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+				<FootstepSound>
+					<FootstepAudioType>ENDSTEP_WHEELS_3</FootstepAudioType>
+					<FootstepAudioScript/>
+				</FootstepSound>
+			</FootstepSounds>
+		</FeatureInfo>
+	</FeatureInfos>
+</Civ4FeatureInfos>
