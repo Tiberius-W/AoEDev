@@ -20,5 +20,12 @@
 			<fBlue>0.40</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_DREAM_AIFONS</Type>
+			<fRed>0.59</fRed>
+			<fGreen>0.00</fGreen>
+			<fBlue>0.28</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

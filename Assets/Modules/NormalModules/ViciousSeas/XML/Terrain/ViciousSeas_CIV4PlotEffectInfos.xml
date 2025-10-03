@@ -12,7 +12,7 @@
 			<Button>Art/Civs/Sidar/mist.dds</Button>
 			<DefaultFeatureGraphics>FEATURE_DREAMWORLD</DefaultFeatureGraphics>
 			<bDispellable>1</bDispellable>
-			<iSeeThrough>2</iSeeThrough>
+			<iSeeThrough>4</iSeeThrough>
 			<iTurnDamage>1</iTurnDamage>
 			<iDamageLimit>25</iDamageLimit>
 			<DamageType>DAMAGE_UNHOLY</DamageType>

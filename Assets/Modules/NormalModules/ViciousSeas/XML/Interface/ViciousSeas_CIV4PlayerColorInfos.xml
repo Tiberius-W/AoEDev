@@ -12,5 +12,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_BEZERI</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_DREAM_AIFONS</Type>
+			<ColorTypePrimary>COLOR_PLAYER_DREAM_AIFONS</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DARK_PINK_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

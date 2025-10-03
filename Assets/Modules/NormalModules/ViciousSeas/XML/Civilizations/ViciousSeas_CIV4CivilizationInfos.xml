@@ -406,10 +406,10 @@
 			<Adjective>TXT_KEY_CIV_DREAM_AIFONS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_DREAM_AIFONS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIV_DREAM_AIFONS_STRATEGY</Strategy>
-			<DefaultPlayerColor>PLAYERCOLOR_BEZERI</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_BEZERI</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_LIZARD</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_LIZARD_BEZERI</UnitArtStyleType>
+			<DefaultPlayerColor>PLAYERCOLOR_DREAM_AIFONS</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_ELOHIM</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ELOHIM</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ELOHIM</UnitArtStyleType>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<bNoCrimeCiv>1</bNoCrimeCiv>
@@ -575,8 +575,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_LIZARDMAN_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_LIZARDMAN_SELECT</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_SPELL_SPECTRE</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_SPELL_SPECTRE</CivilizationActionSound>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>

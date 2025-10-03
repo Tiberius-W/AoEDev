@@ -253,6 +253,7 @@
 			</ProductionTraits>
 			<bCenterInCity>1</bCenterInCity>
 			<bNoUnhappiness>1</bNoUnhappiness>
+			<iCityCapModifier>1</iCityCapModifier>
 			<iAIWeight>300</iAIWeight>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -310,7 +311,7 @@
 			<fVisibilityPriority>10000</fVisibilityPriority>
 			<YieldChanges>
 				<iYield>0</iYield>
-				<iYield>3</iYield>
+				<iYield>4</iYield>
 				<iYield>12</iYield>
 			</YieldChanges>
 			<ObsoleteSafeCommerceChanges>
