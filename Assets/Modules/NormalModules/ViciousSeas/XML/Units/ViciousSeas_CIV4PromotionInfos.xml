@@ -1099,34 +1099,15 @@
 		<PromotionInfo>		<!-- Nightmare Aifon --> <!-- Dream of the Aifons start -->
 			<Type>PROMOTION_NIGHTMARE_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_DREAM_AIFON</PrereqCivilization>
-			</PrereqCivilizations>
-			<PrereqPromotionANDs>
-				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_PIRATE_PRINCE1</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-			</PrereqPromotionANDs>
+			<ReplaceArtType>ART_DEF_UNIT_STYGIAN_GUARD</ReplaceArtType>
 			<bAutoAcquire>1</bAutoAcquire>
-			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqTerrains>
-				<PrereqTerrain>TERRAIN_GLACIER</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_GRASS</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_PLAINS</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_DESERT</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_MARSH</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_TAIGA</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_TUNDRA</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_WASTELAND</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_BURNING_SANDS</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_BROKEN_LANDS</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_FIELDS_OF_PERDITION</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_SHALLOWS</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_PEAK</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_HILL</PrereqTerrain>
-			</PrereqTerrains>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
@@ -1182,31 +1163,24 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
-			<iCombatPercent>20</iCombatPercent>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dreaming Aifon -->
 			<Type>PROMOTION_DREAMING_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM_AIFON</Description>
 			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_DREAM_AIFON</PrereqCivilization>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
 			</PrereqCivilizations>
-			<PrereqPromotionANDs>
-				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_PIRATE_PRINCE1</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-			</PrereqPromotionANDs>
+			<PrereqInBorderSelf>1</PrereqInBorderSelf>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqTerrains>
-				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_BLACKWATER</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_BLIGHTED_COAST</PrereqTerrain>
-				<PrereqTerrain>TERRAIN_OCEAN_DEEP</PrereqTerrain>
-			</PrereqTerrains>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
@@ -1271,8 +1245,12 @@
 					<iBonusRange>2</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
-			<iExtraCombatStr>-2</iExtraCombatStr>
-			<iExtraCombatDefense>2</iExtraCombatDefense>
+			<PlotEffectDefenses>
+				<PlotEffectDefense>
+					<PlotEffectType>PLOT_EFFECT_DREAMWORLD</PlotEffectType>
+					<iPlotEffectDefense>50</iPlotEffectDefense>
+				</PlotEffectDefense>
+			</PlotEffectDefenses>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dream -->						
 			<Type>PROMOTION_DREAM</Type>
@@ -1284,10 +1262,10 @@
 			<bNeverResurrect>1</bNeverResurrect>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
-			<bWaterWalking>1</bWaterWalking>
+		    <bWaterWalking>1</bWaterWalking>
 			<DamageTypeResists>
 				<DamageTypeResist>
-					<DamageType>DAMAGE_DEATH</DamageType>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
 					<iResist>100</iResist>
 				</DamageTypeResist>
 				<DamageTypeResist>

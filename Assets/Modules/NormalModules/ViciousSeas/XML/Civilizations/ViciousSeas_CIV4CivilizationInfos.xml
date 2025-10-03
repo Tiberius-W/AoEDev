@@ -661,49 +661,15 @@
 						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>2</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<TerrainYieldChanges>
-				<TerrainYieldChange>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<TerrainYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-					</TerrainYields>
-				</TerrainYieldChange>
-				<TerrainYieldChange>
-					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
-					<TerrainYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-					</TerrainYields>
-				</TerrainYieldChange>
-				<TerrainYieldChange>
-					<TerrainType>TERRAIN_COAST</TerrainType>
-					<TerrainYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-				</TerrainYields>
-				</TerrainYieldChange>
-				<TerrainYieldChange>
-				    <TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
-					<TerrainYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-				    </TerrainYields>
-				 </TerrainYieldChange>
-				 <TerrainYieldChange>
-				    <TerrainType>TERRAIN_BLACKWATER</TerrainType>
-					<TerrainYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-					</TerrainYields>
-				</TerrainYieldChange>
-			</TerrainYieldChanges>
 		</CivilizationInfo>
 	</CivilizationInfos>
 </Civ4CivilizationInfos>

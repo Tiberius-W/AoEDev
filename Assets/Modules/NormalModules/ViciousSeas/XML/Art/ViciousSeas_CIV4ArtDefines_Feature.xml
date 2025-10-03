@@ -12,7 +12,7 @@
 			<bRiverArt>0</bRiverArt>
 			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
 			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>0.8</fScale>
+			<fScale>1</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
             <Button>, ,Art/Interface/Buttons/Misc_Atlas3.dds,5,11</Button>
 			<FeatureVariety>

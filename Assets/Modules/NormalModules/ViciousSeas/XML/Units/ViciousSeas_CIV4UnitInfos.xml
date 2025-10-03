@@ -1986,7 +1986,7 @@
 			<iWeaponTierMin>4</iWeaponTierMin>
 			<iWeaponTierMax>6</iWeaponTierMax>
 		</UnitInfo>
-		<UnitInfo>        <!-- Aifon Settler   -   Dream of the Aifons START -->
+		<UnitInfo>        <!-- Aifon Settler    -->
 			<Class>UNITCLASS_SETTLER</Class>
 			<Type>UNIT_SETTLER_DREAM_AIFON</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
