@@ -198,31 +198,23 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_LIFE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_SPIRIT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_NATURE</BuildType>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -337,19 +329,23 @@
 			<iWorkRate>400</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -466,31 +462,23 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_LIFE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_SPIRIT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_NATURE</BuildType>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
