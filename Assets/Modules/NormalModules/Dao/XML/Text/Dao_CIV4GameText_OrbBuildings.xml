@@ -41,73 +41,34 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_BUILDING_SHRINE_AIR</Tag>
-        <English>Air Shrine</English>
-        <French>Air Shrine</French>
-        <German>Air Shrine</German>
-        <Italian>Air Shrine</Italian>
-        <Spanish>Air Shrine</Spanish>
+        <English>Air Shen Dian</English>
+        <French>Air Shen Dian</French>
+        <German>Air Shen Dian</German>
+        <Italian>Air Shen Dian</Italian>
+        <Spanish>Air Shen Dian</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_BUILDING_SHRINE_EARTH</Tag>
-        <English>Earth Shrine</English>
-        <French>Earth Shrine</French>
-        <German>Earth Shrine</German>
-        <Italian>Earth Shrine</Italian>
-        <Spanish>Earth Shrine</Spanish>
+        <English>Earth Shen Dian</English>
+        <French>Earth Shen Dian</French>
+        <German>Earth Shen Dian</German>
+        <Italian>Earth Shen Dian</Italian>
+        <Spanish>Earth Shen Dian</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_BUILDING_SHRINE_FIRE</Tag>
-        <English>Fire Shrine</English>
-        <French>Fire Shrine</French>
-        <German>Fire Shrine</German>
-        <Italian>Fire Shrine</Italian>
-        <Spanish>Fire Shrine</Spanish>
+        <English>Fire Shen Dian</English>
+        <French>Fire Shen Dian</French>
+        <German>Fire Shen Dian</German>
+        <Italian>Fire Shen Dian</Italian>
+        <Spanish>Fire Shen Dian</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_BUILDING_SHRINE_WATER</Tag>
-        <English>Water Shrine</English>
-        <French>Water Shrine</French>
-        <German>Water Shrine</German>
-        <Italian>Water Shrine</Italian>
-        <Spanish>Water Shrine</Spanish>
-    </TEXT><TEXT>
-        <Tag>TXT_KEY_BUILDING_SHRINE_AIR_HELP</Tag>
-        <English>[ICON_BULLET]Triples chance to spawn Air elemental, blocks Earth elementals spawning</English>
-        <French>[ICON_BULLET]Triples chance to spawn Air elemental, blocks Earth elementals spawning</French>
-        <German>[ICON_BULLET]Triples chance to spawn Air elemental, blocks Earth elementals spawning</German>
-        <Italian>[ICON_BULLET]Triples chance to spawn Air elemental, blocks Earth elementals spawning</Italian>
-        <Spanish>[ICON_BULLET]Triples chance to spawn Air elemental, blocks Earth elementals spawning</Spanish>
-    </TEXT>
-    <TEXT>
-        <Tag>TXT_KEY_BUILDING_SHRINE_EARTH_HELP</Tag>
-        <English>[ICON_BULLET]Triples chance to spawn Earth elemental, blocks Air elementals spawning</English>
-        <French>[ICON_BULLET]Triples chance to spawn Earth elemental, blocks Air elementals spawning</French>
-        <German>[ICON_BULLET]Triples chance to spawn Earth elemental, blocks Air elementals spawning</German>
-        <Italian>[ICON_BULLET]Triples chance to spawn Earth elemental, blocks Air elementals spawning</Italian>
-        <Spanish>[ICON_BULLET]Triples chance to spawn Earth elemental, blocks Air elementals spawning</Spanish>
-    </TEXT>
-    <TEXT>
-        <Tag>TXT_KEY_BUILDING_SHRINE_FIRE_HELP</Tag>
-        <English>[ICON_BULLET]Triples chance to spawn Fire elemental, blocks Water elementals spawning</English>
-        <French>[ICON_BULLET]Triples chance to spawn Fire elemental, blocks Water elementals spawning</French>
-        <German>[ICON_BULLET]Triples chance to spawn Fire elemental, blocks Water elementals spawning</German>
-        <Italian>[ICON_BULLET]Triples chance to spawn Fire elemental, blocks Water elementals spawning</Italian>
-        <Spanish>[ICON_BULLET]Triples chance to spawn Fire elemental, blocks Water elementals spawning</Spanish>
-    </TEXT>
-    <TEXT>
-        <Tag>TXT_KEY_BUILDING_SHRINE_WATER_HELP</Tag>
-        <English>[ICON_BULLET]Triples chance to spawn Water elemental, blocks Fire elementals spawning</English>
-        <French>[ICON_BULLET]Triples chance to spawn Water elemental, blocks Fire elementals spawning</French>
-        <German>[ICON_BULLET]Triples chance to spawn Water elemental, blocks Fire elementals spawning</German>
-        <Italian>[ICON_BULLET]Triples chance to spawn Water elemental, blocks Fire elementals spawning</Italian>
-        <Spanish>[ICON_BULLET]Triples chance to spawn Water elemental, blocks Fire elementals spawning</Spanish>
-    </TEXT>
-    <TEXT>
-        <Tag>TXT_KEY_BUILDING_DAO_TEMPLE_HELP</Tag>
-        <English>[ICON_BULLET]Provides 1.2% chance to spawn air, earth, fire and water elementals[NEWLINE][ICON_BULLET]At Commune with Nature, Elder Elementals are spawned instead</English>
-        <French>[ICON_BULLET]Provides 1.2% chance to spawn air, earth, fire and water elementals[NEWLINE][ICON_BULLET]At Commune with Nature, Elder Elementals are spawned instead</French>
-        <German>[ICON_BULLET]Provides 1.2% chance to spawn air, earth, fire and water elementals[NEWLINE][ICON_BULLET]At Commune with Nature, Elder Elementals are spawned instead</German>
-        <Italian>[ICON_BULLET]Provides 1.2% chance to spawn air, earth, fire and water elementals[NEWLINE][ICON_BULLET]At Commune with Nature, Elder Elementals are spawned instead</Italian>
-        <Spanish>[ICON_BULLET]Provides 1.2% chance to spawn air, earth, fire and water elementals[NEWLINE][ICON_BULLET]At Commune with Nature, Elder Elementals are spawned instead</Spanish>
+        <English>Water Shen Dian</English>
+        <French>Water Shen Dian</French>
+        <German>Water Shen Dian</German>
+        <Italian>Water Shen Dian</Italian>
+        <Spanish>Water Shen Dian</Spanish>
     </TEXT>
 </Civ4GameText>

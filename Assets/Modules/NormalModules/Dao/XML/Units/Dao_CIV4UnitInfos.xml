@@ -657,7 +657,7 @@
 			<iWorkRate>100</iWorkRate>
 			<BonusAffinities>
 				<BonusAffinity>
-					<BonusType>BONUS_MANA_NATURE</BonusType>
+					<BonusType>BONUS_MANA_FORCE</BonusType>
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>

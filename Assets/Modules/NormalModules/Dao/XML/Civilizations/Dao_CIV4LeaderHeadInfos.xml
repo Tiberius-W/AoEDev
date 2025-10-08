@@ -105,7 +105,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>35</iFlavor>
+					<iFlavor>20</iFlavor>
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -113,7 +113,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
-					<iFlavor>-5</iFlavor>
+					<iFlavor>20</iFlavor>
 				 </Flavor>
 			</Flavors>
 			<ContactRands>
@@ -703,7 +703,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>35</iFlavor>
+					<iFlavor>20</iFlavor>
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -711,7 +711,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
-					<iFlavor>-5</iFlavor>
+					<iFlavor>20</iFlavor>
 				 </Flavor>
 			</Flavors>
 			<ContactRands>

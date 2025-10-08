@@ -8,7 +8,7 @@
 	<BuildInfos>
 		<BuildInfo>
 			<Type>BUILD_MANA_WATER_DAO</Type>
-			<Description>TXT_KEY_BUILD_MANA_WATER</Description>
+			<Description>TXT_KEY_BUILD_MANA_WATER_DAO</Description>
 			<Help/>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
 			<iTime>1200</iTime>
@@ -63,7 +63,7 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_MANA_FIRE_DAO</Type>
-			<Description>TXT_KEY_BUILD_MANA_FIRE</Description>
+			<Description>TXT_KEY_BUILD_MANA_FIRE_DAO</Description>
 			<Help/>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
 			<iTime>1200</iTime>
@@ -118,7 +118,7 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_MANA_AIR_DAO</Type>
-			<Description>TXT_KEY_BUILD_MANA_AIR</Description>
+			<Description>TXT_KEY_BUILD_MANA_AIR_DAO</Description>
 			<Help/>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
 			<iTime>1200</iTime>
@@ -173,7 +173,7 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_MANA_EARTH_DAO</Type>
-			<Description>TXT_KEY_BUILD_MANA_EARTH</Description>
+			<Description>TXT_KEY_BUILD_MANA_EARTH_DAO</Description>
 			<Help/>
 			<PrereqTech>TECH_KNOWLEDGE_OF_THE_ETHER</PrereqTech>
 			<iTime>1200</iTime>
