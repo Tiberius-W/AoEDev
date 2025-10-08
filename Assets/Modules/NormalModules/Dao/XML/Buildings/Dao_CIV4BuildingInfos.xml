@@ -276,8 +276,6 @@
 			<bCtrlDown>0</bCtrlDown>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<iCrime>-10</iCrime>
-			<FreeBonus2>BONUS_MANA_AIR</FreeBonus2>
-			<FreeBonus3>BONUS_MANA_EARTH</FreeBonus3>
 			<PrereqTrait>NONE</PrereqTrait>
 			<RemovePromotion>NONE</RemovePromotion>
 			<SpecialistCommerceChanges>
@@ -1212,9 +1210,9 @@
 			<GlobalSeaPlotYieldChanges>
 			</GlobalSeaPlotYieldChanges>
 			<YieldChanges>
-				<iYield>15</iYield>
 			</YieldChanges>
 			<YieldModifiers>
+				<iYield>15</iYield>
 			</YieldModifiers>
 			<PowerYieldModifiers>
 			</PowerYieldModifiers>

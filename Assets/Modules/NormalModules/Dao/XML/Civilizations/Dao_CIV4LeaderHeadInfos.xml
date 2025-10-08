@@ -94,6 +94,10 @@
 					<bTrait>1</bTrait>
 				 </Trait>
 				 <Trait>
+					<TraitType>TRAIT_DAO_WATER_EARTH</TraitType>
+					<bTrait>1</bTrait>
+				 </Trait>
+				 <Trait>
 					<TraitType>TRAIT_AGNOSTIC</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
@@ -609,7 +613,7 @@
 			<Description>TXT_KEY_LEADER_RUOLAN</Description>
 			<Civilopedia>TXT_KEY_LEADER_RUOLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_RUOLAN</ArtDefineTag>
-			<LeaderClass>LEADERCLASS_HISTORICAL</LeaderClass>
+			<LeaderClass>LEADERCLASS_IMPORTANT</LeaderClass>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-2</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
@@ -689,6 +693,10 @@
 				 </Trait>
 				 <Trait>
 					<TraitType>TRAIT_ORGANIZED</TraitType>
+					<bTrait>1</bTrait>
+				 </Trait>
+				 <Trait>
+					<TraitType>TRAIT_DAO_FIRE_AIR</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
 				 <Trait>

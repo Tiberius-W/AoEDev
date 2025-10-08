@@ -833,8 +833,8 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-	<!--	<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type> 
 			<Button>Art/Modules/Dao/Buttons/Fire Elemental.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
@@ -855,9 +855,9 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo> -->
-		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
+		</UnitArtInfo>
+<!--     <UnitArtInfo> -->
+	<!-- <Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
 			<Button>Art/Interface/Buttons/Units/Fire Elemental.dds</Button>
 			<fScale>0.002</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
@@ -878,7 +878,7 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo>
+		</UnitArtInfo> -->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WATER_ELEMENTAL_MINOR</Type>
 			<Button>Art/Modules/Dao/Buttons/Water Elemental.dds</Button>

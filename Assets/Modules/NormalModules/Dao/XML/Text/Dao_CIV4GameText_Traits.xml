@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_WATER_EARTH</Tag>
+        <English>River and Mountain</English>
+        <French>River and Mountain</French>
+        <German>River and Mountain</German>
+        <Italian>River and Mountain</Italian>
+        <Spanish>River and Mountain</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_WATER_EARTH_PEDIA</Tag>
+        <English>Longing for peace</English>
+        <French>Hermit</French>
+        <German>Hermit</German>
+        <Italian>Hermit</Italian>
+        <Spanish>Hermit</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_WATER_AIR_SHORT</Tag>
+        <English>RvrMtn</English>
+        <French>RvrMtn</French>
+        <German>RvrMtn</German>
+        <Italian>RvrMtn</Italian>
+        <Spanish>RvrMtn</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_FIRE_AIR</Tag>
+        <English>Flame and Sky</English>
+        <French>Flame and Sky</French>
+        <German>Flame and Sky</German>
+        <Italian>Flame and Sky</Italian>
+        <Spanish>Flame and Sky</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_FIRE_AIR_PEDIA</Tag>
+        <English>Longing for adventure</English>
+        <French>Hermit</French>
+        <German>Hermit</German>
+        <Italian>Hermit</Italian>
+        <Spanish>Hermit</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_DAO_FIRE_AIR_SHORT</Tag>
+        <English>FlmSky</English>
+        <French>FlmSky</French>
+        <German>FlmSky</German>
+        <Italian>FlmSky</Italian>
+        <Spanish>FlmSky</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAITCLASS_BALANCE</Tag>
+        <English>Balance</English>
+        <French>Balance</French>
+        <German>Balance</German>
+        <Italian>Balance</Italian>
+        <Spanish>Balance</Spanish>
+    </TEXT>
+</Civ4GameText>

@@ -141,13 +141,11 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</UnitAIs>
-			<NotUnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</NotUnitAIs>
+			</UnitAIs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -251,13 +249,11 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</UnitAIs>
-			<NotUnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</NotUnitAIs>
+			</UnitAIs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -402,13 +398,11 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</UnitAIs>
-			<NotUnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</NotUnitAIs>
+			</UnitAIs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>

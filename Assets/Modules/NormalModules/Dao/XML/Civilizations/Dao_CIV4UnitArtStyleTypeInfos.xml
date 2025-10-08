@@ -301,5 +301,42 @@
 				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>
+		<UnitArtStyleTypeInfo>
+			<Type>UNIT_ARTSTYLE_MINOR</Type>
+			<StyleUnits>
+				<StyleUnit>
+					<UnitType>UNIT_AIR_ELEMENTAL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_AIR_ELEMENTAL_MINOR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_AIR_ELEMENTAL_MINOR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_AIR_ELEMENTAL_MINOR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_FIRE_ELEMENTAL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_WATER_ELEMENTAL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_WATER_ELEMENTAL_MINOR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_WATER_ELEMENTAL_MINOR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_WATER_ELEMENTAL_MINOR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_EARTH_ELEMENTAL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_EARTH_ELEMENTAL_MINOR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_EARTH_ELEMENTAL_MINOR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_EARTH_ELEMENTAL_MINOR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+			</StyleUnits>
+		</UnitArtStyleTypeInfo>
 	</UnitArtStyleTypeInfos>
 </Civ4UnitArtStyleTypeInfos>
