@@ -73,8 +73,8 @@ def spellElementalUnity(caster,amount):
 	caster.changeDamage(-amount,0)
 	caster.finishMoves()
 
-def reqElementalEquilibrium(Caster):
-	pPlot = Caster.plot()
+def reqElementalEquilibrium(caster):
+	pPlot = caster.plot()
 	iImprovement = pPlot.getImprovementType()
         
 	if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isUnique():
@@ -123,8 +123,9 @@ def reqElementalEquilibrium(Caster):
 		return True
 
 
-def spellElementalEquilibrium(Caster):
+def spellElementalEquilibrium(caster):
         pPlayer = gc.getPlayer(caster.getOwner())
+	pPlot = caster.plot()
 	iKan = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_WATER_I_DAO'))
 	iLi = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_FIRE_I_DAO'))
 	iGen = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_EARTH_I_DAO'))
