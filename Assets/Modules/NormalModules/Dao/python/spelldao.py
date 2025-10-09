@@ -16,7 +16,7 @@ PyPlayer = PyHelpers.PyPlayer
 gc = CyGlobalContext()
 cf = CustomFunctions.CustomFunctions()
 sf = ScenarioFunctions.ScenarioFunctions()
-
+getInfoType         = gc.getInfoTypeForString
 
 def reqElementalSwarm(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
@@ -72,3 +72,584 @@ def reqElementalUnity(caster):
 def spellElementalUnity(caster,amount):
 	caster.changeDamage(-amount,0)
 	caster.finishMoves()
+
+def reqElementalEquilibrium(Caster):
+	pPlot = Caster.plot()
+	iImprovement = pPlot.getImprovementType()
+        
+	if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isUnique():
+		return False
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_SHADOW'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_ENCHANTMENT'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_LAW'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_DEATH'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_LIFE'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_SUN'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_ICE'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_CREATION'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_NATURE'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_ENTROPY'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_DIMENSIONAL'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_METAMAGIC'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_BODY'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_CHAOS'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_MIND'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_AIR'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_EARTH'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_FIRE'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_WATER'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_FORCE'):
+		return True
+	if pPlot.getBonusType(-1) == getInfoType('BONUS_MANA_SPIRIT'):
+		return True
+
+
+def spellElementalEquilibrium(Caster):
+        pPlayer = gc.getPlayer(caster.getOwner())
+	iKan = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_WATER_I_DAO'))
+	iLi = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_FIRE_I_DAO'))
+	iGen = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_EARTH_I_DAO'))
+	iQian = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_AIR_I_DAO'))
+	iPoshi = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_FORCE_NODE'))
+	iBonus = pPlot.getBonusType(-1)
+	setBonus = pPlot.setBonusType
+	randNum = CyGame().getSorenRandNum
+	iImprovement = pPlot.getImprovementType()
+	chance = randNum(100, "Balance")
+
+
+        if (iKan + iLi + iGen + iPoshi) < (iQian):
+                pPlot.setImprovementType(-1)
+                if iBonus == getInfoType('BONUS_MANA_FORCE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_FIRE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_WATER'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_EARTH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_AIR'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_MIND'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_CREATION'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_DEATH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_SHADOW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_ENTROPY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_CHAOS'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_SUN'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_LAW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_ICE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_SPIRIT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_BODY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_DIMENSIONAL'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_METAMAGIC'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_NATURE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_ENCHANTMENT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+                if iBonus == getInfoType('BONUS_MANA_LIFE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_AIR'))
+
+        if (iQian + iLi + iGen + iPoshi) < (iKan):
+                pPlot.setImprovementType(-1)
+                if iBonus == getInfoType('BONUS_MANA_FORCE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_FIRE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_WATER'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_EARTH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_AIR'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_MIND'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_CREATION'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_DEATH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_SHADOW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_ENTROPY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_CHAOS'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_SUN'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_LAW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_ICE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_SPIRIT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_BODY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_DIMENSIONAL'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_METAMAGIC'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_NATURE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_ENCHANTMENT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+                if iBonus == getInfoType('BONUS_MANA_LIFE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_WATER'))
+
+        if (iKan + iQian + iGen + iPoshi) < (iLi):
+                pPlot.setImprovementType(-1)
+                if iBonus == getInfoType('BONUS_MANA_FORCE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_FIRE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_WATER'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_EARTH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_AIR'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_MIND'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_CREATION'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_DEATH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_SHADOW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_ENTROPY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_CHAOS'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_SUN'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_LAW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_ICE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_SPIRIT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_BODY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_DIMENSIONAL'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_METAMAGIC'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_NATURE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_ENCHANTMENT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                if iBonus == getInfoType('BONUS_MANA_LIFE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_FIRE'))
+
+        if (iKan + iLi + iQian + iPoshi) < (iGen):
+                pPlot.setImprovementType(-1)
+                if iBonus == getInfoType('BONUS_MANA_FORCE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_FIRE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_WATER'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_EARTH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_AIR'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_MIND'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_CREATION'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_DEATH'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_SHADOW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_ENTROPY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_CHAOS'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_SUN'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_LAW'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_ICE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_SPIRIT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_BODY'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_DIMENSIONAL'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_METAMAGIC'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_NATURE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_ENCHANTMENT'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+                if iBonus == getInfoType('BONUS_MANA_LIFE'):
+                        if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
+                        elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
+                        elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))
+                        elif chance < 95: setBonus(getInfoType('BONUS_MANA_FORCE'))
+                        else: setBonus(getInfoType('BONUS_MANA_EARTH'))
+
