@@ -142,10 +142,20 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<NotUnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</NotUnitAIs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -250,10 +260,20 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<NotUnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</NotUnitAIs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -395,10 +415,21 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>	
+			</UnitAIs>
+			<NotUnitAIs>
+				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</UnitAIs>
+			</NotUnitAIs>
+
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -777,11 +808,11 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!--Ninja-->
+		<UnitInfo> <!-- Ying Zi -->
 			<Class>UNITCLASS_ASSASSIN</Class>
 			<Type>UNIT_NINJA</Type>
 			<Description>TXT_KEY_UNIT_NINJA</Description>
-			<Civilopedia>TXT_KEY_UNIT_ASSASSIN_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_NINJA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ASSASSIN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
@@ -802,11 +833,14 @@
 					<PromotionType>PROMOTION_MARKSMAN</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_TEMPERANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_ROGUE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<iTier>3</iTier>
-			<iWeaponTierMax>3</iWeaponTierMax>
 			<bNeverObsolete>1</bNeverObsolete>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_SHADOW</UnitClassUpgradeType>
@@ -820,14 +854,8 @@
 			<iAsset>7</iAsset>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_POISON</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<iCombat>5</iCombat>
-			<iCombatDefense>3</iCombatDefense>
+			<iCombat>8</iCombat>
+			<iCombatDefense>2</iCombatDefense>
 			<iCombatLimit>100</iCombatLimit>
 			<iFirstStrikes>1</iFirstStrikes>
 			<bFirstStrikeImmune>1</bFirstStrikeImmune>

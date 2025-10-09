@@ -127,6 +127,7 @@
 			<bHasCasted>1</bHasCasted>
 			<CivilizationPrereq>CIVILIZATION_DAO</CivilizationPrereq>
 			<TechPrereq>TECH_KNOWLEDGE_OF_THE_ETHER</TechPrereq>
+			<iDelay>7</iDelay>
 			<bAllowAI>0</bAllowAI>
 			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
 			<PyRequirement>reqElementalEquilibrium(pCaster)</PyRequirement>

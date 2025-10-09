@@ -28,14 +28,21 @@
         <German>Sanari Shu Lien</German>
         <Italian>Sanari Shu Lien</Italian>
         <Spanish>Sanari Shu Lien</Spanish>
-		</TEXT>
+	</TEXT>
 	<TEXT>
         <Tag>TXT_KEY_UNIT_NINJA</Tag>
-        <English>Ninja</English>
-        <French>Ninja</French>
-        <German>Ninja</German>
-        <Italian>Ninja</Italian>
-        <Spanish>Ninja</Spanish>
+        <English>Ying Zi</English>
+        <French>Ying Zi</French>
+        <German>Ying Zi</German>
+        <Italian>Ying Zi</Italian>
+        <Spanish>Ying Zi</Spanish>
+    </TEXT><TEXT>
+        <Tag>TXT_KEY_UNIT_NINJA_PEDIA</Tag>
+        <English>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</English>
+        <French>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</French>
+        <German>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</German>
+        <Italian>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</Italian>
+        <Spanish>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SHUGENJA</Tag>
@@ -47,11 +54,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SOHEI</Tag>
-        <English>Sohei</English>
-        <French>Sohei</French>
-        <German>Sohei</German>
-        <Italian>Sohei</Italian>
-        <Spanish>Sohei</Spanish>
+        <English>Warden of Xian Shi</English>
+        <French>Warden of Xian Shi</French>
+        <German>Warden of Xian Shi</German>
+        <Italian>Warden of Xian Shi</Italian>
+        <Spanish>Warden of Xian Shi</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_HERMIT</Tag>

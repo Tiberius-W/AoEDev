@@ -109,7 +109,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>20</iFlavor>
+					<iFlavor>15</iFlavor>
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -117,7 +117,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
-					<iFlavor>20</iFlavor>
+					<iFlavor>25</iFlavor>
 				 </Flavor>
 			</Flavors>
 			<ContactRands>
@@ -482,19 +482,23 @@
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_FIRE</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_FIRE_I_DAO</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_WATER</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_WATER_I_DAO</ImprovementType>
+					<iWeightModifier>50</iWeightModifier>
+				 </ImprovementWeightModifier>
+				 <ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_EARTH_I_DAO</ImprovementType>
+					<iWeightModifier>50</iWeightModifier>
+				 </ImprovementWeightModifier>
+				 <ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_AIR_I_DAO</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_EARTH</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_AIR</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_FORCE</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
@@ -566,7 +570,7 @@
 			<iSomniumAggressiveness>80</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 		   	<iAlignmentModifier>0</iAlignmentModifier>
-			<EthicalAlignment>ETHICAL_ALIGNMENT_NEUTRAL</EthicalAlignment>
+			<EthicalAlignment>ETHICAL_ALIGNMENT_LAWFUL</EthicalAlignment>
 			<iEthicalAlignmentModifier>0</iEthicalAlignmentModifier>
 			<FavoriteWonder>BUILDING_AQUAE_SUCELLUS</FavoriteWonder>
 			<HatedCivic>NONE</HatedCivic>
@@ -711,7 +715,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>20</iFlavor>
+					<iFlavor>25</iFlavor>
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -719,7 +723,7 @@
 				 </Flavor>
 				 <Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
-					<iFlavor>20</iFlavor>
+					<iFlavor>15</iFlavor>
 				 </Flavor>
 			</Flavors>
 			<ContactRands>
@@ -1084,19 +1088,23 @@
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_FIRE</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_AIR_I_DAO</ImprovementType>
+					<iWeightModifier>50</iWeightModifier>
+				 </ImprovementWeightModifier>
+				 <ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_FIRE_I_DAO</ImprovementType>
+					<iWeightModifier>50</iWeightModifier>
+				 </ImprovementWeightModifier>
+				 <ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_MANA_WATER_I_DAO</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_WATER</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_EARTH_I_DAO</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_EARTH</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
-				 </ImprovementWeightModifier>
-				 <ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_MANA_AIR</ImprovementType>
+					<ImprovementType>IMPROVEMENT_MANA_FORCE</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				 </ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
@@ -1168,7 +1176,7 @@
 			<iSomniumAggressiveness>80</iSomniumAggressiveness>
 			<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			<iAlignmentModifier>0</iAlignmentModifier>
-			<EthicalAlignment>ETHICAL_ALIGNMENT_NEUTRAL</EthicalAlignment>
+			<EthicalAlignment>ETHICAL_ALIGNMENT_LAWFUL</EthicalAlignment>
 			<iEthicalAlignmentModifier>0</iEthicalAlignmentModifier>
 			<FavoriteWonder>BUILDING_THEATRE_OF_DREAMS</FavoriteWonder>
 			<HatedCivic>NONE</HatedCivic>
