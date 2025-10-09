@@ -142,6 +142,14 @@
 		<Spanish>Dexterous</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_TEMPERANCE</Tag>
+		<English>Temperance</English>
+		<French>Temperance</French>
+		<German>Temperance</German>
+		<Italian>Temperance</Italian>
+		<Spanish>Temperance</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DISRUPTED</Tag>
 		<English>Disrupted</English>
 		<French>Déconcentré</French>

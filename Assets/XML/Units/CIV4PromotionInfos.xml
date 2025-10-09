@@ -8093,6 +8093,72 @@
 			<iMinLevel>-1</iMinLevel>
 			<PromotionCombatApply>PROMOTION_DISEASED</PromotionCombatApply>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Temperance -->
+			<Type>PROMOTION_TEMPERANCE</Type>
+			<Description>TXT_KEY_PROMOTION_TEMPERANCE</Description>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Spells/Temperance.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iResist>50</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iResist>50</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Disrupted -->
 			<Type>PROMOTION_DISRUPTED</Type>
 			<Description>TXT_KEY_PROMOTION_DISRUPTED</Description>
@@ -8146,7 +8212,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Civs/Mechanos/Promotions/disrupted.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Disrupted.dds</Button>
 			<iExpireChance>50</iExpireChance>
 			<iMinLevel>-1</iMinLevel>
 			<iSpellDamageModify>-20</iSpellDamageModify>

@@ -678,6 +678,38 @@
 		<Spanish>Venomous Web</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_TEMPERANCE</Tag>
+		<English>Temperance</English>
+		<French>Temperance</French>
+		<German>Temperance</German>
+		<Italian>Temperance</Italian>
+		<Spanish>Temperance</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_TEMPERANCE_HELP</Tag>
+		<English>[ICON_BULLET]Give resistance from holy and unholy damage.</English>
+		<French>[ICON_BULLET]Give resistance from holy and unholy damage.</French>
+		<German>[ICON_BULLET]Give resistance from holy and unholy damage.</German>
+		<Italian>[ICON_BULLET]Give resistance from holy and unholy damage.</Italian>
+		<Spanish>[ICON_BULLET]Give resistance from holy and unholy damage.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DISRUPT_MAGIC</Tag>
+		<English>Disrupt Magic</English>
+		<French>Disrupt Magic</French>
+		<German>Disrupt Magic</German>
+		<Italian>Disrupt Magic</Italian>
+		<Spanish>Disrupt Magic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_DISRUPT_MAGIC_HELP</Tag>
+		<English>[ICON_BULLET]The Disrupted promotion reduces spell dammage by 20 and increases miscast chance to 75%.</English>
+		<French>[ICON_BULLET]The Disrupted promotion reduces spell dammage by 20 and increases miscast chance to 75%.</French>
+		<German>[ICON_BULLET]The Disrupted promotion reduces spell dammage by 20 and increases miscast chance to 75%.</German>
+		<Italian>[ICON_BULLET]The Disrupted promotion reduces spell dammage by 20 and increases miscast chance to 75%.</Italian>
+		<Spanish>[ICON_BULLET]The Disrupted promotion reduces spell dammage by 20 and increases miscast chance to 75%.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MULTI_WALL_OF_FORCE</Tag>
 		<English>Wall of Force</English>
 		<French>Mur de Force</French>
@@ -1351,7 +1383,7 @@
 		<Spanish>[ICON_BULLET]Causes unhappiness and decreases the culture of the city[NEWLINE][ICON_BULLET]Can Convert cities without culture</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPELL_DISRUPT_MAGIC</Tag>
+		<Tag>TXT_KEY_SPELL_DISRUPT_MAGIC_M</Tag>
 		<English>Disrupt Magic</English>
 		<French>Interrompre la magie</French>
 		<German>Unterbreche Magie</German>

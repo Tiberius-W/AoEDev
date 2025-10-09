@@ -1586,8 +1586,8 @@
 			<Sound>AS3D_SPELL_FIRE_ELEMENTAL</Sound>
 			<Button>Art/Interface/Buttons/Units/Fire Elemental.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Force 1 - Accelerate -->
-			<Type>SPELL_ACCELERATE</Type>
+<!--	<SpellInfo>	-->		<!-- Force 1 - Accelerate -->
+   <!-- <Type>SPELL_ACCELERATE</Type>
 			<Description>TXT_KEY_SPELL_ACCELERATE</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_ACCELERATE_HELP</Help>
@@ -1612,6 +1612,66 @@
 			<Effect>EFFECT_WIND_SWIRL</Effect>
 			<Sound>AS3D_SPELL_HASTE</Sound>
 			<Button>Art/Interface/Buttons/Promotions/Accelerate.dds</Button>
+		</SpellInfo> -->
+		<SpellInfo>			<!-- Force 1 - Temperance -->
+			<Type>SPELL_TEMPERANCE</Type>
+			<Description>TXT_KEY_SPELL_TEMPERANCE</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_TEMPERANCE_HELP</Help>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_FORCE</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_BUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_FORCE1</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bIsAutoCastable>1</bIsAutoCastable>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_TEMPERANCE</AddPromotion>
+			</AddPromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SWORD_CHECK</Sound>
+			<Button>Art/Interface/Buttons/Spells/Temperance.dds</Button>
+		</SpellInfo>
+		<SpellInfo>			<!-- Force 2 - Disrupt Magic -->
+			<Type>SPELL_DISRUPT_MAGIC</Type>
+			<Description>TXT_KEY_DISRUPT_MAGIC</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_DISRUPT_MAGIC_HELP</Help>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_FORCE</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_FORCE2</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<iResistModify>5</iResistModify>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_DISRUPTED</AddPromotion>
+			</AddPromotions>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_CONTAGION</Sound>
+			<Button>Art/Interface/Buttons/Spells/DisruptMagic.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Force 3 - Wall of Force -->
 			<Type>SPELL_WALL_OF_FORCE</Type>
@@ -7228,8 +7288,8 @@
 			<Button>Art/Interface/Buttons/Spells/Spring.dds</Button>
 		</SpellInfo>
 		<SpellInfo>			<!-- Disrupt Magic -->
-			<Type>SPELL_DISRUPT_MAGIC</Type>
-			<Description>TXT_KEY_SPELL_DISRUPT_MAGIC</Description>
+			<Type>SPELL_DISRUPT_MAGIC_M</Type>
+			<Description>TXT_KEY_SPELL_DISRUPT_MAGIC_M</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<UnitPrereq>UNIT_WITCHHUNTER</UnitPrereq>
 			<bAllowAI>1</bAllowAI>

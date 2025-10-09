@@ -64,7 +64,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -168,7 +168,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -263,10 +263,6 @@
 			<BonusType>BONUS_REAGENTS</BonusType>
 			<PrereqTech>TECH_STRENGTH_OF_WILL</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<DenyPromotions>
-					<Promotion>PROMOTION_LIFE1</Promotion>
-					<Promotion>PROMOTION_LIFE2</Promotion>
-			</DenyPromotions>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
@@ -411,9 +407,6 @@
 			</Flavors>
 			<PrereqTech>TECH_SORCERY</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<DenyPromotions>
-					<Promotion>PROMOTION_LIFE3</Promotion>
-			</DenyPromotions>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MEDIC1</PromotionType>
@@ -428,7 +421,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -535,10 +528,15 @@
 					<PromotionType>PROMOTION_DEMON_SLAYING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL_SLAYING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 		<iTier>3</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
 			<bNeverObsolete>1</bNeverObsolete>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_PALADIN</UnitClassUpgradeType>
@@ -631,7 +629,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -715,11 +713,23 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_COURAGE</PromotionType>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_IMMUNE_DISEASE</PromotionType>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL_SLAYING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -749,14 +759,8 @@
 			<iAsset>22</iAsset>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_HOLY</DamageType>
-					<iCombat>3</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<iCombat>11</iCombat>
-			<iCombatDefense>11</iCombatDefense>
+			<iCombat>14</iCombat>
+			<iCombatDefense>14</iCombatDefense>
 			<iCombatLimit>100</iCombatLimit>
 			<iMoves>1</iMoves>
 			<iNukeRange>-1</iNukeRange>
