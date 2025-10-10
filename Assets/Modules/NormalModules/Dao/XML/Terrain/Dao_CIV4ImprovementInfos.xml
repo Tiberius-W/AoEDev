@@ -6,7 +6,7 @@
 <!-- Improvement Infos -->
 <Civ4ImprovementInfos xmlns="x-schema:Dao_CIV4TerrainSchema.xml">
 	<ImprovementInfos>
-			<ImprovementInfo><!-- Dao Air Mana Node I -->                 <!-- Mana Nodes -->
+		<ImprovementInfo><!-- Dao Air Mana Node I -->                 <!-- Mana Nodes -->
 			<Type>IMPROVEMENT_MANA_AIR_I_DAO</Type>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_AIR_I_DAO</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_AIR_DAO_PEDIA</Civilopedia>
@@ -19,9 +19,9 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -89,9 +89,9 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -159,9 +159,9 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -229,9 +229,9 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>

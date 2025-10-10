@@ -946,6 +946,16 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<PassableTech>TECH_ELEMENTALISM</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<PassableTech>TECH_SORCERY</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -1167,6 +1177,16 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<PassableTech>TECH_ELEMENTALISM</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<PassableTech>TECH_SORCERY</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
