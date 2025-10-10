@@ -124,6 +124,7 @@
 			</ProductionTraits>
 			<FreeBonus>BONUS_MANA_FIRE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bGovernmentCenter>1</bGovernmentCenter>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
@@ -191,6 +192,7 @@
 			</ProductionTraits>
 			<FreeBonus>BONUS_MANA_EARTH</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bGovernmentCenter>1</bGovernmentCenter>
 			<bTeamShare>1</bTeamShare>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
@@ -405,6 +407,7 @@
 			</ProductionTraits>
 			<FreeBonus>BONUS_MANA_ICE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bGovernmentCenter>1</bGovernmentCenter>
 			<bTeamShare>1</bTeamShare>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
@@ -480,6 +483,7 @@
 			</ProductionTraits>
 			<FreeBonus>BONUS_MANA_NATURE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bGovernmentCenter>1</bGovernmentCenter>
 			<bTeamShare>1</bTeamShare>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
@@ -547,6 +551,7 @@
 			<FreeBonus>BONUS_MANA_AIR</FreeBonus>
 			<FreeBonus2>BONUS_MANA_WATER</FreeBonus2>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
+			<bGovernmentCenter>1</bGovernmentCenter>
 			<bTeamShare>1</bTeamShare>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
