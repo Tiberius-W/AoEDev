@@ -48,7 +48,7 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Civics/Slavery.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Eidolon (Jotnar) -->
+   <!-- <SpellInfo>			Eidolon (Jotnar) 
 			<Type>SPELL_EIDOLON</Type>
 			<Description>Eidolon</Description>
 			<PromotionPrereq1>PROMOTION_JOT_RENOWNED_GIANT</PromotionPrereq1>
@@ -71,7 +71,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCost>200</iCost>
 			<Button>Art/Interface/Buttons/Units/Eidolon.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 <!-- <SpellInfo> -->			<!-- Hurler   Overpowered.-->
 	<!-- <Type>SPELL_HURLER</Type>
 			<Description>Hurler</Description>
@@ -113,7 +113,7 @@
 			<Sound>AS3D_SPELL_ENCHANTMENT</Sound>
 			<Button>Art/Interface/Buttons/Spells/Mask.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Paladin (Jotnar) -->
+   <!--<SpellInfo>			 Paladin (Jotnar) 
 			<Type>SPELL_PALADIN</Type>
 			<Description>Paladin</Description>
 			<PromotionPrereq1>PROMOTION_JOT_RENOWNED_GIANT</PromotionPrereq1>
@@ -136,8 +136,8 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCost>200</iCost>
 			<Button>Art/Interface/Buttons/Units/Paladin.dds</Button>
-		</SpellInfo>
-		<SpellInfo>			<!-- Radiant -->
+		</SpellInfo> -->
+   <!-- <SpellInfo>			 Radiant 
 			<Type>SPELL_RADIANT</Type>
 			<Description>Radiant</Description>
 			<PromotionPrereq1>PROMOTION_JOT_RENOWNED_GIANT</PromotionPrereq1>
@@ -160,7 +160,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<iCost>200</iCost>
 			<Button>Art/Interface/Buttons/Units/Radiant Guard.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Reveal (Jotnar - Foreststealth) -->
 			<Type>SPELL_REVEAL1</Type>
 			<Description>Reveal</Description>

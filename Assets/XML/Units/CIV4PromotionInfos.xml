@@ -8781,37 +8781,6 @@
 			<iMinLevel>-1</iMinLevel>
 			<PromotionRandomApply>PROMOTION_FAIR_WINDS</PromotionRandomApply>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Eidolon -->
-			<Type>PROMOTION_EIDOLON</Type>
-			<Description>TXT_KEY_UNIT_EIDOLON</Description>
-			<TechPrereq>TECH_NEVER</TechPrereq>
-			<bPillageOnMove>1</bPillageOnMove>
-			<NewName>Eidolon</NewName>
-			<PromotionAllows>
-				<Promotion>PROMOTION_CHANNELING1</Promotion>
-				<Promotion>PROMOTION_CHANNELING2</Promotion>
-			</PromotionAllows>
-			<PromotionOverwrites>
-			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
-			</PromotionOverwrites>
-			<bAlwaysHeal>1</bAlwaysHeal>
-			<Button>Art/Interface/Buttons/Units/Eidolon.dds</Button>
-			<bFear>1</bFear>
-			<bImmuneToFear>1</bImmuneToFear>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EIDOLON</UnitArtStyleType>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_UNHOLY</DamageType>
-					<iCombat>4</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<BonusAffinities>
-				<BonusAffinity>
-					<BonusType>BONUS_MANA_ENTROPY</BonusType>
-					<iAffinity>1</iAffinity>
-				</BonusAffinity>
-			</BonusAffinities>
-		</PromotionInfo>
 		<PromotionInfo>		<!-- Emperor and Honor -->
 			<Type>PROMOTION_EMPEROR_AND_HONOR</Type>
 			<Description>TXT_KEY_MULTI_EMPEROR_AND_HONOR</Description>
@@ -13890,40 +13859,6 @@
 			<iGroupSize>1</iGroupSize>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Paladin -->
-			<Type>PROMOTION_PALADIN</Type>
-			<Description>TXT_KEY_UNIT_PALADIN</Description>
-			<TechPrereq>TECH_NEVER</TechPrereq>
-			<NewName>Paladin</NewName>
-			<PromotionAllows>
-				<Promotion>PROMOTION_CHANNELING1</Promotion>
-				<Promotion>PROMOTION_CHANNELING2</Promotion>
-			</PromotionAllows>
-			<PromotionOverwrites>
-			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
-			</PromotionOverwrites>
-			<bAlwaysHeal>1</bAlwaysHeal>
-			<Button>Art/Interface/Buttons/Units/Paladin.dds</Button>
-			<bImmuneToFear>1</bImmuneToFear>
-			<PromotionExcludes>
-				<Promotion>PROMOTION_DISEASED</Promotion>
-				<Promotion>PROMOTION_PLAGUED</Promotion>
-				<Promotion>PROMOTION_BLACKBLOOD</Promotion>
-			</PromotionExcludes>
-			<UnitArtStyleType>UNIT_ARTSTYLE_PALADIN</UnitArtStyleType>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_HOLY</DamageType>
-					<iCombat>3</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<BonusAffinities>
-				<BonusAffinity>
-					<BonusType>BONUS_MANA_LAW</BonusType>
-					<iAffinity>1</iAffinity>
-				</BonusAffinity>
-			</BonusAffinities>
-		</PromotionInfo>
 		<PromotionInfo>		<!-- Parched -->
 			<Type>PROMOTION_PARCHED</Type>
 			<Description>Parched</Description>
@@ -14437,41 +14372,6 @@
 			<Button>Art/Interface/Buttons/Promotions/quickened.dds</Button>
 			<bValidate>1</bValidate>
 			<iSpellCasterXP>30</iSpellCasterXP>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- Radiant -->
-			<Type>PROMOTION_RADIANT</Type>
-			<Description>TXT_KEY_PROMOTION_RADIANT</Description>
-			<TechPrereq>TECH_NEVER</TechPrereq>
-			<NewName>Radiant</NewName>
-			<PromotionAllows>
-				<Promotion>PROMOTION_CHANNELING1</Promotion>
-				<Promotion>PROMOTION_CHANNELING2</Promotion>
-			</PromotionAllows>
-			<PromotionOverwrites>
-				<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
-			</PromotionOverwrites>
-			<bAlwaysHeal>1</bAlwaysHeal>
-			<iMovesChange>2</iMovesChange>
-			<Button>Art/Interface/Buttons/Units/RadiantGuard.dds</Button>
-			<bImmuneToFear>1</bImmuneToFear>
-			<PromotionExcludes>
-				<Promotion>PROMOTION_DISEASED</Promotion>
-				<Promotion>PROMOTION_PLAGUED</Promotion>
-				<Promotion>PROMOTION_BLACKBLOOD</Promotion>
-			</PromotionExcludes>
-			<UnitArtStyleType>UNIT_ARTSTYLE_RADIANT</UnitArtStyleType>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_FIRE</DamageType>
-					<iCombat>3</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<BonusAffinities>
-				<BonusAffinity>
-					<BonusType>BONUS_MANA_SUN</BonusType>
-					<iAffinity>1</iAffinity>
-				</BonusAffinity>
-			</BonusAffinities>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Raider -->
 			<Type>PROMOTION_RAIDER</Type>

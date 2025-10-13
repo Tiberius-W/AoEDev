@@ -1278,7 +1278,7 @@
 			<iPopCost>1</iPopCost>
 			<iMoves>2</iMoves>
 			<iAirRange>1</iAirRange>
-			<iCombat>7</iCombat>
+			<iCombat>5</iCombat>
 			<iAirCombat>6</iAirCombat>
 			<iAirCombatLimit>50</iAirCombatLimit>
 			<iFirstStrikes>2</iFirstStrikes>
@@ -1313,7 +1313,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>9</iCombatDefense>
+			<iCombatDefense>7</iCombatDefense>
 			<iDefensiveStrikeChance>30</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>15</iDefensiveStrikeDamage>
 			<iExtraGoldSupport>2</iExtraGoldSupport>
@@ -1417,7 +1417,7 @@
 			<iAdvancedStartCost>200</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>200</iWorkRate>
-			<iCombat>5</iCombat>
+			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
@@ -1453,7 +1453,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
-			<iCombatDefense>7</iCombatDefense>
+			<iCombatDefense>6</iCombatDefense>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
 			<iTier>2</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
@@ -1699,7 +1699,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>7</iCombatDefense>
+			<iCombatDefense>6</iCombatDefense>
 			<iDefensiveStrikeChance>20</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>10</iDefensiveStrikeDamage>
 			<iExtraGoldSupport>1</iExtraGoldSupport>
@@ -1822,7 +1822,7 @@
 			<iAdvancedStartCost>300</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>250</iWorkRate>
-			<iCombat>9</iCombat>
+			<iCombat>7</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
@@ -1862,7 +1862,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
-			<iCombatDefense>9</iCombatDefense>
+			<iCombatDefense>8</iCombatDefense>
 			<iExtraGoldSupport>2</iExtraGoldSupport>
 			<iTier>3</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
@@ -1890,7 +1890,7 @@
 			<iPopCost>1</iPopCost>
 			<iAdvancedStartCost>200</iAdvancedStartCost>
 			<iMoves>2</iMoves>
-			<iCombat>13</iCombat>
+			<iCombat>15</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>10</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
@@ -1928,7 +1928,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>8</iCombatDefense>
+			<iCombatDefense>9</iCombatDefense>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
@@ -2502,7 +2502,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>300</iWorkRate>
-			<iCombat>16</iCombat>
+			<iCombat>9</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
@@ -2538,7 +2538,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>16</iCombatDefense>
+			<iCombatDefense>15</iCombatDefense>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
 			<iTier>4</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
@@ -3441,7 +3441,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
-			<iCombatDefense>16</iCombatDefense>
+			<iCombatDefense>11</iCombatDefense>
 			<iDefensiveStrikeChance>40</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>20</iDefensiveStrikeDamage>
 			<iExtraGoldSupport>3</iExtraGoldSupport>
@@ -4096,7 +4096,6 @@
 			</FreePromotions>
 			<bNeverObsolete>1</bNeverObsolete>
 			<iTier>2</iTier>
-			<PrereqBuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</PrereqBuildingClass>
 			<iWeaponTierMax>2</iWeaponTierMax>
 			<UpgradeCiv>CIVILIZATION_JOTNAR</UpgradeCiv>
 			<iMinLevel>2</iMinLevel>
