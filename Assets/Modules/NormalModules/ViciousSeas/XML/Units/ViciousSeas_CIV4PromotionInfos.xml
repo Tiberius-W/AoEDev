@@ -1100,6 +1100,7 @@
 			<Type>PROMOTION_NIGHTMARE_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
 			<ReplaceArtType>ART_DEF_UNIT_NIGHTMARE_AIFON</ReplaceArtType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</UnitArtStyleType>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
 		    <bWaterWalking>1</bWaterWalking>
