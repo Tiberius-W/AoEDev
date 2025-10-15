@@ -51,5 +51,16 @@
 			<iMercenaryWeight>20</iMercenaryWeight>
 			<bUnique>1</bUnique>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Trenton -->
+			<Type>UNITCLASS_TRENTON</Type>
+			<Description>TXT_KEY_UNIT_TRENTON</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TRENTON</DefaultUnit>
+			<iMercenaryWeight>20</iMercenaryWeight>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
 	</UnitClassInfos>
 </Civ4UnitClassInfos>

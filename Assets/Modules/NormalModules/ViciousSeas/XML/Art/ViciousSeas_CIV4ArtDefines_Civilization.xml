@@ -12,5 +12,11 @@
 			<Path>Modules/NormalModules/ViciousSeas/Art/Interface/Teamcolor/BEZERINEVERGONNAGIVEYOUUP.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_DREAM_AIFONS</Type>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Teamcolor/DreamAifonButton.dds</Button>
+			<Path>Modules/NormalModules/ViciousSeas/Art/Interface/Teamcolor/AifonLogo.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

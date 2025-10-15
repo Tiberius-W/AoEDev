@@ -1102,9 +1102,14 @@
 			<ReplaceArtType>ART_DEF_UNIT_NIGHTMARE_AIFON</ReplaceArtType>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
 			<PrereqPromotionORs>
 				<PrereqPromotionOR>
 					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_DREAMING_AIFON</PromotionType>
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
@@ -1259,6 +1264,7 @@
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
@@ -1318,8 +1324,8 @@
 				<CityBonus>
 					<bApplyRival>1</bApplyRival>
 					<bApplyEnemy>1</bApplyEnemy>
-					<fCulture>-1</fCulture>
-					<fInfectCulture>2</fInfectCulture>
+					<fCulture>-0.10</fCulture>
+					<fInfectCulture>0.20</fInfectCulture>
 					<iBonusRange>2</iBonusRange>
 				</CityBonus>
 			</CityBonuses>

@@ -407,9 +407,9 @@
 			<Civilopedia>TXT_KEY_CIV_DREAM_AIFONS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIV_DREAM_AIFONS_STRATEGY</Strategy>
 			<DefaultPlayerColor>PLAYERCOLOR_DREAM_AIFONS</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_ELOHIM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_DREAM_AIFONS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ELOHIM</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ELOHIM</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_DREAM_AIFONS</UnitArtStyleType>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<bNoCrimeCiv>1</bNoCrimeCiv>
@@ -580,7 +580,7 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>
-			<Hero>UNIT_SKAA_RAJ</Hero>
+			<Hero>UNIT_TRENTON</Hero>
 			<TerrainCultureDistanceChanges>
 				<TerrainCultureDistanceChange>
 					<TerrainType>TERRAIN_MARSH</TerrainType>
@@ -595,7 +595,7 @@
 					<iCultureDistanceChange>1</iCultureDistanceChange>
 				</TerrainCultureDistanceChange>
 			</TerrainCultureDistanceChanges>
-			<Image>Modules/NormalModules/ViciousSeas/Art/Interface/Popups/Civ/BezeriBanner.dds</Image>
+			<Image>Modules/NormalModules/ViciousSeas/Art/Interface/Popups/Civ/DreamAifonsBanner.dds</Image>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
@@ -670,6 +670,7 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
+			<FormClimateZoneType>CLIMATEZONE_WASTELAND</FormClimateZoneType>
 		</CivilizationInfo>
 	</CivilizationInfos>
 </Civ4CivilizationInfos>
