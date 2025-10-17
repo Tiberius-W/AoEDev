@@ -299,9 +299,10 @@
 		<PromotionInfo>
 			<Type>PROMOTION_ELEMENTAL_NORMAL</Type>
 			<Button>Art/Modules/Dao/Buttons/HugeElemental.dds</Button>
-			<Description>TXT_KEY_PROMOTION_ELEMENTAL_HUGE</Description>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_NORMAL</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<TechPrereq>TECH_ARCANE_LORE</TechPrereq>
+			<bEffectProm>1</bEffectProm>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DAO</PrereqCivilization>
 			</PrereqCivilizations>
@@ -325,7 +326,7 @@
 		<PromotionInfo>
 			<Type>PROMOTION_ELEMENTAL_WEAK</Type>
 			<Button>Art/Interface/Buttons/Promotions/Weak.dds</Button>
-			<Description>TXT_KEY_PROMOTION_ELEMENTAL_HUGE</Description>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_WEAK</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MINOR</UnitArtStyleType>
 			<TechPrereq>TECH_ELEMENTALISM</TechPrereq>
@@ -352,7 +353,7 @@
 		<PromotionInfo>
 			<Type>PROMOTION_ELEMENTAL_VERY_WEAK</Type>
 			<Button>Art/Interface/Buttons/Promotions/Weak.dds</Button>
-			<Description>TXT_KEY_PROMOTION_ELEMENTAL_HUGE</Description>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_VERY_WEAK</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MINOR</UnitArtStyleType>
 			<TechPrereq>TECH_KNOWLEDGE_OF_THE_ETHER</TechPrereq>

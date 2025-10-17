@@ -94,6 +94,30 @@
         <Italian>Huge Elemental</Italian>
         <Spanish>Huge Elemental</Spanish>
     </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_NORMAL</Tag>
+        <English>Normal Elemental</English>
+        <French>Normal Elemental</French>
+        <German>Normal Elemental</German>
+        <Italian>Normal Elemental</Italian>
+        <Spanish>Normal Elemental</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_WEAK</Tag>
+        <English>Small Elemental</English>
+        <French>Small Elemental</French>
+        <German>Small Elemental</German>
+        <Italian>Small Elemental</Italian>
+        <Spanish>Small Elemental</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_VERY_WEAK</Tag>
+        <English>Tiny Elemental</English>
+        <French>Tiny Elemental</French>
+        <German>Tiny Elemental</German>
+        <Italian>Tiny Elemental</Italian>
+        <Spanish>Tiny Elemental</Spanish>
+    </TEXT>
 	
     <TEXT>
         <Tag>TXT_KEY_PROMOTION_POTENCY_HERMIT</Tag>
