@@ -1114,6 +1114,12 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
@@ -1171,6 +1177,76 @@
 			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Nightmare Aifon hidden nationality safety net--> 
+			<Type>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Type>
+			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			</PrereqCivilizations>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
+			<bHiddenNationality>1</bHiddenNationality>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Nightmare Hemah --> 
 			<Type>PROMOTION_NIGHTMARE_HEMAH</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
@@ -1186,9 +1262,11 @@
 			</PrereqCivilizations>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 			</PromotionOverwrites>
 			<UnitCombats>
 				<UnitCombat>
@@ -1325,8 +1403,8 @@
 				<CityBonus>
 					<bApplyRival>1</bApplyRival>
 					<bApplyEnemy>1</bApplyEnemy>
-					<fCulture>-0.10</fCulture>
-					<fInfectCulture>0.20</fInfectCulture>
+					<fCulture>-0.50</fCulture>
+					<fInfectCulture>0.50</fInfectCulture>
 					<iBonusRange>2</iBonusRange>
 				</CityBonus>
 			</CityBonuses>

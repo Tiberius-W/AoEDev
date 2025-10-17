@@ -412,7 +412,6 @@
 			<UnitArtStyleType>UNIT_ARTSTYLE_DREAM_AIFONS</UnitArtStyleType>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
-			<bNoCrimeCiv>1</bNoCrimeCiv>
 			<Cities>
 				<City>Bezer'ej</City>
 				<City>Baltra'sey</City>
@@ -454,6 +453,46 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SIEGE_WORKSHOP</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
+					<BuildingType>BUILDING_DREAM_OF_PLENTY</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SMOKEHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_DREAM_OF_THE_FEAST</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_HUNTING_LODGE</BuildingClassType>
+					<BuildingType>BUILDING_DREAM_OF_THE_HUNT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_INFIRMARY</BuildingClassType>
+					<BuildingType>BUILDING_DREAM_OF_CARE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PUBLIC_BATHS</BuildingClassType>
+					<BuildingType>BUILDING_WET_DREAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingType>BUILDING_DREAM_OF_COLORS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_CRACKS_IN_THE_DREAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_HOLES_IN_THE_DREAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_MURDER</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BREAKING_DREAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_SHATTERED_DREAM</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
