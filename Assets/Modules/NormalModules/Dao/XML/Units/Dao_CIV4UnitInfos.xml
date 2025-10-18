@@ -602,11 +602,11 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!--Shugenja-->
+		<UnitInfo> <!-- Immutable De lu Yi-->
 			<Class>UNITCLASS_DRUID</Class>
 			<Type>UNIT_SHUGENJA</Type>
 			<Description>TXT_KEY_UNIT_SHUGENJA</Description>
-			<Civilopedia>TXT_KEY_UNIT_DRUID_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_SHUGENJA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_DRUID_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>

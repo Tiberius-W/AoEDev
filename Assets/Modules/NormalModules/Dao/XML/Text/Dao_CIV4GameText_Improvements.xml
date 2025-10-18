@@ -6,14 +6,6 @@
 <!-- Game Text - Units -->
 <Civ4GameText xmlns="http://www.firaxis.com">
     <TEXT>
-        <Tag>TXT_KEY_UNIT_HERMIT</Tag>
-        <English>Hermit</English>
-        <French>Hermit</French>
-        <German>Hermit</German>
-        <Italian>Hermit</Italian>
-        <Spanish>Hermit</Spanish>
-    </TEXT>
-    <TEXT>
         <Tag>TXT_KEY_BUILD_MANA_WATER_DAO</Tag>
         <English>Build Leyline of Kan Nengyuan</English>
         <French>Build Leyline of Kan Nengyuan</French>

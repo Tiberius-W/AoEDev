@@ -31,11 +31,11 @@
 	</TEXT>
 	<TEXT>
         <Tag>TXT_KEY_UNIT_NINJA</Tag>
-        <English>Ying Zi</English>
-        <French>Ying Zi</French>
-        <German>Ying Zi</German>
-        <Italian>Ying Zi</Italian>
-        <Spanish>Ying Zi</Spanish>
+        <English>Gui Zi Shou</English>
+        <French>Gui Zi Shou</French>
+        <German>Gui Zi Shou</German>
+        <Italian>Gui Zi Shou</Italian>
+        <Spanish>Gui Zi Shou</Spanish>
     </TEXT><TEXT>
         <Tag>TXT_KEY_UNIT_NINJA_PEDIA</Tag>
         <English>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</English>
@@ -46,11 +46,19 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SHUGENJA</Tag>
-        <English>Shugenja</English>
-        <French>Shugenja</French>
-        <German>Shugenja</German>
-        <Italian>Shugenja</Italian>
-        <Spanish>Shugenja</Spanish>
+        <English>Immutable De Lu Yi</English>
+        <French>Immutable De Lu Yi</French>
+        <German>Immutable De Lu Yi</German>
+        <Italian>Immutable De Lu Yi</Italian>
+        <Spanish>Immutable De Lu Yi</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SHUGENJA_PEDIA</Tag>
+        <English> De Lu Yi, disciples of the compact and natures majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</English>
+        <French>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</French>
+        <German>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</German>
+        <Italian>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Italian>
+        <Spanish>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SOHEI</Tag>

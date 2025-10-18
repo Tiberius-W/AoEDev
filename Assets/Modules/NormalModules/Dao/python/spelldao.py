@@ -41,13 +41,13 @@ def spellElementalSwarm(caster):
 		pPlot = CyMap().plotByIndex(i)
 		if pPlot.isOwned():
 			if pPlot.getOwner() == iPlayer:
-				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_WATER'):
+				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_WATER_I_DAO'):
 					pPlayer.initUnit(gc.getInfoTypeForString('UNIT_WATER_ELEMENTAL'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_FIRE'):
+				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_FIRE_I_DAO'):
 					pPlayer.initUnit(gc.getInfoTypeForString('UNIT_FIRE_ELEMENTAL'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_EARTH'):
+				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_EARTH_I_DAO'):
 					pPlayer.initUnit(gc.getInfoTypeForString('UNIT_EARTH_ELEMENTAL'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_AIR'):
+				if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_MANA_AIR_I_DAO'):
 					pPlayer.initUnit(gc.getInfoTypeForString('UNIT_AIR_ELEMENTAL'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	iCount = 0
 	for pUnit in py.getUnitList():
