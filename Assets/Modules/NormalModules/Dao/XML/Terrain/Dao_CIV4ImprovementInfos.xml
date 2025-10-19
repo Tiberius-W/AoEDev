@@ -39,16 +39,11 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_MANA_AIR</BonusConvert>
 			<SpawnUnitType>UNIT_AIR_ELEMENTAL</SpawnUnitType>
-			<ImmediateSpawnUnitType>UNIT_AIR_ELEMENTAL</ImmediateSpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_FREE_UNIT</Promotion>
 			</SpawnPromotions>
-			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_1</Promotion>
-				<Promotion>PROMOTION_FREE_UNIT</Promotion>
-			</GuardianPromotions>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
@@ -109,16 +104,11 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_MANA_EARTH</BonusConvert>
 			<SpawnUnitType>UNIT_EARTH_ELEMENTAL</SpawnUnitType>
-			<ImmediateSpawnUnitType>UNIT_EARTH_ELEMENTAL</ImmediateSpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_FREE_UNIT</Promotion>
 			</SpawnPromotions>
-			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_1</Promotion>
-				<Promotion>PROMOTION_FREE_UNIT</Promotion>
-			</GuardianPromotions>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
@@ -179,16 +169,11 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_MANA_WATER</BonusConvert>
 			<SpawnUnitType>UNIT_WATER_ELEMENTAL</SpawnUnitType>
-			<ImmediateSpawnUnitType>UNIT_WATER_ELEMENTAL</ImmediateSpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_FREE_UNIT</Promotion>
 			</SpawnPromotions>
-			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_1</Promotion>
-				<Promotion>PROMOTION_FREE_UNIT</Promotion>
-			</GuardianPromotions>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
@@ -249,16 +234,11 @@
 			</BonusTypeStructs>
 			<BonusConvert>BONUS_MANA_FIRE</BonusConvert>
 			<SpawnUnitType>UNIT_FIRE_ELEMENTAL</SpawnUnitType>
-			<ImmediateSpawnUnitType>UNIT_FIRE_ELEMENTAL</ImmediateSpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
-			<iSpawnAtOnceLimit>4</iSpawnAtOnceLimit>
+			<iSpawnAtOnceLimit>3</iSpawnAtOnceLimit>
 			<SpawnPromotions>
 				<Promotion>PROMOTION_FREE_UNIT</Promotion>
 			</SpawnPromotions>
-			<GuardianPromotions>
-				<Promotion>PROMOTION_LEASH_1</Promotion>
-				<Promotion>PROMOTION_FREE_UNIT</Promotion>
-			</GuardianPromotions>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
