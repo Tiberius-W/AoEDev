@@ -8750,7 +8750,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
+					<UnitAIType>UNITAI_HERO</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -8780,6 +8780,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MISERY_INFLUENCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_GYRES_HEXING_DOLL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

@@ -2368,6 +2368,20 @@
 				</BonusAffinity>
 			</BonusAffinities>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Gyre's Hexing Doll -->
+			<Type>PROMOTION_GYRES_HEXING_DOLL</Type>
+			<Description>TXT_KEY_EQUIPMENT_GYRES_HEXING_DOLL</Description>
+					<Civilopedia>TXT_KEY_EQUIPMENT_GYRES_HEXING_DOLL_PEDIA</Civilopedia>
+			<Button>Art/Interface/Buttons/Equipment/GyresHexingDoll.dds</Button>
+			<bEquipment>1</bEquipment>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<iAlignmentModifier>-3</iAlignmentModifier>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Pieces of Barnaxus -->
 			<Type>PROMOTION_PIECES_OF_BARNAXUS</Type>
 			<Description>TXT_KEY_EQUIPMENT_PIECES_OF_BARNAXUS</Description>

@@ -8256,7 +8256,7 @@
 			<Type>SPELL_MISLEADING_PROPHECY_GYRE</Type>
 			<Description>TXT_KEY_SPELL_MISLEADING_PROPHECY</Description>
 			<Civilopedia>TXT_KEY_SPELL_WEIRD_WRACK_PEDIA</Civilopedia>
-			<UnitPrereq>UNIT_GYRE_CARLIN</UnitPrereq>
+			<PromotionPrereq1>PROMOTION_GYRES_HEXING_DOLL</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
 			<iAIWeight>300</iAIWeight>
 			<bIsAutoCastable>1</bIsAutoCastable>
@@ -8265,6 +8265,7 @@
 			<bResistable>1</bResistable>
 			<iRange>2</iRange>
 			<iResistModify>-10</iResistModify>
+			<bCausesWar>1</bCausesWar>
 			<AddPromotions>
 				<AddPromotion>PROMOTION_WEIRD_WRACKED</AddPromotion>
 			</AddPromotions>
