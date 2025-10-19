@@ -20,10 +20,10 @@ getInfoType         = gc.getInfoTypeForString
 
 def reqElementalSwarm(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
-	iWater = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_WATER_NODE'))
-	iFire = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_FIRE_NODE'))
-	iEarth = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_EARTH_NODE'))
-	iAir = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_AIR_NODE'))
+	iWater = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_WATER_I_DAO'))
+	iFire = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_FIRE_I_DAO'))
+	iEarth = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_EARTH_I_DAO'))
+	iAir = pPlayer.getImprovementCount(gc.getInfoTypeForString('IMPROVEMENT_MANA_AIR_I_DAO'))
 	if pPlayer.isHuman() == False:
 		if (iWater + iFire + iEarth + iAir) < 3:
 			return False
