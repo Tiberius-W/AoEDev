@@ -122,7 +122,7 @@
 			<Help>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM_HELP</Help>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_WILD_HUNT</Sound>
-			<Button>Modules/NormalModules/Dao/Art/Interface/Buttons/Spells/ElementalEquilibrium.dds</Button>
+			<Button>Art/Civs/ArcaneMastery/Promotions/Masterelements.dds</Button>
 			<bAbility>1</bAbility>
 			<bHasCasted>1</bHasCasted>
 			<CivilizationPrereq>CIVILIZATION_DAO</CivilizationPrereq>
