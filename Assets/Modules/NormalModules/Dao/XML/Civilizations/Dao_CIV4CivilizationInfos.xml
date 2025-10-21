@@ -12,6 +12,7 @@
 			<ShortDescription>TXT_KEY_CIV_DAO_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_DAO_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_DAO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIV_DAO_STRATEGY</Strategy>
 			<DefaultPlayerColor>PLAYERCOLOR_DAO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_DAO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_DAO</ArtStyleType>

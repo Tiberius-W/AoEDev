@@ -54,11 +54,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SHUGENJA_PEDIA</Tag>
-        <English> De Lu Yi, disciples of the compact and natures majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</English>
-        <French>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</French>
-        <German>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</German>
-        <Italian>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Italian>
-        <Spanish>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in it's own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Spanish>
+        <English>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</English>
+        <French>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</French>
+        <German>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</German>
+        <Italian>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Italian>
+        <Spanish>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SOHEI</Tag>
@@ -67,6 +67,14 @@
         <German>Warden of Xian Shi</German>
         <Italian>Warden of Xian Shi</Italian>
         <Spanish>Warden of Xian Shi</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SOHEI_PEDIA</Tag>
+        <English>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</English>
+        <French>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</French>
+        <German>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</German>
+        <Italian>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Italian>
+        <Spanish>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_HERMIT</Tag>

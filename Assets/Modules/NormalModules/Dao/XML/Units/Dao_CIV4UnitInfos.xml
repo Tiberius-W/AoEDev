@@ -712,7 +712,7 @@
 			<Class>UNITCLASS_PALADIN</Class>
 			<Type>UNIT_SOHEI</Type>
 			<Description>TXT_KEY_UNIT_SOHEI</Description>
-			<Civilopedia>TXT_KEY_UNIT_PALADIN_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_SOHEI_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PALADIN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
@@ -808,7 +808,7 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!-- Ying Zi -->
+		<UnitInfo> <!-- Gui Zi Shou -->
 			<Class>UNITCLASS_ASSASSIN</Class>
 			<Type>UNIT_NINJA</Type>
 			<Description>TXT_KEY_UNIT_NINJA</Description>
@@ -855,7 +855,7 @@
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
 			<iCombat>8</iCombat>
-			<iCombatDefense>2</iCombatDefense>
+			<iCombatDefense>3</iCombatDefense>
 			<iCombatLimit>100</iCombatLimit>
 			<iFirstStrikes>1</iFirstStrikes>
 			<bFirstStrikeImmune>1</bFirstStrikeImmune>
