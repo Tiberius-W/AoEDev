@@ -17787,8 +17787,8 @@
 			<iAIWeight>-100</iAIWeight>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Wretched -->
-			<Type>PROMOTION_WRETCHED</Type>
+  <!-- <PromotionInfo>	-->	<!-- Wretched -->
+	   <!-- <Type>PROMOTION_WRETCHED</Type>
 			<Description>TXT_KEY_PROMOTION_WRETCHED</Description>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -17817,9 +17817,9 @@
 					<iCombat>1</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- Wretched2 -->
-			<Type>PROMOTION_WRETCHED2</Type>
+		</PromotionInfo> -->
+  <!-- <PromotionInfo>	-->	<!-- Wretched2 -->
+	   <!-- <Type>PROMOTION_WRETCHED2</Type>
 			<Description>TXT_KEY_PROMOTION_WRETCHED</Description>
 			<iSlaveGenerationChance>15</iSlaveGenerationChance>
 			<PrereqCivilizations>
@@ -17837,7 +17837,7 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/Wretched2.dds</Button>
 			<iAIWeight>-100</iAIWeight>
-		</PromotionInfo>
+		</PromotionInfo> -->
 		<PromotionInfo>		<!-- Vanedis - City Attack -->
 			<Type>PROMOTION_VANEDIS_CITY_ATTACK</Type>
 			<Description>TXT_KEY_PROMOTION_VANEDIS_CITY_ATTACK</Description>
