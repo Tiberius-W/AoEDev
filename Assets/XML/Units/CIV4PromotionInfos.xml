@@ -9189,12 +9189,12 @@
 		<PromotionInfo>		<!-- Fell Spirit -->
 			<Type>PROMOTION_FELL_SPIRIT</Type>
 			<Description>TXT_KEY_PROMOTION_FELL_SPIRIT</Description>
-			<PromotionExcludes>
+	   <!-- <PromotionExcludes>
 				<Promotion>PROMOTION_WRETCHED</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_WRETCHED</Promotion>
-			</PromotionOverwrites>
+			</PromotionOverwrites> -->
 			<iSlaveGenerationChance>35</iSlaveGenerationChance>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/FellSpirit.dds</Button>
 		</PromotionInfo>
@@ -17818,8 +17818,8 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</PromotionInfo> -->
-  <!-- <PromotionInfo>	-->	<!-- Wretched2 -->
-	   <!-- <Type>PROMOTION_WRETCHED2</Type>
+		<PromotionInfo>		<!-- Wretched2 -->
+			<Type>PROMOTION_WRETCHED2</Type>
 			<Description>TXT_KEY_PROMOTION_WRETCHED</Description>
 			<iSlaveGenerationChance>15</iSlaveGenerationChance>
 			<PrereqCivilizations>
@@ -17837,7 +17837,7 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/Wretched2.dds</Button>
 			<iAIWeight>-100</iAIWeight>
-		</PromotionInfo> -->
+		</PromotionInfo> 	
 		<PromotionInfo>		<!-- Vanedis - City Attack -->
 			<Type>PROMOTION_VANEDIS_CITY_ATTACK</Type>
 			<Description>TXT_KEY_PROMOTION_VANEDIS_CITY_ATTACK</Description>

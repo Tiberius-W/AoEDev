@@ -6972,10 +6972,6 @@
 					<UnitType>UNIT_HAEGTESSE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
-					<UnitType>UNIT_GYRE_CARLIN</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER</UnitType>
 				</Unit>
@@ -7520,6 +7516,10 @@
 			</Cities>
 			<Buildings/>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_GYRE_CARLIN</UnitClassType>
+					<UnitType>UNIT_GYRE_CARLIN</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_BATSWARM</UnitClassType>
 					<UnitType>UNIT_CHORT</UnitType>

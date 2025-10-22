@@ -11189,6 +11189,7 @@
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_MAGE</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_CHAMPION</UnitClassUpgradeType>
+				<UnitClassUpgradeType>UNITCLASS_PIKEMAN</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_LONGBOWMAN</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_HORSE_ARCHER</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_RANGER</UnitClassUpgradeType>
@@ -13312,6 +13313,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_AXEMAN</UnitClassUpgradeType>
+				<UnitClassUpgradeType>UNITCLASS_SPEARMAN</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_HUNTER</UnitClassUpgradeType>
 				<UnitClassUpgradeType>UNITCLASS_ARCHER</UnitClassUpgradeType>
 			</UnitClassUpgrades>

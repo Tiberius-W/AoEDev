@@ -1056,6 +1056,7 @@
 			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>						
 			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
 			<PrereqBuildingClassType>BUILDINGCLASS_HERON_THRONE</PrereqBuildingClassType>
+			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Construct           Heron Throne                                Fisherman -->
 			<Type>TRAITTRIGGER_CONSTRUCT_HERON_THRONE_IMPORTANT</Type>
@@ -1068,6 +1069,7 @@
 			<TraitClassType>TRAITCLASS_PERSONALITY</TraitClassType>						
 			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
 			<PrereqBuildingClassType>BUILDINGCLASS_HERON_THRONE</PrereqBuildingClassType>
+			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Construct           Lighthouse                                  Virtuous Pirate -->
 			<Type>TRAITTRIGGER_CONSTRUCT_LIGHTHOUSE</Type>
@@ -1231,6 +1233,7 @@
 			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>						
 			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
 			<PrereqBuildingClassType>BUILDINGCLASS_MOKKAS_CAULDRON</PrereqBuildingClassType>
+			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Construct           Tower of Necromancy                         Necromancer -->
 			<Type>TRAITTRIGGER_CONSTRUCT_TOWER_OF_NECROMANCY</Type>

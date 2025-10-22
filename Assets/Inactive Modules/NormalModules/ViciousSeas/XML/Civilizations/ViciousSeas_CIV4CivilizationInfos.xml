@@ -283,12 +283,6 @@
 					<iCultureDistanceChange>-1</iCultureDistanceChange>
 				</FeatureCultureDistanceChange>
 			</FeatureCultureDistanceChanges>
-			<MaintainFeatures>
-				<MaintainFeature>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bMaintain>1</bMaintain>
-				</MaintainFeature>
-			</MaintainFeatures>
 			<Image>Modules/NormalModules/ViciousSeas/Art/Interface/Popups/Civ/BezeriBanner.dds</Image>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>

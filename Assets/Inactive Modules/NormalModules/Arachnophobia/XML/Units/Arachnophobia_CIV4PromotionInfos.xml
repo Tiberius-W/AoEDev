@@ -20,6 +20,12 @@
 				<Promotion>PROMOTION_MITHRIL_WEAPONS</Promotion>
 				<Promotion>PROMOTION_RUSTED</Promotion>
 			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_BRONZE_WEAPONS</Promotion>
+				<Promotion>PROMOTION_IRON_WEAPONS</Promotion>
+				<Promotion>PROMOTION_MITHRIL_WEAPONS</Promotion>
+				<Promotion>PROMOTION_RUSTED</Promotion>
+			</PromotionOverwrites>
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_POISON</DamageType>

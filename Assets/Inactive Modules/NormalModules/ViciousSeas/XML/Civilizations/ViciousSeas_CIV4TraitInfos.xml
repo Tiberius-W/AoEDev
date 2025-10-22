@@ -105,5 +105,18 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 		</TraitInfo>
+		<TraitInfo>		<!-- Fisherman -->
+			<Type>TRAIT_FISHERMAN</Type>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_TRAWLING_BOATS</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
+		</TraitInfo>
 	</TraitInfos> 
 </Civ4TraitInfos>

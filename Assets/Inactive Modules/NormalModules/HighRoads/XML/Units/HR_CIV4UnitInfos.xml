@@ -87,6 +87,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
+		     </AndDependencyTypes>
 		</UnitInfo>
 	
 		</UnitInfos>
