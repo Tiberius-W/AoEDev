@@ -696,10 +696,6 @@
 					<bTrait>1</bTrait>
 				 </Trait>
 				 <Trait>
-					<TraitType>TRAIT_ORGANIZED</TraitType>
-					<bTrait>1</bTrait>
-				 </Trait>
-				 <Trait>
 					<TraitType>TRAIT_DAO_FIRE_AIR</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
