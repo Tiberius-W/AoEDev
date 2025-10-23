@@ -25615,9 +25615,9 @@
 					<bApplyRival>1</bApplyRival>
 					<fHappy>-3</fHappy>
 					<fCrime>10</fCrime>
-					<fFood>-5</fFood>
+					<fFood>-3</fFood>
 					<fHealth>-3</fHealth>
-					<iBonusRange>5</iBonusRange>
+					<iBonusRange>4</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
 			<PrereqUnits>

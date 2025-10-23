@@ -8755,9 +8755,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<iCost>-1</iCost>
-			<iMoves>3</iMoves>
-			<iCombat>6</iCombat>
-			<iCombatDefense>8</iCombatDefense>
+			<iMoves>2</iMoves>
+			<iCombat>5</iCombat>
+			<iCombatDefense>7</iCombatDefense>
 			<iAsset>6</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
