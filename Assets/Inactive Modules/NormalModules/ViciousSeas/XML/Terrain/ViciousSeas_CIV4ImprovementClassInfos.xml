@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:ViciousSeas_CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Dummy -->
+			<Type>IMPROVEMENTCLASS_DUMMY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DUMMY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Coral Fort -->
+			<Type>IMPROVEMENTCLASS_CORAL_FORT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CORAL_FORT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Coral Castle -->
+			<Type>IMPROVEMENTCLASS_CORAL_CASTLE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CORAL_CASTLE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Coral Citadel -->
+			<Type>IMPROVEMENTCLASS_CORAL_CITADEL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CORAL_CITADEL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Hunting Reef -->
+			<Type>IMPROVEMENTCLASS_HUNTING_REEF</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HUNTING_REEF</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Fishing Boats -->
+			<Type>IMPROVEMENTCLASS_FISHING_BOATS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FISHING_BOATS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Trawling Boats -->
+			<Type>IMPROVEMENTCLASS_TRAWLING_BOATS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TRAWLING_BOATS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Den -->
+			<Type>IMPROVEMENTCLASS_PIRATE_DEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_DEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Stronghold -->
+			<Type>IMPROVEMENTCLASS_PIRATE_STRONGHOLD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_STRONGHOLD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Free City -->
+			<Type>IMPROVEMENTCLASS_PIRATE_FREE_CITY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_FREE_CITY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sea Serpent Nest -->
+			<Type>IMPROVEMENTCLASS_SEA_SERPENT_NEST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SEA_SERPENT_NEST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Titan Shell Lair -->
+			<Type>IMPROVEMENTCLASS_TITAN_SHELL_LAIR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TITAN_SHELL_LAIR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ocean Tower -->
+			<Type>IMPROVEMENTCLASS_OCEAN_TOWER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_OCEAN_TOWER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Drowned Lair -->
+			<Type>IMPROVEMENTCLASS_DROWNED_LAIR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DROWNED_LAIR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dredge Heep -->
+			<Type>IMPROVEMENTCLASS_DREDGE_HEEP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DREDGE_HEEP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Howling Reef -->
+			<Type>IMPROVEMENTCLASS_HOWLING_REEF</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HOWLING_REEF</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Shrine (I) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_SHRINE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_SHRINE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Temple (II) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_TEMPLE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_TEMPLE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Spire (III) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_CATHEDRAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_CATHEDRAL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Monolith (IV) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_GRAND_SPIRE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_GRAND_SPIRE</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>

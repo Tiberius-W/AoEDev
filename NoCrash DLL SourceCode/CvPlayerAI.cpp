@@ -10,6 +10,7 @@
 #include "CvPlot.h"
 #include "CvGameAI.h"
 #include "CvTeamAI.h"
+#include "CvGameCoreUtils.h"
 #include "CvDiploParameters.h"
 #include "CvInitCore.h"
 #include "CyArgsList.h"
@@ -5022,7 +5023,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								{
 									if (GC.getBuildInfo((BuildTypes)iJ).getTechPrereq() == iI)
 									{
-										eImprovement = (ImprovementTypes)(GC.getBuildInfo((BuildTypes)iJ).getImprovement());
+										eImprovement = (ImprovementTypes)(GC.getBuildInfo((BuildTypes)iJ).getImprovementClass());
 										if (eImprovement != NO_IMPROVEMENT)
 										{
 											eImprovement = finalImprovementUpgrade(eImprovement);
@@ -6753,7 +6754,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 							if (GC.getBuildInfo((BuildTypes)iJ).getTechPrereq() == iI || (GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iJ).getTechPrereq()) && GC.getBuildInfo((BuildTypes)iJ).getTechDiscount(iI) != 0))
 							{
 
-								eImprovement = (ImprovementTypes)(GC.getBuildInfo((BuildTypes)iJ).getImprovement());
+								eImprovement = (ImprovementTypes)getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)iJ).getImprovementClass());
 
 								if (eImprovement != NO_IMPROVEMENT)
 								{
@@ -23907,7 +23908,7 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 				BuildTypes eBuild = pCity->AI_getBestBuild(iI);
 				if (eBuild != NO_BUILD)
 				{
-					ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+					ImprovementTypes eImprovement = (ImprovementTypes)getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass());
 					if (eImprovement != NO_IMPROVEMENT)
 					{
 						CvPlot* pLoopPlot = plotCity(pCity->getX_INLINE(), pCity->getY_INLINE(), iI);

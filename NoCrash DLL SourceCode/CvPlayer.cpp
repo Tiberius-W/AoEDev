@@ -5045,9 +5045,9 @@ int CvPlayer::countUnimprovedBonuses(CvArea* pArea, CvPlot* pFromPlot) const
 								{
 									eBuild = ((BuildTypes)iJ);
 
-									if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+									if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass())!=NO_IMPROVEMENT)
 									{
-										if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isImprovementBonusTrade(eNonObsoleteBonus))
+										if (GC.getImprovementInfo((ImprovementTypes)getPlayerImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isImprovementBonusTrade(eNonObsoleteBonus))
 										{
 											if (canBuild(pLoopPlot, eBuild))
 											{
@@ -18052,7 +18052,7 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED", GC.getImprovementInfo(pPlot->getImprovementType()).getDescription()).GetCString();
-				pPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage()));
+				pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()));
 				bSomethingHappened = true;
 			}
 			else if (pPlot->getRouteType() != NO_ROUTE)
@@ -18935,14 +18935,14 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 					{
 						for (int iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 						{
-							ImprovementTypes eLoopImprovement = ((ImprovementTypes)(GC.getBuildInfo((BuildTypes)iI).getImprovement()));
+							ImprovementTypes eLoopImprovement = ((ImprovementTypes)getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)iI).getImprovementClass()));
 
 							if (eImprovement == eLoopImprovement)
 							{
 								if (GC.getBuildInfo((BuildTypes)iI).isFeatureRemove(pPlot->getFeatureType()) && canBuild(pPlot, (BuildTypes)iI)
 
 //FfH: Added by Kael 11/11/2007
-								  && (!GC.getCivilizationInfo(getCivilizationType()).isMaintainFeatures(pPlot->getFeatureType()) || GC.getBuildInfo((BuildTypes)iI).getImprovement() == NO_IMPROVEMENT)
+								  && (!GC.getCivilizationInfo(getCivilizationType()).isMaintainFeatures(pPlot->getFeatureType()) || GC.getBuildInfo((BuildTypes)iI).getImprovementClass() == NO_IMPROVEMENTCLASS || getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)iI).getImprovementClass())==NO_IMPROVEMENT)
 //FfH: End Add
 
 								  )
@@ -19759,7 +19759,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 			for (int iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 			{
 				CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iI);
-				ImprovementTypes eLoopImprovement = ((ImprovementTypes)(kBuild.getImprovement()));
+				ImprovementTypes eLoopImprovement = ((ImprovementTypes)getPlayerImprovement((ImprovementClassTypes)kBuild.getImprovementClass()));
 
 				if (eImprovement == eLoopImprovement && canBuild(pPlot, (BuildTypes)iI))
 				{
@@ -19811,7 +19811,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 	// Tech requirement
 	for (int iBuildLoop = 0; iBuildLoop < GC.getNumBuildInfos(); iBuildLoop++)
 	{
-		if (GC.getBuildInfo((BuildTypes) iBuildLoop).getImprovement() == eImprovement)
+		if (getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo((BuildTypes) iBuildLoop).getImprovementClass()) == eImprovement)
 		{
 			if (!(GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes) iBuildLoop).getTechPrereq())))
 			{
@@ -30617,3 +30617,14 @@ int CvPlayer::getClaimFortCost() const
 	iCost /= 400;
 	return iCost;
 }
+
+
+ImprovementTypes CvPlayer::getPlayerImprovement(ImprovementClassTypes iClass) const
+{
+	if (iClass == NO_IMPROVEMENTCLASS)
+	{
+		return NO_IMPROVEMENT;
+	}
+	return(ImprovementTypes) GC.getCivilizationInfo((CivilizationTypes)getCivilizationType()).getCivilizationImprovements(iClass);
+}
+

@@ -2311,7 +2311,7 @@ void CvUnitAI::AI_workerMove()
 //							if (pCity->AI_getBestBuildValue(iI) > 0)
 //							{
 //								ImprovementTypes eImprovement;
-//								eImprovement = (ImprovementTypes)GC.getBuildInfo((BuildTypes)pCity->AI_getBestBuild(iI)).getImprovement();
+//								eImprovement = (ImprovementTypes)GC.getBuildInfo((BuildTypes)pCity->AI_getBestBuild(iI)).getImprovementClass();
 //								if (eImprovement != NO_IMPROVEMENT)
 //								{
 //									bMoreBuilds = true;
@@ -22001,9 +22001,9 @@ bool CvUnitAI::AI_improveLocalPlot(int iRange, CvCity* pIgnoreCity)
 /**		Already checked for Safe_Automation, let them rebuild over something if they want to	**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
-											if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && GC.getBuildInfo(pCity->AI_getBestBuild(iIndex)).getImprovement() != NO_IMPROVEMENT)
+											if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && GC.getBuildInfo(pCity->AI_getBestBuild(iIndex)).getImprovementClass() != NO_IMPROVEMENT)
 /**								----  End Original Code  ----									**/
-											if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && GC.getBuildInfo(pCity->AI_getBestBuild(iIndex)).getImprovement() == pLoopPlot->getImprovementType())
+											if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && getUnitImprovement((ImprovementClassTypes)GC.getBuildInfo(pCity->AI_getBestBuild(iIndex)).getImprovementClass()) == pLoopPlot->getImprovementType())
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -22267,7 +22267,7 @@ bool CvUnitAI::AI_nextCityToImprove(CvCity* pCity)
 			plot()->getWorkingCity()->AI_changeWorkersHave(-1);
 		}
 
-		FAssert(pBestPlot->getWorkingCity() != NULL || GC.getBuildInfo(eBestBuild).getImprovement() == NO_IMPROVEMENT);
+		FAssert(pBestPlot->getWorkingCity() != NULL || GC.getBuildInfo(eBestBuild).getImprovementClass() == NO_IMPROVEMENTCLASS || getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBestBuild).getImprovementClass()))==NO_IMPROVEMENT);
 		if (NULL != pBestPlot->getWorkingCity())
 		{
 			pBestPlot->getWorkingCity()->AI_changeWorkersHave(+1);
@@ -22416,9 +22416,9 @@ bool CvUnitAI::AI_irrigateTerritory()
 										eBuild = ((BuildTypes)iJ);
 										FAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid Build");
 
-										if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+										if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT)
 										{
-											if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isCarriesIrrigation())
+											if (GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isCarriesIrrigation())
 											{
 												if (canBuild(pLoopPlot, eBuild))
 												{
@@ -22599,11 +22599,11 @@ bool CvUnitAI::AI_fortTerritory(bool bCanal, bool bAirbase)
 							BuildTypes eBuild = ((BuildTypes)iJ);
 							FAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid Build");
 
-							if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+							if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENT)
 							{
-								if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isActsAsCity())
+								if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovementClass())).isActsAsCity())
 								{
-									if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).getDefenseModifier() > 0)
+									if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovementClass())).getDefenseModifier() > 0)
 									{
 										if (canBuild(pLoopPlot, eBuild))
 										{
@@ -22686,9 +22686,9 @@ bool CvUnitAI::AI_fortTerritory(bool bCanal, bool bAirbase)
 						BuildTypes eBuild = ((BuildTypes)iJ);
 						FAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid Build");
 
-						if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+						if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT)
 						{
-							iValue = GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).getDefenseModifier();
+							iValue = GC.getImprovementInfo((ImprovementTypes)(getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())))).getDefenseModifier();
 							if (iValue > 0)
 							{
 								if (canBuild(pLoopPlot, eBuild))
@@ -22907,9 +22907,9 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 							{
 								eBuild = ((BuildTypes)iJ);
 
-								if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+								if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT)
 								{
-									if (GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus) || (!pLoopPlot->isCityRadius() && GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity()))
+									if (GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isImprovementBonusTrade(eNonObsoleteBonus) || (!pLoopPlot->isCityRadius() && GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isActsAsCity()))
 									{
 										if (canBuild(pLoopPlot, eBuild))
 										{
@@ -22935,7 +22935,7 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 												if (!isHuman())
 												{
 													iValue /= 100;
-													iValue *= std::max(0, (100-GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getImprovementWeightModifier((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement())));
+													iValue *= std::max(0, (100-GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getImprovementWeightModifier((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovementClass())));
 												}
 												iValue -= GC.getGameINLINE().getSorenRandNum(4000, "AIBonus");
 //FfH: End Add
@@ -22944,9 +22944,9 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 												if (!isHuman())
 												{
 													iValue /= 100;
-													iValue *= std::max(0, (100-GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getImprovementWeightModifier((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement())));
+													iValue *= std::max(0, (100-GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getImprovementWeightModifier((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())))));
 												}
-												BonusTypes eBonus = (BonusTypes)GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).getBonusConvert();
+												BonusTypes eBonus = (BonusTypes)GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).getBonusConvert();
 												if (eBonus != NO_BONUS && GC.getBonusInfo(eBonus).getBonusClassType() == GC.getDefineINT("BONUSCLASS_MANA"))
 												{
 													iValue -= GET_PLAYER(getOwnerINLINE()).AI_bonusVal(eBonus);
@@ -23003,9 +23003,9 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 
 								if (bDoImprove)
 								{
-									eImprovement = (ImprovementTypes)GC.getBuildInfo(eBestTempBuild).getImprovement();
+									eImprovement = (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBestTempBuild).getImprovementClass()));
 									FAssert(eImprovement != NO_IMPROVEMENT);
-									//iValue += (GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBestTempBuild).getImprovement()))
+									//iValue += (GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBestTempBuild).getImprovementClass()))
 									iValue += 5 * pLoopPlot->calculateImprovementYieldChange(eImprovement, YIELD_FOOD, getOwnerINLINE(), false);
 /*************************************************************************************************/
 /**	CivPlotMods								04/02/09								Jean Elcard	**/
@@ -23284,9 +23284,9 @@ BuildTypes CvUnitAI::AI_betterPlotBuild(CvPlot* pPlot, BuildTypes eBuild)
 /**						Consider Player-specific Feature Yield Changes.							**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
-			if ((kOriginalBuildInfo.getImprovement() == NO_IMPROVEMENT) || (!pPlot->isBeingWorked() || (kFeatureInfo.getYieldChange(YIELD_FOOD) + kFeatureInfo.getYieldChange(YIELD_PRODUCTION)) <= 0))
+			if ((kOriginalBuildInfo.getImprovementClass() == NO_IMPROVEMENT) || (!pPlot->isBeingWorked() || (kFeatureInfo.getYieldChange(YIELD_FOOD) + kFeatureInfo.getYieldChange(YIELD_PRODUCTION)) <= 0))
 /**								----  End Original Code  ----									**/
-			if ((kOriginalBuildInfo.getImprovement() == NO_IMPROVEMENT) || (!pPlot->isBeingWorked() ||
+			if ((kOriginalBuildInfo.getImprovementClass() == NO_IMPROVEMENTCLASS ||getUnitImprovement((ImprovementClassTypes)kOriginalBuildInfo.getImprovementClass())==NO_IMPROVEMENT) || (!pPlot->isBeingWorked() ||
 				(kFeatureInfo.getYieldChange(YIELD_FOOD) + GET_PLAYER(getOwnerINLINE()).getFeatureYieldChange(eFeature , YIELD_FOOD)
 			   + kFeatureInfo.getYieldChange(YIELD_PRODUCTION) + GET_PLAYER(getOwnerINLINE()).getFeatureYieldChange(eFeature , YIELD_PRODUCTION)) <= 0))
 /*************************************************************************************************/
@@ -23474,7 +23474,7 @@ BuildTypes CvUnitAI::AI_betterPlotBuild(CvPlot* pPlot, BuildTypes eBuild)
 /*************************************************************************************************/
 							iValue /= 3;
 						}
-						ImprovementTypes eImprovement = (ImprovementTypes)kOriginalBuildInfo.getImprovement();
+						ImprovementTypes eImprovement = (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)kOriginalBuildInfo.getImprovementClass());
 
 						if (eImprovement != NO_IMPROVEMENT)
 						{
@@ -23544,7 +23544,7 @@ BuildTypes CvUnitAI::AI_betterPlotBuild(CvPlot* pPlot, BuildTypes eBuild)
 										CvFeatureInfo& kLinkedFeatureInfo = GC.getFeatureInfo(eFeature);
 										if (kOriginalLinkedBuildInfo.isFeatureRemove(eFeature) && !GC.getCivilizationInfo(getCivilizationType()).isMaintainFeatures(pPlot->getFeatureType()))
 										{
-											if ((kOriginalLinkedBuildInfo.getImprovement() == NO_IMPROVEMENT) || (!pPlot->isBeingWorked() ||
+											if ((kOriginalLinkedBuildInfo.getImprovementClass() == NO_IMPROVEMENTCLASS) && getUnitImprovement((ImprovementClassTypes)kOriginalLinkedBuildInfo.getImprovementClass())==NO_IMPROVEMENT || (!pPlot->isBeingWorked() ||
 												(kLinkedFeatureInfo.getYieldChange(YIELD_FOOD) + GET_PLAYER(getOwnerINLINE()).getFeatureYieldChange(eFeature , YIELD_FOOD)
 											   + kLinkedFeatureInfo.getYieldChange(YIELD_PRODUCTION) + GET_PLAYER(getOwnerINLINE()).getFeatureYieldChange(eFeature , YIELD_PRODUCTION)) <= 0))
 											{
@@ -23630,7 +23630,7 @@ BuildTypes CvUnitAI::AI_betterPlotBuild(CvPlot* pPlot, BuildTypes eBuild)
 
 															iLinkedValue /= 3;
 														}
-														ImprovementTypes eImprovement = (ImprovementTypes)kOriginalLinkedBuildInfo.getImprovement();
+														ImprovementTypes eImprovement = (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)kOriginalLinkedBuildInfo.getImprovementClass());
 
 														if (eImprovement != NO_IMPROVEMENT)
 														{
@@ -28728,14 +28728,14 @@ bool CvUnitAI::AI_fort()
 							{
 								eBuild = ((BuildTypes)iJ);
 								FAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid Build");
-								if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+								if (getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())) != NO_IMPROVEMENT)
 								{
-									if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isFort())
+									if (GC.getImprovementInfo((ImprovementTypes)(getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())))).isFort())
 									{
 										if (canBuild(pCitySitePlot, eBuild))
 										{
-											iValue = GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).getDefenseModifier();
-											if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).getImprovementUpgrade() == NO_IMPROVEMENT)
+											iValue = GC.getImprovementInfo((ImprovementTypes)(getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())))).getDefenseModifier();
+											if (GC.getImprovementInfo((ImprovementTypes)(getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())))).getImprovementClassUpgrade() == NO_IMPROVEMENTCLASS)
 											{
 												iValue *= 3 / 2; //Bonus if it's the final upgrade
 											}
@@ -29293,7 +29293,7 @@ void CvUnitAI::AI_upgrademanaMove()
 				if (canBuild(plot(), eBuild))
 				{
 					// we have to first get the improvement, then find out what mana this node will be converted to
-					ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+					ImprovementTypes eImprovement = (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()));
 					BonusTypes eNewBonus = (BonusTypes)GC.getImprovementInfo(eImprovement).getBonusConvert();
 
 					iValue = kPlayer.AI_bonusVal(eNewBonus) + 1;

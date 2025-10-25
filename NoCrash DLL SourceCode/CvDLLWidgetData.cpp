@@ -2097,16 +2097,17 @@ void CvDLLWidgetData::doPediaBuildJump(CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
 
+	ImprovementClassTypes eImprovementClass = NO_IMPROVEMENTCLASS;
 	ImprovementTypes eImprovement = NO_IMPROVEMENT;
 	BuildTypes eBuild = (BuildTypes)widgetDataStruct.m_iData2;
 	if (NO_BUILD != eBuild)
 	{
-		eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+		eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
 	}
 
-	if (NO_IMPROVEMENT != eImprovement)
+	if (NO_IMPROVEMENTCLASS != eImprovementClass && GC.getImprovementClassInfo(eImprovementClass).getDefaultImprovementIndex()!=NO_IMPROVEMENT)
 	{
-		argsList.add(eImprovement);
+		argsList.add(GC.getImprovementClassInfo(eImprovementClass).getDefaultImprovementIndex());
 		gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToImprovement", argsList.makeFunctionArgs());
 	}
 }
@@ -2462,7 +2463,8 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	CvPlot* pLoopPlot;
 	CvWString szTempBuffer;
 	CvWString szFirstBuffer;
-	ImprovementTypes eImprovement;
+	ImprovementTypes eImprovement=NO_IMPROVEMENT;
+	ImprovementClassTypes eImprovementClass;
 	ImprovementTypes eFinalImprovement;
 	ReligionTypes eReligion;
 	BuildingTypes eBuilding;
@@ -3049,10 +3051,13 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			{
 				eBuild = ((BuildTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData()));
 				FAssert(eBuild != NO_BUILD);
-				eImprovement = ((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement()));
+				eImprovementClass = ((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()));
+				if (eImprovementClass != NO_IMPROVEMENTCLASS)
+				{
+					eImprovement = pHeadSelectedUnit->getUnitImprovement(eImprovementClass);
+				}
 				eRoute = ((RouteTypes)(GC.getBuildInfo(eBuild).getRoute()));
 				eBonus = pMissionPlot->getBonusType(pHeadSelectedUnit->getTeam());
-
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
 					iYield = 0;
@@ -3105,6 +3110,13 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 						szTempBuffer.Format(L", +%d%c", abs(iHappy), (iHappy > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 						szBuffer.append(szTempBuffer);
 					}
+				}
+				if (eImprovement != NO_IMPROVEMENT && eImprovement != GC.getImprovementClassInfo((ImprovementClassTypes)eImprovementClass).getDefaultImprovementIndex())
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILD_UNIQUE_IMPROVEMENT", GC.getImprovementInfo((ImprovementTypes)eImprovement).getTextKeyWide()));
+
+
 				}
 
 				bValid = false;
@@ -3463,14 +3475,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 						szBuffer.append(gDLL->getText("TXT_KEY_ACTION_DEFENSE_MODIFIER", GC.getImprovementInfo(eImprovement).getDefenseModifier()));
 					}
 
-					if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT)
+					if (GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()) != NO_IMPROVEMENT)
 					{
-						if (GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()) // test Ronkhar to hide improvements upgrades if only for another civilization
-						{
+					//	if (GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()).getPrereqCivilization() == GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()) // test Ronkhar to hide improvements upgrades if only for another civilization
+					//	{
 							iTurns = pMissionPlot->getUpgradeTimeLeft(eImprovement, pHeadSelectedUnit->getOwnerINLINE());
 							szBuffer.append(NEWLINE);
-							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BECOMES_IMP", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide(), iTurns));
-						}
+							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_BECOMES_IMP", GC.getImprovementInfo((ImprovementTypes)GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade())).getTextKeyWide(), iTurns));
+					//	}
 					}
 				}
 

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:MagisterAshes_CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Abaddon's Pit -->
+			<Type>IMPROVEMENTCLASS_ABADDONS_PIT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ABADDONS_PIT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Carnivaen's Camp -->
+			<Type>IMPROVEMENTCLASS_CARNIVEANS_CAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CARNIVEANS_CAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Grave of Asmoday -->
+			<Type>IMPROVEMENTCLASS_GRAVE_OF_ASMODAY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GRAVE_OF_ASMODAY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Majen's Workshop -->
+			<Type>IMPROVEMENTCLASS_MAJENS_WORKSHOP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAJENS_WORKSHOP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Wandering Castle of the Eternal Blizzard -->
+			<Type>IMPROVEMENTCLASS_BADBS_BLIZZARD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BADBS_BLIZZARD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Whispering Woods -->
+			<Type>IMPROVEMENTCLASS_WHISPERING_WOOD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WHISPERING_WOOD</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>

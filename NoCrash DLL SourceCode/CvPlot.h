@@ -577,7 +577,7 @@ public:
 	void setRevealedRouteType(TeamTypes eTeam, RouteTypes eNewValue);
 
 	int getBuildProgress(BuildTypes eBuild) const;																											// Exposed to Python
-	bool changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam = NO_TEAM, bool bLinked = false);								// Exposed to Python
+	bool changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam = NO_TEAM, bool bLinked = false, CvUnit* pBuilder=NULL);								// Exposed to Python
 
 	void updateFeatureSymbolVisibility();
 	void updateFeatureSymbol(bool bForce = false);

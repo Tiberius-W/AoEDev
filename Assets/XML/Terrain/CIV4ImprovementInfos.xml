@@ -6,8 +6,9 @@
 <!-- Improvement Infos -->
 <Civ4ImprovementInfos xmlns="x-schema:CIV4TerrainSchema.xml">
 	<ImprovementInfos>
-		<ImprovementInfo>
+		<ImprovementInfo><!--Dummy-->
 			<Type>IMPROVEMENT_DUMMY</Type> <!-- Add more description here if anyone wants... If a value is entered, it's probably the default -->
+			<ImprovementClass>IMPROVEMENTCLASS_DUMMY</ImprovementClass>
 			<Description></Description>
 			<Civilopedia></Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CAMP</ArtDefineTag>
@@ -117,9 +118,9 @@
 				</AllowsFeature>
 			</AllowsFeatures>
 			<iFeatureGrowth>0</iFeatureGrowth> <!-- A probability for features to... grow on the tile? Not sure. -->
-			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into -->
+			<ImprovementPillage></ImprovementPillage> <!-- When pillaged or explored, what it turns into (improvementclass)-->
 			<iUpgradeTime>0</iUpgradeTime> <!-- How many turns it takes to upgrade the improvement. If 0, will only upgrade if the upgrade has weights > 0 (I think?) -->
-			<ImprovementUpgrade></ImprovementUpgrade> <!-- When upgraded, what it turns into. Tracked alive units are set to 0, ImmediateSpawnUnitType will spawn -->
+			<ImprovementUpgrade></ImprovementUpgrade> <!-- When upgraded, what it turns into. Tracked alive units are set to 0, ImmediateSpawnUnitType will spawn (improvementclass)-->
 			<bPermanent>0</bPermanent> <!-- 1 means the improvement can't be destroyed in almost all circumstances -->
 			<bUnique>0</bUnique> <!-- 1 means won't spawn multiple, and represents a UF. Additional work elsewhere needed to implement name tag and such -->
 			<bExplorable>1</bExplorable> <!-- Means units can explore to destroy/pillage it. If ImprovementPillage is set, will change to that. Recommend setting with GoodyClasses... -->
@@ -175,6 +176,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ash Field -->
 			<Type>IMPROVEMENT_ASH_FIELD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_ASH_FIELD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_ASH_FIELD</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_ASH_FIELD</ArtDefineTag>
@@ -243,6 +245,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Cage -->
 			<Type>IMPROVEMENT_CAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CAGE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CAGE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CAGE</ArtDefineTag>
@@ -250,6 +253,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Camp -->
 			<Type>IMPROVEMENT_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CAMP_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CAMP</ArtDefineTag>
@@ -261,7 +265,7 @@
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>10</iPillageGold>
-			<ImprovementUpgrade>IMPROVEMENT_YARANGA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_YARANGA</ImprovementUpgrade>
 			<iUpgradeTime>20</iUpgradeTime>
 			<AllowsFeatures>
 				<AllowsFeature>
@@ -419,6 +423,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Castle -->
 			<Type>IMPROVEMENT_CASTLE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CASTLE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CASTLE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CASTLE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CASTLE</ArtDefineTag>
@@ -493,8 +498,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_FORT</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_CITADEL</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_FORT</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CITADEL</ImprovementUpgrade>
 			<iMaxAirlift>1</iMaxAirlift>
 			<iHealRateChange>10</iHealRateChange>
 			<iRange>1</iRange>
@@ -506,6 +511,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Citadel -->
 			<Type>IMPROVEMENT_CITADEL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITADEL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CITADEL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CITADEL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CITADEL</ArtDefineTag>
@@ -581,8 +587,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_CASTLE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_CITADEL_OF_LIGHT</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_CASTLE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CITADEL_OF_LIGHT</ImprovementUpgrade>
 			<iHealRateChange>20</iHealRateChange>
 			<iRange>2</iRange>
 			<iRangeDefenseModifier>25</iRangeDefenseModifier>
@@ -594,6 +600,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- City Ruins -->
 			<Type>IMPROVEMENT_CITY_RUINS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITY_RUINS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CITY_RUINS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CITY_RUINS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CITY_RUINS</ArtDefineTag>
@@ -605,6 +612,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ancient Ruins -->
 			<Type>IMPROVEMENT_CITY_RUINS_ANCIENT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITY_RUINS_ANCIENT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CITY_RUINS_ANCIENT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CITY_RUINS_ANCIENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CITY_RUINS_ANCIENT</ArtDefineTag>
@@ -669,6 +677,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Cottage -->
 			<Type>IMPROVEMENT_COTTAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_COTTAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_COTTAGE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_COTTAGE_PEDIA</Civilopedia>
 			<Help/>
@@ -717,12 +726,13 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_HAMLET</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HAMLET</ImprovementUpgrade>
 			<iCultureRange>-1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Farm-->
 			<Type>IMPROVEMENT_FARM</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FARM</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FARM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Civilopedia>
 			<Help/>
@@ -737,7 +747,7 @@
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 			</IrrigatedYieldChange>
-			<ImprovementUpgrade>IMPROVEMENT_HOMESTEAD</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HOMESTEAD</ImprovementUpgrade>
 			<iUpgradeTime>50</iUpgradeTime>
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -885,6 +895,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Fishing Boats -->
 			<Type>IMPROVEMENT_FISHING_BOATS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FISHING_BOATS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FISHING_BOATS_PEDIA</Civilopedia>
 			<Help/>
@@ -1004,6 +1015,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Fort -->
 			<Type>IMPROVEMENT_FORT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FORT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FORT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FORT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FORT</ArtDefineTag>
@@ -1073,7 +1085,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_CASTLE</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CASTLE</ImprovementUpgrade>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 			<iMaxAirlift>1</iMaxAirlift>
@@ -1082,6 +1094,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hamlet-->
 			<Type>IMPROVEMENT_HAMLET</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HAMLET</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HAMLET</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_HAMLET_PEDIA</Civilopedia>
 			<Help/>
@@ -1094,13 +1107,14 @@
 			<iUpgradeTime>20</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>15</iPillageGold>
-			<ImprovementPillage>IMPROVEMENT_COTTAGE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_VILLAGE</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_COTTAGE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_VILLAGE</ImprovementUpgrade>
 			<iCultureRange>-1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hellfire -->
 			<Type>IMPROVEMENT_HELLFIRE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HELLFIRE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HELLFIRE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_HELLFIRE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HELLFIRE</ArtDefineTag>
@@ -1137,6 +1151,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Jungle Altar -->
 			<Type>IMPROVEMENT_JUNGLE_ALTAR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_JUNGLE_ALTAR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_JUNGLE_ALTAR</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_JUNGLE_ALTAR</ArtDefineTag>
@@ -1146,6 +1161,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lumbermill -->
 			<Type>IMPROVEMENT_LUMBERMILL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LUMBERMILL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LUMBERMILL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_LUMBERMILL_PEDIA</Civilopedia>
 			<Help/>
@@ -1221,6 +1237,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mine -->
 			<Type>IMPROVEMENT_MINE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MINE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MINE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Civilopedia>
 			<Help/>
@@ -1361,6 +1378,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Necrototem -->
 			<Type>IMPROVEMENT_NECROTOTEM</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_NECROTOTEM</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NECROTOTEM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NECROTOTEM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NECROTOTEM</ArtDefineTag>
@@ -1369,11 +1387,12 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pasture -->
 			<Type>IMPROVEMENT_PASTURE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PASTURE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PASTURE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PASTURE_PEDIA</Civilopedia>
 			<Help/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PASTURE</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_HOMESTEAD</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HOMESTEAD</ImprovementUpgrade>
 			<iUpgradeTime>50</iUpgradeTime>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
@@ -1477,6 +1496,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Penguins -->
 			<Type>IMPROVEMENT_PENGUINS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PENGUINS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PENGUINS</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PENGUINS</ArtDefineTag>
 			<iHappiness>100</iHappiness>
@@ -1484,6 +1504,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Plantation 19-->
 			<Type>IMPROVEMENT_PLANTATION</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PLANTATION</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PLANTATION</Description>
 			<Civilopedia/>
 			<Help/>
@@ -1625,6 +1646,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Portal -->
 			<Type>IMPROVEMENT_PORTAL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PORTAL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PORTAL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PORTAL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PORTAL</ArtDefineTag>
@@ -1634,6 +1656,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Quarry -->
 			<Type>IMPROVEMENT_QUARRY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_QUARRY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_QUARRY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_QUARRY_PEDIA</Civilopedia>
 			<Help/>
@@ -1716,6 +1739,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Smoke -->
 			<Type>IMPROVEMENT_SMOKE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SMOKE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SMOKE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_SMOKE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SMOKE</ArtDefineTag>
@@ -1779,6 +1803,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Snake Pillar -->
 			<Type>IMPROVEMENT_SNAKE_PILLAR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SNAKE_PILLAR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SNAKE_PILLAR</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SNAKE_PILLAR</ArtDefineTag>
@@ -1812,6 +1837,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Swamp -->
 			<Type>IMPROVEMENT_SWAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SWAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SWAMP</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SWAMP</ArtDefineTag>
@@ -1902,6 +1928,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Tower -->
 			<Type>IMPROVEMENT_TOWER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TOWER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TOWER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_TOWER</ArtDefineTag>
@@ -1959,6 +1986,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Town -->
 			<Type>IMPROVEMENT_TOWN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TOWN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TOWN</Description>
 			<Civilopedia/>
 			<Help/>
@@ -1971,8 +1999,8 @@
 			<iUpgradeTime>10</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>25</iPillageGold>
-			<ImprovementPillage>IMPROVEMENT_VILLAGE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_ENCLAVE</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_VILLAGE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_ENCLAVE</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_TAXATION</PrereqTech>
@@ -1988,6 +2016,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Village -->
 			<Type>IMPROVEMENT_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_VILLAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_VILLAGE</Description>
 			<Civilopedia/>
 			<Help/>
@@ -2001,8 +2030,8 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iPillageGold>20</iPillageGold>
-			<ImprovementPillage>IMPROVEMENT_HAMLET</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_TOWN</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_HAMLET</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_TOWN</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_TAXATION</PrereqTech>
@@ -2018,6 +2047,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Warning Post -->
 			<Type>IMPROVEMENT_WARNING_POST</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WARNING_POST</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WARNING_POST</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WARNING_POST</ArtDefineTag>
@@ -2026,6 +2056,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Watermill -->
 			<Type>IMPROVEMENT_WATERMILL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WATERMILL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WATERMILL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WATERMILL_PEDIA</Civilopedia>
 			<Help/>
@@ -2055,6 +2086,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Windmill -->
 			<Type>IMPROVEMENT_WINDMILL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WINDMILL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WINDMILL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WINDMILL_PEDIA</Civilopedia>
 			<Help/>
@@ -2090,6 +2122,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Winery -->
 			<Type>IMPROVEMENT_WINERY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WINERY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WINERY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WINERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WINERY</ArtDefineTag>
@@ -2113,6 +2146,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Workshop -->
 			<Type>IMPROVEMENT_WORKSHOP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WORKSHOP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WORKSHOP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WORKSHOP_PEDIA</Civilopedia>
 			<Help/>
@@ -2186,6 +2220,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Worked Tile -->
 			<Type>IMPROVEMENT_LAND_WORKED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LAND_WORKED</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LAND_WORKED</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_LAND_WORKED_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LAND_WORKED</ArtDefineTag>
@@ -2194,6 +2229,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Worked Water -->
 			<Type>IMPROVEMENT_WATER_WORKED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WATER_WORKED</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WATER_WORKED</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WATER_WORKED_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WATER_WORKED</ArtDefineTag>
@@ -2202,6 +2238,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bandit Encampment -->             <!-- Lairs/Explorables -->
 			<Type>IMPROVEMENT_BANDIT_ENCAMPMENT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BANDIT_ENCAMPMENT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BANDIT_ENCAMPMENT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BANDIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BANDIT_ENCAMPMENT</ArtDefineTag>
@@ -2241,7 +2278,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_BANDIT_HIDEOUT</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BANDIT_HIDEOUT</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_BANDIT</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_BANDIT_CHIEF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -2291,6 +2328,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bandit Hideout -->
 			<Type>IMPROVEMENT_BANDIT_HIDEOUT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BANDIT_HIDEOUT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BANDIT_HIDEOUT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BANDIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BANDIT_HIDEOUT</ArtDefineTag>
@@ -2330,7 +2368,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_BANDIT_FORTRESS</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BANDIT_FORTRESS</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_BANDIT_CHIEF</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_BANDIT_VIGIL</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -2394,6 +2432,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bandit Fortress -->
 			<Type>IMPROVEMENT_BANDIT_FORTRESS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BANDIT_FORTRESS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BANDIT_FORTRESS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BANDIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BANDIT_FORTRESS</ArtDefineTag>
@@ -2502,6 +2541,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Barrow -->
 			<Type>IMPROVEMENT_BARROW</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BARROW</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BARROW</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BARROW_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW</ArtDefineTag>
@@ -2554,7 +2594,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_BARROW_GLOOMY</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BARROW_GLOOMY</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_SKELETON</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_SKELETON_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
@@ -2609,6 +2649,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Gloomy Barrow -->
 			<Type>IMPROVEMENT_BARROW_GLOOMY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BARROW_GLOOMY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BARROW_GLOOMY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BARROW_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW_GLOOMY</ArtDefineTag>
@@ -2661,7 +2702,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_BARROW_HOWLING</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BARROW_HOWLING</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_SKELETON_ARCHER</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_SKELETON_PIKEMAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
@@ -2730,6 +2771,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Howling Barrow -->
 			<Type>IMPROVEMENT_BARROW_HOWLING</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BARROW_HOWLING</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BARROW_HOWLING</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BARROW_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW_HOWLING</ArtDefineTag>
@@ -2856,6 +2898,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bear Den -->
 			<Type>IMPROVEMENT_BEAR_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BEAR_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BEAR_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEAR_DEN</ArtDefineTag>
@@ -2876,6 +2919,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Blighted Forest -->
 			<Type>IMPROVEMENT_BLIGHTED_FOREST</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BLIGHTED_FOREST</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BLIGHTED_FOREST</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BLIGHTED_FOREST_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FALLEN_FOREST</ArtDefineTag>
@@ -2938,6 +2982,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Centaur Camp -->
 			<Type>IMPROVEMENT_CENTAUR_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CENTAUR_CAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CENTAUR_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CENTAUR_CAMP_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CENTAUR_CAMP</ArtDefineTag>
@@ -2973,7 +3018,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_CENTAUR_WARCAMP</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CENTAUR_WARCAMP</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_CENTAUR_OUTRUNNER</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_CENTAUR_MARAUDER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -3025,6 +3070,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Centaur Warcamp -->
 			<Type>IMPROVEMENT_CENTAUR_WARCAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CENTAUR_WARCAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CENTAUR_WARCAMP</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CENTAUR_WARCAMP</ArtDefineTag>
@@ -3060,7 +3106,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_CENTAUR_VILLAGE</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CENTAUR_VILLAGE</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_CENTAUR_MARAUDER</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_CENTAUR_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -3126,6 +3172,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Centaur Village -->
 			<Type>IMPROVEMENT_CENTAUR_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CENTAUR_VILLAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CENTAUR_VILLAGE</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CENTAUR_VILLAGE</ArtDefineTag>
@@ -3232,6 +3279,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dungeon -->
 			<Type>IMPROVEMENT_DUNGEON</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DUNGEON</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DUNGEON</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DUNGEON_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DUNGEON</ArtDefineTag>
@@ -3392,10 +3440,11 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower -->
 			<Type>IMPROVEMENT_MAGE_TOWER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAGE_TOWER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAGE_TOWER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAGE_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAGE_TOWER_1</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_MAGE_TOWER_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_MAGE_TOWER_2</ImprovementUpgrade>
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_SORCERY</LairUpgradeTechType>
@@ -3472,10 +3521,11 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower 2 -->
 			<Type>IMPROVEMENT_MAGE_TOWER_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAGE_TOWER_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAGE_TOWER_2</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAGE_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAGE_TOWER_2</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_MAGE_TOWER_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_MAGE_TOWER_3</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<TerrainMakesValids>
@@ -3576,6 +3626,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mage Tower 3 -->
 			<Type>IMPROVEMENT_MAGE_TOWER_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAGE_TOWER_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAGE_TOWER_3</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAGE_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAGE_TOWER_3</ArtDefineTag>
@@ -3690,6 +3741,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goblin Camp -->
 			<Type>IMPROVEMENT_GOBLIN_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GOBLIN_CAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GOBLIN_CAMP</Description>
 			<Civilopedia>TXT_KEY_SCORPION_CLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOBLIN_CAMP</ArtDefineTag>
@@ -3721,8 +3773,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_GOBLIN_FORT_CLEARED</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_GOBLIN_VILLAGE</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_GOBLIN_FORT_CLEARED</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_GOBLIN_VILLAGE</ImprovementUpgrade>
 			<SpawnGroupType>SPAWN_GROUP_GOBLIN_PARTY</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_ARCHER_SCORPION_CLAN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -3776,6 +3828,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goblin Village -->
 			<Type>IMPROVEMENT_GOBLIN_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GOBLIN_VILLAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GOBLIN_VILLAGE</Description>
 			<Civilopedia>TXT_KEY_SCORPION_CLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOBLIN_VILLAGE</ArtDefineTag>
@@ -3807,8 +3860,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_GOBLIN_CAMP</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_GOBLIN_TOWN</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_GOBLIN_CAMP</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_GOBLIN_TOWN</ImprovementUpgrade>
 			<SpawnGroupType>SPAWN_GROUP_WOLF_RIDER_PARTY</SpawnGroupType>
 			<ImmediateSpawnUnitType>UNIT_GOBLIN_SAPPER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -3880,6 +3933,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goblin Town -->
 			<Type>IMPROVEMENT_GOBLIN_TOWN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GOBLIN_TOWN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GOBLIN_TOWN</Description>
 			<Civilopedia>TXT_KEY_SCORPION_CLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOBLIN_TOWN</ArtDefineTag>
@@ -3912,7 +3966,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_GOBLIN_VILLAGE</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_GOBLIN_VILLAGE</ImprovementPillage>
 			<iRange>1</iRange>
 			<iRangeDefenseModifier>10</iRangeDefenseModifier>
 			<SpawnGroupType>SPAWN_GROUP_WOLFARCHER_PARTY</SpawnGroupType>
@@ -3996,6 +4050,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goblin Fort (Cleared Out) -->
 			<Type>IMPROVEMENT_GOBLIN_FORT_CLEARED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GOBLIN_FORT_CLEARED</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GOBLIN_FORT_CLEARED</Description>
 			<Civilopedia>TXT_KEY_SCORPION_CLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOBLIN_CAMP</ArtDefineTag>
@@ -4004,10 +4059,11 @@
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<ImprovementUpgrade>IMPROVEMENT_FORT</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_FORT</ImprovementUpgrade>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Goody Hut -->
 			<Type>IMPROVEMENT_GOODY_HUT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GOODY_HUT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GOODY_HUT</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOODY_HUT</ArtDefineTag>
@@ -4070,6 +4126,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Graveyard -->
 			<Type>IMPROVEMENT_GRAVEYARD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GRAVEYARD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GRAVEYARD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVEYARD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GRAVEYARD</ArtDefineTag>
@@ -4130,6 +4187,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Lion Den -->
 			<Type>IMPROVEMENT_LION_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LION_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_LION_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LION_DEN</ArtDefineTag>
@@ -4150,6 +4208,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Shipwreck -->
 			<Type>IMPROVEMENT_SHIP_WRECK</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SHIP_WRECK</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SHIP_WRECK</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_SHIP_WRECK_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SHIP_WRECK</ArtDefineTag>
@@ -4188,6 +4247,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Staedding -->
 			<Type>IMPROVEMENT_MARNOK_HILLGIANT_STEADING</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MARNOK_HILLGIANT_STEADING</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STAEDDING</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STAEDDING_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STAEDDING</ArtDefineTag>
@@ -4234,7 +4294,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_STAEDDING_OLD</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_STAEDDING_OLD</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_HUSCARL</SpawnUnitType>
 			<iSpawnUnitChancePercentMod>25</iSpawnUnitChancePercentMod>
 			<ImmediateSpawnUnitType>UNIT_HILL_GIANT</ImmediateSpawnUnitType>
@@ -4285,6 +4345,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Old Staedding -->
 			<Type>IMPROVEMENT_STAEDDING_OLD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STAEDDING_OLD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STAEDDING_OLD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STAEDDING_OLD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STAEDDING_OLD</ArtDefineTag>
@@ -4331,7 +4392,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_STAEDDING_LEGENDARY</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_STAEDDING_LEGENDARY</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_HILL_GIANT</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_JARL</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4395,6 +4456,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Legendary Staedding -->
 			<Type>IMPROVEMENT_STAEDDING_LEGENDARY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STAEDDING_LEGENDARY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STAEDDING_LEGENDARY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STAEDDING_LEGENDARY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STAEDDING_LEGENDARY</ArtDefineTag>
@@ -4510,6 +4572,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ruins -->
 			<Type>IMPROVEMENT_RUINS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RUINS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RUINS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RUINS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS</ArtDefineTag>
@@ -4527,7 +4590,7 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_RUINS_SPRAWLING</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_RUINS_SPRAWLING</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_LIZARDMAN_WILD</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_LIZARDMAN_HEAVY</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4577,6 +4640,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sprawling Ruins -->
 			<Type>IMPROVEMENT_RUINS_SPRAWLING</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RUINS_SPRAWLING</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RUINS_SPRAWLING</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RUINS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS_SPRAWLING</ArtDefineTag>
@@ -4594,7 +4658,7 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_RUINS_COLOSSAL</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_RUINS_COLOSSAL</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_LIZARDMAN_HEAVY</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_LIZARD_BLOWPIPE</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4658,6 +4722,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Colossal Ruins -->
 			<Type>IMPROVEMENT_RUINS_COLOSSAL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RUINS_COLOSSAL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RUINS_COLOSSAL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RUINS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS_COLOSSAL</ArtDefineTag>
@@ -4744,6 +4809,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Wolf Den -->
 			<Type>IMPROVEMENT_DEN_WOLF</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DEN_WOLF</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DEN_WOLF</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DEN_WOLF</ArtDefineTag>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -4777,6 +4843,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Spider Den -->
 			<Type>IMPROVEMENT_DEN_SPIDER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DEN_SPIDER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN</Description>
 			<Civilopedia>TXT_KEY_MULTI_SPIDER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPIDER_DEN</ArtDefineTag>
@@ -4811,6 +4878,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hippogriff Weyr -->
 			<Type>IMPROVEMENT_HIPPOGRIFF_WEYR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HIPPOGRIFF_WEYR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HIPPOGRIFF_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -4823,6 +4891,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Griffin Weyr (T2) -->
 			<Type>IMPROVEMENT_GRIFFIN_WEYR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GRIFFIN_WEYR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GRIFFIN_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
 			<bPeakMakesValid>1</bPeakMakesValid>
@@ -4834,6 +4903,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Frostling Encampment -->
 			<Type>IMPROVEMENT_FROSTLING_ENCAMPMENT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FROSTLING_ENCAMPMENT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FROSTLING_ENCAMPMENT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FROSTLING_ENCAMPMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FROSTLING_ENCAMPMENT</ArtDefineTag>
@@ -4853,7 +4923,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_FROSTLING_CAMP</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_FROSTLING_CAMP</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_FROSTLING</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_FROSTLING_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4905,6 +4975,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Frostling Camp -->
 			<Type>IMPROVEMENT_FROSTLING_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FROSTLING_CAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FROSTLING_CAMP</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FROSTLING_CAMP</ArtDefineTag>
@@ -4924,7 +4995,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_FROSTLING_VILLAGE</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_FROSTLING_VILLAGE</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_FROSTLING_WOLF_RIDER</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_FROSTLING_ARCHER</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -4990,6 +5061,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Frostling Village -->
 			<Type>IMPROVEMENT_FROSTLING_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FROSTLING_VILLAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FROSTLING_VILLAGE</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FROSTLING_VILLAGE</ArtDefineTag>
@@ -5082,6 +5154,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bedouin Camp -->                  <!-- Civilization Specific -->
 			<Type>IMPROVEMENT_BEDOUIN_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HAMLET</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEDOUIN_CAMP</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEDOUIN_CAMP</ArtDefineTag>
 			<YieldChanges>
@@ -5102,15 +5175,15 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_BEDOUIN_SIT</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_BEDOUIN_GATHERING</ImprovementUpgrade>
-			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<ImprovementPillage>IMPROVEMENTCLASS_COTTAGE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_VILLAGE</ImprovementUpgrade>
 			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bedouin Gathering -->
 			<Type>IMPROVEMENT_BEDOUIN_GATHERING</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_VILLAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEDOUIN_GATHERING</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BEDOUIN_SIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEDOUIN_GATHERING</ArtDefineTag>
@@ -5132,9 +5205,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_BEDOUIN_CAMP</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_BEDOUIN_VILLAGE</ImprovementUpgrade>
-			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<ImprovementPillage>IMPROVEMENTCLASS_HAMLET</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_TOWN</ImprovementUpgrade>
 			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
@@ -5142,6 +5214,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bedouin Sit -->
 			<Type>IMPROVEMENT_BEDOUIN_SIT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_COTTAGE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEDOUIN_SIT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BEDOUIN_SIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEDOUIN_SIT</ArtDefineTag>
@@ -5165,13 +5238,13 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_BEDOUIN_CAMP</ImprovementUpgrade>
-			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HAMLET</ImprovementUpgrade>
 			<iCultureRange>-1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bedouin Village -->
 			<Type>IMPROVEMENT_BEDOUIN_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TOWN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEDOUIN_VILLAGE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BEDOUIN_SIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEDOUIN_VILLAGE</ArtDefineTag>
@@ -5194,7 +5267,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_BEDOUIN_GATHERING</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_VILLAGE</ImprovementPillage>
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
@@ -5206,7 +5279,6 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
-			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
 			<iMinimumDistance>1</iMinimumDistance>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>2</iCultureControlStrength>
@@ -5214,6 +5286,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Citadel of Light-->
 			<Type>IMPROVEMENT_CITADEL_OF_LIGHT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITADEL_OF_LIGHT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CITADEL_OF_LIGHT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CITADEL_OF_LIGHT_STRATEGY</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CITADEL_OF_LIGHT</ArtDefineTag>
@@ -5248,12 +5321,11 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_CITADEL</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_CITADEL</ImprovementPillage>
 			<iHealRateChange>20</iHealRateChange>
 			<iRange>3</iRange>
 			<iRangeDefenseModifier>25</iRangeDefenseModifier>
 			<iVisibilityChange>3</iVisibilityChange>
-			<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
 			<PythonAtRange>atRangeCitadel(pCaster, pPlot)</PythonAtRange>
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>3</iCultureControlStrength>
@@ -5262,12 +5334,12 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Crypt -->
 			<Type>IMPROVEMENT_DTESH_CRYPT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WORKSHOP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_CRYPT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVEYARD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DTESHI_CRYPT</ArtDefineTag>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<iPillageGold>10</iPillageGold>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -5381,12 +5453,12 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Defiled Crypt -->
 			<Type>IMPROVEMENT_DTESH_CRYPT_DEFILED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WORKSHOP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_CRYPT_DEFILED</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVEYARD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DTESHI_CRYPT</ArtDefineTag>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<bPermanent>1</bPermanent>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -5494,6 +5566,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Corrupted Pasture -->
 			<Type>IMPROVEMENT_PASTURE_CORRUPTED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PASTURE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PASTURE_CORRUPTED</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CORRUPTED_PASTURE</ArtDefineTag>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5566,11 +5639,11 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'Teshi Pyre -->
 			<Type>IMPROVEMENT_DTESH_PYRE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PLANTATION</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_PYRE</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE</ArtDefineTag>
 			<bWater>0</bWater>
 			<iPillageGold>15</iPillageGold>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_ASH</BonusType>
@@ -5943,6 +6016,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'Teshi Pyre (Aquatic) -->
 			<Type>IMPROVEMENT_DTESH_PYRE_AQUATIC</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_PYRE_AQUATIC</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE_AQUATIC</ArtDefineTag>
 			<Help>TXT_KEY_IMPROVEMENT_DTESH_PYRE_AQUATIC_HELP</Help>
@@ -6061,11 +6135,11 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Catacombs -->
 			<Type>IMPROVEMENT_DTESH_CATACOMBS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MINE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_CATACOMBS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DTESH_CATACOMBS_PEDIA</Civilopedia>
 			<Help/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_MINE</ArtDefineTag>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
@@ -6161,6 +6235,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Mausoleum - Lesser -->
 			<Type>IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FORT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_LESSER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_FORT</ArtDefineTag>
@@ -6226,13 +6301,14 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_DTESH_MAUSOLEUM</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CASTLE</ImprovementUpgrade>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>2</iCultureControlStrength>
 			<iCultureCenterBonus>3</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Mausoleum -->
 			<Type>IMPROVEMENT_DTESH_MAUSOLEUM</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CASTLE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_CASTLE</ArtDefineTag>
@@ -6256,7 +6332,6 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bFort>1</bFort>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -6303,8 +6378,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_FORT</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CITADEL</ImprovementUpgrade>
 			<iRange>1</iRange>
 			<iRangeDefenseModifier>15</iRangeDefenseModifier>
 			<iVisibilityChange>1</iVisibilityChange>
@@ -6314,6 +6389,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Mausoleum - Greater -->
 			<Type>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITADEL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HAUNTED_CITADEL</ArtDefineTag>
@@ -6338,7 +6414,6 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<bFort>1</bFort>
-			<PrereqCivilization>CIVILIZATION_DTESH</PrereqCivilization>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
@@ -6385,7 +6460,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_DTESH_MAUSOLEUM</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_CASTLE</ImprovementPillage>
 			<iRange>2</iRange>
 			<iRangeDefenseModifier>25</iRangeDefenseModifier>
 			<iVisibilityChange>1</iVisibilityChange>
@@ -6395,6 +6470,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dwarven Mine (I) -->
 			<Type>IMPROVEMENT_DWARVEN_MINE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DWARVEN_MINE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DWARVEN_MINE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DWARVEN_MINE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DWARVEN_MINE</ArtDefineTag>
@@ -6538,13 +6614,14 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementUpgrade>IMPROVEMENT_DWARVEN_SETTLEMENT</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DWARVEN_SETTLEMENT</ImprovementUpgrade>
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dwarven Settlement (II) -->
 			<Type>IMPROVEMENT_DWARVEN_SETTLEMENT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DWARVEN_SETTLEMENT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DWARVEN_SETTLEMENT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DWARVEN_SETTLEMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DWARVEN_SETTLEMENT</ArtDefineTag>
@@ -6688,14 +6765,15 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_DWARVEN_MINE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_DWARVEN_HALL</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_DWARVEN_MINE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DWARVEN_HALL</ImprovementUpgrade>
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dwarven Hall (III) -->
 			<Type>IMPROVEMENT_DWARVEN_HALL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DWARVEN_HALL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DWARVEN_HALL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DWARVEN_HALL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DWARVEN_HALL</ArtDefineTag>
@@ -6839,8 +6917,8 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_DWARVEN_SETTLEMENT</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_DWARVEN_FORTRESS</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_DWARVEN_SETTLEMENT</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DWARVEN_FORTRESS</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_TAXATION</PrereqTech>
@@ -6857,6 +6935,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dwarven Fortress (IV) -->
 			<Type>IMPROVEMENT_DWARVEN_FORTRESS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DWARVEN_FORTRESS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DWARVEN_FORTRESS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DWARVEN_FORTRESS_PEDIA</Civilopedia>
 			<Help/>
@@ -7002,7 +7081,7 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_DWARVEN_HALL</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_DWARVEN_HALL</ImprovementPillage>
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
@@ -7028,6 +7107,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Enclave -->
 			<Type>IMPROVEMENT_ENCLAVE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_ENCLAVE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_ENCLAVE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_ENCLAVE_PEDIA</Civilopedia>
 			<Help/>
@@ -7039,7 +7119,7 @@
 			</YieldChanges>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iPillageGold>30</iPillageGold>
-			<ImprovementPillage>IMPROVEMENT_TOWN</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_TOWN</ImprovementPillage>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_TAXATION</PrereqTech>
@@ -7050,19 +7130,18 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
-			<PrereqCivilization>CIVILIZATION_KURIOTATES</PrereqCivilization>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Homestead -->
 			<Type>IMPROVEMENT_HOMESTEAD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HOMESTEAD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HOMESTEAD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_HOMESTEAD_PEDIA</Civilopedia>
 			<Help/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_HOMESTEAD</ArtDefineTag>
-			<PrereqCivilization>CIVILIZATION_GRIGORI</PrereqCivilization>
-			<ImprovementPillage>IMPROVEMENT_FARM</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_FARM</ImprovementPillage>
 			<FreeSpecialist>SPECIALIST_STATESMAN</FreeSpecialist>
 			<YieldChanges>
 				<iYieldChange>2</iYieldChange>
@@ -7253,6 +7332,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Cove -->
 			<Type>IMPROVEMENT_PIRATE_COVE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_COVE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_COVE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_COVE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -7285,13 +7365,14 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_PIRATE_HARBOR</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_PIRATE_HARBOR</ImprovementUpgrade>
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Harbor -->
 			<Type>IMPROVEMENT_PIRATE_HARBOR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_HARBOR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_HARBOR</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_COVE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -7308,8 +7389,8 @@
 			<iDefenseModifier>20</iDefenseModifier>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
-			<ImprovementPillage>IMPROVEMENT_PIRATE_COVE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_PIRATE_PORT</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_PIRATE_COVE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_PIRATE_PORT</ImprovementUpgrade>
 			<iHealRateChange>10</iHealRateChange>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
@@ -7317,6 +7398,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Port -->
 			<Type>IMPROVEMENT_PIRATE_PORT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_PORT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_PORT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_COVE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -7332,7 +7414,7 @@
 			<iDefenseModifier>30</iDefenseModifier>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
-			<ImprovementPillage>IMPROVEMENT_PIRATE_HARBOR</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_PIRATE_HARBOR</ImprovementPillage>
 			<iHealRateChange>20</iHealRateChange>
 			<iRange>2</iRange>
 			<iRangeDefenseModifier>10</iRangeDefenseModifier>
@@ -7342,6 +7424,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Yaranga -->
 			<Type>IMPROVEMENT_YARANGA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_YARANGA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_YARANGA</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_YARANGA_PEDIA</Civilopedia>
 			<Help/>
@@ -7353,8 +7436,7 @@
 			</YieldChanges>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iPillageGold>10</iPillageGold>
-			<ImprovementPillage>IMPROVEMENT_CAMP</ImprovementPillage>
-			<PrereqCivilization>CIVILIZATION_DOVIELLO</PrereqCivilization>
+			<ImprovementPillage>IMPROVEMENTCLASS_CAMP</ImprovementPillage>
 			<AllowsFeatures>
 				<AllowsFeature>
 					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
@@ -7497,6 +7579,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Aifon Isle -->                    <!-- Uniques -->
 			<Type>IMPROVEMENT_AIFON_ISLE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_AIFON_ISLE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_AIFON_ISLE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_AIFON_ISLE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_AIFON_ISLE</ArtDefineTag>
@@ -7540,6 +7623,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bair of Lacuna -->
 			<Type>IMPROVEMENT_BAIR_OF_LACUNA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BAIR_OF_LACUNA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BAIR_OF_LACUNA</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BAIR_OF_LACUNA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BAIR_OF_LACUNA</ArtDefineTag>
@@ -7626,6 +7710,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bradeline's Well -->
 			<Type>IMPROVEMENT_BRADELINES_WELL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BRADELINES_WELL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BRADELINES_WELL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BRADELINES_WELL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BRADELINES_WELL</ArtDefineTag>
@@ -7707,6 +7792,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Bradeline's Well (Purified) -->
 			<Type>IMPROVEMENT_BRADELINES_WELL_PURIFIED</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BRADELINES_WELL_PURIFIED</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BRADELINES_WELL_PURIFIED</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BRADELINES_WELL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BRADELINES_WELL</ArtDefineTag>
@@ -7748,6 +7834,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Broken Sepulcher -->
 			<Type>IMPROVEMENT_BROKEN_SEPULCHER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BROKEN_SEPULCHER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BROKEN_SEPULCHER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BROKEN_SEPULCHER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BROKEN_SEPULCHER</ArtDefineTag>
@@ -7840,6 +7927,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Cliffs of Kelle -->
 			<Type>IMPROVEMENT_CLIFFS_OF_TALI</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CLIFFS_OF_TALI</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE	</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CLIFFS_OF_KELLE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLIFFS_OF_KELLE</ArtDefineTag>
@@ -7907,6 +7995,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Clockwork Tower -->
 			<Type>IMPROVEMENT_CLOCKWORK_TOWER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CLOCKWORK_TOWER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CLOCKWORK_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CLOCKWORK_TOWER</ArtDefineTag>
@@ -7992,6 +8081,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dragon Bones -->
 			<Type>IMPROVEMENT_DRAGON_BONES</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DRAGON_BONES</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DRAGON_BONES</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DRAGON_BONES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DRAGON_BONES</ArtDefineTag>
@@ -8044,6 +8134,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Foxford -->
 			<Type>IMPROVEMENT_FOXFORD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FOXFORD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FOXFORD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FOXFORD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOODY_HUT</ArtDefineTag>
@@ -8085,6 +8176,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Guardian -->
 			<Type>IMPROVEMENT_GUARDIAN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GUARDIAN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GUARDIAN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_GUARDIAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_GUARDIAN</ArtDefineTag>
@@ -8137,6 +8229,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Letum Frigus -->
 			<Type>IMPROVEMENT_LETUM_FRIGUS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LETUM_FRIGUS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LETUM_FRIGUS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_LETUM_FRIGUS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LETUM_FRIGUS</ArtDefineTag>
@@ -8205,6 +8298,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Maelstrom -->
 			<Type>IMPROVEMENT_MAELSTROM</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAELSTROM</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAELSTROM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAELSTROM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MAELSTROM</ArtDefineTag>
@@ -8221,6 +8315,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mirror of Heaven -->
 			<Type>IMPROVEMENT_MIRROR_OF_HEAVEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MIRROR_OF_HEAVEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MIRROR_OF_HEAVEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MIRROR_OF_HEAVEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MIRROR_OF_HEAVEN</ArtDefineTag>
@@ -8259,6 +8354,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Monster Skeleton -->
 			<Type>IMPROVEMENT_MONSTER_SKELETON</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MONSTER_SKELETON</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MONSTER_SKELETON</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MONSTER_SKELETON</ArtDefineTag>
@@ -8266,6 +8362,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mount Kalshekk -->
 			<Type>IMPROVEMENT_MOUNT_KALSHEKK</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MOUNT_KALSHEKK</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MOUNT_KALSHEKK</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MOUNT_KALSHEKK_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MOUNT_KALSHEKK</ArtDefineTag>
@@ -8330,6 +8427,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Odio's Prison -->
 			<Type>IMPROVEMENT_ODIOS_PRISON</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_ODIOS_PRISON</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_ODIOS_PRISON</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_ODIOS_PRISON_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_ODIOS_PRISON</ArtDefineTag>
@@ -8395,6 +8493,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pool of Tears -->
 			<Type>IMPROVEMENT_POOL_OF_TEARS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_POOL_OF_TEARS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_POOL_OF_TEARS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_POOL_OF_TEARS_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_POOL_OF_TEARS_HELP</Help>
@@ -8428,6 +8527,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pyre of the Seraphic -->
 			<Type>IMPROVEMENT_PYRE_OF_THE_SERAPHIC</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PYRE_OF_THE_SERAPHIC</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PYRE_OF_THE_SERAPHIC</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PYRE_OF_THE_SERAPHIC_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE_OF_THE_SERAPHIC</ArtDefineTag>
@@ -8503,6 +8603,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Remnants of Patria -->
 			<Type>IMPROVEMENT_REMNANTS_OF_PATRIA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_REMNANTS_OF_PATRIA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_REMNANTS_OF_PATRIA</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_REMNANTS_OF_PATRIA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_REMNANTS_OF_PATRIA</ArtDefineTag>
@@ -8594,6 +8695,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ring of Carcer -->
 			<Type>IMPROVEMENT_RING_OF_CARCER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RING_OF_CARCER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RING_OF_CARCER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RING_OF_CARCER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RING_OF_CARCER</ArtDefineTag>
@@ -8609,6 +8711,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Rinwell -->
 			<Type>IMPROVEMENT_RINWELL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RINWELL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RINWELL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RINWELL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RINWELL</ArtDefineTag>
@@ -8625,7 +8728,7 @@
 				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<iBasePlotCounterModify>10</iBasePlotCounterModify>
-			<ImprovementUpgrade>IMPROVEMENT_RINWELL2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_RINWELL2</ImprovementUpgrade>
 			<bUnique>1</bUnique>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>4</iCultureControlStrength>
@@ -8633,6 +8736,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Rinwell 2 -->
 			<Type>IMPROVEMENT_RINWELL2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RINWELL2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RINWELL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RINWELL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RINWELL</ArtDefineTag>
@@ -8642,7 +8746,7 @@
 			<bActsAsCity>1</bActsAsCity>
 			<iUpgradeTime>100</iUpgradeTime>
 			<bOutsideBorders>1</bOutsideBorders>
-			<ImprovementUpgrade>IMPROVEMENT_RINWELL3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_RINWELL3</ImprovementUpgrade>
 			<bUnique>1</bUnique>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
@@ -8655,6 +8759,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Rinwell 3 -->
 			<Type>IMPROVEMENT_RINWELL3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_RINWELL3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_RINWELL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_RINWELL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RINWELL</ArtDefineTag>
@@ -8675,6 +8780,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Seven Pines -->
 			<Type>IMPROVEMENT_SEVEN_PINES</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEVEN_PINES</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SEVEN_PINES</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_SEVEN_PINES_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_SEVEN_PINES_HELP</Help>
@@ -8733,6 +8839,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sirona's Beacon -->
 			<Type>IMPROVEMENT_SIRONAS_BEACON</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SIRONAS_BEACON</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SIRONAS_BEACON</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_SIRONAS_BEACON_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SIRONAS_BEACON</ArtDefineTag>
@@ -8779,6 +8886,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Standing Stones -->
 			<Type>IMPROVEMENT_STANDING_STONES</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STANDING_STONES</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STANDING_STONES</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STANDING_STONES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STANDING_STONES</ArtDefineTag>
@@ -8846,6 +8954,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Tower of Eyes -->
 			<Type>IMPROVEMENT_TOWER_OF_EYES</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TOWER_OF_EYES</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TOWER_OF_EYES</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_TOWER_OF_EYES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_TOWER_OF_EYES</ArtDefineTag>
@@ -8932,6 +9041,7 @@
 		</ImprovementInfo>		
 		<ImprovementInfo><!-- Tomb of Sucellus -->
 			<Type>IMPROVEMENT_TOMB_OF_SUCELLUS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TOMB_OF_SUCELLUS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TOMB_OF_SUCELLUS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_TOMB_OF_SUCELLUS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_TOMB_OF_SUCELLUS</ArtDefineTag>
@@ -8977,6 +9087,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Yggdrasil -->
 			<Type>IMPROVEMENT_YGGDRASIL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_YGGDRASIL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_YGGDRASIL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_YGGDRASIL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_YGGDRASIL</ArtDefineTag>
@@ -9036,6 +9147,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Well of Souls -->
 			<Type>IMPROVEMENT_WELL_OF_SOULS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WELL_OF_SOULS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WELL_OF_SOULS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WELL_OF_SOULS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BRADELINES_WELL</ArtDefineTag>
@@ -9117,6 +9229,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Well of Souls (Open) -->
 			<Type>IMPROVEMENT_WELL_OF_SOULS_OPEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WELL_OF_SOULS_OPEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WELL_OF_SOULS_OPEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WELL_OF_SOULS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BRADELINES_WELL</ArtDefineTag>
@@ -9158,6 +9271,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Air Mana Node -->                 <!-- Mana Nodes -->
 			<Type>IMPROVEMENT_MANA_AIR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_AIR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_AIR</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_AIR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_AIR</ArtDefineTag>
@@ -9191,6 +9305,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Body Mana Node -->
 			<Type>IMPROVEMENT_MANA_BODY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_BODY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_BODY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_BODY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_BODY</ArtDefineTag>
@@ -9224,6 +9339,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Chaos Mana Node -->
 			<Type>IMPROVEMENT_MANA_CHAOS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_CHAOS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_CHAOS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_CHAOS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_CHAOS</ArtDefineTag>
@@ -9257,6 +9373,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Creation Mana Node -->
 			<Type>IMPROVEMENT_MANA_CREATION</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_CREATION</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_CREATION</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_CREATION_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_CREATION</ArtDefineTag>
@@ -9290,6 +9407,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Death Mana Node -->
 			<Type>IMPROVEMENT_MANA_DEATH</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_DEATH</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_DEATH</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_DEATH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_DEATH</ArtDefineTag>
@@ -9323,6 +9441,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dimensional Mana Node -->
 			<Type>IMPROVEMENT_MANA_DIMENSIONAL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_DIMENSIONAL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_DIMENSIONAL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_DIMENSIONAL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_DIMENSIONAL</ArtDefineTag>
@@ -9356,6 +9475,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Earth Mana Node -->
 			<Type>IMPROVEMENT_MANA_EARTH</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_EARTH</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_EARTH</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_EARTH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_EARTH</ArtDefineTag>
@@ -9389,6 +9509,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Enchantment Mana Node -->
 			<Type>IMPROVEMENT_MANA_ENCHANTMENT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_ENCHANTMENT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_ENCHANTMENT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_ENCHANTMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_ENCHANTMENT</ArtDefineTag>
@@ -9422,6 +9543,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Entropy Mana Node -->
 			<Type>IMPROVEMENT_MANA_ENTROPY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_ENTROPY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_ENTROPY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_ENTROPY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_ENTROPY</ArtDefineTag>
@@ -9455,6 +9577,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Fire Mana Node -->
 			<Type>IMPROVEMENT_MANA_FIRE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_FIRE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_FIRE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_FIRE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_FIRE</ArtDefineTag>
@@ -9488,6 +9611,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Force Mana Node -->
 			<Type>IMPROVEMENT_MANA_FORCE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_FORCE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_FORCE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_FORCE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_FORCE</ArtDefineTag>
@@ -9521,6 +9645,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ice Mana Node -->
 			<Type>IMPROVEMENT_MANA_ICE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_ICE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_ICE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_ICE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_ICE</ArtDefineTag>
@@ -9554,6 +9679,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Law Mana Node -->
 			<Type>IMPROVEMENT_MANA_LAW</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_LAW</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_LAW</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_LAW_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_LAW</ArtDefineTag>
@@ -9587,6 +9713,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Life Mana Node -->
 			<Type>IMPROVEMENT_MANA_LIFE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_LIFE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_LIFE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_LIFE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_LIFE</ArtDefineTag>
@@ -9620,6 +9747,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Metamagic Mana Node -->
 			<Type>IMPROVEMENT_MANA_METAMAGIC</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_METAMAGIC</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_METAMAGIC</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_METAMAGIC_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_METAMAGIC</ArtDefineTag>
@@ -9653,6 +9781,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Mind Mana Node -->
 			<Type>IMPROVEMENT_MANA_MIND</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_MIND</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_MIND</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_MIND_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_MIND</ArtDefineTag>
@@ -9686,6 +9815,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Nature Mana Node -->
 			<Type>IMPROVEMENT_MANA_NATURE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_NATURE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_NATURE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_NATURE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_NATURE</ArtDefineTag>
@@ -9719,6 +9849,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Refined Mana Refinery -->
 			<Type>IMPROVEMENT_REFINERY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_REFINERY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_REFINERY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_REFINERY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_REFINERY</ArtDefineTag>
@@ -9769,6 +9900,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Shadow Mana Node -->
 			<Type>IMPROVEMENT_MANA_SHADOW</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_SHADOW</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_SHADOW</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_SHADOW_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_SHADOW</ArtDefineTag>
@@ -9802,6 +9934,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Spirit Mana Node -->
 			<Type>IMPROVEMENT_MANA_SPIRIT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_SPIRIT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_SPIRIT</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_SPIRIT</ArtDefineTag>
@@ -9835,6 +9968,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sun Mana Node -->
 			<Type>IMPROVEMENT_MANA_SUN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_SUN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_SUN</Description>
 			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_SUN</ArtDefineTag>
@@ -9868,6 +10002,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Water Mana Node -->
 			<Type>IMPROVEMENT_MANA_WATER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MANA_WATER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_WATER</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_WATER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_WATER</ArtDefineTag>

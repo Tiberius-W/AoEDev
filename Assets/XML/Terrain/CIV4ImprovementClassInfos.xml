@@ -1,0 +1,826 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Dummy -->
+			<Type>IMPROVEMENTCLASS_DUMMY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DUMMY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ash Field -->
+			<Type>IMPROVEMENTCLASS_ASH_FIELD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ASH_FIELD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Cage -->
+			<Type>IMPROVEMENTCLASS_CAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Camp -->
+			<Type>IMPROVEMENTCLASS_CAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Castle -->
+			<Type>IMPROVEMENTCLASS_CASTLE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CASTLE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Citadel -->
+			<Type>IMPROVEMENTCLASS_CITADEL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CITADEL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- City Ruins -->
+			<Type>IMPROVEMENTCLASS_CITY_RUINS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CITY_RUINS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ancient Ruins -->
+			<Type>IMPROVEMENTCLASS_CITY_RUINS_ANCIENT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CITY_RUINS_ANCIENT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Cottage -->
+			<Type>IMPROVEMENTCLASS_COTTAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_COTTAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Farm -->
+			<Type>IMPROVEMENTCLASS_FARM</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FARM</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Fishing Boats -->
+			<Type>IMPROVEMENTCLASS_FISHING_BOATS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FISHING_BOATS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Fort -->
+			<Type>IMPROVEMENTCLASS_FORT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FORT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Hamlet -->
+			<Type>IMPROVEMENTCLASS_HAMLET</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HAMLET</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Hellfire -->
+			<Type>IMPROVEMENTCLASS_HELLFIRE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HELLFIRE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Jungle Altar -->
+			<Type>IMPROVEMENTCLASS_JUNGLE_ALTAR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_JUNGLE_ALTAR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Lumbermill -->
+			<Type>IMPROVEMENTCLASS_LUMBERMILL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LUMBERMILL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mine -->
+			<Type>IMPROVEMENTCLASS_MINE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MINE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Necrototem -->
+			<Type>IMPROVEMENTCLASS_NECROTOTEM</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_NECROTOTEM</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pasture -->
+			<Type>IMPROVEMENTCLASS_PASTURE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PASTURE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Penguins -->
+			<Type>IMPROVEMENTCLASS_PENGUINS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PENGUINS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Plantation -->
+			<Type>IMPROVEMENTCLASS_PLANTATION</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PLANTATION</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Portal -->
+			<Type>IMPROVEMENTCLASS_PORTAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PORTAL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Quarry -->
+			<Type>IMPROVEMENTCLASS_QUARRY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_QUARRY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Smoke -->
+			<Type>IMPROVEMENTCLASS_SMOKE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SMOKE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Snake Pillar -->
+			<Type>IMPROVEMENTCLASS_SNAKE_PILLAR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SNAKE_PILLAR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Swamp -->
+			<Type>IMPROVEMENTCLASS_SWAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SWAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Tower -->
+			<Type>IMPROVEMENTCLASS_TOWER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TOWER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Town -->
+			<Type>IMPROVEMENTCLASS_TOWN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TOWN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Village -->
+			<Type>IMPROVEMENTCLASS_VILLAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_VILLAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Warning Post -->
+			<Type>IMPROVEMENTCLASS_WARNING_POST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WARNING_POST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Watermill -->
+			<Type>IMPROVEMENTCLASS_WATERMILL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WATERMILL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Windmill -->
+			<Type>IMPROVEMENTCLASS_WINDMILL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WINDMILL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Winery -->
+			<Type>IMPROVEMENTCLASS_WINERY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WINERY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Workshop -->
+			<Type>IMPROVEMENTCLASS_WORKSHOP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WORKSHOP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Worked Tile -->
+			<Type>IMPROVEMENTCLASS_LAND_WORKED</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LAND_WORKED</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Worked Water -->
+			<Type>IMPROVEMENTCLASS_WATER_WORKED</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WATER_WORKED</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bandit Encampment -->
+			<Type>IMPROVEMENTCLASS_BANDIT_ENCAMPMENT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BANDIT_ENCAMPMENT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bandit Hideout -->
+			<Type>IMPROVEMENTCLASS_BANDIT_HIDEOUT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BANDIT_HIDEOUT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bandit Fortress -->
+			<Type>IMPROVEMENTCLASS_BANDIT_FORTRESS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BANDIT_FORTRESS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Barrow -->
+			<Type>IMPROVEMENTCLASS_BARROW</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BARROW</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Gloomy Barrow -->
+			<Type>IMPROVEMENTCLASS_BARROW_GLOOMY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BARROW_GLOOMY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Howling Barrow -->
+			<Type>IMPROVEMENTCLASS_BARROW_HOWLING</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BARROW_HOWLING</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bear Den -->
+			<Type>IMPROVEMENTCLASS_BEAR_DEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BEAR_DEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Blighted Forest -->
+			<Type>IMPROVEMENTCLASS_BLIGHTED_FOREST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BLIGHTED_FOREST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Centaur Camp -->
+			<Type>IMPROVEMENTCLASS_CENTAUR_CAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CENTAUR_CAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Centaur Warcamp -->
+			<Type>IMPROVEMENTCLASS_CENTAUR_WARCAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CENTAUR_WARCAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Centaur Village -->
+			<Type>IMPROVEMENTCLASS_CENTAUR_VILLAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CENTAUR_VILLAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dungeon -->
+			<Type>IMPROVEMENTCLASS_DUNGEON</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DUNGEON</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mage Tower -->
+			<Type>IMPROVEMENTCLASS_MAGE_TOWER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAGE_TOWER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mage Tower 2 -->
+			<Type>IMPROVEMENTCLASS_MAGE_TOWER_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAGE_TOWER_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mage Tower 3 -->
+			<Type>IMPROVEMENTCLASS_MAGE_TOWER_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAGE_TOWER_3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Goblin Camp -->
+			<Type>IMPROVEMENTCLASS_GOBLIN_CAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GOBLIN_CAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Goblin Village -->
+			<Type>IMPROVEMENTCLASS_GOBLIN_VILLAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GOBLIN_VILLAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Goblin Town -->
+			<Type>IMPROVEMENTCLASS_GOBLIN_TOWN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GOBLIN_TOWN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Goblin Fort (Cleared Out) -->
+			<Type>IMPROVEMENTCLASS_GOBLIN_FORT_CLEARED</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GOBLIN_FORT_CLEARED</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Goody Hut -->
+			<Type>IMPROVEMENTCLASS_GOODY_HUT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GOODY_HUT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Graveyard -->
+			<Type>IMPROVEMENTCLASS_GRAVEYARD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GRAVEYARD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Lion Den -->
+			<Type>IMPROVEMENTCLASS_LION_DEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LION_DEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Shipwreck -->
+			<Type>IMPROVEMENTCLASS_SHIP_WRECK</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SHIP_WRECK</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Staedding -->
+			<Type>IMPROVEMENTCLASS_MARNOK_HILLGIANT_STEADING</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MARNOK_HILLGIANT_STEADING</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Old Staedding -->
+			<Type>IMPROVEMENTCLASS_STAEDDING_OLD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STAEDDING_OLD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Legendary Staedding -->
+			<Type>IMPROVEMENTCLASS_STAEDDING_LEGENDARY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STAEDDING_LEGENDARY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ruins -->
+			<Type>IMPROVEMENTCLASS_RUINS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RUINS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sprawling Ruins -->
+			<Type>IMPROVEMENTCLASS_RUINS_SPRAWLING</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RUINS_SPRAWLING</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Colossal Ruins -->
+			<Type>IMPROVEMENTCLASS_RUINS_COLOSSAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RUINS_COLOSSAL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Wolf Den -->
+			<Type>IMPROVEMENTCLASS_DEN_WOLF</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DEN_WOLF</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Spider Den -->
+			<Type>IMPROVEMENTCLASS_DEN_SPIDER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DEN_SPIDER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Hippogriff Weyr -->
+			<Type>IMPROVEMENTCLASS_HIPPOGRIFF_WEYR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HIPPOGRIFF_WEYR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Griffin Weyr (T2) -->
+			<Type>IMPROVEMENTCLASS_GRIFFIN_WEYR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GRIFFIN_WEYR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Frostling Encampment -->
+			<Type>IMPROVEMENTCLASS_FROSTLING_ENCAMPMENT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FROSTLING_ENCAMPMENT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Frostling Camp -->
+			<Type>IMPROVEMENTCLASS_FROSTLING_CAMP</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FROSTLING_CAMP</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Frostling Village -->
+			<Type>IMPROVEMENTCLASS_FROSTLING_VILLAGE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FROSTLING_VILLAGE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Citadel of Light -->
+			<Type>IMPROVEMENTCLASS_CITADEL_OF_LIGHT</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CITADEL_OF_LIGHT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dwarven Mine (I) -->
+			<Type>IMPROVEMENTCLASS_DWARVEN_MINE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DWARVEN_MINE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dwarven Settlement (II) -->
+			<Type>IMPROVEMENTCLASS_DWARVEN_SETTLEMENT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DWARVEN_SETTLEMENT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dwarven Hall (III) -->
+			<Type>IMPROVEMENTCLASS_DWARVEN_HALL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DWARVEN_HALL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dwarven Fortress (IV) -->
+			<Type>IMPROVEMENTCLASS_DWARVEN_FORTRESS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DWARVEN_FORTRESS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Enclave -->
+			<Type>IMPROVEMENTCLASS_ENCLAVE</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ENCLAVE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Homestead -->
+			<Type>IMPROVEMENTCLASS_HOMESTEAD</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_HOMESTEAD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Cove -->
+			<Type>IMPROVEMENTCLASS_PIRATE_COVE</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_COVE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Harbor -->
+			<Type>IMPROVEMENTCLASS_PIRATE_HARBOR</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_HARBOR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pirate Port -->
+			<Type>IMPROVEMENTCLASS_PIRATE_PORT</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PIRATE_PORT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Yaranga -->
+			<Type>IMPROVEMENTCLASS_YARANGA</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_YARANGA</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Aifon Isle -->
+			<Type>IMPROVEMENTCLASS_AIFON_ISLE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_AIFON_ISLE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bair of Lacuna -->
+			<Type>IMPROVEMENTCLASS_BAIR_OF_LACUNA</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BAIR_OF_LACUNA</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bradeline's Well -->
+			<Type>IMPROVEMENTCLASS_BRADELINES_WELL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BRADELINES_WELL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bradeline's Well (Purified) -->
+			<Type>IMPROVEMENTCLASS_BRADELINES_WELL_PURIFIED</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BRADELINES_WELL_PURIFIED</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Broken Sepulcher -->
+			<Type>IMPROVEMENTCLASS_BROKEN_SEPULCHER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BROKEN_SEPULCHER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Cliffs of Kelle -->
+			<Type>IMPROVEMENTCLASS_CLIFFS_OF_TALI</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CLIFFS_OF_TALI</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Clockwork Tower -->
+			<Type>IMPROVEMENTCLASS_CLOCKWORK_TOWER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CLOCKWORK_TOWER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dragon Bones -->
+			<Type>IMPROVEMENTCLASS_DRAGON_BONES</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DRAGON_BONES</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Foxford -->
+			<Type>IMPROVEMENTCLASS_FOXFORD</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FOXFORD</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Guardian -->
+			<Type>IMPROVEMENTCLASS_GUARDIAN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_GUARDIAN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Letum Frigus -->
+			<Type>IMPROVEMENTCLASS_LETUM_FRIGUS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LETUM_FRIGUS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Maelstrom -->
+			<Type>IMPROVEMENTCLASS_MAELSTROM</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAELSTROM</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mirror of Heaven -->
+			<Type>IMPROVEMENTCLASS_MIRROR_OF_HEAVEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MIRROR_OF_HEAVEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Monster Skeleton -->
+			<Type>IMPROVEMENTCLASS_MONSTER_SKELETON</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MONSTER_SKELETON</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mount Kalshekk -->
+			<Type>IMPROVEMENTCLASS_MOUNT_KALSHEKK</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MOUNT_KALSHEKK</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Odio's Prison -->
+			<Type>IMPROVEMENTCLASS_ODIOS_PRISON</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ODIOS_PRISON</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pool of Tears -->
+			<Type>IMPROVEMENTCLASS_POOL_OF_TEARS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_POOL_OF_TEARS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Pyre of the Seraphic -->
+			<Type>IMPROVEMENTCLASS_PYRE_OF_THE_SERAPHIC</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PYRE_OF_THE_SERAPHIC</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Remnants of Patria -->
+			<Type>IMPROVEMENTCLASS_REMNANTS_OF_PATRIA</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_REMNANTS_OF_PATRIA</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ring of Carcer -->
+			<Type>IMPROVEMENTCLASS_RING_OF_CARCER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RING_OF_CARCER</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Rinwell -->
+			<Type>IMPROVEMENTCLASS_RINWELL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RINWELL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Rinwell 2 -->
+			<Type>IMPROVEMENTCLASS_RINWELL2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RINWELL2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Rinwell 3 -->
+			<Type>IMPROVEMENTCLASS_RINWELL3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_RINWELL3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Seven Pines -->
+			<Type>IMPROVEMENTCLASS_SEVEN_PINES</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SEVEN_PINES</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sirona's Beacon -->
+			<Type>IMPROVEMENTCLASS_SIRONAS_BEACON</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SIRONAS_BEACON</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Standing Stones -->
+			<Type>IMPROVEMENTCLASS_STANDING_STONES</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STANDING_STONES</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Tower of Eyes -->
+			<Type>IMPROVEMENTCLASS_TOWER_OF_EYES</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TOWER_OF_EYES</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Tomb of Sucellus -->
+			<Type>IMPROVEMENTCLASS_TOMB_OF_SUCELLUS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_TOMB_OF_SUCELLUS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Yggdrasil -->
+			<Type>IMPROVEMENTCLASS_YGGDRASIL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_YGGDRASIL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Well of Souls -->
+			<Type>IMPROVEMENTCLASS_WELL_OF_SOULS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WELL_OF_SOULS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Well of Souls (Open) -->
+			<Type>IMPROVEMENTCLASS_WELL_OF_SOULS_OPEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WELL_OF_SOULS_OPEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Air Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_AIR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_AIR</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Body Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_BODY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_BODY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Chaos Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_CHAOS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_CHAOS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Creation Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_CREATION</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_CREATION</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Death Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_DEATH</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_DEATH</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dimensional Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_DIMENSIONAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_DIMENSIONAL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Earth Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_EARTH</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_EARTH</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Enchantment Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_ENCHANTMENT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_ENCHANTMENT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Entropy Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_ENTROPY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_ENTROPY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Fire Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_FIRE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_FIRE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Force Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_FORCE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_FORCE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ice Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_ICE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_ICE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Law Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_LAW</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_LAW</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Life Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_LIFE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_LIFE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Metamagic Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_METAMAGIC</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_METAMAGIC</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Mind Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_MIND</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_MIND</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Nature Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_NATURE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_NATURE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Refined Mana Refinery -->
+			<Type>IMPROVEMENTCLASS_REFINERY</Type>
+			<Description></Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_REFINERY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Shadow Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_SHADOW</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_SHADOW</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Spirit Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_SPIRIT</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_SPIRIT</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sun Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_SUN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_SUN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Water Mana Node -->
+			<Type>IMPROVEMENTCLASS_MANA_WATER</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MANA_WATER</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>

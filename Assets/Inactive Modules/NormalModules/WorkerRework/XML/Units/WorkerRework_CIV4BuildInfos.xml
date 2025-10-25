@@ -15,7 +15,7 @@
 			<PrereqTech>NONE</PrereqTech>
 			<iTime>2000</iTime>
 			<iCost>0</iCost>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>

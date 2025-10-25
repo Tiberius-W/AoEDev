@@ -8,6 +8,7 @@
 	<ImprovementInfos>
 		<ImprovementInfo><!-- Camp-->
 			<Type>IMPROVEMENT_CAMP_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CAMP_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Civilopedia>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
@@ -18,7 +19,7 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>-5</iYieldChange> <!-- Note: Other civs could leave improvement but expect the faction favor of no coins, might still be worth it -->
 			</YieldChanges>
-			<ImprovementUpgrade>IMPROVEMENT_FARM_ANSCARCA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_FARM_ANSCARCA</ImprovementUpgrade>
 			<iUpgradeTime>25</iUpgradeTime>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
@@ -490,6 +491,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Farm-->
 			<Type>IMPROVEMENT_FARM_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FARM_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FARM</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Civilopedia>
 			<Help/>
@@ -500,7 +502,7 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>-5</iYieldChange>
 			</YieldChanges>
-			<ImprovementUpgrade>IMPROVEMENT_HARVESTER_ANSCARCA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HARVESTER_ANSCARCA</ImprovementUpgrade>
 			<iUpgradeTime>50</iUpgradeTime>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
@@ -972,6 +974,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Harvester -->
 			<Type>IMPROVEMENT_HARVESTER_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HARVESTER_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HARVESTER_ANSCARCA</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Civilopedia>
 			<Help/>
@@ -982,7 +985,7 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>-5</iYieldChange>
 			</YieldChanges>
-			<ImprovementUpgrade>IMPROVEMENT_REAPER_ANSCARCA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_REAPER_ANSCARCA</ImprovementUpgrade>
 			<iUpgradeTime>100</iUpgradeTime>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAirBombDefense>5</iAirBombDefense>
@@ -1454,6 +1457,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Reaper -->
 			<Type>IMPROVEMENT_REAPER_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_REAPER_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_REAPER_ANSCARCA</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Civilopedia>
 			<Help/>
@@ -1942,6 +1946,7 @@
 		
 		<ImprovementInfo><!-- Bore -->
 			<Type>IMPROVEMENT_BORE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BORE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BORE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Civilopedia>
 			<Help/>
@@ -1952,7 +1957,7 @@
 				<iYieldChange>1</iYieldChange>
 				<iYieldChange>-5</iYieldChange>
 			</YieldChanges>
-			<ImprovementUpgrade>IMPROVEMENT_SIPHON_ANSCARCA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SIPHON_ANSCARCA</ImprovementUpgrade>
 			<iUpgradeTime>25</iUpgradeTime>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>10</iAirBombDefense>
@@ -2157,6 +2162,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- SIPHON -->
 			<Type>IMPROVEMENT_SIPHON_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SIPHON_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SIPHON</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Civilopedia>
 			<Help/>
@@ -2167,7 +2173,7 @@
 				<iYieldChange>2</iYieldChange>
 				<iYieldChange>-5</iYieldChange>
 			</YieldChanges>
-			<ImprovementUpgrade>IMPROVEMENT_EXTRACTOR</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_EXTRACTOR</ImprovementUpgrade>
 			<iUpgradeTime>50</iUpgradeTime>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>10</iAirBombDefense>
@@ -2329,6 +2335,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Extractor -->
 			<Type>IMPROVEMENT_EXTRACTOR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_EXTRACTOR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_EXTRACTOR</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Civilopedia>
 			<Help/>
@@ -2500,12 +2507,13 @@
 		
 		<ImprovementInfo><!-- Node I -->
 			<Type>IMPROVEMENT_NODE_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_NODE_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_I</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE</ArtDefineTag>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
 			<iUpgradeTime>10</iUpgradeTime>
-			<ImprovementUpgrade>IMPROVEMENT_SPIKE_ANSCARCA</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SPIKE_ANSCARCA</ImprovementUpgrade>
 			<iDefenseModifier>-80</iDefenseModifier> <!-- Have to prevent enemy from reaching -->
 			<iHealRateChange>5</iHealRateChange>
 			<iCultureControlStrength>1</iCultureControlStrength>
@@ -2574,13 +2582,14 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Node II -->
 			<Type>IMPROVEMENT_SPIKE_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SPIKE_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_II</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE</ArtDefineTag>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
 			<iUpgradeTime>40</iUpgradeTime>
-			<ImprovementPillage>IMPROVEMENT_NODE_ANSCARCA</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_SPIRE_ANSCARCA</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_NODE_ANSCARCA</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SPIRE_ANSCARCA</ImprovementUpgrade>
 			<iDefenseModifier>-80</iDefenseModifier> <!-- Have to prevent enemy from reaching -->
 			<iVisibilityChange>1</iVisibilityChange>
 			<iHealRateChange>10</iHealRateChange>
@@ -2653,13 +2662,14 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Node III -->
 			<Type>IMPROVEMENT_SPIRE_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SPIRE_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_III</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE</ArtDefineTag>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
 			<iUpgradeTime>100</iUpgradeTime>
-			<ImprovementPillage>IMPROVEMENT_SPIKE_ANSCARCA</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_GREATER_SPIRE_ANSCARCA</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_SPIKE_ANSCARCA</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_GREATER_SPIRE_ANSCARCA</ImprovementUpgrade>
 			<iDefenseModifier>-80</iDefenseModifier> <!-- Have to prevent enemy from reaching -->
 			<iHealRateChange>15</iHealRateChange>
 			<iRange>3</iRange>
@@ -2732,11 +2742,12 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Node IV -->
 			<Type>IMPROVEMENT_GREATER_SPIRE_ANSCARCA</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GREATER_SPIRE_ANSCARCA</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_IV</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NODE_ANSCARCA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PYRE</ArtDefineTag>
 			<PrereqCivilization>CIVILIZATION_ANSCARCA</PrereqCivilization>
-			<ImprovementPillage>IMPROVEMENT_SPIRE_ANSCARCA</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_SPIRE_ANSCARCA</ImprovementPillage>
 			<iDefenseModifier>-40</iDefenseModifier> <!-- Have to prevent enemy from reaching -->
 			<iHealRateChange>25</iHealRateChange>
 			<iRange>5</iRange>

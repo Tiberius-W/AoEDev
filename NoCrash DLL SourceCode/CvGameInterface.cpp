@@ -100,7 +100,7 @@ void CvGame::updateColoredPlots()
 
 					if (NO_BUILD != eBestBuild)
 					{
-						if( GC.getBuildInfo(eBestBuild).getImprovement() != NO_IMPROVEMENT && eImprovement != GC.getBuildInfo(eBestBuild).getImprovement() )
+						if( GC.getBuildInfo(eBestBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && eImprovement != GET_PLAYER(pWorkingCity->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()) && GET_PLAYER(pWorkingCity->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()) != NO_IMPROVEMENT)
 						{
 							gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT")).getColor(), PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
 						}

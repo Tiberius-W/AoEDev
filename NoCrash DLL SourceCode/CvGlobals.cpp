@@ -2280,6 +2280,22 @@ CvBuildingClassInfo& CvGlobals::getBuildingClassInfo(BuildingClassTypes eBuildin
 	FAssert(eBuildingClassNum < GC.getNumBuildingClassInfos());
 	return *(m_paBuildingClassInfo[eBuildingClassNum]);
 }
+int CvGlobals::getNumImprovementClassInfos()
+{
+	return (int)m_paImprovementClassInfo.size();
+}
+
+std::vector<CvImprovementClassInfo*>& CvGlobals::getImprovementClassInfo()	// For Moose - XML Load Util, CvInfos
+{
+	return m_paImprovementClassInfo;
+}
+
+CvImprovementClassInfo& CvGlobals::getImprovementClassInfo(ImprovementClassTypes eBuildingClassNum)
+{
+	FAssert(eBuildingClassNum > -1);
+	FAssert(eBuildingClassNum < GC.getNumImprovementClassInfos());
+	return *(m_paImprovementClassInfo[eBuildingClassNum]);
+}
 
 int CvGlobals::getNumBuildingInfos()
 {

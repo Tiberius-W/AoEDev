@@ -1656,6 +1656,7 @@ public:
 	void changeWorkRateModify(int iChange);
 	CvPlot* getOpenPlot() const;
 	void betray(PlayerTypes ePlayer);
+	ImprovementTypes getUnitImprovement(ImprovementClassTypes iClass) const;
 
 /*************************************************************************************************/
 /**	Xienwolf Tweak							03/27/09											**/

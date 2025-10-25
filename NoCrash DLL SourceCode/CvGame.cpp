@@ -10844,7 +10844,10 @@ void CvGame::createLairs()
 				}
 			}
 		}
-
+		if (eLair == NO_IMPROVEMENT)
+		{
+			continue;
+		}
 		iLairFlags = iFlags;
 		if (GC.getImprovementInfo(eLair).isWater())
 		{

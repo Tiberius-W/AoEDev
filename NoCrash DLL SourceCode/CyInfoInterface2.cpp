@@ -278,7 +278,7 @@ void CyInfoPythonInterface2()
 		.def("getTime", &CvBuildInfo::getTime, "int ()")
 		.def("getCost", &CvBuildInfo::getCost, "int ()")
 		.def("getTechPrereq", &CvBuildInfo::getTechPrereq, "int ()")
-		.def("getImprovement", &CvBuildInfo::getImprovement, "int ()")
+		.def("getImprovementClass", &CvBuildInfo::getImprovementClass, "int ()")
 		.def("getRoute", &CvBuildInfo::getRoute, "int ()")
 		.def("getEntityEvent", &CvBuildInfo::getEntityEvent, "int ()")
 		.def("getMissionType", &CvBuildInfo::getMissionType, "int ()")
@@ -422,12 +422,13 @@ void CyInfoPythonInterface2()
 		/* UNOFFICIAL_PATCH                        END                                                  */
 		/************************************************************************************************/
 		.def("getPillageGold", &CvImprovementInfo::getPillageGold, "int ()")
-		.def("getImprovementPillage", &CvImprovementInfo::getImprovementPillage, "int ()")
-		.def("getImprovementUpgrade", &CvImprovementInfo::getImprovementUpgrade, "int ()")
+		.def("getImprovementClassPillage", &CvImprovementInfo::getImprovementClassPillage, "int ()")
+		.def("getImprovementClassUpgrade", &CvImprovementInfo::getImprovementClassUpgrade, "int ()")
+		.def("getImprovementClass", &CvImprovementInfo::getImprovementClass, "int ()")
 
-		/*************************************************************************************************/
-		/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
-		/*************************************************************************************************/
+/*************************************************************************************************/
+/**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
+/*************************************************************************************************/
 		.def("getCultureRange", &CvImprovementInfo::getCultureRange, "int ()")
 		.def("getCultureControlStrength", &CvImprovementInfo::getCultureControlStrength, "int ()")
 		.def("getCultureCenterBonus", &CvImprovementInfo::getCultureCenterBonus, "int ()")

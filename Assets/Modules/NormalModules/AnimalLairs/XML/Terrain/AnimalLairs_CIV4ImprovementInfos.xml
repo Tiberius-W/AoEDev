@@ -8,9 +8,10 @@
 	<ImprovementInfos>
 		<ImprovementInfo>	<!-- Bear Den t1 -->
 			<Type>IMPROVEMENT_BEAR_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BEAR_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_1</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEAR_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_BEAR_DEN_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BEAR_DEN_2</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -77,9 +78,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Bear Den t2 -->
 			<Type>IMPROVEMENT_BEAR_DEN_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BEAR_DEN_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_2</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEAR_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_BEAR_DEN_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_BEAR_DEN_3</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -152,6 +154,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Bear Den t3 -->
 			<Type>IMPROVEMENT_BEAR_DEN_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BEAR_DEN_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_BEAR_DEN_3</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BEAR_DEN</ArtDefineTag>
 			<bPermanent>1</bPermanent>
@@ -228,9 +231,10 @@
 
 		<ImprovementInfo>	<!-- Hippogriff Weyr t1 -->
 			<Type>IMPROVEMENT_HIPPOGRIFF_WEYR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HIPPOGRIFF_WEYR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HIPPOGRIFF_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_GRIFFIN_WEYR</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_GRIFFIN_WEYR</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -276,9 +280,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Griffin Weyr t2 -->
 			<Type>IMPROVEMENT_GRIFFIN_WEYR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GRIFFIN_WEYR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GRIFFIN_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_ROC_WEYR</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_ROC_WEYR</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -335,6 +340,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Roc Weyr t3 -->
 			<Type>IMPROVEMENT_ROC_WEYR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_ROC_WEYR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_ROC_WEYR</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NEST</ArtDefineTag>
 			<bPermanent>1</bPermanent>
@@ -394,9 +400,10 @@
 
 		<ImprovementInfo>	<!-- Lion Den t1 -->
 			<Type>IMPROVEMENT_LION_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LION_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN_1</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LION_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_LION_DEN_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_LION_DEN_2</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -460,9 +467,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Lion Den t2 -->
 			<Type>IMPROVEMENT_LION_DEN_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LION_DEN_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN_2</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LION_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_LION_DEN_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_LION_DEN_3</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -533,6 +541,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Lion Den t3 -->
 			<Type>IMPROVEMENT_LION_DEN_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_LION_DEN_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_LION_DEN_3</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_LION_DEN</ArtDefineTag>
 			<bPermanent>1</bPermanent>
@@ -607,9 +616,10 @@
 
 		<ImprovementInfo>	<!-- Spider Den t1 -->
 			<Type>IMPROVEMENT_DEN_SPIDER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DEN_SPIDER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN_1</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPIDER_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_SPIDER_DEN_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SPIDER_DEN_2</ImprovementUpgrade>
 			<bHillsMakesValid>1</bHillsMakesValid>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
@@ -680,9 +690,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Spider Den t2 -->
 			<Type>IMPROVEMENT_SPIDER_DEN_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SPIDER_DEN_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN_2</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPIDER_DEN</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_SPIDER_DEN_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SPIDER_DEN_3</ImprovementUpgrade>
 			<bHillsMakesValid>1</bHillsMakesValid>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
@@ -761,6 +772,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Spider Den t3 -->
 			<Type>IMPROVEMENT_SPIDER_DEN_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SPIDER_DEN_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SPIDER_DEN_3</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPIDER_DEN</ArtDefineTag>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -843,9 +855,10 @@
 
 		<ImprovementInfo>	<!-- Wolf Lair t1 -->
 			<Type>IMPROVEMENT_DEN_WOLF</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DEN_WOLF</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WOLF_LAIR_1</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DEN_WOLF</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_WOLF_LAIR_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_WOLF_LAIR_2</ImprovementUpgrade>
 			<bHillsMakesValid>1</bHillsMakesValid>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
@@ -920,9 +933,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Wolf Lair t2 -->
 			<Type>IMPROVEMENT_WOLF_LAIR_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WOLF_LAIR_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WOLF_LAIR_2</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DEN_WOLF</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_WOLF_LAIR_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_WOLF_LAIR_3</ImprovementUpgrade>
 			<bHillsMakesValid>1</bHillsMakesValid>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
@@ -1005,6 +1019,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Wolf Lair t3 -->
 			<Type>IMPROVEMENT_WOLF_LAIR_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WOLF_LAIR_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WOLF_LAIR_3</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DEN_WOLF</ArtDefineTag>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -1092,9 +1107,10 @@
 
 		<ImprovementInfo>	<!-- Scorpion Nest t1 -->
 			<Type>IMPROVEMENT_SCORPION_NEST_1</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SCORPION_NEST_1</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SCORPION_NEST_1</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SCORPION_NEST</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_SCORPION_NEST_2</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SCORPION_NEST_2</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -1147,9 +1163,10 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Scorpion Nest t2 -->
 			<Type>IMPROVEMENT_SCORPION_NEST_2</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SCORPION_NEST_2</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SCORPION_NEST_2</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SCORPION_NEST</ArtDefineTag>
-			<ImprovementUpgrade>IMPROVEMENT_SCORPION_NEST_3</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SCORPION_NEST_3</ImprovementUpgrade>
 			<bPermanent>1</bPermanent>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -1209,6 +1226,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>	<!-- Scorpion Nest t3 -->
 			<Type>IMPROVEMENT_SCORPION_NEST_3</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SCORPION_NEST_3</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SCORPION_NEST_3</Description>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SCORPION_NEST</ArtDefineTag>
 			<bPermanent>1</bPermanent>

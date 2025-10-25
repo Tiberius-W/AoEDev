@@ -8,6 +8,7 @@
 	<ImprovementInfos>
 		<ImprovementInfo><!-- Coral Fort -->
 			<Type>IMPROVEMENT_CORAL_FORT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CORAL_FORT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CORAL_FORT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FORT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS</ArtDefineTag>
@@ -39,7 +40,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_CORAL_CASTLE</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CORAL_CASTLE</ImprovementUpgrade>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 			<iMaxAirlift>1</iMaxAirlift>
@@ -47,6 +48,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Coral Castle -->
 			<Type>IMPROVEMENT_CORAL_CASTLE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CORAL_CASTLE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CORAL_CASTLE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CASTLE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS_SPRAWLING</ArtDefineTag>
@@ -78,8 +80,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_CORAL_FORT</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_CORAL_CITADEL</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_CORAL_FORT</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CORAL_CITADEL</ImprovementUpgrade>
 			<iMaxAirlift>1</iMaxAirlift>
 			<iHealRateChange>10</iHealRateChange>
 			<iRange>1</iRange>
@@ -92,6 +94,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Coral Citadel -->
 			<Type>IMPROVEMENT_CORAL_CITADEL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CORAL_CITADEL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CORAL_CITADEL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CITADEL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_RUINS_COLOSSAL</ArtDefineTag>
@@ -124,8 +127,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_CORAL_CASTLE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_CITADEL_OF_LIGHT</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_CORAL_CASTLE</ImprovementPillage>
 			<iHealRateChange>20</iHealRateChange>
 			<iRange>2</iRange>
 			<iRangeDefenseModifier>25</iRangeDefenseModifier>
@@ -138,6 +140,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Hunting Reef -->
 			<Type>IMPROVEMENT_HUNTING_REEF</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HUNTING_REEF</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HUNTING_REEF</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_HUNTING_REEF_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -261,6 +264,7 @@
 		</ImprovementInfo>	
 		<ImprovementInfo><!-- Fishing Boats -->
 			<Type>IMPROVEMENT_FISHING_BOATS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FISHING_BOATS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FISHING_BOATS_PEDIA</Civilopedia>
 			<Help/>
@@ -403,6 +407,7 @@
 		</ImprovementInfo>	
 		<ImprovementInfo><!-- Trawling Boats -->
 			<Type>IMPROVEMENT_TRAWLING_BOATS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TRAWLING_BOATS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_TRAWLING_BOATS_PEDIA</Civilopedia>
 			<Help/>
@@ -443,6 +448,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Den -->
 			<Type>IMPROVEMENT_PIRATE_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_DEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -455,7 +461,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_PIRATE_STRONGHOLD</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_PIRATE_STRONGHOLD</ImprovementUpgrade>
 			<iAppearanceProbability>80</iAppearanceProbability>
 			<SpawnUnitType>UNIT_GALLEY</SpawnUnitType>
 	  <!-- <SpawnGroupType>SPAWN_GROUP_GALLEY</SpawnGroupType>  - feels really bad -->
@@ -511,6 +517,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Stronghold -->
 			<Type>IMPROVEMENT_PIRATE_STRONGHOLD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_STRONGHOLD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_STRONGHOLD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_STRONGHOLD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -523,7 +530,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_PIRATE_FREE_CITY</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_PIRATE_FREE_CITY</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_TRIREME</SpawnUnitType>
 	  <!-- <SpawnGroupType>SPAWN_GROUP_GALLEON</SpawnGroupType> -->
 			<ImmediateSpawnUnitType>UNIT_BOARDING_PARTY</ImmediateSpawnUnitType>
@@ -591,6 +598,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Pirate Free City -->
 			<Type>IMPROVEMENT_PIRATE_FREE_CITY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PIRATE_FREE_CITY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_PIRATE_FREE_CITY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_PIRATE_FREE_CITY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PIRATE_COVE</ArtDefineTag>
@@ -672,6 +680,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Sea Serpent Nest -->
 			<Type>IMPROVEMENT_SEA_SERPENT_NEST</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEA_SERPENT_NEST</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_SEA_SERPENT_NEST</Description>
 			<Civilopedia>TXT_KEY_SEA_SERPENT_NEST_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SEA_SERPENT_NEST</ArtDefineTag>
@@ -722,6 +731,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Titan Shell Lair -->
 			<Type>IMPROVEMENT_TITAN_SHELL_LAIR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_TITAN_SHELL_LAIR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_TITAN_SHELL_LAIR</Description>
 			<Civilopedia>TXT_KEY_TITAN_SHELL_LAIR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_TITAN_LAIR</ArtDefineTag>
@@ -772,6 +782,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Ocean Tower -->
 			<Type>IMPROVEMENT_OCEAN_TOWER</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_OCEAN_TOWER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_OCEAN_TOWER</Description>
 			<Civilopedia>TXT_KEY_OCEAN_TOWER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_OCEAN_TOWER</ArtDefineTag>
@@ -834,6 +845,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Drowned Lair -->
 			<Type>IMPROVEMENT_DROWNED_LAIR</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DROWNED_LAIR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DROWNED_LAIR</Description>
 			<Civilopedia>TXT_KEY_DROWNED_LAIR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW</ArtDefineTag>
@@ -850,7 +862,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_DREDGE_HEEP</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DREDGE_HEEP</ImprovementUpgrade>
 			<iAppearanceProbability>70</iAppearanceProbability>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_DROWN</ImmediateSpawnUnitType>
@@ -894,6 +906,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dredge Heep -->
 			<Type>IMPROVEMENT_DREDGE_HEEP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DREDGE_HEEP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DREDGE_HEEP</Description>
 			<Civilopedia>TXT_KEY_DROWNED_LAIR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW_GLOOMY</ArtDefineTag>
@@ -910,7 +923,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_HOWLING_REEF</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_HOWLING_REEF</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_DROWN</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_DROWN</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
@@ -958,6 +971,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Howling Reef -->
 			<Type>IMPROVEMENT_HOWLING_REEF</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_HOWLING_REEF</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_HOWLING_REEF</Description>
 			<Civilopedia>TXT_KEY_DROWNED_LAIR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_BARROW_HOWLING</ArtDefineTag>
@@ -1013,6 +1027,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Stygian Shrine (I) -->
 			<Type>IMPROVEMENT_STYGIAN_SHRINE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STYGIAN_SHRINE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STYGIAN_SHRINE</ArtDefineTag>
@@ -1112,13 +1127,14 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementUpgrade>IMPROVEMENT_STYGIAN_TEMPLE</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_STYGIAN_TEMPLE</ImprovementUpgrade>
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Stygian Temple (II) -->
 			<Type>IMPROVEMENT_STYGIAN_TEMPLE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STYGIAN_TEMPLE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STYGIAN_TEMPLE</ArtDefineTag>
@@ -1218,14 +1234,15 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_STYGIAN_SHRINE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_STYGIAN_CATHEDRAL</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_STYGIAN_SHRINE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_STYGIAN_CATHEDRAL</ImprovementUpgrade>
 			<iCultureRange>0</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Stygian Spire (III) -->
 			<Type>IMPROVEMENT_STYGIAN_CATHEDRAL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STYGIAN_CATHEDRAL</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_STYGIAN_CATHEDRAL</ArtDefineTag>
@@ -1325,8 +1342,8 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_STYGIAN_TEMPLE</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_STYGIAN_GRAND_SPIRE</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_STYGIAN_TEMPLE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_STYGIAN_GRAND_SPIRE</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_ASTRONOMY</PrereqTech>
@@ -1343,6 +1360,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Stygian Monolith (IV) -->
 			<Type>IMPROVEMENT_STYGIAN_GRAND_SPIRE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_STYGIAN_GRAND_SPIRE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE_PEDIA</Civilopedia>
 			<Help/>
@@ -1444,7 +1462,7 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
-			<ImprovementPillage>IMPROVEMENT_STYGIAN_CATHEDRAL</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_STYGIAN_CATHEDRAL</ImprovementPillage>
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>

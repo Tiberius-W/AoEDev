@@ -87,7 +87,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FARM</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
@@ -152,7 +152,7 @@
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -175,7 +175,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MINE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -240,7 +240,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DTESH_CATACOMBS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MINE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -305,7 +305,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_WORKSHOP</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -370,7 +370,7 @@
 			<iTime>3500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_LUMBERMILL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -399,7 +399,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_WINDMILL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -464,7 +464,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_WATERMILL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -529,7 +529,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_PLANTATION</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -589,7 +589,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_QUARRY</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -649,7 +649,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_PASTURE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -705,7 +705,7 @@
 			<iTime>2000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_CAMP</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -734,7 +734,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_WINERY</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -793,7 +793,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_COTTAGE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -862,7 +862,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FORT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -927,7 +927,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FORT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -992,7 +992,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DTESH_MAUSOLEUM</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_CASTLE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -1057,7 +1057,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_CASTLE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_CASTLE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -1195,7 +1195,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_AIR</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_AIR</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1254,7 +1254,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_BODY</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_BODY</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1313,7 +1313,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_CHAOS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_CHAOS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1372,7 +1372,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_CREATION</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_CREATION</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1431,7 +1431,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_DEATH</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_DEATH</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1490,7 +1490,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_DIMENSIONAL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_DIMENSIONAL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1549,7 +1549,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_EARTH</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_EARTH</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1608,7 +1608,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_ENCHANTMENT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_ENCHANTMENT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1667,7 +1667,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_ENTROPY</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_ENTROPY</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1726,7 +1726,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_FIRE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_FIRE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1785,7 +1785,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_FORCE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_FORCE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1844,7 +1844,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_ICE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_ICE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1903,7 +1903,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_LAW</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_LAW</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -1962,7 +1962,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_LIFE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_LIFE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2021,7 +2021,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_METAMAGIC</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_METAMAGIC</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2080,7 +2080,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_MIND</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_MIND</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2139,7 +2139,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_NATURE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_NATURE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2198,7 +2198,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_SPIRIT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_SPIRIT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2257,7 +2257,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_WATER</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_WATER</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2316,7 +2316,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_SHADOW</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_SHADOW</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2375,7 +2375,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_MANA_SUN</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MANA_SUN</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2434,7 +2434,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_BEDOUIN_SIT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_COTTAGE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2461,7 +2461,7 @@
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -2484,7 +2484,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DTESH_PYRE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_PLANTATION</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -2539,7 +2539,7 @@
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>
-			<ImprovementType>IMPROVEMENT_DTESH_PYRE_AQUATIC</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -2585,7 +2585,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DTESH_CRYPT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_WORKSHOP</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2644,7 +2644,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_REFINERY</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_REFINERY</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs>
@@ -2703,7 +2703,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_PASTURE_CORRUPTED</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_PASTURE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -2762,7 +2762,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DWARVEN_MINE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_DWARVEN_MINE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -2826,7 +2826,7 @@
 			<PrereqTech>NONE</PrereqTech>
 			<iTime>400</iTime>
 			<iCost>0</iCost>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -2844,7 +2844,7 @@
 			<PrereqTech>TECH_SEAFARING</PrereqTech>
 			<iTime>400</iTime>
 			<iCost>0</iCost>
-			<ImprovementType>IMPROVEMENT_PIRATE_COVE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_PIRATE_COVE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -2863,7 +2863,7 @@
 			<iTime>2000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_SWAMP</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_SWAMP</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<FeatureStructs/>

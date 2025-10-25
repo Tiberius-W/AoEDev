@@ -4007,7 +4007,7 @@ bool CvUnit::isActionRecommended(int iAction)
 
 			if (canBuild(pPlot, eBuild))
 			{
-				eImprovement = ((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement()));
+				eImprovement = ((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())));
 				eRoute = ((RouteTypes)(GC.getBuildInfo(eBuild).getRoute()));
 				eBonus = pPlot->getBonusType(getTeam());
 				pWorkingCity = pPlot->getWorkingCity();
@@ -7662,7 +7662,7 @@ bool CvUnit::airBomb(int iX, int iY)
 					gDLL->getInterfaceIFace()->addMessage(pPlot->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
 				}
 
-				pPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage()));
+				pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()));
 /*************************************************************************************************/
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
@@ -8197,7 +8197,7 @@ bool CvUnit::pillage()
 			}
 		}
 
-		pPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage()));
+		pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage())));
 /*************************************************************************************************/
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
@@ -8549,13 +8549,13 @@ bool CvUnit::sabotage()
 
 	if (!bCaught)
 	{
-		pPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage()));
+		pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage())));
 /*************************************************************************************************/
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
 		if (pPlot->getImprovementOwner() != NO_PLAYER)
 		{
-			pPlot->addCultureControl(pPlot->getImprovementOwner(), (ImprovementTypes) GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage(), true);
+			pPlot->addCultureControl(pPlot->getImprovementOwner(), (ImprovementTypes)GET_PLAYER(pPlot->getImprovementOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()), true);
 		}
 /*************************************************************************************************/
 /**	Improvements Mods	END								**/
@@ -10343,7 +10343,7 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 				{
 					if (GC.getCivilizationInfo(GET_PLAYER(pPlot->getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(pPlot->getFeatureType()))
 					{
-						if (GC.getBuildInfo(eBuild).getImprovement() == NO_IMPROVEMENT)
+						if (GC.getBuildInfo(eBuild).getImprovementClass() == NO_IMPROVEMENTCLASS || getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))==NO_IMPROVEMENT)
 							return false;
 					}
 				}
@@ -10359,7 +10359,7 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 		{
 			if (pPlot->getBonusType(getTeam()) == GC.getDefineINT("BONUS_MANA"))
 			{
-				if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT && GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isImprovementBonusMakesValid(GC.getDefineINT("BONUS_MANA")))
+				if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT && GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isImprovementBonusMakesValid(GC.getDefineINT("BONUS_MANA")))
 				{
 					if (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WORKER"))
 					{
@@ -10496,7 +10496,7 @@ bool CvUnit::build(BuildTypes eBuild)
 /**								---- Start Original Code ----									**
 	bFinished = plot()->changeBuildProgress(eBuild, workRate(false), getTeam());
 /**								----  End Original Code  ----									**/
-	bFinished = plot()->changeBuildProgress(eBuild, iWorkRate, getTeam(), bLinkedBuild);
+	bFinished = plot()->changeBuildProgress(eBuild, iWorkRate, getTeam(), bLinkedBuild, this);
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -10508,18 +10508,18 @@ bool CvUnit::build(BuildTypes eBuild)
 /*************************************************************************************************/
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
-		if ((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT && (ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement() != eOldImprovement)
+		if ((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT && (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())) != eOldImprovement)
 		{
-			if (GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement()).getCultureControlStrength() > 0)
+			if (GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).getCultureControlStrength() > 0)
 			{
-				if (GC.getImprovementInfo((ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement()).isFort())
+				if (GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isFort())
 				{
 					claimFort(true);
 				}
 				else
 				{
 					plot()->setImprovementOwner(getOwner());
-					plot()->addCultureControl(getOwner(), (ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement(), true);
+					plot()->addCultureControl(getOwner(), (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass())), true);
 				}
 			}
 		}
@@ -10530,15 +10530,15 @@ bool CvUnit::build(BuildTypes eBuild)
 			kTrigger.m_iRoute = (RouteTypes)GC.getBuildInfo(eBuild).getRoute();
 			GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_BUILD_ROUTE, &kTrigger);
 		}
-		if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+		if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))!=NO_IMPROVEMENT)
 		{
 			TraitTriggeredData kTrigger;
 			kTrigger.m_iUnitClass = getUnitClassType();
-			kTrigger.m_iImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+			kTrigger.m_iImprovement = (ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()));
 			GET_PLAYER(getOwnerINLINE()).doTraitTriggers(TRAITHOOK_BUILD_IMPROVEMENT, &kTrigger);
 			if ((plot()->getBonusType(getTeam())) != NO_BONUS)
 			{
-				if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isImprovementBonusTrade(plot()->getBonusType(getTeam())))
+				if (GC.getImprovementInfo((ImprovementTypes)getUnitImprovement((ImprovementClassTypes)(GC.getBuildInfo(eBuild).getImprovementClass()))).isImprovementBonusTrade(plot()->getBonusType(getTeam())))
 				{
 					CvString szError;
 					//		szError.Format("getting inside the test for resource");
@@ -15760,7 +15760,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 						eTempImprovement = pNewPlot->getImprovementType();
 						szBuffer = gDLL->getText("TXT_KEY_MISC_IMP_DESTROYED", GC.getImprovementInfo(pNewPlot->getImprovementType()).getTextKeyWide(), getNameKey(), getVisualCivAdjective(pNewPlot->getTeam()));
 						gDLL->getInterfaceIFace()->addMessage(pNewPlot->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), pNewPlot->getX_INLINE(), pNewPlot->getY_INLINE(), true, true);
-						pNewPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pNewPlot->getImprovementType()).getImprovementPillage()));
+						pNewPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pNewPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)(GC.getImprovementInfo(pNewPlot->getImprovementType()).getImprovementClassPillage())));
 					}
 				}
 				else if (pNewPlot->isRoute())
@@ -15885,7 +15885,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 									gDLL->getInterfaceIFace()->addMessage(pNewPlot->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), pNewPlot->getX_INLINE(), pNewPlot->getY_INLINE(), true, true);
 								}
 								CvEventReporter::getInstance().unitPillage(this, pNewPlot->getImprovementType(), NO_ROUTE, getOwnerINLINE());
-								pNewPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pNewPlot->getImprovementType()).getImprovementPillage()));
+								pNewPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pNewPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)(GC.getImprovementInfo(pNewPlot->getImprovementType()).getImprovementClassPillage())));
 							}
 /*************************************************************************************************/
 /**	AutoPillage 								END												**/
@@ -32116,12 +32116,12 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 	changeExperience(100);
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getGameINLINE().getSorenRandNum(100, "Destroy Lair Chance") < GC.getGoodyInfo(eGoody).getDestroyLairChance())
 	{
-		if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT)
+		if ((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage() != NO_IMPROVEMENTCLASS)
 		{
 			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
 			pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
 			plot()->setImprovementOwner(NO_PLAYER);
-			pPlot->setImprovementType((ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage());
+			pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()));
 		}
 		else
 		{
@@ -33070,5 +33070,12 @@ int CvUnit::getRealFreeXPRate() const
 		}
 	}
 	return res;
+
+}
+
+ImprovementTypes CvUnit::getUnitImprovement(ImprovementClassTypes iClass) const
+{
+	return GET_PLAYER(getOwner()).getPlayerImprovement(iClass);
+
 
 }

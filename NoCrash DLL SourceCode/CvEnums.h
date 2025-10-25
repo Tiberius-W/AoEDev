@@ -1390,6 +1390,10 @@ enum BuildingClassTypes				// Exposed to Python
 	NO_BUILDINGCLASS = -1,
 };
 
+enum ImprovementClassTypes				// Exposed to Python
+{
+	NO_IMPROVEMENTCLASS = -1,
+};
 enum BuildingTypes						// Exposed to Python
 {
 	NO_BUILDING = -1,

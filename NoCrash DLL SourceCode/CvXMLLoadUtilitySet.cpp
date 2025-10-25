@@ -1004,7 +1004,12 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 
 	LoadGlobalClassInfo(GC.getCorporationInfo(), "CIV4CorporationInfo", "GameInfo", "Civ4CorporationInfo/CorporationInfos/CorporationInfo", false);
 	LoadGlobalClassInfo(GC.getRouteInfo(), "Civ4RouteInfos", "Misc", "Civ4RouteInfos/RouteInfos/RouteInfo", false);
+	LoadGlobalClassInfo(GC.getImprovementClassInfo(), "CIV4ImprovementClassInfos", "Terrain", "Civ4ImprovementClassInfos/ImprovementClassInfos/ImprovementClassInfo", false);
 	LoadGlobalClassInfo(GC.getImprovementInfo(), "CIV4ImprovementInfos", "Terrain", "Civ4ImprovementInfos/ImprovementInfos/ImprovementInfo", true, &CvDLLUtilityIFaceBase::createImprovementInfoCacheObject);
+	for (int i = 0; i < GC.getNumImprovementClassInfos(); ++i)
+	{
+		GC.getImprovementClassInfo((ImprovementClassTypes)i).readPass3();
+	}
 	LoadGlobalClassInfo(GC.getBuildingClassInfo(), "CIV4BuildingClassInfos", "Buildings", "Civ4BuildingClassInfos/BuildingClassInfos/BuildingClassInfo", false);
 	LoadGlobalClassInfo(GC.getCivicInfo(), "CIV4CivicInfos", "GameInfo", "Civ4CivicInfos/CivicInfos/CivicInfo", false, &CvDLLUtilityIFaceBase::createCivicInfoCacheObject);
 	LoadGlobalClassInfo(GC.getBuildingInfo(), "CIV4BuildingInfos", "Buildings", "Civ4BuildingInfos/BuildingInfos/BuildingInfo", false, &CvDLLUtilityIFaceBase::createBuildingInfoCacheObject);

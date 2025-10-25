@@ -237,6 +237,11 @@ CvBuildingClassInfo* CyGlobalContext::getBuildingClassInfo(int i) const
 	return (i>=0 && i<GC.getNumBuildingClassInfos()) ? &GC.getBuildingClassInfo((BuildingClassTypes) i) : NULL;
 }
 
+CvImprovementClassInfo* CyGlobalContext::getImprovementClassInfo(int i) const
+{
+	return (i >= 0 && i < GC.getNumImprovementClassInfos()) ? &GC.getImprovementClassInfo((ImprovementClassTypes)i) : NULL;
+}
+
 
 CvBuildingInfo* CyGlobalContext::getBuildingInfo(int i) const
 {

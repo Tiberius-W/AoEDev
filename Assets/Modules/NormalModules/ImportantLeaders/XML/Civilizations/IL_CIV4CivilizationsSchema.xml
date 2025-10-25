@@ -812,6 +812,14 @@
 	<ElementType name="Buildings" content="eltOnly">
 		<element type="Building" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="ImprovementClassType" content="textOnly"/>
+	<ElementType name="Improvement" content="eltOnly">
+		<element type="ImprovementClassType"/>
+		<element type="ImprovementType"/>
+	</ElementType>
+	<ElementType name="Improvements" content="eltOnly">
+		<element type="Improvement" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="UnitClassType" content="textOnly"/>
 	<ElementType name="UnitType" content="textOnly"/>
 	<ElementType name="Unit" content="eltOnly">
@@ -957,6 +965,7 @@
 		<element type="Cities"/>
 		<element type="Buildings"/>
 		<element type="Units"/>
+		<element type="Improvements"/>
 		<element type="FreeUnitClasses"/>
 		<element type="FreeBuildingClasses"/>
 		<element type="FreeTechs"/>

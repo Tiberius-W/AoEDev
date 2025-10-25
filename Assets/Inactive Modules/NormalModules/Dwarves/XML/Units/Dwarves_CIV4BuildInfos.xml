@@ -18,7 +18,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DWARVEN_SETTLEMENT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_DWARVEN_SETTLEMENT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -87,7 +87,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_DWARVEN_HALL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_DWARVEN_HALL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -156,7 +156,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_CITADEL</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>

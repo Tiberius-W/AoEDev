@@ -21676,10 +21676,6 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_BEDOUIN_SIT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -32658,7 +32654,7 @@
 			</NotUnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
+					<BuildType>BUILD_FISHING_BOATS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>

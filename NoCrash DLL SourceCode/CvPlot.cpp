@@ -1092,11 +1092,22 @@ void CvPlot::doImprovementCityWorking()
 void CvPlot::doImprovementUpgrade()
 {
 	if (getImprovementType() == NO_IMPROVEMENT)
+		return;
+
+	ImprovementClassTypes eImprovementClassUpgrade = (ImprovementClassTypes)GC.getImprovementInfo(getImprovementType()).getImprovementClassUpgrade();
+	if (eImprovementClassUpgrade == NO_IMPROVEMENTCLASS)
 	{
 		return;
 	}
-
-	ImprovementTypes eImprovementUpgrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
+	ImprovementTypes eImprovementUpgrade;
+	if (getOwner() != NO_PLAYER)
+	{
+		eImprovementUpgrade = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClassUpgrade);
+	}
+	else
+	{
+		eImprovementUpgrade =(ImprovementTypes) GC.getImprovementClassInfo(eImprovementClassUpgrade).getDefaultImprovementIndex();
+	}
 	if (eImprovementUpgrade == NO_IMPROVEMENT)
 		return;
 
@@ -1149,11 +1160,11 @@ void CvPlot::doImprovementUpgrade()
 			{
 				changeUpgradeProgress(GET_PLAYER(getOwnerINLINE()).getImprovementUpgradeRate());
 			}
-			if (GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() != NO_CIVILIZATION &&
-				GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() != GET_PLAYER(getOwnerINLINE()).getCivilizationType())
-			{
-				setImprovementType((ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementPillage());
-			}
+		//	if (GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() != NO_CIVILIZATION &&
+		//		GC.getImprovementInfo(getImprovementType()).getPrereqCivilization() != GET_PLAYER(getOwnerINLINE()).getCivilizationType())
+		//	{
+		//		setImprovementType((ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementClassPillage());
+		//	}
 		}
 		else
 		{
@@ -2980,11 +2991,13 @@ bool CvPlot::isImprovementInRange(ImprovementTypes eImprovement, int iRange, boo
 	{
 		for (int iI = 0; iI < GC.getNumBuildInfos(); iI++)
 		{
-			eLoopImprovement = (ImprovementTypes) GC.getBuildInfo((BuildTypes) iI).getImprovement();
-			if (eLoopImprovement == eImprovement)
-			{
-				eBuild = ((BuildTypes) iI);
-				break;
+			if ((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)iI).getImprovementClass() != NO_IMPROVEMENTCLASS) {
+				eLoopImprovement = (ImprovementTypes)GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)iI).getImprovementClass()).getDefaultImprovementIndex();
+				if (eLoopImprovement == eImprovement)
+				{
+					eBuild = ((BuildTypes)iI);
+					break;
+				}
 			}
 		}
 	}
@@ -3094,9 +3107,14 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	}
 
 	bValid = false;
-
-	eImprovement = ((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement()));
-
+	if (ePlayer != NO_PLAYER)
+	{
+		eImprovement = ((ImprovementTypes)GET_PLAYER(ePlayer).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()));
+	}
+	else
+	{
+		eImprovement = (ImprovementTypes)GC.getImprovementClassInfo(((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass())).getDefaultImprovementIndex();
+	}
 	if (eImprovement != NO_IMPROVEMENT)
 	{
 		// CivPlotMods - Jean Elcard - 04/02/09 - Use the player version of this method to account for player-specific natural yields.
@@ -3170,13 +3188,13 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	if (eRoute != NO_ROUTE)
 	{
 		// Snarko - 18/02/12 - To prevent Malakim from building roads on deserts
-		if (ePlayer != NO_PLAYER)
-		{
-			if (isNetworkTerrain(GET_PLAYER(ePlayer).getTeam()))
-			{
-				return false;
-			}
-		}
+//		if (ePlayer != NO_PLAYER)
+//		{
+//			if (isNetworkTerrain(GET_PLAYER(ePlayer).getTeam()))
+//			{
+//				return false;
+//			}
+//		}
 
 		if (getRouteType() != NO_ROUTE)
 		{
@@ -7359,9 +7377,9 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		if (getBuildProgress(eBuild) > 0)
 		{
 			// The improvement can be NO_IMPROVEMENT (example roads) : Snarko 09/06/10
-			if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+			if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()).getDefaultImprovementIndex() !=NO_IMPROVEMENT)
 			{
-				eLoopImprovement = (ImprovementTypes) GC.getBuildInfo(eBuild).getImprovement();
+				eLoopImprovement = (ImprovementTypes) GC.getImprovementClassInfo((ImprovementClassTypes) GC.getBuildInfo(eBuild).getImprovementClass()).getDefaultImprovementIndex();
 				if (eLoopImprovement != getImprovementType() && GC.getImprovementInfo(eLoopImprovement).getMinimumDistance() != 0)
 				{
 					m_paiBuildProgress[eBuild] = 0;
@@ -10015,7 +10033,7 @@ int CvPlot::getBuildProgress(BuildTypes eBuild) const
 
 
 // Returns true if build finished...
-bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam, bool bLinked)
+bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam, bool bLinked, CvUnit* pBuilder)
 {
 	CvCity* pCity;
 	CvWString szBuffer;
@@ -10047,9 +10065,9 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 		{
 			m_paiBuildProgress[eBuild] = 0;
 
-			if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+			if (pBuilder->getUnitImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()) != NO_IMPROVEMENT)
 			{
-				setImprovementType((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement());
+				setImprovementType((ImprovementTypes)pBuilder->getUnitImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()));
 			}
 
 			if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
@@ -10068,7 +10086,7 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 					{
 						if (GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isMaintainFeatures(getFeatureType()))
 						{
-							if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+							if (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()) != NO_IMPROVEMENT)
 							{
 								bValid = false;
 							}
@@ -12297,7 +12315,7 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 /**	CivPlotMods								END													**/
 /*************************************************************************************************/
 
-	ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+	ImprovementTypes eImprovement = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass());
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
@@ -12305,13 +12323,13 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 		{
 			//in the case that improvements upgrade, use 2 upgrade levels higher for the
 			//yield calculations.
-			ImprovementTypes eUpgradeImprovement = (ImprovementTypes)GC.getImprovementInfo(eImprovement).getImprovementUpgrade();
+			ImprovementTypes eUpgradeImprovement = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade());
 			if (eUpgradeImprovement != NO_IMPROVEMENT)
 			{
 				//unless it's commerce on a low food tile, in which case only use 1 level higher
 				if ((eYield != YIELD_COMMERCE) || (getYield(YIELD_FOOD) >= GC.getFOOD_CONSUMPTION_PER_POPULATION()))
 				{
-					ImprovementTypes eUpgradeImprovement2 = (ImprovementTypes)GC.getImprovementInfo(eUpgradeImprovement).getImprovementUpgrade();
+					ImprovementTypes eUpgradeImprovement2 = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eUpgradeImprovement).getImprovementClassUpgrade());
 					if (eUpgradeImprovement2 != NO_IMPROVEMENT)
 					{
 						eUpgradeImprovement = eUpgradeImprovement2;

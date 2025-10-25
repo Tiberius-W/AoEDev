@@ -1522,6 +1522,8 @@ public:
 	int getTerrainYieldChange(TerrainTypes eIndex1, YieldTypes eIndex2) const;
 	void changeTerrainYieldChange(TerrainTypes eIndex1, YieldTypes eIndex2, int iChange);
 
+	ImprovementTypes getPlayerImprovement(ImprovementClassTypes iClass) const;
+
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;

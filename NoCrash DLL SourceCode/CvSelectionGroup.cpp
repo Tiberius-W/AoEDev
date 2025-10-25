@@ -4509,9 +4509,10 @@ bool CvSelectionGroup::groupBuild(BuildTypes eBuild)
 
 	pPlot = plot();
 
-	ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-	if (eImprovement != NO_IMPROVEMENT)
+	ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+	if (eImprovementClass != NO_IMPROVEMENTCLASS && GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass)!=NO_IMPROVEMENT)
 	{
+		ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
 		if (AI_isControlled())
 		{
 			if (GET_PLAYER(getOwnerINLINE()).isOption(PLAYEROPTION_SAFE_AUTOMATION))
@@ -4521,7 +4522,7 @@ bool CvSelectionGroup::groupBuild(BuildTypes eBuild)
 					BonusTypes eBonus = (BonusTypes)pPlot->getNonObsoleteBonusType(GET_PLAYER(getOwnerINLINE()).getTeam());
 					if ((eBonus == NO_BONUS) || !GC.getImprovementInfo(eImprovement).isImprovementBonusTrade(eBonus))
 					{
-						if (GC.getImprovementInfo(eImprovement).getImprovementPillage() != NO_IMPROVEMENT)
+						if (GC.getImprovementInfo(eImprovement).getImprovementClassPillage() != NO_IMPROVEMENTCLASS)
 						{
 							return false;
 						}

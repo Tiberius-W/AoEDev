@@ -76,6 +76,7 @@ public:
 	CvGameSpeedInfo* getGameSpeedInfo(int i) const;
 	CvTurnTimerInfo* getTurnTimerInfo(int i) const;
 	CvBuildingClassInfo* getBuildingClassInfo(int i) const;
+	CvImprovementClassInfo* getImprovementClassInfo(int i) const;
 	CvMissionInfo* getMissionInfo(int i) const;
 	CvCommandInfo* getCommandInfo(int i) const;
 	CvAutomateInfo* getAutomateInfo(int i) const;

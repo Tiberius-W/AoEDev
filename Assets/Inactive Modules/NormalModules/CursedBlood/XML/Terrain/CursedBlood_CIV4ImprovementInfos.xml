@@ -8,6 +8,7 @@
 	<ImprovementInfos>
 		<ImprovementInfo><!-- Werewolf Den -->
 			<Type>IMPROVEMENT_WEREWOLF_DEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WEREWOLF_DEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WEREWOLF_DEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WEREWOLF_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WEREWOLF_FORTRESS</ArtDefineTag>
@@ -60,7 +61,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_WEREWOLF_PACK</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_WEREWOLF_PACK</ImprovementUpgrade>
 			<iAppearanceProbability>30</iAppearanceProbability>
 			<SpawnUnitType>UNIT_RAVENOUS_WEREWOLF</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_RAVENOUS_WEREWOLF</ImmediateSpawnUnitType>
@@ -114,6 +115,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Werewolf Pack -->
 			<Type>IMPROVEMENT_WEREWOLF_PACK</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WEREWOLF_PACK</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WEREWOLF_PACK</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WEREWOLF_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WEREWOLF_FORTRESS</ArtDefineTag>
@@ -166,7 +168,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_WEREWOLF_CLAN</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_WEREWOLF_CLAN</ImprovementUpgrade>
 			<SpawnUnitType>UNIT_RAVENOUS_WEREWOLF</SpawnUnitType>
 			<ImmediateSpawnUnitType>UNIT_GREATER_WEREWOLF</ImmediateSpawnUnitType>
 			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
@@ -232,8 +234,9 @@
 				<Promotion>PROMOTION_MAGIC_RESISTANCE</Promotion>
 			</GuardianPromotions>
 		</ImprovementInfo>
-				<ImprovementInfo><!-- Werewolf Clan -->
+		<ImprovementInfo><!-- Werewolf Clan -->
 			<Type>IMPROVEMENT_WEREWOLF_CLAN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WEREWOLF_CLAN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WEREWOLF_CLAN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WEREWOLF_DEN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WEREWOLF_FORTRESS</ArtDefineTag>
@@ -356,74 +359,6 @@
 				<Promotion>PROMOTION_LEASH_1</Promotion>
 				<Promotion>PROMOTION_MAGIC_RESISTANCE</Promotion>
 			</GuardianPromotions>
-		</ImprovementInfo>
-		<ImprovementInfo><!-- Ash Field -->
-			<Type>IMPROVEMENT_ASH_FIELD</Type>
-			<Description>TXT_KEY_IMPROVEMENT_ASH_FIELD</Description>
-			<Civilopedia/>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_ASH_FIELD</ArtDefineTag>
-			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_OBSIDIAN</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-			</BonusTypeStructs>
-			<TerrainMakesValids>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-				<TerrainMakesValid>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bMakesValid>1</bMakesValid>
-				</TerrainMakesValid>
-			</TerrainMakesValids>
-			<bGraphicalOnly>1</bGraphicalOnly>
-			<bPermanent>1</bPermanent>
 		</ImprovementInfo>
 </ImprovementInfos>
 </Civ4ImprovementInfos>

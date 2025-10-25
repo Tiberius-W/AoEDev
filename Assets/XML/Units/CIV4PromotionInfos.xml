@@ -5658,28 +5658,6 @@
 			</PromotionBuilds>
 			<Button>,Art/Interface/Teamcolor/Khazadbutton.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Malakim Worker -->
-			<Type>PROMOTION_MALAKIM_WORKER</Type>
-			<Description>TXT_KEY_PROMOTION_BEDOUIN_WORKER</Description>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bEffectProm>0</bEffectProm>
-			<bMustMaintain>1</bMustMaintain>
-			<bNoXP>1</bNoXP>
-			<PrereqCivilizations>
-				<PrereqCivilization>CIVILIZATION_MALAKIM</PrereqCivilization>
-			</PrereqCivilizations>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-			</UnitCombats>
-			<iMovesChange>-1</iMovesChange>
-			<PromotionBuilds>
-				<PromotionBuild>BUILD_BEDOUIN_SIT</PromotionBuild>
-			</PromotionBuilds>
-			<Button>,Art/Interface/Teamcolor/Malakimbutton.dds</Button>
-		</PromotionInfo>
 		<PromotionInfo>		<!-- Mazatl Worker -->
 			<Type>PROMOTION_MAZATL_WORKER</Type>
 			<Description>TXT_KEY_PROMOTION_MAZATL_WORKER</Description>
@@ -5739,28 +5717,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<iWorkRateModify>30</iWorkRateModify>
-			<PromotionBuilds>
-				<PromotionBuild>BUILD_PYRE</PromotionBuild>
-		        <PromotionBuild>BUILD_DTESH_CRYPT</PromotionBuild> 
-				<PromotionBuild>BUILD_PASTURE_CORRUPTED</PromotionBuild>
-		    <!--<PromotionBuild>BUILD_CATACOMBS</PromotionBuild> -->
-				<PromotionBuild>BUILD_MAUSOLEUM_LESSER</PromotionBuild>
-			</PromotionBuilds>
-			<PromotionCannotBuilds>
-		<!--	<PromotionBuild>BUILD_MINE</PromotionBuild> -->
-				<PromotionBuild>BUILD_COTTAGE</PromotionBuild>
-				<PromotionBuild>BUILD_LUMBERMILL</PromotionBuild>
-				<PromotionBuild>BUILD_PLANTATION</PromotionBuild>
-				<PromotionBuild>BUILD_WINDMILL</PromotionBuild>
-				<PromotionBuild>BUILD_WATERMILL</PromotionBuild>
-				<PromotionBuild>BUILD_QUARRY</PromotionBuild>
-				<PromotionBuild>BUILD_FORT</PromotionBuild>
-				<PromotionBuild>BUILD_FARM</PromotionBuild>
-		        <PromotionBuild>BUILD_WORKSHOP</PromotionBuild> 
-				<PromotionBuild>BUILD_PASTURE</PromotionBuild>
-				<PromotionBuild>BUILD_CAMP</PromotionBuild>
-				<PromotionBuild>BUILD_WINERY</PromotionBuild>
-			</PromotionCannotBuilds>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_FORTIFICATION_SPECIALIST</Promotion>
 				<Promotion>PROMOTION_APTITUDE1</Promotion>
@@ -24276,7 +24232,7 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Dtesh/MausoleumSpecialist.dds</Button>
 			<PromotionBuilds>
-				<PromotionBuild>BUILD_MAUSOLEUM</PromotionBuild>
+				<PromotionBuild>BUILD_CASTLE</PromotionBuild>
 			</PromotionBuilds>
 			<iWorkRateModify>20</iWorkRateModify>
 			<bValidate>1</bValidate>

@@ -2127,6 +2127,12 @@
 					<UnitType>UNIT_PIKEMAN_DOVIELLO</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_YARANGA</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_YARANGA</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -2544,6 +2550,12 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_HOMESTEAD</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_HOMESTEAD</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -3809,6 +3821,12 @@
 					<UnitType>UNIT_MUSTEVAL_BEASTMASTER</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_ENCLAVE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_ENCLAVE</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -3999,6 +4017,20 @@
 					<UnitType>UNIT_WORKBOAT_LANUN</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_PIRATE_COVE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_PIRATE_COVE</ImprovementType>
+				</Improvement>
+					<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_PIRATE_HARBOR</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_PIRATE_HARBOR</ImprovementType>
+				</Improvement>
+					<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_PIRATE_PORT</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_PIRATE_PORT</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -4681,6 +4713,28 @@
 					<UnitType>UNIT_ANUBIS</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CITADEL_OF_LIGHT</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_CITADEL_OF_LIGHT</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_COTTAGE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_BEDOUIN_SIT</ImprovementType>
+				</Improvement>
+					<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_HAMLET</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_BEDOUIN_CAMP</ImprovementType>
+				</Improvement>
+					<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_VILLAGE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_BEDOUIN_GATHERING</ImprovementType>
+				</Improvement>
+					<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_TOWN</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_BEDOUIN_VILLAGE</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -5262,6 +5316,12 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_REFINERY</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_REFINERY</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -6804,6 +6864,72 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_MINE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_CATACOMBS</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_PLANTATION</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_PYRE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_WORKSHOP</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_CRYPT</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_PASTURE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_PASTURE_CORRUPTED</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_PYRE_AQUATIC</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_FORT</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_MAUSOLEUM_LESSER</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CASTLE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_MAUSOLEUM</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CITADEL</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_COTTAGE</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_LUMBERMILL</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_WINDMILL</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_WATERMILL</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_QUARRY</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_FARM</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CAMP</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_WINERY</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_VESSEL_DTESH</UnitClassType>

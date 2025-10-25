@@ -8,6 +8,7 @@
 	<ImprovementInfos>
 		<ImprovementInfo><!-- Feeding Pen -->
 			<Type>IMPROVEMENT_FEEDING_PEN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FEEDING_PEN</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_FEEDING_PEN</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FEEDING_PEN_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_FEEDING_PEN_HELP</Help>
@@ -138,6 +139,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Maze of Webs -->
 			<Type>IMPROVEMENT_MAZE_OF_WEBS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAZE_OF_WEBS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAZE_OF_WEBS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAZE_OF_WEBS_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_MAZE_OF_WEBS_HELP</Help>
@@ -229,6 +231,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Nesting Ground -->
 			<Type>IMPROVEMENT_NESTING_GROUND</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_NESTING_GROUND</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_NESTING_GROUND</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NESTING_GROUND_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_NESTING_GROUND_HELP</Help>
@@ -303,7 +306,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementUpgrade>IMPROVEMENT_DEEP_NEST</ImprovementUpgrade>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DEEP_NEST</ImprovementUpgrade>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
 			<iMaxAirlift>1</iMaxAirlift>
@@ -311,6 +314,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Infested Fortress -->
 			<Type>IMPROVEMENT_INFESTED_FORTRESS</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_INFESTED_FORTRESS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_INFESTED_FORTRESS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_INFESTED_FORTRESS_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_INFESTED_FORTRESS_HELP</Help>
@@ -390,8 +394,8 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_NESTING_GROUND</ImprovementPillage>
-			<ImprovementUpgrade>IMPROVEMENT_DEEP_NEST</ImprovementUpgrade>
+			<ImprovementPillage>IMPROVEMENTCLASS_NESTING_GROUND</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_DEEP_NEST</ImprovementUpgrade>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>1</iCultureControlStrength>
 			<iCultureCenterBonus>1</iCultureCenterBonus>
@@ -400,6 +404,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Deep Nest -->
 			<Type>IMPROVEMENT_DEEP_NEST</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_DEEP_NEST</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_DEEP_NEST</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_DEEP_NEST_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_DEEP_NEST_HELP</Help>
@@ -478,7 +483,7 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
-			<ImprovementPillage>IMPROVEMENT_NESTING_GROUND</ImprovementPillage>
+			<ImprovementPillage>IMPROVEMENTCLASS_NESTING_GROUND</ImprovementPillage>
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>2</iCultureControlStrength>
 			<iCultureCenterBonus>2</iCultureCenterBonus>

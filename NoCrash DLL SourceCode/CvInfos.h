@@ -5472,6 +5472,7 @@ public:
 
 	DllExport CvString getCivilizationBuildingArtDefines(int i) const;				// Exposed to Python
 	DllExport int getCivilizationBuildings(int i) const;				// Exposed to Python
+	DllExport int getCivilizationImprovements(int i) const;				// Exposed to Python
 	DllExport int getCivilizationUnits(int i) const;				// Exposed to Python
 	DllExport int getCivilizationFreeUnitsClass(int i) const;				// Exposed to Python
 	DllExport int getCivilizationInitialCivics(int i) const;				// Exposed to Python
@@ -5554,6 +5555,7 @@ protected:
 	// Arrays
 	CvString* m_piCivilizationBuildingArtDefines;
 	int* m_piCivilizationBuildings;
+	int* m_piCivilizationImprovements;
 	int* m_piCivilizationUnits;
 	int* m_piCivilizationFreeUnitsClass;
 	int* m_piCivilizationInitialCivics;
@@ -6155,7 +6157,7 @@ public:
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 	int getTechPrereq() const;				// Exposed to Python
-	int getImprovement() const;				// Exposed to Python
+	int getImprovementClass() const;				// Exposed to Python
 	int getRoute() const;				// Exposed to Python
 	DllExport int getEntityEvent() const;				// Exposed to Python
 	DllExport int getMissionType() const;				// Exposed to Python
@@ -6599,10 +6601,13 @@ public:
 	int getDefenseModifier() const;				// Exposed to Python
 	int getHappiness() const;				// Exposed to Python
 	int getPillageGold() const;				// Exposed to Python
-	int getImprovementPillage() const;				// Exposed to Python
+	int getImprovementClassPillage() const;				// Exposed to Python
 	void setImprovementPillage(int i);
-	int getImprovementUpgrade() const;				// Exposed to Python
+	int getImprovementClassUpgrade() const;				// Exposed to Python
 	void setImprovementUpgrade(int i);
+	
+	int getImprovementClass() const;				// Exposed to Python
+	void setImprovementClass(int i);
 
 	bool isActsAsCity() const;				// Exposed to Python
 	bool isHillsMakesValid() const;				// Exposed to Python
@@ -6827,6 +6832,7 @@ protected:
 	int m_iPillageGold;
 	int m_iImprovementPillage;
 	int m_iImprovementUpgrade;
+	int m_iImprovementClass;
 	bool m_bActsAsCity;
 	bool m_bHillsMakesValid;
 /*************************************************************************************************/
@@ -13189,5 +13195,38 @@ public:
 	//---------------------------------------PROTECTED MEMBER VARIABLES---------------------------------
 
 protected:
+};
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+//  class : CvImprovementClassInfo
+//
+//  DESC:
+//
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class CvImprovementClassInfo :
+	public CvInfoBase
+{
+	//---------------------------------------PUBLIC INTERFACE---------------------------------
+public:
+
+	CvImprovementClassInfo();
+	virtual ~CvImprovementClassInfo();
+
+	int getDefaultImprovementIndex() const;				// Exposed to Python
+	void setDefaultImprovementIndex(int i);
+
+
+	bool isUnique() const;
+
+	bool read(CvXMLLoadUtility* pXML);
+	bool readPass3();
+	void copyNonDefaults(CvImprovementClassInfo* pClassInfo = NULL, CvXMLLoadUtility* pXML = NULL);
+protected:
+
+	int m_iDefaultImprovementIndex;
+
+	bool m_bUnique;
+
 };
 

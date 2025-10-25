@@ -236,6 +236,7 @@ public:
 
 	// allocate and initialize the civilization's default buildings
 	void InitBuildingDefaults(int **ppiDefaults);
+	void InitImprovementDefaults(int** ppiDefaults);
 	void InitBuildingArtDefineDefaults(CvString** ppiDefaults);
 	void InitFeatureGraphicsDefaults(int** ppiDefaults);
 	// allocate and initialize the civilization's default units

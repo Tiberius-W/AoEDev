@@ -578,8 +578,10 @@
 		<element type="GoodyClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iNoBadExplore" content="textOnly" dt:type="int"/>
+	<ElementType name="ImprovementClass" content="textOnly"/>
 	<ElementType name="ImprovementInfo" content="eltOnly" order="many">
 		<element type="Type"/>
+		<element type="ImprovementClass"/>
 		<element type="bForceOverwrite"/>
 		<element type="bTypeDependency"/>
 		<element type="AndDependencyTypes"/>
@@ -777,6 +779,24 @@
 	</ElementType>
 	<ElementType name="Civ4PlotEffectInfos" content="eltOnly">
 		<element type="PlotEffectInfos"/>
+	</ElementType>
+	<ElementType name="DefaultImprovement" content="textOnly"/>
+	
+	<ElementType name="ImprovementClassInfo" content="eltOnly" order="many">
+		<element type="Type"/>
+		<element type="bForceOverwrite"/>
+		<element type="bTypeDependency"/>
+		<element type="AndDependencyTypes"/>
+		<element type="OrDependencyTypes"/>
+		<element type="Description"/>
+		<element type="bUnique"/>
+		<element type="DefaultImprovement"/>
+	</ElementType>
+	<ElementType name="ImprovementClassInfos" content="eltOnly">
+		<element type="ImprovementClassInfo" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="Civ4ImprovementClassInfos" content="eltOnly">
+		<element type="ImprovementClassInfos" minOccurs="0"/>
 	</ElementType>
 <!-- FlavourMod: End Add -->
 </Schema>

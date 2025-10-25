@@ -7198,22 +7198,26 @@ int CvCityAI::AI_getGoodTileCount()
 
 					if( eBuild != NO_BUILD )
 					{
-						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-						if (eImprovement != NO_IMPROVEMENT)
+						ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+						if (eImprovementClass != NO_IMPROVEMENTCLASS)
 						{
-							bool bIgnoreFeature = false;
-							if (pLoopPlot->getFeatureType() != NO_FEATURE)
+							ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
+							if (eImprovement != NO_IMPROVEMENT)
 							{
-								if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+								bool bIgnoreFeature = false;
+								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-									bIgnoreFeature = true;
+									if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+									{
+										bIgnoreFeature = true;
+									}
 								}
-							}
 
-							bUseBaseValue = false;
-							for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-							{
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								bUseBaseValue = false;
+								for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+								{
+									aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								}
 							}
 						}
 					}
@@ -7298,22 +7302,26 @@ int CvCityAI::AI_countWorkedPoorTiles()
 
 					if( eBuild != NO_BUILD )
 					{
-						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-						if (eImprovement != NO_IMPROVEMENT)
+						ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+						if (eImprovementClass != NO_IMPROVEMENTCLASS)
 						{
-							bool bIgnoreFeature = false;
-							if (pLoopPlot->getFeatureType() != NO_FEATURE)
+							ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
+							if (eImprovement != NO_IMPROVEMENT)
 							{
-								if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+								bool bIgnoreFeature = false;
+								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-									bIgnoreFeature = true;
+									if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+									{
+										bIgnoreFeature = true;
+									}
 								}
-							}
 
-							bUseBaseValue = false;
-							for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-							{
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								bUseBaseValue = false;
+								for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+								{
+									aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								}
 							}
 						}
 					}
@@ -7456,22 +7464,26 @@ void CvCityAI::AI_getYieldMultipliers( int &iFoodMultiplier, int &iProductionMul
 
 					if( eBuild != NO_BUILD )
 					{
-						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-						if (eImprovement != NO_IMPROVEMENT)
+						ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+						if (eImprovementClass != NO_IMPROVEMENTCLASS)
 						{
-							bool bIgnoreFeature = false;
-							if (pLoopPlot->getFeatureType() != NO_FEATURE)
+							ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
+							if (eImprovement != NO_IMPROVEMENT)
 							{
-								if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+								bool bIgnoreFeature = false;
+								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-									bIgnoreFeature = true;
+									if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType()))
+									{
+										bIgnoreFeature = true;
+									}
 								}
-							}
 
-							bUseBaseValue = false;
-							for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-							{
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								bUseBaseValue = false;
+								for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+								{
+									aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								}
 							}
 						}
 					}
@@ -7761,7 +7773,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 
 			if (pLoopUnit->getBuildType() != NO_BUILD)
 			{
-				if (GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovement() != NO_IMPROVEMENT)
+				if (GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovementClass() != NO_IMPROVEMENTCLASS && pLoopUnit->getUnitImprovement((ImprovementClassTypes)GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovementClass()) != NO_IMPROVEMENT)
 				{
 					eForcedBuild = pLoopUnit->getBuildType();
 					break;
@@ -7782,7 +7794,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 	{
 		if (eForcedBuild != NO_BUILD)
 		{
-			if (GC.getBuildInfo(eForcedBuild).getImprovement() == eImprovement)
+			if (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eForcedBuild).getImprovementClass()) == eImprovement)
 			{
 				eBestTempBuild = eForcedBuild;
 			}
@@ -7793,7 +7805,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 			{
 				BuildTypes eBuild = ((BuildTypes)iJ);
 
-				if (GC.getBuildInfo(eBuild).getImprovement() == eImprovement)
+				if (GC.getBuildInfo(eBuild).getImprovementClass() !=NO_IMPROVEMENTCLASS && GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass())== eImprovement)
 				{
 					if (GET_PLAYER(getOwnerINLINE()).canBuild(pPlot, eBuild, false))
 					{
@@ -7867,7 +7879,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 					iValue += 200;
 					/*if (eBestBuild != NO_BUILD)
 					{
-						if ((GC.getBuildInfo(eBestBuild).getImprovement() == NO_IMPROVEMENT) || (!GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus)))
+						if ((GC.getBuildInfo(eBestBuild).getImprovementClass() == NO_IMPROVEMENT) || (!GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()).isImprovementBonusTrade(eNonObsoleteBonus)))
 						{
 							//Always prefer improvements which connect bonuses.
 							eBestBuild = NO_BUILD;
@@ -7879,7 +7891,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 				{
 					/*if (eBestBuild != NO_BUILD)
 					{
-						if ((GC.getBuildInfo(eBestBuild).getImprovement() != NO_IMPROVEMENT) && (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus)))
+						if ((GC.getBuildInfo(eBestBuild).getImprovementClass() != NO_IMPROVEMENT) && (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()).isImprovementBonusTrade(eNonObsoleteBonus)))
 						{
 							iValue -= 1000;
 						}
@@ -8106,15 +8118,15 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 			else
 			{
 				// cottage/villages (don't want to chop them up if turns have been invested)
-				ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage();
+				ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage());
 				while (eImprovementDowngrade != NO_IMPROVEMENT)
 				{
 					CvImprovementInfo& kImprovementDowngrade = GC.getImprovementInfo(eImprovementDowngrade);
 					iValue -= kImprovementDowngrade.getUpgradeTime() * 8;
-					eImprovementDowngrade = (ImprovementTypes)kImprovementDowngrade.getImprovementPillage();
+					eImprovementDowngrade = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)kImprovementDowngrade.getImprovementClassPillage());
 				}
 
-				if (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementUpgrade() != NO_IMPROVEMENT)
+				if (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassUpgrade()) != NO_IMPROVEMENT)
 				{
 					iValue -= (GC.getImprovementInfo(pPlot->getImprovementType()).getUpgradeTime() * 8 * (pPlot->getUpgradeProgress())) / std::max(1, GC.getGameINLINE().getImprovementUpgradeTime(pPlot->getImprovementType()));
 				}
@@ -8123,7 +8135,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 				{
 					if (isWorkingPlot(pPlot))
 					{
-						if (((iFoodPriority < 100) && (aiFinalYields[YIELD_FOOD] >= GC.getFOOD_CONSUMPTION_PER_POPULATION())) || (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT))
+						if (((iFoodPriority < 100) && (aiFinalYields[YIELD_FOOD] >= GC.getFOOD_CONSUMPTION_PER_POPULATION())) || (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage() != NO_IMPROVEMENTCLASS))
 						{
 							iValue -= 70;
 							iValue *= 2;
@@ -8283,47 +8295,38 @@ void CvCityAI::AI_updateBestBuild()
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
-						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-						if (eImprovement != NO_IMPROVEMENT)
+						ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+						if (eImprovementClass!=NO_IMPROVEMENTCLASS)
 						{
-							bool bIgnoreFeature = false;
-							if (pLoopPlot->getFeatureType() != NO_FEATURE)
+							ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
+							if (eImprovement != NO_IMPROVEMENT)
 							{
-								if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType())
-
-//FfH: Added by Kael 04/24/2008
-								  && !GC.getCivilizationInfo(getCivilizationType()).isMaintainFeatures(pLoopPlot->getFeatureType())
-//FfH: End Add
-
-
-								)
+								bool bIgnoreFeature = false;
+								if (pLoopPlot->getFeatureType() != NO_FEATURE)
 								{
-									bIgnoreFeature = true;
+									if (GC.getBuildInfo(eBuild).isFeatureRemove(pLoopPlot->getFeatureType())
+								
+									//FfH: Added by Kael 04/24/2008
+										&& !GC.getCivilizationInfo(getCivilizationType()).isMaintainFeatures(pLoopPlot->getFeatureType())
+									//FfH: End Add
+										)
+									{
+										bIgnoreFeature = true;
+									}
 								}
-							}
 
-							iHappyAdjust += GC.getImprovementInfo(eImprovement).getHappiness();
-							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-							{
-								iHappyAdjust -= GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness();
-							}
+								iHappyAdjust += GC.getImprovementInfo(eImprovement).getHappiness();
+								if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
+								{
+									iHappyAdjust -= GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness();
+								}
 
 
-							bUseBaseValue = false;
-							for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-							{
-/*************************************************************************************************/
-/**	CivPlotMods								04/02/09								Jean Elcard	**/
-/**																								**/
-/**							Calculate Player-specific Nature Yields.							**/
-/*************************************************************************************************/
-/**								---- Start Original Code ----									**
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
-/**								----  End Original Code  ----									**/
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getOwner(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
-/*************************************************************************************************/
-/**	CivPlotMods								END													**/
-/*************************************************************************************************/
+								bUseBaseValue = false;
+								for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+								{
+									aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getOwner(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								}
 							}
 						}
 					}
@@ -8970,7 +8973,7 @@ void CvCityAI::AI_updateBestBuild()
 /**	Xienwolf Notes							NOTES												**/
 /**						Our intended improvement isn't a road/chop								**/
 /*************************************************************************************************/
-								if (GC.getBuildInfo(m_aeBestBuild[iI]).getImprovement() != NO_IMPROVEMENT)
+								if (GC.getBuildInfo(m_aeBestBuild[iI]).getImprovementClass() != NO_IMPROVEMENTCLASS)
 								{
 /*************************************************************************************************/
 /**	Xienwolf Notes							NOTES												**/
@@ -8990,7 +8993,7 @@ void CvCityAI::AI_updateBestBuild()
 /**	Xienwolf Notes							NOTES												**/
 /**		BUT, if this plot IS being worked, and is not improved yet, but we plan to improve it	**/
 /*************************************************************************************************/
-							else if ((pLoopPlot->getImprovementType() != NO_IMPROVEMENT) && (GC.getBuildInfo(m_aeBestBuild[iI]).getImprovement() != NO_IMPROVEMENT))
+							else if ((pLoopPlot->getImprovementType() != NO_IMPROVEMENT) && (GC.getBuildInfo(m_aeBestBuild[iI]).getImprovementClass() != NO_IMPROVEMENTCLASS))
 							{
 								for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 								{
@@ -11427,7 +11430,7 @@ int CvCityAI::AI_plotValue(CvPlot* pPlot, bool bAvoidGrowth, bool bRemove, bool 
 		}
 	}
 
-	if ((eCurrentImprovement != NO_IMPROVEMENT) && (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementUpgrade() != NO_IMPROVEMENT))
+	if ((eCurrentImprovement != NO_IMPROVEMENT) && (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassUpgrade()) != NO_IMPROVEMENT))
 	{
 		iValue += 200;
 		iValue -= pPlot->getUpgradeTimeLeft(eCurrentImprovement, NO_PLAYER);
@@ -11628,7 +11631,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 
 			if (pLoopUnit->getBuildType() != NO_BUILD)
 			{
-				if (GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovement() != NO_IMPROVEMENT)
+				if (GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovementClass() != NO_IMPROVEMENTCLASS  && pLoopUnit->getUnitImprovement((ImprovementClassTypes)GC.getBuildInfo(pLoopUnit->getBuildType()).getImprovementClass())!=NO_IMPROVEMENT)
 				{
 					eForcedBuild = pLoopUnit->getBuildType();
 					break;
@@ -11776,7 +11779,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /*************************************************************************************************/
 			if (eForcedBuild != NO_BUILD)
 			{
-				if (GC.getBuildInfo(eForcedBuild).getImprovement() == eImprovement)
+				if (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eForcedBuild).getImprovementClass()) == eImprovement)
 				{
 					eBestTempBuild = eForcedBuild;
 				}
@@ -11806,7 +11809,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				{
 					eBuild = ((BuildTypes)iJ);
 
-					if (GC.getBuildInfo(eBuild).getImprovement() == eImprovement)
+					if (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass()) == eImprovement)
 					{
 						if (GET_PLAYER(getOwnerINLINE()).canBuild(pPlot, eBuild, false))
 						{
@@ -11959,9 +11962,12 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /**				Need to account for every possible method of connecting the resource			**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
-							if ((GC.getBuildInfo(eBestBuild).getImprovement() == NO_IMPROVEMENT) || (!GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus)))
+							if ((GC.getBuildInfo(eBestBuild).getImprovementClass() == NO_IMPROVEMENT) || (!GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()).isImprovementBonusTrade(eNonObsoleteBonus)))
 /**								----  End Original Code  ----									**/
-							if ((GC.getBuildInfo(eBestBuild).getImprovement() == NO_IMPROVEMENT) || !(GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus) || GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isActsAsCity()))
+							if ((GC.getBuildInfo(eBestBuild).getImprovementClass() == NO_IMPROVEMENTCLASS) 
+								|| GET_PLAYER(getOwner()).getPlayerImprovement(((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass())) == NO_IMPROVEMENT 
+								|| !(GC.getImprovementInfo((ImprovementTypes) GET_PLAYER(getOwner()).getPlayerImprovement(((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()))).isImprovementBonusTrade(eNonObsoleteBonus)) 
+								|| (GC.getImprovementInfo((ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement(((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()))).isActsAsCity()))
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -11986,9 +11992,12 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /**				Need to account for every possible method of connecting the resource			**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
-							if ((GC.getBuildInfo(eBestBuild).getImprovement() != NO_IMPROVEMENT) && (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus)))
+							if ((GC.getBuildInfo(eBestBuild).getImprovementClass() != NO_IMPROVEMENT) && (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()).isImprovementBonusTrade(eNonObsoleteBonus)))
 /**								----  End Original Code  ----									**/
-							if ((GC.getBuildInfo(eBestBuild).getImprovement() != NO_IMPROVEMENT) && (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus) || GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isActsAsCity()))
+							if ((GC.getBuildInfo(eBestBuild).getImprovementClass() != NO_IMPROVEMENTCLASS) 
+								&& (GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass()) != NO_IMPROVEMENT) 
+								&& (GC.getImprovementInfo((ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass())).isImprovementBonusTrade(eNonObsoleteBonus) 
+									|| GC.getImprovementInfo((ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getBuildInfo(eBestBuild).getImprovementClass())).isActsAsCity()))
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -12324,7 +12333,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				else
 				{
 					// cottage/villages (don't want to chop them up if turns have been invested)
-					ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage();
+					ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage());
 /*************************************************************************************************/
 /**	Xienwolf Notes							NOTES												**/
 /**	Rather a small adjustment here... Maybe base it on the AI value of the yields for the tile?	**/
@@ -12334,7 +12343,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					{
 						CvImprovementInfo& kImprovementDowngrade = GC.getImprovementInfo(eImprovementDowngrade);
 						iValue -= kImprovementDowngrade.getUpgradeTime() * 8;
-						eImprovementDowngrade = (ImprovementTypes)kImprovementDowngrade.getImprovementPillage();
+						eImprovementDowngrade = (ImprovementTypes)GET_PLAYER(getOwner()).getPlayerImprovement((ImprovementClassTypes)kImprovementDowngrade.getImprovementClassPillage());
 					}
 
 /*************************************************************************************************/
@@ -12345,7 +12354,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /**	Need to check this value on the Player in case they run Sacrifice the Weak, or are Fallow	**/
 /*************************************************************************************************/
 /**								---- Start Original Code ----									**
-					if (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementUpgrade() != NO_IMPROVEMENT)
+					if (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassUpgrade() != NO_IMPROVEMENT)
 /**								----  End Original Code  ----									**/
 					if (finalImprovementUpgrade(pPlot->getImprovementType(), GET_PLAYER(getOwnerINLINE()).getCivilizationType()) != NO_IMPROVEMENT)
 /*************************************************************************************************/
@@ -12359,7 +12368,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					{
 						if (isWorkingPlot(pPlot))
 						{
-							if (((iFoodPriority < 100) && (aiFinalYields[YIELD_FOOD] >= getFoodConsumptionPerPopulation())) || (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage() != NO_IMPROVEMENT))
+							if (((iFoodPriority < 100) && (aiFinalYields[YIELD_FOOD] >= getFoodConsumptionPerPopulation())) || (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage() != NO_IMPROVEMENTCLASS))
 							{
 								iValue -= 70;
 								iValue *= 2;
@@ -12466,7 +12475,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				{
 					eBuild = ((BuildTypes)iI);
 
-					if (GC.getBuildInfo(eBuild).getImprovement() == NO_IMPROVEMENT)
+					if (GC.getBuildInfo(eBuild).getImprovementClass() == NO_IMPROVEMENTCLASS)
 					{
 						if (GC.getBuildInfo(eBuild).isFeatureRemove(pPlot->getFeatureType())
 
@@ -12505,7 +12514,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 		for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 		{
 			eBuild = ((BuildTypes)iI);
-			if (GC.getBuildInfo(eBuild).getImprovement() == NO_IMPROVEMENT)
+			if (GC.getBuildInfo(eBuild).getImprovementClass() == NO_IMPROVEMENTCLASS)
 			{
 				if (GC.getBuildInfo(eBuild).isFeatureRemove(pPlot->getFeatureType())
 
@@ -12632,7 +12641,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 		//Now modify the priority for this build.
 		if (GET_PLAYER(getOwnerINLINE()).AI_isFinancialTrouble())
 		{
-			if (GC.getBuildInfo(eBestBuild).getImprovement() != NO_IMPROVEMENT)
+			if (GC.getBuildInfo(eBestBuild).getImprovementClass() != NO_IMPROVEMENTCLASS)
 			{
 				iBestValue += (iBestValue * std::max(0, aiBestDiffYields[YIELD_COMMERCE])) / 4;
 				iBestValue = std::max(1, iBestValue);
@@ -13602,21 +13611,24 @@ int CvCityAI::AI_countNumImprovableBonuses( bool bIncludeNeutral, TechTypes eExt
 
 							if( eBuild != NO_BUILD && pLoopPlot->canBuild(eBuild, getOwnerINLINE()) )
 							{
-								ImprovementTypes eImp = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
-
-								if( eImp != NO_IMPROVEMENT && GC.getImprovementInfo(eImp).isImprovementBonusTrade(eLoopBonus) )
+								ImprovementClassTypes eImpClass = (ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass();
+								if (eImpClass != NO_IMPROVEMENTCLASS)
 								{
-									if( GET_PLAYER(getOwnerINLINE()).canBuild(pLoopPlot, eBuild) )
+									ImprovementTypes eImp = GET_PLAYER(getOwner()).getPlayerImprovement(eImpClass);
+									if (eImp != NO_IMPROVEMENT && GC.getImprovementInfo(eImp).isImprovementBonusTrade(eLoopBonus))
 									{
-										iCount++;
-										break;
-									}
-									else if( (eExtraTech != NO_TECH) )
-									{
-										if (GC.getBuildInfo(eBuild).getTechPrereq() == eExtraTech)
+										if (GET_PLAYER(getOwnerINLINE()).canBuild(pLoopPlot, eBuild))
 										{
 											iCount++;
 											break;
+										}
+										else if ((eExtraTech != NO_TECH))
+										{
+											if (GC.getBuildInfo(eBuild).getTechPrereq() == eExtraTech)
+											{
+												iCount++;
+												break;
+											}
 										}
 									}
 								}
@@ -14055,28 +14067,24 @@ void CvCityAI::AI_updateWorkersNeededHere()
 						}
 
 						int iPlotValue = AI_yieldValue(aiYields, NULL, false, false, false, false, true, true);
-						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(AI_getBestBuild(iI)).getImprovement();
-						if (eImprovement != NO_IMPROVEMENT)
+						ImprovementClassTypes eImprovementClass = (ImprovementClassTypes)GC.getBuildInfo(AI_getBestBuild(iI)).getImprovementClass();
+						if (eImprovementClass != NO_IMPROVEMENTCLASS)
 						{
-							if ((getImprovementFreeSpecialists(eImprovement) > 0) || (GC.getImprovementInfo(eImprovement).getHappiness() > 0))
+							ImprovementTypes eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(eImprovementClass);
+							if (eImprovement != NO_IMPROVEMENT)
 							{
-								iSpecialCount ++;
-							}
-/*************************************************************************************************/
-/**	Statesmen								02/05/10											**/
-/**																								**/
-/**						Allows improvements to grant specific specialists						**/
-/*************************************************************************************************/
-							if (GC.getImprovementInfo(finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType())).getFreeSpecialist() != NO_SPECIALIST)
-							{
+								if ((getImprovementFreeSpecialists(eImprovement) > 0) || (GC.getImprovementInfo(eImprovement).getHappiness() > 0))
+								{
+									iSpecialCount++;
+								}
+								if (GC.getImprovementInfo(finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType())).getFreeSpecialist() != NO_SPECIALIST)
+								{
 
-								iSpecialCount++;
+									iSpecialCount++;
+								}
 							}
-/*************************************************************************************************/
-/**	Statesmen								END													**/
-/*************************************************************************************************/
+							iBestPotentialPlotValue = std::max(iBestPotentialPlotValue, iPlotValue);
 						}
-						iBestPotentialPlotValue = std::max(iBestPotentialPlotValue, iPlotValue);
 					}
 				}
 			}

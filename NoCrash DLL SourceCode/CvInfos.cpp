@@ -25926,6 +25926,7 @@ m_bAIPlayable(false),
 m_bNoCrimeCiv(false),
 m_piCivilizationBuildingArtDefines(NULL),
 m_piCivilizationBuildings(NULL),
+m_piCivilizationImprovements(NULL),
 m_piCivilizationUnits(NULL),
 m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
@@ -25986,6 +25987,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 {
 	SAFE_DELETE_ARRAY(m_piCivilizationBuildingArtDefines);
 	SAFE_DELETE_ARRAY(m_piCivilizationBuildings);
+	SAFE_DELETE_ARRAY(m_piCivilizationImprovements);
 	SAFE_DELETE_ARRAY(m_piCivilizationUnits);
 	SAFE_DELETE_ARRAY(m_piCivilizationFreeUnitsClass);
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
@@ -26235,6 +26237,13 @@ int CvCivilizationInfo::getCivilizationBuildings(int i) const
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_piCivilizationBuildings ? m_piCivilizationBuildings[i] : -1;
+}
+
+int CvCivilizationInfo::getCivilizationImprovements(int i) const
+{
+	FAssertMsg(i < GC.getNumImprovementClassInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piCivilizationImprovements ? m_piCivilizationImprovements[i] : -1;
 }
 
 int CvCivilizationInfo::getCivilizationUnits(int i) const
@@ -26493,6 +26502,10 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	m_piCivilizationBuildings = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_piCivilizationBuildings);
 
+	SAFE_DELETE_ARRAY(m_piCivilizationImprovements);
+	m_piCivilizationImprovements = new int[GC.getNumImprovementClassInfos()];
+	stream->Read(GC.getNumImprovementClassInfos(), m_piCivilizationImprovements);
+
 	SAFE_DELETE_ARRAY(m_piCivilizationUnits);
 	m_piCivilizationUnits = new int[GC.getNumUnitClassInfos()];
 	stream->Read(GC.getNumUnitClassInfos(), m_piCivilizationUnits);
@@ -26594,6 +26607,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 		stream->WriteString( m_piCivilizationBuildingArtDefines[i]);
 	}
 	stream->Write(GC.getNumBuildingClassInfos(), m_piCivilizationBuildings);
+	stream->Write(GC.getNumImprovementClassInfos(), m_piCivilizationImprovements);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationUnits);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationFreeUnitsClass);
 	stream->Write(GC.getNumCivicOptionInfos(), m_piCivilizationInitialCivics);
@@ -27018,11 +27032,6 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 		// set the current xml node to it's parent node
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
-/*************************************************************************************************/
-/**	TrueModular								05/26/09	Written: Mr. Genie	Imported: Xienwolf	**/
-/**		Quickly adjusted to account for bUnique tag, should work as now written, but untested	**/
-/**	Properly links Modular modifications to previous elements, and allows partial overwriting	**/
-/*************************************************************************************************/
 	else
 	{
 		pXML->InitBuildingDefaults(&m_piCivilizationBuildings);
@@ -27034,7 +27043,91 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 			}
 		}
 	}
-/*************************************************************************************************/
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "Improvements"))
+	{
+		// pXML->Skip any comments and stop at the next value we might want
+		if (pXML->SkipToNextVal())
+		{
+			// call the function that sets the default civilization Improvements
+			pXML->InitImprovementDefaults(&m_piCivilizationImprovements);
+			/*************************************************************************************************/
+			/**	TrimmingFat								01/12/09								Xienwolf	**/
+			/**																								**/
+			/**						Blocks all Units not specifically authorized for Civ					**/
+			/*************************************************************************************************/
+			if (m_bLimitedSelection)
+			{
+				for (int i = 0; i < GC.getNumImprovementClassInfos(); i++)
+				{
+					m_piCivilizationImprovements[i] = -1;
+				}
+			}
+			/*************************************************************************************************/
+			/**	TrimmingFat								END													**/
+			/*************************************************************************************************/
+						// get the total number of children the current xml node has
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			// if the call to the function that sets the current xml node to it's first non-comment
+			// child and sets the parameter with the new node's value succeeds
+			if ((0 < iNumSibs) && (gDLL->getXMLIFace()->SetToChild(pXML->GetXML())))
+			{
+				int iImprovementClassIndex;
+
+				FAssertMsg((iNumSibs <= GC.getNumImprovementClassInfos()), "In SetGlobalCivilizationInfo iNumSibs is greater than GC.getNumImprovementClassInfos()");
+
+				// loop through all the siblings
+				for (j = 0; j < iNumSibs; j++)
+				{
+					if (pXML->GetChildXmlVal(szClassVal))
+					{
+						// get the index into the array based on the Improvement class type
+						iImprovementClassIndex = pXML->FindInInfoClass(szClassVal);
+						if (-1 < iImprovementClassIndex)
+						{
+							// get the next value which should be the Improvement type to set this civilization's version of this Improvement class too
+							pXML->GetNextXmlVal(szTextVal);
+							// call the find in list function to return either -1 if no value is found
+							// or the index in the list the match is found at
+							m_piCivilizationImprovements[iImprovementClassIndex] = pXML->FindInInfoClass(szTextVal);
+						}
+						else
+						{
+							FAssertMsg(0, "ImprovementClass index is -1 in SetGlobalCivilizationInfo function");
+						}
+
+						// set the current xml node to it's parent node
+						gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+					}
+
+					// if the call to the function that sets the current xml node to it's first non-comment
+					// sibling and sets the parameter with the new node's value does not succeed
+					// we will break out of this for loop
+					if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+					{
+						break;
+					}
+				}
+
+				// set the current xml node to it's parent node
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitImprovementDefaults(&m_piCivilizationImprovements);
+		if (isLimitedSelection())
+		{
+			for (j = 0; j < GC.getNumImprovementClassInfos(); j++)
+			{
+				m_piCivilizationImprovements[j] = NO_IMPROVEMENT;
+			}
+		}
+	}
+	/*************************************************************************************************/
 /**	TrueModular								END													**/
 /*************************************************************************************************/
 
@@ -27273,6 +27366,11 @@ void CvCivilizationInfo::copyNonDefaults(CvCivilizationInfo* pClassInfo, CvXMLLo
 		int iDefaultBuilding = (GC.getBuildingClassInfo((BuildingClassTypes)i).isUnique() || isLimitedSelection()) ? -1 : GC.getBuildingClassInfo((BuildingClassTypes)i).getDefaultBuildingIndex();
 		if (getCivilizationBuildings(i) == iDefaultBuilding)	m_piCivilizationBuildings[i] = pClassInfo->getCivilizationBuildings(i);
 		if (isCivilizationFreeBuildingClass(i) == false)				m_pbCivilizationFreeBuildingClass[i] = pClassInfo->isCivilizationFreeBuildingClass(i);
+	}
+	for (int i = 0; i < GC.getNumImprovementClassInfos(); i++)
+	{
+		int iDefaultImprovement = (GC.getImprovementClassInfo((ImprovementClassTypes)i).isUnique() || isLimitedSelection()) ? -1 : GC.getImprovementClassInfo((ImprovementClassTypes)i).getDefaultImprovementIndex();
+		if (getCivilizationImprovements(i) == iDefaultImprovement)	m_piCivilizationImprovements[i] = pClassInfo->getCivilizationImprovements(i);
 	}
 	cDefault = CvString::format("").GetCString();
 
@@ -29122,7 +29220,7 @@ m_piLinkedBuilds(NULL),
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 m_iTechPrereq(NO_TECH),
-m_iImprovement(NO_IMPROVEMENT),
+m_iImprovement(NO_IMPROVEMENTCLASS),
 m_iRoute(NO_ROUTE),
 m_iEntityEvent(ENTITY_EVENT_NONE),
 m_iMissionType(NO_MISSION),
@@ -29214,7 +29312,7 @@ int CvBuildInfo::getTechPrereq() const
 	return m_iTechPrereq;
 }
 
-int CvBuildInfo::getImprovement() const
+int CvBuildInfo::getImprovementClass() const
 {
 	return m_iImprovement;
 }
@@ -29385,7 +29483,7 @@ void CvBuildInfo::copyNonDefaults(CvBuildInfo* pClassInfo, CvXMLLoadUtility* pXM
 /*************************************************************************************************/
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
-	if (getImprovement()			== NO_IMPROVEMENT)		m_iImprovement				= pClassInfo->getImprovement();
+	if (getImprovementClass()			== NO_IMPROVEMENTCLASS)		m_iImprovement				= pClassInfo->getImprovementClass();
 	if (getRoute()					== NO_ROUTE)			m_iRoute					= pClassInfo->getRoute();
 	if (getEntityEvent()			== ENTITY_EVENT_NONE)	m_iEntityEvent				= pClassInfo->getEntityEvent();
 	for ( int i = 0; i < GC.getNumFeatureInfos(); i++)
@@ -30451,8 +30549,9 @@ CvImprovementInfo::CvImprovementInfo() :
 	m_iDefenseModifier(0),
 	m_iHappiness(0),
 	m_iPillageGold(0),
-	m_iImprovementPillage(NO_IMPROVEMENT),
-	m_iImprovementUpgrade(NO_IMPROVEMENT),
+	m_iImprovementPillage(NO_IMPROVEMENTCLASS),
+	m_iImprovementUpgrade(NO_IMPROVEMENTCLASS),
+	m_iImprovementClass(NO_IMPROVEMENTCLASS),
 	m_bActsAsCity(true),
 	m_bHillsMakesValid(false),
 	/*************************************************************************************************/
@@ -30774,7 +30873,7 @@ void CvImprovementInfo::setCultureCenterBonus(int i)
 /**	Improvements Mods	END								**/
 /*************************************************************************************************/
 
-int CvImprovementInfo::getImprovementPillage() const
+int CvImprovementInfo::getImprovementClassPillage() const
 {
 	return m_iImprovementPillage;
 }
@@ -30784,7 +30883,7 @@ void CvImprovementInfo::setImprovementPillage(int i)
 	m_iImprovementPillage = i;
 }
 
-int CvImprovementInfo::getImprovementUpgrade() const
+int CvImprovementInfo::getImprovementClassUpgrade() const
 {
 	return m_iImprovementUpgrade;
 }
@@ -30792,6 +30891,16 @@ int CvImprovementInfo::getImprovementUpgrade() const
 void CvImprovementInfo::setImprovementUpgrade(int i)
 {
 	m_iImprovementUpgrade = i;
+}
+
+int CvImprovementInfo::getImprovementClass() const
+{
+	return m_iImprovementClass;
+}
+
+void CvImprovementInfo::setImprovementClass(int i)
+{
+	m_iImprovementClass = i;
 }
 
 bool CvImprovementInfo::isActsAsCity() const
@@ -31314,6 +31423,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iPillageGold);
 	stream->Read(&m_iImprovementPillage);
 	stream->Read(&m_iImprovementUpgrade);
+	stream->Read(&m_iImprovementClass);
 	stream->Read(&m_bActsAsCity);
 	stream->Read(&m_bHillsMakesValid);
 /*************************************************************************************************/
@@ -31560,6 +31670,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iPillageGold);
 	stream->Write(m_iImprovementPillage);
 	stream->Write(m_iImprovementUpgrade);
+	stream->Write(m_iImprovementClass);
 	stream->Write(m_bActsAsCity);
 	stream->Write(m_bHillsMakesValid);
 /*************************************************************************************************/
@@ -32095,6 +32206,9 @@ bool CvImprovementInfo::readPass2(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(szTextVal, "ImprovementUpgrade");
 	m_iImprovementUpgrade = GC.getInfoTypeForString(szTextVal);
+	
+	pXML->GetChildXmlValByName(szTextVal, "ImprovementClass");
+	m_iImprovementClass = GC.getInfoTypeForString(szTextVal);
 
 	return true;
 }
@@ -32416,8 +32530,9 @@ void CvImprovementInfo::copyNonDefaults(CvImprovementInfo* pClassInfo, CvXMLLoad
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 	//Readpass2 stuff
-	if (m_iImprovementPillage								== -1)				m_iImprovementPillage						= pClassInfo->getImprovementPillage();
-	if (m_iImprovementUpgrade								== -1)				m_iImprovementUpgrade						= pClassInfo->getImprovementUpgrade();
+	if (m_iImprovementPillage								== -1)				m_iImprovementPillage						= pClassInfo->getImprovementClassPillage();
+	if (m_iImprovementUpgrade								== -1)				m_iImprovementUpgrade						= pClassInfo->getImprovementClassUpgrade();
+	if (m_iImprovementClass == -1)				m_iImprovementClass = pClassInfo->getImprovementClass();
 
 	//Readpass3 stuff
 	for ( int i = 0; i < pClassInfo->getSpawnUnitTypeVectorSize(); i++ )
@@ -32461,8 +32576,9 @@ void CvImprovementInfo::copyNonDefaultsReadPass2(CvImprovementInfo* pClassInfo, 
 	CvString cDefault = CvString::format("").GetCString();
 	CvWString wDefault = CvWString::format(L"").GetCString();
 
-	if (bOver || pClassInfo->getImprovementPillage()		!= -1)				m_iImprovementPillage						= pClassInfo->getImprovementPillage();
-	if (bOver || pClassInfo->getImprovementUpgrade()		!= -1)				m_iImprovementUpgrade						= pClassInfo->getImprovementUpgrade();
+	if (bOver || pClassInfo->getImprovementClassPillage()		!= -1)				m_iImprovementPillage						= pClassInfo->getImprovementClassPillage();
+	if (bOver || pClassInfo->getImprovementClassUpgrade()		!= -1)				m_iImprovementUpgrade						= pClassInfo->getImprovementClassUpgrade();
+	if (bOver || pClassInfo->getImprovementClass() != -1)				m_iImprovementClass = pClassInfo->getImprovementClass();
 }
 /*************************************************************************************************/
 /**	TrueModular								END													**/
@@ -53907,3 +54023,98 @@ bool CvSpellClassInfo::read(CvXMLLoadUtility* pXML)
 }
 
 
+
+//======================================================================================================
+//					CvImprovementClassInfo
+//======================================================================================================
+
+//------------------------------------------------------------------------------------------------------
+//
+//  FUNCTION:   CvImprovementClassInfo()
+//
+//  PURPOSE :   Default constructor
+//
+//------------------------------------------------------------------------------------------------------
+CvImprovementClassInfo::CvImprovementClassInfo() :
+	m_iDefaultImprovementIndex(NO_IMPROVEMENT),
+	m_bUnique(false)
+{
+}
+
+//------------------------------------------------------------------------------------------------------
+//
+//  FUNCTION:   ~CvImprovementClassInfo()
+//
+//  PURPOSE :   Default destructor
+//
+//------------------------------------------------------------------------------------------------------
+CvImprovementClassInfo::~CvImprovementClassInfo()
+{
+}
+
+int CvImprovementClassInfo::getDefaultImprovementIndex() const
+{
+	return m_iDefaultImprovementIndex;
+}
+
+void CvImprovementClassInfo::setDefaultImprovementIndex(int i)
+{
+	m_iDefaultImprovementIndex = i;
+}
+
+bool CvImprovementClassInfo::isUnique() const
+{
+	return m_bUnique;
+}
+
+
+bool CvImprovementClassInfo::read(CvXMLLoadUtility* pXML)
+{
+	if (!CvInfoBase::read(pXML))
+	{
+		return false;
+	}
+
+	pXML->GetChildXmlValByName(&m_bUnique, "bUnique");
+	
+	CvString szTextVal;
+	pXML->GetChildXmlValByName(szTextVal, "DefaultImprovement");
+	m_aszExtraXMLforPass3.push_back(szTextVal);
+
+	return true;
+}
+
+bool CvImprovementClassInfo::readPass3()
+{
+	if (m_aszExtraXMLforPass3.size() < 1)
+	{
+		FAssert(false);
+		return false;
+	}
+
+	int iTextDefault = -1;
+	int iSize = m_aszExtraXMLforPass3.size();
+	for (int i = 0; i < iSize; i++)
+	{
+		if (GC.getInfoTypeForString(m_aszExtraXMLforPass3[iSize - (i + 1)]) != iTextDefault)
+		{
+			m_iDefaultImprovementIndex = GC.getInfoTypeForString(m_aszExtraXMLforPass3[iSize - (i + 1)]);
+			break;
+		}
+	}
+	m_aszExtraXMLforPass3.clear();
+
+	return true;
+}
+void CvImprovementClassInfo::copyNonDefaults(CvImprovementClassInfo* pClassInfo, CvXMLLoadUtility* pXML)
+{
+	CvString cDefault = CvString::format("").GetCString();
+	CvWString wDefault = CvWString::format(L"").GetCString();
+
+	CvInfoBase::copyNonDefaults(pClassInfo, pXML);
+
+	if (isUnique() == false)			m_bUnique = pClassInfo->isUnique();
+}
+/*************************************************************************************************/
+/**	TrueModular								END													**/
+/*************************************************************************************************/

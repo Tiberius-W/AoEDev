@@ -217,6 +217,10 @@ class CvTraitClassInfo;
 class CvLeaderClassInfo;
 
 class CvTraitTriggerInfo;
+
+//ImprovementClass
+class CvImprovementClassInfo;
+
 class CvGlobals
 {
 //	friend class CvDLLUtilityIFace;
@@ -656,6 +660,10 @@ public:
 	int getNumBuildingClassInfos();
 	std::vector<CvBuildingClassInfo*>& getBuildingClassInfo();
 	CvBuildingClassInfo& getBuildingClassInfo(BuildingClassTypes eBuildingClassNum);
+	
+	int getNumImprovementClassInfos();
+	std::vector<CvImprovementClassInfo*>& getImprovementClassInfo();
+	CvImprovementClassInfo& getImprovementClassInfo(ImprovementClassTypes eBuildingClassNum);
 
 	int getNumBuildingInfos();
 	std::vector<CvBuildingInfo*>& getBuildingInfo();
@@ -1454,6 +1462,7 @@ protected:
 	std::vector<CvVoteInfo*> m_paVoteInfo;
 	std::vector<CvProjectInfo*> m_paProjectInfo;
 	std::vector<CvBuildingClassInfo*> m_paBuildingClassInfo;
+	std::vector<CvImprovementClassInfo*> m_paImprovementClassInfo;
 	std::vector<CvBuildingInfo*> m_paBuildingInfo;
 	std::vector<CvSpecialBuildingInfo*> m_paSpecialBuildingInfo;
 	std::vector<CvUnitClassInfo*> m_paUnitClassInfo;

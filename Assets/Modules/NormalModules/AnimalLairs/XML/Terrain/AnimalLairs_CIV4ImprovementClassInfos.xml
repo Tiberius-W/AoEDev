@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:AnimalLairs_CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Bear Den 2-->
+			<Type>IMPROVEMENTCLASS_BEAR_DEN_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BEAR_DEN_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Bear Den 3-->
+			<Type>IMPROVEMENTCLASS_BEAR_DEN_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_BEAR_DEN_3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- roc weyr-->
+			<Type>IMPROVEMENTCLASS_ROC_WEYR</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ROC_WEYR</DefaultImprovement>
+		</ImprovementClassInfo>
+			<ImprovementClassInfo><!-- Lion Den 2 -->
+			<Type>IMPROVEMENTCLASS_LION_DEN_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LION_DEN_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Lion Den 3-->
+			<Type>IMPROVEMENTCLASS_LION_DEN_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_LION_DEN_3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Spider Den 2-->
+			<Type>IMPROVEMENTCLASS_SPIDER_DEN_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SPIDER_DEN_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Spider Den 3-->
+			<Type>IMPROVEMENTCLASS_SPIDER_DEN_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SPIDER_DEN_3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Wolf den 2-->
+			<Type>IMPROVEMENTCLASS_WOLF_LAIR_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WOLF_LAIR_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Wolf den 3-->
+			<Type>IMPROVEMENTCLASS_WOLF_LAIR_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WOLF_LAIR_3</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Scorpion Nest 1-->
+			<Type>IMPROVEMENTCLASS_SCORPION_NEST_1</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SCORPION_NEST_1</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Scorpion Nest 2-->
+			<Type>IMPROVEMENTCLASS_SCORPION_NEST_2</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SCORPION_NEST_2</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Scorpion Nest 3-->
+			<Type>IMPROVEMENTCLASS_SCORPION_NEST_3</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SCORPION_NEST_3</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>

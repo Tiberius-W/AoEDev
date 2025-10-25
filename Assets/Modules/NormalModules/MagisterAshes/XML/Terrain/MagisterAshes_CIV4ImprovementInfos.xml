@@ -8,6 +8,7 @@
 	<ImprovementInfos>
 		<ImprovementInfo> <!--Abaddon's Pit-->
 			<Type>IMPROVEMENT_ABADDONS_PIT</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_ABADDONS_PIT</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_ABADDONS_PIT</Description>
 			<Civilopedia>TXT_KEY_UNIT_ABADDON_PEDIA</Civilopedia>
 			<Help/>
@@ -72,6 +73,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo> <!-- Carnivaen's Camp -->
 			<Type>IMPROVEMENT_CARNIVEANS_CAMP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CARNIVEANS_CAMP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CARNIVEANS_CAMP_PEDIA</Civilopedia>
 			<Help/>
@@ -172,6 +174,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo> <!-- Grave of Asmoday -->
 			<Type>IMPROVEMENT_GRAVE_OF_ASMODAY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_GRAVE_OF_ASMODAY</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_GRAVE_OF_ASMODAY_PEDIA</Civilopedia>
 			<Help/>
@@ -259,6 +262,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo> <!-- Majen's Workshop -->
 			<Type>IMPROVEMENT_MAJENS_WORKSHOP</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_MAJENS_WORKSHOP</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_MAJENS_WORKSHOP_PEDIA</Civilopedia>
 			<Help/>
@@ -329,6 +333,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>  <!--Wandering Castle of the Eternal Blizzard-->
 			<Type>IMPROVEMENT_BADBS_BLIZZARD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_BADBS_BLIZZARD</ImprovementClass>
 			<Description>TXT_KEY_BADBS_BLIZZARD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_BADBS_BLIZZARD_PEDIA</Civilopedia>
 			<Help>TXT_KEY_IMPROVEMENT_BADBS_BLIZZARD_HELP</Help>
@@ -412,6 +417,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo> 	<!--Whispering Woods-->
 			<Type>IMPROVEMENT_WHISPERING_WOOD</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_WHISPERING_WOOD</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_WHISPERING_WOOD</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WHISPERING_WOOD_PEDIA</Civilopedia>
 			<Help/>

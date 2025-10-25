@@ -17,7 +17,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_FEEDING_PEN</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_FEEDING_PEN</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -72,7 +72,7 @@
 			<iTime>1000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_MAZE_OF_WEBS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_MAZE_OF_WEBS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -95,7 +95,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_NESTING_GROUND</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_NESTING_GROUND</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -160,7 +160,7 @@
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
 			</LinkedBuilds>
-			<ImprovementType>IMPROVEMENT_INFESTED_FORTRESS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_INFESTED_FORTRESS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>

@@ -692,9 +692,9 @@ ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCou
 		return NO_IMPROVEMENT;
 	}
 
-	if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT)
+	if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() != NO_IMPROVEMENT)
 	{
-		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement).getImprovementUpgrade())), (iCount + 1));
+		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade())), (iCount + 1));
 /**								----  End Original Code  ----									**/
 ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, CivilizationTypes eCiv, int iCount, ImprovementTypes eOriginalImprovement)
 {
@@ -711,25 +711,24 @@ ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, Civiliza
 			return eImprovement;
 		}
 	}
-
 	if (iCount > GC.getNumImprovementInfos())
 	{
-		return (ImprovementTypes)GC.getImprovementInfo(eOriginalImprovement).getImprovementUpgrade();
+		return (ImprovementTypes)GC.getImprovementInfo(eOriginalImprovement).getImprovementClassUpgrade();
 	}
-
-	if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT && (eCiv == NO_CIVILIZATION || GC.getImprovementInfo(eImprovement).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo(eImprovement).getPrereqCivilization() == eCiv))
+	if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() != NO_IMPROVEMENTCLASS)
 	{
-		if (GC.getImprovementInfo((ImprovementTypes)GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == NO_CIVILIZATION || GC.getImprovementInfo((ImprovementTypes)GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getPrereqCivilization() == eCiv)
+		if(eCiv!=NO_CIVILIZATION && GC.getCivilizationInfo(eCiv).getCivilizationImprovements(GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()) != NO_IMPROVEMENT)
 		{
-			return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement).getImprovementUpgrade())), eCiv, (iCount + 1), eOriginalImprovement);
+			return finalImprovementUpgrade((ImprovementTypes)GC.getCivilizationInfo(eCiv).getCivilizationImprovements(GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()), eCiv, iCount + 1);
+		}
+		else if (GC.getImprovementClassInfo((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()).getDefaultImprovementIndex() != NO_IMPROVEMENT)
+		{
+			return (ImprovementTypes)(GC.getImprovementClassInfo((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()).getDefaultImprovementIndex());
 		}
 		else
 		{
 			return eImprovement;
 		}
-/*************************************************************************************************/
-/**	Tweak									END													**/
-/*************************************************************************************************/
 	}
 	else
 	{

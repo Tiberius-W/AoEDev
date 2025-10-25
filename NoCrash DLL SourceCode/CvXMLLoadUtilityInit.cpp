@@ -290,6 +290,41 @@ void CvXMLLoadUtility::InitBuildingDefaults(int **ppiDefaults)
 
 }
 
+void CvXMLLoadUtility::InitImprovementDefaults(int** ppiDefaults)
+{
+	// SPEEDUP
+	PROFILE_FUNC();
+
+	int i;
+	int* piDefaults;
+
+	FAssertMsg(*ppiDefaults == NULL, "memory leak?");
+	// allocate memory based on the number of Improvement classes
+	*ppiDefaults = new int[GC.getNumImprovementClassInfos()];
+	// set the local pointer to the new memory
+	piDefaults = *ppiDefaults;
+
+	// loop through all the pointers and set their default values
+	for (i = 0; i < GC.getNumImprovementClassInfos(); i++)
+	{
+		/*************************************************************************************************/
+		/**	Streamline							10/18/08									Xienwolf	**/
+		/**																								**/
+		/**				Initializes the UnitClass to default as NONE if flagged to be Unique			**/
+		/*************************************************************************************************/
+		if (GC.getImprovementClassInfo((ImprovementClassTypes)i).isUnique())
+		{
+			piDefaults[i] = -1;
+		}
+		else
+			/*************************************************************************************************/
+			/**	Streamline									END												**/
+			/*************************************************************************************************/
+			piDefaults[i] = GC.getImprovementClassInfo((ImprovementClassTypes)i).getDefaultImprovementIndex();
+	}
+
+}
+
 void CvXMLLoadUtility::InitBuildingArtDefineDefaults(CvString** ppiDefaults)
 {
 	// SPEEDUP

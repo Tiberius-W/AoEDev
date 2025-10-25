@@ -13,7 +13,7 @@
 			<PrereqTech>TECH_SWAMPDWELLING</PrereqTech>
 			<iTime>400</iTime>
 			<iCost>0</iCost>
-			<ImprovementType>IMPROVEMENT_HUNTING_REEF</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_HUNTING_REEF</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -31,7 +31,7 @@
 			<iTime>3200</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_CORAL_FORT</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_CORAL_FORT</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<HotKey>KB_F</HotKey>
@@ -55,7 +55,7 @@
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>
-			<ImprovementType>IMPROVEMENT_TRAWLING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -73,7 +73,7 @@
 			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<iTime>400</iTime>
 			<iCost>0</iCost>
-			<ImprovementType>IMPROVEMENT_TRAWLING_BOATS</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs/>
@@ -91,7 +91,7 @@
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENT_STYGIAN_SHRINE</ImprovementType>
+			<ImprovementType>IMPROVEMENTCLASS_STYGIAN_SHRINE</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<HotKey>KB_F</HotKey>

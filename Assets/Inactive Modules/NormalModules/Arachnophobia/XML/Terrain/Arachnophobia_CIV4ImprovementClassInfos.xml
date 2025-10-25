@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:Arachnophobia_CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Feeding Pen-->
+			<Type>IMPROVEMENTCLASS_FEEDING_PEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_FEEDING_PEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Nesting Ground-->
+			<Type>IMPROVEMENTCLASS_NESTING_GROUND</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_NESTING_GROUND</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Infested fortress-->
+			<Type>IMPROVEMENTCLASS_INFESTED_FORTRESS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_INFESTED_FORTRESS</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Deep Nest-->
+			<Type>IMPROVEMENTCLASS_DEEP_NEST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_DEEP_NEST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Maze of webs-->
+			<Type>IMPROVEMENTCLASS_MAZE_OF_WEBS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_MAZE_OF_WEBS</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>
