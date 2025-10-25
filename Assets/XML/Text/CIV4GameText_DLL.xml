@@ -371,12 +371,28 @@
 		<Spanish>%d1 Extra Spell Range[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_DURATION</Tag>
+		<English>%d1 Extra Duration[SPACE]</English>
+		<French>%d1 Extra Duration[SPACE]</French>
+		<German>%d1 Extra Duration[SPACE]</German>
+		<Italian>%d1 Extra Duration[SPACE]</Italian>
+		<Spanish>%d1 Extra Duration[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_TEAM</Tag>
 		<English>Immunity for your units</English>
 		<French>Immunity for your units</French>
 		<German>Immunity for your units</German>
 		<Italian>Immunity for your units</Italian>
 		<Spanish>Immunity for your units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_PERMANENT</Tag>
+		<English>Permanent Effect</English>
+		<French>Permanent Effect</French>
+		<German>Permanent Effect</German>
+		<Italian>Permanent Effect</Italian>
+		<Spanish>Permanent Effect</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_NUM_TARGETS</Tag>

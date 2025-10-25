@@ -14620,6 +14620,32 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 			}
 			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_TARGET_RANGE", iValue);
 		}
+		iValue = cbTemp.iExtraDuration;
+		if (iValue != 0)
+		{
+			szBonusString.Format(L"%.0f", iValue);
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_DURATION", iValue);
+		}
+		if (cbTemp.bExtraPermanent != false)
+		{
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_PERMANENT", iValue);
+		}
 		if (cbTemp.bExtraImmuneTeam != false)
 		{
 			if (!bFirst)

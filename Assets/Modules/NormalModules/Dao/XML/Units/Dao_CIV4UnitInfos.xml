@@ -206,19 +206,19 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
+					<BuildType>BUILD_MANA_AIR</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
+					<BuildType>BUILD_MANA_EARTH</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
+					<BuildType>BUILD_MANA_FIRE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
+					<BuildType>BUILD_MANA_WATER</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -341,19 +341,19 @@
 			<iWorkRate>400</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
+					<BuildType>BUILD_MANA_AIR</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
+					<BuildType>BUILD_MANA_EARTH</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
+					<BuildType>BUILD_MANA_FIRE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
+					<BuildType>BUILD_MANA_WATER</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -480,19 +480,19 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
+					<BuildType>BUILD_MANA_AIR</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
+					<BuildType>BUILD_MANA_EARTH</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
+					<BuildType>BUILD_MANA_FIRE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
+					<BuildType>BUILD_MANA_WATER</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>

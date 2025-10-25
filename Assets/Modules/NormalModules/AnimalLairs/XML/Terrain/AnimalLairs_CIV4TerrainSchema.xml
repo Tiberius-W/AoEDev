@@ -758,7 +758,7 @@
 		<element type="Description"/>
 		<element type="DefaultFeatureGraphics"/>
 		<element type="PythonOnMove"/>
-		<element type="PythonPerTurn"/>
+		<element type="PyPerTurn"/>
 		<element type="iTurnDamage"/>
 		<element type="iDamageLimit"/>
 		<element type="DamageType"/>

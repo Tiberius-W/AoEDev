@@ -599,7 +599,7 @@ struct TraitTriggeredData
 
 struct SpellBonuses
 {
-	SpellBonuses() :iPrereqExtraPower(0), iMaxApplications(0), iExtraDamage(0), iExtraMaxDamage(0), iExtraNumTargets(0), iExtraTargetRange(0), bExtraImmuneTeam(false)
+	SpellBonuses() :iPrereqExtraPower(0), iMaxApplications(0), iExtraDamage(0), iExtraMaxDamage(0), iExtraNumTargets(0), iExtraTargetRange(0), iExtraDuration(0),bExtraPermanent(false), bExtraImmuneTeam(false)
 	{
 	}
 	int iPrereqExtraPower;
@@ -608,6 +608,8 @@ struct SpellBonuses
 	int iExtraMaxDamage;
 	int iExtraNumTargets;
 	int iExtraTargetRange;
+	int iExtraDuration;
+	bool bExtraPermanent;
 	bool bExtraImmuneTeam;
 
 
@@ -617,13 +619,13 @@ struct SpellBonuses
 };
 struct SpellUpgradeData
 {
-	SpellUpgradeData() :iDamage(0),iMaxDamage(0),iNumTargets(0)
+	SpellUpgradeData() :iDamage(0),iMaxDamage(0),iNumTargets(0), iDuration(0)
 	{
 	}
 	int iDamage;
 	int iMaxDamage;
 	int iNumTargets;
-
+	int iDuration;
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);

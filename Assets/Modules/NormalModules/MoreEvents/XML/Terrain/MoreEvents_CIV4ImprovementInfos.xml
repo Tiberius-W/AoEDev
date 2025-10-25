@@ -139,7 +139,7 @@
 			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Whispering Woods -->
-			<Type>IMPROVEMENT_WHISPERING_WOODS</Type>
+			<Type>IMPROVEMENT_WHISPERING_WOOD</Type>
 			<PythonOnMove>onMoveSearchableUF(pCaster, pPlot)</PythonOnMove>
 		</ImprovementInfo>
 		<ImprovementInfo>		<!-- Yggdrasil -->

@@ -37,8 +37,10 @@
 	<ElementType name="iExtraMaxDamage" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraNumTargets" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraTargetRange" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraDuration" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxApplications" content="textOnly" dt:type="int"/>
 	<ElementType name="bExtraImmuneTeam" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraPermanent" content="textOnly" dt:type="boolean"/>
 	
 	<ElementType name="SpellBonus" content="eltOnly" order="many">
 		<element type="iPrereqExtraPower"/>
@@ -46,8 +48,10 @@
 		<element type="iExtraMaxDamage"/>
 		<element type="iExtraNumTargets"/>
 		<element type="iExtraTargetRange"/>
+		<element type="iExtraDuration"/>
 		<element type="iMaxApplications"/>
 		<element type="bExtraImmuneTeam"/>
+		<element type="bExtraPermanent"/>
 	</ElementType>
 	<ElementType name="SpellBonuses" content="eltOnly">
 		<element type="SpellBonus" minOccurs="0"/>

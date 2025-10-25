@@ -792,7 +792,9 @@ void SpellBonuses::read(FDataStreamBase* pStream)
 	pStream->Read(&iExtraMaxDamage);
 	pStream->Read(&iExtraNumTargets);
 	pStream->Read(&iExtraTargetRange);
+	pStream->Read(&iExtraDuration);
 	pStream->Read(&bExtraImmuneTeam);
+	pStream->Read(&bExtraPermanent);
 }
 
 void SpellBonuses::write(FDataStreamBase* pStream)
@@ -803,7 +805,9 @@ void SpellBonuses::write(FDataStreamBase* pStream)
 	pStream->Write(iExtraMaxDamage);
 	pStream->Write(iExtraNumTargets);
 	pStream->Write(iExtraTargetRange);
+	pStream->Write(iExtraDuration);
 	pStream->Write(bExtraImmuneTeam);
+	pStream->Write(bExtraPermanent);
 }
 
 bool SpellBonuses::compare(SpellBonuses cbTemp)
@@ -815,7 +819,9 @@ bool SpellBonuses::compare(SpellBonuses cbTemp)
 	else if (iExtraMaxDamage != cbTemp.iExtraMaxDamage) bSame = false;
 	else if (iExtraNumTargets != cbTemp.iExtraNumTargets) bSame = false;
 	else if (iExtraTargetRange != cbTemp.iExtraTargetRange) bSame = false;
+	else if (iExtraDuration != cbTemp.iExtraDuration) bSame = false;
 	else if (bExtraImmuneTeam != cbTemp.bExtraImmuneTeam) bSame = false;
+	else if (bExtraPermanent != cbTemp.bExtraPermanent) bSame = false;
 	return bSame;
 }
 void SpellUpgradeData::read(FDataStreamBase* pStream)
@@ -823,6 +829,7 @@ void SpellUpgradeData::read(FDataStreamBase* pStream)
 	pStream->Read(&iDamage);
 	pStream->Read(&iMaxDamage);
 	pStream->Read(&iNumTargets);
+	pStream->Read(&iDuration);
 }
 
 void SpellUpgradeData::write(FDataStreamBase* pStream)
@@ -830,6 +837,7 @@ void SpellUpgradeData::write(FDataStreamBase* pStream)
 	pStream->Write(iDamage);
 	pStream->Write(iMaxDamage);
 	pStream->Write(iNumTargets);
+	pStream->Write(iDuration);
 }
 
 bool SpellUpgradeData::compare(SpellUpgradeData cbTemp)
@@ -838,5 +846,6 @@ bool SpellUpgradeData::compare(SpellUpgradeData cbTemp)
 	if (iDamage != cbTemp.iDamage) bSame = false;
 	else if (iMaxDamage != cbTemp.iMaxDamage) bSame = false;
 	else if (iNumTargets != cbTemp.iNumTargets) bSame = false;
+	else if (iDuration != cbTemp.iDuration) bSame = false;
 	return bSame;
 }
