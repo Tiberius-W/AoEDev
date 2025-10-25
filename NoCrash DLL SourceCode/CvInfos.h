@@ -12814,7 +12814,7 @@ public:
 	DllExport virtual ~CvPlotEffectInfo();
 
 	const TCHAR* getPythonOnMove() const;
-	const TCHAR* getPythonPerTurn() const;
+	const TCHAR* getPyPerTurn() const;
 	const int getDefaultFeatureGraphics() const;
 	const int getTurnDamage()const;
 	const int getDamageLimit()const;
@@ -12838,7 +12838,7 @@ public:
 
 protected:
 	CvString m_szPythonOnMove;
-	CvString m_szPythonPerTurn;
+	CvString m_szPyPerTurn;
 	int m_iDefaultFeatureGraphics;
 	int m_iTurnDamage;
 	int m_iDamageLimit;

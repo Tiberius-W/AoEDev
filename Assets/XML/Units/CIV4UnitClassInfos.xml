@@ -4556,7 +4556,7 @@
 			<DefaultUnit>UNIT_GOBLIN_SAPPER</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
-		<UnitClassInfo>		<!-- Haegetesse -->
+		<UnitClassInfo>		<!-- Haegtesse -->
 			<Type>UNITCLASS_HAG</Type>
 			<Description>TXT_KEY_UNIT_HAEGTESSE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

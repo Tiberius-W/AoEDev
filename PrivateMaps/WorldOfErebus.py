@@ -150,8 +150,8 @@ class MapConstants :
 		#for jungles.  Used in combination with the minimum temperature to place jungles.
 		self.JungleRain = 2.1
 
-		#This is the chance for light forest to exist on plains.
-		self.chanceForLightForest = 0.10
+		#This is the chance for light forest to exist on plains or grassland.
+		self.chanceForLightForest = 0.05
 
 		#Marsh appears where there is the most rainfall, which is also where there
 		#are the most trees. Since marsh looks good without trees, it should
@@ -5556,7 +5556,7 @@ def addFeatures():
 							chance *= 0.8
 						if PRand.random() < chance:
 							plot.setFeatureType(featureCrystalPlains, 0)
-				if sm.terrainMap[i] == mc.PLAINS and PRand.random() < mc.chanceForLightForest and sm.plotMap[i] != mc.HILLS and featureLightForest != -1:
+				if sm.terrainMap[i] in (mc.PLAINS, mc.GRASS) and PRand.random() < mc.chanceForLightForest and sm.plotMap[i] != mc.HILLS and featureLightForest != -1:
 					plot.setFeatureType(featureLightForest,0)
 				if sm.terrainMap[i] == mc.MARSH and PRand.random() < mc.chanceForTreelessMarsh :
 					plot.setFeatureType(FeatureTypes.NO_FEATURE,0)

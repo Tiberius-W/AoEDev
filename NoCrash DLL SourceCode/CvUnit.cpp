@@ -2105,6 +2105,10 @@ void CvUnit::doTurn()
 	// NOTE: It may be possible, if xml is altered, for the unit to be killed by DoT on terrain / plot effects!
 	// This method takes into account healing and turn DoT effects both
 	changeDamageReal(-calcTurnHealthChangeReal());
+	if (isDead())
+	{
+		return;
+	}
 
 	if (!hasMoved() && !isCargo())
 	{

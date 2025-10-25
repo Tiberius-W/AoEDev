@@ -761,19 +761,6 @@ void CvPlot::doTurn()
 /**	Flavour Mod								END													**/
 /*************************************************************************************************/
 
-	if (getPlotEffectType() != NO_PLOT_EFFECT)
-	{
-		// XXX
-		if (getPlotEffectType() != NO_PLOT_EFFECT && !CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPythonPerTurn()).empty())
-		{
-			CyPlot* pyPlot = new CyPlot(this);
-			CyArgsList argsList;
-			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in unit class
-			argsList.add(getPlotEffectType());//the promotion #
-			gDLL->getPythonIFace()->callFunction(PYSpellModule, "effect", argsList.makeFunctionArgs()); //, &lResult
-			delete pyPlot; // python fxn must not hold on to this pointer
-		}
-	}
 #ifdef _DEBUG
 	{
 		CLLNode<IDInfo>* pUnitNode;
@@ -6487,8 +6474,10 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 			}
 
 			// Immediately update hell tile for Infernals
-			if (eNewValue == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+			if (GET_PLAYER(getOwner()).getCivilizationType() == GC.getInfoTypeForString("CIVILIZATION_INFERNAL"))
+			{
 				setPlotCounter(100);
+			}
 
 			for (iI = 0; iI < MAX_CIV_TEAMS; ++iI)
 			{
@@ -10876,70 +10865,96 @@ void CvPlot::doPlotEffect()
 {
 	PROFILE("CvPlot::doPlotEffect()")
 
-		CvCity* pCity;
+	CvCity* pCity;
 	CvPlot* pLoopPlot;
 	CvWString szBuffer;
-	int iProbability;
-	int iI, iJ;
+	int iProbability, iJ;
 
 	if (getPlotEffectType() != NO_PLOT_EFFECT)
 	{
-		bool bHasMoved = false;
+		// Chance to move
 		iProbability = GC.getPlotEffectInfo(getPlotEffectType()).getMoveChance();
 		if (iProbability > 0)
 		{
 			int dir = GC.getGameINLINE().getMapRandNum(4, "PlotEffect MoveDirection");
 			pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)dir));
-			if (pLoopPlot!=NULL && pLoopPlot->getPlotEffectType() == NO_PLOT_EFFECT && pLoopPlot->canHavePlotEffect(getPlotEffectType()))
+			if (pLoopPlot != NULL && pLoopPlot->getPlotEffectType() == NO_PLOT_EFFECT && pLoopPlot->canHavePlotEffect(getPlotEffectType()))
 			{
 				if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Move") < iProbability)
 				{
 					pLoopPlot->setPlotEffectType(getPlotEffectType());
 					setPlotEffectType(NO_PLOT_EFFECT);
-					bHasMoved = true;
+					return;
 				}
-
 			}
 		}
-		if (!bHasMoved && GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance() > 0)
+
+		// Chance to disappear
+		if (GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance() > 0)
 		{
 			if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Disappearance") < GC.getPlotEffectInfo(getPlotEffectType()).getDisappearChance())
 			{
 				setPlotEffectType(NO_PLOT_EFFECT);
+				return;
 			}
 		}
+
+		// If still here, do pyPerTurn
+		if (!CvString(GC.getPlotEffectInfo((PlotEffectTypes)getPlotEffectType()).getPyPerTurn()).empty())
+		{
+			CyPlot* pyPlot = new CyPlot(this);
+			CyArgsList argsList;
+			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in unit class
+			argsList.add(getPlotEffectType());//the plotEffect #
+			gDLL->getPythonIFace()->callFunction(PYSpellModule, "effectPlot", argsList.makeFunctionArgs()); //, &lResult
+			delete pyPlot; // python fxn must not hold on to this pointer
+		}
 	}
-	else {
-		for (iI = 0; iI < GC.getNumPlotEffectInfos(); iI++)
+	else
+	{
+		for (int iI = 0; iI < GC.getNumPlotEffectInfos(); iI++)
 		{
 			iProbability = GC.getPlotEffectInfo((PlotEffectTypes)iI).getSpawnChance();
 			if (isOwned())
 			{
 				iProbability += GET_PLAYER(getOwner()).getPlotEffectSpawnChance((PlotEffectTypes)iI);
 			}
-			if (iProbability > 0)
-			{
-				if (canHavePlotEffect((PlotEffectTypes)iI))
-				{
-					if (GC.getPlotEffectInfo((PlotEffectTypes)iI).getSpreadChance() > 0)
-					{
-						for (iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
-						{
-							pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iJ));
 
-							if (pLoopPlot != NULL)
-							{
-								if (pLoopPlot->getPlotEffectType() == ((PlotEffectTypes)iI))
-								{
-									iProbability += GC.getPlotEffectInfo((PlotEffectTypes)iI).getSpreadChance();
-								}
-							}
-						}
-					}
-					if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Spawn") < iProbability)
+			if (iProbability <= 0)
+			{
+				continue;
+			}
+
+			if (!canHavePlotEffect((PlotEffectTypes)iI))
+			{
+				continue;
+			}
+
+			if (GC.getPlotEffectInfo((PlotEffectTypes)iI).getSpreadChance() > 0)
+			{
+				for (iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
+				{
+					pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iJ));
+
+					if (pLoopPlot != NULL && pLoopPlot->getPlotEffectType() == ((PlotEffectTypes)iI))
 					{
-						setPlotEffectType((PlotEffectTypes)iI);
+						iProbability += GC.getPlotEffectInfo((PlotEffectTypes)iI).getSpreadChance();
 					}
+				}
+			}
+
+			if (GC.getGameINLINE().getMapRandNum(10000, "PlotEffect Spawn") < iProbability)
+			{
+				setPlotEffectType((PlotEffectTypes)iI);
+
+				pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+
+				if (pCity != NULL)
+				{
+					// Tell the owner of this city.
+					szBuffer = gDLL->getText("TXT_KEY_MISC_PLOT_EFFECT_APPEAR_NEAR_CITY", GC.getPlotEffectInfo((PlotEffectTypes)iI).getTextKeyWide(), pCity->getNameKey());
+					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO,
+						GC.getPlotEffectInfo((PlotEffectTypes)iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
 				}
 			}
 		}
@@ -11062,7 +11077,6 @@ void CvPlot::doFeature()
 								{
 									iProbability += GC.getFeatureInfo((FeatureTypes)iI).getGrowthProbability();
 									if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
-
 									{
 										iProbability += GC.getImprovementInfo(pLoopPlot->getImprovementType()).getFeatureGrowthProbability();
 										if (getOwnerINLINE() != NO_PLAYER)
@@ -11074,11 +11088,13 @@ void CvPlot::doFeature()
 							}
 						}
 
+						// BtS +25
 						iProbability *= std::max(0, (GC.getFEATURE_GROWTH_MODIFIER() + 100));
 						iProbability /= 100;
 
 						if (isRoute())
 						{
+							// BtS -50
 							iProbability *= std::max(0, (GC.getROUTE_FEATURE_GROWTH_MODIFIER() + 100));
 							iProbability /= 100;
 						}

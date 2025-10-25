@@ -160,6 +160,11 @@ def effect(argsList):
 	prom = gc.getPromotionInfo(eProm)
 	eval(prom.getPyPerTurn())
 
+def effectPlot(argsList):
+	pPlot, ePlotEffect = argsList
+	plotEffect = gc.getPlotEffectInfo(ePlotEffect)
+	eval(plotEffect.getPyPerTurn())
+
 # Broader Alignments: Added by Grey Fox 04/10/2008
 def effectUnits(argsList):
 	pCaster, eUnit = argsList
@@ -7609,17 +7614,6 @@ def spellDeathsDominion(caster):
 		if pUnit.getUnitCombatType() != -1:
 			pUnit.setHasPromotion(iDominion, True)
 
-def checkFort(pCaster):
-	pPlot = pCaster.plot()
-	iPlayer = pPlot.getOwner()
-	iImprovement = pPlot.getImprovementType()
-	if iPlayer == -1:
-		pCaster.kill(True, PlayerTypes.NO_PLAYER)
-	if iPlayer != -1:
-		if iImprovement != -1:
-			if not gc.getImprovementInfo(iImprovement).isFort():
-				pCaster.kill(True, PlayerTypes.NO_PLAYER)
-
 def reqPioneer(caster):
 	pPlot = caster.plot()
 	if (pPlot.isOwned()
@@ -10000,7 +9994,13 @@ def perTurnApophis(pCaster):
 				pCaster.setName(CyTranslator().getText("TXT_KEY_UNIT_GOAT_2", ()))
 				CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_APOPHIS_REVEALED", ()),'',1,'Art/Interface/Buttons/Units/Goat.dds',ColorTypes(8),pCaster.getX(),pCaster.getY(),True,True)
 				pCaster.setHasPromotion(getInfoType('PROMOTION_APOPHIS'),True)
-					
+
+def perTurnHauntedLands(pPlot):
+	for i in xrange(pPlot.getNumUnits()):
+		pUnit = pPlot.getUnit(i)
+		pUnit.setName("I'm haunted D:")
+	git			= gc.getInfoTypeForString
+	CyGame().setPlotExtraYield (pPlot.getX(),pPlot.getY(), git("YIELD_COMMERCE"), 3)
 					
 def spellHauntedBreath(pCaster):
 	getPlot		= CyMap().plot

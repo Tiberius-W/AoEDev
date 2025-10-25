@@ -281,8 +281,8 @@ class MapConstants :
 		#from coldest 0.0 to hottest 1.0.
 		self.JungleTemp = .85
 
-		#This is the chance for light forest to exist on plains.
-		self.chanceForLightForest = 0.10
+		#This is the chance for light forest to exist on plains or grassland.
+		self.chanceForLightForest = 0.05
 
 		#Marsh appears where there is the most rainfall, which is also where there
 		#are the most trees. Since marsh looks good without trees, it should
@@ -5191,7 +5191,7 @@ def addFeatures():
 							plot.setFeatureType(featureKelp,0)
 
 			if plot.isPeak() == False and plot.isWater() == False:
-				if sm.terrainMap[i] == mc.PLAINS and PRand.random() < mc.chanceForLightForest and sm.plotMap[i] != mc.HILLS:
+				if sm.terrainMap[i] in (mc.PLAINS, mc.GRASS) and PRand.random() < mc.chanceForLightForest and sm.plotMap[i] != mc.HILLS:
 					plot.setFeatureType(featureLightForest,0)
 				if sm.terrainMap[i] == mc.MARSH and PRand.random() < mc.chanceForTreelessMarsh :
 					plot.setFeatureType(FeatureTypes.NO_FEATURE,0)

@@ -174,7 +174,7 @@
 	<ElementType name="FeatureUpgrade" content="textOnly"/>
 	<ElementType name="PrereqStateReligion" content="textOnly"/>
 	<ElementType name="PythonOnMove" content="textOnly"/>
-	<ElementType name="PythonPerTurn" content="textOnly"/>
+	<ElementType name="PyPerTurn" content="textOnly"/>
 	<ElementType name="RequireResist" content="textOnly"/>
 	<ElementType name="bMist" content="textOnly" dt:type="boolean"/>
 	<ElementType name="FeatureInfo" content="eltOnly" order="many">
@@ -756,7 +756,7 @@
 		<element type="Description"/>
 		<element type="DefaultFeatureGraphics"/>
 		<element type="PythonOnMove"/>
-		<element type="PythonPerTurn"/>
+		<element type="PyPerTurn"/>
 		<element type="iTurnDamage"/>
 		<element type="iDamageLimit"/>
 		<element type="DamageType"/>
