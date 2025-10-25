@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_1</Tag>
+        <English>Wuxing</English>
+        <French>Wuxing</French>
+        <German>Wuxing</German>
+        <Italian>Wuxing</Italian>
+        <Spanish>Wuxing</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_10</Tag>
+        <English>Wanbao</English>
+        <French>Wanbao</French>
+        <German>Wanbao</German>
+        <Italian>Wanbao</Italian>
+        <Spanish>Wanbao</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_11</Tag>
+        <English>Yangshun</English>
+        <French>Yangshun</French>
+        <German>Yangshun</German>
+        <Italian>Yangshun</Italian>
+        <Spanish>Yangshun</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_12</Tag>
+        <English>Ma Po</English>
+        <French>Ma Po</French>
+        <German>Ma Po</German>
+        <Italian>Ma Po</Italian>
+        <Spanish>Ma Po</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_13</Tag>
+        <English>Hsijing</English>
+        <French>Hsijing</French>
+        <German>Hsijing</German>
+        <Italian>Hsijing</Italian>
+        <Spanish>Hsijing</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_14</Tag>
+        <English>Chingbao</English>
+        <French>Chingbao</French>
+        <German>Chingbao</German>
+        <Italian>Chingbao</Italian>
+        <Spanish>Chingbao</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_15</Tag>
+        <English>Dong Kou</English>
+        <French>Dong Kou</French>
+        <German>Dong Kou</German>
+        <Italian>Dong Kou</Italian>
+        <Spanish>Dong Kou</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_16</Tag>
+        <English>Tiaohe</English>
+        <French>Tiaohe</French>
+        <German>Tiaohe</German>
+        <Italian>Tiaohe</Italian>
+        <Spanish>Tiaohe</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_17</Tag>
+        <English>Rui An</English>
+        <French>Rui An</French>
+        <German>Rui An</German>
+        <Italian>Rui An</Italian>
+        <Spanish>Rui An</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_18</Tag>
+        <English>Dali</English>
+        <French>Dali</French>
+        <German>Dali</German>
+        <Italian>Dali</Italian>
+        <Spanish>Dali</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_19</Tag>
+        <English>Chio Fan</English>
+        <French>Chio Fan</French>
+        <German>Chio Fan</German>
+        <Italian>Chio Fan</Italian>
+        <Spanish>Chio Fan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_2</Tag>
+        <English>Shen</English>
+        <French>Shen</French>
+        <German>Shen</German>
+        <Italian>Shen</Italian>
+        <Spanish>Shen</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_20</Tag>
+        <English>Yunjing</English>
+        <French>Yunjing</French>
+        <German>Yunjing</German>
+        <Italian>Yunjing</Italian>
+        <Spanish>Yunjing</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_21</Tag>
+        <English>Anlu</English>
+        <French>Anlu</French>
+        <German>Anlu</German>
+        <Italian>Anlu</Italian>
+        <Spanish>Anlu</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_22</Tag>
+        <English>I Lan</English>
+        <French>I Lan</French>
+        <German>I Lan</German>
+        <Italian>I Lan</Italian>
+        <Spanish>I Lan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_23</Tag>
+        <English>Yangming</English>
+        <French>Yangming</French>
+        <German>Yangming</German>
+        <Italian>Yangming</Italian>
+        <Spanish>Yangming</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_24</Tag>
+        <English>Shanli</English>
+        <French>Shanli</French>
+        <German>Shanli</German>
+        <Italian>Shanli</Italian>
+        <Spanish>Shanli</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_3</Tag>
+        <English>Sanqing</English>
+        <French>Sanqing</French>
+        <German>Sanqing</German>
+        <Italian>Sanqing</Italian>
+        <Spanish>Sanqing</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_4</Tag>
+        <English>Datai</English>
+        <French>Datai</French>
+        <German>Datai</German>
+        <Italian>Datai</Italian>
+        <Spanish>Datai</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_5</Tag>
+        <English>Naan Guang</English>
+        <French>Naan Guang</French>
+        <German>Naan Guang</German>
+        <Italian>Naan Guang</Italian>
+        <Spanish>Naan Guang</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_6</Tag>
+        <English>Lohai</English>
+        <French>Lohai</French>
+        <German>Lohai</German>
+        <Italian>Lohai</Italian>
+        <Spanish>Lohai</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_7</Tag>
+        <English>Hai Kang</English>
+        <French>Hai Kang</French>
+        <German>Hai Kang</German>
+        <Italian>Hai Kang</Italian>
+        <Spanish>Hai Kang</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_8</Tag>
+        <English>Yangyang</English>
+        <French>Yangyang</French>
+        <German>Yangyang</German>
+        <Italian>Yangyang</Italian>
+        <Spanish>Yangyang</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CITY_DAO_9</Tag>
+        <English>Heyang</English>
+        <French>Heyang</French>
+        <German>Heyang</German>
+        <Italian>Heyang</Italian>
+        <Spanish>Heyang</Spanish>
+    </TEXT>
+    
+    <TEXT>
+        <Tag>TXT_KEY_CIV_DAO_ADJECTIVE</Tag>
+        <English>Dao</English>
+        <French>Dao</French>
+        <German>Dao</German>
+        <Italian>Dao</Italian>
+        <Spanish>Dao</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_DAO_DESC</Tag>
+        <English>Dao</English>
+        <French>Dao</French>
+        <German>Dao</German>
+        <Italian>Dao</Italian>
+        <Spanish>Dao</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_CIV_DAO_PEDIA</Tag>
+        <English>The Dao are a faction that survived the Godswar by the blindest of luck. When a golden dragon fought a dragon of blackest night, the golden dragon's strikes carved into the nearby mountains, causing them to collapse along the eastern face in a great rumbling wave of devastation. The Dao, seeking shelter along the base of the mountains' western face, heard the screams as their sister clan was erased from Erebus forever.
+Shaken by this, the people of this clan began hastily scrabbling at the rocks, hoping to dig some sort of shelter before the dragons returned.
+
+Annoyed by the clumsy banging and tapping of his mountain, an Earth Elemental by the name of Gen emerged from the rocky ground, demanding to know why these humans were disturbing Kilmorph's designs. Though terrified by the sudden appearance of this elemental, they beseeched it for help. "We need shelter from the war of the gods," they said. "Will you please help us?"
+Gen stood there, unmoving for many moments before finally speaking, "If you bring me four gemstones from four mountains in this valley, I will carve you a cave deep enough to hide in until the war moves beyond this valley."
+The villagers chose four of their wisest fighters to find these gems.
+
+The first reached a mountain with bubbling freshwater springs and roaring waterfalls. Unable to climb the wet rock face, the warrior tried and failed again and again, until a Water Elemental's bubbling head emerged from the pools. It asked, "Why are you playing in my springs? Can you not see there is a war going on?" The Warrior replied, "My people have made a promise to the elemental Gen of the northern mountain to bring him a gem from this mountain. Can you help us?" The Amorphous being sloshed about in confusion. "The earth makes deals with humans? Ludicrous!" It exclaimed. "I have no use for rocks. I will give you the gem you seek if you do something for me; the debris of the last battle has clogged one of my streams. Clear it away, and we will have a deal." And so they left with the gemstone.
+
+The second warrior reached the base of a mountain covered in glowing red cracks that spat fire and brimstone against a blackened sky. Though he tried again and again, he could not bear to touch the burning rocks, and his sandals caught fire as easily as paper. His yelps of pain amused a Fire Elemental whose crackling laughter caused the warrior to spin around.
+"What are you doing, pathetic kindling? This is not a place for you." It said. "I need to retrieve a gemstone for Gen; the Elemental has promised us help." The Warrior replied. The elemental found this very amusing indeed! "Going to the earth for aid? Might as well grind your own bones to dust and save Gen the trouble! But I wish to play too, give me something to burn more brightly, and I will find this gem of yours." The warrior thought for a while before presenting the oil canister for his torch. "This will help you burn more brightly," He said, and so he left with the gemstone.
+
+The third climbed along the howling cliffsides of her mountain, supplies and equipment stolen away by vicious gusts of wind, biting at her flesh.
+The Elemental of Air had no interest in this human; it wanted her dead and blown off this mountain this very instant. She clung to the rocks with whitened knuckles, the braids of her hair coming loose under the barraging squall. The elemental known as Qian was enthralled with envy, and in a blast of wind, appeared in front of the warrior. "What is that?" Qian demanded in a petulant tone, pointing at her head. Bemused and focusing on surviving, the warrior yelled, "I'm a little busy at the moment!" The elemental, no time for games, put the gale to rest with a flick of its arm.. "Give it to me! I want it!" It squawked like a petulant child.
+"I seek the gemstone of this mountain. Give me what I need, and I will cut off my locks for you to keep." Finding gems to be a pointless thing that can not even flutter correctly, the elemental hastily agreed. The warrior ran a blade across the locks clenched in her fist, scattering the thousands of strands into the wind. Qian raced after them in a swirl of clouds, leaving the gemstone bouncing across the ground.
+ And so she left with the gemstone.
+
+The fourth and final warrior searched and searched, climbed from peak to peak, until there were no mountains or hills left to search. Defeated, they returned to the mountain of Gen.
+As the other three warriors presented the gems before the elemental, the fourth exclaimed, "I have failed! I can not find the final gemstone, please! Do not punish the others, it was me who failed our agreement!"
+The elemental did the most disturbing thing a creature of stone and slate could do; it smiled, and all the villagers recoiled, preparing for some horrific retribution for failing the task.
+"I have the final gemstone," Gen stated flatly. "The task was an impossible one. I wanted to see what kind of creatures you are; if you had lied or tried to fool me, I would have swallowed you all into the grounds' embrace. But you did not; you honored the pact as best as you could. And for that, I will give you the final stone and shelter your people."
+
+The Dao would escape the devastation of the remainder of the Godswar, safely tucked away inside their earthen bunker, until one day, the great Godswar stopped. The heavens grew still, and the land began to heal. But the Dao never forgot the lessons of that day - even the most beautiful golden beings from the highest heavens, with all their benevolence and love, would still, by their divine nature, bring cataclysm to the lives of simple mortal men.
+They did not know what the compact was, exactly. Only that all the forces of creation had returned to their proper sphere of reality, each pushing and pulling one another in some semblance of harmony.
+And with that understanding came the Dao's new vow: The Heavens must never be tempted to battle their wars again, and no Dao must ever invite, tempt, or anger those divine beings.
+Though perhaps the most important lesson of all was that there was help to be found in Erebus, if you were willing to honor the terms.
+
+These lessons led them to present offerings to both kindly and hateful spirits alike whenever they faced hardship, not out of worship but in the hope of brokering peace with the forces of their natural world and restoring harmony.
+
+This delicate harmony would go on for an age and then some, rewarding and reinforcing their commitment to this balance with times of ease and plenty. 
+Eventually, they would encounter a great and terrible empire by the name of Patria. Their dealings with this empire were always an unpleasant affair, but, as they presented appeasement to elements, they would do the same for this monstrous kingdom. Their offerings were good but not grand, filling the belly of this dragon without leaving it hungering for more, preventing the maulings that other neighboring realms experienced when trying to broker deals with Patria.
+
+Until one day, a terrible wind blew-a wind of ice and hail, a wind of death. Again and again, they made offerings to the elements to bring an end to the storms, but the elements were simply... gone. They had fled this paradise, back to whatever domain they call home. The Dao were left adrift, bewildered by this sudden collapse of their world. Soon after, refugees from neighboring realms began showing up at their walls, bringing stories of the god of winter's return, of the heavens doing battle once again. 
+The Dao made pilgrimage, following the stories of their elders, back to the valley where they had hidden from the gods' war. They climbed the northern mountain, threw themselves onto the ground, and begged for aid.
+
+The elemental Gen emerged from the rocks, looked down upon them, and smiled, reopening the doorway to their old refuge.</English>
+        <French>The Dao are a faction that survived the Godswar by the blindest of luck. When a golden dragon fought a dragon of blackest night, the golden dragon's strikes carved into the nearby mountains, causing them to collapse along the eastern face in a great rumbling wave of devastation. The Dao, seeking shelter along the base of the mountains' western face, heard the screams as their sister clan was erased from Erebus forever.
+Shaken by this, the people of this clan began hastily scrabbling at the rocks, hoping to dig some sort of shelter before the dragons returned.
+
+Annoyed by the clumsy banging and tapping of his mountain, an Earth Elemental by the name of Gen emerged from the rocky ground, demanding to know why these humans were disturbing Kilmorph's designs. Though terrified by the sudden appearance of this elemental, they beseeched it for help. "We need shelter from the war of the gods," they said. "Will you please help us?"
+Gen stood there, unmoving for many moments before finally speaking, "If you bring me four gemstones from four mountains in this valley, I will carve you a cave deep enough to hide in until the war moves beyond this valley."
+The villagers chose four of their wisest fighters to find these gems.
+
+The first reached a mountain with bubbling freshwater springs and roaring waterfalls. Unable to climb the wet rock face, the warrior tried and failed again and again, until a Water Elemental's bubbling head emerged from the pools. It asked, "Why are you playing in my springs? Can you not see there is a war going on?" The Warrior replied, "My people have made a promise to the elemental Gen of the northern mountain to bring him a gem from this mountain. Can you help us?" The Amorphous being sloshed about in confusion. "The earth makes deals with humans? Ludicrous!" It exclaimed. "I have no use for rocks. I will give you the gem you seek if you do something for me; the debris of the last battle has clogged one of my streams. Clear it away, and we will have a deal." And so they left with the gemstone.
+
+The second warrior reached the base of a mountain covered in glowing red cracks that spat fire and brimstone against a blackened sky. Though he tried again and again, he could not bear to touch the burning rocks, and his sandals caught fire as easily as paper. His yelps of pain amused a Fire Elemental whose crackling laughter caused the warrior to spin around.
+"What are you doing, pathetic kindling? This is not a place for you." It said. "I need to retrieve a gemstone for Gen; the Elemental has promised us help." The Warrior replied. The elemental found this very amusing indeed! "Going to the earth for aid? Might as well grind your own bones to dust and save Gen the trouble! But I wish to play too, give me something to burn more brightly, and I will find this gem of yours." The warrior thought for a while before presenting the oil canister for his torch. "This will help you burn more brightly," He said, and so he left with the gemstone.
+
+The third climbed along the howling cliffsides of her mountain, supplies and equipment stolen away by vicious gusts of wind, biting at her flesh.
+The Elemental of Air had no interest in this human; it wanted her dead and blown off this mountain this very instant. She clung to the rocks with whitened knuckles, the braids of her hair coming loose under the barraging squall. The elemental known as Qian was enthralled with envy, and in a blast of wind, appeared in front of the warrior. "What is that?" Qian demanded in a petulant tone, pointing at her head. Bemused and focusing on surviving, the warrior yelled, "I'm a little busy at the moment!" The elemental, no time for games, put the gale to rest with a flick of its arm.. "Give it to me! I want it!" It squawked like a petulant child.
+"I seek the gemstone of this mountain. Give me what I need, and I will cut off my locks for you to keep." Finding gems to be a pointless thing that can not even flutter correctly, the elemental hastily agreed. The warrior ran a blade across the locks clenched in her fist, scattering the thousands of strands into the wind. Qian raced after them in a swirl of clouds, leaving the gemstone bouncing across the ground.
+ And so she left with the gemstone.
+
+The fourth and final warrior searched and searched, climbed from peak to peak, until there were no mountains or hills left to search. Defeated, they returned to the mountain of Gen.
+As the other three warriors presented the gems before the elemental, the fourth exclaimed, "I have failed! I can not find the final gemstone, please! Do not punish the others, it was me who failed our agreement!"
+The elemental did the most disturbing thing a creature of stone and slate could do; it smiled, and all the villagers recoiled, preparing for some horrific retribution for failing the task.
+"I have the final gemstone," Gen stated flatly. "The task was an impossible one. I wanted to see what kind of creatures you are; if you had lied or tried to fool me, I would have swallowed you all into the grounds' embrace. But you did not; you honored the pact as best as you could. And for that, I will give you the final stone and shelter your people."
+
+The Dao would escape the devastation of the remainder of the Godswar, safely tucked away inside their earthen bunker, until one day, the great Godswar stopped. The heavens grew still, and the land began to heal. But the Dao never forgot the lessons of that day - even the most beautiful golden beings from the highest heavens, with all their benevolence and love, would still, by their divine nature, bring cataclysm to the lives of simple mortal men.
+They did not know what the compact was, exactly. Only that all the forces of creation had returned to their proper sphere of reality, each pushing and pulling one another in some semblance of harmony.
+And with that understanding came the Dao's new vow: The Heavens must never be tempted to battle their wars again, and no Dao must ever invite, tempt, or anger those divine beings.
+Though perhaps the most important lesson of all was that there was help to be found in Erebus, if you were willing to honor the terms.
+
+These lessons led them to present offerings to both kindly and hateful spirits alike whenever they faced hardship, not out of worship but in the hope of brokering peace with the forces of their natural world and restoring harmony.
+
+This delicate harmony would go on for an age and then some, rewarding and reinforcing their commitment to this balance with times of ease and plenty. 
+Eventually, they would encounter a great and terrible empire by the name of Patria. Their dealings with this empire were always an unpleasant affair, but, as they presented appeasement to elements, they would do the same for this monstrous kingdom. Their offerings were good but not grand, filling the belly of this dragon without leaving it hungering for more, preventing the maulings that other neighboring realms experienced when trying to broker deals with Patria.
+
+Until one day, a terrible wind blew-a wind of ice and hail, a wind of death. Again and again, they made offerings to the elements to bring an end to the storms, but the elements were simply... gone. They had fled this paradise, back to whatever domain they call home. The Dao were left adrift, bewildered by this sudden collapse of their world. Soon after, refugees from neighboring realms began showing up at their walls, bringing stories of the god of winter's return, of the heavens doing battle once again. 
+The Dao made pilgrimage, following the stories of their elders, back to the valley where they had hidden from the gods' war. They climbed the northern mountain, threw themselves onto the ground, and begged for aid.
+
+The elemental Gen emerged from the rocks, looked down upon them, and smiled, reopening the doorway to their old refuge.</French>
+        <German>The Dao are a faction that survived the Godswar by the blindest of luck. When a golden dragon fought a dragon of blackest night, the golden dragon's strikes carved into the nearby mountains, causing them to collapse along the eastern face in a great rumbling wave of devastation. The Dao, seeking shelter along the base of the mountains' western face, heard the screams as their sister clan was erased from Erebus forever.
+Shaken by this, the people of this clan began hastily scrabbling at the rocks, hoping to dig some sort of shelter before the dragons returned.
+
+Annoyed by the clumsy banging and tapping of his mountain, an Earth Elemental by the name of Gen emerged from the rocky ground, demanding to know why these humans were disturbing Kilmorph's designs. Though terrified by the sudden appearance of this elemental, they beseeched it for help. "We need shelter from the war of the gods," they said. "Will you please help us?"
+Gen stood there, unmoving for many moments before finally speaking, "If you bring me four gemstones from four mountains in this valley, I will carve you a cave deep enough to hide in until the war moves beyond this valley."
+The villagers chose four of their wisest fighters to find these gems.
+
+The first reached a mountain with bubbling freshwater springs and roaring waterfalls. Unable to climb the wet rock face, the warrior tried and failed again and again, until a Water Elemental's bubbling head emerged from the pools. It asked, "Why are you playing in my springs? Can you not see there is a war going on?" The Warrior replied, "My people have made a promise to the elemental Gen of the northern mountain to bring him a gem from this mountain. Can you help us?" The Amorphous being sloshed about in confusion. "The earth makes deals with humans? Ludicrous!" It exclaimed. "I have no use for rocks. I will give you the gem you seek if you do something for me; the debris of the last battle has clogged one of my streams. Clear it away, and we will have a deal." And so they left with the gemstone.
+
+The second warrior reached the base of a mountain covered in glowing red cracks that spat fire and brimstone against a blackened sky. Though he tried again and again, he could not bear to touch the burning rocks, and his sandals caught fire as easily as paper. His yelps of pain amused a Fire Elemental whose crackling laughter caused the warrior to spin around.
+"What are you doing, pathetic kindling? This is not a place for you." It said. "I need to retrieve a gemstone for Gen; the Elemental has promised us help." The Warrior replied. The elemental found this very amusing indeed! "Going to the earth for aid? Might as well grind your own bones to dust and save Gen the trouble! But I wish to play too, give me something to burn more brightly, and I will find this gem of yours." The warrior thought for a while before presenting the oil canister for his torch. "This will help you burn more brightly," He said, and so he left with the gemstone.
+
+The third climbed along the howling cliffsides of her mountain, supplies and equipment stolen away by vicious gusts of wind, biting at her flesh.
+The Elemental of Air had no interest in this human; it wanted her dead and blown off this mountain this very instant. She clung to the rocks with whitened knuckles, the braids of her hair coming loose under the barraging squall. The elemental known as Qian was enthralled with envy, and in a blast of wind, appeared in front of the warrior. "What is that?" Qian demanded in a petulant tone, pointing at her head. Bemused and focusing on surviving, the warrior yelled, "I'm a little busy at the moment!" The elemental, no time for games, put the gale to rest with a flick of its arm.. "Give it to me! I want it!" It squawked like a petulant child.
+"I seek the gemstone of this mountain. Give me what I need, and I will cut off my locks for you to keep." Finding gems to be a pointless thing that can not even flutter correctly, the elemental hastily agreed. The warrior ran a blade across the locks clenched in her fist, scattering the thousands of strands into the wind. Qian raced after them in a swirl of clouds, leaving the gemstone bouncing across the ground.
+ And so she left with the gemstone.
+
+The fourth and final warrior searched and searched, climbed from peak to peak, until there were no mountains or hills left to search. Defeated, they returned to the mountain of Gen.
+As the other three warriors presented the gems before the elemental, the fourth exclaimed, "I have failed! I can not find the final gemstone, please! Do not punish the others, it was me who failed our agreement!"
+The elemental did the most disturbing thing a creature of stone and slate could do; it smiled, and all the villagers recoiled, preparing for some horrific retribution for failing the task.
+"I have the final gemstone," Gen stated flatly. "The task was an impossible one. I wanted to see what kind of creatures you are; if you had lied or tried to fool me, I would have swallowed you all into the grounds' embrace. But you did not; you honored the pact as best as you could. And for that, I will give you the final stone and shelter your people."
+
+The Dao would escape the devastation of the remainder of the Godswar, safely tucked away inside their earthen bunker, until one day, the great Godswar stopped. The heavens grew still, and the land began to heal. But the Dao never forgot the lessons of that day - even the most beautiful golden beings from the highest heavens, with all their benevolence and love, would still, by their divine nature, bring cataclysm to the lives of simple mortal men.
+They did not know what the compact was, exactly. Only that all the forces of creation had returned to their proper sphere of reality, each pushing and pulling one another in some semblance of harmony.
+And with that understanding came the Dao's new vow: The Heavens must never be tempted to battle their wars again, and no Dao must ever invite, tempt, or anger those divine beings.
+Though perhaps the most important lesson of all was that there was help to be found in Erebus, if you were willing to honor the terms.
+
+These lessons led them to present offerings to both kindly and hateful spirits alike whenever they faced hardship, not out of worship but in the hope of brokering peace with the forces of their natural world and restoring harmony.
+
+This delicate harmony would go on for an age and then some, rewarding and reinforcing their commitment to this balance with times of ease and plenty. 
+Eventually, they would encounter a great and terrible empire by the name of Patria. Their dealings with this empire were always an unpleasant affair, but, as they presented appeasement to elements, they would do the same for this monstrous kingdom. Their offerings were good but not grand, filling the belly of this dragon without leaving it hungering for more, preventing the maulings that other neighboring realms experienced when trying to broker deals with Patria.
+
+Until one day, a terrible wind blew-a wind of ice and hail, a wind of death. Again and again, they made offerings to the elements to bring an end to the storms, but the elements were simply... gone. They had fled this paradise, back to whatever domain they call home. The Dao were left adrift, bewildered by this sudden collapse of their world. Soon after, refugees from neighboring realms began showing up at their walls, bringing stories of the god of winter's return, of the heavens doing battle once again. 
+The Dao made pilgrimage, following the stories of their elders, back to the valley where they had hidden from the gods' war. They climbed the northern mountain, threw themselves onto the ground, and begged for aid.
+
+The elemental Gen emerged from the rocks, looked down upon them, and smiled, reopening the doorway to their old refuge.</German>
+        <Italian>The Dao are a faction that survived the Godswar by the blindest of luck. When a golden dragon fought a dragon of blackest night, the golden dragon's strikes carved into the nearby mountains, causing them to collapse along the eastern face in a great rumbling wave of devastation. The Dao, seeking shelter along the base of the mountains' western face, heard the screams as their sister clan was erased from Erebus forever.
+Shaken by this, the people of this clan began hastily scrabbling at the rocks, hoping to dig some sort of shelter before the dragons returned.
+
+Annoyed by the clumsy banging and tapping of his mountain, an Earth Elemental by the name of Gen emerged from the rocky ground, demanding to know why these humans were disturbing Kilmorph's designs. Though terrified by the sudden appearance of this elemental, they beseeched it for help. "We need shelter from the war of the gods," they said. "Will you please help us?"
+Gen stood there, unmoving for many moments before finally speaking, "If you bring me four gemstones from four mountains in this valley, I will carve you a cave deep enough to hide in until the war moves beyond this valley."
+The villagers chose four of their wisest fighters to find these gems.
+
+The first reached a mountain with bubbling freshwater springs and roaring waterfalls. Unable to climb the wet rock face, the warrior tried and failed again and again, until a Water Elemental's bubbling head emerged from the pools. It asked, "Why are you playing in my springs? Can you not see there is a war going on?" The Warrior replied, "My people have made a promise to the elemental Gen of the northern mountain to bring him a gem from this mountain. Can you help us?" The Amorphous being sloshed about in confusion. "The earth makes deals with humans? Ludicrous!" It exclaimed. "I have no use for rocks. I will give you the gem you seek if you do something for me; the debris of the last battle has clogged one of my streams. Clear it away, and we will have a deal." And so they left with the gemstone.
+
+The second warrior reached the base of a mountain covered in glowing red cracks that spat fire and brimstone against a blackened sky. Though he tried again and again, he could not bear to touch the burning rocks, and his sandals caught fire as easily as paper. His yelps of pain amused a Fire Elemental whose crackling laughter caused the warrior to spin around.
+"What are you doing, pathetic kindling? This is not a place for you." It said. "I need to retrieve a gemstone for Gen; the Elemental has promised us help." The Warrior replied. The elemental found this very amusing indeed! "Going to the earth for aid? Might as well grind your own bones to dust and save Gen the trouble! But I wish to play too, give me something to burn more brightly, and I will find this gem of yours." The warrior thought for a while before presenting the oil canister for his torch. "This will help you burn more brightly," He said, and so he left with the gemstone.
+
+The third climbed along the howling cliffsides of her mountain, supplies and equipment stolen away by vicious gusts of wind, biting at her flesh.
+The Elemental of Air had no interest in this human; it wanted her dead and blown off this mountain this very instant. She clung to the rocks with whitened knuckles, the braids of her hair coming loose under the barraging squall. The elemental known as Qian was enthralled with envy, and in a blast of wind, appeared in front of the warrior. "What is that?" Qian demanded in a petulant tone, pointing at her head. Bemused and focusing on surviving, the warrior yelled, "I'm a little busy at the moment!" The elemental, no time for games, put the gale to rest with a flick of its arm.. "Give it to me! I want it!" It squawked like a petulant child.
+"I seek the gemstone of this mountain. Give me what I need, and I will cut off my locks for you to keep." Finding gems to be a pointless thing that can not even flutter correctly, the elemental hastily agreed. The warrior ran a blade across the locks clenched in her fist, scattering the thousands of strands into the wind. Qian raced after them in a swirl of clouds, leaving the gemstone bouncing across the ground.
+ And so she left with the gemstone.
+
+The fourth and final warrior searched and searched, climbed from peak to peak, until there were no mountains or hills left to search. Defeated, they returned to the mountain of Gen.
+As the other three warriors presented the gems before the elemental, the fourth exclaimed, "I have failed! I can not find the final gemstone, please! Do not punish the others, it was me who failed our agreement!"
+The elemental did the most disturbing thing a creature of stone and slate could do; it smiled, and all the villagers recoiled, preparing for some horrific retribution for failing the task.
+"I have the final gemstone," Gen stated flatly. "The task was an impossible one. I wanted to see what kind of creatures you are; if you had lied or tried to fool me, I would have swallowed you all into the grounds' embrace. But you did not; you honored the pact as best as you could. And for that, I will give you the final stone and shelter your people."
+
+The Dao would escape the devastation of the remainder of the Godswar, safely tucked away inside their earthen bunker, until one day, the great Godswar stopped. The heavens grew still, and the land began to heal. But the Dao never forgot the lessons of that day - even the most beautiful golden beings from the highest heavens, with all their benevolence and love, would still, by their divine nature, bring cataclysm to the lives of simple mortal men.
+They did not know what the compact was, exactly. Only that all the forces of creation had returned to their proper sphere of reality, each pushing and pulling one another in some semblance of harmony.
+And with that understanding came the Dao's new vow: The Heavens must never be tempted to battle their wars again, and no Dao must ever invite, tempt, or anger those divine beings.
+Though perhaps the most important lesson of all was that there was help to be found in Erebus, if you were willing to honor the terms.
+
+These lessons led them to present offerings to both kindly and hateful spirits alike whenever they faced hardship, not out of worship but in the hope of brokering peace with the forces of their natural world and restoring harmony.
+
+This delicate harmony would go on for an age and then some, rewarding and reinforcing their commitment to this balance with times of ease and plenty. 
+Eventually, they would encounter a great and terrible empire by the name of Patria. Their dealings with this empire were always an unpleasant affair, but, as they presented appeasement to elements, they would do the same for this monstrous kingdom. Their offerings were good but not grand, filling the belly of this dragon without leaving it hungering for more, preventing the maulings that other neighboring realms experienced when trying to broker deals with Patria.
+
+Until one day, a terrible wind blew-a wind of ice and hail, a wind of death. Again and again, they made offerings to the elements to bring an end to the storms, but the elements were simply... gone. They had fled this paradise, back to whatever domain they call home. The Dao were left adrift, bewildered by this sudden collapse of their world. Soon after, refugees from neighboring realms began showing up at their walls, bringing stories of the god of winter's return, of the heavens doing battle once again. 
+The Dao made pilgrimage, following the stories of their elders, back to the valley where they had hidden from the gods' war. They climbed the northern mountain, threw themselves onto the ground, and begged for aid.
+
+The elemental Gen emerged from the rocks, looked down upon them, and smiled, reopening the doorway to their old refuge.</Italian>
+        <Spanish>The Dao are a faction that survived the Godswar by the blindest of luck. When a golden dragon fought a dragon of blackest night, the golden dragon's strikes carved into the nearby mountains, causing them to collapse along the eastern face in a great rumbling wave of devastation. The Dao, seeking shelter along the base of the mountains' western face, heard the screams as their sister clan was erased from Erebus forever.
+Shaken by this, the people of this clan began hastily scrabbling at the rocks, hoping to dig some sort of shelter before the dragons returned.
+
+Annoyed by the clumsy banging and tapping of his mountain, an Earth Elemental by the name of Gen emerged from the rocky ground, demanding to know why these humans were disturbing Kilmorph's designs. Though terrified by the sudden appearance of this elemental, they beseeched it for help. "We need shelter from the war of the gods," they said. "Will you please help us?"
+Gen stood there, unmoving for many moments before finally speaking, "If you bring me four gemstones from four mountains in this valley, I will carve you a cave deep enough to hide in until the war moves beyond this valley."
+The villagers chose four of their wisest fighters to find these gems.
+
+The first reached a mountain with bubbling freshwater springs and roaring waterfalls. Unable to climb the wet rock face, the warrior tried and failed again and again, until a Water Elemental's bubbling head emerged from the pools. It asked, "Why are you playing in my springs? Can you not see there is a war going on?" The Warrior replied, "My people have made a promise to the elemental Gen of the northern mountain to bring him a gem from this mountain. Can you help us?" The Amorphous being sloshed about in confusion. "The earth makes deals with humans? Ludicrous!" It exclaimed. "I have no use for rocks. I will give you the gem you seek if you do something for me; the debris of the last battle has clogged one of my streams. Clear it away, and we will have a deal." And so they left with the gemstone.
+
+The second warrior reached the base of a mountain covered in glowing red cracks that spat fire and brimstone against a blackened sky. Though he tried again and again, he could not bear to touch the burning rocks, and his sandals caught fire as easily as paper. His yelps of pain amused a Fire Elemental whose crackling laughter caused the warrior to spin around.
+"What are you doing, pathetic kindling? This is not a place for you." It said. "I need to retrieve a gemstone for Gen; the Elemental has promised us help." The Warrior replied. The elemental found this very amusing indeed! "Going to the earth for aid? Might as well grind your own bones to dust and save Gen the trouble! But I wish to play too, give me something to burn more brightly, and I will find this gem of yours." The warrior thought for a while before presenting the oil canister for his torch. "This will help you burn more brightly," He said, and so he left with the gemstone.
+
+The third climbed along the howling cliffsides of her mountain, supplies and equipment stolen away by vicious gusts of wind, biting at her flesh.
+The Elemental of Air had no interest in this human; it wanted her dead and blown off this mountain this very instant. She clung to the rocks with whitened knuckles, the braids of her hair coming loose under the barraging squall. The elemental known as Qian was enthralled with envy, and in a blast of wind, appeared in front of the warrior. "What is that?" Qian demanded in a petulant tone, pointing at her head. Bemused and focusing on surviving, the warrior yelled, "I'm a little busy at the moment!" The elemental, no time for games, put the gale to rest with a flick of its arm.. "Give it to me! I want it!" It squawked like a petulant child.
+"I seek the gemstone of this mountain. Give me what I need, and I will cut off my locks for you to keep." Finding gems to be a pointless thing that can not even flutter correctly, the elemental hastily agreed. The warrior ran a blade across the locks clenched in her fist, scattering the thousands of strands into the wind. Qian raced after them in a swirl of clouds, leaving the gemstone bouncing across the ground.
+ And so she left with the gemstone.
+
+The fourth and final warrior searched and searched, climbed from peak to peak, until there were no mountains or hills left to search. Defeated, they returned to the mountain of Gen.
+As the other three warriors presented the gems before the elemental, the fourth exclaimed, "I have failed! I can not find the final gemstone, please! Do not punish the others, it was me who failed our agreement!"
+The elemental did the most disturbing thing a creature of stone and slate could do; it smiled, and all the villagers recoiled, preparing for some horrific retribution for failing the task.
+"I have the final gemstone," Gen stated flatly. "The task was an impossible one. I wanted to see what kind of creatures you are; if you had lied or tried to fool me, I would have swallowed you all into the grounds' embrace. But you did not; you honored the pact as best as you could. And for that, I will give you the final stone and shelter your people."
+
+The Dao would escape the devastation of the remainder of the Godswar, safely tucked away inside their earthen bunker, until one day, the great Godswar stopped. The heavens grew still, and the land began to heal. But the Dao never forgot the lessons of that day - even the most beautiful golden beings from the highest heavens, with all their benevolence and love, would still, by their divine nature, bring cataclysm to the lives of simple mortal men.
+They did not know what the compact was, exactly. Only that all the forces of creation had returned to their proper sphere of reality, each pushing and pulling one another in some semblance of harmony.
+And with that understanding came the Dao's new vow: The Heavens must never be tempted to battle their wars again, and no Dao must ever invite, tempt, or anger those divine beings.
+Though perhaps the most important lesson of all was that there was help to be found in Erebus, if you were willing to honor the terms.
+
+These lessons led them to present offerings to both kindly and hateful spirits alike whenever they faced hardship, not out of worship but in the hope of brokering peace with the forces of their natural world and restoring harmony.
+
+This delicate harmony would go on for an age and then some, rewarding and reinforcing their commitment to this balance with times of ease and plenty. 
+Eventually, they would encounter a great and terrible empire by the name of Patria. Their dealings with this empire were always an unpleasant affair, but, as they presented appeasement to elements, they would do the same for this monstrous kingdom. Their offerings were good but not grand, filling the belly of this dragon without leaving it hungering for more, preventing the maulings that other neighboring realms experienced when trying to broker deals with Patria.
+
+Until one day, a terrible wind blew-a wind of ice and hail, a wind of death. Again and again, they made offerings to the elements to bring an end to the storms, but the elements were simply... gone. They had fled this paradise, back to whatever domain they call home. The Dao were left adrift, bewildered by this sudden collapse of their world. Soon after, refugees from neighboring realms began showing up at their walls, bringing stories of the god of winter's return, of the heavens doing battle once again. 
+The Dao made pilgrimage, following the stories of their elders, back to the valley where they had hidden from the gods' war. They climbed the northern mountain, threw themselves onto the ground, and begged for aid.
+
+The elemental Gen emerged from the rocks, looked down upon them, and smiled, reopening the doorway to their old refuge.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_DAO_STRATEGY</Tag>
+        <English>Strategy:
+
+The Dao are masters of temperance and elemental forces.
+
+[ICON_BULLET]The Dao have access to unique Mana improvements for [LINK=IMPROVEMENT_MANA_AIR_I_DAO]Air[\LINK], [LINK=IMPROVEMENT_MANA_FIRE_I_DAO]Fire[\LINK], [LINK=IMPROVEMENT_MANA_EARTH_I_DAO]Earth[\LINK], and [LINK=IMPROVEMENT_MANA_WATER_I_DAO]Water[\LINK], available at Knowledge of the Ether, these improvements spawn up to 3 elementals of the chosen type, these elementals are weakened by the Age of Ice. They will need further research to restore their strength - [LINK=TECH_ELEMENTALISM]Elementalism[\LINK] and [LINK=TECH_ARCANE_LORE]Arcane Lore[\LINK].
+[ICON_BULLET]The Dao can not convert mana nodes normally; instead, they must use the spell [LINK=SPELL_ELEMENTAL_EQUILIBRIUM]Elemental Equilibrium[\LINK] to change existing mana nodes. This is weighted against whatever element they have the most of, with Force mana being the constant.
+[ICON_BULLET]Units are mostly comprised of Disciple unit types, even their unique arcane line starts with the [LINK=UNIT_HERMIT]Hermit[\LINK], a Disciple unit who can go down the path of an elemental conjurer or the path of a [LINK=UNIT_WARRIOR_MONK]Warrior Monk[\LINK] - the Conjurering line is focused on the elements of nature, and the Warrior Monk is a path of fighting to preserve the compact from both angel and demon. This means that great prophets and by extension, the [LINK=BUILDING_ALTAR_OF_THE_LUONNOTAR]Altar of the Luonnotar[\LINK], which gives bonus experience to disciple units, is a powerful synergy for the Dao if you can manage to gain enough great prophets, which the Dao have reduced access to.
+[ICON_BULLET]Their unique building, [LINK=BUILDING_TEMPLE_DAO]Temple of Elements[\LINK] unlocks the choice between 4 elemental shrines in a city, offering ways to customize a city to best suit its environment.  There is a catch, however. Water shrines can not be built in the same city as a fire shrine, and an earth shrine can not be alongside an air shrine.</English>
+        <French>Strategy:
+
+The Dao are masters of temperance and elemental forces.
+
+[ICON_BULLET]The Dao have access to unique Mana improvements for [LINK=IMPROVEMENT_MANA_AIR_I_DAO]Air[\LINK], [LINK=IMPROVEMENT_MANA_FIRE_I_DAO]Fire[\LINK], [LINK=IMPROVEMENT_MANA_EARTH_I_DAO]Earth[\LINK], and [LINK=IMPROVEMENT_MANA_WATER_I_DAO]Water[\LINK], available at Knowledge of the Ether, these improvements spawn up to 3 elementals of the chosen type, these elementals are weakened by the Age of Ice. They will need further research to restore their strength - [LINK=TECH_ELEMENTALISM]Elementalism[\LINK] and [LINK=TECH_ARCANE_LORE]Arcane Lore[\LINK].
+[ICON_BULLET]The Dao can not convert mana nodes normally; instead, they must use the spell [LINK=SPELL_ELEMENTAL_EQUILIBRIUM]Elemental Equilibrium[\LINK] to change existing mana nodes. This is weighted against whatever element they have the most of, with Force mana being the constant.
+[ICON_BULLET]Units are mostly comprised of Disciple unit types, even their unique arcane line starts with the [LINK=UNIT_HERMIT]Hermit[\LINK], a Disciple unit who can go down the path of an elemental conjurer or the path of a [LINK=UNIT_WARRIOR_MONK]Warrior Monk[\LINK] - the Conjurering line is focused on the elements of nature, and the Warrior Monk is a path of fighting to preserve the compact from both angel and demon. This means that great prophets and by extension, the [LINK=BUILDING_ALTAR_OF_THE_LUONNOTAR]Altar of the Luonnotar[\LINK], which gives bonus experience to disciple units, is a powerful synergy for the Dao if you can manage to gain enough great prophets, which the Dao have reduced access to.
+[ICON_BULLET]Their unique building, [LINK=BUILDING_TEMPLE_DAO]Temple of Elements[\LINK] unlocks the choice between 4 elemental shrines in a city, offering ways to customize a city to best suit its environment.  There is a catch, however. Water shrines can not be built in the same city as a fire shrine, and an earth shrine can not be alongside an air shrine.</French>
+        <German>Strategy:
+
+The Dao are masters of temperance and elemental forces.
+
+[ICON_BULLET]The Dao have access to unique Mana improvements for [LINK=IMPROVEMENT_MANA_AIR_I_DAO]Air[\LINK], [LINK=IMPROVEMENT_MANA_FIRE_I_DAO]Fire[\LINK], [LINK=IMPROVEMENT_MANA_EARTH_I_DAO]Earth[\LINK], and [LINK=IMPROVEMENT_MANA_WATER_I_DAO]Water[\LINK], available at Knowledge of the Ether, these improvements spawn up to 3 elementals of the chosen type, these elementals are weakened by the Age of Ice. They will need further research to restore their strength - [LINK=TECH_ELEMENTALISM]Elementalism[\LINK] and [LINK=TECH_ARCANE_LORE]Arcane Lore[\LINK].
+[ICON_BULLET]The Dao can not convert mana nodes normally; instead, they must use the spell [LINK=SPELL_ELEMENTAL_EQUILIBRIUM]Elemental Equilibrium[\LINK] to change existing mana nodes. This is weighted against whatever element they have the most of, with Force mana being the constant.
+[ICON_BULLET]Units are mostly comprised of Disciple unit types, even their unique arcane line starts with the [LINK=UNIT_HERMIT]Hermit[\LINK], a Disciple unit who can go down the path of an elemental conjurer or the path of a [LINK=UNIT_WARRIOR_MONK]Warrior Monk[\LINK] - the Conjurering line is focused on the elements of nature, and the Warrior Monk is a path of fighting to preserve the compact from both angel and demon. This means that great prophets and by extension, the [LINK=BUILDING_ALTAR_OF_THE_LUONNOTAR]Altar of the Luonnotar[\LINK], which gives bonus experience to disciple units, is a powerful synergy for the Dao if you can manage to gain enough great prophets, which the Dao have reduced access to.
+[ICON_BULLET]Their unique building, [LINK=BUILDING_TEMPLE_DAO]Temple of Elements[\LINK] unlocks the choice between 4 elemental shrines in a city, offering ways to customize a city to best suit its environment.  There is a catch, however. Water shrines can not be built in the same city as a fire shrine, and an earth shrine can not be alongside an air shrine.</German>
+        <Italian>Strategy:
+
+The Dao are masters of temperance and elemental forces.
+
+[ICON_BULLET]The Dao have access to unique Mana improvements for [LINK=IMPROVEMENT_MANA_AIR_I_DAO]Air[\LINK], [LINK=IMPROVEMENT_MANA_FIRE_I_DAO]Fire[\LINK], [LINK=IMPROVEMENT_MANA_EARTH_I_DAO]Earth[\LINK], and [LINK=IMPROVEMENT_MANA_WATER_I_DAO]Water[\LINK], available at Knowledge of the Ether, these improvements spawn up to 3 elementals of the chosen type, these elementals are weakened by the Age of Ice. They will need further research to restore their strength - [LINK=TECH_ELEMENTALISM]Elementalism[\LINK] and [LINK=TECH_ARCANE_LORE]Arcane Lore[\LINK].
+[ICON_BULLET]The Dao can not convert mana nodes normally; instead, they must use the spell [LINK=SPELL_ELEMENTAL_EQUILIBRIUM]Elemental Equilibrium[\LINK] to change existing mana nodes. This is weighted against whatever element they have the most of, with Force mana being the constant.
+[ICON_BULLET]Units are mostly comprised of Disciple unit types, even their unique arcane line starts with the [LINK=UNIT_HERMIT]Hermit[\LINK], a Disciple unit who can go down the path of an elemental conjurer or the path of a [LINK=UNIT_WARRIOR_MONK]Warrior Monk[\LINK] - the Conjurering line is focused on the elements of nature, and the Warrior Monk is a path of fighting to preserve the compact from both angel and demon. This means that great prophets and by extension, the [LINK=BUILDING_ALTAR_OF_THE_LUONNOTAR]Altar of the Luonnotar[\LINK], which gives bonus experience to disciple units, is a powerful synergy for the Dao if you can manage to gain enough great prophets, which the Dao have reduced access to.
+[ICON_BULLET]Their unique building, [LINK=BUILDING_TEMPLE_DAO]Temple of Elements[\LINK] unlocks the choice between 4 elemental shrines in a city, offering ways to customize a city to best suit its environment.  There is a catch, however. Water shrines can not be built in the same city as a fire shrine, and an earth shrine can not be alongside an air shrine.</Italian>
+        <Spanish>Strategy:
+
+The Dao are masters of temperance and elemental forces.
+
+[ICON_BULLET]The Dao have access to unique Mana improvements for [LINK=IMPROVEMENT_MANA_AIR_I_DAO]Air[\LINK], [LINK=IMPROVEMENT_MANA_FIRE_I_DAO]Fire[\LINK], [LINK=IMPROVEMENT_MANA_EARTH_I_DAO]Earth[\LINK], and [LINK=IMPROVEMENT_MANA_WATER_I_DAO]Water[\LINK], available at Knowledge of the Ether, these improvements spawn up to 3 elementals of the chosen type, these elementals are weakened by the Age of Ice. They will need further research to restore their strength - [LINK=TECH_ELEMENTALISM]Elementalism[\LINK] and [LINK=TECH_ARCANE_LORE]Arcane Lore[\LINK].
+[ICON_BULLET]The Dao can not convert mana nodes normally; instead, they must use the spell [LINK=SPELL_ELEMENTAL_EQUILIBRIUM]Elemental Equilibrium[\LINK] to change existing mana nodes. This is weighted against whatever element they have the most of, with Force mana being the constant.
+[ICON_BULLET]Units are mostly comprised of Disciple unit types, even their unique arcane line starts with the [LINK=UNIT_HERMIT]Hermit[\LINK], a Disciple unit who can go down the path of an elemental conjurer or the path of a [LINK=UNIT_WARRIOR_MONK]Warrior Monk[\LINK] - the Conjurering line is focused on the elements of nature, and the Warrior Monk is a path of fighting to preserve the compact from both angel and demon. This means that great prophets and by extension, the [LINK=BUILDING_ALTAR_OF_THE_LUONNOTAR]Altar of the Luonnotar[\LINK], which gives bonus experience to disciple units, is a powerful synergy for the Dao if you can manage to gain enough great prophets, which the Dao have reduced access to.
+[ICON_BULLET]Their unique building, [LINK=BUILDING_TEMPLE_DAO]Temple of Elements[\LINK] unlocks the choice between 4 elemental shrines in a city, offering ways to customize a city to best suit its environment.  There is a catch, however. Water shrines can not be built in the same city as a fire shrine, and an earth shrine can not be alongside an air shrine.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_DAO_SHORT_DESC</Tag>
+        <English>Dao</English>
+        <French>Dao</French>
+        <German>Dao</German>
+        <Italian>Dao</Italian>
+        <Spanish>Dao</Spanish>
+    </TEXT>
+
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_RUOLAN</Tag>
+        <English>Ruolan</English>
+        <French>Ruolan</French>
+        <German>Ruolan</German>
+        <Italian>Ruolan</Italian>
+        <Spanish>Ruolan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_RUOLAN_PEDIA</Tag>
+        <English>Ruolan</English>
+        <French>Ruolan</French>
+        <German>Ruolan</German>
+        <Italian>Ruolan</Italian>
+        <Spanish>Ruolan</Spanish>
+    </TEXT>
+	
+   
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_YINXI</Tag>
+        <English>Yinxi</English>
+        <French>Yinxi</French>
+        <German>Yinxi</German>
+        <Italian>Yinxi</Italian>
+        <Spanish>Yinxi</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_YINXI_PEDIA</Tag>
+        <English>Yinxi</English>
+        <French>Yinxi</French>
+        <German>Yinxi</German>
+        <Italian>Yinxi</Italian>
+        <Spanish>Yinxi</Spanish>
+    </TEXT>
+	
+</Civ4GameText>

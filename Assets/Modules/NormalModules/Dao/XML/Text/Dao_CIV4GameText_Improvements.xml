@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_BUILD_MANA_WATER_DAO</Tag>
+        <English>Build Leyline of Kan Nengyuan</English>
+        <French>Build Leyline of Kan Nengyuan</French>
+        <German>Build Leyline of Kan Nengyuan</German>
+        <Italian>Build Leyline of Kan Nengyuan</Italian>
+        <Spanish>Build Leyline of Kan Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILD_MANA_FIRE_DAO</Tag>
+        <English>Build Leyline of Li Nengyuan</English>
+        <French>Build Leyline of Li Nengyuan</French>
+        <German>Build Leyline of Li Nengyuan</German>
+        <Italian>Build Leyline of Li Nengyuan</Italian>
+        <Spanish>Build Leyline of Li Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILD_MANA_EARTH_DAO</Tag>
+        <English>Build Leyline of Gen Nengyuan</English>
+        <French>Build Leyline of Gen Nengyuan</French>
+        <German>Build Leyline of Gen Nengyuan</German>
+        <Italian>Build Leyline of Gen Nengyuan</Italian>
+        <Spanish>Build Leyline of Gen Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILD_MANA_AIR_DAO</Tag>
+        <English>Build Leyline of Qian Nengyuan</English>
+        <French>Build Leyline of Qian Nengyuan</French>
+        <German>Build Leyline of Qian Nengyuan</German>
+        <Italian>Build Leyline of Qian Nengyuan</Italian>
+        <Spanish>Build Leyline of Qian Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_MANA_WATER_I_DAO</Tag>
+        <English>Leyline of Kan Nengyuan</English>
+        <French>Leyline of Kan Nengyuan</French>
+        <German>Leyline of Kan Nengyuan</German>
+        <Italian>Leyline of Kan Nengyuan</Italian>
+        <Spanish>Leyline of Kan Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_MANA_EARTH_I_DAO</Tag>
+        <English>Leyline of Gen Nengyuan</English>
+        <French>Leyline of Gen Nengyuan</French>
+        <German>Leyline of Gen Nengyuan</German>
+        <Italian>Leyline of Gen Nengyuan</Italian>
+        <Spanish>Leyline of Gen Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_MANA_AIR_I_DAO</Tag>
+        <English>Leyline of Qian Nengyuan</English>
+        <French>Leyline of Qian Nengyuan</French>
+        <German>Leyline of Qian Nengyuan</German>
+        <Italian>Leyline of Qian Nengyuan</Italian>
+        <Spanish>Leyline of Qian Nengyuan</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_MANA_FIRE_I_DAO</Tag>
+        <English>Leyline of Li Nengyuan</English>
+        <French>Leyline of Li Nengyuan</French>
+        <German>Leyline of Li Nengyuan</German>
+        <Italian>Leyline of Li Nengyuan</Italian>
+        <Spanish>Leyline of Li Nengyuan</Spanish>
+    </TEXT>
+</Civ4GameText>

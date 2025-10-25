@@ -833,8 +833,8 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-	<!--	<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type> 
 			<Button>Art/Modules/Dao/Buttons/Fire Elemental.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
@@ -855,9 +855,9 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo> -->
-		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
+		</UnitArtInfo>
+<!--     <UnitArtInfo> -->
+	<!-- <Type>ART_DEF_UNIT_FIRE_ELEMENTAL_MINOR</Type>
 			<Button>Art/Interface/Buttons/Units/Fire Elemental.dds</Button>
 			<fScale>0.002</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
@@ -878,7 +878,7 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo>
+		</UnitArtInfo> -->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WATER_ELEMENTAL_MINOR</Type>
 			<Button>Art/Modules/Dao/Buttons/Water Elemental.dds</Button>
@@ -1046,7 +1046,7 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-   <!--	<UnitArtInfo>
+		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_HUGE</Type>
 			<Button>Art/Modules/Dao/Buttons/Fire_Elder.dds</Button>
 			<fScale>1.1</fScale>
@@ -1068,9 +1068,9 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo> -->
-		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FIRE_ELEMENTAL_HUGE</Type>
+		</UnitArtInfo>
+<!--    <UnitArtInfo>
+		    <Type>ART_DEF_UNIT_FIRE_ELEMENTAL_HUGE</Type>
 			<Button>Art/Interface/Buttons/Fire Elemental.dds</Button>
 			<fScale>0.1</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
@@ -1091,11 +1091,11 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo>
+		</UnitArtInfo> -->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WATER_ELEMENTAL_HUGE</Type>
 			<Button>Art/Modules/Dao/Buttons/Water_Elder.dds</Button>
-			<fScale>0.6</fScale>
+			<fScale>0.55</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>

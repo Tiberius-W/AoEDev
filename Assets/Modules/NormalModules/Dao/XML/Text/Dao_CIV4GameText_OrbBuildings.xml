@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+   
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_CALLIGRAPHY_HOUSE</Tag>
+        <English>Calligraphy House</English>
+        <French>Calligraphy House</French>
+        <German>Calligraphy House</German>
+        <Italian>Calligraphy House</Italian>
+        <Spanish>Calligraphy House</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_CALLIGRAPHY_HOUSE_PEDIA</Tag>
+        <English>Calligraphy House</English>
+        <French>Calligraphy House</French>
+        <German>Calligraphy House</German>
+        <Italian>Calligraphy House</Italian>
+        <Spanish>Calligraphy House</Spanish>
+    </TEXT>
+
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_PALACE_DAO</Tag>
+        <English>Dao Palace</English>
+        <French>Dao Palace</French>
+        <German>Dao Palace</German>
+        <Italian>Dao Palace</Italian>
+        <Spanish>Dao Palace</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DAO_TEMPLE</Tag>
+        <English>Temple of Elements</English>
+        <French>Temple of Elements</French>
+        <German>Temple of Elements</German>
+        <Italian>Temple of Elements</Italian>
+        <Spanish>Temple of Elements</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_SHRINE_AIR</Tag>
+        <English>Air Shen Dian</English>
+        <French>Air Shen Dian</French>
+        <German>Air Shen Dian</German>
+        <Italian>Air Shen Dian</Italian>
+        <Spanish>Air Shen Dian</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_SHRINE_EARTH</Tag>
+        <English>Earth Shen Dian</English>
+        <French>Earth Shen Dian</French>
+        <German>Earth Shen Dian</German>
+        <Italian>Earth Shen Dian</Italian>
+        <Spanish>Earth Shen Dian</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_SHRINE_FIRE</Tag>
+        <English>Fire Shen Dian</English>
+        <French>Fire Shen Dian</French>
+        <German>Fire Shen Dian</German>
+        <Italian>Fire Shen Dian</Italian>
+        <Spanish>Fire Shen Dian</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_SHRINE_WATER</Tag>
+        <English>Water Shen Dian</English>
+        <French>Water Shen Dian</French>
+        <German>Water Shen Dian</German>
+        <Italian>Water Shen Dian</Italian>
+        <Spanish>Water Shen Dian</Spanish>
+    </TEXT>
+</Civ4GameText>

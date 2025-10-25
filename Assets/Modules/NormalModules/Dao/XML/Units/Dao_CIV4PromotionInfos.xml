@@ -277,6 +277,16 @@
 					<PrereqUnit>UNIT_WATER_ELEMENTAL</PrereqUnit>
 					<PrereqUnit>UNIT_EARTH_ELEMENTAL</PrereqUnit>
 			</PrereqUnits>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_ELEMENTAL_NORMAL</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_WEAK</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_ELEMENTAL_NORMAL</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_WEAK</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionOverwrites>
 			<iMinLevel>9</iMinLevel>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -285,6 +295,81 @@
 			<iCollateralDamageChange>40</iCollateralDamageChange>
 			<iCollateralLimitBoost>25</iCollateralLimitBoost>
 			<iCollateralExtraTargets>2</iCollateralExtraTargets>
+		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_ELEMENTAL_NORMAL</Type>
+			<Button>Art/Modules/Dao/Buttons/HugeElemental.dds</Button>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_NORMAL</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<TechPrereq>TECH_ARCANE_LORE</TechPrereq>
+			<bEffectProm>1</bEffectProm>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DAO</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqUnits>
+					<PrereqUnit>UNIT_AIR_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_FIRE_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_WATER_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_EARTH_ELEMENTAL</PrereqUnit>
+			</PrereqUnits>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_ELEMENTAL_WEAK</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_ELEMENTAL_WEAK</Promotion>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionOverwrites>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_ELEMENTAL_WEAK</Type>
+			<Button>Art/Interface/Buttons/Promotions/Weak.dds</Button>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_WEAK</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MINOR</UnitArtStyleType>
+			<TechPrereq>TECH_ELEMENTALISM</TechPrereq>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DAO</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqUnits>
+					<PrereqUnit>UNIT_AIR_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_FIRE_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_WATER_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_EARTH_ELEMENTAL</PrereqUnit>
+			</PrereqUnits>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_ELEMENTAL_VERY_WEAK</Promotion>
+			</PromotionOverwrites>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<iExtraCombatStr>-3</iExtraCombatStr>
+			<iExtraCombatDefense>-3</iExtraCombatDefense>
+		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_ELEMENTAL_VERY_WEAK</Type>
+			<Button>Art/Interface/Buttons/Promotions/Weak.dds</Button>
+			<Description>TXT_KEY_PROMOTION_ELEMENTAL_VERY_WEAK</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MINOR</UnitArtStyleType>
+			<TechPrereq>TECH_KNOWLEDGE_OF_THE_ETHER</TechPrereq>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DAO</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqUnits>
+					<PrereqUnit>UNIT_AIR_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_FIRE_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_WATER_ELEMENTAL</PrereqUnit>
+					<PrereqUnit>UNIT_EARTH_ELEMENTAL</PrereqUnit>
+			</PrereqUnits>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<iExtraCombatStr>-5</iExtraCombatStr>
+			<iExtraCombatDefense>-5</iExtraCombatDefense>
 		</PromotionInfo>
 		<!-- PalaceGuard opened by Dao Palace -->
 		

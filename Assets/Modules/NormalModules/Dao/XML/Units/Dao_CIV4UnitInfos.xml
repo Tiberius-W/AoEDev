@@ -64,7 +64,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -141,6 +141,14 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 			</UnitAIs>
 			<NotUnitAIs>
 				<UnitAI>
@@ -170,7 +178,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -198,31 +206,23 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_LIFE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_SPIRIT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_NATURE</BuildType>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -259,6 +259,14 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 			</UnitAIs>
 			<NotUnitAIs>
 				<UnitAI>
@@ -275,10 +283,6 @@
 			<BonusType>BONUS_REAGENTS</BonusType>
 			<PrereqTech>TECH_STRENGTH_OF_WILL</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<DenyPromotions>
-					<Promotion>PROMOTION_LIFE1</Promotion>
-					<Promotion>PROMOTION_LIFE2</Promotion>
-			</DenyPromotions>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
@@ -337,19 +341,23 @@
 			<iWorkRate>400</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -406,6 +414,14 @@
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>	
 			</UnitAIs>
 			<NotUnitAIs>
 				<UnitAI>
@@ -413,6 +429,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</NotUnitAIs>
+
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MAGIC</FlavorType>
@@ -421,9 +438,6 @@
 			</Flavors>
 			<PrereqTech>TECH_SORCERY</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<DenyPromotions>
-					<Promotion>PROMOTION_LIFE3</Promotion>
-			</DenyPromotions>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MEDIC1</PromotionType>
@@ -438,7 +452,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -466,31 +480,23 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_LIFE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_SPIRIT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MANA_NATURE</BuildType>
+					<BuildType>BUILD_MANA_FORCE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -553,10 +559,15 @@
 					<PromotionType>PROMOTION_DEMON_SLAYING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL_SLAYING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 		<iTier>3</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
 			<bNeverObsolete>1</bNeverObsolete>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_PALADIN</UnitClassUpgradeType>
@@ -591,11 +602,11 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!--Shugenja-->
+		<UnitInfo> <!-- Immutable De lu Yi-->
 			<Class>UNITCLASS_DRUID</Class>
 			<Type>UNIT_SHUGENJA</Type>
 			<Description>TXT_KEY_UNIT_SHUGENJA</Description>
-			<Civilopedia>TXT_KEY_UNIT_DRUID_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_SHUGENJA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_DRUID_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
@@ -649,7 +660,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LIFE1</PromotionType>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -669,7 +680,7 @@
 			<iWorkRate>100</iWorkRate>
 			<BonusAffinities>
 				<BonusAffinity>
-					<BonusType>BONUS_MANA_NATURE</BonusType>
+					<BonusType>BONUS_MANA_FORCE</BonusType>
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
@@ -701,7 +712,7 @@
 			<Class>UNITCLASS_PALADIN</Class>
 			<Type>UNIT_SOHEI</Type>
 			<Description>TXT_KEY_UNIT_SOHEI</Description>
-			<Civilopedia>TXT_KEY_UNIT_PALADIN_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_SOHEI_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PALADIN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
@@ -733,11 +744,23 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_COURAGE</PromotionType>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_IMMUNE_DISEASE</PromotionType>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FORCE1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL_SLAYING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -767,14 +790,8 @@
 			<iAsset>22</iAsset>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_HOLY</DamageType>
-					<iCombat>3</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<iCombat>11</iCombat>
-			<iCombatDefense>11</iCombatDefense>
+			<iCombat>14</iCombat>
+			<iCombatDefense>14</iCombatDefense>
 			<iCombatLimit>100</iCombatLimit>
 			<iMoves>1</iMoves>
 			<iNukeRange>-1</iNukeRange>
@@ -791,11 +808,11 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!--Ninja-->
+		<UnitInfo> <!-- Gui Zi Shou -->
 			<Class>UNITCLASS_ASSASSIN</Class>
 			<Type>UNIT_NINJA</Type>
 			<Description>TXT_KEY_UNIT_NINJA</Description>
-			<Civilopedia>TXT_KEY_UNIT_ASSASSIN_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_NINJA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ASSASSIN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
@@ -816,11 +833,14 @@
 					<PromotionType>PROMOTION_MARKSMAN</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_TEMPERANCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_ROGUE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<iTier>3</iTier>
-			<iWeaponTierMax>3</iWeaponTierMax>
 			<bNeverObsolete>1</bNeverObsolete>
 			<UnitClassUpgrades>
 					<UnitClassUpgradeType>UNITCLASS_SHADOW</UnitClassUpgradeType>
@@ -834,13 +854,7 @@
 			<iAsset>7</iAsset>
 			<iXPValueAttack>8</iXPValueAttack>
 			<iXPValueDefense>4</iXPValueDefense>
-			<DamageTypeCombats>
-				<DamageTypeCombat>
-					<DamageType>DAMAGE_POISON</DamageType>
-					<iCombat>1</iCombat>
-				</DamageTypeCombat>
-			</DamageTypeCombats>
-			<iCombat>5</iCombat>
+			<iCombat>8</iCombat>
 			<iCombatDefense>3</iCombatDefense>
 			<iCombatLimit>100</iCombatLimit>
 			<iFirstStrikes>1</iFirstStrikes>
@@ -932,6 +946,16 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<PassableTech>TECH_ELEMENTALISM</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<PassableTech>TECH_SORCERY</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -1153,6 +1177,16 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<PassableTech>TECH_ELEMENTALISM</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<PassableTech>TECH_SORCERY</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>

@@ -14,7 +14,6 @@
 			<Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
 			<Strategy></Strategy>
 			<iCrime>-10</iCrime>
-			<Help>TXT_KEY_BUILDING_DAO_TEMPLE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_DAO</ArtDefineTag>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
@@ -108,7 +107,7 @@
 			</HappinessTraits>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
-			<FreeBonus>BONUS_MANA_NATURE</FreeBonus>
+			<FreeBonus>BONUS_MANA_FORCE</FreeBonus>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<FreeBuilding>NONE</FreeBuilding>
 			<FreePromotion>NONE</FreePromotion>
@@ -277,8 +276,6 @@
 			<bCtrlDown>0</bCtrlDown>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<iCrime>-10</iCrime>
-			<FreeBonus2>BONUS_MANA_AIR</FreeBonus2>
-			<FreeBonus3>BONUS_MANA_EARTH</FreeBonus3>
 			<PrereqTrait>NONE</PrereqTrait>
 			<RemovePromotion>NONE</RemovePromotion>
 			<SpecialistCommerceChanges>
@@ -521,7 +518,6 @@
 			<Type>BUILDING_SHRINE_AIR</Type>
 			<Description>TXT_KEY_BUILDING_SHRINE_AIR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
-			<Help>TXT_KEY_BUILDING_SHRINE_AIR_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHRINE_AIR</ArtDefineTag>
 			<bNeverCapture>1</bNeverCapture>
@@ -575,6 +571,18 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
+			
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_AIR</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>10</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
+			<iTradeRouteModifier>25</iTradeRouteModifier>
 	   </BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SHRINE_EARTH</BuildingClass>
@@ -583,7 +591,6 @@
 			<Description>TXT_KEY_BUILDING_SHRINE_EARTH</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
 			<Strategy></Strategy>
-			<Help>TXT_KEY_BUILDING_SHRINE_EARTH_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHRINE_EARTH</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -695,7 +702,7 @@
 			<iForeignTradeRouteModifier>0</iForeignTradeRouteModifier>
 			<iGlobalPopulationChange>0</iGlobalPopulationChange>
 			<iFreeTechs>0</iFreeTechs>
-			<iDefense>0</iDefense>
+			<iDefense>25</iDefense>
 			<iBombardDefense>0</iBombardDefense>
 			<iAllCityDefense>0</iAllCityDefense>
 			<iEspionageDefense>0</iEspionageDefense>
@@ -711,6 +718,9 @@
 			<YieldChanges>
 			</YieldChanges>
 			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>15</iYield>
+				<iYield>0</iYield>
 			</YieldModifiers>
 			<PowerYieldModifiers>
 			</PowerYieldModifiers>
@@ -811,6 +821,16 @@
 			<RemovePromotion>NONE</RemovePromotion>
 			<SpecialistCommerceChanges>
 			</SpecialistCommerceChanges>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_EARTH</BonusType>
+					<CommerceModifiers>
+						<iCommerce>10</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SHRINE_FIRE</BuildingClass>
@@ -819,7 +839,6 @@
 			<Description>TXT_KEY_BUILDING_SHRINE_FIRE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
 			<Strategy></Strategy>
-			<Help>TXT_KEY_BUILDING_SHRINE_FIRE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHRINE_FIRE</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -909,9 +928,9 @@
 			<iAreaFreeSpecialist>0</iAreaFreeSpecialist>
 			<iGlobalFreeSpecialist>0</iGlobalFreeSpecialist>
 			<iMaintenanceModifier>0</iMaintenanceModifier>
-			<iWarWearinessModifier>0</iWarWearinessModifier>
+			<iWarWearinessModifier>-25</iWarWearinessModifier>
 			<iGlobalWarWearinessModifier>0</iGlobalWarWearinessModifier>
-			<iEnemyWarWearinessModifier>0</iEnemyWarWearinessModifier>
+			<iEnemyWarWearinessModifier>25</iEnemyWarWearinessModifier>
 			<iHealRateChange>0</iHealRateChange>
 			<iHealth>0</iHealth>
 			<iAreaHealth>0</iAreaHealth>
@@ -921,7 +940,7 @@
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
+			<iMilitaryProductionModifier>10</iMilitaryProductionModifier>
 			<iSpaceProductionModifier>0</iSpaceProductionModifier>
 			<iGlobalSpaceProductionModifier>0</iGlobalSpaceProductionModifier>
 			<iTradeRoutes>0</iTradeRoutes>
@@ -1047,6 +1066,16 @@
 			<RemovePromotion>NONE</RemovePromotion>
 			<SpecialistCommerceChanges>
 			</SpecialistCommerceChanges>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MANA_FIRE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>10</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SHRINE_WATER</BuildingClass>
@@ -1055,7 +1084,6 @@
 			<Description>TXT_KEY_BUILDING_SHRINE_WATER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
 			<Strategy></Strategy>
-			<Help>TXT_KEY_BUILDING_SHRINE_WATER_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHRINE_WATER</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -1177,12 +1205,14 @@
 			<SeaPlotYieldChanges>
 			</SeaPlotYieldChanges>
 			<RiverPlotYieldChanges>
+				<iYield>1</iYield>
 			</RiverPlotYieldChanges>
 			<GlobalSeaPlotYieldChanges>
 			</GlobalSeaPlotYieldChanges>
 			<YieldChanges>
 			</YieldChanges>
 			<YieldModifiers>
+				<iYield>15</iYield>
 			</YieldModifiers>
 			<PowerYieldModifiers>
 			</PowerYieldModifiers>
@@ -1282,7 +1312,7 @@
 			<PrereqTrait>NONE</PrereqTrait>
 			<RemovePromotion>NONE</RemovePromotion>
 			<SpecialistCommerceChanges>
-			</SpecialistCommerceChanges>
+			</SpecialistCommerceChanges>	
 		</BuildingInfo>
 
 	</BuildingInfos>

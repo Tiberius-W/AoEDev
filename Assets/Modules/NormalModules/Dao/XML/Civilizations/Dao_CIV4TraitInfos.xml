@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leader Trait Infos -->
+<Civ4TraitInfos xmlns="x-schema:Dao_CIV4CivilizationsSchema.xml">
+	<TraitInfos>
+		<TraitInfo>		<!-- Dao Water and Earth -->
+			<Type>TRAIT_DAO_WATER_EARTH</Type>
+			<Description>TXT_KEY_TRAIT_DAO_WATER_EARTH</Description>
+			<Civilopedia>TXT_KEY_TRAIT_DAO_WATER_EARTH_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_DAO_WATER_EARTH_SHORT</ShortDescription>
+			<TraitClass>TRAITCLASS_BALANCE_DAO</TraitClass>
+			<FreeBonuses>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_WATER</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_EARTH</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>
+			</FreeBonuses>
+		</TraitInfo>
+		<TraitInfo>		<!-- Dao Fire and Air -->
+			<Type>TRAIT_DAO_FIRE_AIR</Type>
+			<Description>TXT_KEY_TRAIT_DAO_FIRE_AIR</Description>
+			<Civilopedia>TXT_KEY_TRAIT_DAO_FIRE_AIR_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_DAO_FIRE_AIR_SHORT</ShortDescription>
+			<TraitClass>TRAITCLASS_BALANCE_DAO</TraitClass>
+			<FreeBonuses>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_FIRE</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_AIR</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>
+			</FreeBonuses>
+		</TraitInfo>
+	</TraitInfos>
+</Civ4TraitInfos>

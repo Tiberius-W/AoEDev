@@ -11866,7 +11866,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_FORCE2</PromotionType>
+					<PromotionType>PROMOTION_KINETIC_BLAST</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -11876,7 +11876,7 @@
 			</FreePromotions>
 			<BonusAffinities>
 				<BonusAffinity>
-					<BonusType>BONUS_MANA_FORCE</BonusType>
+					<BonusType>BONUS_MANA_DIMENSIONAL</BonusType>
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>

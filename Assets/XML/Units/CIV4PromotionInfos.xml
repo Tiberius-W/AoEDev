@@ -8107,6 +8107,72 @@
 			<iMinLevel>-1</iMinLevel>
 			<PromotionCombatApply>PROMOTION_DISEASED</PromotionCombatApply>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Temperance -->
+			<Type>PROMOTION_TEMPERANCE</Type>
+			<Description>TXT_KEY_PROMOTION_TEMPERANCE</Description>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Spells/Temperance.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iResist>50</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iResist>50</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Disrupted -->
 			<Type>PROMOTION_DISRUPTED</Type>
 			<Description>TXT_KEY_PROMOTION_DISRUPTED</Description>
@@ -8160,7 +8226,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Civs/Mechanos/Promotions/disrupted.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Disrupted.dds</Button>
 			<iExpireChance>50</iExpireChance>
 			<iMinLevel>-1</iMinLevel>
 			<iSpellDamageModify>-20</iSpellDamageModify>
@@ -22359,6 +22425,97 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Dimensional3.dds</Button>
+		</PromotionInfo>	
+		<PromotionInfo>		<!-- Dimensional II - Kinetic Blast formerly Force II -->
+			<Type>PROMOTION_KINETIC_BLAST</Type>
+			<Description>TXT_KEY_PROMOTION_KINETIC_BLAST</Description>
+			<Civilopedia>TXT_KEY_PROMOTION_KINETIC_BLAST_PEDIA</Civilopedia>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_DIMENSIONAL2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_EARTH2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_FIRE2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_WATER2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_ICE2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_ENCHANTMENT2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
+			<iAirCombat>6</iAirCombat>
+			<iAirCombatLimitBoost>25</iAirCombatLimitBoost>
+			<iAirRangeChange>1</iAirRangeChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/Civs/Mekara/IronWill.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Drill I -->
 			<Type>PROMOTION_DRILL1</Type>
@@ -23853,9 +24010,6 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionAND>
 			</PrereqPromotionANDs>
-			<iAirCombat>6</iAirCombat>
-			<iAirCombatLimitBoost>25</iAirCombatLimitBoost>
-			<iAirRangeChange>1</iAirRangeChange>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -23982,7 +24136,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Force3.dds</Button>
-		</PromotionInfo>
+		</PromotionInfo>	
 		<PromotionInfo>		<!-- Formation I -->
 			<Type>PROMOTION_FORMATION</Type>
 			<Description>TXT_KEY_PROMOTION_FORMATION</Description>

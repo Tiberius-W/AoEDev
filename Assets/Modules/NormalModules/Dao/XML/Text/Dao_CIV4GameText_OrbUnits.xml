@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SANARI</Tag>
+        <English>Sanari Shu Lien</English>
+        <French>Sanari Shu Lien</French>
+        <German>Sanari Shu Lien</German>
+        <Italian>Sanari Shu Lien</Italian>
+        <Spanish>Sanari Shu Lien</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SANARI_PEDIA</Tag>
+        <English>Sanari Shu Lien</English>
+        <French>Sanari Shu Lien</French>
+        <German>Sanari Shu Lien</German>
+        <Italian>Sanari Shu Lien</Italian>
+        <Spanish>Sanari Shu Lien</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SANARI_STRATEGY</Tag>
+        <English>Sanari Shu Lien</English>
+        <French>Sanari Shu Lien</French>
+        <German>Sanari Shu Lien</German>
+        <Italian>Sanari Shu Lien</Italian>
+        <Spanish>Sanari Shu Lien</Spanish>
+	</TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_NINJA</Tag>
+        <English>Gui Zi Shou</English>
+        <French>Gui Zi Shou</French>
+        <German>Gui Zi Shou</German>
+        <Italian>Gui Zi Shou</Italian>
+        <Spanish>Gui Zi Shou</Spanish>
+    </TEXT><TEXT>
+        <Tag>TXT_KEY_UNIT_NINJA_PEDIA</Tag>
+        <English>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</English>
+        <French>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</French>
+        <German>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</German>
+        <Italian>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</Italian>
+        <Spanish>The most dangerous disharmonies often come in the form of the softest targets [NEWLINE][NEWLINE]A demonic general, hiding safely behind his infernal horde [NEWLINE][NEWLINE]Or an angelic preacher, leading sermons from behind city walls [NEWLINE][NEWLINE]Neither belong in creation. Both must be removed. The compact will be enforced.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SHUGENJA</Tag>
+        <English>Immutable De Lu Yi</English>
+        <French>Immutable De Lu Yi</French>
+        <German>Immutable De Lu Yi</German>
+        <Italian>Immutable De Lu Yi</Italian>
+        <Spanish>Immutable De Lu Yi</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SHUGENJA_PEDIA</Tag>
+        <English>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</English>
+        <French>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</French>
+        <German>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</German>
+        <Italian>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Italian>
+        <Spanish>De Lu Yi, disciples of the compact and nature's majesty. A De Lu Yi's domain is immaculate, every living thing in its own proper place in creation, no one species dominating the other. No being, be it heavenly or hellspawn, would dare disturb even a single pebble.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SOHEI</Tag>
+        <English>Warden of Xian Shi</English>
+        <French>Warden of Xian Shi</French>
+        <German>Warden of Xian Shi</German>
+        <Italian>Warden of Xian Shi</Italian>
+        <Spanish>Warden of Xian Shi</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_SOHEI_PEDIA</Tag>
+        <English>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</English>
+        <French>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</French>
+        <German>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</German>
+        <Italian>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Italian>
+        <Spanish>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_HERMIT</Tag>
+        <English>Hermit</English>
+        <French>Hermit</French>
+        <German>Hermit</German>
+        <Italian>Hermit</Italian>
+        <Spanish>Hermit</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_ELEMENTALIST</Tag>
+        <English>Elementalist</English>
+        <French>Elementalist</French>
+        <German>Elementalist</German>
+        <Italian>Elementalist</Italian>
+        <Spanish>Elementalist</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_CONJURER</Tag>
+        <English>Conjurer</English>
+        <French>Conjurer</French>
+        <German>Conjurer</German>
+        <Italian>Conjurer</Italian>
+        <Spanish>Conjurer</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_WARRIOR_MONK</Tag>
+        <English>Warrior Monk</English>
+        <French>Warrior Monk</French>
+        <German>Warrior Monk</German>
+        <Italian>Warrior Monk</Italian>
+        <Spanish>Warrior Monk</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_WARRIOR_MONK_PEDIA</Tag>
+        <English>Warrior Monk</English>
+        <French>Warrior Monk</French>
+        <German>Warrior Monk</German>
+        <Italian>Warrior Monk</Italian>
+        <Spanish>Warrior Monk</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_AIR_ELEMENTAL_DAO_STRATEGY</Tag>
+        <English>Although weak for a rank 3 summon, an Air Elemental can pass over any terrain, including water tiles, and it can see 2 tiles further than other units. Upon winning a combat, Air Elementals have 25% chance to summon [LINK=UNIT_AIR_ELEMENTAL_MINOR]Minor Air Elementals[/LINK].</English>
+        <French>Although weak for a rank 3 summon, an Air Elemental can pass over any terrain, including water tiles, and it can see 2 tiles further than other units. Upon winning a combat, Air Elementals have 25% chance to summon [LINK=UNIT_AIR_ELEMENTAL_MINOR]Minor Air Elementals[/LINK].</French>
+        <German>Obwohl schwach für eine Level 3 Beschwörung, kann sich ein Luftelementar über jedes Gelände, inklusive Wasser, bewegen und 2 Felder weiter sehen als andere Einheiten. Wenn sie einen Kampf gewinnen, beschwören sie permanente Blitzelementare.</German>
+        <Italian>Although weak for a rank 3 summon, an Air Elemental can pass over any terrain, including water tiles, and it can see 2 tiles further than other units. Upon winning a combat, Air Elementals have 25% chance to summon [LINK=UNIT_AIR_ELEMENTAL_MINOR]Minor Air Elementals[/LINK].</Italian>
+        <Spanish>Although weak for a rank 3 summon, an Air Elemental can pass over any terrain, including water tiles, and it can see 2 tiles further than other units. Upon winning a combat, Air Elementals have 25% chance to summon [LINK=UNIT_AIR_ELEMENTAL_MINOR]Minor Air Elementals[/LINK].</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_AIR_ELEMENTAL_MINOR</Tag>
+        <English>Minor Air Elemental</English>
+        <French>Minor Air Elemental</French>
+        <German>Minor Air Elemental</German>
+        <Italian>Minor Air Elemental</Italian>
+        <Spanish>Minor Air Elemental</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_FIRE_ELEMENTAL_MINOR</Tag>
+        <English>Minor Fire Elemental</English>
+        <French>Minor Fire Elemental</French>
+        <German>Minor Fire Elemental</German>
+        <Italian>Minor Fire Elemental</Italian>
+        <Spanish>Minor Fire Elemental</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_WATER_ELEMENTAL_MINOR</Tag>
+        <English>Minor Water Elemental</English>
+        <French>Minor Water Elemental</French>
+        <German>Minor Water Elemental</German>
+        <Italian>Minor Water Elemental</Italian>
+        <Spanish>Minor Water Elemental</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_EARTH_ELEMENTAL_MINOR</Tag>
+        <English>Minor Earth Elemental</English>
+        <French>Minor Earth Elemental</French>
+        <German>Minor Earth Elemental</German>
+        <Italian>Minor Earth Elemental</Italian>
+        <Spanish>Minor Earth Elemental</Spanish>
+    </TEXT>
+</Civ4GameText>

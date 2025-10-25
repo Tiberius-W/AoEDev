@@ -115,7 +115,26 @@
 			<bAllowAI>1</bAllowAI>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 		</SpellInfo>
-   
+   		<SpellInfo>
+			<Type>SPELL_ELEMENTAL_EQUILIBRIUM</Type>
+			<Description>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM</Description>
+			<Civilopedia>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM_PEDIA</Civilopedia>
+			<Help>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM_HELP</Help>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_WILD_HUNT</Sound>
+			<Button>Art/Civs/ArcaneMastery/Promotions/Masterelements.dds</Button>
+			<bAbility>1</bAbility>
+			<bHasCasted>1</bHasCasted>
+			<CivilizationPrereq>CIVILIZATION_DAO</CivilizationPrereq>
+			<TechPrereq>TECH_KNOWLEDGE_OF_THE_ETHER</TechPrereq>
+			<PromotionPrereq1>PROMOTION_POTENCY_HERMIT</PromotionPrereq1>
+			<iDelay>7</iDelay>
+			<bInBordersOnly>1</bInBordersOnly>
+			<bAllowAI>0</bAllowAI>
+			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+			<PyRequirement>reqElementalEquilibrium(pCaster)</PyRequirement>
+			<PyResult>spellElementalEquilibrium(pCaster)</PyResult>
+		</SpellInfo>
 		
 	</SpellInfos>
 </Civ4SpellInfos>

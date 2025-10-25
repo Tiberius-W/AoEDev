@@ -94,6 +94,30 @@
         <Italian>Huge Elemental</Italian>
         <Spanish>Huge Elemental</Spanish>
     </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_NORMAL</Tag>
+        <English>Normal Elemental</English>
+        <French>Normal Elemental</French>
+        <German>Normal Elemental</German>
+        <Italian>Normal Elemental</Italian>
+        <Spanish>Normal Elemental</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_WEAK</Tag>
+        <English>Small Elemental</English>
+        <French>Small Elemental</French>
+        <German>Small Elemental</German>
+        <Italian>Small Elemental</Italian>
+        <Spanish>Small Elemental</Spanish>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_PROMOTION_ELEMENTAL_VERY_WEAK</Tag>
+        <English>Tiny Elemental</English>
+        <French>Tiny Elemental</French>
+        <German>Tiny Elemental</German>
+        <Italian>Tiny Elemental</Italian>
+        <Spanish>Tiny Elemental</Spanish>
+    </TEXT>
 	
     <TEXT>
         <Tag>TXT_KEY_PROMOTION_POTENCY_HERMIT</Tag>
@@ -143,5 +167,29 @@
         <German>Summon Minor Water Elemental</German>
         <Italian>Summon Minor Water Elemental</Italian>
         <Spanish>Summon Minor Water Elemental</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM</Tag>
+        <English>Elemental Equilibrium</English>
+        <French>Elemental Equilibrium</French>
+        <German>Elemental Equilibrium</German>
+        <Italian>Elemental Equilibrium</Italian>
+        <Spanish>Elemental Equilibrium</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM_PEDIA</Tag>
+        <English>What you want is often not what you need. The Dao accept this and heed the guiding flow of reality.</English>
+        <French>What you want is often not what you need. The Dao accept this and heed the guiding flow of reality.</French>
+        <German>What you want is often not what you need. The Dao accept this and heed the guiding flow of reality.</German>
+        <Italian>What you want is often not what you need. The Dao accept this and heed the guiding flow of reality.</Italian>
+        <Spanish>What you want is often not what you need. The Dao accept this and heed the guiding flow of reality.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_ELEMENTAL_EQUILIBRIUM_HELP</Tag>
+        <English>[ICON_BULLET]Changes this mana source to either fire, earth, air, water or force. The more of one mana type you have, the less likely it will be chosen.</English>
+        <French>[ICON_BULLET]Changes this mana source to either fire, earth, air, water or force. The more of one mana type you have, the less likely it will be chosen.</French>
+        <German>[ICON_BULLET]Changes this mana source to either fire, earth, air, water or force. The more of one mana type you have, the less likely it will be chosen.</German>
+        <Italian>[ICON_BULLET]Changes this mana source to either fire, earth, air, water or force. The more of one mana type you have, the less likely it will be chosen.</Italian>
+        <Spanish>[ICON_BULLET]Changes this mana source to either fire, earth, air, water or force. The more of one mana type you have, the less likely it will be chosen.</Spanish>
     </TEXT>
 </Civ4GameText>

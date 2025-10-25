@@ -431,6 +431,27 @@
 		<Spanish>Dimensional III</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_KINETIC_BLAST</Tag>
+		<English>Kinetic Blast</English>
+		<French>Kinetic Blast</French>
+		<German>Kinetic Blast</German>
+		<Italian>Kinetic Blast</Italian>
+		<Spanish>Kinetic Blast</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_KINETIC_BLAST_PEDIA</Tag>
+		<English>Dimensional Mages, to their glee, discovered that dropping any manner of things down a dimensional portal and reopening it facing their enemy would result in shocking and messy results.
+		[NEWLINE]"Mages! you have now learned how to cross dimensions. With it, you can create your own Portals. These intra-dimensional Entry Gates have proven to be completely safe. The Exit Gate, however, has not. Do not touch the operational end of the Exit Gate. Do not look directly at the operational end of Exit Gate. Do not submerge Exit Gate in liquid, even partially. Most importantly, under no circumstances, should you-" </English>
+		<French>Dimensional Mages, to their glee, discovered that dropping any manner of things down a dimensional portal and reopening it facing their enemy would result in shocking and messy results.
+		[NEWLINE]"Mages! you have now learned how to cross dimensions. With it, you can create your own Portals. These intra-dimensional Entry Gates have proven to be completely safe. The Exit Gate, however, has not. Do not touch the operational end of the Exit Gate. Do not look directly at the operational end of Exit Gate. Do not submerge Exit Gate in liquid, even partially. Most importantly, under no circumstances, should you-" </French>
+		<German>Dimensional Mages, to their glee, discovered that dropping any manner of things down a dimensional portal and reopening it facing their enemy would result in shocking and messy results.
+		[NEWLINE]"Mages! you have now learned how to cross dimensions. With it, you can create your own Portals. These intra-dimensional Entry Gates have proven to be completely safe. The Exit Gate, however, has not. Do not touch the operational end of the Exit Gate. Do not look directly at the operational end of Exit Gate. Do not submerge Exit Gate in liquid, even partially. Most importantly, under no circumstances, should you-" </German>
+		<Italian>Dimensional Mages, to their glee, discovered that dropping any manner of things down a dimensional portal and reopening it facing their enemy would result in shocking and messy results.
+		[NEWLINE]"Mages! you have now learned how to cross dimensions. With it, you can create your own Portals. These intra-dimensional Entry Gates have proven to be completely safe. The Exit Gate, however, has not. Do not touch the operational end of the Exit Gate. Do not look directly at the operational end of Exit Gate. Do not submerge Exit Gate in liquid, even partially. Most importantly, under no circumstances, should you-" </Italian>
+		<Spanish>Dimensional Mages, to their glee, discovered that dropping any manner of things down a dimensional portal and reopening it facing their enemy would result in shocking and messy results.
+		[NEWLINE]"Mages! you have now learned how to cross dimensions. With it, you can create your own Portals. These intra-dimensional Entry Gates have proven to be completely safe. The Exit Gate, however, has not. Do not touch the operational end of the Exit Gate. Do not look directly at the operational end of Exit Gate. Do not submerge Exit Gate in liquid, even partially. Most importantly, under no circumstances, should you-" </Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ICE1</Tag>
 		<English>Ice I</English>
 		<French>Glace I</French>
