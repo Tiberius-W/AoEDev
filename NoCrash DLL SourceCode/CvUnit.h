@@ -1437,6 +1437,8 @@ public:
 	SpellUpgradeData getSpellData(int spell);
 	int getSpellTargetRange(int spell);
 	bool isSpellImmuneTeam(int spell);
+	bool isSpellImmuneNeutral(int spell);
+	bool isSpellImmuneEnemy(int spell);
 	int getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const;
 
 	void cast(int spell, CvPlot* pTargetPlot = NULL);

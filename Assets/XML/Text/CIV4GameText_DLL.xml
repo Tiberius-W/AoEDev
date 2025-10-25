@@ -387,6 +387,22 @@
 		<Spanish>Immunity for your units</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_NEUTRAL</Tag>
+		<English>Immunity for neutral units</English>
+		<French>Immunity for neutral units</French>
+		<German>Immunity for neutral units</German>
+		<Italian>Immunity for neutral units</Italian>
+		<Spanish>Immunity for neutral units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_ENEMY</Tag>
+		<English>Immunity for enemy units</English>
+		<French>Immunity for enemy units</French>
+		<German>Immunity for enemy units</German>
+		<Italian>Immunity for enemy units</Italian>
+		<Spanish>Immunity for enemy units</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_PERMANENT</Tag>
 		<English>Permanent Effect</English>
 		<French>Permanent Effect</French>

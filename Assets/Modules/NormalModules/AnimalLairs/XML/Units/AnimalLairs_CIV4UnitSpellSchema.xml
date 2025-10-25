@@ -40,6 +40,8 @@
 	<ElementType name="iExtraDuration" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxApplications" content="textOnly" dt:type="int"/>
 	<ElementType name="bExtraImmuneTeam" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraImmuneNeutral" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraImmuneEnemy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bExtraPermanent" content="textOnly" dt:type="boolean"/>
 	
 	<ElementType name="SpellBonus" content="eltOnly" order="many">
@@ -51,6 +53,8 @@
 		<element type="iExtraDuration"/>
 		<element type="iMaxApplications"/>
 		<element type="bExtraImmuneTeam"/>
+		<element type="bExtraImmuneNeutral"/>
+		<element type="bExtraImmuneEnemy"/>
 		<element type="bExtraPermanent"/>
 	</ElementType>
 	<ElementType name="SpellBonuses" content="eltOnly">

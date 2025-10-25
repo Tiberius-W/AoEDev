@@ -11581,6 +11581,8 @@ bool CvSpellInfo::read(CvXMLLoadUtility* pXML)
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraTargetRange), "iExtraTargetRange", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraDuration), "iExtraDuration", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneTeam), "bExtraImmuneTeam");
+					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneNeutral), "bExtraImmuneNeutral");
+					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneEnemy), "bExtraImmuneEnemy");
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraPermanent), "bExtraPermanent");
 					m_cbSpellBonuses.push_back(cbTemp);
 					if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))						break;

@@ -23488,12 +23488,12 @@ SpellUpgradeData CvUnit::getSpellData(int spell)
 	SpellUpgradeData data;
 	SpellBonuses bonus;
 	int iNumBonusApplications=0;
-	bool bPermanent = false;
 	//Core Spell Data
 	data.iDamage = GC.getSpellInfo((SpellTypes)spell).getDamage();
 	data.iMaxDamage = GC.getSpellInfo((SpellTypes)spell).getDamageLimit();
 	data.iNumTargets = GC.getSpellInfo((SpellTypes)spell).getNumTargets();
 	data.iDuration = GC.getSpellInfo((SpellTypes)spell).getPromotionDuration();
+	data.bPermanent = false;
 
 	//Applying Spell Bonuses
 	for (int iI = 0; iI < GC.getSpellInfo((SpellTypes)spell).getNumSpellBonuses(); iI++)
@@ -23509,10 +23509,10 @@ SpellUpgradeData CvUnit::getSpellData(int spell)
 			data.iDuration += bonus.iExtraDuration = iNumBonusApplications;
 			if (bonus.bExtraPermanent)
 			{
-				bPermanent = true;
+				data.bPermanent = true;
 			}
 		}
-		if (bPermanent)
+		if (data.bPermanent)
 		{
 			data.iDuration = -1;
 		}
@@ -23553,6 +23553,57 @@ bool CvUnit::isSpellImmuneTeam(int spell)
 	
 		bonus = GC.getSpellInfo((SpellTypes)spell).getSpellBonus(iI);
 		if (bonus.bExtraImmuneTeam)
+		{
+			iNumBonusApplications = 0;
+			if (bonus.iPrereqExtraPower > 0)
+				iNumBonusApplications = std::min((iExtraPower / (bonus.iPrereqExtraPower)), bonus.iMaxApplications);
+			if (iNumBonusApplications > 0)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+bool CvUnit::isSpellImmuneNeutral(int spell)
+{
+	int iMagicalPower = getSpellMagicalPower(spell);
+	int iExtraPower = iMagicalPower - GC.getSpellInfo((SpellTypes)spell).getMagicalPowerPrereq();
+	int iTargetRange = GC.getSpellInfo((SpellTypes)spell).getTargetRange();
+	SpellBonuses bonus;
+	int iNumBonusApplications = 0;
+	//Applying Spell Bonuses
+	for (int iI = 0; iI < GC.getSpellInfo((SpellTypes)spell).getNumSpellBonuses(); iI++)
+	{
+
+		bonus = GC.getSpellInfo((SpellTypes)spell).getSpellBonus(iI);
+		if (bonus.bExtraImmuneNeutral)
+		{
+			iNumBonusApplications = 0;
+			if (bonus.iPrereqExtraPower > 0)
+				iNumBonusApplications = std::min((iExtraPower / (bonus.iPrereqExtraPower)), bonus.iMaxApplications);
+			if (iNumBonusApplications > 0)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool CvUnit::isSpellImmuneEnemy(int spell)
+{
+	int iMagicalPower = getSpellMagicalPower(spell);
+	int iExtraPower = iMagicalPower - GC.getSpellInfo((SpellTypes)spell).getMagicalPowerPrereq();
+	int iTargetRange = GC.getSpellInfo((SpellTypes)spell).getTargetRange();
+	SpellBonuses bonus;
+	int iNumBonusApplications = 0;
+	//Applying Spell Bonuses
+	for (int iI = 0; iI < GC.getSpellInfo((SpellTypes)spell).getNumSpellBonuses(); iI++)
+	{
+
+		bonus = GC.getSpellInfo((SpellTypes)spell).getSpellBonus(iI);
+		if (bonus.bExtraImmuneEnemy)
 		{
 			iNumBonusApplications = 0;
 			if (bonus.iPrereqExtraPower > 0)
@@ -25004,6 +25055,10 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 				{
 					setPromotionDuration(ePromotion1, iDuration);
 				}
+				if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
+				{
+					setPromotionDuration(ePromotion1, 0);
+				}
 				/*************************************************************************************************/
 				/**	TickTock									END												**/
 				/*************************************************************************************************/
@@ -25076,6 +25131,10 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 														{
 															pLoopUnit->setPromotionDuration(ePromotion1, iDuration);
 														}
+														if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
+														{
+															setPromotionDuration(ePromotion1, 0);
+														}
 														/*************************************************************************************************/
 														/**	TickTock									END												**/
 														/*************************************************************************************************/
@@ -25093,6 +25152,11 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 															{
 																pLoopUnit->setPromotionDuration(ePromotion1, iDuration);
 															}
+															if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
+															{
+																setPromotionDuration(ePromotion1, 0);
+															}
+
 														}
 													}
 													/*************************************************************************************************/
@@ -25995,7 +26059,7 @@ bool CvUnit::isImmuneToSpell(CvUnit* pCaster, int spell) const
 			return true;
 		}
 	}
-	if (GC.getSpellInfo((SpellTypes)spell).isImmuneNeutral())
+	if (GC.getSpellInfo((SpellTypes)spell).isImmuneNeutral() || pCaster->isSpellImmuneNeutral(spell))
 	{
 		if (getTeam() != pCaster->getTeam())
 		{
@@ -26005,7 +26069,7 @@ bool CvUnit::isImmuneToSpell(CvUnit* pCaster, int spell) const
 			}
 		}
 	}
-	if (GC.getSpellInfo((SpellTypes)spell).isImmuneEnemy())
+	if (GC.getSpellInfo((SpellTypes)spell).isImmuneEnemy() || pCaster->isSpellImmuneEnemy(spell))
 	{
 		if (isEnemy(pCaster->getTeam()))
 		{

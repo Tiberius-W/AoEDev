@@ -6607,11 +6607,11 @@
 			<Help>TXT_KEY_SPELL_SNOWFALL_GREATER_HELP</Help>
 			<SpellClasses>
 				<SpellClass>
-					<SpellClassType>SPELLCLASS_AIR</SpellClassType>
+					<SpellClassType>SPELLCLASS_ICE</SpellClassType>
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>
 				<SpellClass>
-					<SpellClassType>SPELLCLASS_BUFF</SpellClassType>
+					<SpellClassType>SPELLCLASS_OFFENSIVE</SpellClassType>
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>
 			</SpellClasses>
@@ -7903,11 +7903,11 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<SpellClasses>
 				<SpellClass>
-					<SpellClassType>SPELLCLASS_AIR</SpellClassType>
+					<SpellClassType>SPELLCLASS_DEATH</SpellClassType>
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>
 				<SpellClass>
-					<SpellClassType>SPELLCLASS_BUFF</SpellClassType>
+					<SpellClassType>SPELLCLASS_OFFENSIVE</SpellClassType>
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>
 			</SpellClasses>

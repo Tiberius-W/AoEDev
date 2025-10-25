@@ -14658,6 +14658,30 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 			}
 			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_TEAM",iValue);
 		}
+		if (cbTemp.bExtraImmuneNeutral != false)
+		{
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_NEUTRAL", iValue);
+		}
+		if (cbTemp.bExtraImmuneEnemy != false)
+		{
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_ENEMY", iValue);
+		}
 		szBuffer.append(gDLL->getText(szTempBuffer.GetCString()));
 
 	}
