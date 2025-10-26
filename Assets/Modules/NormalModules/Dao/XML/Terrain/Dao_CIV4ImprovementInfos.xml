@@ -32,12 +32,17 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>2</iYieldChange>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
 			<BonusConvert>BONUS_MANA_AIR</BonusConvert>
 			<SpawnUnitType>UNIT_AIR_ELEMENTAL</SpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -99,11 +104,16 @@
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>3</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
 			<BonusConvert>BONUS_MANA_EARTH</BonusConvert>
 			<SpawnUnitType>UNIT_EARTH_ELEMENTAL</SpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -164,12 +174,17 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
-						<iYieldChange>3</iYieldChange>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<YieldChanges>
+				<iYieldChange>3</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
 			<BonusConvert>BONUS_MANA_WATER</BonusConvert>
 			<SpawnUnitType>UNIT_WATER_ELEMENTAL</SpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
@@ -231,11 +246,16 @@
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>3</iYieldChange>
+			</YieldChanges>
 			<BonusConvert>BONUS_MANA_FIRE</BonusConvert>
 			<SpawnUnitType>UNIT_FIRE_ELEMENTAL</SpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>

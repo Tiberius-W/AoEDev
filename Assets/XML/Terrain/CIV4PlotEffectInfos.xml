@@ -87,7 +87,6 @@
 				</TerrainBoolean>
 			</TerrainBooleans>
 			<Button>Art/Interface/Buttons/TerrainFeatures/haunted.dds</Button>
-			<PyPerTurn>perTurnHauntedLands(pPlot)</PyPerTurn>
 		</PlotEffectInfo>
 		<PlotEffectInfo>		<!-- Mist -->
 			<Type>PLOT_EFFECT_MIST</Type>
