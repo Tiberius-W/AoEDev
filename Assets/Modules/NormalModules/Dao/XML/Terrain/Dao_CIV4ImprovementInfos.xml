@@ -10,7 +10,7 @@
 			<Type>IMPROVEMENT_MANA_AIR_I_DAO</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_MANA_AIR</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_AIR_I_DAO</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_AIR_DAO_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_AIR</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
@@ -81,7 +81,7 @@
 			<Type>IMPROVEMENT_MANA_EARTH_I_DAO</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_MANA_EARTH</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_EARTH_I_DAO</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_EARTH_DAO_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_EARTH</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
@@ -152,7 +152,7 @@
 			<Type>IMPROVEMENT_MANA_WATER_I_DAO</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_MANA_WATER</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_WATER_I_DAO</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_WATER_DAO_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_WATER</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
@@ -223,7 +223,7 @@
 			<Type>IMPROVEMENT_MANA_FIRE_I_DAO</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_MANA_FIRE</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_MANA_FIRE_I_DAO</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_MANA_FIRE_DAO_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_FIRE</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>

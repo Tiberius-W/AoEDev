@@ -70,11 +70,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_SOHEI_PEDIA</Tag>
-        <English>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</English>
-        <French>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</French>
-        <German>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</German>
-        <Italian>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Italian>
-        <Spanish>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens on the day of the Lanun-Infernal invasion of Lohai</Spanish>
+        <English>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens, on the day of the Lanun-Infernal invasion of Lohai</English>
+        <French>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens, on the day of the Lanun-Infernal invasion of Lohai</French>
+        <German>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens, on the day of the Lanun-Infernal invasion of Lohai</German>
+        <Italian>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens, on the day of the Lanun-Infernal invasion of Lohai</Italian>
+        <Spanish>No meddling force will enter the realms protected by these wardens; it simply will not happen. Not today, not this cycle, not even in this lifetime. The defilers of the compact will be held at spear point from the home we have built here!  [NEWLINE] - Captain Xinlei of the Wardens, on the day of the Lanun-Infernal invasion of Lohai</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_HERMIT</Tag>
@@ -85,6 +85,39 @@
         <Spanish>Hermit</Spanish>
     </TEXT>
     <TEXT>
+        <Tag>TXT_KEY_UNIT_HERMIT_PEDIA</Tag>
+        <English>The Hermits of the Dao are not born with any gift or magical potential; they are as mundane as they come.
+
+Wandering the secluded corners of the world, hermits establish shrines at places where elementals can be found. 
+They will spend months or even years tending to these shrines and the nearby wilderness before ever seeing or speaking to an elemental directly. Assuming they tend to the shrine diligently and help the lands around it flourish, the first impulse of that elemental might not be to ground them into a red paste, light them on fire, drown them or sandblast their skin off.
+Hermits consider leaving an encounter with all parts of themselves still attached as a hopeful sign that they may be able to exchange favours with this elemental in the future.
+No one knows what the hermits who don't come back think.</English>
+        <French>The Hermits of the Dao are not born with any gift or magical potential; they are as mundane as they come.
+
+Wandering the secluded corners of the world, hermits establish shrines at places where elementals can be found. 
+They will spend months or even years tending to these shrines and the nearby wilderness before ever seeing or speaking to an elemental directly. Assuming they tend to the shrine diligently and help the lands around it flourish, the first impulse of that elemental might not be to ground them into a red paste, light them on fire, drown them or sandblast their skin off.
+Hermits consider leaving an encounter with all parts of themselves still attached as a hopeful sign that they may be able to exchange favours with this elemental in the future.
+No one knows what the hermits who don't come back think.</French>
+        <German>The Hermits of the Dao are not born with any gift or magical potential; they are as mundane as they come.
+
+Wandering the secluded corners of the world, hermits establish shrines at places where elementals can be found. 
+They will spend months or even years tending to these shrines and the nearby wilderness before ever seeing or speaking to an elemental directly. Assuming they tend to the shrine diligently and help the lands around it flourish, the first impulse of that elemental might not be to ground them into a red paste, light them on fire, drown them or sandblast their skin off.
+Hermits consider leaving an encounter with all parts of themselves still attached as a hopeful sign that they may be able to exchange favours with this elemental in the future.
+No one knows what the hermits who don't come back think.</German>
+        <Italian>The Hermits of the Dao are not born with any gift or magical potential; they are as mundane as they come.
+
+Wandering the secluded corners of the world, hermits establish shrines at places where elementals can be found. 
+They will spend months or even years tending to these shrines and the nearby wilderness before ever seeing or speaking to an elemental directly. Assuming they tend to the shrine diligently and help the lands around it flourish, the first impulse of that elemental might not be to ground them into a red paste, light them on fire, drown them or sandblast their skin off.
+Hermits consider leaving an encounter with all parts of themselves still attached as a hopeful sign that they may be able to exchange favours with this elemental in the future.
+No one knows what the hermits who don't come back think.</Italian>
+        <Spanish>The Hermits of the Dao are not born with any gift or magical potential; they are as mundane as they come.
+
+Wandering the secluded corners of the world, hermits establish shrines at places where elementals can be found. 
+They will spend months or even years tending to these shrines and the nearby wilderness before ever seeing or speaking to an elemental directly. Assuming they tend to the shrine diligently and help the lands around it flourish, the first impulse of that elemental might not be to ground them into a red paste, light them on fire, drown them or sandblast their skin off.
+Hermits consider leaving an encounter with all parts of themselves still attached as a hopeful sign that they may be able to exchange favours with this elemental in the future.
+No one knows what the hermits who don't come back think.</Spanish>
+    </TEXT>
+    <TEXT>
         <Tag>TXT_KEY_UNIT_ELEMENTALIST</Tag>
         <English>Elementalist</English>
         <French>Elementalist</French>
@@ -93,12 +126,68 @@
         <Spanish>Elementalist</Spanish>
     </TEXT>
     <TEXT>
+        <Tag>TXT_KEY_UNIT_ELEMENTALIST_PEDIA</Tag>
+        <English>While the majority of hermits are magicless, being born with an affinity for Force magic lends itself to surviving those first few years of a hermit's service to the balance.
+
+Conjurers, meanwhile, are almost all Force practitioners, knowingly or not.  It is simply a requirement to be able to compel an elemental to enter any sort of formal discussion of terms.
+
+Elementalists are those so incredibly gifted in the aspect of Force as to be impossible to deny an audience for any elemental.
+In a self-fulfilling cycle, the elements heed the call of an Elementalist because the Elementalists have cast a decree on themselves to always uphold the way of the world and all the elements in it, binding themselves not just to one element's terms, but to reality itself.</English>
+        <French>While the majority of hermits are magicless, being born with an affinity for Force magic lends itself to surviving those first few years of a hermit's service to the balance.
+
+Conjurers, meanwhile, are almost all Force practitioners, knowingly or not.  It is simply a requirement to be able to compel an elemental to enter any sort of formal discussion of terms.
+
+Elementalists are those so incredibly gifted in the aspect of Force as to be impossible to deny an audience for any elemental.
+In a self-fulfilling cycle, the elements heed the call of an Elementalist because the Elementalists have cast a decree on themselves to always uphold the way of the world and all the elements in it, binding themselves not just to one element's terms, but to reality itself.</French>
+        <German>While the majority of hermits are magicless, being born with an affinity for Force magic lends itself to surviving those first few years of a hermit's service to the balance.
+
+Conjurers, meanwhile, are almost all Force practitioners, knowingly or not.  It is simply a requirement to be able to compel an elemental to enter any sort of formal discussion of terms.
+
+Elementalists are those so incredibly gifted in the aspect of Force as to be impossible to deny an audience for any elemental.
+In a self-fulfilling cycle, the elements heed the call of an Elementalist because the Elementalists have cast a decree on themselves to always uphold the way of the world and all the elements in it, binding themselves not just to one element's terms, but to reality itself.</German>
+        <Italian>While the majority of hermits are magicless, being born with an affinity for Force magic lends itself to surviving those first few years of a hermit's service to the balance.
+
+Conjurers, meanwhile, are almost all Force practitioners, knowingly or not.  It is simply a requirement to be able to compel an elemental to enter any sort of formal discussion of terms.
+
+Elementalists are those so incredibly gifted in the aspect of Force as to be impossible to deny an audience for any elemental.
+In a self-fulfilling cycle, the elements heed the call of an Elementalist because the Elementalists have cast a decree on themselves to always uphold the way of the world and all the elements in it, binding themselves not just to one element's terms, but to reality itself.</Italian>
+        <Spanish>While the majority of hermits are magicless, being born with an affinity for Force magic lends itself to surviving those first few years of a hermit's service to the balance.
+
+Conjurers, meanwhile, are almost all Force practitioners, knowingly or not.  It is simply a requirement to be able to compel an elemental to enter any sort of formal discussion of terms.
+
+Elementalists are those so incredibly gifted in the aspect of Force as to be impossible to deny an audience for any elemental.
+In a self-fulfilling cycle, the elements heed the call of an Elementalist because the Elementalists have cast a decree on themselves to always uphold the way of the world and all the elements in it, binding themselves not just to one element's terms, but to reality itself.</Spanish>
+    </TEXT>
+    <TEXT>
         <Tag>TXT_KEY_UNIT_CONJURER</Tag>
         <English>Conjurer</English>
         <French>Conjurer</French>
         <German>Conjurer</German>
         <Italian>Conjurer</Italian>
         <Spanish>Conjurer</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_CONJURER_PEDIA</Tag>
+        <English>To gain the assistance of an elemental for a single task requires the petitioner to undergo some trial or exchange that is of value to the elemental.
+To gain the assistance of an elemental for a lifetime requires the petitioner to walk a tightrope for the rest of their lives in an ongoing journey of service and humility. 
+
+Conjurers can create towers of flame, carve canyons into cliffside and bring storms down on advancing armies - yet for all that, it is rare to find a boastful Conjurer; they consider themselves debtors, with interest due.</English>
+        <French>To gain the assistance of an elemental for a single task requires the petitioner to undergo some trial or exchange that is of value to the elemental.
+To gain the assistance of an elemental for a lifetime requires the petitioner to walk a tightrope for the rest of their lives in an ongoing journey of service and humility. 
+
+Conjurers can create towers of flame, carve canyons into cliffside and bring storms down on advancing armies - yet for all that, it is rare to find a boastful Conjurer; they consider themselves debtors, with interest due.</French>
+        <German>To gain the assistance of an elemental for a single task requires the petitioner to undergo some trial or exchange that is of value to the elemental.
+To gain the assistance of an elemental for a lifetime requires the petitioner to walk a tightrope for the rest of their lives in an ongoing journey of service and humility. 
+
+Conjurers can create towers of flame, carve canyons into cliffside and bring storms down on advancing armies - yet for all that, it is rare to find a boastful Conjurer; they consider themselves debtors, with interest due.</German>
+        <Italian>To gain the assistance of an elemental for a single task requires the petitioner to undergo some trial or exchange that is of value to the elemental.
+To gain the assistance of an elemental for a lifetime requires the petitioner to walk a tightrope for the rest of their lives in an ongoing journey of service and humility. 
+
+Conjurers can create towers of flame, carve canyons into cliffside and bring storms down on advancing armies - yet for all that, it is rare to find a boastful Conjurer; they consider themselves debtors, with interest due.</Italian>
+        <Spanish>To gain the assistance of an elemental for a single task requires the petitioner to undergo some trial or exchange that is of value to the elemental.
+To gain the assistance of an elemental for a lifetime requires the petitioner to walk a tightrope for the rest of their lives in an ongoing journey of service and humility. 
+
+Conjurers can create towers of flame, carve canyons into cliffside and bring storms down on advancing armies - yet for all that, it is rare to find a boastful Conjurer; they consider themselves debtors, with interest due.</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_UNIT_WARRIOR_MONK</Tag>

@@ -132,8 +132,8 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_HERMIT</Type>
 			<Description>TXT_KEY_UNIT_HERMIT</Description>
-			<Civilopedia>TXT_KEY_UNIT_ADEPT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_HERMIT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<UnitAIs>
@@ -254,8 +254,8 @@
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_ELEMENTALIST</Type>
 			<Description>TXT_KEY_UNIT_ELEMENTALIST</Description>
-			<Civilopedia>TXT_KEY_UNIT_ARCHMAGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ARCHMAGE_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_ELEMENTALIST_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_ELEMENTALIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<UnitAIs>
@@ -413,8 +413,8 @@
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_CONJURER</Type>
 			<Description>TXT_KEY_UNIT_CONJURER</Description>
-			<Civilopedia>TXT_KEY_UNIT_PLACEHOLDER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_MAGE_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_CONJURER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_CONJURER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<UnitAIs>
