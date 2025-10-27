@@ -135,18 +135,22 @@
 			<Civilopedia>TXT_KEY_UNIT_ADEPT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ADEPT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<UnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
 				<UnitAI>
 					<UnitAIType>UNITAI_MAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
+					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
 					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_TERRAFORMER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -206,19 +210,19 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -256,15 +260,19 @@
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
 					<UnitAIType>UNITAI_MAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
+					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
 					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_TERRAFORMER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -341,19 +349,19 @@
 			<iWorkRate>400</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -411,17 +419,21 @@
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<UnitAIType>UNITAI_MAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_MAGE</UnitAIType>
+					<UnitAIType>UNITAI_WARWIZARD</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
 					<UnitAIType>UNITAI_MANA_UPGRADE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
-				</UnitAI>	
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_TERRAFORMER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 			</UnitAIs>
 			<NotUnitAIs>
 				<UnitAI>
@@ -480,19 +492,19 @@
 			<iWorkRate>300</iWorkRate>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_MANA_AIR</BuildType>
+					<BuildType>BUILD_MANA_AIR_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_EARTH</BuildType>
+					<BuildType>BUILD_MANA_EARTH_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_FIRE</BuildType>
+					<BuildType>BUILD_MANA_FIRE_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_MANA_WATER</BuildType>
+					<BuildType>BUILD_MANA_WATER_DAO</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -909,6 +921,10 @@
 					<PromotionType>PROMOTION_IMMUNE_LIGHTNING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_AIR1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -993,6 +1009,10 @@
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_EARTH1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -1057,6 +1077,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FIRE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -1138,6 +1162,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -1241,6 +1269,10 @@
 					<PromotionType>PROMOTION_IMMUNE_LIGHTNING</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_AIR1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -1312,6 +1344,10 @@
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_EARTH1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 			</FreePromotions>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -1381,6 +1417,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FIRE1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -1467,6 +1507,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_ELEMENTAL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

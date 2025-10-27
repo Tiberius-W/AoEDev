@@ -172,6 +172,7 @@
 			</PrereqPromotionANDs>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
+			<bWaterWalking>1</bWaterWalking>
 			<PrereqTerrains>
 				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
 				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>

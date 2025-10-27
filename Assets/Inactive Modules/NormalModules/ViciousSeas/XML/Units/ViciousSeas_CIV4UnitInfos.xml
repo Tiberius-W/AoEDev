@@ -1700,7 +1700,8 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
-		</UnitInfo>		<UnitInfo>		<!-- Egrass -->
+		</UnitInfo>	
+		<UnitInfo>		<!-- Egrass -->
 			<Class>UNITCLASS_EGRASS</Class>
 			<Type>UNIT_EGRASS</Type>
 			<Builds>
@@ -1862,7 +1863,7 @@
 				</Build>
 			</Builds>
 		     <AndDependencyTypes>
-		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>
 		<UnitInfo>		<!-- Jotnar Citizens -->
@@ -1943,7 +1944,7 @@
 				</Build>
 			</Builds>
 		     <AndDependencyTypes>
-		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>	
 		<UnitInfo>		<!-- Jotnar Freebooters -->
@@ -1964,7 +1965,7 @@
 				</Build>
 			</Builds>
 		     <AndDependencyTypes>
-		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>
 		<UnitInfo>		<!-- Jotnar Reavers -->
@@ -1985,7 +1986,7 @@
 				</Build>
 			</Builds>
 		     <AndDependencyTypes>
-		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>
 		<UnitInfo>        <!-- Jotnar Fishing Longboat -->
@@ -2002,7 +2003,7 @@
 				</Build>
 			</Builds>
 		     <AndDependencyTypes>
-		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>
 </UnitInfos>
