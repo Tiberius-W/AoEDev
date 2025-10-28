@@ -6160,6 +6160,7 @@
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>10</iAirBombDefense>
 			<iPillageGold>10</iPillageGold>
+			<bHillsMakesValid>1</bHillsMakesValid>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_COPPER</BonusType>
