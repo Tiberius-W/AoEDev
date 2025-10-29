@@ -1539,6 +1539,7 @@
 			<iDefensiveStrikeChance>10</iDefensiveStrikeChance>
 			<iDefensiveStrikeDamage>5</iDefensiveStrikeDamage>
 			<iExtraCombatStr>-3</iExtraCombatStr>
+			<iExtraCombatDefense>-3</iExtraCombatDefense>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_LIGHTNING</DamageType>

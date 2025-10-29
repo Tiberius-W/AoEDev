@@ -347,8 +347,8 @@
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
-			<iExtraCombatStr>-3</iExtraCombatStr>
-			<iExtraCombatDefense>-3</iExtraCombatDefense>
+			<iExtraCombatStr>-4</iExtraCombatStr>
+			<iExtraCombatDefense>-4</iExtraCombatDefense>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ELEMENTAL_VERY_WEAK</Type>
@@ -368,8 +368,8 @@
 			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
-			<iExtraCombatStr>-5</iExtraCombatStr>
-			<iExtraCombatDefense>-5</iExtraCombatDefense>
+			<iExtraCombatStr>-6</iExtraCombatStr>
+			<iExtraCombatDefense>-6</iExtraCombatDefense>
 		</PromotionInfo>
 		<!-- PalaceGuard opened by Dao Palace -->
 		
