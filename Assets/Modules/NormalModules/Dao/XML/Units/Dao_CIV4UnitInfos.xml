@@ -34,10 +34,15 @@
 			<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<AllowPromotions>
-					<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
+				<Promotion>PROMOTION_SUBDUE_BEASTS</Promotion>
+				<Promotion>PROMOTION_LIFE1</Promotion>
 			</AllowPromotions>
 			<!--Also had the druidic promotion initially-->
 			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
 					<iNumApplied>1</iNumApplied>
@@ -293,6 +298,10 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<FreePromotions>
 				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -329,6 +338,9 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<AllowPromotions>
+				<Promotion>PROMOTION_LIFE1</Promotion>
+			</AllowPromotions>
 			<iFreePromotionPick>1</iFreePromotionPick>
 			<bFreeXP>1</bFreeXP>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
@@ -441,6 +453,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</NotUnitAIs>
+			<AllowPromotions>
+				<Promotion>PROMOTION_LIFE1</Promotion>
+			</AllowPromotions>
 
 			<Flavors>
 				<Flavor>
@@ -457,6 +472,10 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_MEDIC2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
@@ -636,6 +655,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<AllowPromotions>
+				<Promotion>PROMOTION_LIFE1</Promotion>
+			</AllowPromotions>
 			<PrereqTech>TECH_COMMUNE_WITH_NATURE</PrereqTech>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<PrereqBuilding>BUILDING_GROVE</PrereqBuilding>
@@ -720,7 +742,7 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 		</UnitInfo>
-		<UnitInfo> <!--Sohei-->
+		<UnitInfo> <!-- Warden of Xian Shi-->
 			<Class>UNITCLASS_PALADIN</Class>
 			<Type>UNIT_SOHEI</Type>
 			<Description>TXT_KEY_UNIT_SOHEI</Description>
@@ -788,6 +810,9 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<AllowPromotions>
+				<Promotion>PROMOTION_LIFE1</Promotion>
+			</AllowPromotions>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<iTier>4</iTier>

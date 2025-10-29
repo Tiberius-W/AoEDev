@@ -425,7 +425,7 @@
 					<iResist>20</iResist>
 				</DamageTypeResist>
 			</DamageTypeResists>
-</PromotionInfo>
+		</PromotionInfo>
 		
 		<!-- so that RuoLan Hermits can get some xp -->
 
@@ -446,33 +446,6 @@
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		
-		<!-- so that hermit are allowed to get those life1 -->
-		<PromotionInfo>
-			<Type>PROMOTION_LIFE1</Type>
-			<Button>Art/Interface/Buttons/Promotions/Life1.dds</Button>
-			<Description>TXT_KEY_PROMOTION_LIFE1</Description>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<iAIWeight>50</iAIWeight>
-			<PromotionNextLevel>PROMOTION_LIFE2</PromotionNextLevel>
-			<BonusPrereq>BONUS_MANA_LIFE</BonusPrereq>
-			<PrereqPromotionANDs>
-				<PrereqPromotionAND>
-					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionAND>
-			</PrereqPromotionANDs>
-			<iMinLevel>0</iMinLevel>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-			</UnitCombats>
-		</PromotionInfo>
 		
 	</PromotionInfos>
 </Civ4PromotionInfos>
