@@ -10051,7 +10051,7 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 	{
 		if (NULL == m_paiBuildProgress)
 		{
-			m_paiBuildProgress = new short[GC.getNumBuildInfos()];
+			m_paiBuildProgress = new int[GC.getNumBuildInfos()];
 			for (int iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 			{
 				m_paiBuildProgress[iI] = 0;
@@ -11699,7 +11699,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&iCount);
 	if (iCount > 0)
 	{
-		m_paiBuildProgress = new short[iCount];
+		m_paiBuildProgress = new int[iCount];
 		pStream->Read(iCount, m_paiBuildProgress);
 	}
 

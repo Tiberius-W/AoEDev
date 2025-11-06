@@ -905,7 +905,7 @@ protected:
 
 	char* m_szScriptData;
 
-	short* m_paiBuildProgress;
+	int* m_paiBuildProgress;
 
 	CvFeature* m_pFeatureSymbol;
 	CvRoute* m_pRouteSymbol;

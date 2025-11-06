@@ -1431,13 +1431,11 @@
 			<Type>PROMOTION_MINOTAUR</Type>
 			<Description>TXT_KEY_PROMOTION_MINOTAUR</Description>
 			<iNoBadExplore>10</iNoBadExplore>
-			<iPromotionRandomApplyChance>50</iPromotionRandomApplyChance>
 			<bIgnoreTerrainCosts>1</bIgnoreTerrainCosts>
 			<iCollateralDamageProtection>15</iCollateralDamageProtection>
 			<Button>Art/Interface/Buttons/Races/Race_Minotaur.dds</Button>
 			<bRace>1</bRace>
 			<iMinLevel>-1</iMinLevel>
-			<PromotionRandomApply>PROMOTION_ENRAGED</PromotionRandomApply>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Musteval -->
 			<Type>PROMOTION_MUSTEVAL</Type>

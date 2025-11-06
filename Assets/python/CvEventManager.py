@@ -3511,6 +3511,7 @@ class CvEventManager:
 					if not pLoopPlayer.isBarbarian():
 						if pLoopPlayer.getTeam() != pPlayer.getTeam():
 							if pLoopPlayer.getStateReligion() == Religion["White Hand"]:
+								getTeam(pLoopPlayer.getTeam()).makePeace(pPlayer.getTeam())
 								getTeam(pLoopPlayer.getTeam()).setVassal(pPlayer.getTeam(), True, False)
 			if pPlayer.isHuman():
 				t = "TROPHY_FEAT_ASCENSION"

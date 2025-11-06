@@ -8039,7 +8039,7 @@
 			<Description>TXT_KEY_BUILDING_TIGER_MANGROVE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TIGER_MANGROVE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TIGER_MANGROVE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_LION_SAVANNA</ArtDefineTag>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
 			<iConquestProb>25</iConquestProb>
 			<iHappiness>1</iHappiness>

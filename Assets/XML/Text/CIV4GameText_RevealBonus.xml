@@ -2538,6 +2538,14 @@
 		<Spanish>Within the lair, your unit finds a stone shaped as a human heart inside a vault.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_ITEM_CROWN_OF_AKHARIEN</Tag>
+		<English>Within the lair, your unit finds the ruins of a library. Among the fluttering ashes of the brunt books, an old crown lies.</English>
+		<French>Within the lair, your unit finds the ruins of a library. Among the fluttering ashes of the brunt books, an old crown lies.</French>
+		<German>Within the lair, your unit finds the ruins of a library. Among the fluttering ashes of the brunt books, an old crown lies.</German>
+		<Italian>Within the lair, your unit finds the ruins of a library. Among the fluttering ashes of the brunt books, an old crown lies.</Italian>
+		<Spanish>Within the lair, your unit finds the ruins of a library. Among the fluttering ashes of the brunt books, an old crown lies.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_ITEM_APHELION_AMULET</Tag>
 		<English>Within the lair, your unit finds a dwarven cadaver wearing a silver amulet. As your unit removes the amulet, the cadaver changes into an elven body.</English>
 		<French>Within the lair, your unit finds a dwarven cadaver wearing a silver amulet. As your unit removes the amulet, the cadaver changes into an elven body.</French>

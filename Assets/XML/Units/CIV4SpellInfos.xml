@@ -5111,10 +5111,6 @@
 			<Help>TXT_KEY_SPELL_DISRUPT_HELP</Help>
 			<SpellClasses>
 				<SpellClass>
-					<SpellClassType>SPELLCLASS_METAMAGIC</SpellClassType>
-					<bSpellClass>1</bSpellClass>
-				</SpellClass>
-				<SpellClass>
 					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
 					<bSpellClass>1</bSpellClass>
 				</SpellClass>

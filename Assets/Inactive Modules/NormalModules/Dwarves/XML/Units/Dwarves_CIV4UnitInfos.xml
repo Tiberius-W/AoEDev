@@ -230,6 +230,7 @@
 		<UnitInfo>		<!-- Engineers  Aprentice-->
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_DWARVEN_ENGINEERS_APRENTICE</Type>
+			<iMagicalPower>50</iMagicalPower>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DWARVEN_ENGINEERS_APPRENTICE</Description>
@@ -324,6 +325,7 @@
 		<UnitInfo>		<!-- Engineer -->
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_DWARVEN_ENGINEER</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DWARVEN_ENGINEER</Description>
@@ -440,6 +442,7 @@
 		<UnitInfo>		<!-- Master Engineer -->
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_DWARVEN_MASTER_ENGINEER</Type>
+			<iMagicalPower>300</iMagicalPower>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DWARVEN_MASTER_ENGINEER</Description>

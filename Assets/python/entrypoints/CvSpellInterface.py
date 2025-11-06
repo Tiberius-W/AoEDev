@@ -9095,6 +9095,12 @@ def exploreLairGoat(argsList):
 	else:
 		newUnit = pPlayer.initUnit(getInfoType('UNIT_GOAT'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
+def reqAkharien(argsList):
+	pUnit, pPlot	= argsList
+	pPlayer=gc.getPlayer(pUnit.getOwner())
+	if pPlayer.isHasFlag(gc.getInfoTypeForString("FLAG_AKHARIEN_LOST")):
+		return False
+	return True
 def exploreLairAkharien(argsList):
 	gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_AKHARIEN_LOST'),False)
 						

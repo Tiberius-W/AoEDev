@@ -174,7 +174,6 @@
 			<Type>CIVIC_IMPERIUM</Type>
 			<Description>TXT_KEY_CIVIC_IMPERIUM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_IMPERIUM_PEDIA</Civilopedia>
-			<Help>TXT_KEY_CIVIC_IMPERIUM_HELP</Help>
 			<Button>Modules/NormalModules/VCivics/Art/Interface/Buttons/Civics/VCivics_imperium.dds</Button>
 			<TechPrereq>TECH_MILITARY_STRATEGY</TechPrereq>
 			<iAIWeight>50</iAIWeight>

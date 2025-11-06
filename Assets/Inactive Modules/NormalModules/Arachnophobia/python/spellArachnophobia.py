@@ -115,7 +115,8 @@ def reqGiantSpiderUpgradeToBehemoth(caster):
 	iBehemothGreen = getInfoType('PROMOTION_SPIDER_VENENUM_BEHEMOTH')
 	iBehemothGrey = getInfoType('PROMOTION_SPIDER_MUCRO_BEHEMOTH')
 	if caster.isHasPromotion(iBehemothGreen) or caster.isHasPromotion(iBehemothGrey): return False
-
+	if not caster.isHasPromotion(getInfoType("PROMOTION_SPIDER_VENENUM_GREATER")) and not caster.isHasPromotion(getInfoType("PROMOTION_SPIDER_MUCRO_GREATER")):
+		return False
 	pPlayer = gc.getPlayer(caster.getOwner())
 	if (pPlayer.getNumCities() > 0):
 		pNest = pPlayer.getCapitalCity()

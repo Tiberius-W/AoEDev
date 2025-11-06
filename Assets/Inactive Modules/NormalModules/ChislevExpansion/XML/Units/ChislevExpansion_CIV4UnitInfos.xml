@@ -286,6 +286,7 @@
 		<UnitInfo>        <!-- Totemist -->
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_TOTEMIST</Type>
+			<iMagicalPower>50</iMagicalPower>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_TOTEMIST</Description>

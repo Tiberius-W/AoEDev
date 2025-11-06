@@ -57,14 +57,6 @@
 		<Spanish>The Imperium, also known as the Imperial Monarchy, is an expansive empire governed by an emperor whose primary objectives revolve around expansion and fostering trade. In order to effectively administer its vast territories, the Imperium relies upon a sophisticated bureaucracy and maintains a formidable military presence, ensuring the stability and security of its dominion.[PARAGRAPH]- Aurelius Decimus, philosopher and historian</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_IMPERIUM_HELP</Tag>
-		<English>[ICON_BULLET]Free Technology [LINK=TECH_IMPERIAL_BUREAUCRACY]Imperial Bureaucracy[\LINK]</English>
-		<French>[ICON_BULLET]Free Technology [LINK=TECH_IMPERIAL_BUREAUCRACY]Imperial Bureaucracy[\LINK]</French>
-		<German>[ICON_BULLET]Free Technology [LINK=TECH_IMPERIAL_BUREAUCRACY]Imperial Bureaucracy[\LINK]</German>
-		<Italian>[ICON_BULLET]Free Technology [LINK=TECH_IMPERIAL_BUREAUCRACY]Imperial Bureaucracy[\LINK]</Italian>
-		<Spanish>[ICON_BULLET]Free Technology [LINK=TECH_IMPERIAL_BUREAUCRACY]Imperial Bureaucracy[\LINK]</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_PEDIA_V_OVR</Tag>
 		<English>In the sanctified embrace of our nation's unyielding faith, our leaders rise as champions of divine supremacy, their every mandate a thunderous proclamation of the gods' will. In their righteous fury, they purge the heretics and infidels, ensuring our realm remains untainted by the corrupting influence of the unbelievers.[PARAGRAPH]- Unknown</English>
 		<French>In the sanctified embrace of our nation's unyielding faith, our leaders rise as champions of divine supremacy, their every mandate a thunderous proclamation of the gods' will. In their righteous fury, they purge the heretics and infidels, ensuring our realm remains untainted by the corrupting influence of the unbelievers.[PARAGRAPH]- Unknown</French>

@@ -9,7 +9,7 @@
 	<!--T1 Unique Units -->
 		<UnitInfo>        <!-- Duskbringer -->
 			<Type>UNIT_DUSKBRINGER</Type>
-			<iMagicalPower></iMagicalPower>
+			<iMagicalPower>40</iMagicalPower>
 		</UnitInfo>
 	<!--T2 Units -->
 		<UnitInfo>        <!-- Adept -->          
@@ -35,7 +35,7 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Frostling Shaman --> 
 			<Type>UNIT_FROSTLING_SHAMAN</Type>
-			<iMagicalPower>30</iMagicalPower>
+			<iMagicalPower>120</iMagicalPower>
 		</UnitInfo>
 		<UnitInfo>		<!-- Muris Clan Adept -->
 			<Type>UNIT_ADEPT_MURIS_CLAN</Type>

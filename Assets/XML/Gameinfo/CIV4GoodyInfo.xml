@@ -3123,6 +3123,7 @@
 		</GoodyInfo>		
 		<GoodyInfo> <!--CrownofAkharien	 Unique-->
 			<Type>GOODY_EXPLORE_LAIR_ITEM_CROWN_OF_AKHARIEN</Type>
+			<PythonPrereq>reqAkharien</PythonPrereq>
 			<GoodyClasses>
 				<GoodyClass>
 					<GoodyClassType>GOODYCLASS_MAGIC_MAJOR</GoodyClassType>

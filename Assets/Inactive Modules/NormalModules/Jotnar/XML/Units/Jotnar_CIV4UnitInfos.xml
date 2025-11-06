@@ -2656,6 +2656,7 @@
 		<UnitInfo>		<!-- Skald -->
 			<Class>UNITCLASS_MAGE</Class>
 			<Type>UNIT_JOT_SPEAKER</Type>
+			<iMagicalPower>150</iMagicalPower>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_JOT_SPEAKER</Description>
@@ -2833,6 +2834,7 @@
 		<UnitInfo>		<!-- Sloegrrekkr -->
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_JOT_ADEPT</Type>
+			<iMagicalPower>50</iMagicalPower>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_JOT_ADEPT</Description>
@@ -3451,6 +3453,7 @@
 		<UnitInfo>		<!-- Vala -->
 			<Class>UNITCLASS_ARCHMAGE</Class>
 			<Type>UNIT_JOT_HIGH_SPEAKER</Type>
+			<iMagicalPower>300</iMagicalPower>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_JOT_HIGH_SPEAKER</Description>

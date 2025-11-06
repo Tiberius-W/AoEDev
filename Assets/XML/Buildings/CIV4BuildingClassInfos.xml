@@ -2401,7 +2401,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MASTER_SMITH</Type>
-			<Description>TXT_KEY_MASTER_SMITH</Description>
+			<Description>TXT_KEY_BUILDING_MASTER_SMITH</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -2413,7 +2413,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MASTER_FLETCHER</Type>
-			<Description>TXT_KEY_MASTER_FLETCHER</Description>
+			<Description>TXT_KEY_BUILDING_MASTER_FLETCHER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -2425,7 +2425,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MASTER_OUTFITTER</Type>
-			<Description>TXT_KEY_MASTER_OUTFITTER</Description>
+			<Description>TXT_KEY_BUILDING_MASTER_OUTFITTER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -2437,7 +2437,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MASTER_BREEDER</Type>
-			<Description>TXT_KEY_MASTER_BREEDER</Description>
+			<Description>TXT_KEY_BUILDING_MASTER_BREEDER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -2473,7 +2473,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GUILD_FABRICAFORMA</Type>
-			<Description>TXT_KEY_BUILDING_GUILD_MASQUERADE_TROUPE_CAMP</Description>
+			<Description>TXT_KEY_BUILDING_GUILD_FABRICAFORMA</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
@@ -2713,7 +2713,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MASTER_SIEGE</Type>
-			<Description>TXT_KEY_MASTER_SIEGE</Description>
+			<Description>TXT_KEY_BUILDING_MASTER_SIEGE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
