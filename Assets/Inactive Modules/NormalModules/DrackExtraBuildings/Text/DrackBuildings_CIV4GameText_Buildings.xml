@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the Orbis editor by Ahwaric -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <!-- Names -->
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_HIGHWALLS</Tag>
+        <English>High Walls</English>
+        <French>High Walls</French>
+        <German>High Walls</German>
+        <Italian>High Walls</Italian>
+        <Spanish>High Walls</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_CRAFTSMENHUT</Tag>
+        <English>Craftsmen Hut</English>
+        <French>Craftsmen Hut</French>
+        <German>Craftsmen Hut</German>
+        <Italian>Craftsmen Hut</Italian>
+        <Spanish>Craftsmen Hut</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN</Tag>
+        <English>Fruit Garden</English>
+        <French>Fruit Garden</French>
+        <German>Fruit Garden</German>
+        <Italian>Fruit Garden</Italian>
+        <Spanish>Fruit Garden</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_IRONWOODS</Tag>
+        <English>Iron Woods</English>
+        <French>Iron Woods</French>
+        <German>Iron Woods</German>
+        <Italian>Iron Woods</Italian>
+        <Spanish>Iron Woods</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_TREESINGER</Tag>
+        <English>Treesinger's Hut</English>
+        <French>Treesinger's Hut</French>
+        <German>Treesinger's Hut</German>
+        <Italian>Treesinger's Hut</Italian>
+        <Spanish>Treesinger's Hut</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_GOLDENTREE</Tag>
+        <English>Golden Tree</English>
+        <French>Golden Tree</French>
+        <German>Golden Tree</German>
+        <Italian>Golden Tree</Italian>
+        <Spanish>Golden Tree</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_RADIANTTOWER</Tag>
+        <English>Radiant Tower</English>
+        <French>Radiant Tower</French>
+        <German>Radiant Tower</German>
+        <Italian>Radiant Tower</Italian>
+        <Spanish>Radiant Tower</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL</Tag>
+        <English>Prayer Hall</English>
+        <French>Prayer Hall</French>
+        <German>Prayer Hall</German>
+        <Italian>Prayer Hall</Italian>
+        <Spanish>Prayer Hall</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_REDEMPTIONSHRINE</Tag>
+        <English>Redemption Shrine</English>
+        <French>Redemption Shrine</French>
+        <German>Redemption Shrine</German>
+        <Italian>Redemption Shrine</Italian>
+        <Spanish>Redemption Shrine</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_BRILLIANTHALL</Tag>
+        <English>Brilliant Hall</English>
+        <French>Brilliant Hall</French>
+        <German>Brilliant Hall</German>
+        <Italian>Brilliant Hall</Italian>
+        <Spanish>Brilliant Hall</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR</Tag>
+        <English>Altar of Kilmorph</English>
+        <French>Altar of Kilmorph</French>
+        <German>Altar of Kilmorph</German>
+        <Italian>Altar of Kilmorph</Italian>
+        <Spanish>Altar of Kilmorph</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_WORKSHOP</Tag>
+        <English>Workshop of Kilmorph</English>
+        <French>Workshop of Kilmorph</French>
+        <German>Workshop of Kilmorph</German>
+        <Italian>Workshop of Kilmorph</Italian>
+        <Spanish>Workshop of Kilmorph</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_PILEOFGOLD</Tag>
+        <English>Pile of Gold</English>
+        <French>Pile of Gold</French>
+        <German>Pile of Gold</German>
+        <Italian>Pile of Gold</Italian>
+        <Spanish>Pile of Gold</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH</Tag>
+        <English>Halls of Wealth</English>
+        <French>Halls of Wealth</French>
+        <German>Halls of Wealth</German>
+        <Italian>Halls of Wealth</Italian>
+        <Spanish>Halls of Wealth</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES</Tag>
+        <English>Wall of Heroes</English>
+        <French>Wall of Heroes</French>
+        <German>Wall of Heroes</German>
+        <Italian>Wall of Heroes</Italian>
+        <Spanish>Wall of Heroes</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_SCHOOLOFDEMONHUNTERS</Tag>
+        <English>School of Demonhunters</English>
+        <French>School of Demonhunters</French>
+        <German>School of Demonhunters</German>
+        <Italian>School of Demonhunters</Italian>
+        <Spanish>School of Demonhunters</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CHAMBEROFFAITH</Tag>
+        <English>Chamber of Faith</English>
+        <French>Chamber of Faith</French>
+        <German>Chamber of Faith</German>
+        <Italian>Chamber of Faith</Italian>
+        <Spanish>Chamber of Faith</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER</Tag>
+        <English>Congress of Order</English>
+        <French>Congress of Order</French>
+        <German>Congress of Order</German>
+        <Italian>Congress of Order</Italian>
+        <Spanish>Congress of Order</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_PORTHEMAH</Tag>
+        <English>Port of Hemah</English>
+        <French>Port of Hemah</French>
+        <German>Port of Hemah</German>
+        <Italian>Port of Hemah</Italian>
+        <Spanish>Port of Hemah</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_OVERLORDHABOR</Tag>
+        <English>Dark Overlords Habor</English>
+        <French>Dark Overlords Habor</French>
+        <German>Dark Overlords Habor</German>
+        <Italian>Dark Overlords Habor</Italian>
+        <Spanish>Dark Overlords Habor</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_HOUSEMADNESS</Tag>
+        <English>House of Madness</English>
+        <French>House of Madness</French>
+        <German>House of Madness</German>
+        <Italian>House of Madness</Italian>
+        <Spanish>House of Madness</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_CHAMBERAPATHY</Tag>
+        <English>Chamber of Apathy</English>
+        <French>Chamber of Apathy</French>
+        <German>Chamber of Apathy</German>
+        <Italian>Chamber of Apathy</Italian>
+        <Spanish>Chamber of Apathy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAGARES</Tag>
+        <English>Temples of Agares</English>
+        <French>Temples of Agares</French>
+        <German>Temples of Agares</German>
+        <Italian>Temples of Agares</Italian>
+        <Spanish>Temples of Agares</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAERON</Tag>
+        <English>Temple of Aeron</English>
+        <French>Temple of Aeron</French>
+        <German>Temple of Aeron</German>
+        <Italian>Temple of Aeron</Italian>
+        <Spanish>Temple of Aeron</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEHYBOREM</Tag>
+        <English>Temple of Hyborem</English>
+        <French>Temple of Hyborem</French>
+        <German>Temple of Hyborem</German>
+        <Italian>Temple of Hyborem</Italian>
+        <Spanish>Temple of Hyborem</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_CADAVERPITT</Tag>
+        <English>Cadaver Pitt</English>
+        <French>Cadaver Pitt</French>
+        <German>Cadaver Pitt</German>
+        <Italian>Cadaver Pitt</Italian>
+        <Spanish>Cadaver Pitt</Spanish>
+    </TEXT>
+
+    <!-- Strategy -->
+    
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_HIGHWALLS_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_CRAFTSMENHUT_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_IRONWOODS_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_TREESINGER_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_GOLDENTREE_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_RADIANTTOWER_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_REDEMPTIONSHRINE_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_BRILLIANTHALL_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_WORKSHOP_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_PILEOFGOLD_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_SCHOOLOFDEMONHUNTERS_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CHAMBEROFFAITH_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_PORTHEMAH_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_OVERLORDHABOR_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_HOUSEMADNESS_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_CHAMBERAPATHY_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAGARES_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAERON_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEHYBOREM_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_CADAVERPITT_STRATEGY</Tag>
+        <English>Strategy</English>
+        <French>Strategy</French>
+        <German>Strategy</German>
+        <Italian>Strategy</Italian>
+        <Spanish>Strategy</Spanish>
+    </TEXT>
+
+    <!-- Lore -->
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_HIGHWALLS_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_CRAFTSMENHUT_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_IRONWOODS_LORE</Tag>
+        <English>Recon Units are the backbone of the forest watch. In the Iron watch, they are trained to ensure they can protect their designated part of the forst.</English>
+        <French>Recon Units are the backbone of the forest watch. In the Iron watch, they are trained to ensure they can protect their designated part of the forst.</French>
+        <German>Recon Units are the backbone of the forest watch. In the Iron watch, they are trained to ensure they can protect their designated part of the forst.</German>
+        <Italian>Recon Units are the backbone of the forest watch. In the Iron watch, they are trained to ensure they can protect their designated part of the forst.</Italian>
+        <Spanish>Recon Units are the backbone of the forest watch. In the Iron watch, they are trained to ensure they can protect their designated part of the forst.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_TREESINGER_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_LEAVES_GOLDENTREE_LORE</Tag>
+        <English>The golden tree is a holy place created by powerful priests of the leaves. It increases food production for the city.</English>
+        <French>The golden tree is a holy place created by powerful priests of the leaves. It increases food production for the city.</French>
+        <German>The golden tree is a holy place created by powerful priests of the leaves. It increases food production for the city.</German>
+        <Italian>The golden tree is a holy place created by powerful priests of the leaves. It increases food production for the city.</Italian>
+        <Spanish>The golden tree is a holy place created by powerful priests of the leaves. It increases food production for the city.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_RADIANTTOWER_LORE</Tag>
+        <English>The Radiant Towers are a place to gather, to listen and to trade. The Radiant Guard protects these centers of exchange.</English>
+        <French>The Radiant Towers are a place to gather, to listen and to trade. The Radiant Guard protects these centers of exchange.</French>
+        <German>The Radiant Towers are a place to gather, to listen and to trade. The Radiant Guard protects these centers of exchange.</German>
+        <Italian>The Radiant Towers are a place to gather, to listen and to trade. The Radiant Guard protects these centers of exchange.</Italian>
+        <Spanish>The Radiant Towers are a place to gather, to listen and to trade. The Radiant Guard protects these centers of exchange.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL_LORE</Tag>
+        <English>No matter who you are, or where you come from, here in the prayer hall you can find salvation and the light.</English>
+        <French>No matter who you are, or where you come from, here in the prayer hall you can find salvation and the light.</French>
+        <German>No matter who you are, or where you come from, here in the prayer hall you can find salvation and the light.</German>
+        <Italian>No matter who you are, or where you come from, here in the prayer hall you can find salvation and the light.</Italian>
+        <Spanish>No matter who you are, or where you come from, here in the prayer hall you can find salvation and the light.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_REDEMPTIONSHRINE_LORE</Tag>
+        <English>Those that have done evil, these that followed dark gods shall crawl to the shrine of redemption.
+            Those that killed without need shall pray till they find light.</English>
+        <French>Those that have done evil, these that followed dark gods shall crawl to the shrine of redemption.
+            Those that killed without need shall pray till they find light.</French>
+        <German>Those that have done evil, these that followed dark gods shall crawl to the shrine of redemption.
+            Those that killed without need shall pray till they find light.</German>
+        <Italian>Those that have done evil, these that followed dark gods shall crawl to the shrine of redemption.
+            Those that killed without need shall pray till they find light.</Italian>
+        <Spanish>Those that have done evil, these that followed dark gods shall crawl to the shrine of redemption.
+            Those that killed without need shall pray till they find light.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_EMPRYREAN_BRILLIANTHALL_LORE</Tag>
+        <English>A temple of pure light and faith, build first by a simple farmer and later extended by many faithful.</English>
+        <French>A temple of pure light and faith, build first by a simple farmer and later extended by many faithful.</French>
+        <German>A temple of pure light and faith, build first by a simple farmer and later extended by many faithful.</German>
+        <Italian>A temple of pure light and faith, build first by a simple farmer and later extended by many faithful.</Italian>
+        <Spanish>A temple of pure light and faith, build first by a simple farmer and later extended by many faithful.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_WORKSHOP_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_PILEOFGOLD_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_SCHOOLOFDEMONHUNTERS_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CHAMBEROFFAITH_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_PORTHEMAH_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_OVERLORDHABOR_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_HOUSEMADNESS_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_OCTO_CHAMBERAPATHY_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAGARES_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAERON_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEHYBOREM_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_VEIL_CADAVERPITT_LORE</Tag>
+        <English>Lore</English>
+        <French>Lore</French>
+        <German>Lore</German>
+        <Italian>Lore</Italian>
+        <Spanish>Lore</Spanish>
+    </TEXT>
+
+</Civ4GameText>

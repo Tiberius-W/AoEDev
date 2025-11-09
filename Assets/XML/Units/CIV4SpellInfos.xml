@@ -9028,7 +9028,6 @@
 			<bHasCasted>1</bHasCasted>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bResistable>1</bResistable>
-			<iRange>1</iRange>
 			<iResistModify>10</iResistModify>
 			<iDamage>50</iDamage>
 			<iDamageLimit>100</iDamageLimit>

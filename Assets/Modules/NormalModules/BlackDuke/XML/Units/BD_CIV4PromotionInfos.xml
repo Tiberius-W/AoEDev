@@ -170,6 +170,7 @@
 			<Description>Black Duke's Gentlemen - Adept 1</Description>
 			<TempUnitCombat>UNITCOMBAT_MELEE</TempUnitCombat>
 			<bEffectProm>1</bEffectProm>
+			<iMagicalPower>150</iMagicalPower>
 			<SecondaryUnitCombats>
 				<SecondaryUnitCombat>UNITCOMBAT_ADEPT</SecondaryUnitCombat>
 			</SecondaryUnitCombats>

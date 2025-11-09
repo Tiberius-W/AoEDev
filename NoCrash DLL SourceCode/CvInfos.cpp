@@ -10370,6 +10370,8 @@ CvSpellInfo::CvSpellInfo() :
 	m_iUnitInStackTargetPrereq(NO_UNIT),
 	m_iBuildingPrereq(NO_BUILDING),
 	m_iBuildingTargetPrereq(NO_BUILDING),
+	m_iBuildingClassPrereq(NO_BUILDINGCLASS),
+	m_iBuildingClassTargetPrereq(NO_BUILDINGCLASS),
 	m_iBuildingClassOwnedPrereq(NO_BUILDINGCLASS),
 	m_iCivilizationPrereq(NO_CIVILIZATION),
 	m_iCorporationPrereq(NO_CORPORATION),
@@ -10585,6 +10587,15 @@ int CvSpellInfo::getBuildingTargetPrereq() const
 	return m_iBuildingTargetPrereq;
 }
 
+int CvSpellInfo::getBuildingClassPrereq() const
+{
+	return m_iBuildingClassPrereq;
+}
+
+int CvSpellInfo::getBuildingClassTargetPrereq() const
+{
+	return m_iBuildingClassTargetPrereq;
+}
 int CvSpellInfo::getBuildingClassOwnedPrereq() const
 {
 	return m_iBuildingClassOwnedPrereq;
@@ -11119,6 +11130,8 @@ void CvSpellInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUnitInStackTargetPrereq);
 	stream->Read(&m_iBuildingPrereq);
 	stream->Read(&m_iBuildingTargetPrereq);
+	stream->Read(&m_iBuildingClassPrereq);
+	stream->Read(&m_iBuildingClassTargetPrereq);
 	stream->Read(&m_iBuildingClassOwnedPrereq);
 	stream->Read(&m_iCivilizationPrereq);
 	stream->Read(&m_iCorporationPrereq);
@@ -11322,6 +11335,8 @@ void CvSpellInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUnitInStackTargetPrereq);
 	stream->Write(m_iBuildingPrereq);
 	stream->Write(m_iBuildingTargetPrereq);
+	stream->Write(m_iBuildingClassPrereq);
+	stream->Write(m_iBuildingClassTargetPrereq);
 	stream->Write(m_iBuildingClassOwnedPrereq);
 	stream->Write(m_iCivilizationPrereq);
 	stream->Write(m_iCorporationPrereq);
@@ -11517,6 +11532,10 @@ bool CvSpellInfo::read(CvXMLLoadUtility* pXML)
 	if (szTextVal != "") m_iBuildingPrereq = pXML->FindInInfoClass(szTextVal);
 	pXML->GetChildXmlValByName(szTextVal, "BuildingTargetPrereq");
 	if (szTextVal != "") m_iBuildingTargetPrereq = pXML->FindInInfoClass(szTextVal);
+	pXML->GetChildXmlValByName(szTextVal, "BuildingClassPrereq");
+	if (szTextVal != "") m_iBuildingClassPrereq = pXML->FindInInfoClass(szTextVal);
+	pXML->GetChildXmlValByName(szTextVal, "BuildingClassTargetPrereq");
+	if (szTextVal != "") m_iBuildingClassTargetPrereq = pXML->FindInInfoClass(szTextVal);
 	pXML->GetChildXmlValByName(szTextVal, "BuildingClassOwnedPrereq");
 	if (szTextVal != "") m_iBuildingClassOwnedPrereq = pXML->FindInInfoClass(szTextVal);
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationPrereq");
@@ -11891,6 +11910,8 @@ void CvSpellInfo::copyNonDefaults(CvSpellInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getCreateBuildingType()			== NO_BUILDING)			m_iCreateBuildingType			= pClassInfo->getCreateBuildingType();
 	if (getBuildingPrereq()				== NO_BUILDING)			m_iBuildingPrereq				= pClassInfo->getBuildingPrereq();
 	if (getBuildingTargetPrereq() == NO_BUILDING)			m_iBuildingTargetPrereq = pClassInfo->getBuildingTargetPrereq();
+	if (getBuildingClassPrereq() == NO_BUILDINGCLASS)			m_iBuildingClassPrereq = pClassInfo->getBuildingClassPrereq();
+	if (getBuildingClassTargetPrereq() == NO_BUILDINGCLASS)			m_iBuildingClassTargetPrereq = pClassInfo->getBuildingClassTargetPrereq();
 	if (getPromotionPrereq1()			== NO_PROMOTION)		m_iPromotionPrereq1				= pClassInfo->getPromotionPrereq1();
 	if (getPromotionPrereq2()			== NO_PROMOTION)		m_iPromotionPrereq2				= pClassInfo->getPromotionPrereq2();
 	if (getPromotionInStackPrereq()		== NO_PROMOTION)		m_iPromotionInStackPrereq		= pClassInfo->getPromotionInStackPrereq();
@@ -13436,8 +13457,7 @@ CvUnitInfo::~CvUnitInfo()
 /*************************************************************************************************/
 /**	Better Affinity							END													**/
 /*************************************************************************************************/
-	//Magic Rework
-	//SAFE_DELETE_ARRAY(m_piSpellClassExtraPower);
+
 
 }
 
@@ -20800,6 +20820,7 @@ m_bGovernmentCenter(false),
 m_bGoldenAge(false),
 m_bMapCentering(false),
 m_bNoUnhappiness(false),
+m_bNoUnhealthiness(false),
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -21780,6 +21801,10 @@ bool CvBuildingInfo::isNoUnhappiness() const
 	return m_bNoUnhappiness;
 }
 
+bool CvBuildingInfo::isNoUnhealthiness() const
+{
+	return m_bNoUnhealthiness;
+}
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -22826,6 +22851,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bGoldenAge);
 	stream->Read(&m_bMapCentering);
 	stream->Read(&m_bNoUnhappiness);
+	stream->Read(&m_bNoUnhealthiness);
 	stream->ReadString(m_szPyHelp);
 
 /************************************************************************************************/
@@ -23499,6 +23525,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bGoldenAge);
 	stream->Write(m_bMapCentering);
 	stream->Write(m_bNoUnhappiness);
+	stream->Write(m_bNoUnhealthiness);
 	stream->WriteString(m_szPyHelp);
 
 /************************************************************************************************/
@@ -24022,6 +24049,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
 	pXML->GetChildXmlValByName(&m_bMapCentering, "bMapCentering");
 	pXML->GetChildXmlValByName(&m_bNoUnhappiness, "bNoUnhappiness");
+	pXML->GetChildXmlValByName(&m_bNoUnhealthiness, "bNoUnhealthiness");
 	pXML->GetChildXmlValByName(m_szPyHelp, "PyHelp");
 
 /************************************************************************************************/
@@ -24849,7 +24877,8 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 	if (isAllowsNukes()							== false)				m_bAllowsNukes						= pClassInfo->isAllowsNukes();
 	if (isMapCentering()						== false)				m_bMapCentering						= pClassInfo->isMapCentering();
 	if (isNoUnhappiness()						== false)				m_bNoUnhappiness					= pClassInfo->isNoUnhappiness();
-/************************************************************************************************/
+	if (isNoUnhealthiness() == false)				m_bNoUnhealthiness = pClassInfo->isNoUnhealthiness();
+	/************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
 /*						Prevents IDW effects within specific borders                            */
@@ -35900,6 +35929,11 @@ int CvLeaderHeadInfo::getFreedomAppreciation() const
 
 const TCHAR* CvLeaderHeadInfo::getArtDefineTag() const
 {
+	CvString cKoun = CvString::format("ART_DEF_LEADER_KOUN").GetCString();
+	CvString cKoun2 = CvString::format("ART_DEF_LEADER_KOUN2").GetCString();
+
+	if (m_szArtDefineTag == cKoun && GC.getGame().isUniDay())
+		return cKoun2;
 	return m_szArtDefineTag;
 }
 
@@ -40059,6 +40093,7 @@ m_bAssimilation(false),
 m_bBarbarianAlly(false),
 m_bIgnoreFood(false),
 m_bIgnoreHealth(false),
+m_bIgnoreHappy(false),
 m_bInsane(false),
 m_bSelectable(false),
 m_bSprawling(false),
@@ -40441,6 +40476,10 @@ bool CvTraitInfo::isIgnoreFood() const
 bool CvTraitInfo::isIgnoreHealth() const
 {
 	return m_bIgnoreHealth;
+}
+bool CvTraitInfo::isIgnoreHappy() const
+{
+	return m_bIgnoreHappy;
 }
 bool CvTraitInfo::isInsane() const
 {
@@ -40866,6 +40905,7 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bBarbarianAlly, "bBarbarianAlly");
 	pXML->GetChildXmlValByName(&m_bIgnoreFood, "bIgnoreFood");
 	pXML->GetChildXmlValByName(&m_bIgnoreHealth, "bIgnoreHealth");
+	pXML->GetChildXmlValByName(&m_bIgnoreHappy, "bIgnoreHappy");
 	pXML->GetChildXmlValByName(&m_bInsane, "bInsane");
 	pXML->GetChildXmlValByName(&m_bSelectable, "bSelectable");
 	pXML->GetChildXmlValByName(&m_bSprawling, "bSprawling");
@@ -41368,6 +41408,7 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (isBarbarianAlly() == false)		m_bBarbarianAlly = pClassInfo->isBarbarianAlly();
 	if (isIgnoreFood() == false)		m_bIgnoreFood = pClassInfo->isIgnoreFood();
 	if (isIgnoreHealth() == false)		m_bIgnoreHealth = pClassInfo->isIgnoreHealth();
+	if (isIgnoreHappy() == false)		m_bIgnoreHappy = pClassInfo->isIgnoreHappy();
 	if (isInsane() == false)		m_bInsane = pClassInfo->isInsane();
 	if (isSelectable() == false)		m_bSelectable = pClassInfo->isSelectable();
 	if (isSprawling() == false)		m_bSprawling = pClassInfo->isSprawling();

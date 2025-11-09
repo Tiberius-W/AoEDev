@@ -86,6 +86,7 @@
 			<iTier>4</iTier>
 			<iAIWeight>16</iAIWeight>
 			<iCost>240</iCost>
+			<iMagicalPower>400</iMagicalPower>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>

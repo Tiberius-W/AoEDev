@@ -8718,6 +8718,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
 			</TerrainMakesValids>
 			<bUnique>1</bUnique>
 			<PythonOnMove>onMoveCarcer(pCaster, pPlot)</PythonOnMove>

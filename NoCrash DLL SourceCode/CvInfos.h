@@ -2057,6 +2057,8 @@ public:
 	int getUnitInStackTargetPrereq() const;
 	int getBuildingPrereq() const;
 	int getBuildingTargetPrereq() const;
+	int getBuildingClassPrereq() const;
+	int getBuildingClassTargetPrereq() const;
 	int getBuildingClassOwnedPrereq() const;
 	int getCivilizationPrereq() const;
 	int getCorporationPrereq() const;
@@ -2238,6 +2240,8 @@ protected:
 	int m_iUnitInStackTargetPrereq;
 	int m_iBuildingPrereq;
 	int m_iBuildingTargetPrereq;
+	int m_iBuildingClassPrereq;
+	int m_iBuildingClassTargetPrereq;
 	int m_iBuildingClassOwnedPrereq;
 	int m_iCivilizationPrereq;
 	int m_iCorporationPrereq;
@@ -4446,6 +4450,7 @@ public:
 	bool isGoldenAge() const;				// Exposed to Python
 	bool isMapCentering() const;				// Exposed to Python
 	bool isNoUnhappiness() const;				// Exposed to Python
+	bool isNoUnhealthiness() const;				// Exposed to Python
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -4865,6 +4870,7 @@ protected:
 	bool m_bGoldenAge;
 	bool m_bMapCentering;
 	bool m_bNoUnhappiness;
+	bool m_bNoUnhealthiness;
 	CvString m_szPyHelp;
 
 /************************************************************************************************/
@@ -9216,6 +9222,7 @@ public:
 	bool isBarbarianAlly() const;
 	bool isIgnoreFood() const;
 	bool isIgnoreHealth() const;
+	bool isIgnoreHappy() const;
 	bool isInsane() const;
 	bool isSelectable() const;
 	bool isSprawling() const;
@@ -9407,6 +9414,7 @@ protected:
 	bool m_bBarbarianAlly;
 	bool m_bIgnoreFood;
 	bool m_bIgnoreHealth;
+	bool m_bIgnoreHappy;
 	bool m_bInsane;
 	bool m_bSelectable;
 	bool m_bSprawling;

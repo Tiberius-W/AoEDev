@@ -7760,9 +7760,11 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			for (iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
 			{
 				// Show free promotion, so long as it's not bgraphicalonly/hidden. We don't have a easy way to see if the player qualifies for the hidden *promotion* here, so it'll just have to stay hidden
-				if (GC.getTraitInfo(eTrait).isFreePromotionUnitCombat(iJ) && !GC.getPromotionInfo((PromotionTypes)iJ).isGraphicalOnly())
+				if (GC.getTraitInfo(eTrait).isFreePromotionUnitCombat(iJ) )
 				{
-					szTempBuffer.Format(L"\n        %c<link=literal>%s</link>", gDLL->getSymbolID(BULLET_CHAR), GC.getUnitCombatInfo((UnitCombatTypes)iJ).getDescription());
+					szTempBuffer.Format(L"\n        %c", gDLL->getSymbolID(BULLET_CHAR));
+					szTempBuffer.append(gDLL->getText("TXT_KEY_LINK", GC.getUnitCombatInfo((UnitCombatTypes)iJ).getTextKeyWide(), GC.getUnitCombatInfo((UnitCombatTypes)iJ).getTextKeyWide()));
+
 					szHelpString.append(szTempBuffer);
 				}
 			}
@@ -7945,6 +7947,10 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 		if (GC.getTraitInfo(eTrait).isIgnoreHealth())
 		{
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_IGNORE_HEALTH_HELP"));
+		}
+		if (GC.getTraitInfo(eTrait).isIgnoreHappy())
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_IGNORE_HAPPY_HELP"));
 		}
 
 		if (GC.getTraitInfo(eTrait).isInsane())
@@ -13873,6 +13879,16 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_BUILDING_TARGET_PREREQ", ((CvWString)(GC.getBuildingInfo((BuildingTypes)GC.getSpellInfo(eSpell).getBuildingTargetPrereq()).getType())).c_str(), GC.getBuildingInfo((BuildingTypes)GC.getSpellInfo(eSpell).getBuildingTargetPrereq()).getTextKeyWide()));
 	}
+	if (GC.getSpellInfo(eSpell).getBuildingClassPrereq() != NO_BUILDINGCLASS)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_BUILDINGCLASS_PREREQ", ((CvWString)(GC.getBuildingClassInfo((BuildingClassTypes)GC.getSpellInfo(eSpell).getBuildingClassPrereq()).getType())).c_str(), GC.getBuildingClassInfo((BuildingClassTypes)GC.getSpellInfo(eSpell).getBuildingClassPrereq()).getTextKeyWide()));
+	}
+	if (GC.getSpellInfo(eSpell).getBuildingClassTargetPrereq() != NO_BUILDING)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_BUILDINGCLASS_TARGET_PREREQ", ((CvWString)(GC.getBuildingClassInfo((BuildingClassTypes)GC.getSpellInfo(eSpell).getBuildingClassTargetPrereq()).getType())).c_str(), GC.getBuildingClassInfo((BuildingClassTypes)GC.getSpellInfo(eSpell).getBuildingClassTargetPrereq()).getTextKeyWide()));
+	}
 	if (GC.getSpellInfo(eSpell).getBuildingClassOwnedPrereq() != NO_BUILDINGCLASS)
 	{
 		szBuffer.append(pcNewline);
@@ -19758,6 +19774,11 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NO_UNHAPPY"));
 	}
 
+	if (kBuilding.isNoUnhealthiness())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NO_UNHEALTHY"));
+	}
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -21839,7 +21860,12 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 				szBuffer.append(gDLL->getText("TXT_KEY_MAX_LATITUDE", kBuilding.getMaxLatitude()));
 			}
 		}
+		if (kBuilding.isRiver())
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_RIVERSIDE_HELP"));
 
+		}
 		if (pCity != NULL)
 		{
 			if (GC.getGameINLINE().isNoNukes())

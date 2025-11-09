@@ -748,6 +748,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iExtraHappiness = 0;
 	m_iExtraHealth = 0;
 	m_iNoUnhappinessCount = 0;
+	m_iNoUnhealthinessCount = 0;
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -5519,7 +5520,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changePowerCount(((GC.getBuildingInfo(eBuilding).isPower()) ? iChange : 0), GC.getBuildingInfo(eBuilding).isDirtyPower());
 		changeGovernmentCenterCount((GC.getBuildingInfo(eBuilding).isGovernmentCenter()) ? iChange : 0);
 		changeNoUnhappinessCount((GC.getBuildingInfo(eBuilding).isNoUnhappiness()) ? iChange : 0);
-/************************************************************************************************/
+		changeNoUnhealthinessCount((GC.getBuildingInfo(eBuilding).isNoUnhealthiness()) ? iChange : 0);
+		/************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
 /*						Prevents IDW effects within specific borders                            */
@@ -6264,7 +6266,10 @@ int CvCity::unhappyLevel(int iExtra) const
 	int iI;
 
 	iUnhappiness = 0;
-
+	if (GET_PLAYER(getOwnerINLINE()).isIgnoreHappy())
+	{
+		return 0;
+	}
 	if (!isNoUnhappiness())
 	{
 		iAngerPercent = 0;
@@ -6616,7 +6621,10 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 /*************************************************************************************************/
 /**	Hunger									END													**/
 /*************************************************************************************************/
-
+	if (isNoUnhealthiness())
+	{
+		return 0;
+	}
 	iTotalHealth = 0;
 
 	iHealth = getEspionageHealthCounter();
@@ -9496,6 +9504,29 @@ void CvCity::changeNoUnhappinessCount(int iChange)
 	{
 		m_iNoUnhappinessCount = (m_iNoUnhappinessCount + iChange);
 		FAssert(getNoUnhappinessCount() >= 0);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+int CvCity::getNoUnhealthinessCount() const
+{
+	return m_iNoUnhealthinessCount;
+}
+
+
+bool CvCity::isNoUnhealthiness() const
+{
+	return (getNoUnhealthinessCount() > 0);
+}
+
+
+void CvCity::changeNoUnhealthinessCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iNoUnhealthinessCount = (m_iNoUnhealthinessCount + iChange);
+		FAssert(getNoUnhealthinessCount() >= 0);
 
 		AI_setAssignWorkDirty(true);
 	}
@@ -16637,6 +16668,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraHappiness);
 	pStream->Read(&m_iExtraHealth);
 	pStream->Read(&m_iNoUnhappinessCount);
+	pStream->Read(&m_iNoUnhealthinessCount);
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -17067,6 +17099,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraHappiness);
 	pStream->Write(m_iExtraHealth);
 	pStream->Write(m_iNoUnhappinessCount);
+	pStream->Write(m_iNoUnhealthinessCount);
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -19508,6 +19541,10 @@ int CvCity::getCrime() const
 	{
 		return 0;
 	}
+	if (GET_PLAYER(getOwner()).isBarbarian())
+	{
+		return 0;
+	}
 	if (GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).isNoCrimeCiv()) {
 		return 0;
 	}
@@ -20109,6 +20146,15 @@ bool CvCity::canCast(int spell, bool bTestVisible)
 			return false;
 		}
 	}
+	if (kSpell.getBuildingClassPrereq() != NO_BUILDINGCLASS)
+	{
+	
+		if (getNumBuilding((BuildingTypes)getCityBuildings(kSpell.getBuildingClassPrereq())) == 0)
+		{
+			return false;
+		}
+	}
+
 	if (kSpell.getBuildingClassOwnedPrereq() != NO_BUILDINGCLASS)
 	{
 		if (kPlayer.getBuildingClassCount((BuildingClassTypes)kSpell.getBuildingClassOwnedPrereq())  == 0)

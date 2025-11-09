@@ -4291,7 +4291,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 /*************************************************************************************************/
 			}
 
-			if (((iFocusFlags & BUILDINGFOCUS_HEALTHY) || (iPass > 0)) && !isNoUnhealthyPopulation())
+			if (((iFocusFlags & BUILDINGFOCUS_HEALTHY) || (iPass > 0)) && (!isNoUnhealthyPopulation()|| !isNoUnhealthiness()))
 			{
 /*************************************************************************************************/
 /**	Civilization Flavors				09/07/10										Snarko	**/

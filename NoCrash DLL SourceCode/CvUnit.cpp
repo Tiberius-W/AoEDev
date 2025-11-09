@@ -347,6 +347,10 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 			}
 		}
 	}
+	for (iI = 0; iI < GC.getNumSpellClassInfos(); iI++)
+	{
+		changeExtraSpellClassPower(((SpellClassTypes)iI), (m_pUnitInfo->getSpellClassExtraPower(iI)));
+	}
 
 	if (NO_UNITCOMBAT != getUnitCombatType())
 	{
@@ -1691,16 +1695,10 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		}
 	}
 
-	// Point of no return; everything before this should be OK to trigger repeatedly, after, trigger only once
-	if (bDelay)
-	{
-		startDelayedDeath();
-		return;
-	}
 
 	if (GET_PLAYER(getOwner()).isBarbarian())
 	{
-		if (getCombatUnit() != NULL)
+		if (getCombatUnit() != NULL) // never applies on delayed death
 		{
 			CvUnit* pKiller = getCombatUnit();
 			if (pKiller->isTradeDefender())
@@ -1739,8 +1737,15 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			}
 		}
 	}
+	if (ePlayer == NO_PLAYER)
+	{
+		if (getCombatUnit() != NULL)
+		{
+			ePlayer = getCombatUnit()->getOwner();
+		}
 
-	if (ePlayer != NO_PLAYER)
+	}
+	if (ePlayer != NO_PLAYER) //never applies on delayed death
 	{
 		
 		TraitTriggeredData kTriggerData;
@@ -1797,6 +1802,15 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 				}
 			}
 		}
+	}
+	
+
+
+	// Point of no return; everything before this should be OK to trigger repeatedly, after, trigger only once
+	if (bDelay)
+	{
+		startDelayedDeath();
+		return;
 	}
 
 	// WorldBreakers - Xienwolf - 01/05/09 - Tracks AC Contributions on a player basis
@@ -22814,6 +22828,28 @@ bool CvUnit::canCast(int spell, bool bTestVisible, CvPlot* pTargetPlot)
 			return false;
 		}
 		if (pTargetPlot->getPlotCity()->getNumBuilding((BuildingTypes)GC.getSpellInfo(eSpell).getBuildingTargetPrereq()) == 0)
+		{
+			return false;
+		}
+	}
+	if (GC.getSpellInfo(eSpell).getBuildingClassPrereq() != NO_BUILDINGCLASS)
+	{
+		if (!pPlot->isCity())
+		{
+			return false;
+		}
+		if (pPlot->getPlotCity()->getNumBuilding((BuildingTypes)pPlot->getPlotCity()->getCityBuildings(GC.getSpellInfo(eSpell).getBuildingPrereq())) == 0)
+		{
+			return false;
+		}
+	}
+	if (GC.getSpellInfo(eSpell).getBuildingClassTargetPrereq() != NO_BUILDINGCLASS)
+	{
+		if (!pTargetPlot->isCity())
+		{
+			return false;
+		}
+		if (pTargetPlot->getPlotCity()->getNumBuilding((BuildingTypes)pTargetPlot->getPlotCity()->getCityBuildings(GC.getSpellInfo(eSpell).getBuildingPrereq())) == 0)
 		{
 			return false;
 		}

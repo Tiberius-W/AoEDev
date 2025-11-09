@@ -33,5 +33,19 @@
 				</Leader>
 			</Leaders>
 		</CivilizationInfo>
+		<CivilizationInfo><!-- dural -->
+			<Type>CIVILIZATION_DURAL</Type>
+			<bTypeDependency>1</bTypeDependency>
+				<AndDependencyTypes>
+			<DependencyType>MODULE_DURAL</DependencyType>
+			</AndDependencyTypes>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_DETLESIAS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		
 	</CivilizationInfos>
 </Civ4CivilizationInfos>

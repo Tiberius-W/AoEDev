@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Building Class Infos -->
+<!-- Created by Drackzahn -->
+<Civ4BuildingClassInfos xmlns="x-schema:DrackBuildings_CIV4BuildingsSchema.xml">
+    <BuildingClassInfos>
+        <!-- General Buildings -->
+        <BuildingClassInfo> <!-- High Walls -->
+            <Type>BUILDINGCLASS_DRACK_GENERAL_HIGHWALLS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_GENERAL_HIGHWALLS</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Craftsmen Hut -->
+            <Type>BUILDINGCLASS_DRACK_GENERAL_CRAFTSMENHUT</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_GENERAL_CRAFTSMENHUT</DefaultBuilding> 
+        </BuildingClassInfo>
+        <!-- Religious Buildings -->
+        <!-- Leaves Religion -->
+        <BuildingClassInfo> <!-- Fruit garden -->
+            <Type>BUILDINGCLASS_DRACK_LEAVES_FRUITGARDEN</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_LEAVES_FRUITGARDEN</DefaultBuilding>
+        </BuildingClassInfo>
+        <BuildingClassInfo> <!-- Iron Woods -->
+            <Type>BUILDINGCLASS_DRACK_LEAVES_IRONWOODS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_LEAVES_IRONWOODS</DefaultBuilding>
+        </BuildingClassInfo>
+        <BuildingClassInfo> <!-- Hut of Treesinger -->
+            <Type>BUILDINGCLASS_DRACK_LEAVES_TREESINGER</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_LEAVES_TREESINGER</DefaultBuilding>
+        </BuildingClassInfo>
+        <BuildingClassInfo> <!-- Golden Tree -->
+            <Type>BUILDINGCLASS_DRACK_LEAVES_GOLDENTREE</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_LEAVES_GOLDENTREE</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Empryrean-->
+		<BuildingClassInfo> <!-- Radiant Tower -->
+            <Type>BUILDINGCLASS_DRACK_EMPRYREAN_RADIANTTOWER</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_EMPRYREAN_RADIANTTOWER</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Prayer Hall -->
+            <Type>BUILDINGCLASS_DRACK_EMPRYREAN_PRAYERHALL</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_EMPRYREAN_PRAYERHALL</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Redemption Shrine -->
+            <Type>BUILDINGCLASS_DRACK_EMPRYREAN_REDEMPTIONSHRINE</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_EMPRYREAN_REDEMPTIONSHRINE</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Brilliant Hall -->
+            <Type>BUILDINGCLASS_DRACK_EMPRYREAN_BRILLIANTHALL</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_EMPRYREAN_BRILLIANTHALL</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Kilmorph -->
+		<BuildingClassInfo> <!-- Altar of Kilmorph  -->
+            <Type>BUILDINGCLASS_DRACK_KILMORPH_ALTAR</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_KILMORPH_ALTAR</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Workshop  -->
+            <Type>BUILDINGCLASS_DRACK_KILMORPH_WORKSHOP</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_KILMORPH_WORKSHOP</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Pile of Gold -->
+            <Type>BUILDINGCLASS_DRACK_KILMORPH_PILEOFGOLD</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_KILMORPH_PILEOFGOLD</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Halls of Wealth -->
+            <Type>BUILDINGCLASS_DRACK_KILMORPH_HALLSOFWEALTH</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_KILMORPH_HALLSOFWEALTH</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Order -->
+		<BuildingClassInfo> <!-- Wall of Heroes -->
+            <Type>BUILDINGCLASS_DRACK_ORDER_WALLOFHEROES</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ORDER_WALLOFHEROES</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- School of Demonhunters  -->
+            <Type>BUILDINGCLASS_DRACK_ORDER_SCHOOLOFDEMONHUNTERS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ORDER_SCHOOLOFDEMONHUNTERS</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Chamber of Faith -->
+            <Type>BUILDINGCLASS_DRACK_ORDER_CHAMBEROFFAITH</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ORDER_CHAMBEROFFAITH</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Congress of Order -->
+            <Type>BUILDINGCLASS_DRACK_ORDER_CONGRESSOFORDER</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ORDER_CONGRESSOFORDER</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Octopus -->
+		<BuildingClassInfo> <!-- Port of Hemah -->
+            <Type>BUILDINGCLASS_DRACK_OCTO_PORTHEMAH</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_OCTO_PORTHEMAH</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Dark Overlords’s Habor -->
+            <Type>BUILDINGCLASS_DRACK_OCTO_OVERLORDHABOR</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_OCTO_OVERLORDHABOR</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- House of Madness -->
+            <Type>BUILDINGCLASS_DRACK_OCTO_HOUSEMADNESS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_OCTO_HOUSEMADNESS</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Chamber of Apathy -->
+            <Type>BUILDINGCLASS_DRACK_OCTO_CHAMBERAPATHY</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_OCTO_CHAMBERAPATHY</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Ashen Veil -->
+		<BuildingClassInfo> <!-- Temples of Agares -->
+            <Type>BUILDINGCLASS_DRACK_VEIL_TEMPLEAGARES</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_VEIL_TEMPLEAGARES</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Temple of Aeron -->
+            <Type>BUILDINGCLASS_DRACK_VEIL_TEMPLEAERON</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_VEIL_TEMPLEAERON</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Temple of Hyborem -->
+            <Type>BUILDINGCLASS_DRACK_VEIL_TEMPLEHYBOREM</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_VEIL_TEMPLEHYBOREM</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Cadaver Pitt -->
+            <Type>BUILDINGCLASS_DRACK_VEIL_CADAVERPITT</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_VEIL_CADAVERPITT</DefaultBuilding>
+        </BuildingClassInfo>
+    </BuildingClassInfos>
+</Civ4BuildingClassInfos>

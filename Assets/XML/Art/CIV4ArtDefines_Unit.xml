@@ -18712,9 +18712,9 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/units/spawns/Haegetesse/Haegetesse.nif</NIF>
+			<NIF>Art/units/spawns/Haegtesse/Haegtesse.nif</NIF>
 			<KFM>Art/Animations/Warrior/warrior.kfm</KFM>
-			<SHADERNIF>Art/units/spawns/Haegetesse/Haegetesse.nif</SHADERNIF>
+			<SHADERNIF>Art/units/spawns/Haegtesse/Haegtesse.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -29617,7 +29617,30 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-	<!-- Sheaim End -->
+	<UnitArtInfo> <!-- UNIT_NAGA -->
+			<Type>ART_DEF_UNIT_NAGA</Type>
+			<Button>Art/Interface/Buttons/Units/naga.dds</Button>
+			<fScale>24.8</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Civs/sheaim/naga/naga.nif</NIF>
+			<KFM>Art/animations/maar2/maar.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>Bip01 Pelvis</ShadowAttachNode>
+				<fShadowScale>0.02</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.28</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<!-- Sheaim End -->
  <!-- Sidar Start --> 
 		<UnitArtInfo><!-- UNIT_ADEPT in UNIT_ARTSTYLE_SIDAR -->
 			<Type>ART_DEF_UNIT_ADEPT_SIDAR</Type>
@@ -34259,7 +34282,7 @@
 	<UnitArtInfo> <!-- Rat-->
 			<Type>ART_DEF_UNIT_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>0.2</fScale>
+			<fScale>4.68</fScale>
 			<fInterfaceScale>1.4</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34268,7 +34291,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -34282,7 +34305,7 @@
 	<UnitArtInfo> <!-- big Rat-->
 			<Type>ART_DEF_UNIT_BIG_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>0.5</fScale>
+			<fScale>9.36</fScale>
 			<fInterfaceScale>1.4</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34291,7 +34314,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -34305,7 +34328,7 @@
 	<UnitArtInfo> <!--black Rat-->
 			<Type>ART_DEF_UNIT_BLACK_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>0.2</fScale>
+			<fScale>4.68</fScale>
 			<fInterfaceScale>1.4</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34314,7 +34337,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -34328,7 +34351,7 @@
 	<UnitArtInfo> <!--big black Rat-->
 			<Type>ART_DEF_UNIT_BIG_BLACK_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>0.5</fScale>
+			<fScale>9.36</fScale>
 			<fInterfaceScale>1.4</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34337,7 +34360,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -34351,7 +34374,7 @@
 	<UnitArtInfo> <!--black angel Rat-->
 			<Type>ART_DEF_UNIT_BLACK_ANGEL_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>1.5</fScale>
+			<fScale>14.04</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34360,7 +34383,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -34374,7 +34397,7 @@
 	<UnitArtInfo> <!--plagued Rat-->
 			<Type>ART_DEF_UNIT_PLAGUED_RAT</Type>
 			<Button>Art/Interface/Buttons/Units/ratty.dds</Button>
-			<fScale>0.2</fScale>
+			<fScale>4.68</fScale>
 			<fInterfaceScale>1.4</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -34383,7 +34406,7 @@
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
 				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
+				<fShadowScale>0.0045</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
@@ -36635,7 +36658,7 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-<UnitArtInfo> <!-- UNIT_COUATL -->
+		<UnitArtInfo> <!-- UNIT_COUATL -->
 			<Type>ART_DEF_UNIT_COUATL</Type>
 			<Button>Art/units/spawns/couatl/CoatlannButton.dds</Button>
 			<fScale>8</fScale>
@@ -36661,7 +36684,7 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_DRAKE_SELECT</SelectionSound>
 		</UnitArtInfo>
-<UnitArtInfo> <!-- UNIT_PIXIE -->
+		<UnitArtInfo> <!-- UNIT_PIXIE -->
 			<Type>ART_DEF_UNIT_PIXIE</Type>
 			<Button>Art/units/spawns/fairy/fairy.dds</Button>
 			<fScale>0.5</fScale>
@@ -36686,7 +36709,7 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_DRAKE_SELECT</SelectionSound>
 		</UnitArtInfo>
-<UnitArtInfo> <!-- UNIT_LOIREAG -->
+		<UnitArtInfo> <!-- UNIT_LOIREAG -->
 			<Type>ART_DEF_UNIT_LOIREAG</Type>
 			<Button>Art/units/spawns/fairy/fairy.dds</Button>
 			<fScale>0.5</fScale>
@@ -36782,7 +36805,7 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-<UnitArtInfo> <!-- UNIT_SLYPH -->
+		<UnitArtInfo> <!-- UNIT_SLYPH -->
 			<Type>ART_DEF_UNIT_SLYPH</Type>
 			<Button>Art/units/spawns/fairy/fairy.dds</Button>
 			<fScale>0.5</fScale>
@@ -36898,7 +36921,7 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-			<UnitArtInfo> <!-- UNIT_APOPHIS -->
+		<UnitArtInfo> <!-- UNIT_APOPHIS -->
 			<Type>ART_DEF_UNIT_APOPHIS</Type>
 			<Button>Art/units/heroes/apophis/CoatlannButton.dds</Button>
 			<fScale>32</fScale>
@@ -36923,6 +36946,102 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 			<SelectionSound>AS3D_DRAKE_SELECT</SelectionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>  <!-- Anglerman -->
+			<Type>ART_DEF_UNIT_ANGLERMAN</Type>
+			<Button>Art/Interface/Buttons/Units/Haegtesse.dds</Button>
+			<fScale>2.42</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/units/spawns/Anglerman/Anglerman.nif</NIF>
+			<KFM>Art/Animations/Warrior/warrior.kfm</KFM>
+			<SHADERNIF>Art/units/spawns/Anglerman/Anglerman.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.18</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.4</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>  <!-- Anglerman Light -->
+			<Type>ART_DEF_UNIT_ANGLERMAN_LIGHT</Type>
+			<Button>Art/Interface/Buttons/Units/Haegtesse.dds</Button>
+			<fScale>2.42</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/units/spawns/Anglerman/AnglermanTeal.nif</NIF>
+			<KFM>Art/Animations/Warrior/warrior.kfm</KFM>
+			<SHADERNIF>Art/units/spawns/Anglerman/AnglermanTeal.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.18</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.4</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_SEED_DRAGON -->
+			<Type>ART_DEF_UNIT_SEED_DRAGON</Type>
+			<Button>Art/Interface/Buttons/Units/seeddragonbutton.dds</Button>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/animal/dragons/seeddragon/seeddragon.nif</NIF>
+			<KFM>Art/animations/dragon3/dragon.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/horseshadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Center</ShadowAttachNode>
+				<fShadowScale>2</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>1.2</fBattleDistance>
+			<fRangedDeathTime>0.35</fRangedDeathTime>
+			<bActAsRanged>1</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_DRAGON_BREATH_IN_SELECT</SelectionSound>
+			<ActionSound>AS3D_UN_DRAGON_ROAR</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_CORAL_GIANT -->
+			<Type>ART_DEF_UNIT_CORAL_GIANT</Type>
+			<Button>Art/Interface/Buttons/Units/CoralGiant.dds</Button>
+			<fScale>0.44</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/spawns/CoralGiant/CoralGiant.nif</NIF>
+			<KFM>Art/Units/Warrior/warrior.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
 		</UnitArtInfo>
 	<!-- Summons End -->
 <!-- Misc Start --> 

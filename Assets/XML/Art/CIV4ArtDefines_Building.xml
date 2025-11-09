@@ -1534,7 +1534,7 @@
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Archeryrange/Archeryrange.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Archeryrange.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Archery_range.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WEAPONSMITH</Type>
@@ -1634,7 +1634,17 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Trainingyard.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Training_yard.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JOUSTING_TILT</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jousting_tilt.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ARENA</Type>
@@ -1925,6 +1935,16 @@
 			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Huntinglodge.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HUNTERS_HALL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Hunters_Hall.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TEMPLE_ORDER</Type>
@@ -4015,7 +4035,7 @@
 			<fInterfaceScale>0.52</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/MastersBuildings/cannon_forge.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/MasterSmith.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Master_Smith.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MASTER_FLETCHER</Type>
@@ -4025,7 +4045,7 @@
 			<fInterfaceScale>0.52</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/MastersBuildings/cannon_forge.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/MasterFletcher.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Master_Fletcher.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MASTER_OUTFITTER</Type>
@@ -4035,7 +4055,7 @@
 			<fInterfaceScale>0.52</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/MastersBuildings/cannon_forge.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/MasterOutfitter.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Master_Outfitter.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MASTER_BREEDER</Type>
@@ -4045,8 +4065,19 @@
 			<fInterfaceScale>0.52</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/MastersBuildings/cannon_forge.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/MasterBreeder.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Master_Breeder.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MASTER_SIEGE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Siegeworkshop/Siegeworkshop.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Master_Siegesmith.dds</Button>
+		</BuildingArtInfo>
+		
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_STONEFIRE_FORGE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>

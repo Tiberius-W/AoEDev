@@ -2558,6 +2558,22 @@
 		<Spanish>[ICON_BULLET]Requires a [LINK=%s1]%s2_building[\LINK] building in the target city</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_BUILDINGCLASS_PREREQ</Tag>
+		<English>[ICON_BULLET]Requires a building of the [LINK=%s1]%s2_building[\LINK] class in the caster's city</English>
+		<French>[ICON_BULLET]Nécessite un [LINK=%s1]%s2_building[\LINK] dans la ville du lanceur</French>
+		<German>[ICON_BULLET]Erfordert ein [LINK=%s1]%s2_building[\LINK] in der Stadt des Zaubernden</German>
+		<Italian>[ICON_BULLET]Requires a building of the [[LINK=%s1]%s2_building[\LINK] class in the caster's city</Italian>
+		<Spanish>[ICON_BULLET]Requires a building of the [[LINK=%s1]%s2_building[\LINK] class in the caster's city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BUILDINGCLASS_TARGET_PREREQ</Tag>
+		<English>[ICON_BULLET]Requires a building of the [LINK=%s1]%s2_building[\LINK] class in the target city</English>
+		<French>[ICON_BULLET]Nécessite un [LINK=%s1]%s2_building[\LINK] dans la ville ciblée</French>
+		<German>[ICON_BULLET]Erfordert ein [LINK=%s1]%s2_building[\LINK] in der Stadt des Zaubernden</German>
+		<Italian>[ICON_BULLET]Requires a building of the [LINK=%s1]%s2_building[\LINK] class in the target city</Italian>
+		<Spanish>[ICON_BULLET]Requires a building of the [LINK=%s1]%s2_building[\LINK] class in the target city</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_BUILDINGCLASS_OWNED_PREREQ</Tag>
 		<English>[ICON_BULLET]The player must own the [LINK=%s1]%s2_building[\LINK] to use this spell</English>
 		<French>[ICON_BULLET]Le joueur doit posséder le [LINK=%s1]%s2_building[\LINK]pour lancer ce sort.</French>

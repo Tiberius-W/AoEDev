@@ -514,6 +514,10 @@ public:
 	bool isNoUnhappiness() const;																					// Exposed to Python
 	void changeNoUnhappinessCount(int iChange);
 
+	int getNoUnhealthinessCount() const;
+	bool isNoUnhealthiness() const;																					// Exposed to Python
+	void changeNoUnhealthinessCount(int iChange);
+
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
@@ -1554,7 +1558,8 @@ protected:
 	int m_iExtraHappiness;
 	int m_iExtraHealth;
 	int m_iNoUnhappinessCount;
-/************************************************************************************************/
+	int m_iNoUnhealthinessCount;
+	/************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
 /*                                                                                              */
 /*						Prevents IDW effects within specific borders                            */

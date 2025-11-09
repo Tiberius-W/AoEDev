@@ -32,5 +32,13 @@
 		<Italian>[NEWLINE][ICON_BULLET]Cities won't be affected by unhealth</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Cities won't be affected by unhealth</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_IGNORE_HAPPY_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Cities won't be affected by unhappiness</English>
+		<French>[NEWLINE][ICON_BULLET]Cities won't be affected by unhappiness</French>
+		<German>[NEWLINE][ICON_BULLET]Cities won't be affected by unhappiness</German>
+		<Italian>[NEWLINE][ICON_BULLET]Cities won't be affected by unhappiness</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Cities won't be affected by unhappiness</Spanish>
+	</TEXT>
 
 </Civ4GameText>

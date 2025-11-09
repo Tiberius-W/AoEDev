@@ -986,7 +986,6 @@
 			<Type>BUILDING_BREWERY</Type>
 			<Description>TXT_KEY_BUILDING_BREWERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BREWERY_PEDIA</Civilopedia>
-			<Help>TXT_KEY_BUILDING_RIVERSIDE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BREWERY</ArtDefineTag>
 			<PrereqTech>TECH_CRAFTING</PrereqTech>
@@ -8345,7 +8344,7 @@
 			<Description>TXT_KEY_BUILDING_JOUSTING_TILT</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_JOUSTING_TILT</ArtDefineTag>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -10193,7 +10192,6 @@
 			<Type>BUILDING_SPIRIT_MILL</Type>
 			<Description>TXT_KEY_BUILDING_SPIRIT_MILL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SPIRIT_MILL_PEDIA</Civilopedia>
-			<Help>TXT_KEY_BUILDING_RIVERSIDE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SPIRIT_MILL</ArtDefineTag>
 			<PrereqTech>TECH_CRAFTING</PrereqTech>
@@ -12016,7 +12014,6 @@
 			<Type>BUILDING_SEWERS</Type>
 			<Description>TXT_KEY_BUILDING_SEWER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SEWER_PEDIA</Civilopedia>
-			<Help>TXT_KEY_BUILDING_RIVERSIDE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SEWER</ArtDefineTag>
 			<PrereqTech>TECH_SANITATION</PrereqTech>
@@ -12731,7 +12728,7 @@
 			<Description>TXT_KEY_BUILDING_HUNTERS_HALL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HUNTERS_HALL_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HUNTING_LODGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_HUNTERS_HALL</ArtDefineTag>
 			<PrereqTech>TECH_TRACKING</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -13659,7 +13656,7 @@
 			<PyHelp>helpMasterBuildings</PyHelp>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<Strategy>TXT_KEY_BUILDING_MASTER_SIEGE_STRATEGY</Strategy>
-			<ArtDefineTag>ART_DEF_BUILDING_SIEGE_WORKSHOP</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MASTER_SIEGE</ArtDefineTag>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>

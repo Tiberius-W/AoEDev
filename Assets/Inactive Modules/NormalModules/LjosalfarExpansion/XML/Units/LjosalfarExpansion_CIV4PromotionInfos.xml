@@ -176,7 +176,6 @@
 		<PromotionInfo> 		<!-- Ranged Expertise I, Unit, Needed for Ljos Expansion -->
 			<Type>PROMOTION_GW_MASTER_BOWS</Type>
 			<Description>TXT_KEY_GW_MASTER_BOWS</Description>
-			<bGraphicalOnly>1</bGraphicalOnly>
 			<PrereqPermission>1</PrereqPermission>
 			<iAirCombat>1</iAirCombat>
 			<iAirCombatLimitBoost>10</iAirCombatLimitBoost>

@@ -9792,7 +9792,7 @@ def exploreLairNoSheaimPrereq(argsList):
 
 def exploreLairNoGoodUnitPrereq(argsList):
 	pUnit, pPlot = argsList
-	if (pUnit.isHasPromotion(getInfoType("PROMOTION_HERO")) or pUnit.isHasPromotion(getInfoType("PROMOTION_HEROIC")) or pUnit.isHasPromotion(getInfoType("PROMOTION_ADVENTURER"))):
+	if (pUnit.getLevel()>9 or pUnit.isHasPromotion(getInfoType("PROMOTION_HERO")) or pUnit.isHasPromotion(getInfoType("PROMOTION_HEROIC")) or pUnit.isHasPromotion(getInfoType("PROMOTION_ADVENTURER"))):
 		return False
 	return True
 	

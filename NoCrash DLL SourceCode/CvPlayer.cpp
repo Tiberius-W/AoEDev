@@ -986,6 +986,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 /*************************************************************************************************/
 	m_bIgnoreFood = false;
 	m_bIgnoreHealth = false;
+	m_bIgnoreHappy = false;
 	m_bInsane = false;
 	m_bSprawling = false;
 /************************************************************************************************/
@@ -3398,6 +3399,10 @@ void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
 	if (GC.getTraitInfo(eTrait).isIgnoreHealth())
 	{
 		setIgnoreHealth(bNewValue);
+	}
+	if (GC.getTraitInfo(eTrait).isIgnoreHappy())
+	{
+		setIgnoreHappy(bNewValue);
 	}
 	if (GC.getTraitInfo(eTrait).isInsane())
 	{
@@ -20617,6 +20622,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 /*************************************************************************************************/
 	pStream->Read(&m_bIgnoreFood);
 	pStream->Read(&m_bIgnoreHealth);
+	pStream->Read(&m_bIgnoreHappy);
 	pStream->Read(&m_bInsane);
 	pStream->Read(&m_bSprawling);
 /************************************************************************************************/
@@ -21359,6 +21365,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 /*************************************************************************************************/
 	pStream->Write(m_bIgnoreFood);
 	pStream->Write(m_bIgnoreHealth);
+	pStream->Write(m_bIgnoreHappy);
 	pStream->Write(m_bInsane);
 	pStream->Write(m_bSprawling);
 /************************************************************************************************/
@@ -27605,6 +27612,15 @@ void CvPlayer::setIgnoreHealth(bool bNewValue)
 {
 	m_bIgnoreHealth = bNewValue;
 }
+bool CvPlayer::isIgnoreHappy() const
+{
+	return m_bIgnoreHappy;
+}
+
+void CvPlayer::setIgnoreHappy(bool bNewValue)
+{
+	m_bIgnoreHappy = bNewValue;
+}
 bool CvPlayer::isInsane() const
 {
 	return m_bInsane;
@@ -30579,19 +30595,65 @@ int CvPlayer::getSpecialistTypeExtraHealth(SpecialistTypes eIndex1) const
 
 void CvPlayer::changeSpecialistTypeExtraHappiness(SpecialistTypes eIndex1, int iChange)
 {
+	CvCity* pLoopCity;
+	int iLoop;
+	int oldvalue = m_paiSpecialistTypeExtraHappiness[eIndex1];
 	if (iChange != 0)
 	{
 		m_paiSpecialistTypeExtraHappiness[eIndex1] = (m_paiSpecialistTypeExtraHappiness[eIndex1] + iChange);
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			if (oldvalue < 0)
+			{
+				pLoopCity->changeSpecialistUnhappiness(-oldvalue * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (oldvalue >0)
+			{
+				pLoopCity->changeSpecialistHappiness(-oldvalue * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (m_paiSpecialistTypeExtraHappiness[eIndex1] < 0)
+			{
+				pLoopCity->changeSpecialistUnhappiness(m_paiSpecialistTypeExtraHappiness[eIndex1] * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (m_paiSpecialistTypeExtraHappiness[eIndex1] > 0)
+			{
+				pLoopCity->changeSpecialistHappiness(m_paiSpecialistTypeExtraHappiness[eIndex1] * pLoopCity->getSpecialistCount(eIndex1));
+			}
+		}
 		AI_makeAssignWorkDirty();
 	}
 }
 
 void CvPlayer::changeSpecialistTypeExtraHealth(SpecialistTypes eIndex1, int iChange)
 {
+	CvCity* pLoopCity;
+	int iLoop;
+	int oldvalue = m_paiSpecialistTypeExtraHealth[eIndex1];
+	
 	if (iChange != 0)
 	{
 		m_paiSpecialistTypeExtraHealth[eIndex1] = (m_paiSpecialistTypeExtraHealth[eIndex1] + iChange);
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			if (oldvalue < 0)
+			{
+				pLoopCity->changeSpecialistBadHealth(-oldvalue * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (oldvalue > 0)
+			{
+				pLoopCity->changeSpecialistGoodHealth(-oldvalue * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (m_paiSpecialistTypeExtraHealth[eIndex1] < 0)
+			{
+				pLoopCity->changeSpecialistBadHealth(m_paiSpecialistTypeExtraHealth[eIndex1] * pLoopCity->getSpecialistCount(eIndex1));
+			}
+			if (m_paiSpecialistTypeExtraHealth[eIndex1] > 0)
+			{
+				pLoopCity->changeSpecialistGoodHealth(m_paiSpecialistTypeExtraHealth[eIndex1] * pLoopCity->getSpecialistCount(eIndex1));
+			}
+		}
 		AI_makeAssignWorkDirty();
+
 	}
 }
 int CvPlayer::getSpecialistTypeExtraCrime(SpecialistTypes eIndex1) const

@@ -1308,6 +1308,8 @@ public:
 	void setIgnoreFood(bool bNewValue);
 	bool isIgnoreHealth() const;
 	void setIgnoreHealth(bool bNewValue);
+	bool isIgnoreHappy() const;
+	void setIgnoreHappy(bool bNewValue);
 	bool isInsane() const;
 	void setInsane(bool bNewValue);
 
@@ -1853,6 +1855,7 @@ protected:
 /*************************************************************************************************/
 	bool m_bIgnoreFood;
 	bool m_bIgnoreHealth;
+	bool m_bIgnoreHappy;
 	bool m_bInsane;
 	bool m_bSprawling;
 /************************************************************************************************/
