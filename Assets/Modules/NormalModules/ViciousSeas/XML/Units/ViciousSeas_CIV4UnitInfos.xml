@@ -2171,6 +2171,84 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<iTier>1</iTier>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Undine Ranger -->
+			<Class>UNITCLASS_RANGER</Class>
+			<Type>UNIT_UNDINE</Type>
+			<Combat>UNITCOMBAT_RECON</Combat>
+			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
+			<iExtraPerception>2</iExtraPerception>
+			<Description>TXT_KEY_UNIT_UNDINE</Description>
+			<Civilopedia>TXT_KEY_UNIT_RANGER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_RANGER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bNoBadGoodies>1</bNoBadGoodies>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<UnitClassUpgrades>
+				<UnitClassUpgradeType>UNITCLASS_BEASTMASTER</UnitClassUpgradeType>
+				<UnitClassUpgradeType>UNITCLASS_DRUID</UnitClassUpgradeType>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_ANIMAL_HANDLING</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMoves>2</iMoves>
+			<iWorkRate>200</iWorkRate>
+			<iCombat>7</iCombat>
+			<iCityAttack>-20</iCityAttack>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
+			<SpecialCargo>SPECIALUNIT_BIRD</SpecialCargo>
+			<DomainCargo>DOMAIN_AIR</DomainCargo>
+			<iCargo>1</iCargo>
+			<iAsset>10</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_UNDINE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<bGraphicalOnly>1</bGraphicalOnly>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bNeverObsolete>1</bNeverObsolete>
+			<iCombatDefense>7</iCombatDefense>
+			<iTier>3</iTier>
+			<PrereqBuildingClass>BUILDINGCLASS_HUNTING_LODGE</PrereqBuildingClass>
 		</UnitInfo>
 		<UnitInfo>        <!-- Trenton -->
 			<Class>UNITCLASS_TRENTON</Class>

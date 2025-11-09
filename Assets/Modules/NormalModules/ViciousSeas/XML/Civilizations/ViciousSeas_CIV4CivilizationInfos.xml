@@ -451,10 +451,6 @@
 					<BuildingType>BUILDING_MONUMENT_DREAM_OF_JOY</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SIEGE_WORKSHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
 					<BuildingType>BUILDING_DREAM_OF_PLENTY</BuildingType>
 				</Building>
@@ -499,6 +495,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_RANGER</UnitClassType>
+					<UnitType>UNIT_UNDINE</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
