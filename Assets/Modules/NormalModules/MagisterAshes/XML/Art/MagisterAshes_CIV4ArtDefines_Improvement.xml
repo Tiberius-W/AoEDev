@@ -31,7 +31,7 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Improvements/CarniveansCamp/CampsiteKultiras.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/FreakShow.dds</Button>
+			<Button>Art/Interface/Buttons/Improvements/CarniveansCampButton.dds</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_GRAVE_OF_ASMODAY</Type>
