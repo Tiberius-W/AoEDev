@@ -876,7 +876,7 @@
 		</UnitArtInfo>	
 		<UnitArtInfo>  <!-- UNIT_NIGHTMARE_AIFON-->
 			<Type>ART_DEF_UNIT_NIGHTMARE_AIFON</Type>
-			<Button>Art/Interface/Buttons/Units/Stygian Guard.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -900,7 +900,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DREAMER</Type> <!-- Dream Aifon -->
-			<Button>Modules/NormalModules/Xtended/XDanalin/Buttons/Children.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonDreamAdeptButton.dds</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -926,7 +926,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DREAMDEFENDER</Type> <!-- Dream Aifon -->
-			<Button>Modules/NormalModules/Xtended/XDanalin/Buttons/Children.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonDreamWarriorButton.dds</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

@@ -1174,12 +1174,12 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Nightmare Aifon hidden nationality safety net--> 
 			<Type>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Type>
-			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Description>
+			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
 		    <bWaterWalking>1</bWaterWalking>
@@ -1244,7 +1244,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Nightmare Hemah --> 
@@ -1322,7 +1322,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Units/Drown.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dreaming Aifon -->
@@ -1334,10 +1334,12 @@
 			<PrereqInBorderSelf>1</PrereqInBorderSelf>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HEMAH</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HEMAH</Promotion>
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
@@ -1398,7 +1400,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Units/Devout.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/DreamingAifonButton.dds</Button>
 			<CityBonuses>
 				<CityBonus>
 					<bApplyRival>1</bApplyRival>
@@ -1418,7 +1420,7 @@
 		<PromotionInfo>		<!-- Dream -->						
 			<Type>PROMOTION_DREAM</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM</Description>
-			<Button>Art/Interface/Buttons/Races/Race_Angel.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/Dream.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
