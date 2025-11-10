@@ -6,7 +6,12 @@
 <!-- Promotion Infos -->
 <Civ4PromotionInfos xmlns="x-schema:CursedBlood_CIV4UnitSchema.xml">
 	<PromotionInfos>
-			<PromotionInfo>		<!-- Werewolf Form -->
+			<PromotionInfo>		<!-- Werewolf -->
+			<Type>PROMOTION_WEREWOLF</Type>
+			<iPromotionRandomApplyChance>3</iPromotionRandomApplyChance>
+			<PromotionRandomApply>PROMOTION_WEREWOLF_FORM2</PromotionRandomApply>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Werewolf Form -->
 			<Type>PROMOTION_WEREWOLF_FORM1</Type>
 			<Description>TXT_KEY_PROMOTION_WEREWOLF_FORM1</Description>
 			<bNoXP>1</bNoXP>
@@ -14,7 +19,8 @@
 			<ReplaceArtType>ART_DEF_UNIT_RAVENOUS_WEREWOLF</ReplaceArtType>
 			<bFreeUnit>1</bFreeUnit>
 			<bNoSupply>1</bNoSupply>
-			<iExtraCombatStr>2</iExtraCombatStr>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iCombatPercent>15</iCombatPercent>
 			<iMovesChange>2</iMovesChange>
 			<iCombatHealPercent>10</iCombatHealPercent>
 			<iPromotionDuration>1</iPromotionDuration>
@@ -28,7 +34,8 @@
 			<bNoXP>1</bNoXP>
 			<Button>Modules/NormalModules/CursedBlood/Art/Interface/Buttons/Promotions/BloodMoonRage.dds</Button>
 			<ReplaceArtType>ART_DEF_UNIT_RAVENOUS_WEREWOLF</ReplaceArtType>
-			<iExtraCombatStr>2</iExtraCombatStr>
+			<iExtraCombatStr>1</iExtraCombatStr>
+			<iCombatPercent>15</iCombatPercent>
 			<iMovesChange>2</iMovesChange>
 			<iCombatHealPercent>10</iCombatHealPercent>
 			<iPromotionDuration>3</iPromotionDuration>

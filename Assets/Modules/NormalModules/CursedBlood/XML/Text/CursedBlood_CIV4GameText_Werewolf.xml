@@ -7,11 +7,11 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_BLOODMOON</Tag>
-		<English>Blood Moon</English>
-		<French>Blood Moon</French>
-		<German>Blood Moon</German>
-		<Italian>Blood Moon</Italian>
-		<Spanish>Blood Moon</Spanish>
+		<English>Blood Frenzy</English>
+		<French>Blood Frenzy</French>
+		<German>Blood Frenzy</German>
+		<Italian>Blood Frenzy</Italian>
+		<Spanish>Blood Frenzy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_BLOODMOON_HELP</Tag>
