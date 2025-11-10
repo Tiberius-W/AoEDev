@@ -888,6 +888,21 @@
 						<LateArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</MiddleArtDefineTag>
 					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</MiddleArtDefineTag>
+					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>	

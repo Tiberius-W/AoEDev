@@ -248,6 +248,70 @@ their pools for a lethal, watery kis</Spanish>
 		<Spanish>When we dream, we focus on what is right in front of us, in clear and detailed hallucinations. But what about the scenery? The crowd passing by on the street, the servant dusting the bookshelves or the children playing in the street, they have no clear or memorable form; they are just there.</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_WET_DREAM</Tag>
+		<English>Dream of Love</English>
+		<French>Dream of Love</French>
+		<German>Dream of Love</German>
+		<Italian>Dream of Love</Italian>
+		<Spanish>Dream of Love</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_DREAM_OF_CARE</Tag>
+		<English>Dream of Care</English>
+		<French>Dream of Care</French>
+		<German>Dream of Care</German>
+		<Italian>Dream of Care</Italian>
+		<Spanish>Dream of Care</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_DREAM_OF_THE_FEAST</Tag>
+		<English>Dream of the Feast</English>
+		<French>Dream of the Feast</French>
+		<German>Dream of the Feast</German>
+		<Italian>Dream of the Feast</Italian>
+		<Spanish>Dream of the Feast</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_DREAM_OF_PLENTY</Tag>
+		<English>Dream of Plenty</English>
+		<French>Dream of Plenty</French>
+		<German>Dream of Plenty</German>
+		<Italian>Dream of Plenty</Italian>
+		<Spanish>Dream of Plenty</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_DREAM_OF_THE_HUNT</Tag>
+		<English>Dream of the Hunt</English>
+		<French>Dream of the Hunt</French>
+		<German>Dream of the Hunt</German>
+		<Italian>Dream of the Hunt</Italian>
+		<Spanish>Dream of the Hunt</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
+		<English>Bezeri</English>
+		<French>Bezeri</French>
+		<German>Bezeri</German>
+		<Italian>Bezeri</Italian>
+		<Spanish>Bezeri</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
+		<English>Bezeri</English>
+		<French>Bezeri</French>
+		<German>Bezeri</German>
+		<Italian>Bezeri</Italian>
+		<Spanish>Bezeri</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
+		<English>Bezeri</English>
+		<French>Bezeri</French>
+		<German>Bezeri</German>
+		<Italian>Bezeri</Italian>
+		<Spanish>Bezeri</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
 		<English>Bezeri</English>
 		<French>Bezeri</French>
