@@ -501,6 +501,10 @@
 					<UnitType>UNIT_UNDINE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_THIEF</UnitClassType>
+					<UnitType>UNIT_NIGHTMAREHAG</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>

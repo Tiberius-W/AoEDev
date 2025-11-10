@@ -344,6 +344,7 @@
 			<Description>TXT_KEY_SPELL_FEAROFISOLATION</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_FEAROFISOLATION_HELP</Help>
+			<PromotionPrereq1>PROMOTION_HATEFUL_GLARE</PromotionPrereq1>
 			<SpellClasses>
 				<SpellClass>
 					<SpellClassType>SPELLCLASS_OFFENSIVE</SpellClassType>
@@ -367,7 +368,7 @@
 			<Sound>AS3D_SPELL_SPRING</Sound>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/FearofIsolation.dds</Button>
 			<AddPromotions>
-				<AddPromotion>PROMOTION_HIDDEN_NATIONALITY</AddPromotion>
+				<AddPromotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</AddPromotion>
 			</AddPromotions>
 		</SpellInfo>
 	</SpellInfos>

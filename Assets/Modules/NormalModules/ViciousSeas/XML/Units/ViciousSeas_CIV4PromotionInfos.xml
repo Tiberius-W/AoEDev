@@ -1515,5 +1515,21 @@
 			</TerrainDefenses>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SirensCall.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Hateful Glare -->
+			<Type>PROMOTION_HATEFUL_GLARE</Type>
+			<Description>TXT_KEY_PROMOTION_HATEFUL_GLARE</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyEnemy>1</bApplyEnemy>
+					<bApplyRival>1</bApplyRival>
+					<fHappy>-0.25</fHappy>
+					<fCrime>1</fCrime>
+					<iBonusRange>1</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<iMinLevel>-1</iMinLevel>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/NightmareHag.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

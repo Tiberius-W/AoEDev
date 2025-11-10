@@ -216,20 +216,20 @@ their pools for a lethal, watery kis</Spanish>
 		<Spanish>[ICON_BULLET]Causes a single neutral or enemy unit to be disguised as one of the horrors of the dream, marking them for attack.</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
+		<Tag>TXT_KEY_UNIT_NIGHTMAREHAG</Tag>
+		<English>Nightmare Hag</English>
+		<French>Nightmare Hag</French>
+		<German>Nightmare Hag</German>
+		<Italian>Nightmare Hag</Italian>
+		<Spanish>Nightmare Hag</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
+		<Tag>TXT_KEY_PROMOTION_HATEFUL_GLARE</Tag>
+		<English>Hateful Glare</English>
+		<French>Hateful Glare</French>
+		<German>Hateful Glare</German>
+		<Italian>Hateful Glare</Italian>
+		<Spanish>Hateful Glare</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>

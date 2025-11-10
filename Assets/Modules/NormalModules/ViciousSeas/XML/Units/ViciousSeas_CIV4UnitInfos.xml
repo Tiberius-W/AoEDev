@@ -2253,6 +2253,71 @@
 			<iCombatDefense>7</iCombatDefense>
 			<iTier>3</iTier>
 			<PrereqBuildingClass>BUILDINGCLASS_HUNTING_LODGE</PrereqBuildingClass>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Thief - Nightmare Hag-->
+			<Class>UNITCLASS_THIEF</Class>
+			<Type>UNIT_NIGHTMAREHAG</Type>
+			<Combat>UNITCOMBAT_ROGUE</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<iInvisibleLevel>1</iInvisibleLevel>
+			<Description>TXT_KEY_UNIT_NIGHTMAREHAG</Description>
+			<Civilopedia>TXT_KEY_UNIT_NIGHTMAREHAG_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_NIGHTMAREHAG_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<UnitClassUpgrades>
+				<UnitClassUpgradeType>UNITCLASS_ASSASSIN</UnitClassUpgradeType>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HATEFUL_GLARE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<PrereqTech>TECH_HUNTING</PrereqTech>
+			<iCost>60</iCost>
+			<iMoves>2</iMoves>
+			<iWorkRate>200</iWorkRate>
+			<iCombat>4</iCombat>
+			<iCombatDefense>1</iCombatDefense>
+			<iAsset>4</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_HAG</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<iTier>2</iTier>
+			<PrereqBuildingClass>BUILDINGCLASS_THIEVES_DEN</PrereqBuildingClass>
 		</UnitInfo>
 		<UnitInfo>        <!-- Trenton -->
 			<Class>UNITCLASS_TRENTON</Class>
