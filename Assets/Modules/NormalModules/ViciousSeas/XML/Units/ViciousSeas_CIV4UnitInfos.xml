@@ -2179,8 +2179,8 @@
 			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
 			<iExtraPerception>2</iExtraPerception>
 			<Description>TXT_KEY_UNIT_UNDINE</Description>
-			<Civilopedia>TXT_KEY_UNIT_RANGER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_RANGER_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_UNDINE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_UNDINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -2242,6 +2242,10 @@
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SIREN_VS</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

@@ -952,7 +952,7 @@
 		</UnitArtInfo>	
 		<UnitArtInfo> <!-- UNIT_UNDINE -->
 			<Type>ART_DEF_UNIT_UNDINE</Type>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/Undine.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/UndineButton.dds</Button>
 			<fScale>24.8</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

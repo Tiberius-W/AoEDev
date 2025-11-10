@@ -697,7 +697,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SeaSneak/SeaSneak.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SeaSneak.dds</Button>
 			<iMinLevel>6</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Sea Sneak SPELL-->
@@ -751,7 +751,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SeaSneak/SeaSneak.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SeaSneak.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Sea Stealth  -->
@@ -1452,6 +1452,68 @@
 					<iPrereqApplications>1</iPrereqApplications>
 				</PrereqPromotionOR>
 			</PrereqPromotionORs>
+		</PromotionInfo>	
+		<PromotionInfo>		<!-- Siren -->
+			<Type>PROMOTION_SIREN_VS</Type>
+			<Description>TXT_KEY_PROMOTION_SIREN_VS</Description>
+			<PlotEffectAttacks>
+				<PlotEffectAttack>
+					<PlotEffectType>PLOT_EFFECT_DREAMWORLD</PlotEffectType>
+					<iPlotEffectAttack>30</iPlotEffectAttack>
+				</PlotEffectAttack>
+			</PlotEffectAttacks>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/UndineButton.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- SLEEPWALKING -->
+			<Type>PROMOTION_SLEEPWALKING</Type>
+			<Description>TXT_KEY_PROMOTION_SLEEPWALKING</Description>
+			<Button>Art/Interface/Buttons/Promotions/Waterwalking.dds</Button>
+		    <bWaterWalking>1</bWaterWalking>
+			<iVisibilityChange>2</iVisibilityChange>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- I Cant Swim!  -->
+			<Type>PROMOTION_ICANTSWIM</Type>
+			<Description>TXT_KEY_PROMOTION_ICANTSWIM</Description>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_SLEEPWALKING</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<iChanceFirstStrikesChange>-1</iChanceFirstStrikesChange>
+			<PrereqTerrains>
+				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_OCEAN_DEEP</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLIGHTED_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLACKWATER</PrereqTerrain>
+			</PrereqTerrains>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLIGHTED_COAST</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<iTerrainDefense>-25</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SirensCall.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
