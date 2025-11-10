@@ -925,7 +925,7 @@
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_DREAMDEFENDER</Type> <!-- Dream Aifon -->
+			<Type>ART_DEF_UNIT_DREAMDEFENDER</Type> <!-- Dream defender Aifon -->
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonDreamWarriorButton.dds</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>

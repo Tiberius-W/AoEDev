@@ -1257,6 +1257,7 @@
 			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
 			</PrereqCivilizations>
@@ -1328,16 +1329,16 @@
 		<PromotionInfo>		<!-- Nightmare Hateful Glare --> 
 			<Type>PROMOTION_NIGHTMARE_HATEFUL_GLARE</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
-			<UnitArtStyleType>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</UnitArtStyleType>
 			<ReplaceArtType>ART_DEF_UNIT_HATEFUL_HORROR</ReplaceArtType>
-			<PrereqPromotionORs>
-				<PrereqPromotionOR>
-					<PromotionType>PROMOTION_HATEFUL_GLARE</PromotionType>
-					<iPrereqApplications>1</iPrereqApplications>
-				</PrereqPromotionOR>
-			</PrereqPromotionORs>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_NIGHTMAREHAG</PrereqUnit>
+				<PrereqUnit>UNIT_THIEF</PrereqUnit>
+				<PrereqUnit>UNIT_ASSASSIN</PrereqUnit>
+				<PrereqUnit>UNIT_SHADOW</PrereqUnit>
+			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
 			</PrereqCivilizations>
@@ -1611,6 +1612,14 @@
 				</CityBonus>
 			</CityBonuses>
 			<iMinLevel>-1</iMinLevel>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/NightmareHag.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
