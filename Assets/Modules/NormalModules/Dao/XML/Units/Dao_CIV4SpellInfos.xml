@@ -130,7 +130,8 @@
 			<PromotionPrereq1>PROMOTION_POTENCY_HERMIT</PromotionPrereq1>
 			<iDelay>7</iDelay>
 			<bInBordersOnly>1</bInBordersOnly>
-			<bAllowAI>0</bAllowAI>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
 			<PyRequirement>reqElementalEquilibrium(pCaster)</PyRequirement>
 			<PyResult>spellElementalEquilibrium(pCaster)</PyResult>

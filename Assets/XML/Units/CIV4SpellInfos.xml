@@ -1336,6 +1336,33 @@
 			<Sound>AS3D_SWORD_CHECK</Sound>
 			<Button>Art/Interface/Buttons/Promotions/Enchantedblade.dds</Button>
 		</SpellInfo>
+		<SpellInfo>			<!-- Enchantment 1 - Accelerate -->
+		<Type>SPELL_ACCELERATE</Type>
+			<Description>TXT_KEY_SPELL_ACCELERATE</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_ACCELERATE_HELP</Help>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_ENCHANTMENT</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_BUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_ENCHANTMENT1</PromotionPrereq1>
+			<iPromotionDuration>1</iPromotionDuration>
+			<bAllowAI>1</bAllowAI>
+			<bIsAutoCastable>1</bIsAutoCastable>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<PyResult>spellAccelerate(pCaster)</PyResult>
+			<PyRequirement>reqAccelerate(pCaster)</PyRequirement>
+			<Effect>EFFECT_WIND_SWIRL</Effect>
+			<Sound>AS3D_SPELL_HASTE</Sound>
+			<Button>Art/Interface/Buttons/Promotions/Accelerate.dds</Button>
+		</SpellInfo>
 		<SpellInfo>			<!-- Enchantment 1 - Repair -->
 			<Type>SPELL_REPAIR</Type>
 			<Description>TXT_KEY_SPELL_REPAIR</Description>
@@ -1586,33 +1613,6 @@
 			<Sound>AS3D_SPELL_FIRE_ELEMENTAL</Sound>
 			<Button>Art/Interface/Buttons/Units/Fire Elemental.dds</Button>
 		</SpellInfo>
-<!--	<SpellInfo>	-->		<!-- Force 1 - Accelerate -->
-   <!-- <Type>SPELL_ACCELERATE</Type>
-			<Description>TXT_KEY_SPELL_ACCELERATE</Description>
-			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
-			<Help>TXT_KEY_SPELL_ACCELERATE_HELP</Help>
-			<SpellClasses>
-				<SpellClass>
-					<SpellClassType>SPELLCLASS_FORCE</SpellClassType>
-					<bSpellClass>1</bSpellClass>
-				</SpellClass>
-				<SpellClass>
-					<SpellClassType>SPELLCLASS_BUFF</SpellClassType>
-					<bSpellClass>1</bSpellClass>
-				</SpellClass>
-			</SpellClasses>
-			<PromotionPrereq1>PROMOTION_FORCE1</PromotionPrereq1>
-			<iPromotionDuration>1</iPromotionDuration>
-			<bAllowAI>1</bAllowAI>
-			<bIsAutoCastable>1</bIsAutoCastable>
-			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
-			<bHasCasted>1</bHasCasted>
-			<PyResult>spellAccelerate(pCaster)</PyResult>
-			<PyRequirement>reqAccelerate(pCaster)</PyRequirement>
-			<Effect>EFFECT_WIND_SWIRL</Effect>
-			<Sound>AS3D_SPELL_HASTE</Sound>
-			<Button>Art/Interface/Buttons/Promotions/Accelerate.dds</Button>
-		</SpellInfo> -->
 		<SpellInfo>			<!-- Force 1 - Temperance -->
 			<Type>SPELL_TEMPERANCE</Type>
 			<Description>TXT_KEY_SPELL_TEMPERANCE</Description>
