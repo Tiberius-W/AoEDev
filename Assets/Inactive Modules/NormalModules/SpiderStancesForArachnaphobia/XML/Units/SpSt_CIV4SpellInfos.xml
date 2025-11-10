@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Spell Infos -->
+<Civ4SpellInfos xmlns="x-schema:SpSt_CIV4UnitSpellSchema.xml">
+	<SpellInfos>
+		<SpellInfo>			<!-- Go Hunting-->
+			<Type>SPELL_GO_HUNTING_SPIDER_STANCES</Type>
+			<Description>TXT_KEY_SPELL_GO_HUNTING_SPIDER_STANCES</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_GO_HUNTING_SPIDER_STANCES_HELP</Help>
+			<PromotionPrereq1>PROMOTION_SPIDER_TERRITORIAL</PromotionPrereq1>
+			<bAllowAI>0</bAllowAI>
+			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SPIDER_HUNTING</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_SPIDER_TERRITORIAL</RemovePromotion>
+			</RemovePromotions>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<bInBordersOnly>1</bInBordersOnly>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_HIDE</Sound>
+			<Button>Art/Interface/Buttons/Promotions/HiddenNationality.dds</Button>
+		</SpellInfo>
+		<SpellInfo>			<!-- Protect Territory-->
+			<Type>SPELL_PROTECT_TERRITORY_SPIDER_STANCES</Type>
+			<Description>TXT_KEY_SPELL_PROTECT_TERRITORY_SPIDER_STANCES</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_PROTECT_TERRITORY_SPIDER_STANCES_HELP</Help>
+			<PromotionPrereq1>PROMOTION_SPIDER_HUNTING</PromotionPrereq1>
+			<bAllowAI>0</bAllowAI>
+			<bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SPIDER_TERRITORIAL</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_SPIDER_HUNTING</RemovePromotion>
+			</RemovePromotions>
+			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<bInBordersOnly>1</bInBordersOnly>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_REVEAL_SELF</Sound>
+			<Button>Art/Interface/Buttons/Spells/Declarenationality.dds</Button>
+		</SpellInfo>
+	</SpellInfos>
+</Civ4SpellInfos>

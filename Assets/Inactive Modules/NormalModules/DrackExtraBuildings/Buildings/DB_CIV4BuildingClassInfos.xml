@@ -4,7 +4,7 @@
 <!-- -->
 <!-- Building Class Infos -->
 <!-- Created by Drackzahn -->
-<Civ4BuildingClassInfos xmlns="x-schema:DrackBuildings_CIV4BuildingsSchema.xml">
+<Civ4BuildingClassInfos xmlns="x-schema:DB_CIV4BuildingsSchema.xml">
     <BuildingClassInfos>
         <!-- General Buildings -->
         <BuildingClassInfo> <!-- High Walls -->
