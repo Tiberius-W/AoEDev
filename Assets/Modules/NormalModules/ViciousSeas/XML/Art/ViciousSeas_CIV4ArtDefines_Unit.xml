@@ -851,7 +851,7 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-		<UnitArtInfo> <!-- UNIT_HEMAH COPY -->
+		<UnitArtInfo> <!-- UNIT_HEMAH COPY --> <!-- AIFON START -->
 			<Type>ART_DEF_UNIT_HEMAHS_REFLECTION</Type>
 			<Button>Art/Interface/Buttons/Units/Hemah.dds</Button>
 			<fScale>0.46</fScale>
@@ -881,9 +881,9 @@
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Nightmare Aifons/NightmareAifon.nif</NIF>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Nightmare/NightmareAifon.nif</NIF>
 			<KFM>art/animations/warrior/warrior.kfm</KFM>
-			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Nightmare Aifons/AnglerMan.nif</SHADERNIF>
+			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Nightmare/AnglerMan.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -905,9 +905,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/Dreamer/Mage_Water.nif</NIF>
-			<KFM>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/Dreamer/Mage_Water.kfm</KFM>
-			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/Dreamer/Mage_Water_FX.nif</SHADERNIF>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dreamer/Mage_Water.nif</NIF>
+			<KFM>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dreamer/Mage_Water.kfm</KFM>
+			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dreamer/Mage_Water_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -931,9 +931,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/DreamDefender/Mage_Water.nif</NIF>
-			<KFM>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/Dreamer/Mage_Water.kfm</KFM>
-			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dream Aifons/DreamDefender/Mage_Water_FX.nif</SHADERNIF>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Defender/Mage_Water.nif</NIF>
+			<KFM>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Dreamer/Mage_Water.kfm</KFM>
+			<SHADERNIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Defender/Mage_Water_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -980,7 +980,7 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/NightmareHag/NightmareHag.nif</NIF>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Hag/NightmareHag.nif</NIF>
 			<KFM>art/units/civs/lanun/seahag/medievalspy.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
@@ -997,6 +997,52 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_LOSHA_SELECT</SelectionSound>
 			<ActionSound>AS3D_LOSHA_ORDER</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>  <!-- UNIT_WORKER in UNIT_ARTSTYLE_AIFON -->
+			<Type>ART_DEF_UNIT_WORKER_AIFON</Type>
+			<Button>Art/Interface/Buttons/Units/Worker.dds</Button>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/worker/worker.nif</NIF>
+			<KFM>Art/Units/Worker/Worker.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.9</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>  <!-- UNIT_HATEFUL_HORROR -->
+			<Type>ART_DEF_UNIT_HATEFUL_HORROR</Type>
+			<Button>Art/Interface/Buttons/Units/Scions/abomination.dds</Button>
+			<fScale>40.0</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Horror/HorrorTent.nif</NIF>
+			<KFM>Art/Units/Civs/Scions/Horror/Horror.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.05</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.15</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
 		</UnitArtInfo>
 	</UnitArtInfos>
 </Civ4ArtDefines>

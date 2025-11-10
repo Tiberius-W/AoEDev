@@ -553,10 +553,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
-					<UnitType>UNIT_SETTLER_DREAM_AIFON</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
