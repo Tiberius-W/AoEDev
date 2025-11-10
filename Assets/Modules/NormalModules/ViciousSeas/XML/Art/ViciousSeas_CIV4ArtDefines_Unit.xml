@@ -1000,7 +1000,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>  <!-- UNIT_WORKER in UNIT_ARTSTYLE_AIFON -->
 			<Type>ART_DEF_UNIT_WORKER_AIFON</Type>
-			<Button>Art/Interface/Buttons/Units/Worker.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/FacelessWorker.dds</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

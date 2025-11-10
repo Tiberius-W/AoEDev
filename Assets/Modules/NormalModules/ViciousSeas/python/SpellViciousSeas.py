@@ -237,3 +237,39 @@ def spellSeekLeviathan(caster):
 					iTeam = pPlayer.getTeam()
 					pPlot.setRevealed(iTeam, True, False, TeamTypes.NO_TEAM)
 					CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("We have found the monster!", ()),'',1,'Art/Interface/Buttons/Units/Leviathan.dds',ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
+
+
+def reqGlimpseUnseen(caster):
+	pPlayer = gc.getPlayer(caster.getOwner())
+	if pPlayer.isHuman() == False:
+		iTeam = gc.getPlayer(caster.getOwner()).getTeam()
+		pTeam = gc.getTeam(iTeam)
+		if pTeam.getAtWarCount(True) < 2:
+			return False
+	return True
+
+def spellGlimpseUnseen(caster):
+        getInfoType         = gc.getInfoTypeForString
+        pPlot = caster.plot()
+	pPlayer = gc.getPlayer(caster.getOwner())
+	iHero = getInfoType('PROMOTION_HERO')
+	iPromotionBerserk = getInfoType('PROMOTION_ENRAGED')
+	iPromotionHidden = getInfoType('PROMOTION_HIDDEN_NATIONALITY')
+	iAifonTeam = pPlayer.getTeam()
+
+	for i in xrange (CyMap().numPlots()): # check whole map
+                # all non-Aifon, non Berserk, units receive promotion wintered
+                pPlot = CyMap().plotByIndex(i)
+                for e in range(pPlot.getNumUnits()): 
+                        pUnit = pPlot.getUnit(e)
+                        if not pUnit.isHasPromotion(iHero):                                        # heroes
+                                if not pUnit.isHasPromotion(iPromotionBerserk):
+                                        pOwner = gc.getPlayer(pUnit.getOwner())
+                                        iOwnerTeam = pOwner.getTeam()
+                                        if iOwnerTeam != iAifonTeam:
+                                                CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_CONSUME_PALADIN", ()),'',1,'Art/Interface/Buttons/Units/Beast of Agares.dds',ColorTypes(8),caster.getX(),caster.getY(),True,True)
+                                                pUnit.setHasPromotion(iPromotionBerserk, True)
+                                                pUnit.setPromotionDuration(iPromotionBerserk, 5)
+                                                pUnit.setHasPromotion(iPromotionHidden, True)
+                                                pUnit.setPromotionDuration(iPromotionHidden, 5)
+

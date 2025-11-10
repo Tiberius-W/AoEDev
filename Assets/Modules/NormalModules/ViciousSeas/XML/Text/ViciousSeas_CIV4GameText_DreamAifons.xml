@@ -296,6 +296,53 @@ their pools for a lethal, watery kis</Spanish>
 		<Spanish>Dream of Colors</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_SPELL_GLIMPSE_UNSEEN</Tag>
+		<English>Glimpse of the Unseen</English>
+		<French>Glimpse of the Unseen</French>
+		<German>Glimpse of the Unseen</German>
+		<Italian>Glimpse of the Unseen</Italian>
+		<Spanish>Glimpse of the Unseen</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_SPELL_GLIMPSE_UNSEEN_PEDIA</Tag>
+		<English>Lo! The promised day has come!
+Lo! The cheering, jeering faces laugh!
+Lo! the sun has peeled back its skin!
+Lo! the King of Nightmare nears!</English>
+		<French>Lo! The promised day has come!
+Lo! The cheering, jeering faces laugh!
+Lo! the sun has peeled back its skin!
+Lo! the King of Nightmare nears!</French>
+		<German>Lo! The promised day has come!
+Lo! The cheering, jeering faces laugh!
+Lo! the sun has peeled back its skin!
+Lo! the King of Nightmare nears!</German>
+		<Italian>Lo! The promised day has come!
+Lo! The cheering, jeering faces laugh!
+Lo! the sun has peeled back its skin!
+Lo! the King of Nightmare nears!</Italian>
+		<Spanish>Lo! The promised day has come!
+Lo! The cheering, jeering faces laugh!
+Lo! the sun has peeled back its skin!
+Lo! the King of Nightmare nears!</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_SPELL_GLIMPSE_UNSEEN_STRATEGY</Tag>
+		<English>Use Glimpse of the Unseen to drown the world in chaos for 5 turns, giving the Aifons a valuable window to stabilise in a war, or cripple a stronger foe who is surrounded by other factions!</English>
+		<French>Use Glimpse of the Unseen to drown the world in chaos for 5 turns, giving the Aifons a valuable window to stabilise in a war, or cripple a stronger foe who is surrounded by other factions!</French>
+		<German>Use Glimpse of the Unseen to drown the world in chaos for 5 turns, giving the Aifons a valuable window to stabilise in a war, or cripple a stronger foe who is surrounded by other factions!</German>
+		<Italian>Use Glimpse of the Unseen to drown the world in chaos for 5 turns, giving the Aifons a valuable window to stabilise in a war, or cripple a stronger foe who is surrounded by other factions!</Italian>
+		<Spanish>Use Glimpse of the Unseen to drown the world in chaos for 5 turns, giving the Aifons a valuable window to stabilise in a war, or cripple a stronger foe who is surrounded by other factions!</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_SPELL_GLIMPSE_UNSEEN_HELP</Tag>
+		<English>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</English>
+		<French>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</French>
+		<German>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</German>
+		<Italian>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</Italian>
+		<Spanish>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
 		<English>Bezeri</English>
 		<French>Bezeri</French>

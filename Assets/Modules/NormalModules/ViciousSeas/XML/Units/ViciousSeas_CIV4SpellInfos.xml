@@ -371,5 +371,25 @@
 				<AddPromotion>PROMOTION_NIGHTMARE_AIFON</AddPromotion>
 			</AddPromotions>
 		</SpellInfo>
+		<SpellInfo>			<!-- Glimpse the Unseen -->							<!-- Worldspell -->
+			<Type>SPELL_GLIMPSE_UNSEEN</Type>
+			<Description>TXT_KEY_SPELL_GLIMPSE_UNSEEN</Description>
+			<Civilopedia>TXT_KEY_SPELL_GLIMPSE_UNSEEN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_SPELL_GLIMPSE_UNSEEN_STRATEGY</Strategy>
+			<Help>TXT_KEY_SPELL_GLIMPSE_UNSEEN_HELP</Help>
+			<CivilizationPrereq>CIVILIZATION_DREAM_AIFONS</CivilizationPrereq>
+			<bCityAction>1</bCityAction>
+			<TechPrereq>TECH_FESTIVALS</TechPrereq>
+			<bAllowAI>1</bAllowAI>
+			<bGlobal>1</bGlobal>
+			<iAIWeight>50</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<PyResult>spellGlimpseUnseen(pCaster)</PyResult>
+			<PyRequirement>reqGlimpseUnseen(pCaster)</PyRequirement>
+			<Effect>EFFECT_SNOWFALL</Effect>
+			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/GlimpseUnseen.dds</Button>
+		</SpellInfo>
 	</SpellInfos>
 </Civ4SpellInfos>
