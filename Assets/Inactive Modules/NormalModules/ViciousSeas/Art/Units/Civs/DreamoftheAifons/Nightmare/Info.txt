@@ -1,0 +1,3 @@
+Warrior KFM
+fScale 2.42
+fShadowscale 0.18
