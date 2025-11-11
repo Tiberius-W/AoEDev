@@ -23,7 +23,7 @@
 			<Description>Ball of fire for use as a catapult rock or ship projectile.</Description>
 			<fScale>1.0</fScale>
 			<fUpdateRate>1.0</fUpdateRate>
-			<Path>Art/Units/Fireball/wolf.nif</Path>
+			<Path>Art/Units/summons/Fireball/wolf.nif</Path>
 			<bIsProjectile>1</bIsProjectile>
 			<fSpeed>200.0</fSpeed>
 			<fArcValue>4.0</fArcValue>

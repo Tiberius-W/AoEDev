@@ -1013,19 +1013,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_LESS</Tag>
-		<English>[ICON_BULLET]Reduced chance to defend the stack</English>
-		<French>[ICON_BULLET]Diminue les chances de défendre la pile</French>
-		<German>[ICON_BULLET]Reduziert die Chance den Truppenverband zu verteidigen</German>
-		<Italian>[ICON_BULLET]Reduced chance to defend the stack</Italian>
-		<Spanish>[ICON_BULLET]Reduced chance to defend the stack</Spanish>
+		<English>[ICON_BULLET]Reduced chance to defend the stack (effective str decreased by %d1 %)</English>
+		<French>[ICON_BULLET]Diminue les chances de défendre la pile (effective str decreased by %d1 %)</French>
+		<German>[ICON_BULLET]Reduziert die Chance den Truppenverband zu verteidigen (effective str decreased by %d1 %)</German>
+		<Italian>[ICON_BULLET]Reduced chance to defend the stack (effective str decreased by %d1 %)</Italian>
+		<Spanish>[ICON_BULLET]Reduced chance to defend the stack (effective str decreased by %d1 %)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_MORE</Tag>
-		<English>[ICON_BULLET]Increased chance to defend the stack</English>
-		<French>[ICON_BULLET]Augmente les chances de défendre la pile</French>
-		<German>[ICON_BULLET]Erhöht die Chance den Truppenverband zu verteidigen</German>
-		<Italian>[ICON_BULLET]Increased chance to defend the stack</Italian>
-		<Spanish>[ICON_BULLET]Increased chance to defend the stack</Spanish>
+		<English>[ICON_BULLET]Increased chance to defend the stack (effective str increased by %d1 %)</English>
+		<French>[ICON_BULLET]Augmente les chances de défendre la pile (effective str increased by %d1 %)</French>
+		<German>[ICON_BULLET]Erhöht die Chance den Truppenverband zu verteidigen (effective str increased by %d1 %)</German>
+		<Italian>[ICON_BULLET]Increased chance to defend the stack (effective str increased by %d1 %)</Italian>
+		<Spanish>[ICON_BULLET]Increased chance to defend the stack (effective str increased by %d1 %)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_CITY_ATTACK_TEXT</Tag>

@@ -12840,6 +12840,12 @@
 					<fTrainXPCap>32</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
+				<TrainXPRates>
+				<TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<fTrainXPRate>0.35</fTrainXPRate>
+				</TrainXPRate>
+			</TrainXPRates>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Resplendent Minaret                                        Malakim UB -->
 			<BuildingClass>BUILDINGCLASS_MALAKIM_TEMPLE_MIRROR</BuildingClass>

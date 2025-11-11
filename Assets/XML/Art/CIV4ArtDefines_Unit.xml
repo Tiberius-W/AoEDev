@@ -17294,7 +17294,7 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Illians/Horse Archer2/HorseArcher.nif</NIF>
+			<NIF>Art/Units/Civs/Illians/HorseArcher2/HorseArcher.nif</NIF>
 			<KFM>Art/animations/HorseArcher/HorseArcher blood.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
@@ -17317,7 +17317,7 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Illians/Horse Archer2/HorseArcher-Hyapon.nif</NIF>
+			<NIF>Art/Units/Civs/Illians/HorseArcher2/HorseArcher-Hyapon.nif</NIF>
 			<KFM>Art/animations/HorseArcher/HorseArcher blood.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
@@ -17340,7 +17340,7 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Illians/Horse Archer2/HorseArcher-Nightmare.nif</NIF>
+			<NIF>Art/Units/Civs/Illians/HorseArcher2/HorseArcher-Nightmare.nif</NIF>
 			<KFM>Art/animations/HorseArcher/HorseArcher blood.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>

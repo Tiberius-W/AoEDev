@@ -8338,6 +8338,19 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 				}
 			}
 		}
+		if (!isImpassable())
+		{
+			pWorkingCity = getWorkingCity();
+
+			if (NULL != pWorkingCity)
+			{
+				if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
+				{
+					iYield += pWorkingCity->getLocalTerrainYield(getTerrainType(), eYield);
+				}
+			}
+		}
+
 	}
 
 	if (bCity)

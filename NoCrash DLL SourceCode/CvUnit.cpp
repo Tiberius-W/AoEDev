@@ -1246,7 +1246,8 @@ void CvUnit::setupGraphical()
 void CvUnit::convert(CvUnit* pUnit)
 {
 	CvPlot* pPlot = plot();
-
+	CvUnit* pLoopUnit;
+	int iLoop;
 //FfH: Modified by Kael 08/21/2008
 //	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 //	{
@@ -1463,6 +1464,13 @@ void CvUnit::convert(CvUnit* pUnit)
 		if (pUnit->getCommanderUnit() != NULL)
 		{
 			pUnit->getCommanderUnit()->addMinionUnit(getID());
+		}
+		for (pLoopUnit = GET_PLAYER(getOwnerINLINE()).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER(getOwnerINLINE()).nextUnit(&iLoop))
+		{
+			if (pLoopUnit->getSummoner() == pUnit->getID())
+			{
+				pLoopUnit->setSummoner(getID());
+			}
 		}
 	}
 	else
@@ -17225,6 +17233,13 @@ float CvUnit::getCasterXPRate() const
 	if (pPlot->isCity())
 	{
 		fXPRate += pCity->getTrainXPRate(getUnitCombatType());
+		for (int i = 0; i < GC.getNumUnitCombatInfos(); i++)
+		{
+			if (isSecondaryUnitCombat((UnitCombatTypes)i))
+			{
+				fXPRate += pCity->getTrainXPRate((UnitCombatTypes)i);
+			}
+		}
 	}
 	return fXPRate;
 }
@@ -27171,6 +27186,13 @@ int CvUnit::getSpellCasterXP() const
 		if (pCity != NULL)
 		{
 			iXPCap += pCity->getTrainXPCap(getUnitCombatType());
+			for (int i = 0; i < GC.getNumUnitCombatInfos(); i++)
+			{
+				if (isSecondaryUnitCombat((UnitCombatTypes)i))
+				{
+					iXPCap += pCity->getTrainXPCap((UnitCombatTypes)i);
+				}
+			}
 		}
 	}
 	if (!(getUnitCombatType() == (UnitCombatTypes)GC.getDefineINT("WORKER_UNITCOMBAT") && GC.getGameINLINE().isOption(GAMEOPTION_NO_WORKER_XP)))

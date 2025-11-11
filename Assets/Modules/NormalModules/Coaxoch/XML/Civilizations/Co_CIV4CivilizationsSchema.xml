@@ -481,6 +481,7 @@
 	<ElementType name="bBarbarianAlly" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bIgnoreFood" content="textOnly" dt:type="boolean"/><!-- the player does not consume food. Fallow and undying traits (dtesh, frozen, infernal, scions) -->
 	<ElementType name="bIgnoreHealth" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bIgnoreHappy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bInsane" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSelectable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSprawling" content="textOnly" dt:type="boolean"/>
@@ -756,6 +757,7 @@
 		<element type="bBarbarianAlly"/>
 		<element type="bIgnoreFood"/>
 		<element type="bIgnoreHealth"/>
+		<element type="bIgnoreHappy"/>
 		<element type="bInsane"/>
 		<element type="bSelectable"/>
 		<element type="bSprawling"/>

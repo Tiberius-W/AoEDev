@@ -32,6 +32,7 @@
 CvCity::CvCity()
 {
 	m_aiSeaPlotYield = new int[NUM_YIELD_TYPES];
+	m_paaiLocalTerrainYield = NULL;
 	m_aiRiverPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiBaseYieldRate = new int[NUM_YIELD_TYPES];
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
@@ -571,6 +572,15 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 void CvCity::uninit()
 {
+	if (m_paaiLocalTerrainYield != NULL)
+	{
+		for (int iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_paaiLocalTerrainYield[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_paaiLocalTerrainYield);
+	}
+	
 	SAFE_DELETE_ARRAY(m_paiNoBonus);
 	SAFE_DELETE_ARRAY(m_paiFreeBonus);
 	SAFE_DELETE_ARRAY(m_paiNumBonuses);
@@ -1011,6 +1021,16 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 /**	END																							**/
 /*************************************************************************************************/
 		m_aiPerCrimeEffectYield[iI] = 0;
+	}
+	FAssertMsg(m_paaiLocalTerrainYield == NULL, "About to leak memory, CvCity::m_paaiLocalTerrainYield is NULL");
+	m_paaiLocalTerrainYield = new int* [GC.getNumTerrainInfos()];
+	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+	{
+		m_paaiLocalTerrainYield[iI] = new int[NUM_YIELD_TYPES];
+		for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+		{
+			m_paaiLocalTerrainYield[iI][iJ] = 0;
+		}
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -5540,7 +5560,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 /*************************************************************************************************/
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
-
+		for (iI = 0 ; iI < GC.getNumTerrainInfos(); iI++)
+		{
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				changeLocalTerrainYield((TerrainTypes)iI, (YieldTypes)iJ, GC.getBuildingInfo(eBuilding).getTerrainYieldChange(iI, iJ) * iChange);
+			}
+		}
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
@@ -10727,6 +10753,60 @@ void CvCity::changeRiverPlotYield(YieldTypes eIndex, int iChange)
 	}
 }
 
+int CvCity::getLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield) const
+{
+	FAssertMsg(eTerrain >= 0, "eTerrain expected to be >= 0");
+	FAssertMsg(eTerrain < GC.getNumTerrainInfos(), "eTerrain expected to be < GC.getNumTerrainInfos");
+	FAssertMsg(eYield >= 0, "eYield expected to be >= 0");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
+
+	return m_paaiLocalTerrainYield[eTerrain][eYield];
+}
+
+int CvCity::getLocalTerrainYield(YieldTypes eYield) const
+{
+	FAssertMsg(0 < GC.getNumTerrainInfos(), "GC.getNumTerrainInfos expected to be >= 0");
+
+	int iYield = 0;
+	for (int iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+	{
+		iYield += getLocalTerrainYield((TerrainTypes)iI, eYield);
+	}
+
+	return iYield;
+}
+
+void CvCity::setLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield, int iValue)
+{
+	FAssertMsg(eTerrain >= 0, "eTerrain expected to be >= 0");
+	FAssertMsg(eTerrain < GC.getNumTerrainInfos(), "eTerrain expected to be < GC.getNumTerrainInfos");
+	FAssertMsg(eYield >= 0, "eYield expected to be >= 0");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
+
+	m_paaiLocalTerrainYield[eTerrain][eYield] = iValue;
+}
+
+void CvCity::changeLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield, int iChange)
+{
+	if (iChange != 0)
+	{
+		setLocalTerrainYield(eTerrain, eYield, getLocalTerrainYield(eTerrain, eYield) + iChange);
+
+		updateYield();
+	}
+}
+
+void CvCity::changeLocalTerrainYield(YieldTypes eYield, int iChange)
+{
+	FAssertMsg(0 < GC.getNumTerrainInfos(), "GC.getNumTerrainInfos() expected to be > 0");
+	if (iChange != 0)
+	{
+		for (int iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+		{
+			changeLocalTerrainYield((TerrainTypes)iI, eYield, iChange);
+		}
+	}
+}
 
 int CvCity::getBaseYieldRate(YieldTypes eIndex)	const
 {
@@ -16827,6 +16907,10 @@ void CvCity::read(FDataStreamBase* pStream)
 
 	pStream->Read(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+	{
+		pStream->Read(NUM_YIELD_TYPES, m_paaiLocalTerrainYield[iI]);
+	}
 	pStream->Read(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Read(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);
@@ -17257,6 +17341,10 @@ void CvCity::write(FDataStreamBase* pStream)
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+	{
+		pStream->Write(NUM_YIELD_TYPES, m_paaiLocalTerrainYield[iI]);
+	}
 	pStream->Write(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Write(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);

@@ -141,10 +141,10 @@ def onUnitCreated(self, argsList):
 	CombatList  = [getInfoType('UNITCOMBAT_ADEPT'),getInfoType('UNITCOMBAT_ARCHER'),getInfoType('UNITCOMBAT_DISCIPLE'),getInfoType('UNITCOMBAT_MELEE'),getInfoType('UNITCOMBAT_MOUNTED'),getInfoType('UNITCOMBAT_RECON')]
 	Race = self.Promotions["Race"]
 	RaceList = list(Race.keys())
-	RaceList.remove(getInfoType('PROMOTION_AVATAR'))
-	RaceList.remove(getInfoType('PROMOTION_DRAGON'))
-	RaceList.remove(getInfoType('PROMOTION_ILLUSION'))
-	RaceList.remove(getInfoType('PROMOTION_PUPPET'))
+	RaceList.remove('Avatar')
+	RaceList.remove('Dragon')
+	RaceList.remove('Illusion')
+	RaceList.remove('Puppet')
 	
  	if pPlayer.hasTrait(getInfoType('TRAIT_GRAND_MARSHAL')) and pUnit.getUnitCombatType() in CombatList and not pUnit.isHasPromotion(getInfoType('PROMOTION_CORPORAL')):
 		pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CORPORAL'),True)

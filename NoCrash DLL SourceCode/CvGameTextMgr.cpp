@@ -13391,11 +13391,11 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(pcNewline);
 		if (GC.getPromotionInfo(ePromotion).getBetterDefenderThanPercent() < 0)
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_LESS"));
+			szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_LESS", -GC.getPromotionInfo(ePromotion).getBetterDefenderThanPercent()));
 		}
 		if (GC.getPromotionInfo(ePromotion).getBetterDefenderThanPercent() > 0)
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_MORE"));
+			szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_BETTER_DEFENDER_THAN_PERCENT_MORE", GC.getPromotionInfo(ePromotion).getBetterDefenderThanPercent()));
 		}
 	}
 	if (GC.getPromotionInfo(ePromotion).getPromotionCombatApply() != NO_PROMOTION)
@@ -20178,6 +20178,13 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS").c_str(), L": ", L"", kBuilding.getSeaPlotYieldChangeArray());
 
+	for (int i = 0; i < GC.getNumTerrainInfos(); i++)
+	{
+		szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_TERRAIN_PLOTS", GC.getTerrainInfo((TerrainTypes)i).getDescription());
+
+		setYieldChangeHelp(szBuffer, L" ", L"", szTempBuffer, kBuilding.getTerrainYieldChangeArray(i));
+
+	}
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_RIVER_PLOTS").c_str(), L": ", L"", kBuilding.getRiverPlotYieldChangeArray());
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS_ALL_CITIES").c_str(), L": ", L"", kBuilding.getGlobalSeaPlotYieldChangeArray());

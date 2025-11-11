@@ -175,6 +175,7 @@
 	<ElementType name="bAllowsNukes" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bMapCentering" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoUnhappiness" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoUnhealthiness" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNeverCapture" content="textOnly" dt:type="boolean"/>
@@ -835,6 +836,7 @@
 		<element type="bAllowsNukes"/>
 		<element type="bMapCentering"/>
 		<element type="bNoUnhappiness"/>
+		<element type="bNoUnhealthiness"/>
 		<element type="bNoUnhealthyPopulation"/>
 		<element type="bBuildingOnlyHealthy"/>
 		<element type="bNeverCapture"/>

@@ -11167,12 +11167,21 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Spanish>[ICON_BULLET]En esta ciudad no hay [ICON_UNHEALTHY]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_BUILDING_TERRAIN_PLOTS</Tag>
+		<English> on %s1 Tiles</English>
+		<French> sur les Cases de %s1[SPACE]</French>
+		<German> on %s1 Tiles</German>
+		<Italian> on %s1 Tiles</Italian>
+		<Spanish> on %s1 Tiles</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAM_OF_VIR_HELP</Tag>
+		<English>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</English>
+		<French>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</French>
+		<German>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</German>
+		<Italian>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</Italian>
+		<Spanish>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

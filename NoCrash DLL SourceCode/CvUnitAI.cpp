@@ -2368,14 +2368,16 @@ void CvUnitAI::AI_workerMove()
 //		bBuildFort = true;
 //	}
 //FfH: End Modify
+	if (AI_AddPopToCity())
+		return;
 
-	if (bCanRoute && isBarbarian())
-	{
-		if (AI_connectCity())
-		{
-			return;
-		}
-	}
+	//if (bCanRoute && isBarbarian())
+	//{
+	//	if (AI_connectCity())
+	//	{
+	//		return;
+	//	}
+	//}
 
 	if ((pCity == NULL) || (pCity->AI_getWorkersNeeded() == 0) || ((pCity->AI_getWorkersHave() > (pCity->AI_getWorkersNeeded() + 1))))
 	{

@@ -712,6 +712,11 @@ public:
 
 	int getRiverPlotYield(YieldTypes eIndex) const;																// Exposed to Python
 	void changeRiverPlotYield(YieldTypes eIndex, int iChange);
+	int getLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield) const;
+	int getLocalTerrainYield(YieldTypes eYield) const;
+	void setLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield, int iValue);
+	void changeLocalTerrainYield(TerrainTypes eTerrain, YieldTypes eYield, int iChange);
+	void changeLocalTerrainYield(YieldTypes eYield, int iChange);
 
 	int getBaseYieldRate(YieldTypes eIndex) const;															// Exposed to Python
 	int getBaseYieldRateModifier(YieldTypes eIndex, int iExtra = 0) const;			// Exposed to Python
@@ -1772,6 +1777,7 @@ protected:
 
 
 	int* m_aiSeaPlotYield;
+	int** m_paaiLocalTerrainYield;
 	int* m_aiRiverPlotYield;
 	int* m_aiBaseYieldRate;
 	int* m_aiYieldRateModifier;
