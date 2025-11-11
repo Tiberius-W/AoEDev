@@ -23849,7 +23849,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Flanking3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Flanking_3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Flying -->
 			<Type>PROMOTION_FLYING</Type>

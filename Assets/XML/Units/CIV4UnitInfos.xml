@@ -20947,7 +20947,7 @@
 			<iCost>180</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>8</iCombat>
-			<iCombatDefense>10</iCombatDefense>
+			<iCombatDefense>11</iCombatDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>15</iAsset>
 			<UnitMeshGroups>
