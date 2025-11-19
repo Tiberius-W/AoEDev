@@ -97,10 +97,6 @@
 					<TraitType>TRAIT_DAO_WATER_EARTH</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
-				 <Trait>
-					<TraitType>TRAIT_AGNOSTIC</TraitType>
-					<bTrait>1</bTrait>
-				 </Trait>
 			</Traits>
 			<Flavors>
 				 <Flavor>
@@ -696,11 +692,11 @@
 					<bTrait>1</bTrait>
 				 </Trait>
 				 <Trait>
-					<TraitType>TRAIT_DAO_FIRE_AIR</TraitType>
+					<TraitType>TRAIT_WARLORD</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
 				 <Trait>
-					<TraitType>TRAIT_AGNOSTIC</TraitType>
+					<TraitType>TRAIT_DAO_FIRE_AIR</TraitType>
 					<bTrait>1</bTrait>
 				 </Trait>
 			</Traits>
