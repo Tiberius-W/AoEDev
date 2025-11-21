@@ -2882,19 +2882,19 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -2914,19 +2914,19 @@
 			<DiplomacyMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_LANUN_HANNAH</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>1</bFemale>
@@ -3080,11 +3080,11 @@
 					<bTrait>1</bTrait>
 				</Trait>
 				<Trait>
-					<TraitType>TRAIT_INDUSTRIOUS</TraitType>
+					<TraitType>TRAIT_IMPERIALIST</TraitType>
 					<bTrait>1</bTrait>
 				</Trait>
 				<Trait>
-					<TraitType>TRAIT_PHILOSOPHICAL</TraitType>
+					<TraitType>TRAIT_WARLORD</TraitType>
 					<bTrait>1</bTrait>
 				</Trait>
 			</Traits>
@@ -3487,19 +3487,19 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -3519,19 +3519,19 @@
 			<DiplomacyMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_INFERNAL</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>0</bFemale>

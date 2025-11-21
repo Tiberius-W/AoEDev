@@ -518,6 +518,10 @@
 					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_FINAL</BuildingClassType>
 					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING7</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -586,6 +590,18 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MAGE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARCHMAGE</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>

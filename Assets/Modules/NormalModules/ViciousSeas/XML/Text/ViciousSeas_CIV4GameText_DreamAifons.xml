@@ -531,6 +531,38 @@ their pools for a lethal, watery kis</Spanish>
 		<Spanish>Dream of Colors</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_CRIME_SHATTERED_DREAM</Tag>
+		<English>The Dream Is shattered</English>
+		<French>The Dream Is shattered</French>
+		<German>The Dream Is shattered</German>
+		<Italian>The Dream Is shattered</Italian>
+		<Spanish>The Dream Is shattered</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_CRIME_CRACKS_IN_THE_DREAM</Tag>
+		<English>Cracks In The Dream</English>
+		<French>Cracks In The Dream</French>
+		<German>Cracks In The Dream</German>
+		<Italian>Cracks In The Dream</Italian>
+		<Spanish>Cracks In The Dream</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_CRIME_BREAKING_DREAM</Tag>
+		<English>The Dream Is Breaking Apart</English>
+		<French>The Dream Is Breaking Apart</French>
+		<German>The Dream Is Breaking Apart</German>
+		<Italian>The Dream Is Breaking Apart</Italian>
+		<Spanish>The Dream Is Breaking Apart</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_CRIME_HOLES_IN_THE_DREAM</Tag>
+		<English>Holes Appear In The Dream</English>
+		<French>Holes Appear In The Dream</French>
+		<German>Holes Appear In The Dream</German>
+		<Italian>Holes Appear In The Dream</Italian>
+		<Spanish>Holes Appear In The Dream</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_SPELL_GLIMPSE_UNSEEN</Tag>
 		<English>Glimpse of the Unseen</English>
 		<French>Glimpse of the Unseen</French>

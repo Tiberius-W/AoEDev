@@ -655,8 +655,8 @@
 		<BuildingInfo>		<!--Crime--><!--The Dream has holes-->
 			<BuildingClass>BUILDINGCLASS_CRIME_TAX_EVASION</BuildingClass>
 			<Type>BUILDING_CRIME_HOLES_IN_THE_DREAM</Type>
-			<Description>TXT_KEY_BUILDING_HOLES_IN_THE_DREAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HOLES_IN_THE_DREAM_PEDIA</Civilopedia>
+			<Description>TXT_KEY_BUILDING_CRIME_HOLES_IN_THE_DREAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_HOLES_IN_THE_DREAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>400</iPrereqCrime>
 			<iPrereqPopulation>5</iPrereqPopulation>
@@ -679,8 +679,8 @@
 		<BuildingInfo>		<!--Crime--><!--The Dream is breaking-->
 			<BuildingClass>BUILDINGCLASS_CRIME_MURDER</BuildingClass>
 			<Type>BUILDING_CRIME_BREAKING_DREAM</Type>
-			<Description>TXT_KEY_BUILDING_BREAKING_DREAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BREAKING_DREAM_PEDIA</Civilopedia>
+			<Description>TXT_KEY_BUILDING_CRIME_BREAKING_DREAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BREAKING_DREAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>1000</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
@@ -755,7 +755,7 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!-- Altar Of The Dreaming                                    Great Priest National Wonder -->
+		<BuildingInfo>		<!--                 Dream Aifon            Altar Of The Dreaming                                    Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING</Description>
@@ -804,7 +804,7 @@
 			</PrereqAlignments>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                             Great Priest National Wonder -->
+		<BuildingInfo>		<!--            Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_ANOINTED</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING2</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING2</Description>
@@ -856,7 +856,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                              Great Priest National Wonder -->
+		<BuildingInfo>		<!--           Dream Aifon                   Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_BLESSED</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING3</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING3</Description>
@@ -930,7 +930,7 @@
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                         Great Priest National Wonder -->
+		<BuildingInfo>		<!--           Dream Aifon              Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_CONSECRATED</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING4</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING4</Description>
@@ -988,7 +988,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                             Great Priest National Wonder -->
+		<BuildingInfo>		<!--            Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_DIVINE</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING5</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING5</Description>
@@ -1058,7 +1058,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                              Great Priest National Wonder -->
+		<BuildingInfo>		<!--             Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_EXALTED</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING6</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING6</Description>
@@ -1110,7 +1110,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCityCapModifier>2</iCityCapModifier>
 		</BuildingInfo>
-		<BuildingInfo>		<!--                              Great Priest National Wonder -->
+		<BuildingInfo>		<!--             Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_FINAL</BuildingClass>
 			<Type>BUILDING_ALTAR_OF_THE_DREAMING7</Type>
 			<Description>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING7</Description>
