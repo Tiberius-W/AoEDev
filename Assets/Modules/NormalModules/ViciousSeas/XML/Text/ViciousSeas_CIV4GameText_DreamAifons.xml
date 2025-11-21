@@ -281,14 +281,6 @@ As the Dreaming syphons more and more reality into itself, living things inside 
 		<Spanish>Bezeri</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_DREAM_AIFONS_STRATEGY</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
-	</TEXT>
-	<TEXT> 
 		<Tag>TXT_KEY_TRAIT_DREAM</Tag>
 		<English>Dreams</English>
 		<French>Dreams</French>
@@ -319,6 +311,14 @@ As the Dreaming syphons more and more reality into itself, living things inside 
 		<German>The Mirror</German>
 		<Italian>The Mirror</Italian>
 		<Spanish>The Mirror</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_LEADER_HASTUR</Tag>
+		<English>Hastur</English>
+		<French>Hastur</French>
+		<German>Hastur</German>
+		<Italian>Hastur</Italian>
+		<Spanish>Hastur</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Tag>
@@ -578,28 +578,85 @@ Lo! the King of Nightmare nears!</Spanish>
 		<Spanish>[ICON_BULLET]All non Aifon units gain [LINK=PROMOTION_ENRAGED]Enraged[\LINK] and [LINK=PROMOTION_HIDDEN_NATIONALITY]Hidden Nationality[\LINK] for 5 turns.</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING_PEDIA</Tag>
+		<English>The Dreaming is attempting to subsume reality; False prophets help the waking world slip further into the unreal.
+
+First beast, then man, then angel, then all.</English>
+		<French>The Dreaming is attempting to subsume reality; False prophets help the waking world slip further into the unreal.
+
+First beast, then man, then angel, then all.</French>
+		<German>The Dreaming is attempting to subsume reality; False prophets help the waking world slip further into the unreal.
+
+First beast, then man, then angel, then all.</German>
+		<Italian>The Dreaming is attempting to subsume reality; False prophets help the waking world slip further into the unreal.
+
+First beast, then man, then angel, then all.</Italian>
+The Dreaming is attempting to subsume reality; False prophets help the waking world slip further into the unreal.
+
+First beast, then man, then angel, then all.	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING_STRATEGY</Tag>
+		<English>Use great prophets to build 1-6 of these buildings, then construct the final stage as everyone tries to kill you!</English>
+		<French>Use great prophets to build 1-6 of these buildings, then construct the final stage as everyone tries to kill you!</French>
+		<German>Use great prophets to build 1-6 of these buildings, then construct the final stage as everyone tries to kill you!</German>
+		<Italian>Use great prophets to build 1-6 of these buildings, then construct the final stage as everyone tries to kill you!</Italian>
+		<Spanish>Use great prophets to build 1-6 of these buildings, then construct the final stage as everyone tries to kill you!</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING</Tag>
+		<English>The Charybdis (Shimmering)</English>
+		<French>The Charybdis (Shimmering)</French>
+		<German>The Charybdis (Shimmering)</German>
+		<Italian>The Charybdis (Shimmering)</Italian>
+		<Spanish>The Charybdis (Shimmering)</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>
-		<English>Bezeri</English>
-		<French>Bezeri</French>
-		<German>Bezeri</German>
-		<Italian>Bezeri</Italian>
-		<Spanish>Bezeri</Spanish>
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING2</Tag>
+		<English>The Charybdis (Ripple)</English>
+		<French>The Charybdis (Ripple)</French>
+		<German>The Charybdis (Ripple)</German>
+		<Italian>The Charybdis (Ripple)</Italian>
+		<Spanish>The Charybdis (Ripple)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING3</Tag>
+		<English>The Charybdis (Whirlpool)</English>
+		<French>The Charybdis (Whirlpool)</French>
+		<German>The Charybdis (Whirlpool)</German>
+		<Italian>The Charybdis (Whirlpool)</Italian>
+		<Spanish>The Charybdis (Whirlpool)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING4</Tag>
+		<English>The Charybdis (Cyclone)</English>
+		<French>The Charybdis (Cyclone)</French>
+		<German>The Charybdis (Cyclone)</German>
+		<Italian>The Charybdis (Cyclone)</Italian>
+		<Spanish>The Charybdis (Cyclone)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING5</Tag>
+		<English>The Charybdis (Drowning Gyre)</English>
+		<French>The Charybdis (Drowning Gyre)</French>
+		<German>The Charybdis (Drowning Gyre)</German>
+		<Italian>The Charybdis (Drowning Gyre)</Italian>
+		<Spanish>The Charybdis (Drowning Gyre)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING6</Tag>
+		<English>The Charybdis (Warping Maelstrom)</English>
+		<French>The Charybdis (Warping Maelstrom)</French>
+		<German>The Charybdis (Warping Maelstrom)</German>
+		<Italian>The Charybdis (Warping Maelstrom)</Italian>
+		<Spanish>The Charybdis (Warping Maelstrom)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_BUILDING_ALTAR_OF_THE_DREAMING7</Tag>
+		<English>The Charybdis (Subsuming Depths)</English>
+		<French>The Charybdis (Subsuming Depths)</French>
+		<German>The Charybdis (Subsuming Depths)</German>
+		<Italian>The Charybdis (Subsuming Depths)</Italian>
+		<Spanish>The Charybdis (Subsuming Depths)</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_CIV_BEZERI_DESC</Tag>

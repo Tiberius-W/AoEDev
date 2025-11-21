@@ -2006,6 +2006,36 @@
 		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 		</UnitInfo>
+		<UnitInfo>        <!-- Great Prophet -->
+			<Class>UNITCLASS_PROPHET</Class>
+			<Type>UNIT_PROPHET</Type>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING2</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING3</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING4</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING5</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING6</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
+		</UnitInfo>
 		<UnitInfo>        <!-- Dream Aifon Worker--> <!-- Dream of the Aifons Start -->
 			<Class>UNITCLASS_WORKER</Class>
 			<Type>UNIT_WORKER_DREAM_AIFON</Type>
