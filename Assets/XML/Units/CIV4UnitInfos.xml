@@ -55317,7 +55317,7 @@
 			<Type>UNIT_SALLOS</Type>
 			<Combat>UNITCOMBAT_COMMANDER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_LEADER_SALLOS</Description>
 			<Civilopedia>TXT_KEY_LEADER_SALLOS_PEDIA</Civilopedia>
 			<Strategy></Strategy>
@@ -55326,6 +55326,10 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
