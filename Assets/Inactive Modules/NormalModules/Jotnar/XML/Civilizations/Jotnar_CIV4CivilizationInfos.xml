@@ -77,6 +77,14 @@
 				<BuildingType>BUILDING_JOT_STAEDDING</BuildingType>
 			</Building>
 			<Building>
+				<BuildingClassType>BUILDINGCLASS_JOT_STAEDDING2</BuildingClassType>
+				<BuildingType>BUILDING_JOT_STAEDDING2</BuildingType>
+			</Building>
+			<Building>
+				<BuildingClassType>BUILDINGCLASS_JOT_STAEDDING3</BuildingClassType>
+				<BuildingType>BUILDING_JOT_STAEDDING3</BuildingType>
+			</Building>
+			<Building>
 				<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 				<BuildingType>BUILDING_JOT_BARRACKS</BuildingType>
 			</Building>
@@ -544,6 +552,12 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_COTTAGE</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>

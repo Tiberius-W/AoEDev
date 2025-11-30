@@ -645,12 +645,54 @@ besitzt Uxol in der Tat beeindruckende magische Kr&#228;fte und es gelingt ihm, 
 		<Spanish>Jotnar Staedding</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JOT_STAEDDING2</Tag>
+		<English>Jotnar Staedding - Crowded</English>
+		<French>Jotnar Staedding - Crowded</French>
+		<German>Jotnar Staedding - Crowded</German>
+		<Italian>Jotnar Staedding - Crowded</Italian>
+		<Spanish>Jotnar Staedding - Crowded</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JOT_STAEDDING3</Tag>
+		<English>Jotnar Staedding - Overpopulation</English>
+		<French>Jotnar Staedding - Overpopulation</French>
+		<German>Jotnar Staedding - Overpopulation</German>
+		<Italian>Jotnar Staedding - Overpopulation</Italian>
+		<Spanish>Jotnar Staedding - Overpopulation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JOT_STAEDDING_PEDIA</Tag>
 		<English>The Jotnar Staedding is the center of every Homestaed, the heart from where the ruling family governs their city.</English>
 		<French>The Jotnar Staedding is the center of every Homestaed, the heart from where the ruling family governs their city.</French>
 		<German>Das Jotnar Staedding ist das Zentrum eines jeden Homestaed, von wo aus die regierende Familie die Stadt lenkt.</German>
 		<Italian>The Jotnar Staedding is the center of every Homestaed, the heart from where the ruling family governs their city.</Italian>
 		<Spanish>The Jotnar Staedding is the center of every Homestaed, the heart from where the ruling family governs their city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JOT_STAEDDING_PEDIA2</Tag>
+		<English>[ICON_BULLET] Requires 25 population.
+		This Jotnar Staeding is crowded with too many giants eating all the food.</English>
+		<French>[ICON_BULLET] Requires 25 population.
+		This Jotnar Staeding is crowded with too many giants eating all the food.</French>
+		<German>[ICON_BULLET] Requires 25 population.
+		This Jotnar Staeding is crowded with too many giants eating all the food.</German>
+		<Italian>[ICON_BULLET] Requires 25 population.
+		This Jotnar Staeding is crowded with too many giants eating all the food.</Italian>
+		<Spanish>[ICON_BULLET] Requires 25 population.
+		This Jotnar Staeding is crowded with too many giants eating all the food.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JOT_STAEDDING_PEDIA3</Tag>
+		<English>[ICON_BULLET] Requires 30 population.
+		This Jotnar Staeding is overpopulated, the giants are wasting away from malnutrition!</English>
+		<French>[ICON_BULLET] Requires 30 population.
+		This Jotnar Staeding is overpopulated, the giants are wasting away from malnutrition!</French>
+		<German>[ICON_BULLET] Requires 30 population.
+		This Jotnar Staeding is overpopulated, the giants are wasting away from malnutrition!</German>
+		<Italian>[ICON_BULLET] Requires 30 population.
+		This Jotnar Staeding is overpopulated, the giants are wasting away from malnutrition!</Italian>
+		<Spanish>[ICON_BULLET] Requires 30 population.
+		This Jotnar Staeding is overpopulated, the giants are wasting away from malnutrition!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JOT_HOUSE_OF_THE_ANCESTORS</Tag>

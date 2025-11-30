@@ -345,4 +345,76 @@
 		<Italian>Un rifugiato è arrivato nella tua città!</Italian>
 		<Spanish>Refugee has arrived in your city!</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Tag>
+		<English>(Crime) Adventure - Petty Gangs</English>
+		<French>(Crime) Adventure - Petty Gangs</French>
+		<German>(Crime) Adventure - Petty Gangs</German>
+		<Italian>(Crime) Adventure - Petty Gangs</Italian>
+		<Spanish>(Crime) Adventure - Petty Gangs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_PEDIA</Tag>
+		<English>Adventurers set off to solve the local crime spree</English>
+		<French>Adventurers set off to solve the local crime spree</French>
+		<German>Adventurers set off to solve the local crime spree</German>
+		<Italian>Adventurers set off to solve the local crime spree</Italian>
+		<Spanish>Adventurers set off to solve the local crime spree</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Tag>
+		<English>(Crime) Adventure - Mekara Syndicate</English>
+		<French>(Crime) Adventure - Mekara Syndicate</French>
+		<German>(Crime) Adventure - Mekara Syndicate</German>
+		<Italian>(Crime) Adventure - Mekara Syndicate</Italian>
+		<Spanish>(Crime) Adventure - Mekara Syndicate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE_PEDIA</Tag>
+		<English>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</English>
+		<French>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</French>
+		<German>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</German>
+		<Italian>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</Italian>
+		<Spanish>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Tag>
+		<English>(Crime) Adventure - Mekara Spies</English>
+		<French>(Crime) Adventure - Mekara Spies</French>
+		<German>(Crime) Adventure - Mekara Spies</German>
+		<Italian>(Crime) Adventure - Mekara Spies</Italian>
+		<Spanish>(Crime) Adventure - Mekara Spies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT_PEDIA</Tag>
+		<English>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</English>
+		<French>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</French>
+		<German>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</German>
+		<Italian>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</Italian>
+		<Spanish>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Tag>
+		<English>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</English>
+		<French>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</French>
+		<German>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</German>
+		<Italian>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</Italian>
+		<Spanish>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_VIGILANTE</Tag>
+		<English>Vigilante</English>
+		<French>Vigilante</French>
+		<German>Vigilante</German>
+		<Italian>Vigilante</Italian>
+		<Spanish>Vigilante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_OPPORTUNIST</Tag>
+		<English>Opportunist</English>
+		<French>Opportunist</French>
+		<German>Opportunist</German>
+		<Italian>Opportunist</Italian>
+		<Spanish>Opportunist</Spanish>
+	</TEXT>
 </Civ4GameText>

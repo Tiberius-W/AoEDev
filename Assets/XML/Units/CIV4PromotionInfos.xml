@@ -25732,6 +25732,39 @@
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Vigilante -->
+			<Type>PROMOTION_VIGILANTE</Type>
+			<Description>TXT_KEY_PROMOTION_VIGILANTE</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyTeam>1</bApplyTeam>
+					<fCrime>-5</fCrime>
+					<iBonusRange>1</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_ADVENTURER</PrereqUnit>
+			</PrereqUnits>
+			<Button>Art/Interface/Buttons/Promotions/Vigilante.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Opportunist -->
+			<Type>PROMOTION_OPPORTUNIST</Type>
+			<Description>TXT_KEY_PROMOTION_OPPORTUNIST</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyEnemy>1</bApplyEnemy>
+					<bApplyRival>1</bApplyRival>
+					<fCrime>5</fCrime>
+					<iBonusRange>2</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_ADVENTURER</PrereqUnit>
+			</PrereqUnits>
+			<Button>Art/Interface/Buttons/Promotions/Opportunist.dds</Button>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Malaise -->
 			<Type>PROMOTION_MALAISE</Type>
 			<Description>TXT_KEY_PROMOTION_MALAISE</Description>

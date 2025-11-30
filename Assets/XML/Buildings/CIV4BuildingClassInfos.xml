@@ -3392,6 +3392,45 @@
 			<DefaultBuilding>BUILDING_CRIME_ILLEGAL_IMMIGRATION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure Petty Gangs-->
+			<Type>BUILDINGCLASS_CRIME_ADVENTURE_PETTY_GANGS</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_PETTY_GANGS</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure Mekara Syndicate-->
+			<Type>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_SYNDICATE</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure Mekara Syndicate Leadership -->
+			<Type>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_PLOT</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Insubordination-->
 			<Type>BUILDINGCLASS_CRIME_INSUBORDINATION</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_INSUBORDINATION</Description>
