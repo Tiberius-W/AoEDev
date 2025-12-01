@@ -3392,6 +3392,45 @@
 			<DefaultBuilding>BUILDING_CRIME_ILLEGAL_IMMIGRATION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure minor bounty-->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_MINOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_MINOR</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure major bounty-->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_MAJOR</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure grand bounty -->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_GRAND</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_GRAND</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Insubordination-->
 			<Type>BUILDINGCLASS_CRIME_INSUBORDINATION</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_INSUBORDINATION</Description>

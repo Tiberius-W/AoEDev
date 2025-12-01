@@ -1615,6 +1615,9 @@ class CustomFunctions:
 			iNumPalace 		= countB(Building["Grigori Palace"])
 			iNumDagda 		= countB(Building["Grigori Temple"])
 			iNumRefuge 		= countB(Building["Dwelling of Refuge"])
+			iNumBountyMinor		= countB(Building["Crime Bounty Minor"])
+			iNumBountyMajor 	= countB(Building["Crime Bounty Major"])
+			iNumBountyGrand 	= countB(Building["Crime Bounty Grand"])
 
 # Different buildings give different modifiers.  Aristocracy gives a +66% mod.
 			iPalaceMod 		= iNumPalace
@@ -1645,7 +1648,7 @@ class CustomFunctions:
 			if not pPlayer.isHuman():
 				iAImod = 1.5
 
-			iGrigoriSpawn = round(((iPalaceMod + iDagdaMod + iMuseumMod +iTavernsMod + iGuildsMod + iCivicMod + iStatesmanMod + iRefugeMod) * iCivicMult * iAImod), 2)
+			iGrigoriSpawn = round(((iPalaceMod + iDagdaMod + iMuseumMod +iTavernsMod + iGuildsMod + iNumBountyMinor + iNumBountyMajor + iNumBountyGrand + iCivicMod + iStatesmanMod + iRefugeMod) * iCivicMult * iAImod), 2)
 			iGrigoriSpawn = int(iGrigoriSpawn * 100)
 			iGrigoriSpawn = scaleInverse(iGrigoriSpawn)
 

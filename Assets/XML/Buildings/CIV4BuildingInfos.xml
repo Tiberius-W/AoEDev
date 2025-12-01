@@ -1641,6 +1641,12 @@
 			<iAsset>2</iAsset>
 			<iPower>1</iPower>
 			<fVisibilityPriority>1</fVisibilityPriority>
+			<iCrime>-5</iCrime>
+			<PerCrimeEffectYieldChanges>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>3</iYield>
+			</PerCrimeEffectYieldChanges>
 			<DomainFreeExperiences>
 				<DomainFreeExperience>
 					<DomainType>DOMAIN_LAND</DomainType>
@@ -17257,6 +17263,111 @@
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
+			<iWarWearinessModifier>0</iWarWearinessModifier>
+			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>	
+		<BuildingInfo>		<!--Crime--><!--Grigory Minor bounties                           Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_MINOR</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_MINOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>160</iPrereqCrime>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
+			<iPrereqPopulation>3</iPrereqPopulation>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iCrime>-3</iCrime>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>5</iYield>
+			</YieldModifiers>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fHappy>0.1</fHappy>
+					<fHealth>-0.1</fHealth>
+					<fGPP>-0.1</fGPP>
+				</PerPopBonus>
+			</PerPopBonuses>
+			<SpawnUnitType>UNIT_BOUNTY_HUNTER</SpawnUnitType>
+			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
+			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<iSpawnChance>5</iSpawnChance>
+			<iWarWearinessModifier>0</iWarWearinessModifier>
+			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>	
+		<BuildingInfo>		<!--Crime--><!--Grigory Major bounties                          Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_MAJOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>500</iPrereqCrime>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
+			<iPrereqPopulation>8</iPrereqPopulation>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iCrime>-6</iCrime>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>5</iYield>
+			</YieldModifiers>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fHappy>0.1</fHappy>
+					<fHealth>-0.1</fHealth>
+					<fGPP>-0.1</fGPP>
+				</PerPopBonus>
+			</PerPopBonuses>
+			<SpawnUnitType>UNIT_SLAVE_HUNTER</SpawnUnitType>
+			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
+			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<iSpawnChance>5</iSpawnChance>
+			<iWarWearinessModifier>0</iWarWearinessModifier>
+			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
+			<iCost>-1</iCost>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
+		</BuildingInfo>
+		<BuildingInfo>		<!--Crime--><!--Grigory grand bounties                            Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_GRAND</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_GRAND</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
+			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
+			<iPrereqCrime>750</iPrereqCrime>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
+			<iPrereqPopulation>3</iPrereqPopulation>
+			<bCrimeEffect>1</bCrimeEffect>
+			<iCrime>-10</iCrime>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>5</iYield>
+			</YieldModifiers>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fHappy>0.1</fHappy>
+					<fHealth>-0.1</fHealth>
+					<fGPP>-0.1</fGPP>
+				</PerPopBonus>
+			</PerPopBonuses>
+			<SpawnUnitType>UNIT_AGENT</SpawnUnitType>
+			<SpawnUnitCiv>CIVILIZATION_ORC</SpawnUnitCiv>
+			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<iSpawnChance>1</iSpawnChance>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>

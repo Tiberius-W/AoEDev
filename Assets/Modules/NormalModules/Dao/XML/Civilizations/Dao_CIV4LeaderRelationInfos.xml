@@ -18,6 +18,39 @@
 					<TargetLeaderType>LEADER_BASIUM</TargetLeaderType>
 					<iAttitudeChange>-10</iAttitudeChange>
 				</LeaderAttitudeChange>
+			</LeaderAttitudeChanges>
+		</LeaderRelationInfo>
+		<LeaderRelationInfo>
+			<Type>LEADERRELATION_ROULAN</Type>
+			<Leader>LEADER_RUOLAN</Leader>
+			<LeaderAttitudeChanges>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_HYBOREM</TargetLeaderType>
+					<iAttitudeChange>-10</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_BASIUM</TargetLeaderType>
+					<iAttitudeChange>-10</iAttitudeChange>
+				</LeaderAttitudeChange>
+			</LeaderAttitudeChanges>
+		</LeaderRelationInfo>
+		
+		
+		<LeaderRelationInfo>
+			<Type>LEADERRELATION_YINXI</Type>
+			<Leader>LEADER_YINXI</Leader>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_IMPORTANT_LEADERS</DependencyType>
+		     </AndDependencyTypes>
+			<LeaderAttitudeChanges>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_HYBOREM</TargetLeaderType>
+					<iAttitudeChange>-10</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_BASIUM</TargetLeaderType>
+					<iAttitudeChange>-10</iAttitudeChange>
+				</LeaderAttitudeChange>
 				<LeaderAttitudeChange>
 					<TargetLeaderType>LEADER_JUDECCA</TargetLeaderType>
 					<iAttitudeChange>-10</iAttitudeChange>
@@ -47,6 +80,9 @@
 		<LeaderRelationInfo>
 			<Type>LEADERRELATION_ROULAN</Type>
 			<Leader>LEADER_RUOLAN</Leader>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_IMPORTANT_LEADERS</DependencyType>
+		     </AndDependencyTypes>
 			<LeaderAttitudeChanges>
 				<LeaderAttitudeChange>
 					<TargetLeaderType>LEADER_HYBOREM</TargetLeaderType>

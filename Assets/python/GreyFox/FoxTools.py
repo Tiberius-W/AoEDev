@@ -2275,6 +2275,9 @@ class FoxTools:
 		Building["Memorial Refugee"]	= git('BUILDING_MEMORIAL_REFUGEE')
 		Building["Dwelling of Refuge"]	= git('BUILDING_DWELLING_OF_REFUGE')
 		Building["Forum"]				= git('BUILDING_FORUM')
+		Building["Crime Bounty Minor"]			= git('BUILDING_CRIME_BOUNTY_MINOR')
+		Building["Crime Bounty Major"]		        = git('BUILDING_CRIME_BOUNTY_MAJOR')
+		Building["Crime Bounty Grand"]			= git('BUILDING_CRIME_BOUNTY_GRAND')
 
 		Building["Warrens"]				= git('BUILDING_WARRENS')
 		Building["Manor"]				= git('BUILDING_GOVERNORS_MANOR')

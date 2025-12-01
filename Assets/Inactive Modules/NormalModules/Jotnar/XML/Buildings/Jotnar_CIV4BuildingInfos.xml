@@ -19,32 +19,69 @@
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<bNoCivicAnger>1</bNoCivicAnger>
-			<YieldChanges>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-			</YieldChanges>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</CommerceModifiers>
 			<CommerceHappinesses>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
 			</CommerceHappinesses>
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fFood>-0.01</fFood>
+				</PerPopBonus>
+			</PerPopBonuses>
 			<Flavors>
 			</Flavors>
 			<iFreePromotionPick>0</iFreePromotionPick>
 			<iPlotRadius>3</iPlotRadius>
-			<FreeBonus2>NONE</FreeBonus2>
+		</BuildingInfo>	
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JOT_STAEDDING2</BuildingClass>
+			<Type>BUILDING_JOT_STAEDDING2</Type>
+			<Description>TXT_KEY_BUILDING_JOT_STAEDDING2</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JOT_STAEDDING_PEDIA2</Civilopedia>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_JOT_STAEDDING</ArtDefineTag>
+			<PrereqTech>TECH_JO1</PrereqTech>
+			<bNeverCapture>0</bNeverCapture>
+			<bNukeImmune>0</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>-1</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iConquestProb>0</iConquestProb>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fFood>-0.24</fFood>
+				</PerPopBonus>
+			</PerPopBonuses>
+			<iPrereqPopulation>20</iPrereqPopulation>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JOT_STAEDDING3</BuildingClass>
+			<Type>BUILDING_JOT_STAEDDING3</Type>
+			<Description>TXT_KEY_BUILDING_JOT_STAEDDING3</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JOT_STAEDDING_PEDIA3</Civilopedia>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_JOT_STAEDDING</ArtDefineTag>
+			<PrereqTech>TECH_JO1</PrereqTech>
+			<bNeverCapture>0</bNeverCapture>
+			<bNukeImmune>0</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>-1</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iConquestProb>0</iConquestProb>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<PerPopBonuses>
+				<PerPopBonus>
+					<fFood>-0.25</fFood>
+				</PerPopBonus>
+			</PerPopBonuses>
+			<iPrereqPopulation>30</iPrereqPopulation>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ELDER_COUNCIL</BuildingClass>

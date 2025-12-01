@@ -2532,6 +2532,18 @@
 					<BuildingClassType>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_MINOR</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_MINOR</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_MAJOR</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_GRAND</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_GRAND</BuildingType>
+				</Building>
 
 			</Buildings>
 			<Units>

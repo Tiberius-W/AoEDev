@@ -12,6 +12,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_DAO_WATER_EARTH_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_DAO_WATER_EARTH_SHORT</ShortDescription>
 			<TraitClass>TRAITCLASS_BALANCE_DAO</TraitClass>
+			<bAgnostic>1</bAgnostic>
 			<FreeBonuses>
 				<FreeBonus>
 					<BonusType>BONUS_MANA_WATER</BonusType>
@@ -29,6 +30,7 @@
 			<Civilopedia>TXT_KEY_TRAIT_DAO_FIRE_AIR_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_DAO_FIRE_AIR_SHORT</ShortDescription>
 			<TraitClass>TRAITCLASS_BALANCE_DAO</TraitClass>
+			<bAgnostic>1</bAgnostic>
 			<FreeBonuses>
 				<FreeBonus>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
