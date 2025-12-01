@@ -57,7 +57,7 @@
 					<fFood>-0.24</fFood>
 				</PerPopBonus>
 			</PerPopBonuses>
-			<iPrereqPopulation>25</iPrereqPopulation>
+			<iPrereqPopulation>20</iPrereqPopulation>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JOT_STAEDDING3</BuildingClass>
