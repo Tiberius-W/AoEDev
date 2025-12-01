@@ -346,52 +346,52 @@
 		<Spanish>Refugee has arrived in your city!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Tag>
-		<English>(Crime) Adventure - Petty Gangs</English>
-		<French>(Crime) Adventure - Petty Gangs</French>
-		<German>(Crime) Adventure - Petty Gangs</German>
-		<Italian>(Crime) Adventure - Petty Gangs</Italian>
-		<Spanish>(Crime) Adventure - Petty Gangs</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR</Tag>
+		<English>(Crime) Bounties - Minor</English>
+		<French>(Crime) Bounties - Minor</French>
+		<German>(Crime) Bounties - Minor</German>
+		<Italian>(Crime) Bounties - Minor</Italian>
+		<Spanish>(Crime) Bounties - Minor</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_PEDIA</Tag>
-		<English>Adventurers set off to solve the local crime spree</English>
-		<French>Adventurers set off to solve the local crime spree</French>
-		<German>Adventurers set off to solve the local crime spree</German>
-		<Italian>Adventurers set off to solve the local crime spree</Italian>
-		<Spanish>Adventurers set off to solve the local crime spree</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR_PEDIA</Tag>
+		<English>As crime rises in the city, locals begin posting bounties to attract adventurers.</English>
+		<French>As crime rises in the city, locals begin posting bounties to attract adventurers.</French>
+		<German>As crime rises in the city, locals begin posting bounties to attract adventurers.</German>
+		<Italian>As crime rises in the city, locals begin posting bounties to attract adventurers.</Italian>
+		<Spanish>As crime rises in the city, locals begin posting bounties to attract adventurers.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Tag>
-		<English>(Crime) Adventure - Mekara Syndicate</English>
-		<French>(Crime) Adventure - Mekara Syndicate</French>
-		<German>(Crime) Adventure - Mekara Syndicate</German>
-		<Italian>(Crime) Adventure - Mekara Syndicate</Italian>
-		<Spanish>(Crime) Adventure - Mekara Syndicate</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR</Tag>
+		<English>(Crime) Bounties - Major</English>
+		<French>(Crime) Bounties - Major</French>
+		<German>(Crime) Bounties - Major</German>
+		<Italian>(Crime) Bounties - Major</Italian>
+		<Spanish>(Crime) Bounties - Major</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE_PEDIA</Tag>
-		<English>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</English>
-		<French>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</French>
-		<German>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</German>
-		<Italian>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</Italian>
-		<Spanish>Adventurers have uncovered a shadow cabal of former Ordine Medicos and Mages abducting Grigorians for cruel experiments</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR_PEDIA</Tag>
+		<English>With criminal activity rampant, guilds and merchants post large bounties and hire skilled adventurers to protect their trade.</English>
+		<French>With criminal activity rampant, guilds and merchants post large bounties and hire skilled adventurers to protect their trade.</French>
+		<German>With criminal activity rampant, guilds and merchants post large bounties and hire skilled adventurers to protect their trade.</German>
+		<Italian>With criminal activity rampant, guilds and merchants post large bounties and hire skilled adventurers to protect their trade.</Italian>
+		<Spanish>With criminal activity rampant, guilds and merchants post large bounties and hire skilled adventurers to protect their trade.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Tag>
-		<English>(Crime) Adventure - Mekara Spies</English>
-		<French>(Crime) Adventure - Mekara Spies</French>
-		<German>(Crime) Adventure - Mekara Spies</German>
-		<Italian>(Crime) Adventure - Mekara Spies</Italian>
-		<Spanish>(Crime) Adventure - Mekara Spies</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND</Tag>
+		<English>(Crime) Bounties - Grand</English>
+		<French>(Crime) Bounties - Grand</French>
+		<German>(Crime) Bounties - Grand</German>
+		<Italian>(Crime) Bounties - Grand</Italian>
+		<Spanish>(Crime) Bounties - Grand</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT_PEDIA</Tag>
-		<English>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</English>
-		<French>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</French>
-		<German>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</German>
-		<Italian>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</Italian>
-		<Spanish>Adventurers have uncovered clues to a group of nobles sponsering the syndicate activities and are in danger of retaliation!</Spanish>
+		<Tag>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND_PEDIA</Tag>
+		<English>Crime is a way of life in this city; lords and nobles pay handsomely to guard their riches, and only the very best adventurers dare to face off against the local crime families.</English>
+		<French>Crime is a way of life in this city; lords and nobles pay handsomely to guard their riches, and only the very best adventurers dare to face off against the local crime families.</French>
+		<German>Crime is a way of life in this city; lords and nobles pay handsomely to guard their riches, and only the very best adventurers dare to face off against the local crime families.</German>
+		<Italian>Crime is a way of life in this city; lords and nobles pay handsomely to guard their riches, and only the very best adventurers dare to face off against the local crime families.</Italian>
+		<Spanish>Crime is a way of life in this city; lords and nobles pay handsomely to guard their riches, and only the very best adventurers dare to face off against the local crime families.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Tag>

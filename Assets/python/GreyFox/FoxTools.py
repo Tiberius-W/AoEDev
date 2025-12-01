@@ -2275,9 +2275,9 @@ class FoxTools:
 		Building["Memorial Refugee"]	= git('BUILDING_MEMORIAL_REFUGEE')
 		Building["Dwelling of Refuge"]	= git('BUILDING_DWELLING_OF_REFUGE')
 		Building["Forum"]				= git('BUILDING_FORUM')
-		Building["Crime Petty Gangs"]				= git('BUILDING_CRIME_ADVENTURE_PETTY_GANGS')
-		Building["Crime Mekara Syndicate"]				= git('BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE')
-		Building["Crime Mekara Plot"]				= git('BUILDING_CRIME_ADVENTURE_MEKARA_PLOT')
+		Building["Crime Bounty Minor"]			= git('BUILDING_CRIME_BOUNTY_MINOR')
+		Building["Crime Bounty Major"]		        = git('BUILDING_CRIME_BOUNTY_MAJOR')
+		Building["Crime Bounty Grand"]			= git('BUILDING_CRIME_BOUNTY_GRAND')
 
 		Building["Warrens"]				= git('BUILDING_WARRENS')
 		Building["Manor"]				= git('BUILDING_GOVERNORS_MANOR')

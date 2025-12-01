@@ -17264,11 +17264,11 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>	
-		<BuildingInfo>		<!--Crime--><!--Adventurers face Petty Gangs                            Grigori UB-->
-			<BuildingClass>BUILDINGCLASS_CRIME_ADVENTURE_PETTY_GANGS</BuildingClass>
-			<Type>BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_PEDIA</Civilopedia>
+		<BuildingInfo>		<!--Crime--><!--Grigory Minor bounties                           Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_MINOR</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_MINOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR_PEDIA</Civilopedia>
 			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>160</iPrereqCrime>
@@ -17299,11 +17299,11 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>	
-		<BuildingInfo>		<!--Crime--><!--Adventurers face Mekara Syndicate                          Grigori UB-->
-			<BuildingClass>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_SYNDICATE</BuildingClass>
-			<Type>BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE_PEDIA</Civilopedia>
+		<BuildingInfo>		<!--Crime--><!--Grigory Major bounties                          Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_MAJOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR_PEDIA</Civilopedia>
 			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
@@ -17334,11 +17334,11 @@
 			<bAutoBuild>1</bAutoBuild>
 			<bMustMaintain>1</bMustMaintain>
 		</BuildingInfo>
-		<BuildingInfo>		<!--Crime--><!--Adventurers face plot of governers assassination by Mekara syndicate leadership                            Grigori UB-->
-			<BuildingClass>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_PLOT</BuildingClass>
-			<Type>BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT_PEDIA</Civilopedia>
+		<BuildingInfo>		<!--Crime--><!--Grigory grand bounties                            Grigori UB-->
+			<BuildingClass>BUILDINGCLASS_CRIME_BOUNTY_GRAND</BuildingClass>
+			<Type>BUILDING_CRIME_BOUNTY_GRAND</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND_PEDIA</Civilopedia>
 			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>750</iPrereqCrime>

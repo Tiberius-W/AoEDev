@@ -3392,42 +3392,42 @@
 			<DefaultBuilding>BUILDING_CRIME_ILLEGAL_IMMIGRATION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Adventure Petty Gangs-->
-			<Type>BUILDINGCLASS_CRIME_ADVENTURE_PETTY_GANGS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS</Description>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure minor bounty-->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_MINOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MINOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_PETTY_GANGS</DefaultBuilding>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_MINOR</DefaultBuilding>
 			<bUnique>1</bUnique>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Adventure Mekara Syndicate-->
-			<Type>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_SYNDICATE</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</Description>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure major bounty-->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_MAJOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_MAJOR</DefaultBuilding>
 			<bUnique>1</bUnique>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Adventure Mekara Syndicate Leadership -->
-			<Type>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_PLOT</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</Description>
+		<BuildingClassInfo>  <!--Crime --><!--Adventure grand bounty -->
+			<Type>BUILDINGCLASS_CRIME_BOUNTY_GRAND</Type>
+			<Description>TXT_KEY_BUILDING_CRIME_BOUNTY_GRAND</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</DefaultBuilding>
+			<DefaultBuilding>BUILDING_CRIME_BOUNTY_GRAND</DefaultBuilding>
 			<bUnique>1</bUnique>
 			<VictoryThresholds/>
 		</BuildingClassInfo>

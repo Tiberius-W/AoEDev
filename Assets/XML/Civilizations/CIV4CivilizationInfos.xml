@@ -2519,16 +2519,16 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ADVENTURE_PETTY_GANGS</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_ADVENTURE_PETTY_GANGS</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_MINOR</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_MINOR</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_SYNDICATE</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_ADVENTURE_MEKARA_SYNDICATE</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_MAJOR</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_MAJOR</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ADVENTURE_MEKARA_PLOT</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_ADVENTURE_MEKARA_PLOT</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_CRIME_BOUNTY_GRAND</BuildingClassType>
+					<BuildingType>BUILDING_CRIME_BOUNTY_GRAND</BuildingType>
 				</Building>
 
 			</Buildings>
