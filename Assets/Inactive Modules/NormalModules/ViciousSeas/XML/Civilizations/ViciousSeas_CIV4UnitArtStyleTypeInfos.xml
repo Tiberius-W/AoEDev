@@ -608,19 +608,19 @@
 				<StyleUnit>
 					<UnitType>UNIT_ARCHER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -719,17 +719,17 @@
 				<StyleUnit>
 					<UnitType>UNIT_HUNTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNTER_DREAM</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNTER_DREAM</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNTER_DREAM</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_LONGBOWMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_DREAM</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_DREAM</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_LONGBOWMAN_DREAM</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -798,17 +798,17 @@
 			<StyleUnit>
 					<UnitType>UNIT_RANGER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_RANGER_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_RANGER_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_RANGER_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_RANGER_DREAM</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_RANGER_DREAM</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_RANGER_DREAM</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_MARKSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MARKSMAN_ELOHIM</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MARKSMAN_ELOHIM</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MARKSMAN_ELOHIM</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MARKSMAN_DREAM</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MARKSMAN_DREAM</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MARKSMAN_DREAM</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
@@ -817,6 +817,14 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+			<StyleUnit>
+					<UnitType>UNIT_CHAMPION</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_CHAMPION_DREAM</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_CHAMPION_DREAM</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_CHAMPION_DREAM</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
@@ -830,55 +838,55 @@
 			<StyleUnit>
 					<UnitType>UNIT_SPEARMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_PIKEMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_PHALANX</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMDEFENDER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DREAMSPEARWOMEN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

@@ -267,7 +267,6 @@ def spellGlimpseUnseen(caster):
                                         pOwner = gc.getPlayer(pUnit.getOwner())
                                         iOwnerTeam = pOwner.getTeam()
                                         if iOwnerTeam != iAifonTeam:
-                                                CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_CONSUME_PALADIN", ()),'',1,'Art/Interface/Buttons/Units/Beast of Agares.dds',ColorTypes(8),caster.getX(),caster.getY(),True,True)
                                                 pUnit.setHasPromotion(iPromotionBerserk, True)
                                                 pUnit.setPromotionDuration(iPromotionBerserk, 5)
                                                 pUnit.setHasPromotion(iPromotionHidden, True)

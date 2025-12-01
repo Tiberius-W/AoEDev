@@ -46,5 +46,13 @@
 			<NoShaderNIF/>
 			<BackgroundKFM/>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_HASTUR</Type>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/LeaderHeads/HasturButton.dds</Button>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Interface/LeaderHeads/Hastur.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -413,29 +413,29 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Bezer'ej</City>
-				<City>Baltra'sey</City>
-				<City>Albemarle</City>
-				<City>Chatham</City>
-				<City>Bindloe'ej</City>
-				<City>Xishall</City>
-				<City>Pinta'sey</City>
-				<City>Genove'sey Tower</City>
-				<City>Tortusa</City>
-				<City>Ayora'ej</City>
-				<City>Daruin</City>
-				<City>Chelonoidis Bay</City>
-				<City>Galapag'ej</City>
-				<City>Nanlu'sey</City>
-				<City>Putuo'ej</City>
-				<City>Marchen</City>
-				<City>Fernan'ej</City>
-				<City>Agos</City>
-				<City>Tahkki's Rest</City>
-				<City>Warmstone Bay</City>
-				<City>Bunyi'sey</City>
-				<City>Conoloph'ej</City>
-				<City>Amblyrhynch</City>
+				<City>Echo</City>
+				<City>Sisemen</City>
+				<City>Narcisseae</City>
+				<City>Quiet Crest</City>
+				<City>Mesial</City>
+				<City>Isle of Id</City>
+				<City>Shining Pools</City>
+				<City>Lucid</City>
+				<City>Obsessia</City>
+				<City>Blameless</City>
+				<City>Painted Vase</City>
+				<City>Pale Sands</City>
+				<City>Boeotie</City>
+				<City>Metamorphoses</City>
+				<City>Junoanjove</City>
+				<City>Tiresias</City>
+				<City>Tilphussa</City>
+				<City>Lethe</City>
+				<City>Danalines Cradel</City>
+				<City>Gleaming Bay</City>
+				<City>Flickerwhisp Shoals</City>
+				<City>Joyful Grimace</City>
+				<City>Anglers Rest</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -489,6 +489,38 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS</BuildingClassType>
 					<BuildingType>BUILDING_CRIME_SHATTERED_DREAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_ANOINTED</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING2</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_BLESSED</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING3</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_CONSECRATED</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING4</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_DIVINE</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING5</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_EXALTED</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING6</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_FINAL</BuildingClassType>
+					<BuildingType>BUILDING_ALTAR_OF_THE_DREAMING7</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MAGE_GUILD</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -560,6 +592,18 @@
 					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MAGE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARCHMAGE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -586,10 +630,6 @@
 					<TechType>TECH_FISHING</TechType>
 					<bFreeTech>1</bFreeTech>
 				</FreeTech>
-				<FreeTech>
-					<TechType>TECH_ANCIENT_CHANTS</TechType>
-					<bFreeTech>1</bFreeTech>
-				</FreeTech>
 			</FreeTechs>
 			<DisableTechs>
 			</DisableTechs>
@@ -610,6 +650,10 @@
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MIRROR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HASTUR</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
