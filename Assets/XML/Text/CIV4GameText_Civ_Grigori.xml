@@ -395,11 +395,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Tag>
-		<English>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</English>
-		<French>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</French>
-		<German>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</German>
-		<Italian>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</Italian>
-		<Spanish>[ICON_BULLET]The Adventurer counter is raised by every instance of this crime</Spanish>
+		<English>[ICON_BULLET]The Adventurer counter progresses faster for each one of these buildings in your cities.</English>
+		<French>[ICON_BULLET]The Adventurer counter progresses faster for each one of these buildings in your cities.</French>
+		<German>[ICON_BULLET]The Adventurer counter progresses faster for each one of these buildings in your cities.</German>
+		<Italian>[ICON_BULLET]The Adventurer counter progresses faster for each one of these buildings in your cities.</Italian>
+		<Spanish>[ICON_BULLET]The Adventurer counter progresses faster for each one of these buildings in your cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_VIGILANTE</Tag>

@@ -17286,7 +17286,7 @@
 				<PerPopBonus>
 					<fHappy>0.1</fHappy>
 					<fHealth>-0.1</fHealth>
-					<fProduction>-0.1</fProduction>
+					<fGPP>-0.1</fGPP>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<SpawnUnitType>UNIT_BOUNTY_HUNTER</SpawnUnitType>
@@ -17321,7 +17321,7 @@
 				<PerPopBonus>
 					<fHappy>0.1</fHappy>
 					<fHealth>-0.1</fHealth>
-					<fProduction>-0.1</fProduction>
+					<fGPP>-0.1</fGPP>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<SpawnUnitType>UNIT_SLAVE_HUNTER</SpawnUnitType>
@@ -17356,7 +17356,7 @@
 				<PerPopBonus>
 					<fHappy>0.1</fHappy>
 					<fHealth>-0.1</fHealth>
-					<fProduction>-0.1</fProduction>
+					<fGPP>-0.1</fGPP>
 				</PerPopBonus>
 			</PerPopBonuses>
 			<SpawnUnitType>UNIT_AGENT</SpawnUnitType>
