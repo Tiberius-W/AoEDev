@@ -4320,7 +4320,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_ARCHMAGE in UNIT_ARTSTYLE_AUSTRIN_PEGASUS -->
 			<Type>ART_DEF_UNIT_MOUNTED_PEGASUS_ARCHMAGE_AUSTRIN</Type>
-			<Button>Art\units\civs\austrin\mounted\archmage\wizard_mounted.dds</Button>
+			<Button>Art/interface/buttons/units/mage.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -4396,7 +4396,6 @@
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Civs/Austrin/Mounted/arquebus/russiancossack.nif</NIF>
 			<KFM>Art/Units/Unique/Russia/Cossack/RussianCossack.kfm</KFM>
-			<SHADERNIF>Art/Units/Civs/Austrin/Mounted/arquebus/russiancossack_fx.nif</SHADERNIF>
 		<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -4420,7 +4419,6 @@
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Civs/Austrin/Mounted/Arthendain/Arthendain.nif</NIF>
 			<KFM>Art/animations/HorseArcher/HorseArcher blood.kfm</KFM>
-			<SHADERNIF>Art/Units/Civs/Austrin/Mounted/Arthendain/Arthendain_fx.nif</SHADERNIF>
 		<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -4468,7 +4466,6 @@
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Civs/Austrin/Mounted/Assassin/Assassin.nif</NIF>
 			<KFM>Art/Units/MountedSwordsman_Mongol/Mounted_Swordsman_Mongol.kfm</KFM>
-			<SHADERNIF>Art/Units/Civs/Austrin/Mounted/Assassin/Assassin_fx.nif</SHADERNIF>
 		<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -4516,7 +4513,6 @@
             <bActAsAir>0</bActAsAir>
 	    <NIF>Art/Units/Civs/Austrin/Mounted/Beastmaster/Beastmaster.nif</NIF>
 	    <KFM>Art/Units/Prodromoi/Prodromoi.kfm</KFM>
-	    <SHADERNIF>Art/Units/Civs/Austrin/Mounted/Beastmaster/Beastmaster_FX.nif</SHADERNIF>
 	    <ShadowDef>
 		<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 		<ShadowAttachNode>HorseBip Spine1</ShadowAttachNode>
@@ -4654,7 +4650,7 @@
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Austrin/Mounted/Crusader/Crusader.nif</NIF>
+			<NIF>Art/Units/Civs/Austrin/Mounted/Crusader/crusader blood.nif</NIF>
 			<KFM>Art/Units/Charlemagne_HeavyCavalry/HeavyCavalry.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
@@ -4816,7 +4812,7 @@
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Austrin/Mounted/Hero/AustrinHeroRider.nif</NIF>
+			<NIF>Art/Units/Civs/Austrin/Mounted/Hero/AusterinHeroRider.nif</NIF>
 			<KFM>Art/Units/scenario/companion_cavalry/Companion_Cavalry.kfm</KFM>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
@@ -4839,7 +4835,7 @@
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Civs/Austrin/Mounted/Hemah/Hemah.nif</NIF>
+			<NIF>Art/Units/Civs/Austrin/Mounted/Hemah/Hemah1.nif</NIF>
 			<KFM>Art/Units/MountedSwordsman_Mongol/Mounted_Swordsman_Mongol.kfm</KFM>
 		<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
@@ -5186,7 +5182,6 @@
 	    <bActAsAir>0</bActAsAir>
 	    <NIF>Art/Units/Civs/Austrin/Mounted/Lunatic/MountedInfantry.nif</NIF>
 	    <KFM>Art/Units/Charlemagne_MountedInfantry/MountedInfantry.kfm</KFM>
-	    <SHADERNIF>Art/Units/Civs/Austrin/Mounted/Lunatic/MountedInfantry_FX.nif</SHADERNIF>
 	    <ShadowDef>
 		<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 		<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -5203,7 +5198,7 @@
 	    </UnitArtInfo>
     	<UnitArtInfo><!-- UNIT_MAGE in UNIT_ARTSTYLE_AUSTRIN_PEGASUS --> 
 			<Type>ART_DEF_UNIT_MOUNTED_PEGASUS_MAGE_AUSTRIN</Type>
-			<Button>Art\units\civs\austrin\mounted\archmage\wizard_mounted.dds</Button>
+			<Button>Art/interface/buttons/units/mage.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -32646,6 +32641,32 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_DRAKE_SELECT</SelectionSound>
 		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_BLACK_DRAKE --> <!-- UNIT_BLACK_DRAKE_FLIGHT -->
+			<Type>ART_DEF_UNIT_DRAKE_UNDEAD</Type>
+			<Button>Art/Units/animal/Drakes/black_drake/black_drake_btn.dds</Button>
+			<fScale>16</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/units/civs/aristrakh/drake/storm_drake.nif</NIF>
+			<KFM>Art/animations/stormdrake/black_drake.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>Bone_Pelvis</ShadowAttachNode>
+				<fShadowScale>0.03</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.30</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fBankRate>0.2</fBankRate>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_DRAKE_SELECT</SelectionSound>
+		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_BLOOD_BOAR -->
 			<Type>ART_DEF_UNIT_BLOOD_BOAR</Type>
 			<Button>Art/Interface/Buttons/Units/BoarRider.dds</Button>
@@ -33407,6 +33428,41 @@
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_KRAKEN DEMON -->
+			<Type>ART_DEF_UNIT_KRAKEN_DEMON</Type>
+			<Button>Art/Interface/Buttons/Units/Kraken.dds</Button>
+			<fScale>0.95</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Religions/Octopus Overlords/Kraken/krakendemon.nif</NIF>
+			<KFM>Art/animations/Kraken/krake.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.25</fShadowScale>
+			</ShadowDef>
+			<iDamageStates>0</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>2</fWidth>
+				<fLength>180</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>0.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.4</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_LEVIATHAN -->
 			<Type>ART_DEF_UNIT_LEVIATHAN</Type>
 			<Button>Art/Interface/Buttons/Units/Leviathan.dds</Button>
@@ -33802,6 +33858,31 @@
 			<SelectionSound>AS3D_SEA_SERPENT</SelectionSound>
 			<ActionSound>AS3D_SEA_SERPENT</ActionSound>
 		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_OTOLOCH -->
+			<Type>ART_DEF_UNIT_OTOLOCH</Type>
+			<Button>Art/Interface/Buttons/Units/otolochbutton.dds</Button>
+			<fScale>6</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/animal/otoloch/otolochv1.nif</NIF>
+			<KFM>Art/animations/maar2/maar.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/horseshadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Center</ShadowAttachNode>
+				<fShadowScale>0.05</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>1.2</fBattleDistance>
+			<fRangedDeathTime>0.35</fRangedDeathTime>
+			<bActAsRanged>1</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_SEA_SERPENT</SelectionSound>
+			<ActionSound>AS3D_SEA_SERPENT</ActionSound>
+		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_SERKET -->
 			<Type>ART_DEF_UNIT_SERKET</Type>
 			<Button>Art/Interface/Buttons/Units/Scorpion.dds</Button>
@@ -34072,29 +34153,6 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_UN_WOLF_FIDGT_VOX</SelectionSound>
 			<ActionSound>AS3D_UN_WOLF_ATTK_VOX</ActionSound>
-		</UnitArtInfo>
-		<UnitArtInfo> <!-- UNIT_GOBLIN_BEASTMASTER --> 
-			<Type>ART_DEF_UNIT_RAT</Type>
-			<Button>Art/Interface/Buttons/Units/Wolf.dds</Button>
-			<fScale>0.5</fScale>
-			<fInterfaceScale>1.4</fInterfaceScale>
-			<bActAsLand>0</bActAsLand>
-			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/animal/rat/rat.nif</NIF>
-			<KFM>Art/animations/wolf/wolf.kfm</KFM>
-			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/WolfShadow.nif</ShadowNIF>
-				<ShadowAttachNode>LionBip Spine</ShadowAttachNode>
-				<fShadowScale>1</fShadowScale>
-			</ShadowDef>
-			<fBattleDistance>0.35</fBattleDistance>
-			<fRangedDeathTime>0.31</fRangedDeathTime>
-			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_WOLF_PACK -->
 			<Type>ART_DEF_UNIT_WOLF_PACK</Type>
@@ -37043,7 +37101,31 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
-	<!-- Summons End -->
+	<UnitArtInfo> <!-- UNIT_KEZEF -->
+			<Type>ART_DEF_UNIT_KEZEF</Type>
+			<Button>Art/Interface/Buttons/Units/kezef.dds</Button>
+			<fScale>0.85</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/heroes/kezef/kezef.nif</NIF>
+			<KFM>Art/Units/Swordsman/swordsman.kfm</KFM>
+			<SHADERNIF>Art/Units/heroes/kezef/kezef_fx.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<!-- Summons End -->
 <!-- Misc Start --> 
 <!-- Duplicates Start -->
 	<!--<UnitArtInfo>	UNUSED, MISSING NIF

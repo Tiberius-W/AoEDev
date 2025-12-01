@@ -273,6 +273,14 @@
 						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_YARANGA</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 		</TraitInfo>
 		<TraitInfo>		<!-- Imperialist -->
@@ -2794,7 +2802,6 @@
 			<Description>TXT_KEY_TRAIT_ZARIA_INFO</Description>
 			<Civilopedia>TXT_KEY_TRAIT_ZARIA_INFO_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_ZARIA_INFO_SHORT</ShortDescription>
-			<Help>TXT_KEY_TRAIT_ZARIA_INFO3_HELP</Help>
 			<iLevel>3</iLevel>
 			<iMinRequiredPoints>1500</iMinRequiredPoints>
 			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>

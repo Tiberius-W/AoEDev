@@ -610,6 +610,10 @@ int CyCity::hurryGold(int /*HurryTypes*/ iHurry)
 	return m_pCity ? m_pCity->hurryGold((HurryTypes)iHurry) : -1;
 }
 
+int CyCity::hurryCulture(int /*HurryTypes*/ iHurry)
+{
+	return m_pCity ? m_pCity->hurryCulture((HurryTypes)iHurry) : -1;
+}
 int CyCity::hurryPopulation(int /*HurryTypes*/ iHurry)
 {
 	return m_pCity ? m_pCity->hurryPopulation((HurryTypes)iHurry) : -1;

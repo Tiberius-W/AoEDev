@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_SWASHBUCKLER_IMPORTANTTWEAKS</Tag>
+		<English>Swashbuckling Traditions</English>
+		<French>Swashbuckling Traditions</French>
+		<German>Swashbuckling Traditions</German>
+		<Italian>Swashbuckling Traditions</Italian>
+		<Spanish>Swashbuckling Traditions</Spanish>
+	</TEXT>
+</Civ4GameText>

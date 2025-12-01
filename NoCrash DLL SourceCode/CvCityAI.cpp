@@ -9263,6 +9263,35 @@ void CvCityAI::AI_doHurry(bool bForce)
 								}
 							}
 						}
+						else
+						{
+							int iHurryCulture = hurryCulture((HurryTypes)iI);
+							if (iHurryCulture > 0 && iHurryAngerLength == 0) {
+								bool bDanger = AI_isDanger();
+								bool bWait = true;
+
+								if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_TURTLE))
+								{
+									if ((bDanger ? 5 : 8) * iHurryCulture < getCulture(getOwnerINLINE()))
+									{
+										bWait = false;
+									}
+								}
+								else
+								{
+									if ((bDanger ? 8 : 12) * iHurryCulture < getCulture(getOwnerINLINE()))
+									{
+										bWait = false;
+									}
+								}
+
+								if (!bWait)
+								{
+									hurry((HurryTypes)iI);
+									break;
+								}
+							}
+						}
 					}
 				}
 			}

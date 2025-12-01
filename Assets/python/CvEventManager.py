@@ -2844,6 +2844,7 @@ class CvEventManager:
 					pLoopPlot.setPlotEffectType(gc.getInfoTypeForString("PLOT_EFFECT_BLESSED_LANDS"))
 
 			elif gc.getInfoTypeForString("MODULE_MAGISTER_ASHES")!=-1 and iImprovement==gc.getInfoTypeForString("IMPROVEMENT_WHISPERING_WOOD"):
+				pPlot.setFeatureType(gc.getInfoTypeForString("FEATURE_FOREST_ANCIENT"),0)
 				for iiX, iiY in aoeByMapSize(pPlot):
 					pLoopPlot = getPlot(iiX, iiY)
 					pLoopPlot.setPlotEffectType(gc.getInfoTypeForString("PLOT_EFFECT_MIST"))

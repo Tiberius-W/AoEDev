@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Spell Infos -->
+<Civ4SpellInfos xmlns="x-schema:CaptainImportantTriggerTweaks_CIV4UnitSpellSchema.xml">
+	<SpellInfos>
+		<SpellInfo>			<!--Swashbuckling Tradition-->
+			<Type>SPELL_SWASHBUCKLER_IMPORTANTTWEAKS</Type>
+			<Description>TXT_KEY_SPELL_SWASHBUCKLER_IMPORTANTTWEAKS</Description>
+			<Civilopedia>TXT_KEY_SPELL_SWASHBUCKLER_IMPORTANTTWEAKS_PEDIA</Civilopedia>
+			<PrereqTraits>
+			<PrereqTrait>TRAIT_SWASHBUCKLER</PrereqTrait>
+			</PrereqTraits>
+			<bAllowAI>1</bAllowAI>
+			<bHasCasted>1</bHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_NAVIGATION1</AddPromotion>
+				<AddPromotion>PROMOTION_EXPANDED_HULL</AddPromotion>
+			</AddPromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<Effect>EFFECT_WIND_SWIRL</Effect>
+			<Sound>AS3D_SPELL_HASTE</Sound>
+			<Button>Art/Interface/Buttons/Promotions/Hasted.dds</Button>
+		</SpellInfo>
+	</SpellInfos>
+</Civ4SpellInfos>

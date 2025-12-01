@@ -2307,6 +2307,7 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 	CvWString szTempBuffer;
 	bool bFirst;
 	int iHurryGold;
+	int iHurryCulture;
 	int iHurryPopulation;
 	int iHurryAngerLength;
 	int iI;
@@ -2323,6 +2324,13 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		{
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HURRY_GOLD", iHurryGold));
+		}
+		iHurryCulture = pHeadSelectedCity->hurryCulture((HurryTypes)(widgetDataStruct.m_iData1));
+
+		if (iHurryCulture > 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HURRY_CULTURE", iHurryCulture));
 		}
 
 		iHurryPopulation = pHeadSelectedCity->hurryPopulation((HurryTypes)(widgetDataStruct.m_iData1));

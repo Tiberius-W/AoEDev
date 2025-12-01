@@ -240,6 +240,7 @@ public:
 	int hurryCost(bool bExtra) const;																				// Exposed to Python
 	int getHurryCostModifier(bool bIgnoreNew = false) const;
 	int hurryGold(HurryTypes eHurry) const;												// Exposed to Python
+	int hurryCulture(HurryTypes eHurry) const;												// Exposed to Python
 	int hurryPopulation(HurryTypes eHurry) const;									// Exposed to Python
 	int hurryProduction(HurryTypes eHurry) const;														// Exposed to Python
 	int flatHurryAngerLength() const;																				// Exposed to Python
@@ -1936,6 +1937,7 @@ protected:
 	int getHurryCost(bool bExtra, int iProductionLeft, int iHurryModifier, int iModifier) const;
 	int getHurryPopulation(HurryTypes eHurry, int iHurryCost) const;
 	int getHurryGold(HurryTypes eHurry, int iHurryCost) const;
+	int getHurryCulture(HurryTypes eHurry, int iHurryCost) const;
 	bool canHurryUnit(HurryTypes eHurry, UnitTypes eUnit, bool bIgnoreNew) const;
 	bool canHurryBuilding(HurryTypes eHurry, BuildingTypes eBuilding, bool bIgnoreNew) const;
 

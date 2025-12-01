@@ -7239,6 +7239,31 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 		{
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_GREAT_GENERAL_MODIFIER", GC.getTraitInfo(eTrait).getGreatGeneralRateModifier()));
 		}
+		if (GC.getTraitInfo(eTrait).getDiscoverRandModifier() != 0)
+		{
+			szHelpString.append(NEWLINE);
+			if (GC.getTraitInfo(eTrait).getDiscoverRandModifier() > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_BONUS_DISCOVER_RAND_MODIFIER_INCREASE"));
+			}
+			if (GC.getTraitInfo(eTrait).getDiscoverRandModifier() < 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_BONUS_DISCOVER_RAND_MODIFIER_DECREASE"));
+			}
+		}
+		if (GC.getTraitInfo(eTrait).getSpreadRandModifier() != 0)
+		{
+			szHelpString.append(NEWLINE);
+			if (GC.getTraitInfo(eTrait).getSpreadRandModifier() > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_INCREASE"));
+			}
+			if (GC.getTraitInfo(eTrait).getSpreadRandModifier() < 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_DECREASE"));
+			}
+		}
+
 		if (GC.getTraitInfo(eTrait).getACGrowthThreshold() != 0)
 		{
 			szHelpString.append(NEWLINE);
@@ -7322,6 +7347,20 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 				else
 				{
 					szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_UNIT_UNITCLASS_DEFAULT", GC.getUnitInfo((UnitTypes)GC.getTraitInfo(eTrait).getExtraUnitClasses(iJ)).getTextKeyWide(), GC.getUnitInfo((UnitTypes)GC.getTraitInfo(eTrait).getExtraUnitClasses(iJ)).getTextKeyWide()));
+				}
+			}
+		}
+		for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
+		{
+			if (GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ) != NO_BUILDING)
+			{
+				if (GC.getBuildingClassInfo((BuildingClassTypes)iJ).getDefaultBuildingIndex() != GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ))
+				{
+					szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_BUILDING_BUILDINGCLASS", GC.getBuildingClassInfo((BuildingClassTypes)iJ).getDescription(), GC.getBuildingInfo((BuildingTypes)GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ)).getTextKeyWide(), GC.getBuildingInfo((BuildingTypes)GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ)).getTextKeyWide()));
+				}
+				else
+				{
+					szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_BUILDING_BUILDINGCLASS_DEFAULT", GC.getBuildingInfo((BuildingTypes)GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ)).getTextKeyWide(), GC.getBuildingInfo((BuildingTypes)GC.getTraitInfo(eTrait).getExtraBuildingClasses(iJ)).getTextKeyWide()));
 				}
 			}
 		}
@@ -10373,7 +10412,7 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 		int iSpecialistGPP = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
 		if (pCity != NULL)
 		{
-			iSpecialistGPP += pCity->getLocalSpecialistGPP(eSpecialist);
+			iSpecialistGPP += pCity->getLocalSpecialistGPP(eSpecialist) + GET_PLAYER(pCity->getOwner()).getSpecialistTypeExtraGPP(eSpecialist);
 		}
 		if (iSpecialistGPP > 0)
 		{
@@ -14893,12 +14932,13 @@ void CvGameTextMgr::parseCivicInfoHelp(CvWStringBuffer &szHelpText, CivicTypes e
 				szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_TURN_CITIZENS_INTO", GC.getCivicInfo(eCivic).getSpecialistCount(iI), GC.getSpecialistInfo((SpecialistTypes) iI).getTextKeyWide()));
 			}
 		}
-		if (GC.getCivicInfo(eCivic).isSpecialistValid(iI))
-		{
-			//	Specialist Commerce
-			setCommerceChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_TYPE",GC.getSpecialistInfo((SpecialistTypes)iI).getDescription()).GetCString(), GC.getCivicInfo(eCivic).getSpecialistExtraCommerceArray());
+	//	if (GC.getCivicInfo(eCivic).isSpecialistValid(iI))
+	//	{
+		//	Specialist Commerce
+		setCommerceChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_TYPE",GC.getSpecialistInfo((SpecialistTypes)iI).getDescription()).GetCString(), GC.getCivicInfo(eCivic).getSpecialistCommerceChangeArray(iI));
+		setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_TYPE", GC.getSpecialistInfo((SpecialistTypes)iI).getDescription()).GetCString(), GC.getCivicInfo(eCivic).getSpecialistYieldChangeArray(iI));
 
-		}
+	//	}
 	}
 
 	//	Great People Modifier...
@@ -14914,7 +14954,30 @@ void CvGameTextMgr::parseCivicInfoHelp(CvWStringBuffer &szHelpText, CivicTypes e
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_GREAT_GENERAL_MOD", GC.getCivicInfo(eCivic).getGreatGeneralRateModifier()));
 	}
-
+	if (GC.getCivicInfo(eCivic).getDiscoverRandModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		if (GC.getCivicInfo(eCivic).getDiscoverRandModifier() > 0)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_BONUS_DISCOVER_RAND_MODIFIER_INCREASE"));
+		}
+		if (GC.getCivicInfo(eCivic).getDiscoverRandModifier() < 0)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_BONUS_DISCOVER_RAND_MODIFIER_DECREASE"));
+		}
+	}
+	if (GC.getCivicInfo(eCivic).getSpreadRandModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		if (GC.getCivicInfo(eCivic).getSpreadRandModifier() > 0)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_INCREASE"));
+		}
+		if (GC.getCivicInfo(eCivic).getSpreadRandModifier() < 0)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_DECREASE"));
+		}
+	}
 	if (GC.getCivicInfo(eCivic).getDomesticGreatGeneralRateModifier() != 0)
 	{
 		szHelpText.append(NEWLINE);
@@ -15184,6 +15247,13 @@ void CvGameTextMgr::parseCivicInfoHelp(CvWStringBuffer &szHelpText, CivicTypes e
 		if (GC.getCivicInfo(eCivic).getSpecialistCrimeChanges(iI) != 0)
 		{
 			szHelpText.append(gDLL->getText("TXT_KEY_TRAIT_SPECIALIST_CRIME_CHANGE", GC.getSpecialistInfo((SpecialistTypes)iI).getDescription(), GC.getCivicInfo(eCivic).getSpecialistCrimeChanges(iI)));
+		}
+	}
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
+	{
+		if (GC.getCivicInfo(eCivic).getSpecialistGPPChanges(iI) != 0)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_TRAIT_SPECIALIST_GPP_CHANGE", GC.getSpecialistInfo((SpecialistTypes)iI).getDescription(), GC.getCivicInfo(eCivic).getSpecialistGPPChanges(iI)));
 		}
 	}
 
@@ -21814,6 +21884,14 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_STATE_RELIGION"));
+			}
+		}
+		if (kBuilding.isPrereqNoReligion())
+		{
+			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION != GET_PLAYER(ePlayer).getStateReligion() )
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_NO_RELIGION"));
 			}
 		}
 

@@ -856,6 +856,8 @@ public:
 
 	int getExtraUnitClasses(UnitClassTypes eIndex) const;																								// Exposed to Python
 	void setExtraUnitClasses(UnitClassTypes eIndex, int iChange);
+	int getExtraBuildingClasses(BuildingClassTypes eIndex) const;																								// Exposed to Python
+	void setExtraBuildingClasses(BuildingClassTypes eIndex, int iChange);
 	int getUnitClassCount(UnitClassTypes eIndex) const;																								// Exposed to Python
 	bool isUnitClassMaxedOut(UnitClassTypes eIndex, int iExtra = 0) const;														// Exposed to Python
 	void changeUnitClassCount(UnitClassTypes eIndex, int iChange);
@@ -1245,6 +1247,9 @@ public:
 	void changeSpecialistTypeExtraCrime(SpecialistTypes eIndex1, int iChange);
 	int getSpecialistTypeExtraCrime(SpecialistTypes eIndex1) const;
 
+	void changeSpecialistTypeExtraGPP(SpecialistTypes eIndex1, int iChange);
+	int getSpecialistTypeExtraGPP(SpecialistTypes eIndex1) const;
+
 
 	int getPotency();
 	void changePotency(int iChange);
@@ -1455,6 +1460,8 @@ public:
 	void changeUpgradeCostModifier(int iChange);
 	int getDiscoverRandModifier() const;
 	void changeDiscoverRandModifier(int iChange);
+	int getSpreadRandModifier() const;
+	void changeSpreadRandModifier(int iChange);
 	int getHealChange() const;
 	void changeHealChange(int iChange);
 	int getHealChangeEnemy() const;
@@ -1910,6 +1917,7 @@ protected:
 	int m_iDisableResearch;
 	int m_iDisableSpellcasting;
 	int m_iDiscoverRandModifier;
+	int m_iSpreadRandModifier;
 	int m_iEnslavementChance;
 	int m_iFreeXPFromCombat;
 	int m_iHealChange;
@@ -2008,6 +2016,7 @@ protected:
 	int* m_paiUnitClassCount;
 	int* m_paiUnitClassPlayerInstancesChanges;
 	int* m_paiExtraUnitClasses;
+	int* m_paiExtraBuildingClasses;
 	int* m_paiUnitClassMaking;
 	int* m_paiBuildingClassCount;
 	int* m_paiBuildingClassMaking;
@@ -2029,6 +2038,7 @@ protected:
 	int* m_paiSpecialistTypeExtraHappiness;
 	int* m_paiSpecialistTypeExtraHealth;
 	int* m_paiSpecialistTypeExtraCrime;
+	int* m_paiSpecialistTypeExtraGPP;
 
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;

@@ -2230,6 +2230,12 @@ void CvGame::startFlyoutMenu(const CvPlot* pPlot, std::vector<CvFlyoutMenuData>&
 					{
 						szBuffer += gDLL->getText("TXT_KEY_HURRY_PRODUCTION_GOLD", iHurryGold);
 					}
+					
+					int iHurryCulture = pCity->hurryCulture((HurryTypes)iI);
+					if (iHurryCulture > 0)
+					{
+						szBuffer += gDLL->getText("TXT_KEY_HURRY_PRODUCTION_CULTURE", iHurryCulture);
+					}
 
 					int iHurryPopulation = pCity->hurryPopulation((HurryTypes)iI);
 					if (iHurryPopulation > 0)

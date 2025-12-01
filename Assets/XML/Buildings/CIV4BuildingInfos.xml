@@ -2431,6 +2431,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_BEAR_CAVE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BEAR_DEN</ArtDefineTag>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
 			<iConquestProb>25</iConquestProb>
 			<iHappiness>1</iHappiness>
@@ -3239,6 +3240,7 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GORILLA_FOREST</ArtDefineTag>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
 			<iConquestProb>25</iConquestProb>
 			<iAIWeight>10</iAIWeight>
@@ -4496,6 +4498,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_LION_SAVANNA_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LION_SAVANNA</ArtDefineTag>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
 			<iConquestProb>25</iConquestProb>
 			<iHappiness>1</iHappiness>
@@ -8039,6 +8042,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_TIGER_MANGROVE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LION_SAVANNA</ArtDefineTag>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
 			<iConquestProb>25</iConquestProb>
 			<iHappiness>1</iHappiness>
@@ -8617,6 +8621,7 @@
 			<Type>BUILDING_WOLF_BURROW</Type>
 			<Description>TXT_KEY_BUILDING_WOLF_BURROW</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WOLF_BURROW_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WOLF_BURROW</ArtDefineTag>
 			<Parent>BUILDINGCLASS_GROVE</Parent>
@@ -16989,7 +16994,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<bCrimeEffect>1</bCrimeEffect>
-			<iPrereqCrime>1000</iPrereqCrime>
+			<iPrereqCrime>500</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -17103,7 +17108,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_ORGANIZED_TRAFFICKING_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<bCrimeEffect>1</bCrimeEffect>
-			<iPrereqCrime>1000</iPrereqCrime>
+			<iPrereqCrime>500</iPrereqCrime>
 			<iPrereqPopulation>10</iPrereqPopulation>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
@@ -18533,6 +18538,7 @@
 			<Type>BUILDING_CRIME_RAVENOUS_PACK</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>10</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
@@ -18818,6 +18824,7 @@
 			<Type>BUILDING_CRIME_RAVENOUS_PACK_ESUS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK_PEDIA</Civilopedia>
+			<Help>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>10</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
@@ -18994,6 +19001,7 @@
 			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
 			<Civilopedia>TXT_KEY_BUILDING_PENAL_COLONY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PENAL_COLONY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PENAL_COLONY_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DUNGEON</ArtDefineTag>
 			<bNeverCapture>1</bNeverCapture>
@@ -19863,6 +19871,75 @@
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
 					<fTrainXPCap>5</fTrainXPCap>
+				</TrainXPCap>
+			</TrainXPCaps>
+		</BuildingInfo>
+		<BuildingInfo>		<!-- Aphotic Throne Faeryl                                    Religious Building -->
+			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
+			<Type>BUILDING_APHOTIC_THRONE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL_PEDIA</Civilopedia>
+			<Strategy />
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_APHOTIC_THRONE</ArtDefineTag>
+			<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
+			<PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+			<PrereqTech>TECH_DECEPTION</PrereqTech>
+			<iAIWeight>70</iAIWeight>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>2</iCommerce>
+				<iCommerce>1</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceModifiers>
+				<iCommerce>5</iCommerce>
+				<iCommerce>5</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceModifiers>
+			<iPerCrimeEffectHappy>1</iPerCrimeEffectHappy>
+			<PerCrimeEffectCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+				<iCommerce>1</iCommerce>
+			</PerCrimeEffectCommerceChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_OVERLORDS_DINK</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_SHADOW</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+			<TrainXPRates>
+				<TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<fTrainXPRate>0.50</fTrainXPRate>
+				</TrainXPRate>
+			</TrainXPRates>
+			<TrainXPCaps>
+				<TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<fTrainXPCap>10</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
 		</BuildingInfo>

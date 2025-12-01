@@ -150,6 +150,7 @@ public:
 	int productionLeft();
 	int hurryCost(bool bExtra);
 	int hurryGold(int /*HurryTypes*/ iHurry);
+	int hurryCulture(int /*HurryTypes*/ iHurry);
 	int hurryPopulation(int /*HurryTypes*/ iHurry);
 	int hurryProduction(int /*HurryTypes*/ iHurry);
 	int flatHurryAngerLength();

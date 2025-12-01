@@ -672,7 +672,7 @@ def postCombatAuricAscendedWon(pCaster, pOpponent):
 def onDeathAuric(pCaster):
 	iPlayer = pCaster.getOwner()
 	pPlayer = gc.getPlayer(iPlayer)
-	if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_ASCENDED"))==0 :
+	if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))+ pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))+pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_ASCENDED"))<=1 :
 		for iTrait in range(gc.getNumTraitInfos()):
 			if pPlayer.hasTrait(iTrait):
 				pPlayer.setHasTrait(iTrait,False)
@@ -4080,6 +4080,9 @@ def reqSpreadTheCouncilOfEsus(caster):
 def spellFoundThrone(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pCity = caster.plot().getPlotCity()
+	if(pPlayer.getCivilizationType()==gc.getInfoType("CIVILIZATION_SVARTALFAR")):
+		pCity.setNumRealBuilding(getInfoType("BUILDINGCLASS_APHOTIC_THRONE_FAERYL"),1)
+		return
 	thrones=["BUILDING_APHOTIC_THRONE_MERCHANT","BUILDING_APHOTIC_THRONE_MERCHANT","BUILDING_APHOTIC_THRONE_SLAVER","BUILDING_APHOTIC_THRONE_SLAVER","BUILDING_APHOTIC_THRONE_POISONER","BUILDING_APHOTIC_THRONE_POISONER","BUILDING_APHOTIC_THRONE_BORED_NOBLE"]
 	randNum		= CyGame().getSorenRandNum
 	ind = randNum(len(thrones),"aphotic throne")
@@ -8882,6 +8885,20 @@ def exploreLairMurderhoof(argsList):
 	newUnit.setHasPromotion(getInfoType('PROMOTION_AWAKENED'),True)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_HERO'),True)
 	newUnit.setHasPromotion(getInfoType('PROMOTION_COMBAT1'),True)
+
+def exploreLairSeedDragon(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getANIMAL_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_SEED_DRAGON'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	
+def exploreLairKezef(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_KEZEF'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 	
 def exploreLairUndeadCarnival(argsList):
@@ -9026,6 +9043,21 @@ def exploreLairMulyalfar(argsList):
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_ICE_DRUID'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	newUnit.changeDamage(70,0)
+
+def exploreLairPriestWinter(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_PRIEST_OF_WINTER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.changeDamage(70,0)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_IMMORTAL"),True)
+
+def exploreLairFrostlingWarrior(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_FROSTLING_AXEMAN'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.changeDamage(70,0)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_MITHRIL_WEAPONS"),True)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_MAGIC_IMMUNE"),True)
 
 def exploreLairDwarvenDruid(argsList):
 	pUnit, pPlot = argsList
@@ -9680,7 +9712,26 @@ def exploreLairSeaSerpent(argsList):
 	bPlayer=gc.getPlayer(gc.getANIMAL_PLAYER())
 	pNewPlot = findClearPlot(-1, pPlot)
 	newUnit = bPlayer.initUnit(getInfoType('UNIT_SEA_SERPENT'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+def exploreLairVampireKraken(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_KRAKEN'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_VAMPIRE"),True)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_DEMON"),True)
+
+def exploreLairOtoloch2(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	NewUnit.setName("Kumitara, the Otoloch Whisperer")
 	
+def exploreLairTsunami(argsList):
+	pUnit, pPlot = argsList
+	pUnit.cast(getInfoType("SPELL_TSUNAMI"))
+
 def exploreLairTortoise(argsList):
 	pUnit, pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
@@ -9746,6 +9797,28 @@ def exploreLairBarbatos(argsList):
 	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
 	pNewPlot = findClearPlot(-1, pPlot)
 	newUnit = bPlayer.initUnit(getInfoType('UNIT_BARBATOS'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+def exploreLairRottenEarthElem(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_EARTH_ELEMENTAL'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit.setHasPromotion(getInfoType("PROMOTION_ROTTEN"),True)
+
+def exploreLairDeathKnight(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_DEATH_KNIGHT'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+def exploreLairUndeadDrake(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_UNDEAD_DRAKE'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 def exploreLairFrostGiant(argsList):
 	pUnit, pPlot = argsList
@@ -9753,6 +9826,13 @@ def exploreLairFrostGiant(argsList):
 	bPlayer=gc.getPlayer(gc.getDEMON_PLAYER())
 	pNewPlot = findClearPlot(-1, pPlot)
 	newUnit = bPlayer.initUnit(getInfoType('UNIT_FROST_GIANT'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+def exploreLairPlaguedRats(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	bPlayer=gc.getPlayer(gc.getANIMAL_PLAYER())
+	pNewPlot = findClearPlot(-1, pPlot)
+	newUnit = bPlayer.initUnit(getInfoType('UNIT_PLAGUED_RAT_PACK'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 def exploreLairIceElemental(argsList):
 	pUnit, pPlot = argsList
@@ -11522,6 +11602,11 @@ def reqRecycle(pCaster):
 		return false
 	return true
 
+def reqSidequest(pCaster):
+	if (pCaster.getDomainType()!=gc.getInfoTypeForString("DOMAIN_LAND")):
+		return False
+	return True
+
 def reqGiftWerewolf(caster):
 	pPlot = caster.plot()
 	for i in range(pPlot.getNumUnits()):
@@ -11598,6 +11683,7 @@ def postCombatClavaVindex(pCaster, pOpponent):
 	if pOpponent.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DEMON')) or pOpponent.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ICE_DEMON')) :
 		if not gc.isNoCrash():
 			gc.getGame().addtoDeathList(gc.getInfoTypeForString('DEATHLIST_BASIUM_DEMON'),pOpponent)
+		pOpponent.changeImmortal(-100)
 		pOpponent.kill(True, iWinner)
 		
 				
@@ -13169,6 +13255,16 @@ def exploreTradeShip(argsList):
 	pPlayer				= gc.getPlayer(pUnit.getOwner())
 	newUnit				= pPlayer.initUnit(getInfoType('UNIT_TRADESHIP'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
+def exploreKelp(argsList):
+	pUnit, pPlot		= argsList
+	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,1):
+		iPlot = getPlot(x,y)
+		iPlot.setFeatureType(getInfoType("FEATURE_KELP"),0)
+	
+def exploreKelpReagents(argsList):
+	pUnit, pPlot		= argsList
+	pPlot.setFeatureType(getInfoType("FEATURE_KELP"),0)
+	
 	
 def reqBuyMount(caster,promotion):
 	if caster.getUnitCombatType()!=getInfoType("UNITCOMBAT_MOUNTED") and not caster.isSecondaryUnitCombat(getInfoType("UNITCOMBAT_MOUNTED")):
@@ -13992,3 +14088,10 @@ def spellSwapEquipment(pCaster):
 				popupInfo.addPythonButton(localText.getText("TXT_KEY_SPELL_SWAP_EQUIPMENT_LIST",(gc.getPromotionInfo(iPromotion).getTextKey(), pHolder.getName(), pHolder.getLevel(),)),gc.getPromotionInfo(iPromotion).getButton())
 			popupInfo.addPopup(iPlayer)
 	
+
+def effectOtoloch(caster):
+	pPlot = caster.plot()
+	if pPlot.getTerrainType()==gc.getInfoTypeForString("TERRAIN_OCEAN") and pPlot.getImprovementType()==-1 and not caster.isLeashed():
+		if CyGame().getSorenRandNum(100, "otoloch")<5:
+			caster.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LEASH_1"),True)
+			pPlot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_SHIMMERING_PORTAL"))

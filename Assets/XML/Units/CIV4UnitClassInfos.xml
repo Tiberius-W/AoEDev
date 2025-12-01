@@ -677,6 +677,17 @@
 			<DefaultUnit>UNIT_SEA_SERPENT</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- OTOLOCH -->
+			<Type>UNITCLASS_OTOLOCH</Type>
+			<Description>TXT_KEY_UNIT_OTOLOCH</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_OTOLOCH</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- Nuckelavee -->
 			<Type>UNITCLASS_NUCKELAVEE</Type>
 			<Description>TXT_KEY_UNIT_NUCKELAVEE</Description>
@@ -1004,6 +1015,17 @@
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<bUnique>1</bUnique>
 			<DefaultUnit>UNIT_BLACK_DRAKE</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!--	UNDEAD	DRAKE -->
+			<Type>UNITCLASS_UNDEAD_DRAKE</Type>
+			<Description>TXT_KEY_UNIT_GRIFFON</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_UNDEAD_DRAKE</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- RED DRAKE -->
@@ -4578,5 +4600,28 @@
 			<bUnique>1</bUnique>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Seed Dragon -->
+			<Type>UNITCLASS_SEED_DRAGON</Type>
+			<Description>TXT_KEY_UNIT_SEED_DRAGON</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_SEED_DRAGON</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+	<UnitClassInfo>		<!-- Kezef -->
+			<Type>UNITCLASS_KEZEF</Type>
+			<Description>TXT_KEY_UNIT_KEZEF</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_KEZEF</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+
 		</UnitClassInfos>
 	</Civ4UnitClassInfos>

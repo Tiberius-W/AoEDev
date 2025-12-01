@@ -677,15 +677,6 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_SAVEROUS_AUSTRIN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-				<StyleUnit><!--Shadowrider Pegasus-->
-					<UnitType>UNIT_SHADOWRIDER</UnitType>
-					<PromotionType>PROMOTION_PEGASUS</PromotionType>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</MiddleArtDefineTag>
-					</UnitMeshGroup>
-				</StyleUnit>
 				<StyleUnit><!--Centaur Nightmare-->
 					<UnitType>UNIT_CENTAUR</UnitType>
 					<PromotionType>PROMOTION_NIGHTMARE</PromotionType>
@@ -756,6 +747,14 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_CENTAUR_LANCER_NIGHTMARE</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_CENTAUR_LANCER_NIGHTMARE</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_CENTAUR_LANCER_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Kraken demon-->
+					<UnitType>UNIT_KRAKEN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_KRAKEN_DEMON</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_KRAKEN_DEMON</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_KRAKEN_DEMON</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -1043,15 +1042,6 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_SOLDIER_OF_KILMORPH_AUSTRIN</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_SOLDIER_OF_KILMORPH_AUSTRIN</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_SOLDIER_OF_KILMORPH_AUSTRIN+</MiddleArtDefineTag>
-					</UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_PRIEST_OF_KILMORPH</UnitType>
-					<PromotionType>PROMOTION_PEGASUS</PromotionType>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				</StyleUnits>
@@ -3946,9 +3936,9 @@
 					<UnitType>UNIT_HORSE_ARCHER</UnitType>
 					<PromotionType>PROMOTION_PEGASUS</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_HORSE_ARCHER_AUSTRIN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_HORSE_ARCHER_AUSTRIN</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_HORSE_ARCHER_AUSTRIN+</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_MOUNTED_PEGASUS_UNIT_HORSE_ARCHER_AUSTRIN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_MOUNTED_PEGASUS_UNIT_HORSE_ARCHER_AUSTRIN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_MOUNTED_PEGASUS_UNIT_HORSE_ARCHER_AUSTRIN+</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -4327,18 +4317,36 @@
 					<UnitType>UNIT_NIGHTWATCH</UnitType>
 					<PromotionType>PROMOTION_PEGASUS</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_MOUNTED_PEGASUS_NIGHTWATCH_AUSTRIN</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Shadowrider Pegasus-->
+					<UnitType>UNIT_SHADOWRIDER</UnitType>
+					<PromotionType>PROMOTION_PEGASUS</PromotionType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_MOUNTED_PEGASUS_SHADOWRIDER_AUSTRIN</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_KILMORPH</UnitType>
+					<PromotionType>PROMOTION_PEGASUS</PromotionType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_STONEWARDEN_AUSTRIN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PARAMANDER</UnitType>
 					<PromotionType>PROMOTION_PEGASUS</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMADANDER_AUSTRIN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMADANDER_AUSTRIN</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMADANDER_AUSTRIN</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMANDER_AUSTRIN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMANDER_AUSTRIN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MOUNTED_PEGASUS_PARAMANDER_AUSTRIN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

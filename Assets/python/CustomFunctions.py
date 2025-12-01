@@ -1778,12 +1778,26 @@ class CustomFunctions:
 			pPlayer = gc.getPlayer(iPlayer)
 
 		pPlot           = pCity.plot()
-		iDenPop         =(pCity.getPopulation() - 1) * 0.4
-		iSpawnChance    = 4
+		iDenPop         =(pCity.getPopulation() - 1) * 0.6
+		iSpawnChance    = 8
 		iReligion       = pPlayer.getStateReligion()
 		Rel             = self.Religions
 		Civic           = self.Civics
-
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_BEAR_CAVE")))>0:
+			iSpawnChance=iSpawnChance+0.5
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_GORILLA_FOREST")))>0:
+			iSpawnChance=iSpawnChance+0.5
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_LION_SAVANNA")))>0:
+			iSpawnChance=iSpawnChance+0.5
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_TIGER_MANGROVE")))>0:
+			iSpawnChance=iSpawnChance+0.5
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_WOLF_BURROW")))>0:
+			iSpawnChance=iSpawnChance+0.5
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_CRIME_RAVENOUS_PACK")))>0:
+			iSpawnChance=iSpawnChance+1
+		if (pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_CRIME_RAVENOUS_PACK_ESUS")))>0:
+			iSpawnChance=iSpawnChance+1
+			
 		if pPlayer.isCivic(Civic["Wild Council"]):
 			iSpawnChance = iSpawnChance * 2
 		if iReligion == Rel["Fellowship"]:

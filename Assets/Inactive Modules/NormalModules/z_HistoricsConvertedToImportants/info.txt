@@ -1,0 +1,43 @@
+[name]
+HistoricsConvertedToImportants
+[version]
+1.0 
+[rifeversion]
+381
+[author]
+Captain
+[dependency]
+;Ashes of Erebus;ImportantLeaders
+[compatible]
+;everything
+[shortdesc]
+Adds important leader options for most civs, generally leaving 1 leader as historic. Civs with only 1 leader like austrin converted to important, too.
+[desc]
+Changes each following leader to important with one trait, listed as follows. Capria still has aspect of war, it is just flagged as a civ trait so she can earn 2 personality traits. Casin changed to match other importants.
+Some I picked purely to offset the historical choices - sheelba is organized since jonas is aggressive, mahala is trader since charadon is warlike, cassin is philosophical because hannah is financial.
+
+- Amurites - Valledia [Charismatic]
+- Archos - Veraato [Arcane]
+- Bannor - Capria [Industrious]
+- Calabim - Kind of think Mahon the Butcher with tyrant trait is weird enough so they get a 'normal one', Flauros [Financial]
+- Chislev - Natane [Organized]
+- Clan of Embers - Sheelba [Organized]
+- Doviello - Mahala [Traders]
+- Khazad - Kandros Fir [Financial]
+- Lanun - Cassin loses financial
+- Luchuirp - Letigo changes because aggressive is lame on golem faction, spiritual at least lets you lean into your religous units and is not 'wasted' [Spiritual]
+- Scions - Korinna [Aggressive]
+
+V2, renamed to Historics Converted To Importants and added:
+- Austrin - Deirda [Expansive]
+- Elohim - Ethne [Spiritual]
+- Hippus - Tasunke [Raiders]
+- Ljosalfar - Thessa [Expansive]
+- Luchuirp - Garrim Gyr [Financial]
+- Mazatl - Hianthrogh [Defender]
+- Sheaim - Tebryn [Arcane]
+- Balseraphs - Keelyn [Summoner]
+
+with bezeri from Vicious Seas
+
+- Bezer - Cimesiat [Charismatic] (still feral too)

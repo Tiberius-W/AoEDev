@@ -1034,6 +1034,7 @@ void CvPlot::doImprovementCityWorking()
 
 	int iSpeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getImprovementPercent();
 	int iDiscoverMod = std::max(-99, GET_PLAYER(getOwnerINLINE()).getDiscoverRandModifier());
+	int iSpreadMod = std::max(-99, GET_PLAYER(getOwnerINLINE()).getSpreadRandModifier());
 	int iOffset = GC.getGameINLINE().getMapRandNum(GC.getNumBonusInfos(), "Don't wanna weigh first bonuses differently");
 
 	for (int iI = iOffset; iI < GC.getNumBonusInfos() + iOffset; ++iI)
@@ -1065,7 +1066,7 @@ void CvPlot::doImprovementCityWorking()
 		{
 			continue;
 		}
-		iChance = iChance * iSpeedMod / (100 + iDiscoverMod);
+		iChance = iChance * iSpeedMod / (100 + iSpreadMod);
 		if (GC.getGameINLINE().getMapRandNum(std::max(0, iChance), "Bonus Spread") == 0)
 		{
 			setBonusType((BonusTypes)iBonus);

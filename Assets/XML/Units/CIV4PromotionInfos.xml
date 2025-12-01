@@ -1903,8 +1903,12 @@
 			<Description>TXT_KEY_BUILDING_MOKKAS_CAULDRON</Description>
 			<Civilopedia>TXT_KEY_EQUIPMENT_MOKKA_CAULDRON_PEDIA</Civilopedia>
 			<Button>Art/Interface/Buttons/buildings/mokkascauldron.dds</Button>
+			<iSlaveGenerationChance>80</iSlaveGenerationChance>
+			<bPrereqAliveCapture>1</bPrereqAliveCapture>
+			<CapturePromotions>
+				<PromotionType>PROMOTION_DEMON</PromotionType>
+			</CapturePromotions>
 			<bEquipment>1</bEquipment>
-			<PythonPostCombatWon>spellMokkaCauldronCombatWon(pCaster, pOpponent)</PythonPostCombatWon>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Empty Bier -->
 			<Type>PROMOTION_EMPTY_BIER</Type>
@@ -9510,7 +9514,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander1.dds</Button>
-			<iExtraCombatStr>1</iExtraCombatStr>
 			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<iMinLevel>4</iMinLevel>
 			<PromotionNextLevel>PROMOTION_COMMANDER2</PromotionNextLevel>
@@ -9536,7 +9539,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander2.dds</Button>
-			<iExtraCombatStr>1</iExtraCombatStr>
 			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<iMinLevel>6</iMinLevel>
 			<PromotionNextLevel>PROMOTION_COMMANDER3</PromotionNextLevel>
@@ -9572,7 +9574,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander2.dds</Button>
-			<iExtraCombatStr>1</iExtraCombatStr>
 			<iExtraCombatDefense>1</iExtraCombatDefense>
 			<iMinLevel>8</iMinLevel>
 			<iAirCombat>2</iAirCombat>
@@ -9600,7 +9601,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander1.dds</Button>
-			<iExtraCombatStr>2</iExtraCombatStr>
 			<iExtraCombatDefense>2</iExtraCombatDefense>
 			<iMinLevel>4</iMinLevel>
 			<PromotionNextLevel>PROMOTION_DWARVEN_COMMANDER2</PromotionNextLevel>
@@ -9654,7 +9654,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander2.dds</Button>
-			<iExtraCombatStr>2</iExtraCombatStr>
 			<iExtraCombatDefense>2</iExtraCombatDefense>
 			<iMinLevel>6</iMinLevel>
 			<PromotionNextLevel>PROMOTION_DWARVEN_COMMANDER3</PromotionNextLevel>
@@ -9693,7 +9692,6 @@
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/commander2.dds</Button>
-			<iExtraCombatStr>3</iExtraCombatStr>
 			<iExtraCombatDefense>3</iExtraCombatDefense>
 			<iMinLevel>8</iMinLevel>
 			<iAirCombat>1</iAirCombat>
@@ -11519,8 +11517,15 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_MOBILITY1</Promotion>
+				<Promotion>PROMOTION_MOBILITY2</Promotion>
+				<Promotion>PROMOTION_ENRAGED</Promotion>
+			</PromotionExcludes>
+			
 			<Button>Art/Civs/Other/FortCommander/Influence.dds</Button>
 			<bImmuneToCapture>1</bImmuneToCapture>
+			
 			<iBetterDefenderThanPercent>-20</iBetterDefenderThanPercent>
 			<iMinLevel>-1</iMinLevel>
 			<iFreeXPPerTurn>0.25</iFreeXPPerTurn>
@@ -31467,6 +31472,15 @@
 				<SecondaryUnitCombat>UNITCOMBAT_COMMANDER</SecondaryUnitCombat>
 			</SecondaryUnitCombats>
 			<Button>Art/Interface/Buttons/Unitcombats/SecondaryUC_CommanderAlt.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Secondary Animal -->
+			<Type>PROMOTION_SECONDARY_ANIMAL</Type>
+			<Description>TXT_KEY_PROMOTION_SECONDARY_ANIMAL</Description>
+			<SecondaryUnitCombats>
+				<SecondaryUnitCombat>UNITCOMBAT_ANIMAL</SecondaryUnitCombat>
+			</SecondaryUnitCombats>
+			<Button>Art/Interface/Buttons/Unitcombats/SecondaryUC_Animal.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Secondary Archer -->

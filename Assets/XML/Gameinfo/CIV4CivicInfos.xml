@@ -300,17 +300,16 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iWarWearinessModifier>50</iWarWearinessModifier>
-			<SpecialistExtraCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-				<iCommerce>0</iCommerce>
-			</SpecialistExtraCommerces>
-			<SpecialistValids>
-				<SpecialistValid>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-			</SpecialistValids>
+					<SpecialistCommerces>
+						<iCommerce>0</iCommerce>
+						<iCommerce>2</iCommerce>
+						<iCommerce>0</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<SpecialistUnlimiteds>
 				<SpecialistUnlimited>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
@@ -755,17 +754,16 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BuildingHappinessChange>
 			</BuildingHappinessChanges>
-			<SpecialistExtraCommerces>
-				<iCommerce>2</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</SpecialistExtraCommerces>
-			<SpecialistValids>
-				<SpecialistValid>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
 					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-			</SpecialistValids>
+					<SpecialistCommerces>
+						<iCommerce>2</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<TradeYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>

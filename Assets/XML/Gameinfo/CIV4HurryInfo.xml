@@ -10,6 +10,7 @@
 			<Type>HURRY_POPULATION</Type>
 			<Description>TXT_KEY_HURRY_POPULATION</Description>
 			<iGoldPerProduction>0</iGoldPerProduction>
+			<iCulturePerProduction>0</iCulturePerProduction>
 			<iProductionPerPopulation>30</iProductionPerPopulation>
 			<bAnger>1</bAnger>
 			<Button>Art/Interface/MainScreen/CityScreen/hurry_slavery.dds</Button>
@@ -18,6 +19,7 @@
 			<Type>HURRY_GOLD</Type>
 			<Description>TXT_KEY_HURRY_GOLD</Description>
 			<iGoldPerProduction>3</iGoldPerProduction>
+			<iCulturePerProduction>0</iCulturePerProduction>
 			<iProductionPerPopulation>0</iProductionPerPopulation>
 			<bAnger>0</bAnger>
 			<Button>Art/Interface/MainScreen/CityScreen/hurry_commerce.dds</Button>

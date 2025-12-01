@@ -822,5 +822,11 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_MANA_WATER</DefaultImprovement>
 		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Shimmering Portal -->
+			<Type>IMPROVEMENTCLASS_SHIMMERING_PORTAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SHIMMERING_PORTAL</DefaultImprovement>
+		</ImprovementClassInfo>
 	</ImprovementClassInfos>
 </Civ4ImprovementClassInfos>

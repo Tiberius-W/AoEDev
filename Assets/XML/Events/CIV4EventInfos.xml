@@ -4110,6 +4110,10 @@
 					<UnitClass>UNITCLASS_AXEMAN</UnitClass>
 					<UnitPromotion>PROMOTION_COVER</UnitPromotion>
 				</UnitClassPromotion>
+				<UnitClassPromotion>
+					<UnitClass>UNITCLASS_SPEARMAN</UnitClass>
+					<UnitPromotion>PROMOTION_COVER</UnitPromotion>
+				</UnitClassPromotion>
 			</UnitClassPromotions>
 			<PythonCallback>applyTowerShield</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>

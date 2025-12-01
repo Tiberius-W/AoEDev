@@ -25629,7 +25629,7 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 			pLoopPlot = ::plotXY(plot()->getX_INLINE(), plot()->getY_INLINE(), i, j);
 			if (NULL != pLoopPlot && canCastTargetPlot(spell,false,pLoopPlot))
 			{
-				if (pLoopPlot->getX() != pTargetPlot->getX() || pTargetPlot->getY() != plot()->getY())
+				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
 					pUnitNode = pLoopPlot->headUnitNode();
 					while (pUnitNode != NULL)
@@ -33106,14 +33106,14 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			pUnit = GET_PLAYER(getOwnerINLINE()).initUnit((UnitTypes)iUnit, plot()->getX_INLINE(), plot()->getY_INLINE());
 			if (!plot()->isValidDomainForLocation(*pUnit))
 			{
-				if (!pLoserPlot->isValidDomainForLocation(*pUnit))
-				{
-					pUnit->jumpToNearestValidPlot();
-				}
-				else
-				{
-					pUnit->setXY(pLoserPlot->getX(), pLoserPlot->getY());
-				}
+			//	if (!pLoserPlot->isValidDomainForLocation(*pUnit))
+			//	{
+					pUnit->jumpToNearestValidPlot(false);
+			//	}
+			//	else
+			//	{
+			//		pUnit->setXY(pLoserPlot->getX(), pLoserPlot->getY());
+			//	}
 			}
 			/*************************************************************************************************/
 			/**	Xienwolf Tweak							09/06/08											**/
@@ -33189,7 +33189,7 @@ void CvUnit::doCombatCapture(CvUnit* pLoser)
 			{
 				pLoser->setDamage(75, NO_PLAYER, false);
 				pUnit->convert(pLoser);
-
+			//	pUnit->setDamage(75, NO_PLAYER, false);
 				for (int iI = 0; iI < GC.getNumPromotionInfos(); ++iI)
 				{
 					CvPromotionInfo& kLoopPromotion = GC.getPromotionInfo((PromotionTypes)iI);

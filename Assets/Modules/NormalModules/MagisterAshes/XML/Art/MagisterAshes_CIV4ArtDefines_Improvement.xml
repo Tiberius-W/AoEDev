@@ -47,7 +47,7 @@
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>20.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Improvements/MajensWorkshop/MajensWorkshop2.nif</NIF>
+			<NIF>Art/Structures/Improvements/MajensWorkshop/harounfoundry.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Improvements/MajensWorkshopButton.dds</Button>
 		</ImprovementArtInfo>

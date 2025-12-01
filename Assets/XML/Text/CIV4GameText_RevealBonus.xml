@@ -161,6 +161,14 @@
 		<Spanish>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_SPECIALIST_GPP_CHANGE</Tag>
+		<English>[NEWLINE][ICON_BULLET]%d2 Great Person Point per %s1</English>
+		<French>[NEWLINE][ICON_BULLET]%d2 Great Person Point per %s1</French>
+		<German>[NEWLINE][ICON_BULLET]%d2  Great Person Point per %s1</German>
+		<Italian>[NEWLINE][ICON_BULLET]%d2  Great Person Point per %s1</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SPECIALIST_HEALTH_CHANGE</Tag>
 		<English>[NEWLINE][ICON_BULLET]+%d2 [ICON_HEALTHY] for %s1</English>
 		<French>[NEWLINE][ICON_BULLET]+%d2 [ICON_HEALTHY] for %s1</French>
@@ -2434,6 +2442,14 @@
 		<Spanish>Secondary Rogue</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_SECONDARY_ANIMAL</Tag>
+		<English>Secondary Animal</English>
+		<French>Secondary Animal</French>
+		<German>Secondary Animal</German>
+		<Italian>Secondary Animal</Italian>
+		<Spanish>Secondary Animal</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_REBUILD_MITHRIL_GOLEM</Tag>
 		<English>Rebuild the Mithril Golem</English>
 		<French>Reconstruire le Golem de Mithril</French>
@@ -4336,6 +4352,14 @@
 		<German>Your troops find some kind of body trapped in a block of ice. As they get it out, it starts to thaw, revealing an elf unlike all they have ever scene. He is still alive, and grateful, for now.</German>
 		<Italian>Your troops find some kind of body trapped in a block of ice. As they get it out, it starts to thaw, revealing an elf unlike all they have ever scene. He is still alive, and grateful, for now.</Italian>
 		<Spanish>Your troops find some kind of body trapped in a block of ice. As they get it out, it starts to thaw, revealing an elf unlike all they have ever scene. He is still alive, and grateful, for now.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_PRIEST_WINTER</Tag>
+		<English>Your troops find a man under a pile of snow within the ruins. He seems to have been here for some time, though your healers wonder how he can be alive. He speaks of the calm of winter, and preaches for unending serenity. Some of your villagers seem taken in by his words.</English>
+		<French>Your troops find a man under a pile of snow within the ruins. He seems to have been here for some time, though your healers wonder how he can be alive. He speaks of the calm of winter, and preaches for unending serenity. Some of your villagers seem taken in by his words.</French>
+		<German>Your troops find a man under a pile of snow within the ruins. He seems to have been here for some time, though your healers wonder how he can be alive. He speaks of the calm of winter, and preaches for unending serenity. Some of your villagers seem taken in by his words.</German>
+		<Italian>Your troops find a man under a pile of snow within the ruins. He seems to have been here for some time, though your healers wonder how he can be alive. He speaks of the calm of winter, and preaches for unending serenity. Some of your villagers seem taken in by his words.</Italian>
+		<Spanish>Your troops find a man under a pile of snow within the ruins. He seems to have been here for some time, though your healers wonder how he can be alive. He speaks of the calm of winter, and preaches for unending serenity. Some of your villagers seem taken in by his words.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODY_MARNOK_HELLHOUNDS</Tag>
@@ -9216,6 +9240,14 @@
 		<Spanish>Aphotic Throne</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL</Tag>
+		<English>Aphotic Throne (Faeryl)</English>
+		<French>Aphotic Throne (Faeryl)</French>
+		<German>Aphotic Throne (Faeryl)</German>
+		<Italian>Aphotic Throne (Faeryl)</Italian>
+		<Spanish>Aphotic Throne (Faeryl)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_APHOTIC_THRONE_MERCHANT</Tag>
 		<English>Aphotic Throne (Merchant)</English>
 		<French>Aphotic Throne (Merchant)</French>
@@ -11182,6 +11214,263 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<German>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</German>
 		<Italian>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</Italian>
 		<Spanish>[ICON_BULLET]Units who Kill a Ram of Vir get fully healed.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REQUIRES_NO_RELIGION</Tag>
+		<English>[ICON_BULLET]Cannot Be Built if the civilization has any State Religion</English>
+		<French>[ICON_BULLET]Cannot Be Built if the civilization has any State Religion</French>
+		<German>[ICON_BULLET]Cannot Be Built if the civilization has any State Religion</German>
+		<Italian>[ICON_BULLET]Cannot Be Built if the civilization has any State Religion</Italian>
+		<Spanish>[ICON_BULLET]Cannot Be Built if the civilization has any State Religion</Spanish>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_MISC_HURRY_CULTURE</Tag>
+		<English>[ICON_BULLET]Costs %d1_Num Culture</English>
+		<French>[ICON_BULLET]Co&#251;t en culture : %d1_Num</French>
+		<German>[ICON_BULLET]Costs %d1_Num Culture</German>
+		<Italian>[ICON_BULLET]Costs %d1_Num Culture</Italian>
+		<Spanish>[ICON_BULLET]Costs %d1_Num Culture</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SEED_DRAGON</Tag>
+		<English>Seed Dragon</English>
+		<French>Seed Dragon</French>
+		<German>Seed Dragon</German>
+		<Italian>Seed Dragon</Italian>
+		<Spanish>Seed Dragon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SEED_DRAGON_PEDIA</Tag>
+		<English>Also known as the father of hydras (though there is no truth to it), Seed Dragons have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. They also have a poisoned stinger on the end of their tail with a venom that causes death. Seed Dragons sleep in remote forest glades, plants grow quickly over them, completely obscuring them. Their presence increases plant growth for miles around. Many thick forests have a slumbering Seed Dragon at their heart, beneath a hill of growth or nestled within the roots of a great tree, though even those walking over them would never know. Seed Dragons collect unusual plants, taking seeds and pollen carefully from new plants to bring back to their glade.[NEWLINE][NEWLINE]Seed Dragons were created during the Godswar by Sucellus, but he never participated in the war. So they were given to forests and areas sacred to him, to defend against those that would wander in and destroy the forests. But since no armies attacked Sucellus they had a peaceful existence, chasing off or killing the rare isolated enemies that would wander to close. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</English>
+		<French>Also known as the father of hydras (though there is no truth to it), Seed Dragons have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. They also have a poisoned stinger on the end of their tail with a venom that causes death. Seed Dragons sleep in remote forest glades, plants grow quickly over them, completely obscuring them. Their presence increases plant growth for miles around. Many thick forests have a slumbering Seed Dragon at their heart, beneath a hill of growth or nestled within the roots of a great tree, though even those walking over them would never know. Seed Dragons collect unusual plants, taking seeds and pollen carefully from new plants to bring back to their glade.[NEWLINE][NEWLINE]Seed Dragons were created during the Godswar by Sucellus, but he never participated in the war. So they were given to forests and areas sacred to him, to defend against those that would wander in and destroy the forests. But since no armies attacked Sucellus they had a peaceful existence, chasing off or killing the rare isolated enemies that would wander to close. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</French>
+		<German>Also known as the father of hydras (though there is no truth to it), Seed Dragons have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. They also have a poisoned stinger on the end of their tail with a venom that causes death. Seed Dragons sleep in remote forest glades, plants grow quickly over them, completely obscuring them. Their presence increases plant growth for miles around. Many thick forests have a slumbering Seed Dragon at their heart, beneath a hill of growth or nestled within the roots of a great tree, though even those walking over them would never know. Seed Dragons collect unusual plants, taking seeds and pollen carefully from new plants to bring back to their glade.[NEWLINE][NEWLINE]Seed Dragons were created during the Godswar by Sucellus, but he never participated in the war. So they were given to forests and areas sacred to him, to defend against those that would wander in and destroy the forests. But since no armies attacked Sucellus they had a peaceful existence, chasing off or killing the rare isolated enemies that would wander to close. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</German>
+		<Italian>Also known as the father of hydras (though there is no truth to it), Seed Dragons have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. They also have a poisoned stinger on the end of their tail with a venom that causes death. Seed Dragons sleep in remote forest glades, plants grow quickly over them, completely obscuring them. Their presence increases plant growth for miles around. Many thick forests have a slumbering Seed Dragon at their heart, beneath a hill of growth or nestled within the roots of a great tree, though even those walking over them would never know. Seed Dragons collect unusual plants, taking seeds and pollen carefully from new plants to bring back to their glade.[NEWLINE][NEWLINE]Seed Dragons were created during the Godswar by Sucellus, but he never participated in the war. So they were given to forests and areas sacred to him, to defend against those that would wander in and destroy the forests. But since no armies attacked Sucellus they had a peaceful existence, chasing off or killing the rare isolated enemies that would wander to close. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</Italian>
+		<Spanish>Also known as the father of hydras (though there is no truth to it), Seed Dragons have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. They also have a poisoned stinger on the end of their tail with a venom that causes death. Seed Dragons sleep in remote forest glades, plants grow quickly over them, completely obscuring them. Their presence increases plant growth for miles around. Many thick forests have a slumbering Seed Dragon at their heart, beneath a hill of growth or nestled within the roots of a great tree, though even those walking over them would never know. Seed Dragons collect unusual plants, taking seeds and pollen carefully from new plants to bring back to their glade.[NEWLINE][NEWLINE]Seed Dragons were created during the Godswar by Sucellus, but he never participated in the war. So they were given to forests and areas sacred to him, to defend against those that would wander in and destroy the forests. But since no armies attacked Sucellus they had a peaceful existence, chasing off or killing the rare isolated enemies that would wander to close. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_SEED_DRAGON_CREATION</Tag>
+		<English>Seed Dragons were created during the Godswar by Sucellus. They have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. Since no armies attacked Sucellus they had a peaceful existence. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature. </English>
+		<French>Seed Dragons were created during the Godswar by Sucellus. They have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. Since no armies attacked Sucellus they had a peaceful existence. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</French>
+		<German>Seed Dragons were created during the Godswar by Sucellus. They have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. Since no armies attacked Sucellus they had a peaceful existence. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</German>
+		<Italian>Seed Dragons were created during the Godswar by Sucellus. They have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. Since no armies attacked Sucellus they had a peaceful existence. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</Italian>
+		<Spanish>Seed Dragons were created during the Godswar by Sucellus. They have three heads. They have no breath weapon but each head has a different venom, one causes a paralysis, another debilitating euphoria, and the third horrific pain. Since no armies attacked Sucellus they had a peaceful existence. Their peaceful nature (despite their threatening appearance) survives to this day and sometimes puts them at odds with Cernunnos's more bestial nature.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_SEED_DRAGON</Tag>
+		<English>The ground in the forest is shaking. Something old has awoken.</English>
+		<French>The ground in the forest is shaking. Something old has awoken.</French>
+		<German>The ground in the forest is shaking. Something old has awoken.</German>
+		<Italian>The ground in the forest is shaking. Something old has awoken.</Italian>
+		<Spanish>The ground in the forest is shaking. Something old has awoken.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KEZEF</Tag>
+		<English>Kezef</English>
+		<French>Kezef</French>
+		<German>Kezef</German>
+		<Italian>Kezef</Italian>
+		<Spanish>Kezef</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_KEZEF</Tag>
+		<English>In the deepest part of the Lair, your unit finds a cage suspended in some kind of stasis. Inside the cage is a deformed, bloody two-headed giant. As your scout approaches, the wards fall. The giant casts.</English>
+		<French>In the deepest part of the Lair, your unit finds a cage suspended in some kind of stasis. Inside the cage is a deformed, bloody two-headed giant. As your scout approaches, the wards fall. The giant casts.</French>
+		<German>In the deepest part of the Lair, your unit finds a cage suspended in some kind of stasis. Inside the cage is a deformed, bloody two-headed giant. As your scout approaches, the wards fall. The giant casts.</German>
+		<Italian>In the deepest part of the Lair, your unit finds a cage suspended in some kind of stasis. Inside the cage is a deformed, bloody two-headed giant. As your scout approaches, the wards fall. The giant casts.</Italian>
+		<Spanish>In the deepest part of the Lair, your unit finds a cage suspended in some kind of stasis. Inside the cage is a deformed, bloody two-headed giant. As your scout approaches, the wards fall. The giant casts.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KEZEF_PEDIA</Tag>
+		<English>Kezef was a member of the Imprimatur council, the 21 apprentices of Kylorin who ruled Patria with him. A specialist of Body Magic, his experiments killed all the animals on the Grigi plains. Kezef mastered the art of being able to stitch various creatures together, he created the chimera and the flesh golem. He reserved his biggest feats for his own body, grafting himself into the body of a living giant.</English>
+		<French>Kezef was a member of the Imprimatur council, the 21 apprentices of Kylorin who ruled Patria with him. A specialist of Body Magic, his experiments killed all the animals on the Grigi plains. Kezef mastered the art of being able to stitch various creatures together, he created the chimera and the flesh golem. He reserved his biggest feats for his own body, grafting himself into the body of a living giant.</French>
+		<German>Kezef was a member of the Imprimatur council, the 21 apprentices of Kylorin who ruled Patria with him. A specialist of Body Magic, his experiments killed all the animals on the Grigi plains. Kezef mastered the art of being able to stitch various creatures together, he created the chimera and the flesh golem. He reserved his biggest feats for his own body, grafting himself into the body of a living giant.</German>
+		<Italian>Kezef was a member of the Imprimatur council, the 21 apprentices of Kylorin who ruled Patria with him. A specialist of Body Magic, his experiments killed all the animals on the Grigi plains. Kezef mastered the art of being able to stitch various creatures together, he created the chimera and the flesh golem. He reserved his biggest feats for his own body, grafting himself into the body of a living giant.</Italian>
+		<Spanish>Kezef was a member of the Imprimatur council, the 21 apprentices of Kylorin who ruled Patria with him. A specialist of Body Magic, his experiments killed all the animals on the Grigi plains. Kezef mastered the art of being able to stitch various creatures together, he created the chimera and the flesh golem. He reserved his biggest feats for his own body, grafting himself into the body of a living giant.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_KEZEF_CREATION</Tag>
+		<English>Hail The Butcher of Patria, Hail The Birther of Chimera, Hail the Decimator of Grigi, Hail the Gigantic Archmage of Body ! </English>
+		<French>Hail The Butcher of Patria, Hail The Birther of Chimera, Hail the Decimator of Grigi, Hail the Gigantic Archmage of Body !</French>
+		<German>Hail The Butcher of Patria, Hail The Birther of Chimera, Hail the Decimator of Grigi, Hail the Gigantic Archmage of Body !</German>
+		<Italian>Hail The Butcher of Patria, Hail The Birther of Chimera, Hail the Decimator of Grigi, Hail the Gigantic Archmage of Body !</Italian>
+		<Spanish>Hail The Butcher of Patria, Hail The Birther of Chimera, Hail the Decimator of Grigi, Hail the Gigantic Archmage of Body !</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SHIMMERING_PORTAL</Tag>
+		<English>Shimmering Portal</English>
+		<French>Shimmering Portal</French>
+		<German>Shimmering Portal</German>
+		<Italian>Shimmering Portal</Italian>
+		<Spanish>Shimmering Portal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SHIMMERING_PORTAL_PEDIA</Tag>
+		<English>A portal to Danalin's Vault, the Shimmering Depths. Various sea creatures are attracted to the energy produced by these portals. Since Danalin's Slumber, dangerous creatures twisted by Hastur's nightmares have been known to emerge from those depths.</English>
+		<French>A portal to Danalin's Vault, the Shimmering Depths. Various sea creatures are attracted to the energy produced by these portals. Since Danalin's Slumber, dangerous creatures twisted by Hastur's nightmares have been known to emerge from those depths.</French>
+		<German>A portal to Danalin's Vault, the Shimmering Depths. Various sea creatures are attracted to the energy produced by these portals. Since Danalin's Slumber, dangerous creatures twisted by Hastur's nightmares have been known to emerge from those depths.</German>
+		<Italian>A portal to Danalin's Vault, the Shimmering Depths. Various sea creatures are attracted to the energy produced by these portals. Since Danalin's Slumber, dangerous creatures twisted by Hastur's nightmares have been known to emerge from those depths.</Italian>
+		<Spanish>A portal to Danalin's Vault, the Shimmering Depths. Various sea creatures are attracted to the energy produced by these portals. Since Danalin's Slumber, dangerous creatures twisted by Hastur's nightmares have been known to emerge from those depths.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PENAL_COLONY_HELP</Tag>
+		<English>[ICON_BULLET]Applies a [LINK=BUILDING_PENAL_COLONY_EFFECT]Penal Colony Effect[\LINK] in every other owned city, decreasing crime per population and growth.</English>
+		<French>[ICON_BULLET]Applies a [LINK=BUILDING_PENAL_COLONY_EFFECT]Penal Colony Effect[\LINK] in every other owned city, decreasing crime per population and growth.</French>
+		<German>[ICON_BULLET]Applies a [LINK=BUILDING_PENAL_COLONY_EFFECT]Penal Colony Effect[\LINK] in every other owned city, decreasing crime per population and growth.</German>
+		<Italian>[ICON_BULLET]Applies a [LINK=BUILDING_PENAL_COLONY_EFFECT]Penal Colony Effect[\LINK] in every other owned city, decreasing crime per population and growth.</Italian>
+		<Spanish>[ICON_BULLET]Applies a [LINK=BUILDING_PENAL_COLONY_EFFECT]Penal Colony Effect[\LINK] in every other owned city, decreasing crime per population and growth.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_EXPLORE_LAIR_BONUS_FISH_SHIMMERING</Tag>
+		<English>You're not quite sure what to make of the strange, beaked fish that live here, but their massive eyeballs are good eating.</English>
+		<French>You're not quite sure what to make of the strange, beaked fish that live here, but their massive eyeballs are good eating.</French>
+		<German>You're not quite sure what to make of the strange, beaked fish that live here, but their massive eyeballs are good eating.</German>
+		<Italian>You're not quite sure what to make of the strange, beaked fish that live here, but their massive eyeballs are good eating.</Italian>
+		<Spanish>You're not quite sure what to make of the strange, beaked fish that live here, but their massive eyeballs are good eating.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_KELP_SHIMMERING</Tag>
+		<English>One of your crewmen, idly fishing through the portal, suddenly yells, "I've got a big one!"  He struggles for several minutes before pulling up some seaweed. As soon as it's out of the water, it starts to expand uncontrollably.</English>
+		<French>One of your crewmen, idly fishing through the portal, suddenly yells, "I've got a big one!"  He struggles for several minutes before pulling up some seaweed. As soon as it's out of the water, it starts to expand uncontrollably.</French>
+		<German>One of your crewmen, idly fishing through the portal, suddenly yells, "I've got a big one!"  He struggles for several minutes before pulling up some seaweed. As soon as it's out of the water, it starts to expand uncontrollably.</German>
+		<Italian>One of your crewmen, idly fishing through the portal, suddenly yells, "I've got a big one!"  He struggles for several minutes before pulling up some seaweed. As soon as it's out of the water, it starts to expand uncontrollably.</Italian>
+		<Spanish>One of your crewmen, idly fishing through the portal, suddenly yells, "I've got a big one!"  He struggles for several minutes before pulling up some seaweed. As soon as it's out of the water, it starts to expand uncontrollably.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_SPAWN_VAMPIRE_KRAKEN</Tag>
+		<English>One of our sailors turned mad looking at the portal.He now thinks it's a good idea to go fishing with prisoners as bait. It's only a matter of time before something bites.</English>
+		<French>One of our sailors turned mad looking at the portal.He now thinks it's a good idea to go fishing with prisoners as bait. It's only a matter of time before something bites.</French>
+		<German>One of our sailors turned mad looking at the portal.He now thinks it's a good idea to go fishing with prisoners as bait. It's only a matter of time before something bites.</German>
+		<Italian>One of our sailors turned mad looking at the portal.He now thinks it's a good idea to go fishing with prisoners as bait. It's only a matter of time before something bites.</Italian>
+		<Spanish>One of our sailors turned mad looking at the portal.He now thinks it's a good idea to go fishing with prisoners as bait. It's only a matter of time before something bites.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_TSUNAMI</Tag>
+		<English>More and more water starts pouring out of the portal, till gigantic waves start to form.</English>
+		<French>More and more water starts pouring out of the portal, till gigantic waves start to form.</French>
+		<German>More and more water starts pouring out of the portal, till gigantic waves start to form.</German>
+		<Italian>More and more water starts pouring out of the portal, till gigantic waves start to form.</Italian>
+		<Spanish>More and more water starts pouring out of the portal, till gigantic waves start to form.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_EXPLORE_LAIR_ENRAGED</Tag>
+		<English>Your ships flees, the crew fearing what lurks beyond the portal.</English>
+		<French>Your ships flees, the crew fearing what lurks beyond the portal.</French>
+		<German>Your ships flees, the crew fearing what lurks beyond the portal.</German>
+		<Italian>Your ships flees, the crew fearing what lurks beyond the portal.</Italian>
+		<Spanish>Your ships flees, the crew fearing what lurks beyond the portal.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_EXPLORE_LAIR_BONUS_REAGENTS_SHIMMERING</Tag>
+		<English>Strange Kelp grows out of the portal in these sunless depths. Our sages think it could be useful if gathered.</English>
+		<French>Strange Kelp grows out of the portal in these sunless depths. Our sages think it could be useful if gathered.</French>
+		<German>Strange Kelp grows out of the portal in these sunless depths. Our sages think it could be useful if gathered.</German>
+		<Italian>Strange Kelp grows out of the portal in these sunless depths. Our sages think it could be useful if gathered.</Italian>
+		<Spanish>Strange Kelp grows out of the portal in these sunless depths. Our sages think it could be useful if gathered.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTOLOCH_2</Tag>
+		<English>Otoloch Hunter</English>
+		<French>Otoloch Hunter</French>
+		<German>Otoloch Hunter</German>
+		<Italian>Otoloch Hunter</Italian>
+		<Spanish>Otoloch Hunter</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTOLOCH2_PEDIA</Tag>
+		<English>The Otoloch Whisperer. Some say he was found, raised and taught to swim by a school of Otoloch's. Some say he was birthed from an Otoloch and an Aifon Dream. All we really know is that he wanders the vicious seas of Erebus, accompanied by his trusted Otoloch's.</English>
+		<French>The Otoloch Whisperer. Some say he was found, raised and taught to swim by a school of Otoloch's. Some say he was birthed from an Otoloch and an Aifon Dream. All we really know is that he wanders the vicious seas of Erebus, accompanied by his trusted Otoloch's.</French>
+		<German>The Otoloch Whisperer. Some say he was found, raised and taught to swim by a school of Otoloch's. Some say he was birthed from an Otoloch and an Aifon Dream. All we really know is that he wanders the vicious seas of Erebus, accompanied by his trusted Otoloch's.</German>
+		<Italian>The Otoloch Whisperer. Some say he was found, raised and taught to swim by a school of Otoloch's. Some say he was birthed from an Otoloch and an Aifon Dream. All we really know is that he wanders the vicious seas of Erebus, accompanied by his trusted Otoloch's.</Italian>
+		<Spanish>The Otoloch Whisperer. Some say he was found, raised and taught to swim by a school of Otoloch's. Some say he was birthed from an Otoloch and an Aifon Dream. All we really know is that he wanders the vicious seas of Erebus, accompanied by his trusted Otoloch's.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTOLOCH</Tag>
+		<English>Otoloch</English>
+		<French>Otoloch</French>
+		<German>Otoloch</German>
+		<Italian>Otoloch</Italian>
+		<Spanish>Otoloch</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTOLOCH_PEDIA</Tag>
+		<English>Otoloch's are a species of eels that are drawn to the energy released by the dying water creatures. They don't feed on the flesh, they are attempting to return to the Shimmering Depths and sense a soul returning to that world, even if they are unable to follow. Actual portals to the Shimmering Depths, either used for summoning or gates, draw thousands of Otoloch's and the Lanun have learned to use them to seek out such gates.</English>
+		<French>Otoloch's are a species of eels that are drawn to the energy released by the dying water creatures. They don't feed on the flesh, they are attempting to return to the Shimmering Depths and sense a soul returning to that world, even if they are unable to follow. Actual portals to the Shimmering Depths, either used for summoning or gates, draw thousands of Otoloch's and the Lanun have learned to use them to seek out such gates.</French>
+		<German>Otoloch's are a species of eels that are drawn to the energy released by the dying water creatures. They don't feed on the flesh, they are attempting to return to the Shimmering Depths and sense a soul returning to that world, even if they are unable to follow. Actual portals to the Shimmering Depths, either used for summoning or gates, draw thousands of Otoloch's and the Lanun have learned to use them to seek out such gates.</German>
+		<Italian>Otoloch's are a species of eels that are drawn to the energy released by the dying water creatures. They don't feed on the flesh, they are attempting to return to the Shimmering Depths and sense a soul returning to that world, even if they are unable to follow. Actual portals to the Shimmering Depths, either used for summoning or gates, draw thousands of Otoloch's and the Lanun have learned to use them to seek out such gates.</Italian>
+		<Spanish>Otoloch's are a species of eels that are drawn to the energy released by the dying water creatures. They don't feed on the flesh, they are attempting to return to the Shimmering Depths and sense a soul returning to that world, even if they are unable to follow. Actual portals to the Shimmering Depths, either used for summoning or gates, draw thousands of Otoloch's and the Lanun have learned to use them to seek out such gates.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_FROSTLING_WARRIOR</Tag>
+		<English>Within the ruins, your scouts find a Frostling Warrior, fully armored and ready for battle. At the sight of your troops however, it lowers its gleaming weapons. You're not quite sure why, but it seems to have joined your side.</English>
+		<French>Within the ruins, your scouts find a Frostling Warrior, fully armored and ready for battle. At the sight of your troops however, it lowers its gleaming weapons. You're not quite sure why, but it seems to have joined your side.</French>
+		<German>Within the ruins, your scouts find a Frostling Warrior, fully armored and ready for battle. At the sight of your troops however, it lowers its gleaming weapons. You're not quite sure why, but it seems to have joined your side.</German>
+		<Italian>Within the ruins, your scouts find a Frostling Warrior, fully armored and ready for battle. At the sight of your troops however, it lowers its gleaming weapons. You're not quite sure why, but it seems to have joined your side.</Italian>
+		<Spanish>Within the ruins, your scouts find a Frostling Warrior, fully armored and ready for battle. At the sight of your troops however, it lowers its gleaming weapons. You're not quite sure why, but it seems to have joined your side.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_ROTTEN_EARTH_ELEM</Tag>
+		<English>All around the sepulcher, the ground is full of bones and decomposing corpses. Your scouts don't realize that some of it is starting to move.</English>
+		<French>All around the sepulcher, the ground is full of bones and decomposing corpses. Your scouts don't realize that some of it is starting to move.</French>
+		<German>All around the sepulcher, the ground is full of bones and decomposing corpses. Your scouts don't realize that some of it is starting to move.</German>
+		<Italian>All around the sepulcher, the ground is full of bones and decomposing corpses. Your scouts don't realize that some of it is starting to move.</Italian>
+		<Spanish>All around the sepulcher, the ground is full of bones and decomposing corpses. Your scouts don't realize that some of it is starting to move.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_SPAWN_PLAGUED_RATS</Tag>
+		<English>A pack of rats rush out of an half-open grave. They seem greener than usual.</English>
+		<French>A pack of rats rush out of an half-open grave. They seem greener than usual.</French>
+		<German>A pack of rats rush out of an half-open grave. They seem greener than usual.</German>
+		<Italian>A pack of rats rush out of an half-open grave. They seem greener than usual.</Italian>
+		<Spanish>A pack of rats rush out of an half-open grave. They seem greener than usual.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_DEATH_KNIGHT</Tag>
+		<English>Your scouts hear the rumblings of a galloping horse within the sepulcher. it's getting closer.</English>
+		<French>Your scouts hear the rumblings of a galloping horse within the sepulcher. it's getting closer.</French>
+		<German>Your scouts hear the rumblings of a galloping horse within the sepulcher. it's getting closer.</German>
+		<Italian>Your scouts hear the rumblings of a galloping horse within the sepulcher. it's getting closer.</Italian>
+		<Spanish>Your scouts hear the rumblings of a galloping horse within the sepulcher. it's getting closer.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_UNDEAD_DRAKE</Tag>
+		<English>Your scouts pass by the carcass of a drake in a room of the sepulcher. it's waiting at the entrance when they come back.</English>
+		<French>Your scouts pass by the carcass of a drake in a room of the sepulcher. it's waiting at the entrance when they come back.</French>
+		<German>Your scouts pass by the carcass of a drake in a room of the sepulcher. it's waiting at the entrance when they come back.</German>
+		<Italian>Your scouts pass by the carcass of a drake in a room of the sepulcher. it's waiting at the entrance when they come back.</Italian>
+		<Spanish>Your scouts pass by the carcass of a drake in a room of the sepulcher. it's waiting at the entrance when they come back.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_UNDEAD_DRAKE</Tag>
+		<English>Undead Drake</English>
+		<French>Undead Drake</French>
+		<German>Undead Drake</German>
+		<Italian>Undead Drake</Italian>
+		<Spanish>Undead Drake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANIMAL_DOVIELLO_HELP</Tag>
+		<English>[ICON_BULLET]Increases the chance of Animal Spawning in the City.</English>
+		<French>[ICON_BULLET]Increases the chance of Animal Spawning in the City.</French>
+		<German>[ICON_BULLET]Increases the chance of Animal Spawning in the City.</German>
+		<Italian>[ICON_BULLET]Increases the chance of Animal Spawning in the City.</Italian>
+		<Spanish>[ICON_BULLET]Increases the chance of Animal Spawning in the City.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL_PEDIA</Tag>
+		<English>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</English>
+		<French>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</French>
+		<German>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</German>
+		<Italian>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</Italian>
+		<Spanish>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

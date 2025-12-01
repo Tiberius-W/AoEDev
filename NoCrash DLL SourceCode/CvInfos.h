@@ -3788,6 +3788,8 @@ public:
 	int getAIWeight() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
+	int getDiscoverRandModifier() const;				// Exposed to Python
+	int getSpreadRandModifier() const;				// Exposed to Python
 	int getDomesticGreatGeneralRateModifier() const;				// Exposed to Python
 	int getStateReligionGreatPeopleRateModifier() const;				// Exposed to Python
 	int getDistanceMaintenanceModifier() const;				// Exposed to Python
@@ -3964,6 +3966,7 @@ public:
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
 	int getSpecialistCrimeChanges(int i) const;				// Exposed to Python
+	int getSpecialistGPPChanges(int i) const;				// Exposed to Python
 
 	bool isHurry(int i) const;													// Exposed to Python
 	bool isSpecialBuildingNotRequired(int i) const;			// Exposed to Python
@@ -3973,6 +3976,10 @@ public:
 	bool isSpecialistUnlimited(int i) const;								// Exposed to Python
 
 	int getImprovementYieldChanges(int i, int j) const;				// Exposed to Python
+	int getSpecialistYieldChanges(int i, int j) const;				// Exposed to Python
+	int* getSpecialistYieldChangeArray(int i) const;
+	int getSpecialistCommerceChanges(int i, int j) const;				// Exposed to Python
+	int* getSpecialistCommerceChangeArray(int i) const;
 
 	void read(FDataStreamBase* stream);
 	void write(FDataStreamBase* stream);
@@ -3989,6 +3996,8 @@ protected:
 	int m_iAIWeight;
 	int m_iGreatPeopleRateModifier;
 	int m_iGreatGeneralRateModifier;
+	int m_iDiscoverRandModifier;
+	int	m_iSpreadRandModifier;
 	int m_iDomesticGreatGeneralRateModifier;
 	int m_iStateReligionGreatPeopleRateModifier;
 	int m_iDistanceMaintenanceModifier;
@@ -4161,6 +4170,7 @@ protected:
 	int* m_paiBuildingHealthChanges;
 	int* m_paiFeatureHappinessChanges;
 	int* m_paiSpecialistCrimeChanges;
+	int* m_paiSpecialistGPPChanges;
 
 	bool* m_pabHurry;
 	bool* m_pabSpecialBuildingNotRequired;
@@ -4171,6 +4181,8 @@ protected:
 	int* m_piFreeSpecialistCount;
 
 	int** m_ppiImprovementYieldChanges;
+	int** m_ppiSpecialistYieldChanges;
+	int** m_ppiSpecialistCommerceChanges;
 
 };
 
@@ -4481,6 +4493,7 @@ public:
 	bool isNeverCapture() const;				// Exposed to Python
 	bool isNukeImmune() const;				// Exposed to Python
 	bool isPrereqReligion() const;				// Exposed to Python
+	bool isPrereqNoReligion() const;				// Exposed to Python
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
@@ -4905,6 +4918,7 @@ protected:
 	bool m_bNeverCapture;
 	bool m_bNukeImmune;
 	bool m_bPrereqReligion;
+	bool m_bPrereqNoReligion;
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
@@ -5743,6 +5757,7 @@ class CvHurryInfo :
 		virtual ~CvHurryInfo();
 
 		int getGoldPerProduction() const;					// Exposed to Python
+		int getCulturePerProduction() const;					// Exposed to Python
 		int getProductionPerPopulation() const;		// Exposed to Python
 
 		bool isAnger() const;											// Exposed to Python
@@ -5762,6 +5777,7 @@ class CvHurryInfo :
 	protected:
 
 		int m_iGoldPerProduction;
+		int m_iCulturePerProduction;
 		int m_iProductionPerPopulation;
 
 		bool m_bAnger;
@@ -9199,6 +9215,8 @@ public:
 	int getLevelExperienceModifier() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
+	int getDiscoverRandModifier() const;				// Exposed to Python
+	int getSpreadRandModifier() const;				// Exposed to Python
 	int getExtraGrowthThreshold() const;				// Exposed to Python
 	int getACGrowthThreshold() const;				// Exposed to Python
 	int getDomesticGreatGeneralRateModifier() const;				// Exposed to Python
@@ -9342,6 +9360,11 @@ public:
 	CvString getUnitClassesVectorElement(int i);
 	CvString getUnitClassesUnitVectorElement(int i);
 	int getExtraUnitClasses(int i) const;
+	int getBuildingClassesVectorSize();
+	int getBuildingClassesBuildingVectorSize();
+	CvString getBuildingClassesVectorElement(int i);
+	CvString getBuildingClassesBuildingVectorElement(int i);
+	int getExtraBuildingClasses(int i) const;
 	/*************************************************************************************************/
 /**	Miner Trait							END			**/
 /*************************************************************************************************/
@@ -9398,6 +9421,8 @@ protected:
 	int m_iLevelExperienceModifier;
 	int m_iGreatPeopleRateModifier;
 	int m_iGreatGeneralRateModifier;
+	int m_iDiscoverRandModifier;
+	int m_iSpreadRandModifier;
 	int m_iExtraGrowthThreshold;
 	int m_iACGrowthThreshold;
 	int m_iDomesticGreatGeneralRateModifier;
@@ -9536,7 +9561,10 @@ protected:
 	std::vector<CvString> m_aszUnitClassesforPass3;
 	std::vector<CvString> m_aszUnitClassesUnitforPass3;
 	int* m_piExtraUnitClass;
-/*************************************************************************************************/
+	std::vector<CvString> m_aszBuildingClassesforPass3;
+	std::vector<CvString> m_aszBuildingClassesBuildingforPass3;
+	int* m_piExtraBuildingClass;
+	/*************************************************************************************************/
 /**	Miner Trait							END			**/
 /*************************************************************************************************/
 

@@ -4916,7 +4916,6 @@
 			<Type>SPELL_MOUNT_PEGASUS</Type>
 			<Description>TXT_KEY_SPELL_MOUNT_PEGASUS</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
-			<UnitCombatPrereq>UNITCOMBAT_ADEPT</UnitCombatPrereq>
 			<UnitInStackPrereq>UNIT_PEGASUS</UnitInStackPrereq>
 			<CivilizationPrereq>CIVILIZATION_AUSTRIN</CivilizationPrereq>
 			<bAllowAI>1</bAllowAI>
@@ -6531,6 +6530,7 @@
 				<AddPromotion>PROMOTION_QUESTING</AddPromotion>
 			</AddPromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
+			<PyRequirement>reqSidequest(pCaster)</PyRequirement>
 			<Effect>EFFECT_SPELL1</Effect>
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Adventurer.dds</Button>

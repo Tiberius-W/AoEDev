@@ -1348,7 +1348,7 @@
 			<Sound>AS2D_GOODY_HOSTILE</Sound>
 			<iDestroyLairChance>50</iDestroyLairChance>
 			<PromotionAdds>
-				<Promotion>PROMOTION_CRAZED</Promotion>
+				<Promotion>PROMOTION_ENRAGED</Promotion>
 			</PromotionAdds>
 			<bAnyPromotion>1</bAnyPromotion>
 			<bBad>1</bBad>
@@ -2076,6 +2076,22 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<PythonCallback>explorePetRoc</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--Kezef		Unique	lair	Results Giant		Bad Major -->
+			<Type>GOODY_EXPLORE_LAIR_KEZEF</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_GIANT_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_KEZEF</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>75</iDestroyLairChance>
+			<bUnique>1</bUnique>
+			<bBad>1</bBad>
+			<PythonCallback>exploreLairKezef</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--Wolf					Lair	 Results Goblin		Good Minor	  -->
 			<Type>GOODY_EXPLORE_LAIR_WOLF</Type>
@@ -3548,6 +3564,22 @@
 			<bBad>1</bBad>
 			<PythonCallback>exploreLairMurderhoof</PythonCallback>
 		</GoodyInfo>
+		<GoodyInfo> <!--SeedDragon		Unique-->
+			<Type>GOODY_EXPLORE_LAIR_SEEDDRAGON</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_NATURE_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_SEED_DRAGON</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>75</iDestroyLairChance>
+			<bUnique>1</bUnique>
+			<bBad>1</bBad>
+			<PythonCallback>exploreLairSeedDragon</PythonCallback>
+		</GoodyInfo>
 		<GoodyInfo> <!--Elven Aeron-->
 			<Type>GOODY_EXPLORE_LAIR_ELVEN_AERON</Type>
 			<GoodyClasses>
@@ -3675,6 +3707,20 @@
 			<iWeight>333</iWeight>
 			<iDestroyLairChance>60</iDestroyLairChance>
 			<PythonCallback>exploreLairSkeletons</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--Plagued Rats-->
+			<Type>GOODY_EXPLORE_LAIR_SPAWN_PLAGUED_RATS</Type>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_SPAWN_PLAGUED_RATS</Description>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_UNDEAD_MINOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<bBad>1</bBad>
+			<iWeight>150</iWeight>
+			<iDestroyLairChance>60</iDestroyLairChance>
+			<PythonCallback>exploreLairPlaguedRats</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--GraveHighGold			Lair	 Results Undead		Good Moderate -->
 			<Type>GOODY_GRAVE_HIGH_GOLD</Type>
@@ -4385,6 +4431,111 @@
 			<bBad>0</bBad>
 			<PythonCallback>exploreLairDomesticatedWarTortoise</PythonCallback>
 		</GoodyInfo>
+		<GoodyInfo> <!--Fish				lair	 Results Shimmering	Good -->
+			<Type>GOODY_BONUS_FISH_BEAKY</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_MESSAGE_EXPLORE_LAIR_BONUS_FISH_SHIMMERING</Description>
+			<iDestroyLairChance>100</iDestroyLairChance>
+			<BonusType>BONUS_FISH</BonusType>
+			<bBad>0</bBad>
+		</GoodyInfo>
+		<GoodyInfo>	<!-- Kelp -->
+			<Type>GOODY_KELP</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_GOODY_KELP_SHIMMERING</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>90</iDestroyLairChance>
+			<bBad>0</bBad>
+			<PythonCallback>exploreKelp</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--Reagents -->
+			<Type>GOODY_BONUS_REAGENTS_SHIMMERING</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_MESSAGE_EXPLORE_LAIR_BONUS_REAGENTS_SHIMMERING</Description>
+			<iDestroyLairChance>100</iDestroyLairChance>
+			<BonusType>BONUS_REAGENTS</BonusType>
+			<PythonCallback>exploreKelpReagents</PythonCallback>
+			<bBad>0</bBad>
+		</GoodyInfo>
+		<GoodyInfo>	<!--Otoloch			Unique-->
+			<Type>GOODY_EXPLORE_LAIR_OTOLOCH_2</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_OTOLOCH_2</Description>
+			<Sound>AS2D_GOODY_SETTLER</Sound>
+			<iDestroyLairChance>100</iDestroyLairChance>
+			<bBad>0</bBad>
+			<bUnique>1</bUnique>
+			<PythonCallback>exploreLairOtoloch2</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--VampireKraken				Lair	 Results Shimmering      Bad  -->
+			<Type>GOODY_EXPLORE_LAIR_SPAWN_VAMPIRE_KRAKEN</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_SPAWN_VAMPIRE_KRAKEN</Description>
+			<iDestroyLairChance>60</iDestroyLairChance>
+			<bBad>1</bBad>
+					<PythonCallback>exploreLairVampireKraken</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--Tsunami-->
+			<Type>GOODY_EXPLORE_LAIR_TSUNAMI</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_TSUNAMI</Description>
+			<iDestroyLairChance>60</iDestroyLairChance>
+			<bBad>1</bBad>
+					<PythonCallback>exploreLairTsunami</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo> <!--Enraged -->
+			<Type>GOODY_EXPLORE_LAIR_ENRAGED</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>200</iWeight>
+			<Description>TXT_KEY_MESSAGE_EXPLORE_LAIR_ENRAGED</Description>
+			<Sound>AS2D_GOODY_GOLD</Sound>
+			<iDestroyLairChance>80</iDestroyLairChance>
+			<PromotionAdds>
+				<Promotion>PROMOTION_ENRAGED</Promotion>
+			</PromotionAdds>
+			<bBad>1</bBad>
+		</GoodyInfo>
 		<GoodyInfo>	<!--MaskGabella		 Unique ULair	 Results Bair		Good  		  -->
 			<Type>GOODY_EXPLORE_LAIR_ITEM_MASK_GABELLA</Type>
 			<GoodyClasses>
@@ -4404,7 +4555,7 @@
 			<bUnique>1</bUnique>
 			<bBad>0</bBad>
 		</GoodyInfo>
-		<GoodyInfo>	<!--UrorBand-->
+		<GoodyInfo>	<!--UrorBand		 Unique -->
 			<Type>GOODY_EXPLORE_LAIR_ITEM_UROR_BAND</Type>
 			<GoodyClasses>
 				<GoodyClass>
@@ -4421,7 +4572,7 @@
 			<bBad>0</bBad>
 			<PythonCallback>exploreLairUrorBand</PythonCallback>
 		</GoodyInfo>
-		<GoodyInfo>	<!--Tapestry House Curator-->
+		<GoodyInfo>	<!--Tapestry House Curator Unique-->
 			<Type>GOODY_EXPLORE_LAIR_TAPESTRY_HOUSE_CURATOR</Type>
 			<GoodyClasses>
 				<GoodyClass>
@@ -4473,7 +4624,7 @@
 			<bUnique>0</bUnique>
 			<PythonCallback>exploreLairSuccubus</PythonCallback>
 		</GoodyInfo>
-		<GoodyInfo>	<!--BreakBair-->
+		<GoodyInfo>	<!--BreakBair         Unique-->
 			<Type>GOODY_EXPLORE_LAIR_ITEM_BREAK_BAIR</Type>
 			<GoodyClasses>
 				<GoodyClass>
@@ -4608,6 +4759,51 @@
 			<PythonCallback>exploreLairBarbatos</PythonCallback>
 			<PrereqEra>ERA_CLASSICAL</PrereqEra>
 		</GoodyInfo>
+		<GoodyInfo>	<!--Rotten Earth Elem -->
+			<Type>GOODY_ROTTEN_EARTH_ELEM</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SEPULCHER</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_ROTTEN_EARTH_ELEM</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>0</iDestroyLairChance>
+			<bBad>1</bBad>
+			<PythonCallback>exploreLairRottenEarthElem</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo>	<!--Death Knight -->
+			<Type>GOODY_DEATH_KNIGHT</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SEPULCHER</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_DEATH_KNIGHT</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>0</iDestroyLairChance>
+			<bBad>1</bBad>
+			<PythonCallback>exploreLairDeathKnight</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo>	<!--Drake -->
+			<Type>GOODY_UNDEAD_DRAKE</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SEPULCHER</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_UNDEAD_DRAKE</Description>
+			<Sound>AS2D_GOODY_HOSTILE</Sound>
+			<iDestroyLairChance>0</iDestroyLairChance>
+			<bBad>1</bBad>
+			<PythonCallback>exploreLairUndeadDrake</PythonCallback>
+		</GoodyInfo>
 		<GoodyInfo>	<!--Mulyalfar		 		ULair	 Results Letum		Good 		  -->
 			<Type>GOODY_EXPLORE_LAIR_MULYALFAR</Type>
 			<GoodyClasses>
@@ -4622,6 +4818,36 @@
 			<iDestroyLairChance>90</iDestroyLairChance>
 			<bBad>0</bBad>
 			<PythonCallback>exploreLairMulyalfar</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo>	<!--Priest of winter -->
+			<Type>GOODY_EXPLORE_LAIR_PRIEST_WINTER</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_LETUM</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>100</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_PRIEST_WINTER</Description>
+			<Sound>AS2D_GOODY_SETTLER</Sound>
+			<iDestroyLairChance>90</iDestroyLairChance>
+			<bBad>0</bBad>
+			<PythonCallback>exploreLairPriestWinter</PythonCallback>
+		</GoodyInfo>
+		<GoodyInfo>	<!--Frostling Warrior -->
+			<Type>GOODY_EXPLORE_LAIR_FROSTLING_WARRIOR</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_LETUM</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>10</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_FROSTLING_WARRIOR</Description>
+			<Sound>AS2D_GOODY_SETTLER</Sound>
+			<iDestroyLairChance>90</iDestroyLairChance>
+			<bBad>0</bBad>
+			<PythonCallback>exploreLairFrostlingWarrior</PythonCallback>
 		</GoodyInfo>
 		<GoodyInfo> <!--FrostGiant				ULair	 Results Letum      Bad           -->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_FROST_GIANT</Type>

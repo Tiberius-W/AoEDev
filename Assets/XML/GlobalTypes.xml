@@ -192,6 +192,7 @@
 		<GoodyClassType>GOODYCLASS_WANDERING_CASTLE</GoodyClassType>
 		<GoodyClassType>GOODYCLASS_CLOCKWORK</GoodyClassType>
 		<GoodyClassType>GOODYCLASS_WHISPERING</GoodyClassType>
+		<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
 	</GoodyClassTypes>
 	<CivFlavorTypes>
 		<!--Changes must be reflected in CvEnums.h-->

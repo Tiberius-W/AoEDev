@@ -2340,7 +2340,21 @@
 					<UnitType>UNIT_SWORDSMAN</UnitType>
 				</Unit>
 			</Units>
-			<FreeUnitClasses>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_FORT</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_PRIORY</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CASTLE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_ABBEY</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_CITADEL</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_FORTIFIED_ABBEY</ImprovementType>
+				</Improvement>
+			</Improvements>
+		<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
 					<iFreeUnits>1</iFreeUnits>
@@ -6414,6 +6428,10 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_APHOTIC_THRONE</BuildingClassType>
+					<BuildingType>BUILDING_APHOTIC_THRONE_FAERYL</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_CRIME_WINTER_LOYALIST</BuildingClassType>
 					<BuildingType>BUILDING_CRIME_SUMMER_LOYALIST</BuildingType>
 				</Building>
@@ -7551,6 +7569,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_NUCKELAVEE</UnitClassType>
 					<UnitType>UNIT_NUCKELAVEE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_OTOLOCH</UnitClassType>
+					<UnitType>UNIT_OTOLOCH</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_BUNYIP</UnitClassType>

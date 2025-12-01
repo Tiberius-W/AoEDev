@@ -1,0 +1,16 @@
+[name]
+CaptainImportantTriggerTweaks
+[version]
+1.0 
+[rifeversion]
+381
+[author]
+Captain
+[dependency]
+;Ashes of Erebus
+[compatible]
+;everything
+[shortdesc]
+Adds or edits more triggers to earn traits on important leaders
+[desc]
+See changes.txt for details

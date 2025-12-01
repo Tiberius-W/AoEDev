@@ -237,11 +237,16 @@
 			<iLargestCityHappiness>-1</iLargestCityHappiness>
 			<iGreatPeopleRateModifier>-25</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>-75</iGreatGeneralRateModifier>
-			<SpecialistExtraCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-				<iCommerce>0</iCommerce>
-			</SpecialistExtraCommerces>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>0</iCommerce>
+						<iCommerce>2</iCommerce>
+						<iCommerce>0</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_MAGE_GUILD</BuildingType>
@@ -420,11 +425,16 @@
 				<iCommerce>10</iCommerce>
 				<iCommerce>0</iCommerce>
 			</CommerceModifiers>
-			<SpecialistExtraCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-				<iCommerce>0</iCommerce>
-			</SpecialistExtraCommerces>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>0</iCommerce>
+						<iCommerce>2</iCommerce>
+						<iCommerce>0</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
@@ -789,11 +799,40 @@
 			<TechPrereq>TECH_TAXATION</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<SpecialistExtraCommerces>
-				<iCommerce>1</iCommerce>
-				<iCommerce>1</iCommerce>
-				<iCommerce>1</iCommerce>
-			</SpecialistExtraCommerces>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+				<SpecialistCommerceChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<SpecialistCommerces>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>

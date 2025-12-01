@@ -1001,6 +1001,18 @@
 						<iYieldChange>1</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_REAGENTS</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
 			</BonusTypeStructs>
 			<TechYieldChanges>
 				<TechYieldChange>
@@ -4206,6 +4218,49 @@
 			<iAppearanceProbability>10</iAppearanceProbability>
 			<iLairCreationWeight>60</iLairCreationWeight>
 		</ImprovementInfo>
+		<ImprovementInfo><!-- Shimmering Portal -->
+			<Type>IMPROVEMENT_SHIMMERING_PORTAL</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SHIMMERING_PORTAL</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_SHIMMERING_PORTAL</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SHIMMERING_PORTAL_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SHIMMERING_PORTAL</ArtDefineTag>
+			<bWater>1</bWater>
+			<bPermanent>1</bPermanent>
+			<bOutsideBorders>1</bOutsideBorders>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<bExplorable>1</bExplorable>
+			<iLairTier>3</iLairTier>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_WATER_MINOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_WATER_MODERATE</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_WATER_MAJOR</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iAppearanceProbability>5</iAppearanceProbability>
+			<iLairCreationWeight>10</iLairCreationWeight>
+			<iMinimumDistance>15</iMinimumDistance>
+		</ImprovementInfo>
 		<ImprovementInfo><!-- Shipwreck -->
 			<Type>IMPROVEMENT_SHIP_WRECK</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_SHIP_WRECK</ImprovementClass>
@@ -6318,6 +6373,7 @@
 			<iCultureRange>1</iCultureRange>
 			<iCultureControlStrength>2</iCultureControlStrength>
 			<iCultureCenterBonus>3</iCultureCenterBonus>
+			<iMaxAirlift>1</iMaxAirlift>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Mausoleum -->
 			<Type>IMPROVEMENT_DTESH_MAUSOLEUM</Type>
@@ -6399,6 +6455,7 @@
 			<iCultureRange>2</iCultureRange>
 			<iCultureControlStrength>3</iCultureControlStrength>
 			<iCultureCenterBonus>4</iCultureCenterBonus>
+			<iMaxAirlift>1</iMaxAirlift>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- D'teshi Mausoleum - Greater -->
 			<Type>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</Type>
@@ -6480,6 +6537,7 @@
 			<iCultureRange>3</iCultureRange>
 			<iCultureControlStrength>5</iCultureControlStrength>
 			<iCultureCenterBonus>6</iCultureCenterBonus>
+			<iMaxAirlift>2</iMaxAirlift>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dwarven Mine (I) -->
 			<Type>IMPROVEMENT_DWARVEN_MINE</Type>
@@ -7589,6 +7647,284 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- Priory -->
+			<Type>IMPROVEMENT_PRIORY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_FORT</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_PRIORY</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_PRIORY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_PRIORY</ArtDefineTag>
+			<iUpgradeTime>20</iUpgradeTime>
+			<iDefenseModifier>20</iDefenseModifier>
+			<iPillageGold>10</iPillageGold>
+			<bOutsideBorders>1</bOutsideBorders>
+			<iMinimumDistance>1</iMinimumDistance>
+			<bFort>1</bFort>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CASTLE</ImprovementUpgrade>
+			<iCultureControlStrength>1</iCultureControlStrength>
+			<iCultureCenterBonus>1</iCultureCenterBonus>
+			<iMaxAirlift>1</iMaxAirlift>
+			<iHealRateChange>10</iHealRateChange>
+			<iRange>1</iRange>
+			<iRangeDefenseModifier>5</iRangeDefenseModifier>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- Abbey -->
+			<Type>IMPROVEMENT_ABBEY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CASTLE</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_ABBEY</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_ABBEY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_ABBEY</ArtDefineTag>
+			<iUpgradeTime>40</iUpgradeTime>
+			<iDefenseModifier>30</iDefenseModifier>
+			<iPillageGold>10</iPillageGold>
+			<bOutsideBorders>1</bOutsideBorders>
+			<bFort>1</bFort>
+			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+					<TechYieldChange>
+					<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_THEOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+		</TechYieldChanges>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<ImprovementPillage>IMPROVEMENTCLASS_FORT</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CITADEL</ImprovementUpgrade>
+			<iMaxAirlift>1</iMaxAirlift>
+			<iHealRateChange>20</iHealRateChange>
+			<iRange>1</iRange>
+			<iRangeDefenseModifier>15</iRangeDefenseModifier>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>2</iCultureControlStrength>
+			<iCultureCenterBonus>2</iCultureCenterBonus>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- Fortified Abbey -->
+			<Type>IMPROVEMENT_FORTIFIED_ABBEY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_CITADEL</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_FORTIFIED_ABBEY</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_FORTIFIED_ABBEY_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_FORTIFIED_ABBEY</ArtDefineTag>
+			<bActsAsCity>1</bActsAsCity>
+			<iUpgradeTime>60</iUpgradeTime>
+			<iDefenseModifier>40</iDefenseModifier>
+			<iPillageGold>15</iPillageGold>
+			<bOutsideBorders>1</bOutsideBorders>
+			<bFort>1</bFort>
+			<iMinimumDistance>1</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+					<TechYieldChange>
+					<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_THEOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<ImprovementPillage>IMPROVEMENTCLASS_CASTLE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_CITADEL_OF_LIGHT</ImprovementUpgrade>
+			<iHealRateChange>40</iHealRateChange>
+			<iRange>2</iRange>
+			<iRangeDefenseModifier>25</iRangeDefenseModifier>
+			<iVisibilityChange>1</iVisibilityChange>
+			<iCultureRange>1</iCultureRange>
+			<iCultureControlStrength>3</iCultureControlStrength>
+			<iCultureCenterBonus>3</iCultureCenterBonus>
+			<iMaxAirlift>2</iMaxAirlift>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Aifon Isle -->                    <!-- Uniques -->
 			<Type>IMPROVEMENT_AIFON_ISLE</Type>

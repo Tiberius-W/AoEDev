@@ -112,6 +112,7 @@ CvPlayer::CvPlayer()
 	m_paiUnitClassCount = NULL;
 	m_paiUnitClassPlayerInstancesChanges = NULL;
 	m_paiExtraUnitClasses = NULL;
+	m_paiExtraBuildingClasses = NULL;
 	m_paiUnitClassMaking = NULL;
 	m_paiBuildingClassCount = NULL;
 	m_paiBuildingClassMaking = NULL;
@@ -133,6 +134,7 @@ CvPlayer::CvPlayer()
 	m_paiSpecialistTypeExtraHappiness = NULL;
 	m_paiSpecialistTypeExtraHealth = NULL;
 	m_paiSpecialistTypeExtraCrime = NULL;
+	m_paiSpecialistTypeExtraGPP = NULL;
 
 	m_pabResearchingTech = NULL;
 	m_pabLoyalMember = NULL;
@@ -611,6 +613,7 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiUnitClassCount);
 	SAFE_DELETE_ARRAY(m_paiUnitClassPlayerInstancesChanges);
 	SAFE_DELETE_ARRAY(m_paiExtraUnitClasses);
+	SAFE_DELETE_ARRAY(m_paiExtraBuildingClasses);
 	SAFE_DELETE_ARRAY(m_paiUnitClassMaking);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassCount);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassMaking);
@@ -633,6 +636,7 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiSpecialistTypeExtraHappiness);
 	SAFE_DELETE_ARRAY(m_paiSpecialistTypeExtraHealth);
 	SAFE_DELETE_ARRAY(m_paiSpecialistTypeExtraCrime);
+	SAFE_DELETE_ARRAY(m_paiSpecialistTypeExtraGPP);
 
 	SAFE_DELETE_ARRAY(m_pabResearchingTech);
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
@@ -1041,6 +1045,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iDisableResearch = 0;
 	m_iDisableSpellcasting = 0;
 	m_iDiscoverRandModifier = 0;
+	m_iSpreadRandModifier = 0;
 	m_iEnslavementChance = 0;
 	m_iFreeXPFromCombat = 0;
 	m_iHealChange = 0;
@@ -1232,6 +1237,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_paiUnitClassPlayerInstancesChanges = new int[GC.getNumUnitClassInfos()];
 		FAssertMsg(m_paiExtraUnitClasses == NULL, "about to leak memory, CvPlayer::m_paiExtraUnitClasses");
 		m_paiExtraUnitClasses = new int[GC.getNumUnitClassInfos()];
+		FAssertMsg(m_paiExtraBuildingClasses == NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingClasses");
+		m_paiExtraBuildingClasses = new int[GC.getNumBuildingClassInfos()];
 		FAssertMsg(m_paiUnitClassMaking==NULL, "about to leak memory, CvPlayer::m_paiUnitClassMaking");
 		m_paiUnitClassMaking = new int [GC.getNumUnitClassInfos()];
 		for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
@@ -1250,6 +1257,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_paiBuildingClassCount[iI] = 0;
 			m_paiBuildingClassMaking[iI] = 0;
+			m_paiExtraBuildingClasses[iI] = NO_BUILDING;
 		}
 
 		FAssertMsg(m_paiHurryCount==NULL, "about to leak memory, CvPlayer::m_paiHurryCount");
@@ -1439,6 +1447,15 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_paiSpecialistTypeExtraCrime[iI] = 0;
 		}
+
+		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
+		FAssertMsg(m_paiSpecialistTypeExtraGPP == NULL, "about to leak memory, CvPlayer::m_paiSpecialistTypeExtraCrime");
+		m_paiSpecialistTypeExtraGPP = new int[GC.getNumSpecialistInfos()];
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			m_paiSpecialistTypeExtraGPP[iI] = 0;
+		}
+
 
 		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
 		FAssertMsg(m_ppaaiSpecialistExtraYield==NULL, "about to leak memory, CvPlayer::m_ppaaiSpecialistExtraYield");
@@ -3260,6 +3277,9 @@ void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
 	changeLevelExperienceModifier(GC.getTraitInfo(eTrait).getLevelExperienceModifier() * iChange);
 	changeGreatPeopleRateModifier(GC.getTraitInfo(eTrait).getGreatPeopleRateModifier() * iChange);
 	changeGreatGeneralRateModifier(GC.getTraitInfo(eTrait).getGreatGeneralRateModifier() * iChange);
+	changeDiscoverRandModifier(GC.getTraitInfo(eTrait).getDiscoverRandModifier() * iChange);
+	changeSpreadRandModifier(GC.getTraitInfo(eTrait).getSpreadRandModifier() * iChange);
+
 	changeACGrowthThreshold(GC.getTraitInfo(eTrait).getACGrowthThreshold() * iChange);
 	changeExtraGrowthThreshold(GC.getTraitInfo(eTrait).getExtraGrowthThreshold() * iChange);
 	changeDomesticGreatGeneralRateModifier(GC.getTraitInfo(eTrait).getDomesticGreatGeneralRateModifier() * iChange);
@@ -3301,6 +3321,20 @@ void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
 			else if (iChange<0)
 			{
 				setExtraUnitClasses(eUnitClass, NO_UNIT);
+			}
+		}
+	}
+	for (BuildingClassTypes eBuildingClass = (BuildingClassTypes)0; eBuildingClass < GC.getNumBuildingClassInfos(); eBuildingClass = (BuildingClassTypes)(eBuildingClass + 1))
+	{
+		if (GC.getTraitInfo(eTrait).getExtraBuildingClasses(eBuildingClass) != NO_BUILDING)
+		{
+			if (iChange > 0)
+			{
+				setExtraBuildingClasses(eBuildingClass, GC.getTraitInfo(eTrait).getExtraBuildingClasses(eBuildingClass));
+			}
+			else if (iChange < 0)
+			{
+				setExtraBuildingClasses(eBuildingClass, NO_BUILDING);
 			}
 		}
 	}
@@ -15475,6 +15509,19 @@ void CvPlayer::setExtraUnitClasses(UnitClassTypes eIndex, int iChange)
 	m_paiExtraUnitClasses[eIndex] = iChange;
 }
 
+int CvPlayer::getExtraBuildingClasses(BuildingClassTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiExtraBuildingClasses[eIndex];
+}
+void CvPlayer::setExtraBuildingClasses(BuildingClassTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	m_paiExtraBuildingClasses[eIndex] = iChange;
+}
+
 int CvPlayer::getUnitClassMaking(UnitClassTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -20190,6 +20237,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 
 	changeGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getGreatPeopleRateModifier() * iChange);
 	changeGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getGreatGeneralRateModifier() * iChange);
+	changeDiscoverRandModifier(GC.getCivicInfo(eCivic).getDiscoverRandModifier() * iChange) ;
+	changeSpreadRandModifier(GC.getCivicInfo(eCivic).getSpreadRandModifier() * iChange);
 	changeDomesticGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getDomesticGreatGeneralRateModifier() * iChange);
 	changeStateReligionGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getStateReligionGreatPeopleRateModifier() * iChange);
 	changeDistanceMaintenanceModifier(GC.getCivicInfo(eCivic).getDistanceMaintenanceModifier() * iChange);
@@ -20360,15 +20409,17 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		changeSpecialistTypeExtraCrime((SpecialistTypes)iI, GC.getCivicInfo(eCivic).getSpecialistCrimeChanges(iI) * iChange);
+		changeSpecialistTypeExtraGPP((SpecialistTypes)iI, GC.getCivicInfo(eCivic).getSpecialistGPPChanges(iI) * iChange);
 		changeSpecialistValidCount(((SpecialistTypes)iI), ((GC.getCivicInfo(eCivic).isSpecialistUnlimited(iI)) ? iChange : 0));
 		changeSpecialistCount(((SpecialistTypes)iI), (iChange * GC.getCivicInfo(eCivic).getSpecialistCount(iI)));
 		changeFreeSpecialistCount(((SpecialistTypes)iI), (iChange * GC.getCivicInfo(eCivic).getFreeSpecialistCount(iI)));
-		if (GC.getCivicInfo(eCivic).isSpecialistValid(iI))
+		for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
 		{
-			for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
-			{
-				changeSpecialistTypeExtraCommerce(((SpecialistTypes)iI), (CommerceTypes)iJ, GC.getCivicInfo(eCivic).getSpecialistExtraCommerce(iJ) * iChange);
-			}
+			changeSpecialistTypeExtraCommerce((SpecialistTypes)iI, (CommerceTypes)iJ, GC.getCivicInfo(eCivic).getSpecialistCommerceChanges(iI,iJ) * iChange);
+		}
+		for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+		{
+			changeSpecialistExtraYield((SpecialistTypes)iI,(YieldTypes)iJ, GC.getCivicInfo(eCivic).getSpecialistYieldChanges(iI, iJ) * iChange);
 		}
 	}
 
@@ -20677,6 +20728,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iDisableResearch);
 	pStream->Read(&m_iDisableSpellcasting);
 	pStream->Read(&m_iDiscoverRandModifier);
+	pStream->Read(&m_iSpreadRandModifier);
 	pStream->Read(&m_iEnslavementChance);
 	pStream->Read(&m_iFreeXPFromCombat);
 	pStream->Read(&m_iHealChange);
@@ -20810,6 +20862,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiExtraUnitClasses);
+	pStream->Read(GC.getNumBuildingClassInfos(), m_paiExtraBuildingClasses);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassPlayerInstancesChanges);
@@ -20830,6 +20883,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraHappiness);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraHealth);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraCrime);
+	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraGPP);
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::read");
 	pStream->Read(GC.getNumTechInfos(), m_pabResearchingTech);
@@ -21420,6 +21474,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iDisableResearch);
 	pStream->Write(m_iDisableSpellcasting);
 	pStream->Write(m_iDiscoverRandModifier);
+	pStream->Write(m_iSpreadRandModifier);
 	pStream->Write(m_iEnslavementChance);
 	pStream->Write(m_iFreeXPFromCombat);
 	pStream->Write(m_iHealChange);
@@ -21547,6 +21602,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiExtraUnitClasses);
+	pStream->Write(GC.getNumBuildingClassInfos(), m_paiExtraBuildingClasses);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassPlayerInstancesChanges);
@@ -21568,6 +21624,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraHappiness);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraHealth);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraCrime);
+	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistTypeExtraGPP);
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::write");
 	pStream->Write(GC.getNumTechInfos(), m_pabResearchingTech);
@@ -29489,6 +29546,18 @@ void CvPlayer::changeDiscoverRandModifier(int iChange)
 		m_iDiscoverRandModifier = (m_iDiscoverRandModifier + iChange);
 	}
 }
+int CvPlayer::getSpreadRandModifier() const
+{
+	return m_iSpreadRandModifier;
+}
+
+void CvPlayer::changeSpreadRandModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iSpreadRandModifier = (m_iSpreadRandModifier + iChange);
+	}
+}
 
 int CvPlayer::getHealChange() const
 {
@@ -29530,6 +29599,8 @@ int CvPlayer::getSpecialistTypeExtraCommerce(SpecialistTypes eIndex1, CommerceTy
 {
 	return m_ppaaiSpecialistTypeExtraCommerce[eIndex1][eIndex2];
 }
+
+
 
 void CvPlayer::setGreatPeopleCreated(int iNewValue)
 {
@@ -30665,6 +30736,35 @@ void CvPlayer::changeSpecialistTypeExtraCrime(SpecialistTypes eIndex1, int iChan
 	if (iChange != 0)
 	{
 		m_paiSpecialistTypeExtraCrime[eIndex1] = (m_paiSpecialistTypeExtraCrime[eIndex1] + iChange);
+		AI_makeAssignWorkDirty();
+	}
+}
+
+int CvPlayer::getSpecialistTypeExtraGPP(SpecialistTypes eIndex1) const
+{
+	return m_paiSpecialistTypeExtraGPP[eIndex1];
+}
+void CvPlayer::changeSpecialistTypeExtraGPP(SpecialistTypes eIndex1, int iChange)
+{
+	int iLoop = 0;
+	CvCity* pLoopCity;
+	UnitTypes eGreatPeopleUnit;
+	if (iChange != 0)
+	{
+		m_paiSpecialistTypeExtraGPP[eIndex1] = (m_paiSpecialistTypeExtraGPP[eIndex1] + iChange);
+
+		//Updating current specialists in cities
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			eGreatPeopleUnit = ((UnitTypes)(pLoopCity->getCityUnits(GC.getSpecialistInfo(eIndex1).getGreatPeopleUnitClass())));
+			if (eGreatPeopleUnit != NO_UNIT)
+			{
+				pLoopCity->changeGreatPeopleUnitRate(eGreatPeopleUnit, pLoopCity->getSpecialistCount(eIndex1) * iChange);
+			}
+			pLoopCity->changeBaseGreatPeopleRate(pLoopCity->getSpecialistCount(eIndex1) * iChange);
+		}
+
+
 		AI_makeAssignWorkDirty();
 	}
 }

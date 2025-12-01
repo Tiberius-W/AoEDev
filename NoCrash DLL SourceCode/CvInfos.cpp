@@ -18162,6 +18162,8 @@ m_iUpkeep(0),
 m_iAIWeight(0),
 m_iGreatPeopleRateModifier(0),
 m_iGreatGeneralRateModifier(0),
+m_iDiscoverRandModifier(0),
+m_iSpreadRandModifier(0),
 m_iDomesticGreatGeneralRateModifier(0),
 m_iStateReligionGreatPeopleRateModifier(0),
 m_iDistanceMaintenanceModifier(0),
@@ -18257,6 +18259,7 @@ m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiFeatureHappinessChanges(NULL),
 m_paiSpecialistCrimeChanges(NULL),
+m_paiSpecialistGPPChanges(NULL),
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
@@ -18265,6 +18268,8 @@ m_piSpecialistCount(NULL),
 m_piFreeSpecialistCount(NULL),
 m_ppiImprovementYieldChanges(NULL),
 
+m_ppiSpecialistYieldChanges(NULL),
+m_ppiSpecialistCommerceChanges(NULL),
 /*************************************************************************************************/
 /**	New Tag Defs	(CivicInfos)			05/15/08								Xienwolf	**/
 /**																								**/
@@ -18370,6 +18375,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiSpecialistCrimeChanges);
+	SAFE_DELETE_ARRAY(m_paiSpecialistGPPChanges);
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_piSpecialistCount);
@@ -18383,6 +18389,22 @@ CvCivicInfo::~CvCivicInfo()
 			SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges[iI]);
 		}
 		SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges);
+	}
+	if (m_ppiSpecialistYieldChanges != NULL)
+	{
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistYieldChanges[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistYieldChanges);
+	}
+	if (m_ppiSpecialistCommerceChanges != NULL)
+	{
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistCommerceChanges[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistCommerceChanges);
 	}
 }
 
@@ -18421,6 +18443,15 @@ int CvCivicInfo::getGreatGeneralRateModifier() const
 	return m_iGreatGeneralRateModifier;
 }
 
+int CvCivicInfo::getDiscoverRandModifier() const
+{
+	return m_iDiscoverRandModifier;
+}
+
+int CvCivicInfo::getSpreadRandModifier() const
+{
+	return m_iSpreadRandModifier;
+}
 int CvCivicInfo::getDomesticGreatGeneralRateModifier() const
 {
 	return m_iDomesticGreatGeneralRateModifier;
@@ -18941,6 +18972,7 @@ int* CvCivicInfo::getCapitalCommerceModifierArray() const
 	return m_piCapitalCommerceModifier;
 }
 
+
 int CvCivicInfo::getSpecialistExtraCommerce(int i) const
 {
 	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
@@ -18979,6 +19011,13 @@ int CvCivicInfo::getSpecialistCrimeChanges(int i) const
 	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_paiSpecialistCrimeChanges ? m_paiSpecialistCrimeChanges[i] : -1;
+}
+
+int CvCivicInfo::getSpecialistGPPChanges(int i) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_paiSpecialistGPPChanges ? m_paiSpecialistGPPChanges[i] : -1;
 }
 
 bool CvCivicInfo::isHurry(int i) const
@@ -19031,6 +19070,38 @@ int CvCivicInfo::getImprovementYieldChanges(int i, int j) const
 	FAssertMsg(j > -1, "Index out of bounds");
 	return m_ppiImprovementYieldChanges[i][j];
 }
+int CvCivicInfo::getSpecialistYieldChanges(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiSpecialistYieldChanges ? m_ppiSpecialistYieldChanges[i][j] : -1;
+}
+
+int* CvCivicInfo::getSpecialistYieldChangeArray(int i) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiSpecialistYieldChanges[i];
+}
+
+int CvCivicInfo::getSpecialistCommerceChanges(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiSpecialistCommerceChanges ? m_ppiSpecialistCommerceChanges[i][j] : -1;
+}
+
+int* CvCivicInfo::getSpecialistCommerceChangeArray(int i) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiSpecialistCommerceChanges[i];
+}
+
 
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
@@ -19046,6 +19117,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAIWeight);
 	stream->Read(&m_iGreatPeopleRateModifier);
 	stream->Read(&m_iGreatGeneralRateModifier);
+	stream->Read(&m_iDiscoverRandModifier);
+	stream->Read(&m_iSpreadRandModifier);
 	stream->Read(&m_iDomesticGreatGeneralRateModifier);
 	stream->Read(&m_iStateReligionGreatPeopleRateModifier);
 	stream->Read(&m_iDistanceMaintenanceModifier);
@@ -19236,6 +19309,11 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_paiSpecialistCrimeChanges = new int[GC.getNumSpecialistInfos()];
 	stream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistCrimeChanges);
 
+	SAFE_DELETE_ARRAY(m_paiSpecialistGPPChanges);
+	m_paiSpecialistGPPChanges = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistGPPChanges);
+
+
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
 	stream->Read(GC.getNumHurryInfos(), m_pabHurry);
@@ -19276,6 +19354,36 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 		stream->Read(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
 	}
 
+	if (m_ppiSpecialistYieldChanges != NULL)
+	{
+		for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistYieldChanges[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistYieldChanges);
+	}
+	m_ppiSpecialistYieldChanges = new int* [GC.getNumSpecialistInfos()];
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		m_ppiSpecialistYieldChanges[i] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppiSpecialistYieldChanges[i]);
+	}
+
+	if (m_ppiSpecialistCommerceChanges != NULL)
+	{
+		for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistCommerceChanges[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistCommerceChanges);
+	}
+	m_ppiSpecialistCommerceChanges = new int* [GC.getNumSpecialistInfos()];
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		m_ppiSpecialistCommerceChanges[i] = new int[NUM_COMMERCE_TYPES];
+		stream->Read(NUM_COMMERCE_TYPES, m_ppiSpecialistCommerceChanges[i]);
+	}
+
 	stream->ReadString(m_szWeLoveTheKingKey);
 }
 
@@ -19293,6 +19401,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAIWeight);
 	stream->Write(m_iGreatPeopleRateModifier);
 	stream->Write(m_iGreatGeneralRateModifier);
+	stream->Write(m_iDiscoverRandModifier);
+	stream->Write(m_iSpreadRandModifier);
 	stream->Write(m_iDomesticGreatGeneralRateModifier);
 	stream->Write(m_iStateReligionGreatPeopleRateModifier);
 	stream->Write(m_iDistanceMaintenanceModifier);
@@ -19441,6 +19551,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
 	stream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistCrimeChanges);
+	stream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistGPPChanges);
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
 	stream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
@@ -19453,6 +19564,16 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	{
 		stream->Write(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
 	}
+
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		stream->Write(NUM_YIELD_TYPES, m_ppiSpecialistYieldChanges[i]);
+	}
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		stream->Write(NUM_COMMERCE_TYPES, m_ppiSpecialistCommerceChanges[i]);
+	}
+
 
 	stream->WriteString(m_szWeLoveTheKingKey);
 }
@@ -19485,6 +19606,8 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
 	pXML->GetChildXmlValByName(&m_iGreatPeopleRateModifier, "iGreatPeopleRateModifier");
 	pXML->GetChildXmlValByName(&m_iGreatGeneralRateModifier, "iGreatGeneralRateModifier");
+	pXML->GetChildXmlValByName(&m_iDiscoverRandModifier, "iDiscoverRandModifier");
+	pXML->GetChildXmlValByName(&m_iSpreadRandModifier, "iSpreadRandModifier");
 	pXML->GetChildXmlValByName(&m_iDomesticGreatGeneralRateModifier, "iDomesticGreatGeneralRateModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionGreatPeopleRateModifier, "iStateReligionGreatPeopleRateModifier");
 	pXML->GetChildXmlValByName(&m_iDistanceMaintenanceModifier, "iDistanceMaintenanceModifier");
@@ -19655,6 +19778,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiFeatureHappinessChanges, "FeatureHappinessChanges", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());
 	pXML->SetVariableListTagPair(&m_paiSpecialistCrimeChanges, "SpecialistCrimeChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
+	pXML->SetVariableListTagPair(&m_paiSpecialistGPPChanges, "SpecialistGPPChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 
 	// initialize the boolean list to the correct size and all the booleans to false
 	FAssertMsg((GC.getNumImprovementInfos() > 0) && (NUM_YIELD_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
@@ -19687,6 +19811,100 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 							else
 							{
 								pXML->InitList(&m_ppiImprovementYieldChanges[iIndex], NUM_YIELD_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	FAssertMsg((GC.getNumSpecialistInfos() > 0) && (NUM_YIELD_TYPES) > 0, "either the number of Specialist infos is zero or less or the number of yield types is zero or less");
+	pXML->Init2DIntList(&m_ppiSpecialistYieldChanges, GC.getNumSpecialistInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistYieldChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (j = 0; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "SpecialistType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_ppiSpecialistYieldChanges[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistYields"))
+							{
+								// call the function that sets the yield change variable
+								pXML->SetYields(&m_ppiSpecialistYieldChanges[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_ppiSpecialistYieldChanges[iIndex], NUM_YIELD_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	FAssertMsg((GC.getNumSpecialistInfos() > 0) && (NUM_COMMERCE_TYPES) > 0, "either the number of Specialist infos is zero or less or the number of Commerce types is zero or less");
+	pXML->Init2DIntList(&m_ppiSpecialistCommerceChanges, GC.getNumSpecialistInfos(), NUM_COMMERCE_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistCommerceChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (j = 0; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "SpecialistType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_ppiSpecialistCommerceChanges[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistCommerces"))
+							{
+								// call the function that sets the Commerce change variable
+								pXML->SetCommerce(&m_ppiSpecialistCommerceChanges[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_ppiSpecialistCommerceChanges[iIndex], NUM_COMMERCE_TYPES);
 							}
 						}
 
@@ -19859,6 +20077,8 @@ void CvCivicInfo::copyNonDefaults(CvCivicInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getAIWeight()									== 0)				m_iAIWeight									= pClassInfo->getAIWeight();
 	if (getGreatPeopleRateModifier()					== 0)				m_iGreatPeopleRateModifier					= pClassInfo->getGreatPeopleRateModifier();
 	if (getGreatGeneralRateModifier()					== 0)				m_iGreatGeneralRateModifier					= pClassInfo->getGreatGeneralRateModifier();
+	if (getSpreadRandModifier() == 0)			m_iSpreadRandModifier = pClassInfo->getSpreadRandModifier();
+	if (getDiscoverRandModifier() == 0)			m_iDiscoverRandModifier = pClassInfo->getDiscoverRandModifier();
 	if (getDomesticGreatGeneralRateModifier()			== 0)				m_iDomesticGreatGeneralRateModifier			= pClassInfo->getDomesticGreatGeneralRateModifier();
 	if (getStateReligionGreatPeopleRateModifier()		== 0)				m_iStateReligionGreatPeopleRateModifier		= pClassInfo->getStateReligionGreatPeopleRateModifier();
 	if (getDistanceMaintenanceModifier()				== 0)				m_iDistanceMaintenanceModifier				= pClassInfo->getDistanceMaintenanceModifier();
@@ -19934,6 +20154,7 @@ void CvCivicInfo::copyNonDefaults(CvCivicInfo* pClassInfo, CvXMLLoadUtility* pXM
 		if (m_piFreeSpecialistCount[i] == 0)				m_piFreeSpecialistCount[i] = pClassInfo->getFreeSpecialistCount(i);
 		if (m_piSpecialistCount[i]						== 0)				m_piSpecialistCount[i]						= pClassInfo->getSpecialistCount(i);
 		if (m_paiSpecialistCrimeChanges[i] == 0)				m_paiSpecialistCrimeChanges[i] = pClassInfo->getSpecialistCrimeChanges(i);
+		if (m_paiSpecialistGPPChanges[i] == 0)				m_paiSpecialistGPPChanges[i] = pClassInfo->getSpecialistGPPChanges(i);
 	}
 
 	for ( int i = 0; i < GC.getNumBuildingClassInfos(); i++ )
@@ -19950,6 +20171,20 @@ void CvCivicInfo::copyNonDefaults(CvCivicInfo* pClassInfo, CvXMLLoadUtility* pXM
 		for ( int j = 0; j < NUM_YIELD_TYPES; j++ )
 		{
 			if (m_ppiImprovementYieldChanges[i][j]		== 0)				m_ppiImprovementYieldChanges[i][j]			= pClassInfo->getImprovementYieldChanges(i,j);
+		}
+	}
+	for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		for (int j = 0; j < NUM_YIELD_TYPES; j++)
+		{
+			if (m_ppiSpecialistYieldChanges[i][j] == 0)				m_ppiSpecialistYieldChanges[i][j] = pClassInfo->getSpecialistYieldChanges(i, j);
+		}
+	}
+	for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		for (int j = 0; j < NUM_COMMERCE_TYPES; j++)
+		{
+			if (m_ppiSpecialistCommerceChanges[i][j] == 0)				m_ppiSpecialistCommerceChanges[i][j] = pClassInfo->getSpecialistCommerceChanges(i, j);
 		}
 	}
 	if (isCompassionHigh()								== false)			m_bCompassionHigh							= pClassInfo->isCompassionHigh();
@@ -20851,6 +21086,7 @@ m_bBuildingOnlyHealthy(false),
 m_bNeverCapture(false),
 m_bNukeImmune(false),
 m_bPrereqReligion(false),
+m_bPrereqNoReligion(false),
 m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
@@ -21869,6 +22105,10 @@ bool CvBuildingInfo::isPrereqReligion() const
 	return m_bPrereqReligion;
 }
 
+bool CvBuildingInfo::isPrereqNoReligion() const
+{
+	return m_bPrereqNoReligion;
+}
 bool CvBuildingInfo::isCenterInCity() const
 {
 	return m_bCenterInCity;
@@ -22909,6 +23149,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNeverCapture);
 	stream->Read(&m_bNukeImmune);
 	stream->Read(&m_bPrereqReligion);
+	stream->Read(&m_bPrereqNoReligion);
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
@@ -23600,6 +23841,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNeverCapture);
 	stream->Write(m_bNukeImmune);
 	stream->Write(m_bPrereqReligion);
+	stream->Write(m_bPrereqNoReligion);
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
@@ -24129,6 +24371,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
 	pXML->GetChildXmlValByName(&m_bPrereqReligion, "bPrereqReligion");
+	pXML->GetChildXmlValByName(&m_bPrereqNoReligion, "bPrereqNoReligion");
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
@@ -24997,6 +25240,7 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 	if (isNeverCapture()						== false)				m_bNeverCapture						= pClassInfo->isNeverCapture();
 	if (isNukeImmune()							== false)				m_bNukeImmune						= pClassInfo->isNukeImmune();
 	if (isPrereqReligion()						== false)				m_bPrereqReligion					= pClassInfo->isPrereqReligion();
+	if (isPrereqNoReligion() == false)				m_bPrereqNoReligion = pClassInfo->isPrereqNoReligion();
 	if (isCenterInCity()						== false)				m_bCenterInCity						= pClassInfo->isCenterInCity();
 	if (isStateReligion()						== false)				m_bStateReligion					= pClassInfo->isStateReligion();
 	if (isApplyFreePromotionOnMove()			== false)				m_bApplyFreePromotionOnMove			= pClassInfo->isApplyFreePromotionOnMove();
@@ -27950,6 +28194,7 @@ void CvVictoryInfo::copyNonDefaultsReadPass2(CvVictoryInfo* pClassInfo, CvXMLLoa
 //------------------------------------------------------------------------------------------------------
 CvHurryInfo::CvHurryInfo() :
 m_iGoldPerProduction(0),
+m_iCulturePerProduction(0),
 m_iProductionPerPopulation(0),
 m_bAnger(false)
 {
@@ -27971,6 +28216,10 @@ int CvHurryInfo::getGoldPerProduction() const
 	return m_iGoldPerProduction;
 }
 
+int CvHurryInfo::getCulturePerProduction() const
+{
+	return m_iCulturePerProduction;
+}
 int CvHurryInfo::getProductionPerPopulation() const
 {
 	return m_iProductionPerPopulation;
@@ -27989,6 +28238,7 @@ bool CvHurryInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->GetChildXmlValByName(&m_iGoldPerProduction, "iGoldPerProduction");
+	pXML->GetChildXmlValByName(&m_iCulturePerProduction, "iCulturePerProduction");
 	pXML->GetChildXmlValByName(&m_iProductionPerPopulation, "iProductionPerPopulation");
 
 	pXML->GetChildXmlValByName(&m_bAnger, "bAnger");
@@ -28008,6 +28258,7 @@ void CvHurryInfo::copyNonDefaults(CvHurryInfo* pClassInfo, CvXMLLoadUtility* pXM
 	CvInfoBase::copyNonDefaults(pClassInfo, pXML);
 
 	if (getGoldPerProduction()			== 0)		m_iGoldPerProduction		= pClassInfo->getGoldPerProduction();
+	if (getCulturePerProduction() == 0)		m_iCulturePerProduction = pClassInfo->getCulturePerProduction();
 	if (getProductionPerPopulation()	== 0)		m_iProductionPerPopulation	= pClassInfo->getProductionPerPopulation();
 	if (isAnger()						== false)	m_bAnger					= pClassInfo->isAnger();
 }
@@ -40171,6 +40422,8 @@ m_iMilitaryProductionModifier(0),
 m_iLevelExperienceModifier(0),
 m_iGreatPeopleRateModifier(0),
 m_iGreatGeneralRateModifier(0),
+m_iDiscoverRandModifier(0),
+m_iSpreadRandModifier(0),
 m_iExtraGrowthThreshold(0),
 m_iACGrowthThreshold(0),
 m_iDomesticGreatGeneralRateModifier(0),
@@ -40281,6 +40534,7 @@ m_paiSpecialistHappinessChange(NULL),
 m_paiSpecialistCrimeChange(NULL),
 m_paiUnitClassPlayerInstancesChange(NULL),
 m_piExtraUnitClass(NULL),
+m_piExtraBuildingClass(NULL),
 /*************************************************************************************************/
 /**	Miner Trait 	 	Orbis from Sanguo Mod		18/02/09	Ahwaric		**/
 /*************************************************************************************************/
@@ -40483,6 +40737,16 @@ int CvTraitInfo::getGreatPeopleRateModifier() const
 int CvTraitInfo::getGreatGeneralRateModifier() const
 {
 	return m_iGreatGeneralRateModifier;
+}
+
+int CvTraitInfo::getDiscoverRandModifier() const
+{
+	return m_iDiscoverRandModifier;
+}
+
+int CvTraitInfo::getSpreadRandModifier() const
+{
+	return m_iSpreadRandModifier;
 }
 
 int CvTraitInfo::getExtraGrowthThreshold() const
@@ -40930,6 +41194,18 @@ int CvTraitInfo::getExtraUnitClasses(int i) const
 	return m_piExtraUnitClass[i];
 }
 
+int CvTraitInfo::getBuildingClassesVectorSize() { return m_aszBuildingClassesforPass3.size(); }
+int CvTraitInfo::getBuildingClassesBuildingVectorSize() { return m_aszBuildingClassesBuildingforPass3.size(); }
+CvString CvTraitInfo::getBuildingClassesVectorElement(int i) { return m_aszBuildingClassesforPass3[i]; }
+CvString CvTraitInfo::getBuildingClassesBuildingVectorElement(int i) { return m_aszBuildingClassesBuildingforPass3[i]; }
+
+int CvTraitInfo::getExtraBuildingClasses(int i) const
+{
+	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piExtraBuildingClass[i];
+}
+
 int CvTraitInfo::getHurryPopulationModifier() const
 {
 	return m_iHurryPopulationModifier;
@@ -40986,6 +41262,8 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier");
 	pXML->GetChildXmlValByName(&m_iGreatPeopleRateModifier, "iGreatPeopleRateModifier");
 	pXML->GetChildXmlValByName(&m_iGreatGeneralRateModifier, "iGreatGeneralRateModifier");
+	pXML->GetChildXmlValByName(&m_iDiscoverRandModifier, "iDiscoverRandModifier");
+	pXML->GetChildXmlValByName(&m_iSpreadRandModifier, "iSpreadRandModifier");
 	pXML->GetChildXmlValByName(&m_iExtraGrowthThreshold, "iExtraGrowthThreshold");
 	pXML->GetChildXmlValByName(&m_iACGrowthThreshold, "iACGrowthThreshold");
 	pXML->GetChildXmlValByName(&m_iDomesticGreatGeneralRateModifier, "iDomesticGreatGeneralRateModifier");
@@ -41456,6 +41734,41 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ExtraBuildingClasses"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					int iIndex;
+
+					for (j = 0; j < iNumSibs; j++)
+					{
+						if (pXML->GetChildXmlVal(szClassVal))
+						{
+							m_aszBuildingClassesforPass3.push_back(szClassVal);
+							pXML->GetNextXmlVal(szTextVal);
+							m_aszBuildingClassesBuildingforPass3.push_back(szTextVal);
+
+							gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+						}
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+
+					gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+				}
+
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
 
 /*************************************************************************************************/
 /** bUniqueCult             Opera for LE/Orbis  06/07/09        imported by Valkrionn	09.26.09**/
@@ -41571,6 +41884,8 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getLevelExperienceModifier() == 0)			m_iLevelExperienceModifier = pClassInfo->getLevelExperienceModifier();
 	if (getGreatPeopleRateModifier() == 0)			m_iGreatPeopleRateModifier = pClassInfo->getGreatPeopleRateModifier();
 	if (getGreatGeneralRateModifier() == 0)			m_iGreatGeneralRateModifier = pClassInfo->getGreatGeneralRateModifier();
+	if (getSpreadRandModifier() == 0)			m_iSpreadRandModifier = pClassInfo->getSpreadRandModifier();
+	if (getDiscoverRandModifier() == 0)			m_iDiscoverRandModifier = pClassInfo->getDiscoverRandModifier();
 	if (getExtraGrowthThreshold() == 0)			m_iExtraGrowthThreshold = pClassInfo->getExtraGrowthThreshold();
 	if (getACGrowthThreshold() == 0)			m_iACGrowthThreshold = pClassInfo->getACGrowthThreshold();
 	if (getDomesticGreatGeneralRateModifier() == 0)			m_iDomesticGreatGeneralRateModifier = pClassInfo->getDomesticGreatGeneralRateModifier();
@@ -41680,6 +41995,11 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 		m_aszUnitClassesforPass3.push_back(pClassInfo->getUnitClassesVectorElement(i));
 		m_aszUnitClassesUnitforPass3.push_back(pClassInfo->getUnitClassesUnitVectorElement(i));
 	}
+	for (int i = 0; i < pClassInfo->getBuildingClassesVectorSize(); i++)
+	{
+		m_aszBuildingClassesforPass3.push_back(pClassInfo->getBuildingClassesVectorElement(i));
+		m_aszBuildingClassesBuildingforPass3.push_back(pClassInfo->getBuildingClassesBuildingVectorElement(i));
+	}
 }
 /*************************************************************************************************/
 /**	TrueModular								END													**/
@@ -41759,6 +42079,24 @@ bool CvTraitInfo::readPass3()
 	}
 	m_aszUnitClassesforPass3.clear();
 	m_aszUnitClassesUnitforPass3.clear();
+
+	m_piExtraBuildingClass = new int[GC.getNumBuildingClassInfos()];
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		m_piExtraBuildingClass[iI] = NO_BUILDING;
+	}
+
+	iNumLoad = m_aszBuildingClassesforPass3.size();
+
+	for (int iI = 0; iI < iNumLoad; iI++)
+	{
+		FAssertMsg(GC.getInfoTypeForString(m_aszBuildingClassesforPass3[iI]) >= 0, "Warning, about to leak memory in CvTraitInfo::readPass3");
+		m_piExtraBuildingClass[GC.getInfoTypeForString(m_aszBuildingClassesforPass3[iI])] = GC.getInfoTypeForString(m_aszBuildingClassesBuildingforPass3[iI]);
+
+	}
+	m_aszBuildingClassesforPass3.clear();
+	m_aszBuildingClassesBuildingforPass3.clear();
+
 
 	return true;
 }

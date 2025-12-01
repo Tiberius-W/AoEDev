@@ -1293,5 +1293,41 @@
 			<KFM/>
 			<Button>Art/Interface/Buttons/Improvements/centaurcamp.dds</Button>
 		</ImprovementArtInfo>
+		<ImprovementArtInfo>		<!-- Shimmering Portal -->
+			<Type>ART_DEF_IMPROVEMENT_SHIMMERING_PORTAL</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+            <fScale>18.0</fScale>
+            <fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/ShimmeringPortal/ShimmeringPortal.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/shimmeringportal.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>		<!-- Priory -->
+			<Type>ART_DEF_IMPROVEMENT_PRIORY</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+            <fScale>0.9</fScale>
+            <fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Abbey/AbbeyFort.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/abbey.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>		<!-- Abbey -->
+			<Type>ART_DEF_IMPROVEMENT_ABBEY</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+            <fScale>0.07</fScale>
+            <fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Abbey/AbbeyCastle.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/abbey.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>		<!--Fortified Abbey -->
+			<Type>ART_DEF_IMPROVEMENT_FORTIFIED_ABBEY</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+            <fScale>0.07</fScale>
+            <fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Abbey/AbbeyCitadel.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/abbey.dds</Button>
+		</ImprovementArtInfo>
 	</ImprovementArtInfos>
 </Civ4ArtDefines>

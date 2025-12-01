@@ -2956,6 +2956,14 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	if (GC.getBuildingInfo(eBuilding).isPrereqNoReligion())
+	{
+		if (GET_PLAYER(getOwnerINLINE()).getStateReligion()!=NO_RELIGION)
+		{
+			return false;
+		}
+	}
+
 	if (GC.getBuildingInfo(eBuilding).isStateReligion())
 	{
 		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
@@ -4753,7 +4761,10 @@ bool CvCity::canHurry(HurryTypes eHurry, bool bTestVisible) const
 		{
 			return false;
 		}
-
+		if (getCulture(getOwnerINLINE()) < hurryCulture(eHurry))
+		{
+			return false;
+		}
 		if (maxHurryPopulation() < hurryPopulation(eHurry))
 		{
 			return false;
@@ -4791,7 +4802,10 @@ bool CvCity::canHurryUnit(HurryTypes eHurry, UnitTypes eUnit, bool bIgnoreNew) c
 	{
 		return false;
 	}
-
+	if (getCulture(getOwnerINLINE()) < getHurryCulture(eHurry, getHurryCost(false, eUnit, bIgnoreNew)))
+	{
+		return false;
+	}
 	if (maxHurryPopulation() < getHurryPopulation(eHurry, getHurryCost(true, eUnit, bIgnoreNew)))
 	{
 		return false;
@@ -4822,6 +4836,11 @@ bool CvCity::canHurryBuilding(HurryTypes eHurry, BuildingTypes eBuilding, bool b
 		return false;
 	}
 
+	if (getCulture(getOwnerINLINE()) < getHurryCulture(eHurry, getHurryCost(false, eBuilding, bIgnoreNew)))
+	{
+		return false;
+	}
+
 	if (maxHurryPopulation() < getHurryPopulation(eHurry, getHurryCost(true, eBuilding, bIgnoreNew)))
 	{
 		return false;
@@ -4834,6 +4853,7 @@ bool CvCity::canHurryBuilding(HurryTypes eHurry, BuildingTypes eBuilding, bool b
 void CvCity::hurry(HurryTypes eHurry)
 {
 	int iHurryGold;
+	int iHurryCulture;
 	int iHurryPopulation;
 	int iHurryAngerLength;
 
@@ -4843,12 +4863,14 @@ void CvCity::hurry(HurryTypes eHurry)
 	}
 
 	iHurryGold = hurryGold(eHurry);
+	iHurryCulture = hurryCulture(eHurry);
 	iHurryPopulation = hurryPopulation(eHurry);
 	iHurryAngerLength = hurryAngerLength(eHurry);
 
 	changeProduction(hurryProduction(eHurry));
 
 	GET_PLAYER(getOwnerINLINE()).changeGold(-(iHurryGold));
+	changeCulture(getOwnerINLINE(), -iHurryCulture, true, true);
 	changePopulation(-(iHurryPopulation));
 
 	changeHurryAngerTimer(iHurryAngerLength);
@@ -5799,7 +5821,7 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 /**	GWSLocalSpecialist																	Milaga	**/
 /** Buildings can change give bonuses to specialists in only one city							**/
 /*************************************************************************************************/
-	int iSpecialistGPP = std::max(0, GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() + getLocalSpecialistGPP(eSpecialist));
+	int iSpecialistGPP = std::max(0, GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() + getLocalSpecialistGPP(eSpecialist)+GET_PLAYER(getOwner()).getSpecialistTypeExtraGPP(eSpecialist));
 /*************************************************************************************************/
 /**	GWSLocalSpecialist																		END	**/
 /*************************************************************************************************/
@@ -6962,6 +6984,25 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 	}
 
 	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getGoldPerProduction());
+
+	return std::max(1, iGold);
+}
+
+int CvCity::hurryCulture(HurryTypes eHurry) const
+{
+	return getHurryCulture(eHurry, hurryCost(false));
+}
+
+int CvCity::getHurryCulture(HurryTypes eHurry, int iHurryCost) const
+{
+	int iGold;
+
+	if (GC.getHurryInfo(eHurry).getCulturePerProduction() == 0)
+	{
+		return 0;
+	}
+
+	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getCulturePerProduction());
 
 	return std::max(1, iGold);
 }
@@ -21917,6 +21958,10 @@ int CvCity::getCityUnits(int eUnitClass) const
 
 int CvCity::getCityBuildings(int eBuildingClass) const
 {
+	if (GET_PLAYER(getOwner()).getExtraBuildingClasses((BuildingClassTypes)eBuildingClass) != NO_BUILDING)
+	{
+		return GET_PLAYER(getOwner()).getExtraBuildingClasses((BuildingClassTypes)eBuildingClass);
+	}
 	if (getCityClass() != NO_CITYCLASS)
 	{
 	//	if (GC.getCityClassInfo(getCityClass()).getCityClassBuildings(eBuildingClass) != NO_BUILDING)

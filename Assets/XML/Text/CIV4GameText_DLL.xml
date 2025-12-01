@@ -51,6 +51,22 @@
 		<Spanish>[ICON_BULLET]Aumentan las probabilidades de descubrir nuevos recursos.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_DECREASE</Tag>
+		<English>[ICON_BULLET]Decreases the chance of spreading existing resources.</English>
+		<French>[ICON_BULLET]Decreases the chance of spreading existing resources.</French>
+		<German>[ICON_BULLET]Decreases the chance of spreading existing resources.</German>
+		<Italian>[ICON_BULLET]Decreases the chance of spreading existing resources.</Italian>
+		<Spanish>[ICON_BULLET]Decreases the chance of spreading existing resources.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SPREAD_RAND_MODIFIER_INCREASE</Tag>
+		<English>[ICON_BULLET]Increases the chance of spreading existing resources.</English>
+		<French>[ICON_BULLET]Increases the chance of spreading existing resources.</French>
+		<German>[ICON_BULLET]Increases the chance of spreading existing resources.</German>
+		<Italian>[ICON_BULLET]Increases the chance of spreading existing resources.</Italian>
+		<Spanish>[ICON_BULLET]Increases the chance of spreading existing resources.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_GREAT_PEOPLE_RATE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1% to Great Person Growth</English>
 		<French>[ICON_BULLET]%D1% au taux d'apparition des personnages illustres</French>
@@ -2431,6 +2447,22 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_EXTRA_UNIT_UNITCLASS_DEFAULT</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_EXTRA_BUILDING_BUILDINGCLASS</Tag>
+		<English>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s2]%s3[\LINK], replacing any building of the %s1 class</English>
+		<French>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s2]%s3[\LINK], replacing any building of the %s1 class</French>
+		<German>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s2]%s3[\LINK], replacing any building of the %s1 class</German>
+		<Italian>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s2]%s3[\LINK], replacing any building of the %s1 class</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s2]%s3[\LINK], replacing any building of the %s1 class</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_EXTRA_BUILDING_BUILDINGCLASS_DEFAULT</Tag>
 		<English>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</English>
 		<French>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</French>
 		<German>[NEWLINE][ICON_BULLET]Grants access to [LINK=%s1]%s2[\LINK]</German>
