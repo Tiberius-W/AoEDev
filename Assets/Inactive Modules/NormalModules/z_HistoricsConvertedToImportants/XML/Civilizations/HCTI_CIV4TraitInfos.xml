@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Leader Trait Infos -->
-<Civ4TraitInfos xmlns="x-schema:HistoricsConvertedToImportants_CIV4CivilizationsSchema.xml">
+<Civ4TraitInfos xmlns="x-schema:HCTI_CIV4CivilizationsSchema.xml">
 	<TraitInfos>
 		<TraitInfo>		<!-- Aspect of War (Capria) -->
 			<Type>TRAIT_ASPECT_OF_WAR_CAPRIA</Type>

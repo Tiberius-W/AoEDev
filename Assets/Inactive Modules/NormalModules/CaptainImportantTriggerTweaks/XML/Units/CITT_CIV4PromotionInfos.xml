@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Promotion Infos -->
-<Civ4PromotionInfos xmlns="x-schema:CaptainImportantTriggerTweaks_CIV4UnitSchema.xml">
+<Civ4PromotionInfos xmlns="x-schema:CITT_CIV4UnitSchema.xml">
 	<PromotionInfos>
 		<PromotionInfo>		<!-- Ambition -->
 			<Type>PROMOTION_AMBITION</Type>

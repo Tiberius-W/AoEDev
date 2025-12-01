@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Leader Trait Infos -->
-<Civ4TraitInfos xmlns="x-schema:CaptainImportantTriggerTweaks_CIV4CivilizationsSchema.xml">
+<Civ4TraitInfos xmlns="x-schema:CITT_CIV4CivilizationsSchema.xml">
 	<TraitInfos>
 		<TraitInfo>		<!-- Warlord -->
 			<Type>TRAIT_WARLORD</Type>

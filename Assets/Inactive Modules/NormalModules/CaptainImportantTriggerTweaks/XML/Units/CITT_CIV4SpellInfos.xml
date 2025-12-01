@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Spell Infos -->
-<Civ4SpellInfos xmlns="x-schema:CaptainImportantTriggerTweaks_CIV4UnitSpellSchema.xml">
+<Civ4SpellInfos xmlns="x-schema:CITT_CIV4UnitSpellSchema.xml">
 	<SpellInfos>
 		<SpellInfo>			<!--Swashbuckling Tradition-->
 			<Type>SPELL_SWASHBUCKLER_IMPORTANTTWEAKS</Type>

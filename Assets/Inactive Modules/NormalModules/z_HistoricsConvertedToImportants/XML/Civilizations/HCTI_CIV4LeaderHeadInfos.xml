@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Leader Infos and AI Settings -->
-<Civ4LeaderHeadInfos xmlns="x-schema:HistoricsConvertedToImportants_CIV4CivilizationsSchema.xml">
+<Civ4LeaderHeadInfos xmlns="x-schema:HCTI_CIV4CivilizationsSchema.xml">
 	<LeaderHeadInfos>
 		<LeaderHeadInfo>		<!-- Capria --><!-- Bannor leader -->
 			<Type>LEADER_CAPRIA</Type>

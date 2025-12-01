@@ -5,7 +5,7 @@
 <!-- -->
 <!-- Basic Infos -->
 
-<Civ4TraitTriggerInfos xmlns="x-schema:CaptainImportantTriggerTweaks_CIV4CivilizationsSchema.xml">
+<Civ4TraitTriggerInfos xmlns="x-schema:CITT_CIV4CivilizationsSchema.xml">
 	<TraitTriggerInfos>
 		<TraitTriggerInfo> <!-- Construct           Hunters Hall	                       			Warlord -->
 			<Type>TRAITTRIGGER_CONSTRUCT_HUNTERS_HALL_IMPORTANTTWEAKS</Type>
