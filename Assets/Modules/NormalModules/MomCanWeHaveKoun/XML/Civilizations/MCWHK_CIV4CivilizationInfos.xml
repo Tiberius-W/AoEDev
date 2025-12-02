@@ -118,7 +118,70 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-		</CivilizationInfo> -->
+		</CivilizationInfo> -->		
+		<CivilizationInfo><!-- Balseraphs -->
+			<Type>CIVILIZATION_BALSERAPHS</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_PERPENTACH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KEELYN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_WEEVIL</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_NOJAH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_FURIA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_GAIUS_OCTKOUNIUS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>		
+		<CivilizationInfo><!-- Sheaim -->
+			<Type>CIVILIZATION_SHEAIM</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TEBRYN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_OS-GABELLA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_OPHELIA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HOMELESS_KOUN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Mazatl -->
+			<Type>CIVILIZATION_MAZATL</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_MAZATL</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_ACOLDRIC_KOUNVIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
 		<CivilizationInfo><!-- Doviello -->
 			<Type>CIVILIZATION_DOVIELLO</Type>
 			<Leaders>

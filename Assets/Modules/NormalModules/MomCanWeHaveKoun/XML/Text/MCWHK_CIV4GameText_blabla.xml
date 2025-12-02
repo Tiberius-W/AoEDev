@@ -117,4 +117,52 @@
 		<Italian>Wayward Mechanos</Italian>
 		<Spanish>Wayward Mechanos</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HOMELESS_KOUN</Tag>
+		<English>Homeless Koun</English>
+		<French>Homeless Koun</French>
+		<German>Homeless Koun</German>
+		<Italian>Homeless Koun</Italian>
+		<Spanish>Homeless Koun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KOUN_AUSTRIN</Tag>
+		<English>Lost Austrin</English>
+		<French>Lost Austrin</French>
+		<German>Lost Austrin</German>
+		<Italian>Lost Austrin</Italian>
+		<Spanish>Lost Austrin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GAIUS_OCTKOUNIUS</Tag>
+		<English>Gaius Octkounius</English>
+		<French>Gaius Octkounius</French>
+		<German>Gaius Octkounius</German>
+		<Italian>Gaius Octkounius</Italian>
+		<Spanish>Gaius Octkounius</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KOUN_BANNOR</Tag>
+		<English>Wayward Bannor</English>
+		<French>Wayward Bannor</French>
+		<German>Wayward Bannor</German>
+		<Italian>Wayward Bannor</Italian>
+		<Spanish>Wayward Bannor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ACOLDRIC_KOUNVIN</Tag>
+		<English>Acoldric Kounvin</English>
+		<French>Acoldric Kounvin</French>
+		<German>Acoldric Kounvin</German>
+		<Italian>Acoldric Kounvin</Italian>
+		<Spanish>Acoldric Kounvin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KOUN_ILLIAN</Tag>
+		<English>Wayward Illians</English>
+		<French>Wayward Illians</French>
+		<German>Wayward Illians</German>
+		<Italian>Wayward Illians</Italian>
+		<Spanish>Wayward Illians</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -614,8 +614,16 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<TerrainYields>
 						<iYield>1</iYield>
+						<iYield>1</iYield>
 						<iYield>0</iYield>
-						<iYield>0</iYield>
+					</TerrainYields>
+				</TerrainYieldChange>
+				<TerrainYieldChange>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<TerrainYields>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
 					</TerrainYields>
 				</TerrainYieldChange>
 			</TerrainYieldChanges>
@@ -623,7 +631,7 @@
 		<TraitInfo>		<!-- Homeless Koun -->								
 			<Type>TRAIT_KOUN_AUSTRIN</Type>
 			<TraitClass>TRAITCLASS_KOUNFUSION</TraitClass>
-			<Description>TXT_KEY_TRAIT_HOMELESS_KOUN</Description>
+			<Description>TXT_KEY_TRAIT_KOUN_AUSTRIN</Description>
 			<Civilopedia>TXT_KEY_TRAIT_HOMELESS_KOUN_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_AGGRESSIVE_SHORT</ShortDescription>
 			<ExtraUnitClasses>
@@ -726,7 +734,7 @@
 		<TraitInfo>		<!-- Gaius Octkounius -->								
 			<Type>TRAIT_KOUN_BANNOR</Type>
 			<TraitClass>TRAITCLASS_KOUNFUSION</TraitClass>
-			<Description>TXT_KEY_TRAIT_KOUNIUS</Description>
+			<Description>TXT_KEY_TRAIT_KOUN_BANNOR</Description>
 			<Civilopedia>TXT_KEY_TRAIT_KOUNIUS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_AGGRESSIVE_SHORT</ShortDescription>
 			<ExtraUnitClasses>
