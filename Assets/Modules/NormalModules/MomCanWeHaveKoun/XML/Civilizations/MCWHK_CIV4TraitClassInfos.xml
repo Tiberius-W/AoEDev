@@ -5,7 +5,7 @@
 <!-- -->
 <!-- Basic Infos -->
 
-<Civ4TraitClassInfos xmlns="x-schema:XX_CIV4CivilizationsSchema.xml">
+<Civ4TraitClassInfos xmlns="x-schema:MCWHK_CIV4CivilizationsSchema.xml">
 	<TraitClassInfos>
 		<TraitClassInfo>
 			<Type>TRAITCLASS_KOUNFUSION</Type>

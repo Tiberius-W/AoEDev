@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Leader Infos and AI Settings -->
-<Civ4LeaderHeadInfos xmlns="x-schema:XX_CIV4CivilizationsSchema.xml">
+<Civ4LeaderHeadInfos xmlns="x-schema:MCWHK_CIV4CivilizationsSchema.xml">
 	<LeaderHeadInfos>
      	<LeaderHeadInfo>		<!-- Faeryl --><!-- Svartalfar leader -->
 			<Type>LEADER_VIKOUNIA</Type>

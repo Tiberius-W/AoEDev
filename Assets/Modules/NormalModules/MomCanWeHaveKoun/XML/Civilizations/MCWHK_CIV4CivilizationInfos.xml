@@ -4,10 +4,8 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Civilization Infos -->
-<Civ4CivilizationInfos xmlns="x-schema:XX_CIV4CivilizationsSchema.xml">
+<Civ4CivilizationInfos xmlns="x-schema:MCWHK_CIV4CivilizationsSchema.xml">
 	<CivilizationInfos>
-		<CivilizationInfo><!-- Amurites -->
-		</CivilizationInfo>
 		<CivilizationInfo><!-- Kuriotates -->
 			<Type>CIVILIZATION_KURIOTATES</Type>
 			<Leaders>
@@ -74,11 +72,12 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_KOUNROY</LeaderName>
+					<LeaderName>LEADER_VIKOUNIA</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-		</CivilizationInfo>		<CivilizationInfo><!-- Mekara Order V2 -->
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Mekara Order V2 -->
 			<Type>CIVILIZATION_MEKARA_V2</Type>
 			<Leaders>
 				<Leader>
@@ -99,8 +98,8 @@
 				</Leader>
 			</Leaders>
 		</CivilizationInfo>	
-		<CivilizationInfo><!-- Ljosalfar -->
-			<Type>CIVILIZATION_LJOSALFAR</Type>
+	<!-- 	<CivilizationInfo> --> <!-- Ljosalfar -->
+	<!--    <Type>CIVILIZATION_LJOSALFAR</Type>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_AMELANCHIER</LeaderName>
@@ -116,6 +115,23 @@
 				</Leader>
 				<Leader>
 					<LeaderName>LEADER_VIKOUNIA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo> -->
+		<CivilizationInfo><!-- Mechanos -->
+			<Type>CIVILIZATION_MECHANOS</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_VEROCCHIO</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MAER</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KOUNROY</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
