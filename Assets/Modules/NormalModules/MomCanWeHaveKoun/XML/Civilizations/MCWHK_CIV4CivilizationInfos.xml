@@ -119,6 +119,27 @@
 				</Leader>
 			</Leaders>
 		</CivilizationInfo> -->
+		<CivilizationInfo><!-- Doviello -->
+			<Type>CIVILIZATION_DOVIELLO</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_CHARADON</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MAHALA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_DUIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KOUNTRAP</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
 		<CivilizationInfo><!-- Mechanos -->
 			<Type>CIVILIZATION_MECHANOS</Type>
 			<Leaders>

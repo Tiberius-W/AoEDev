@@ -46,5 +46,13 @@
 			<NoShaderNIF/>
 			<BackgroundKFM/>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KOUNTRAP</Type>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KountrapButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/Kountrap.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

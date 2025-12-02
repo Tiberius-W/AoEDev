@@ -101,4 +101,20 @@
 		<Italian>Wayward Winter Court</Italian>
 		<Spanish>Wayward Winter Court</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KOUNTRAP</Tag>
+		<English>Kountrap</English>
+		<French>Kountrap</French>
+		<German>Kountrap</German>
+		<Italian>Kountrap</Italian>
+		<Spanish>Kountrap</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_KOUNTRAP</Tag>
+		<English>Wayward Mechanos</English>
+		<French>Wayward Mechanos</French>
+		<German>Wayward Mechanos</German>
+		<Italian>Wayward Mechanos</Italian>
+		<Spanish>Wayward Mechanos</Spanish>
+	</TEXT>
 </Civ4GameText>
