@@ -7,7 +7,7 @@
 			<Type>CIVIC_SLUMBERING_COVEN</Type>
 			<Description>TXT_KEY_CIVIC_SLUMBERING_COVEN</Description>
 			<Civilopedia>TXT_KEY_CIVIC_SLUMBERING_COVEN_PEDIA</Civilopedia>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/religions/SlumberingCoven.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Civics/SlumberingCoven.dds</Button>
 			<TechPrereq>TECH_MIND_STAPLING</TechPrereq>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
 			<bStateReligion>1</bStateReligion>
@@ -16,24 +16,48 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_THE_DREAMERS</WeLoveTheKing>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
-			<SpecialistExtraCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
-				<iCommerce>1</iCommerce>
-			</SpecialistExtraCommerces>
-			<SpecialistValids>
-				<SpecialistValid>
+			<SpecialistCommerceChanges>
+				<SpecialistCommerceChange>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-			</SpecialistValids>
+					<SpecialistCommerces>
+						<iCommerce>0</iCommerce>
+						<iCommerce>1</iCommerce>
+						<iCommerce>1</iCommerce>
+					</SpecialistCommerces>
+				</SpecialistCommerceChange>
+			</SpecialistCommerceChanges>
 			<SpecialistUnlimiteds>
 				<SpecialistUnlimited>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<bValid>1</bValid>
 				</SpecialistUnlimited>
-			</SpecialistUnlimiteds>
-			<iGreatPeopleRateModifier>-25</iGreatPeopleRateModifier>
+			</SpecialistUnlimiteds>	
+			<SpecialistGPPChanges>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iGPPChange>1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_HEALER</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+			</SpecialistGPPChanges>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_STYGIAN_SHRINE</ImprovementType>
@@ -125,7 +149,7 @@
 			<Type>CIVIC_SLUMBERING_COVEN</Type>
 			<Description>TXT_KEY_CIVIC_SLUMBERING_COVEN</Description>
 			<Civilopedia>TXT_KEY_CIVIC_SLUMBERING_COVEN_PEDIA</Civilopedia>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/religions/SlumberingCoven.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Civics/SlumberingCoven.dds</Button>
 			<TechPrereq>TECH_MIND_STAPLING</TechPrereq>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
 			<bStateReligion>1</bStateReligion>
@@ -133,11 +157,12 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_THE_DREAMERS</WeLoveTheKing>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
-			<SpecialistExtraCommerces>
+			<iAIWeight>50</iAIWeight>
+			<SpecialistCommerces>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1</iCommerce>
 				<iCommerce>1</iCommerce>
-			</SpecialistExtraCommerces>
+			</SpecialistCommerces>
 			<SpecialistValids>
 				<SpecialistValid>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
@@ -237,6 +262,21 @@
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 			<bForceOverwrite>1</bForceOverwrite>
+		</CivicInfo>
+		<CivicInfo>		<!-- Slavery -->
+			<CivicOptionType>CIVICOPTION_LABOR</CivicOptionType>
+			<Type>CIVIC_MELDING</Type>
+			<Description>TXT_KEY_CIVIC_MELDING</Description>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Civics/Melding2.dds</Button>
+			<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			<Upkeep>UPKEEP_LOW</Upkeep>
+			<iAIWeight>90</iAIWeight>
+			<Hurrys>
+				<Hurry>
+					<HurryType>HURRY_CULTURE_VS</HurryType>
+					<bHurry>1</bHurry>
+				</Hurry>
+			</Hurrys>
 		</CivicInfo>
 	</CivicInfos>
 </Civ4CivicInfos>
