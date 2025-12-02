@@ -4,7 +4,7 @@
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
 <!-- Leaderhead art path information -->
-<Civ4ArtDefines xmlns="x-schema:XX_CIV4ArtDefinesSchema.xml">
+<Civ4ArtDefines xmlns="x-schema:MCWHK_CIV4ArtDefinesSchema.xml">
 	<LeaderheadArtInfos>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_THEKOUNT</Type>
