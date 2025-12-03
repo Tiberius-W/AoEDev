@@ -5,7 +5,120 @@
 <!-- -->
 <!-- Civilization Infos -->
 <Civ4CivilizationInfos xmlns="x-schema:MCWHK_CIV4CivilizationsSchema.xml">
-	<CivilizationInfos>
+	<CivilizationInfos>		
+			<CivilizationInfo><!-- Lanun -->
+			<Type>CIVILIZATION_LANUN</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_FALAMAR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HANNAH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CASIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MORDMORGAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BLACKHEART</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BARON_KOUNHALFMORN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Clan of Embers -->
+			<Type>CIVILIZATION_CLAN_OF_EMBERS</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_JONAS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SHEELBA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HAFGAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SAUROS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_GLITTERKOUN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Hippus -->
+			<Type>CIVILIZATION_HIPPUS</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TASUNKE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_RHOANNA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Elohim -->
+			<Type>CIVILIZATION_ELOHIM</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ETHNE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_EINION</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_THESSALONICA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KOUNPEROR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
+		<CivilizationInfo><!-- Calabim -->
+			<Type>CIVILIZATION_CALABIM</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ALEXIS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_FLAUROS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_DECIUS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_ELIJAH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_OSKOUNBELLA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		</CivilizationInfo>
 		<CivilizationInfo><!-- Kuriotates -->
 			<Type>CIVILIZATION_KURIOTATES</Type>
 			<Leaders>
@@ -98,8 +211,8 @@
 				</Leader>
 			</Leaders>
 		</CivilizationInfo>	
-	<!-- 	<CivilizationInfo> --> <!-- Ljosalfar -->
-	<!--    <Type>CIVILIZATION_LJOSALFAR</Type>
+	 	<CivilizationInfo>  <!-- Ljosalfar -->
+	    <Type>CIVILIZATION_LJOSALFAR</Type>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_AMELANCHIER</LeaderName>
@@ -114,11 +227,11 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_VIKOUNIA</LeaderName>
+					<LeaderName>LEADER_KOUNIE</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-		</CivilizationInfo> -->		
+		</CivilizationInfo> 	
 		<CivilizationInfo><!-- Balseraphs -->
 			<Type>CIVILIZATION_BALSERAPHS</Type>
 			<Leaders>

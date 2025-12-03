@@ -175,7 +175,7 @@
 			<BackgroundKFM/>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_SCIONKOUN</Type>
+			<Type>ART_DEF_LEADER_KOUNPEROR</Type>
 			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/KounperorButton.dds</Button>
 			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/Kounperor.dds</NIF>
 			<KFM/>
@@ -208,8 +208,8 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SHEAIMKOUN</Type>
-			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/OsKounaButton.dds</Button>
-			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/OsKouna.dds</NIF>
+			<Button>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/OsKounbellaButton.dds</Button>
+			<NIF>Modules/NormalModules/MomCanWeHaveKoun/Art/Interface/LeaderHeads/OsKounbella.dds</NIF>
 			<KFM/>
 			<NoShaderNIF/>
 			<BackgroundKFM/>
