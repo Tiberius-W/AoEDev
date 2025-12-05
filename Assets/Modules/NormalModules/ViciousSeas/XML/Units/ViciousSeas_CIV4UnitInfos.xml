@@ -2211,6 +2211,7 @@
 			</UnitCombatMods>
 			<SpecialCargo>SPECIALUNIT_BIRD</SpecialCargo>
 			<DomainCargo>DOMAIN_AIR</DomainCargo>
+			<bNeverObsolete>1</bNeverObsolete>
 			<iCargo>1</iCargo>
 			<iAsset>10</iAsset>
 			<UnitMeshGroups>
@@ -2251,6 +2252,7 @@
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNeverObsolete>1</bNeverObsolete>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_ASSASSIN</UnitClassUpgradeType>
 			</UnitClassUpgrades>

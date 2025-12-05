@@ -658,8 +658,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_SPELL_SPECTRE</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_SPELL_SPECTRE</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_DREAM_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_DREAM_SELECT</CivilizationActionSound>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>

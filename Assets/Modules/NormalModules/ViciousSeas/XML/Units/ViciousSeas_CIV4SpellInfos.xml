@@ -333,7 +333,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<Effect>EFFECT_SPELL1</Effect>
-			<Sound>AS3D_SPELL_SPRING</Sound>
+			<Sound>AS3D_SUB_SELECT</Sound>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SirensCall.dds</Button>
 			<AddPromotions>
 				<AddPromotion>PROMOTION_SLEEPWALKING</AddPromotion>
@@ -365,7 +365,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<Effect>EFFECT_SPELL1</Effect>
-			<Sound>AS3D_SPELL_SPRING</Sound>
+			<Sound>AS3D_SPELL_SPECTRE</Sound>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/FearofIsolation.dds</Button>
 			<AddPromotions>
 				<AddPromotion>PROMOTION_NIGHTMARE_AIFON</AddPromotion>

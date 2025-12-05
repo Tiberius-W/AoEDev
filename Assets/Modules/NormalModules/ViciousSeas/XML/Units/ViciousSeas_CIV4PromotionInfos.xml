@@ -1602,6 +1602,7 @@
 				</TerrainDefense>
 			</TerrainDefenses>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SirensCall.dds</Button>
+			<Sound>AS3D_SUB_SELECT</Sound>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Hateful Glare -->
 			<Type>PROMOTION_HATEFUL_GLARE</Type>

@@ -10578,6 +10578,13 @@ bInGeneric: Unknown. Always 1.
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SND_DREAM_SELECT</SoundID>
+			<Filename>Sounds/Units/DreamSelect</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_SKELETON_SELECT</SoundID>
 			<Filename>Sounds/Units/SkeletonSelect</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
