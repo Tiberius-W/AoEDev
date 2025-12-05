@@ -19987,7 +19987,7 @@
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Aphotic Throne Faeryl                                    Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
-			<Type>BUILDING_APHOTIC_THRONE</Type>
+			<Type>BUILDING_APHOTIC_THRONE_FAERYL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL_PEDIA</Civilopedia>
