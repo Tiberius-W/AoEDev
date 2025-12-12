@@ -663,7 +663,7 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>
-			<Hero>UNIT_TRENTON</Hero>
+			<Hero>NONE</Hero>
 			<TerrainCultureDistanceChanges>
 				<TerrainCultureDistanceChange>
 					<TerrainType>TERRAIN_MARSH</TerrainType>
