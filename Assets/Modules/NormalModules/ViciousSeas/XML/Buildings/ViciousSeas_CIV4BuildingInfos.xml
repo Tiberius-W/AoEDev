@@ -287,8 +287,8 @@
 		<BuildingInfo>		<!-- Palace Dream of the Aifons -->
 			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
 			<Type>BUILDING_PALACE_DREAM_AIFONS</Type>
-			<Description>TXT_KEY_BUILDING_PALACE_BEZERI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_PALACE_BEZERI</Civilopedia>
+			<Description>TXT_KEY_BUILDING_PALACE_DREAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PALACE_DREAM</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PALACE_DURAL</ArtDefineTag>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
@@ -639,7 +639,7 @@
 			<iPrereqCrime>225</iPrereqCrime>
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
-			<iPrereqPopulation>3</iPrereqPopulation>
+			<iPrereqPopulation>2</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -659,7 +659,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_HOLES_IN_THE_DREAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>400</iPrereqCrime>
-			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqPopulation>2</iPrereqPopulation>
 			<bCrimeEffect>1</bCrimeEffect>
 			<PerPopBonuses>
 				<PerPopBonus>
@@ -682,9 +682,9 @@
 			<Description>TXT_KEY_BUILDING_CRIME_BREAKING_DREAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_BREAKING_DREAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-			<iPrereqCrime>1000</iPrereqCrime>
+			<iPrereqCrime>800</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqPopulation>2</iPrereqPopulation>
 			<iMilitaryProductionModifier>-30</iMilitaryProductionModifier>
 			<FreePromotion>PROMOTION_CRAZED</FreePromotion>
 			<ObsoleteSafeCommerceChanges>
@@ -735,9 +735,9 @@
 			<Description>TXT_KEY_BUILDING_CRIME_SHATTERED_DREAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CRIME_SHATTERED_DREAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
-			<iPrereqCrime>3000</iPrereqCrime>
+			<iPrereqCrime>1600</iPrereqCrime>
 			<bCrimeEffect>1</bCrimeEffect>
-			<iPrereqPopulation>5</iPrereqPopulation>
+			<iPrereqPopulation>2</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
 					<fCulture>-1</fCulture>
