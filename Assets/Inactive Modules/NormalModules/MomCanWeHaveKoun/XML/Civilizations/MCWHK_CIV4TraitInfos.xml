@@ -399,6 +399,10 @@
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 		</TraitInfo>
 		<TraitInfo>		<!-- K'tesh -->								
@@ -534,6 +538,10 @@
 				</FreePromotionUnitCombat>
 				<FreePromotionUnitCombat>
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
@@ -729,6 +737,10 @@
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 		</TraitInfo>
 		<TraitInfo>		<!-- Gaius Octkounius -->								
@@ -781,14 +793,6 @@
 				</FreePromotion>
 			</FreePromotions>
 			<FreePromotionUnitCombats>
-				<FreePromotionUnitCombat>
-					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
-					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
-				</FreePromotionUnitCombat>
-				<FreePromotionUnitCombat>
-					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
-					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
-				</FreePromotionUnitCombat>
 				<FreePromotionUnitCombat>
 					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
@@ -946,6 +950,10 @@
 				</FreePromotionUnitCombat>
 				<FreePromotionUnitCombat>
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
@@ -1179,6 +1187,10 @@
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<PlotEffectSpawnChances>
 				<PlotEffectSpawnChance>
@@ -1360,6 +1372,10 @@
 					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 		</TraitInfo>
 		<TraitInfo>		<!-- Kounhalfmorn -->								
@@ -1519,59 +1535,330 @@
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 		</TraitInfo>
-		<TraitInfo>		<!--  -->								
-			<Type>TRAIT_KOUN_</Type>
+		<TraitInfo>		<!-- Koundoss -->								
+			<Type>TRAIT_KOUN_BEZERI</Type>
 			<TraitClass>TRAITCLASS_KOUNFUSION</TraitClass>
-			<Description>TXT_KEY_TRAIT_</Description>
-			<Civilopedia>TXT_KEY_TRAIT_KOUNT_PEDIA</Civilopedia>
+			<Description>TXT_KEY_TRAIT_KOUN_BEZERI</Description>
+			<Civilopedia>TXT_KEY_TRAIT_KOUN_BEZERI_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_AGGRESSIVE_SHORT</ShortDescription>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		     </AndDependencyTypes>
 			<ExtraUnitClasses>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_</UnitClassType>
-					<UnitType>UNIT_</UnitType>
+					<UnitClassType>UNITCLASS_ADEPTTOAD</UnitClassType>
+					<UnitType>UNIT_TIDECALLER</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_</UnitClassType>
-					<UnitType>UNIT_</UnitType>
+					<UnitClassType>UNITCLASS_MAGETOAD</UnitClassType>
+					<UnitType>UNIT_TIDEBINDER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ARCHMAGETOAD</UnitClassType>
+					<UnitType>UNIT_TIDEMASTER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitType>UNIT_SHARK_HUNTER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitType>UNIT_SERPENT_HUNTERS</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<UnitType>UNIT_BUNYIP_SWARM</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_TRIREME</UnitClassType>
+					<UnitType>UNIT_BUNYIP_SCHOOL</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_MAN_O_WAR</UnitClassType>
+					<UnitType>UNIT_KIN_BONDED_SEA_DRAKE</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_CARRACK</UnitClassType>
+					<UnitType>UNIT_SEA_SERPENT_BROOD</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SKAARAJ</UnitClassType>
+					<UnitType>UNIT_SKAA_RAJ</UnitType>
 				</ExtraUnitClass>
 			</ExtraUnitClasses>	
 			<ExtraBuildingClasses>
 				<ExtraBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_</BuildingClassType>
-					<BuildingType>BUILDING_</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_MONEYCHANGER</BuildingClassType>
+					<BuildingType>BUILDING_BARTERHOUSE</BuildingType>
 				</ExtraBuildingClass>
 				<ExtraBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_</BuildingClassType>
-					<BuildingType>BUILDING_</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_ELDER_COUNCIL</BuildingClassType>
+					<BuildingType>BUILDING_TOAD_ELDERS</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_SHIPYARD</BuildingClassType>
+					<BuildingType>BUILDING_FEEDING_GROUNDS</BuildingType>
 				</ExtraBuildingClass>
 			</ExtraBuildingClasses>	
+			<bAmphibian>1</bAmphibian>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER_WALKING</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
 		</TraitInfo>
-		<TraitInfo>		<!--  -->								
-			<Type>TRAIT_KOUN_</Type>
+		<TraitInfo>		<!-- Big Green Koun -->								
+			<Type>TRAIT_KOUN_JOTNAR</Type>
 			<TraitClass>TRAITCLASS_KOUNFUSION</TraitClass>
-			<Description>TXT_KEY_TRAIT_</Description>
-			<Civilopedia>TXT_KEY_TRAIT_KOUNT_PEDIA</Civilopedia>
+			<Description>TXT_KEY_TRAIT_KOUN_JOTNAR</Description>
+			<Civilopedia>TXT_KEY_TRAIT_KOUN_JOTNAR_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_AGGRESSIVE_SHORT</ShortDescription>
+		     <AndDependencyTypes>
+		        <DependencyType>MODULE_JOTNAR</DependencyType>
+		     </AndDependencyTypes>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_GIANTKIN</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_JOT_POTENTIAL</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
 			<ExtraUnitClasses>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_</UnitClassType>
-					<UnitType>UNIT_</UnitType>
+					<UnitClassType>UNITCLASS_MARKSMAN</UnitClassType>
+					<UnitType>UNIT_TRYGGVI</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_</UnitClassType>
-					<UnitType>UNIT_</UnitType>
+					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitType>UNIT_DEADEYE</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitType>UNIT_HURLER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_PHALANX</UnitClassType>
+					<UnitType>UNIT_JOTUN</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_IMMORTAL</UnitClassType>
+					<UnitType>UNIT_TITAN</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<UnitType>UNIT_JOT_BERSERKER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_CHAMPION</UnitClassType>
+					<UnitType>UNIT_JOT_GIANT_CHAMPION</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<UnitType>UNIT_FYRD</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ARCHMAGE</UnitClassType>
+					<UnitType>UNIT_JOT_HIGH_SPEAKER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_MAGE</UnitClassType>
+					<UnitType>UNIT_JOT_SPEAKER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
+					<UnitType>UNIT_JOT_ADEPT</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
+					<UnitType>UNIT_JOT_FORT_COMMANDER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_EGRASS</UnitClassType>
+					<UnitType>UNIT_EGRASS</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_HILL_GIANT</UnitClassType>
+					<UnitType>UNIT_FYRD</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
+					<UnitType>UNIT_HUSCARL</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_FREEBOOTER</UnitClassType>
+					<UnitType>UNIT_FREEBOOTER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_REAVER</UnitClassType>
+					<UnitType>UNIT_REAVER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_BEASTMASTER</UnitClassType>
+					<UnitType>UNIT_JOT_BEASTMASTER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_RANGER</UnitClassType>
+					<UnitType>UNIT_TROLL_RANGER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_HUNTER</UnitClassType>
+					<UnitType>UNIT_TROLL_HUNTER</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_SCOUT</UnitClassType>
+					<UnitType>UNIT_JOT_TROLL</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_GOTHI</UnitClassType>
+					<UnitType>UNIT_GOTHI</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_JOT_MOUTH_OF_THE_DIVINE</UnitClassType>
+					<UnitType>UNIT_JOT_MOUTH_OF_THE_DIVINE</UnitType>
+				</ExtraUnitClass>
+				<ExtraUnitClass>
+					<UnitClassType>UNITCLASS_VOICE_OF_THE_DIVINE</UnitClassType>
+					<UnitType>UNIT_VOICE_OF_THE_DIVINE</UnitType>
 				</ExtraUnitClass>
 			</ExtraUnitClasses>	
 			<ExtraBuildingClasses>
 				<ExtraBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_</BuildingClassType>
-					<BuildingType>BUILDING_</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_HALL_OF_YEARS</BuildingClassType>
+					<BuildingType>BUILDING_HALL_OF_YEARS</BuildingType>
 				</ExtraBuildingClass>
 				<ExtraBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_</BuildingClassType>
-					<BuildingType>BUILDING_</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_SPRING_PALACE</BuildingClassType>
+					<BuildingType>BUILDING_HALL_OF_SPRING</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_FALL_PALACE</BuildingClassType>
+					<BuildingType>BUILDING_HALL_OF_AUTUMN</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_FORBIDDEN_PALACE</BuildingClassType>
+					<BuildingType>BUILDING_HALL_OF_SUMMER</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_WINTER_PALACE</BuildingClassType>
+					<BuildingType>BUILDING_HALL_OF_WINTER</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+					<BuildingType>BUILDING_JOT_BARRACKS</BuildingType>
+				</ExtraBuildingClass>
+				<ExtraBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ELDER_COUNCIL</BuildingClassType>
+					<BuildingType>BUILDING_JOT_HOUSE_OF_THE_ANCESTORS</BuildingType>
 				</ExtraBuildingClass>
 			</ExtraBuildingClasses>	
 		</TraitInfo>

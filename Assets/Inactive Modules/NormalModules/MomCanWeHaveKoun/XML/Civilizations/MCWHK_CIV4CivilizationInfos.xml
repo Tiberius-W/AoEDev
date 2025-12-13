@@ -6,6 +6,58 @@
 <!-- Civilization Infos -->
 <Civ4CivilizationInfos xmlns="x-schema:MCWHK_CIV4CivilizationsSchema.xml">
 	<CivilizationInfos>		
+	       <CivilizationInfo>
+            <Type>CIVILIZATION_GOBLIN</Type>
+		    <AndDependencyTypes>
+		       <DependencyType>MODULE_JOTNAR</DependencyType>
+		    </AndDependencyTypes>
+            <Leaders>
+				<Leader>
+					<LeaderName>LEADER_GOBLIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BIG_GREEN_KOUN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+            </Leaders>
+        </CivilizationInfo>
+		<CivilizationInfo><!-- Amurites -->
+			<Type>CIVILIZATION_AMURITES</Type>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_VALLEDIA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_DAIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_TYA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_LORELEI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_NAXUS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KAHD</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KOUNDOSS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+		    <AndDependencyTypes>
+		       <DependencyType>MODULE_VICIOUSSEAS</DependencyType>
+		    </AndDependencyTypes>
+		</CivilizationInfo>
 			<CivilizationInfo><!-- Lanun -->
 			<Type>CIVILIZATION_LANUN</Type>
 			<Leaders>
