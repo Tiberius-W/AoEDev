@@ -10704,7 +10704,7 @@
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<CreateFeatureType>FEATURE_FOREST_NEW</CreateFeatureType>
-			<iDelay>2</iDelay>
+			<iDelay>3</iDelay>
 			<Effect>EFFECT_BLOOM</Effect>
 			<Sound>AS3D_SPELL_BLOOM</Sound>
 			<Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
@@ -10729,6 +10729,7 @@
 			<bAllowAI>1</bAllowAI>
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<iDelay>3</iDelay>
 			<bHasCasted>1</bHasCasted>
 			<bCausesWar>1</bCausesWar>
 			<PyResult>spellSpring(pCaster)</PyResult>
@@ -10758,6 +10759,7 @@
 			<bIsAutoCastable>1</bIsAutoCastable>
 			<bCausesWar>1</bCausesWar>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<iDelay>3</iDelay>
 			<bHasCasted>1</bHasCasted>
 			<PyResult>spellScorch(pCaster)</PyResult>
 			<PyRequirement>reqScorch(pCaster)</PyRequirement>

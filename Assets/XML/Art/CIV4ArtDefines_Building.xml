@@ -1534,7 +1534,17 @@
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Archeryrange/Archeryrange.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Archery_range.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/archeryrange.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_FLETCHER</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Archeryrange/Archeryrange.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/archery_range.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WEAPONSMITH</Type>
@@ -1635,6 +1645,36 @@
 			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Training_yard.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BARRACKS</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Trainingyard.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GARRISON_QUARTER</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/GarrisonQuarters.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_DRILL_YARD</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trainingyard/Trainingyard.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Garrison_Quarters.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_JOUSTING_TILT</Type>

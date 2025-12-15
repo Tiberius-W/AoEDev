@@ -695,7 +695,7 @@
 			<Description>TXT_KEY_BUILDING_BARRACKS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BARRACKS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_BARRACKS</ArtDefineTag>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<iAIWeight>80</iAIWeight>
 			<iCost>100</iCost>
@@ -717,7 +717,7 @@
 			<Description>TXT_KEY_BUILDING_GARRISON_QUARTERS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_GARRISON_QUARTERS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_GARRISON_QUARTER</ArtDefineTag>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<iAIWeight>80</iAIWeight>
 			<iCost>100</iCost>
@@ -2970,7 +2970,7 @@
 			<Description>TXT_KEY_BUILDING_FLETCHER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ARCHERY_RANGE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ARCHERY_RANGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_FLETCHER</ArtDefineTag>
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -8422,7 +8422,7 @@
 			<Description>TXT_KEY_BUILDING_DRILL_YARD</Description>
 			<Civilopedia>TXT_KEY_BUILDING_DRILL_YARD_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_DRILL_YARD</ArtDefineTag>
 			<PrereqTech>TECH_WARFARE</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -19987,7 +19987,7 @@
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Aphotic Throne Faeryl                                    Religious Building -->
 			<BuildingClass>BUILDINGCLASS_APHOTIC_THRONE</BuildingClass>
-			<Type>BUILDING_APHOTIC_THRONE</Type>
+			<Type>BUILDING_APHOTIC_THRONE_FAERYL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APHOTIC_THRONE_FAERYL_PEDIA</Civilopedia>
