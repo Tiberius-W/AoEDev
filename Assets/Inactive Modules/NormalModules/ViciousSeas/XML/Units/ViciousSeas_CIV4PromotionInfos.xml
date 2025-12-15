@@ -83,7 +83,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/religions/SlumberingCoven.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Civics/SlumberingCoven.dds</Button>
 		</PromotionInfo>
 			<PromotionInfo>		<!-- Guardian of Nature  Kelp -->
 			<Type>PROMOTION_GUARDIANSEASE_VS</Type>
@@ -1602,6 +1602,7 @@
 				</TerrainDefense>
 			</TerrainDefenses>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SirensCall.dds</Button>
+			<Sound>AS3D_SUB_SELECT</Sound>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Hateful Glare -->
 			<Type>PROMOTION_HATEFUL_GLARE</Type>

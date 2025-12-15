@@ -15,8 +15,8 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DREAM_AIFONS</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DREAM_AIFONS</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DREAM_AIFONS</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_DARK_PINK_TEXT</TextColorType>
+			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DARK_YELLOW_TEXT</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

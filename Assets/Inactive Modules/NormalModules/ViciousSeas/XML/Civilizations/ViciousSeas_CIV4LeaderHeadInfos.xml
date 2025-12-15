@@ -2953,23 +2953,23 @@
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
-					<iWeightModifier>-91</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ORDER</ReligionType>
-					<iWeightModifier>-91</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_WHITE_HAND</ReligionType>
-					<iWeightModifier>-91</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
-					<iWeightModifier>-91</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
-					<iWeightModifier>-91</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ASHEN_VEIL</ReligionType>

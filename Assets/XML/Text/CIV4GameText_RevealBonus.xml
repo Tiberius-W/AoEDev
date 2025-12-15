@@ -162,11 +162,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SPECIALIST_GPP_CHANGE</Tag>
-		<English>[NEWLINE][ICON_BULLET]%d2 Great Person Point per %s1</English>
-		<French>[NEWLINE][ICON_BULLET]%d2 Great Person Point per %s1</French>
-		<German>[NEWLINE][ICON_BULLET]%d2  Great Person Point per %s1</German>
-		<Italian>[NEWLINE][ICON_BULLET]%d2  Great Person Point per %s1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]%d2 Crime per %s1</Spanish>
+		<English>[NEWLINE][ICON_BULLET]%d2 [ICON_GREATPEOPLE] per %s1</English>
+		<French>[NEWLINE][ICON_BULLET]%d2 [ICON_GREATPEOPLE] per %s1</French>
+		<German>[NEWLINE][ICON_BULLET]%d2 [ICON_GREATPEOPLE] per %s1</German>
+		<Italian>[NEWLINE][ICON_BULLET]%d2 [ICON_GREATPEOPLE] per %s1</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]%d2 [ICON_GREATPEOPLE] per %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SPECIALIST_HEALTH_CHANGE</Tag>

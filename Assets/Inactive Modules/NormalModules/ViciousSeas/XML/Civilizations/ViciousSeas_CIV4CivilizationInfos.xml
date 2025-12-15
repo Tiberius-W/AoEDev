@@ -636,14 +636,14 @@
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
 				<CivicType>CIVIC_RELIGION</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_MELDING</CivicType>
 				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
 				<CivicType>CIVIC_NO_MEMBERSHIP</CivicType>
 			</InitialCivics>
 			<AnarchyCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
 				<CivicType>CIVIC_RELIGION</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_MELDING</CivicType>
 				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
 				<CivicType>CIVIC_NO_MEMBERSHIP</CivicType>
 			</AnarchyCivics>
@@ -658,12 +658,12 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_SPELL_SPECTRE</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_SPELL_SPECTRE</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_DREAM_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_DREAM_SELECT</CivilizationActionSound>
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>
-			<Hero>UNIT_TRENTON</Hero>
+			<Hero>NONE</Hero>
 			<TerrainCultureDistanceChanges>
 				<TerrainCultureDistanceChange>
 					<TerrainType>TERRAIN_MARSH</TerrainType>
