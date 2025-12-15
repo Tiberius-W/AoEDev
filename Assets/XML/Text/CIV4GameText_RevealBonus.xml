@@ -11464,6 +11464,54 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Italian>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</Italian>
 		<Spanish>The closest Esus ever had to an organized cult was amongst the Svartalfar. As early as the Age of Magic, Faeryl Viconia was acting as his grand priestess. Consequently, the Aphotic thrones in Svartalfar lands act more like legs of a state-sized spider than headless chickens, united in the will of their Grand Priestess.</Spanish>
 	</TEXT>
+	    <TEXT>
+        <Tag>TXT_KEY_PEDIA_CIV_MENU_BLOCKED_IMPROVEMENTS</Tag>
+        <English>Blocked Improvements</English>
+        <French>Blocked Improvements</French>
+        <German>Blocked Improvements</German>
+        <Italian>Blocked Improvements</Italian>
+        <Spanish>Blocked Improvements</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_PEDIA_CIV_MENU_UNIQUE_IMPROVEMENTS</Tag>
+        <English>Unique Improvements</English>
+        <French>Unique Improvements</French>
+        <German>Unique Improvements</German>
+        <Italian>Unique Improvements</Italian>
+        <Spanish>Unique Improvements</Spanish>
+    </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PLAGUED_RAT_PACK</Tag>
+		<English>Pack of Plagued Rats</English>
+		<French>Pack of Plagued Rats</French>
+		<German>Pack of Plagued Rats</German>
+		<Italian>Pack of Plagued Rats</Italian>
+		<Spanish>Pack of Plagued Rats</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_ABBEY</Tag>
+		<English>Abbey</English>
+		<French>Abbey</French>
+		<German>Abbey</German>
+		<Italian>Abbey</Italian>
+		<Spanish>Abbey</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PRIORY</Tag>
+		<English>Priory</English>
+		<French>Priory</French>
+		<German>Priory</German>
+		<Italian>Priory</Italian>
+		<Spanish>Priory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_FORTIFIED_ABBEY</Tag>
+		<English>Fortified Abbey</English>
+		<French>Fortified Abbey</French>
+		<German>Fortified Abbey</German>
+		<Italian>Fortified Abbey</Italian>
+		<Spanish>Fortified Abbey</Spanish>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>

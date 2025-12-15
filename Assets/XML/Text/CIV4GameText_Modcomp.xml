@@ -2629,6 +2629,14 @@
 		<Spanish>[ICON_BULLET]Work Rate: %d1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORK_RATE_MODIFIER</Tag>
+		<English>[ICON_BULLET]Work Rate: +%d1 %</English>
+		<French>[ICON_BULLET]Vitesse de travail : +%d1 %</French>
+		<German>[ICON_BULLET]Baurate: +%d1 %</German>
+		<Italian>[ICON_BULLET]Work Rate: +%d1 %</Italian>
+		<Spanish>[ICON_BULLET]Work Rate: +%d1 %</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TERRITORIAL</Tag>
 		<English>[ICON_BULLET]Will Prevent all Non-Team Units from entering Tile</English>
 		<French>[ICON_BULLET]Will Prevent all Non-Team Units from entering Tile</French>

@@ -12625,7 +12625,7 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion, bool bSkipRandom, boo
 /**	Tweak									END													**/
 /*************************************************************************************************/
 
-	iTemp = kPromotion.getWorkRateModify();
+	iTemp = kPromotion.getWorkRateModify()+ kPromotion.getWorkRateModifier();
 	iExtra = 0;
 	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 		if (m_pUnitInfo->getBuilds(iI))

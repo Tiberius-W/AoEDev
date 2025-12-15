@@ -131,6 +131,10 @@ void CyGlobalContextPythonInterface1(python::class_<CyGlobalContext>& x)
 		.def("getNumBuildingClassInfos", &CyGlobalContext::getNumBuildingClassInfos, "() - Total Building Class Infos XML\\Buildings\\CIV4BuildingClassInfos.xml")
 		.def("getBuildingClassInfo", &CyGlobalContext::getBuildingClassInfo, python::return_value_policy<python::reference_existing_object>(), "(BuildingClassID) - CvInfo for BuildingClassID")
 
+
+		.def("getNumImprovementClassInfos", &CyGlobalContext::getNumImprovementClassInfos, "() - Total Improvement Class Infos XML\\Terrain\\CIV4ImprovementClassInfos.xml")
+		.def("getImprovementClassInfo", &CyGlobalContext::getImprovementClassInfo, python::return_value_policy<python::reference_existing_object>(), "(ImprvoementClassID) - CvInfo for ImprovementClassID")
+
 		.def("getNumBuildingInfos", &CyGlobalContext::getNumBuildingInfos, "() - Total Building Infos XML\\Buildings\\CIV4BuildingInfos.xml")
 		.def("getBuildingInfo", &CyGlobalContext::getBuildingInfo, python::return_value_policy<python::reference_existing_object>(), "(BuildingID) - CvInfo for BuildingID")
 

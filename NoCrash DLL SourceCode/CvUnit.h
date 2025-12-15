@@ -1656,6 +1656,8 @@ public:
 	int countUnitsWithinRange(int iRange, bool bEnemy, bool bNeutral, bool bTeam, bool bAny = false, bool bCombatantOnly = false);
 	int getWorkRateModify() const;
 	void changeWorkRateModify(int iChange);
+	int getWorkRateModifier() const;
+	void changeWorkRateModifier(int iChange);
 	CvPlot* getOpenPlot() const;
 	void betray(PlayerTypes ePlayer);
 	ImprovementTypes getUnitImprovement(ImprovementClassTypes iClass) const;
@@ -2148,6 +2150,7 @@ protected:
 	int m_iTotalDamageTypeCombat;
 	int m_iUnitArtStyleType;
 	int m_iWorkRateModify;
+	int m_iWorkRateModifier;
 	int* m_paiBonusAffinity;
 	int* m_paiBonusAffinityAmount;
 	int* m_paiDamageTypeCombat;

@@ -3528,6 +3528,7 @@ m_iSpellCasterXP(0.0f),
 /*************************************************************************************************/
 m_iSpellDamageModify(0),
 m_iWorkRateModify(0),
+m_iWorkRateModifier(0),
 m_iCaptureUnitCombat(NO_UNITCOMBAT),
 m_iBlockedSpellClass(NO_SPELLCLASS),
 m_iPromotionCombatApply(NO_PROMOTION),
@@ -4927,6 +4928,10 @@ int CvPromotionInfo::getWorkRateModify() const
 	return m_iWorkRateModify;
 }
 
+int CvPromotionInfo::getWorkRateModifier() const
+{
+	return m_iWorkRateModifier;
+}
 int CvPromotionInfo::getCaptureUnitCombat() const
 {
 	return m_iCaptureUnitCombat;
@@ -6044,6 +6049,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iSpellCasterXP);
 	stream->Read(&m_iSpellDamageModify);
 	stream->Read(&m_iWorkRateModify);
+	stream->Read(&m_iWorkRateModifier);
 	stream->Read(&m_iCaptureUnitCombat);
 	stream->Read(&m_iBlockedSpellClass);
 	stream->Read(&m_iPromotionCombatApply);
@@ -6744,6 +6750,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iSpellCasterXP);
 	stream->Write(m_iSpellDamageModify);
 	stream->Write(m_iWorkRateModify);
+	stream->Write(m_iWorkRateModifier);
 	stream->Write(m_iCaptureUnitCombat);
 	stream->Write(m_iBlockedSpellClass);
 	stream->Write(m_iPromotionCombatApply);
@@ -7436,6 +7443,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iSpellCasterXP, "iSpellCasterXP");
 	pXML->GetChildXmlValByName(&m_iSpellDamageModify, "iSpellDamageModify");
 	pXML->GetChildXmlValByName(&m_iWorkRateModify, "iWorkRateModify");
+	pXML->GetChildXmlValByName(&m_iWorkRateModifier, "iWorkRateModifier");
 	pXML->GetChildXmlValByName(szTextVal, "CaptureUnitCombat");
 	m_iCaptureUnitCombat = GC.getInfoTypeForString(szTextVal);
 	pXML->GetChildXmlValByName(szTextVal, "BlockedSpellClass");
@@ -8185,6 +8193,7 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 	if (getResistMagic()						== 0)					m_iResistMagic						= pClassInfo->getResistMagic();
 	if (getSpellCasterXP()						== 0)					m_iSpellCasterXP					= (float)pClassInfo->getSpellCasterXP()/100.0f;
 	if (getWorkRateModify()						== 0)					m_iWorkRateModify					= pClassInfo->getWorkRateModify();
+	if (getWorkRateModifier() == 0)					m_iWorkRateModifier = pClassInfo->getWorkRateModifier();
 	if (getCasterXPRate()						== 0.0f)				m_fCasterXPRate						= pClassInfo->getCasterXPRate();
 	if (getPyPostCombatLost()					== cDefault)			m_szPyPostCombatLost				= pClassInfo->getPyPostCombatLost();
 	if (getPyPostCombatWon()					== cDefault)			m_szPyPostCombatWon					= pClassInfo->getPyPostCombatWon();
@@ -11599,6 +11608,8 @@ bool CvSpellInfo::read(CvXMLLoadUtility* pXML)
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraNumTargets), "iExtraNumTargets", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraTargetRange), "iExtraTargetRange", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraDuration), "iExtraDuration", 0);
+					pXML->GetChildXmlValByName(&(cbTemp.iExtraImmobileTurns), "iExtraImmobileTurns", 0);
+					pXML->GetChildXmlValByName(&(cbTemp.iExtraPromotionApply), "iExtraPromotionApply", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneTeam), "bExtraImmuneTeam");
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneNeutral), "bExtraImmuneNeutral");
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneEnemy), "bExtraImmuneEnemy");

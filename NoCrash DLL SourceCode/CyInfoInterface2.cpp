@@ -34,6 +34,13 @@ void CyInfoPythonInterface2()
 		.def("getVictoryThreshold", &CvBuildingClassInfo::getVictoryThreshold, "int (int i)")
 		;
 
+	python::class_<CvImprovementClassInfo, python::bases<CvInfoBase> >("CvBuildingClassInfo")
+		.def("getDefaultImprovementIndex", &CvImprovementClassInfo::getDefaultImprovementIndex, "int ()")
+
+		.def("isUnique", &CvImprovementClassInfo::isUnique, "bool ()")
+	
+		;
+
 	python::class_<CvRouteModelInfo, python::bases<CvInfoBase> >("CvRouteModelInfo")
 
 		.def("getModelFile", &CvRouteModelInfo::getModelFile, "string ()")

@@ -793,6 +793,8 @@ void SpellBonuses::read(FDataStreamBase* pStream)
 	pStream->Read(&iExtraNumTargets);
 	pStream->Read(&iExtraTargetRange);
 	pStream->Read(&iExtraDuration);
+	pStream->Read(&iExtraImmobileTurns);
+	pStream->Read(&iExtraPromotionApply);
 	pStream->Read(&bExtraImmuneTeam);
 	pStream->Read(&bExtraImmuneNeutral);
 	pStream->Read(&bExtraImmuneEnemy);
@@ -808,6 +810,8 @@ void SpellBonuses::write(FDataStreamBase* pStream)
 	pStream->Write(iExtraNumTargets);
 	pStream->Write(iExtraTargetRange);
 	pStream->Write(iExtraDuration);
+	pStream->Write(iExtraImmobileTurns);
+	pStream->Write(iExtraPromotionApply);
 	pStream->Write(bExtraImmuneTeam);
 	pStream->Write(bExtraImmuneNeutral);
 	pStream->Write(bExtraImmuneEnemy);
@@ -824,6 +828,8 @@ bool SpellBonuses::compare(SpellBonuses cbTemp)
 	else if (iExtraNumTargets != cbTemp.iExtraNumTargets) bSame = false;
 	else if (iExtraTargetRange != cbTemp.iExtraTargetRange) bSame = false;
 	else if (iExtraDuration != cbTemp.iExtraDuration) bSame = false;
+	else if (iExtraImmobileTurns != cbTemp.iExtraImmobileTurns) bSame = false;
+	else if (iExtraPromotionApply != cbTemp.iExtraPromotionApply) bSame = false;
 	else if (bExtraImmuneTeam != cbTemp.bExtraImmuneTeam) bSame = false;
 	else if (bExtraImmuneNeutral != cbTemp.bExtraImmuneNeutral) bSame = false;
 	else if (bExtraImmuneEnemy != cbTemp.bExtraImmuneEnemy) bSame = false;
@@ -835,6 +841,8 @@ void SpellUpgradeData::read(FDataStreamBase* pStream)
 	pStream->Read(&iDamage);
 	pStream->Read(&iMaxDamage);
 	pStream->Read(&iNumTargets);
+	pStream->Read(&iImmobileTurns);
+	pStream->Read(&iPromotionApply);
 	pStream->Read(&iDuration);
 	pStream->Read(&bPermanent);
 }
@@ -844,6 +852,8 @@ void SpellUpgradeData::write(FDataStreamBase* pStream)
 	pStream->Write(iDamage);
 	pStream->Write(iMaxDamage);
 	pStream->Write(iNumTargets);
+	pStream->Write(iImmobileTurns);
+	pStream->Write(iPromotionApply);
 	pStream->Write(iDuration);
 	pStream->Write(bPermanent);
 }
@@ -854,6 +864,8 @@ bool SpellUpgradeData::compare(SpellUpgradeData cbTemp)
 	if (iDamage != cbTemp.iDamage) bSame = false;
 	else if (iMaxDamage != cbTemp.iMaxDamage) bSame = false;
 	else if (iNumTargets != cbTemp.iNumTargets) bSame = false;
+	else if (iImmobileTurns != cbTemp.iImmobileTurns) bSame = false;
+	else if (iPromotionApply != cbTemp.iPromotionApply) bSame = false;
 	else if (iDuration != cbTemp.iDuration) bSame = false;
 	else if (bPermanent != cbTemp.bPermanent) bSame = false;
 	return bSame;

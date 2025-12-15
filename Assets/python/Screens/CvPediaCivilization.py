@@ -93,9 +93,11 @@ class CvPediaCivilization:
 		self.placeIcon()
 		self.placeTech()
 		self.placeUnit()
+		self.placeImprovement()
 		self.placeLeader()
 		self.placeBlockedBuilding()
 		self.placeBlockedUnit()
+		self.placeBlockedImprovement()
 		self.placeEffects()
 		self.placeHistory()
 		self.placeStrategy()
@@ -264,6 +266,24 @@ class CvPediaCivilization:
 						screen.attachImageButton( panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUniqueUnit, 1, False )
 			bPipe = True
 
+	def placeImprovement(self):
+		screen = self.top.getScreen()
+		self.X_IMP = self.top.EXT_SPACING
+		self.Y_IMP = self.Y_UNIT + self.H_UNIT
+		self.W_IMP = self.W_BUILDING
+		self.H_IMP = self.top.H_BLUE50_PANEL
+		panelName = self.top.getNextWidgetName()
+		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_CIV_MENU_UNIQUE_IMPROVEMENTS", ()), "", false, true,
+				self.X_IMP, self.Y_IMP, self.W_IMP, self.H_IMP, PanelStyles.PANEL_STYLE_BLUE50 )
+		screen.setPanelColor(panelName, 0, 100, 0)
+		
+		for iImprovementClass in range(gc.getNumImprovementClassInfos()):
+			iUniqueImprovement = gc.getCivilizationInfo(self.iCivilization).getCivilizationImprovements(iImprovementClass);
+			iDefaultImprovement = gc.getImprovementClassInfo(iImprovementClass).getDefaultImprovementIndex();
+			if (iDefaultImprovement > -1 and iUniqueImprovement > -1 and iDefaultImprovement != iUniqueImprovement) or (iUniqueImprovement > -1 and gc.getImprovementClassInfo(iImprovementClass).isUnique()):
+				if not gc.getImprovementInfo(iUniqueImprovement).isGraphicalOnly():
+					screen.attachImageButton( panelName, "", gc.getImprovementInfo(iUniqueImprovement).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT, iUniqueImprovement, 1, False )
+
 	def placeLeader(self):
 		screen = self.top.getScreen()
 		self.X_LEADER = self.X_TECH
@@ -310,7 +330,7 @@ class CvPediaCivilization:
 	def placeBlockedBuilding(self):
 		screen = self.top.getScreen()
 		self.X_XBUILDING = self.top.EXT_SPACING
-		self.Y_XBUILDING = self.Y_UNIT + self.H_UNIT
+		self.Y_XBUILDING = self.Y_IMP + self.H_IMP
 		self.W_XBUILDING = self.W_BUILDING
 		self.H_XBUILDING = self.top.H_BLUE50_PANEL
 		panelName = self.top.getNextWidgetName()
@@ -345,10 +365,28 @@ class CvPediaCivilization:
 					szButton = gc.getUnitInfo(iDefaultUnit).getButton()
 					screen.attachImageButton(panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iDefaultUnit, 1, False)
 
+	def placeBlockedImprovement(self):
+		screen = self.top.getScreen()
+		self.X_XIMP = self.top.EXT_SPACING
+		self.Y_XIMP = self.Y_XUNIT + self.H_XUNIT
+		self.W_XIMP = self.W_BUILDING
+		self.H_XIMP = self.top.H_BLUE50_PANEL
+		panelName = self.top.getNextWidgetName()
+		screen.addPanel(panelName, localText.getText("TXT_KEY_PEDIA_CIV_MENU_BLOCKED_IMPROVEMENTS", ()), "", False, True, self.X_XIMP, self.Y_XIMP, self.W_XIMP, self.H_XIMP, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.setPanelColor(panelName, 206, 65, 69)
+		
+		for iImprovementClass in range(gc.getNumImprovementClassInfos()):
+			iUniqueImprovement = gc.getCivilizationInfo(self.iCivilization).getCivilizationImprovements(iImprovementClass);
+			iDefaultImprovement = gc.getImprovementClassInfo(iImprovementClass).getDefaultImprovementIndex();
+			if iDefaultImprovement != ImprovementTypes.NO_IMPROVEMENT and not gc.getImprovementClassInfo(iImprovementClass).isUnique():
+				if iUniqueImprovement == ImprovementTypes.NO_IMPROVEMENT:
+					szButton = gc.getImprovementInfo(iDefaultImprovement).getButton()
+					screen.attachImageButton(panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT, iDefaultImprovement, 1, False)
+
 	def placeEffects(self):
 		screen = self.top.getScreen()
 		self.X_EFFECTS = self.top.EXT_SPACING
-		self.Y_EFFECTS = self.Y_XUNIT + self.H_XUNIT
+		self.Y_EFFECTS = self.Y_XIMP + self.H_XIMP
 		self.H_EFFECTS = self.top.H_SCREEN - self.top.H_BOT_BAR - self.top.EXT_SPACING - self.Y_EFFECTS
 		self.W_EFFECTS = self.W_BUILDING
 		panelName = self.top.getNextWidgetName()
@@ -364,7 +402,7 @@ class CvPediaCivilization:
 		screen = self.top.getScreen()
 
 		self.X_HISTORY = self.X_LOGO
-		self.Y_HISTORY = self.Y_XBUILDING
+		self.Y_HISTORY = self.Y_IMP
 		self.W_HISTORY = self.top.X_LINKS - self.X_HISTORY - self.top.EXT_SPACING
 		# the remaining vertical space under the logo is split in 2. upper-half --> History ; bottom-half --> Strategy
 		self.H_HISTORY = int(0.5 * (self.top.H_SCREEN-self.top.H_BOT_BAR-self.top.EXT_SPACING-self.Y_HISTORY))

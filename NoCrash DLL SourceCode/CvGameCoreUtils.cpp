@@ -713,7 +713,7 @@ ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, Civiliza
 	}
 	if (iCount > GC.getNumImprovementInfos())
 	{
-		return (ImprovementTypes)GC.getImprovementInfo(eOriginalImprovement).getImprovementClassUpgrade();
+		return (ImprovementTypes)(GC.getImprovementClassInfo((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()).getDefaultImprovementIndex());
 	}
 	if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() != NO_IMPROVEMENTCLASS)
 	{

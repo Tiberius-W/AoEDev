@@ -3002,7 +3002,13 @@ bool CvPlot::isImprovementInRange(ImprovementTypes eImprovement, int iRange, boo
 			}
 		}
 	}
-	int iDX, iDY;
+	int iDX, iDY,iCiv,iLoopCiv;
+	iCiv = -1;
+	iLoopCiv = -1;
+	if (isOwned())
+	{
+		iCiv = GET_PLAYER(getOwner()).getCivilizationType();
+	}
 	CvPlot* pLoopPlot;
 	bool bInvalid = false;
 	for (iDX = -iRange; iDX <= iRange; iDX++)
@@ -3016,14 +3022,19 @@ bool CvPlot::isImprovementInRange(ImprovementTypes eImprovement, int iRange, boo
 			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 			if (pLoopPlot != NULL)
 			{
+				if (pLoopPlot->isOwned())
+				{
+					iLoopCiv = GET_PLAYER(pLoopPlot->getOwner()).getCivilizationType();
+				}
+
 				ImprovementTypes eFinalImprovementType;
-				eFinalImprovementType = finalImprovementUpgrade(eImprovement,(CivilizationTypes)GC.getImprovementInfo(eImprovement).getPrereqCivilization());
+				eFinalImprovementType = finalImprovementUpgrade(eImprovement,(CivilizationTypes)iCiv);
 
 				if (eFinalImprovementType != NO_IMPROVEMENT)
 				{
 					if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 					{
-						if (finalImprovementUpgrade(pLoopPlot->getImprovementType(), (CivilizationTypes)GC.getImprovementInfo(eImprovement).getPrereqCivilization()) == eFinalImprovementType)
+						if (finalImprovementUpgrade(pLoopPlot->getImprovementType(), (CivilizationTypes)iLoopCiv) == eFinalImprovementType)
 						{
 							bInvalid = true;
 							break;

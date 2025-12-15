@@ -13258,7 +13258,7 @@ def exploreTradeShip(argsList):
 def exploreKelp(argsList):
 	pUnit, pPlot		= argsList
 	for x, y in plotsInRange(pPlot.getX(),pPlot.getY(),1,1):
-		iPlot = getPlot(x,y)
+		iPlot = CyMap().plot(x,y)
 		iPlot.setFeatureType(getInfoType("FEATURE_KELP"),0)
 	
 def exploreKelpReagents(argsList):

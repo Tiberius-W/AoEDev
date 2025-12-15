@@ -237,6 +237,7 @@ public:
 	int getNumGameSpeedInfos() const { return GC.getNumGameSpeedInfos(); }
 	int getNumTurnTimerInfos() const { return GC.getNumTurnTimerInfos(); }
 	int getNumBuildingClassInfos() const { return GC.getNumBuildingClassInfos(); }
+	int getNumImprovementClassInfos() const { return GC.getNumImprovementClassInfos(); }
 	int getNumBuildingInfos() const { return GC.getNumBuildingInfos(); }
 	int getNumUnitClassInfos() const { return GC.getNumUnitClassInfos(); }
 	int getNumUnitCombatInfos() const { return GC.getNumUnitCombatInfos(); }

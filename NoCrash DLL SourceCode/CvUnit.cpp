@@ -1063,6 +1063,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iTotalDamageTypeCombat = 0;
 	m_iUnitArtStyleType = NO_UNIT_ARTSTYLE;
 	m_iWorkRateModify = 0;
+	m_iWorkRateModifier = 0;
 /*************************************************************************************************/
 /**	AutoCast								24/05/10									Snarko	**/
 /**																								**/
@@ -12173,6 +12174,9 @@ int CvUnit::workRate(bool bMax, BuildTypes eBuild, FeatureTypes eFeature) const
 //FfH: Added by Kael 08/13/2008
 	iRate += getWorkRateModify();
 //FfH: End Add
+
+	iRate *= std::max(0, (getWorkRateModifier() + 100));
+	iRate /= 100;
 /*************************************************************************************************/
 /**	Choppers							12/07/08									Xienwolf	**/
 /**																								**/
@@ -22304,6 +22308,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		changeTwincast((kPromotion.isTwincast()) ? iChange : 0);
 		changeWaterWalking((kPromotion.isWaterWalking()) ? iChange : 0);
 		changeWorkRateModify(kPromotion.getWorkRateModify() * iChange);
+		changeWorkRateModifier(kPromotion.getWorkRateModifier() * iChange);
 /*************************************************************************************************/
 /**	WorldBreakers						01/05/09									Xienwolf	**/
 /**																								**/
@@ -23544,6 +23549,16 @@ SpellUpgradeData CvUnit::getSpellData(int spell)
 	data.iMaxDamage = GC.getSpellInfo((SpellTypes)spell).getDamageLimit();
 	data.iNumTargets = GC.getSpellInfo((SpellTypes)spell).getNumTargets();
 	data.iDuration = GC.getSpellInfo((SpellTypes)spell).getPromotionDuration();
+	data.iImmobileTurns = GC.getSpellInfo((SpellTypes)spell).getImmobileTurns();
+	if (GC.getSpellInfo((SpellTypes)spell).getNumAddPromotions() > 0)
+	{
+		data.iPromotionApply = 1;
+	}
+	else
+	{
+		data.iPromotionApply = 0;
+
+	}
 	data.bPermanent = false;
 
 	//Applying Spell Bonuses
@@ -23557,7 +23572,9 @@ SpellUpgradeData CvUnit::getSpellData(int spell)
 			data.iDamage += bonus.iExtraDamage * iNumBonusApplications;
 			data.iMaxDamage += bonus.iExtraMaxDamage * iNumBonusApplications;
 			data.iNumTargets += bonus.iExtraNumTargets * iNumBonusApplications;
-			data.iDuration += bonus.iExtraDuration = iNumBonusApplications;
+			data.iDuration += bonus.iExtraDuration * iNumBonusApplications;
+			data.iImmobileTurns += bonus.iExtraImmobileTurns * iNumBonusApplications;
+			data.iPromotionApply += bonus.iExtraPromotionApply * iNumBonusApplications;
 			if (bonus.bExtraPermanent)
 			{
 				data.bPermanent = true;
@@ -25087,6 +25104,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 	bool bResistable = GC.getSpellInfo((SpellTypes)spell).isResistable();
 	int iDuration = spellData.iDuration;
 	int iNumTargets = spellData.iNumTargets;
+	int iExtraApply = spellData.iPromotionApply;
 
 	for (int promidx = 0; promidx < GC.getSpellInfo((SpellTypes)spell).getNumAddPromotions(); promidx++)
 	{
@@ -25097,6 +25115,13 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 			if (ePromotion1 != NO_PROMOTION)
 			{
 				setHasPromotion(ePromotion1, true);
+				if (iExtraApply > 1)
+				{
+					for (int i = 1; i < iExtraApply; i++)
+					{
+						setHasPromotion(ePromotion1, true);
+					}
+				}
 				/*************************************************************************************************/
 				/**	TickTock							11/04/08									Xienwolf	**/
 				/**																								**/
@@ -25607,8 +25632,10 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 	{
 		pTargetPlot = plot();
 	}
+	SpellUpgradeData spellData = getSpellData(spell);
 	bool bResistable = GC.getSpellInfo((SpellTypes)spell).isResistable();
-	int iImmobileTurns = GC.getSpellInfo((SpellTypes)spell).getImmobileTurns();
+	int iNumTargets = spellData.iNumTargets;
+	int iImmobileTurns = spellData.iImmobileTurns;
 	int iRange = GC.getSpellInfo((SpellTypes)spell).getRange();
 /*************************************************************************************************/
 /**	Spellcasting Range						04/08/08	Written: Grey Fox	Imported: Xienwolf	**/
@@ -25622,6 +25649,8 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
 	CvPlot* pLoopPlot;
+	bool* bUnitHit = NULL;
+	bool bValid = true;
 	for (int i = -iRange; i <= iRange; ++i)
 	{
 		for (int j = -iRange; j <= iRange; ++j)
@@ -25631,16 +25660,34 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					pUnitNode = pLoopPlot->headUnitNode();
-					while (pUnitNode != NULL)
+					if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
 					{
-						pLoopUnit = ::getUnit(pUnitNode->m_data);
-						pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
-						if (!pLoopUnit->isImmuneToSpell(this, spell) && pLoopUnit->getImmobileTimer() == 0)
+						pUnitNode = pLoopPlot->headUnitNode();
+						while (pUnitNode != NULL)
 						{
-							if (bResistable)
+							pLoopUnit = ::getUnit(pUnitNode->m_data);
+							pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+							if (!pLoopUnit->isImmuneToSpell(this, spell) && pLoopUnit->getImmobileTimer() == 0)
 							{
-								if (!pLoopUnit->isResisted(this, spell))
+								if (bResistable)
+								{
+									if (!pLoopUnit->isResisted(this, spell))
+									{
+										pLoopUnit->changeImmobileTimer(iImmobileTurns);
+										/*************************************************************************************************/
+										/**	Xienwolf Tweak							09/06/08											**/
+										/**																								**/
+										/**									Prevents AI Group Lock-ups									**/
+										/*************************************************************************************************/
+										pLoopUnit->joinGroup(NULL, true, true);
+										/*************************************************************************************************/
+										/**	Tweak									END													**/
+										/*************************************************************************************************/
+										gDLL->getInterfaceIFace()->addMessage((PlayerTypes)pLoopUnit->getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_SPELL_IMMOBILE"), "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, GC.getSpellInfo((SpellTypes)spell).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+										gDLL->getInterfaceIFace()->addMessage((PlayerTypes)getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_SPELL_IMMOBILE"), "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, GC.getSpellInfo((SpellTypes)spell).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+									}
+								}
+								else
 								{
 									pLoopUnit->changeImmobileTimer(iImmobileTurns);
 									/*************************************************************************************************/
@@ -25656,22 +25703,74 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 									gDLL->getInterfaceIFace()->addMessage((PlayerTypes)getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_SPELL_IMMOBILE"), "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, GC.getSpellInfo((SpellTypes)spell).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
 								}
 							}
-							else
+						}
+					}
+					else
+					{
+						int iUnitsOnPlot = pLoopPlot->getNumUnits();
+						int iValue;
+						int iBestValue = 0;
+						int iBestUnitCounter = -1;
+						CvUnit* pBestUnit = NULL;
+						int iNumUnitsHit = 0;
+
+						bUnitHit = new bool[iUnitsOnPlot];
+
+						for (int k = 0; k < iUnitsOnPlot; k++)
+						{
+							bUnitHit[k] = false;
+						}
+
+						for (int iI = 0; iI < std::min(iUnitsOnPlot, iNumTargets); iI++)
+						{
+							pUnitNode = pLoopPlot->headUnitNode();
+							int iCounter = -1;
+							iBestValue = 0;
+							pBestUnit = NULL;
+							while (pUnitNode != NULL)
 							{
-								pLoopUnit->changeImmobileTimer(iImmobileTurns);
-								/*************************************************************************************************/
-								/**	Xienwolf Tweak							09/06/08											**/
-								/**																								**/
-								/**									Prevents AI Group Lock-ups									**/
-								/*************************************************************************************************/
-								pLoopUnit->joinGroup(NULL, true, true);
-								/*************************************************************************************************/
-								/**	Tweak									END													**/
-								/*************************************************************************************************/
-								gDLL->getInterfaceIFace()->addMessage((PlayerTypes)pLoopUnit->getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_SPELL_IMMOBILE"), "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, GC.getSpellInfo((SpellTypes)spell).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_NEGATIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
-								gDLL->getInterfaceIFace()->addMessage((PlayerTypes)getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_SPELL_IMMOBILE"), "AS2D_DISCOVERBONUS", MESSAGE_TYPE_MAJOR_EVENT, GC.getSpellInfo((SpellTypes)spell).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_POSITIVE_TEXT"), getX_INLINE(), getY_INLINE(), true, true);
+								iCounter++; // Start at 0
+								pLoopUnit = ::getUnit(pUnitNode->m_data);
+								pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+								if (GC.getSpellInfo((SpellTypes)spell).getNumTargetPromotionsPrereq() > 0)
+								{
+									bValid = false;
+									for (int k = 0; k < GC.getSpellInfo((SpellTypes)spell).getNumTargetPromotionsPrereq(); k++)
+									{
+										if (pLoopUnit->isHasPromotion((PromotionTypes)GC.getSpellInfo((SpellTypes)spell).getTargetPromotionPrereq(k)))
+										{
+											bValid = true;
+											break;
+										}
+									}
+								}
+								if (bValid && !pLoopUnit->isImmuneToSpell(this, spell))
+								{
+									if (GC.getSpellInfo((SpellTypes)spell).isCausesWar() || GET_TEAM(getTeam()).isAtWar(pLoopUnit->getTeam()))
+									{
+										if (!bUnitHit[iCounter])
+										{
+											iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, -1);
+
+											if (iValue > iBestValue)
+											{
+												iBestValue = iValue;
+												pBestUnit = pLoopUnit;
+												iBestUnitCounter = iCounter;
+											}
+										}
+									}
+								}
+							}
+							if (pBestUnit != NULL)
+							{							
+								pBestUnit->setImmobileTimer(iImmobileTurns);
+								bUnitHit[iBestUnitCounter] = true;
 							}
 						}
+						SAFE_DELETE_ARRAY(bUnitHit);
+
+
 					}
 				}
 			}
@@ -27253,6 +27352,18 @@ void CvUnit::changeWorkRateModify(int iChange)
 	}
 }
 
+int CvUnit::getWorkRateModifier() const
+{
+	return m_iWorkRateModifier;
+}
+
+void CvUnit::changeWorkRateModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iWorkRateModifier += iChange;
+	}
+}
 bool CvUnit::isResisted(CvUnit* pCaster, int iSpell) const
 {
 	if (GC.getGameINLINE().getSorenRandNum(100, "is Resisted") <= getResistChance(pCaster, iSpell))
@@ -29270,6 +29381,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTotalDamageTypeCombat);
 	pStream->Read(&m_iUnitArtStyleType);
 	pStream->Read(&m_iWorkRateModify);
+	pStream->Read(&m_iWorkRateModifier);
 	pStream->Read(GC.getNumBonusInfos(), m_paiBonusAffinity);
 	pStream->Read(GC.getNumBonusInfos(), m_paiBonusAffinityAmount);
 	pStream->Read(GC.getNumDamageTypeInfos(), m_paiDamageTypeCombat);
@@ -29779,6 +29891,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTotalDamageTypeCombat);
 	pStream->Write(m_iUnitArtStyleType);
 	pStream->Write(m_iWorkRateModify);
+	pStream->Write(m_iWorkRateModifier);
 	pStream->Write(GC.getNumBonusInfos(), m_paiBonusAffinity);
 	pStream->Write(GC.getNumBonusInfos(), m_paiBonusAffinityAmount);
 	pStream->Write(GC.getNumDamageTypeInfos(), m_paiDamageTypeCombat);

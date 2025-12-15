@@ -1302,6 +1302,7 @@ public:
 	int getSpellCasterXP() const;
 	int getSpellDamageModify() const;
 	int getWorkRateModify() const;
+	int getWorkRateModifier() const;
 	int getCaptureUnitCombat() const;
 	int getBlockedSpellClass() const;
 	int getPromotionCombatApply() const;
@@ -1933,6 +1934,7 @@ protected:
 /*************************************************************************************************/
 	int m_iSpellDamageModify;
 	int m_iWorkRateModify;
+	int m_iWorkRateModifier;
 	int m_iCaptureUnitCombat;
 	int m_iBlockedSpellClass;
 	int m_iPromotionCombatApply;

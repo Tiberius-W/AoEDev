@@ -13792,6 +13792,11 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WORK_RATE", GC.getPromotionInfo(ePromotion).getWorkRateModify()));
 	}
+	if (GC.getPromotionInfo(ePromotion).getWorkRateModifier() != 0)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WORK_RATE_MODIFIER", GC.getPromotionInfo(ePromotion).getWorkRateModifier()));
+	}
 //FfH: End Add
 
 	if (wcslen(GC.getPromotionInfo(ePromotion).getHelp()) > 0)
@@ -14688,6 +14693,34 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 				bFirst = false;
 			}
 			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_DURATION", iValue);
+		}
+		iValue = cbTemp.iExtraImmobileTurns;
+		if (iValue != 0)
+		{
+			szBonusString.Format(L"%.0f", iValue);
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_IMMOBILE_TURNS", iValue);
+		}
+		iValue = cbTemp.iExtraPromotionApply;
+		if (iValue != 0)
+		{
+			szBonusString.Format(L"%.0f", iValue);
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_PROMOTION_APPLY", iValue);
 		}
 		if (cbTemp.bExtraPermanent != false)
 		{
