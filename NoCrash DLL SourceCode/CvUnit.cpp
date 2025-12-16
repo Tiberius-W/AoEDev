@@ -25226,7 +25226,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 					pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 					if (NULL != pLoopPlot && canCastTargetPlot(spell, false, pLoopPlot))
 					{
-						if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
+						if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
 						{
 							pUnitNode = pLoopPlot->headUnitNode();
 							while (pUnitNode != NULL)
@@ -25518,7 +25518,7 @@ void CvUnit::castDamage(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
+					if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
 					{
 						pUnitNode = pLoopPlot->headUnitNode();
 						while (pUnitNode != NULL)
@@ -25737,7 +25737,7 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
+					if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
 					{
 						pUnitNode = pLoopPlot->headUnitNode();
 						while (pUnitNode != NULL)
@@ -25891,7 +25891,7 @@ void CvUnit::castFortify(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
+					if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
 					{
 						pUnitNode = pLoopPlot->headUnitNode();
 						while (pUnitNode != NULL)
@@ -26123,7 +26123,7 @@ void CvUnit::castRemovePromotion(int spell, CvPlot* pTargetPlot)
 					pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 					if (NULL != pLoopPlot && canCastTargetPlot(spell, false, pLoopPlot))
 					{
-						if (iNumTargets == -1 || iNumTargets < pLoopPlot->getNumUnits())
+						if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
 						{
 							pUnitNode = pLoopPlot->headUnitNode();
 							while (pUnitNode != NULL)
