@@ -5,7 +5,7 @@
 <!-- -->
 <!-- Basic Infos -->
 
-<Civ4ModuleIdInfos xmlns="x-schema:HistoricsConvertedToImportants_CIV4GameInfoSchema.xml">
+<Civ4ModuleIdInfos xmlns="x-schema:HCTI_CIV4GameInfoSchema.xml">
 	<ModuleIdInfos>
 		<ModuleIdInfo>
 			<Type>MODULE_HISTORICS_CONVERTED</Type>

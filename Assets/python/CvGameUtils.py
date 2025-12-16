@@ -905,7 +905,7 @@ class CvGameUtils:
 				if eCivic != Civic["Traditions"]:	return True
 		
 		if eCiv == gc.getInfoTypeForString("CIVILIZATION_MECHANOS") and gc.getInfoTypeForString("MODULE_VCIVICS")!=-1:
-			if(eCivic==GC.getInfoTypeForString("CIVIC_MAGOCRACY")):
+			if(eCivic==gc.getInfoTypeForString("CIVIC_MAGOCRACY")):
 				return True
 		
 		if pPlayer.isHuman() == False:
