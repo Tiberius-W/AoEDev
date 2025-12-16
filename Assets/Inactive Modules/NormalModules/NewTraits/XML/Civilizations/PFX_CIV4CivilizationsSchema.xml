@@ -481,6 +481,7 @@
 	<ElementType name="bBarbarianAlly" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bIgnoreFood" content="textOnly" dt:type="boolean"/><!-- the player does not consume food. Fallow and undying traits (dtesh, frozen, infernal, scions) -->
 	<ElementType name="bIgnoreHealth" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bIgnoreHappy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bInsane" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSelectable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSprawling" content="textOnly" dt:type="boolean"/>
@@ -734,6 +735,7 @@
 		<element type="iMaxPlayerBuildingProductionModifier"/>
 		<element type="UnitClassPlayerInstancesChanges"/>
 		<element type="ExtraUnitClasses"/>
+		<element type="ExtraBuildingClasses"/>
 		<element type="FreeSpecialistsNonStateReligion"/>
 		<element type="FreeSpecialistsStateReligion"/>
 		<element type="bAdaptive"/>
@@ -756,6 +758,7 @@
 		<element type="bBarbarianAlly"/>
 		<element type="bIgnoreFood"/>
 		<element type="bIgnoreHealth"/>
+		<element type="bIgnoreHappy"/>
 		<element type="bInsane"/>
 		<element type="bSelectable"/>
 		<element type="bSprawling"/>
@@ -1117,6 +1120,15 @@
 	<ElementType name="ExtraUnitClasses" content="eltOnly">
 		<element type="ExtraUnitClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+
+	<ElementType name="ExtraBuildingClass" content="eltOnly">
+		<element type="BuildingClassType"/>
+		<element type="BuildingType"/>
+	</ElementType>
+	<ElementType name="ExtraBuildingClasses" content="eltOnly">
+		<element type="ExtraBuildingClass" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	
 	
 	<ElementType name="PrereqTrainXPCap" content="eltOnly">
 		<element type="UnitCombatType"/>

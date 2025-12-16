@@ -1431,6 +1431,7 @@ public:
 	bool canSpreadReligion(int spell, CvPlot* pTargetPlot = NULL) const;
 	bool canDispel(int spell, CvPlot* pTargetPlot = NULL);
 	bool canImmobile(int spell, CvPlot* pTargetPlot = NULL);
+	bool canCastFortify(int spell, CvPlot* pTargetPlot = NULL);
 	bool canPush(int spell);
 	bool canRemovePromotion(int spell, CvPlot* pTargetPlot = NULL);
 	//TargetedSpell 0924 blackimp
@@ -1448,6 +1449,7 @@ public:
 	void castDamage(int spell, CvPlot* pTargetPlot = NULL);
 	void castDispel(int spell, CvPlot* pTargetPlot = NULL);
 	void castImmobile(int spell, CvPlot* pTargetPlot = NULL);
+	void castFortify(int spell, CvPlot* pTargetPlot = NULL);
 	void castPush(int spell);
 	void castRemovePromotion(int spell, CvPlot* pTargetPlot = NULL);
 

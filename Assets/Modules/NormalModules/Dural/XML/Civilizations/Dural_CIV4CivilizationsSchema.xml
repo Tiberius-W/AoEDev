@@ -735,6 +735,7 @@
 		<element type="iMaxPlayerBuildingProductionModifier"/>
 		<element type="UnitClassPlayerInstancesChanges"/>
 		<element type="ExtraUnitClasses"/>
+		<element type="ExtraBuildingClasses"/>
 		<element type="FreeSpecialistsNonStateReligion"/>
 		<element type="FreeSpecialistsStateReligion"/>
 		<element type="bAdaptive"/>
@@ -1119,6 +1120,15 @@
 	<ElementType name="ExtraUnitClasses" content="eltOnly">
 		<element type="ExtraUnitClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+
+	<ElementType name="ExtraBuildingClass" content="eltOnly">
+		<element type="BuildingClassType"/>
+		<element type="BuildingType"/>
+	</ElementType>
+	<ElementType name="ExtraBuildingClasses" content="eltOnly">
+		<element type="ExtraBuildingClass" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	
 	
 	<ElementType name="PrereqTrainXPCap" content="eltOnly">
 		<element type="UnitCombatType"/>

@@ -37,6 +37,7 @@
 	<ElementType name="iAdvancedStartPointsMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxCitiesMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iUniqueFeatureChance" content="textOnly" dt:type="int"/>
+	<ElementType name="iMapsizePlotCounterAttenuation" content="textOnly" dt:type="int"/>
 	<ElementType name="ClimateInfo" content="eltOnly" order="many">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -83,6 +84,7 @@
 		<element type="iAdvancedStartPointsMod"/>
 		<element type="iMaxCitiesMod"/>
 		<element type="iUniqueFeatureChance"/>
+		<element type="iMapsizePlotCounterAttenuation"/>
 	</ElementType>
 	<ElementType name="WorldInfos" content="eltOnly">
 		<element type="WorldInfo" maxOccurs="*"/>
@@ -246,6 +248,7 @@
 	<ElementType name="bHidden" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSneakAttack" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bUpdateSight" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iACPlotAttenuationMod" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalCounterFound" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalCounterSpread" content="textOnly" dt:type="int"/>
 	<ElementType name="Alignment" content="textOnly"/>
@@ -314,6 +317,7 @@
 		<element type="bHidden"/>
 		<element type="bSneakAttack"/>
 		<element type="bUpdateSight"/>
+		<element type="iACPlotAttenuationMod"/>
 		<element type="iGlobalCounterFound"/>
 		<element type="iGlobalCounterSpread"/>
 		<element type="Alignment"/>
@@ -507,7 +511,6 @@
 	<ElementType name="iTilesPerOrc" content="textOnly" dt:type="int"/>
 	<ElementType name="iWaterTilesPerOrc" content="textOnly" dt:type="int"/>
 	<ElementType name="iUnownedTilesPerBarbarianCity" content="textOnly" dt:type="int"/>
-	<ElementType name="iBarbarianCreationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbarianCityCreationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbarianCityCreationProb" content="textOnly" dt:type="int"/>
 	<ElementType name="iAnimalBonus" content="textOnly" dt:type="int"/>
@@ -590,7 +593,6 @@
 		<element type="iTilesPerOrc"/>
 		<element type="iWaterTilesPerOrc"/>
 		<element type="iUnownedTilesPerBarbarianCity"/>
-		<element type="iBarbarianCreationTurnsElapsed"/>
 		<element type="iBarbarianCityCreationTurnsElapsed"/>
 		<element type="iBarbarianCityCreationProb"/>
 		<element type="iAnimalBonus"/>
@@ -630,7 +632,7 @@
 		<element type="iAnimalEscalationTurnsElapsed"/>
 		<element type="iPercentDemonsPerEvilPlot"/>
 		<element type="iPercentDemonsPerEvilPlotPerGlobalCounter"/>
-		<element type="iMinimumTilesPerDemon"/>
+		<element type="iTilesPerLairDemon"/>
 		<element type="iDemonGlobalCounterFreeXPPercent"/>
 		<element type="iDemonPerTurnKnownTechsPercent"/>
 		<element type="iDemonBonus"/>
@@ -643,7 +645,7 @@
 	<ElementType name="iAnimalEscalationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iPercentDemonsPerEvilPlot" content="textOnly" dt:type="int"/>
 	<ElementType name="iPercentDemonsPerEvilPlotPerGlobalCounter" content="textOnly" dt:type="int"/>
-	<ElementType name="iMinimumTilesPerDemon" content="textOnly" dt:type="int"/>
+	<ElementType name="iTilesPerLairDemon" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonGlobalCounterFreeXPPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonPerTurnKnownTechsPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iDemonBonus" content="textOnly" dt:type="int"/>
@@ -824,12 +826,14 @@
 	</ElementType>
 	<ElementType name="ForcePeaceWithCivilization" content="textOnly"/>
 	<ElementType name="iGoldPerProduction" content="textOnly" dt:type="int"/>
+	<ElementType name="iCulturePerProduction" content="textOnly" dt:type="int"/>
 	<ElementType name="iProductionPerPopulation" content="textOnly" dt:type="int"/>
 	<ElementType name="bAnger" content="textOnly" dt:type="boolean"/>
 	<ElementType name="HurryInfo" content="eltOnly" order="many">
 		<element type="Type"/>
 		<element type="Description"/>
 		<element type="iGoldPerProduction"/>
+		<element type="iCulturePerProduction"/>
 		<element type="iProductionPerPopulation"/>
 		<element type="bAnger"/>
 		<element type="Button"/>
@@ -965,9 +969,6 @@
 	<ElementType name="CapitalCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<ElementType name="SpecialistExtraCommerces" content="eltOnly">
-		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
-	</ElementType>
 	<ElementType name="HurryType" content="textOnly"/>
 	<ElementType name="bHurry" content="textOnly" dt:type="boolean"/>
 	<ElementType name="Hurry" content="eltOnly">
@@ -1050,6 +1051,14 @@
 	<ElementType name="SpecialistCrimeChanges" content="eltOnly">
 		<element type="SpecialistCrimeChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iGPPChange" content="textOnly" dt:type="int"/>
+	<ElementType name="SpecialistGPPChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="iGPPChange"/>
+	</ElementType>
+	<ElementType name="SpecialistGPPChanges" content="eltOnly">
+		<element type="SpecialistGPPChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="ImprovementType" content="textOnly"/>
 	<ElementType name="ImprovementYields" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
@@ -1060,6 +1069,26 @@
 	</ElementType>
 	<ElementType name="ImprovementYieldChanges" content="eltOnly">
 		<element type="ImprovementYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistYieldChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="SpecialistYields"/>
+	</ElementType>
+	<ElementType name="SpecialistYieldChanges" content="eltOnly">
+		<element type="SpecialistYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerces" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerceChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="SpecialistCommerces"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerceChanges" content="eltOnly">
+		<element type="SpecialistCommerceChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="bCompassionHigh" content="textOnly" dt:type="boolean"/>
@@ -1155,10 +1184,8 @@
 		<element type="CommerceChanges"/>
 		<element type="CommerceModifiers"/>
 		<element type="CapitalCommerceModifiers"/>
-		<element type="SpecialistExtraCommerces"/>
 		<element type="Hurrys"/>
 		<element type="SpecialBuildingNotRequireds"/>
-		<element type="SpecialistValids"/>
 		<element type="SpecialistUnlimiteds"/>
 		<element type="SpecialistCounts"/>
 		<element type="FreeSpecialistCounts"/>
@@ -1166,7 +1193,10 @@
 		<element type="BuildingHealthChanges"/>
 		<element type="FeatureHappinessChanges"/>
 		<element type="SpecialistCrimeChanges"/>
+		<element type="SpecialistGPPChanges"/>
 		<element type="ImprovementYieldChanges"/>
+		<element type="SpecialistYieldChanges"/>
+		<element type="SpecialistCommerceChanges"/>
 		<element type="WeLoveTheKing"/>
 		<element type="bCompassionHigh"/>
 		<element type="bCompassionLow"/>
@@ -1245,12 +1275,14 @@
 		<element type="GameTurnInfos"/>
 		<element type="iLairSpawnChance"/>
 		<element type="iTurnsPerLairCycle"/>
+		<element type="iBarbSpawnDelay"/>
 	</ElementType>
 	<ElementType name="GameSpeedInfos" content="eltOnly">
 		<element type="GameSpeedInfo" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iLairSpawnChance" content="textOnly" dt:type="int"/>
 	<ElementType name="iTurnsPerLairCycle" content="textOnly" dt:type="int"/>
+	<ElementType name="iBarbSpawnDelay" content="textOnly" dt:type="int"/>
 	<ElementType name="iBaseTime" content="textOnly" dt:type="int"/>
 	<ElementType name="iCityBonus" content="textOnly" dt:type="int"/>
 	<ElementType name="iUnitBonus" content="textOnly" dt:type="int"/>

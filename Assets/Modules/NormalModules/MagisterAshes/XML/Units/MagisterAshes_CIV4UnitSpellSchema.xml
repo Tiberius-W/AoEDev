@@ -38,6 +38,9 @@
 	<ElementType name="iExtraNumTargets" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraTargetRange" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraDuration" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraImmobileTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraFortifyTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraPromotionApply" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxApplications" content="textOnly" dt:type="int"/>
 	<ElementType name="bExtraImmuneTeam" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bExtraImmuneNeutral" content="textOnly" dt:type="boolean"/>
@@ -51,6 +54,9 @@
 		<element type="iExtraNumTargets"/>
 		<element type="iExtraTargetRange"/>
 		<element type="iExtraDuration"/>
+		<element type="iExtraImmobileTurns"/>
+		<element type="iExtraFortifyTurns"/>
+		<element type="iExtraPromotionApply"/>
 		<element type="iMaxApplications"/>
 		<element type="bExtraImmuneTeam"/>
 		<element type="bExtraImmuneNeutral"/>
@@ -169,6 +175,7 @@
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
 	<ElementType name="iDelay" content="textOnly" dt:type="int"/>
 	<ElementType name="iImmobileTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iFortifyTurns" content="textOnly" dt:type="int"/>
 	<ElementType name="iMiscastChance" content="textOnly" dt:type="int"/>
 	<ElementType name="PyMiscast" content="textOnly"/>
 	<ElementType name="PyResult" content="textOnly"/>
@@ -296,6 +303,7 @@
 		<element type="iCost"/>
 		<element type="iDelay"/>
 		<element type="iImmobileTurns"/>
+		<element type="iFortifyTurns"/>
 		<element type="iMiscastChance"/>
 		<element type="PyHelp"/>
 		<element type="PyMiscast"/>

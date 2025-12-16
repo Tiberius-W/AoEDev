@@ -794,6 +794,7 @@ void SpellBonuses::read(FDataStreamBase* pStream)
 	pStream->Read(&iExtraTargetRange);
 	pStream->Read(&iExtraDuration);
 	pStream->Read(&iExtraImmobileTurns);
+	pStream->Read(&iExtraFortifyTurns);
 	pStream->Read(&iExtraPromotionApply);
 	pStream->Read(&bExtraImmuneTeam);
 	pStream->Read(&bExtraImmuneNeutral);
@@ -811,6 +812,7 @@ void SpellBonuses::write(FDataStreamBase* pStream)
 	pStream->Write(iExtraTargetRange);
 	pStream->Write(iExtraDuration);
 	pStream->Write(iExtraImmobileTurns);
+	pStream->Write(iExtraFortifyTurns);
 	pStream->Write(iExtraPromotionApply);
 	pStream->Write(bExtraImmuneTeam);
 	pStream->Write(bExtraImmuneNeutral);
@@ -829,6 +831,7 @@ bool SpellBonuses::compare(SpellBonuses cbTemp)
 	else if (iExtraTargetRange != cbTemp.iExtraTargetRange) bSame = false;
 	else if (iExtraDuration != cbTemp.iExtraDuration) bSame = false;
 	else if (iExtraImmobileTurns != cbTemp.iExtraImmobileTurns) bSame = false;
+	else if (iExtraFortifyTurns != cbTemp.iExtraFortifyTurns) bSame = false;
 	else if (iExtraPromotionApply != cbTemp.iExtraPromotionApply) bSame = false;
 	else if (bExtraImmuneTeam != cbTemp.bExtraImmuneTeam) bSame = false;
 	else if (bExtraImmuneNeutral != cbTemp.bExtraImmuneNeutral) bSame = false;
@@ -842,6 +845,7 @@ void SpellUpgradeData::read(FDataStreamBase* pStream)
 	pStream->Read(&iMaxDamage);
 	pStream->Read(&iNumTargets);
 	pStream->Read(&iImmobileTurns);
+	pStream->Read(&iFortifyTurns);
 	pStream->Read(&iPromotionApply);
 	pStream->Read(&iDuration);
 	pStream->Read(&bPermanent);
@@ -853,6 +857,7 @@ void SpellUpgradeData::write(FDataStreamBase* pStream)
 	pStream->Write(iMaxDamage);
 	pStream->Write(iNumTargets);
 	pStream->Write(iImmobileTurns);
+	pStream->Write(iFortifyTurns);
 	pStream->Write(iPromotionApply);
 	pStream->Write(iDuration);
 	pStream->Write(bPermanent);
@@ -865,6 +870,7 @@ bool SpellUpgradeData::compare(SpellUpgradeData cbTemp)
 	else if (iMaxDamage != cbTemp.iMaxDamage) bSame = false;
 	else if (iNumTargets != cbTemp.iNumTargets) bSame = false;
 	else if (iImmobileTurns != cbTemp.iImmobileTurns) bSame = false;
+	else if (iFortifyTurns != cbTemp.iFortifyTurns) bSame = false;
 	else if (iPromotionApply != cbTemp.iPromotionApply) bSame = false;
 	else if (iDuration != cbTemp.iDuration) bSame = false;
 	else if (bPermanent != cbTemp.bPermanent) bSame = false;

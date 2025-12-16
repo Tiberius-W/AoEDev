@@ -395,6 +395,22 @@
 		<Spanish>%d1 Extra Duration[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_IMMOBILE_TURNS</Tag>
+		<English>%d1 Extra Turns of Immobility[SPACE]</English>
+		<French>%d1 Extra Turns of Immobility[SPACE]</French>
+		<German>%d1 Extra Turns of Immobility[SPACE]</German>
+		<Italian>%d1 Extra Turns of Immobility[SPACE]</Italian>
+		<Spanish>%d1 Extra Turns of Immobility[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_FORTIFY_TURNS</Tag>
+		<English>%d1 Extra Turns of Fortification[SPACE]</English>
+		<French>%d1 Extra Turns of Fortification[SPACE]</French>
+		<German>%d1 Extra Turns of Fortification[SPACE]</German>
+		<Italian>%d1 Extra Turns of Fortification[SPACE]</Italian>
+		<Spanish>%d1 Extra Turns of Fortification[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_IMMUNE_TEAM</Tag>
 		<English>Immunity for your units</English>
 		<French>Immunity for your units</French>

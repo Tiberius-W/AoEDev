@@ -10499,6 +10499,7 @@ m_iNumTargets(-1),
 m_iCrimePrereq(0),
 m_iDelay(0),
 m_iImmobileTurns(0),
+m_iFortifyTurns(0),
 m_iMiscastChance(0),
 /*************************************************************************************************/
 /**	AutoCast								24/05/10									Snarko	**/
@@ -11044,6 +11045,10 @@ int CvSpellInfo::getImmobileTurns() const
 {
 	return m_iImmobileTurns;
 }
+int CvSpellInfo::getFortifyTurns() const
+{
+	return m_iFortifyTurns;
+}
 
 int CvSpellInfo::getMiscastChance() const
 {
@@ -11296,6 +11301,7 @@ void CvSpellInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCrimePrereq);
 	stream->Read(&m_iDelay);
 	stream->Read(&m_iImmobileTurns);
+	stream->Read(&m_iFortifyTurns);
 	stream->Read(&m_iMiscastChance);
 	stream->ReadString(m_szPyMiscast);
 	stream->ReadString(m_szPyResult);
@@ -11486,6 +11492,7 @@ void CvSpellInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCrimePrereq);
 	stream->Write(m_iDelay);
 	stream->Write(m_iImmobileTurns);
+	stream->Write(m_iFortifyTurns);
 	stream->Write(m_iMiscastChance);
 	stream->WriteString(m_szPyMiscast);
 	stream->WriteString(m_szPyResult);
@@ -11609,6 +11616,7 @@ bool CvSpellInfo::read(CvXMLLoadUtility* pXML)
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraTargetRange), "iExtraTargetRange", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraDuration), "iExtraDuration", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraImmobileTurns), "iExtraImmobileTurns", 0);
+					pXML->GetChildXmlValByName(&(cbTemp.iExtraFortifyTurns), "iExtraFortifyTurns", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.iExtraPromotionApply), "iExtraPromotionApply", 0);
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneTeam), "bExtraImmuneTeam");
 					pXML->GetChildXmlValByName(&(cbTemp.bExtraImmuneNeutral), "bExtraImmuneNeutral");
@@ -11745,6 +11753,7 @@ bool CvSpellInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCrimePrereq, "iCrimePrereq");
 	pXML->GetChildXmlValByName(&m_iDelay, "iDelay");
 	pXML->GetChildXmlValByName(&m_iImmobileTurns, "iImmobileTurns");
+	pXML->GetChildXmlValByName(&m_iFortifyTurns, "iFortifyTurns");
 	pXML->GetChildXmlValByName(&m_iMiscastChance, "iMiscastChance");
 
 	pXML->GetChildXmlValByName(m_szPyMiscast, "PyMiscast");
@@ -11892,6 +11901,7 @@ void CvSpellInfo::copyNonDefaults(CvSpellInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getCrimePrereq() == 0)					m_iCrimePrereq = pClassInfo->getCrimePrereq();
 	if (getDelay()						== 0)					m_iDelay						= pClassInfo->getDelay();
 	if (getImmobileTurns()				== 0)					m_iImmobileTurns				= pClassInfo->getImmobileTurns();
+	if (getFortifyTurns() == 0)					m_iFortifyTurns = pClassInfo->getFortifyTurns();
 	if (getMiscastChance()				== 0)					m_iMiscastChance				= pClassInfo->getMiscastChance();
 	if (getQuote()						== cDefault)			m_szQuote						= pClassInfo->getQuote();
 	if (getSound()						== cDefault)			m_szSound						= pClassInfo->getSound();

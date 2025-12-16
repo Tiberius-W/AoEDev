@@ -599,7 +599,7 @@ struct TraitTriggeredData
 
 struct SpellBonuses
 {
-	SpellBonuses() :iPrereqExtraPower(0), iMaxApplications(0), iExtraDamage(0), iExtraMaxDamage(0), iExtraNumTargets(0), iExtraTargetRange(0), iExtraDuration(0), iExtraImmobileTurns(0), iExtraPromotionApply(0), bExtraPermanent(false), bExtraImmuneTeam(false), bExtraImmuneNeutral(false), bExtraImmuneEnemy(false)
+	SpellBonuses() :iPrereqExtraPower(0), iMaxApplications(0), iExtraDamage(0), iExtraMaxDamage(0), iExtraNumTargets(0), iExtraTargetRange(0), iExtraDuration(0), iExtraImmobileTurns(0), iExtraFortifyTurns(0), iExtraPromotionApply(0), bExtraPermanent(false), bExtraImmuneTeam(false), bExtraImmuneNeutral(false), bExtraImmuneEnemy(false)
 	{
 	}
 	int iPrereqExtraPower;
@@ -610,6 +610,7 @@ struct SpellBonuses
 	int iExtraTargetRange;
 	int iExtraDuration;
 	int iExtraImmobileTurns;
+	int iExtraFortifyTurns;
 	int iExtraPromotionApply;
 	bool bExtraPermanent;
 	bool bExtraImmuneTeam;
@@ -623,13 +624,14 @@ struct SpellBonuses
 };
 struct SpellUpgradeData
 {
-	SpellUpgradeData() :iDamage(0),iMaxDamage(0),iNumTargets(0), iDuration(0), iImmobileTurns(0), iPromotionApply(0),bPermanent(false)
+	SpellUpgradeData() :iDamage(0),iMaxDamage(0),iNumTargets(0), iDuration(0), iImmobileTurns(0), iFortifyTurns(0), iPromotionApply(0),bPermanent(false)
 	{
 	}
 	int iDamage;
 	int iMaxDamage;
 	int iNumTargets;
 	int iImmobileTurns;
+	int iFortifyTurns;
 	int iPromotionApply;
 	int iDuration;
 	bool bPermanent;

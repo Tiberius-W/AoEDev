@@ -1871,6 +1871,14 @@
 		<Spanish>[ICON_BULLET]Units become immobile for %d1 turns</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPELL_FORTIFY_TURNS</Tag>
+		<English>[ICON_BULLET]Fortifies Units to the equivalent of %d1 turns</English>
+		<French>[ICON_BULLET]Fortifies Units to the equivalent of %d1 turns</French>
+		<German>[ICON_BULLET]Fortifies Units to the equivalent of %d1 turns</German>
+		<Italian>[ICON_BULLET]Fortifies Units to the equivalent of %d1 turns</Italian>
+		<Spanish>[ICON_BULLET]Fortifies Units to the equivalent of %d1 turns</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPELL_IMPERSONATE_LEADER</Tag>
 		<English>Impersonate Leader</English>
 		<French>Contrefaire le Dirigeant</French>

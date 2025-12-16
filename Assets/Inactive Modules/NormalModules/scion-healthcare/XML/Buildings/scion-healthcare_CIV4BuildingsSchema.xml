@@ -175,11 +175,13 @@
 	<ElementType name="bAllowsNukes" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bMapCentering" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoUnhappiness" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoUnhealthiness" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNeverCapture" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bPrereqNoReligion" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -835,11 +837,13 @@
 		<element type="bAllowsNukes"/>
 		<element type="bMapCentering"/>
 		<element type="bNoUnhappiness"/>
+		<element type="bNoUnhealthiness"/>
 		<element type="bNoUnhealthyPopulation"/>
 		<element type="bBuildingOnlyHealthy"/>
 		<element type="bNeverCapture"/>
 		<element type="bNukeImmune"/>
 		<element type="bPrereqReligion"/>
+		<element type="bPrereqNoReligion"/>
 		<element type="bCenterInCity"/>
 		<element type="bUseMultiBonuses"/>
 		<element type="bCrimeEffect"/>

@@ -826,12 +826,14 @@
 	</ElementType>
 	<ElementType name="ForcePeaceWithCivilization" content="textOnly"/>
 	<ElementType name="iGoldPerProduction" content="textOnly" dt:type="int"/>
+	<ElementType name="iCulturePerProduction" content="textOnly" dt:type="int"/>
 	<ElementType name="iProductionPerPopulation" content="textOnly" dt:type="int"/>
 	<ElementType name="bAnger" content="textOnly" dt:type="boolean"/>
 	<ElementType name="HurryInfo" content="eltOnly" order="many">
 		<element type="Type"/>
 		<element type="Description"/>
 		<element type="iGoldPerProduction"/>
+		<element type="iCulturePerProduction"/>
 		<element type="iProductionPerPopulation"/>
 		<element type="bAnger"/>
 		<element type="Button"/>
@@ -967,9 +969,6 @@
 	<ElementType name="CapitalCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<ElementType name="SpecialistExtraCommerces" content="eltOnly">
-		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
-	</ElementType>
 	<ElementType name="HurryType" content="textOnly"/>
 	<ElementType name="bHurry" content="textOnly" dt:type="boolean"/>
 	<ElementType name="Hurry" content="eltOnly">
@@ -1052,6 +1051,14 @@
 	<ElementType name="SpecialistCrimeChanges" content="eltOnly">
 		<element type="SpecialistCrimeChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iGPPChange" content="textOnly" dt:type="int"/>
+	<ElementType name="SpecialistGPPChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="iGPPChange"/>
+	</ElementType>
+	<ElementType name="SpecialistGPPChanges" content="eltOnly">
+		<element type="SpecialistGPPChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="ImprovementType" content="textOnly"/>
 	<ElementType name="ImprovementYields" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
@@ -1062,6 +1069,26 @@
 	</ElementType>
 	<ElementType name="ImprovementYieldChanges" content="eltOnly">
 		<element type="ImprovementYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistYieldChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="SpecialistYields"/>
+	</ElementType>
+	<ElementType name="SpecialistYieldChanges" content="eltOnly">
+		<element type="SpecialistYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerces" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerceChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="SpecialistCommerces"/>
+	</ElementType>
+	<ElementType name="SpecialistCommerceChanges" content="eltOnly">
+		<element type="SpecialistCommerceChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="bCompassionHigh" content="textOnly" dt:type="boolean"/>
@@ -1157,10 +1184,8 @@
 		<element type="CommerceChanges"/>
 		<element type="CommerceModifiers"/>
 		<element type="CapitalCommerceModifiers"/>
-		<element type="SpecialistExtraCommerces"/>
 		<element type="Hurrys"/>
 		<element type="SpecialBuildingNotRequireds"/>
-		<element type="SpecialistValids"/>
 		<element type="SpecialistUnlimiteds"/>
 		<element type="SpecialistCounts"/>
 		<element type="FreeSpecialistCounts"/>
@@ -1168,7 +1193,10 @@
 		<element type="BuildingHealthChanges"/>
 		<element type="FeatureHappinessChanges"/>
 		<element type="SpecialistCrimeChanges"/>
+		<element type="SpecialistGPPChanges"/>
 		<element type="ImprovementYieldChanges"/>
+		<element type="SpecialistYieldChanges"/>
+		<element type="SpecialistCommerceChanges"/>
 		<element type="WeLoveTheKing"/>
 		<element type="bCompassionHigh"/>
 		<element type="bCompassionLow"/>

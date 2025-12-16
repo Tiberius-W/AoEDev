@@ -2155,6 +2155,7 @@ public:
 	int getCreateImprovementType() const;
 	int getSpreadReligion() const;
 	int getImmobileTurns() const;
+	int getFortifyTurns() const;
 	int getMiscastChance() const;
 	int getRemovePromotionType1() const;
 	int getRemovePromotionType2() const;
@@ -2365,6 +2366,7 @@ protected:
 	int m_iNumTargets;
 	int m_iCrimePrereq;
 	int m_iImmobileTurns;
+	int m_iFortifyTurns;
 	int m_iMiscastChance;
 	int m_iEffect;
 	int m_iCommandType;

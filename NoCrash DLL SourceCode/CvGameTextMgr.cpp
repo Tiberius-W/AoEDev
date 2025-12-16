@@ -14583,13 +14583,15 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_IMMOBILE_TURNS", GC.getSpellInfo(eSpell).getImmobileTurns()));
 	}
-	if (GC.getSpellInfo(eSpell).getImmobileTurns() != -1)
+	if (GC.getSpellInfo(eSpell).getFortifyTurns() != 0)
 	{
 		szBuffer.append(pcNewline);
-		if (GC.getSpellInfo(eSpell).getNumTargets() > 0)
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_SPELL_NUM_TARGETS", GC.getSpellInfo(eSpell).getNumTargets()));
-		}
+		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_FORTIFY_TURNS", GC.getSpellInfo(eSpell).getFortifyTurns()));
+	}
+	szBuffer.append(pcNewline);
+	if (GC.getSpellInfo(eSpell).getNumTargets() > 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_SPELL_NUM_TARGETS", GC.getSpellInfo(eSpell).getNumTargets()));
 	}
 	if (GC.getSpellInfo(eSpell).isSacrificeCaster())
 	{
@@ -14707,6 +14709,20 @@ void CvGameTextMgr::parseSpellHelp(CvWStringBuffer &szBuffer, SpellTypes eSpell,
 				bFirst = false;
 			}
 			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_IMMOBILE_TURNS", iValue);
+		}
+		iValue = cbTemp.iExtraFortifyTurns;
+		if (iValue != 0)
+		{
+			szBonusString.Format(L"%.0f", iValue);
+			if (!bFirst)
+			{
+				szTempBuffer += L", ";
+			}
+			else
+			{
+				bFirst = false;
+			}
+			szTempBuffer += gDLL->getText("TXT_KEY_SPELL_BONUS_EXTRA_FORTIFY_TURNS", iValue);
 		}
 		iValue = cbTemp.iExtraPromotionApply;
 		if (iValue != 0)
