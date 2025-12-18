@@ -99,6 +99,13 @@ bInGeneric: Unknown. Always 1.
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>DIPLO_HASTUR</SoundID>
+			<Filename>Sounds/Diplomacy/DreamHastur</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>DIPLO_BARBARIAN</SoundID>
 			<Filename>Sounds/Diplomacy/Barbarian</Filename>
 			<LoadType>STREAMED</LoadType>
