@@ -14,6 +14,7 @@ import ScenarioFunctions
 import CvEventInterface
 
 PyPlayer = PyHelpers.PyPlayer
+cf = CustomFunctions.CustomFunctions()
 
 
 #	Added in Frozen: TC01

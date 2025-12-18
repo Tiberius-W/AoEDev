@@ -83,6 +83,7 @@ CvUnit::CvUnit()
 /**										Allocate Memory											**/
 /*************************************************************************************************/
 	m_pabRealPromotion = NULL;
+	m_pabPermanentSpellPromotion = NULL;
 	m_aiSupplementalPromotions = NULL;
 	m_pSlaveUnitList.clear();
 	m_pMinionUnitList.clear();
@@ -447,8 +448,6 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 
 	setSpawnPlot(GC.getMapINLINE().plotINLINE(iX, iY));
 
-	if (getCivilizationType() == (CivilizationTypes)GC.getDefineINT("DEMON_CIVILIZATION"))
-		changeExperience(GC.getGameINLINE().getGlobalCounter() * GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getDemonGlobalCounterFreeXPPercent());
 
 	//FfH Units: Added by Kael 04/18/2008
 	if (m_pUnitInfo->getFreePromotionPick() > 0)
@@ -568,6 +567,7 @@ void CvUnit::uninit()
 /**											Clears Arrays										**/
 /*************************************************************************************************/
 	SAFE_DELETE_ARRAY(m_pabRealPromotion);
+	SAFE_DELETE_ARRAY(m_pabPermanentSpellPromotion);
 	SAFE_DELETE_ARRAY(m_aiSupplementalPromotions);
 	m_pSlaveUnitList.clear();
 	m_pMinionUnitList.clear();
@@ -885,10 +885,12 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	if (!bConstructorCall)
 	{
 		m_pabRealPromotion = new bool[GC.getNumPromotionInfos()];
+		m_pabPermanentSpellPromotion = new bool[GC.getNumPromotionInfos()];
 		m_aiSupplementalPromotions = new int[GC.getNumPromotionInfos()];
 		for(iI = 0; iI < GC.getNumPromotionInfos(); ++iI)
 		{
 			m_pabRealPromotion[iI] = false;
+			m_pabPermanentSpellPromotion[iI] = false;
 			m_aiSupplementalPromotions[iI] = 0;
 		}
 		m_piYieldFromWin = new int[NUM_YIELD_TYPES];
@@ -2269,7 +2271,7 @@ void CvUnit::doTurn()
 			if (iPromDuration != 0)
 			{
 				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
-				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0 && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCasting())
+				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0 && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCasting() && !isPermanentSpellPromotion((PromotionTypes)iI))
 				{
 					setHasPromotion(((PromotionTypes)iI), false);
 				}
@@ -3807,14 +3809,14 @@ void CvUnit::updateCombat(bool bQuick)
 				{
 					if (isHasPromotion((PromotionTypes)iI))
 					{
-						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI)==0)
+						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI)==0 && !isPermanentSpellPromotion((PromotionTypes)iI))
 						{
 							setHasPromotion(((PromotionTypes)iI), false);
 						}
 					}
 					if (pDefender->isHasPromotion((PromotionTypes)iI))
 					{
-						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && pDefender->getPromotionDuration((PromotionTypes)iI) == 0)
+						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && pDefender->getPromotionDuration((PromotionTypes)iI) == 0 && !pDefender->isPermanentSpellPromotion((PromotionTypes)iI))
 						{
 							pDefender->setHasPromotion(((PromotionTypes)iI), false);
 						}
@@ -3875,14 +3877,14 @@ void CvUnit::updateCombat(bool bQuick)
 				{
 					if (isHasPromotion((PromotionTypes)iI))
 					{
-						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0)
+						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0 && !isPermanentSpellPromotion((PromotionTypes)iI))
 						{
 							setHasPromotion(((PromotionTypes)iI), false);
 						}
 					}
 					if (pDefender->isHasPromotion((PromotionTypes)iI))
 					{
-						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && pDefender->getPromotionDuration((PromotionTypes)iI) == 0)
+						if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && pDefender->getPromotionDuration((PromotionTypes)iI) == 0 && !pDefender->isPermanentSpellPromotion((PromotionTypes)iI))
 						{
 							pDefender->setHasPromotion(((PromotionTypes)iI), false);
 						}
@@ -8272,7 +8274,7 @@ bool CvUnit::pillage()
 	{
 		if (isHasPromotion((PromotionTypes)iI))
 		{
-			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0)
+			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0 && !isPermanentSpellPromotion((PromotionTypes)iI))
 			{
 				setHasPromotion(((PromotionTypes)iI), false);
 			}
@@ -16547,6 +16549,14 @@ void CvUnit::setRealPromotion(PromotionTypes ePromotion, bool bNewValue)
 {
 	m_pabRealPromotion[ePromotion] = bNewValue;
 }
+bool CvUnit::isPermanentSpellPromotion(PromotionTypes ePromotion) const
+{
+	return m_pabPermanentSpellPromotion[ePromotion];
+}
+void CvUnit::setPermanentSpellPromotion(PromotionTypes ePromotion, bool bNewValue)
+{
+	m_pabPermanentSpellPromotion[ePromotion] = bNewValue;
+}
 void CvUnit::validateCommandPromotions(CvPlot* pOldPlot, CvPlot* pNewPlot, int iChange)
 {
 	CvUnit* pCommander = getCommanderUnit();
@@ -22095,6 +22105,10 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		setNewName(kPromotion.getNewName(), bNewValue);
 		if (!bNewValue)
 		{
+			if (isPermanentSpellPromotion(eIndex))
+			{
+				setPermanentSpellPromotion(eIndex, false);
+			}
 			if (kPromotion.getNumPromotionDegradesTo() > 0 && !bSupressEffects)
 			{
 				for (iI = 0; iI < kPromotion.getNumPromotionDegradesTo(); iI++)
@@ -24789,7 +24803,7 @@ void CvUnit::cast(int spell,CvPlot* pTargetPlot)
 	{
 		if (isHasPromotion((PromotionTypes)iI))
 		{
-			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCasting() && getPromotionDuration((PromotionTypes)iI) == 0)
+			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCasting() && getPromotionDuration((PromotionTypes)iI) == 0 && !isPermanentSpellPromotion((PromotionTypes)iI))
 			{
 				setHasPromotion((PromotionTypes)iI, false);
 			}
@@ -25194,6 +25208,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 				if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 				{
 					setPromotionDuration(ePromotion1, -1);
+					setPermanentSpellPromotion(ePromotion1, true);
 				}
 				/*************************************************************************************************/
 				/**	TickTock									END												**/
@@ -25270,6 +25285,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 														if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 														{
 															pLoopUnit->setPromotionDuration(ePromotion1, -1);
+															pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 														}
 														/*************************************************************************************************/
 														/**	TickTock									END												**/
@@ -25291,6 +25307,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 															if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 															{
 																pLoopUnit->setPromotionDuration(ePromotion1, -1);
+																pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 															}
 
 														}
@@ -25324,6 +25341,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 													if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 													{
 														pLoopUnit->setPromotionDuration(ePromotion1, -1);
+														pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 													}
 													/*************************************************************************************************/
 													/**	TickTock									END												**/
@@ -25345,6 +25363,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 														if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 														{
 															pLoopUnit->setPromotionDuration(ePromotion1, -1);
+															pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 														}
 													}
 												}
@@ -25437,6 +25456,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 												if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 												{
 													pLoopUnit->setPromotionDuration(ePromotion1, -1);
+													pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 												}
 												/*************************************************************************************************/
 												/**	TickTock									END												**/
@@ -25459,6 +25479,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 													if (GC.getPromotionInfo(ePromotion1).getDuration() > 0 && spellData.bPermanent)
 													{
 														pLoopUnit->setPromotionDuration(ePromotion1, -1);
+														pLoopUnit->setPermanentSpellPromotion(ePromotion1, true);
 													}
 												}
 											}
@@ -28330,7 +28351,7 @@ void CvUnit::combatWon(CvUnit* pLoser, bool bAttacking)
 /*************************************************************************************************/
 				}
 			}
-			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0)
+			if (GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && getPromotionDuration((PromotionTypes)iI) == 0 && !isPermanentSpellPromotion((PromotionTypes)iI))
 			{
 				setHasPromotion(((PromotionTypes)iI), false);
 			}
@@ -29300,6 +29321,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 /**										Read Data from Save File								**/
 /*************************************************************************************************/
 	pStream->Read(GC.getNumPromotionInfos(), m_pabRealPromotion);
+	pStream->Read(GC.getNumPromotionInfos(), m_pabPermanentSpellPromotion);
 	pStream->Read(GC.getNumPromotionInfos(), m_aiSupplementalPromotions);
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */
@@ -29833,6 +29855,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 /**										Write Data to Save Files								**/
 /*************************************************************************************************/
 	pStream->Write(GC.getNumPromotionInfos(), m_pabRealPromotion);
+	pStream->Write(GC.getNumPromotionInfos(), m_pabPermanentSpellPromotion);
 	pStream->Write(GC.getNumPromotionInfos(), m_aiSupplementalPromotions);
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */

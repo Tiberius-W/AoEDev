@@ -10967,14 +10967,6 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Spanish>+%d1 Magical Power to %s2 Spells</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPELL_IMMOBILE_TURNS</Tag>
-		<English>[ICON_BULLET]Affects up to %d1 units in the targeted tile.</English>
-		<French>[ICON_BULLET]Affects up to %d1 units in the targeted tile.</French>
-		<German>[ICON_BULLET]Affects up to %d1 units in the targeted tile.</German>
-		<Italian>[ICON_BULLET]Affects up to %d1 units in the targeted tile.</Italian>
-		<Spanish>[ICON_BULLET]Affects up to %d1 units in the targeted tile.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_AFFINITY_HYDROMANCER</Tag>
 		<English>Hydromancer Affinity</English>
 		<French>Hydromancer Affinity</French>

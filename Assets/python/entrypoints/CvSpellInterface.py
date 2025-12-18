@@ -3532,7 +3532,7 @@ def spellSacrificeCualli(caster):
 			if(bBrigit and bSauros):
 				pUnit.setHasPromotion(iEmpowerFire,True)
 
-			return
+	return
 
 def reqSacrificeCualli(caster):
 	pPlot = caster.plot()
@@ -3613,7 +3613,7 @@ def spellSacrificeSlaveCualli(caster):
 			if(bBrigit and bSauros):
 				pUnit.setHasPromotion(iEmpowerFire,True)
 
-			return
+	return
 			
 
 def reqSacrifice(caster):

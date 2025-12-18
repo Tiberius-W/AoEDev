@@ -1074,6 +1074,8 @@ public:
 /*************************************************************************************************/
 	bool isRealPromotion(PromotionTypes ePromotion) const;
 	void setRealPromotion(PromotionTypes ePromotion, bool bNewValue);
+	bool isPermanentSpellPromotion(PromotionTypes ePromotion) const;
+	void setPermanentSpellPromotion(PromotionTypes ePromotion, bool bNewValue);
 	void validateCommandPromotions(CvPlot* pOldPlot, CvPlot* pNewPlot, int iChange = 0);
 	int getSupplementalPromotionQuantity(PromotionTypes ePromotion) const;
 	void changeSupplementalPromotions(PromotionTypes ePromotion, bool bNewValue);
@@ -1880,6 +1882,7 @@ protected:
 /**								Defines Variable for Use in .cpp								**/
 /*************************************************************************************************/
 	bool* m_pabRealPromotion;
+	bool* m_pabPermanentSpellPromotion;
 	int* m_aiSupplementalPromotions;
 /************************************************************************************************/
 /* Influence Driven War                   06/08/10                                 Valkrionn    */

@@ -72,12 +72,8 @@
 			<Description>TXT_KEY_PROJECT_CHOSEN_OF_ESUS</Description>
 			<Civilopedia>TXT_KEY_PROJECT_CHOSEN_OF_ESUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_CHOSEN_OF_ESUS_STRATEGY</Strategy>
-			<TechPrereq>TECH_DECEPTION</TechPrereq>
+			<TechPrereq>TECH_WAY_OF_THE_WICKED</TechPrereq>
 			<iMaxTeamInstances>2</iMaxTeamInstances>
-			<PrereqAlignments>
-				<Alignment>ALIGNMENT_EVIL</Alignment>
-				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
-			</PrereqAlignments>
 			<iCost>500</iCost>
 			<iCooldown>30</iCooldown>
 			<iHideUnits>10</iHideUnits>
@@ -181,12 +177,8 @@
 			<Description>TXT_KEY_PROJECT_LIGHT_OF_LUGUS</Description>
 			<Civilopedia>TXT_KEY_PROJECT_LIGHT_OF_LUGUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_LIGHT_OF_LUGUS_STRATEGY</Strategy>
-			<TechPrereq>TECH_HONOR</TechPrereq>
+			<TechPrereq>TECH_WAY_OF_THE_WISE</TechPrereq>
 			<iMaxTeamInstances>4</iMaxTeamInstances>
-			<PrereqAlignments>
-				<Alignment>ALIGNMENT_GOOD</Alignment>
-				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
-			</PrereqAlignments>
 			<iCost>200</iCost>
 			<iCooldown>10</iCooldown>
 			<iSeeInvisible>3</iSeeInvisible>

@@ -2407,7 +2407,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
-					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide(), GC.getTerrainInfo((TerrainTypes)iI).getTextKeyWide()));
 					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
 				}
 				// Terrain move modifiers : GWS Milaga 2010-08-23
@@ -2426,7 +2426,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
-					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide()));
+					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide(), GC.getFeatureInfo((FeatureTypes)iI).getTextKeyWide()));
 					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
 				}
 				// Terrain move modifiers : GWS Milaga 2010-08-23
@@ -2444,7 +2444,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
-					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getPlotEffectInfo((PlotEffectTypes)iI).getTextKeyWide()));
+					szString.append(gDLL->getText("TXT_KEY_PROMOTION_DOUBLE_MOVE_TEXT", GC.getPlotEffectInfo((PlotEffectTypes)iI).getTextKeyWide(), GC.getPlotEffectInfo((PlotEffectTypes)iI).getTextKeyWide()));
 					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
 				}
 			}

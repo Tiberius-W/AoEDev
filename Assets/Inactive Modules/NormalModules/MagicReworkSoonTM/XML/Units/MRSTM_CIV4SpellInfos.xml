@@ -6,6 +6,7 @@
 <!-- Spell Infos -->
 <Civ4SpellInfos xmlns="x-schema:MRSTM_CIV4UnitSpellSchema.xml">
 	<SpellInfos>
+	<!--Damage Spells-->
 		<SpellInfo>			<!-- Air 2 - Maelstrom -->
 			<Type>SPELL_MAELSTROM</Type>
 			<bForceOverwrite>1</bForceOverwrite>
@@ -742,6 +743,8 @@
 			<Button>Art/Interface/Buttons/Spells/Breathfire.dds</Button>
 		</SpellInfo>
 	
+	
+	<!--Buff Spells -->
 		<SpellInfo>			<!-- Air 1 - Fair Winds -->				<!-- BEGIN SPELLSPHERES -->
 			<Type>SPELL_FAIR_WINDS</Type>
 			<bForceOverwrite>1</bForceOverwrite>
@@ -1714,6 +1717,259 @@
 				</SpellBonus>
 			</SpellBonuses>
 		</SpellInfo>
-		
+	
+	
+	<!--Debuff Spells-->
+	<SpellInfo>			<!-- Entropy 1 - Corrode -->
+			<Type>SPELL_RUST</Type>
+			<bForceOverwrite>1</bForceOverwrite>
+			<Description>TXT_KEY_SPELL_CORRODE</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_ENTROPY</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_ENTROPY1</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bIsAutoCastable>1</bIsAutoCastable>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_RUSTED</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_BRONZE_WEAPONS</RemovePromotion>
+				<RemovePromotion>PROMOTION_IRON_WEAPONS</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SWORD_FLAT</Sound>
+			<Button>Art/Interface/Buttons/Promotions/Rusted.dds</Button>
+			<iMagicalPowerPrereq>50</iMagicalPowerPrereq>
+			<iNumTargets>3</iNumTargets>
+			<SpellBonuses>
+				<SpellBonus>
+					<iPrereqExtraPower>30</iPrereqExtraPower>
+					<iMaxApplications>20</iMaxApplications>
+					<iExtraNumTargets>1</iExtraNumTargets>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>100</iPrereqExtraPower>
+					<iMaxApplications>2</iMaxApplications>
+					<iExtraTargetRange>1</iExtraTargetRange>
+				</SpellBonus>
+			</SpellBonuses>		
+		</SpellInfo>
+	
+	<SpellInfo>			<!-- Force 2 - Disrupt Magic -->
+			<Type>SPELL_DISRUPT_MAGIC</Type>
+			<bForceOverwrite>1</bForceOverwrite>
+			<Description>TXT_KEY_DISRUPT_MAGIC</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Help>TXT_KEY_SPELL_DISRUPT_MAGIC_HELP</Help>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_FORCE</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_FORCE2</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<iResistModify>5</iResistModify>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_DISRUPTED</AddPromotion>
+			</AddPromotions>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_CONTAGION</Sound>
+			<Button>Art/Interface/Buttons/Spells/DisruptMagic.dds</Button>
+			<iMagicalPowerPrereq>150</iMagicalPowerPrereq>
+			<iNumTargets>5</iNumTargets>
+			<SpellBonuses>
+				<SpellBonus>
+					<iPrereqExtraPower>50</iPrereqExtraPower>
+					<iMaxApplications>20</iMaxApplications>
+					<iExtraNumTargets>1</iExtraNumTargets>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>100</iPrereqExtraPower>
+					<iMaxApplications>3</iMaxApplications>
+					<iExtraTargetRange>1</iExtraTargetRange>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>80</iPrereqExtraPower>
+					<iMaxApplications>5</iMaxApplications>
+					<iExtraDuration>1</iExtraDuration>
+				</SpellBonus>
+			</SpellBonuses>
+		</SpellInfo>
+			<SpellInfo>			<!-- Ice 1 - Slow -->
+			<Type>SPELL_SLOW</Type>
+			<bForceOverwrite>1</bForceOverwrite>
+			<Description>TXT_KEY_SPELL_SLOW</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_ICE</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_ICE1</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bIsAutoCastable>1</bIsAutoCastable>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_SLOW</AddPromotion>
+			</AddPromotions>
+			<RemovePromotions>
+				<RemovePromotion>PROMOTION_HASTED</RemovePromotion>
+			</RemovePromotions>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<Effect>EFFECT_SLOW</Effect>
+			<Sound>AS3D_SPELL_SPRING</Sound>
+			<Button>Art/Interface/Buttons/Promotions/Slow.dds</Button>
+			<iMagicalPowerPrereq>50</iMagicalPowerPrereq>
+			<iNumTargets>3</iNumTargets>
+			<SpellBonuses>
+				<SpellBonus>
+					<iPrereqExtraPower>30</iPrereqExtraPower>
+					<iMaxApplications>20</iMaxApplications>
+					<iExtraNumTargets>1</iExtraNumTargets>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>50</iPrereqExtraPower>
+					<iMaxApplications>5</iMaxApplications>
+					<iExtraDuration>1</iExtraDuration>
+				</SpellBonus>
+			</SpellBonuses>
+		</SpellInfo>
+		<SpellInfo>			<!-- Mind 2 - Charm Person -->
+			<Type>SPELL_CHARM_PERSON</Type>
+			<bForceOverwrite>1</bForceOverwrite>
+			<Description>TXT_KEY_SPELL_CHARM_PERSON</Description>
+			<Civilopedia>TXT_KEY_SPELL_CHARM_PERSON_PEDIA</Civilopedia>
+			<Help>TXT_KEY_SPELL_CHARM_PERSON_HELP</Help>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_MIND</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_MIND2</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<iResistModify>20</iResistModify>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_CHARMED</AddPromotion>
+			</AddPromotions>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneNotAlive>1</bImmuneNotAlive>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_CHARM_PERSON</Sound>
+			<Button>Art/Interface/Buttons/Promotions/Charmed.dds</Button>
+			<iMagicalPowerPrereq>150</iMagicalPowerPrereq>
+			<iNumTargets>2</iNumTargets>
+			<SpellBonuses>
+				<SpellBonus>
+					<iPrereqExtraPower>80</iPrereqExtraPower>
+					<iMaxApplications>20</iMaxApplications>
+					<iExtraNumTargets>1</iExtraNumTargets>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>100</iPrereqExtraPower>
+					<iMaxApplications>3</iMaxApplications>
+					<iExtraTargetRange>1</iExtraTargetRange>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>50</iPrereqExtraPower>
+					<iMaxApplications>5</iMaxApplications>
+					<iExtraDuration>1</iExtraDuration>
+				</SpellBonus>
+			</SpellBonuses>
+		</SpellInfo>
+		<SpellInfo>			<!-- Sun 2 - Blinding Light -->
+			<Type>SPELL_BLINDING_LIGHT</Type>
+			<bForceOverwrite>1</bForceOverwrite>
+			<Description>TXT_KEY_SPELL_BLINDING_LIGHT</Description>
+			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<SpellClasses>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_SUN</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+				<SpellClass>
+					<SpellClassType>SPELLCLASS_DEBUFF</SpellClassType>
+					<bSpellClass>1</bSpellClass>
+				</SpellClass>
+			</SpellClasses>
+			<PromotionPrereq1>PROMOTION_SUN2</PromotionPrereq1>
+			<bAllowAI>1</bAllowAI>
+			<bIsAutoCastable>1</bIsAutoCastable>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bResistable>1</bResistable>
+			<iRange>1</iRange>
+			<iResistModify>30</iResistModify>
+			<bImmuneTeam>1</bImmuneTeam>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<iImmobileTurns>2</iImmobileTurns>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_CHARM_PERSON</Sound>
+			<Button>Art/Interface/Buttons/Spells/Blinding Light.dds</Button>
+			<iMagicalPowerPrereq>150</iMagicalPowerPrereq>
+			<iNumTargets>5</iNumTargets>
+			<SpellBonuses>
+				<SpellBonus>
+					<iPrereqExtraPower>50</iPrereqExtraPower>
+					<iMaxApplications>20</iMaxApplications>
+					<iExtraNumTargets>1</iExtraNumTargets>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>100</iPrereqExtraPower>
+					<iMaxApplications>3</iMaxApplications>
+					<iExtraTargetRange>1</iExtraTargetRange>
+				</SpellBonus>
+				<SpellBonus>
+					<iPrereqExtraPower>80</iPrereqExtraPower>
+					<iMaxApplications>5</iMaxApplications>
+					<iExtraImmobileTurns>1</iExtraImmobileTurns>
+				</SpellBonus>
+			</SpellBonuses>
+		</SpellInfo>
+	
 	</SpellInfos>
 </Civ4SpellInfos>

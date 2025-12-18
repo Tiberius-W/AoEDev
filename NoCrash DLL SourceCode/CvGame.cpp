@@ -11039,6 +11039,7 @@ void CvGame::createDemons()
 			if (eBestUnit != NO_UNIT)
 			{
 				CvUnit* pUnit = GET_PLAYER(DEMON_PLAYER).initUnit(eBestUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE(), UNITAI_ATTACK);
+				pUnit->changeExperience(getGlobalCounter() * GC.getHandicapInfo(getHandicapType()).getDemonGlobalCounterFreeXPPercent());
 				if (isMPOption(MPOPTION_SIMULTANEOUS_TURNS))
 					pUnit->setImmobileTimer(2);
 
