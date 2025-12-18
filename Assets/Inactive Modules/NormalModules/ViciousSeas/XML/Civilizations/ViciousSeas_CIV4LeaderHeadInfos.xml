@@ -3487,19 +3487,19 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -3519,19 +3519,19 @@
 			<DiplomacyMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_AIFON</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HASTUR</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>0</bFemale>
