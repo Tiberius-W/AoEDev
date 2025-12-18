@@ -2500,8 +2500,8 @@ SoundID : Implemented in AudioDefines to retrieve the sound file.
 		<ScriptID>AS2D_DIPLO_HASTUR</ScriptID>
 		<SoundID>DIPLO_HASTUR</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>85</iMinVolume>
-		<iMaxVolume>85</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>

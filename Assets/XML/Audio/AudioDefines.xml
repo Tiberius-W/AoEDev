@@ -100,7 +100,7 @@ bInGeneric: Unknown. Always 1.
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_HASTUR</SoundID>
-			<Filename>Sounds/Diplomacy/DreamHastur</Filename>
+			<Filename>Sounds/Diplomacy/20 - Legion of Shadows</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
