@@ -7885,8 +7885,6 @@ def spellDarkEmpowerment(caster):
 
 def spellSnowfallPassive(caster):
 	gc			= CyGlobalContext()
-	if gc.getGame().isNetworkMultiPlayer(): # In a multiplayer game, this spell causes OOS (because pyRequirement is local context, but terraforming is global context)
-		return False
 	randNum		= CyGame().getSorenRandNum
 	getPlot		= CyMap().plot
 	iFlames 	= getInfoType('FEATURE_FLAMES')

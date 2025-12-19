@@ -852,12 +852,12 @@ class UnitStatisticsTools:
 		experience = sdObjectGetVal("UnitStats", objPlayer, EXPERIENCE)
 
 		strCombatCount = ""
+		strAirCombatCount = ""
 		if(g_bShowCombatCount):
 			strCombatCount = localText.getText("TXT_KEY_BATTLES_FOUGHT", (battlecount, battlecountAttacking, battlecountDefending)) + "\n"
 			strCombatCount = strCombatCount + localText.getText("TXT_KEY_UNITS_KILLED", (numberOfKills + numberOfKillsCollateral + numberOfKillsFlanking + numberOfKillsOther + numberOfKillsAirStrike, numberOfKillsAttacking, numberOfKillsDefending, numberOfKillsCollateral + numberOfKillsFlanking + numberOfKillsOther + numberOfKillsAirStrike)) + "\n"
 			strCombatCount = strCombatCount + localText.getText("TXT_KEY_UNITS_LOST", (losscount + losscountCollateral + losscountFlanking + losscountOther + losscountAirStrike, losscountAttacking, losscountDefending, losscountCollateral + losscountFlanking + losscountOther + losscountAirStrike)) + "\n"
 			strCombatCount = strCombatCount + localText.getText("TXT_KEY_UNDECIDED_BATTLES", (withdrawalcount, withdrawalcountAttacking, withdrawalcountDefending)) + "\n\n"
-			strAirCombatCount = ""
 		if g_bFfHMode:
 			strCombatCount = strCombatCount + localText.getText("TXT_KEY_UNITSTATS_HEROCOUNT", (heroCount, ())) + "\n"
 			strCombatCount = strCombatCount + localText.getText("TXT_KEY_UNITSTATS_CASTCOUNT", (castCount, ())) + "\n"

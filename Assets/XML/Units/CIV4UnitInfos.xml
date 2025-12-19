@@ -1675,6 +1675,7 @@
 			</DamageTypeCombats>
 			<iPowerAdd>300</iPowerAdd>
 			<iPowerMult>20</iPowerMult>
+			<PyPerTurn>spellSnowfallPassive(pCaster)</PyPerTurn>
 		</UnitInfo>
 		<UnitInfo>        <!-- Auric Ulvin -->
 			<Class>UNITCLASS_AURIC</Class>

@@ -1739,14 +1739,16 @@ class CvMainInterface:
 			self.ClearHUD()
 			# < Mercenaries Start >
 			# Show the mercenary manager button if the player has at least one city and mercenaries are unlocked.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getGame().isUnlockMercenaries()):
-					screen.show( "MercenaryManagerButton" )
+			if (not gc.isNoCrash()):
+				if(gc.getActivePlayer().getNumCities() > 0 and gc.getGame().isUnlockMercenaries()):
+						screen.show( "MercenaryManagerButton" )
 			# < Mercenaries End >
 			self.PartialHUD()
 			# < Mercenaries Start >
 			# move the mercenary manager button to the front if the player has at least one city and mercenaries are unlocked.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getGame().isUnlockMercenaries()):
-					screen.moveToFront( "MercenaryManagerButton" )
+			if (not gc.isNoCrash()):
+				if(gc.getActivePlayer().getNumCities() > 0 and gc.getGame().isUnlockMercenaries()):
+						screen.moveToFront( "MercenaryManagerButton" )
 			# < Mercenaries End >
 
 		elif (CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_ADVANCED_START):
@@ -4779,6 +4781,7 @@ class CvMainInterface:
 
 		xResolution = screen.getXResolution()
 		yResolution = screen.getYResolution()
+		yCoord = yResolution - 68
 
 		screen.hide( "ScoreBackground" )
 		screen.hide( "SmallScoreToggle" )
