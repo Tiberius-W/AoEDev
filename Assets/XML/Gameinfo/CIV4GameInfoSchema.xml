@@ -891,6 +891,8 @@
 	<ElementType name="iDistanceMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iNumCitiesMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCorporationMaintenanceModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iDiscoverRandModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iSpreadRandModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeExperience" content="textOnly" dt:type="float"/>
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
@@ -1138,6 +1140,8 @@
 		<element type="iDistanceMaintenanceModifier"/>
 		<element type="iNumCitiesMaintenanceModifier"/>
 		<element type="iCorporationMaintenanceModifier"/>
+		<element type="iDiscoverRandModifier"/>
+		<element type="iSpreadRandModifier"/>
 		<element type="iExtraHealth"/>
 		<element type="iFreeExperience"/>
 		<element type="iWorkerSpeedModifier"/>

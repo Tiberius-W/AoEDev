@@ -6065,7 +6065,6 @@
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
 			<Help>TXT_KEY_SPELL_SACRIFICE_CUALLI_HELP</Help>
 			<BuildingPrereq>BUILDING_SACRIFICIAL_ALTAR</BuildingPrereq>
-			<bCasterMustBeAlive>1</bCasterMustBeAlive>
 			<bCasterNoDuration>1</bCasterNoDuration>
 			<bInCityOnly>1</bInCityOnly>
 			<iCasterMinLevel>2</iCasterMinLevel>

@@ -1570,7 +1570,6 @@
 	<ElementType name="iSpellDamageModify" content="textOnly" dt:type="int"/>
 	<ElementType name="iDamageOnRemove" content="textOnly" dt:type="int"/>
 	<ElementType name="iWorkRateModify" content="textOnly" dt:type="int"/>
-	<ElementType name="iWorkRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iPromotionRandomApplyChance" content="textOnly" dt:type="int"/>
 	<ElementType name="CaptureUnitCombat" content="textOnly"/>
 	<ElementType name="BlockedSpellClass" content="textOnly"/>
@@ -1978,7 +1977,6 @@
 		<element type="iSpellCasterXP"/>
 		<element type="iSpellDamageModify"/>
 		<element type="iWorkRateModify"/>
-		<element type="iWorkRateModifier"/>
 		<element type="bNonInfluence"/>
 		<element type="bInfluence"/>
 		<element type="iVictoryInfluenceModifier"/>

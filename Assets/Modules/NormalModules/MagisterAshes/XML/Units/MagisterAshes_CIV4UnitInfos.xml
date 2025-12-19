@@ -276,6 +276,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_CHAOS3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_CURSED</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>

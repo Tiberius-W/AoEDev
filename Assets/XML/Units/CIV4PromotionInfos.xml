@@ -39657,6 +39657,19 @@
 				</BonusAffinity>
 			</BonusAffinities>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Sacrificial Blood Fire -->
+			<Type>PROMOTION_SACRIFICIAL_BLOOD_FIRE</Type>
+			<Description>TXT_KEY_PROMOTION_SACRIFICIAL_BLOOD_DIVINE</Description>
+			<Button>Art/Interface/Buttons/Promotions/throatslitters.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+			<bImmortal>1</bImmortal>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_FIRE</BonusType>
+					<iAffinity>3</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Raise the Dead 1-->
 			<Type>PROMOTION_RAISE_THE_DEAD1</Type>
 			<Description>TXT_KEY_PROMOTION_RAISE_THE_DEAD1</Description>

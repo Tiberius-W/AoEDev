@@ -3539,7 +3539,7 @@ def reqSacrificeCualli(caster):
 	iPriest = getInfoType('UNIT_LIZARD_PRIEST_OF_AGRUONN')
 	iShadowPriest = getInfoType('UNIT_SHADOW_PRIEST_OF_AGRUONN')
 	iHeroPriest = getInfoType('UNIT_MIQUIZTLI')
-	if (not caster.getUnitType() == iShadowPriest) and (not caster.getUnitType()== iHeroPriest) and (not caster.getUnitType()==iPriest):
+	if (not caster.getUnitType() == iShadowPriest) and (not caster.getUnitType()== iHeroPriest) and (not caster.getUnitType()==iPriest) and (not(caster.getUnitType()==getInfoType('UNIT_BRIGIT'))) and (not (caster.getUnitType()== getInfoType('UNIT_ODIO'))) :
 		return False	
 	return True	
 
@@ -3576,7 +3576,7 @@ def spellSacrificeSlaveCualli(caster):
 		if pUnit.getUnitType() == getInfoType('UNIT_SLAVE'):
 			iLevel=iLevel+1
 			pUnit.kill(True,caster.getOwner())
-	iLevel=iLevel/2
+	iLevel=(iLevel*2)/3
 	for i in range(pPlot.getNumUnits()):
 		pUnit = pPlot.getUnit(i)
 

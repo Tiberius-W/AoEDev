@@ -606,7 +606,7 @@
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_DRUID</UnitClassType>
-					<UnitType>UNIT_MULYALFAR_ELF</UnitType>
+					<UnitType>UNIT_ICE_DRUID</UnitType>
 				</ExtraUnitClass>
 			</ExtraUnitClasses>	
 			<TerrainYieldChanges>
@@ -751,8 +751,8 @@
 			<ShortDescription>TXT_KEY_TRAIT_AGGRESSIVE_SHORT</ShortDescription>
 			<ExtraUnitClasses>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_DONAL_LUGH</UnitClassType>
-					<UnitType>UNIT_DONAL_LUGH</UnitType>
+					<UnitClassType>UNITCLASS_DONAL</UnitClassType>
+					<UnitType>UNIT_DONAL</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_CRUSADER</UnitClassType>
@@ -771,7 +771,7 @@
 					<UnitType>UNIT_CLERIC</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_GREAT_COMMANDER</UnitClassType>
+					<UnitClassType>UNITCLASS_COMMANDER</UnitClassType>
 					<UnitType>UNIT_CAPTAIN</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
@@ -844,7 +844,7 @@
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_ABASHI</UnitClassType>
-					<UnitType>UNITS_ABASHI</UnitType>
+					<UnitType>UNIT_ABASHI</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_PYRE_ZOMBIE</UnitClassType>
@@ -868,7 +868,7 @@
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_REVELERS</UnitClassType>
-					<UnitType>UNITS_REVELERS</UnitType>
+					<UnitType>UNIT_REVELERS</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_SUCCUBUS</UnitClassType>
@@ -1262,10 +1262,6 @@
 				<ExtraUnitClass>
 					<UnitClassType>UNITCLASS_SIEGE_GOLEM</UnitClassType>
 					<UnitType>UNIT_SIEGE_GOLEM</UnitType>
-				</ExtraUnitClass>
-				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_</UnitClassType>
-					<UnitType>UNIT_</UnitType>
 				</ExtraUnitClass>
 			</ExtraUnitClasses>	
 			<ExtraBuildingClasses>

@@ -1042,7 +1042,7 @@ class CustomFunctions:
                                 getInfoType = gc.getInfoTypeForString
 				iPlotCount = pPlot.getPlotCounter()
 				setBonus = pPlot.setBonusType
-				if iPlotCount > 9:
+				if iPlotCount > 9 and not (iTerrain ==Terrain["Tundra"] or iTerrain == Terrain["Taiga"]):
 					if (iBonus == Bonus["Sheep"] or iBonus == Bonus["Pig"] or iBonus == Bonus["Fur"] or iBonus == Bonus["Deer"]):
 						setBonus(Bonus["Toad"])
 					elif (iBonus == Bonus["Horse"] or iBonus == Bonus["Cow"] or iBonus == Bonus["Camel"] or iBonus == Bonus["Ivory"]):

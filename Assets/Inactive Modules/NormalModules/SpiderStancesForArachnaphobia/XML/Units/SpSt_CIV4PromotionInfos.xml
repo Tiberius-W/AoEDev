@@ -25,6 +25,9 @@
 			<bNoDefenseBonus>1</bNoDefenseBonus>
 			<iMinLevel>-1</iMinLevel>
 			<PromotionSummonPerk>PROMOTION_HIDDEN_NATIONALITY</PromotionSummonPerk>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_SPIDER_TERRITORIAL</Promotion>
+			</PromotionExcludes>
 		</PromotionInfo>
 		<PromotionInfo>
 		<Type>PROMOTION_SPIDER_TERRITORIAL</Type>

@@ -2137,6 +2137,15 @@
 		<Spanish>I don't think he enjoys our jests[NEWLINE]Because of that I think that it's best[NEWLINE]That you all do away[NEWLINE]With the butcher today[NEWLINE]And put him to his eternal rest</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_WB_THE_MOMUS_DOGPILE_MELISANDRE</Tag>
+		<English>Dolls decorated Melisandre's bed[NEWLINE]"Throw them away," her parents said[NEWLINE]"You're too old for those anymore"[NEWLINE]But the dolls came across the floor[NEWLINE]And threw the parents out instead</English>
+		<French>Dolls decorated Melisandre's bed[NEWLINE]"Throw them away," her parents said[NEWLINE]"You're too old for those anymore"[NEWLINE]But the dolls came across the floor[NEWLINE]And threw the parents out instead</French>
+		<German>Dolls decorated Melisandre's bed[NEWLINE]"Throw them away," her parents said[NEWLINE]"You're too old for those anymore"[NEWLINE]But the dolls came across the floor[NEWLINE]And threw the parents out instead</German>
+		<Italian>Dolls decorated Melisandre's bed[NEWLINE]"Throw them away," her parents said[NEWLINE]"You're too old for those anymore"[NEWLINE]But the dolls came across the floor[NEWLINE]And threw the parents out instead</Italian>
+		<Spanish>Dolls decorated Melisandre's bed[NEWLINE]"Throw them away," her parents said[NEWLINE]"You're too old for those anymore"[NEWLINE]But the dolls came across the floor[NEWLINE]And threw the parents out instead</Spanish>
+	</TEXT>
+
+	<TEXT>
 		<Tag>TXT_KEY_WB_THE_MOMUS_DOGPILE_SALLOS</Tag>
 		<English>Duke Sallos has come to our play[NEWLINE]I’m honored he'd come all this way[NEWLINE]To make sure he has fun[NEWLINE]Let's get everyone[NEWLINE]To engage his troops in melee</English>
 		<French>Duke Sallos has come to our play[NEWLINE]I’m honored he'd come all this way[NEWLINE]To make sure he has fun[NEWLINE]Let's get everyone[NEWLINE]To engage his troops in melee</French>
@@ -2151,6 +2160,14 @@
 		<German>Candle, candle burning bright[NEWLINE]Tya entered the cave of the Amurites[NEWLINE]Together tested no one knew[NEWLINE]A child inside her body grew[NEWLINE]Now she's all alone at night</German>
 		<Italian>Candle, candle burning bright[NEWLINE]Tya entered the cave of the Amurites[NEWLINE]Together tested no one knew[NEWLINE]A child inside her body grew[NEWLINE]Now she's all alone at night</Italian>
 		<Spanish>Candle, candle burning bright[NEWLINE]Tya entered the cave of the Amurites[NEWLINE]Together tested no one knew[NEWLINE]A child inside her body grew[NEWLINE]Now she's all alone at night</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_THE_MOMUS_DOGPILE_ULDANOR</Tag>
+		<English>Uldanor comes seeking our prize[NEWLINE]I don't want to spoil the surprise[NEWLINE]But he'll be very pleased[NEWLINE]With the prize if he's[NEWLINE]Not the one who dies</English>
+		<French>Uldanor comes seeking our prize[NEWLINE]I don't want to spoil the surprise[NEWLINE]But he'll be very pleased[NEWLINE]With the prize if he's[NEWLINE]Not the one who dies</French>
+		<German>Uldanor comes seeking our prize[NEWLINE]I don't want to spoil the surprise[NEWLINE]But he'll be very pleased[NEWLINE]With the prize if he's[NEWLINE]Not the one who dies</German>
+		<Italian>Uldanor comes seeking our prize[NEWLINE]I don't want to spoil the surprise[NEWLINE]But he'll be very pleased[NEWLINE]With the prize if he's[NEWLINE]Not the one who dies</Italian>
+		<Spanish>Uldanor comes seeking our prize[NEWLINE]I don't want to spoil the surprise[NEWLINE]But he'll be very pleased[NEWLINE]With the prize if he's[NEWLINE]Not the one who dies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_THE_MOMUS_DOGPILE_WEEVIL</Tag>

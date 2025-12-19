@@ -31,6 +31,15 @@ class ScenarioFunctions:
 		popup.setSize(840, 640)
 		popup.launch(true, PopupStates.POPUPSTATE_IMMEDIATE)
 
+	def addPopup(self, szText, sDDS):
+		szTitle = CyGameTextMgr().getTimeStr(CyGame().getGameTurn(), False)
+		popup = PyPopup.PyPopup(-1)
+		popup.addDDS(sDDS, 0, 0, 128, 384)
+		popup.addSeparator()
+		popup.setHeaderString(szTitle)
+		popup.setBodyString(szText)
+		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
 	def cannotResearch(self, ePlayer, eTech, bTrade):
 		pPlayer = gc.getPlayer(ePlayer)
 
@@ -525,7 +534,7 @@ class ScenarioFunctions:
 				gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString('UNIT_DECIUS'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 				newUnit = gc.getPlayer(gc.getORC_PLAYER()).initUnit(gc.getInfoTypeForString('EQUIPMENT_CONTAINER'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 				newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_NETHER_BLADE'), True)
-				cf.addPopup(szText,'art/interface/popups/Decius.dds')
+				self.addPopup(szText,'art/interface/popups/Decius.dds')
 		gc.getGame().changeScenarioCounter(1)
 		if gc.getGame().getScenarioCounter() == 40:
 			gc.getGame().changeScenarioCounter(-40)
@@ -670,7 +679,7 @@ class ScenarioFunctions:
 												pTeam.setPermanentWarPeace(iLoopTeam2, False)
 												pTeam.declareWar(iLoopTeam2, false, WarPlanTypes.WARPLAN_TOTAL)
 												pTeam.setPermanentWarPeace(iLoopTeam2, True)
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_ALL_WAR",()),'art/interface/popups/Perpentach.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_ALL_WAR",()),'art/interface/popups/Perpentach.dds')
 				if iRnd >= 30 and iRnd < 70:
 					iBestRank = 100
 					for iLoopPlayer in range(gc.getMAX_PLAYERS()):
@@ -713,34 +722,42 @@ class ScenarioFunctions:
 															pTeam.setPermanentWarPeace(iLoopTeam2, True)
 					pPlayer = gc.getPlayer(iBestPlayer)
 					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_FALAMAR'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_FALAMAR",()),'art/interface/popups/Perpentach.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_FALAMAR",()),'art/interface/popups/Perpentach.dds')
+					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_MAHON'):
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_MAHON",()),'art/interface/popups/Perpentach.dds')
+					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_SALLOS'):
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_SALLOS",()),'art/interface/popups/Perpentach.dds')
 					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BEERI'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_BEERI",()),'art/interface/popups/Perpentach.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_BEERI",()),'art/interface/popups/Perpentach.dds')
+					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_ULDANOR'):
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_ULDANOR",()),'art/interface/popups/Perpentach.dds')
 					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_TYA'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_TYA",()),'art/interface/popups/Perpentach.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_TYA",()),'art/interface/popups/Perpentach.dds')
 					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_WEEVIL'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_WEEVIL",()),'art/interface/popups/Perpentach.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_WEEVIL",()),'art/interface/popups/Perpentach.dds')
 					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_FURIA'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_FURIA",()),'art/interface/popups/Perpentach.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_FURIA",()),'art/interface/popups/Perpentach.dds')
+					if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_MELISANDRE'):
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DOGPILE_MELISANDRE",()),'art/interface/popups/Perpentach.dds')
 
 	def doTurnTheRadiantGuard(self):
 		if CyGame().getGameTurn() == 10:
-			cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA",()),'art/interface/popups/Capria.dds')
+			self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA",()),'art/interface/popups/Capria.dds')
 		if CyGame().getGameTurn() == 40:
 			pPlot = CyMap().plot(29,3)
 			if pPlot.isCity():
 				if pPlot.getOwner() == 2: #Hyborem
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_2",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_2",()),'art/interface/popups/Capria.dds')
 		if CyGame().getGameTurn() == 50:
 			pPlot = CyMap().plot(29,3)
 			if pPlot.isCity():
 				if pPlot.getOwner() == 2: #Hyborem
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_3",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_3",()),'art/interface/popups/Capria.dds')
 		if CyGame().getGameTurn() == 60:
 			pPlot = CyMap().plot(29,3)
 			if pPlot.isCity():
 				if pPlot.getOwner() == 2: #Hyborem
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_LOST",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_LOST",()),'art/interface/popups/Capria.dds')
 					gc.getPlayer(3).setAlive(false) #Capria
 		iPlayer = 2 #Hyborem
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1448,7 +1465,7 @@ class ScenarioFunctions:
 		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_THE_RADIANT_GUARD):
 			if pPlayer.isHuman():
 				if pCity.getName() == "Bastradam":
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_WON",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_RADIANT_GUARD_CAPRIA_WON",()),'art/interface/popups/Capria.dds')
 					gc.getGame().changeTrophyValue("TROPHY_WB_THE_RADIANT_GUARD_CAPRIA_ALLY", 1)
 					pPlayer = gc.getPlayer(0) #Falamar
 					pPlayer.initUnit(gc.getInfoTypeForString('UNIT_CHAMPION'), pCity.getX(),  pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
@@ -1569,7 +1586,7 @@ class ScenarioFunctions:
 				if pPlayer.isHuman():
 					if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALAKIM'):
 						gc.getGame().changeScenarioCounter(175)
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_INTO_THE_DESERT_MALAKIM_MIRROR_OF_HEAVEN",()),'art/interface/popups/Varn.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_INTO_THE_DESERT_MALAKIM_MIRROR_OF_HEAVEN",()),'art/interface/popups/Varn.dds')
 						pPlot = CyMap().plot(30,23)
 						pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SETTLER'), pPlot.getX(),  pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 						pPlayer.initUnit(gc.getInfoTypeForString('UNIT_SETTLER'), pPlot.getX(),  pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
@@ -1630,7 +1647,7 @@ class ScenarioFunctions:
 				if (pPlot.getX() == 4 and pPlot.getY() == 14):
 					if not pCaster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_AIR2')):
 						pCaster.setXY(4, 13, false, true, true)
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_AIR",()),'art/interface/popups/Dain.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_AIR",()),'art/interface/popups/Dain.dds')
 					else:
 						apUnitList = PyPlayer(gc.getORC_PLAYER()).getUnitList()
 						iManes = gc.getInfoTypeForString('UNIT_MANES')
@@ -1640,7 +1657,7 @@ class ScenarioFunctions:
 				if (pPlot.getX() == 16 and pPlot.getY() == 11):
 					if not pCaster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_FIRE2')):
 						pCaster.setXY(17, 11, false, true, true)
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_FIRE",()),'art/interface/popups/Dain.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_FIRE",()),'art/interface/popups/Dain.dds')
 					else:
 						apUnitList = PyPlayer(gc.getORC_PLAYER()).getUnitList()
 						iPyreZombie = gc.getInfoTypeForString('UNIT_PYRE_ZOMBIE')
@@ -1670,7 +1687,7 @@ class ScenarioFunctions:
 				if (pPlot.getX() == 28 and pPlot.getY() == 1):
 					if pPlayer.isHuman():
 						if pCaster.getUnitType() == gc.getInfoTypeForString('UNIT_ARCHMAGE'):
-							cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_POTION_OF_INVISIBILITY",()),'art/interface/popups/Dain.dds')
+							self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_POTION_OF_INVISIBILITY",()),'art/interface/popups/Dain.dds')
 							pPlot = CyMap().plot(27,1)
 							pUnit = pPlot.getUnit(0)
 							pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_INVISIBLE'), True)
@@ -1800,7 +1817,7 @@ class ScenarioFunctions:
 									pPlot.setTerrainType(iTaiga)
 								if iTerrain == iDesert:
 									pPlot.setTerrainType(iPlains)
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_AURIC_ASCENDED",()),'art/interface/popups/Auric Ascended.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_AURIC_ASCENDED",()),'art/interface/popups/Auric Ascended.dds')
 
 		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_THE_CULT):
 			pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_FLYING'), False)
@@ -1832,7 +1849,7 @@ class ScenarioFunctions:
 									szText = CyTranslator().getText("TXT_KEY_WB_WAGES_OF_SIN_HERO_VALIN_MALAKIM",())
 								if pLoopPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_SHEAIM'):
 									szText = CyTranslator().getText("TXT_KEY_WB_WAGES_OF_SIN_HERO_VALIN_SHEAIM",())
-								cf.addPopup(szText,'art/interface/popups/Valin Phanuel.dds')
+								self.addPopup(szText,'art/interface/popups/Valin Phanuel.dds')
 
 			if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_ROSIER'):
 				if gc.getGame().getUnitClassCreatedCount(gc.getInfoTypeForString('UNITCLASS_ROSIER')) == 1:
@@ -1849,7 +1866,7 @@ class ScenarioFunctions:
 									szText = CyTranslator().getText("TXT_KEY_WB_WAGES_OF_SIN_HERO_ROSIER_MALAKIM",())
 								if pLoopPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_SHEAIM'):
 									szText = CyTranslator().getText("TXT_KEY_WB_WAGES_OF_SIN_HERO_ROSIER_SHEAIM",())
-								cf.addPopup(szText,'art/interface/popups/Rosier the Fallen.dds')
+								self.addPopup(szText,'art/interface/popups/Rosier the Fallen.dds')
 
 	def onUnitKilled(self, pUnit, iAttacker):
 		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_INTO_THE_DESERT):
@@ -2136,28 +2153,28 @@ class ScenarioFunctions:
 	def openChest(self, caster, pPlot):
 		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_GIFT_OF_KYLORIN):
 			if caster.getUnitType() != gc.getInfoTypeForString('UNIT_ARCHMAGE'):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORON_TREASURE_LOCKED",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORON_TREASURE_LOCKED",()),'art/interface/popups/Dain.dds')
 				return False
 			if (pPlot.getX() == 20 and pPlot.getY() == 11):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_SPRING",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_SPRING",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_WATER1'), True)
 				gc.getGame().changeScenarioCounter(1)
 			if (pPlot.getX() == 25 and pPlot.getY() == 4):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_RAISE_SKELETON",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_RAISE_SKELETON",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DEATH1'), True)
 			if (pPlot.getX() == 27 and pPlot.getY() == 11):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_FIREBALL",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_FIREBALL",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_FIRE2'), True)
 				gc.getGame().changeScenarioCounter(1)
 			if (pPlot.getX() == 8 and pPlot.getY() == 14):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_COURAGE",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_COURAGE",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SPIRIT1'), True)
 			if (pPlot.getX() == 17 and pPlot.getY() == 4):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_MAELSTROM",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_MAELSTROM",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_AIR2'), True)
 				gc.getGame().changeScenarioCounter(1)
 			if (pPlot.getX() == 27 and pPlot.getY() == 20):
-				cf.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_FLOATING_EYE",()),'art/interface/popups/Dain.dds')
+				self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_TREASURE_FLOATING_EYE",()),'art/interface/popups/Dain.dds')
 				caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_METAMAGIC1'), True)
 				gc.getGame().changeScenarioCounter(1)
 			iTreasure = gc.getInfoTypeForString('EQUIPMENT_TREASURE')
@@ -2176,19 +2193,19 @@ class ScenarioFunctions:
 		if gc.getGame().getGameTurn() > 5:
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_BARBARIAN_ASSAULT):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AMELANCHIER'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_AMELANCHIER",()),'art/interface/popups/Amelanchier.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_AMELANCHIER",()),'art/interface/popups/Amelanchier.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BEERI'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_CAPRIA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_CHARADON'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_CHARADON",()),'art/interface/popups/Charadon.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_CHARADON",()),'art/interface/popups/Charadon.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_DAIN'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_DAIN",()),'art/interface/popups/Dain.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_DAIN",()),'art/interface/popups/Dain.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_EINION'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_EINION",()),'art/interface/popups/Einion.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_EINION",()),'art/interface/popups/Einion.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_HALFGAN'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_HALFGAN",()),'art/interface/popups/Halfgan.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_HALFGAN",()),'art/interface/popups/Halfgan.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_SHEELBA'):
 					for iTeam in range(gc.getMAX_TEAMS()):
 						pTeam = gc.getTeam(iTeam)
@@ -2196,56 +2213,56 @@ class ScenarioFunctions:
 							if pTeam.isHuman():
 								gc.getGame().setWinner(iTeam, 2)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_TASUNKE'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_TASUNKE",()),'art/interface/popups/Tasunke.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BARBARIAN_ASSAULT_DEFEATED_TASUNKE",()),'art/interface/popups/Tasunke.dds')
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_BENEATH_THE_HEEL):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AURIC'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
 					for iTeam in range(gc.getMAX_TEAMS()):
 						pTeam = gc.getTeam(iTeam)
 						if pTeam.isAlive():
 							if not pTeam.isHuman():
 								gc.getGame().setWinner(iTeam, 2)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BEERI'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_EINION'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_EINION",()),'art/interface/popups/Einion.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_EINION",()),'art/interface/popups/Einion.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_GARRIM'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_GARRIM",()),'art/interface/popups/Garrim.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_GARRIM",()),'art/interface/popups/Garrim.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_SANDALPHON'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_SANDALPHON",()),'art/interface/popups/Sandalphon.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_SANDALPHON",()),'art/interface/popups/Sandalphon.dds')
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_BLOOD_OF_ANGELS):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AURIC'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
 					for iTeam in range(gc.getMAX_TEAMS()):
 						pTeam = gc.getTeam(iTeam)
 						if pTeam.isAlive():
 							if not pTeam.isHuman():
 								gc.getGame().setWinner(iTeam, 2)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_HANNAH'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_HANNAH",()),'art/interface/popups/Hannah.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_HANNAH",()),'art/interface/popups/Hannah.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_MAHALA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_MAHALA",()),'art/interface/popups/Lucian.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_MAHALA",()),'art/interface/popups/Lucian.dds')
 					for iTeam in range(gc.getMAX_TEAMS()):
 						pTeam = gc.getTeam(iTeam)
 						if pTeam.isAlive():
 							if not pTeam.isHuman():
 								gc.getGame().setWinner(iTeam, 2)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_SABATHIEL'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_SABATHIEL",()),'art/interface/popups/Sabathiel.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BLOOD_OF_ANGELS_DEFEATED_SABATHIEL",()),'art/interface/popups/Sabathiel.dds')
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_LORD_OF_THE_BALORS):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_HYBOREM'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_HYBOREM",()),'art/interface/popups/Hyborem.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_HYBOREM",()),'art/interface/popups/Hyborem.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BASIUM'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_BASIUM",()),'art/interface/popups/Basium.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_BASIUM",()),'art/interface/popups/Basium.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_CAPRIA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_KEELYN'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_KEELYN",()),'art/interface/popups/Keelyn.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_KEELYN",()),'art/interface/popups/Keelyn.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_VARN'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_VARN",()),'art/interface/popups/Varn.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_DEFEATED_VARN",()),'art/interface/popups/Varn.dds')
 				iCount = 0
 				iInfernal = gc.getInfoTypeForString('CIVILIZATION_INFERNAL')
 				for iPlayer in range(gc.getMAX_PLAYERS()):
@@ -2262,39 +2279,39 @@ class ScenarioFunctions:
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_MULCARN_REBORN):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_MAHALA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_MAHALA",()),'art/interface/popups/Mahala.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_MAHALA",()),'art/interface/popups/Mahala.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AMELANCHIER'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_AMELANCHIER",()),'art/interface/popups/Amelanchier.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_AMELANCHIER",()),'art/interface/popups/Amelanchier.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_VOLANNA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_VOLANNA",()),'art/interface/popups/Volanna.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_VOLANNA",()),'art/interface/popups/Volanna.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_RHOANNA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_RHOANNA",()),'art/interface/popups/Rhoanna.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_RHOANNA",()),'art/interface/popups/Rhoanna.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_FALAMAR'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_FALAMAR",()),'art/interface/popups/Falamar.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_FALAMAR",()),'art/interface/popups/Falamar.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_CAPRIA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_CAPRIA",()),'art/interface/popups/Capria.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_DECIUS'):
 					if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_CALABIM'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_DECIUS_CALABIM",()),'art/interface/popups/Decius.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_DECIUS_CALABIM",()),'art/interface/popups/Decius.dds')
 					if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_MALAKIM'):
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_DECIUS_MALAKIM",()),'art/interface/popups/Decius.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_MULCARN_REBORN_DEFEATED_DECIUS_MALAKIM",()),'art/interface/popups/Decius.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AURIC'):
 					gc.getGame().setWinner(1, 2) #Falamar Wins
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_RETURN_OF_WINTER):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_AURIC'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_BENEATH_THE_HEEL_DEFEATED_AURIC",()),'art/interface/popups/Auric.dds')
 					iPlayer = 0 #Mahala
 					gc.getPlayer(iPlayer).setAlive(false)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_CARDITH'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_CARDITH_DEFEATED",()),'art/interface/popups/Cardith.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_CARDITH_DEFEATED",()),'art/interface/popups/Cardith.dds')
 					for iLoopPlayer in range(gc.getMAX_PLAYERS()):
 						pLoopPlayer = gc.getPlayer(iLoopPlayer)
 						if pLoopPlayer.isAlive():
 							if pLoopPlayer.isHuman():
 								pLoopPlayer.changeGold(250)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_KOUN'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_KOUN_DEFEATED",()),'art/interface/popups/Koun.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_KOUN_DEFEATED",()),'art/interface/popups/Koun.dds')
 					for iLoopPlayer in range(gc.getMAX_PLAYERS()):
 						pLoopPlayer = gc.getPlayer(iLoopPlayer)
 						if pLoopPlayer.isAlive():
@@ -2303,7 +2320,7 @@ class ScenarioFunctions:
 								pLoopPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIEST_OF_LEAVES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 								pLoopPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIEST_OF_LEAVES'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_TETHIRA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_TETHIRA_DEFEATED",()),'art/interface/popups/Tethira.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_TETHIRA_DEFEATED",()),'art/interface/popups/Tethira.dds')
 					for iLoopPlayer in range(gc.getMAX_PLAYERS()):
 						pLoopPlayer = gc.getPlayer(iLoopPlayer)
 						if pLoopPlayer.isAlive():
@@ -2312,7 +2329,7 @@ class ScenarioFunctions:
 									pUnit = pLoopPlayer.getUnit(iUnit)
 									pUnit.changeExperience(2, -1, False, False, False)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_THESSALONICA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_THESSALONICA_DEFEATED",()),'art/interface/popups/Thessalonica.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_RETURN_OF_WINTER_THESSALONICA_DEFEATED",()),'art/interface/popups/Thessalonica.dds')
 					for iLoopPlayer in range(gc.getMAX_PLAYERS()):
 						pLoopPlayer = gc.getPlayer(iLoopPlayer)
 						if pLoopPlayer.isAlive():
@@ -2327,13 +2344,13 @@ class ScenarioFunctions:
 
 			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_THE_MOMUS):
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_FURIA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_FURIA",()),'art/interface/popups/Furia.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_FURIA",()),'art/interface/popups/Furia.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_WEEVIL'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_WEEVIL",()),'art/interface/popups/Weevil.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_WEEVIL",()),'art/interface/popups/Weevil.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_TYA'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_TYA",()),'art/interface/popups/Tya.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_TYA",()),'art/interface/popups/Tya.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BEERI'):
-					cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
+					self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_MOMUS_DEFEATED_BEERI",()),'art/interface/popups/Beeri.dds')
 				bValid = True
 				if not gc.getPlayer(1).isAlive(): #Perpentach
 					gc.getGame().setWinner(0, 2)
@@ -2401,10 +2418,10 @@ class ScenarioFunctions:
 						triggerData = gc.getPlayer(iHumanPlayer).initTriggeredData(iEvent, true, -1, -1, -1, iHumanPlayer, -1, -1, -1, -1, -1)
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_ARENDEL'):
 					if not bWin:
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_SPLINTERED_COURT_DEFEATED_ARENDEL",()),'art/interface/popups/Arendel.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_SPLINTERED_COURT_DEFEATED_ARENDEL",()),'art/interface/popups/Arendel.dds')
 				if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_FAERYL'):
 					if not bWin:
-						cf.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_SPLINTERED_COURT_DEFEATED_FAERYL",()),'art/interface/popups/Faeryl.dds')
+						self.addPopup(CyTranslator().getText("TXT_KEY_WB_THE_SPLINTERED_COURT_DEFEATED_FAERYL",()),'art/interface/popups/Faeryl.dds')
 				if bWin:
 					gc.getGame().setWinner(iWinningTeam, 2)
 
