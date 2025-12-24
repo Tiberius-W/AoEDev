@@ -1501,9 +1501,16 @@
 			<PlotEffectDefenses>
 				<PlotEffectDefense>
 					<PlotEffectType>PLOT_EFFECT_DREAMWORLD</PlotEffectType>
-					<iPlotEffectDefense>50</iPlotEffectDefense>
+					<iPlotEffectDefense>25</iPlotEffectDefense>
 				</PlotEffectDefense>
 			</PlotEffectDefenses>
+			<PlotEffectAttacks>
+				<PlotEffectAttack>
+					<PlotEffectType>PLOT_EFFECT_DREAMWORLD</PlotEffectType>
+					<iPlotEffectAttack>25</iPlotEffectAttack>
+				</PlotEffectAttack>
+			</PlotEffectAttacks>
+			<bDispellable>1</bDispellable>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dream -->						
 			<Type>PROMOTION_DREAM</Type>
@@ -1531,6 +1538,12 @@
 				</DamageTypeResist>
 			</DamageTypeResists>
 			<PromotionSummonPerk>PROMOTION_DREAM</PromotionSummonPerk>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fear -->
 			<Type>PROMOTION_FEAR</Type>

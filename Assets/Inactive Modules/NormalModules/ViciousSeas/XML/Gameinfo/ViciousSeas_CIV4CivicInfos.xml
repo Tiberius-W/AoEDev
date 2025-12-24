@@ -175,10 +175,35 @@
 					<iSpecialistCount>3</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<SpecialistGPPChanges>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iGPPChange>1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+				<SpecialistGPPChange>
+					<SpecialistType>SPECIALIST_HEALER</SpecialistType>
+					<iGPPChange>-1</iGPPChange>
+				</SpecialistGPPChange>
+			</SpecialistGPPChanges>
 		     <AndDependencyTypes>
 		        <DependencyType>MODULE_VCIVICS</DependencyType>
 		     </AndDependencyTypes>
-			<iGreatPeopleRateModifier>-25</iGreatPeopleRateModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_STYGIAN_SHRINE</ImprovementType>

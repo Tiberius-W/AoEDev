@@ -560,6 +560,7 @@
 				<bExclude>1</bExclude>
 				</BuildingExclude>
 			</BuildingExcludes>
+			<iAirlift>1</iAirlift>
 			
 		  <Flavors>
 				<Flavor>
@@ -583,6 +584,7 @@
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
 			<iTradeRouteModifier>25</iTradeRouteModifier>
+			<iTradeRoutes>1</iTradeRoutes>
 	   </BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SHRINE_EARTH</BuildingClass>
@@ -1071,7 +1073,7 @@
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<CommerceModifiers>
 						<iCommerce>0</iCommerce>
-						<iCommerce>10</iCommerce>
+						<iCommerce>15</iCommerce>
 						<iCommerce>0</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
@@ -1212,7 +1214,6 @@
 			<YieldChanges>
 			</YieldChanges>
 			<YieldModifiers>
-				<iYield>15</iYield>
 			</YieldModifiers>
 			<PowerYieldModifiers>
 			</PowerYieldModifiers>
