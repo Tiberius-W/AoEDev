@@ -1130,9 +1130,6 @@ class CvMainInterface:
 			szButtonID = "Hurry" + str(i)
 			szHideList.append( szButtonID )
 
-		szHideList.append( "Hurry0" )
-		szHideList.append( "Hurry1" )
-
 		screen.registerHideList( szHideList, len(szHideList), 0 )
 
 		#Xienwolf Religious HUDs Add Begin
@@ -2456,8 +2453,8 @@ class CvMainInterface:
 				screen.hide( "Conscript" )
 
 				iBtnY += iBtnH
-				iBtnW = 32
-				iBtnH = 28
+				iBtnW = 21
+				iBtnH = 24
 
 				# Hurry Buttons
 				screen.setButtonGFC( "Hurry0", "", "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_HURRY, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
@@ -2470,8 +2467,16 @@ class CvMainInterface:
 				screen.setStyle( "Hurry1", "Button_CityC2_Style" )
 				screen.hide( "Hurry1" )
 
+				iBtnX += iBtnW
+
+				screen.setButtonGFC( "Hurry2", "", "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_HURRY, 2, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+				screen.setStyle( "Hurry2", "Button_CityC1_Style" )
+				screen.hide( "Hurry2" )
+
 				iBtnX = iBtnSX
 				iBtnY += iBtnH
+				iBtnW = 32
+				iBtnH = 28
 
 				# Automate Production Button
 				screen.addCheckBoxGFC( "AutomateProduction", "", "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_AUTOMATE_PRODUCTION, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
@@ -3664,7 +3669,8 @@ class CvMainInterface:
 					szBuffer += u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR))
 
 				szBuffer += u"%s: %d" %(pHeadSelectedCity.getName(), pHeadSelectedCity.getPopulation())
-
+				if (pHeadSelectedCity.getCityPopulationCap()>0):
+					szBuffer+=u"/%d"%(pHeadSelectedCity.getCityPopulationCap())
 				if (pHeadSelectedCity.isOccupation()):
 					szBuffer += u" (%c:%d)" %(CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR), pHeadSelectedCity.getOccupationTimer())
 

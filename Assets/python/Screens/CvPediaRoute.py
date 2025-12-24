@@ -149,17 +149,58 @@ class CvPediaRoute:
 				 self.X_REQUIRES, self.Y_REQUIRES, self.W_REQUIRES, self.H_REQUIRES, PanelStyles.PANEL_STYLE_BLUE50 )
 
 		screen.attachLabel(panelName, "", "  ")
-		lBonus = []
-		iBonusPrereq = gc.getRouteInfo(self.iRoute).getPrereqBonus()
-		if iBonusPrereq != -1:
-			lBonus.append(iBonusPrereq)
-		for i in xrange(gc.getDefineINT("NUM_ROUTE_PREREQ_OR_BONUSES")):
-			iBonusPrereqOr = gc.getRouteInfo(self.iRoute).getPrereqOrBonus(i)
-			if iBonusPrereqOr != -1 and iBonusPrereqOr != iBonusPrereq:
-				lBonus.append(iBonusPrereqOr)
-		if lBonus:
-			for iBonus in lBonus:
-				screen.attachImageButton( panelName, "", gc.getBonusInfo(iBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, 1, False )
+		
+		# add resource buttons
+		bFirst = True
+		iPrereq = gc.getRouteInfo(self.iRoute).getPrereqBonus()
+		if (iPrereq >= 0):
+			bFirst = False
+			screen.attachImageButton( panelName, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False )
+
+		# count the number of OR resources
+		nOr = 0
+		for j in range(gc.getDefineINT("NUM_ROUTE_PREREQ_OR_BONUSES")):
+			if (gc.getRouteInfo(self.iRoute).getPrereqOrBonus(j) > -1):
+				nOr += 1
+
+		szLeftDelimeter = ""
+		szRightDelimeter = ""
+		#  Display a bracket if we have more than one OR resource and an AND resource
+		if (not bFirst):
+			if (nOr > 1):
+				szLeftDelimeter = localText.getText("TXT_KEY_AND", ()) + "( "
+				szRightDelimeter = " ) "
+			elif (nOr > 0):
+				szLeftDelimeter = localText.getText("TXT_KEY_AND", ())
+
+		if len(szLeftDelimeter) > 0:
+			screen.attachLabel(panelName, "", szLeftDelimeter)
+
+		bFirst = True
+		for j in range(gc.getDefineINT("NUM_ROUTE_PREREQ_OR_BONUSES")):
+			eBonus = gc.getRouteInfo(self.iRoute).getPrereqOrBonus(j)
+			if (eBonus > -1):
+				if (not bFirst):
+					screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+				else:
+					bFirst = False
+				screen.attachImageButton( panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, -1, False )
+
+		if len(szRightDelimeter) > 0:
+			screen.attachLabel(panelName, "", szRightDelimeter)
+
+		
+	#	lBonus = []
+	#	iBonusPrereq = gc.getRouteInfo(self.iRoute).getPrereqBonus()
+	#	if iBonusPrereq != -1:
+	#		lBonus.append(iBonusPrereq)
+	#	for i in xrange(gc.getDefineINT("NUM_ROUTE_PREREQ_OR_BONUSES")):
+	#		iBonusPrereqOr = gc.getRouteInfo(self.iRoute).getPrereqOrBonus(i)
+	#		if iBonusPrereqOr != -1 and iBonusPrereqOr != iBonusPrereq:
+	#			lBonus.append(iBonusPrereqOr)
+	#	if lBonus:
+	#		for iBonus in lBonus:
+	#			screen.attachImageButton( panelName, "", gc.getBonusInfo(iBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, 1, False )
 
 	def placeRoutes(self):
 		screen = self.top.getScreen()

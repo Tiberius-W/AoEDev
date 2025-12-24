@@ -596,7 +596,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_ARCHERY_RANGE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ARCHERY_RANGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ARCHERY_RANGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_FLETCHER</ArtDefineTag>
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
@@ -2970,7 +2970,7 @@
 			<Description>TXT_KEY_BUILDING_FLETCHER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ARCHERY_RANGE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_FLETCHER</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ARCHERY_RANGE</ArtDefineTag>
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>

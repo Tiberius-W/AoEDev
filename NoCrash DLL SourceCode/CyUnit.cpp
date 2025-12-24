@@ -1186,10 +1186,10 @@ int CyUnit::getY()
 	return m_pUnit ? m_pUnit->getY_INLINE() : -1;
 }
 
-void CyUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow)
+void CyUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bAllowNotMove)
 {
 	if (m_pUnit)
-		return m_pUnit->setXY(iX, iY, bGroup, bUpdate, bShow);
+		return m_pUnit->setXY(iX, iY, bGroup, bUpdate, bShow,false, bAllowNotMove);
 }
 
 bool CyUnit::at(int iX, int iY)

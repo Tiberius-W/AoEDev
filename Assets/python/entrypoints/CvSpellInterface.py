@@ -4080,7 +4080,7 @@ def reqSpreadTheCouncilOfEsus(caster):
 def spellFoundThrone(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pCity = caster.plot().getPlotCity()
-	if(pPlayer.getCivilizationType()==gc.getInfoType("CIVILIZATION_SVARTALFAR")):
+	if(pPlayer.getCivilizationType()==getInfoType("CIVILIZATION_SVARTALFAR")):
 		pCity.setNumRealBuilding(getInfoType("BUILDINGCLASS_APHOTIC_THRONE_FAERYL"),1)
 		return
 	thrones=["BUILDING_APHOTIC_THRONE_MERCHANT","BUILDING_APHOTIC_THRONE_MERCHANT","BUILDING_APHOTIC_THRONE_SLAVER","BUILDING_APHOTIC_THRONE_SLAVER","BUILDING_APHOTIC_THRONE_POISONER","BUILDING_APHOTIC_THRONE_POISONER","BUILDING_APHOTIC_THRONE_BORED_NOBLE"]
@@ -7060,7 +7060,7 @@ def effectWanderingCurse(caster):
 	pPlot = caster.plot()
 	pPlot2 = findClearPlot(caster, caster.plot())
 	if pPlot2 != -1:
-		caster.setXY(pPlot2.getX(), pPlot2.getY(), False, True, True)
+		caster.setXY(pPlot2.getX(), pPlot2.getY(), False, True, True,True)
 		CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_WANDERING", ()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/Lost.dds',ColorTypes(7),pPlot.getX(),pPlot.getY(),True,True)
 
 def effectFieldExercise(caster):
@@ -9723,7 +9723,7 @@ def exploreLairVampireKraken(argsList):
 def exploreLairOtoloch2(argsList):
 	pUnit, pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
-	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pNewPlot.getX(), pNewPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	NewUnit.setName("Kumitara, the Otoloch Whisperer")
 	
 def exploreLairTsunami(argsList):

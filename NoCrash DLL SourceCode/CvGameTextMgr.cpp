@@ -6997,14 +6997,14 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity) // 
 /*************************************************************************************************/
 /** CityPopCap     Opera  9.8.09            imported by Valkrionn	09.26.09                    **/
 /*************************************************************************************************/
-	if (GET_PLAYER(pCity->getOwner()).getPopulationCap() > 0)
+//	if (GET_PLAYER(pCity->getOwner()).getPopulationCap() > 0)
+//	{
+	if (pCity->getCityPopulationCap() > 0)
 	{
-		if (pCity->getCityPopulationCap() > 0)
-		{
-			szString.append(NEWLINE);
-			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CITY_CAP", pCity->getCityPopulationCap()));
-		}
+		szString.append(NEWLINE);
+		szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CITY_CAP", pCity->getCityPopulationCap()));
 	}
+//	}
 /*************************************************************************************************/
 /** CityPopCap                  END                                                             **/
 /*************************************************************************************************/
@@ -10545,7 +10545,12 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_RACE_PEDIA", GC.getPromotionInfo(ePromotion).getDescription()));
 	}
+	if (GC.getPromotionInfo(ePromotion).isDispellable())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE"));
 
+	}
 	if (GC.getPromotionInfo(ePromotion).getMinLevel() < 0 || (GC.getPromotionInfo(ePromotion).isNoXP() && GC.getPromotionInfo(ePromotion).getGoldCost() != 0) || GC.getPromotionInfo(ePromotion).isRace() || GC.getPromotionInfo(ePromotion).isEquipment())
 	{
 		szBuffer.append(pcNewline);
@@ -11257,7 +11262,7 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	if (GC.getPromotionInfo(ePromotion).getSpecialCargo() != NO_SPECIALUNIT)
 	{
 		szBuffer.append(pcNewline);
-		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CARRIES", GC.getSpecialUnitInfo ((SpecialUnitTypes) GC.getPromotionInfo(ePromotion).getSpecialCargo()).getTextKeyWide()));
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_CARRIES", GC.getSpecialUnitInfo ((SpecialUnitTypes) GC.getPromotionInfo(ePromotion).getSpecialCargo()).getTextKeyWide()));
 	}
 
 	if (GC.getPromotionInfo(ePromotion).isInfluence())

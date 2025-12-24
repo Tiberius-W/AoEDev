@@ -11102,6 +11102,11 @@ void CvGame::createAnimals()
 					eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_MURDERHOOF");
 					iNetValue = 1000;
 				}
+				if (isTikuCurse())
+				{
+					eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_HORNSE");
+					iNetValue = 1000;
+				}
 			}
 
 			// Get the plot-modulated weight summation of all possible animals to spawn
@@ -11842,9 +11847,39 @@ void CvGame::changeGlobalFlagValue(FlagTypes eFlag, int eChange)
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		GET_PLAYER((PlayerTypes)iI).changeFlagValue(eFlag, eChange);
 }
+bool CvGame::isTikuCurse()
+{
+	if (isHasTrophy("TROPHY_TIKU_CURSE"))
+	{
+		return true;
+	}
+	for (int iJ = 0; iJ < MAX_CIV_PLAYERS; iJ++)
+	{
+		CvWString wDefault = CvWString::format(L"Tikumara").GetCString();
+		CvWString wDefault2 = CvWString::format(L"Tikum").GetCString();
+		if (GET_PLAYER((PlayerTypes)iJ).getLeaderType()!=NO_LEADER && GET_PLAYER((PlayerTypes)iJ).isAlive() && ((GET_PLAYER((PlayerTypes)iJ).getNameKey() == wDefault || GET_PLAYER((PlayerTypes)iJ).getNameKey() == wDefault2) && ((ModuleIds)GC.getInfoTypeForString("MODULE_MCWHK") != NO_MODULE)))
+		{
+			if (!isHasTrophy("TROPHY_TIKU_CURSE"))
+			{
+				changeTrophyValue("TROPHY_TIKU_CURSE", 1);
+			}
+
+			return true;
+		}
+	}
+	
+	return false;
+}
+
 bool CvGame::isUniDay() {
 	time_t rawtime;
 	tm* ptm;
+
+	if (isTikuCurse())
+	{
+		return true;
+	}
+	
 
 	time(&rawtime);
 

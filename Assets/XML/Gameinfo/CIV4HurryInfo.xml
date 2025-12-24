@@ -24,5 +24,13 @@
 			<bAnger>0</bAnger>
 			<Button>Art/Interface/MainScreen/CityScreen/hurry_commerce.dds</Button>
 		</HurryInfo>
+		<HurryInfo>
+			<Type>HURRY_CULTURE_VS</Type>
+			<Description>TXT_KEY_HURRY_CULTURE_VS</Description>
+			<iGoldPerProduction>0</iGoldPerProduction>
+			<iCulturePerProduction>3</iCulturePerProduction>
+			<iProductionPerPopulation>0</iProductionPerPopulation>
+			<Button>Art/Interface/MainScreen/CityScreen/hurry_slavery.dds</Button>
+		</HurryInfo>
 	</HurryInfos>
 </Civ4HurryInfo>

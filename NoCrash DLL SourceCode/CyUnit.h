@@ -325,7 +325,7 @@ public:
 
 	int getX();
 	int getY();
-	void setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow);
+	void setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bAllowNotMove=false);
 	bool at(int iX, int iY);
 	bool atPlot(CyPlot* pPlot);
 	CyPlot* plot();

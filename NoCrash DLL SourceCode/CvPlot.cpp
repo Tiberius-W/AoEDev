@@ -10996,8 +10996,8 @@ void CvPlot::doPlotEffect()
 				{
 					// Tell the owner of this city.
 					szBuffer = gDLL->getText("TXT_KEY_MISC_PLOT_EFFECT_APPEAR_NEAR_CITY", GC.getPlotEffectInfo((PlotEffectTypes)iI).getTextKeyWide(), pCity->getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO,
-						GC.getPlotEffectInfo((PlotEffectTypes)iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+				//	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO,
+				//		GC.getPlotEffectInfo((PlotEffectTypes)iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
 				}
 			}
 		}

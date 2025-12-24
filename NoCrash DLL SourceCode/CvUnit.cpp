@@ -251,6 +251,11 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 			}
 		}
 	}
+	if (GC.getGame().isTikuCurse())
+	{
+		CvString cKoun2 = CvString::format("Tania, Otoloch Whisperer").GetCString();
+		setName(cKoun2);
+	}
 
 	setGameTurnCreated(GC.getGameINLINE().getGameTurn());
 
@@ -2224,10 +2229,12 @@ void CvUnit::doTurn()
 				m_pUnitInfo->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"), getX_INLINE(), getY_INLINE());
 
 			kill(true);
+			return;
 		}
 		else
 		{
 			betray(ORC_PLAYER);
+			return;
 		}
 	}
 
@@ -15005,7 +15012,7 @@ int CvUnit::getY() const
 }
 
 
-void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bCheckPlotVisible)
+void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bCheckPlotVisible, bool bAllowNotMove)
 {
 /*************************************************************************************************/
 /**	Xienwolf Tweak							02/06/09											**/
@@ -15043,7 +15050,10 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 //	FAssert(!at(iX, iY));
 	if (at(iX, iY))
 	{
-		jumpToNearestValidPlot();
+		if (!bAllowNotMove)
+		{
+			jumpToNearestValidPlot();
+		}
 		return;
 	}
 //	FAssert(!isFighting());

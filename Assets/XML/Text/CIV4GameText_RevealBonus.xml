@@ -11505,12 +11505,12 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Spanish>Fortified Abbey</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_PROMOTION_CARRIES</Tag>
+		<English>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</English>
+		<French>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</French>
+		<German>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</German>
+		<Italian>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</Italian>
+		<Spanish>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

@@ -246,6 +246,8 @@ class CvPediaBonus:
 			bFirst = True
 			szYield = u""
 			bEffect = False
+			if (gc.getImprovementInfo(j).isGraphicalOnly()):
+				continue
 			for k in range(YieldTypes.NUM_YIELD_TYPES):
 				iYieldChange = gc.getImprovementInfo(j).getImprovementBonusYield(self.iBonus, k)
 				if (iYieldChange != 0):

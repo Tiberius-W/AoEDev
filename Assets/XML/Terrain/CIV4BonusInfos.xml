@@ -598,7 +598,7 @@
 		<BonusInfo>		<!-- Deer Arctic 12-->
 			<Type>BONUS_DEER_ARCTIC</Type>
 			<Description>TXT_KEY_BONUS_DEER_ARCTIC</Description>
-			<Civilopedia>TXT_KEY_BONUS_DEER_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BONUS_DEER_ARCTIC_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_DEER_ARCTIC</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
@@ -2968,7 +2968,7 @@
 		<BonusInfo>		<!-- Mana Refined -->
 			<Type>BONUS_REFINED_MANA</Type>
 			<Description>TXT_KEY_BONUS_REFINED_MANA</Description>
-			<Civilopedia>TXT_KEY_BONUS_REFINED_MANA_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_REFINERY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BONUS_REFINED_MANA_STRATEGY</Strategy>
 			<BonusClassType>BONUSCLASS_MANA</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_REFINED_MANA</ArtDefineTag>

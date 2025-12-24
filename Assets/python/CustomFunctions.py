@@ -982,12 +982,12 @@ class CustomFunctions:
 				if (iImprovement == Improvement["Swamp"]) and (iTerrain != Terrain["Marsh"]) :
 					setImprov(-1)
 
-			if iAreThereMalakimHere and bIsOwned:
-				if eCiv == Civ["Malakim"]:
-					if iTerrain == Terrain["Desert"]:
-						if pPlot.getRouteType() == Improvement["Road"]:
-							if randNum(100, "Sand Storm") < 20:
-								pPlot.setRouteType(-1)
+		#	if iAreThereMalakimHere and bIsOwned:
+		#		if eCiv == Civ["Malakim"]:
+		#			if iTerrain == Terrain["Desert"]:
+		#				if pPlot.getRouteType() == Improvement["Road"]:
+		#					if randNum(100, "Sand Storm") < 20:
+		#						pPlot.setRouteType(-1)
 
 		#### Haunted Lands Section
 			if iAreThereScionsHere:

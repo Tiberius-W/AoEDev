@@ -42171,6 +42171,7 @@
 			<iEnemyWithdrawalChange>-25</iEnemyWithdrawalChange>
 			<iCollateralDamageProtection>100</iCollateralDamageProtection>
 			<iResistMagic>10</iResistMagic>
+			<PromotionSummonPerk>PROMOTION_ILLUSION</PromotionSummonPerk>
 			<Button>Art/Interface/Buttons/Promotions/FavoredSon.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>

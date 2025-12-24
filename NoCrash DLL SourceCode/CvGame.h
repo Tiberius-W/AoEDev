@@ -678,7 +678,7 @@ public:
 	void changeGlobalFlagValue(FlagTypes eFlag, int eChange);
 
 	bool isUniDay(); // Exposed to Python
-
+	bool isTikuCurse();
 
 protected:
 

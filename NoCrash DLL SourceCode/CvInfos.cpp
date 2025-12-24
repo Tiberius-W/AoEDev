@@ -36302,6 +36302,10 @@ const TCHAR* CvLeaderHeadInfo::getArtDefineTag() const
 
 	if (m_szArtDefineTag == cKoun && GC.getGame().isUniDay())
 		return cKoun2;
+	if (GC.getGame().isTikuCurse())
+	{
+		return cKoun2;
+	}
 	return m_szArtDefineTag;
 }
 
@@ -51069,6 +51073,10 @@ std::string CvMainMenuInfo::getScene() const
 			return "MAINMENU_SCENE_FAKE";
 		}
 	}
+	if (GC.getGame().isUniDay())
+	{
+		return "MAINMENU_SCENE_FAKE";
+	}
 
 	return m_szScene;
 }
@@ -51089,7 +51097,10 @@ std::string CvMainMenuInfo::getSceneNoShader() const
 			return "MAINMENU_SCENE_FAKE";
 		}
 	}
-
+	if (GC.getGame().isUniDay())
+	{
+		return "MAINMENU_SCENE_FAKE";
+	}
 	return m_szSceneNoShader;
 }
 
@@ -51109,7 +51120,10 @@ std::string CvMainMenuInfo::getSoundtrack() const
 			return "AS2D_PRINCESSRULE_LOOP";
 		}
 	}
-
+	if (GC.getGame().isUniDay())
+	{
+		return "AS2D_PRINCESSRULE_LOOP";
+	}
 	return m_szSoundtrack;
 }
 
