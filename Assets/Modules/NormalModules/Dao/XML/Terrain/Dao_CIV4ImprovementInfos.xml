@@ -14,18 +14,6 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_AIR</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_AIR</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
@@ -84,18 +72,6 @@
 			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_EARTH</ArtDefineTag>
 			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_MANA</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_EARTH</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
@@ -156,18 +132,6 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_WATER</ArtDefineTag>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
-					<BonusType>BONUS_MANA</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_WATER</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
@@ -226,18 +190,6 @@
 			<Civilopedia>TXT_KEY_UNIT_HERMIT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANA_FIRE</ArtDefineTag>
 			<BonusTypeStructs>
-				<BonusTypeStruct>
-					<BonusType>BONUS_MANA</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>

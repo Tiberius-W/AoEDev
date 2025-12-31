@@ -97,7 +97,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_WALDRUN in UNIT_ARTSTYLE_ONCE_ELF -->
 			<Type>ART_DEF_UNIT_WALDRUN_ONCE_ELVES</Type>
-			<Button>Modules/NormalModules/ElfnDeath/Art/Interface/LeaderHeads/WaldrunLeaderButton.dds</Button>
+			<Button>Modules/NormalModules/ElfnDeath/Art/Interface/LeaderHeads/veronica_anrathi_annec_B.dds</Button>
 			<fScale>0.4</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

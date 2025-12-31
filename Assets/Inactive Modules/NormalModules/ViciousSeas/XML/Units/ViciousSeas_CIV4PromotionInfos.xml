@@ -751,6 +751,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
+			<bDispellable>1</bDispellable>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Spells/SeaSneak.dds</Button>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
@@ -1571,6 +1572,7 @@
 			<Button>Art/Interface/Buttons/Promotions/Waterwalking.dds</Button>
 		    <bWaterWalking>1</bWaterWalking>
 			<iVisibilityChange>2</iVisibilityChange>
+			<bDispellable>1</bDispellable>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- I Cant Swim!  -->
 			<Type>PROMOTION_ICANTSWIM</Type>
