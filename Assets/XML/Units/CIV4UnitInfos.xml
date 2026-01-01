@@ -1728,7 +1728,7 @@
 		<UnitInfo>        <!-- Auric - Winter -->
 			<Class>UNITCLASS_AURIC_WINTER</Class>
 			<Type>UNIT_AURIC_WINTER</Type>
-			<Combat>UNITAI_RESERVE</Combat>
+			<Combat>UNITCOMBAT_COMMANDER</Combat>
 			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AURIC_WINTER</Description>
 			<Civilopedia>TXT_KEY_LEADER_AURIC_PEDIA</Civilopedia>
