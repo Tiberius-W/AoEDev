@@ -1511,6 +1511,12 @@
 					<iPlotEffectAttack>25</iPlotEffectAttack>
 				</PlotEffectAttack>
 			</PlotEffectAttacks>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
 			<bDispellable>1</bDispellable>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dream -->						

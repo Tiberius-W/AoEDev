@@ -447,10 +447,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-					<BuildingType>BUILDING_MONUMENT_DREAM_OF_JOY</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
 					<BuildingType>BUILDING_DREAM_OF_PLENTY</BuildingType>
 				</Building>

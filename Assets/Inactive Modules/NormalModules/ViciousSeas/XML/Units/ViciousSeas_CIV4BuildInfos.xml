@@ -11,7 +11,7 @@
 			<Description>TXT_KEY_BUILD_HUNTING_REEF</Description>
 			<Help/>
 			<PrereqTech>TECH_SWAMPDWELLING</PrereqTech>
-			<iTime>400</iTime>
+			<iTime>1300</iTime>
 			<iCost>0</iCost>
 			<ImprovementType>IMPROVEMENTCLASS_HUNTING_REEF</ImprovementType>
 			<RouteType>NONE</RouteType>
@@ -52,9 +52,9 @@
 			<Description>TXT_KEY_BUILD_TRAWLING_BOATS</Description>
 			<Help/>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
-			<iTime>0</iTime>
+			<iTime>1300</iTime>
 			<iCost>0</iCost>
-			<bKill>1</bKill>
+			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
@@ -71,7 +71,7 @@
 			<Description>TXT_KEY_BUILD_TRAWLING_BOATS</Description>
 			<Help/>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
-			<iTime>400</iTime>
+			<iTime>1300</iTime>
 			<iCost>0</iCost>
 			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
@@ -83,6 +83,27 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Reefs.dds</Button>
+		</BuildInfo>	
+		<BuildInfo> <!-- Aquatic Pyre -->
+			<Type>BUILD_PYRE_AQUATIC</Type>
+			<iTime>1300</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+		</BuildInfo>
+		<BuildInfo> <!-- Fishing Boats -->
+			<Type>BUILD_FISHING_BOATS</Type>
+			<iTime>1300</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+		</BuildInfo>
+		<BuildInfo> <!-- Fishing Boats Lanun -->
+			<Type>BUILD_FISHING_BOATS_LANUN</Type>
+			<iTime>1300</iTime>
+		</BuildInfo>
+		<BuildInfo> <!-- Fishing Boats Wyrmfisher -->
+			<Type>BUILD_FISHING_BOATS_WYRMFISHER</Type>
+			<iTime>1300</iTime>
+			<bKill>0</bKill>
 		</BuildInfo>
 		<BuildInfo> <!-- Stygian Shrine -->
 			<Type>BUILD_STYGIAN_SHRINE</Type>

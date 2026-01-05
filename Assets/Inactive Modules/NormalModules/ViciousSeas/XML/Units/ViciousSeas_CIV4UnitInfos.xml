@@ -1654,6 +1654,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iCost>75</iCost>
 		</UnitInfo>
 		<UnitInfo>        <!-- WyrmFisher -->
 			<Class>UNITCLASS_WYRMFISHER</Class>
@@ -1668,6 +1669,8 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iWorkRate>150</iWorkRate>
+			<iCost>75</iCost>
 		</UnitInfo>	
 		<UnitInfo>        <!-- Workboat (Lanun) -->
 			<Class>UNITCLASS_WORKBOAT</Class>
@@ -1686,6 +1689,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iWorkRate>150</iWorkRate>
 		</UnitInfo>
 		<UnitInfo>        <!-- Funeral Barge -->
 			<Class>UNITCLASS_WORKBOAT</Class>
@@ -2005,6 +2009,7 @@
 		     <AndDependencyTypes>
 		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
+			<iCost>75</iCost>
 		</UnitInfo>
 		<UnitInfo>        <!-- Great Prophet -->
 			<Class>UNITCLASS_PROPHET</Class>
