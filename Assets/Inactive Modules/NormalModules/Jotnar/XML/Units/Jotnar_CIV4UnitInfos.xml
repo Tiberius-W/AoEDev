@@ -1320,12 +1320,12 @@
 			<iTier>3</iTier>
 			<iWeaponTierMax>2</iWeaponTierMax>
 		</UnitInfo>
-		<UnitInfo>		<!-- Fyrd -->
+		<UnitInfo>		<!-- Huscarl -->
 			<Class>UNITCLASS_AXEMAN</Class>
 			<Type>UNIT_FYRD</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_FYRD</Description>
+			<Description>TXT_KEY_UNIT_HUSCARL</Description>
 			<Civilopedia>TXT_KEY_UNIT_HILL_GIANT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -1341,72 +1341,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_FARM</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_MINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WORKSHOP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_LUMBERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINDMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WATERMILL</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PLANTATION</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_QUARRY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_PASTURE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_CAMP</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_COTTAGE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_FORT</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_REMOVE_JUNGLE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_REMOVE_FOREST</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
@@ -1706,12 +1640,12 @@
 			<iTier>2</iTier>
 			<iWeaponTierMax>1</iWeaponTierMax>
 		</UnitInfo>
-		<UnitInfo>		<!-- Huscarl -->
+		<UnitInfo>		<!-- Fyrd -->
 			<Class>UNITCLASS_WARRIOR</Class>
 			<Type>UNIT_HUSCARL</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_HUSCARL</Description>
+			<Description>TXT_KEY_UNIT_FYRD</Description>
 			<Civilopedia>TXT_KEY_UNIT_JOT_WORKER_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
@@ -2251,7 +2185,7 @@
 			<iPopCost>1</iPopCost>
 			<iAdvancedStartCost>120</iAdvancedStartCost>
 			<iMoves>2</iMoves>
-			<iWorkRate>300</iWorkRate>
+			<iWorkRate>150</iWorkRate>
 			<iCombat>6</iCombat>
 			<iCollateralDamage>100</iCollateralDamage>
 			<iCollateralDamageLimit>50</iCollateralDamageLimit>

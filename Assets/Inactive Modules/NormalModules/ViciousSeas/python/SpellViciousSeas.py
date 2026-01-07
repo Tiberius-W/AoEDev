@@ -255,6 +255,7 @@ def spellGlimpseUnseen(caster):
 	iHero = getInfoType('PROMOTION_HERO')
 	iPromotionBerserk = getInfoType('PROMOTION_ENRAGED')
 	iPromotionHidden = getInfoType('PROMOTION_HIDDEN_NATIONALITY')
+	iPromotionHeld = getInfoType('PROMOTION_LEASH_4')
 	iAifonTeam = pPlayer.getTeam()
 
 	for i in xrange (CyMap().numPlots()): # check whole map
@@ -271,4 +272,6 @@ def spellGlimpseUnseen(caster):
                                                 pUnit.setPromotionDuration(iPromotionBerserk, 5)
                                                 pUnit.setHasPromotion(iPromotionHidden, True)
                                                 pUnit.setPromotionDuration(iPromotionHidden, 5)
+                                                pUnit.setHasPromotion(iPromotionHeld, True)
+                                                pUnit.setPromotionDuration(iPromotionHeld, 5)
 
