@@ -1137,6 +1137,29 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_UNMADE -->
+			<Type>ART_DEF_UNIT_UNMADE</Type>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/UnmadeButton.dds</Button>
+			<fScale>24.8</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Unmade/Unmade.nif</NIF>
+			<KFM>Art/animations/maar2/maar.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>Bip01 Pelvis</ShadowAttachNode>
+				<fShadowScale>0.02</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.28</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_NIGHTMARE HAG -->
 			<Type>ART_DEF_UNIT_NIGHTMARE_HAG</Type>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/NightmareHag.dds</Button>
@@ -1188,7 +1211,7 @@
 		<UnitArtInfo>  <!-- UNIT_HATEFUL_HORROR -->
 			<Type>ART_DEF_UNIT_HATEFUL_HORROR</Type>
 			<Button>Art/Interface/Buttons/Units/Scions/abomination.dds</Button>
-			<fScale>40.0</fScale>
+			<fScale>35.0</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -1221,6 +1244,29 @@
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>1</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_HUNGER -->
+			<Type>ART_DEF_UNIT_HUNGER</Type>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/EmptyHungerButton.dds</Button>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Units/Civs/DreamoftheAifons/Hunger/Hunger.nif</NIF>
+			<KFM>Art/Units/Swordsman/Swordsman.kfm</KFM>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>0.85</fShadowScale>
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>

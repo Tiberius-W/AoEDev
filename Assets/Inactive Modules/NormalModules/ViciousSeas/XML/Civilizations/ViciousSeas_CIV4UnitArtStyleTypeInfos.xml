@@ -920,9 +920,17 @@
 				<StyleUnit>
 					<UnitType>UNIT_ADEPT</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_EMPTY</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1057,9 +1065,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_HUNTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1105,14 +1113,14 @@
 				<StyleUnit>
 					<UnitType>UNIT_SCOUT</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1152,17 +1160,17 @@
 			<StyleUnit>
 					<UnitType>UNIT_BEASTMASTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_RANGER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>

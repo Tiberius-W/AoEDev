@@ -1408,6 +1408,166 @@
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Nightmare Undine --> 
+			<Type>PROMOTION_NIGHTMARE_UNDINE</Type>
+			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
+			<ReplaceArtType>ART_DEF_UNIT_UNMADE</ReplaceArtType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</UnitArtStyleType>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_UNDINE</PrereqUnit>
+				<PrereqUnit>UNIT_SCOUT</PrereqUnit>
+				<PrereqUnit>UNIT_HUNTER</PrereqUnit>
+				<PrereqUnit>UNIT_BEASTMASTER</PrereqUnit>
+			</PrereqUnits>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			</PrereqCivilizations>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
+			<bHiddenNationality>1</bHiddenNationality>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Nightmare Empty --> 
+			<Type>PROMOTION_NIGHTMARE_EMPTY</Type>
+			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
+			<ReplaceArtType>ART_DEF_UNIT_HUNGER</ReplaceArtType>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_EMPTY</PrereqUnit>
+			</PrereqUnits>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+		    <bWaterWalking>1</bWaterWalking>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
+			</PrereqCivilizations>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
+			<bHiddenNationality>1</bHiddenNationality>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Dreaming Aifon -->
 			<Type>PROMOTION_DREAMING_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM_AIFON</Description>
@@ -1420,12 +1580,16 @@
 				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HEMAH</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HATEFUL_GLARE</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_EMPTY</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_UNDINE</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HEMAH</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_HATEFUL_GLARE</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_EMPTY</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_UNDINE</Promotion>
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
