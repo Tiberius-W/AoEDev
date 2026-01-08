@@ -1100,7 +1100,7 @@
 		<PromotionInfo>		<!-- Nightmare Aifon --> <!-- Dream of the Aifons start -->
 			<Type>PROMOTION_NIGHTMARE_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
-			<ReplaceArtType>ART_DEF_UNIT_NIGHTMARE_AIFON</ReplaceArtType>
+			<ReplaceArtType>ART_DEF_UNIT_HATEFUL_HORROR</ReplaceArtType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</UnitArtStyleType>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -1411,14 +1411,14 @@
 		<PromotionInfo>		<!-- Nightmare Undine --> 
 			<Type>PROMOTION_NIGHTMARE_UNDINE</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
-			<ReplaceArtType>ART_DEF_UNIT_UNMADE</ReplaceArtType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</UnitArtStyleType>
-			<PrereqUnits>
-				<PrereqUnit>UNIT_UNDINE</PrereqUnit>
-				<PrereqUnit>UNIT_SCOUT</PrereqUnit>
-				<PrereqUnit>UNIT_HUNTER</PrereqUnit>
-				<PrereqUnit>UNIT_BEASTMASTER</PrereqUnit>
-			</PrereqUnits>
+			<ReplaceArtType>ART_DEF_UNIT_UNMADE</ReplaceArtType>
+			<PrereqPromotionORs>
+				<PrereqPromotionOR>
+					<PromotionType>PROMOTION_SIREN_VS</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionOR>
+			</PrereqPromotionORs>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
 		    <bWaterWalking>1</bWaterWalking>
@@ -1734,6 +1734,14 @@
 					<iPlotEffectAttack>30</iPlotEffectAttack>
 				</PlotEffectAttack>
 			</PlotEffectAttacks>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/UndineButton.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- SLEEPWALKING -->

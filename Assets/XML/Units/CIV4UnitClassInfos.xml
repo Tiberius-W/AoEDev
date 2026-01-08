@@ -688,6 +688,17 @@
 			<DefaultUnit>UNIT_OTOLOCH</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- OTOLOCH QUEEN -->
+			<Type>UNITCLASS_OTOLOCH_QUEEN</Type>
+			<Description>TXT_KEY_UNIT_OTOLOCH</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_OTOLOCH_QUEEN</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- Nuckelavee -->
 			<Type>UNITCLASS_NUCKELAVEE</Type>
 			<Description>TXT_KEY_UNIT_NUCKELAVEE</Description>

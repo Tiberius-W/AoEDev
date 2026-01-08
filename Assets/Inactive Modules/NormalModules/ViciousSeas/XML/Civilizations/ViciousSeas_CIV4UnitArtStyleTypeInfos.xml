@@ -588,24 +588,6 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_GALLEY</UnitType>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
-					</UnitMeshGroup>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
-					</UnitMeshGroup>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
-					</UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
 					<UnitType>UNIT_ARCHER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</EarlyArtDefineTag>
@@ -912,6 +894,24 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_SEVERED_SOUL</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_UNDINE</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNDINE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNDINE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNDINE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNDINE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNDINE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNDINE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNDINE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNDINE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNDINE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>	
 		<UnitArtStyleTypeInfo>	<!--Dream of the Aifons - Nightmares -->
@@ -936,130 +936,130 @@
 				<StyleUnit>
 					<UnitType>UNIT_GALLEY</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_ARCHER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_CHARIOT</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_CHARIOT</UnitType>
 					<PromotionType>PROMOTION_HYAPON</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_CHARIOT</UnitType>
 					<PromotionType>PROMOTION_NIGHTMARE</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSE_ARCHER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSE_ARCHER</UnitType>
 					<PromotionType>PROMOTION_HYAPON</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSE_ARCHER</UnitType>
 					<PromotionType>PROMOTION_NIGHTMARE</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSEMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSEMAN</UnitType>
 					<PromotionType>PROMOTION_HYAPON</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HORSEMAN</UnitType>
 					<PromotionType>PROMOTION_NIGHTMARE</PromotionType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1069,13 +1069,18 @@
 						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_LONGBOWMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1105,9 +1110,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_MAGE</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1124,37 +1129,55 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_UNDINE</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_WAR_ELEPHANT</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_WARRIOR</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_ARCHMAGE</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
@@ -1164,6 +1187,21 @@
 						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_RANGER</UnitType>
@@ -1172,83 +1210,93 @@
 						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
 					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_MARKSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_SWORDSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_IMMORTAL</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_SPEARMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_PIKEMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			<StyleUnit>
 					<UnitType>UNIT_PHALANX</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_NIGHTMARE_AIFON</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				</StyleUnits>

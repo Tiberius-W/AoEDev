@@ -7587,6 +7587,10 @@
 					<UnitType>UNIT_OTOLOCH</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_OTOLOCH_QUEEN</UnitClassType>
+					<UnitType>UNIT_OTOLOCH_QUEEN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_BUNYIP</UnitClassType>
 					<UnitType>UNIT_BUNYIP</UnitType>
 				</Unit>
