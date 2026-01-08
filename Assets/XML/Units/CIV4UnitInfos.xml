@@ -48331,6 +48331,12 @@
 				<Promotion>PROMOTION_WOODSMAN1</Promotion>
 			</DenyPromotions>
 			<iTier>4</iTier>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_COLD</DamageType>
