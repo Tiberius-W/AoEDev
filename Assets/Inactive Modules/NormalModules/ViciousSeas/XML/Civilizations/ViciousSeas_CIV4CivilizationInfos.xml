@@ -521,6 +521,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_DREAM_CONDATIS</UnitClassType>
+					<UnitType>UNIT_DREAM_CONDATIS</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
 				</Unit>

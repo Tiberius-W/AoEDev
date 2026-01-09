@@ -51,5 +51,16 @@
 			<iMercenaryWeight>20</iMercenaryWeight>
 			<bUnique>1</bUnique>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Dream Condatis -->
+			<Type>UNITCLASS_DREAM_CONDATIS</Type>
+			<Description>TXT_KEY_UNIT_DREAM_CONDATIS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DREAM_CONDATIS</DefaultUnit>
+			<iMercenaryWeight>20</iMercenaryWeight>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
 	</UnitClassInfos>
 </Civ4UnitClassInfos>

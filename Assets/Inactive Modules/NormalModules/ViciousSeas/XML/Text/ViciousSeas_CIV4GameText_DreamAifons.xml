@@ -411,12 +411,12 @@ This means the only way they can capture a city is by culture flipping it!
 		<Spanish>Heart of the Dream</Spanish>
 	</TEXT>
 	<TEXT> 
-		<Tag>TXT_KEY_UNIT_TRENTON</Tag>
-		<English>Trenton</English>
-		<French>Trenton</French>
-		<German>Trenton</German>
-		<Italian>Trenton</Italian>
-		<Spanish>Trenton</Spanish>
+		<Tag>TXT_KEY_UNIT_DREAM_CONDATIS</Tag>
+		<English>Condatis</English>
+		<French>Condatis</French>
+		<German>Condatis</German>
+		<Italian>Condatis</Italian>
+		<Spanish>Condatis</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_UNIT_UNDINE</Tag>
