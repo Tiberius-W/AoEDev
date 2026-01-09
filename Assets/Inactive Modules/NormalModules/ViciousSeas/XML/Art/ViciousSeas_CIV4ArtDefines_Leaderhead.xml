@@ -54,5 +54,13 @@
 			<NoShaderNIF/>
 			<BackgroundKFM/>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DREAM_CONDATIS</Type>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/LeaderHeads/CondatisDaneenWilkerson2.dds</Button>
+			<NIF>Modules/NormalModules/ViciousSeas/Art/Interface/LeaderHeads/CondatisDaneenWilkerson.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

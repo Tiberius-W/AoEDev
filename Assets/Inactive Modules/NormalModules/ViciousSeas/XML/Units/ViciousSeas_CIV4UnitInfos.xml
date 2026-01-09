@@ -2558,6 +2558,7 @@
 				</FreePromotion>
 			</FreePromotions>
 			<iModifyGlobalCounter>-3</iModifyGlobalCounter>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<iTier>4</iTier>
 			<Image>Modules/NormalModules/ViciousSeas/Art/Interface/Popups/DreamCondatisBanner.dds</Image>
 			<Quote>TXT_KEY_UNIT_DREAM_CONDATIS_STRATEGY</Quote>
@@ -2568,6 +2569,7 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iAlignmentModifier>6</iAlignmentModifier>
+			<PyPerTurn>perTurnCondatis(pCaster)</PyPerTurn>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

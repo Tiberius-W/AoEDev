@@ -347,6 +347,30 @@ This means the only way they can capture a city is by culture flipping it!
 		<Spanish>Dreams</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_TRAITCLASS_REAL_VS</Tag>
+		<English>Redeemer of the Broken</English>
+		<French>Redeemer of the Broken</French>
+		<German>Redeemer of the Broken</German>
+		<Italian>Redeemer of the Broken</Italian>
+		<Spanish>Redeemer of the Broken</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_TRAIT_REAL_VS_SHORT</Tag>
+		<English>RL</English>
+		<French>RL</French>
+		<German>RL</German>
+		<Italian>RL</Italian>
+		<Spanish>RL</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_TRAITCLASS_REAL_VS_PEDIA</Tag>
+		<English>Freed from Hastur's obsessions, Condatis leads the Dreamlings into the waking world.</English>
+		<French>Freed from Hastur's obsessions, Condatis leads the Dreamlings into the waking world.</French>
+		<German>Freed from Hastur's obsessions, Condatis leads the Dreamlings into the waking world.</German>
+		<Italian>Freed from Hastur's obsessions, Condatis leads the Dreamlings into the waking world.</Italian>
+		<Spanish>Freed from Hastur's obsessions, Condatis leads the Dreamlings into the waking world.</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_FEATURE_DREAMWORLD</Tag>
 		<English>The Dreaming</English>
 		<French>The Dreaming</French>
@@ -369,6 +393,14 @@ This means the only way they can capture a city is by culture flipping it!
 		<German>Hastur</German>
 		<Italian>Hastur</Italian>
 		<Spanish>Hastur</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_LEADER_DREAM_CONDATIS</Tag>
+		<English>Condatis, Twin-Soul</English>
+		<French>Condatis, Twin-Soul</French>
+		<German>Condatis, Twin-Soul</German>
+		<Italian>Condatis, Twin-Soul</Italian>
+		<Spanish>Condatis, Twin-Soul</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Tag>
@@ -417,6 +449,22 @@ This means the only way they can capture a city is by culture flipping it!
 		<German>Condatis</German>
 		<Italian>Condatis</Italian>
 		<Spanish>Condatis</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_PROMOTION_TWIN_SOUL_VS</Tag>
+		<English>Twin-Soul</English>
+		<French>Twin-Soul</French>
+		<German>Twin-Soul</German>
+		<Italian>Twin-Soul</Italian>
+		<Spanish>Twin-Soul</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_PROMOTION_MERGED_VS</Tag>
+		<English>Condatis As One</English>
+		<French>Condatis As One</French>
+		<German>Condatis As One</German>
+		<Italian>Condatis As One</Italian>
+		<Spanish>Condatis As One</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_UNIT_UNDINE</Tag>

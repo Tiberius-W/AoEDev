@@ -9725,6 +9725,11 @@ def exploreLairOtoloch2(argsList):
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	NewUnit.setName("Kumitara, the Otoloch Whisperer")
+
+def exploreLairCondatis(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_CONDATIS'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 def exploreLairTsunami(argsList):
 	pUnit, pPlot = argsList

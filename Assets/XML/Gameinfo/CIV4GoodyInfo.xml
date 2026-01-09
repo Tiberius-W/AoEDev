@@ -4491,6 +4491,23 @@
 			<bUnique>1</bUnique>
 			<PythonCallback>exploreLairOtoloch2</PythonCallback>
 		</GoodyInfo>
+		<GoodyInfo>	<!--Condatis			Unique-->
+			<Type>GOODY_EXPLORE_LAIR_CONDATIS</Type>
+			<GoodyClasses>
+				<GoodyClass>
+					<GoodyClassType>GOODYCLASS_SHIMMERING</GoodyClassType>
+					<bGoodyClass>1</bGoodyClass>
+				</GoodyClass>
+			</GoodyClasses>
+			<iWeight>50</iWeight>
+			<Description>TXT_KEY_GOODY_EXPLORE_LAIR_CONDATIS</Description>
+			<Sound>AS2D_GOODY_SETTLER</Sound>
+			<iDestroyLairChance>200</iDestroyLairChance>
+			<bBad>0</bBad>
+			<bUnique>1</bUnique>
+			<PythonCallback>exploreLairCondatis</PythonCallback>
+			<PrereqEra>ERA_CLASSICAL</PrereqEra>
+		</GoodyInfo>
 		<GoodyInfo> <!--VampireKraken				Lair	 Results Shimmering      Bad  -->
 			<Type>GOODY_EXPLORE_LAIR_SPAWN_VAMPIRE_KRAKEN</Type>
 			<GoodyClasses>

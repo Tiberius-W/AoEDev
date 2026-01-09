@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Event Trigger Infos -->
+<Civ4EventTriggerInfos xmlns="x-schema:ViciousSeas_CIV4EventSchema.xml">
+	<EventTriggerInfos>
+		<EventTriggerInfo>	<!--Condatis Dreaming1 -->
+			<Type>EVENTTRIGGER_CONDATIS_DREAM1</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_DREAM_CONDATIS</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_DREAM_CONDATIS</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<PrereqFlags>
+				<PrereqFlag>FLAG_CONDATIS_MEETING</PrereqFlag>
+			</PrereqFlags>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>-1</iWeight>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<UnitsRequired>
+				<UnitClass>UNITCLASS_DREAM_CONDATIS</UnitClass>
+			</UnitsRequired>
+			<iNumUnits>1</iNumUnits>
+			<iUnitExperienceWeight>1</iUnitExperienceWeight>
+			<iPlotType>-1</iPlotType>
+			<Events>
+				<Event>EVENT_DREAM_CONDATIS_1</Event>
+				<Event>EVENT_DREAM_CONDATIS_2</Event>
+			</Events>
+			<bShowPlot>1</bShowPlot>
+		</EventTriggerInfo>
+		<EventTriggerInfo>	<!--Condatis Dreaming2 -->
+			<Type>EVENTTRIGGER_CONDATIS_DREAM2</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_DREAM_CONDATIS</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_DREAM_CONDATIS</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>-1</iWeight>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<UnitsRequired>
+				<UnitClass>UNITCLASS_DREAM_CONDATIS</UnitClass>
+			</UnitsRequired>
+			<iNumUnits>1</iNumUnits>
+			<iUnitExperienceWeight>1</iUnitExperienceWeight>
+			<iPlotType>-1</iPlotType>
+			<Events>
+				<Event>EVENT_DREAM_CONDATIS_1</Event>
+			</Events>
+			<bShowPlot>1</bShowPlot>
+			<PythonCanDoUnit>canTriggerCondatisDreaming</PythonCanDoUnit>
+		</EventTriggerInfo>
+	</EventTriggerInfos>
+</Civ4EventTriggerInfos>
