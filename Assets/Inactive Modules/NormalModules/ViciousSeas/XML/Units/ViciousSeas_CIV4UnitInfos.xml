@@ -2314,7 +2314,7 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_EMPTY</Type>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_EMPTY</Description>
 			<Civilopedia>TXT_KEY_UNIT_EMPTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_EMPTY_STRATEGY</Strategy>

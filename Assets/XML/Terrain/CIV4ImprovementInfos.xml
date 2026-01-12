@@ -4376,8 +4376,8 @@
 				</GoodyClass>
 			</GoodyClasses>
 			<!-- Giants start with a decent percent to spawn on mapgen, but each tier is half as likely to appear -->
-			<iAppearanceProbability>40</iAppearanceProbability>
-			<iLairCreationWeight>20</iLairCreationWeight>
+			<iAppearanceProbability>65</iAppearanceProbability>
+			<iLairCreationWeight>30</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_CONSTRUCTION</LairCreationWeightTechType>
@@ -4671,8 +4671,8 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iAppearanceProbability>75</iAppearanceProbability>
-			<iLairCreationWeight>100</iLairCreationWeight>
+			<iAppearanceProbability>85</iAppearanceProbability>
+			<iLairCreationWeight>110</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_TRACKING</LairCreationWeightTechType>

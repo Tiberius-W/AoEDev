@@ -138,7 +138,7 @@
 			<Type>TRAIT_REAL_VS</Type>
 			<TraitClass>TRAITCLASS_PERSONALITY</TraitClass>
 			<Description>TXT_KEY_TRAITCLASS_REAL_VS</Description>
-			<Civilopedia>TXT_KEY_TRAIT_REAL_VS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_TRAITCLASS_REAL_VS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_REAL_VS_SHORT</ShortDescription>	
 			<TerrainYieldChanges>
 				<TerrainYieldChange>

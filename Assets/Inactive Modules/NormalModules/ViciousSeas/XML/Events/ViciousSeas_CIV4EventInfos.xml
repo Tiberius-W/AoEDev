@@ -8,7 +8,7 @@
 	<EventInfos>
 			<EventInfo>
 			<Type>EVENT_DREAM_CONDATIS_1</Type>
-			<Description>TXT_KEY_EVENT_DREAMING_CONDATIS_2</Description>
+			<Description>TXT_KEY_EVENT_DREAMING_CONDATIS_1</Description>
 			<UnitPromotion>PROMOTION_TWIN_SOUL_VS</UnitPromotion>
 			<PythonCallback>doChangeLeaderCondatis1</PythonCallback>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>

@@ -13,7 +13,7 @@
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_DREAM_CONDATIS</Text>
+					<Text>TXT_KEY_EVENT_DREAM_CONDATIS_MEETING</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
@@ -42,7 +42,7 @@
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_DREAM_CONDATIS</Text>
+					<Text>TXT_KEY_EVENT_DREAM_CONDATIS_MASK</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>

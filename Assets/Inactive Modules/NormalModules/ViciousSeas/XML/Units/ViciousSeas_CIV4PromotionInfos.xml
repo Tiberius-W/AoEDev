@@ -1900,6 +1900,7 @@
 		<PromotionInfo>		<!-- Real Dreams -->
 			<Type>PROMOTION_REAL_VS</Type>
 			<Description>TXT_KEY_TRAITCLASS_REAL_VS</Description>
+			<Civilopedia>TXT_KEY_TRAITCLASS_REAL_VS_PEDIA</Civilopedia>
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DREAM_AIFONS</PrereqCivilization>
 			</PrereqCivilizations>
@@ -1914,6 +1915,7 @@
 				<Promotion>PROMOTION_NIGHTMARE_EMPTY</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_UNDINE</Promotion>
 				<Promotion>PROMOTION_WRETCHED2</Promotion>
+				<Promotion>PROMOTION_VILE_TOUCH</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
@@ -1923,6 +1925,7 @@
 				<Promotion>PROMOTION_NIGHTMARE_EMPTY</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_UNDINE</Promotion>
 				<Promotion>PROMOTION_WRETCHED2</Promotion>
+				<Promotion>PROMOTION_VILE_TOUCH</Promotion>
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -2020,7 +2023,7 @@
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 			</PromotionOverwrites>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/DreamingAifonButton.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/Twin_Soul.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Condatis Merged -->
 			<Type>PROMOTION_MERGED_VS</Type>
@@ -2036,7 +2039,7 @@
 				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
 				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
 			</PromotionOverwrites>
-			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/DreamingAifonButton.dds</Button>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Promotions/CondatisasOne.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

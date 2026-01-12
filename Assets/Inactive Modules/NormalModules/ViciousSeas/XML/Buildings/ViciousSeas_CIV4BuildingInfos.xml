@@ -290,7 +290,7 @@
 			<Description>TXT_KEY_BUILDING_PALACE_DREAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PALACE_DREAM</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PALACE_DURAL</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PALACE_AIFON</ArtDefineTag>
 			<iNumFreeBonuses>1</iNumFreeBonuses>
 			<bCapital>1</bCapital>
 			<iHealth>2</iHealth>
