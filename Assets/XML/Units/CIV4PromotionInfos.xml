@@ -31109,6 +31109,7 @@
 			<Type>PROMOTION_TOAD_BLOOD</Type>
 			<Description>TXT_KEY_PROMOTION_TOAD_BLOOD</Description>
 			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_MARSH</TerrainType>

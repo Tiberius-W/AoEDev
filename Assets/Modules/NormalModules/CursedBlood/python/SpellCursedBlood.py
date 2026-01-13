@@ -20,10 +20,14 @@ def reqBloodMoon(caster):
 		return False
 	if caster.isHasPromotion(getInfoType('PROMOTION_WEREWOLF_FORM3')):
 		return False
+	if caster.isHasPromotion(getInfoType('PROMOTION_LOYALTY2')):
+		return False
 	if caster.isHasPromotion(getInfoType('PROMOTION_PACK_ALPHA')):
 		return False
 	if caster.getUnitType() == getInfoType('UNIT_DUIN'):
 		return False
 	if caster.getUnitType() == getInfoType('UNIT_DOVIELLO_WEREWOLF'):
+		return False
+	if caster.getUnitType() == getInfoType('UNIT_RAVENOUS_WEREWOLF'):
 		return False
 	return True
