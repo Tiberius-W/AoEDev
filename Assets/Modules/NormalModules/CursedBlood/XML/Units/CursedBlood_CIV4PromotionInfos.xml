@@ -103,7 +103,7 @@
 				<Promotion>PROMOTION_ENRAGED</Promotion>
 				<Promotion>PROMOTION_LOYALTY</Promotion>
 				<Promotion>PROMOTION_LOYALTY3</Promotion>
-				<Promotion>TXT_KEY_PROMOTION_WEREWOLF_FORM2</Promotion>
+				<Promotion>PROMOTION_WEREWOLF_FORM2</Promotion>
 			</PromotionExcludes>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Werewolf Form -->
