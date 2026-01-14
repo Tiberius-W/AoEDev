@@ -96,5 +96,15 @@
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn7.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CRIME_NIGHTMARE</Type>
+			<LSystem>LSYSTEM_ARCOLOGY</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Gallows/galgen.nif</NIF>
+			<KFM/>
+			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

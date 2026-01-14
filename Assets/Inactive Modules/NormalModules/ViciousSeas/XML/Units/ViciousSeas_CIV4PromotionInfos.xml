@@ -1936,6 +1936,13 @@
 				<Promotion>PROMOTION_VILE_TOUCH</Promotion>
 			</PromotionOverwrites>
 			<bAutoAcquire>1</bAutoAcquire>
+				<CityBonuses>
+				<CityBonus>
+					<bApplySelf>1</bApplySelf>
+					<fCrime>-10</fCrime>
+					<iBonusRange>0</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
 			<bNoXP>1</bNoXP>
 			<UnitCombats>
 				<UnitCombat>

@@ -471,6 +471,10 @@
 					<BuildingType>BUILDING_DREAM_OF_COLORS</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_NIGHTMARES</BuildingClassType>
+					<BuildingType>BUILDING_NIGHTMARES</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClassType>
 					<BuildingType>BUILDING_CRIME_CRACKS_IN_THE_DREAM</BuildingType>
 				</Building>
@@ -622,6 +626,10 @@
 			<FreeBuildingClasses>
 				<FreeBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_NIGHTMARES</BuildingClassType>
 					<bFreeBuildingClass>1</bFreeBuildingClass>
 				</FreeBuildingClass>
 			</FreeBuildingClasses>

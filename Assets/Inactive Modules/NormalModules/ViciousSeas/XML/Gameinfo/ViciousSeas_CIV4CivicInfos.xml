@@ -288,7 +288,7 @@
 			</ImprovementYieldChanges>
 			<bForceOverwrite>1</bForceOverwrite>
 		</CivicInfo>
-		<CivicInfo>		<!-- Slavery -->
+		<CivicInfo>		<!-- Melding -->
 			<CivicOptionType>CIVICOPTION_LABOR</CivicOptionType>
 			<Type>CIVIC_MELDING</Type>
 			<Description>TXT_KEY_CIVIC_MELDING</Description>
@@ -302,6 +302,11 @@
 					<bHurry>1</bHurry>
 				</Hurry>
 			</Hurrys>
+			<ForeignTradeCommerceModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>50</iYield>
+			</ForeignTradeCommerceModifiers>
 		</CivicInfo>
 	</CivicInfos>
 </Civ4CivicInfos>
