@@ -2667,6 +2667,16 @@
 			<DefaultUnit>UNIT_SAVEROUS</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- SAVEROUS REDEEMED -->
+			<Type>UNITCLASS_SAVEROUS_REDEEMED</Type>
+			<Description>TXT_KEY_UNIT_SAVEROUS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SAVEROUS_REDEEMED</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- ROSIER -->
 			<Type>UNITCLASS_ROSIER</Type>
 			<Description>TXT_KEY_UNIT_ROSIER</Description>

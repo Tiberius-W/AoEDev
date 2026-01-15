@@ -588,6 +588,14 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_SAVEROUS</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS_REDEEMED</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SAVEROUS_REDEEMED</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SAVEROUS_REDEEMED</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_ARCHER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_AIFON</EarlyArtDefineTag>
@@ -1152,6 +1160,14 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_SAVEROUS</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SAVEROUS</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SAVEROUS</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

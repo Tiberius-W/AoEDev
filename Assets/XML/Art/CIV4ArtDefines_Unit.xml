@@ -35438,12 +35438,13 @@
 		<UnitArtInfo> <!-- UNIT_SAVEROUS -->
 			<Type>ART_DEF_UNIT_SAVEROUS</Type>
 			<Button>Art/Interface/Buttons/Units/Saverous.dds</Button>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Heroes/Saverous/Warrior.nif</NIF>
-			<KFM>Art/Units/Warrior/Warrior.kfm</KFM>
+			<NIF>Art/Units/Heroes/Saverous2/Saverous.nif</NIF>
+			<KFM>Art/Units/Axeman/Axeman.kfm</KFM>
+			<SHADERNIF>Art/Units/Heroes/Saverous2/Saverous_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -35457,7 +35458,31 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-		</UnitArtInfo>
+			<SelectionSound>AS3D_UNDEAD_SELECT</SelectionSound>
+		</UnitArtInfo>	
+		<UnitArtInfo>	<!--UNIT_SAVEROUS_REDEEMED-->
+			<Type>ART_DEF_UNIT_SAVEROUS_REDEEMED</Type>
+			<Button>Art/interface/Buttons/Units/SaverousRedeemed.dds</Button>
+            <fScale>0.90</fScale>
+            <fInterfaceScale>0.5</fInterfaceScale>
+            <bActAsLand>0</bActAsLand>
+            <bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Heroes/SaverousRedeemed/SaverousRedeemed.nif</NIF>
+			<KFM>Art/Units/Missionary/Confucian/Confucian_missionary.kfm</KFM>
+            <ShadowDef>
+                <ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+                <ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+                <fShadowScale>1</fShadowScale>
+            </ShadowDef>
+                <fBattleDistance>0.35</fBattleDistance>
+                <fRangedDeathTime>0.31</fRangedDeathTime>
+                <bActAsRanged>0</bActAsRanged>
+                <TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+            <AudioRunSounds>
+                <AudioRunTypeLoop/>
+                <AudioRunTypeEnd/>
+            </AudioRunSounds>
+	    </UnitArtInfo>
 		<UnitArtInfo>  <!-- UNIT_STYGIAN_GUARD -->
 			<Type>ART_DEF_UNIT_STYGIAN_GUARD</Type>
 			<Button>Art/Interface/Buttons/Units/Stygian Guard.dds</Button>
