@@ -7480,6 +7480,7 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<PythonPostCombatLost>postCombatSaverous(pCaster, pOpponent)</PythonPostCombatLost>
 		</UnitInfo>
 		<UnitInfo>        <!-- Saverous Redeemed -->
 			<Class>UNITCLASS_SAVEROUS_REDEEMED</Class>

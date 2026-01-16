@@ -35438,8 +35438,8 @@
 		<UnitArtInfo> <!-- UNIT_SAVEROUS -->
 			<Type>ART_DEF_UNIT_SAVEROUS</Type>
 			<Button>Art/Interface/Buttons/Units/Saverous.dds</Button>
-			<fScale>0.75</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
+			<fScale>0.65</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Heroes/Saverous2/Saverous.nif</NIF>
@@ -35463,8 +35463,8 @@
 		<UnitArtInfo>	<!--UNIT_SAVEROUS_REDEEMED-->
 			<Type>ART_DEF_UNIT_SAVEROUS_REDEEMED</Type>
 			<Button>Art/interface/Buttons/Units/SaverousRedeemed.dds</Button>
-            <fScale>0.90</fScale>
-            <fInterfaceScale>0.5</fInterfaceScale>
+            <fScale>0.60</fScale>
+            <fInterfaceScale>1</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Heroes/SaverousRedeemed/SaverousRedeemed.nif</NIF>
