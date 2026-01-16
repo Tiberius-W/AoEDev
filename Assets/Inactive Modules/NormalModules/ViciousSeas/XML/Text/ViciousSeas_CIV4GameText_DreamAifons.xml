@@ -347,6 +347,14 @@ This means the only way they can capture a city is by culture flipping it!
 		<Spanish>Dreams</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_PROMOTION_SEAFOLK_VS</Tag>
+		<English>Seafolk</English>
+		<French>Seafolk</French>
+		<German>Seafolk</German>
+		<Italian>Seafolk</Italian>
+		<Spanish>Seafolk</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_TRAITCLASS_REAL_VS</Tag>
 		<English>Redeemer of the Broken</English>
 		<French>Redeemer of the Broken</French>
