@@ -613,8 +613,20 @@ class CvEventManager:
 					cf.showUnitPerTilePopup()
 
 			# Alt+R creates a reminder
-			if (theKey == int(InputTypes.KB_R) and self.bAlt):
+			if (theKey == int(InputTypes.KB_R) and self.bAlt and self.bShift):
 				self.beginEvent(CvUtil.EventReminder)
+				return 1
+
+			if theKey == int(InputTypes.KB_X) and self.bAlt:
+				CvScreensInterface.showBootlegSO()
+				return 1
+
+			if theKey == int(InputTypes.KB_X) and self.bShift:
+				CvScreensInterface.changeBootlegSORadius()
+				return 1
+
+			if theKey == int(InputTypes.KB_X) and self.bCtrl:
+				CvScreensInterface.changeBootlegSODraw()
 				return 1
 
 # Grey Fox Speed Tweaks: START
@@ -1505,6 +1517,16 @@ class CvEventManager:
 			else:
 				pPlayer.setTraitPoints(iData2,0)
 				pPlayer.setGainingTrait(False)
+		elif iData1 == 5001 or iData1 == 5002: # Commerce Change from MainInterface
+			iPlayer		= iData2
+			iChange		= iData3
+			iCommerce	= CommerceTypes(iData4)
+			pPlayer = gc.getPlayer(iPlayer)
+			if iData1 == 5001:
+				pPlayer.changeCommercePercent(iCommerce, iChange)
+			else:
+				pPlayer.changeCommercePercent(iCommerce, - min(iChange, pPlayer.getCommercePercent(iCommerce)))
+
 		## *******************
 		## Modular Python: ANW 29-may-2010
 		for module in command['onModNetMessage']:

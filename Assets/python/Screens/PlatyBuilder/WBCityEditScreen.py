@@ -257,6 +257,30 @@ class WBCityEditScreen:
 		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_TEMP_HAPPY",(pCity.getHappinessTimer(),)) + "</font>"
 		screen.setLabel("CityTemporaryHappyText", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
+		iY += 30
+		screen.setButtonGFC("CityCounterPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CityCounterMinus", "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_CITY_COUNTER",(pCity.getCityCounter(),)) + "</font>"
+		screen.setLabel("CityCounterText", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("ModCounterPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("ModCounterMinus", "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_CITY_COUNTER_MOD",(pCity.getCityCounterMod(),)) + "</font>"
+		screen.setLabel("ModCounterText", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("CrimeCounterPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CrimeCounterMinus", "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_CITY_CRIME",(pCity.getCrime(),)) + "</font>"
+		screen.setLabel("CrimeCounterText", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("CrimePerTurnPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CrimePerTurnMinus", "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_CITY_CRIME_MOD",(pCity.getCrimePerTurn(),)) + "</font>"
+		screen.setLabel("CrimePerTurnText", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 	def placeScript(self):
 		screen = CyGInterfaceScreen( "WBCityEditScreen", CvScreenEnums.WB_CITYEDIT)
 		iY = screen.getYResolution()/2 - 85
@@ -577,6 +601,35 @@ class WBCityEditScreen:
 						if pUnitX.getOwner() == iPlayer:
 							self.top.lMoveUnit.append([iPlayer, pUnitX.getID()])
 			screen.hideScreen()
+
+		elif inputClass.getFunctionName().find("CityCounter") > -1:
+			if inputClass.getData1() == 1030:
+				pCity.changeCityCounter(iChange)
+			elif inputClass.getData1() == 1031:
+				pCity.changeCityCounter(- min(iChange, pCity.getCityCounter()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("ModCounter") > -1:
+			if inputClass.getData1() == 1030:
+				pCity.changeCityCounterMod(iChange)
+			elif inputClass.getData1() == 1031:
+				pCity.changeCityCounterMod(- min(iChange, pCity.getCityCounterMod()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("CrimeCounter") > -1:
+			if inputClass.getData1() == 1030:
+				pCity.changeCrime(iChange)
+			elif inputClass.getData1() == 1031:
+				pCity.changeCrime(- min(iChange, pCity.getCrime()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("CrimePerTurn") > -1:
+			if inputClass.getData1() == 1030:
+				pCity.changeCrimePerTurn(iChange)
+			elif inputClass.getData1() == 1031:
+				pCity.changeCrimePerTurn(-iChange)
+			self.placeStats()
+
 		return 1
 
 	def handlePlatyChooseProduction(self, inputClass):

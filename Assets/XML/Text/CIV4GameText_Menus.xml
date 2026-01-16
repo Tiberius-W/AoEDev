@@ -1628,4 +1628,12 @@
 		<Italian>Clear Reminders</Italian>
 		<Spanish>Clear Reminders</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMMERCE_CHANGE</Tag>
+		<English>Change %s1_commerce Rate by 10% (5% with Shift)</English>
+		<French>Change %s1_commerce Rate by 10% (5% with Shift)</French>
+		<German>Change %s1_commerce Rate by 10% (5% with Shift)</German>
+		<Italian>Change %s1_commerce Rate by 10% (5% with Shift)</Italian>
+		<Spanish>Change %s1_commerce Rate by 10% (5% with Shift)</Spanish>
+	</TEXT>
 </Civ4GameText>
