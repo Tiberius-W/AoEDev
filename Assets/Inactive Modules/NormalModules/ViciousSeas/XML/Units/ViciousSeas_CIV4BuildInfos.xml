@@ -52,7 +52,7 @@
 			<Description>TXT_KEY_BUILD_TRAWLING_BOATS</Description>
 			<Help/>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
@@ -65,13 +65,19 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Reefs.dds</Button>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>750</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>
 		<BuildInfo> <!-- Trawling Boats Lanun -->
 			<Type>BUILD_TRAWLING_BOATS_LANUN</Type>
 			<Description>TXT_KEY_BUILD_TRAWLING_BOATS</Description>
 			<Help/>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
 			<iCost>0</iCost>
 			<ImprovementType>IMPROVEMENTCLASS_TRAWLING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
@@ -83,27 +89,89 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/TerrainFeatures/Reefs.dds</Button>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>750</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>	
 		<BuildInfo> <!-- Aquatic Pyre -->
 			<Type>BUILD_PYRE_AQUATIC</Type>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_SAILING</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_OPTICS</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>
 		<BuildInfo> <!-- Fishing Boats -->
 			<Type>BUILD_FISHING_BOATS</Type>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_SAILING</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_OPTICS</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>
 		<BuildInfo> <!-- Fishing Boats Lanun -->
 			<Type>BUILD_FISHING_BOATS_LANUN</Type>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_SAILING</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_OPTICS</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>
 		<BuildInfo> <!-- Fishing Boats Wyrmfisher -->
 			<Type>BUILD_FISHING_BOATS_WYRMFISHER</Type>
-			<iTime>1300</iTime>
+			<iTime>1500</iTime>
 			<bKill>0</bKill>
+			<TechBuildDiscounts>
+				<TechBuildDiscount>
+					<TechType>TECH_SAILING</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_OPTICS</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+				<TechBuildDiscount>
+					<TechType>TECH_ASTRONOMY</TechType>
+					<iDiscount>300</iDiscount>
+				</TechBuildDiscount>
+			</TechBuildDiscounts>
 		</BuildInfo>
 		<BuildInfo> <!-- Stygian Shrine -->
 			<Type>BUILD_STYGIAN_SHRINE</Type>

@@ -7132,10 +7132,6 @@
 					<UnitType>UNIT_WORKER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
-					<UnitType>UNIT_WORKBOAT</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
 					<UnitType>UNIT_ORC_FORT_COMMANDER</UnitType>
 				</Unit>

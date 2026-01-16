@@ -722,11 +722,11 @@ Sometimes, a cultist will not be content worshiping on land. This marine shrine 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_TRAWLING_BOATS</Tag>
-		<English>Trawling Boats</English>
-		<French>Trawling Boats</French>
-		<German>Trawling Boats</German>
-		<Italian>Trawling Boats</Italian>
-		<Spanish>Trawling Boats</Spanish>
+		<English>Create Trawling Boats</English>
+		<French>Create Trawling Boats</French>
+		<German>Create Trawling Boats</German>
+		<Italian>Create Trawling Boats</Italian>
+		<Spanish>Create Trawling Boats</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_TRAWLING_BOATS</Tag>

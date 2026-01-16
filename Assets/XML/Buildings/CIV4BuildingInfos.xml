@@ -17312,6 +17312,12 @@
 			<Help>TXT_KEY_BUILDING_CRIME_ADVENTURE_PETTY_GANGS_HELP</Help>
 			<ArtDefineTag>ART_DEF_BUILDING_CRIME</ArtDefineTag>
 			<iPrereqCrime>500</iPrereqCrime>
+			<BuildingExcludes>
+				<BuildingExclude>
+					<BuildingClassType>BUILDINGCLASS_CRIME_ARSON</BuildingClassType>
+					<bExclude>1</bExclude>
+				</BuildingExclude>
+			</BuildingExcludes>
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
 			<iPrereqPopulation>8</iPrereqPopulation>

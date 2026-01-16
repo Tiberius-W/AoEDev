@@ -1641,9 +1641,50 @@
 				</FreePromotion>
 			</FreePromotions>
 		</UnitInfo>
+		<UnitInfo>        <!-- Galley -->            
+			<Class>UNITCLASS_GALLEY</Class>
+			<Type>UNIT_GALLEY</Type>
+			<PrereqTech>TECH_FISHING</PrereqTech>
+		</UnitInfo>
+		<UnitInfo>        <!-- Trireme -->
+			<Class>UNITCLASS_TRIREME</Class>
+			<Type>UNIT_TRIREME</Type>
+			<PrereqTech>TECH_SAILING</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_CRAFTING</PrereqTech>
+			</TechTypes>
+		</UnitInfo>
+		<UnitInfo>        <!-- Galleon -->
+			<Class>UNITCLASS_GALLEON</Class>
+			<Type>UNIT_GALLEON</Type>
+			<PrereqBonuses>
+				<BonusType>BONUS_COPPER</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_MITHRIL</BonusType>
+			</PrereqBonuses>
+		</UnitInfo>
+		<UnitInfo>        <!-- Caravel -->
+			<Class>UNITCLASS_CARAVEL</Class>
+			<Type>UNIT_CARAVEL</Type>
+			<FeatureMoveCosts>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_KELP</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_KELP_FOREST</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_REEFS</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+			</FeatureMoveCosts>
+		</UnitInfo>
 		<UnitInfo>        <!-- Workboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -1655,10 +1696,12 @@
 				</Build>
 			</Builds>
 			<iCost>75</iCost>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- WyrmFisher -->
 			<Class>UNITCLASS_WYRMFISHER</Class>
 			<Type>UNIT_WYRMFISHER</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
@@ -1670,11 +1713,12 @@
 				</Build>
 			</Builds>
 			<iWorkRate>150</iWorkRate>
-			<iCost>75</iCost>
+			<bFood>1</bFood>
 		</UnitInfo>	
 		<UnitInfo>        <!-- Workboat (Lanun) -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT_LANUN</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
@@ -1690,10 +1734,12 @@
 				</Build>
 			</Builds>
 			<iWorkRate>150</iWorkRate>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- Funeral Barge -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_FUNERAL_BARGE</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
@@ -1996,6 +2042,7 @@
 		<UnitInfo>        <!-- Jotnar Fishing Longboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_JOT_WORKBOAT</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -2010,6 +2057,7 @@
 		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
 			<iCost>75</iCost>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- Great Prophet -->
 			<Class>UNITCLASS_PROPHET</Class>
