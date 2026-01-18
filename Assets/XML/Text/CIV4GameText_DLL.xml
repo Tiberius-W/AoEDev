@@ -348,11 +348,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_BONUS_PREFIX</Tag>
-		<English>With %d1 Extra Magical Power and up to %d2 times, Grants[SPACE]</English>
-		<French>With %d1 Extra Magical Power and up to %d2 times, Grants[SPACE]</French>
-		<German>With %d1 Extra Magical Power and up to %d2 times, Grants[SPACE]</German>
-		<Italian>With %d1 Extra Magical Power and up to %d2 times, Grants[SPACE]</Italian>
-		<Spanish>With %d1 Extra Magical Power and up to %d2 times, Grants[SPACE]</Spanish>
+		<English>Per %d1 Extra Magical Power (up to %d2 times), Grants[SPACE]</English>
+		<French>Per %d1 Extra Magical Power (up to %d2 times), Grants[SPACE]</French>
+		<German>Per %d1 Extra Magical Power (up to %d2 times), Grants[SPACE]</German>
+		<Italian>Per %d1 Extra Magical Power (up to %d2 times), Grants[SPACE]</Italian>
+		<Spanish>Per %d1 Extra Magical Power (up to %d2 times), Grants[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_BONUS_EXTRA_DAMAGE</Tag>
@@ -1862,11 +1862,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_DOUBLE_SPEED_ALTERNATIVE</Tag>
-		<English>[NEWLINE][ICON_BULLET]Double production speed for </English>
-		<French>[PARAGRAPH:1][ICON_BULLET]Vitesse de production doublée </French>
-		<German>[NEWLINE][ICON_BULLET]Doppelte Produktionsgeschwindigkeit für</German>
-		<Italian>[NEWLINE][ICON_BULLET]Doppia velocit&#224; produttiva con</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]Doble velocidad de producci&#243;n con</Spanish>
+		<English>[NEWLINE][ICON_BULLET]Double production speed for[SPACE]</English>
+		<French>[PARAGRAPH:1][ICON_BULLET]Vitesse de production doublée[SPACE]</French>
+		<German>[NEWLINE][ICON_BULLET]Doppelte Produktionsgeschwindigkeit für[SPACE]</German>
+		<Italian>[NEWLINE][ICON_BULLET]Doppia velocit&#224; produttiva con[SPACE]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Doble velocidad de producci&#243;n con[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRUENEUTRAL</Tag>

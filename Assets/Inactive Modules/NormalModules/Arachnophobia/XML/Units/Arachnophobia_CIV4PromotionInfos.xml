@@ -314,7 +314,6 @@
 			<iPromotionDuration>1</iPromotionDuration>
 			<bHeld>1</bHeld>
 			<bNoXP>1</bNoXP>
-			<bRemovedByCombat>1</bRemovedByCombat>
 			<iInvisibleLevel>3</iInvisibleLevel>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>

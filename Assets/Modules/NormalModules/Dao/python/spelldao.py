@@ -83,6 +83,8 @@ def reqElementalEquilibrium(caster):
 		return False
 	if gc.getBonusInfo(pPlot.getBonusType(-1)).getBonusClassType() == getInfoType('BONUSCLASS_MANA') and not pPlot.getBonusType(-1) in [gc.getInfoTypeForString("BONUS_MANA_AIR"),gc.getInfoTypeForString("BONUS_MANA_EARTH"),gc.getInfoTypeForString("BONUS_MANA_WATER"),gc.getInfoTypeForString("BONUS_MANA_FIRE"),gc.getInfoTypeForString("BONUS_MANA_FORCE")]	:
 		return True
+	if pPlot.getBonusType(-1) == gc.getInfoTypeForString("BONUS_MANA"):
+		return True
 	return False
 
 
@@ -103,7 +105,7 @@ def spellElementalEquilibrium(caster):
 
         if (iKan + iLi + iGen + iPoshi) < (iQian):
                 pPlot.setImprovementType(-1)
-                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA'):
+                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA') or iBonus == gc.getInfoTypeForString("BONUS_MANA"):
                         if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
                         elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
                         elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
@@ -112,7 +114,7 @@ def spellElementalEquilibrium(caster):
                
         if (iQian + iLi + iGen + iPoshi) < (iKan):
                 pPlot.setImprovementType(-1)
-                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA'):
+                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA') or iBonus == gc.getInfoTypeForString("BONUS_MANA"):
                         if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
                         elif chance < 48: setBonus(getInfoType('BONUS_MANA_AIR'))
                         elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
@@ -121,7 +123,7 @@ def spellElementalEquilibrium(caster):
                 
         if (iKan + iQian + iGen + iPoshi) < (iLi):
                 pPlot.setImprovementType(-1)
-                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA'):
+                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA') or iBonus == gc.getInfoTypeForString("BONUS_MANA"):
                         if chance < 24: setBonus(getInfoType('BONUS_MANA_AIR'))
                         elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
                         elif chance < 72: setBonus(getInfoType('BONUS_MANA_EARTH'))
@@ -130,7 +132,7 @@ def spellElementalEquilibrium(caster):
                 
         if (iKan + iLi + iQian + iPoshi) < (iGen):
                 pPlot.setImprovementType(-1)
-                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA'):
+                if gc.getBonusInfo(iBonus).getBonusClassType() == getInfoType('BONUSCLASS_MANA') or iBonus == gc.getInfoTypeForString("BONUS_MANA"):
                         if chance < 24: setBonus(getInfoType('BONUS_MANA_FIRE'))
                         elif chance < 48: setBonus(getInfoType('BONUS_MANA_WATER'))
                         elif chance < 72: setBonus(getInfoType('BONUS_MANA_AIR'))

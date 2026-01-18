@@ -991,7 +991,7 @@ class ScenarioFunctions:
 							pPlayer.setStartingPlot(pNewPlot, True)
 							for i in range(pPlot.getNumUnits(), -1, -1):
 								pUnit = pPlot.getUnit(i)
-								pUnit.setXY(pNewPlot.getX(), pNewPlot.getY(), true, true, true)
+								pUnit.setXY(pNewPlot.getX(), pNewPlot.getY(), True, True, True,False)
 			if iCount == 1:
 				if pHumanPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_BASIUM'):
 					self.addPopupWB(CyTranslator().getText("TXT_KEY_WB_LORD_OF_THE_BALORS_INTRO_BASIUM",()), 'art/interface/popups/Lord of the Balors.dds')
@@ -1523,9 +1523,9 @@ class ScenarioFunctions:
 						pPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIEST_OF_THE_EMPYREAN'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 						pTeam = gc.getTeam(pPlayer.getTeam())
 						pTeam.setHasTech(gc.getInfoTypeForString('TECH_HONOR'), true, 0, true, false)
-						pTeam.setDefensivePact(getID(2), true)
-						pTeam.setDefensivePact(getID(3), true)
-						pTeam.setDefensivePact(getID(5), true)
+						pTeam.setDefensivePact(gc.getPlayer(2).getTeam(), true)
+						pTeam.setDefensivePact(gc.getPlayer(3).getTeam(), true)
+						pTeam.setDefensivePact(gc.getPlayer(5).getTeam(), true)
 						CyInterface().setDirty(InterfaceDirtyBits.Score_DIRTY_BIT, True)
 
 	def onImprovementDestroyed(self, iImprovement, iOwner, iX, iY):
@@ -1646,7 +1646,7 @@ class ScenarioFunctions:
 				iHeld = gc.getInfoTypeForString('PROMOTION_HELD')
 				if (pPlot.getX() == 4 and pPlot.getY() == 14):
 					if not pCaster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_AIR2')):
-						pCaster.setXY(4, 13, false, true, true)
+						pCaster.setXY(4, 13, False, True, True,False)
 						self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_AIR",()),'art/interface/popups/Dain.dds')
 					else:
 						apUnitList = PyPlayer(gc.getORC_PLAYER()).getUnitList()
@@ -1656,7 +1656,7 @@ class ScenarioFunctions:
 								pUnit.setHasPromotion(iHeld, False)
 				if (pPlot.getX() == 16 and pPlot.getY() == 11):
 					if not pCaster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_FIRE2')):
-						pCaster.setXY(17, 11, false, true, true)
+						pCaster.setXY(17, 11, False, True, True)
 						self.addPopup(CyTranslator().getText("TXT_KEY_WB_GIFT_OF_KYLORIN_WARD_FIRE",()),'art/interface/popups/Dain.dds')
 					else:
 						apUnitList = PyPlayer(gc.getORC_PLAYER()).getUnitList()
@@ -1973,24 +1973,26 @@ class ScenarioFunctions:
 				if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_BASIUM'):
 					if gc.getTeam(0).isAtWar(pPlayer.getTeam()):
 						gc.getGame().setOption(GameOptionTypes.GAMEOPTION_COMPLETE_KILLS, False)
-						gc.getPlayer(0).initCity(0,2)
-						for iPlayer in range(gc.getMAX_PLAYERS()):
-							if iPlayer != 0:
-								pPlayer = gc.getPlayer(iPlayer)
-								if pPlayer.isAlive():
-									pPlayer.setAlive(False)
+						if not (CyMap().plot(0,2).isCity()):
+							gc.getPlayer(0).initCity(0,2)
+					##	for iPlayer in range(gc.getMAX_PLAYERS()):
+					#		if iPlayer != 0:
+					 #			pPlayer = gc.getPlayer(iPlayer)
+					#			if pPlayer.isAlive():
+					#				pPlayer.setAlive(False)
 						gc.getGame().setWinner(0, 2) #Falamar wins
 					else:
 						gc.getGame().setWinner(2, 2) #Hyborem wins
 				if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_HYBOREM'):
 					if gc.getTeam(0).isAtWar(pPlayer.getTeam()):
 						gc.getGame().setOption(GameOptionTypes.GAMEOPTION_COMPLETE_KILLS, False)
-						gc.getPlayer(0).initCity(0,2)
-						for iPlayer in range(gc.getMAX_PLAYERS()):
-							if iPlayer != 0:
-								pPlayer = gc.getPlayer(iPlayer)
-								if pPlayer.isAlive():
-									pPlayer.setAlive(False)
+						if not (CyMap().plot(0,2).isCity()):
+							gc.getPlayer(0).initCity(0,2)
+					#	for iPlayer in range(gc.getMAX_PLAYERS()):
+					#		if iPlayer != 0:
+					#			pPlayer = gc.getPlayer(iPlayer)
+					#			if pPlayer.isAlive():
+					#				pPlayer.setAlive(False)
 						gc.getGame().setWinner(0, 2) #Falamar wins
 					else:
 						gc.getGame().setWinner(1, 2) #Basium wins

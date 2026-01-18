@@ -4217,7 +4217,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC

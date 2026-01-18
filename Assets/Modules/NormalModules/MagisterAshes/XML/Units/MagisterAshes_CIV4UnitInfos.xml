@@ -308,6 +308,10 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
+					<PromotionType>PROMOTION_PATRIAN_HANDCUFFS</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
 					<PromotionType>PROMOTION_FANATIC</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>

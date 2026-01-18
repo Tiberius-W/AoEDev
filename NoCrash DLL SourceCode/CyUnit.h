@@ -538,6 +538,7 @@ public:
 	bool canCast(int spell, bool bTestVisible) const;
 	bool canDispel(int spell) const;
 	void cast(int spell);
+	void castOnPlot(int spell, CyPlot* pPlot = NULL);
 	void doDamage(int iDmg, int iDmgLimit, CyUnit* pAttacker, int iDmgType, bool bStartWar);
 	void doDamageCity(int iDmg, int iDmgLimit, CyCity* pAttacker, int iDmgType, bool bStartWar);
 	void doDamageNoCaster(int iDmg, int iDmgLimit, int iDmgType, bool bStartWar);

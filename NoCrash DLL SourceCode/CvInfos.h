@@ -766,6 +766,7 @@ public:
 	bool isAlwaysHeal() const;				// Exposed to Python
 	bool isHillsDoubleMove() const;				// Exposed to Python
 	bool isImmuneToFirstStrikes() const;				// Exposed to Python
+	bool isDurationDecreaseSpellpower() const;				// Exposed to Python
 
 	bool isTradeDefender() const;
 
@@ -849,6 +850,7 @@ public:
 /*************************************************************************************************/
 	int getExtraPerception() const;
 	int getInvisibleLevel() const;
+	bool isRevealed() const;
 /*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -1138,6 +1140,10 @@ public:
 	int getNumCityBonuses() const;
 	CityBonuses getCityBonus(int iI) const;
 	std::list<CityBonuses> listCityBonuses();
+	//Aura black_imp 24/09/15
+	int getNumAuraBonuses() const;
+	AuraBonuses getAuraBonus(int iI) const;
+	std::list<AuraBonuses> listAuraBonuses();
 
 	int getNumPrereqUnitTypesOnTile() const;
 	int getPrereqUnitTypeOnTile(int iI) const;
@@ -1182,6 +1188,7 @@ public:
 	bool isBoarding() const;
 	bool isOnlyDefensive() const;
 	bool isDispellable() const;
+	int getPrereqDispelPower() const;
 	bool isDoubleFortifyBonus() const;
 	bool isEquipment() const;
 	bool isFear() const;
@@ -1434,7 +1441,7 @@ protected:
 	bool m_bAlwaysHeal;
 	bool m_bHillsDoubleMove;
 	bool m_bImmuneToFirstStrikes;
-	
+	bool m_bDurationDecreaseSpellpower;
 	bool m_bTradeDefender;
 
 	CvString m_szSound;
@@ -1475,6 +1482,7 @@ protected:
 /*************************************************************************************************/
 	int m_iExtraPerception;
 	int m_iInvisibleLevel;
+	bool m_bRevealed;
 	/*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -1756,6 +1764,10 @@ protected:
 	int m_iNumCityBonuses;
 	std::list <CityBonuses> m_cbCityBonuses;
 
+	int m_iNumAuraBonuses;
+	std::list <AuraBonuses> m_cbAuraBonuses;
+
+
 	int m_iNumPrereqUnitTypesOnTile;
 	int* m_piPrereqUnitTypesOnTile;
 	std::vector<CvString> m_aszPrereqUnitTypesOnTileforPass3;
@@ -1804,6 +1816,7 @@ protected:
 	bool m_bBoarding;
 	bool m_bOnlyDefensive;
 	bool m_bDispellable;
+	int m_iPrereqDispelPower;
 	bool m_bDoubleFortifyBonus;
 	bool m_bEquipment;
 	bool m_bFear;
@@ -4611,6 +4624,8 @@ public:
 	bool isOverflowProduction() const;
 	bool isUnhappyProduction() const;
 	int getCrime() const;
+	int getCrimePerUnhappyModifier() const;
+	int getCrimePerUnhealthModifier() const;
 	int getFreePromotionPick() const;
 	int getGlobalResistEnemyModify() const;
 	int getGlobalResistModify() const;
@@ -5041,6 +5056,8 @@ protected:
 	bool m_bUnhappyProduction;
 	int m_iCrime;
 	int m_iCrimePerTurn;
+	int m_iCrimePerUnhappyModifier;
+	int m_iCrimePerUnhealthModifier;
 	int m_iFreePromotionPick;
 	int m_iFreeBonus2;
 	int m_iFreeBonus3;
@@ -8067,6 +8084,8 @@ public:
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	bool isLeaderVariant() const;
+	LeaderHeadTypes getPrimaryLeader() const;
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/01/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -8117,12 +8136,14 @@ public:
 	void write(FDataStreamBase* stream);
 	void read(FDataStreamBase* stream);
 	bool read(CvXMLLoadUtility* pXML);
+	bool readPass2(CvXMLLoadUtility* pXML);
 /*************************************************************************************************/
 /**	TrueModular								05/26/09	Written: Mr. Genie	Imported: Xienwolf	**/
 /**																								**/
 /**	Properly links Modular modifications to previous elements, and allows partial overwriting	**/
 /*************************************************************************************************/
 	void copyNonDefaults(CvLeaderHeadInfo* pClassInfo = NULL, CvXMLLoadUtility* pXML = NULL );
+	void copyNonDefaultsReadPass2(CvLeaderHeadInfo* pClassInfo = NULL, CvXMLLoadUtility* pXML = NULL);
 /*************************************************************************************************/
 /**	TrueModular								END													**/
 /*************************************************************************************************/
@@ -8252,6 +8273,8 @@ protected:
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	bool m_bLeaderVariant;
+	int m_iPrimaryLeader;
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/02/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -12869,6 +12892,7 @@ public:
 	const int getDamageLimit()const;
 	const int getDamageType()const;
 	const bool isDispellable()const;
+	const int getPrereqDispelPower()const;
 	const int getHealthPercent()const;
 	const int getMaxPlotCounter()const;
 	const int getSpawnChance()const;
@@ -12894,6 +12918,7 @@ protected:
 	int m_iDamageType;
 	int m_iHealthPercent;
 	bool m_bDispellable;
+	bool m_iPrereqDispelPower;
 	int m_iMaxPlotCounter;
 	int m_iSpawnChance;
 	int m_iSpreadChance;
@@ -13098,6 +13123,7 @@ public:
 	int getPrereqMaxKilledEthicalAlignment() const;
 	bool isFirst() const;
 	bool isOncePerPlayer() const;
+	bool isGameSpeedScale() const;
 	bool isCoastal() const;
 	bool isPrereqConquest() const;
 	bool isPrereqTrade() const;
@@ -13178,6 +13204,7 @@ protected:
 
 	bool m_bFirst;
 	bool m_bOncePerPlayer;
+	bool m_bGameSpeedScale;
 	bool m_bCoastal;
 	bool m_bConquest;
 	bool m_bTrade;

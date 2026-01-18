@@ -1867,7 +1867,6 @@
 		<EventInfo>
 			<Type>EVENT_GRAVEYARD_1</Type>
 			<Description>TXT_KEY_EVENT_GRAVEYARD_1</Description>
-			<bPickCity>1</bPickCity>
 			<iGold>-25</iGold>
 			<ImprovementType>IMPROVEMENT_GRAVEYARD</ImprovementType>
 			<iImprovementChange>1</iImprovementChange>
@@ -7379,5 +7378,46 @@
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
+			<EventInfo>
+			<Type>EVENT_WB_SPLINTERED_COURT_PARITH_YES</Type>
+			<Description>TXT_KEY_EVENT_WB_SPLINTERED_COURT_PARITH_YES</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<iGold>-25</iGold>
+			<PythonCallback>applyWBSplinteredCourtParithYes</PythonCallback>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_WB_SPLINTERED_COURT_PARITH_NO</Type>
+			<Description>TXT_KEY_EVENT_WB_SPLINTERED_COURT_PARITH_NO</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+	<EventInfo>
+			<Type>EVENT_PARITH_YES</Type>
+			<Description>TXT_KEY_EVENT_PARITH_YES</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<bDisbandUnit>1</bDisbandUnit>
+			<PythonCallback>applyParithYes</PythonCallback>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_PARITH_NO</Type>
+			<Description>TXT_KEY_EVENT_PARITH_NO</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+	
 	</EventInfos>
 </Civ4EventInfos>

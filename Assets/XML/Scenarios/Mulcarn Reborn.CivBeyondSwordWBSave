@@ -3222,7 +3222,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GREATER_WEREWOLF, UnitOwner=35
+		UnitType=UNIT_GREATER_WEREWOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -3509,7 +3509,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -3532,7 +3532,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4075,7 +4075,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -5052,7 +5052,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_WINTERBORN
@@ -5203,7 +5203,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -5310,7 +5310,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_WINTERBORN
@@ -5807,7 +5807,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6215,7 +6215,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -6679,7 +6679,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OGRE_WARCHIEF, UnitOwner=35
+		UnitType=UNIT_OGRE_WARCHIEF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -7434,7 +7434,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -7451,7 +7451,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_WINTERBORN
@@ -11083,7 +11083,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -13251,7 +13251,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -14099,7 +14099,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -15478,7 +15478,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_WINTERBORN
@@ -15574,7 +15574,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_WINTERBORN
@@ -20096,7 +20096,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4

@@ -877,6 +877,7 @@ class CvCityDesc:
 			self.city = player.initCity(self.plotX, self.plotY)
 
 		if (self.name != None):
+			print(self.name)
 			self.city.setName(self.name, False)
 
 		if (self.population):

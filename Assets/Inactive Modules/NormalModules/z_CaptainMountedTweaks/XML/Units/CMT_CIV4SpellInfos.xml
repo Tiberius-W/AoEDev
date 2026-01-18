@@ -237,6 +237,29 @@
 			<Sound>AS3D_BRAWL</Sound>
 			<Button>Modules/NormalModules/z_CaptainMountedTweaks/Art/Interface/Buttons/Promotions/mount_flying.dds</Button>
 	</SpellInfo>
+	<SpellInfo>			<!-- Ride Toads -->
+			<Type>SPELL_RIDE_TOAD_MOUNTEDTWEAKS</Type>
+			<Description>TXT_KEY_SPELL_RIDE_TOAD_MOUNTEDTWEAKS</Description>
+			<Help>TXT_KEY_SPELL_RIDE_TOAD_MOUNTEDTWEAKS_HELP</Help>
+			<Civilopedia></Civilopedia>
+			<Strategy></Strategy>
+			<PromotionPrereq1>PROMOTION_TOAD_BLOOD</PromotionPrereq1>
+			<PromotionPrereq2>PROMOTION_TAME</PromotionPrereq2>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>10</iAIWeight>
+			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+			<bHasCasted>1</bHasCasted>
+			<bIgnoreHasCasted>1</bIgnoreHasCasted>
+			<AddPromotions>
+				<AddPromotion>PROMOTION_TOAD_MOUNTEDTWEAKS</AddPromotion>
+			</AddPromotions>
+			<bImmuneNeutral>1</bImmuneNeutral>
+			<bImmuneEnemy>1</bImmuneEnemy>
+			<bSacrificeCaster>1</bSacrificeCaster>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_BRAWL</Sound>
+			<Button>Modules/NormalModules/z_CaptainMountedTweaks/Art/Interface/Buttons/Promotions/mount_toad.dds</Button>
+	</SpellInfo>
 	<SpellInfo>			<!-- Khazad Boar Rider - Return to Boars -->
 			<Type>SPELL_RETURN_TO_BOAR_MOUNTEDTWEAKS</Type>
 			<Description>TXT_KEY_SPELL_RETURN_TO_BOAR_MOUNTEDTWEAKS</Description>

@@ -2031,7 +2031,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -2113,7 +2113,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -2187,7 +2187,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2300,7 +2300,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2361,7 +2361,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2369,7 +2369,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=35
+		UnitType=UNIT_ARCHER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2377,7 +2377,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=TXT_KEY_CITY_BARBARIAN_7
 		CityPopulation=2
 		BuildingType=BUILDING_GAMBLING_HOUSE
@@ -2809,14 +2809,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_TIGER, UnitOwner=35
+		UnitType=UNIT_TIGER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ANIMAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_TIGER, UnitOwner=35
+		UnitType=UNIT_TIGER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2969,7 +2969,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -3034,7 +3034,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -3271,7 +3271,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_DROWN, UnitOwner=35
+		UnitType=UNIT_DROWN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -3437,7 +3437,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUIRIN, UnitOwner=35
+		UnitType=UNIT_MUIRIN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -3538,7 +3538,7 @@ BeginPlot
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	BeginUnit
-		UnitType=UNIT_GIANT_TORTOISE, UnitOwner=35
+		UnitType=UNIT_GIANT_TORTOISE, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -3623,7 +3623,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SWORDSMAN, UnitOwner=35
+		UnitType=UNIT_SWORDSMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -3644,7 +3644,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MERCENARY, UnitOwner=35
+		UnitType=UNIT_MERCENARY, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ENCHANTED_BLADE
@@ -3675,7 +3675,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4013,7 +4013,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_FREAK, UnitOwner=35
+		UnitType=UNIT_FREAK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_AMPHIBIOUS
@@ -4035,7 +4035,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FREAK, UnitOwner=35
+		UnitType=UNIT_FREAK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_AMPHIBIOUS
@@ -4068,7 +4068,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_JAVELIN_THROWER, UnitOwner=35
+		UnitType=UNIT_JAVELIN_THROWER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_COLD_RESISTANCE
@@ -4078,7 +4078,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FREAK, UnitOwner=35
+		UnitType=UNIT_FREAK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_AMPHIBIOUS
@@ -4106,7 +4106,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MERCENARY, UnitOwner=35
+		UnitType=UNIT_MERCENARY, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_CITY_RAIDER1
@@ -4118,7 +4118,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FREAK, UnitOwner=35
+		UnitType=UNIT_FREAK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_AMPHIBIOUS
@@ -4260,7 +4260,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_BUCCANEERS
@@ -4341,7 +4341,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LION_PRIDE, UnitOwner=35
+		UnitType=UNIT_LION_PRIDE, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -4649,7 +4649,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_COMBAT1
@@ -4862,7 +4862,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4901,7 +4901,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4914,7 +4914,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -5076,14 +5076,14 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ANIMAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5110,7 +5110,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_TIGER, UnitOwner=35
+		UnitType=UNIT_TIGER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5174,7 +5174,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_PACK, UnitOwner=35
+		UnitType=UNIT_WOLF_PACK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5187,7 +5187,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5447,7 +5447,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -5543,14 +5543,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_PACK, UnitOwner=35
+		UnitType=UNIT_WOLF_PACK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ANIMAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WOLF, UnitOwner=35
+		UnitType=UNIT_WOLF, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -6298,7 +6298,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_LIZARDMAN
@@ -6462,7 +6462,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6470,7 +6470,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_COMBAT1
@@ -6479,7 +6479,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6487,7 +6487,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC

@@ -88,6 +88,7 @@ CvUnit::CvUnit()
 	m_pSlaveUnitList.clear();
 	m_pMinionUnitList.clear();
 	m_cbCityBonuses.clear();
+	m_cbAuraBonuses.clear();
 	m_piYieldFromWin = NULL;
 	m_piYieldForLoss = NULL;
 	m_piCommerceFromWin = NULL;
@@ -577,6 +578,7 @@ void CvUnit::uninit()
 	m_pSlaveUnitList.clear();
 	m_pMinionUnitList.clear();
 	m_cbCityBonuses.clear();
+	m_cbAuraBonuses.clear();
 	SAFE_DELETE_ARRAY(m_piYieldFromWin);
 	SAFE_DELETE_ARRAY(m_piYieldForLoss);
 	SAFE_DELETE_ARRAY(m_piCommerceFromWin);
@@ -779,6 +781,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iBlind = 0;
 	m_iStrBoost = 0;
 	m_iCannotCast = 0;
+	m_iRevealed = 0;
 	m_iFreeUnit = 0;
 /*************************************************************************************************/
 /**	Workers Paradise						01/08/10											**/
@@ -887,6 +890,8 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_pMinionUnitList.clear();
 	m_iNumCityBonuses = 0;
 	m_cbCityBonuses.clear();
+	m_iNumAuraBonuses = 0;
+	m_cbAuraBonuses.clear();
 	if (!bConstructorCall)
 	{
 		m_pabRealPromotion = new bool[GC.getNumPromotionInfos()];
@@ -2278,6 +2283,10 @@ void CvUnit::doTurn()
 			if (iPromDuration != 0)
 			{
 				setPromotionDuration((PromotionTypes)iI, iPromDuration-1);
+				if (GC.getPromotionInfo((PromotionTypes)iI).isDurationDecreaseSpellpower())
+				{
+					changeExtraMagicalPower(1);
+				}
 				if (iPromDuration == 1 && GC.getPromotionInfo((PromotionTypes)iI).getExpireChance() == 0 && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCombat() && !GC.getPromotionInfo((PromotionTypes)iI).isRemovedByCasting() && !isPermanentSpellPromotion((PromotionTypes)iI))
 				{
 					setHasPromotion(((PromotionTypes)iI), false);
@@ -2326,7 +2335,10 @@ void CvUnit::doTurn()
 			promote(((PromotionTypes)iI), -1);
 		}
 	}
-
+	if (getNumAuraBonuses() > 0)
+	{
+		applyAuraBonusEffects(true, false, false);
+	}
 	setHasCasted(false);
 
 	// Xienwolf - 10/07/08 - Allows Twincast to cast a seperate spell, and stack Gameoption to disable Automatic Worker XP gain
@@ -11882,6 +11894,10 @@ bool CvUnit::isRevealed() const
 	{
 		return false;
 	}
+	if (isRevealedPromo())
+	{
+		return true;
+	}
 	bool temp = false;
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
@@ -11904,6 +11920,10 @@ bool CvUnit::isRevealed(const CvPlot* pPlot) const
 	if (getNumInvisibleTypes() <= 0)
 	{
 		return false;
+	}
+	if (isRevealedPromo())
+	{
+		return true;
 	}
 	bool temp = false;
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
@@ -15536,6 +15556,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 /**						Modifies City Status upon Flagged Unit Entry							**/
 /*************************************************************************************************/
 		applyCityBonusEffects(true, false);
+		applyAuraBonusEffects(true, false,false);
 /*************************************************************************************************/
 /**	People's Choice							END													**/
 /*************************************************************************************************/
@@ -16855,6 +16876,14 @@ void CvUnit::changeCannotCast(int iChange)
 {
 	m_iCannotCast = (m_iCannotCast + iChange);
 }
+bool CvUnit::isRevealedPromo() const
+{
+	return m_iRevealed > 0;
+}
+void CvUnit::changeRevealedPromo(int iChange)
+{
+	m_iRevealed = (m_iRevealed + iChange);
+}
 bool CvUnit::isTerritorial() const
 {
 	return m_iTerritorial > 0;
@@ -18171,6 +18200,204 @@ void CvUnit::changeCityBonuses(bool bApply, std::list<CityBonuses> cbCityBonus)
 		}
 	}
 }
+//Aura black_imp 24/09/15
+int CvUnit::getNumAuraBonuses() const
+{
+	return m_iNumAuraBonuses;
+}
+AuraBonuses CvUnit::getAuraBonus(int iI) const
+{
+	int iCount = 0;
+	AuraBonuses cbTemp;
+	for (std::list<AuraBonuses>::const_iterator iter = m_cbAuraBonuses.begin(); iter != m_cbAuraBonuses.end(); ++iter)
+	{
+		if (iCount == iI)
+		{
+			cbTemp = *iter;
+		}
+		iCount++;
+	}
+	return cbTemp;
+}
+std::list<AuraBonuses> CvUnit::listAuraBonuses()
+{
+	return m_cbAuraBonuses;
+}
+void CvUnit::changeAuraBonuses(bool bApply, std::list<AuraBonuses> cbAuraBonus)
+{
+	if (bApply)
+	{
+		while (!cbAuraBonus.empty())
+		{
+			m_iNumAuraBonuses++;
+			AuraBonuses cvTemp = cbAuraBonus.front();
+			m_cbAuraBonuses.push_back(cvTemp);
+			cbAuraBonus.pop_front();
+		}
+	}
+	else
+	{
+		while (!cbAuraBonus.empty())
+		{
+			if (m_cbAuraBonuses.front().compare(cbAuraBonus.front()))
+			{
+				m_iNumAuraBonuses--;
+				cbAuraBonus.pop_front();
+				m_cbAuraBonuses.pop_front();
+			}
+			else
+			{
+				m_cbAuraBonuses.push_back(m_cbAuraBonuses.front());
+				m_cbAuraBonuses.pop_front();
+			}
+		}
+	}
+}
+//Aura black_imp 24/09/15
+void CvUnit::applyAuraBonus(AuraBonuses cbTemp, CvUnit* pCheckUnit, bool bNewValue, int iDistance)
+{
+	if (cbTemp.promotion != NO_PROMOTION)
+	{
+
+		pCheckUnit->setHasPromotion(cbTemp.promotion, bNewValue, false, false);
+
+	}
+}
+void CvUnit::applyAuraBonusEffects(bool bActivate, bool bAlterFullMap, bool bCleanUp)
+{
+	PROFILE("CvUnit::applyAuraBonusEffects");
+
+	int iX, iY, iChange, iDistance, iLoop;
+	bool bApplyBonus = false;
+
+	iChange = (bActivate ? 1 : -1);
+
+	for (int iI = 0; iI < getNumAuraBonuses(); iI++)
+	{
+		AuraBonuses cbTemp = getAuraBonus(iI);
+		if (cbTemp.bFullMap || bCleanUp)
+		{
+			if (bAlterFullMap)
+			{
+				for (int iK = 0; iK < MAX_PLAYERS; iK++)
+				{
+					if (GET_PLAYER((PlayerTypes)iK).isAlive())
+					{
+						bApplyBonus = false;
+						if ((PlayerTypes)iK == getOwner() && cbTemp.bApplySelf)
+						{
+							bApplyBonus = true;
+						}
+						else if (GET_PLAYER((PlayerTypes)iK).getTeam() == getTeam() && !((PlayerTypes)iK == getOwner()) && cbTemp.bApplyTeam)
+						{
+							bApplyBonus = true;
+						}
+						else if (GET_TEAM(GET_PLAYER((PlayerTypes)iK).getTeam()).isAtWar(getTeam()) && cbTemp.bApplyEnemy)
+						{
+							bApplyBonus = true;
+						}
+						else if (!(GET_TEAM(GET_PLAYER((PlayerTypes)iK).getTeam()).isAtWar(getTeam())) && !(GET_PLAYER((PlayerTypes)iK).getTeam() == getTeam()) && cbTemp.bApplyRival)
+						{
+							bApplyBonus = true;
+						}
+						if (bApplyBonus)
+						{
+							for (CvUnit* pCheckUnit = GET_PLAYER((PlayerTypes)iK).firstUnit(&iLoop); pCheckUnit != NULL; pCheckUnit = GET_PLAYER((PlayerTypes)iK).nextUnit(&iLoop))
+							{
+								iDistance = plotDistance(getX(), getY(), pCheckUnit->getX(), pCheckUnit->getY());
+								applyAuraBonus(cbTemp, pCheckUnit, bActivate, iDistance);
+							}
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			for (int jX = -cbTemp.iBonusRange; jX < cbTemp.iBonusRange + 1; jX++)
+			{
+				iX = jX + getX();
+				if (iX >= GC.getMapINLINE().getGridWidthINLINE())
+				{
+					if (GC.getMapINLINE().isWrapXINLINE())
+					{
+						iX = iX - GC.getMapINLINE().getGridWidthINLINE();
+					}
+					else
+					{
+						iX = GC.getMapINLINE().getGridWidthINLINE();
+					}
+				}
+				else if (iX < 0)
+				{
+					if (GC.getMapINLINE().isWrapXINLINE())
+					{
+						iX = GC.getMapINLINE().getGridWidthINLINE() + iX;
+					}
+					else
+					{
+						iX = 0;
+					}
+				}
+				for (int jY = -cbTemp.iBonusRange; jY < cbTemp.iBonusRange + 1; jY++)
+				{
+					iY = jY + getY();
+					if (iY >= GC.getMapINLINE().getGridHeightINLINE())
+					{
+						if (GC.getMapINLINE().isWrapYINLINE())
+						{
+							iY = iY - GC.getMapINLINE().getGridHeightINLINE();
+						}
+					}
+					else if (iY < 0)
+					{
+						if (GC.getMapINLINE().isWrapYINLINE())
+						{
+							iY = GC.getMapINLINE().getGridHeightINLINE() + iY;
+						}
+					}
+					CvPlot* pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
+					if (pPlot != NULL)
+					{
+						for (int i = 0; i < pPlot->getNumUnits(); i++)
+						{
+							CvUnit* pCheckUnit = pPlot->getUnitByIndex(i);
+							if (pCheckUnit != NULL)
+							{
+								bApplyBonus = false;
+								iDistance = plotDistance(getX(), getY(), iX, iY);
+								if (pCheckUnit->getOwner() == getOwner() && cbTemp.bApplySelf)
+								{
+									bApplyBonus = true;
+								}
+								else if (pCheckUnit->getTeam() == getTeam() && !(pCheckUnit->getOwner() == getOwner()) && cbTemp.bApplyTeam)
+								{
+									bApplyBonus = true;
+								}
+								else if (pCheckUnit->isEnemy(getTeam()) && cbTemp.bApplyEnemy)
+								{
+									bApplyBonus = true;
+								}
+								else if (!(pCheckUnit->isEnemy(getTeam())) && !(pCheckUnit->getTeam() == getTeam()) && cbTemp.bApplyRival)
+								{
+									bApplyBonus = true;
+								}
+								//if (pCheckUnit->getID()==getID()){
+								//	bApplyBonus=false;
+								//}
+								if (bApplyBonus)
+								{
+									applyAuraBonus(cbTemp, pCheckUnit, bActivate, iDistance);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 bool CvUnit::isAllowPromotion(PromotionTypes eIndex) const
 {
 	return (m_pUnitInfo->isAllowPromotion(eIndex) || m_piAllowPromotion[eIndex] > 0);
@@ -22048,7 +22275,20 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		}
 		changeFreeXPCap(kPromotion.getFreeXPCap() * iChange);
 		changeCasterXPRate(kPromotion.getCasterXPRate() * iChange);
+
+		if (kPromotion.isDurationDecreaseSpellpower())
+		{
+			if (bNewValue)
+			{
+				changeExtraMagicalPower(-kPromotion.getDuration());
+			}
+			else
+			{
+				changeExtraMagicalPower(getPromotionDuration(eIndex));
+			}
+		}
 		setPromotionDuration(eIndex, (bNewValue ? kPromotion.getDuration() : 0));
+		
 		if (bNewValue)
 		{
 			for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
@@ -22148,6 +22388,8 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 		{
 			updateInvisibleLevel();
 		}
+
+		changeRevealedPromo((kPromotion.isRevealed()) ? iChange : 0);
 	//	if (kPromotion.getNumSeeInvisibleTypes() > 0)
 	//	{
 	//		for (iI = 0; iI < kPromotion.getNumSeeInvisibleTypes(); iI++)
@@ -22245,6 +22487,12 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 			changeCityBonuses(bNewValue, kPromotion.listCityBonuses());
 		}
 		applyCityBonusEffects(true, true);
+		if (kPromotion.getNumAuraBonuses() > 0)
+		{
+			applyAuraBonusEffects(false, true,false);
+			changeAuraBonuses(bNewValue, kPromotion.listAuraBonuses());
+			applyAuraBonusEffects(true, true,false);
+		}
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeYieldFromWin(iI, (kPromotion.getYieldFromWin(iI) * iChange));
@@ -23848,7 +24096,7 @@ bool CvUnit::canCastTargetPlot(int spell, bool bTestVisible, CvPlot* pTargetPlot
 	return true;
 }
 
-int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const {
+int CvUnit::getDamageSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const {
 	int iValue = 0;
 
 	if (pLoopUnit == pTargetplot->getBestDefender(getOwnerINLINE()))
@@ -23872,6 +24120,150 @@ int CvUnit::getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iD
 			iValue /= std::max(1, 100 - pLoopUnit->getDamageTypeResist((DamageTypes)iDmgType));
 		}
 		iValue = std::max(iValue, 3);
+	}
+
+	return iValue;
+}
+
+int CvUnit::getImmobileSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot) const {
+	int iValue = 0;
+
+	if (pLoopUnit == pTargetplot->getBestDefender(getOwnerINLINE()))
+	{
+		iValue = MAX_INT;
+	}
+	else if (pLoopUnit->getTeam() == getTeam())
+	{
+		iValue = 1;
+	}
+	else if (!GET_TEAM(getTeam()).isAtWar(pLoopUnit->getTeam()))
+	{
+		iValue = 2;
+	}
+	else
+	{
+		iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+		iValue = std::max(iValue, 3);
+	}
+
+	return iValue;
+}
+
+int CvUnit::getFortifySpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot) const {
+	int iValue = 0;
+
+	
+	if (!pLoopUnit->getTeam() == getTeam())
+	{
+		iValue = 2;
+	}
+	else if (GET_TEAM(getTeam()).isAtWar(pLoopUnit->getTeam()))
+	{
+		iValue = 1;
+	}
+	else
+	{
+		iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+		iValue = std::max(iValue, 3);
+	}
+
+	return iValue;
+}
+
+
+int CvUnit::getAddPromotionSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iPromoType, bool bEnemy) const {
+	int iValue = 0;
+	if (pLoopUnit->isHasPromotion((PromotionTypes)iPromoType))
+	{
+		return 0;
+	}
+	if (!bEnemy)
+	{
+		if (pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType) < 0)
+		{
+			return 0;
+		}
+		if (pLoopUnit->getTeam() == getTeam())
+		{
+			iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+			iValue *=std::abs(pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType));
+			iValue = std::max(iValue, 3);
+		}
+
+	}
+	else
+	{
+		if (pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType) > 0)
+		{
+			return 0;
+		}
+		if (pLoopUnit == pTargetplot->getBestDefender(getOwnerINLINE()))
+		{
+			iValue = MAX_INT;
+		}
+		else if (pLoopUnit->getTeam() == getTeam())
+		{
+			iValue = 1;
+		}
+		else if (!GET_TEAM(getTeam()).isAtWar(pLoopUnit->getTeam()))
+		{
+			iValue = 2;
+		}
+		else
+		{
+			iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+			iValue *= std::abs(pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType));
+			iValue = std::max(iValue, 3);
+		}
+	}
+
+	return iValue;
+}
+
+int CvUnit::getRemovePromotionSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iPromoType, bool bEnemy) const {
+	int iValue = 0;
+	if (!pLoopUnit->isHasPromotion((PromotionTypes)iPromoType))
+	{
+		return 0;
+	}
+	if (!bEnemy)
+	{
+		if (pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType) > 0)
+		{
+			return 0;
+		}
+		if (pLoopUnit->getTeam() == getTeam())
+		{
+			iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+			iValue *= std::abs(pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType));
+			iValue = std::max(iValue, 3);
+		}
+
+	}
+	else
+	{
+		if (pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType) < 0)
+		{
+			return 0;
+		}
+		if (pLoopUnit == pTargetplot->getBestDefender(getOwnerINLINE()))
+		{
+			iValue = MAX_INT;
+		}
+		else if (pLoopUnit->getTeam() == getTeam())
+		{
+			iValue = 1;
+		}
+		else if (!GET_TEAM(getTeam()).isAtWar(pLoopUnit->getTeam()))
+		{
+			iValue = 2;
+		}
+		else
+		{
+			iValue = (pLoopUnit->baseCombatStr() + pLoopUnit->baseCombatStrDefense()) * 100 / (10 + pLoopUnit->getDamage());
+			iValue *= std::abs(pLoopUnit->AI_promotionValue((PromotionTypes)iPromoType));
+			iValue = std::max(iValue, 3);
+		}
 	}
 
 	return iValue;
@@ -24466,7 +24858,7 @@ bool CvUnit::canDispel(int spell, CvPlot* pTargetPlot)
 			pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 			if (NULL != pLoopPlot && canCastTargetPlot(spell,false,pLoopPlot))
 			{
-				if (pLoopPlot->getPlotEffectType()!=NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).isDispellable())
+				if (pLoopPlot->getPlotEffectType()!=NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).isDispellable() && (GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).getPrereqDispelPower()==0 || GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).getPrereqDispelPower()<= getSpellMagicalPower(spell)))
 				{
 					return true;
 				}
@@ -24481,7 +24873,7 @@ bool CvUnit::canDispel(int spell, CvPlot* pTargetPlot)
 						{
 							if (pLoopUnit->isHasPromotion((PromotionTypes)iI))
 							{
-								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable())
+								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable()&& (GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() == 0 || GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() <= getSpellMagicalPower(spell)))
 								{
 									if ((GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() < 0 && pLoopUnit->getTeam() == getTeam())
 									|| (GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() > 0 && pLoopUnit->isEnemy(getTeam())))
@@ -25251,7 +25643,7 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 					pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 					if (NULL != pLoopPlot && canCastTargetPlot(spell, false, pLoopPlot))
 					{
-						if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
+						if (iNumTargets == -1 || iNumTargets >= pLoopPlot->getNumUnits())
 						{
 							pUnitNode = pLoopPlot->headUnitNode();
 							while (pUnitNode != NULL)
@@ -25432,7 +25824,21 @@ void CvUnit::castAddPromotion(int spell, CvPlot* pTargetPlot)
 										{
 											if (!bUnitHit[iCounter])
 											{
-												iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, -1);
+												iValue = getAddPromotionSpellDefenderValue(pLoopUnit, pLoopPlot, ePromotion1,true);
+
+												if (iValue > iBestValue)
+												{
+													iBestValue = iValue;
+													pBestUnit = pLoopUnit;
+													iBestUnitCounter = iCounter;
+												}
+											}
+										}
+										else
+										{
+											if (!bUnitHit[iCounter])
+											{
+												iValue = getAddPromotionSpellDefenderValue(pLoopUnit, pLoopPlot, ePromotion1, false);
 
 												if (iValue > iBestValue)
 												{
@@ -25632,7 +26038,7 @@ void CvUnit::castDamage(int spell, CvPlot* pTargetPlot)
 									{
 										if (!bUnitHit[iCounter])
 										{
-											iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, iDmgType);
+											iValue = getDamageSpellDefenderValue(pLoopUnit, pLoopPlot, iDmgType);
 
 											if (iValue > iBestValue)
 											{
@@ -25688,7 +26094,7 @@ void CvUnit::castDispel(int spell, CvPlot* pTargetPlot)
 			pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 			if (NULL != pLoopPlot && canCastTargetPlot(spell,false,pTargetPlot))
 			{
-				if (pLoopPlot->getPlotEffectType()!=NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).isDispellable())
+				if (pLoopPlot->getPlotEffectType()!=NO_PLOT_EFFECT && GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).isDispellable() && (GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).getPrereqDispelPower() == 0 || GC.getPlotEffectInfo((PlotEffectTypes)pLoopPlot->getPlotEffectType()).getPrereqDispelPower() <= getSpellMagicalPower(spell)))
 				{
 					pLoopPlot->setPlotEffectType(NO_PLOT_EFFECT);
 				}
@@ -25710,7 +26116,7 @@ void CvUnit::castDispel(int spell, CvPlot* pTargetPlot)
 							}
 							for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 							{
-								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable() && GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() > 0)
+								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable() && GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() > 0 && (GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() == 0 || GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() <= getSpellMagicalPower(spell)))
 								{
 									pLoopUnit->setHasPromotion((PromotionTypes)iI, false);
 								}
@@ -25720,7 +26126,7 @@ void CvUnit::castDispel(int spell, CvPlot* pTargetPlot)
 						{
 							for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 							{
-								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable() && GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() < 0)
+								if (GC.getPromotionInfo((PromotionTypes)iI).isDispellable() && GC.getPromotionInfo((PromotionTypes)iI).getAIWeight() < 0 && (GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() == 0 || GC.getPromotionInfo((PromotionTypes)iI).getPrereqDispelPower() <= getSpellMagicalPower(spell)))
 								{
 									pLoopUnit->setHasPromotion((PromotionTypes)iI, false);
 								}
@@ -25768,7 +26174,7 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
+					if (iNumTargets == -1 || iNumTargets >= pLoopPlot->getNumUnits())
 					{
 						pUnitNode = pLoopPlot->headUnitNode();
 						while (pUnitNode != NULL)
@@ -25858,7 +26264,7 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 									{
 										if (!bUnitHit[iCounter])
 										{
-											iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, -1);
+											iValue = getImmobileSpellDefenderValue(pLoopUnit, pLoopPlot);
 
 											if (iValue > iBestValue)
 											{
@@ -25867,6 +26273,21 @@ void CvUnit::castImmobile(int spell, CvPlot* pTargetPlot)
 												iBestUnitCounter = iCounter;
 											}
 										}
+									}
+									else
+									{
+										if (!bUnitHit[iCounter])
+										{
+											iValue = getImmobileSpellDefenderValue(pLoopUnit, pLoopPlot);
+
+											if (iValue > iBestValue)
+											{
+												iBestValue = iValue;
+												pBestUnit = pLoopUnit;
+												iBestUnitCounter = iCounter;
+											}
+										}
+
 									}
 								}
 							}
@@ -25922,7 +26343,7 @@ void CvUnit::castFortify(int spell, CvPlot* pTargetPlot)
 			{
 				if (pLoopPlot->getX() != plot()->getX() || pLoopPlot->getY() != plot()->getY())
 				{
-					if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
+					if (iNumTargets == -1 || iNumTargets >= pLoopPlot->getNumUnits())
 					{
 						pUnitNode = pLoopPlot->headUnitNode();
 						while (pUnitNode != NULL)
@@ -26012,7 +26433,22 @@ void CvUnit::castFortify(int spell, CvPlot* pTargetPlot)
 									{
 										if (!bUnitHit[iCounter])
 										{
-											iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, -1);
+											iValue = getFortifySpellDefenderValue(pLoopUnit, pLoopPlot);
+
+											if (iValue > iBestValue)
+											{
+												iBestValue = iValue;
+												pBestUnit = pLoopUnit;
+												iBestUnitCounter = iCounter;
+											}
+										}
+									}
+									else
+									{
+
+										if (!bUnitHit[iCounter])
+										{
+											iValue = getFortifySpellDefenderValue(pLoopUnit, pLoopPlot);
 
 											if (iValue > iBestValue)
 											{
@@ -26154,7 +26590,7 @@ void CvUnit::castRemovePromotion(int spell, CvPlot* pTargetPlot)
 					pLoopPlot = ::plotXY(pTargetPlot->getX_INLINE(), pTargetPlot->getY_INLINE(), i, j);
 					if (NULL != pLoopPlot && canCastTargetPlot(spell, false, pLoopPlot))
 					{
-						if (iNumTargets == -1 || iNumTargets > pLoopPlot->getNumUnits())
+						if (iNumTargets == -1 || iNumTargets >= pLoopPlot->getNumUnits())
 						{
 							pUnitNode = pLoopPlot->headUnitNode();
 							while (pUnitNode != NULL)
@@ -26241,7 +26677,21 @@ void CvUnit::castRemovePromotion(int spell, CvPlot* pTargetPlot)
 										{
 											if (!bUnitHit[iCounter])
 											{
-												iValue = getSpellDefenderValue(pLoopUnit, pLoopPlot, -1);
+												iValue = getRemovePromotionSpellDefenderValue(pLoopUnit, pLoopPlot, ePromotion1, true);
+
+												if (iValue > iBestValue)
+												{
+													iBestValue = iValue;
+													pBestUnit = pLoopUnit;
+													iBestUnitCounter = iCounter;
+												}
+											}
+										}
+										else
+										{
+											if (!bUnitHit[iCounter])
+											{
+												iValue = getRemovePromotionSpellDefenderValue(pLoopUnit, pLoopPlot, ePromotion1, false);
 
 												if (iValue > iBestValue)
 												{
@@ -27062,7 +27512,7 @@ void CvUnit::calcCombatLimit()
 
 		iValue = GC.getPromotionInfo((PromotionTypes)iI).getCombatLimit();
 
-		if (iValue < iBestValue)
+		if (iValue < iBestValue && iValue!=0)
 			iBestValue = iValue;
 	}
 
@@ -29364,6 +29814,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iStrBoost);
 	pStream->Read(&m_bDisablePyDeath);
 	pStream->Read(&m_iCannotCast);
+	pStream->Read(&m_iRevealed);
 	pStream->Read(&m_iFreeUnit);
 /*************************************************************************************************/
 /**	Workers Paradise						01/08/10											**/
@@ -29501,6 +29952,17 @@ void CvUnit::read(FDataStreamBase* pStream)
 		{
 			cbTemp.read(pStream);
 			m_cbCityBonuses.push_back(cbTemp);
+		}
+	}
+	pStream->Read(&m_iNumAuraBonuses);
+	m_cbAuraBonuses.clear();
+	if (m_iNumAuraBonuses != 0)
+	{
+		AuraBonuses cbTemp;
+		for (int iI = 0; iI < m_iNumAuraBonuses; iI++)
+		{
+			cbTemp.read(pStream);
+			m_cbAuraBonuses.push_back(cbTemp);
 		}
 	}
 	pStream->Read(NUM_YIELD_TYPES, m_piYieldFromWin);
@@ -29898,6 +30360,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStrBoost);
 	pStream->Write(m_bDisablePyDeath);
 	pStream->Write(m_iCannotCast);
+	pStream->Write(m_iRevealed);
 	pStream->Write(m_iFreeUnit);
 /*************************************************************************************************/
 /**	Workers Paradise						01/08/10											**/
@@ -30019,6 +30482,17 @@ void CvUnit::write(FDataStreamBase* pStream)
 		while (!cbDupe.empty())
 		{
 			CityBonuses cbTemp = cbDupe.front();
+			cbDupe.pop_front();
+			cbTemp.write(pStream);
+		}
+	}
+	pStream->Write(m_iNumAuraBonuses);
+	if (m_iNumAuraBonuses != 0)
+	{
+		std::list<AuraBonuses> cbDupe = m_cbAuraBonuses;
+		while (!cbDupe.empty())
+		{
+			AuraBonuses cbTemp = cbDupe.front();
 			cbDupe.pop_front();
 			cbTemp.write(pStream);
 		}
@@ -32768,8 +33242,15 @@ bool CvUnit::claimFort(bool bBuilt)
 
 	if (bCanSpawnCommander)
 	{
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
-		
+		UnitTypes eUnit;
+		if (GET_PLAYER(getOwnerINLINE()).getExtraUnitClasses((UnitClassTypes)iUnitClass) != NO_UNIT)
+		{
+			eUnit = (UnitTypes)GET_PLAYER(getOwnerINLINE()).getExtraUnitClasses((UnitClassTypes)iUnitClass);
+		}
+		else
+		{
+			eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
+		}
 		FAssertMsg(eUnit != NO_UNIT, "Missing fort commander entry for civ, aborting");
 
 		CvUnit* pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eUnit, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);

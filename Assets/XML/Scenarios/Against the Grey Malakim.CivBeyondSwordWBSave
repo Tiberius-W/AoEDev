@@ -913,7 +913,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -1622,7 +1622,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -1633,7 +1633,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -1641,7 +1641,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -2247,7 +2247,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2390,7 +2390,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2408,7 +2408,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_DIVIDED_SOUL, UnitOwner=35
+		UnitType=UNIT_DIVIDED_SOUL, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2446,7 +2446,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING
@@ -2454,7 +2454,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING
@@ -2462,7 +2462,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FROSTLING, UnitOwner=35
+		UnitType=UNIT_FROSTLING, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING
@@ -2628,7 +2628,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2779,7 +2779,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2794,7 +2794,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN_DRUID, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN_DRUID, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_CHANNELING1
@@ -2810,7 +2810,7 @@ BeginPlot
 		UnitAIType=UNITAI_EXPLORE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_LIZARDMAN
@@ -2818,7 +2818,7 @@ BeginPlot
 		UnitAIType=UNITAI_EXPLORE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2831,7 +2831,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2850,7 +2850,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2966,7 +2966,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2995,7 +2995,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -3482,7 +3482,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_DIVIDED_SOUL, UnitOwner=35
+		UnitType=UNIT_DIVIDED_SOUL, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -3722,7 +3722,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -3809,7 +3809,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -4307,7 +4307,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4428,7 +4428,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4446,7 +4446,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4485,7 +4485,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -4496,7 +4496,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -4504,7 +4504,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -4586,7 +4586,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4604,7 +4604,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4612,7 +4612,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4625,7 +4625,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN_DRUID, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN_DRUID, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_CHANNELING1
@@ -4640,7 +4640,7 @@ BeginPlot
 		UnitAIType=UNITAI_EXPLORE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_LIZARDMAN
@@ -4648,7 +4648,7 @@ BeginPlot
 		UnitAIType=UNITAI_EXPLORE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4686,7 +4686,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4792,7 +4792,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6111,7 +6111,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING
@@ -6119,7 +6119,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=35
+		UnitType=UNIT_FROSTLING_WOLF_RIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING
@@ -6127,7 +6127,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FROSTLING, UnitOwner=35
+		UnitType=UNIT_FROSTLING, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FROSTLING

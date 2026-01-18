@@ -164,6 +164,7 @@ public:
 	void assignVassal(int /*TeamTypes*/ eIndex, bool bSurrender);
 	void freeVassal(int /*TeamTypes*/ eIndex);
 	bool isDefensivePact(int /*TeamTypes*/ eIndex);
+	void setDefensivePact(int/*TeamTypes*/, bool ichange);
 	int getRouteChange(int /*RouteTypes*/ eIndex);
 	void changeRouteChange(int /*RouteTypes*/ eIndex, int iChange);
 	int getProjectCount(int /*ProjectTypes*/ eIndex);

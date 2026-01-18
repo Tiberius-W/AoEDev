@@ -321,7 +321,7 @@ def doFear(pVictim, pPlot, pCaster, bResistable):
 								iBestPlot = iRnd
 								pBestPlot = pLoopPlot
 	if pBestPlot != -1:
-		pVictim.setXY(pBestPlot.getX(), pBestPlot.getY(), False, true, true)
+		pVictim.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 		return True
 	return False
 

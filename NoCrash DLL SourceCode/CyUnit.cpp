@@ -2074,10 +2074,14 @@ bool CyUnit::canDispel(int spell) const
 	return m_pUnit ? m_pUnit->canDispel(spell) : false;
 }
 
-void CyUnit::cast(int spell)
-{
+void CyUnit::cast(int spell){
 	if (m_pUnit)
 		return m_pUnit->cast(spell);
+}
+
+void CyUnit::castOnPlot(int spell, CyPlot* pPlot) {
+	if (m_pUnit)
+		return m_pUnit->cast(spell, pPlot->getPlot());
 }
 
 void CyUnit::doDamage(int iDmg, int iDmgLimit, CyUnit* pAttacker, int iDmgType, bool bStartWar)

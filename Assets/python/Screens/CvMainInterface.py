@@ -30,7 +30,6 @@ import CvPath
 ## MPL end
 import math
 
-
 #---unitstats addition 1/4-----------------------
 import CvStatisticsScreen
 import UnitStatisticsTools
@@ -132,8 +131,6 @@ HUD_Main_Bottom_Right_Width = 243
 HUD_Main_Bottom_Right_Height = 186
 
 #Main Panel Behind Unit Stats
-# HUD_Main_Bottom_Left_Width = 243	Changed r364
-# HUD_Main_Bottom_Left_Width = 186	Changed r364
 HUD_Main_Bottom_Left_Width = 291
 HUD_Main_Bottom_Left_Height = 210
 
@@ -236,14 +233,8 @@ iXPLblCoordY = iXPBarCoordY + 5
 
 # MULTI LIST
 #####################
-
-#FfH: Modified by Kael 07/17/2008
-#iMultiListXL = 318
-#iMultiListXR = 332
-#iMultiListXL = 250 Changed r364
 iMultiListXL = 298
 iMultiListXR = 236
-#FfH: End Modify
 
 # TOP CENTER TITLE
 #####################
@@ -285,7 +276,7 @@ iPromotionsPerPage = 30
 iPromotionPage = 1
 iNumUnitPromotions = 0
 
-bSmallScoreboard = False
+iScoreState = 0
 
 class CvMainInterface:
 	"Main Interface Screen"
@@ -1138,8 +1129,8 @@ class CvMainInterface:
 		#Xienwolf Religious HUDs Add End
 		return 0
 
-		screen.setButtonGFC( "SmallScoreToggle", u"", "", 0, 0, 20,20, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
-		screen.hide("SmallScoreToggle")
+		screen.setButtonGFC( "ScoreToggle", u"", "", 0, 0, 18,18, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+		screen.hide("ScoreToggle")
 
 	# Will update the screen (every 250 MS)
 	def updateScreen(self):
@@ -1611,10 +1602,10 @@ class CvMainInterface:
 
 					if (gc.getActivePlayer().isCommerceFlexible(eCommerce) or (CyInterface().isCityScreenUp() and (eCommerce == CommerceTypes.COMMERCE_GOLD))):
 						szString1 = "IncreasePercent" + str(eCommerce)
-						screen.setButtonGFC( szString1, u"", "", 70 + iShift, 50 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_PLUS )
+						screen.setButtonGFC( szString1, u"", "", 70 + iShift, 50 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_PYTHON, 5001, eCommerce, ButtonStyles.BUTTON_STYLE_CITY_PLUS ) #gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS")
 						screen.show( szString1 )
 						szString2 = "DecreasePercent" + str(eCommerce)
-						screen.setButtonGFC( szString2, u"", "", 90 + iShift, 50 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+						screen.setButtonGFC( szString2, u"", "", 90 + iShift, 50 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_PYTHON, 5002, eCommerce, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
 						screen.show( szString2 )
 
 						iCount = iCount + 1
@@ -4458,7 +4449,6 @@ class CvMainInterface:
 
 		global iNumUnitPromotions
 		iNumUnitPromotions = 0
-
 		iRow = 0
 
 		screen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
@@ -4469,30 +4459,17 @@ class CvMainInterface:
 		xResolution = screen.getXResolution()
 		yResolution = screen.getYResolution()
 
-		bShift = CyInterface().shiftKey()
-
-#FfH: Modified by Kael 07/01/2007
-#		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 140, 280, 130, PanelStyles.PANEL_STYLE_STANDARD )
-#		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 140, 200, 130, PanelStyles.PANEL_STYLE_STANDARD )	Changed r364
 		screen.addPanel( "SelectedUnitPanel", u"", u"", True, False, 8, yResolution - 164, 200, 80, PanelStyles.PANEL_STYLE_STANDARD )
-#FfH: End Modify
-
 		screen.setStyle( "SelectedUnitPanel", "Panel_Game_HudStat_Style" )
 		screen.hide( "SelectedUnitPanel" )
-
-#FfH: Modified by Kael 07/01/2007
-#		screen.addTableControlGFC( "SelectedUnitText", 3, 10, yResolution - 109, 183, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
-#		screen.addTableControlGFC( "SelectedUnitText", 3, 10, yResolution - 109, 153, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )	Changed r364
 		screen.addTableControlGFC( "SelectedUnitText", 3, 5, yResolution - 135, 280, 102, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
-#FfH: End Modify
-
-
 		screen.setStyle( "SelectedUnitText", "Table_EmptyScroll_Style" )
 		screen.hide( "SelectedUnitText" )
 		screen.hide( "SelectedUnitLabel" )
 		screen.hide( "Stealth Icon" )
-
-		screen.addTableControlGFC( "SelectedCityText", 3, 10, yResolution - 139, 183, 128, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
+		screen.hide( "Unit UC" )
+		screen.hide( "Unit HN" )
+		screen.addTableControlGFC( "SelectedCityText", 3, 10, yResolution - 139, 220, 128, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 		screen.setStyle( "SelectedCityText", "Table_EmptyScroll_Style" )
 		screen.hide( "SelectedCityText" )
 
@@ -4513,53 +4490,54 @@ class CvMainInterface:
 		if (pHeadSelectedCity):
 
 			iOrders = CyInterface().getNumOrdersQueued()
+			iWidthMax = 0
 
-			screen.setTableColumnHeader( "SelectedCityText", 0, u"", 121 )
-			screen.setTableColumnHeader( "SelectedCityText", 1, u"", 54 )
+			screen.setTableColumnHeader( "SelectedCityText", 0, u"", 10 )
+			screen.setTableColumnHeader( "SelectedCityText", 1, u"", 200 )
 			screen.setTableColumnHeader( "SelectedCityText", 2, u"", 10 )
-			screen.setTableColumnRightJustify( "SelectedCityText", 1 )
 
 			for i in xrange( iOrders ):
 
-				szLeftBuffer = u""
-				szRightBuffer = u""
+				szBuffer0 = u""
+				szBuffer1 = u""
 
 				if ( CyInterface().getOrderNodeType(i) == OrderTypes.ORDER_TRAIN ):
-					szLeftBuffer = gc.getUnitInfo(CyInterface().getOrderNodeData1(i)).getDescription()
-					szRightBuffer = "(" + str(pHeadSelectedCity.getUnitProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
-
+					szBuffer0 += "(" + str(pHeadSelectedCity.getUnitProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
 					if (CyInterface().getOrderNodeSave(i)):
-						szLeftBuffer = u"*" + szLeftBuffer
+						szBuffer1 += u"*"
+					szBuffer1 += gc.getUnitInfo(CyInterface().getOrderNodeData1(i)).getDescription()
+
 
 				elif ( CyInterface().getOrderNodeType(i) == OrderTypes.ORDER_CONSTRUCT ):
-					szLeftBuffer = gc.getBuildingInfo(CyInterface().getOrderNodeData1(i)).getDescription()
-					szRightBuffer = "(" + str(pHeadSelectedCity.getBuildingProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
+					szBuffer0 += "(" + str(pHeadSelectedCity.getBuildingProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
+					szBuffer1 += gc.getBuildingInfo(CyInterface().getOrderNodeData1(i)).getDescription()
 
 				elif ( CyInterface().getOrderNodeType(i) == OrderTypes.ORDER_CREATE ):
-					szLeftBuffer = gc.getProjectInfo(CyInterface().getOrderNodeData1(i)).getDescription()
-					szRightBuffer = "(" + str(pHeadSelectedCity.getProjectProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
+					szBuffer0 += "(" + str(pHeadSelectedCity.getProjectProductionTurnsLeft(CyInterface().getOrderNodeData1(i), i)) + ")"
+					szBuffer1 += gc.getProjectInfo(CyInterface().getOrderNodeData1(i)).getDescription()
+
 
 				elif ( CyInterface().getOrderNodeType(i) == OrderTypes.ORDER_MAINTAIN ):
-					szLeftBuffer = gc.getProcessInfo(CyInterface().getOrderNodeData1(i)).getDescription()
+					szBuffer1 += gc.getProcessInfo(CyInterface().getOrderNodeData1(i)).getDescription()
+
+				iWidth0 = CyInterface().determineWidth(szBuffer0)
+				if iWidth0 > iWidthMax:
+					iWidthMax = iWidth0
 
 				screen.appendTableRow( "SelectedCityText" )
-				screen.setTableText( "SelectedCityText", 0, iRow, szLeftBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, i, -1, CvUtil.FONT_LEFT_JUSTIFY )
-				screen.setTableText( "SelectedCityText", 1, iRow, szRightBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, i, -1, CvUtil.FONT_RIGHT_JUSTIFY )
+				screen.setTableText( "SelectedCityText", 0, iRow, szBuffer0, "", WidgetTypes.WIDGET_HELP_SELECTED, i, -1, CvUtil.FONT_RIGHT_JUSTIFY )
+				screen.setTableText( "SelectedCityText", 1, iRow, szBuffer1, "", WidgetTypes.WIDGET_HELP_SELECTED, i, -1, CvUtil.FONT_LEFT_JUSTIFY )
 				screen.show( "SelectedCityText" )
-				screen.show( "SelectedUnitPanel" )
 				iRow += 1
+
+			screen.setTableColumnHeader( "SelectedCityText", 0, u"", iWidthMax + 15 )
+			screen.setTableColumnHeader( "SelectedCityText", 1, u"", 195 - iWidthMax )
 
 		elif (pHeadSelectedUnit and CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW):
 
-#FfH: Modified by Kael 07/17/2008
-#			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 100 )
-#			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 75 )
-#			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 10 )
 			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 290 )
 			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 5 )
 			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 5 )
-#FfH: End Modify
-
 			screen.setTableColumnRightJustify( "SelectedUnitText", 1 )
 
 			if (CyInterface().mirrorsSelectionGroup()):
@@ -4569,7 +4547,6 @@ class CvMainInterface:
 
 			if (CyInterface().getLengthSelectionList() > 1):
 
-#				screen.setText( "SelectedUnitLabel", "Background", localText.getText("TXT_KEY_UNIT_STACK", (CyInterface().getLengthSelectionList(), )), CvUtil.FONT_LEFT_JUSTIFY, 18, yResolution - 137, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 ) Changed r364
 				screen.setText( "SelectedUnitLabel", "Background", localText.getText("TXT_KEY_UNIT_STACK", (CyInterface().getLengthSelectionList(), )), CvUtil.FONT_LEFT_JUSTIFY, 18, yResolution - 161, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 )
 
 				if ((pSelectedGroup == 0) or (pSelectedGroup.getLengthMissionQueue() <= 1)):
@@ -4593,29 +4570,62 @@ class CvMainInterface:
 								screen.show( "SelectedUnitPanel" )
 								iRow += 1
 			else:
+				szBuffer	= ""
+				xPos		= 12
+				yPos		= yResolution - 161
+				xOffset		= 24
+
+				iUC = pHeadSelectedUnit.getUnitCombatType()
+				if iUC != -1:
+					szButton = gc.getUnitCombatInfo(iUC).getButton()
+					screen.addDDSGFC( "Unit UC", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+					screen.show( "Unit UC" )
+					xPos += xOffset
+
+				if pHeadSelectedUnit.getNumInvisibleTypes() > 0:
+					if pHeadSelectedUnit.isRevealed():
+						szButton = ArtFileMgr.getInterfaceArtInfo("INTERFACE_UNIT_REVEALED").getPath()
+					else:
+						szButton = ArtFileMgr.getInterfaceArtInfo("OVERLAY_HIDDEN").getPath()
+					screen.addDDSGFC( "Stealth Icon", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+					screen.show( "Stealth Icon" )
+					xPos += xOffset
+
+				if pHeadSelectedUnit.isHiddenNationality():
+					szButton = gc.getPromotionInfo(gc.getInfoTypeForString("PROMOTION_HIDDEN_NATIONALITY")).getButton()
+					screen.addDDSGFC( "Unit HN", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+					screen.show( "Unit HN" )
+					xPos += xOffset
+
+				iRel = pHeadSelectedUnit.getReligion()
+				if iRel != -1:
+					cRel = gc.getReligionInfo(iRel).getChar()
+					szTempBuffer = u"%c" %(cRel)
+					szBuffer += szTempBuffer
+
+				if pHeadSelectedUnit.isRivalTerritory():
+					cRT = CyGame().getSymbolID(FontSymbols.OPEN_BORDERS_CHAR)
+					szTempBuffer = u"%c" %(cRT)
+					szBuffer += szTempBuffer
 
 				if (pHeadSelectedUnit.getHotKeyNumber() == -1):
-					szBuffer = localText.getText("INTERFACE_PANE_UNIT_NAME", (pHeadSelectedUnit.getName(), ))
+					szBuffer += localText.getText("INTERFACE_PANE_UNIT_NAME", (pHeadSelectedUnit.getName(), ))
 				else:
-					szBuffer = localText.getText("INTERFACE_PANE_UNIT_NAME_HOT_KEY", (pHeadSelectedUnit.getHotKeyNumber(), pHeadSelectedUnit.getName()))
-				if (len(szBuffer) > 60):
+					szBuffer += localText.getText("INTERFACE_PANE_UNIT_NAME_HOT_KEY", (pHeadSelectedUnit.getHotKeyNumber(), pHeadSelectedUnit.getName()))
+				if (len(szBuffer) > 50):
+					print "len"
+					print szBuffer
+					print len(szBuffer)
 					szBuffer = "<font=2>" + szBuffer + "</font>"
-				# Esus icon before the name if unit is stealthed
-				if pHeadSelectedUnit.getNumInvisibleTypes() > 0:
-					szFileName = ArtFileMgr.getInterfaceArtInfo("OVERLAY_HIDDEN").getPath()
-					screen.addDDSGFC ( "Stealth Icon", szFileName, 18, yResolution - 158, 20, 20, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( "Stealth Icon" )
-					screen.setText( "SelectedUnitLabel", "Background", szBuffer, CvUtil.FONT_LEFT_JUSTIFY, 40, yResolution - 161, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 )
-				else:
-#					screen.setText( "SelectedUnitLabel", "Background", szBuffer, CvUtil.FONT_LEFT_JUSTIFY, 18, yResolution - 137, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 )	Changed r364
-					screen.setText( "SelectedUnitLabel", "Background", szBuffer, CvUtil.FONT_LEFT_JUSTIFY, 18, yResolution - 161, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 )
+
+				screen.setText( "SelectedUnitLabel", "Background", szBuffer, CvUtil.FONT_LEFT_JUSTIFY, xPos, yPos - 2, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_UNIT_NAME, -1, -1 )
 
 				if ((pSelectedGroup == 0) or (pSelectedGroup.getLengthMissionQueue() <= 1)):
 					screen.show( "SelectedUnitText" )
 					screen.show( "SelectedUnitPanel" )
 
-					# [Movement] [Level] [XP] [Fortify]
-					# [Combat] [Ranged] [MP] [Work Rate]
+					# [Level] [XP] [Movement] [Fortify]
+					# [Combat] [HP] [Ranged] [MP] [Work Rate]
 
 					szBuffer		= u""
 					szColorStart	= ''
@@ -4640,19 +4650,41 @@ class CvMainInterface:
 							if bHurt:
 								fCurrentHP = float(pHeadSelectedUnit.currHitPoints())
 								fMaxHP = float(pHeadSelectedUnit.maxHitPoints())
-								fHP = (fCurrentHP / fMaxHP) * 100
-								fHP = round(fHP, 1)
-								szHP = u" %g" %(fHP) + "%"
 								iStrength = float(iStrength) * (fCurrentHP / fMaxHP)
 								iStrength = round(iStrength, 1)
 								iDefStrength = float(iDefStrength) * (fCurrentHP / fMaxHP)
 								iDefStrength = round(iDefStrength, 1)
 							cStrength = CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR)
 							if bShortStr:
-								szCombat = szColorStart + u"%c%g" %(cStrength,iStrength) + szHP + szColorEnd
+								szCombat = szColorStart + u"%c%g" %(cStrength,iStrength) + szColorEnd
 							else:
-								szCombat = szColorStart + u"%c%g/%g" %(cStrength,iStrength,iDefStrength) + szHP + szColorEnd
+								szCombat = szColorStart + u"%c%g/%g" %(cStrength,iStrength,iDefStrength) + szColorEnd
 							lRow2.append(szCombat)
+					
+					# HP + Regen
+					iRegen = pHeadSelectedUnit.calcTurnHealthChangeReal()
+					if bHurt or iRegen < 0:
+						fCurrentHP = float(pHeadSelectedUnit.currHitPoints())
+						fMaxHP = float(pHeadSelectedUnit.maxHitPoints())
+						fHP = (fCurrentHP / fMaxHP) * 100
+						fHP = round(fHP, 1)
+						szHP = u" %g" %(fHP) + "%"
+						szHP = szColorStart + szHP + szColorEnd
+						
+						iRegen = pHeadSelectedUnit.calcTurnHealthChangeReal()
+						fRegen = (iRegen / fMaxHP) * 100
+						fRegen = int(fRegen)
+						szRegen = ""
+						if fRegen < 0:
+							szColorRegenStart = localText.getText('[COLOR_RED]',())
+							szColorRegenEnd = localText.getText('[COLOR_REVERT]',())
+							szRegen = szColorRegenStart + " (" + str(fRegen) + "%)" + szColorRegenEnd
+						elif fRegen > 0:
+							szColorRegenStart = localText.getText('[COLOR_POSITIVE_TEXT]',())
+							szColorRegenEnd = localText.getText('[COLOR_REVERT]',())
+							szRegen = szColorRegenStart + " (+" + str(fRegen) + "%)" + szColorRegenEnd
+						szHP += szRegen
+						lRow2.append(szHP)
 
 					# Ranged Str
 					if (pHeadSelectedUnit.airBaseCombatStr() > 0):
@@ -4664,7 +4696,7 @@ class CvMainInterface:
 							iRangedStrength = float(iRangedStrength) * (fCurrentHP / fMaxHP)
 							iRangedStrength = round(iRangedStrength, 1)
 						cRanged = CyGame().getSymbolID(FontSymbols.RANGED_CHAR)
-						szRanged = szColorStart + u"%c%d" %(cRanged,iRangedStrength) + szColorEnd + u", %d%%" %(iRangedLimit)
+						szRanged = szColorStart + u"%c%g" %(cRanged,iRangedStrength) + szColorEnd + u", %d%%" %(iRangedLimit)
 						lRow2.append(szRanged)
 
 					# Magical Power
@@ -4681,6 +4713,17 @@ class CvMainInterface:
 						szWorkRate = u"%c%d" %(cWork,iWorkRate)
 						lRow2.append(szWorkRate)
 
+					# Level
+					iLevel = pHeadSelectedUnit.getLevel()
+					szLevel = localText.getText("TXT_KEY_INTERFACE_LEVEL", (iLevel,))
+					lRow1.append(szLevel)
+
+					# XP
+					fCurrentXP = pHeadSelectedUnit.getExperience()
+					fNeededXP = pHeadSelectedUnit.experienceNeeded()
+					szXP = localText.getText("TXT_KEY_INTERFACE_XP", ()) + u" %g/%g" %(fCurrentXP,fNeededXP)
+					lRow1.append(szXP)
+
 					# Movement
 					fMoves = float(pHeadSelectedUnit.movesLeft())
 					fCurrMoves = (fMoves / gc.getMOVE_DENOMINATOR())
@@ -4692,17 +4735,6 @@ class CvMainInterface:
 					else:
 						szMovement = u"%c%g/%d" %(cMoves,fCurrMoves,iBase)
 					lRow1.append(szMovement)
-
-					# Level
-					iLevel = pHeadSelectedUnit.getLevel()
-					szLevel = localText.getText("TXT_KEY_INTERFACE_LEVEL", (iLevel,))
-					lRow1.append(szLevel)
-
-					# XP
-					fCurrentXP = pHeadSelectedUnit.getExperience()
-					fNeededXP = pHeadSelectedUnit.experienceNeeded()
-					szXP = localText.getText("TXT_KEY_INTERFACE_XP", ()) + u" %g/%g" %(fCurrentXP,fNeededXP)
-					lRow1.append(szXP)
 
 					# Fortify
 					if pHeadSelectedUnit.fortifyModifier() > 0:
@@ -4717,6 +4749,10 @@ class CvMainInterface:
 						else:
 							szBuffer += string
 
+					iWidth = CyInterface().determineWidth(szBuffer)
+					if iWidth > 260:
+						szBuffer = "<font=1>" + szBuffer + "</font>"
+
 					screen.appendTableRow( "SelectedUnitText" )
 					screen.setTableText( "SelectedUnitText", 0, iRow, szBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
 					iRow += 1
@@ -4727,6 +4763,10 @@ class CvMainInterface:
 							szBuffer += string + szSeparator
 						else:
 							szBuffer += string
+
+					iWidth = CyInterface().determineWidth(szBuffer)
+					if iWidth > 260:
+						szBuffer = "<font=1>" + szBuffer + "</font>"
 
 					screen.appendTableRow( "SelectedUnitText" )
 					screen.setTableText( "SelectedUnitText", 0, iRow, szBuffer, "", WidgetTypes.WIDGET_HELP_SELECTED, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
@@ -4782,334 +4822,269 @@ class CvMainInterface:
 
 	# Will update the scores
 	def updateScoreStrings( self ):
-
+		global iScoreState
 		screen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
 
-		xResolution = screen.getXResolution()
-		yResolution = screen.getYResolution()
-		yCoord = yResolution - 68
-
 		screen.hide( "ScoreBackground" )
-		screen.hide( "SmallScoreToggle" )
-
+		screen.hide( "ScoreToggle" )
+		screen.hide( "CutLosersTag" )
+		screen.hide( "DifficultyTag" )
+		screen.hide( "HighToLowTag" )
+		screen.hide( "DisableProductionTag" )
+		screen.hide( "DisableResearchTag" )
+		screen.hide( "DisableSpellcastingTag" )
 		for i in xrange( gc.getMAX_PLAYERS() ):
-			szName = "ScoreText" + str(i)
-			screen.hide( szName )
-
-#FfH Global Counter: Added by Kael 08/12/2007
+			screen.hide( "ScoreText" + str(i) )
 		if CyGame().getWBMapScript():
-			szName = "GoalTag"
-			screen.hide( szName )
-		szName = "CutLosersTag"
-		screen.hide( szName )
-		szName = "DifficultyTag"
-		screen.hide( szName )
-		szName = "HighToLowTag"
-		screen.hide( szName )
-		szName = "DisableProductionTag"
-		screen.hide( szName )
-		szName = "DisableResearchTag"
-		screen.hide( szName )
-		szName = "DisableSpellcastingTag"
-		screen.hide( szName )
-#FfH: End Add
+			screen.hide( "GoalTag" )
 
-		iWidth = 0
-		iCount = 0
-		iBtnHeight = 22
+		if CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_HIDE_ALL: return
+		if CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_MINIMAP_ONLY: return
+		if not CyInterface().isScoresVisible(): return
+		if CyInterface().isCityScreenUp(): return
+		if CyEngine().isGlobeviewUp(): return
 
-		if ((CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY)):
-			if (CyInterface().isScoresVisible() and not CyInterface().isCityScreenUp() and CyEngine().isGlobeviewUp() == false):
-				i = gc.getMAX_CIV_TEAMS() - 1
-				while (i > -1):
-					iTeam = gc.getGame().getRankTeam(i)
-					pTeam = gc.getTeam(iTeam)
-					if (gc.getTeam(gc.getGame().getActiveTeam()).isHasMet(iTeam) or pTeam.isHuman() or gc.getGame().isDebugMode()):
-						j = gc.getMAX_CIV_PLAYERS() - 1
-						while (j > -1):
-							ePlayer = gc.getGame().getRankPlayer(j)
+		xResolution		= screen.getXResolution()
+		yResolution		= screen.getYResolution()
+		git				= gc.getInfoTypeForString
+		iWidth			= 0
+		iRow			= 0
+		iRowSpecial		= 0
+		iBtnHeight		= 22
+		iY				= yResolution - 206
+		iX				= xResolution - 18
+		iActiveTeam		= gc.getGame().getActiveTeam()
+		iActivePlayer	= gc.getGame().getActivePlayer()
+		pActivePlayer	= gc.getPlayer(iActivePlayer)
+		bDebug = False
+		if CyGame().isDebugMode():
+			bDebug = True
+		bEyesEars = False
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			iLoopTeam = pLoopPlayer.getTeam()
+			if iLoopTeam == iActiveTeam and pLoopPlayer.getNumBuilding(git('BUILDING_EYES_AND_EARS_NETWORK')) > 0:
+				bEyesEars = True
 
-							if (not CyInterface().isScoresMinimized() or gc.getGame().getActivePlayer() == ePlayer):
-								if (gc.getPlayer(ePlayer).isAlive() and not gc.getPlayer(ePlayer).isMinorCiv()):
+		lMasters = []
+		lVassals = []
+		lPlayers = []
+		if iScoreState == 2:
+			lPlayers.append(iActivePlayer)
+		else:
+			for iPlayerX in xrange(gc.getMAX_CIV_PLAYERS()):
+				pPlayerX = gc.getPlayer(iPlayerX)
+				if pPlayerX.isAlive() and not pPlayerX.isMinorCiv():
+					iTeamX = pPlayerX.getTeam()
+					pTeamX = gc.getTeam(iTeamX)
+					if pTeamX.isHasMet(iActiveTeam) or bDebug:
+						if pTeamX.isAVassal():
+							for iTeamY in xrange(gc.getMAX_CIV_TEAMS()):
+								if pTeamX.isVassal(iTeamY):
+									lVassals.append([CyGame().getTeamRank(iTeamY), CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iPlayerX])
+									break
+						else:
+							lMasters.append([CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iPlayerX])
+		lMasters.sort()
+		lVassals.sort()
+		for i in xrange(len(lMasters)):
+			lPlayers.append(lMasters[i][2])
+			if i < len(lMasters) - 1 and lMasters[i][0] == lMasters[i + 1][0]: continue
+			for j in lVassals:
+				if j[0] == lMasters[i][0]:
+					lPlayers.append(j[3])
+				elif j[0] > lMasters[i][0]:
+					break
+		lPlayers.reverse()
 
-									if (gc.getPlayer(ePlayer).getTeam() == iTeam):
-										szBuffer = u"<font=2>"
+		screen.setButtonGFC( "ScoreToggle", u"", "", iX, iY, 18,18, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+		screen.show("ScoreToggle")
 
-										if (gc.getGame().isGameMultiPlayer() and not gc.getGame().isHotSeat):
-											if (not (gc.getPlayer(ePlayer).isTurnActive())):
-												szBuffer = szBuffer + "*"
+		for iPlayer in lPlayers:
+			pPlayer	= gc.getPlayer(iPlayer)
+			iTeam	= pPlayer.getTeam()
+			pTeam	= gc.getTeam(iTeam)
+			szName	= "ScoreText" + str(iPlayer)
+			szColorStart	= u"<color=%d,%d,%d,%d>" %(pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(), pPlayer.getPlayerTextColorA())
+			szColorEnd		= u"</color>"
+			if iPlayer == iActivePlayer:
+				szColorStart	= u"[" + szColorStart
+				szColorEnd		+= u"]"
+			szPlayerString	= u"<font=2>"
+			szScore			= str(gc.getGame().getPlayerScore(iPlayer)) + ": "
+			if g_bScoreShowStateName and iScoreState != 1:
+				szPlayerName = pPlayer.getStateName()
+				# Reminder to change to Secondary Leader when they are added
+				if pPlayer.getLeaderType() == git('LEADER_KOUN'):
+					szPlayerName += u" %c" %(CyGame().getSymbolID(FontSymbols.GREAT_PEOPLE_CHAR))
+			else:
+				szPlayerName = pPlayer.getName()
 
-										if (gc.getGame().isHotSeat):
-											if ePlayer < gc.getGame().getActivePlayer():
-												szBuffer = szBuffer + "*"
-
-										if (not CyInterface().isFlashingPlayer(ePlayer) or CyInterface().shouldFlash(ePlayer)):
-											if (ePlayer == gc.getGame().getActivePlayer()):
-												if bSmallScoreboard:
-													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
-												elif g_bScoreShowStateName:
-													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getStateName())
-												else:
-													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
-											else:
-												if bSmallScoreboard:
-													szTempBuffer = u"%d: [<color=%d,%d,%d,%d>%s</color>]" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
-												elif g_bScoreShowStateName:
-													szTempBuffer = u"%d: <color=%d,%d,%d,%d>%s</color>" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getStateName())
-												else:
-													szTempBuffer = u"%d: <color=%d,%d,%d,%d>%s</color>" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getPlayerTextColorR(), gc.getPlayer(ePlayer).getPlayerTextColorG(), gc.getPlayer(ePlayer).getPlayerTextColorB(), gc.getPlayer(ePlayer).getPlayerTextColorA(), gc.getPlayer(ePlayer).getName())
-										else:
-											szTempBuffer = u"%d: %s" %(gc.getGame().getPlayerScore(ePlayer), gc.getPlayer(ePlayer).getName())
-										szBuffer = szBuffer + szTempBuffer
-										if (gc.getPlayer(ePlayer).getLeaderType() == gc.getInfoTypeForString('LEADER_KOUN')):
-											szBuffer = szBuffer + u" (Koun)"
-										if (pTeam.isAlive()):
-											if ( not (gc.getTeam(gc.getGame().getActiveTeam()).isHasMet(iTeam)) ):
-												szBuffer = szBuffer + (" ?")
-											elif (not (gc.getPlayer(ePlayer).isHuman() or gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam())):
-												if (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) != AttitudeTypes.NO_ATTITUDE):
-													if (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) ==  AttitudeTypes.ATTITUDE_FURIOUS):
-														szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.FURIOUS_CHAR))
-														szBuffer = szBuffer + szTempBuffer
-													elif (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) ==  AttitudeTypes.ATTITUDE_ANNOYED):
-														szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.ANNOYED_CHAR))
-														szBuffer = szBuffer + szTempBuffer
-													elif (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) ==  AttitudeTypes.ATTITUDE_CAUTIOUS):
-														szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.CAUTIOUS_CHAR))
-														szBuffer = szBuffer + szTempBuffer
-													elif (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) ==  AttitudeTypes.ATTITUDE_PLEASED):
-														szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.PLEASED_CHAR))
-														szBuffer = szBuffer + szTempBuffer
-													elif (gc.getPlayer(ePlayer).AI_getAttitude(gc.getGame().getActivePlayer()) ==  AttitudeTypes.ATTITUDE_FRIENDLY):
-														szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.FRIENDLY_CHAR))
-														szBuffer = szBuffer + szTempBuffer
-											if (pTeam.isAtWar(gc.getGame().getActiveTeam())):
-												szBuffer = szBuffer + "("  + localText.getColorText("TXT_KEY_CONCEPT_WAR", (), gc.getInfoTypeForString("COLOR_NEGATIVE_TEXT")).upper() + ")"
-											if (gc.getPlayer(ePlayer).canTradeNetworkWith(gc.getGame().getActivePlayer()) and (ePlayer != gc.getGame().getActivePlayer())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.TRADE_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if (pTeam.isOpenBorders(gc.getGame().getActiveTeam())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.OPEN_BORDERS_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if (pTeam.isDefensivePact(gc.getGame().getActiveTeam())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.DEFENSIVE_PACT_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if not (pTeam.isAtWar(gc.getORC_TEAM())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.ORC_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if not (pTeam.isAtWar(gc.getDEMON_TEAM())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.DEMON_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if not (pTeam.isAtWar(gc.getANIMAL_TEAM())):
-												szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.ANIMAL_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if pTeam.getBlockBonuses() > 0:
-												if (gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam() or gc.getGame().isDebugMode()):
-													szTempBuffer = u"%c(%d)" %(CyGame().getSymbolID(FontSymbols.BAD_FOOD_CHAR), pTeam.getBlockBonuses())
-												else:
-													szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.BAD_FOOD_CHAR))
-												szBuffer = szBuffer + szTempBuffer
-											if pTeam.getRevealAllBonuses() > 0:
-												if (gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam() or gc.getGame().isDebugMode()):
-													szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_NATURE')).getChar(), pTeam.getRevealAllBonuses())
-												else:
-													szTempBuffer = u"%c" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_NATURE')).getChar())
-												szBuffer = szBuffer + szTempBuffer
-											if gc.getPlayer(ePlayer).isHideUnits():
-												if (gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam() or gc.getGame().isDebugMode()):
-													if pTeam.getHideUnits() > 0:
-														szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SHADOW')).getChar(), pTeam.getHideUnits())
-													else:
-														szTempBuffer = u"%c" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SHADOW')).getChar())
-												else:
-													szTempBuffer = u"%c" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SHADOW')).getChar())
-												szBuffer = szBuffer + szTempBuffer
-											if gc.getPlayer(ePlayer).isSeeInvisible():
-												if (gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam() or gc.getGame().isDebugMode()):
-													if pTeam.getSeeInvisible() > 0:
-														szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SUN')).getChar(), pTeam.getSeeInvisible())
-													else:
-														szTempBuffer = u"%c" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SUN')).getChar())
-												else:
-													szTempBuffer = u"%c" %(gc.getBonusInfo(gc.getInfoTypeForString('BONUS_MANA_SUN')).getChar())
-												szBuffer = szBuffer + szTempBuffer
-											if (gc.getPlayer(ePlayer).getStateReligion() != -1):
-
-#FfH: Added by Kael 11/04/2007
-												if (gc.getPlayer(gc.getGame().getActivePlayer()).canSeeReligion(gc.getPlayer(ePlayer).getStateReligion())):
-#FfH: End Add
-
-													if (gc.getPlayer(ePlayer).hasHolyCity(gc.getPlayer(ePlayer).getStateReligion())):
-														szTempBuffer = u"%c" %(gc.getReligionInfo(gc.getPlayer(ePlayer).getStateReligion()).getHolyCityChar())
-														szBuffer = szBuffer + szTempBuffer
-													else:
-														szTempBuffer = u"%c" %(gc.getReligionInfo(gc.getPlayer(ePlayer).getStateReligion()).getChar())
-														szBuffer = szBuffer + szTempBuffer
-											if (pTeam.getEspionagePointsAgainstTeam(gc.getGame().getActiveTeam()) < gc.getTeam(gc.getGame().getActiveTeam()).getEspionagePointsAgainstTeam(iTeam)):
-												szTempBuffer = u"%c" %(gc.getCommerceInfo(CommerceTypes.COMMERCE_ESPIONAGE).getChar())
-												szBuffer = szBuffer + szTempBuffer
-
-											if not bSmallScoreboard:
-												if gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_CHAOTIC'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_EVIL", (), gc.getInfoTypeForString("COLOR_RED")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_NEUTRAL", (), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_CHAOTIC_GOOD", (), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												elif gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_LAWFUL'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_EVIL", (), gc.getInfoTypeForString("COLOR_RED")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_NEUTRAL", (), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_LAWFUL_GOOD", (), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												elif gc.getPlayer(ePlayer).getEthicalAlignment() == gc.getInfoTypeForString('ETHICAL_ALIGNMENT_NEUTRAL'):
-													if gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_EVIL", (), gc.getInfoTypeForString("COLOR_RED")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_NEUTRAL'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_NEUTRAL", (), gc.getInfoTypeForString("COLOR_GREY")) + ")"
-													elif gc.getPlayer(ePlayer).getAlignment() == gc.getInfoTypeForString('ALIGNMENT_GOOD'):
-														szTempBuffer = " (" + localText.getColorText("TXT_KEY_ALIGNMENT_NEUTRAL_GOOD", (), gc.getInfoTypeForString("COLOR_YELLOW")) + ")"
-												szBuffer = szBuffer + szTempBuffer
-#FfH: End Add
-#LeaderStatus: Added by Valkrionn 02/10/2009
-											if gc.getPlayer(ePlayer).getLeaderStatus() == gc.getInfoTypeForString('HISTORICAL_STATUS'):
-												szTempBuffer = " " + u"%c" %(CyGame().getSymbolID(FontSymbols.HISTORICAL_CHAR))
-											elif gc.getPlayer(ePlayer).getLeaderStatus() == gc.getInfoTypeForString('IMPORTANT_STATUS'):
-												szTempBuffer = " " + u"%c" %(CyGame().getSymbolID(FontSymbols.IMPORTANT_CHAR))
-											elif gc.getPlayer(ePlayer).getLeaderStatus() == gc.getInfoTypeForString('EMERGENT_STATUS'):
-												szTempBuffer = " " + u"%c" %(CyGame().getSymbolID(FontSymbols.EMERGENT_CHAR))
-											else:
-												szTempBuffer = ""
-											szBuffer = szBuffer + szTempBuffer
-#LeaderStatus: End Add
-										if not bSmallScoreboard:
-											bEspionageCanSeeResearch = false
-											for iMissionLoop in xrange(gc.getNumEspionageMissionInfos()):
-												if (gc.getEspionageMissionInfo(iMissionLoop).isSeeResearch()):
-													bEspionageCanSeeResearch = gc.getPlayer(gc.getGame().getActivePlayer()).canDoEspionageMission(iMissionLoop, ePlayer, None, -1)
-													break
-
-											# If player's team owns eyes and ears network, then EspionageCanSeeResearch"
-											numEyesEarsNetwork = 0
-											ActiveTeam = gc.getTeam(gc.getPlayer(gc.getGame().getActivePlayer()).getTeam()).getID()
-											for iPlayerLoop in range(gc.getMAX_PLAYERS()): # for all players
-												pPlayer = gc.getPlayer(iPlayerLoop)
-												iPlayerTeam = pPlayer.getTeam()
-												if iPlayerTeam == ActiveTeam:
-													numEyesEarsNetwork += pPlayer.getNumBuilding(gc.getInfoTypeForString('BUILDING_EYES_AND_EARS_NETWORK'))
-											if numEyesEarsNetwork > 0:
-												bEspionageCanSeeResearch = True
-
-											if (((gc.getPlayer(ePlayer).getTeam() == gc.getGame().getActiveTeam()) and (gc.getTeam(gc.getGame().getActiveTeam()).getNumMembers() > 1)) or (gc.getTeam(gc.getPlayer(ePlayer).getTeam()).isVassal(gc.getGame().getActiveTeam())) or gc.getGame().isDebugMode() or bEspionageCanSeeResearch):
-												if (gc.getPlayer(ePlayer).getCurrentResearch() != -1):
-													szTempBuffer = u"-%s (%d)" %(gc.getTechInfo(gc.getPlayer(ePlayer).getCurrentResearch()).getDescription(), gc.getPlayer(ePlayer).getResearchTurnsLeft(gc.getPlayer(ePlayer).getCurrentResearch(), True))
-													szBuffer = szBuffer + szTempBuffer
-										if (CyGame().isNetworkMultiPlayer()):
-											szBuffer = szBuffer + CyGameTextMgr().getNetStats(ePlayer)
-
-										if (gc.getPlayer(ePlayer).isHuman() and CyInterface().isOOSVisible()):
-											szTempBuffer = u" <color=255,0,0>* %s *</color>" %(CyGameTextMgr().getOOSSeeds(ePlayer))
-											szBuffer = szBuffer + szTempBuffer
-
-										szBuffer = szBuffer + "</font>"
-
-										if ( CyInterface().determineWidth( szBuffer ) > iWidth ):
-											iWidth = CyInterface().determineWidth( szBuffer )
-
-										szName = "ScoreText" + str(ePlayer)
-										if ( CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW or CyInterface().isInAdvancedStart()):
-											yCoord = yResolution - 206
-										else:
-											yCoord = yResolution - 88
-										screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - (iCount * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_CONTACT_CIV, ePlayer, -1 )
-										screen.show( szName )
-
-										CyInterface().checkFlashReset(ePlayer)
-
-										iCount = iCount + 1
-							j = j - 1
-					i = i - 1
-
-				if not CyInterface().isScoresMinimized():
-					screen.setButtonGFC( "SmallScoreToggle", u"", "", xResolution - 18, yCoord - (iCount * iBtnHeight), 20,20, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
-					iCount += 1
-					screen.show("SmallScoreToggle")
-
-				if ( CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW or CyInterface().isInAdvancedStart()):
-					yCoord = yResolution - 186
+			if gc.getGame().isNetworkMultiPlayer() and not pPlayer.isTurnActive():
+				szPlayerString += "*"
+			elif gc.getGame().isHotSeat and iPlayer < iActivePlayer:
+				szPlayerString += "*"
+			szPlayerString += szScore
+			szPlayerString += szColorStart
+			szPlayerString += szPlayerName
+			szPlayerString += szColorEnd
+			if not pTeam.isHasMet(iActiveTeam):
+				szPlayerString += " ?"
+			elif not pPlayer.isHuman():
+				szAttitudeChar = ""
+				iAttitude = pPlayer.AI_getAttitude(iActivePlayer)
+				if iAttitude == AttitudeTypes.ATTITUDE_FURIOUS:
+					szAttitudeChar = u"%c" %(CyGame().getSymbolID(FontSymbols.FURIOUS_CHAR))
+				elif iAttitude == AttitudeTypes.ATTITUDE_ANNOYED:
+					szAttitudeChar = u"%c" %(CyGame().getSymbolID(FontSymbols.ANNOYED_CHAR))
+				elif iAttitude == AttitudeTypes.ATTITUDE_CAUTIOUS:
+					szAttitudeChar = u"%c" %(CyGame().getSymbolID(FontSymbols.CAUTIOUS_CHAR))
+				elif iAttitude == AttitudeTypes.ATTITUDE_PLEASED:
+					szAttitudeChar = u"%c" %(CyGame().getSymbolID(FontSymbols.PLEASED_CHAR))
+				elif iAttitude == AttitudeTypes.ATTITUDE_FRIENDLY:
+					szAttitudeChar = u"%c" %(CyGame().getSymbolID(FontSymbols.FRIENDLY_CHAR))
+				szPlayerString += szAttitudeChar
+			if pTeam.isAtWar(iActiveTeam):
+				szPlayerString += "("  + localText.getColorText("TXT_KEY_CONCEPT_WAR", (), git("COLOR_NEGATIVE_TEXT")).upper() + ")"
+			if pPlayer.canTradeNetworkWith(iActivePlayer) and (iPlayer != iActivePlayer):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.TRADE_CHAR))
+				szPlayerString += szTempBuffer
+			if pTeam.isOpenBorders(iActiveTeam):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.OPEN_BORDERS_CHAR))
+				szPlayerString += szTempBuffer
+			if pTeam.isDefensivePact(iActiveTeam):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.DEFENSIVE_PACT_CHAR))
+				szPlayerString += szTempBuffer
+			if not (pTeam.isAtWar(gc.getORC_TEAM())):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.ORC_CHAR))
+				szPlayerString += szTempBuffer
+			if not (pTeam.isAtWar(gc.getDEMON_TEAM())):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.DEMON_CHAR))
+				szPlayerString += szTempBuffer
+			if not (pTeam.isAtWar(gc.getANIMAL_TEAM())):
+				szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.ANIMAL_CHAR))
+				szPlayerString += szTempBuffer
+			if pTeam.getBlockBonuses() > 0:
+				if iTeam == iActiveTeam or bDebug:
+					szTempBuffer = u"%c(%d)" %(CyGame().getSymbolID(FontSymbols.BAD_FOOD_CHAR), pTeam.getBlockBonuses())
 				else:
-					yCoord = yResolution - 68
+					szTempBuffer = u"%c" %(CyGame().getSymbolID(FontSymbols.BAD_FOOD_CHAR))
+				szPlayerString += szTempBuffer
+			if pTeam.getRevealAllBonuses() > 0:
+				if iTeam == iActiveTeam or bDebug:
+					szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(git('BONUS_MANA_NATURE')).getChar(), pTeam.getRevealAllBonuses())
+				else:
+					szTempBuffer = u"%c" %(gc.getBonusInfo(git('BONUS_MANA_NATURE')).getChar())
+				szPlayerString += szTempBuffer
+			if pPlayer.isHideUnits():
+				if (iTeam == iActiveTeam or bDebug) and pTeam.getHideUnits() > 0:
+					szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(git('BONUS_MANA_SHADOW')).getChar(), pTeam.getHideUnits())
+				else:
+					szTempBuffer = u"%c" %(gc.getBonusInfo(git('BONUS_MANA_SHADOW')).getChar())
+				szPlayerString += szTempBuffer
+			if pPlayer.isSeeInvisible():
+				if (iTeam == iActiveTeam or bDebug) and pTeam.getSeeInvisible() > 0:
+					szTempBuffer = u"%c(%d)" %(gc.getBonusInfo(git('BONUS_MANA_SUN')).getChar(), pTeam.getSeeInvisible())
+				else:
+					szTempBuffer = u"%c" %(gc.getBonusInfo(git('BONUS_MANA_SUN')).getChar())
+				szPlayerString += szTempBuffer
+			if pPlayer.getStateReligion() != -1 and (pActivePlayer.canSeeReligion(pPlayer.getStateReligion()) or bDebug):
+				if pPlayer.hasHolyCity(pPlayer.getStateReligion()):
+					szTempBuffer = u"%c" %(gc.getReligionInfo(pPlayer.getStateReligion()).getHolyCityChar())
+				else:
+					szTempBuffer = u"%c" %(gc.getReligionInfo(pPlayer.getStateReligion()).getChar())
+				szPlayerString += szTempBuffer
+			if iScoreState != 1:
+				iAlignment	= pPlayer.getAlignment()
+				iEAlignment	= pPlayer.getEthicalAlignment()
+				lAlignment	= [git("ALIGNMENT_EVIL"), git("ALIGNMENT_GOOD"), git("ALIGNMENT_NEUTRAL")]
+				lEAlignment	= [git("ETHICAL_ALIGNMENT_CHAOTIC"), git("ETHICAL_ALIGNMENT_LAWFUL"), git("ETHICAL_ALIGNMENT_NEUTRAL")]
+				lColor		= [git("COLOR_RED"), git("COLOR_YELLOW"), git("COLOR_GREY")]
+				lStrAlignment	= [	"TXT_KEY_ALIGNMENT_CHAOTIC_EVIL",	"TXT_KEY_ALIGNMENT_CHAOTIC_GOOD",	"TXT_KEY_ALIGNMENT_CHAOTIC_NEUTRAL",
+									"TXT_KEY_ALIGNMENT_LAWFUL_EVIL",	"TXT_KEY_ALIGNMENT_LAWFUL_GOOD",	"TXT_KEY_ALIGNMENT_LAWFUL_NEUTRAL",
+									"TXT_KEY_ALIGNMENT_NEUTRAL_EVIL",	"TXT_KEY_ALIGNMENT_NEUTRAL_GOOD",	"TXT_KEY_ALIGNMENT_NEUTRAL_NEUTRAL"]
+				for i in lAlignment:
+					if iAlignment == i:
+						for j in lEAlignment:
+							if iEAlignment == j:
+								index = lAlignment.index(i) + lEAlignment.index(j) * 3
+								szTempBuffer = " (" + localText.getColorText(lStrAlignment[index], (), lColor[lAlignment.index(i)]) + ")"
+								szPlayerString += szTempBuffer
+			szTempBuffer = u""
+			if pPlayer.getLeaderStatus() == git('HISTORICAL_STATUS'):
+				szTempBuffer = u" %c" %(CyGame().getSymbolID(FontSymbols.HISTORICAL_CHAR))
+			elif pPlayer.getLeaderStatus() == git('IMPORTANT_STATUS'):
+				szTempBuffer = u" %c" %(CyGame().getSymbolID(FontSymbols.IMPORTANT_CHAR))
+			elif pPlayer.getLeaderStatus() == git('EMERGENT_STATUS'):
+				szTempBuffer = u" %c" %(CyGame().getSymbolID(FontSymbols.EMERGENT_CHAR))
+			szPlayerString += szTempBuffer
+			if bEyesEars or bDebug or (iTeam == iActiveTeam and gc.getTeam(iActiveTeam).getNumMembers() > 1) or pTeam.isVassal(iActiveTeam):
+				if pPlayer.getCurrentResearch() != -1:
+					szPlayerString += u"-%s (%d)" %(gc.getTechInfo(pPlayer.getCurrentResearch()).getDescription(), pPlayer.getResearchTurnsLeft(pPlayer.getCurrentResearch(), True))
+			if CyGame().isNetworkMultiPlayer():
+				szPlayerString += CyGameTextMgr().getNetStats(iPlayer)
+			if pPlayer.isHuman() and CyInterface().isOOSVisible():
+				szPlayerString += u" <color=255,0,0>* %s *</color>" %(CyGameTextMgr().getOOSSeeds(iPlayer))
 
-#FfH Global Counter: Added by Kael 08/12/2007
-				pPlayer = gc.getPlayer(gc.getGame().getActivePlayer())
-				iCountSpecial = 0
-				if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_INCREASING_DIFFICULTY) or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_FLEXIBLE_DIFFICULTY)):
-					iCountSpecial += 1
-					szName = "DifficultyTag"
-					szBuffer = u"<font=2>"
-					szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_DIFFICULTY", (gc.getHandicapInfo(pPlayer.getHandicapType()).getDescription(), ()), gc.getInfoTypeForString("COLOR_RED"))
-					szBuffer = szBuffer + "</font>"
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-				if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_CUT_LOSERS) or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_BARBARIAN_ASSAULT)):
-					if gc.getGame().countCivPlayersAlive() > 5:
-						iCountSpecial += 1
-						szName = "CutLosersTag"
-						szBuffer = u"<font=2>"
-						szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_CUT_LOSERS", (50 * gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() - gc.getGame().getCutLosersCounter(), ()), gc.getInfoTypeForString("COLOR_RED"))
-						szBuffer = szBuffer + "</font>"
-						screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-						screen.show( szName )
-				if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_HIGH_TO_LOW):
-					iCountSpecial += 1
-					szName = "HighToLowTag"
-					szBuffer = u"<font=2>"
-					if gc.getGame().getHighToLowCounter() == 0:
-						szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_0", (), gc.getInfoTypeForString("COLOR_RED"))
-					if gc.getGame().getHighToLowCounter() == 1:
-						szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_1", (), gc.getInfoTypeForString("COLOR_RED"))
-					if gc.getGame().getHighToLowCounter() > 1:
-						szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_2", (), gc.getInfoTypeForString("COLOR_RED"))
-					szBuffer = szBuffer + "</font>"
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-				if CyGame().getWBMapScript():
-					iCountSpecial += 1
-					szName = "GoalTag"
-					szBuffer= sf.getGoalTag(pPlayer)
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-				iCountSpecial += 1
-				if pPlayer.getDisableProduction() > 0:
-					iCountSpecial += 1
-					szBuffer = u"<font=2>"
-					szName = "DisableProductionTag"
-					szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_PRODUCTION", (pPlayer.getDisableProduction(), ()), gc.getInfoTypeForString("COLOR_RED"))
-					szBuffer = szBuffer + "</font>"
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-				if pPlayer.getDisableResearch() > 0:
-					iCountSpecial += 1
-					szBuffer = u"<font=2>"
-					szName = "DisableResearchTag"
-					szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_RESEARCH", (pPlayer.getDisableResearch(), ()), gc.getInfoTypeForString("COLOR_RED"))
-					szBuffer = szBuffer + "</font>"
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-				if pPlayer.getDisableSpellcasting() > 0:
-					iCountSpecial += 1
-					szBuffer = u"<font=2>"
-					szName = "DisableSpellcastingTag"
-					szBuffer = szBuffer + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_SPELLCASTING", (pPlayer.getDisableSpellcasting(), ()), gc.getInfoTypeForString("COLOR_RED"))
-					szBuffer = szBuffer + "</font>"
-					screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 12, yCoord - ((iCount + iCountSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-					screen.show( szName )
-#FfH: End Add
+			if CyInterface().determineWidth(szPlayerString) > iWidth:
+				iWidth = CyInterface().determineWidth(szPlayerString)
 
-				screen.setPanelSize( "ScoreBackground", xResolution - 21 - iWidth, yCoord - (iBtnHeight * iCount) - 4, iWidth + 12, (iBtnHeight * iCount) + 8 )
-				screen.show( "ScoreBackground" )
+			screen.setText( szName, "Background", szPlayerString, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - (iRow * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1 )
+			screen.show( szName )
+			iRow += 1
+
+		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_INCREASING_DIFFICULTY) or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_FLEXIBLE_DIFFICULTY):
+			iRowSpecial += 1
+			szName = "DifficultyTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_DIFFICULTY", (gc.getHandicapInfo(pActivePlayer.getHandicapType()).getDescription(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_CUT_LOSERS) or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_BARBARIAN_ASSAULT)) and gc.getGame().countCivPlayersAlive() > 5:
+			iRowSpecial += 1
+			szName = "CutLosersTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_CUT_LOSERS", (50 * gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() - gc.getGame().getCutLosersCounter(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_CHALLENGE_HIGH_TO_LOW):
+			iRowSpecial += 1
+			szName = "HighToLowTag"
+			szBuffer = u"<font=2>"
+			if gc.getGame().getHighToLowCounter() == 0:
+				szBuffer += localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_0", (), gc.getInfoTypeForString("COLOR_RED"))
+			elif gc.getGame().getHighToLowCounter() == 1:
+				szBuffer += localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_1", (), gc.getInfoTypeForString("COLOR_RED"))
+			elif gc.getGame().getHighToLowCounter() > 1:
+				szBuffer += localText.getColorText("TXT_KEY_MESSAGE_HIGH_TO_LOW_GOAL_2", (), gc.getInfoTypeForString("COLOR_RED"))
+			szBuffer += "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if CyGame().getWBMapScript():
+			iRowSpecial += 1
+			szName = "GoalTag"
+			szBuffer = sf.getGoalTag(pActivePlayer)
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if pActivePlayer.getDisableProduction() > 0:
+			iRowSpecial += 1
+			szName = "DisableProductionTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_PRODUCTION", (pActivePlayer.getDisableProduction(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if pActivePlayer.getDisableResearch() > 0:
+			iRowSpecial += 1
+			szName = "DisableResearchTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_RESEARCH", (pActivePlayer.getDisableResearch(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+		if pActivePlayer.getDisableSpellcasting() > 0:
+			iRowSpecial += 1
+			szName = "DisableSpellcastingTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_SPELLCASTING", (pActivePlayer.getDisableSpellcasting(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+
+		screen.setPanelSize( "ScoreBackground", iX - iWidth - 10, iY - (iBtnHeight * (iRow - 1)) - 4, iWidth + 22, (iBtnHeight * iRow) + 8 )
+		screen.show( "ScoreBackground" )
 
 #FfH: Added by Kael 10/29/2007
 	def updateManaStrings( self ):
@@ -5457,7 +5432,7 @@ class CvMainInterface:
 			else:
 				bHasOptions = False
 				screen.hide( "ScoreBackground" )
-				screen.hide( "SmallScoreToggle" )
+				screen.hide( "ScoreToggle" )
 
 #FfH: Added by Kael 10/29/2007
 				screen.hide( "ManaBackground" )
@@ -5671,7 +5646,7 @@ class CvMainInterface:
 		global isformershowManaBar
 		global iBuildingsList
 		global iPromotionPage
-		global bSmallScoreboard
+		global iScoreState
 
 		if ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_ON and inputClass.getFunctionName() == "UnitStatsButton"):
 			screen.show("UNIT_INFO_TEXT")
@@ -5778,14 +5753,35 @@ class CvMainInterface:
 			self.updateInfoPaneStrings()
 			return 1
 
-		if(inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "SmallScoreToggle"):
-			print "Input Clicked on BG"
-			if not CyInterface().isScoresMinimized():
-				print "not minimized"
-				print bSmallScoreboard
-				bSmallScoreboard = not bSmallScoreboard
-				print bSmallScoreboard
-				self.updateScoreStrings()
+		if(inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "ScoreToggle"):
+			iScoreState += 1
+			if iScoreState > 2:
+				iScoreState = 0
+			self.updateScoreStrings()
+			return 1
+
+		if inputClass.getFunctionName().find("IncreasePercent") > -1:
+			iPlayer		= gc.getGame().getActivePlayer()
+			iCommerce	= CommerceTypes(inputClass.getData2())
+			iChange		= 10
+			if CyInterface().shiftKey():
+				iChange = 5
+			# I wish Civ4 worked
+			elif inputClass.isCtrlKeyDown():
+				iChange = 1
+			CyMessageControl().sendModNetMessage(5001, iPlayer, iChange, iCommerce, -1)
+			return 1
+
+		if inputClass.getFunctionName().find("DecreasePercent") > -1:
+			iPlayer		= gc.getGame().getActivePlayer()
+			iCommerce	= CommerceTypes(inputClass.getData2())
+			iChange		= 10
+			if CyInterface().shiftKey():
+				iChange = 5
+			# I wish Civ4 worked
+			elif inputClass.isCtrlKeyDown():
+				iChange = 1
+			CyMessageControl().sendModNetMessage(5002, iPlayer, iChange, iCommerce, -1)
 			return 1
 
 #/---unitstats addition 4/4-----------------------

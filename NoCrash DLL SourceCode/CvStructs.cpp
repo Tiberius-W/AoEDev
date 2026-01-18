@@ -671,6 +671,45 @@ bool CityBonuses::compare(CityBonuses cbTemp)
 /*************************************************************************************************/
 /**	People's Choice							END													**/
 /*************************************************************************************************/
+/// Aura black_imp 24/09/15
+
+
+void AuraBonuses::read(FDataStreamBase* pStream)
+{
+	pStream->Read(&bFullMap);
+	pStream->Read(&bApplyEnemy);
+	pStream->Read(&bApplyRival);
+	pStream->Read(&bApplySelf);
+	pStream->Read(&bApplyTeam);
+	pStream->Read((int*)&promotion);
+	pStream->Read(&iBonusRange);
+}
+
+void AuraBonuses::write(FDataStreamBase* pStream)
+{
+	pStream->Write(bFullMap);
+	pStream->Write(bApplyEnemy);
+	pStream->Write(bApplyRival);
+	pStream->Write(bApplySelf);
+	pStream->Write(bApplyTeam);
+	pStream->Write(promotion);
+	pStream->Write(iBonusRange);
+}
+
+bool AuraBonuses::compare(AuraBonuses cbTemp)
+{
+	bool bSame = true;
+	if (bFullMap != cbTemp.bFullMap) bSame = false;
+	else if (bApplyEnemy != cbTemp.bApplyEnemy) bSame = false;
+	else if (bApplyRival != cbTemp.bApplyRival) bSame = false;
+	else if (bApplySelf != cbTemp.bApplySelf) bSame = false;
+	else if (bApplyTeam != cbTemp.bApplyTeam) bSame = false;
+	else if (promotion != cbTemp.promotion) bSame = false;
+	else if (iBonusRange != cbTemp.iBonusRange) bSame = false;
+	return bSame;
+}
+
+
 void TraitTriggeredData::read(FDataStreamBase* pStream)
 {
 	pStream->Read(&m_bAtWar);

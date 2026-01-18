@@ -534,6 +534,23 @@ struct CityBonuses
 /*************************************************************************************************/
 /**	People's Choice							END													**/
 /*************************************************************************************************/
+struct AuraBonuses
+{
+	AuraBonuses() : bFullMap(false), bApplyEnemy(false), bApplyRival(false), bApplySelf(false), bApplyTeam(false), promotion(NO_PROMOTION), iBonusRange(0) {}
+
+	bool bFullMap;
+	bool bApplyEnemy;
+	bool bApplyRival;
+	bool bApplySelf;
+	bool bApplyTeam;
+	PromotionTypes promotion;
+	int iBonusRange;
+
+	void read(FDataStreamBase* pStream);
+	void write(FDataStreamBase* pStream);
+	bool compare(AuraBonuses cbTemp);
+};
+
 struct TraitTriggeredData
 {
 	TraitTriggeredData() : m_bAtWar(false), m_bHill(false), m_bPeak(false), m_bHappy(false), m_bHealth(false), m_iReligion(NO_RELIGION), m_iOldReligion(NO_RELIGION), m_iCulture(NO_CULTURELEVEL), m_iRace(NO_PROMOTION), m_iKilledRace(NO_PROMOTION), m_iTrade(TRADE_ITEM_NONE), m_iImprovement(NO_IMPROVEMENT), m_iRoute(NO_ROUTE), m_iProject(NO_PROJECT), m_iTerrain(NO_TERRAIN), m_iFeature(NO_FEATURE), m_iBonus(NO_BONUS), m_iTech(NO_TECH), m_iHurry(NO_HURRY), m_iPromotion(NO_PROMOTION), m_iSpell(NO_SPELL), m_iBuildingClass(NO_BUILDINGCLASS), m_iUnitClass(NO_UNITCLASS), m_iKilledUnitClass(NO_UNITCLASS), m_iUnitCombat(NO_UNITCOMBAT), m_iKilledUnitCombat(NO_UNITCOMBAT), m_bFirst(false), m_bCoastal(false), m_bConquest(false), m_bTrade(false), m_bOwnHolyCity(false), m_bNotOwnHolyCity(false), m_bAnyHolyCity(false), m_iAlignment(0), m_iEthicalAlignment(0), m_iKilledAlignment(0), m_iKilledEthicalAlignment(0), m_iAlignmentStatus(NO_ALIGNMENT), m_iEthicalAlignmentStatus(NO_ETHICAL_ALIGNMENT), m_iKilledAlignmentStatus(NO_ALIGNMENT), m_iKilledEthicalAlignmentStatus(NO_ETHICAL_ALIGNMENT), m_bWerewolf(false), m_bUndead(false), m_bHero(false), m_bHiddenNationality(false), m_bInBorders(false), m_bOutsideBorders(false), m_bKilledWerewolf(false), m_bKilledUndead(false), m_bKilledHero(false), m_bKilledHiddenNationality(false), m_bKilledInBorders(false), m_bKilledOutsideBorders(false)

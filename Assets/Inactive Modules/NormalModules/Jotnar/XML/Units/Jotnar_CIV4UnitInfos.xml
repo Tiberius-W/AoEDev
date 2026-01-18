@@ -2835,6 +2835,7 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_JOT_ADEPT</Type>
 			<iMagicalPower>50</iMagicalPower>
+			<PrereqBuildingClass>BUILDINGCLASS_MAGE_GUILD</PrereqBuildingClass>
 			<Combat>UNITCOMBAT_ADEPT</Combat>
 			<DefaultUnitAI>UNITAI_RESERVE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_JOT_ADEPT</Description>

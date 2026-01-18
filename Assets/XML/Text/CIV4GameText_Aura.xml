@@ -2,7 +2,7 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_AURA_BONUS_PREFIX</Tag>
-		<English>Gives the promotion  %s1_promotion[SPACE]</English>
+		<English>Gives the promotion  [LINK=literal]%s1_promotion[\LINK][SPACE]</English>
 		<French>Gives the promotion  %s1_promotion[SPACE]</French>
 		<German>Gibt die Beförderung   %s1_promotion[SPACE]</German>
 		<Italian>Fornisce la promozione  %s1_promotion[SPACE]</Italian>

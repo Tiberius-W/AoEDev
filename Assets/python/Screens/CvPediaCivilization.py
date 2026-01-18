@@ -396,6 +396,19 @@ class CvPediaCivilization:
 
 		szName = self.top.getNextWidgetName()
 		szText = CyGameTextMgr().parseMoreCivInfos(self.iCivilization, False, True, True)
+
+		lMaintainedFeatures = []
+		for iFeature in range(gc.getNumFeatureInfos()):
+			if gc.getCivilizationInfo(self.iCivilization).isMaintainFeatures(iFeature):
+				lMaintainedFeatures.append(iFeature)
+		if lMaintainedFeatures:
+			szText += "\n\n" + localText.getText("TXT_KEY_PEDIA_CIV_MENU_MAINTAINED_FEATURES", ()) + " "
+			iLastFeature = lMaintainedFeatures[-1]
+			for iFeature in lMaintainedFeatures:
+				szText += gc.getFeatureInfo(iFeature).getDescription()
+				if iFeature != iLastFeature:
+					szText += ", "
+
 		screen.attachMultilineText( panelName, szName, szText, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 
 	def placeHistory(self):

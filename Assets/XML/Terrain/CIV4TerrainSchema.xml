@@ -10,6 +10,7 @@
 	<ElementType name="bTypeDependency" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bForceOverwrite" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDispellable" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iPrereqDispelPower" content="textOnly" dt:type="int"/>
 	<ElementType name="DependencyType" content="textOnly"/>
 	<ElementType name="AndDependencyTypes" content="eltOnly">
 		<element type="DependencyType"/>
@@ -771,6 +772,7 @@
 		<element type="iMoveChance"/>
 		<element type="iPerceptionCost"/>
 		<element type="bDispellable"/>
+		<element type="iPrereqDispelPower"/>
 		<element type="YieldChanges"/>
 		<element type="iHealthPercent"/>
 	</ElementType>

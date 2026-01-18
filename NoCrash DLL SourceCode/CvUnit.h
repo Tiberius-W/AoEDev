@@ -1127,6 +1127,8 @@ public:
 	bool isNullPromoteAvailable() const;
 	bool isCannotCast() const;
 	void changeCannotCast(int iChange);
+	bool isRevealedPromo() const;
+	void changeRevealedPromo(int iChange);
 	bool isFreeUnit() const;
 	void changeFreeUnit(int iChange);
 /*************************************************************************************************/
@@ -1374,6 +1376,12 @@ public:
 	std::list<CityBonuses> listCityBonuses();
 	void applyCityBonus(CityBonuses cbTemp, CvCity* pCheckCity, int iChange, int iDistance);
 	void changeCityBonuses(bool bApply, std::list<CityBonuses> cbCityBonus);
+	int getNumAuraBonuses() const;
+	AuraBonuses getAuraBonus(int iI) const;
+	std::list<AuraBonuses> listAuraBonuses();
+	void applyAuraBonus(AuraBonuses cbTemp, CvUnit* pCheckUnit, bool bChange, int iDistance);
+	void changeAuraBonuses(bool bApply, std::list<AuraBonuses> cbAuraBonus);
+	void applyAuraBonusEffects(bool bActivate, bool bAlterFullMap, bool bCleanUp);
 	bool isAllowPromotion(PromotionTypes eIndex) const;
 	void changeAllowPromotion(PromotionTypes eIndex, int iChange);
 /*************************************************************************************************/
@@ -1442,7 +1450,11 @@ public:
 	bool isSpellImmuneTeam(int spell);
 	bool isSpellImmuneNeutral(int spell);
 	bool isSpellImmuneEnemy(int spell);
-	int getSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const;
+	int getDamageSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iDmgType) const;
+	int getAddPromotionSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iPromoType, bool bEnemy) const;
+	int getRemovePromotionSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot, int iPromoType, bool bEnemy) const;
+	int getImmobileSpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot) const;
+	int getFortifySpellDefenderValue(CvUnit* pLoopUnit, CvPlot* pTargetplot) const;
 
 	void cast(int spell, CvPlot* pTargetPlot = NULL);
 	void castAddPromotion(int spell, CvPlot* pTargetPlot = NULL);
@@ -1914,6 +1926,7 @@ protected:
 	int m_iBlind;
 	int m_iStrBoost;
 	int m_iCannotCast;
+	int m_iRevealed;
 	int m_iFreeUnit;
 /*************************************************************************************************/
 /**	Workers Paradise						01/08/10											**/
@@ -2023,6 +2036,8 @@ protected:
 	std::list <int> m_pMinionUnitList;
 	int m_iNumCityBonuses;
 	std::list <CityBonuses> m_cbCityBonuses;
+	int m_iNumAuraBonuses;
+	std::list <AuraBonuses> m_cbAuraBonuses;
 	int* m_piPromotionDuration;
 	int* m_piYieldFromWin;
 	int* m_piYieldForLoss;

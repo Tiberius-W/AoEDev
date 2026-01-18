@@ -1156,7 +1156,7 @@ def spellCallForm(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
 	pUnit = pPlayer.getUnit(caster.getSummoner())
 	pPlot = caster.plot()
-	pUnit.setXY(pPlot.getX(), pPlot.getY(), False, True, True)
+	pUnit.setXY(pPlot.getX(), pPlot.getY(), False, True, True,False)
 
 def reqCallOfTheGrave(caster):
 	pPlayer = gc.getPlayer(caster.getOwner())
@@ -1672,7 +1672,7 @@ def spellEnterPortal(caster):
 	iY = pPlot.getPortalExitY()
 	pExitPlot = CyMap().plot(iX,iY)
 	if not pPlot.isNone() and not pExitPlot.isNone():
-		caster.setXY(iX, iY, False, True, True)
+		caster.setXY(iX, iY, False, True, True,False)
 
 def reqEntertain(caster):
 	pPlot = caster.plot()
@@ -2254,7 +2254,7 @@ def spellKidnap(caster):
 		pCity.changeFreeSpecialistCount(iSpec, -1)
 	else:
 		if CyGame().getSorenRandNum(100, "Kidnap") <= 50:
-			caster.setXY(pPlayer.getCapitalCity().getX(), pPlayer.getCapitalCity().getY(), False, True, True)
+			caster.setXY(pPlayer.getCapitalCity().getX(), pPlayer.getCapitalCity().getY(), False, True, True,False)
 		else:
 			caster.kill(True, 0)
 		startWar(caster.getOwner(), pCity.getOwner(), WarPlanTypes.WARPLAN_TOTAL)
@@ -4401,14 +4401,14 @@ def spellTeleport(caster,loc):
 		if pCity.isNone():
 			pPlot = caster.getSpawnPlot()
 			if caster.canMoveInto(pPlot, False, False, True):
-				caster.setXY(pPlot.getX(), pPlot.getY(), False, True, True)
+				caster.setXY(pPlot.getX(), pPlot.getY(), False, True, True,False)
 		else:
 			if (caster.getDomainType()==getInfoType("DOMAIN_SEA")and not pCity.isCoastal(10)):
 				pNearestCity = gc.getMap().findCity(pCity.getX(), pCity.getY(), -1, pCity.getTeam(), False, True, -1, -1, pCity, True)
 				if (not pNearestCity.isNone()):
-					caster.setXY(pNearestCity.getX(),pNearestCity.getY(),False,True,True)
+					caster.setXY(pNearestCity.getX(),pNearestCity.getY(),False,True,True,False)
 			else:
-				caster.setXY(pCity.getX(), pCity.getY(), False, True, True)
+				caster.setXY(pCity.getX(), pCity.getY(), False, True, True,False)
 	if loc == 'Random':
 		pBestPlot	= -1
 		iBestPlot	= -1
@@ -4421,7 +4421,7 @@ def spellTeleport(caster,loc):
 					iBestPlot = iPlotValue
 					pBestPlot = pPlot
 		if pBestPlot != -1:
-			caster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+			caster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 
 def reqTeachSpellcasting(caster):
 	iAnimal = getInfoType('UNITCOMBAT_ANIMAL')
@@ -5211,7 +5211,7 @@ def onMoveMaelstrom(pCaster, pPlot):
 					pBestPlot = pTargetPlot
 		if pBestPlot != -1:
 			pCaster.getGroup().clearMissionQueue();
-			pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+			pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 			pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 			CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 
@@ -8602,7 +8602,7 @@ def effectLairPortal(argsList):
 					iBestValue = iValue
 					pBestPlot = pPlot
 		if pBestPlot != -1:
-			pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+			pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 			CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_EXPLORE_LAIR_PORTAL",()),'',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pBestPlot.getX(),pBestPlot.getY(),True,True)
 
 def exploreLairDwarfVsLizard(argsList):

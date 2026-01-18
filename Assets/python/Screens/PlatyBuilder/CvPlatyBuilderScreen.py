@@ -31,6 +31,7 @@ gc = CyGlobalContext()
 iChange = 1
 bPython = True
 bHideInactive = False
+bSelectionTableSearch = False
 Activities = ["AWAKE", "HOLD", "SLEEP", "HEAL", "SENTRY", "INTERCEPT", "MISSION", "PATROL", "PLUNDER"]
 
 class CvWorldBuilderScreen:
@@ -948,11 +949,11 @@ class CvWorldBuilderScreen:
 			screen.setStyle("EditReligions", "Button_HUDAdvisorReligious_Style")
 			iX += iAdjust
 			screen.setImageButton("EditCorporations", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 21)
-			screen.setStyle("EditCorporations", "Button_HUDAdvisorCorporation_Style")
+			screen.setStyle("EditCorporations", "Button_HUDAdvisorGuild_Style")
 			iX += iAdjust
 			screen.setImageButton("EditDiplomacy", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_DIPLOMACY_MODE_BUTTON, -1, -1)
 			screen.setStyle("EditDiplomacy", "Button_HUDAdvisorForeign_Style")
-			iX += iAdjust
+#			iX += iAdjust
 #			screen.setImageButton("EditEspionage", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 22)
 #			screen.setStyle("EditEspionage", "Button_HUDAdvisorEspionage_Style")
 			iX += iAdjust
@@ -1005,8 +1006,9 @@ class CvWorldBuilderScreen:
 		return
 
 	def refreshSideMenu(self):
+		global bSelectionTableSearch
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
-		szSearch = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN).getEditBoxString("WBUnitSearch")
+		szSearch = screen.getEditBoxString("WBUnitSearch")
 		CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_WORLD_BUILDER)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
@@ -1015,6 +1017,9 @@ class CvWorldBuilderScreen:
 		iScreenWidth = 16 + iAdjust * 6
 		iScreenHeight = 16 + iAdjust * 4
 		
+		screen.hide("WBUnitSearch")
+		screen.hide("WBUnitSearchButton")
+		bSelectionTableSearch = False
 		if CyInterface().isInAdvancedStart():
 			iX = 50
 			iY = 15
@@ -1088,9 +1093,10 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.setImageButton("EditTeamData", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,8,7", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 2)
 				iX += iAdjust
-				screen.setImageButton("EditTechnologies", ",Art/Interface/Buttons/TechTree/Physics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,5,6", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 3)
+				screen.setImageButton("EditTechnologies", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 3)
+				screen.setStyle("EditTechnologies", "Button_HUDAdvisorTechnology_Style")
 				iX += iAdjust
-				screen.setImageButton("EditProjects", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,6", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 4)
+				screen.setImageButton("EditProjects", "Art/Interface/Buttons/Projects/Elegy of the Sheaim.dds", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 4)
 				iX += iAdjust
 				screen.setImageButton("EditUnitsCities", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,12", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 5)
 				iX += iAdjust
@@ -1267,6 +1273,7 @@ class CvWorldBuilderScreen:
 		screen.setState("SensibilityCheck", self.bSensibility)
 
 	def setSelectionTable(self, search = ""):
+		global bSelectionTableSearch
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
 		iWidth = 200
 		iCivilization = gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType()
@@ -1287,6 +1294,9 @@ class CvWorldBuilderScreen:
 
 			screen.setButtonGFC("WBUnitSearchButton", "Search", "", 100, iY + 3, 95, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 
+			screen.show("WBUnitSearch")
+			screen.show("WBUnitSearchButton")
+			bSelectionTableSearch = True
 			szLCsearch = search.lower()
 
 			lItems = []
@@ -1296,7 +1306,7 @@ class CvWorldBuilderScreen:
 					iClass = ItemInfo.getUnitClassType()
 					if gc.getCivilizationInfo(iCivilization).getCivilizationUnits(iClass) != i: continue
 				if ItemInfo.getUnitCombatType() != self.iSelectClass and self.iSelectClass > -2: continue
-				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1:continue
+				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1 and (ItemInfo.getType().lower()).find(szLCsearch) == -1: continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
@@ -1332,6 +1342,9 @@ class CvWorldBuilderScreen:
 
 			screen.setButtonGFC("WBUnitSearchButton", "Search", "", 100, iY + 3, 95, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 
+			screen.show("WBUnitSearch")
+			screen.show("WBUnitSearchButton")
+			bSelectionTableSearch = True
 			szLCsearch = search.lower()
 
 			lItems = []
@@ -1348,7 +1361,7 @@ class CvWorldBuilderScreen:
 					if not isTeamWonderClass(iClass): continue
 				elif self.iSelectClass == 4:
 					if not isWorldWonderClass(iClass): continue
-				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1:continue
+				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1 and (ItemInfo.getType().lower()).find(szLCsearch) == -1: continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
@@ -1402,13 +1415,55 @@ class CvWorldBuilderScreen:
 
 		elif self.iPlayerAddMode == "Improvements":
 			iY = 25
+			screen.addDropDownBoxGFC("WBSelectClass", 0, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_CITY_ALL",()), 0, 0, 0 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_REGULAR",()), 1, 1, 1 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_UNIQUE", ()), 2, 2, 2 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_LAIRS", ()), 3, 3, 3 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_CULTURE", ()), 4, 4, 4 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_SPECIFIC", ()), 5, 5, 5 == self.iSelectClass)
+			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_PEDIA_FILTER_IMPROVEMENT_CONVERSION", ()), 6, 6, 6 == self.iSelectClass)
+
+			iY += 30
+
+			screen.addEditBoxGFC("WBUnitSearch", 3, iY, 97, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+			screen.setEditBoxString("WBUnitSearch", search)
+			screen.setActivation("WBUnitSearch", ActivationTypes.ACTIVATE_NORMAL)
+			screen.setEditBoxMaxCharCount("WBUnitSearch", 32, 32)
+
+			screen.setButtonGFC("WBUnitSearchButton", "Search", "", 100, iY + 3, 95, 30, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+
+			screen.show("WBUnitSearch")
+			screen.show("WBUnitSearchButton")
+			bSelectionTableSearch = True
+			szLCsearch = search.lower()
+
 			lItems = []
 			for i in xrange(gc.getNumImprovementInfos()):
 				ItemInfo = gc.getImprovementInfo(i)
 				if ItemInfo.isGraphicalOnly(): continue
+				if (ItemInfo.getDescription().lower()).find(szLCsearch) == -1 and (ItemInfo.getType().lower()).find(szLCsearch) == -1: continue
+				if self.iSelectClass == 1:
+					git = gc.getInfoTypeForString
+					lHCRegular = [	git('IMPROVEMENT_CAMP'), git('IMPROVEMENT_COTTAGE'), git('IMPROVEMENT_FARM'), git('IMPROVEMENT_FISHING_BOATS'), git('IMPROVEMENT_FORT'),
+									git('IMPROVEMENT_HAMLET'), git('IMPROVEMENT_LUMBERMILL'), git('IMPROVEMENT_MINE'), git('IMPROVEMENT_PASTURE'), git('IMPROVEMENT_PLANTATION'),
+									git('IMPROVEMENT_QUARRY'), git('IMPROVEMENT_TOWN'), git('IMPROVEMENT_VILLAGE'), git('IMPROVEMENT_WATERMILL'), git('IMPROVEMENT_WINDMILL'),
+									git('IMPROVEMENT_WORKSHOP'), git('IMPROVEMENT_YARANGA')]
+					if not i in lHCRegular: continue
+				if self.iSelectClass == 2:
+					if not ItemInfo.isUnique(): continue
+				if self.iSelectClass == 3:
+					if not (ItemInfo.getSpawnUnitType() > -1 or ItemInfo.getSpawnGroupType() > -1 or ItemInfo.getImmediateSpawnUnitType() > -1 or ItemInfo.getImmediateSpawnGroupType()) > -1: continue
+				if self.iSelectClass == 4:
+					if not ItemInfo.getCultureCenterBonus() > 0: continue
+				if self.iSelectClass == 5:
+					if not ItemInfo.getPrereqCivilization() > -1: continue
+				if self.iSelectClass == 6:
+					if not ItemInfo.getBonusConvert() != -1: continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
+			iY += 35
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
 			screen.addTableControlGFC("WBSelectItem", 1, 0, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
 			screen.setTableColumnHeader("WBSelectItem", 0, "", iWidth)
@@ -1502,6 +1557,9 @@ class CvWorldBuilderScreen:
 			screen.setTableText("WBSelectItem", 0, 2, "<font=3>" + gc.getTerrainInfo(item).getDescription() + "</font>", gc.getTerrainInfo(item).getButton(), WidgetTypes.WIDGET_PYTHON, 7875, item, CvUtil.FONT_LEFT_JUSTIFY)
 			item = gc.getInfoTypeForString("TERRAIN_OCEAN")
 			screen.setTableText("WBSelectItem", 0, 3, "<font=3>" + gc.getTerrainInfo(item).getDescription() + "</font>", gc.getTerrainInfo(item).getButton(), WidgetTypes.WIDGET_PYTHON, 7875, item, CvUtil.FONT_LEFT_JUSTIFY)
+		else:
+			screen.hide("SelectionTable")
+			bSelectionTable = False
 		self.refreshSelection()
 
 	def refreshSelection(self):
@@ -2041,7 +2099,12 @@ class CvWorldBuilderScreen:
 			self.bSensibility = not self.bSensibility
 			self.setCurrentModeCheckbox()
 
-		elif  inputClass.getFunctionName() == "WBUnitSearchButton":
+		elif inputClass.getFunctionName() == "WBUnitSearchButton":
 			self.refreshSideMenu()
 
+		elif inputClass.getFunctionName() == "WBUnitSearch":
+			self.refreshSideMenu()
+
+		elif bSelectionTableSearch == True and inputClass.getData() == int(InputTypes.KB_RETURN):
+			self.refreshSideMenu()
 		return 1

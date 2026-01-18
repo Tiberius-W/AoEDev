@@ -1357,7 +1357,7 @@ class UniqueImprovement:
 		self.pPlot.setBonusType(self.eBonus)
 		if self.pPlot.getNumUnits() == 0:
 			for pUnit in self.pUnitList:
-				pUnit.setXY(self.pPlot.getX(), self.pPlot.getY(), False, True, True)
+				pUnit.setXY(self.pPlot.getX(), self.pPlot.getY(), False, True, True,False)
 		else: self.killThemAll()
 		# debug information:
 		sImprovementName = self.getDescription()

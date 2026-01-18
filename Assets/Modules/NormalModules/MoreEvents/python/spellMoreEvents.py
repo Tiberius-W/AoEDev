@@ -11,6 +11,8 @@ import CvScreensInterface
 from BasicFunctions import *
 import CvSpellInterface
 
+import ScenarioFunctions
+sf                  = ScenarioFunctions.ScenarioFunctions()
 PyPlayer = PyHelpers.PyPlayer
 gc = CyGlobalContext()
 getInfoType = gc.getInfoTypeForString
@@ -314,6 +316,9 @@ def onMoveSironasBeacon2(pCaster, pPlot):
 	onMoveSearchableUF(pCaster, pPlot)
 
 def onMoveMirrorOfHeaven2(pCaster, pPlot):
+	if CyGame().getWBMapScript():
+		sf.onMoveMirrorOfHeaven(pCaster, pPlot)
+		return
 	iPlayer			= pCaster.getOwner()
 	pPlayer			= gc.getPlayer(iPlayer)
 	iImprovement	= pPlot.getImprovementType()

@@ -3048,6 +3048,8 @@ m_bAlwaysHeal(false),
 m_bHillsDoubleMove(false),
 m_bImmuneToFirstStrikes(false),
 
+m_bDurationDecreaseSpellpower(false),
+
 m_bTradeDefender(false),
 
 m_piNoBadExploreImprovement(NULL),
@@ -3114,6 +3116,7 @@ m_iPillageInfluenceModifier(100),
 /*************************************************************************************************/
 m_iExtraPerception(0),
 m_iInvisibleLevel(0),
+m_bRevealed(false),
 /*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -3352,6 +3355,8 @@ m_piPrereqFeatORs(NULL),
 m_piPrereqFeatNOTs(NULL),
 m_iNumCityBonuses(0),
 m_cbCityBonuses(NULL),
+m_iNumAuraBonuses(0),
+m_cbAuraBonuses(NULL),
 m_iNumPromotionAllows(0),
 m_bRequirePermission(false),
 m_piPromotionAllows(NULL),
@@ -3398,6 +3403,7 @@ m_bEnraged(false),
 m_bBoarding(false),
 m_bOnlyDefensive(false),
 m_bDispellable(false),
+m_iPrereqDispelPower(0),
 m_bDoubleFortifyBonus(false),
 m_bEquipment(false),
 m_bFear(false),
@@ -3609,6 +3615,7 @@ CvPromotionInfo::~CvPromotionInfo()
 	SAFE_DELETE_ARRAY(m_piSlavePromotions);
 	SAFE_DELETE_ARRAY(m_piMasterPromotions);
 	m_cbCityBonuses.clear();
+	m_cbAuraBonuses.clear();
 	m_aiInvisibleTypes.clear();
 	m_aiSeeInvisibleTypes.clear();
 	SAFE_DELETE_ARRAY(m_piYieldFromWin);
@@ -4006,6 +4013,11 @@ bool CvPromotionInfo::isImmuneToFirstStrikes() const
 	return m_bImmuneToFirstStrikes;
 }
 
+bool CvPromotionInfo::isDurationDecreaseSpellpower() const
+{
+	return m_bDurationDecreaseSpellpower;
+}
+
 bool CvPromotionInfo::isTradeDefender() const
 {
 	return m_bTradeDefender;
@@ -4091,6 +4103,7 @@ int CvPromotionInfo::getPillageInfluenceModifier() const
 /*************************************************************************************************/
 int CvPromotionInfo::getExtraPerception() const									{return m_iExtraPerception;}
 int CvPromotionInfo::getInvisibleLevel() const { return m_iInvisibleLevel; }
+bool CvPromotionInfo::isRevealed() const { return m_bRevealed; }
 /*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -4380,6 +4393,25 @@ CityBonuses CvPromotionInfo::getCityBonus(int iI) const
 	return cbTemp;
 }
 std::list<CityBonuses> CvPromotionInfo::listCityBonuses()				{return m_cbCityBonuses;}
+//Auras added by black_imp 06/01/26
+int CvPromotionInfo::getNumAuraBonuses() const { return m_iNumAuraBonuses; }
+AuraBonuses CvPromotionInfo::getAuraBonus(int iI) const
+{
+	int iCount = 0;
+	AuraBonuses cbTemp = AuraBonuses();
+	for (std::list<AuraBonuses>::const_iterator iter = m_cbAuraBonuses.begin(); iter != m_cbAuraBonuses.end(); ++iter)
+	{
+		if (iCount == iI)
+		{
+			cbTemp = *iter;
+			break;
+		}
+		iCount++;
+	}
+	return cbTemp;
+}
+std::list<AuraBonuses> CvPromotionInfo::listAuraBonuses() { return m_cbAuraBonuses; }
+
 bool CvPromotionInfo::isRequirePermission() const						{return m_bRequirePermission;}
 PromotionTypes CvPromotionInfo::getPromotionAllows(int iI) const		{return (getNumPromotionAllows() > iI)				? (PromotionTypes)m_piPromotionAllows[iI]	: NO_PROMOTION;}
 int CvPromotionInfo::getNumPromotionAllows() const						{return m_iNumPromotionAllows;}
@@ -4442,6 +4474,10 @@ bool CvPromotionInfo::isDispellable() const
 	return m_bDispellable;
 }
 
+int CvPromotionInfo::getPrereqDispelPower() const
+{
+	return m_iPrereqDispelPower;
+}
 bool CvPromotionInfo::isDoubleFortifyBonus() const
 {
 	return m_bDoubleFortifyBonus;
@@ -5305,7 +5341,9 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bAlwaysHeal);
 	stream->Read(&m_bHillsDoubleMove);
 	stream->Read(&m_bImmuneToFirstStrikes);
-	
+
+	stream->Read(&m_bDurationDecreaseSpellpower);
+
 	stream->Read(&m_bTradeDefender);
 
 	stream->ReadString(m_szSound);
@@ -5356,6 +5394,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 /*************************************************************************************************/
 	stream->Read(&m_iExtraPerception);
 	stream->Read(&m_iInvisibleLevel);
+	stream->Read(&m_bRevealed);
 	/*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -5536,6 +5575,19 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 			m_cbCityBonuses.push_back(cbTemp);
 		}
 	}
+	//Aura Black_imp 24/09/15
+	stream->Read(&m_iNumAuraBonuses);
+	m_cbAuraBonuses.clear();
+	if (m_iNumAuraBonuses != 0)
+	{
+		AuraBonuses cbTemp;
+		for (int iI = 0; iI < m_iNumAuraBonuses; iI++)
+		{
+			cbTemp.read(stream);
+			m_cbAuraBonuses.push_back(cbTemp);
+		}
+	}
+
 	SAFE_DELETE_ARRAY(m_piYieldFromWin);
 	m_piYieldFromWin = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piYieldFromWin);
@@ -5872,6 +5924,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bBoarding);
 	stream->Read(&m_bOnlyDefensive);
 	stream->Read(&m_bDispellable);
+	stream->Read(&m_iPrereqDispelPower);
 	stream->Read(&m_bDoubleFortifyBonus);
 	stream->Read(&m_bEquipment);
 	stream->Read(&m_bFear);
@@ -6239,6 +6292,8 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bHillsDoubleMove);
 	stream->Write(m_bImmuneToFirstStrikes);
 
+	stream->Write(m_bDurationDecreaseSpellpower);
+
 	stream->Write(m_bTradeDefender);
 	
 	stream->WriteString(m_szSound);
@@ -6289,6 +6344,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 /*************************************************************************************************/
 	stream->Write(m_iExtraPerception);
 	stream->Write(m_iInvisibleLevel);
+	stream->Write(m_bRevealed);
 	/*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -6462,6 +6518,19 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 			cbTemp.write(stream);
 		}
 	}
+	//aura black_imp 24/09/15
+	stream->Write(m_iNumAuraBonuses);
+	if (m_iNumAuraBonuses != 0)
+	{
+		std::list<AuraBonuses> cbDupe = m_cbAuraBonuses;
+		while (!cbDupe.empty())
+		{
+			AuraBonuses cbTemp = cbDupe.front();
+			cbDupe.pop_front();
+			cbTemp.write(stream);
+		}
+	}
+
 	stream->Write(NUM_YIELD_TYPES, m_piYieldFromWin);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldForLoss);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceFromWin);
@@ -6627,6 +6696,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bBoarding);
 	stream->Write(m_bOnlyDefensive);
 	stream->Write(m_bDispellable);
+	stream->Write(m_iPrereqDispelPower);
 	stream->Write(m_bDoubleFortifyBonus);
 	stream->Write(m_bEquipment);
 	stream->Write(m_bFear);
@@ -6861,6 +6931,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	m_iCaptureUnitClass = pXML->FindInInfoClass(szTextVal);
 
 	pXML->GetChildXmlValByName(&m_bLeader, "bLeader");
+	pXML->GetChildXmlValByName(&m_bDurationDecreaseSpellpower, "bDurationDecreaseSpellpower");
 	if (m_bLeader)
 	{
 		m_bGraphicalOnly = true;  // don't show in Civilopedia list of promotions
@@ -7021,7 +7092,8 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 /**	Sidar Mist 								25/06/10								Grey Fox	**/
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(&m_iExtraPerception, "iExtraPerception", 0);
-	pXML->GetChildXmlValByName(&m_iInvisibleLevel, "iInvisibleLevel", 0);
+	pXML->GetChildXmlValByName(&m_iInvisibleLevel, "iInvisibleLevel", 0);;
+	pXML->GetChildXmlValByName(&m_bRevealed, "bRevealed");
 	/*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -7297,6 +7369,41 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 		}
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
+	//Aura black_imp 24/09/15
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AuraBonuses"))
+	{
+		int iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+		if (iNumSibs > 0)
+		{
+			m_iNumAuraBonuses = iNumSibs;
+
+			CvString szError;
+
+			//	szError.Format("having at least this many aura bonuses : %i",iNumSibs );
+			//	gDLL->logMsg("aura.log", szError);
+			if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AuraBonus"))
+			{
+				for (int iI = 0; iI < iNumSibs; iI++)
+				{
+					AuraBonuses cbTemp;
+					pXML->GetChildXmlValByName(&(cbTemp.bFullMap), "bFullMap", false);
+					pXML->GetChildXmlValByName(&(cbTemp.bApplyEnemy), "bApplyEnemy", false);
+					pXML->GetChildXmlValByName(&(cbTemp.bApplyRival), "bApplyRival", false);
+					pXML->GetChildXmlValByName(&(cbTemp.bApplySelf), "bApplySelf", false);
+					pXML->GetChildXmlValByName(&(cbTemp.bApplyTeam), "bApplyTeam", false);
+					pXML->GetChildXmlValByName(szTextVal, "Promotion");
+
+					cbTemp.promotion = (PromotionTypes)pXML->FindInInfoClass(szTextVal);
+					pXML->GetChildXmlValByName(&(cbTemp.iBonusRange), "iBonusRange", 0);
+					m_cbAuraBonuses.push_back(cbTemp);
+					if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))						break;
+				}
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"PrereqUnitTypesOnTile"))		pXML->SetStringWithChildList(&m_iNumPrereqUnitTypesOnTile, &m_aszPrereqUnitTypesOnTileforPass3);
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"PrereqUnitTypesNOTOnTile"))	pXML->SetStringWithChildList(&m_iNumPrereqUnitTypesNOTOnTile, &m_aszPrereqUnitTypesNOTOnTileforPass3);
 /*************************************************************************************************/
@@ -7329,6 +7436,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bBoarding, "bBoarding");
 	pXML->GetChildXmlValByName(&m_bOnlyDefensive, "bOnlyDefensive");
 	pXML->GetChildXmlValByName(&m_bDispellable, "bDispellable");
+	pXML->GetChildXmlValByName(&m_iPrereqDispelPower, "iPrereqDispelPower");
 	pXML->GetChildXmlValByName(&m_bDoubleFortifyBonus, "bDoubleFortifyBonus");
 	pXML->GetChildXmlValByName(&m_bEquipment, "bEquipment");
 	pXML->GetChildXmlValByName(&m_bFear, "bFear");
@@ -7897,11 +8005,13 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 	if (isAlwaysHeal()							== false)				m_bAlwaysHeal						= pClassInfo->isAlwaysHeal();
 	if (isHillsDoubleMove()						== false)				m_bHillsDoubleMove					= pClassInfo->isHillsDoubleMove();
 	if (isImmuneToFirstStrikes()				== false)				m_bImmuneToFirstStrikes				= pClassInfo->isImmuneToFirstStrikes();
+	if (isDurationDecreaseSpellpower() == false)				m_bDurationDecreaseSpellpower = pClassInfo->isDurationDecreaseSpellpower();
 	if (isTradeDefender() 						== false)				m_bTradeDefender 					= pClassInfo->isTradeDefender();
 	if (isEnraged()							== false)				m_bEnraged						= pClassInfo->isEnraged();
 	if (isBoarding()							== false)				m_bBoarding							= pClassInfo->isBoarding();
 	if (isOnlyDefensive()						== false)				m_bOnlyDefensive					= pClassInfo->isOnlyDefensive();
 	if (isDispellable()							== false)				m_bDispellable						= pClassInfo->isDispellable();
+	if (getPrereqDispelPower() == 0)				m_iPrereqDispelPower = pClassInfo->getPrereqDispelPower();
 	if (isDoubleFortifyBonus()					== false)				m_bDoubleFortifyBonus				= pClassInfo->isDoubleFortifyBonus();
 	if (isEquipment()							== false)				m_bEquipment						= pClassInfo->isEquipment();
 	if (isFear()								== false)				m_bFear								= pClassInfo->isFear();
@@ -8046,6 +8156,7 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 /*************************************************************************************************/
 	if(getExtraPerception()						== 0)					m_iExtraPerception					= pClassInfo->getExtraPerception();
 	if (getInvisibleLevel() == 0)					m_iInvisibleLevel = pClassInfo->getInvisibleLevel();
+	if (isRevealed() == false)				m_bRevealed = pClassInfo->isRevealed();
 	/*************************************************************************************************/
 /**	END                                                                   						**/
 /*************************************************************************************************/
@@ -8947,6 +9058,14 @@ void CvPromotionInfo::copyNonDefaults(CvPromotionInfo* pClassInfo, CvXMLLoadUtil
 		cbTemp = pClassInfo->getCityBonus(i);
 		m_cbCityBonuses.push_back(cbTemp);
 		m_iNumCityBonuses++;
+	}
+	//Aura black_imp 24/09/15
+	for (int i = 0; i < pClassInfo->getNumAuraBonuses(); ++i)
+	{
+		AuraBonuses cbTemp;
+		cbTemp = pClassInfo->getAuraBonus(i);
+		m_cbAuraBonuses.push_back(cbTemp);
+		m_iNumAuraBonuses++;
 	}
 
 	// Readpass2 stuff
@@ -21277,6 +21396,8 @@ m_bSeeInvisible(false),
 m_bOverflowProduction(false),
 m_bUnhappyProduction(false),
 m_iCrime(0),
+m_iCrimePerUnhappyModifier(0),
+m_iCrimePerUnhealthModifier(0),
 m_iFreePromotionPick(0),
 m_iFreeBonus2(NO_BONUS),
 m_iFreeBonus3(NO_BONUS),
@@ -22345,6 +22466,16 @@ int CvBuildingInfo::getCrime() const
 	return m_iCrime;
 }
 
+int CvBuildingInfo::getCrimePerUnhappyModifier() const
+{
+	return m_iCrimePerUnhappyModifier;
+}
+
+int CvBuildingInfo::getCrimePerUnhealthModifier() const
+{
+	return m_iCrimePerUnhealthModifier;
+}
+
 int CvBuildingInfo::getFreePromotionPick() const
 {
 	return m_iFreePromotionPick;
@@ -23342,6 +23473,8 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bOverflowProduction);
 	stream->Read(&m_bUnhappyProduction);
 	stream->Read(&m_iCrime);
+	stream->Read(&m_iCrimePerUnhappyModifier);
+	stream->Read(&m_iCrimePerUnhealthModifier);
 	stream->Read(&m_iFreePromotionPick);
 	stream->Read(&m_iFreeBonus2);
 	stream->Read(&m_iFreeBonus3);
@@ -23981,6 +24114,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bOverflowProduction);
 	stream->Write(m_bUnhappyProduction);
 	stream->Write(m_iCrime);
+	stream->Write(m_iCrimePerUnhappyModifier);
+	stream->Write(m_iCrimePerUnhealthModifier);
 	stream->Write(m_iFreePromotionPick);
 	stream->Write(m_iFreeBonus2);
 	stream->Write(m_iFreeBonus3);
@@ -24566,6 +24701,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bOverflowProduction, "bOverflowProduction");
 	pXML->GetChildXmlValByName(&m_bUnhappyProduction, "bUnhappyProduction");
 	pXML->GetChildXmlValByName(&m_iCrime, "iCrime");
+	pXML->GetChildXmlValByName(&m_iCrime, "iExtraCrimePerUnhappy");
+	pXML->GetChildXmlValByName(&m_iCrime, "iExtraCrimePerUnhealth");
 	pXML->GetChildXmlValByName(&m_iFreePromotionPick, "iFreePromotionPick");
 	pXML->GetChildXmlValByName(szTextVal, "FreeBonus2");
 	m_iFreeBonus2 = pXML->FindInInfoClass(szTextVal);
@@ -25399,6 +25536,8 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 	if (getShielding()							== 0)					m_iShielding						= pClassInfo->getShielding();
 	if (getGlobalShielding()					== 0)					m_iGlobalShielding					= pClassInfo->getGlobalShielding();
 	if (getCrime()								== 0)					m_iCrime							= pClassInfo->getCrime();
+	if (getCrimePerUnhappyModifier() == 0)					m_iCrimePerUnhappyModifier = pClassInfo->getCrimePerUnhappyModifier();
+	if (getCrimePerUnhealthModifier() == 0)					m_iCrimePerUnhealthModifier = pClassInfo->getCrimePerUnhealthModifier();
 	if (getFreePromotionPick()					== 0)					m_iFreePromotionPick				= pClassInfo->getFreePromotionPick();
 	if (getGlobalResistEnemyModify()			== 0)					m_iGlobalResistEnemyModify			= pClassInfo->getGlobalResistEnemyModify();
 	if (getGlobalResistModify()					== 0)					m_iGlobalResistModify				= pClassInfo->getGlobalResistModify();
@@ -35771,6 +35910,8 @@ m_bTrueNeutral(false),
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+m_bLeaderVariant(false),
+m_iPrimaryLeader(NO_LEADER),
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/02/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -36350,6 +36491,19 @@ bool CvLeaderHeadInfo::isTrueNeutral() const                    {return m_bTrueN
 /*************************************************************************************************/
 /**	LeaderStatus Infos      Valkrionn 10/02/09                                                  **/
 /*************************************************************************************************/
+bool CvLeaderHeadInfo::isLeaderVariant() const { return m_bLeaderVariant; }
+LeaderHeadTypes CvLeaderHeadInfo::getPrimaryLeader() const
+{
+	if (!isLeaderVariant())
+	{
+		return (LeaderHeadTypes)GC.getInfoTypeForString(getType());
+	}
+	else
+	{
+		return (LeaderHeadTypes)m_iPrimaryLeader;
+	}
+
+}
 int CvLeaderHeadInfo::getLeaderClass() const                   {return m_iLeaderClass;}
 /*************************************************************************************************/
 /**	LeaderStatus Infos      Valkrionn 10/02/09                                              END **/
@@ -36793,6 +36947,8 @@ void CvLeaderHeadInfo::read(FDataStreamBase* stream)
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	stream->Read(&m_bLeaderVariant);
+	stream->Read(&m_iPrimaryLeader);
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/02/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -37073,6 +37229,8 @@ void CvLeaderHeadInfo::write(FDataStreamBase* stream)
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	stream->Write(m_bLeaderVariant);
+	stream->Write(m_iPrimaryLeader);
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/02/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -37367,6 +37525,7 @@ bool CvLeaderHeadInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	pXML->GetChildXmlValByName(&m_bLeaderVariant, "bLeaderVariant");
 /*************************************************************************************************/
 /**	LeaderStatus Infos      				10/01/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -37457,6 +37616,26 @@ bool CvLeaderHeadInfo::read(CvXMLLoadUtility* pXML)
 /**																								**/
 /**	Properly links Modular modifications to previous elements, and allows partial overwriting	**/
 /*************************************************************************************************/
+bool CvLeaderHeadInfo::readPass2(CvXMLLoadUtility* pXML)
+{
+	CvString szTextVal;
+
+	/*************************************************************************************************/
+	/**	TrueModular								05/26/09	Written: Mr. Genie	Imported: Xienwolf	**/
+	/**	HotkeyInfo will call InfoBase for us, so if we need hotkeys, then we don't need Infobase	**/
+	/**	Properly links Modular modifications to previous elements, and allows partial overwriting	**/
+	/*************************************************************************************************/
+	if (!CvInfoBase::read(pXML))
+	{
+		return false;
+	}
+	/*************************************************************************************************/
+	/**	TrueModular								END													**/
+	/*************************************************************************************************/
+	pXML->GetChildXmlValByName(szTextVal, "PrimaryLeader");
+	m_iPrimaryLeader = GC.getInfoTypeForString(szTextVal);
+	return true;
+}
 void CvLeaderHeadInfo::copyNonDefaults(CvLeaderHeadInfo* pClassInfo, CvXMLLoadUtility* pXML)
 {
 	CvString cDefault = CvString::format("").GetCString();
@@ -37476,6 +37655,7 @@ void CvLeaderHeadInfo::copyNonDefaults(CvLeaderHeadInfo* pClassInfo, CvXMLLoadUt
 /*************************************************************************************************/
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
+	if (isLeaderVariant() == false)			m_bLeaderVariant = pClassInfo->isLeaderVariant();
 	if (getWonderConstructRand()						== 0)				m_iWonderConstructRand							= pClassInfo->getWonderConstructRand();
 	if (getBaseAttitude()								== 0)				m_iBaseAttitude									= pClassInfo->getBaseAttitude();
 	if (getBasePeaceWeight()							== 0)				m_iBasePeaceWeight								= pClassInfo->getBasePeaceWeight();
@@ -37670,6 +37850,14 @@ void CvLeaderHeadInfo::copyNonDefaults(CvLeaderHeadInfo* pClassInfo, CvXMLLoadUt
 	{
 		if (getReligionWeightModifier(j)				== 0)				m_piReligionWeightModifier[j]			= pClassInfo->getReligionWeightModifier(j);
 	}
+}
+void CvLeaderHeadInfo::copyNonDefaultsReadPass2(CvLeaderHeadInfo* pClassInfo, CvXMLLoadUtility* pXML)
+{
+	bool bOver = pClassInfo->isForceOverwrite();
+	CvString cDefault = CvString::format("").GetCString();
+	CvWString wDefault = CvWString::format(L"").GetCString();
+
+	if (bOver || pClassInfo->getPrimaryLeader() != NO_LEADER)		m_iPrimaryLeader = pClassInfo->getPrimaryLeader();
 }
 /*************************************************************************************************/
 /**	TrueModular								END													**/
@@ -53089,6 +53277,7 @@ CvPlotEffectInfo::CvPlotEffectInfo() :
 	m_iDamageType(NO_DAMAGE),
 	m_iHealthPercent(0),
 	m_bDispellable(false),
+	m_iPrereqDispelPower(0),
 	m_iPerceptionCost(0),
 	m_iSeeThroughChange(0),
 	m_iMaxPlotCounter(-1),
@@ -53139,6 +53328,10 @@ const int CvPlotEffectInfo::getHealthPercent() const
 const bool CvPlotEffectInfo::isDispellable() const
 {
 	return m_bDispellable;
+}
+const int CvPlotEffectInfo::getPrereqDispelPower() const
+{
+	return m_iPrereqDispelPower;
 }
 const int CvPlotEffectInfo::getPerceptionCost() const
 {
@@ -53221,6 +53414,7 @@ bool CvPlotEffectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMaxPlotCounter, "iMaxPlotCounter",-1);
 	pXML->GetChildXmlValByName(&m_iSpawnChance, "iSpawnChance");
 	pXML->GetChildXmlValByName(&m_bDispellable, "bDispellable");
+	pXML->GetChildXmlValByName(&m_iPrereqDispelPower, "iPrereqDispelPower");
 	pXML->GetChildXmlValByName(&m_iSpreadChance, "iSpreadChance");
 	pXML->GetChildXmlValByName(&m_iDisappearChance, "iDisappearChance");
 	pXML->GetChildXmlValByName(&m_iMoveChance, "iMoveChance");
@@ -53252,6 +53446,7 @@ void CvPlotEffectInfo::copyNonDefaults(CvPlotEffectInfo* pClassInfo, CvXMLLoadUt
 	if (getDefaultFeatureGraphics() 		== NO_FEATURE)		m_iDefaultFeatureGraphics 	= (pClassInfo->getDefaultFeatureGraphics());
 	if (getMaxPlotCounter() 				== -1)				m_iMaxPlotCounter 			= (pClassInfo->getMaxPlotCounter());
 	if (isDispellable() 					== false)			m_bDispellable 				= (pClassInfo->isDispellable());
+	if (getPrereqDispelPower() == 0)			m_iPrereqDispelPower = (pClassInfo->getPrereqDispelPower());
 	if (getSpawnChance() 					== 0)				m_iSpawnChance 				= (pClassInfo->getSpawnChance());
 	if (getSpreadChance() 					== 0)				m_iSpreadChance 			= (pClassInfo->getSpreadChance());
 	if (getDisappearChance() 				== 0)				m_iDisappearChance 			= (pClassInfo->getDisappearChance());
@@ -53929,6 +54124,7 @@ CvTraitTriggerInfo::CvTraitTriggerInfo() :
 	m_iPrereqMaxKilledEthicalAlignment(0),
 	m_bFirst(false),
 	m_bOncePerPlayer(false),
+	m_bGameSpeedScale(false),
 	m_bCoastal(false),
 	m_bConquest(false),
 	m_bTrade(false),
@@ -54027,6 +54223,7 @@ int CvTraitTriggerInfo::getPrereqMinKilledEthicalAlignment() const { return m_iP
 int CvTraitTriggerInfo::getPrereqMaxKilledEthicalAlignment() const { return m_iPrereqMaxKilledEthicalAlignment; }
 bool CvTraitTriggerInfo::isFirst() const { return m_bFirst; }
 bool CvTraitTriggerInfo::isOncePerPlayer() const { return m_bOncePerPlayer; }
+bool CvTraitTriggerInfo::isGameSpeedScale() const { return m_bGameSpeedScale; }
 bool CvTraitTriggerInfo::isCoastal() const { return m_bCoastal; }
 bool CvTraitTriggerInfo::isPrereqConquest() const { return m_bConquest; }
 bool CvTraitTriggerInfo::isPrereqTrade() const { return m_bTrade; }
@@ -54150,6 +54347,7 @@ bool CvTraitTriggerInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iPrereqMaxKilledEthicalAlignment, "iPrereqKilledMaxEthicalAlignment");
 	pXML->GetChildXmlValByName(&m_bFirst, "bFirst");
 	pXML->GetChildXmlValByName(&m_bOncePerPlayer, "bOncePerPlayer");
+	pXML->GetChildXmlValByName(&m_bGameSpeedScale, "bGameSpeedScale");
 	pXML->GetChildXmlValByName(&m_bCoastal, "bPrereqCoastalCity");
 	pXML->GetChildXmlValByName(&m_bConquest, "bPrereqConquest");
 	pXML->GetChildXmlValByName(&m_bTrade, "bPrereqTrade");
@@ -54246,6 +54444,7 @@ void CvTraitTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iPrereqMaxKilledEthicalAlignment);
 	stream->Read(&m_bFirst);
 	stream->Read(&m_bOncePerPlayer);
+	stream->Read(&m_bGameSpeedScale);
 	stream->Read(&m_bCoastal);
 	stream->Read(&m_bConquest);
 	stream->Read(&m_bTrade);
@@ -54340,6 +54539,7 @@ void CvTraitTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iPrereqMaxKilledEthicalAlignment);
 	stream->Write(m_bFirst);
 	stream->Write(m_bOncePerPlayer);
+	stream->Write(m_bGameSpeedScale);
 	stream->Write(m_bCoastal);
 	stream->Write(m_bConquest);
 	stream->Write(m_bTrade);
@@ -54426,6 +54626,7 @@ void CvTraitTriggerInfo::copyNonDefaults(CvTraitTriggerInfo* pClassInfo, CvXMLLo
 	if (getPrereqMaxKilledEthicalAlignment() == 0)			m_iPrereqMaxKilledEthicalAlignment = (pClassInfo->getPrereqMaxKilledEthicalAlignment());
 	if (isFirst() == false)			m_bFirst = (pClassInfo->isFirst());
 	if (isOncePerPlayer() == false)			m_bOncePerPlayer = (pClassInfo->isOncePerPlayer());
+	if (isGameSpeedScale() == false)			m_bGameSpeedScale = (pClassInfo->isGameSpeedScale());
 	if (isCoastal() == false)			m_bCoastal = (pClassInfo->isCoastal());
 	if (isPrereqConquest() == false)			m_bConquest = (pClassInfo->isPrereqConquest());
 	if (isPrereqTrade() == false)			m_bTrade = (pClassInfo->isPrereqTrade());

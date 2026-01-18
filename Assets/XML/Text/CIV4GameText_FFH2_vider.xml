@@ -773,11 +773,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HERO</Tag>
-		<English>Hero: %s1</English>
-		<French>Héros : %s1</French>
-		<German>Held: %s1</German>
-		<Italian>Hero: %s1</Italian>
-		<Spanish>Héroe: %s1</Spanish>
+		<English>Hero:[LINK=%s1]%s2[\LINK]</English>
+		<French>Héros : [LINK=%s1]%s2[\LINK]</French>
+		<German>Held: [LINK=%s1]%s2[\LINK]</German>
+		<Italian>Hero: [LINK=%s1]%s2[\LINK]</Italian>
+		<Spanish>Héroe: [LINK=%s1]%s2[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_VARIANT</Tag>
+		<English>Variant of [LINK=%s1]%s2[\LINK]</English>
+		<French>Variante de [LINK=%s1]%s2[\LINK]</French>
+		<German>Variant of [LINK=%s1]%s2[\LINK]</German>
+		<Italian>Variant of [LINK=%s1]%s2[\LINK]</Italian>
+		<Spanish>Variant of [LINK=%s1]%s2[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HERO_PEDIA</Tag>

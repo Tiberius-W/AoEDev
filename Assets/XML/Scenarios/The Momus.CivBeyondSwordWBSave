@@ -2428,7 +2428,7 @@ BeginPlot
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	BeginUnit
-		UnitType=UNIT_KRAKEN, UnitOwner=35
+		UnitType=UNIT_KRAKEN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_STEALTH
@@ -2787,7 +2787,7 @@ BeginPlot
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	BeginUnit
-		UnitType=UNIT_KRAKEN, UnitOwner=35
+		UnitType=UNIT_KRAKEN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_STEALTH
@@ -4941,7 +4941,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GUARDIAN_VINES, UnitOwner=35
+		UnitType=UNIT_GUARDIAN_VINES, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5369,7 +5369,7 @@ BeginPlot
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GUARDIAN_VINES, UnitOwner=35
+		UnitType=UNIT_GUARDIAN_VINES, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4

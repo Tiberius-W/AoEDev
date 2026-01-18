@@ -3819,6 +3819,9 @@ class CvGameUtils:
 					sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 				return sText
 ## Ultrapack ##
+			elif iData1 == 5001 or iData1 == 5002:
+				szCommerce = gc.getCommerceInfo(iData2).getDescription()
+				return CyTranslator().getText("TXT_KEY_COMMERCE_CHANGE", (szCommerce,))
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

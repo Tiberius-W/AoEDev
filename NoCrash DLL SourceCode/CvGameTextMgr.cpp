@@ -501,7 +501,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 		return;
 	}
 
-	if (pUnit->airBaseCombatStr() > 0)
+	if (pUnit->airBaseCombatStr() > 0 && pUnit->airCombatLimit()>0)
 	{
 		if (pUnit->isFighting())
 		{
@@ -2352,6 +2352,125 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 					}
 					szString.append(gDLL->getText("TXT_KEY_CITY_BONUS_DECAY", szBonusString.GetCString()));
 				}
+			}
+			//Aura Black_imp 24/09/15
+			for (iI = 0; iI < pUnit->getNumAuraBonuses(); iI++)
+			{
+				szTempBuffer.clear();
+				bFirst = true;
+				//				float fValue = 0.0f;
+				bool bEnemy = false;
+				bool bRival = false;
+				bool bTeam = false;
+				bool bSelf = false;
+				szBonusString.clear();
+				AuraBonuses cbTemp = pUnit->getAuraBonus(iI);
+
+				szString.append(NEWLINE);
+				szString.append(gDLL->getSymbolID(BULLET_CHAR));
+				szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_PREFIX", GC.getPromotionInfo((PromotionTypes)cbTemp.promotion).getDescription()));
+
+
+
+				if (cbTemp.bApplyEnemy)
+				{
+					bEnemy = true;
+				}
+				if (cbTemp.bApplyRival)
+				{
+					bRival = true;
+				}
+				if (cbTemp.bApplySelf)
+				{
+					bSelf = true;
+				}
+				if (cbTemp.bApplyTeam)
+				{
+					bTeam = true;
+				}
+
+				if (bEnemy && bRival && bSelf && bTeam)
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_ALL"));
+				}
+				else if (!bEnemy && bRival && bSelf && bTeam)
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_NOT_WAR"));
+				}
+				else if (bEnemy && bRival && !bSelf && bTeam)
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_NOT_YOU"));
+				}
+				else if (!bEnemy && !bRival && bSelf && bTeam)
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_FRIENDLY"));
+				}
+				else if (bEnemy && bRival && !bSelf && !bTeam)
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_UNFRIENDLY"));
+				}
+				else
+				{
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_MISC_PREFIX"));
+					bFirst = true;
+					if (bEnemy)
+					{
+						bFirst = false;
+						szString.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_ENEMY"));
+					}
+					if (bRival)
+					{
+						if (bFirst)
+						{
+							bFirst = false;
+						}
+						else
+						{
+							szString.append(gDLL->getText("TXT_KEY_OR"));
+						}
+						szString.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_RIVAL"));
+					}
+					if (bTeam)
+					{
+						if (bFirst)
+						{
+							bFirst = false;
+						}
+						else
+						{
+							szString.append(gDLL->getText("TXT_KEY_OR"));
+						}
+						szString.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_TEAM"));
+					}
+					if (bSelf)
+					{
+						if (bFirst)
+						{
+							bFirst = false;
+						}
+						else
+						{
+							szString.append(gDLL->getText("TXT_KEY_OR"));
+						}
+						szString.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_SELF"));
+					}
+					szString.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_MISC_POSTFIX"));
+				}
+
+				if (cbTemp.bFullMap)
+				{
+					szString.append(gDLL->getText("TXT_KEY_UNIT_CITY_BONUS_FULL_MAP"));
+				}
+				else if (cbTemp.iBonusRange == 0)
+				{
+					szString.append(gDLL->getText("TXT_KEY_UNIT_AURA_BONUS_TILE"));
+				}
+				else
+				{
+					szString.append(gDLL->getText("TXT_KEY_UNIT_CITY_BONUS_RANGE", cbTemp.iBonusRange));
+				}
+
+
 			}
 
 			if (pUnit->getNoBadExplore() > 0)
@@ -9683,6 +9802,10 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 /*************************************************************************************************/
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
+		if (GC.getLeaderHeadInfo(eLeader).isLeaderVariant())
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_LEADER_VARIANT", GC.getLeaderHeadInfo((LeaderHeadTypes)GC.getLeaderHeadInfo(eLeader).getPrimaryLeader()).getTextKeyWide(), GC.getLeaderHeadInfo((LeaderHeadTypes)GC.getLeaderHeadInfo(eLeader).getPrimaryLeader()).getTextKeyWide()));
+		}
 /*************************************************************************************************/
 /**	True Neutral      				10/02/09								Valkrionn	**/
 /*************************************************************************************************/
@@ -9713,7 +9836,7 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 			if (GC.getCivilizationInfo(eCivilization).getHero() != NO_UNIT)
 			{
 				szHelpString.append(NEWLINE);
-				szHelpString.append(gDLL->getText("TXT_KEY_HERO", GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(eCivilization).getHero()).getDescription()));
+				szHelpString.append(gDLL->getText("TXT_KEY_HERO", GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(eCivilization).getHero()).getTextKeyWide(), GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(eCivilization).getHero()).getTextKeyWide()));
 			}
 			for (iI = 0; iI < GC.getNumSpellInfos(); ++iI)
 			{
@@ -10548,8 +10671,14 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	if (GC.getPromotionInfo(ePromotion).isDispellable())
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE"));
-
+		if (GC.getPromotionInfo(ePromotion).getPrereqDispelPower() > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE_POWER", GC.getPromotionInfo(ePromotion).getPrereqDispelPower()));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE"));
+		}
 	}
 	if (GC.getPromotionInfo(ePromotion).getMinLevel() < 0 || (GC.getPromotionInfo(ePromotion).isNoXP() && GC.getPromotionInfo(ePromotion).getGoldCost() != 0) || GC.getPromotionInfo(ePromotion).isRace() || GC.getPromotionInfo(ePromotion).isEquipment())
 	{
@@ -12207,7 +12336,13 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_INVISIBLE_TYPE", GC.getInvisibleInfo((InvisibleTypes)GC.getPromotionInfo(ePromotion).getInvisibleLevel()).getTextKeyWide()));
 
 	}
-//	for (iI = 0; iI < GC.getPromotionInfo(ePromotion).getNumInvisibleTypes(); ++iI)
+	if (GC.getPromotionInfo(ePromotion).isRevealed())
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_REVEALED"));
+
+	}
+	//	for (iI = 0; iI < GC.getPromotionInfo(ePromotion).getNumInvisibleTypes(); ++iI)
 //	{
 //		szBuffer.append(pcNewline);
 //		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_INVISIBLE_TYPE", GC.getInvisibleInfo((InvisibleTypes)GC.getPromotionInfo(ePromotion).getInvisibleType(iI)).getTextKeyWide()));
@@ -12903,6 +13038,121 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 			szBuffer.append(gDLL->getText("TXT_KEY_CITY_BONUS_DECAY", szBonusString.GetCString()));
 		}
 	}
+	//Aura Black_imp 24/09/15
+	for (iI = 0; iI < GC.getPromotionInfo(ePromotion).getNumAuraBonuses(); iI++)
+	{
+		szTempBuffer.clear();
+		bFirst = true;
+		//				float fValue = 0.0f;
+		bool bEnemy = false;
+		bool bRival = false;
+		bool bTeam = false;
+		bool bSelf = false;
+		szBonusString.clear();
+		AuraBonuses cbTemp = GC.getPromotionInfo(ePromotion).getAuraBonus(iI);
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getSymbolID(BULLET_CHAR));
+		szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_PREFIX", GC.getPromotionInfo((PromotionTypes)cbTemp.promotion).getDescription()));
+		szBuffer.append(gDLL->getText(szTempBuffer.GetCString()));
+		if (cbTemp.bApplyEnemy)
+		{
+			bEnemy = true;
+		}
+		if (cbTemp.bApplyRival)
+		{
+			bRival = true;
+		}
+		if (cbTemp.bApplySelf)
+		{
+			bSelf = true;
+		}
+		if (cbTemp.bApplyTeam)
+		{
+			bTeam = true;
+		}
+		if (bEnemy && bRival && bSelf && bTeam)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_ALL"));
+		}
+		else if (!bEnemy && bRival && bSelf && bTeam)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_NOT_WAR"));
+		}
+		else if (bEnemy && bRival && !bSelf && bTeam)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_NOT_YOU"));
+		}
+		else if (!bEnemy && !bRival && bSelf && bTeam)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_FRIENDLY"));
+		}
+		else if (bEnemy && bRival && !bSelf && !bTeam)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_UNFRIENDLY"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_MISC_PREFIX"));
+			bFirst = true;
+			if (bEnemy)
+			{
+				bFirst = false;
+				szBuffer.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_ENEMY"));
+			}
+			if (bRival)
+			{
+				if (bFirst)
+				{
+					bFirst = false;
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_OR"));
+				}
+				szBuffer.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_RIVAL"));
+			}
+			if (bTeam)
+			{
+				if (bFirst)
+				{
+					bFirst = false;
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_OR"));
+				}
+				szBuffer.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_TEAM"));
+			}
+			if (bSelf)
+			{
+				if (bFirst)
+				{
+					bFirst = false;
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_OR"));
+				}
+				szBuffer.append(gDLL->getText("TXT_KEY_CITY_BONUS_APPLY_SELF"));
+			}
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_BONUS_APPLY_MISC_POSTFIX"));
+		}
+		if (cbTemp.bFullMap)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CITY_BONUS_FULL_MAP"));
+		}
+		else if (cbTemp.iBonusRange == 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_AURA_CITY_BONUS_TILE"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CITY_BONUS_RANGE", cbTemp.iBonusRange));
+		}
+
+
+	}
+
 
 	if (GC.getPromotionInfo(ePromotion).getNoBadExplore() > 0)
 	{
@@ -12952,6 +13202,12 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	{
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_IMMUNE_FIRST_STRIKES_TEXT"));
+	}
+
+	if (GC.getPromotionInfo(ePromotion).isDurationDecreaseSpellpower())
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_DURATION_DECREASE_SPELLPOWER"));
 	}
 
 	for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
@@ -16059,7 +16315,10 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 	//	Build farm, mine, etc...
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		buildYieldChangeString(szBuffer, eTech, iI, true, bPlayerContext);
+		if (GC.getGameINLINE().getActivePlayer() == NO_PLAYER|| GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo((ImprovementTypes)iI).getImprovementClass())==iI)
+		{
+			buildYieldChangeString(szBuffer, eTech, iI, true, bPlayerContext);
+		}
 	}
 
 	bFirst = true;
@@ -19584,6 +19843,16 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CRIME", kBuilding.getCrime()));
+	}
+	if (kBuilding.getCrimePerUnhappyModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_EXTRA_CRIME_PER_UNHAPPY", kBuilding.getCrimePerUnhappyModifier()));
+	}
+	if (kBuilding.getCrimePerUnhealthModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_EXTRA_CRIME_PER_UNHEALTH", kBuilding.getCrimePerUnhealthModifier()));
 	}
 	if (kBuilding.getFreePromotionPick() > 0)
 	{
@@ -26944,8 +27213,14 @@ void CvGameTextMgr::setPlotEffectHelp(CvWStringBuffer& szBuffer, PlotEffectTypes
 	if (feature.isDispellable())
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE"));
-
+		if (feature.getPrereqDispelPower() > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE_POWER",feature.getPrereqDispelPower()));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PLOT_EFFECT_DISPELLABLE"));
+		}
 	}
 	CvWString szHealth;
 	szHealth.Format(L"%.2f", 0.01f * abs(feature.getHealthPercent()));
@@ -33566,7 +33841,14 @@ void CvGameTextMgr::parseTraitReqs(CvWStringBuffer& szHelpString, TraitTypes eTr
 				szHelpString.append(gDLL->getText("TXT_KEY_TRAITCOUNTER_SPACE").c_str());
 
 				CvWString szTempBuffer3;
-				szTempBuffer3.Format(L"(%i)", GC.getTraitTriggerInfo((TraitTriggerTypes)eTrigger).getTraitCounterChange(eTrait));
+				if (GC.getTraitTriggerInfo((TraitTriggerTypes)eTrigger).isGameSpeedScale())
+				{
+					szTempBuffer3.Format(L"(%i)", GC.getTraitTriggerInfo((TraitTriggerTypes)eTrigger).getTraitCounterChange(eTrait)* GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent()/100);
+				}
+				else
+				{
+
+				}
 				szHelpString.append(szTempBuffer3);
 			}
 
@@ -33666,7 +33948,13 @@ void CvGameTextMgr::setCrimeHelp(CvWStringBuffer& szBuffer, CvCity& city)
 	}
 	if (city.happyLevel() != city.unhappyLevel())
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_CRIME_HAPPY", city.unhappyLevel() - city.happyLevel()));
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_CRIME_HAPPY", (city.unhappyLevel() - city.happyLevel())*(1+city.getExtraCrimePerUnhappy())));
+		szBuffer.append(NEWLINE);
+
+	}
+	if (city.badHealth() != city.goodHealth() && city.getExtraCrimePerUnhealth()!=0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_CRIME_HEALTH", (city.badHealth() - city.goodHealth()) * (1 + city.getExtraCrimePerUnhealth())));
 		szBuffer.append(NEWLINE);
 
 	}

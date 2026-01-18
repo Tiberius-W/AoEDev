@@ -1627,5 +1627,9 @@
 			<Type>OVERLAY_PROMOTION_SELECTED</Type>
 			<Path>Art/Interface/Buttons/Units/Overlay/frame_Promo_selected.dds</Path>
 		</InterfaceArtInfo>
+		<InterfaceArtInfo>
+			<Type>INTERFACE_UNIT_REVEALED</Type>
+			<Path>Art/Interface/Buttons/Units/Overlay/Revealed.dds</Path>
+		</InterfaceArtInfo>
 	</InterfaceArtInfos>
 </Civ4ArtDefines>

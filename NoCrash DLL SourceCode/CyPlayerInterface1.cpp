@@ -497,6 +497,11 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 			.def("changeFlagValue", &CyPlayer::changeFlagValue, "void (int /*FlagTypes*/ iIndex, int eChange)")
 			.def("changeLeader", &CyPlayer::changeLeader, "void ( int /*LeaderHeadTypes*/ eNewLeader ) - change leader of player")
 
+
+		.def("getPlayerUnit", &CyPlayer::getPlayerUnit, "int (int /*UnitClassTypes*/ iIndex)")
+			.def("getPlayerBuilding", &CyPlayer::getPlayerBuilding, "int (int /*BuildingClassTypes*/ iIndex)")
+			.def("getPlayerImprovement", &CyPlayer::getPlayerImprovement, "int (int /*ImprovementClassTypes*/ iIndex)")
+
 		;
 
 }

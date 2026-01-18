@@ -6863,6 +6863,7 @@
 			<Description>TXT_KEY_PROMOTION_CHANNELING1</Description>
 			<Help>TXT_KEY_PROMOTION_CHANNELING1_PEDIA</Help>
 			<fCasterXPRate>0.60</fCasterXPRate>
+			<bGetCasterXP>1</bGetCasterXP>
 			<Button>Art/Interface/Buttons/Promotions/Channeling1.dds</Button>
 			<iBetterDefenderThanPercent>-25</iBetterDefenderThanPercent>
 			<iMinLevel>-1</iMinLevel>
@@ -36252,6 +36253,7 @@
 			<Description>TXT_KEY_PROMOTION_DEATHMARKED</Description>
 			<bNeverResurrect>1</bNeverResurrect>
 			<iMinLevel>-1</iMinLevel>
+			<iPromotionDuration>5</iPromotionDuration>
 			<Help>TXT_KEY_PROMOTION_DEATHMARKED_HELP</Help>
 			<bPrereqAlive>1</bPrereqAlive>
 			<Button>Art/Interface/Buttons/Promotions/Death3.dds</Button>
@@ -36524,6 +36526,7 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iEnemyWithdrawalChange>-20</iEnemyWithdrawalChange>
+			<iPromotionDuration>2</iPromotionDuration>
 			<Button>Art\Interface\Buttons\Corporal.dds</Button>
 			<iAIWeight>300</iAIWeight>
 		</PromotionInfo>
@@ -38756,6 +38759,7 @@
 					<iCombat>1</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<iPromotionDuration>2</iPromotionDuration>
 			<Button>Art/Interface/Buttons/Equipment/heartstone.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Purifying well -->
@@ -39340,6 +39344,7 @@
 			<iEnemyHealChange>30</iEnemyHealChange>
 			<iNeutralHealChange>30</iNeutralHealChange>
 			<iFriendlyHealChange>30</iFriendlyHealChange>
+			<iPromotionDuration>2</iPromotionDuration>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Nemed Regan Aura -->
 			<Type>PROMOTION_NEMED_REGEN_AURA</Type>
@@ -39363,7 +39368,7 @@
 				</CityBonus>
 			</CityBonuses>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Nemed Regan Aura Effect-->
+		<PromotionInfo>		<!-- Nemed blood Effect-->
 			<Type>PROMOTION_NEMED_CHILD</Type>
 			<Description>TXT_KEY_PROMOTION_NEMED_CHILD</Description>
 			<iAsset>10</iAsset>
@@ -42171,6 +42176,13 @@
 			<iEnemyWithdrawalChange>-25</iEnemyWithdrawalChange>
 			<iCollateralDamageProtection>100</iCollateralDamageProtection>
 			<iResistMagic>10</iResistMagic>
+			<Button>Art/Interface/Buttons/Promotions/FavoredSon.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Patrian Handcuffs -->
+			<Type>PROMOTION_PATRIAN_HANDCUFFS</Type>
+			<Description>TXT_KEY_PROMOTION_PATRIAN_HANDCUFFS</Description>
+			<bDurationDecreaseSpellpower>1</bDurationDecreaseSpellpower>
+			<iPromotionDuration>150</iPromotionDuration>
 			<PromotionSummonPerk>PROMOTION_ILLUSION</PromotionSummonPerk>
 			<Button>Art/Interface/Buttons/Promotions/FavoredSon.dds</Button>
 		</PromotionInfo>

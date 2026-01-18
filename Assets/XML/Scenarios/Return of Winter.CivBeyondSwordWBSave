@@ -1089,7 +1089,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -2647,7 +2647,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -3410,7 +3410,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -4628,7 +4628,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -4728,7 +4728,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -5054,7 +5054,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -8168,7 +8168,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SKELETON, UnitOwner=35
+		UnitType=UNIT_SKELETON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_UNDEAD
@@ -8691,7 +8691,7 @@ BeginPlot
 	TerrainType=TERRAIN_GLACIER
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_POLAR_BEAR, UnitOwner=35
+		UnitType=UNIT_POLAR_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY

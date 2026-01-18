@@ -968,7 +968,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_LIZARDMAN
@@ -984,7 +984,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LIZARDMAN, UnitOwner=35
+		UnitType=UNIT_LIZARDMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_LIZARDMAN
@@ -1426,7 +1426,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -1458,7 +1458,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_CITY_GARRISON1
@@ -1467,7 +1467,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=35
+		UnitType=UNIT_WARRIOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1475,7 +1475,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=TXT_KEY_CITY_BARBARIAN_1
 		CityPopulation=1
 	EndCity
@@ -1538,7 +1538,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -1601,7 +1601,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GRIFFON, UnitOwner=35
+		UnitType=UNIT_GRIFFON, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FLYING
@@ -1789,7 +1789,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1797,7 +1797,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1805,7 +1805,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1813,7 +1813,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1821,7 +1821,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -1829,7 +1829,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -2651,7 +2651,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -2714,7 +2714,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_SENTRY
@@ -2766,7 +2766,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -2880,7 +2880,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -3245,7 +3245,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BABY_SPIDER, UnitOwner=35
+		UnitType=UNIT_BABY_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4072,7 +4072,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4183,7 +4183,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -4904,7 +4904,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -4929,7 +4929,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_SENTRY
@@ -5105,7 +5105,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -5283,7 +5283,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_PACK, UnitOwner=35
+		UnitType=UNIT_WOLF_PACK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -5590,7 +5590,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN, UnitOwner=35
+		UnitType=UNIT_GOBLIN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6012,7 +6012,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_SENTRY
@@ -6045,7 +6045,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ELEPHANT, UnitOwner=35
+		UnitType=UNIT_ELEPHANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -6532,7 +6532,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6540,7 +6540,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6548,7 +6548,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6572,7 +6572,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN, UnitOwner=35
+		UnitType=UNIT_GOBLIN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6616,7 +6616,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LION_PRIDE, UnitOwner=35
+		UnitType=UNIT_LION_PRIDE, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -6710,7 +6710,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -6892,7 +6892,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6900,7 +6900,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -6908,7 +6908,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_ARCHER_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -7218,7 +7218,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -7287,7 +7287,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SAND_LION, UnitOwner=35
+		UnitType=UNIT_SAND_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ELEMENTAL
@@ -7308,7 +7308,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SAND_LION, UnitOwner=35
+		UnitType=UNIT_SAND_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ELEMENTAL
@@ -7339,7 +7339,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -7387,7 +7387,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GIANT_SPIDER, UnitOwner=35
+		UnitType=UNIT_GIANT_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -7542,7 +7542,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_SENTRY
@@ -7605,7 +7605,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_PACK, UnitOwner=35
+		UnitType=UNIT_WOLF_PACK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -7753,7 +7753,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=35
+		UnitType=UNIT_GOBLIN_SCORPION_CLAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -7959,7 +7959,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -7993,7 +7993,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ELEPHANT, UnitOwner=35
+		UnitType=UNIT_ELEPHANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -8123,7 +8123,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_BRONZE_WEAPONS
@@ -8141,7 +8141,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_CITY_GARRISON1
@@ -8151,7 +8151,7 @@ BeginPlot
 		UnitAIType=UNITAI_ANIMAL
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=Dirage
 		CityPopulation=1
 	EndCity
@@ -8382,7 +8382,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -8460,7 +8460,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GOBLIN, UnitOwner=35
+		UnitType=UNIT_GOBLIN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -9180,7 +9180,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -9420,7 +9420,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=35
+		UnitType=UNIT_LION, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -9670,7 +9670,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_HILL_GIANT, UnitOwner=35
+		UnitType=UNIT_HILL_GIANT, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_SENTRY
@@ -10021,7 +10021,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WOLF_PACK, UnitOwner=35
+		UnitType=UNIT_WOLF_PACK, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY
@@ -10100,7 +10100,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_GORILLA, UnitOwner=35
+		UnitType=UNIT_GORILLA, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -10517,7 +10517,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=35
+		UnitType=UNIT_AXEMAN, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -10804,7 +10804,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BABY_SPIDER, UnitOwner=35
+		UnitType=UNIT_BABY_SPIDER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -11908,7 +11908,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BEAR, UnitOwner=35
+		UnitType=UNIT_BEAR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_HIDDEN_NATIONALITY

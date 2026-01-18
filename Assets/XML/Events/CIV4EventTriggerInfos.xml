@@ -8737,6 +8737,50 @@
 			<bShowPlot>1</bShowPlot>
 			<PythonCanDo>canTriggerPlotEmpty</PythonCanDo>
 		</EventTriggerInfo>
-			
+			<EventTriggerInfo>	<!--parith-->
+			<Type>EVENTTRIGGER_WB_SPLINTERED_COURT_PARITH</Type>
+			<WorldNewsTexts>
+				<Text></Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_WB_SPLINTERED_COURT_PARITH</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bSinglePlayer>0</bSinglePlayer>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>0</iWeight>
+			<Events>
+				<Event>EVENT_WB_SPLINTERED_COURT_PARITH_YES</Event>
+				<Event>EVENT_WB_SPLINTERED_COURT_PARITH_NO</Event>
+			</Events>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_PARITH</Type>
+			<WorldNewsTexts>
+				<Text></Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_PARITH</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bSinglePlayer>1</bSinglePlayer>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>200</iWeight>
+			<UnitsRequired>
+				<UnitClass>UNITCLASS_CHAMPION</UnitClass>
+			</UnitsRequired>
+			<iNumUnits>1</iNumUnits>
+			<iUnitExperienceWeight>1</iUnitExperienceWeight>
+			<Events>
+				<Event>EVENT_PARITH_NO</Event>
+				<Event>EVENT_PARITH_YES</Event>
+			</Events>
+			<PythonCanDo>canTriggerParith</PythonCanDo>
+		</EventTriggerInfo>
+		
 		</EventTriggerInfos>
 </Civ4EventTriggerInfos>

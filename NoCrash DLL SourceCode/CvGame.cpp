@@ -256,6 +256,11 @@ void CvGame::init(HandicapTypes eHandicap)
 											{
 												iValue -= 2000;
 											}
+											if (GC.getInitCore().getLeader((PlayerTypes)iI)!=NO_LEADER && GC.getLeaderHeadInfo(GC.getInitCore().getLeader((PlayerTypes)iI)).getPrimaryLeader() == GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getPrimaryLeader())
+											{
+												iValue -= 2000;
+											}
+
 											if (GC.getInitCore().getCiv((PlayerTypes)iI) == iCiv)
 											{
 												iValue -= 1000;
@@ -299,6 +304,65 @@ void CvGame::init(HandicapTypes eHandicap)
 						}
 					}
 					GC.getInitCore().setCiv((PlayerTypes)iPlayer, (CivilizationTypes)iBestCiv);
+					GC.getInitCore().setLeader((PlayerTypes)iPlayer, (LeaderHeadTypes)iBestLeader);
+					iBestCiv = -1;
+					iBestLeader = -1;
+					iBestValue = -1;
+				}
+				else if (GC.getInitCore().getLeader((PlayerTypes)iPlayer) == NO_LEADER ||!GC.getCivilizationInfo((CivilizationTypes)GC.getInitCore().getCiv((PlayerTypes)iPlayer)).isLeaders(GC.getInitCore().getLeader((PlayerTypes)iPlayer)))
+				{
+					for (int iLeader = 0; iLeader < GC.getNumLeaderHeadInfos(); iLeader++)
+					{
+						if (GC.getCivilizationInfo((CivilizationTypes)GC.getInitCore().getCiv((PlayerTypes)iPlayer)).isLeaders(iLeader))
+						{
+					//		if (iAlignment == -1 || GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getAlignment() == iAlignment)
+					//		{
+								iValue = 40000 + getSorenRandNum(1000, "Random Leader");
+								for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+								{
+									if (GC.getInitCore().getLeader((PlayerTypes)iI) == iLeader)
+									{
+										iValue -= 2000;
+									}
+									if ((GC.getInitCore().getLeader((PlayerTypes)iI) != NO_LEADER && GC.getLeaderHeadInfo(GC.getInitCore().getLeader((PlayerTypes)iI)).getPrimaryLeader() == GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getPrimaryLeader()))
+									{
+										iValue -= 2000;
+									}
+								}
+								/*************************************************************************************************/
+								/**	LeaderStatus Infos      				10/02/09								Valkrionn	**/
+								/**                                         Originally                                          **/
+								/** Minor Leaders Options       Opera       08.06.09         imported by Valkrionn	09.26.09    **/
+								/*************************************************************************************************/
+								if (isOption(GAMEOPTION_THE_ACKNOWLEDGEMENT))
+								{
+									if (GC.getLeaderClassInfo((LeaderClassTypes)GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getLeaderClass()).getLeaderStatus() != HISTORICAL_STATUS)
+									{
+										iValue += 50000;
+									}
+								}
+								if (isOption(GAMEOPTION_WELLKNOWN_FACES))
+								{
+									if (GC.getLeaderClassInfo((LeaderClassTypes)GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getLeaderClass()).getLeaderStatus() == HISTORICAL_STATUS)
+									{
+										iValue += 50000;
+									}
+									if (GC.getLeaderClassInfo((LeaderClassTypes)GC.getLeaderHeadInfo((LeaderHeadTypes)iLeader).getLeaderClass()).getLeaderStatus() == NO_STATUS)
+									{
+										iValue += 50000;
+									}
+								}
+								/*************************************************************************************************/
+								/** End                                                                                         **/
+								/*************************************************************************************************/
+								if (iValue > iBestValue)
+								{
+									iBestLeader = iLeader;
+									iBestValue = iValue;
+								}
+						//	}
+						}
+					}
 					GC.getInitCore().setLeader((PlayerTypes)iPlayer, (LeaderHeadTypes)iBestLeader);
 					iBestCiv = -1;
 					iBestLeader = -1;
@@ -8728,6 +8792,7 @@ void CvGame::read(FDataStreamBase* pStream)
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 
+	pStream->Read(GC.getNumGoodyInfos(), m_pabTriggeredGoodies);
 }
 
 
@@ -8945,6 +9010,7 @@ void CvGame::write(FDataStreamBase* pStream)
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
 
+	pStream->Write(GC.getNumGoodyInfos(), m_pabTriggeredGoodies);
 }
 
 void CvGame::writeReplay(FDataStreamBase& stream, PlayerTypes ePlayer)

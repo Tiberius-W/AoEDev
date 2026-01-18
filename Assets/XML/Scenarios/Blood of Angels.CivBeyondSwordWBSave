@@ -11375,7 +11375,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=35
+		UnitType=UNIT_ARCHER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -11383,7 +11383,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=TXT_KEY_CITY_BARBARIAN_2
 		CityPopulation=1
 	EndCity
@@ -11970,7 +11970,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=35
+		UnitType=UNIT_ARCHER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -11978,7 +11978,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=TXT_KEY_CITY_BARBARIAN_12
 		CityPopulation=1
 	EndCity
@@ -12933,7 +12933,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=35
+		UnitType=UNIT_ARCHER, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_ORC
@@ -12941,7 +12941,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=50
 		CityName=TXT_KEY_CITY_BARBARIAN_10
 		CityPopulation=1
 	EndCity

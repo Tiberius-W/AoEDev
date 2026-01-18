@@ -687,7 +687,11 @@ bool CyTeam::isDefensivePact(int /*TeamTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->isDefensivePact((TeamTypes)eIndex) : false;
 }
-
+void CyTeam::setDefensivePact(int /*TeamTypes*/ eIndex, bool iChange)
+{
+	if (m_pTeam)
+		m_pTeam->setDefensivePact((TeamTypes)eIndex, iChange);
+}
 int CyTeam::getRouteChange(int /*RouteTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->getRouteChange((RouteTypes)eIndex) : -1;

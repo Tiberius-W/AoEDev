@@ -4173,7 +4173,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIT_BEAST, UnitOwner=35
+		UnitType=UNIT_PIT_BEAST, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -6068,7 +6068,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIT_BEAST, UnitOwner=35
+		UnitType=UNIT_PIT_BEAST, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -6950,7 +6950,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BALOR, UnitOwner=35
+		UnitType=UNIT_BALOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -7708,7 +7708,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIT_BEAST, UnitOwner=35
+		UnitType=UNIT_PIT_BEAST, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -9112,7 +9112,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_BALOR, UnitOwner=35
+		UnitType=UNIT_BALOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -9475,7 +9475,7 @@ BeginPlot
 	TerrainType=TERRAIN_FIELDS_OF_PERDITION
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIT_BEAST, UnitOwner=35
+		UnitType=UNIT_PIT_BEAST, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -18751,7 +18751,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -19278,7 +19278,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -19478,7 +19478,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BALOR, UnitOwner=35
+		UnitType=UNIT_BALOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON
@@ -19812,7 +19812,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -20163,7 +20163,7 @@ BeginPlot
 	TerrainType=TERRAIN_BROKEN_LANDS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WRAITH, UnitOwner=35
+		UnitType=UNIT_WRAITH, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_FEAR
@@ -20542,7 +20542,7 @@ BeginPlot
 	TerrainType=TERRAIN_SHALLOWS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BALOR, UnitOwner=35
+		UnitType=UNIT_BALOR, UnitOwner=50
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_DEMON

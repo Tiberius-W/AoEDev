@@ -613,7 +613,7 @@ class CvEventManager:
 					cf.showUnitPerTilePopup()
 
 			# Alt+R creates a reminder
-			if (theKey == int(InputTypes.KB_R) and self.bAlt):
+			if (theKey == int(InputTypes.KB_R) and self.bAlt and self.bShift):
 				self.beginEvent(CvUtil.EventReminder)
 				return 1
 
@@ -904,7 +904,7 @@ class CvEventManager:
 							iBestValue = iValue
 							pBestPlot = pPlot
 				if pBestPlot != -1:
-					pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+					pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True, False)
 					CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_EXPLORE_LAIR_PORTAL",()),'',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pBestPlot.getX(),pBestPlot.getY(),True,True)
 
 		elif iData1 == 108:
@@ -1505,6 +1505,16 @@ class CvEventManager:
 			else:
 				pPlayer.setTraitPoints(iData2,0)
 				pPlayer.setGainingTrait(False)
+		elif iData1 == 5001 or iData1 == 5002: # Commerce Change from MainInterface
+			iPlayer		= iData2
+			iChange		= iData3
+			iCommerce	= CommerceTypes(iData4)
+			pPlayer = gc.getPlayer(iPlayer)
+			if iData1 == 5001:
+				pPlayer.changeCommercePercent(iCommerce, iChange)
+			else:
+				pPlayer.changeCommercePercent(iCommerce, - min(iChange, pPlayer.getCommercePercent(iCommerce)))
+
 		## *******************
 		## Modular Python: ANW 29-may-2010
 		for module in command['onModNetMessage']:
@@ -3135,7 +3145,7 @@ class CvEventManager:
 					iX = pPlot.getX(); iY = pPlot.getY();
 					for i in xrange(pPlot.getNumUnits(), -1, -1):
 						pUnit = getUnit(i)
-						pUnit.setXY(pPlot2.getX(), pPlot2.getY(), True, True, True)
+						pUnit.setXY(pPlot2.getX(), pPlot2.getY(), True, True, True, False)
 					game.addPlayerAdvanced(iMercurianPlayer, iTeam, self.Leaders["Basium"], Civ["Mercurians"],pPlayer.getID())
 					basiumUnit = initUnit(self.Heroes["Basium"], iX, iY, iNoAI, iNorth)
 					basiumUnit.setExperienceTimes100(2500, -1)
@@ -4033,6 +4043,8 @@ class CvEventManager:
 			# Funny, but maybe can cause issues.
 			# pUnit.setGameTurnCreated(-100)
 
+		if game.getWBMapScript():
+			sf.onUnitCreated(pUnit)
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

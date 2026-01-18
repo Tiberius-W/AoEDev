@@ -46,7 +46,7 @@
 		<Spanish>Ride Stags</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPELL_RIDE_GREAT_BEASTS_MOUNTEDTWEAKS</Tag>
+		<Tag>TXT_KEY_SPELL_RIDE_GREAT_BEAST_MOUNTEDTWEAKS</Tag>
 		<English>Ride Great Beasts</English>
 		<French>Ride Great Beasts</French>
 		<German>Ride Great Beasts</German>
@@ -84,6 +84,14 @@
 		<German>Ride Flying</German>
 		<Italian>Ride Flying</Italian>
 		<Spanish>Ride Flying</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_RIDE_TOAD_MOUNTEDTWEAKS</Tag>
+		<English>Ride Toads</English>
+		<French>Ride Toads</French>
+		<German>Ride Toads</German>
+		<Italian>Ride Toads</Italian>
+		<Spanish>Ride Toads</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_RETURN_TO_BOAR_MOUNTEDTWEAKS</Tag>
@@ -268,6 +276,14 @@
 		<German>[NEWLINE][ICON_BULLET]Sacrifice the griffon to grant mounted units in the stack a flying mount for flying movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</German>
 		<Italian>[NEWLINE][ICON_BULLET]Sacrifice the griffon to grant mounted units in the stack a flying mount for flying movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Sacrifice the griffon to grant mounted units in the stack a flying mount for flying movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_RIDE_TOAD_MOUNTEDTWEAKS_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Sacrifice the toad to grant mounted units in the stack a toad mount for amphibious attacks and doubled marsh movement, but -1 base movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</English>
+		<French>[NEWLINE][ICON_BULLET]Sacrifice the toad to grant mounted units in the stack a toad mount for amphibious attacks and doubled marsh movement, but -1 base movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</French>
+		<German>[NEWLINE][ICON_BULLET]Sacrifice the toad to grant mounted units in the stack a toad mount for amphibious attacks and doubled marsh movement, but -1 base movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Sacrifice the toad to grant mounted units in the stack a toad mount for amphibious attacks and doubled marsh movement, but -1 base movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Sacrifice the toad to grant mounted units in the stack a toad mount for amphibious attacks and doubled marsh movement, but -1 base movement. [NEWLINE][ICON_BULLET]Replaces existing mount types.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_RETURN_TO_BOAR_MOUNTEDTWEAKS_HELP</Tag>
@@ -461,5 +477,13 @@
 		<German>Flying Mount</German>
 		<Italian>Flying Mount</Italian>
 		<Spanish>Flying Mount</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_TOAD_MOUNTEDTWEAKS</Tag>
+		<English>Toad Mount</English>
+		<French>Toad Mount</French>
+		<German>Toad Mount</German>
+		<Italian>Toad Mount</Italian>
+		<Spanish>Toad Mount</Spanish>
 	</TEXT>
 </Civ4GameText>

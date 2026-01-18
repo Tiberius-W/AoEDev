@@ -233,5 +233,28 @@
 			<bValidate>1</bValidate>
 			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Toad Mount -->									
+			<Type>PROMOTION_TOAD_MOUNTEDTWEAKS</Type>
+			<PromotionClass>PROMOTIONCLASS_MOUNT</PromotionClass>
+			<Description>TXT_KEY_PROMOTION_TOAD_MOUNTEDTWEAKS</Description>
+			<iMovesChange>-1</iMovesChange>
+			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
+			<TerrainDoubleMoves>
+				<TerrainDoubleMove>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainDoubleMove>1</bTerrainDoubleMove>
+				</TerrainDoubleMove>
+			</TerrainDoubleMoves>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Modules/NormalModules/z_CaptainMountedTweaks/Art/Interface/Buttons/Promotions/mount_toad.dds</Button>
+			<bValidate>1</bValidate>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

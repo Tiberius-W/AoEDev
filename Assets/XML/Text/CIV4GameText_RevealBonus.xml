@@ -1596,6 +1596,14 @@
 		<Spanish>%d1 from Happiness</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CRIME_HEALTH</Tag>
+		<English>%d1 from Health</English>
+		<French>%d1 à cause de la santé</French>
+		<German>%d1 from Health</German>
+		<Italian>%d1 from Health</Italian>
+		<Spanish>%d1 from Health</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_SPECIALIST</Tag>
 		<English>%d1 from Specialists</English>
 		<French>%d1 à cause des spécialistes</French>
@@ -10919,6 +10927,14 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Spanish>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PLOT_EFFECT_DISPELLABLE_POWER</Tag>
+		<English>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK] with a magical power of %d1</English>
+		<French>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK] with a magical power of %d1</French>
+		<German>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK] with a magical power of %d1</German>
+		<Italian>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK] with a magical power of %d1</Italian>
+		<Spanish>[ICON_BULLET]Can be Removed by [LINK=SPELL_DISPEL]Dispel[\LINK] with a magical power of %d1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROCESS_CONVERTS_CRIME</Tag>
 		<English>[ICON_BULLET]Converts %d1 % of [ICON_PRODUCTION] to -[ICON_CRIME] and blocks all other [ICON_CRIME] change.</English>
 		<French>[ICON_BULLET]Converts %d1 % of [ICON_PRODUCTION] to -[ICON_CRIME] and blocks all other [ICON_CRIME] change.</French>
@@ -11511,6 +11527,118 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<German>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</German>
 		<Italian>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</Italian>
 		<Spanish>[ICON_BULLET]Unit now carries %s1 instead of its former cargo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DURATION_DECREASE_SPELLPOWER</Tag>
+		<English>[ICON_BULLET]Duration Decreases Magical Power</English>
+		<French>[ICON_BULLET]Duration Decreases Magical Power</French>
+		<German>[ICON_BULLET]Duration Decreases Magical Power</German>
+		<Italian>[ICON_BULLET]Duration Decreases Magical Power</Italian>
+		<Spanish>[ICON_BULLET]Duration Decreases Magical Power</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PATRIAN_HANDCUFFS</Tag>
+		<English>Patrian Handcuffs</English>
+		<French>Patrian Handcuffs</French>
+		<German>Patrian Handcuffs</German>
+		<Italian>Patrian Handcuffs</Italian>
+		<Spanish>Patrian Handcuffs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GOODY_EXPLORE_LAIR_OTOLOCH_2</Tag>
+		<English>Your unit found a man raising weird eels.they seem so be invisibly much larger than their visible bodies. He calls himself the Otoloch Whisperer.</English>
+		<French>Your unit found a man raising weird eels.they seem so be invisibly much larger than their visible bodies. He calls himself the Otoloch Whisperer.</French>
+		<German>Your unit found a man raising weird eels.they seem so be invisibly much larger than their visible bodies. He calls himself the Otoloch Whisperer.</German>
+		<Italian>Your unit found a man raising weird eels.they seem so be invisibly much larger than their visible bodies. He calls himself the Otoloch Whisperer.</Italian>
+		<Spanish>Your unit found a man raising weird eels.they seem so be invisibly much larger than their visible bodies. He calls himself the Otoloch Whisperer.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_REVEALED</Tag>
+		<English>[ICON_BULLET]Reveals the Unit, negating its Invisibility Level</English>
+		<French>[ICON_BULLET]Reveals the Unit, negating its Invisibility Level</French>
+		<German>[ICON_BULLET]Reveals the Unit, negating its Invisibility Level</German>
+		<Italian>[ICON_BULLET]Reveals the Unit, negating its Invisibility Level</Italian>
+		<Spanish>[ICON_BULLET]Reveals the Unit, negating its Invisibility Level</Spanish>
+	</TEXT>
+	<TEXT>
+    <Tag>TXT_KEY_COMMERCE_CHANGE</Tag>
+    <English>Change %s1_commerce Rate by 10% (5% with Shift)</English>
+    <French>Change %s1_commerce Rate by 10% (5% with Shift)</French>
+    <German>Change %s1_commerce Rate by 10% (5% with Shift)</German>
+    <Italian>Change %s1_commerce Rate by 10% (5% with Shift)</Italian>
+    <Spanish>Change %s1_commerce Rate by 10% (5% with Shift)</Spanish>
+</TEXT>
+   <TEXT>
+        <Tag>TXT_KEY_PEDIA_CIV_MENU_MAINTAINED_FEATURES</Tag>
+        <English>Building improvements won't remove: </English>
+        <French>Building improvements won't remove: </French>
+        <German>Building improvements won't remove: </German>
+        <Italian>Building improvements won't remove: </Italian>
+        <Spanish>Building improvements won't remove: </Spanish>
+    </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EXTRA_CRIME_PER_UNHAPPY</Tag>
+		<English>[ICON_BULLET]Crime per Unhappy Citizens changes by %d1</English>
+		<French>[ICON_BULLET]Crime per Unhappy Citizens changes by %d1</French>
+		<German>[ICON_BULLET]Crime per Unhappy Citizens changes by %d1</German>
+		<Italian>[ICON_BULLET]Crime per Unhappy Citizens changes by %d1</Italian>
+		<Spanish>[ICON_BULLET]Crime per Unhappy Citizens changes by %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EXTRA_CRIME_PER_UNHEALTH</Tag>
+		<English>[ICON_BULLET]Crime per Unhealthy Citizens changes by %d1</English>
+		<French>[ICON_BULLET]Crime per Unhealthy Citizens changes by %d1</French>
+		<German>[ICON_BULLET]Crime per Unhealthy Citizens changes by %d1</German>
+		<Italian>[ICON_BULLET]Crime per Unhealthy Citizens changes by %d1</Italian>
+		<Spanish>[ICON_BULLET]Crime per Unhealthy Citizens changes by %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_SPELL_GLOBAL_TARGETED</Tag>
+		<English>World spells can only be cast once per game. Are you sure you want to cast %s1_ActionName?</English>
+		<French>World spells can only be cast once per game. Are you sure you want to cast %s1_ActionName?</French>
+		<German>World spells can only be cast once per game. Are you sure you want to cast %s1_ActionName?</German>
+		<Italian>World spells can only be cast once per game. Are you sure you want to cast %s1_ActionName?</Italian>
+		<Spanish>World spells can only be cast once per game. Are you sure you want to cast %s1_ActionName?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_SPELL_WAR_TARGETED</Tag>
+		<English>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</English>
+		<French>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</French>
+		<German>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</German>
+		<Italian>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</Italian>
+		<Spanish>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

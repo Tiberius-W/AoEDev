@@ -2829,3 +2829,17 @@ void CyPlayer::setGainingTrait(bool val) {
 		m_pPlayer->setGainingTrait(val);
 	}
 }
+
+int CyPlayer::getPlayerUnit(int /*UnitClassTypes*/ iIndex)
+{
+	return m_pPlayer ? m_pPlayer->getPlayerUnit((UnitClassTypes)iIndex) : 0;
+}
+
+int CyPlayer::getPlayerBuilding(int /*BuildingClassTypes*/ iIndex)
+{
+	return m_pPlayer ? m_pPlayer->getPlayerBuilding((BuildingClassTypes)iIndex) : 0;
+}
+int CyPlayer::getPlayerImprovement(int /*ImprovementClassTypes*/ iIndex)
+{
+	return m_pPlayer ? m_pPlayer->getPlayerImprovement((ImprovementClassTypes)iIndex) : 0;
+}

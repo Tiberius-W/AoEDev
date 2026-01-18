@@ -134,8 +134,12 @@ def onBeginGameTurn(self, argsList):
 					elif gc.getImprovementInfo(iImp).isPermanent():
 						continue
 					iValue += CyGame().getSorenRandNum(750, "Carnivean move")
-					if pTargetPlot.isOwned():
-						iValue += 500
+					if (CyGame().getSorenRandNum(100,"Carnivean Taking a vacation")<30):
+						if pTargetPlot.isOwned():
+							iValue -= 500
+					else:
+						if pTargetPlot.isOwned():
+							iValue += 500
 					if pTargetPlot.getRouteType() != -1:
 						iValue += 250
 					if iValue > iBestValue:

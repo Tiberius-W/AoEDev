@@ -177,7 +177,7 @@ def applyAmuriteTrial1(argsList):
 	if iPlayer2 != -1:
 		pPlayer2 = gc.getPlayer(iPlayer2)
 		pCity = pPlayer2.getCapitalCity()
-		pUnit.setXY(pCity.getX(), pCity.getY(), False, True, True)
+		pUnit.setXY(pCity.getX(), pCity.getY(), False, True, True,False)
 	
 def canTriggerEsusMaskTake(argsList):
 	eTrigger = argsList[0]
@@ -757,7 +757,7 @@ def exploreLair(pUnit, pPlayer, eGoodyClass):
 						# iBestValue = iValue
 						# pBestPlot = pPlot
 	# if pBestPlot != -1:
-		# pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+		# pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 		# CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_EXPLORE_LAIR_PORTAL",()),'',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pBestPlot.getX(),pBestPlot.getY(),True,True)
 
 def doFlareEntropyNode(argsList):
@@ -1422,7 +1422,7 @@ def applyMalakimPilgrimage1(argsList):
 	if iPlayer2 != -1:
 		pPlayer2 = gc.getPlayer(iPlayer2)
 		pCity = pPlayer2.getCapitalCity()
-		pUnit.setXY(pCity.getX(), pCity.getY(), False, True, True)
+		pUnit.setXY(pCity.getX(), pCity.getY(), False, True, True,False)
 
 # def doMalakimMirror2(argsList):
 	# iEvent = argsList[0]
@@ -3150,6 +3150,25 @@ def applyWBSplinteredCourtDefeatedVolanna3(argsList):
 			pTeam.makePeace(iLjosalfarTeam)
 		if not pTeam.isAtWar(iSvartalfarTeam):
 			pTeam.declareWar(iSvartalfarTeam, False, WarPlanTypes.WARPLAN_LIMITED)
+
+def applyWBSplinteredCourtParithYes(argsList):
+	CyGame().setTrophyValue("TROPHY_WB_SPLINTERED_COURT_PARITH", 1)
+
+def canTriggerParith(argsList):
+	kTriggeredData = argsList[0]
+	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
+	if not pPlayer.isHuman():
+		return False
+	if CyGame().getTrophyValue("TROPHY_WB_SPLINTERED_COURT_PARITH") != 1:
+		return False
+	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_WB_THE_SPLINTERED_COURT):
+		return False
+	return True
+
+def applyParithYes(argsList):
+	eEvent, kTriggeredData = argsList
+	pUnit = getUnit(kTriggeredData.ePlayer, kTriggeredData.iUnitId)
+	CyGame().setTrophyValue("TROPHY_WB_SPLINTERED_COURT_PARITH", pUnit.getUnitType())
 
 def canDoWBTheBlackTowerPickCivBannor(argsList):
 	iEvent = argsList[0]
@@ -6220,7 +6239,7 @@ def doKahd1(argsList):
 		iX = pPlot2.getX(); iY = pPlot2.getY()
 		for i in xrange(pPlot.getNumUnits(), -1, -1):
 			pUnit = pPlot.getUnit(i)
-			pUnit.setXY(iX, iY, true, true, true)
+			pUnit.setXY(iX, iY, True, True, True,False)
 		CyGame().addPlayerAdvanced(iKahdPlayer, iTeam, iLeader, iCiv,pPlayer.getID())
 		pKahdPlayer = gc.getPlayer(iKahdPlayer)
 		iKahdTeam = pKahdPlayer.getTeam()
@@ -6267,7 +6286,7 @@ def doKahd1(argsList):
 		iX = pPlot2.getX(); iY = pPlot2.getY()
 		for i in xrange(pPlot.getNumUnits(), -1, -1):
 			pUnit = pPlot.getUnit(i)
-			pUnit.setXY(iX, iY, true, true, true)
+			pUnit.setXY(iX, iY, True, True, True,False)
 		CyGame().addPlayerAdvanced(iKahdPlayer, iTeam, iLeader, iCiv,pPlayer.getID())
 		pKahdPlayer = gc.getPlayer(iKahdPlayer)
 		iKahdTeam = pKahdPlayer.getTeam()
@@ -6349,7 +6368,7 @@ def doKahd2(argsList):
 		iX = pPlot2.getX(); iY = pPlot2.getY()
 		for i in xrange(pPlot.getNumUnits(), -1, -1):
 			pUnit = pPlot.getUnit(i)
-			pUnit.setXY(iX, iY, true, true, true)
+			pUnit.setXY(iX, iY, True, True, True,False)
 		CyGame().addPlayerAdvanced(iKahdPlayer, iTeam, iLeader, iCiv,pPlayer.getID())
 		pKahdPlayer = gc.getPlayer(iKahdPlayer)
 		iKahdTeam = pKahdPlayer.getTeam()
@@ -6422,7 +6441,7 @@ def doKahd2(argsList):
 		iX = pPlot2.getX(); iY = pPlot2.getY()
 		for i in xrange(pPlot.getNumUnits(), -1, -1):
 			pUnit = pPlot.getUnit(i)
-			pUnit.setXY(iX, iY, true, true, true)
+			pUnit.setXY(iX, iY, True, True, True,False)
 		CyGame().addPlayerAdvanced(iKahdPlayer, iTeam, iLeader, iCiv,pPlayer.getID())
 		pKahdPlayer = gc.getPlayer(iKahdPlayer)
 		iKahdTeam = pKahdPlayer.getTeam()

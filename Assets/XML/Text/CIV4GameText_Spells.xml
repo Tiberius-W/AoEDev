@@ -775,11 +775,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_ADD_PROMOTION</Tag>
-		<English>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to all units in the caster's stack</English>
-		<French>[ICON_BULLET]Ajoute la promotion [LINK=%s1]%s2_promotion[\LINK] à toutes les unités de la case</French>
+		<English>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to units in the caster's stack</English>
+		<French>[ICON_BULLET]Ajoute la promotion [LINK=%s1]%s2_promotion[\LINK] à des unités de la case</French>
 		<German>[ICON_BULLET]fügt die [LINK=%s1]%s2_promotion[\LINK] Beförderung hinzu</German>
-		<Italian>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to all units in the caster's stack</Italian>
-		<Spanish>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to all units in the caster's stack</Spanish>
+		<Italian>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to units in the caster's stack</Italian>
+		<Spanish>[ICON_BULLET]Adds the [LINK=%s1]%s2_promotion[\LINK] promotion to units in the caster's stack</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_ADD_PROMOTION_AT_RANGE</Tag>

@@ -10,4 +10,4 @@ Spider: -1 move and strength, but +2 poison strength.
 Flying: Requires Warhorses, but grants flying. No movement bonus like pegasus mount has and locked until late game, so austrin are flying mount experts.
 Gorillas do not make for good riding animals
 Not planning on anything for sand worms. Because any mounted unit that rides on a sandworm probably deserves radical function changes.
-Toads when they get added - amphibious, of course. Don't ask me what a toad chariot looks like.
+Toads: amphibious and doubled marsh movement. Don't ask me what a toad chariot looks like.

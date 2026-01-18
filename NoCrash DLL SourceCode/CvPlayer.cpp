@@ -7493,10 +7493,10 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 
 		// Speedup - Snarko - 26/10/12 - Removes the need for the cannotFoundCity python call
-		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_SETTLERS) && (getNumCities() > 0) && !isBarbarian())
-		{
-			return false;
-		}
+//		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_SETTLERS) && (getNumCities() > 0) && !isBarbarian())
+//		{
+	//		return false;
+	//	}
 	}
 
 	if (pPlot->isImpassable())
@@ -30520,19 +30520,24 @@ void CvPlayer::doTraitTriggers(TraitHookTypes eTraitHook, const TraitTriggeredDa
 		{
 			setValidTraitTrigger((TraitTriggerTypes)iI, false);
 		}
+		int gamespeedmodifier = 100;
+		if (GC.getTraitTriggerInfo((TraitTriggerTypes)iI).isGameSpeedScale())
+		{
+			gamespeedmodifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+		}
 		for (int iJ = 0; iJ < GC.getNumTraitInfos(); iJ++)
 		{
 			if ( GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ) != 0)
 			{
 				if (GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getBonusMultiplierType() != NO_BONUS)
 				{
-					changeTraitPoints((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ)* getNumAvailableBonuses((BonusTypes)GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getBonusMultiplierType()));
+					changeTraitPoints((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ)* getNumAvailableBonuses((BonusTypes)GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getBonusMultiplierType())*gamespeedmodifier/100);
 				}
 				else
 				{
-					changeTraitPoints((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ));
+					changeTraitPoints((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ)* gamespeedmodifier / 100);
 				}
-				handleTraitLevels((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ));
+				handleTraitLevels((TraitTypes)iJ, GC.getTraitTriggerInfo((TraitTriggerTypes)iI).getTraitCounterChange(iJ) * gamespeedmodifier / 100);
 			}
 
 		}
@@ -30790,3 +30795,31 @@ ImprovementTypes CvPlayer::getPlayerImprovement(ImprovementClassTypes iClass) co
 	return(ImprovementTypes) GC.getCivilizationInfo((CivilizationTypes)getCivilizationType()).getCivilizationImprovements(iClass);
 }
 
+
+UnitTypes CvPlayer::getPlayerUnit(UnitClassTypes iClass) const
+{
+	if (iClass == NO_UNITCLASS)
+	{
+		return NO_UNIT;
+	}
+	if (getExtraUnitClasses(iClass) != NO_UNIT)
+	{
+		return (UnitTypes)getExtraUnitClasses(iClass);
+	}
+	return(UnitTypes)GC.getCivilizationInfo((CivilizationTypes)getCivilizationType()).getCivilizationUnits(iClass);
+}
+
+
+
+BuildingTypes CvPlayer::getPlayerBuilding(BuildingClassTypes iClass) const
+{
+	if (iClass == NO_BUILDINGCLASS)
+	{
+		return NO_BUILDING;
+	}
+	if (getExtraBuildingClasses(iClass) != NO_BUILDING)
+	{
+		return (BuildingTypes)getExtraBuildingClasses(iClass);
+	}
+	return(BuildingTypes)GC.getCivilizationInfo((CivilizationTypes)getCivilizationType()).getCivilizationBuildings(iClass);
+}

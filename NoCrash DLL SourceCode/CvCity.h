@@ -1162,6 +1162,10 @@ public:
 	int getBaseCrimePerTurn() const;
 	int getCrimePerTurn() const;
 	void changeCrimePerTurn(int iChange);
+	void changeExtraCrimePerUnhappy(int iChange);
+	int getExtraCrimePerUnhappy() const;
+	void changeExtraCrimePerUnhealth(int iChange);
+	int getExtraCrimePerUnhealth() const;
 	int getMinCrime() const;
 	void updateMinCrime();
 	int getPerCrimeEffectCommerce(CommerceTypes eIndex) const;										// Exposed to Python
@@ -1666,6 +1670,8 @@ protected:
 	//Crime
 	int m_iCrime;
 	int m_iCrimePerTurn;
+	int m_iExtraCrimePerUnhappy;
+	int m_iExtraCrimePerUnhealth;
 	int m_iMinCrime;
 
 	int m_iMutateChance;

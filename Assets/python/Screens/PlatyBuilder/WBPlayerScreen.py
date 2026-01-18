@@ -161,6 +161,17 @@ class WBPlayerScreen:
 			screen.setText("AdjustCommerceFlexible" + gc.getCommerceInfo(i).getType(), "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_PYTHON, 7881, i)
 			iY += 30
 
+		screen.setButtonGFC("CivCounterPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CivCounterMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_WB_CIV_COUNTER", (pPlayer.getCivCounter(),))
+		screen.setLabel("CivCounterText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("CounterModPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CounterModMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_WB_CIV_COUNTER_MOD", (pPlayer.getCivCounterMod(),))
+		screen.setLabel("CounterModText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 	def placeScript(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = screen.getXResolution()/4
@@ -536,6 +547,20 @@ class WBPlayerScreen:
 			popup.createEditBox(pPlayer.getScriptData())
 			popup.launch()
 			return
+
+		elif inputClass.getFunctionName().find("CivCounter") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeCivCounter(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeCivCounter(- min(iChange, pPlayer.getCivCounter()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("CounterMod") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeCivCounterMod(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeCivCounterMod(- min(iChange, pPlayer.getCivCounterMod()))
+			self.placeStats()
 
 		return 1
 

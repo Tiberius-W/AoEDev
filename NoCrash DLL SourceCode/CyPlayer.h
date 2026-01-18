@@ -719,6 +719,11 @@ public:
 	void setNumMaxTraitPerClass(int /*TraitClassTypes*/iIndex,int iNewValue);
 	void initValidTraitTriggers();
 	void setGainingTrait(bool val);
+
+	int getPlayerUnit(int iClass);
+	int getPlayerImprovement(int iClass);
+	int getPlayerBuilding(int iClass);
+
 private:
 	CvPlayer* m_pPlayer;
 };

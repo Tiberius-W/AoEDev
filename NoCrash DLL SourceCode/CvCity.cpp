@@ -840,6 +840,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	//Crime
 	m_iCrime = 0;//GC.getGameINLINE().getSorenRandNum(20, "Crime");
 	m_iCrimePerTurn=0;
+	m_iExtraCrimePerUnhappy = 0;
+	m_iExtraCrimePerUnhealth = 0;
 	m_iMinCrime = 0;
 
 	m_iMutateChance = 0;
@@ -5365,6 +5367,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 //FfH: Added by Kael 08/04/2007
 		changeCrime(GC.getBuildingInfo(eBuilding).getCrime() * iChange);
+		changeExtraCrimePerUnhappy(GC.getBuildingInfo(eBuilding).getCrimePerUnhappyModifier() * iChange);
+		changeExtraCrimePerUnhealth(GC.getBuildingInfo(eBuilding).getCrimePerUnhealthModifier() * iChange);
 		changeOverflowProductionSources(iChange * GC.getBuildingInfo(eBuilding).isOverflowProduction());
 		changeUnhappyProduction(iChange * GC.getBuildingInfo(eBuilding).isUnhappyProduction());
 		if (GC.getBuildingInfo(eBuilding).getFreeBonus2() != NO_BONUS)
@@ -16860,6 +16864,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	//Crime
 	pStream->Read(&m_iCrime);
 	pStream->Read(&m_iCrimePerTurn);
+	pStream->Read(&m_iExtraCrimePerUnhappy);
+	pStream->Read(&m_iExtraCrimePerUnhealth);
 	pStream->Read(&m_iMinCrime);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiPerCrimeEffectCommerce);
 	pStream->Read(NUM_YIELD_TYPES, m_aiPerCrimeEffectYield);
@@ -17295,6 +17301,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	//Crime
 	pStream->Write(m_iCrime);
 	pStream->Write(m_iCrimePerTurn);
+	pStream->Write(m_iExtraCrimePerUnhappy);
+	pStream->Write(m_iExtraCrimePerUnhealth);
 	pStream->Write(m_iMinCrime);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiPerCrimeEffectCommerce);
 	pStream->Write(NUM_YIELD_TYPES, m_aiPerCrimeEffectYield);
@@ -19578,6 +19586,24 @@ void CvCity::changeUnhappyProduction(int iChange)
 		m_iUnhappyProduction += iChange;
 	}
 }
+void CvCity::changeExtraCrimePerUnhappy(int iChange)
+{
+	m_iExtraCrimePerUnhappy += iChange;
+}
+
+int CvCity::getExtraCrimePerUnhappy() const
+{
+	return m_iExtraCrimePerUnhappy;
+}
+void CvCity::changeExtraCrimePerUnhealth(int iChange)
+{
+	m_iExtraCrimePerUnhealth += iChange;
+}
+
+int CvCity::getExtraCrimePerUnhealth() const
+{
+	return m_iExtraCrimePerUnhealth;
+}
 void CvCity::changeCrimePerTurn(int iChange)
 {
 	m_iCrimePerTurn += iChange;
@@ -19610,7 +19636,8 @@ int CvCity::getCrimePerTurn() const
 	iCrimePerTurn += 2 * getNumBonuses((BonusTypes)GC.getInfoTypeForString("BONUS_MANA_CHAOS"));
 	iCrimePerTurn += (int)getProximityCrime(); //Unit Effect
 	iCrimePerTurn += (int)getPerPopCrimePerTurn() * getPopulation(); //PerPop Effect
-	iCrimePerTurn -= happyLevel() - unhappyLevel(); //Happiness Effect
+	iCrimePerTurn -= (happyLevel() - unhappyLevel())*(1+getExtraCrimePerUnhappy()); //Happiness Effect
+	iCrimePerTurn += (badHealth() - goodHealth()) * (0 + getExtraCrimePerUnhealth());
 	iCrimePerTurn += getSpecialistCrime();
 	iCrimePerTurn += GET_PLAYER(this->getOwner()).getCrimePerTurn();
 	if (getNoMilitaryPercentAnger() == 0)

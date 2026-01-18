@@ -212,7 +212,7 @@ class CustomFunctions:
 										iBestPlot = iRnd
 										pBestPlot = pLoopPlot
 				if pBestPlot != -1:
-					pVictim.setXY(pBestPlot.getX(), pBestPlot.getY(), False, true, true)
+					pVictim.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True,False)
 					if pVictim.getOwner() == gc.getORC_PLAYER():
 #						pVictim.doDamage(70, 100, pCaster, getInfoType('DAMAGE_PHYSICAL'), False)
 						pVictim.doDamageNoCaster(90, 100, self.DamageTypes["Physical"], False)
@@ -836,7 +836,7 @@ class CustomFunctions:
 			iX = pPlot2.getX(); iY = pPlot2.getY()
 			for i in xrange(pPlot.getNumUnits(), -1, -1):
 				pUnit = getUnit(i)
-				pUnit.setXY(iX, iY, true, true, true)
+				pUnit.setXY(iX, iY, True, True, True, False)
 			CyGame().addPlayerAdvanced(iPlayer, iTeam, iLeader, iCiv,pFromPlayer.getID())
 			pPlayer = gc.getPlayer(iPlayer)
 			initUnit= pPlayer.initUnit
