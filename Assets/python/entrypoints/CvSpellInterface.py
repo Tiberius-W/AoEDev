@@ -11585,7 +11585,7 @@ def postCombatWinIntolerant(pCaster, pOpponent):
 
 def spellDivinePurge(pCaster):
 	for i in range(pCaster.getNumMinions()):
-		pMinion=pCaster.getMinion(i)
+		pMinion=pCaster.getMinionUnit(i)
 		pMinion.setHasPromotion(getInfoType("PROMOTION_CRUSADER"),False)
 		
 	pPlot = pCaster.plot()
@@ -11596,7 +11596,7 @@ def spellDivinePurge(pCaster):
 			
 def spellHolyCleansing(pCaster):
 	for i in range(pCaster.getNumMinions()):
-		pMinion=pCaster.getMinion(i)
+		pMinion=pCaster.getMinionUnit(i)
 		pMinion.setHasPromotion(getInfoType("PROMOTION_CRUSADER"),False)
 
 
