@@ -1335,12 +1335,12 @@
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Nightmare Hemah --> 
+		<PromotionInfo>		<!-- Nightmare Saverous --> 
 			<Type>PROMOTION_NIGHTMARE_SAVEROUS</Type>
 			<Description>TXT_KEY_PROMOTION_NIGHTMARE_AIFON</Description>
 			<ReplaceArtType>ART_DEF_UNIT_SAVEROUS</ReplaceArtType>
 			<PrereqUnits>
-				<PrereqUnit>UNIT_SAVEROUS</PrereqUnit>
+				<PrereqUnit>UNIT_SAVEROUS_BLESSED</PrereqUnit>
 			</PrereqUnits>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bNoXP>1</bNoXP>
@@ -1653,7 +1653,18 @@
 			</UnitCombats>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Units/AifonNightmareButton.dds</Button>
 			<bHiddenNationality>1</bHiddenNationality>
-		</PromotionInfo>
+		</PromotionInfo>	
+		<PromotionInfo>		<!-- Wretched2 -->
+			<Type>PROMOTION_WRETCHED2</Type>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON</Promotion>
+				<Promotion>PROMOTION_NIGHTMARE_AIFON_HIDDEN_NATIONALITY_BLANKET</Promotion>
+			</PromotionOverwrites>
+		</PromotionInfo> 
 		<PromotionInfo>		<!-- Dreaming Aifon -->
 			<Type>PROMOTION_DREAMING_AIFON</Type>
 			<Description>TXT_KEY_PROMOTION_DREAM_AIFON</Description>

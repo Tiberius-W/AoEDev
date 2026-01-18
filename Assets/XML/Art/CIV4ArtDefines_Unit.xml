@@ -35464,7 +35464,7 @@
 			<Type>ART_DEF_UNIT_SAVEROUS_REDEEMED</Type>
 			<Button>Art/interface/Buttons/Units/SaverousRedeemed.dds</Button>
             <fScale>0.60</fScale>
-            <fInterfaceScale>1</fInterfaceScale>
+            <fInterfaceScale>0.80</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Heroes/SaverousRedeemed/SaverousRedeemed.nif</NIF>

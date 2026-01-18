@@ -278,6 +278,7 @@ As the Dreaming syphons more and more reality into itself, living things inside 
 
 [ICON_BULLET]The Dream Aifons appear as hidden nationality monsters outside of their cultural borders, and angelic beings who inject culture in nearby neutral or hostile cities when inside their own borders.
 This means the only way they can capture a city is by culture flipping it!
+[ICON_BULLET]Dream cities have terrible hammer production, especially if settled in the open ocean. Instead, they start with the unique civic [LINK=CIVIC_MELDING]Melding[\LINK], allowing them to convert their culture into production for completing units or structures.
 [ICON_BULLET]Dream cities are limited in population, to grow larger they will need to build their unique buildings, strengthening the Dreamings' hold on the region.
 [ICON_BULLET]Being born of Danalin's troubled dreams, these false Aifons are able to settle cities on the ocean and have better yields there than on land.
 [ICON_BULLET]The Dreaming terrain type spreads inside their culture, giving them a defensive bonus inside of it and slightly hurting other units. It can be dispelled with Metamagic, leaving the cities exposed as the nightmarish wasteland they are.
@@ -289,6 +290,7 @@ This means the only way they can capture a city is by culture flipping it!
 
 [ICON_BULLET]The Dream Aifons appear as hidden nationality monsters outside of their cultural borders, and angelic beings who inject culture in nearby neutral or hostile cities when inside their own borders.
 This means the only way they can capture a city is by culture flipping it!
+[ICON_BULLET]Dream cities have terrible hammer production, especially if settled in the open ocean. Instead, they start with the unique civic [LINK=CIVIC_MELDING]Melding[\LINK], allowing them to convert their culture into production for completing units or structures.
 [ICON_BULLET]Dream cities are limited in population, to grow larger they will need to build their unique buildings, strengthening the Dreamings' hold on the region.
 [ICON_BULLET]Being born of Danalin's troubled dreams, these false Aifons are able to settle cities on the ocean and have better yields there than on land.
 [ICON_BULLET]The Dreaming terrain type spreads inside their culture, giving them a defensive bonus inside of it and slightly hurting other units. It can be dispelled with Metamagic, leaving the cities exposed as the nightmarish wasteland they are.
@@ -300,6 +302,7 @@ This means the only way they can capture a city is by culture flipping it!
 
 [ICON_BULLET]The Dream Aifons appear as hidden nationality monsters outside of their cultural borders, and angelic beings who inject culture in nearby neutral or hostile cities when inside their own borders.
 This means the only way they can capture a city is by culture flipping it!
+[ICON_BULLET]Dream cities have terrible hammer production, especially if settled in the open ocean. Instead, they start with the unique civic [LINK=CIVIC_MELDING]Melding[\LINK], allowing them to convert their culture into production for completing units or structures.
 [ICON_BULLET]Dream cities are limited in population, to grow larger they will need to build their unique buildings, strengthening the Dreamings' hold on the region.
 [ICON_BULLET]Being born of Danalin's troubled dreams, these false Aifons are able to settle cities on the ocean and have better yields there than on land.
 [ICON_BULLET]The Dreaming terrain type spreads inside their culture, giving them a defensive bonus inside of it and slightly hurting other units. It can be dispelled with Metamagic, leaving the cities exposed as the nightmarish wasteland they are.
@@ -311,6 +314,7 @@ This means the only way they can capture a city is by culture flipping it!
 
 [ICON_BULLET]The Dream Aifons appear as hidden nationality monsters outside of their cultural borders, and angelic beings who inject culture in nearby neutral or hostile cities when inside their own borders.
 This means the only way they can capture a city is by culture flipping it!
+[ICON_BULLET]Dream cities have terrible hammer production, especially if settled in the open ocean. Instead, they start with the unique civic [LINK=CIVIC_MELDING]Melding[\LINK], allowing them to convert their culture into production for completing units or structures.
 [ICON_BULLET]Dream cities are limited in population, to grow larger they will need to build their unique buildings, strengthening the Dreamings' hold on the region.
 [ICON_BULLET]Being born of Danalin's troubled dreams, these false Aifons are able to settle cities on the ocean and have better yields there than on land.
 [ICON_BULLET]The Dreaming terrain type spreads inside their culture, giving them a defensive bonus inside of it and slightly hurting other units. It can be dispelled with Metamagic, leaving the cities exposed as the nightmarish wasteland they are.
@@ -322,6 +326,7 @@ This means the only way they can capture a city is by culture flipping it!
 
 [ICON_BULLET]The Dream Aifons appear as hidden nationality monsters outside of their cultural borders, and angelic beings who inject culture in nearby neutral or hostile cities when inside their own borders.
 This means the only way they can capture a city is by culture flipping it!
+[ICON_BULLET]Dream cities have terrible hammer production, especially if settled in the open ocean. Instead, they start with the unique civic [LINK=CIVIC_MELDING]Melding[\LINK], allowing them to convert their culture into production for completing units or structures.
 [ICON_BULLET]Dream cities are limited in population, to grow larger they will need to build their unique buildings, strengthening the Dreamings' hold on the region.
 [ICON_BULLET]Being born of Danalin's troubled dreams, these false Aifons are able to settle cities on the ocean and have better yields there than on land.
 [ICON_BULLET]The Dreaming terrain type spreads inside their culture, giving them a defensive bonus inside of it and slightly hurting other units. It can be dispelled with Metamagic, leaving the cities exposed as the nightmarish wasteland they are.
@@ -919,6 +924,42 @@ If you can feed them kills, however, then they may become something truly obscen
 However, they are wretched beings, unable to learn or grow on their own. 
 Because of this, they gain no experience from combat and have a pathetic starting strength.
 If you can feed them kills, however, then they may become something truly obscene.</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_UNIT_SAVEROUS_BLESSED</Tag>
+		<English>Saverous, the Blessed</English>
+		<French>Saverous, the Blessed</French>
+		<German>Saverous, the Blessed</German>
+		<Italian>Saverous, the Blessed</Italian>
+		<Spanish>Saverous, the Blessed</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_UNIT_SAVEROUS_BLESSED_PEDIA</Tag>
+		<English>Saverous is the favoured commander of the Bright One and High Justicar of the Order of the Sleeping God, tasked with emancipation of criminals from their corporal forms.
+
+Hastur finds this Saverous mildly bothersome, as the Dreamling imitates the person, not the demon controlling them, which can lead to strange outbursts of "kindness" and "compassion".
+
+Still,  a Dreamling the size of a small hillgiant serves as a useful deterrent.</English>
+		<French>Saverous is the favoured commander of the Bright One and High Justicar of the Order of the Sleeping God, tasked with emancipation of criminals from their corporal forms.
+
+Hastur finds this Saverous mildly bothersome, as the Dreamling imitates the person, not the demon controlling them, which can lead to strange outbursts of "kindness" and "compassion".
+
+Still,  a Dreamling the size of a small hillgiant serves as a useful deterrent.</French>
+		<German>Saverous is the favoured commander of the Bright One and High Justicar of the Order of the Sleeping God, tasked with emancipation of criminals from their corporal forms.
+
+Hastur finds this Saverous mildly bothersome, as the Dreamling imitates the person, not the demon controlling them, which can lead to strange outbursts of "kindness" and "compassion".
+
+Still,  a Dreamling the size of a small hillgiant serves as a useful deterrent.</German>
+		<Italian>Saverous is the favoured commander of the Bright One and High Justicar of the Order of the Sleeping God, tasked with emancipation of criminals from their corporal forms.
+
+Hastur finds this Saverous mildly bothersome, as the Dreamling imitates the person, not the demon controlling them, which can lead to strange outbursts of "kindness" and "compassion".
+
+Still,  a Dreamling the size of a small hillgiant serves as a useful deterrent.</Italian>
+		<Spanish>Saverous is the favoured commander of the Bright One and High Justicar of the Order of the Sleeping God, tasked with emancipation of criminals from their corporal forms.
+
+Hastur finds this Saverous mildly bothersome, as the Dreamling imitates the person, not the demon controlling them, which can lead to strange outbursts of "kindness" and "compassion".
+
+Still,  a Dreamling the size of a small hillgiant serves as a useful deterrent.</Spanish>
 	</TEXT>
 	<TEXT> 
 		<Tag>TXT_KEY_BUILDING_WET_DREAM</Tag>

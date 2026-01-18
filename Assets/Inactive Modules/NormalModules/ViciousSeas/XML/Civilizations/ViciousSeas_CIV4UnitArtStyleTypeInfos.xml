@@ -926,19 +926,11 @@
 			<Type>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</Type>
 			<StyleUnits>
 				<StyleUnit>
-					<UnitType>UNIT_ADEPT</UnitType>
+					<UnitType>UNIT_SAVEROUS_BLESSED</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
-					</UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_EMPTY</UnitType>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SAVEROUS</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SAVEROUS</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1160,14 +1152,6 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
-					</UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_SAVEROUS</UnitType>
-					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_SAVEROUS</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_SAVEROUS</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

@@ -529,6 +529,10 @@
 					<UnitType>UNIT_DREAM_CONDATIS</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_SAVEROUS</UnitClassType>
+					<UnitType>UNIT_SAVEROUS_BLESSED</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
 				</Unit>
