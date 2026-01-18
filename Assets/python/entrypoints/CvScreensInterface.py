@@ -30,6 +30,7 @@ import CvVictoryMovieScreen
 import CvWonderMovieScreen
 import CvEraMovieScreen
 import CvSpaceShipScreen
+import CvBootlegSOScreen
 
 import CvPediaMain
 import CvPediaLore
@@ -260,6 +261,20 @@ victoryScreen = CvVictoryScreen.CvVictoryScreen(VICTORY_SCREEN)
 def showVictoryScreen():
 	if (-1 != CyGame().getActivePlayer()):
 		victoryScreen.interfaceScreen()
+
+bootlegSOScreen = CvBootlegSOScreen.CvBootlegSOScreen()
+def showBootlegSO():
+	if CyGInterfaceScreen("BootlegSOScreen", CvScreenEnums.BOOTLEG_SO_SCREEN).isActive():
+		bootlegSOScreen.hideScreen()
+	else:
+		bootlegSOScreen.interfaceScreen()
+
+def changeBootlegSORadius():
+	if CyGInterfaceScreen("BootlegSOScreen", CvScreenEnums.BOOTLEG_SO_SCREEN).isActive():
+		bootlegSOScreen.changeRadius()
+
+def changeBootlegSODraw():
+	bootlegSOScreen.changeDraw()
 
 # < Unit Statistics Mod Start >
 statisticsScreen = CvStatisticsScreen.CvStatisticsScreen()
@@ -494,6 +509,9 @@ def mouseOverPlot (argsList):
 	# allows overides for mods
 	if (CvScreenUtilsInterface.getScreenUtils().mouseOverPlot(argsList)):
 		return
+
+	if ( argsList[0] == BOOTLEG_SO_SCREEN ):
+		bootlegSOScreen.mouseOverPlot(argsList)
 
 	if (WORLDBUILDER_SCREEN == argsList[0]):
 		worldBuilderScreen.mouseOverPlot(argsList)
@@ -938,6 +956,8 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					WB_CORPORATION : WBCorporationScreen.WBCorporationScreen(),
 					WB_INFO : WBInfoScreen.WBInfoScreen(),
 					WB_TRADE : WBTradeScreen.WBTradeScreen(),
+
+					BOOTLEG_SO_SCREEN : bootlegSOScreen,
 
 				}
 

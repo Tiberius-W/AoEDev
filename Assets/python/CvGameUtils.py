@@ -3495,6 +3495,18 @@ class CvGameUtils:
 			if iData1 == 1003: return CyTranslator().getText("TXT_KEY_PEDIA_EFFECTS",())
 			if iData1 == 1004: return CyTranslator().getText("TXT_KEY_HEADING_TRADEROUTE_LIST",())
 			if iData1 == 1005: return CyTranslator().getText("TXT_KEY_TRAINING_LABEL",())
+			if iData1 == 1006:
+				pHeadSelectedUnit = CyInterface().getHeadSelectedUnit()
+				if pHeadSelectedUnit.isRevealed():
+					return CyTranslator().getText("TXT_KEY_UNIT_REVEALED",())
+				else:
+					return CyTranslator().getText("TXT_KEY_UNIT_HIDDEN",())
+			if iData1 == 1007: return CyTranslator().getText("TXT_KEY_PROMOTION_HIDDEN_NATIONALITY",())
+			if iData1 == 1008:
+				pHeadSelectedUnit = CyInterface().getHeadSelectedUnit()
+				iUC = pHeadSelectedUnit.getUnitCombatType()
+				szUCDecription = gc.getUnitCombatInfo(iUC).getDescription()
+				return szUCDecription
 
 ## Religion Screen ##
 		if eWidgetType == WidgetTypes.WIDGET_HELP_RELIGION:

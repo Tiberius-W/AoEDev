@@ -172,6 +172,31 @@ class WBPlayerScreen:
 		sText = CyTranslator().getText("TXT_KEY_WB_CIV_COUNTER_MOD", (pPlayer.getCivCounterMod(),))
 		screen.setLabel("CounterModText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
+
+		iY += 30
+		screen.setButtonGFC("CounterContribPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("CounterContribMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_WB_CIV_GC_CONTRIB", (pPlayer.getGlobalCounterContrib(),))
+		screen.setLabel("CounterContribText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("DisableProductionPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("DisableProductionMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISABLE_PRODUCTION", (pPlayer.getDisableProduction(),))
+		screen.setLabel("DisableProductionText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("DisableResearchPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("DisableResearchMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISABLE_RESEARCH", (pPlayer.getDisableResearch(),))
+		screen.setLabel("DisableResearchText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+		iY += 30
+		screen.setButtonGFC("DisableSpellsPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("DisableSpellsMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISABLE_SPELLCASTING", (pPlayer.getDisableSpellcasting(),))
+		screen.setLabel("DisableSpellsText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 75, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 	def placeScript(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = screen.getXResolution()/4
@@ -561,6 +586,36 @@ class WBPlayerScreen:
 			elif inputClass.getData1() == 1031:
 				pPlayer.changeCivCounterMod(- min(iChange, pPlayer.getCivCounterMod()))
 			self.placeStats()
+
+
+		elif inputClass.getFunctionName().find("CounterContrib") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeGlobalCounterContrib(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeGlobalCounterContrib(-iChange)
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("DisableProduction") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeDisableProduction(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeDisableProduction(- min(iChange, pPlayer.getDisableProduction()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("DisableResearch") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeDisableResearch(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeDisableResearch(- min(iChange, pPlayer.getDisableResearch()))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("DisableSpells") > -1:
+			if inputClass.getData1() == 1030:
+				pPlayer.changeDisableSpellcasting(iChange)
+			elif inputClass.getData1() == 1031:
+				pPlayer.changeDisableSpellcasting(- min(iChange, pPlayer.getDisableSpellcasting()))
+			self.placeStats()
+
 
 		return 1
 

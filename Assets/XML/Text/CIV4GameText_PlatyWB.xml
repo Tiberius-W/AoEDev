@@ -897,4 +897,30 @@
 		<Italian>City Counter Mod: %d1</Italian>
 		<Spanish>City Counter Mod: %d1</Spanish>
 	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_WB_CITY_CRIME</Tag>
+		<English>Crime [ICON_CRIME]: %d1</English>
+		<French>Crime [ICON_CRIME]: %d1</French>
+		<German>Crime [ICON_CRIME]: %d1</German>
+		<Italian>Crime [ICON_CRIME]: %d1</Italian>
+		<Spanish>Crime [ICON_CRIME]: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CITY_CRIME_MOD</Tag>
+		<English>Crime Per Turn [ICON_CRIME]: %d1</English>
+		<French>Crime Per Turn [ICON_CRIME]: %d1</French>
+		<German>Crime Per Turn [ICON_CRIME]: %d1</German>
+		<Italian>Crime Per Turn [ICON_CRIME]: %d1</Italian>
+		<Spanish>Crime Per Turn [ICON_CRIME]: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CIV_GC_CONTRIB</Tag>
+		<English>Armageddon Contribution: %d1</English>
+		<French>Armageddon Contribution: %d1</French>
+		<German>Armageddon Contribution: %d1</German>
+		<Italian>Armageddon Contribution: %d1</Italian>
+		<Spanish>Armageddon Contribution: %d1</Spanish>
+	</TEXT>
+
 </Civ4GameText>

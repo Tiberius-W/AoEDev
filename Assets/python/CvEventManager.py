@@ -617,6 +617,18 @@ class CvEventManager:
 				self.beginEvent(CvUtil.EventReminder)
 				return 1
 
+			if theKey == int(InputTypes.KB_X) and self.bAlt:
+				CvScreensInterface.showBootlegSO()
+				return 1
+
+			if theKey == int(InputTypes.KB_X) and self.bShift:
+				CvScreensInterface.changeBootlegSORadius()
+				return 1
+
+			if theKey == int(InputTypes.KB_X) and self.bCtrl:
+				CvScreensInterface.changeBootlegSODraw()
+				return 1
+
 # Grey Fox Speed Tweaks: START
 			if ( self.bShift ):
 				if (theKey == int(InputTypes.KB_C)):

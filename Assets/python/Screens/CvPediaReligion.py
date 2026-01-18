@@ -64,6 +64,7 @@ class CvPediaReligion:
 		self.placeSpecial()
 		self.placeHistory()
 		self.placeUnits()
+		self.placeBuildings()
 		self.placeStrategy()
 
 	def placeRequires(self):
@@ -137,12 +138,30 @@ class CvPediaReligion:
 						szButton = gc.getPlayer(self.top.iActivePlayer).getUnitButton(eLoopUnit)
 					screen.attachImageButton( panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False )
 
+	def placeBuildings(self):
+		screen = self.top.getScreen()
+		panelName = self.top.getNextWidgetName()
+		self.X_BUILDING_PANE = self.X_UNIT_PANE
+		self.Y_BUILDING_PANE = self.Y_UNIT_PANE + self.H_UNIT_PANE
+		self.W_BUILDING_PANE = self.W_UNIT_PANE
+		self.H_BUILDING_PANE = self.top.H_BLUE50_PANEL
+		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_BUILDINGS_ENABLED", ()), "", false, true, self.X_BUILDING_PANE, self.Y_BUILDING_PANE, self.W_BUILDING_PANE, self.H_BUILDING_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
+
+		screen.attachLabel(panelName, "", "  ")
+
+		for eLoopBuilding in range(gc.getNumBuildingInfos()):
+			if (eLoopBuilding != -1):
+				iPrereq = gc.getBuildingInfo(eLoopBuilding).getPrereqReligion()
+				if (iPrereq == self.iReligion):
+					szButton = gc.getBuildingInfo(eLoopBuilding).getButton()
+					screen.attachImageButton( panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
+
 	def placeStrategy(self):
 		screen = self.top.getScreen()
 		self.X_STRATEGY = self.X_UNIT_PANE
-		self.Y_STRATEGY = self.Y_UNIT_PANE + self.H_UNIT_PANE
+		self.Y_STRATEGY = self.Y_BUILDING_PANE + self.H_BUILDING_PANE
 		self.W_STRATEGY = self.W_UNIT_PANE
-		self.H_STRATEGY = self.H_HISTORY - self.top.H_BLUE50_PANEL
+		self.H_STRATEGY = self.H_HISTORY - self.top.H_BLUE50_PANEL * 2
 		StrategyPanel = self.top.getNextWidgetName()
 		screen.addPanel( StrategyPanel, localText.getText("TXT_KEY_STRATEGY", ()), "", true, true,self.X_STRATEGY, self.Y_STRATEGY, self.W_STRATEGY, self.H_STRATEGY, PanelStyles.PANEL_STYLE_BLUE50 )
 		StrategyTextPanel = self.top.getNextWidgetName()

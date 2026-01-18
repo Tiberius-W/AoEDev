@@ -52,9 +52,10 @@ class WBTechScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
 
 		screen.addDropDownBoxGFC("TechEra", 20, self.iTable_Y - 30, screen.getXResolution()/5, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-		screen.addPullDownString("TechEra", CyTranslator().getText("TXT_KEY_WB_CITY_ALL", ()), -1, -1, True)
+		screen.addPullDownString("TechEra", CyTranslator().getText("TXT_KEY_WB_CITY_ALL", ()), -2, -2, True)
 		for i in xrange(gc.getNumEraInfos()):
 			screen.addPullDownString("TechEra", gc.getEraInfo(i).getDescription(), i, i, i == iSelectedEra)
+		screen.addPullDownString("TechEra", "Can Research", i+1, i+1, i+1 == iSelectedEra)
 
 		sText = "<font=3b>" + CyTranslator().getText("TXT_KEY_GAME_OPTION_NO_BARBARIANS", ()) + "</font>"
 		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
@@ -148,6 +149,7 @@ class WBTechScreen:
 
 		elif inputClass.getFunctionName() == "WBTech":
 			self.editTech(inputClass.getData2())
+			self.createTechList()
 			self.placeTechs()
 
 		elif inputClass.getFunctionName() == "ApplyAll":
@@ -187,7 +189,10 @@ class WBTechScreen:
 		lTech = []
 		for i in xrange(gc.getNumTechInfos()):
 			ItemInfo = gc.getTechInfo(i)
-			if iSelectedEra == -1 or iSelectedEra == ItemInfo.getEra():
+			if iSelectedEra == gc.getNumEraInfos():
+				if gc.getPlayer(pTeam.getLeaderID()).canResearch(i, False) or pTeam.isHasTech(i):
+					lTech.append([ItemInfo.getDescription(), i])
+			elif iSelectedEra == -1 or iSelectedEra == ItemInfo.getEra():
 				lTech.append([ItemInfo.getDescription(), i])
 		lTech.sort()
 

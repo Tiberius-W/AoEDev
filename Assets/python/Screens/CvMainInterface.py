@@ -4578,7 +4578,9 @@ class CvMainInterface:
 				iUC = pHeadSelectedUnit.getUnitCombatType()
 				if iUC != -1:
 					szButton = gc.getUnitCombatInfo(iUC).getButton()
-					screen.addDDSGFC( "Unit UC", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+
+					screen.addDDSGFC( "Unit UC", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_PYTHON, 1008, -1 )
+
 					screen.show( "Unit UC" )
 					xPos += xOffset
 
@@ -4587,13 +4589,17 @@ class CvMainInterface:
 						szButton = ArtFileMgr.getInterfaceArtInfo("INTERFACE_UNIT_REVEALED").getPath()
 					else:
 						szButton = ArtFileMgr.getInterfaceArtInfo("OVERLAY_HIDDEN").getPath()
-					screen.addDDSGFC( "Stealth Icon", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+
+					screen.addDDSGFC( "Stealth Icon", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_PYTHON, 1006, -1 )
+
 					screen.show( "Stealth Icon" )
 					xPos += xOffset
 
 				if pHeadSelectedUnit.isHiddenNationality():
 					szButton = gc.getPromotionInfo(gc.getInfoTypeForString("PROMOTION_HIDDEN_NATIONALITY")).getButton()
-					screen.addDDSGFC( "Unit HN", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+
+					screen.addDDSGFC( "Unit HN", szButton, xPos, yPos, 24, 24, WidgetTypes.WIDGET_GENERAL, 1007, -1 )
+
 					screen.show( "Unit HN" )
 					xPos += xOffset
 
@@ -4663,7 +4669,9 @@ class CvMainInterface:
 					
 					# HP + Regen
 					iRegen = pHeadSelectedUnit.calcTurnHealthChangeReal()
-					if bHurt or iRegen < 0:
+
+					if (bHurt or iRegen < 0) and not pHeadSelectedUnit.isFighting():
+
 						fCurrentHP = float(pHeadSelectedUnit.currHitPoints())
 						fMaxHP = float(pHeadSelectedUnit.maxHitPoints())
 						fHP = (fCurrentHP / fMaxHP) * 100
@@ -4687,7 +4695,7 @@ class CvMainInterface:
 						lRow2.append(szHP)
 
 					# Ranged Str
-					if (pHeadSelectedUnit.airBaseCombatStr() > 0):
+					if (pHeadSelectedUnit.airBaseCombatStr() > 0) and not pHeadSelectedUnit.isFighting():
 						iRangedStrength = pHeadSelectedUnit.airBaseCombatStr()
 						iRangedLimit = pHeadSelectedUnit.airCombatLimit()
 						if bHurt:
