@@ -30,11 +30,14 @@ class CvPediaImprovement:
 		self.Z_ROTATION_IMPROVEMENT_ANIMATION = 30
 		self.SCALE_ANIMATION = 0.8
 
-		self.X_ICON = 165
-		self.Y_ICON = 100
+		self.X_ICON = 48
+		self.Y_ICON = 105
 		self.W_ICON = 150
 		self.H_ICON = 150
 		self.ICON_SIZE = 64
+
+		self.X_COST = 225
+		self.Y_COST = 115
 
 		self.X_IMPROVEMENTS_PANE = self.X_UPPER_PANE
 		self.Y_IMPROVEMENTS_PANE = self.Y_UPPER_PANE + self.H_UPPER_PANE + 20
@@ -198,6 +201,26 @@ class CvPediaImprovement:
 		else:
 			self.placeLinks(false)
 
+		szCostText = ""
+		iBuild = -1
+		iCost = 0
+		iInst = 0
+		for iBuildInfo in xrange(gc.getNumBuildInfos()):
+			if gc.getImprovementInfo(self.iImprovement).getImprovementClass() == gc.getBuildInfo(iBuildInfo).getImprovementClass():
+				iCost		= gc.getBuildInfo(iBuildInfo).getTime()
+				if iCost == 0: continue
+				iBuild		= iBuildInfo
+				szImpInfo	= gc.getImprovementInfo(self.iImprovement).getType()[12:]
+				szBuildInfo	= gc.getBuildInfo(iBuildInfo).getType()[6:]
+				iInst += 1
+				if szImpInfo == szBuildInfo:
+					iInst = 1
+					break
+		if iInst != 1:
+			iCost = 0
+		if iCost > 0:
+			szCostText = localText.getText("TXT_KEY_PEDIA_COST", ( iCost, ) ) + u"%c" % (gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar())
+
 		# Icon
 		screen.addPanel( self.top.getNextWidgetName(), "", "", False, False,
 			self.X_UPPER_PANE, self.Y_UPPER_PANE, self.W_UPPER_PANE, self.H_UPPER_PANE, PanelStyles.PANEL_STYLE_BLUE50)
@@ -205,6 +228,18 @@ class CvPediaImprovement:
 			self.X_ICON, self.Y_ICON, self.W_ICON, self.H_ICON, PanelStyles.PANEL_STYLE_MAIN)
 		screen.addDDSGFC(self.top.getNextWidgetName(), gc.getImprovementInfo(self.iImprovement).getButton(),
 			self.X_ICON + self.W_ICON/2 - self.ICON_SIZE/2, self.Y_ICON + self.H_ICON/2 - self.ICON_SIZE/2, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+
+		if iCost > 0:
+			screen.setLabel(self.top.getNextWidgetName(), "Background", u"<font=4>" + szCostText.upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_COST, self.Y_COST, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			Y_DISCOUNT = self.Y_COST
+			for iTech in xrange(gc.getNumTechInfos()):
+				iDiscount = gc.getBuildInfo(iBuild).getTechDiscount(iTech)
+				if iDiscount > 0:
+					Y_DISCOUNT += 30
+					szButton = gc.getTechInfo(iTech).getButton()
+					szDicountText = "DISCOUNT: %d" % (iDiscount) + u"%c" % (gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar())
+					screen.setLabel(self.top.getNextWidgetName(), "Background", u"<font=4>" + szDicountText.upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_COST, Y_DISCOUNT, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.addDDSGFC(self.top.getNextWidgetName(), szButton, self.X_COST + 190, Y_DISCOUNT + 5, 22, 22, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, i, -1 )
 
 		# Bonus animation
 		screen.addImprovementGraphicGFC(self.top.getNextWidgetName(), self.iImprovement, self.X_IMPROVEMENT_ANIMATION, self.Y_IMPROVEMENT_ANIMATION, self.W_IMPROVEMENT_ANIMATION, self.H_IMPROVEMENT_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_IMPROVEMENT_ANIMATION, self.Z_ROTATION_IMPROVEMENT_ANIMATION, self.SCALE_ANIMATION, True)

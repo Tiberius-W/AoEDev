@@ -324,14 +324,10 @@ class CvTechChooser:
 						eLoopUnit = pCapital.getCityUnits(j)
 				if (eLoopUnit != -1):
 					if (gc.getUnitInfo(eLoopUnit).getPrereqAndTech() == i):
+						iPrereq = gc.getUnitInfo(eLoopUnit).getPrereqReligion()
+						if iPrereq != -1 and pPlayer.isAgnostic(): continue
 						szUnitButton = "Unit" + str(j)
-						iActivePlayer =gc.getGame().getActivePlayer()
-						pActivePlayer =gc.getPlayer(iActivePlayer)
-						#print eLoopUnit
-						#print gc.getUnitInfo(eLoopUnit).getDescription()
-						#print str(gc.getUnitInfo(eLoopUnit).getType())
-						#print str(gc.getTechInfo(i).getType())
-						newbutton = pActivePlayer.getUnitButton(eLoopUnit)
+						newbutton = pPlayer.getUnitButton(eLoopUnit)
 						screen.addDDSGFCAt( szUnitButton, szTechRecord, newbutton, iX + X_START + (iButton % NUM_SECONDARY_BUTTONS_IN_ROW) * X_INCREMENT, iY + 4 + ( ( iButton / NUM_SECONDARY_BUTTONS_IN_ROW ) + 1 ) * Y_INCREMENT, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, True )
 						iButton += 1
 
@@ -347,6 +343,17 @@ class CvTechChooser:
 						eLoopUnit = pCapital.getCityBuildings(j)
 				if (eLoopBuilding != -1):
 					if (gc.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == i):
+						iAlignment = pPlayer.getAlignment()
+						bAligned = False
+						iNumPrereqs = gc.getBuildingInfo(eLoopBuilding).getNumPrereqAlignments()
+						if iNumPrereqs == 0:
+							bAligned = True
+						else:
+							for iPrereq in xrange(iNumPrereqs):
+								iAlignmentNeeded = gc.getBuildingInfo(eLoopBuilding).getPrereqAlignment(iPrereq)
+								if iAlignmentNeeded == iAlignment:
+									bAligned = True
+						if not bAligned: continue
 						szBuildingButton = "Building" + str(j)
 						screen.addDDSGFCAt( szBuildingButton, szTechRecord, gc.getBuildingInfo(eLoopBuilding).getButton(), iX + X_START + (iButton % NUM_SECONDARY_BUTTONS_IN_ROW) * X_INCREMENT, iY + 4 + ( ( iButton / NUM_SECONDARY_BUTTONS_IN_ROW ) + 1 ) * Y_INCREMENT, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, True )
 						iButton += 1
@@ -437,7 +444,7 @@ class CvTechChooser:
 
 					eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(gc.getTechInfo(i).getFirstFreeUnitClass())
 					if (eLoopUnit != -1):
-						screen.addDDSGFCAt( szFreeUnitButton, szTechRecord, gc.getPlayer(gc.getGame().getActivePlayer()).getUnitButton(eLoopUnit), iX + X_START + (iButton % NUM_SECONDARY_BUTTONS_IN_ROW) * X_INCREMENT, iY + 4 + ( ( iButton / NUM_SECONDARY_BUTTONS_IN_ROW ) + 1 ) * Y_INCREMENT, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FREE_UNIT, eLoopUnit, i, False )
+						screen.addDDSGFCAt( szFreeUnitButton, szTechRecord, pPlayer.getUnitButton(eLoopUnit), iX + X_START + (iButton % NUM_SECONDARY_BUTTONS_IN_ROW) * X_INCREMENT, iY + 4 + ( ( iButton / NUM_SECONDARY_BUTTONS_IN_ROW ) + 1 ) * Y_INCREMENT, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FREE_UNIT, eLoopUnit, i, False )
 						iButton += 1
 			# End Modify
 
@@ -748,15 +755,9 @@ class CvTechChooser:
 			# Yield change
 			for j in range( gc.getNumImprovementInfos() ):
 				bFound = False
-
-				#FfH: Modified by Kael 01/05/2009
-				# for k in range( YieldTypes.NUM_YIELD_TYPES ):
-				# 	if (gc.getImprovementInfo(j).getTechYieldChanges(i, k)):
-				# 		if ( bFound == False ):
-				# 			szYieldChange = "YieldChangeButton" + str( ( i * 1000 ) + j )
-				# 			screen.addDDSGFCAt( szYieldChange, szTechRecord, gc.getImprovementInfo(j).getButton(), iX + X_START + (iButton % NUM_SECONDARY_BUTTONS_IN_ROW) * X_INCREMENT, iY + 4 + ( ( iButton / NUM_SECONDARY_BUTTONS_IN_ROW ) + 1 ) * Y_INCREMENT, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_YIELD_CHANGE, i, j, False )
-				# 			iButton += 1
-				# 			bFound = True
+				iImpClass	= gc.getImprovementInfo(j).getImprovementClass()
+				iCivImp		= gc.getCivilizationInfo(iCivilization).getCivilizationImprovements(iImpClass)
+				if iCivImp != j: continue
 				if not gc.getImprovementInfo(j).isUnique():
 					for k in range( YieldTypes.NUM_YIELD_TYPES ):
 						if (gc.getImprovementInfo(j).getTechYieldChanges(i, k)):
@@ -850,6 +851,10 @@ class CvTechChooser:
 
 			screen.show( szTechRecord )
 
+			if iButton > 13:
+				iX = 30 + ( (gc.getTechInfo(i).getGridX() - 1) * ( ( BOX_INCREMENT_X_SPACING + BOX_INCREMENT_WIDTH ) * PIXEL_INCREMENT ) )
+				iY = ( gc.getTechInfo(i).getGridY() - 1 ) * ( BOX_INCREMENT_Y_SPACING * PIXEL_INCREMENT ) + 5
+				screen.setPanelSize(szTechRecord, iX - 6, iY - 6, self.getXStart() + 6, 36 + ( BOX_INCREMENT_HEIGHT * PIXEL_INCREMENT ))
 
 		screen.attachPanelAt("TechList", "TiersTopPanel", u"", u"", True, True, PanelStyles.PANEL_STYLE_TOPBAR, 0, 0, iMaxX, 55, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 		lTiers = [1, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7, 7.5, 8]
