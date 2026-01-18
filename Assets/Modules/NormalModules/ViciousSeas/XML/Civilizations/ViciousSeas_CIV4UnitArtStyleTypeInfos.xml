@@ -1191,177 +1191,177 @@
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_EMPYREAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_THE_EMPYREAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_THE_EMPYREAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_LEAVES</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_LEAVES</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_OCTOPUS_OVERLORDS</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_THE_OVERLORDS</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_THE_OVERLORDS</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_THE_ORDER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_THE_ORDER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_THE_ORDER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_RUNES_OF_KILMORPH</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_KILMORPH</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_KILMORPH</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_OF_WINTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_WINTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_WINTER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_DISCIPLE_THE_ASHEN_VEIL</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_PRIEST_OF_THE_VEIL</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_HIGH_PRIEST_OF_THE_VEIL</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_NIGHTWATCH</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MURKDWELLER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MURKDWELLER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MURKDWELLER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
