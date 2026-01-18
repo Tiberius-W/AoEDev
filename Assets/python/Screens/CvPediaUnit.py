@@ -964,7 +964,8 @@ class CvPediaUnit:
 			bCanBuild = False
 			# if ingame, get active civ variant for the unitclass
 			if self.top.iActivePlayer != -1:
-				ePlayerUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(eClass)
+				pPlayer = gc.getPlayer(gc.getGame().getActivePlayer())
+				ePlayerUnit = pPlayer.getPlayerUnit(eClass)
 				if (ePlayerUnit == self.iUnit):
 					bCanBuild = True
 			# get all civs that can build our unit
@@ -973,12 +974,11 @@ class CvPediaUnit:
 				eLoopUnit = gc.getCivilizationInfo(iLoopCiv).getCivilizationUnits(eClass)
 				if (eLoopUnit == self.iUnit):
 					Civlist.append(iLoopCiv)
-			Civnumber = len(Civlist)
 			# check all upgradeclasses for our unit
 			for k in range(gc.getUnitInfo(self.iUnit).getNumUpgradeUnitClass()):
 				eUpgradeClass = gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(k)
 				if bCanBuild:# if ingame and activeciv can build unit, get active civ unitupgrades
-					eLoopUpgradeUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(eUpgradeClass)
+					eLoopUpgradeUnit = pPlayer.getPlayerUnit(eUpgradeClass)
 					if (eLoopUpgradeUnit >= 0 and gc.getUnitInfo(eLoopUpgradeUnit).isDisableUpgradeTo() == False):
 						# szButton = gc.getUnitInfo(eLoopUpgradeUnit).getButton()
 						szButton = gc.getPlayer(self.top.iActivePlayer).getUnitButton(eLoopUpgradeUnit)
@@ -986,10 +986,15 @@ class CvPediaUnit:
 				else:
 					lUpgradeList = []
 					bFirst = True
-					for iLoopCiv in Civlist:
-						eLoopUpgradeUnit = gc.getCivilizationInfo(iLoopCiv).getCivilizationUnits(eUpgradeClass)
-						if (eLoopUpgradeUnit >= 0 and gc.getUnitInfo(eLoopUpgradeUnit).isDisableUpgradeTo() == False):
-							lUpgradeList.append(eLoopUpgradeUnit)
+					if Civlist:
+						for iLoopCiv in Civlist:
+							eLoopUpgradeUnit = gc.getCivilizationInfo(iLoopCiv).getCivilizationUnits(eUpgradeClass)
+							if (eLoopUpgradeUnit >= 0 and gc.getUnitInfo(eLoopUpgradeUnit).isDisableUpgradeTo() == False):
+								lUpgradeList.append(eLoopUpgradeUnit)
+					else:
+						eLoopUpgradeUnit = gc.getUnitClassInfo(eUpgradeClass).getDefaultUnitIndex()
+						if eLoopUpgradeUnit == -1: continue
+						lUpgradeList.append(eLoopUpgradeUnit)
 					# sort and remove duplicates
 					lUpgradeList.sort()
 					lUpgradeList = list(set(lUpgradeList))
