@@ -447,10 +447,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-					<BuildingType>BUILDING_MONUMENT_DREAM_OF_JOY</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
 					<BuildingType>BUILDING_DREAM_OF_PLENTY</BuildingType>
 				</Building>
@@ -473,6 +469,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
 					<BuildingType>BUILDING_DREAM_OF_COLORS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_NIGHTMARES</BuildingClassType>
+					<BuildingType>BUILDING_NIGHTMARES</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_CRIME_ILLEGAL_IMMIGRATION</BuildingClassType>
@@ -525,8 +525,24 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_DREAM_CONDATIS</UnitClassType>
+					<UnitType>UNIT_DREAM_CONDATIS</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SAVEROUS</UnitClassType>
+					<UnitType>UNIT_SAVEROUS_BLESSED</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_DROWN</UnitClassType>
+					<UnitType>UNIT_DREAM_DROWN</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STYGIAN_GUARD</UnitClassType>
+					<UnitType>UNIT_DREAM_STYGIAN_GUARD</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_RANGER</UnitClassType>
@@ -624,6 +640,10 @@
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 					<bFreeBuildingClass>1</bFreeBuildingClass>
 				</FreeBuildingClass>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_NIGHTMARES</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
 			</FreeBuildingClasses>
 			<FreeTechs>
 				<FreeTech>
@@ -663,7 +683,7 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<CivTrait>TRAIT_DREAM</CivTrait>
 			<DefaultRace>PROMOTION_DREAM</DefaultRace>
-			<Hero>NONE</Hero>
+			<Hero>UNIT_DREAM_CONDATIS</Hero>
 			<TerrainCultureDistanceChanges>
 				<TerrainCultureDistanceChange>
 					<TerrainType>TERRAIN_MARSH</TerrainType>

@@ -414,7 +414,6 @@
 			<PythonOnDeath>postCombatCarnivean(pCaster)</PythonOnDeath>
 			<Image>Art/Interface/Popups/CarniveanBanner.dds</Image>
 			<Quote>TXT_KEY_POPUP_CARNIVEAN_CREATION</Quote>
-			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ODIO</Class>

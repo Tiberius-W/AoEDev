@@ -7132,10 +7132,6 @@
 					<UnitType>UNIT_WORKER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKBOAT</UnitClassType>
-					<UnitType>UNIT_WORKBOAT</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
 					<UnitType>UNIT_ORC_FORT_COMMANDER</UnitType>
 				</Unit>
@@ -7585,6 +7581,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_OTOLOCH</UnitClassType>
 					<UnitType>UNIT_OTOLOCH</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_OTOLOCH_QUEEN</UnitClassType>
+					<UnitType>UNIT_OTOLOCH_QUEEN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_BUNYIP</UnitClassType>

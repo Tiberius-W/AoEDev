@@ -203,6 +203,16 @@
 			<DefaultUnit>UNIT_BRIGIT</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
+		<UnitClassInfo>		<!-- CONDATIS -->
+			<Type>UNITCLASS_CONDATIS</Type>
+			<Description>TXT_KEY_UNIT_CONDATIS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CONDATIS</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
 		<UnitClassInfo>		<!-- MUIRIN -->
 			<Type>UNITCLASS_MUIRIN</Type>
 			<Description>TXT_KEY_UNIT_MUIRIN</Description>
@@ -686,6 +696,17 @@
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<bUnique>1</bUnique>
 			<DefaultUnit>UNIT_OTOLOCH</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- OTOLOCH QUEEN -->
+			<Type>UNITCLASS_OTOLOCH_QUEEN</Type>
+			<Description>TXT_KEY_UNIT_OTOLOCH</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_OTOLOCH_QUEEN</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- Nuckelavee -->
@@ -2644,6 +2665,16 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SAVEROUS</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- SAVEROUS REDEEMED -->
+			<Type>UNITCLASS_SAVEROUS_REDEEMED</Type>
+			<Description>TXT_KEY_UNIT_SAVEROUS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SAVEROUS_REDEEMED</DefaultUnit>
 			<iMercenaryWeight>0</iMercenaryWeight>
 		</UnitClassInfo>
 		<UnitClassInfo>		<!-- ROSIER -->

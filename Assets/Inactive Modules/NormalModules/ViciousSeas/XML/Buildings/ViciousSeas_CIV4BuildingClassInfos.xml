@@ -43,5 +43,18 @@
 			<DefaultBuilding>BUILDING_GIANT_KELP_LUMBER</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_NIGHTMARES</Type>
+			<Description>TXT_KEY_BUILDING_NIGHTMARES</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_NIGHTMARES</DefaultBuilding>
+			<bUnique>1</bUnique>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>

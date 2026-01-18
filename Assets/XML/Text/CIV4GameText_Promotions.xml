@@ -2134,6 +2134,14 @@
 		<Spanish>Hidden Nationality</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_HIDDEN_NATIONALITY_REAL</Tag>
+		<English>Actual Pirates</English>
+		<French>Actual Pirates</French>
+		<German>Actual Pirates</German>
+		<Italian>Actual Pirates</Italian>
+		<Spanish>Actual Pirates</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_ICARGO_TEXT</Tag>
 		<English>[ICON_BULLET]%d1_Num Extra Cargo</English>
 		<French>[ICON_BULLET]%d1_Num Cargaison Supplémentaire</French>

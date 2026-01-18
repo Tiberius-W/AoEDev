@@ -1728,7 +1728,7 @@
 		<UnitInfo>        <!-- Auric - Winter -->
 			<Class>UNITCLASS_AURIC_WINTER</Class>
 			<Type>UNIT_AURIC_WINTER</Type>
-			<Combat>UNITAI_RESERVE</Combat>
+			<Combat>UNITCOMBAT_COMMANDER</Combat>
 			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AURIC_WINTER</Description>
 			<Civilopedia>TXT_KEY_LEADER_AURIC_PEDIA</Civilopedia>
@@ -2369,6 +2369,108 @@
 			<BonusAffinities>
 				<BonusAffinity>
 					<BonusType>BONUS_MANA_FIRE</BonusType>
+					<iAffinity>1</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Condatis the Shimmering -->
+			<Class>UNITCLASS_CONDATIS</Class>
+			<Type>UNIT_CONDATIS</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_CONDATIS</Description>
+			<Civilopedia>TXT_KEY_UNIT_CONDATIS_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>2</iMoves>
+			<iCombat>6</iCombat>
+			<iXPValueAttack>32</iXPValueAttack>
+			<iXPValueDefense>16</iXPValueDefense>
+			<iCultureGarrison>4</iCultureGarrison>
+			<iAsset>12</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CONDATIS</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DIVINE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bImmortal>1</bImmortal>
+			<iCombatDefense>6</iCombatDefense>
+			<iTier>4</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
+			<Image>Art/Interface/Popups/CondatisBanner.dds</Image>
+			<Quote>TXT_KEY_POPUP_CONDATIS</Quote>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iCombat>3</iCombat>
+				</DamageTypeCombat>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iCombat>3</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_WATER</BonusType>
 					<iAffinity>1</iAffinity>
 				</BonusAffinity>
 			</BonusAffinities>
@@ -7376,6 +7478,100 @@
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_UNHOLY</DamageType>
 					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<PythonPostCombatLost>postCombatSaverous(pCaster, pOpponent)</PythonPostCombatLost>
+		</UnitInfo>
+		<UnitInfo>        <!-- Saverous Redeemed -->
+			<Class>UNITCLASS_SAVEROUS_REDEEMED</Class>
+			<Type>UNIT_SAVEROUS_REDEEMED</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_SAVEROUS_REDEEMED</Description>
+			<Civilopedia>TXT_KEY_UNIT_SAVEROUS_REDEEMED_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SAVEROUS_REDEEMED_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<ReligionType>RELIGION_THE_ORDER</ReligionType>
+			<StateReligion>RELIGION_THE_ORDER</StateReligion>
+			<PrereqReligion>RELIGION_THE_ORDER</PrereqReligion>
+			<PrereqTech>TECH_NEVER</PrereqTech>
+			<iAIWeight>200</iAIWeight>
+			<iCost>-1</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>5</iCombat>
+			<iXPValueAttack>32</iXPValueAttack>
+			<iXPValueDefense>16</iXPValueDefense>
+			<iCultureGarrison>16</iCultureGarrison>
+			<iAsset>5</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS_REDEEMED</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SECONDARY_MELEE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DIVINE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMON_SLAYING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bAbandon>1</bAbandon>
+			<iTier>2</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<Image>Art/Interface/Popups/SaverousRedeemed.dds</Image>
+			<Quote>TXT_KEY_UNIT_SAVEROUS_REDEEMED_STRATEGY</Quote>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iCombat>4</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</UnitInfo>
@@ -48277,6 +48473,81 @@
 			<PyPerTurn>effectOtoloch(pCaster)</PyPerTurn>
 			<iAppearanceProb>100</iAppearanceProb>
 			<iPowerMult>3</iPowerMult>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Otoloch Queen -->
+			<Class>UNITCLASS_OTOLOCH_QUEEN</Class>
+			<Type>UNIT_OTOLOCH_QUEEN</Type>
+			<Combat>UNITCOMBAT_BEAST</Combat>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_OTOLOCH_QUEEN</Description>
+			<Civilopedia>TXT_KEY_UNIT_OTOLOCH_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bAnimal>1</bAnimal>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<bRenderBelowWater>1</bRenderBelowWater>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ANIMAL</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>4</iMoves>
+			<iCombat>8</iCombat>
+			<TerrainNatives>
+				<TerrainNative>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+			</TerrainNatives>
+			<iAsset>0</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_OTOLOCH_QUEEN</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_OTOLOCH</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+			</FreePromotions>
+			<DenyPromotions>
+				<Promotion>PROMOTION_GUERILLA1</Promotion>
+				<Promotion>PROMOTION_WOODSMAN1</Promotion>
+			</DenyPromotions>
+			<iTier>4</iTier>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iCombat>3</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<PyPerTurn>effectOtoloch(pCaster)</PyPerTurn>
+			<iAppearanceProb>-1</iAppearanceProb>
+			<AppearanceTechs>
+				<AppearanceTech>
+					<AppearanceTechType>TECH_OPTICS</AppearanceTechType>
+					<iAppearanceTech>10001</iAppearanceTech>
+				</AppearanceTech>
+			</AppearanceTechs>
+			<iPowerMult>5</iPowerMult>
 		</UnitInfo>
 		<UnitInfo>        <!-- Otoloch -->
 			<Class>UNITCLASS_OTOLOCH</Class>

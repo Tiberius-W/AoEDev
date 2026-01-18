@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Event Infos -->
+<Civ4EventInfos xmlns="x-schema:ViciousSeas_CIV4EventSchema.xml">
+	<EventInfos>
+			<EventInfo>
+			<Type>EVENT_DREAM_CONDATIS_1</Type>
+			<Description>TXT_KEY_EVENT_DREAMING_CONDATIS_1</Description>
+			<UnitPromotion>PROMOTION_TWIN_SOUL_VS</UnitPromotion>
+			<PythonCallback>doChangeLeaderCondatis1</PythonCallback>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_DREAM_CONDATIS_2</Type>
+			<Description>TXT_KEY_EVENT_DREAMING_CONDATIS_2</Description>
+			<PythonCallback>doChangeLeaderCondatis2</PythonCallback>
+			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+		</EventInfo>
+	</EventInfos>
+</Civ4EventInfos>

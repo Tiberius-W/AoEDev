@@ -870,7 +870,7 @@
 		<Spanish>Coven of Hags</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>SPAWN_GROUP_HAEGTESSE_FAMILIARS</Tag>
+		<Tag>TXT_KEY_SPAWN_GROUP_HAEGTESSE_FAMILIARS</Tag>
 		<English>Hags Familiars</English>
 		<French>Hags Familiars</French>
 		<German>Hags Familiars</German>
@@ -878,7 +878,7 @@
 		<Spanish>Hags Familiars</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>SPAWN_GROUP_GHOSTWALKERS</Tag>
+		<Tag>TXT_KEY_SPAWN_GROUP_GHOSTWALKERS</Tag>
 		<English>Ghostwalkers</English>
 		<French>Ghostwalkers</French>
 		<German>Ghostwalkers</German>
@@ -1030,7 +1030,7 @@
 		<Spanish>Rogue Necromancer II</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_II</Tag>
+		<Tag>TXT_KEY_SPAWN_GROUP_ROGUE_NECROMANCER_III</Tag>
 		<English>Rogue Necromancer III</English>
 		<French>Nécromancien rebelle III</French>
 		<German>Rogue Necromancer III</German>

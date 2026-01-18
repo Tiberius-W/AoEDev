@@ -255,10 +255,11 @@ def spellGlimpseUnseen(caster):
 	iHero = getInfoType('PROMOTION_HERO')
 	iPromotionBerserk = getInfoType('PROMOTION_ENRAGED')
 	iPromotionHidden = getInfoType('PROMOTION_HIDDEN_NATIONALITY')
+	iPromotionHeld = getInfoType('PROMOTION_LEASH_4')
 	iAifonTeam = pPlayer.getTeam()
 
 	for i in xrange (CyMap().numPlots()): # check whole map
-                # all non-Aifon, non Berserk, units receive promotion wintered
+                # all non-Aifon, non Berserk, units receive promotion Berserk, Hidden Nationality, Held4
                 pPlot = CyMap().plotByIndex(i)
                 for e in range(pPlot.getNumUnits()): 
                         pUnit = pPlot.getUnit(e)
@@ -271,4 +272,25 @@ def spellGlimpseUnseen(caster):
                                                 pUnit.setPromotionDuration(iPromotionBerserk, 5)
                                                 pUnit.setHasPromotion(iPromotionHidden, True)
                                                 pUnit.setPromotionDuration(iPromotionHidden, 5)
+                                                pUnit.setHasPromotion(iPromotionHeld, True)
+                                                pUnit.setPromotionDuration(iPromotionHeld, 5)
 
+
+def perTurnCondatis(pCaster):
+	git		= gc.getInfoTypeForString
+	pPlayer = gc.getPlayer(pCaster.getOwner())
+	if gc.getGame().getUnitClassCreatedCount(git("UNITCLASS_CONDATIS")) == 0: return
+	if pPlayer.isHasFlag(git("FLAG_CONDATIS_MEETING")): return
+	pPlot	= pCaster.plot()
+	iX		= pPlot.getX()
+	iY		= pPlot.getY()
+	iTarget = git("UNIT_CONDATIS")
+	for dX, dY in BFC:
+		jX = dX + iX
+		jY = dY + iY
+		pLoopPlot = CyMap().plot(jX,jY)
+		if pPlot.isNone(): continue
+		for iLoopUnit in xrange(pLoopPlot.getNumUnits()):
+			pLoopUnit = pLoopPlot.getUnit(iLoopUnit)
+			if pLoopUnit.getUnitType() == iTarget:
+				pPlayer.setHasFlag(git("FLAG_CONDATIS_MEETING"), True)

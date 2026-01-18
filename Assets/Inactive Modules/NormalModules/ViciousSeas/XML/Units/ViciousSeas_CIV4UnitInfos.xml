@@ -1641,9 +1641,50 @@
 				</FreePromotion>
 			</FreePromotions>
 		</UnitInfo>
+		<UnitInfo>        <!-- Galley -->            
+			<Class>UNITCLASS_GALLEY</Class>
+			<Type>UNIT_GALLEY</Type>
+			<PrereqTech>TECH_FISHING</PrereqTech>
+		</UnitInfo>
+		<UnitInfo>        <!-- Trireme -->
+			<Class>UNITCLASS_TRIREME</Class>
+			<Type>UNIT_TRIREME</Type>
+			<PrereqTech>TECH_SAILING</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_CRAFTING</PrereqTech>
+			</TechTypes>
+		</UnitInfo>
+		<UnitInfo>        <!-- Galleon -->
+			<Class>UNITCLASS_GALLEON</Class>
+			<Type>UNIT_GALLEON</Type>
+			<PrereqBonuses>
+				<BonusType>BONUS_COPPER</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_MITHRIL</BonusType>
+			</PrereqBonuses>
+		</UnitInfo>
+		<UnitInfo>        <!-- Caravel -->
+			<Class>UNITCLASS_CARAVEL</Class>
+			<Type>UNIT_CARAVEL</Type>
+			<FeatureMoveCosts>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_KELP</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_KELP_FOREST</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_REEFS</FeatureType>
+					<iFeatureMoveCost>-2</iFeatureMoveCost>
+				</FeatureMoveCost>
+			</FeatureMoveCosts>
+		</UnitInfo>
 		<UnitInfo>        <!-- Workboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -1654,10 +1695,13 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iCost>75</iCost>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- WyrmFisher -->
 			<Class>UNITCLASS_WYRMFISHER</Class>
 			<Type>UNIT_WYRMFISHER</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
@@ -1668,10 +1712,13 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iWorkRate>150</iWorkRate>
+			<bFood>1</bFood>
 		</UnitInfo>	
 		<UnitInfo>        <!-- Workboat (Lanun) -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT_LANUN</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
@@ -1686,10 +1733,13 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<iWorkRate>150</iWorkRate>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- Funeral Barge -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_FUNERAL_BARGE</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
@@ -1992,6 +2042,7 @@
 		<UnitInfo>        <!-- Jotnar Fishing Longboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_JOT_WORKBOAT</Type>
+			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -2005,6 +2056,8 @@
 		     <AndDependencyTypes>
 		        <DependencyType>MODULE_JOTNAR</DependencyType>
 		     </AndDependencyTypes>
+			<iCost>75</iCost>
+			<bFood>1</bFood>
 		</UnitInfo>
 		<UnitInfo>        <!-- Great Prophet -->
 			<Class>UNITCLASS_PROPHET</Class>
@@ -2309,7 +2362,7 @@
 			<Class>UNITCLASS_ADEPT</Class>
 			<Type>UNIT_EMPTY</Type>
 			<Combat>UNITCOMBAT_DISCIPLE</Combat>
-			<DefaultUnitAI>UNITAI_MAGE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_EMPTY</Description>
 			<Civilopedia>TXT_KEY_UNIT_EMPTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_EMPTY_STRATEGY</Strategy>
@@ -2458,6 +2511,363 @@
 			<bNeverObsolete>1</bNeverObsolete>
 			<iTier>2</iTier>
 			<iWeaponTierMax>3</iWeaponTierMax>
+		</UnitInfo>
+		<UnitInfo>        <!-- Dream Condatis -->
+			<Class>UNITCLASS_DREAM_CONDATIS</Class>
+			<Type>UNIT_DREAM_CONDATIS</Type>
+			<Combat>UNITCOMBAT_DISCIPLE</Combat>
+			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DREAM_CONDATIS</Description>
+			<Civilopedia>TXT_KEY_UNIT_DREAM_CONDATIS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DREAM_CONDATIS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_RIGHTEOUSNESS</PrereqTech>
+			<iCost>240</iCost>
+			<iMoves>2</iMoves>
+			<iCombat>12</iCombat>
+			<iXPValueAttack>32</iXPValueAttack>
+			<iXPValueDefense>16</iXPValueDefense>
+			<iCultureGarrison>16</iCultureGarrison>
+			<iAsset>24</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CONDATIS</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MEDIC1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WATER1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MIND1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DIVINE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING1</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING2</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CHANNELING3</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMON_SLAYING</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_ANGEL</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iModifyGlobalCounter>-3</iModifyGlobalCounter>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
+			<iTier>4</iTier>
+			<Image>Modules/NormalModules/ViciousSeas/Art/Interface/Popups/DreamCondatisBanner.dds</Image>
+			<Quote>TXT_KEY_UNIT_DREAM_CONDATIS_STRATEGY</Quote>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_COLD</DamageType>
+					<iCombat>4</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<iAlignmentModifier>6</iAlignmentModifier>
+			<PyPerTurn>perTurnCondatis(pCaster)</PyPerTurn>
+		</UnitInfo>
+		<UnitInfo>        <!-- Saverous (Dream) -->
+			<Class>UNITCLASS_SAVEROUS</Class>
+			<Type>UNIT_SAVEROUS_BLESSED</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<DefaultUnitAI>UNITAI_HERO</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_SAVEROUS_BLESSED</Description>
+			<Civilopedia>TXT_KEY_UNIT_SAVEROUS_BLESSED_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SAVEROUS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_HERO</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
+			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
+			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
+			<PrereqTech>TECH_MIND_STAPLING</PrereqTech>
+			<iAIWeight>200</iAIWeight>
+			<iCost>180</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>5</iCombat>
+			<iXPValueAttack>32</iXPValueAttack>
+			<iXPValueDefense>16</iXPValueDefense>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
+			<iCultureGarrison>16</iCultureGarrison>
+			<iAsset>5</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS_REDEEMED</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_HERO</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bAbandon>1</bAbandon>
+			<iTier>2</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<Image>Art/Interface/Popups/SaverousRedeemed.dds</Image>
+			<Quote>TXT_KEY_UNIT_SAVEROUS_STRATEGY</Quote>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+		</UnitInfo>
+		<UnitInfo>        <!-- Drown (Dream) -->
+			<Class>UNITCLASS_DROWN</Class>
+			<Type>UNIT_DREAM_DROWN</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DROWN</Description>
+			<Civilopedia>TXT_KEY_UNIT_DROWN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DROWN_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
+			<iWorkRate>75</iWorkRate>
+			<UnitClassUpgrades>
+				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
+			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
+			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
+			<PrereqTech>TECH_MESSAGE_FROM_THE_DEEP</PrereqTech>
+			<iCost>90</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>3</iCombat>
+			<iCultureGarrison>3</iCultureGarrison>
+			<iAsset>3</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DISCIPLE_OVERLORDS</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>2</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>1</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<iAlignmentModifier>-1</iAlignmentModifier>
+		</UnitInfo>	
+		<UnitInfo>        <!-- Stygian Guard (Dream) -->
+			<Class>UNITCLASS_STYGIAN_GUARD</Class>
+			<Type>UNIT_DREAM_STYGIAN_GUARD</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_STYGIAN_GUARD</Description>
+			<Strategy>TXT_KEY_UNIT_STYGIAN_GUARD_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_STYGIAN_GUARD_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
+			<UnitClassUpgrades>
+				<UnitClassUpgradeType>UNITCLASS_EIDOLON</UnitClassUpgradeType>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
+			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
+			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
+			<PrereqBuilding>BUILDING_TEMPLE_OF_THE_OVERLORDS</PrereqBuilding>
+			<PrereqTech>TECH_FANATICISM</PrereqTech>
+			<iCost>150</iCost>
+			<iMoves>1</iMoves>
+			<iCombat>5</iCombat>
+			<iCultureGarrison>4</iCultureGarrison>
+			<iAsset>7</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ANGEL</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_MARCH</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<bNeverObsolete>1</bNeverObsolete>
+			<iTier>3</iTier>
+			<iWeaponTierMax>3</iWeaponTierMax>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<iAlignmentModifier>-2</iAlignmentModifier>	
+			<iWorkRate>150</iWorkRate>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

@@ -7125,6 +7125,14 @@ def postCombatLossWerewolf(pCaster, pOpponent):
 			if CyGame().getSorenRandNum(100, "Werewolf Infection") < iInfectChance:	#Low rigid chance for now, will set something up for variability some other time
 				pOpponent.setHasPromotion(getInfoType('PROMOTION_WEREWOLF'), True)
 
+def postCombatSaverous(pCaster, pOpponent):
+	if (pOpponent.getUnitType() == getInfoType('UNIT_VALIN') or pOpponent.getUnitType() == getInfoType('UNIT_HIGH_PRIEST_OF_THE_ORDER') or pOpponent.getUnitType() == getInfoType('UNIT_SPHENER')):
+		pPlayer = gc.getPlayer(pOpponent.getOwner())
+		newUnit = pPlayer.initUnit(getInfoType('UNIT_SAVEROUS_REDEEMED'), pCaster.getX(), pCaster.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+
+
+
 def findCommander(caster):
 	py = PyPlayer(caster.getOwner())
 	pPlot = caster.plot()
@@ -9725,6 +9733,11 @@ def exploreLairOtoloch2(argsList):
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	NewUnit.setName("Kumitara, the Otoloch Whisperer")
+
+def exploreLairCondatis(argsList):
+	pUnit, pPlot = argsList
+	pPlayer = gc.getPlayer(pUnit.getOwner())
+	newUnit = pPlayer.initUnit(getInfoType('UNIT_CONDATIS'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	
 def exploreLairTsunami(argsList):
 	pUnit, pPlot = argsList

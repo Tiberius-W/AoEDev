@@ -11151,6 +11151,29 @@
 			<iMinLevel>-1</iMinLevel>
 			<PromotionSummonPerk>PROMOTION_HIDDEN_NATIONALITY</PromotionSummonPerk>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Hidden Nationality Blocker for Bhall (so troops can board) -->
+			<Type>PROMOTION_HIDDEN_NATIONALITY_BLOCK</Type>
+			<Description>TXT_KEY_PROMOTION_HIDDEN_NATIONALITY_REAL</Description>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_ORC</PrereqCivilization>
+			</PrereqCivilizations>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bNoXP>1</bNoXP>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_HIDDEN_NATIONALITY</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_HIDDEN_NATIONALITY</Promotion>
+			</PromotionOverwrites>
+			<Button>Art/Interface/Buttons/Promotions/HiddenNationality.dds</Button>
+			<iMinLevel>-1</iMinLevel>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Homeland -->
 			<Type>PROMOTION_HOMELAND</Type>
 			<Description>TXT_KEY_PROMOTION_HOMELAND</Description>
@@ -31110,6 +31133,7 @@
 			<Type>PROMOTION_TOAD_BLOOD</Type>
 			<Description>TXT_KEY_PROMOTION_TOAD_BLOOD</Description>
 			<bAmphib>1</bAmphib>
+			<bRiver>1</bRiver>
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_MARSH</TerrainType>
