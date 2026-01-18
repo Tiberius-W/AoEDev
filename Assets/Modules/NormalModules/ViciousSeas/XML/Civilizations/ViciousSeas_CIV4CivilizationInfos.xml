@@ -537,6 +537,14 @@
 					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_DROWN</UnitClassType>
+					<UnitType>UNIT_DREAM_DROWN</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STYGIAN_GUARD</UnitClassType>
+					<UnitType>UNIT_DREAM_STYGIAN_GUARD</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_RANGER</UnitClassType>
 					<UnitType>UNIT_UNDINE</UnitType>
 				</Unit>

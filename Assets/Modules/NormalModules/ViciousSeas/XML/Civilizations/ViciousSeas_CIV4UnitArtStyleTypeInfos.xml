@@ -926,6 +926,45 @@
 			<Type>UNIT_ARTSTYLE_NIGHTMARE_AIFONS</Type>
 			<StyleUnits>
 				<StyleUnit>
+					<UnitType>UNIT_DREAM_DROWN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DROWN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DROWN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DROWN</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DROWN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DROWN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DROWN</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DROWN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DROWN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DROWN</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DREAM_STYGIAN_GUARD</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_STYGIAN_GUARD</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_EMPTY</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SAVEROUS_BLESSED</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_SAVEROUS</EarlyArtDefineTag>
@@ -934,7 +973,15 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_GALLEY</UnitType>
+					<UnitType>UNIT_HEMAH</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEMAHS_REFLECTION</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEMAHS_REFLECTION</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEMAHS_REFLECTION</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_WORKER_DREAM_AIFON</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
@@ -945,6 +992,9 @@
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_NIGHTMAREHAG</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
@@ -967,6 +1017,359 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_CROSSBOWMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_BERSERKER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_CHAMPION</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_LUNATIC</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_CRUSADER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PARAMANDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_RADIANT_GUARD</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_RATHA</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_EMPYREAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_THE_EMPYREAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_THE_EMPYREAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_FELLOWSHIP_OF_LEAVES</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_LEAVES</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_LEAVES</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_OCTOPUS_OVERLORDS</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_THE_OVERLORDS</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_THE_OVERLORDS</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_THE_ORDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_THE_ORDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_THE_ORDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_RUNES_OF_KILMORPH</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_KILMORPH</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_KILMORPH</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_OF_WINTER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_WINTER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_WINTER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_DISCIPLE_THE_ASHEN_VEIL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PRIEST_OF_THE_VEIL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HIGH_PRIEST_OF_THE_VEIL</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_NIGHTWATCH</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_UNMADE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_UNMADE</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_SHADOWRIDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1110,9 +1513,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_MAGE</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1175,12 +1578,12 @@
 				<StyleUnit>
 					<UnitType>UNIT_ARCHMAGE</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HUNGER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HUNGER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HUNGER</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_BEASTMASTER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
@@ -1203,7 +1606,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_RANGER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_UNMADE</EarlyArtDefineTag>
@@ -1221,7 +1624,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_PET_NIGHTMARE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_MARKSMAN</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
@@ -1229,7 +1632,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SWORDSMAN</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
@@ -1237,7 +1640,15 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_AXEMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_IMMORTAL</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
@@ -1245,7 +1656,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SPEARMAN</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
@@ -1263,7 +1674,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_PIKEMAN</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
@@ -1281,8 +1692,8 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-			<StyleUnit>
-					<UnitType>UNIT_PHALANX</UnitType>
+				<StyleUnit>
+					<UnitType>UNIT_ARQUEBUS</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</LateArtDefineTag>
@@ -1299,7 +1710,7 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_HATEFUL_HORROR</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
-				</StyleUnits>
+			</StyleUnits>
 		</UnitArtStyleTypeInfo>	
 	</UnitArtStyleTypeInfos>
 </Civ4UnitArtStyleTypeInfos>
