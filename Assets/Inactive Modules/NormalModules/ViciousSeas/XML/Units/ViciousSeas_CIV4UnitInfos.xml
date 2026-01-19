@@ -1528,7 +1528,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
-			<iWorkRate>75</iWorkRate>
+			<iWorkRate>100</iWorkRate>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
 			</UnitClassUpgrades>

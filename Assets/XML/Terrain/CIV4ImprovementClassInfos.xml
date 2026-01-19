@@ -444,6 +444,24 @@
 			<bUnique>1</bUnique>
 			<DefaultImprovement>IMPROVEMENT_CITADEL_OF_LIGHT</DefaultImprovement>
 		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sacred Harvest -->
+			<Type>IMPROVEMENTCLASS_SACRED_HARVEST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SACRED_HARVEST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Thieves Den -->
+			<Type>IMPROVEMENTCLASS_THIEVES_DEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_THIEVES_DEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Ceridwen Vaultgate -->
+			<Type>IMPROVEMENTCLASS_CERIDWEN_VAULTGATE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_CERIDWEN_VAULTGATE</DefaultImprovement>
+		</ImprovementClassInfo>
 		<ImprovementClassInfo><!-- Dwarven Mine (I) -->
 			<Type>IMPROVEMENTCLASS_DWARVEN_MINE</Type>
 			<Description></Description>

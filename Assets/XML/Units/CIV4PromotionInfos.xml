@@ -6986,6 +6986,32 @@
 			<bEffectProm>1</bEffectProm>
 			<Button>Art/Interface/Buttons/Promotions/Races/Centaur.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Contacts -->
+			<Type>PROMOTION_ESUS_CONTACTS</Type>
+			<Description>TXT_KEY_PROMOTION_ESUS_CONTACTS</Description>
+			<Sound>SND_BT_BREATH_SHORT</Sound>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<PrereqReligions>
+				<PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+			</PrereqReligions>
+			<iWorkRateModify>125</iWorkRateModify>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_THIEVES_DEN</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Improvements/Contacts.dds</Button>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Cloak of Esus -->
 			<Type>PROMOTION_CLOAK_OF_ESUS</Type>
 			<Description>TXT_KEY_PROMOTION_CLOAK_OF_ESUS</Description>
@@ -25760,6 +25786,23 @@
 				<PrereqUnit>UNIT_GYRE_CARLIN</PrereqUnit>
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Promotions/chilblains.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Price of Power Influence -->
+			<Type>PROMOTION_PRICE_OF_POWER_INFLUENCE</Type>
+			<Description>TXT_KEY_PROMOTION_PRICE_OF_POWER</Description>
+			<CityBonuses>
+				<CityBonus>
+					<bApplyEnemy>1</bApplyEnemy>
+					<bApplyRival>1</bApplyRival>
+					<bApplyTeam>1</bApplyTeam>
+					<fFood>-3</fFood>
+					<iBonusRange>2</iBonusRange>
+				</CityBonus>
+			</CityBonuses>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_DEVILCASTER</PrereqUnit>
+			</PrereqUnits>
+			<Button>Art/Interface/Buttons/Improvements/Devilgate.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Vigilante -->
 			<Type>PROMOTION_VIGILANTE</Type>

@@ -18266,6 +18266,65 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 		</UnitInfo>
+		<UnitInfo>        <!-- Devil -->
+			<Class>UNITCLASS_DEVILCASTER</Class>
+			<Type>UNIT_DEVILCASTER</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DEVILCASTER</Description>
+			<Civilopedia>TXT_KEY_UNIT_DEVILCASTER_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iMoves>1</iMoves>
+			<iCombat>4</iCombat>
+			<iAsset>1</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DEVIL_CASTER</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMON</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_PRICE_OF_POWER_INFLUENCE</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_KINETIC_BLAST</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
+			<iTier>3</iTier>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+		</UnitInfo>
 		<UnitInfo>        <!-- Sect of Flies -->
 			<Class>UNITCLASS_CHAMPION</Class>
 			<Type>UNIT_SECT_OF_FLIES</Type>
@@ -21887,7 +21946,7 @@
 			</UnitAIs>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_ROAD</BuildType>
+					<BuildType>BUILD_PATH_OF_LUGUS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -33791,6 +33850,13 @@
 			<StateReligion>RELIGION_THE_ASHEN_VEIL</StateReligion>
 			<PrereqReligion>RELIGION_THE_ASHEN_VEIL</PrereqReligion>
 			<PrereqTech>TECH_CORRUPTION_OF_SPIRIT</PrereqTech>
+			<iWorkRate>100</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_CERIDWEN_VAULTGATE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<iCost>90</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -34442,6 +34508,13 @@
 			<StateReligion>RELIGION_THE_EMPYREAN</StateReligion>
 			<PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
 			<PrereqTech>TECH_HONOR</PrereqTech>
+			<iWorkRate>100</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_PATH_OF_LUGUS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<iCost>90</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -34511,6 +34584,13 @@
 			<StateReligion>RELIGION_THE_EMPYREAN</StateReligion>
 			<PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
 			<PrereqTech>TECH_TRADE</PrereqTech>
+			<iWorkRate>150</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_PATH_OF_LUGUS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<TechTypes>
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			</TechTypes>
@@ -34837,6 +34917,13 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_WAY_OF_THE_FORESTS</PrereqTech>
+			<iWorkRate>100</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_SACRED_HARVEST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<iCost>90</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>3</iCombat>
@@ -34904,6 +34991,13 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_ANIMAL_HANDLING</PrereqTech>
+			<iWorkRate>150</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_SACRED_HARVEST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>4</iCombat>
@@ -34970,6 +35064,13 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_ANIMAL_MASTERY</PrereqTech>
+			<iWorkRate>200</iWorkRate>
+			<Builds>
+				<Build>
+					<BuildType>BUILD_SACRED_HARVEST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+			</Builds>
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>8</iCombat>
