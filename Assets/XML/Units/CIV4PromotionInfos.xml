@@ -6986,31 +6986,95 @@
 			<bEffectProm>1</bEffectProm>
 			<Button>Art/Interface/Buttons/Promotions/Races/Centaur.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Contacts -->
+		<PromotionInfo>		<!-- Contacts       Relgious Promotions for Building Improvments starts -->
 			<Type>PROMOTION_ESUS_CONTACTS</Type>
 			<Description>TXT_KEY_PROMOTION_ESUS_CONTACTS</Description>
-			<Sound>SND_BT_BREATH_SHORT</Sound>
 			<bAutoAcquire>1</bAutoAcquire>
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
-			<PrereqReligions>
-				<PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
-			</PrereqReligions>
-			<iWorkRateModify>125</iWorkRateModify>
+			<StateReligionPrereq>RELIGION_COUNCIL_OF_ESUS</StateReligionPrereq>
 			<PromotionBuilds>
 				<PromotionBuild>BUILD_THIEVES_DEN</PromotionBuild>
 			</PromotionBuilds>
 			<UnitCombats>
 				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Improvements/Contacts.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Glade Tender    -->
+			<Type>PROMOTION_LEAVES_GLADE</Type>
+			<Description>TXT_KEY_PROMOTION_LEAVES_GLADE</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_SACRED_HARVEST</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Improvements/SacredHarvest.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Dark Symbols    -->
+			<Type>PROMOTION_ASHEN_SYMBOLS</Type>
+			<Description>TXT_KEY_PROMOTION_ASHEN_SYMBOLS</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_THE_ASHEN_VEIL</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_CERIDWEN_VAULTGATE</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Improvements/DevilGate.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Paths of Lugus    -->
+			<Type>PROMOTION_EMPYREAN_PATHS</Type>
+			<Description>TXT_KEY_PROMOTION_EMPYREAN_PATHS</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_THE_EMPYREAN</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_PATH_OF_LUGUS</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Builds/LugusCharlesUrbach.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Guilds of Kilmorph    -->
+			<Type>PROMOTION_GUILDS_OF_KILMORPH</Type>
+			<Description>TXT_KEY_PROMOTION_GUILDS_OF_KILMORPH</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_RUNES_OF_KILMORPH</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_DWARVEN_MINE</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Civs/Other/FortCommander/FortB.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Cloak of Esus -->
 			<Type>PROMOTION_CLOAK_OF_ESUS</Type>

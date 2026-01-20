@@ -92,7 +92,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Builds/BuildRoad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,8</Button>
+			<Button>Art/Interface/Buttons/Builds/LugusCharlesUrbach.dds</Button>
 			<TechBuildDiscounts>
 				<TechBuildDiscount>
 					<TechType>TECH_EXPLORATION</TechType>

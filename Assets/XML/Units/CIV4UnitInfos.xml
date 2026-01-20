@@ -21926,7 +21926,7 @@
 			<iWeaponTierMax>3</iWeaponTierMax>
 			<iPowerMult>2</iPowerMult>
 		</UnitInfo>
-		<UnitInfo>        <!-- Worker -->
+		<UnitInfo>        <!-- Worker Malakim -->
 			<Class>UNITCLASS_WORKER</Class>
 			<Type>UNIT_WORKER_MALAKIM</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
@@ -22012,7 +22012,7 @@
 			</Builds>
 			<iCost>75</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMoves>1</iMoves>
+			<iMoves>2</iMoves>
 			<iWorkRate>100</iWorkRate>
 			<iAsset>0</iAsset>
 			<UnitMeshGroups>
@@ -22027,10 +22027,6 @@
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_APTITUDE1</PromotionType>
-					<iNumApplied>1</iNumApplied>
-				</FreePromotion>
-				<FreePromotion>
-					<PromotionType>PROMOTION_SUN1</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -33850,13 +33846,6 @@
 			<StateReligion>RELIGION_THE_ASHEN_VEIL</StateReligion>
 			<PrereqReligion>RELIGION_THE_ASHEN_VEIL</PrereqReligion>
 			<PrereqTech>TECH_CORRUPTION_OF_SPIRIT</PrereqTech>
-			<iWorkRate>100</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_CERIDWEN_VAULTGATE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<iCost>90</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -34508,13 +34497,6 @@
 			<StateReligion>RELIGION_THE_EMPYREAN</StateReligion>
 			<PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
 			<PrereqTech>TECH_HONOR</PrereqTech>
-			<iWorkRate>100</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_PATH_OF_LUGUS</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<iCost>90</iCost>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
@@ -34584,13 +34566,6 @@
 			<StateReligion>RELIGION_THE_EMPYREAN</StateReligion>
 			<PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
 			<PrereqTech>TECH_TRADE</PrereqTech>
-			<iWorkRate>150</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_PATH_OF_LUGUS</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<TechTypes>
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			</TechTypes>
@@ -34917,13 +34892,6 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_WAY_OF_THE_FORESTS</PrereqTech>
-			<iWorkRate>100</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_SACRED_HARVEST</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<iCost>90</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>3</iCombat>
@@ -34991,13 +34959,6 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_ANIMAL_HANDLING</PrereqTech>
-			<iWorkRate>150</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_SACRED_HARVEST</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>4</iCombat>
@@ -35064,13 +35025,6 @@
 			<StateReligion>RELIGION_FELLOWSHIP_OF_LEAVES</StateReligion>
 			<PrereqReligion>RELIGION_FELLOWSHIP_OF_LEAVES</PrereqReligion>
 			<PrereqTech>TECH_ANIMAL_MASTERY</PrereqTech>
-			<iWorkRate>200</iWorkRate>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_SACRED_HARVEST</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<iCost>150</iCost>
 			<iMoves>2</iMoves>
 			<iCombat>8</iCombat>
@@ -35878,10 +35832,6 @@
 			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_DWARVEN_MINE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
