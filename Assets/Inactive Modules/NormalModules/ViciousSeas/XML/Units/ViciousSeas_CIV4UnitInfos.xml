@@ -1528,7 +1528,6 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
-			<iWorkRate>100</iWorkRate>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1541,21 +1540,7 @@
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -1598,35 +1583,6 @@
 			</DamageTypeCombats>
 			<iAlignmentModifier>-1</iAlignmentModifier>
 			<bForceOverwrite>1</bForceOverwrite>
-		</UnitInfo>
-		<UnitInfo>        <!-- Stygian Guard -->
-			<Class>UNITCLASS_STYGIAN_GUARD</Class>
-			<Type>UNIT_STYGIAN_GUARD</Type>
-			<iWorkRate>150</iWorkRate>
-			<UnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 		</UnitInfo>
 		<UnitInfo>        <!-- Malignant Flora Fort Commander -->
 			<Class>UNITCLASS_FORT_COMMANDER</Class>

@@ -1487,6 +1487,165 @@
 		<German>[TAB]Gebaut, um die Grenzen von lange verschollenen Ländern zu bewachen, ermöglichen diese Türme immer noch einen außergewöhnlichen Ausblick auf das Land.</German>
 		<Italian>[TAB]Built to guard the borders of countries that have long since passed away, the towers still offer a remarkable view of the surrounding lands.</Italian>
 		<Spanish>[TAB]Construidas para vigilar las fronteras de países desaparecidos hace ya tiempo, las torres aún ofrecen una vista destacable de las tierras de alrededor.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_PATH_OF_LUGUS</Tag>
+		<English>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</English>
+		<French>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</French>
+		<German>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</German>
+		<Italian>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</Italian>
+		<Spanish>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_AERON_VAULTGATE</Tag>
+		<English>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_THIEVES_DEN</Tag>
+		<English>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_SACRED_HARVEST</Tag>
+		<English>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STYGIAN_SHRINE</Tag>
+		<English>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST</Tag>
+		<English>Sacred Harvest</English>
+		<French>Sacred Harvest</French>
+		<German>Sacred Harvest</German>
+		<Italian>Sacred Harvest</Italian>
+		<Spanish>Sacred Harvest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE</Tag>
+		<English>Hell Gate</English>
+		<French>Hell Gate</French>
+		<German>Hell Gate</German>
+		<Italian>Hell Gate</Italian>
+		<Spanish>Hell Gate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN</Tag>
+		<English>Thieves Den</English>
+		<French>Thieves Den</French>
+		<German>Thieves Den</German>
+		<Italian>Thieves Den</Italian>
+		<Spanish>Thieves Den</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PATH_OF_LUGUS</Tag>
+		<English>Path of Lugus</English>
+		<French>Path of Lugus</French>
+		<German>Path of Lugus</German>
+		<Italian>Path of Lugus</Italian>
+		<Spanish>Path of Lugus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PATH_OF_LUGUS_PEDIA</Tag>
+		<English>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</English>
+		<French>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</French>
+		<German>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</German>
+		<Italian>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</Italian>
+		<Spanish>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE</Tag>
+		<English>Stygian Shrine (I)</English>
+		<French>Stygian Shrine (I)</French>
+		<German>Stygian Shrine (I)</German>
+		<Italian>Stygian Shrine (I)</Italian>
+		<Spanish>Stygian Shrine (I)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE</Tag>
+		<English>Stygian Temple (II)</English>
+		<French>Stygian Temple (II)</French>
+		<German>Stygian Temple (II)</German>
+		<Italian>Stygian Temple (II)</Italian>
+		<Spanish>Stygian Temple (II)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL</Tag>
+		<English>Stygian Cathedral (III)</English>
+		<French>Stygian Cathedral (III)</French>
+		<German>Stygian Cathedral (III)</German>
+		<Italian>Stygian Cathedral (III)</Italian>
+		<Spanish>Stygian Cathedral (III)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE</Tag>
+		<English>Stygian Grand Spire (IV)</English>
+		<French>Stygian Grand Spire (IV)</French>
+		<German>Stygian Grand Spire (IV)</German>
+		<Italian>Stygian Grand Spire (IV)</Italian>
+		<Spanish>Stygian Grand Spire (IV)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE_PEDIA</Tag>
+		<English>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</English>
+		<French>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</French>
+		<German>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</German>
+		<Italian>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Italian>
+		<Spanish>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE_PEDIA</Tag>
+		<English>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</English>
+		<French>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</French>
+		<German>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</German>
+		<Italian>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Italian>
+		<Spanish>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL_PEDIA</Tag>
+		<English>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</English>
+		<French>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</French>
+		<German>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</German>
+		<Italian>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Italian>
+		<Spanish>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE_PEDIA</Tag>
+		<English>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</English>
+		<French>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</French>
+		<German>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</German>
+		<Italian>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Italian>
+		<Spanish>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_WARNING_POST</Tag>
