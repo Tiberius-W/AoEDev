@@ -7096,7 +7096,7 @@
 			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<Button>Art/Interface/Buttons/Improvements/StygianShrine.dds</Button>
 		</PromotionInfo>
-		<PromotionInfo>		<!-- Paths of Lugus    -->
+		<PromotionInfo>		<!-- Paths of Lugus  Note: PromotionBuilds bugs out Pedia if it is a road type   -->
 			<Type>PROMOTION_EMPYREAN_PATH</Type>
 			<Description>TXT_KEY_PROMOTION_EMPYREAN_PATH</Description>
 			<Description>TXT_KEY_PATH_OF_LUGUS_PEDIA</Description>
@@ -7105,7 +7105,7 @@
 			<bNoXP>1</bNoXP>
 			<StateReligionPrereq>RELIGION_THE_EMPYREAN</StateReligionPrereq>
 			<PromotionBuilds>
-				<PromotionBuild>BUILD_DWARVEN_MINE</PromotionBuild>
+				<PromotionBuild>BUILD_PATH_OF_LUGUS</PromotionBuild>
 			</PromotionBuilds>
 			<UnitCombats>
 				<UnitCombat>
