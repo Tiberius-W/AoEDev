@@ -1514,11 +1514,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_AERON_VAULTGATE</Tag>
-		<English>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</English>
-		<French>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</French>
-		<German>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</German>
-		<Italian>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],</Italian>
-		<Spanish>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK],,</Spanish>
+		<English>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</English>
+		<French>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</French>
+		<German>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</German>
+		<Italian>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_THIEVES_DEN</Tag>
@@ -1666,6 +1666,54 @@ In time, they will come to thank us."
 		<German>Hell Gate</German>
 		<Italian>Hell Gate</Italian>
 		<Spanish>Hell Gate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE_PEDIA</Tag>
+		<English>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</English>
+		<French>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</French>
+		<German>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</German>
+		<Italian>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</Italian>
+		<Spanish>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN</Tag>

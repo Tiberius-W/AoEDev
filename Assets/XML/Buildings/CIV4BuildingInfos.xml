@@ -4703,7 +4703,10 @@
 			<MovieDefineTag>ART_DEF_MOVIE_MINES_OF_GALDUR</MovieDefineTag>
 			<StateReligion>RELIGION_RUNES_OF_KILMORPH</StateReligion>
 			<PrereqReligion>RELIGION_RUNES_OF_KILMORPH</PrereqReligion>
+			<TechTypes>
+			<PrereqTech>TECH_SMELTING</PrereqTech>
 			<PrereqTech>TECH_ARETE</PrereqTech>
+			</TechTypes>
 			<FreeBonus>BONUS_IRON</FreeBonus>
 			<iNumFreeBonuses>3</iNumFreeBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
