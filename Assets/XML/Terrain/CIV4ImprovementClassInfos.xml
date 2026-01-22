@@ -462,6 +462,18 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_AERON_VAULTGATE</DefaultImprovement>
 		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Penitentiary  -->
+			<Type>IMPROVEMENTCLASS_PENITENTIARY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PENITENTIARY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Polar Nexus  -->
+			<Type>IMPROVEMENTCLASS_POLAR_NEXUS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_POLAR_NEXUS</DefaultImprovement>
+		</ImprovementClassInfo>
 		<ImprovementClassInfo><!-- Dwarven Mine (I) -->
 			<Type>IMPROVEMENTCLASS_DWARVEN_MINE</Type>
 			<Description></Description>

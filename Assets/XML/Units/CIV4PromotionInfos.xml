@@ -7058,6 +7058,42 @@
 			</UnitCombats>
 			<Button>Art/Civs/Other/FortCommander/FortB.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Order Bailiff    -->
+			<Type>PROMOTION_ORDER_BAILIFF</Type>
+			<Description>TXT_KEY_PROMOTION_ORDER_DEPUTY_BAILIFF</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_THE_ORDER</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_PENITENTIARY</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Improvements/Penitentiary.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- White Hand Stormbringer    -->
+			<Type>PROMOTION_WHITE_STORMBRINGER</Type>
+			<Description>TXT_KEY_PROMOTION_WHITE_STORMBRINGER</Description>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<StateReligionPrereq>RELIGION_WHITE_HAND</StateReligionPrereq>
+			<PromotionBuilds>
+				<PromotionBuild>BUILD_POLAR_NEXUS</PromotionBuild>
+			</PromotionBuilds>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Improvements/PolarNexus.dds</Button>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Enthralled Fanatics    -->
 			<Type>PROMOTION_OVERLORDS_THRALL</Type>
 			<Description>TXT_KEY_PROMOTION_OVERLORDS_THRALL</Description>
@@ -7074,26 +7110,6 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
-			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
-			<Button>Art/Interface/Buttons/Improvements/StygianShrine.dds</Button>
-		</PromotionInfo>
-		<PromotionInfo>		<!-- Enthralled Fanatics Boat  -->
-			<Type>PROMOTION_OVERLORDS_THRALL_BOAT</Type>
-			<Description>TXT_KEY_PROMOTION_OVERLORDS_THRALL</Description>
-			<bAutoAcquire>1</bAutoAcquire>
-			<bMustMaintain>1</bMustMaintain>
-			<bNoXP>1</bNoXP>
-			<bGraphicalOnly>1</bGraphicalOnly>
-			<StateReligionPrereq>RELIGION_OCTOPUS_OVERLORDS</StateReligionPrereq>
-			<PromotionBuilds>
-				<PromotionBuild>BUILD_STYGIAN_SHRINE</PromotionBuild>
-			</PromotionBuilds>
-			<PrereqUnits>
-				<PrereqUnit>UNIT_WYRMFISHER</PrereqUnit>
-				<PrereqUnit>UNIT_WORKBOAT</PrereqUnit>
-				<PrereqUnit>UNIT_WORKBOAT_LANUN</PrereqUnit>
-			</PrereqUnits>
-			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
 			<Button>Art/Interface/Buttons/Improvements/StygianShrine.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Paths of Lugus  Note: PromotionBuilds bugs out Pedia if it is a road type   -->

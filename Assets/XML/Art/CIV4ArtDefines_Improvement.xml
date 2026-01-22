@@ -826,13 +826,13 @@
 			<Button>, ,Art/Erebus_Atlas.dds,5,4</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
-			<Type>ART_DEF_IMPROVEMENT_FOREST_LODGE</Type>
+			<Type>ART_DEF_ICE_FORTRESS</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>17</fScale>
+			<fScale>15</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Improvements/forest lodge/harounwoodconvert.nif</NIF>
+			<NIF>Art/Structures/improvements/PolarVortex/shadowfort.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Improvements/forest lodge/forestlodge.dds</Button>
+			<Button>Art/Interface/Buttons/Improvements/PolarNexus.dds</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_THIEVES_DEN</Type>
@@ -1400,6 +1400,15 @@
 			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
 			<KFM/>
 			<Button>Art/interface/buttons/improvements/StygianShrine.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_PENITENTIARY</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Dark Agora/Agora.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/Penitentiary.dds</Button>
 		</ImprovementArtInfo>
 	</ImprovementArtInfos>
 </Civ4ArtDefines>

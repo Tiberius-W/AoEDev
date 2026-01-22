@@ -19936,6 +19936,9 @@
 			<iMoves>0</iMoves>
 			<bNoRevealMap>1</bNoRevealMap>
 			<iWorkRate>100</iWorkRate>
+			<AllowPromotions>
+				<Promotion>PROMOTION_OVERLORDS_THRALL</Promotion>
+			</AllowPromotions>
 			<iAsset>0</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
@@ -20601,6 +20604,9 @@
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
+			<AllowPromotions>
+				<Promotion>PROMOTION_OVERLORDS_THRALL</Promotion>
+			</AllowPromotions>
 			<PrereqTech>TECH_FISHING</PrereqTech>
 			<iCost>90</iCost>
 			<iMoves>2</iMoves>
@@ -21331,6 +21337,16 @@
 			<iCost>100</iCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>225</iWorkRate>
+			<AllowPromotions>
+				<Promotion>PROMOTION_ESUS_CONTACTS</Promotion>
+				<Promotion>PROMOTION_LEAVES_GLADE</Promotion>
+				<Promotion>PROMOTION_ASHEN_SYMBOLS</Promotion>
+				<Promotion>PROMOTION_GUILDS_OF_KILMORPH</Promotion>
+				<Promotion>PROMOTION_OVERLORDS_THRALL</Promotion>
+				<Promotion>PROMOTION_EMPYREAN_PATH</Promotion>
+				<Promotion>PROMOTION_ORDER_BAILIFF</Promotion>
+				<Promotion>PROMOTION_WHITE_STORMBRINGER</Promotion>
+			</AllowPromotions>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<iMeleeWaveSize>1</iMeleeWaveSize>
@@ -42840,6 +42856,9 @@
 			<iCost>30</iCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>100</iWorkRate>
+			<AllowPromotions>
+				<Promotion>PROMOTION_OVERLORDS_THRALL</Promotion>
+			</AllowPromotions>
 			<TerrainImpassables>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>

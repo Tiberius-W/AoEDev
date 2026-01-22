@@ -7050,7 +7050,7 @@
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>-2</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 						<iYieldChange>6</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
@@ -7074,7 +7074,7 @@
 					<iSpreadRand>0</iSpreadRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>-2</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 						<iYieldChange>6</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
@@ -7109,6 +7109,188 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<iMinimumDistance>2</iMinimumDistance>
+		</ImprovementInfo>	
+		<ImprovementInfo> <!-- Polar Nexus -->
+			<Type>IMPROVEMENT_POLAR_VORTEX</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_POLAR_NEXUS</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_POLAR_NEXUS</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_POLAR_NEXUS_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_ICE_FORTRESS</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>5</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<iAdvancedStartCost>24</iAdvancedStartCost>
+			<iAirBombDefense>10</iAirBombDefense>
+			<iPillageGold>10</iPillageGold>
+			<iDefenseModifier>20</iDefenseModifier>
+			<AllowsFeatures>
+				<AllowsFeature>
+					<FeatureType>FEATURE_BLIZZARD</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</AllowsFeature>
+			</AllowsFeatures>
+			<iFeatureGrowth>5</iFeatureGrowth>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_MANA_ICE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>1750</iDiscoverRand>
+					<iSpreadRand>1750</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>2</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_RELIGIOUS_LAW</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ELEMENTALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<iMinimumDistance>2</iMinimumDistance>	
+			<iCultureControlStrength>1</iCultureControlStrength> <!-- Magnitude of culture control -->
+			<iCultureRange>2</iCultureRange> <!-- How many tiles distance out from the center, culture control applies. 0 is own tile only (if strength>0), 2 is BFC, etc -->
+			<iCultureCenterBonus>3</iCultureCenterBonus> <!-- Any bonus control for the center plot itself -->
+		</ImprovementInfo>	
+		<ImprovementInfo> <!-- Penitentiary -->
+			<Type>IMPROVEMENT_PENITENTIARY</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_PENITENTIARY</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_PENITENTIARY</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_PENITENTIARY_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_PENITENTIARY</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+			</YieldChanges>
+			<iAdvancedStartCost>24</iAdvancedStartCost>
+			<iAirBombDefense>10</iAirBombDefense>
+			<iPillageGold>10</iPillageGold>
+			<SpawnUnitType>UNIT_DISCIPLE_THE_ORDER</SpawnUnitType>
+			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
+			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
+			<iDefenseModifier>20</iDefenseModifier>
+			<SpawnPromotions>
+				<Promotion>PROMOTION_LOYALTY2</Promotion>
+				<Promotion>PROMOTION_FREE_UNIT</Promotion>
+				<Promotion>PROMOTION_PATROL1</Promotion>
+				<Promotion>PROMOTION_GCF_ZEALOUS1</Promotion>
+				<Promotion>PROMOTION_SECONDARY_ROGUE</Promotion>
+			</SpawnPromotions>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_WASTELAND</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_EDUCATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_FANATICISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>

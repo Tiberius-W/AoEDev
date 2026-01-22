@@ -1489,6 +1489,22 @@
 		<Spanish>[TAB]Construidas para vigilar las fronteras de países desaparecidos hace ya tiempo, las torres aún ofrecen una vista destacable de las tierras de alrededor.</Spanish>
 	</TEXT>	
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_POLAR_NEXUS</Tag>
+		<English>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_PENITENTIARY</Tag>
+		<English>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_PATH_OF_LUGUS</Tag>
 		<English>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</English>
 		<French>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</French>
@@ -1527,6 +1543,113 @@
 		<German>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</German>
 		<Italian>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_POLAR_NEXUS</Tag>
+		<English>Polar Nexus</English>
+		<French>Polar Nexus</French>
+		<German>Polar Nexus</German>
+		<Italian>Polar Nexus</Italian>
+		<Spanish>Polar Nexus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_POLAR_NEXUS_PEDIA</Tag>
+		<English>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</English>
+		<French>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</French>
+		<German>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</German>
+		<Italian>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Italian>
+		<Spanish>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PENITENTIARY</Tag>
+		<English>Penitentiary</English>
+		<French>Penitentiary</French>
+		<German>Penitentiary</German>
+		<Italian>Penitentiary</Italian>
+		<Spanish>Penitentiary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PENITENTIARY_PEDIA</Tag>
+		<English>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</English>
+		<French>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</French>
+		<German>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</German>
+		<Italian>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</Italian>
+		<Spanish>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST</Tag>
