@@ -1660,6 +1660,24 @@ In time, they will come to thank us."
 		<Spanish>Sacred Harvest</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST_PEDIA</Tag>
+		<English>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</English>
+		<French>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</French>
+		<German>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</German>
+		<Italian>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Italian>
+		<Spanish>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE</Tag>
 		<English>Hell Gate</English>
 		<French>Hell Gate</French>
@@ -1722,6 +1740,24 @@ A Hell Gate can only be removed by the Sanctify spell.</Spanish>
 		<German>Thieves Den</German>
 		<Italian>Thieves Den</Italian>
 		<Spanish>Thieves Den</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN_PEDIA</Tag>
+		<English>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</English>
+		<French>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</French>
+		<German>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</German>
+		<Italian>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Italian>
+		<Spanish>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PATH_OF_LUGUS</Tag>

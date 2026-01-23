@@ -7116,7 +7116,7 @@
 			<iMinimumDistance>2</iMinimumDistance>
 		</ImprovementInfo>	
 		<ImprovementInfo> <!-- Polar Nexus -->
-			<Type>IMPROVEMENT_POLAR_VORTEX</Type>
+			<Type>IMPROVEMENT_POLAR_NEXUS</Type>
 			<ImprovementClass>IMPROVEMENTCLASS_POLAR_NEXUS</ImprovementClass>
 			<Description>TXT_KEY_IMPROVEMENT_POLAR_NEXUS</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_POLAR_NEXUS_PEDIA</Civilopedia>

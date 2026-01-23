@@ -26483,6 +26483,8 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
+			<SelectionSound>AS3D_GREECE_SELECT</SelectionSound>
+			<ActionSound>AS3D_GREECE_ORDER</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_BATTLE_SLUGA -->
 			<Type>ART_DEF_UNIT_BATTLE_SLUGA</Type>

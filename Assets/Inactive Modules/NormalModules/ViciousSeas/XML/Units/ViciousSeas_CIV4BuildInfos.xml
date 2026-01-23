@@ -173,34 +173,5 @@
 				</TechBuildDiscount>
 			</TechBuildDiscounts>
 		</BuildInfo>
-		<BuildInfo> <!-- Stygian Shrine -->
-			<Type>BUILD_STYGIAN_SHRINE</Type>
-			<Description>TXT_KEY_STYGIAN_SHRINE</Description>
-			<Help/>
-			<iTime>2800</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>IMPROVEMENTCLASS_STYGIAN_SHRINE</ImprovementType>
-			<RouteType>NONE</RouteType>
-			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<HotKey>KB_F</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>1</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Modules/NormalModules/ViciousSeas/Art/interface/buttons/improvements/StygianShrine.dds</Button>
-			<TechBuildDiscounts>
-				<TechBuildDiscount>
-					<TechType>TECH_CONSTRUCTION</TechType>
-					<iDiscount>700</iDiscount>
-				</TechBuildDiscount>
-			</TechBuildDiscounts>
-			<TechBuildDiscounts>
-				<TechBuildDiscount>
-					<TechType>TECH_MIND_STAPLING</TechType>
-					<iDiscount>700</iDiscount>
-				</TechBuildDiscount>
-			</TechBuildDiscounts>
-		</BuildInfo>
 	</BuildInfos>
 </Civ4BuildInfos>
