@@ -906,6 +906,7 @@
 					<iPlayerInstancesChange>4</iPlayerInstancesChange>
 				</UnitClassPlayerInstancesChange>
 			</UnitClassPlayerInstancesChanges>
+			<bIgnoreHappy>1</bIgnoreHappy>
 		</TraitInfo>
 		<TraitInfo>		<!-- Wanderer -->
 			<Type>TRAIT_WANDERER</Type>
@@ -2672,7 +2673,7 @@
 			</CommerceModifiers>
 			<ExtraUnitClasses>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_CHAMPION</UnitClassType>
 					<UnitType>UNIT_CUSTODIAN</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>

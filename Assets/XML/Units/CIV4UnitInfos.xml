@@ -29224,7 +29224,7 @@
 			<PrereqBuildingClass>BUILDINGCLASS_COURTHOUSE</PrereqBuildingClass>
 		</UnitInfo>
 		<UnitInfo>        <!-- Custodian -->
-			<Class>UNITCLASS_PIKEMAN</Class>
+			<Class>UNITCLASS_CHAMPION</Class>
 			<Type>UNIT_CUSTODIAN</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
@@ -42657,22 +42657,6 @@
 			<bFood>1</bFood>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
@@ -42748,6 +42732,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMoves>2</iMoves>
 			<iWorkRate>75</iWorkRate>
+			<bJoinPop>1</bJoinPop>
 			<iCombat>0</iCombat>
 			<iAsset>1</iAsset>
 			<UnitMeshGroups>
