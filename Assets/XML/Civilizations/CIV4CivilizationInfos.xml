@@ -4738,10 +4738,6 @@
 					<UnitClassType>UNITCLASS_PHALANX</UnitClassType>
 					<UnitType>UNIT_ANUBIS</UnitType>
 				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>UNIT_WORKER_MALAKIM</UnitType>
-				</Unit>
 			</Units>
 			<Improvements>
 				<Improvement>
