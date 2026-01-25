@@ -907,6 +907,14 @@ Sie suchen und suchen und D&#246;rfer und H&#228;user werden durchsucht und verl
 		<Spanish>Pirate</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PIRATE_HELP</Tag>
+		<English>[ICON_BULLET]Increases the strength of Longboats.</English>
+		<French>[ICON_BULLET]Increases the strength of Longboats.</French>
+		<German>[ICON_BULLET]Increases the strength of Longboats.</German>
+		<Italian>[ICON_BULLET]Increases the strength of Longboats.</Italian>
+		<Spanish>[ICON_BULLET]Increases the strength of Longboats.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_WARSHIP</Tag>
 		<English>Warship</English>
 		<French>Warship</French>
