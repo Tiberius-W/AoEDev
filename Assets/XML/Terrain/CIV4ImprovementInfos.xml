@@ -7342,7 +7342,7 @@
 			</TerrainMakesValids>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_EDUCATION</PrereqTech>
+					<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
