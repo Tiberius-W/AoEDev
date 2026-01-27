@@ -1419,8 +1419,8 @@
 			<Civilopedia>TXT_KEY_BONUS_JEWELS_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_JEWELS</ArtDefineTag>
-			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechReveal>TECH_SMELTING</TechReveal>
+			<TechCityTrade>TECH_SMELTING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>

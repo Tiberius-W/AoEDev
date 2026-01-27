@@ -236,6 +236,10 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
 					<TerrainType>TERRAIN_WASTELAND</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
@@ -1269,6 +1273,10 @@
 				</TerrainMakesValid>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
@@ -2318,7 +2326,7 @@
 			</PrereqNatureYields>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
-				<iYieldChange>1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
@@ -2367,9 +2375,59 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_JEWELS</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>2500</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>-1</iYieldChange>
+						<iYieldChange>6</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_FINE_CLOTHES</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>2500</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>-1</iYieldChange>
+						<iYieldChange>5</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_ALE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>2500</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>2</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_OBSIDIAN</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>2500</iDiscoverRand>
+					<iSpreadRand>0</iSpreadRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
+					<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
@@ -5603,6 +5661,11 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_DTESHI_CRYPT</ArtDefineTag>
 			<bRequiresFlatlands>1</bRequiresFlatlands>
 			<iPillageGold>10</iPillageGold>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -6977,6 +7040,10 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
 					<TerrainType>TERRAIN_WASTELAND</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
@@ -7003,19 +7070,7 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>6</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_ALE</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>2500</iDiscoverRand>
-					<iSpreadRand>0</iSpreadRand>
-					<YieldChanges>
-						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>5</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -7124,7 +7179,7 @@
 			<ArtDefineTag>ART_DEF_ICE_FORTRESS</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
-				<iYieldChange>5</iYieldChange>
+				<iYieldChange>4</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
@@ -7172,6 +7227,10 @@
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
 					<TerrainType>TERRAIN_WASTELAND</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
@@ -7203,7 +7262,7 @@
 					<PrereqTech>TECH_ELEMENTALISM</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
-						<iYield>1</iYield>
+						<iYield>2</iYield>
 						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -7228,7 +7287,7 @@
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAirBombDefense>10</iAirBombDefense>
 			<iPillageGold>10</iPillageGold>
-			<SpawnUnitType>UNIT_DISCIPLE_THE_ORDER</SpawnUnitType>
+			<SpawnUnitType>UNIT_PENITENT</SpawnUnitType>
 			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
 			<iDefenseModifier>20</iDefenseModifier>
@@ -7270,6 +7329,10 @@
 				</TerrainMakesValid>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
@@ -7356,6 +7419,10 @@
 				</TerrainMakesValid>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_TAIGA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 				<TerrainMakesValid>
@@ -8155,6 +8222,10 @@
 				</TerrainMakesValid>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
 					<bMakesValid>1</bMakesValid>
 				</TerrainMakesValid>
 			</TerrainMakesValids>

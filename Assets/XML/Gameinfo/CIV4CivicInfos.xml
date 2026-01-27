@@ -439,7 +439,17 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iFreeExperience>3</iFreeExperience>
-			<iMilitaryProductionModifier>-25</iMilitaryProductionModifier>
+			<iMilitaryProductionModifier>-25</iMilitaryProductionModifier>		
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 		</CivicInfo>
 		<CivicInfo>		<!-- Slavery -->
 			<CivicOptionType>CIVICOPTION_LABOR</CivicOptionType>
@@ -643,7 +653,17 @@
 				<iYield>0</iYield>
 				<iYield>25</iYield>
 				<iYield>25</iYield>
-			</TradeYieldModifiers>
+			</TradeYieldModifiers>	
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 		</CivicInfo>
 		<CivicInfo>		<!-- Industry -->
 			<CivicOptionType>CIVICOPTION_LABOR</CivicOptionType>

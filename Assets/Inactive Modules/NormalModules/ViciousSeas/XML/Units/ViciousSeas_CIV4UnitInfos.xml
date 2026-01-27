@@ -1643,7 +1643,7 @@
 			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_FISHING_BOATS</BuildType>
+					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>

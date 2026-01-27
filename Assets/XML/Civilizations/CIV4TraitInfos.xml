@@ -2334,6 +2334,10 @@
 					<PromotionType>PROMOTION_NECROMANCER</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_RAISE_THE_DEAD_SCIONS_PRIEST</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
 			</FreePromotions>
 			<FreePromotionUnitCombats>
 				<FreePromotionUnitCombat>
