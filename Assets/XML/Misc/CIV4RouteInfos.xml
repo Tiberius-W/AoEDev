@@ -47,7 +47,7 @@
 		<RouteInfo>
 			<Type>ROUTE_PATH_OF_LUGUS</Type>
 			<Description>TXT_KEY_PATH_OF_LUGUS</Description>
-			<iValue>2</iValue>
+			<iValue>4</iValue>
 			<iAdvancedStartCost>12</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMovement>25</iMovement>

@@ -79,7 +79,7 @@
 			<Type>BUILD_PATH_OF_LUGUS</Type>
 			<Description>TXT_KEY_BUILD_PATH_OF_LUGUS</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_HONOR</PrereqTech>
 			<iTime>1200</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -2812,7 +2812,7 @@
 			<Type>BUILD_SACRED_HARVEST</Type>
 			<Description>TXT_KEY_BUILD_SACRED_HARVEST</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_WAY_OF_THE_FORESTS</PrereqTech>
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -2841,7 +2841,7 @@
 			<Type>BUILD_THIEVES_DEN</Type>
 			<Description>TXT_KEY_BUILD_THIEVES_DEN</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_DECEPTION</PrereqTech>
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -2907,7 +2907,7 @@
 			<Type>BUILD_AERON_VAULTGATE</Type>
 			<Description>TXT_KEY_BUILD_AERON_VAULTGATE</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_CORRUPTION_OF_SPIRIT</PrereqTech>
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -2973,7 +2973,7 @@
 			<Type>BUILD_PENITENTIARY</Type>
 			<Description>TXT_KEY_BUILD_PENITENTIARY</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_ORDERS_FROM_HEAVEN</PrereqTech>
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -3042,7 +3042,7 @@
 			<Type>BUILD_POLAR_NEXUS</Type>
 			<Description>TXT_KEY_BUILD_POLAR_NEXUS</Description>
 			<Help/>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>TECH_WHITE_HAND</PrereqTech>
 			<iTime>2800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>

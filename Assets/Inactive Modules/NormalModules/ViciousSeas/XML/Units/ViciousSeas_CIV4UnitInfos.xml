@@ -1640,10 +1640,9 @@
 		<UnitInfo>        <!-- Workboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
-					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
+					<BuildType>BUILD_FISHING_BOATS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -1657,7 +1656,6 @@
 		<UnitInfo>        <!-- WyrmFisher -->
 			<Class>UNITCLASS_WYRMFISHER</Class>
 			<Type>UNIT_WYRMFISHER</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
@@ -1674,7 +1672,6 @@
 		<UnitInfo>        <!-- Workboat (Lanun) -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT_LANUN</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
@@ -1695,7 +1692,6 @@
 		<UnitInfo>        <!-- Funeral Barge -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_FUNERAL_BARGE</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
@@ -1998,7 +1994,6 @@
 		<UnitInfo>        <!-- Jotnar Fishing Longboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_JOT_WORKBOAT</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
