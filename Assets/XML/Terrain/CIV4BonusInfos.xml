@@ -21,63 +21,13 @@
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Ash -->
 			<Type>BONUS_ASH</Type>
@@ -762,63 +712,13 @@
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Fish -->
 			<Type>BONUS_FISH</Type>
@@ -1528,63 +1428,13 @@
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Marble 30-->
 			<Type>BONUS_MARBLE</Type>
@@ -1845,63 +1695,13 @@
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Patrian Artifacts -->
 			<Type>BONUS_PATRIAN_ARTIFACTS</Type>
@@ -2746,63 +2546,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<DamageType>DAMAGE_LIGHTNING</DamageType>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Body -->
@@ -2821,63 +2571,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iHealChange>5</iHealChange>
 		</BonusInfo>
@@ -2897,63 +2597,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iMutateChance>2</iMutateChance>
 		</BonusInfo>
@@ -2973,63 +2623,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Death -->
 			<Type>BONUS_MANA_DEATH</Type>
@@ -3048,62 +2648,12 @@
 			<iAITradeModifier>30</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
 			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<iBadAttitude>-1</iBadAttitude>
 			<DamageType>DAMAGE_DEATH</DamageType>
 		</BonusInfo>
@@ -3123,63 +2673,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Earth -->
 			<Type>BONUS_MANA_EARTH</Type>
@@ -3197,63 +2697,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iDiscoverRandModifier>20</iDiscoverRandModifier> <!-- This is x percent per resource. 100 -> 2x faster discovery -->
 		</BonusInfo>
@@ -3274,63 +2724,13 @@
 			<iAITradeModifier>90</iAITradeModifier>
 			<iHappiness>1</iHappiness>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Entropy -->
@@ -3349,63 +2749,13 @@
 			</YieldChanges>
 			<iAITradeModifier>30</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iBadAttitude>-2</iBadAttitude>
 			<iHealChangeEnemy>-2</iHealChangeEnemy>
@@ -3428,62 +2778,12 @@
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
 			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<DamageType>DAMAGE_FIRE</DamageType>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Force -->
@@ -3502,63 +2802,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Ice 63-->
 			<Type>BONUS_MANA_ICE</Type>
@@ -3576,63 +2826,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<DamageType>DAMAGE_COLD</DamageType>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Law 64-->
@@ -3651,63 +2851,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iMaintenanceModifier>-5</iMaintenanceModifier>
 		</BonusInfo>
@@ -3728,63 +2878,13 @@
 			<iAITradeModifier>90</iAITradeModifier>
 			<iHealth>2</iHealth>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Metamagic -->
@@ -3803,63 +2903,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Mind -->
 			<Type>BONUS_MANA_MIND</Type>
@@ -3877,63 +2927,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
@@ -3957,63 +2957,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Refined -->
 			<Type>BONUS_REFINED_MANA</Type>
@@ -4092,63 +3042,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Spirit -->
 			<Type>BONUS_MANA_SPIRIT</Type>
@@ -4166,63 +3066,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<bModifierPerBonus>1</bModifierPerBonus>
 			<iGreatPeopleRateModifier>5</iGreatPeopleRateModifier>
 		</BonusInfo>
@@ -4242,63 +3092,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<DamageType>DAMAGE_FIRE</DamageType>
 		</BonusInfo>
 		<BonusInfo>		<!-- Mana Water -->
@@ -4317,63 +3117,13 @@
 			</YieldChanges>
 			<iAITradeModifier>90</iAITradeModifier>
 			<iPlacementOrder>-1</iPlacementOrder>
-			<iMinAreaSize>3</iMinAreaSize>
-			<bHills>1</bHills>
-			<bFlatlands>1</bFlatlands>
-			<iMinLatitude>0</iMinLatitude>
-			<iMaxLatitude>90</iMaxLatitude>
+			<iMinAreaSize>-1</iMinAreaSize>
 			<Rands>
 				<iRandApp1>0</iRandApp1>
 				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<TerrainBooleans>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_SHALLOWS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_DESERT</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_MARSH</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TAIGA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_TUNDRA</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-				<TerrainBoolean>
-					<TerrainType>TERRAIN_WASTELAND</TerrainType>
-					<bTerrain>1</bTerrain>
-				</TerrainBoolean>
-			</TerrainBooleans>
 			<DamageType>DAMAGE_COLD</DamageType>
 		</BonusInfo>
 		<BonusInfo>		<!-- Whale -->
