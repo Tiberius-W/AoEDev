@@ -5008,7 +5008,7 @@
 			<Help>TXT_KEY_BUILDING_PACT_OF_THE_NILHORN_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PACT_OF_THE_NILHORN</ArtDefineTag>
-			<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
+			<PrereqTech>TECH_DRAMA</PrereqTech>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>30</iAIWeight>
 			<iCost>500</iCost>
