@@ -2934,6 +2934,22 @@
 		<Spanish>Sheut Stone</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DRESSEDTOKILL</Tag>
+		<English>Fine Clothes - Dressed to Kill</English>
+		<French>Fine Clothes - Dressed to Kill</French>
+		<German>Fine Clothes - Dressed to Kill</German>
+		<Italian>Fine Clothes - Dressed to Kill</Italian>
+		<Spanish>Fine Clothes - Dressed to Kill</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DAZZLING_GLARE</Tag>
+		<English>Jewelry - Dazzling Glare</English>
+		<French>Fine Clothes - Dazzling Glare</French>
+		<German>Fine Clothes - Dazzling Glare</German>
+		<Italian>Fine Clothes - Dazzling Glare</Italian>
+		<Spanish>Fine Clothes - Dazzling Glare</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SHIELD_OF_FAITH</Tag>
 		<English>Shield of Faith</English>
 		<French>Bouclier de la Foi</French>

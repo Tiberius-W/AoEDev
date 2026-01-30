@@ -1522,11 +1522,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_THIEVES_DEN</Tag>
-		<English>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</English>
-		<French>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</French>
-		<German>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</German>
-		<Italian>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</Italian>
-		<Spanish>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Thieves Den[\LINK],</Spanish>
+		<English>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SACRED_HARVEST</Tag>
@@ -1735,11 +1735,11 @@ A Hell Gate can only be removed by the Sanctify spell.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN</Tag>
-		<English>Thieves Den</English>
-		<French>Thieves Den</French>
-		<German>Thieves Den</German>
-		<Italian>Thieves Den</Italian>
-		<Spanish>Thieves Den</Spanish>
+		<English>Aphotic Hideout</English>
+		<French>Aphotic Hideout</French>
+		<German>Aphotic Hideout</German>
+		<Italian>Aphotic Hideout</Italian>
+		<Spanish>Aphotic Hideout</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN_PEDIA</Tag>

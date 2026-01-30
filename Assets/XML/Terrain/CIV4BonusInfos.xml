@@ -719,6 +719,7 @@
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
+			<FreePromotion>PROMOTION_DRESSEDTOKILL</FreePromotion>
 		</BonusInfo>
 		<BonusInfo>		<!-- Fish -->
 			<Type>BONUS_FISH</Type>
@@ -1435,6 +1436,7 @@
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
+			<FreePromotion>PROMOTION_DAZZLING_GLARE</FreePromotion>
 		</BonusInfo>
 		<BonusInfo>		<!-- Marble 30-->
 			<Type>BONUS_MARBLE</Type>

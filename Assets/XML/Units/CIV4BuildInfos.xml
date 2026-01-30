@@ -107,6 +107,7 @@
 		<BuildInfo> <!-- Stygian Shrine -->
 			<Type>BUILD_STYGIAN_SHRINE</Type>
 			<Description>TXT_KEY_STYGIAN_SHRINE</Description>
+			<PrereqTech>TECH_MESSAGE_FROM_THE_DEEP</PrereqTech>
 			<Help/>
 			<iTime>1000</iTime>
 			<iCost>0</iCost>
@@ -2837,7 +2838,7 @@
 				</TechBuildDiscount>
 			</TechBuildDiscounts>
 		</BuildInfo>
-		<BuildInfo> <!-- Thieves Den -->
+		<BuildInfo> <!-- Thieves Den - Aphotic Hideout -->
 			<Type>BUILD_THIEVES_DEN</Type>
 			<Description>TXT_KEY_BUILD_THIEVES_DEN</Description>
 			<Help/>
