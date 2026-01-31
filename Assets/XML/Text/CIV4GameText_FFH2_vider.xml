@@ -3725,6 +3725,70 @@ Condatis also attempts to fight the influence of the Overlords in creation and i
 		<Spanish>Use the Crusader to counter your opponent's Demonic units. Not only do they get a strength bonus against demons, but they are immune to disease, making them perfect to send into an area to eliminate any diseases the Ashen Veil and their Diseased Corpses have spread.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PENITENT</Tag>
+		<English>Penitent</English>
+		<French>Penitent</French>
+		<German>Penitent</German>
+		<Italian>Penitent</Italian>
+		<Spanish>Penitent</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PENITENT_PEDIA</Tag>
+		<English>If you take a criminal off the streets, brand them, throw them in a complex, and then systematically hammer the letter of the law into their very bones until they see bylaws in their dreams...
+You would get a Penitent.
+
+It does not matter to them whether the punishment they inflict fits the crime, only that the state they serve has ordered the punishment be carried out.
+
+Some people hate their work,  some see it as a duty, and then you have the Penitents, who seem to enjoy it entirely too much.</English>
+		<French>If you take a criminal off the streets, brand them, throw them in a complex, and then systematically hammer the letter of the law into their very bones until they see bylaws in their dreams...
+You would get a Penitent.
+
+It does not matter to them whether the punishment they inflict fits the crime, only that the state they serve has ordered the punishment be carried out.
+
+Some people hate their work,  some see it as a duty, and then you have the Penitents, who seem to enjoy it entirely too much.</French>
+		<German>If you take a criminal off the streets, brand them, throw them in a complex, and then systematically hammer the letter of the law into their very bones until they see bylaws in their dreams...
+You would get a Penitent.
+
+It does not matter to them whether the punishment they inflict fits the crime, only that the state they serve has ordered the punishment be carried out.
+
+Some people hate their work,  some see it as a duty, and then you have the Penitents, who seem to enjoy it entirely too much.</German>
+		<Italian>If you take a criminal off the streets, brand them, throw them in a complex, and then systematically hammer the letter of the law into their very bones until they see bylaws in their dreams...
+You would get a Penitent.
+
+It does not matter to them whether the punishment they inflict fits the crime, only that the state they serve has ordered the punishment be carried out.
+
+Some people hate their work,  some see it as a duty, and then you have the Penitents, who seem to enjoy it entirely too much.</Italian>
+		<Spanish>If you take a criminal off the streets, brand them, throw them in a complex, and then systematically hammer the letter of the law into their very bones until they see bylaws in their dreams...
+You would get a Penitent.
+
+It does not matter to them whether the punishment they inflict fits the crime, only that the state they serve has ordered the punishment be carried out.
+
+Some people hate their work,  some see it as a duty, and then you have the Penitents, who seem to enjoy it entirely too much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PENITENT_STRATEGY</Tag>
+		<English>Produced by Penitentiaries, the Penitent unit is an early and weaker version of the Crusader, lacking the demon slaying and medical practice. 
+These glorified thugs are clubs to be used to keep the masses in check or thrown into an oncoming charge.
+
+By law, they do have the right to ascend up the ranks in the Order, just as any other member can - but the fine print does everything it can to impede a serviceman of the Penitent from ever rising to a position of power in the Order, so help us Junil.</English>
+		<French>Produced by Penitentiaries, the Penitent unit is an early and weaker version of the Crusader, lacking the demon slaying and medical practice. 
+These glorified thugs are clubs to be used to keep the masses in check or thrown into an oncoming charge.
+
+By law, they do have the right to ascend up the ranks in the Order, just as any other member can - but the fine print does everything it can to impede a serviceman of the Penitent from ever rising to a position of power in the Order, so help us Junil.</French>
+		<German>Produced by Penitentiaries, the Penitent unit is an early and weaker version of the Crusader, lacking the demon slaying and medical practice. 
+These glorified thugs are clubs to be used to keep the masses in check or thrown into an oncoming charge.
+
+By law, they do have the right to ascend up the ranks in the Order, just as any other member can - but the fine print does everything it can to impede a serviceman of the Penitent from ever rising to a position of power in the Order, so help us Junil.</German>
+		<Italian>Produced by Penitentiaries, the Penitent unit is an early and weaker version of the Crusader, lacking the demon slaying and medical practice. 
+These glorified thugs are clubs to be used to keep the masses in check or thrown into an oncoming charge.
+
+By law, they do have the right to ascend up the ranks in the Order, just as any other member can - but the fine print does everything it can to impede a serviceman of the Penitent from ever rising to a position of power in the Order, so help us Junil.</Italian>
+		<Spanish>Produced by Penitentiaries, the Penitent unit is an early and weaker version of the Crusader, lacking the demon slaying and medical practice. 
+These glorified thugs are clubs to be used to keep the masses in check or thrown into an oncoming charge.
+
+By law, they do have the right to ascend up the ranks in the Order, just as any other member can - but the fine print does everything it can to impede a serviceman of the Penitent from ever rising to a position of power in the Order, so help us Junil.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_DIPLO_VOTE_TYPE</Tag>
 		<English>[ICON_BULLET]+1 vote in the %s1</English>
 		<French>[ICON_BULLET]+1 vote dans le %s1</French>

@@ -302,6 +302,14 @@
 		<Spanish>Fallen Angel</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_DEVILCASTER</Tag>
+		<English>Crossroads Demon</English>
+		<French>Crossroads Demon</French>
+		<German>Crossroads Demon</German>
+		<Italian>Crossroads Demon</Italian>
+		<Spanish>Crossroads Demon</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_HAEGTESSE</Tag>
 		<English>Haegtesse</English>
 		<French>Haegtesse</French>

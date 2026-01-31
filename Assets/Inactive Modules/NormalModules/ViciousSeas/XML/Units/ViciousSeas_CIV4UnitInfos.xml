@@ -1528,7 +1528,6 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bCanMoveAllTerrain>1</bCanMoveAllTerrain>
-			<iWorkRate>75</iWorkRate>
 			<UnitClassUpgrades>
 				<UnitClassUpgradeType>UNITCLASS_STYGIAN_GUARD</UnitClassUpgradeType>
 			</UnitClassUpgrades>
@@ -1541,21 +1540,7 @@
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -1598,35 +1583,6 @@
 			</DamageTypeCombats>
 			<iAlignmentModifier>-1</iAlignmentModifier>
 			<bForceOverwrite>1</bForceOverwrite>
-		</UnitInfo>
-		<UnitInfo>        <!-- Stygian Guard -->
-			<Class>UNITCLASS_STYGIAN_GUARD</Class>
-			<Type>UNIT_STYGIAN_GUARD</Type>
-			<iWorkRate>150</iWorkRate>
-			<UnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 		</UnitInfo>
 		<UnitInfo>        <!-- Malignant Flora Fort Commander -->
 			<Class>UNITCLASS_FORT_COMMANDER</Class>
@@ -1684,7 +1640,6 @@
 		<UnitInfo>        <!-- Workboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -1701,7 +1656,6 @@
 		<UnitInfo>        <!-- WyrmFisher -->
 			<Class>UNITCLASS_WYRMFISHER</Class>
 			<Type>UNIT_WYRMFISHER</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_WYRMFISHER</BuildType>
@@ -1718,7 +1672,6 @@
 		<UnitInfo>        <!-- Workboat (Lanun) -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_WORKBOAT_LANUN</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS_LANUN</BuildType>
@@ -1739,7 +1692,6 @@
 		<UnitInfo>        <!-- Funeral Barge -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_FUNERAL_BARGE</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_PYRE_AQUATIC</BuildType>
@@ -2042,7 +1994,6 @@
 		<UnitInfo>        <!-- Jotnar Fishing Longboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>
 			<Type>UNIT_JOT_WORKBOAT</Type>
-			<Combat>UNITCOMBAT_WORKER</Combat>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>

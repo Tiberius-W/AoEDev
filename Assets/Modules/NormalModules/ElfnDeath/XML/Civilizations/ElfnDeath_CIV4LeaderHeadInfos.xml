@@ -503,19 +503,19 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -535,19 +535,19 @@
 			<DiplomacyMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_END</EraType>
-					<DiploScriptId>AS2D_DIPLO_SVARTALFAR_RIVANNA</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HAERLOND</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 			<bFemale>0</bFemale>

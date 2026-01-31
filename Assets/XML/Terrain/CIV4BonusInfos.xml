@@ -704,7 +704,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_FINE_CLOTHES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_CRAFTING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -719,6 +719,7 @@
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
+			<FreePromotion>PROMOTION_DRESSEDTOKILL</FreePromotion>
 		</BonusInfo>
 		<BonusInfo>		<!-- Fish -->
 			<Type>BONUS_FISH</Type>
@@ -1420,7 +1421,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_JEWELS</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_SMELTING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1435,6 +1436,7 @@
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
+			<FreePromotion>PROMOTION_DAZZLING_GLARE</FreePromotion>
 		</BonusInfo>
 		<BonusInfo>		<!-- Marble 30-->
 			<Type>BONUS_MARBLE</Type>

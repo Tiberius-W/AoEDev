@@ -545,6 +545,7 @@
 			<bCityAction>1</bCityAction>
 			<bAllowAI>1</bAllowAI>
 			<bGlobal>1</bGlobal>
+			<TechPrereq>TECH_KNOWLEDGE_OF_THE_ETHER</TechPrereq>
 			<Quote>TXT_KEY_GLOBALSPELL_STASIS</Quote>
 			<iAIWeight>50</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>

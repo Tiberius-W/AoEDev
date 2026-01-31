@@ -906,6 +906,7 @@
 					<iPlayerInstancesChange>4</iPlayerInstancesChange>
 				</UnitClassPlayerInstancesChange>
 			</UnitClassPlayerInstancesChanges>
+			<bIgnoreHappy>1</bIgnoreHappy>
 		</TraitInfo>
 		<TraitInfo>		<!-- Wanderer -->
 			<Type>TRAIT_WANDERER</Type>
@@ -2333,6 +2334,10 @@
 					<PromotionType>PROMOTION_NECROMANCER</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_RAISE_THE_DEAD_SCIONS_PRIEST</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
 			</FreePromotions>
 			<FreePromotionUnitCombats>
 				<FreePromotionUnitCombat>
@@ -2672,7 +2677,7 @@
 			</CommerceModifiers>
 			<ExtraUnitClasses>
 				<ExtraUnitClass>
-					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_CHAMPION</UnitClassType>
 					<UnitType>UNIT_CUSTODIAN</UnitType>
 				</ExtraUnitClass>
 				<ExtraUnitClass>

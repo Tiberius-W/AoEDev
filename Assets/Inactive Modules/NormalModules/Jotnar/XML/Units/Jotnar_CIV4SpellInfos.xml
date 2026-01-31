@@ -454,8 +454,8 @@
 			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
 			<Button>Art/Interface/Buttons/Units/Gretchin.dds</Button>
 		</SpellInfo> -->
-		<SpellInfo>			<!-- Blessed (Jotnar - Altar 1) -->			<!-- JOTNAR SPELLS -->
-			<Type>SPELL_JOT_BLESS1</Type>
+		<!-- <SpellInfo>			 Blessed (Jotnar - Altar 1) -->		<!-- JOTNAR SPELLS -->
+		<!--	<Type>SPELL_JOT_BLESS1</Type>
 			<Description>Blessed</Description>
 			<Civilopedia></Civilopedia>
 			<Strategy></Strategy>
@@ -472,7 +472,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Blessed.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Blessed (Jotnar - Altar 2) -->
+		<SpellInfo>			 Blessed (Jotnar - Altar 2) 
 			<Type>SPELL_JOT_BLESS2</Type>
 			<Description>Blessed</Description>
 			<Civilopedia></Civilopedia>
@@ -490,7 +490,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Blessed.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Blessed (Jotnar - Altar 3) -->
+		<SpellInfo>			 Blessed (Jotnar - Altar 3) 
 			<Type>SPELL_JOT_BLESS3</Type>
 			<Description>Blessed</Description>
 			<Civilopedia></Civilopedia>
@@ -508,7 +508,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Blessed.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Blessed (Jotnar - Altar 4) -->
+		<SpellInfo>			 Blessed (Jotnar - Altar 4) 
 			<Type>SPELL_JOT_BLESS4</Type>
 			<Description>Blessed</Description>
 			<Civilopedia></Civilopedia>
@@ -526,7 +526,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Blessed.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Blessed (Jotnar - Altar 5) -->
+		<SpellInfo>			 Blessed (Jotnar - Altar 5) 
 			<Type>SPELL_JOT_BLESS5</Type>
 			<Description>Blessed</Description>
 			<Civilopedia></Civilopedia>
@@ -543,7 +543,7 @@
 			</AddPromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Blessed.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Bloom (Jotnar) -->
 			<Type>SPELL_JOT_BLOOM</Type>
 			<Description>TXT_KEY_SPELL_BLOOM</Description>
@@ -652,7 +652,7 @@
 			<Sound>AS3D_SPELL_EARTHQUAKE</Sound>
 			<Button>Art/Interface/Buttons/Spells/Earthquake.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Enchanted Blade (Jotnar - Dragons Hoard) -->
+	<!--	<SpellInfo>			 Enchanted Blade (Jotnar - Dragons Hoard) 
 			<Type>SPELL_JOT_BLADE</Type>
 			<Description>Enchanted Blade</Description>
 			<Civilopedia></Civilopedia>
@@ -669,7 +669,7 @@
 			</AddPromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Enchantedblade.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Entangle (Jotnar) -->
 			<Type>SPELL_JOT_ENTANGLE</Type>
 			<Description>TXT_KEY_SPELL_ENTANGLE</Description>
@@ -1018,7 +1018,7 @@
 			<Sound>AS3D_SPELL_DEFILE</Sound>
 			<Button>Art/Interface/Buttons/Spells/Scorch.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Scourge (Jotnar - Demons Altar) -->
+		<!--  <SpellInfo>			 Scourge (Jotnar - Demons Altar) 
 			<Type>SPELL_JOT_SCOURGE</Type>
 			<Description>Scourge</Description>
 			<Civilopedia></Civilopedia>
@@ -1036,7 +1036,7 @@
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Scourge.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Sentry (Jotnar - Tower of Eyes) -->
+		<SpellInfo>			 Sentry (Jotnar - Tower of Eyes) 
 			<Type>SPELL_JOT_SENTRY</Type>
 			<Description>Sentry</Description>
 			<Civilopedia></Civilopedia>
@@ -1053,7 +1053,7 @@
 			</AddPromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Sentry1.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Slow (Jotnar) -->
 			<Type>SPELL_JOT_SLOW</Type>
 			<Description>TXT_KEY_SPELL_SLOW</Description>
@@ -1135,7 +1135,7 @@
 			<Sound>AS3D_SPELL_SPRING</Sound>
 			<Button>Art/Interface/Buttons/Spells/Spring.dds</Button>
 		</SpellInfo>
-		<SpellInfo>			<!-- Stigmata (Jotnar - Stigmata of the Unborn) -->
+	<!--	<SpellInfo>			 Stigmata (Jotnar - Stigmata of the Unborn) 
 			<Type>SPELL_JOT_STIGMATA</Type>
 			<Description>Stigmata</Description>
 			<Civilopedia></Civilopedia>
@@ -1152,7 +1152,7 @@
 			</AddPromotions>
 			<bBuffCasterOnly>1</bBuffCasterOnly>
 			<Button>Art/Interface/Buttons/Promotions/Stigmata.dds</Button>
-		</SpellInfo>
+		</SpellInfo> -->
 		<SpellInfo>			<!-- Stoneskin (Jotnar) -->
 			<Type>SPELL_JOT_STONESKIN</Type>
 			<Description>TXT_KEY_SPELL_STONESKIN</Description>
@@ -1317,7 +1317,7 @@
 			<Sound>AS3D_SPELL_INSPIRATION</Sound>
 			<Button>Art/Interface/Buttons/Buildings/Inspiration.dds</Button>
 		</SpellInfo> 
-		<SpellInfo>			<!-- Bellow -->								<!-- JOTNAR ABILITIES -->
+		<SpellInfo>			<!-- Bellow -->								
 			<Type>SPELL_BELLOW</Type>
 			<Description>Bellow</Description>
 			<Civilopedia>TXT_KEY_SPELL_ROAR_PEDIA</Civilopedia>
@@ -1343,7 +1343,7 @@
 			<Type>SPELL_CLAN_SUMMON_FIRE_ELEMENTAL</Type>
 			<CreateUnitPromotion>PROMOTION_FIREKIN</CreateUnitPromotion>
 		</SpellInfo>
-		<SpellInfo>			<!-- Firekin 1 -->
+		<SpellInfo>			<!-- Firekin 1 --> <!-- Aspects of the world -->
 			<Type>SPELL_TRIAL_OF_FIREKIN1</Type>
 			<Description>TXT_KEY_SPELL_TRIAL_OF_FIREKIN</Description>
 			<PromotionPrereq1>PROMOTION_GIANTKIN</PromotionPrereq1>

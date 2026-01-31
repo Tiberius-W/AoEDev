@@ -26507,6 +26507,8 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
+			<SelectionSound>AS3D_GREECE_SELECT</SelectionSound>
+			<ActionSound>AS3D_GREECE_ORDER</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_BATTLE_SLUGA -->
 			<Type>ART_DEF_UNIT_BATTLE_SLUGA</Type>
@@ -35557,6 +35559,30 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
+		<UnitArtInfo>  <!-- UNIT_PENITENT -->
+			<Type>ART_DEF_UNIT_PENITENT</Type>
+			<Button>Art/Interface/Buttons/Units/Crusader.dds</Button>
+			<fScale>0.44</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>art/units/religions/order/Penitent/Penitent.nif</NIF>
+			<KFM>Art/Units/scenario/knigts_templar/Knightstemplar.kfm</KFM>
+			<SHADERNIF>art/units/religions/order/Penitent/Penitent_fx.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
 		<UnitArtInfo>  <!-- UNIT_CRUSADER -->
 			<Type>ART_DEF_UNIT_CRUSADER_DWARF</Type>
 			<Button>Art/Interface/Buttons/Units/Crusader.dds</Button>
@@ -36502,6 +36528,29 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
+		<UnitArtInfo> <!-- UNIT_DEVILCASTER -->
+            <Type>ART_DEF_UNIT_DEVIL_CASTER</Type>
+            <Button>Art/Interface/Buttons/Units/DevilCaster.dds</Button>
+            <fScale>0.55</fScale>
+            <fInterfaceScale>1</fInterfaceScale>
+            <bActAsLand>0</bActAsLand>
+            <bActAsAir>0</bActAsAir>
+            <NIF>Art/Units/Civs/Infernal/devils/devilcaster.nif</NIF>
+            <KFM>Art/Animations/Skirmisher/maliskirmisher blood.kfm</KFM>
+            <ShadowDef>
+                <ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+                <ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+                <fShadowScale>0.95</fShadowScale>
+            </ShadowDef>
+                <fBattleDistance>0.35</fBattleDistance>
+                <fRangedDeathTime>0.31</fRangedDeathTime>
+                <bActAsRanged>1</bActAsRanged>
+            <AudioRunSounds>
+                <AudioRunTypeLoop/>
+                <AudioRunTypeEnd/>
+            </AudioRunSounds>
+            <SelectionSound>AS3D_BALOR_SELECT</SelectionSound>
+        </UnitArtInfo>
 		<UnitArtInfo> <!-- UNIT_PIT_BEAST --> <!-- UNIT_BEASTMASTER in UNIT_ARTSTYLE_DEMON --> <!-- UNIT_BEASTMASTER in UNIT_ARTSTYLE_DTESH -->
 			<Type>ART_DEF_UNIT_PIT_BEAST</Type>
 			<Button>Art/Interface/Buttons/Units/Pit Beast.dds</Button>

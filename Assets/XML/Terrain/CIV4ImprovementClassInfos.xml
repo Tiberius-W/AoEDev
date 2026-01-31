@@ -444,6 +444,36 @@
 			<bUnique>1</bUnique>
 			<DefaultImprovement>IMPROVEMENT_CITADEL_OF_LIGHT</DefaultImprovement>
 		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Sacred Harvest -->
+			<Type>IMPROVEMENTCLASS_SACRED_HARVEST</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_SACRED_HARVEST</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Thieves Den -->
+			<Type>IMPROVEMENTCLASS_THIEVES_DEN</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_THIEVES_DEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Aeron Vaultgate -->
+			<Type>IMPROVEMENTCLASS_AERON_VAULTGATE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_AERON_VAULTGATE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Penitentiary  -->
+			<Type>IMPROVEMENTCLASS_PENITENTIARY</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_PENITENTIARY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Polar Nexus  -->
+			<Type>IMPROVEMENTCLASS_POLAR_NEXUS</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_POLAR_NEXUS</DefaultImprovement>
+		</ImprovementClassInfo>
 		<ImprovementClassInfo><!-- Dwarven Mine (I) -->
 			<Type>IMPROVEMENTCLASS_DWARVEN_MINE</Type>
 			<Description></Description>
@@ -827,6 +857,30 @@
 			<Description></Description>
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_SHIMMERING_PORTAL</DefaultImprovement>
+		</ImprovementClassInfo>		
+		<ImprovementClassInfo><!-- Stygian Shrine (I) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_SHRINE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_SHRINE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Temple (II) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_TEMPLE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_TEMPLE</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Spire (III) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_CATHEDRAL</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_CATHEDRAL</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Stygian Monolith (IV) -->
+			<Type>IMPROVEMENTCLASS_STYGIAN_GRAND_SPIRE</Type>
+			<Description></Description>
+			<bUnique>0</bUnique>
+			<DefaultImprovement>IMPROVEMENT_STYGIAN_GRAND_SPIRE</DefaultImprovement>
 		</ImprovementClassInfo>
 	</ImprovementClassInfos>
 </Civ4ImprovementClassInfos>

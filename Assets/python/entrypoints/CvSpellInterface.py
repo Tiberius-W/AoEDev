@@ -3661,6 +3661,8 @@ def reqSanctify(caster):
 		return True
 	if pPlot.getImprovementType() == getInfoType('IMPROVEMENT_SNAKE_PILLAR'):
 		return True
+	if pPlot.getImprovementType() == getInfoType('IMPROVEMENT_AERON_VAULTGATE'):
+		return True
 	getPlot	= CyMap().plot
 	iRange = 1 + caster.getSpellExtraRange()
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_PLOT_COUNTER):
@@ -3736,6 +3738,9 @@ def sanctifyResource(pPlot):
 		else:
 			if iCount < 66: setBonus(Bonus["Rice"])
 			else: setBonus(Bonus["Wheat"])
+	if iImprovement == getInfoType('IMPROVEMENT_AERON_VAULTGATE'):
+		pPlot.setImprovementType(-1)
+		pPlot.setBonusType(-1)
 
 def spellSanctify(caster):
 	pPlot = caster.plot()

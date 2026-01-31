@@ -826,6 +826,42 @@
 			<Button>, ,Art/Erebus_Atlas.dds,5,4</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
+			<Type>ART_DEF_ICE_FORTRESS</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>15</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/improvements/PolarVortex/shadowfort.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/PolarNexus.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_THIEVES_DEN</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>20.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/improvements/ThievesDen/Werewolf_Hideout.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/Contacts.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_DEVIL_PORTAL</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>22</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/DevilPortal/devilportal.NIF</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/devilgate.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_WITCH_HUT</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>14.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/witchhut/witchhut2.NIF</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/SacredHarvest.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_DWARVEN_MINE</Type>
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>10</fScale>
@@ -1328,6 +1364,51 @@
 			<NIF>Art/Structures/Improvements/Abbey/AbbeyCitadel.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Improvements/abbey.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_STYGIAN_SHRINE</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>14.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress.nif</NIF>
+			<KFM/>
+			<Button>Art/interface/buttons/improvements/StygianShrine.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_STYGIAN_TEMPLE</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>14.5</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress2.nif</NIF>
+			<KFM/>
+			<Button>Art/interface/buttons/improvements/StygianShrine.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_STYGIAN_CATHEDRAL</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>15.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress3.nif</NIF>
+			<KFM/>
+			<Button>Art/interface/buttons/improvements/StygianShrine.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_STYGIAN_GRAND_SPIRE</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>18.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
+			<KFM/>
+			<Button>Art/interface/buttons/improvements/StygianShrine.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_PENITENTIARY</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Dark Agora/Agora.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Improvements/Penitentiary.dds</Button>
 		</ImprovementArtInfo>
 	</ImprovementArtInfos>
 </Civ4ArtDefines>

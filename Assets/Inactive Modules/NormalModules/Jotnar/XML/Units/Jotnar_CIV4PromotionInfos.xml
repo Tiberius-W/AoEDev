@@ -476,6 +476,7 @@
 			<PrereqTerrains>
 				<PrereqTerrain>TERRAIN_TUNDRA</PrereqTerrain>
 				<PrereqTerrain>TERRAIN_TAIGA</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_GLACIER</PrereqTerrain>
 			</PrereqTerrains>
 			<UnitCombats>
 				<UnitCombat>
@@ -1029,6 +1030,7 @@
 		<PromotionInfo>		<!-- Pirate -->
 			<Type>PROMOTION_PIRATE</Type>
 			<Description>TXT_KEY_PROMOTION_PIRATE</Description>
+			<Help>TXT_KEY_PROMOTION_PIRATE_HELP</Help>
 			<PrereqPromotionANDs>
 				<PrereqPromotionAND>
 					<PromotionType>PROMOTION_REAVER</PromotionType>

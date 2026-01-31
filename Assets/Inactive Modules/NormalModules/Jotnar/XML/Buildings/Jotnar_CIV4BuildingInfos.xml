@@ -50,6 +50,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
 			<iAsset>3</iAsset>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<PerPopBonuses>
@@ -74,6 +76,8 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iConquestProb>0</iConquestProb>
 			<iAsset>3</iAsset>
+			<bAutoBuild>1</bAutoBuild>
+			<bMustMaintain>1</bMustMaintain>
 			<fVisibilityPriority>10</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<PerPopBonuses>

@@ -2,7 +2,7 @@
 	<BonusArtInfos>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_ALE</Type>
-			<fScale>1.0</fScale>
+			<fScale>0.7</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/wheat/wheat.nif</NIF>
 			<KFM/>
@@ -11,18 +11,18 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_FINE_CLOTHES</Type>
-			<fScale>1.0</fScale>
+			<fScale>0.1</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/wheat/wheat.nif</NIF>
+			<NIF>Art/effects/cities_smoking/fx_cities_smoking_01.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/WorldBuilder/Fine Clothes.dds</Button>
 			<FontButtonIndex>63</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_JEWELS</Type>
-			<fScale>1.0</fScale>
+			<fScale>0.1</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/wheat/wheat.nif</NIF>
+			<NIF>Art/effects/cities_smoking/fx_cities_smoking_01.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/WorldBuilder/Jewels.dds</Button>
 			<FontButtonIndex>64</FontButtonIndex>

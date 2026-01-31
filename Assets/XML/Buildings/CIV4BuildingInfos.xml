@@ -4703,7 +4703,10 @@
 			<MovieDefineTag>ART_DEF_MOVIE_MINES_OF_GALDUR</MovieDefineTag>
 			<StateReligion>RELIGION_RUNES_OF_KILMORPH</StateReligion>
 			<PrereqReligion>RELIGION_RUNES_OF_KILMORPH</PrereqReligion>
+			<TechTypes>
+			<PrereqTech>TECH_SMELTING</PrereqTech>
 			<PrereqTech>TECH_ARETE</PrereqTech>
+			</TechTypes>
 			<FreeBonus>BONUS_IRON</FreeBonus>
 			<iNumFreeBonuses>3</iNumFreeBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
@@ -5005,7 +5008,7 @@
 			<Help>TXT_KEY_BUILDING_PACT_OF_THE_NILHORN_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PACT_OF_THE_NILHORN</ArtDefineTag>
-			<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
+			<PrereqTech>TECH_DRAMA</PrereqTech>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>30</iAIWeight>
 			<iCost>500</iCost>
@@ -13297,7 +13300,6 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<iCityCapModifier>4</iCityCapModifier>
-			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNeverCapture>0</bNeverCapture>
 			<bNukeImmune>0</bNukeImmune>
 			<iAIWeight>40</iAIWeight>
@@ -15171,7 +15173,7 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<YieldModifiers>
 				<iYield>0</iYield>
-				<iYield>-20</iYield>
+				<iYield>-5</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
 			<iCost>-1</iCost>

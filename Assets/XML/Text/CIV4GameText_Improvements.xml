@@ -1487,6 +1487,372 @@
 		<German>[TAB]Gebaut, um die Grenzen von lange verschollenen Ländern zu bewachen, ermöglichen diese Türme immer noch einen außergewöhnlichen Ausblick auf das Land.</German>
 		<Italian>[TAB]Built to guard the borders of countries that have long since passed away, the towers still offer a remarkable view of the surrounding lands.</Italian>
 		<Spanish>[TAB]Construidas para vigilar las fronteras de países desaparecidos hace ya tiempo, las torres aún ofrecen una vista destacable de las tierras de alrededor.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_POLAR_NEXUS</Tag>
+		<English>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_POLAR_VORTEX]Polar Vortex[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_PENITENTIARY</Tag>
+		<English>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_PENITENTIARY]Penitentiary[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_PATH_OF_LUGUS</Tag>
+		<English>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</English>
+		<French>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</French>
+		<German>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</German>
+		<Italian>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],</Italian>
+		<Spanish>Build a [LINK=ROUT_PATH_OF_LUGUS]Path of Lugus[\LINK],,</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_AERON_VAULTGATE</Tag>
+		<English>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</English>
+		<French>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</French>
+		<German>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</German>
+		<Italian>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_AERON_VAULTGATE]Hell Gate[\LINK](PERMANENT),</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_THIEVES_DEN</Tag>
+		<English>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_THIEVES_DEN]Aphotic Hideout[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_SACRED_HARVEST</Tag>
+		<English>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_SACRED_HARVEST]Sacred Harvest[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STYGIAN_SHRINE</Tag>
+		<English>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_STYGIAN_SHRINE]Stygian Shrine[\LINK],</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_POLAR_NEXUS</Tag>
+		<English>Polar Nexus</English>
+		<French>Polar Nexus</French>
+		<German>Polar Nexus</German>
+		<Italian>Polar Nexus</Italian>
+		<Spanish>Polar Nexus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_POLAR_NEXUS_PEDIA</Tag>
+		<English>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</English>
+		<French>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</French>
+		<German>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</German>
+		<Italian>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Italian>
+		<Spanish>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+
+The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PENITENTIARY</Tag>
+		<English>Penitentiary</English>
+		<French>Penitentiary</French>
+		<German>Penitentiary</German>
+		<Italian>Penitentiary</Italian>
+		<Spanish>Penitentiary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PENITENTIARY_PEDIA</Tag>
+		<English>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</English>
+		<French>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</French>
+		<German>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</German>
+		<Italian>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</Italian>
+		<Spanish>An Order Penitentiary lowers the crime in the city that controls it.
+imprisoning lawbreakers, redistributing stolen possessions, and giving the penitent a chance to redeem themselves with backbreaking labor - The Penitentiary benefits from the Social Order and Slavery civics.
+
+"Above all else, the law is the law.
+
+This is the chant of penance that the criminals of a Penitentiary will repeat, ad nauseam, for the duration of their stay in this facility.
+
+Order is the promise of peace, of safety, and of salvation - but what about those who are either unwilling or incapable of following such a structured existence?
+They can not simply be disposed of; we are not barbarians!
+
+No, instead we shall have them sent to a place of re-education where they can be shown, through blood and suffering, the glory of our great god!
+
+In time, they will come to thank us."
+- Prior Calendor, two moons before the slave revolt and massacre of Kevar southside districts.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST</Tag>
+		<English>Sacred Harvest</English>
+		<French>Sacred Harvest</French>
+		<German>Sacred Harvest</German>
+		<Italian>Sacred Harvest</Italian>
+		<Spanish>Sacred Harvest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST_PEDIA</Tag>
+		<English>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</English>
+		<French>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</French>
+		<German>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</German>
+		<Italian>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Italian>
+		<Spanish>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+
+There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE</Tag>
+		<English>Hell Gate</English>
+		<French>Hell Gate</French>
+		<German>Hell Gate</German>
+		<Italian>Hell Gate</Italian>
+		<Spanish>Hell Gate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE_PEDIA</Tag>
+		<English>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</English>
+		<French>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</French>
+		<German>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</German>
+		<Italian>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</Italian>
+		<Spanish>
+Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand one of your units remain on the portal to "serve" them. 
+Refuse to do this, and the Demon will take back Aerons' riches, they will drain your city,  and you will have to fight them for the tile back.
+
+Crossroad Demons are patient and immortal; they will keep coming back until you send a unit to the tile, or you make peace with Agares with the Pax Diabolis ritual.
+
+Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+
+A Hell Gate can only be removed by the Sanctify spell.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN</Tag>
+		<English>Aphotic Hideout</English>
+		<French>Aphotic Hideout</French>
+		<German>Aphotic Hideout</German>
+		<Italian>Aphotic Hideout</Italian>
+		<Spanish>Aphotic Hideout</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN_PEDIA</Tag>
+		<English>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</English>
+		<French>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</French>
+		<German>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</German>
+		<Italian>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Italian>
+		<Spanish>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+
+These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PATH_OF_LUGUS</Tag>
+		<English>Path of Lugus</English>
+		<French>Path of Lugus</French>
+		<German>Path of Lugus</German>
+		<Italian>Path of Lugus</Italian>
+		<Spanish>Path of Lugus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PATH_OF_LUGUS_PEDIA</Tag>
+		<English>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</English>
+		<French>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</French>
+		<German>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</German>
+		<Italian>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</Italian>
+		<Spanish>This road boosts the yields of standard improvements connected to it.
+
+The roads of Lugus carry a small bit of his radiance, helping to expose potential brigands or notice lost cargo - ensuring a smoother transportation of trade goods.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE</Tag>
+		<English>Stygian Shrine (I)</English>
+		<French>Stygian Shrine (I)</French>
+		<German>Stygian Shrine (I)</German>
+		<Italian>Stygian Shrine (I)</Italian>
+		<Spanish>Stygian Shrine (I)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE</Tag>
+		<English>Stygian Temple (II)</English>
+		<French>Stygian Temple (II)</French>
+		<German>Stygian Temple (II)</German>
+		<Italian>Stygian Temple (II)</Italian>
+		<Spanish>Stygian Temple (II)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL</Tag>
+		<English>Stygian Cathedral (III)</English>
+		<French>Stygian Cathedral (III)</French>
+		<German>Stygian Cathedral (III)</German>
+		<Italian>Stygian Cathedral (III)</Italian>
+		<Spanish>Stygian Cathedral (III)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE</Tag>
+		<English>Stygian Grand Spire (IV)</English>
+		<French>Stygian Grand Spire (IV)</French>
+		<German>Stygian Grand Spire (IV)</German>
+		<Italian>Stygian Grand Spire (IV)</Italian>
+		<Spanish>Stygian Grand Spire (IV)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_SHRINE_PEDIA</Tag>
+		<English>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</English>
+		<French>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</French>
+		<German>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</German>
+		<Italian>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Italian>
+		<Spanish>
+Sometimes, a cultist will not be content worshiping on land. This marine shrine is the end result of one that has taken to the seas and commanded their drowns to construct a site of worship closer to the mad gods they so revere. It may not seem much currently, but with more drowns and frenzied faithful, it will eventually become something much more grand and eldritch...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_TEMPLE_PEDIA</Tag>
+		<English>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</English>
+		<French>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</French>
+		<German>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</German>
+		<Italian>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Italian>
+		<Spanish>Now a proper site of worship, this Temple serves as a proper pilgrimage site for any faithful who are as like-minded as the cultist that constructed it. The still-sane have become wary with how this artificial island of a temple is a hot spot of bouts of delirium and uncontrollable rapacity, but the ones gripped by wild ecstasy and revelation will see that such a temple will become something grander and more worthy for their submarine overlords, no matter the cost to their lives.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_CATHEDRAL_PEDIA</Tag>
+		<English>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</English>
+		<French>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</French>
+		<German>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</German>
+		<Italian>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Italian>
+		<Spanish>The temple has become a cathedral. Bit by bit, the cultist, their drowned, and their fanatical flock have ad-hoc build a marine cathedral that's the envy of anything built on land. Once a couple of small rooms, the dreaming chambers have now become a massive complex where bleeding god wine, jeteye, and other fiendish deliriants are abused to get its dreamers closer to their overlords, their proximity to the sea making it even easier to establish such communion. And with its faithful maddened with enough avarice to dredge out massive piles of valuables like pearls and gemstones, the head cultist can boast a profit that draws the attention of even the Stewards of Inequity.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_STYGIAN_GRAND_SPIRE_PEDIA</Tag>
+		<English>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</English>
+		<French>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</French>
+		<German>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</German>
+		<Italian>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Italian>
+		<Spanish>After enough time, the construction work and the glut of rituals this cathedral was subjected to have given it something only seen in the most magically-charged places on Erebus: a rudimentary, yet foul, consciousness. Now a Speaker of unholy power and influence, the head of this horrific place of worship has become one with this eldritch consciousness, and is exerting an indoctrinating influence that can erode the will of even the most stalwart of Paladins. Even the ever-dreaded Doomgivers of the Scions find themselves helpless facing this monument of mad revelation, for the Overlords will not be denied what they deem rightfully theirs, and neither their now-unrecognizable faithful, ever hungry for more riches and converts...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_WARNING_POST</Tag>

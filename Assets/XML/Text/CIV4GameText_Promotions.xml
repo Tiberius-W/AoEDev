@@ -2934,6 +2934,22 @@
 		<Spanish>Sheut Stone</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DRESSEDTOKILL</Tag>
+		<English>Fine Clothes - Dressed to Kill</English>
+		<French>Fine Clothes - Dressed to Kill</French>
+		<German>Fine Clothes - Dressed to Kill</German>
+		<Italian>Fine Clothes - Dressed to Kill</Italian>
+		<Spanish>Fine Clothes - Dressed to Kill</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DAZZLING_GLARE</Tag>
+		<English>Jewelry - Dazzling Glare</English>
+		<French>Fine Clothes - Dazzling Glare</French>
+		<German>Fine Clothes - Dazzling Glare</German>
+		<Italian>Fine Clothes - Dazzling Glare</Italian>
+		<Spanish>Fine Clothes - Dazzling Glare</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SHIELD_OF_FAITH</Tag>
 		<English>Shield of Faith</English>
 		<French>Bouclier de la Foi</French>
@@ -4069,6 +4085,102 @@
 		<German>Perceptive Summon</German>
 		<Italian>Perceptive Summon</Italian>
 		<Spanish>Perceptive Summon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SLUMBERING_NAVIGATOR</Tag>
+		<English>Slumbering Navigator</English>
+		<French>Slumbering Navigator</French>
+		<German>Slumbering Navigator</German>
+		<Italian>Slumbering Navigator</Italian>
+		<Spanish>Slumbering Navigator</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GUARDIANSEASE</Tag>
+		<English>Guardians Ease</English>
+		<French>Guardians Ease</French>
+		<German>Guardians Ease</German>
+		<Italian>Guardians Ease</Italian>
+		<Spanish>Guardians Ease</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DROWNED_VS</Tag>
+		<English>Drowned Commander</English>
+		<French>Drowned Commander</French>
+		<German>Drowned Commander</German>
+		<Italian>Drowned Commander</Italian>
+		<Spanish>Drowned Commander</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PRICE_OF_POWER</Tag>
+		<English>The Price of Power</English>
+		<French>The Price of Power</French>
+		<German>The Price of Power</German>
+		<Italian>The Price of Power</Italian>
+		<Spanish>The Price of Power</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ESUS_CONTACTS</Tag>
+		<English>Criminal Contacts</English>
+		<French>Criminal Contacts</French>
+		<German>Criminal Contacts</German>
+		<Italian>Criminal Contacts</Italian>
+		<Spanish>Criminal Contacts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ASHEN_SYMBOLS</Tag>
+		<English>Dark Symbol Carver</English>
+		<French>Dark Symbol Carver</French>
+		<German>Dark Symbol Carver</German>
+		<Italian>Dark Symbol Carver</Italian>
+		<Spanish>Dark Symbol Carver</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_LEAVES_GLADE</Tag>
+		<English>Glade Tender</English>
+		<French>Glade Tender</French>
+		<German>Glade Tender</German>
+		<Italian>Glade Tender</Italian>
+		<Spanish>Glade Tender</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_GUILDS_OF_KILMORPH</Tag>
+		<English>Guildsman of Kilmorph</English>
+		<French>Guildsman of Kilmorph</French>
+		<German>Guildsman of Kilmorph</German>
+		<Italian>Guildsman of Kilmorph</Italian>
+		<Spanish>Guildsman of Kilmorph</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_EMPYREAN_PATH</Tag>
+		<English>Hallowed Pathfinder</English>
+		<French>Hallowed Pathfinder</French>
+		<German>Hallowed Pathfinder</German>
+		<Italian>Hallowed Pathfinder</Italian>
+		<Spanish>Hallowed Pathfinder</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_OVERLORDS_THRALL</Tag>
+		<English>Enthralled Fanatic</English>
+		<French>Enthralled Fanatic</French>
+		<German>Enthralled Fanatic</German>
+		<Italian>Enthralled Fanatic</Italian>
+		<Spanish>Enthralled Fanatic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ORDER_DEPUTY_BAILIFF</Tag>
+		<English>Deputy Bailiff</English>
+		<French>Deputy Bailiff</French>
+		<German>Deputy Bailiff</German>
+		<Italian>Deputy Bailiff</Italian>
+		<Spanish>Deputy Bailiff</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_WHITE_STORMBRINGER</Tag>
+		<English>Stormbringer</English>
+		<French>Stormbringer</French>
+		<German>Stormbringer</German>
+		<Italian>Stormbringer</Italian>
+		<Spanish>Stormbringer</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MARAUTULE_POSSESSION</Tag>

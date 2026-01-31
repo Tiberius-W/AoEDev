@@ -5,7 +5,7 @@
 		<RouteInfo>
 			<Type>ROUTE_ROMANROAD</Type>
 			<Description>TXT_KEY_ROUTE_ROMAN_ROAD</Description>
-			<iValue>4</iValue>
+			<iValue>5</iValue>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMovement>10</iMovement>
