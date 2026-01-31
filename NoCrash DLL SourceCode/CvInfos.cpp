@@ -21335,6 +21335,7 @@ m_iEthicalAlignmentShiftTowardsNeutral(-1),
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 //Crime
+m_iPrereqPopulation(0),
 m_iPrereqCrime(0),
 m_iMinCrime(0),
 m_bAutoBuild(false),
@@ -22342,6 +22343,7 @@ int CvBuildingInfo::getPrereqBroadEthicalAlignment() const			{return m_iPrereqBr
 /*************************************************************************************************/
 //Crime
 
+int CvBuildingInfo::getPrereqPopulation() const { return m_iPrereqPopulation; }
 int CvBuildingInfo::getPrereqCrime() const { return m_iPrereqCrime; }
 int CvBuildingInfo::getMinCrime() const { return m_iMinCrime; }
 bool CvBuildingInfo::isAutoBuild() const { return m_bAutoBuild; }
@@ -23365,6 +23367,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 	//Crime
+	stream->Read(&m_iPrereqPopulation);
 	stream->Read(&m_iPrereqCrime);
 	stream->Read(&m_iMinCrime);
 	stream->Read(&m_bAutoBuild);
@@ -24051,6 +24054,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 	//Crime
+	stream->Write(m_iPrereqPopulation);
 	stream->Write(m_iPrereqCrime);
 	stream->Write(m_iMinCrime);
 	stream->Write(m_bAutoBuild);
@@ -24636,6 +24640,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 //Crime
+	pXML->GetChildXmlValByName(&m_iPrereqPopulation, "iPrereqPopulation");
 	pXML->GetChildXmlValByName(&m_iPrereqCrime, "iPrereqCrime");
 	pXML->GetChildXmlValByName(&m_iMinCrime, "iMinCrime");
 	pXML->GetChildXmlValByName(&m_bAutoBuild, "bAutoBuild");
@@ -25522,6 +25527,7 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 	//Crime
+	if (getPrereqPopulation() == 0)					m_iPrereqPopulation = pClassInfo->getPrereqPopulation();
 
 	if (getPrereqCrime() == 0)					m_iPrereqCrime = pClassInfo->getPrereqCrime();
 	if (getMinCrime() == 0)					m_iMinCrime = pClassInfo->getMinCrime();
@@ -31097,26 +31103,26 @@ CvImprovementInfo::CvImprovementInfo() :
 	/*************************************************************************************************/
 	/**	Mountain Mod by NeverMind 		imported by Ahwaric	19.09.09		**/
 	/*************************************************************************************************/
-	m_bPeakMakesValid(false),
-	/*************************************************************************************************/
-	/**	Mountain Mod	END									**/
-	/*************************************************************************************************/
-	m_bFreshWaterMakesValid(false),
-	m_bRiverSideMakesValid(false),
-	m_bNoFreshWater(false),
-	m_bRequiresFlatlands(false),
-	m_bRequiresRiverSide(false),
-	m_bRequiresIrrigation(false),
-	m_bCarriesIrrigation(false),
-	m_bRequiresFeature(false),
-	m_bWater(false),
-	m_bGoody(false),
-	m_bPermanent(false),
-	m_bOutsideBorders(false),
-	m_iLairTier(0),
-	m_iMaxAirlift(0),
-	m_iMaxOutgoingAirlift(0),
-	/*************************************************************************************************/
+m_bPeakMakesValid(false),
+/*************************************************************************************************/
+/**	Mountain Mod	END									**/
+/*************************************************************************************************/
+m_bFreshWaterMakesValid(false),
+m_bRiverSideMakesValid(false),
+m_bNoFreshWater(false),
+m_bRequiresFlatlands(false),
+m_bRequiresRiverSide(false),
+m_bRequiresIrrigation(false),
+m_bCarriesIrrigation(false),
+m_bRequiresFeature(false),
+m_bWater(false),
+m_bGoody(false),
+m_bPermanent(false),
+m_bOutsideBorders(false),
+m_iLairTier(0),
+m_iMaxAirlift(0),
+m_iMaxOutgoingAirlift(0),
+/*************************************************************************************************/
 /**	Improvements Mods by Jeckel		imported by Ahwaric	20.09.09 | Valkrionn	09.24.09		**/
 /*************************************************************************************************/
 m_iMinimumDistance(0),
@@ -31196,6 +31202,7 @@ m_iBonusConvert(NO_BONUS),
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 m_iFreeSpecialist(NO_SPECIALIST),
+m_iWorkingCityCrime(0),
 /*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
@@ -31578,6 +31585,10 @@ int CvImprovementInfo::getBonusConvert() const
 int CvImprovementInfo::getFreeSpecialist() const
 {
 	return m_iFreeSpecialist;
+}
+int CvImprovementInfo::getWorkingCityCrime() const
+{
+	return m_iWorkingCityCrime;
 }
 /*************************************************************************************************/
 /**	Statesmen								END													**/
@@ -32020,7 +32031,8 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 	stream->Read(&m_iFreeSpecialist);
-/*************************************************************************************************/
+	stream->Read(&m_iWorkingCityCrime);
+	/*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
 	stream->Read(&m_iFeatureUpgrade);
@@ -32267,7 +32279,8 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 	stream->Write(m_iFreeSpecialist);
-/*************************************************************************************************/
+	stream->Write(m_iWorkingCityCrime);
+	/*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
 	stream->Write(m_iFeatureUpgrade);
@@ -32634,6 +32647,7 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(szTextVal, "FreeSpecialist");
 	m_iFreeSpecialist = GC.getInfoTypeForString(szTextVal);
+	pXML->GetChildXmlValByName(&m_iWorkingCityCrime, "iWorkingCityCrime");
 /*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
@@ -32933,7 +32947,8 @@ void CvImprovementInfo::copyNonDefaults(CvImprovementInfo* pClassInfo, CvXMLLoad
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 	if (getFreeSpecialist()									== NO_SPECIALIST)	m_iFreeSpecialist							= pClassInfo->getFreeSpecialist();
-/*************************************************************************************************/
+	if (getWorkingCityCrime() == 0)	m_iWorkingCityCrime = pClassInfo->getWorkingCityCrime();
+	/*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
 	if (getFeatureUpgrade()									== NO_FEATURE)		m_iFeatureUpgrade							= pClassInfo->getFeatureUpgrade();
@@ -33233,6 +33248,7 @@ m_bPeaks(false),
 /*************************************************************************************************/
 m_bFlatlands(false),
 m_bNoRiverSide(false),
+m_bDiscoverable(false),
 m_bNormalize(false),
 m_piYieldChange(NULL),
 m_piYieldModifier(NULL),
@@ -33444,6 +33460,10 @@ bool CvBonusInfo::isNoRiverSide() const
 	return m_bNoRiverSide;
 }
 
+bool CvBonusInfo::isDiscoverable() const
+{
+	return m_bDiscoverable;
+}
 bool CvBonusInfo::isNormalize() const
 {
 	return m_bNormalize;
@@ -33660,6 +33680,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 /*************************************************************************************************/
 	stream->Read(&m_bFlatlands);
 	stream->Read(&m_bNoRiverSide);
+	stream->Read(&m_bDiscoverable);
 	stream->Read(&m_bNormalize);
 
 	stream->ReadString(m_szArtDefineTag);
@@ -33752,6 +33773,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 /*************************************************************************************************/
 	stream->Write(m_bFlatlands);
 	stream->Write(m_bNoRiverSide);
+	stream->Write(m_bDiscoverable);
 	stream->Write(m_bNormalize);
 
 	stream->WriteString(m_szArtDefineTag);
@@ -33873,6 +33895,7 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(&m_bFlatlands, "bFlatlands");
 	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bNoRiverSide");
+	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bDiscoverable");
 	pXML->GetChildXmlValByName(&m_bNormalize, "bNormalize");
 
 	pXML->SetVariableListTagPair(&m_pbTerrain, "TerrainBooleans", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
@@ -33949,6 +33972,7 @@ void CvBonusInfo::copyNonDefaults(CvBonusInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (isPeaks()					== false)			m_bPeaks					= pClassInfo->isPeaks();
 	if (isFlatlands()				== false)			m_bFlatlands				= pClassInfo->isFlatlands();
 	if (isNoRiverSide()				== false)			m_bNoRiverSide				= pClassInfo->isNoRiverSide();
+	if (isDiscoverable() == false)			m_bDiscoverable = pClassInfo->isDiscoverable();
 	if (isNormalize()				== false)			m_bNormalize				= pClassInfo->isNormalize();
 	if (isModifierPerBonus()		== false)			m_bModifierPerBonus			= pClassInfo->isModifierPerBonus();
 	if (getBadAttitude()			== 0)				m_iBadAttitude				= pClassInfo->getBadAttitude();

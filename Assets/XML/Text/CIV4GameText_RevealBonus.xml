@@ -1612,6 +1612,14 @@
 		<Spanish>%d1 from Specialists</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CRIME_IMPROVEMENT</Tag>
+		<English>%d1 from Worked Improvements</English>
+		<French>%d1 from Worked Improvements</French>
+		<German>%d1 from Worked Improvements</German>
+		<Italian>%d1 from Worked Improvements</Italian>
+		<Spanish>%d1 from Worked Improvements</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CRIME_CRACKDOWN</Tag>
 		<English>%d1 from Production</English>
 		<French>%d1 à cause de la production</French>
@@ -11660,12 +11668,12 @@ Their lives flashing before their eyes, the scouts are shocked and relieved when
 		<Spanish>Casting this spell may cause you to declare war on another civilization. Are you sure you want to cast %s1_ActionName?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_BONUS_DISCOVERABLE</Tag>
+		<English>[ICON_BULLET]Can Be Discovered by an Improvement regardless of Terrain Prereqs.</English>
+		<French>[ICON_BULLET]Can Be Discovered by an Improvement regardless of Terrain Prereqs.</French>
+		<German>[ICON_BULLET]Can Be Discovered by an Improvement regardless of Terrain Prereqs.</German>
+		<Italian>[ICON_BULLET]Can Be Discovered by an Improvement regardless of Terrain Prereqs.</Italian>
+		<Spanish>[ICON_BULLET]Can Be Discovered by an Improvement regardless of Terrain Prereqs.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

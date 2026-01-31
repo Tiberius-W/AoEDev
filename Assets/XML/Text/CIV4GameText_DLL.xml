@@ -2878,6 +2878,14 @@
 		<Spanish>[ICON_BULLET]Provides a free [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1[\LINK][COLOR_REVERT] to the nearest city</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_CITY_CRIME_PLOT</Tag>
+		<English>[ICON_BULLET]Provides %d1 Crime to the nearest city when Worked</English>
+		<French>[ICON_BULLET]Provides %d1 Crime to the nearest city when Worked</French>
+		<German>[ICON_BULLET]Provides %d1 Crime to the nearest city when Worked</German>
+		<Italian>[ICON_BULLET]Provides %d1 Crime to the nearest city when Worked</Italian>
+		<Spanish>[ICON_BULLET]Provides %d1 Crime to the nearest city when Worked</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_CIV</Tag>
 		<English>[ICON_BULLET]Provides a free [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1[\LINK][COLOR_REVERT] to the nearest [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2[\LINK][COLOR_REVERT] city</English>
 		<French>[ICON_BULLET]Provides a free [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1[\LINK][COLOR_REVERT] to the nearest [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2[\LINK][COLOR_REVERT] city</French>

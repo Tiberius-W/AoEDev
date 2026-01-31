@@ -467,7 +467,7 @@ def onMoveMaelstrom2(pCaster, pPlot):
 						iBestValue = iValue
 						pBestPlot = pTargetPlot
 			if pBestPlot != -1:
-				pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+				pCaster.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True, False)
 				pCaster.setDamage(25, PlayerTypes.NO_PLAYER)
 				CyInterface().addMessage(pCaster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MAELSTROM_MOVE",()),'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Improvements/Maelstrom.dds',ColorTypes(7),pCaster.getX(),pCaster.getY(),True,True)
 

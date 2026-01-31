@@ -7237,7 +7237,7 @@ int CvCityAI::AI_getGoodTileCount()
 					}
 				}
 
-				if ( ((aiFinalYields[YIELD_FOOD]*10) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*4)) > 21 )
+				if ( ((aiFinalYields[YIELD_FOOD]*4) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*10)) > 21 || (GET_PLAYER(getOwner()).isIgnoreFood() && ((aiFinalYields[YIELD_PRODUCTION] * 6) + (aiFinalYields[YIELD_COMMERCE] * 10) > 17)))
 				{
 					iGoodTileCount++;
 				}
@@ -7516,7 +7516,7 @@ void CvCityAI::AI_getYieldMultipliers( int &iFoodMultiplier, int &iProductionMul
 					}
 				}
 
-				if (pLoopPlot->isBeingWorked() || (((aiFinalYields[YIELD_FOOD]*10) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*4)) > 21))
+				if (pLoopPlot->isBeingWorked() || (((aiFinalYields[YIELD_FOOD]*4) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*10)) > 21 || (GET_PLAYER(getOwner()).isIgnoreFood() && ((aiFinalYields[YIELD_PRODUCTION] * 6) + (aiFinalYields[YIELD_COMMERCE] * 10) > 17))))
 				{
 					iGoodTileCount++;
 					if (pLoopPlot->isBeingWorked())
@@ -8388,7 +8388,7 @@ void CvCityAI::AI_updateBestBuild()
 /**		Need to account for Fallow and also StW...  Variable to replace the 10 value maybe?		**/
 /*************************************************************************************************/
 
-				if (pLoopPlot->isBeingWorked() || (((aiFinalYields[YIELD_FOOD]*10) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*4)) > 21))
+				if (pLoopPlot->isBeingWorked() || (((aiFinalYields[YIELD_FOOD]*4) + (aiFinalYields[YIELD_PRODUCTION]*6) + (aiFinalYields[YIELD_COMMERCE]*10)) > 21) ||(GET_PLAYER(getOwner()).isIgnoreFood() && ((aiFinalYields[YIELD_PRODUCTION] * 6) + (aiFinalYields[YIELD_COMMERCE] * 10)>17)) )
 				{
 					iGoodTileCount++;
 					if (pLoopPlot->isBeingWorked())
@@ -11781,10 +11781,13 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 		}
 	}
 
-	for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+	for (iI = 0; iI < GC.getNumImprovementClassInfos(); iI++)
 	{
-		eImprovement = ((ImprovementTypes)iI);
-
+		eImprovement = GET_PLAYER(getOwner()).getPlayerImprovement(((ImprovementClassTypes)iI));
+		if (eImprovement == NO_IMPROVEMENT)
+		{
+			continue;
+		}
 		iBestTempBuildValue = 0;
 		eBestTempBuild = NO_BUILD;
 
@@ -12235,6 +12238,10 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				if (GC.getImprovementInfo(eFinalImprovement).getFreeSpecialist() != NO_SPECIALIST)
 				{
 					iValue += 2000;
+				}
+				if (GC.getImprovementInfo(eFinalImprovement).getWorkingCityCrime() != 0)
+				{
+					iValue -= 100* GC.getImprovementInfo(eFinalImprovement).getWorkingCityCrime();
 				}
 /*************************************************************************************************/
 /**	Statesmen								END													**/

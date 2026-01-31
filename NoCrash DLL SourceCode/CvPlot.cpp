@@ -2729,6 +2729,10 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 	{
 		return false;
 	}
+	if (GC.getBonusInfo(eBonus).isDiscoverable())
+	{
+		return true;
+	}
 
 	if (getFeatureType() != NO_FEATURE)
 	{

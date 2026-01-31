@@ -1301,7 +1301,8 @@ void CyInfoPythonInterface1()
 		/**	Lawful-Chaotic Alignments					END												**/
 		/*************************************************************************************************/
 		// Crime
-		.def("getPrereqCrime", &CvBuildingInfo::getPrereqCrime, "int ()")
+			.def("getPrereqPopulation", &CvBuildingInfo::getPrereqPopulation, "int ()")
+			.def("getPrereqCrime", &CvBuildingInfo::getPrereqCrime, "int ()")
 		.def("getMinCrime", &CvBuildingInfo::getMinCrime, "int ()")
 		.def("isAutoBuild", &CvBuildingInfo::isAutoBuild, "bool ()")
 		.def("isMustMaintain", &CvBuildingInfo::isMustMaintain, "bool ()")

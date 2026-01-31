@@ -1455,7 +1455,7 @@ bool CvUnitAI::AI_bestCityBuild(CvCity* pCity, CvPlot** ppBestPlot, BuildTypes* 
 
 								if (eBuild != NO_BUILD)
 								{
-									if (0 == iPass)
+									if (0 == iPass && canBuild(pLoopPlot, eBuild))
 									{
 										iBestValue = iValue;
 										pBestPlot = pLoopPlot;

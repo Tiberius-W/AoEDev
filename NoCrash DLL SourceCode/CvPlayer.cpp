@@ -26488,7 +26488,7 @@ int CvPlayer::getExtraGrowthThreshold() const
 }
 void CvPlayer::changeExtraGrowthThreshold(int iChange)
 {
-	m_iExtraGrowthThreshold + iChange;
+	m_iExtraGrowthThreshold=m_iExtraGrowthThreshold + iChange;
 }
 int CvPlayer::getACGrowthThreshold() const
 {
@@ -26496,7 +26496,7 @@ int CvPlayer::getACGrowthThreshold() const
 }
 void CvPlayer::changeACGrowthThreshold(int iChange)
 {
-	m_iACGrowthThreshold + iChange;
+	m_iACGrowthThreshold = m_iACGrowthThreshold + iChange;
 }
 
 int CvPlayer::getGrowthThreshold(int iPopulation) const

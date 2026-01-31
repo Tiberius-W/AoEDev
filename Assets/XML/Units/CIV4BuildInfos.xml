@@ -1596,7 +1596,7 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Worldbuilder/Earth.dds</Button>
 		</BuildInfo>
-		<BuildInfo><!--30-->
+		<BuildInfo><!-- Enchantment Mana 30-->
 			<Type>BUILD_MANA_ENCHANTMENT</Type>
 			<Description>TXT_KEY_BUILD_MANA_ENCHANTMENT</Description>
 			<Help/>
@@ -2186,7 +2186,7 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/Worldbuilder/Nature.dds</Button>
 		</BuildInfo>
-		<BuildInfo><!--40-->
+		<BuildInfo><!-- Spirit Mana 40-->
 			<Type>BUILD_MANA_SPIRIT</Type>
 			<Description>TXT_KEY_BUILD_MANA_SPIRIT</Description>
 			<Help/>
@@ -2691,7 +2691,7 @@
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>, ,Art/Erebus_Atlas.dds,5,4</Button>
 		</BuildInfo>
-		<BuildInfo> <!-- Corrupted Pasture -->
+		<BuildInfo> <!-- Corrupted Pasture 51 -->
 			<Type>BUILD_PASTURE_CORRUPTED</Type>
 			<Description>TXT_KEY_BUILD_PASTURE_CORRUPTED</Description>
 			<Help/>

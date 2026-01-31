@@ -1656,6 +1656,22 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_WOLF_RIDER_LUKOS_CLAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_FORT_COMMANDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_COMMANDER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_GOBLIN_COMMANDER</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>
 		<UnitArtStyleTypeInfo>	<!--Lizard-Cualli-->

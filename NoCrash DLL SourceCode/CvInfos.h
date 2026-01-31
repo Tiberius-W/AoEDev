@@ -4533,6 +4533,7 @@ public:
 
 
 	//Crime
+	int getPrereqPopulation() const;
 	int getPrereqCrime() const;
 	int getMinCrime() const;
 	bool isAutoBuild() const;
@@ -4991,6 +4992,7 @@ protected:
 /**	Lawful-Chaotic Alignments					END												**/
 /*************************************************************************************************/
 	//Crime
+	int m_iPrereqPopulation;
 	int m_iPrereqCrime;
 	int m_iMinCrime;
 	bool m_bAutoBuild;
@@ -6813,7 +6815,8 @@ public:
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 	int getFreeSpecialist() const;					// Exposed to Python
-/*************************************************************************************************/
+	int getWorkingCityCrime() const;					// Exposed to Python
+	/*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
 	int getFeatureUpgrade() const;
@@ -6935,6 +6938,7 @@ protected:
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
 	int m_iFreeSpecialist;
+	int m_iWorkingCityCrime;
 /*************************************************************************************************/
 /**	Statesmen								END													**/
 /*************************************************************************************************/
@@ -7120,6 +7124,7 @@ public:
 /*************************************************************************************************/
 	bool isFlatlands() const;						// Exposed to Python
 	bool isNoRiverSide() const;					// Exposed to Python
+	bool isDiscoverable() const;					// Exposed to Python
 	bool isNormalize() const;						// Exposed to Python
 
 	const TCHAR* getArtDefineTag() const;
@@ -7226,6 +7231,7 @@ protected:
 /*************************************************************************************************/
 	bool m_bFlatlands;
 	bool m_bNoRiverSide;
+	bool m_bDiscoverable;
 	bool m_bNormalize;
 
 	CvString m_szArtDefineTag;

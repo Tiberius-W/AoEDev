@@ -53,6 +53,7 @@ public:
 	void verifyWorkingPlots();
 	void clearWorkingOverride(int iIndex);														// Exposed to Python
 	int countNumImprovedPlots(ImprovementTypes eImprovement = NO_IMPROVEMENT, bool bPotential = false) const;																			// Exposed to Python
+	int countNumWorkedImprovedPlots(ImprovementTypes eImprovement = NO_IMPROVEMENT, bool bPotential = false) const;																			// Exposed to Python
 	int countNumWaterPlots() const;																					// Exposed to Python
 	int countNumRiverPlots() const;																					// Exposed to Python
 
@@ -1251,6 +1252,11 @@ public:
 	int getPerCrimeEffectHealth()const;
 	void changePerCrimeEffectHappy(int iChange);
 	void changePerCrimeEffectHealth(int iChange);
+	
+	int getImprovementCrime()const;
+	void changeImprovementCrime(int iChange);
+
+	
 	//PerPopEffect
 	float getPerPopCulture() const;
 	float getPerPopCulture(PlayerTypes ePlayer) const;
@@ -1746,6 +1752,8 @@ protected:
 	int m_iNumCrimeEffects;
 	int m_iPerCrimeEffectHappy;
 	int m_iPerCrimeEffectHealth;
+
+	int m_iImprovementCrime;
 
 
 	int m_iPotency;

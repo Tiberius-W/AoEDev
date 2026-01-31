@@ -15297,7 +15297,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FR_3</Text>
+						<Text>AI_DIPLO_FR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Charadon Annoyed Furious-->
@@ -15973,7 +15973,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FR_3</Text>
+						<Text>AI_DIPLO_FR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Arturus Annoyed Furious-->
@@ -17089,7 +17089,7 @@
 					<DiplomacyPowers>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_DEAL_FR_3</Text>
+						<Text>AI_DIPLO_FR_NO_DEAL_3</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>	<!--Sandalphon Annoyed Furious-->

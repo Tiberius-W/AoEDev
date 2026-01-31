@@ -158,7 +158,7 @@ def spellEscapeKeeper(pCaster,pSource):
 		if (pCity.getNumBuilding(git('BUILDING_SHRINE_KEEPERS1')) > 0 or pCity.getNumBuilding(git('BUILDING_SHRINE_KEEPERS2')) > 0):
 			pShrine		= pCity
 	if pSource == "Spell" and pShrine != -1:							# Can use it for both spell
-		pCaster.setXY(pShrine.getX(), pShrine.getY(), False, True, True)
+		pCaster.setXY(pShrine.getX(), pShrine.getY(), False, True, True, False)
 		return
 	else:																# And respawn
 		return pShrine
@@ -282,7 +282,7 @@ def ForceWishForAI(pKeeper):
 			for pUnit in PyPlayer(iPlayer).getUnitList():				# If AI has at least 2 keeper unit and one of them at least level 5
 				if pUnit.isHasPromotion(bKeeperEffect) and pUnit.getID() != pKeeper.getID:
 					if pUnit.getLevel() > 4 or pKeeper.getLevel() > 4:
-						pUnit.setXY(pShrine2.getX(), pShrine2.getY(), False, True, True)	# Teleport both of them
-						pKeeper.setXY(pShrine2.getX(), pShrine2.getY(), False, True, True)
+						pUnit.setXY(pShrine2.getX(), pShrine2.getY(), False, True, True, False)	# Teleport both of them
+						pKeeper.setXY(pShrine2.getX(), pShrine2.getY(), False, True, True, False)
 						return
 	return

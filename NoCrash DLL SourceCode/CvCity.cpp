@@ -910,6 +910,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iPerCrimeEffectHappy = 0;
 	m_iPerCrimeEffectHealth = 0;
 
+	m_iImprovementCrime = 0;
+
+
 	m_iPotency = 0;
 	m_iShielding = 0;
 
@@ -1778,6 +1781,24 @@ void CvCity::doTurn()
 /**																								**/
 /**						Allows improvements to grant specific specialists						**/
 /*************************************************************************************************/
+	int improvementcrime = 0;
+	for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+	{
+		if (GC.getImprovementInfo((ImprovementTypes)iI).getWorkingCityCrime() !=0)
+		{
+			int iNumImprovement = countNumWorkedImprovedPlots((ImprovementTypes)iI);
+			if (iNumImprovement >= 1)
+			{
+				improvementcrime += iNumImprovement* GC.getImprovementInfo((ImprovementTypes)iI).getWorkingCityCrime();
+			}
+		}
+	}
+	if (getImprovementCrime() != improvementcrime)
+	{
+		int improvementcrime = (improvementcrime - getImprovementCrime());
+		changeImprovementCrime(improvementcrime);
+	}
+
 	for (int iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 	{
 		int iNumFreeSpecialists = 0;
@@ -2362,6 +2383,52 @@ int CvCity::countNumImprovedPlots(ImprovementTypes eImprovement, bool bPotential
 /*************************************************************************************************/
 /**	New Tag Defs							END													**/
 /*************************************************************************************************/
+					{
+						++iCount;
+					}
+				}
+				else if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
+				{
+					iCount++;
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
+
+int CvCity::countNumWorkedImprovedPlots(ImprovementTypes eImprovement, bool bPotential) const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+
+	iCount = 0;
+
+	//>>>>Unofficial Bug Fix: Modified by Denev 2010/04/04
+	//	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	for (iI = 0; iI < getNumCityPlots(); iI++)
+		//<<<<Unofficial Bug Fix: End Modify
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot != NULL && pLoopPlot->isBeingWorked())
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (eImprovement != NO_IMPROVEMENT)
+				{
+					if (pLoopPlot->getImprovementType() == eImprovement ||
+						/*************************************************************************************************/
+						/**	CivPlotMods								04/02/09								Jean Elcard	**/
+						/**																								**/
+						/**		Use the player version of this method to account for player-specific natural yields.	**/
+						/*************************************************************************************************/
+						(bPotential && pLoopPlot->canHaveImprovement(eImprovement, getOwner())))
+						/*************************************************************************************************/
+						/**	New Tag Defs							END													**/
+						/*************************************************************************************************/
 					{
 						++iCount;
 					}
@@ -3386,6 +3453,13 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	if (GC.getBuildingInfo(eBuilding).getPrereqCrime() != 0)
 	{
 		if (this->getCrime() < GC.getBuildingInfo(eBuilding).getPrereqCrime())
+		{
+			return false;
+		}
+	}
+	if (GC.getBuildingInfo(eBuilding).getPrereqPopulation() != 0)
+	{
+		if (this->getPopulation() < GC.getBuildingInfo(eBuilding).getPrereqPopulation())
 		{
 			return false;
 		}
@@ -9107,6 +9181,14 @@ int CvCity::getPerCrimeEffectHappy() const
 int CvCity::getPerCrimeEffectHealth() const
 {
 	return m_iPerCrimeEffectHealth;
+}
+void CvCity::changeImprovementCrime(int fChange)
+{
+	m_iImprovementCrime = m_iImprovementCrime + fChange;
+}
+int CvCity::getImprovementCrime() const
+{
+	return m_iImprovementCrime;
 }
 
 int CvCity::getPotency() const
@@ -16873,6 +16955,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iPerCrimeEffectHappy);
 	pStream->Read(&m_iPerCrimeEffectHealth);
 
+	pStream->Read(&m_iImprovementCrime);
+
 	pStream->Read(&m_iMutateChance);
 	pStream->Read(&m_iPlotRadius);
 	pStream->Read(&m_iResistMagic);
@@ -17309,6 +17393,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNumCrimeEffects);
 	pStream->Write(m_iPerCrimeEffectHappy);
 	pStream->Write(m_iPerCrimeEffectHealth);
+
+	pStream->Write(m_iImprovementCrime);
 
 	pStream->Write(m_iMutateChance);
 	pStream->Write(m_iPlotRadius);
@@ -19640,6 +19726,7 @@ int CvCity::getCrimePerTurn() const
 	iCrimePerTurn += (badHealth() - goodHealth()) * (0 + getExtraCrimePerUnhealth());
 	iCrimePerTurn += getSpecialistCrime();
 	iCrimePerTurn += GET_PLAYER(this->getOwner()).getCrimePerTurn();
+	iCrimePerTurn += getImprovementCrime();
 	if (getNoMilitaryPercentAnger() == 0)
 	{
 		iCrimePerTurn -= 4;

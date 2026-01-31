@@ -4040,11 +4040,11 @@ class CvEventManager:
 				if (not bHasDefaultMount):
 					if pPlayer.hasBonus(getInfoType("BONUS_HORSE")):
 						pUnit.setHasPromotion(getInfoType("PROMOTION_HORSE"),True)
-					elif pPlayer.hasBonus(getInfoType("BONUS_NIGHTMARE")):
+					if pPlayer.hasBonus(getInfoType("BONUS_NIGHTMARE")):
 						pUnit.setHasPromotion(getInfoType("PROMOTION_NIGHTMARE"),True)
-					elif pPlayer.hasBonus(getInfoType("BONUS_HYAPON")):
+					if pPlayer.hasBonus(getInfoType("BONUS_HYAPON")):
 						pUnit.setHasPromotion(getInfoType("PROMOTION_HYAPON"),True)
-					elif pPlayer.hasBonus(getInfoType("BONUS_CAMEL")) and pPlayer.getCivilizationType()==getInfoType("CIVILIZATION_MALAKIM"):
+					if pPlayer.hasBonus(getInfoType("BONUS_CAMEL")) and pPlayer.getCivilizationType()==getInfoType("CIVILIZATION_MALAKIM"):
 						pUnit.setHasPromotion(getInfoType("PROMOTION_CAMEL"),True)
 
 		if iUnitType == getInfoType('UNIT_CARNIVEAN'):

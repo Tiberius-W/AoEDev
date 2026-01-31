@@ -78,7 +78,7 @@ def onBeginGameTurn(self, argsList):
 						for i in xrange(pAdjPlot.getNumUnits()):
 							pUnit = pAdjPlot.getUnit(i)
 							if pUnit.getUnitType() == iBadb:
-								pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+								pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True, False)
 								pUnit.setImmobileTimer(2)
 								if pUnit.isLeashed():
 									pUnit.setLeashX(pBestPlot.getX())
@@ -158,7 +158,7 @@ def onBeginGameTurn(self, argsList):
 						for i in xrange(pAdjPlot.getNumUnits()):
 							pUnit = pAdjPlot.getUnit(i)
 							if pUnit.getUnitType() == iCarnivean:
-								pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True)
+								pUnit.setXY(pBestPlot.getX(), pBestPlot.getY(), False, True, True, False)
 								pUnit.setSpawnPlot(pBestPlot)
 								pUnit.setImmobileTimer(2)
 								if pUnit.isLeashed():

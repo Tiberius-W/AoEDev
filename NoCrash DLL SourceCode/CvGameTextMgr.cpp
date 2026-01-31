@@ -6463,6 +6463,10 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 					szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_PLOT_PREREQ_CIV", GC.getSpecialistInfo((SpecialistTypes)info.getFreeSpecialist()).getDescription(), GC.getCivilizationInfo((CivilizationTypes)info.getPrereqCivilization()).getDescription()));
 				}
 			}
+			if (info.getWorkingCityCrime() != 0)
+			{
+				szString.append(gDLL->getText("TXT_KEY_IMPROVEMENT_CITY_CRIME_PLOT", info.getWorkingCityCrime()));
+			}
 
 			bFound = false;
 
@@ -21970,6 +21974,11 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			szBuffer.append(gDLL->getText("TXT_KEY_PREREQ_CRIME", kBuilding.getPrereqCrime()));
 			szBuffer.append(NEWLINE);
 		}
+		if (kBuilding.getPrereqPopulation() != 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PREREQ_POPULATION", kBuilding.getPrereqPopulation()));
+			szBuffer.append(NEWLINE);
+		}
 
 		bFirst = true;
 		if (kBuilding.getNumPrereqTeamBuildingClassANDs() > 0)
@@ -24111,6 +24120,12 @@ void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, b
 			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_DISCOVER_RAND_MODIFIER_DECREASE"));
 		}
 	}
+	if (GC.getBonusInfo(eBonus).isDiscoverable())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BONUS_DISCOVERABLE"));
+
+	}
 	if (GC.getBonusInfo(eBonus).getGreatPeopleRateModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);
@@ -26020,6 +26035,10 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_FREE_SPECIALISTS_CIV", GC.getSpecialistInfo((SpecialistTypes) info.getFreeSpecialist()).getDescription(), GC.getCivilizationInfo((CivilizationTypes) info.getPrereqCivilization()).getDescription()));
 		}
+	}
+	if (info.getWorkingCityCrime() != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_CITY_CRIME_PLOT", info.getWorkingCityCrime()));
 	}
 /*************************************************************************************************/
 /**	Statesmen								END													**/
@@ -33961,6 +33980,11 @@ void CvGameTextMgr::setCrimeHelp(CvWStringBuffer& szBuffer, CvCity& city)
 	if (city.getSpecialistCrime() != 0)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_CRIME_SPECIALIST", city.getSpecialistCrime()));
+		szBuffer.append(NEWLINE);
+	}
+	if (city.getImprovementCrime() != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_CRIME_IMPROVEMENT", city.getImprovementCrime()));
 		szBuffer.append(NEWLINE);
 	}
 	if (city.getProductionToCrimeModifier() != 0)

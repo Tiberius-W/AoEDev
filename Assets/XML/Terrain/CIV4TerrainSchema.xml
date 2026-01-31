@@ -271,6 +271,7 @@
 	<ElementType name="bPeaks" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFlatlands" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoRiverSide" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bDiscoverable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNormalize" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFeature" content="textOnly" dt:type="boolean"/>
 	<ElementType name="FeatureBoolean" content="eltOnly">
@@ -344,6 +345,7 @@
 		<element type="bPeaks"/>
 		<element type="bFlatlands"/>
 		<element type="bNoRiverSide"/>
+		<element type="bDiscoverable"/>
 		<element type="bNormalize"/>
 		<element type="TerrainBooleans"/>
 		<element type="FeatureBooleans"/>
@@ -579,6 +581,7 @@
 		<element type="GoodyClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iNoBadExplore" content="textOnly" dt:type="int"/>
+	<ElementType name="iWorkingCityCrime" content="textOnly" dt:type="int"/>
 	<ElementType name="ImprovementClass" content="textOnly"/>
 	<ElementType name="ImprovementInfo" content="eltOnly" order="many">
 		<element type="Type"/>
@@ -665,6 +668,7 @@
 		<element type="bExplorable"/>
 		<element type="GoodyClasses"/>
 		<element type="iNoBadExplore"/>
+		<element type="iWorkingCityCrime"/>
 		<element type="bFort"/>
 		<element type="iLairCreationWeight"/>
 		<element type="LairCreationWeightTechs"/>
