@@ -645,10 +645,10 @@
 			<iPrereqPopulation>1</iPrereqPopulation>
 			<PerPopBonuses>
 				<PerPopBonus>
-					<fCrime>0.50</fCrime>
-					<fCulture>0.10</fCulture>
+					<fCulture>0.20</fCulture>
 				</PerPopBonus>
 			</PerPopBonuses>
+			<iExtraCrimePerUnhappy>2</iExtraCrimePerUnhappy>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
 			<iCost>-1</iCost>

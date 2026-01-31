@@ -2141,6 +2141,7 @@
 					</RouteYields>
 				</RouteYieldChange>
             </RouteYieldChanges>
+			<iWorkingCityCrime>2</iWorkingCityCrime>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Village -->
 			<Type>IMPROVEMENT_VILLAGE</Type>
@@ -2182,6 +2183,7 @@
 					</RouteYields>
 				</RouteYieldChange>
             </RouteYieldChanges>
+			<iWorkingCityCrime>1</iWorkingCityCrime>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Warning Post -->
 			<Type>IMPROVEMENT_WARNING_POST</Type>
@@ -7169,6 +7171,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<iMinimumDistance>2</iMinimumDistance>
+			<iWorkingCityCrime>5</iWorkingCityCrime>
 		</ImprovementInfo>	
 		<ImprovementInfo> <!-- Polar Nexus -->
 			<Type>IMPROVEMENT_POLAR_NEXUS</Type>
@@ -7359,6 +7362,7 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<iMinimumDistance>2</iMinimumDistance>
+			<iWorkingCityCrime>-5</iWorkingCityCrime>
 		</ImprovementInfo>	
 		<ImprovementInfo><!-- Aeron Vaultgate - Hell Gate -->
 			<Type>IMPROVEMENT_AERON_VAULTGATE</Type>
