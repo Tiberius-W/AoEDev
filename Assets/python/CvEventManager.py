@@ -455,11 +455,13 @@ class CvEventManager:
 		MLFlist.append(CvPath.assetsPath[2] + "\\Modules\\LoadOrderVitalModules\\ThirdLoad\\")
 		MLFlist.append(CvPath.assetsPath[2] + "\\Modules\\LoadOrderVitalModules\\FourthLoad\\")
 
+		print "Module List:"
 		for pathToMLF in MLFlist:
 			for modules in os.listdir(pathToMLF):
 				pathToModuleRoot = pathToMLF+modules+"\\"
 				# Ignore all xml files
 				if modules.lower()[-4:] != ".xml":
+					print "%s" % (modules)
 					# Check whether path exists // whether current directory isn't actually a file
 					if os.path.exists(pathToModuleRoot):
 						# Check whether python folder is present
@@ -658,6 +660,7 @@ class CvEventManager:
 	def onModNetMessage(self, argsList):
 		'Called whenever CyMessageControl().sendModNetMessage() is called - this is all for you modders!'
 		gc = CyGlobalContext()
+		cf = self.cf
 		game = CyGame()
 		iData1, iData2, iData3, iData4, iData5 = argsList
 
@@ -2156,7 +2159,10 @@ class CvEventManager:
 		# Reminders
 		self.reminders = []
 
-# FF end Wilderness
+		# Bradelines Well
+		lWell = cf.findImprovements(self.UniqueImprovements["Bradeline's Well"])
+		if not lWell:
+			gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_PURIFIED_WELL'),True)
 
 		## *******************
 		## Modular Python: ANW 29-may-2010

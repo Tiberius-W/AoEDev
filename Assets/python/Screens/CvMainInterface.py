@@ -1154,8 +1154,8 @@ class CvMainInterface:
 
 		# Hide all interface widgets
 		#screen.hide( "EndTurnText" )
-		pPlayer = gc.getPlayer(gc.getGame().getActivePlayer())
-
+		iPlayer = gc.getGame().getActivePlayer()
+		pPlayer = gc.getPlayer(iPlayer)
 
 		if ( CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY ):
 			if (gc.getGame().isPaused()):
@@ -1216,7 +1216,6 @@ class CvMainInterface:
 
 		screen.hide( "ACText" )
 		if (not CyInterface().isCityScreenUp() and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_ADVANCED_START and CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW):
-			pPlayer = gc.getPlayer(gc.getGame().getActivePlayer())
 			if (pPlayer != None):
 				ACstr = u"<font=2i><color=%d,%d,%d,%d>%s</color></font>" %(pPlayer.getPlayerTextColorR(),pPlayer.getPlayerTextColorG(),pPlayer.getPlayerTextColorB(),pPlayer.getPlayerTextColorA(),str(CyGame().getGlobalCounter()) + str(" "))
 				screen.setText( "ACText", "Background", ACstr, CvUtil.FONT_CENTER_JUSTIFY, xResolution - 239, yResolution - 157, 0.5, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -1234,23 +1233,27 @@ class CvMainInterface:
 				screen.setText( "AIText", "Background", AIstr, CvUtil.FONT_LEFT_JUSTIFY, 257, 3, 0.5, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 				screen.setHitTest( "AIText", HitTestTypes.HITTEST_NOHIT )
 #Awakened display
-
 		screen.hide( "SRText" )
 		screen.hide( "Awakenedchance" )
 		screen.hide( "ScorpText" )
 		screen.hide( "Scorpchance" )
 		if (not CyInterface().isCityScreenUp() and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_ADVANCED_START and CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW):
-			pPlayer = gc.getPlayer(gc.getGame().getActivePlayer())
 			#*************************************************************************************************#
 			#** Spawn Probability - Scions - Awakened                                                       **#
 			#*************************************************************************************************#
 			if (pPlayer!=None):
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_SCIONS') and pPlayer.getNumCities() > 0:
+					tScionCap	= cf.calculateScionCap(iPlayer)
+					iCurPop		= ""
+					iMaxPop		= ""
+					if tScionCap != -1:
+						iCurPop		= tScionCap[0]
+						iMaxPop		= tScionCap[1]
 					iSpawnOdds  = pPlayer.getCivCounter() # spawn chance, rounded to 2 digits from the decimal point
 					iInteger    = iSpawnOdds / 100
 					iDecimal    = iSpawnOdds % 100
 					if iInteger + iDecimal > 0: # if the value is high enough (min 0.01%)
-						SRstr = u"<font=2i>%s</font>" %(str(" ") + str(iInteger) + str(".") + str(iDecimal) + str("% "))
+						SRstr = u"<font=2i>%s</font>" %(str(" ") + str(iInteger) + str(".") + str(iDecimal) + str("% ") + "  " + str(iCurPop) + "/" + str(iMaxPop) + "  " )
 						screen.setImageButton("Awakenedchance", "Art/Interface/Buttons/Units/Scions/awake.dds", 177, 7, 16, 16, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 						screen.setText( "SRText", "Background", SRstr, CvUtil.FONT_LEFT_JUSTIFY, 189, 5, 0.5, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 						screen.setHitTest( "SRText", HitTestTypes.HITTEST_NOHIT )
