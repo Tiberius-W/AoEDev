@@ -69,7 +69,7 @@
 			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Build               Metamagic Mana                              Redeemed -->
-			<Type>TRAITTRIGGER_BUILD_MANA_MIND_KAHD</Type>
+			<Type>TRAITTRIGGER_BUILD_MANA_METAMAGIC_KAHD</Type>
 			<CounterChanges>
 				<CounterChange>
 					<TraitType>TRAIT_KAHD_OGHMA</TraitType>
@@ -523,20 +523,19 @@
 			<CounterChanges>
 				<CounterChange>
 					<TraitType>TRAIT_KAHD_OGHMA</TraitType>
-					<iModifier>1</iModifier>
+					<iModifier>2</iModifier>
 				</CounterChange>
 			</CounterChanges>
 			<TraitClassType>TRAITCLASS_KAHD</TraitClassType>			
 			<TraitHookType>TRAITHOOK_CAST_SPELL</TraitHookType>
 			<PrereqSpellType>SPELL_FLOATING_EYE</PrereqSpellType>
-			<bOncePerPlayer>1</bOncePerPlayer>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Cast                Dispel	                            		Redeemed -->
 			<Type>TRAITTRIGGER_CAST_DISPEL_KAHD</Type>
 			<CounterChanges>
 				<CounterChange>
 					<TraitType>TRAIT_KAHD_OGHMA</TraitType>
-					<iModifier>3</iModifier>
+					<iModifier>5</iModifier>
 				</CounterChange>
 			</CounterChanges>
 			<TraitClassType>TRAITCLASS_KAHD</TraitClassType>			

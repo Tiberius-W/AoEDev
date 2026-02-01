@@ -33,6 +33,7 @@ CvCity::CvCity()
 {
 	m_aiSeaPlotYield = new int[NUM_YIELD_TYPES];
 	m_paaiLocalTerrainYield = NULL;
+	m_paaiLocalFeatureYield = NULL;
 	m_aiRiverPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiBaseYieldRate = new int[NUM_YIELD_TYPES];
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
@@ -580,7 +581,15 @@ void CvCity::uninit()
 		}
 		SAFE_DELETE_ARRAY(m_paaiLocalTerrainYield);
 	}
-	
+	if (m_paaiLocalFeatureYield != NULL)
+	{
+		for (int iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_paaiLocalFeatureYield[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_paaiLocalFeatureYield);
+	}
+
 	SAFE_DELETE_ARRAY(m_paiNoBonus);
 	SAFE_DELETE_ARRAY(m_paiFreeBonus);
 	SAFE_DELETE_ARRAY(m_paiNumBonuses);
@@ -1035,6 +1044,16 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 		{
 			m_paaiLocalTerrainYield[iI][iJ] = 0;
+		}
+	}
+	FAssertMsg(m_paaiLocalFeatureYield == NULL, "About to leak memory, CvCity::m_paaiLocalFeatureYield is NULL");
+	m_paaiLocalFeatureYield = new int* [GC.getNumFeatureInfos()];
+	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+	{
+		m_paaiLocalFeatureYield[iI] = new int[NUM_YIELD_TYPES];
+		for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+		{
+			m_paaiLocalFeatureYield[iI][iJ] = 0;
 		}
 	}
 
@@ -5681,6 +5700,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 			{
 				changeLocalTerrainYield((TerrainTypes)iI, (YieldTypes)iJ, GC.getBuildingInfo(eBuilding).getTerrainYieldChange(iI, iJ) * iChange);
+			}
+		}
+		for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+		{
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				changeLocalFeatureYield((FeatureTypes)iI, (YieldTypes)iJ, GC.getBuildingInfo(eBuilding).getFeatureYieldChange(iI, iJ) * iChange);
 			}
 		}
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
@@ -10950,6 +10976,36 @@ void CvCity::changeLocalTerrainYield(YieldTypes eYield, int iChange)
 		}
 	}
 }
+void CvCity::setLocalFeatureYield(FeatureTypes eFeature, YieldTypes eYield, int iValue)
+{
+	FAssertMsg(eFeature >= 0, "eFeature expected to be >= 0");
+	FAssertMsg(eFeature < GC.getNumFeatureInfos(), "eFeature expected to be < GC.getNumFeatureInfos");
+	FAssertMsg(eYield >= 0, "eYield expected to be >= 0");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
+
+	m_paaiLocalFeatureYield[eFeature][eYield] = iValue;
+}
+
+int CvCity::getLocalFeatureYield(FeatureTypes eFeature, YieldTypes eYield) const
+{
+	FAssertMsg(eFeature >= 0, "eFeature expected to be >= 0");
+	FAssertMsg(eFeature < GC.getNumFeatureInfos(), "eFeature expected to be < GC.getNumFeatureInfos");
+	FAssertMsg(eYield >= 0, "eYield expected to be >= 0");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
+
+	return m_paaiLocalFeatureYield[eFeature][eYield];
+}
+
+void CvCity::changeLocalFeatureYield(FeatureTypes eFeature, YieldTypes eYield, int iChange)
+{
+	if (iChange != 0)
+	{
+		setLocalFeatureYield(eFeature, eYield, getLocalFeatureYield(eFeature, eYield) + iChange);
+
+		updateYield();
+	}
+}
+
 
 int CvCity::getBaseYieldRate(YieldTypes eIndex)	const
 {
@@ -17058,6 +17114,10 @@ void CvCity::read(FDataStreamBase* pStream)
 	{
 		pStream->Read(NUM_YIELD_TYPES, m_paaiLocalTerrainYield[iI]);
 	}
+	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+	{
+		pStream->Read(NUM_YIELD_TYPES, m_paaiLocalFeatureYield[iI]);
+	}
 	pStream->Read(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Read(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);
@@ -17495,6 +17555,10 @@ void CvCity::write(FDataStreamBase* pStream)
 	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_paaiLocalTerrainYield[iI]);
+	}
+	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+	{
+		pStream->Write(NUM_YIELD_TYPES, m_paaiLocalFeatureYield[iI]);
 	}
 	pStream->Write(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Write(NUM_YIELD_TYPES, m_aiYieldRateModifier);

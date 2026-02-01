@@ -20582,6 +20582,13 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 		setYieldChangeHelp(szBuffer, L" ", L"", szTempBuffer, kBuilding.getTerrainYieldChangeArray(i));
 
 	}
+	for (int i = 0; i < GC.getNumFeatureInfos(); i++)
+	{
+		szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_FEATURE_PLOTS", GC.getFeatureInfo((FeatureTypes)i).getDescription());
+
+		setYieldChangeHelp(szBuffer, L" ", L"", szTempBuffer, kBuilding.getFeatureYieldChangeArray(i));
+
+	}
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_RIVER_PLOTS").c_str(), L": ", L"", kBuilding.getRiverPlotYieldChangeArray());
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS_ALL_CITIES").c_str(), L": ", L"", kBuilding.getGlobalSeaPlotYieldChangeArray());
@@ -26393,7 +26400,7 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 					if (eImprovementClass == GC.getImprovementInfo((ImprovementTypes)iI).getImprovementClass())
 					{
 						szBuffer.append(NEWLINE);
-						szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_IMPROVEMENT", GC.getImprovementInfo((ImprovementTypes)iI).getTextKeyWide()));
+						szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_IMPROVEMENT", GC.getImprovementInfo((ImprovementTypes)iI).getTextKeyWide(), GC.getImprovementInfo((ImprovementTypes)iI).getTextKeyWide()));
 					}
 				}
 			}

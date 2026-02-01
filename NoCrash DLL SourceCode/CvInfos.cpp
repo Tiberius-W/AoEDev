@@ -21237,6 +21237,7 @@ m_piHappinessTraits(NULL),
 m_piSeaPlotYieldChange(NULL),
 m_piRiverPlotYieldChange(NULL),
 m_ppaiTerrainYieldChange(NULL),
+m_ppaiFeatureYieldChange(NULL),
 m_piGlobalSeaPlotYieldChange(NULL),
 m_piYieldChange(NULL),
 m_piYieldModifier(NULL),
@@ -21478,6 +21479,14 @@ CvBuildingInfo::~CvBuildingInfo()
 			SAFE_DELETE_ARRAY(m_ppaiTerrainYieldChange[i]);
 		}
 		SAFE_DELETE_ARRAY(m_ppaiTerrainYieldChange);
+	}
+	if (m_ppaiFeatureYieldChange != NULL)
+	{
+		for (int i = 0; i < GC.getNumFeatureInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiFeatureYieldChange[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiFeatureYieldChange);
 	}
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piYieldChange);
@@ -22718,6 +22727,21 @@ int* CvBuildingInfo::getTerrainYieldChangeArray(int i) const
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_ppaiTerrainYieldChange[i];
 }
+int CvBuildingInfo::getFeatureYieldChange(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiFeatureYieldChange ? m_ppaiFeatureYieldChange[i][j] : -1;
+}
+
+int* CvBuildingInfo::getFeatureYieldChangeArray(int i) const
+{
+	FAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppaiFeatureYieldChange[i];
+}
 
 int CvBuildingInfo::getGlobalSeaPlotYieldChange(int i) const
 {
@@ -23548,6 +23572,21 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 		m_ppaiTerrainYieldChange[iI] = new int[NUM_YIELD_TYPES];
 		stream->Read(NUM_YIELD_TYPES, m_ppaiTerrainYieldChange[iI]);
 	}
+	if (m_ppaiFeatureYieldChange != NULL)
+	{
+		for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiFeatureYieldChange[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiFeatureYieldChange);
+	}
+
+	m_ppaiFeatureYieldChange = new int* [GC.getNumFeatureInfos()];
+	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+	{
+		m_ppaiFeatureYieldChange[iI] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppaiFeatureYieldChange[iI]);
+	}
 
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	m_piGlobalSeaPlotYieldChange = new int[NUM_YIELD_TYPES];
@@ -24160,6 +24199,10 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 	{
 		stream->Write(NUM_YIELD_TYPES, m_ppaiTerrainYieldChange[iI]);
+	}
+	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
+	{
+		stream->Write(NUM_YIELD_TYPES, m_ppaiFeatureYieldChange[iI]);
 	}
 	stream->Write(NUM_YIELD_TYPES, m_piGlobalSeaPlotYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldChange);
@@ -24808,6 +24851,46 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
 
+	pXML->Init2DIntList(&m_ppaiFeatureYieldChange, GC.getNumFeatureInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FeatureYieldChanges"))
+	{
+		iNumChildren = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FeatureYieldChange"))
+		{
+			for (j = 0; j < iNumChildren; j++)
+			{
+				pXML->GetChildXmlValByName(szTextVal, "FeatureType");
+				k = pXML->FindInInfoClass(szTextVal);
+				if (k > -1)
+				{
+					// delete the array since it will be reallocated
+					SAFE_DELETE_ARRAY(m_ppaiFeatureYieldChange[k]);
+					if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FeatureYields"))
+					{
+						// call the function that sets the yield change variable
+						pXML->SetYields(&m_ppaiFeatureYieldChange[k]);
+						gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+					}
+					else
+					{
+						pXML->InitList(&m_ppaiFeatureYieldChange[k], NUM_YIELD_TYPES);
+					}
+				}
+
+				if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+				{
+					break;
+				}
+			}
+
+			// set the current xml node to it's parent node
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+
+		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
 
 	// if we can set the current xml node to it's next sibling
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalSeaPlotYieldChanges"))
@@ -25711,6 +25794,13 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 		for (int i = 0; i < NUM_YIELD_TYPES; i++)
 		{
 			if (getTerrainYieldChange(j, i) == 0)					m_ppaiTerrainYieldChange[j][i] = pClassInfo->getTerrainYieldChange(j, i);
+		}
+	}
+	for (int j = 0; j < GC.getNumFeatureInfos(); j++)
+	{
+		for (int i = 0; i < NUM_YIELD_TYPES; i++)
+		{
+			if (getFeatureYieldChange(j, i) == 0)					m_ppaiFeatureYieldChange[j][i] = pClassInfo->getFeatureYieldChange(j, i);
 		}
 	}
 	for ( int j = 0; j < GC.getNumSpecialistInfos(); j++)

@@ -1894,11 +1894,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REPLACED_BY_IMPROVEMENT</Tag>
-		<English>Replaced by [LINK=literal]%s1_default_building[\LINK]</English>
-		<French>Remplac&#233; par [LINK=literal]%s1_default_building[\LINK]</French>
-		<German>Ersetzt durch Geb&#228;ude [LINK=literal]%s1_default_building[\LINK]</German>
-		<Italian>Sostituita dall'edifici&#224; [LINK=literal]%s1_default_building[\LINK]</Italian>
-		<Spanish>Sustituida por una edifico de [LINK=literal]%s1_default_building[\LINK]</Spanish>
+		<English>Replaced by [LINK=%s1_default_building]%s2_default_building[\LINK]</English>
+		<French>Remplac&#233; par [LINK=%s1_default_building]%s2_default_building[\LINK]</French>
+		<German>Ersetzt durch Geb&#228;ude [LINK=%s1_default_building]%s2_default_building[\LINK]</German>
+		<Italian>Sostituita dall'edifici&#224; [LINK=%s1_default_building]%s2_default_building[\LINK]</Italian>
+		<Spanish>Sustituida por una edifico de [LINK=%s1_default_building]%s2_default_building[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AFFINITIES</Tag>

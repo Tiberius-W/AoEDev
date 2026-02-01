@@ -8363,6 +8363,11 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 				if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 				{
 					iYield += pWorkingCity->getLocalTerrainYield(getTerrainType(), eYield);
+					if (getFeatureType() != NO_FEATURE)
+					{
+						iYield += pWorkingCity->getLocalFeatureYield(getFeatureType(), eYield);
+					}
+
 				}
 			}
 		}

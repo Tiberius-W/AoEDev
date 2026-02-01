@@ -549,6 +549,122 @@
 				</NoBadExploreImprovement>
 			</NoBadExploreImprovements>
 		</PromotionInfo>
+		<PromotionInfo>		<!-- Demon -->
+			<Type>PROMOTION_DEMON_DEGRADES</Type>
+			<Description>TXT_KEY_PROMOTION_DEMON</Description>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<iTerrainAttack>10</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<iTerrainAttack>10</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<iTerrainAttack>10</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BROKEN_LANDS</TerrainType>
+					<iTerrainDefense>10</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_FIELDS_OF_PERDITION</TerrainType>
+					<iTerrainDefense>10</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_BURNING_SANDS</TerrainType>
+					<iTerrainDefense>10</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
+			<Button>Art/Interface/Buttons/Races/Race_Demon.dds</Button>
+			<bImmuneToFear>1</bImmuneToFear>
+			<bNotAlive>1</bNotAlive>
+			<bRace>1</bRace>
+			<bGraphicalOnly>1</bGraphicalOnly>
+			<PromotionDegradesTo>
+				<Promotion>PROMOTION_DEMON</Promotion>
+			</PromotionDegradesTo>
+			<iPromotionDuration>1</iPromotionDuration>
+			<UnitArtStyleType>UNIT_ARTSTYLE_DEMON</UnitArtStyleType>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_DEATH</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>20</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iResist>-25</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iResist>100</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+			<NoBadExploreImprovements>
+				<NoBadExploreImprovement>
+				<ImprovementType>IMPROVEMENT_BRADELINES_WELL</ImprovementType>
+				<iNoBadExploreImprovement>10</iNoBadExploreImprovement>
+				</NoBadExploreImprovement>
+			</NoBadExploreImprovements>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+		</PromotionInfo>
 		<PromotionInfo>		<!-- Cambion -->
 			<Type>PROMOTION_CAMBION</Type>
 			<Description>TXT_KEY_PROMOTION_CAMBION</Description>
@@ -1906,7 +2022,7 @@
 			<iSlaveGenerationChance>80</iSlaveGenerationChance>
 			<bPrereqAliveCapture>1</bPrereqAliveCapture>
 			<CapturePromotions>
-				<PromotionType>PROMOTION_DEMON</PromotionType>
+				<PromotionType>PROMOTION_DEMON_DEGRADES</PromotionType>
 			</CapturePromotions>
 			<bEquipment>1</bEquipment>
 		</PromotionInfo>
@@ -41079,6 +41195,19 @@
 			<Button>Art/Interface/Buttons/units/hawk.dds</Button>
 			<ReplaceArtType>ART_DEF_UNIT_PHOENIX_SMALL</ReplaceArtType>
 			<PromotionNextLevel>PROMOTION_PHOENIX</PromotionNextLevel>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_PHOENIX_EGG_HELD</Promotion>
+			</PromotionOverwrites>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Phoenix -->
 			<Type>PROMOTION_PHOENIX</Type>
@@ -41121,6 +41250,16 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Phoenix Big -->
 			<Type>PROMOTION_PHOENIX_BIG</Type>
@@ -41164,6 +41303,16 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Phoenix Very Big -->
 			<Type>PROMOTION_PHOENIX_VERY_BIG</Type>
@@ -41209,6 +41358,16 @@
 					<iCombat>3</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Phoenix Giant -->
 			<Type>PROMOTION_PHOENIX_GIANT</Type>
@@ -41255,6 +41414,16 @@
 					<iCombat>5</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Parrot Perch -->
 			<Type>PROMOTION_PARROT_PERCH</Type>

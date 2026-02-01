@@ -1534,7 +1534,7 @@ public:
 	ImprovementTypes getPlayerImprovement(ImprovementClassTypes iClass) const;
 	UnitTypes getPlayerUnit(UnitClassTypes iClass) const;
 	BuildingTypes getPlayerBuilding(BuildingClassTypes iClass) const;
-
+	void setLeaderName(const wchar* szNewValue);
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;
@@ -2005,6 +2005,7 @@ protected:
 	bool* m_abOptions;
 
 	CvString m_szScriptData;
+	CvWString m_szName;
 
 	int* m_paiBonusExport;
 	int* m_paiBonusImport;

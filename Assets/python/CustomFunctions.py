@@ -1678,7 +1678,7 @@ class CustomFunctions:
 			for i in xrange(pClearPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
 				if pUnit.isBarbarian() and not gc.getUnitClassInfo(pUnit.getUnitClassType()).isUnique():
-					pUnit.kill()
+					pUnit.kill(False,-1)
 		# Spawning Civilization
 		CyGame().addPlayerAdvanced(iInfernalPlayer, -1, iLeader, self.Civilizations["Infernal"], iPlayer)
 		iFounderTeam	= gc.getPlayer(iPlayer).getTeam()

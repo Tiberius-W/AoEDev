@@ -7267,6 +7267,10 @@
 					<UnitClassType>UNITCLASS_TUMTUM</UnitClassType>
 					<UnitType>UNIT_TUMTUM</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_TRADESHIP</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses/>
 			<FreeBuildingClasses/>
@@ -7622,7 +7626,10 @@
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
 					<UnitType>UNIT_MALIGNANT_COMMANDER</UnitType>
 				</Unit>
-
+				<Unit>
+					<UnitClassType>UNITCLASS_TRADESHIP</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses/>
 			<FreeBuildingClasses/>
@@ -7827,6 +7834,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
 					<UnitType>UNIT_ZABULUS</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_TRADESHIP</UnitClassType>
+					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses/>

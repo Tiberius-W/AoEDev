@@ -5253,7 +5253,7 @@ def onMoveWarningPost(pCaster, pPlot):
 		sf.onMoveWarningPost(pCaster, pPlot)
 
 def onMoveCarcer(pCaster, pPlot):
-	if (pCaster.getLevel() > 14):
+	if (pCaster.getLevel() > 14 and not gc.getPlayer(pCaster.getOwner()).isBarbarian()):
 		pPlot.setImprovementType(-1)
 		pPlayer = gc.getPlayer(pCaster.getOwner())
 		if CyGame().getUnitClassCreatedCount(getInfoType('UNITCLASS_BRIGIT')) == 0:
@@ -8318,7 +8318,7 @@ def spellSelfDestruct(caster):
 		if not pPlot.isWater():
 			pPlot.setFeatureType(-1, -1)
 			pPlot.setFeatureType(getInfoType('FEATURE_FALLOUT'), 0)
-	caster.kill()
+	caster.kill(True,-1)
 
 def reqAddToCityDtesh(caster):
 	pPlot = caster.plot()
@@ -9737,7 +9737,7 @@ def exploreLairOtoloch2(argsList):
 	pUnit, pPlot = argsList
 	pPlayer = gc.getPlayer(pUnit.getOwner())
 	newUnit = pPlayer.initUnit(getInfoType('UNIT_OTOLOCH_2'), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-	NewUnit.setName("Kumitara, the Otoloch Whisperer")
+	newUnit.setName("Kumitara, the Otoloch Whisperer")
 
 def exploreLairCondatis(argsList):
 	pUnit, pPlot = argsList
@@ -11647,7 +11647,7 @@ def spellGiftWerewolf(caster):
 				if pPlayer.hasTrait(Trait["Lycanthropic3"]):
 					iInfectChance = 0
 				if CyGame().getSorenRandNum(100, "Werewolf Infection") < iInfectChance:
-					pUnit.kill()
+					pUnit.kill(False,-1)
 	
 def spellBreakClavaVindex(caster):
 	iPlayer = caster.getOwner()

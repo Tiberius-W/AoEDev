@@ -1183,7 +1183,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	{
 		m_abOptions[iI] = false;
 	}
-
+	m_szName.clear();
 	m_szScriptData = "";
 
 	if (!bConstructorCall)
@@ -3828,26 +3828,34 @@ bool CvPlayer::isBarbarian() const
 
 const wchar* CvPlayer::getName(uint uiForm) const
 {
-	if (GC.getInitCore().getLeaderName(getID(), uiForm).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive() && GC.getGameINLINE().getGameState() == GAMESTATE_ON))
+	if ((m_szName.empty() && GC.getInitCore().getLeaderName(getID(), uiForm).empty()) || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive() && GC.getGameINLINE().getGameState() == GAMESTATE_ON))
 	{
 		return GC.getLeaderHeadInfo(getLeaderType()).getDescription(uiForm);
 	}
-	else
+	else if (m_szName.empty())
 	{
 		return GC.getInitCore().getLeaderName(getID(), uiForm);
+	}
+	else
+	{
+		return gDLL->getObjectText(m_szName, uiForm, true);
 	}
 }
 
 
 const wchar* CvPlayer::getNameKey() const
 {
-	if (GC.getInitCore().getLeaderNameKey(getID()).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive()))
+	if ((m_szName.empty() && GC.getInitCore().getLeaderNameKey(getID()).empty()) || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive()))
 	{
 		return GC.getLeaderHeadInfo(getLeaderType()).getTextKeyWide();
 	}
-	else
+	else if(m_szName.empty())
 	{
 		return GC.getInitCore().getLeaderNameKey(getID());
+	}
+	else
+	{
+		return m_szName;
 	}
 }
 
@@ -20852,6 +20860,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
 
 	pStream->ReadString(m_szScriptData);
+	pStream->ReadString(m_szName);
 
 	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but it is expected to be in CvPlayer::read");
 	pStream->Read(GC.getNumBonusInfos(), m_paiBonusExport);
@@ -21592,6 +21601,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
 
 	pStream->WriteString(m_szScriptData);
+	pStream->WriteString(m_szName);
 
 	FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlayer::write");
 	pStream->Write(GC.getNumBonusInfos(), m_paiBonusExport);
@@ -30823,3 +30833,24 @@ BuildingTypes CvPlayer::getPlayerBuilding(BuildingClassTypes iClass) const
 	}
 	return(BuildingTypes)GC.getCivilizationInfo((CivilizationTypes)getCivilizationType()).getCivilizationBuildings(iClass);
 }
+//void CvPlayer::setLeaderName(CvWString szLeaderName)
+//	{
+	//GC.getIniInitCore().setLeaderName(getID(), szLeaderName);
+//
+	//}
+
+
+
+
+void CvPlayer::setLeaderName(const wchar* szNewValue)
+{
+	CvWString szName(szNewValue);
+	gDLL->stripSpecialCharacters(szName);
+
+	if (!szName.empty())
+	{
+		m_szName = szName;
+
+	}
+}
+

@@ -2066,7 +2066,8 @@ class CvEventManager:
 					gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAHON'),True)
 				if (player.getLeaderType()==gc.getInfoTypeForString('LEADER_SAUROS') and player.getCivilizationType()!=gc.getInfoTypeForString("CIVILIZATION_CLAN_OF_EMBERS")):
 					player.setNumMaxTraitPerClass(getInfoType('TRAITCLASS_SAVAGE'),0)
-					
+				if (player.getLeaderType()==gc.getInfoTypeForString('LEADER_DECIUS') and player.getCivilizationType()==gc.getInfoTypeForString("CIVILIZATION_BANNOR")):
+					player.setLeaderName(CyTranslator().getText("TXT_KEY_LEADER_DECIUS_2",()))
 		if (game.getGameTurnYear() == self.Defines["Start Year"] and not Option["Advanced Start"]):
 			if not game.getWBMapScript():
 				for iPlayer in xrange(iMaxPlayers):

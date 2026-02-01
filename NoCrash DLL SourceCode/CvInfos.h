@@ -4694,6 +4694,8 @@ public:
 	int* getRiverPlotYieldChangeArray() const;
 	int getTerrainYieldChange(int i, int j) const;			// Exposed to Python
 	int* getTerrainYieldChangeArray(int i) const;
+	int getFeatureYieldChange(int i, int j) const;			// Exposed to Python
+	int* getFeatureYieldChangeArray(int i) const;
 	int getGlobalSeaPlotYieldChange(int i) const;				// Exposed to Python
 	int* getGlobalSeaPlotYieldChangeArray() const;
 
@@ -5115,6 +5117,7 @@ protected:
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
 	int** m_ppaiTerrainYieldChange;
+	int** m_ppaiFeatureYieldChange;
 	int* m_piGlobalSeaPlotYieldChange;
 	int* m_piYieldChange;
 	int* m_piYieldModifier;

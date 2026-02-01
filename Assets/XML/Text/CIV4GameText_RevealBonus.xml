@@ -11222,6 +11222,14 @@ A band of different colored hairs, moldy cloth, and dried blood tied together wi
 		<Italian> on %s1 Tiles</Italian>
 		<Spanish> on %s1 Tiles</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FEATURE_PLOTS</Tag>
+		<English> on Tiles with %s1</English>
+		<French> sur les Cases avec %s1[SPACE]</French>
+		<German> on Tiles with %s1</German>
+		<Italian> on Tiles with %s1</Italian>
+		<Spanish> on Tiles with %s1</Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAM_OF_VIR_HELP</Tag>
