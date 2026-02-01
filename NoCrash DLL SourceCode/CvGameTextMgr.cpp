@@ -27621,11 +27621,24 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_PERPOP_PROD", iPerPopProd));
 		szBuffer.append(NEWLINE);
 	}
-
-	if (city.getCurrentProductionDifference(false, true) == 0)
+	
+/*************************************************************************************************/
+/**	ProdModCalcFix							Feb 1 2026									Klauros	**/
+/**								Fix of Production Modifier Calculations							**/
+/*************************************************************************************************/
+//	if (city.getCurrentProductionDifference(false, true) == 0)
+//	{
+//		return;
+//	}
+	//Following if-statement adds base food + base production to see if the total is 0.  If it is, don't build the hover text
+	//Would be better if iBaseProduction and iFoodProduction could be used, but they are not defined yet and doing so would mean reorganizing setProductionHelp(...)
+	if ((city.isFoodProduction() ? std::max(0, (city.getYieldRate(YIELD_FOOD) - city.foodConsumption(true))) : 0) + (city.getBaseYieldRate(YIELD_PRODUCTION) + iPastOverflow + iFromChops + iUnhappyProd + iProxProd + iPerPopProd) == 0)
 	{
 		return;
 	}
+/*************************************************************************************************/
+/**	ProdModCalcFix								END												**/
+/*************************************************************************************************/
 
 	setYieldHelp(szBuffer, city, YIELD_PRODUCTION);
 
@@ -27874,7 +27887,15 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		szBuffer.append(NEWLINE);
 	}
 
-	int iModProduction = iFoodProduction + (iBaseModifier * iBaseProduction) / 100;
+/*************************************************************************************************/
+/**	ProdModCalcFix							Feb 1 2026									Klauros	**/
+/**								Fix of Production Modifier Calculations							**/
+/*************************************************************************************************/
+//	int iModProduction = iFoodProduction + (iBaseModifier * iBaseProduction) / 100;
+	int iModProduction = iFoodProduction + (std::max(0, iBaseModifier) * iBaseProduction) / 100;
+/*************************************************************************************************/
+/**	ProdModCalcFix								END												**/
+/*************************************************************************************************/
 
 	FAssertMsg(iModProduction == city.getCurrentProductionDifference(false, !bIsProcess), "Modified Production does not match actual value");
 
@@ -28442,7 +28463,16 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 		iBaseModifier += iCivicMod;
 	}
 
-	FAssertMsg((iBaseModifier * iBaseProduction) / 100 == city.getYieldRate(eYieldType), "Yield Modifier in setProductionHelp does not agree with actual value");
+/*************************************************************************************************/
+/**	ProdModCalcFix							Feb 1 2026									Klauros	**/
+/**								Fix of Production Modifier Calculations							**/
+/*************************************************************************************************/
+//	FAssertMsg((iBaseModifier * iBaseProduction) / 100 == city.getYieldRate(eYieldType), "Yield Modifier in setProductionHelp does not agree with actual value");
+	FAssertMsg((std::max(0, iBaseModifier) * iBaseProduction) / 100 == city.getYieldRate(eYieldType), "Yield Modifier in setProductionHelp does not agree with actual value");
+/*************************************************************************************************/
+/**	ProdModCalcFix								END												**/
+/*************************************************************************************************/
+
 }
 
 void CvGameTextMgr::setConvertHelp(CvWStringBuffer& szBuffer, PlayerTypes ePlayer, ReligionTypes eReligion)
