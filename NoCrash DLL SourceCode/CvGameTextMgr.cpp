@@ -27643,6 +27643,11 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	{
 		return;
 	}
+	//Also take into account city disorder.
+	if (city.isDisorder())
+	{
+		return;
+	}
 /*************************************************************************************************/
 /**	ProdModCalcFix								END												**/
 /*************************************************************************************************/
