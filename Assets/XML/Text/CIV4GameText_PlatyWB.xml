@@ -234,6 +234,14 @@
 		<Spanish>Base %s1: %d2</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_WB_PLOT_COUNTER</Tag>
+		<English>Plot Counter</English>
+		<French>Plot Counter</French>
+		<German>Plot Counter</German>
+		<Italian>Plot Counter</Italian>
+		<Spanish>Plot Counter</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_WB_CITY_DATA2</Tag>
 		<English>City Data II</English>
 		<French>City Data II</French>
