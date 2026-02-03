@@ -7129,7 +7129,7 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-					<UnitType>UNIT_WORKER</UnitType>
+					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_FORT_COMMANDER</UnitClassType>
@@ -7692,6 +7692,10 @@
 					<UnitType>UNIT_CHORT</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_UNDEAD_DRAKE</UnitClassType>
+					<UnitType>UNIT_UNDEAD_DRAKE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_ADEPT</UnitClassType>
 					<UnitType>UNIT_IMP</UnitType>
 				</Unit>
@@ -7865,6 +7869,7 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivTrait>TRAIT_BERSERK_AGARES</CivTrait>
 			<CivilizationSelectionSound></CivilizationSelectionSound>
 			<CivilizationActionSound></CivilizationActionSound>
 			<bGraphicalOnly>1</bGraphicalOnly>

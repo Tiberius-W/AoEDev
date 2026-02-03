@@ -477,7 +477,7 @@
 			<bSelectable>1</bSelectable>
 			<iMinRequiredPoints>500</iMinRequiredPoints>
 			<TradeYieldModifiers>
-				<iYield>50</iYield>
+				<iYield>0</iYield>
 				<iYield>50</iYield>
 			</TradeYieldModifiers>
 		</TraitInfo>
@@ -2313,7 +2313,7 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<TradeYieldModifiers>
-				<iYield>50</iYield>
+				<iYield>0</iYield>
 				<iYield>50</iYield>
 				<iYield>50</iYield>
 			</TradeYieldModifiers>
@@ -4076,9 +4076,9 @@
 			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_AIFON_SHORT</ShortDescription>
 			<TradeYieldModifiers>
-				<iYield>15</iYield>
 				<iYield>0</iYield>
-				<iYield>15</iYield>
+				<iYield>0</iYield>
+				<iYield>25</iYield>
 			</TradeYieldModifiers>
 		</TraitInfo>
 		<TraitInfo>		<!-- Keepers of the Barred Procession (Well of Souls) -->
@@ -4492,6 +4492,79 @@
 					<iPlayerInstancesChange>4</iPlayerInstancesChange>
 				</UnitClassPlayerInstancesChange>
 			</UnitClassPlayerInstancesChanges>
+		</TraitInfo>
+		<TraitInfo>		<!-- Agares demons are bloodcrazed lunatics -->
+			<Type>TRAIT_BERSERK_AGARES</Type>
+			<TraitClass>TRAITCLASS_CIVILIZATION</TraitClass>
+			<iMinRequiredPoints>500</iMinRequiredPoints>
+			<bCanBeLost>1</bCanBeLost>
+			<Description>TXT_KEY_TRAIT_BERSERK_AGARES</Description>
+			<Civilopedia>TXT_KEY_TRAIT_BERSERK_AGARES_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_BERSERK_AGARES_SHORT</ShortDescription>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DEMONIC_BERSERK</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_WORKER</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
 		</TraitInfo>
 	</TraitInfos>
 </Civ4TraitInfos>

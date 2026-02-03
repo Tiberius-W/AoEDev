@@ -1459,6 +1459,9 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 			<bAutoRaze>1</bAutoRaze>
 			<iTier>4</iTier>
 			<Image>Art/Interface/Popups/Ars.dds</Image>
@@ -1885,6 +1888,9 @@
 			<Quote>TXT_KEY_EVENTTRIGGER_ARMAGEDDON_WRATH</Quote>
 			<iPowerAdd>200</iPowerAdd>
 			<iPowerMult>10</iPowerMult>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Bambur -->
 			<Class>UNITCLASS_BAMBUR</Class>
@@ -2568,6 +2574,9 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iPowerMult>3</iPowerMult>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Chalid Astrakien-->
 			<Class>UNITCLASS_CHALID</Class>
@@ -7780,6 +7789,9 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iPowerMult>3</iPowerMult>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Teutorix -->
 			<Class>UNITCLASS_TEUTORIX</Class>
@@ -8706,6 +8718,9 @@
 				</DamageTypeCombat>
 			</DamageTypeCombats>
 			<iPowerMult>3</iPowerMult>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 		</UnitInfo>
 		<UnitInfo>        <!-- Yvain -->                                                                 <!-- END HERO LIST -->
 			<Class>UNITCLASS_YVAIN</Class>
@@ -8967,6 +8982,9 @@
 					<EarlyArtDefineTag>ART_DEF_UNIT_GYRE_CARLIN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
+			<DenyPromotions>
+				<Promotion>PROMOTION_DEMONIC_BERSERK</Promotion>
+			</DenyPromotions>
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_HERO</PromotionType>
@@ -57038,8 +57056,8 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Undead Drake -->            
 			<Class>UNITCLASS_UNDEAD_DRAKE</Class>
-			<Type>UNIT_BLACK_DRAKE</Type>
-			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<Type>UNIT_UNDEAD_DRAKE</Type>
+			<Combat>UNITCOMBAT_BEAST</Combat>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_UNDEAD_DRAKE</Description>
 			<Civilopedia>TXT_KEY_UNIT_BLACK_DRAKE_PEDIA</Civilopedia>
@@ -57116,13 +57134,7 @@
 					<iCombat>2</iCombat>
 				</DamageTypeCombat>
 			</DamageTypeCombats>
-			<iAppearanceProb>-1</iAppearanceProb>
-			<AppearanceTechs>
-				<AppearanceTech>
-					<AppearanceTechType>TECH_NECROMANCY</AppearanceTechType>
-					<iAppearanceTech>101</iAppearanceTech>
-				</AppearanceTech>
-			</AppearanceTechs>
+			<PrereqTech>TECH_NECROMANCY</PrereqTech>
 		</UnitInfo>
 	</UnitInfos>
 </Civ4UnitInfos>

@@ -40,8 +40,8 @@
 			<iBarbarianCityCreationProb>3</iBarbarianCityCreationProb> <!-- Chance per turn to spawn 1 city, mapsize & speed modulated. 2x higher if raging. 3x this, as a %, is cap of barb/civ cities. EX 4-> max 12% of world cities are barb -->
 			<iAnimalEscalationTurnsElapsed>155</iAnimalEscalationTurnsElapsed> <!-- Turns before an animal gains another point of str. At 5 points, turns into beast and can enter civ borders & attack -->
 			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot> <!-- How many demons are there per 100 hell tiles. Water areas use 1/10 this value. -->
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
-			<iTilesPerLairDemon>115</iTilesPerLairDemon> <!-- *UNOWNED* Tiles. Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>1</iPercentDemonsPerEvilPlotPerGlobalCounter> <!-- Additive with iPercentDemonsPerEvilPlot. 20 means if AC is 10, add 2 to iPercentDemonsPerEvilPlot, and if AC is 100, then 20, etc. -->
+			<iTilesPerLairDemon>1</iTilesPerLairDemon> <!-- *UNOWNED* Tiles. Minimum lower bound for demon density applied to lairs, calculated for each area; all tiles, not hell tiles! Rounds down. Lairs use the max of this or the hardcoded value 3. Water areas use 10x this value. -->
 			<iDemonGlobalCounterFreeXPPercent>6</iDemonGlobalCounterFreeXPPercent> <!-- Barb demons start with an amount of XP equal to global counter * this percent. -->
 			<iDemonPerTurnKnownTechsPercent>3</iDemonPerTurnKnownTechsPercent> <!-- Barb demon is delayed in tech level. Gets this percent per turn per player that has the tech. -->
 			<!-- Maluses these factions get when fighting a human player -->
@@ -149,9 +149,9 @@
 			<iBarbarianCityCreationTurnsElapsed>60</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>4</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>140</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>2</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>8</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>100</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>1</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>2</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>18</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>6</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>-20</iAnimalBonus>
@@ -253,9 +253,9 @@
 			<iBarbarianCityCreationTurnsElapsed>50</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>5</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>125</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>3</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>12</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>85</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>2</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>2</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>30</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>9</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>-10</iAnimalBonus>
@@ -353,9 +353,9 @@
 			<iBarbarianCityCreationTurnsElapsed>40</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>6</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>110</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>4</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>16</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>70</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>3</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>3</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>42</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>12</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -450,9 +450,9 @@
 			<iBarbarianCityCreationTurnsElapsed>30</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>7</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>95</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>20</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>55</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>4</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>4</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>54</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -547,9 +547,9 @@
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>80</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>5</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -650,9 +650,9 @@
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>65</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>5</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>0</iAnimalBonus>
@@ -757,9 +757,9 @@
 			<iBarbarianCityCreationTurnsElapsed>20</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>8</iBarbarianCityCreationProb>
 			<iAnimalEscalationTurnsElapsed>50</iAnimalEscalationTurnsElapsed>
-			<iPercentDemonsPerEvilPlot>6</iPercentDemonsPerEvilPlot>
-			<iPercentDemonsPerEvilPlotPerGlobalCounter>24</iPercentDemonsPerEvilPlotPerGlobalCounter>
-			<iTilesPerLairDemon>40</iTilesPerLairDemon>
+			<iPercentDemonsPerEvilPlot>5</iPercentDemonsPerEvilPlot>
+			<iPercentDemonsPerEvilPlotPerGlobalCounter>5</iPercentDemonsPerEvilPlotPerGlobalCounter>
+			<iTilesPerLairDemon>1</iTilesPerLairDemon>
 			<iDemonGlobalCounterFreeXPPercent>66</iDemonGlobalCounterFreeXPPercent>
 			<iDemonPerTurnKnownTechsPercent>15</iDemonPerTurnKnownTechsPercent>
 			<iAnimalBonus>0</iAnimalBonus>

@@ -863,9 +863,9 @@
 			<iTradeRoutes>2</iTradeRoutes>
 			<bNoForeignTrade>1</bNoForeignTrade>
 			<TradeYieldModifiers>
+				<iYield>0</iYield>
 				<iYield>50</iYield>
-				<iYield>50</iYield>
-				<iYield>-50</iYield>
+				<iYield>-25</iYield>
 			</TradeYieldModifiers>
 			<FeatureHappinessChanges>
 				<FeatureHappinessChange>

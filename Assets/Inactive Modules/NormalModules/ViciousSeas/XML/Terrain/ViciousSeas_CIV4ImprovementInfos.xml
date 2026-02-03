@@ -901,7 +901,7 @@
 			<LairUpgradeTechs>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_NECROMANCY</LairUpgradeTechType>
-					<iLairUpgradeTech>30</iLairUpgradeTech>
+					<iLairUpgradeTech>90</iLairUpgradeTech>
 				</LairUpgradeTech>
 				<LairUpgradeTech>
 					<LairUpgradeTechType>TECH_MALEVOLENT_DESIGNS</LairUpgradeTechType>

@@ -2436,8 +2436,8 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMoves>1</iMoves>
 			<iWorkRate>300</iWorkRate>
-			<iCombat>3</iCombat>
-			<iCombatDefense>3</iCombatDefense>
+			<iCombat>4</iCombat>
+			<iCombatDefense>4</iCombatDefense>
 			<iCultureGarrison>3</iCultureGarrison>
 			<iAsset>16</iAsset>
 			<UnitMeshGroups>

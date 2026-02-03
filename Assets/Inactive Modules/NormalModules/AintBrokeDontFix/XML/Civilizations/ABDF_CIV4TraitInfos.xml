@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leader Trait Infos -->
+<Civ4TraitInfos xmlns="x-schema:ABDF_CIV4CivilizationsSchema.xml">
+	<TraitInfos>
+		<TraitInfo>		<!-- Trader -->
+			<Type>TRAIT_TRADER</Type>
+			<TraitClass>TRAITCLASS_PERSONALITY</TraitClass>
+			<Description>TXT_KEY_TRAIT_TRADER</Description>
+			<ShortDescription>TXT_KEY_TRAIT_TRADER_SHORT</ShortDescription>
+			<iStartingGold>50</iStartingGold>
+			<bSelectable>1</bSelectable>
+			<iMinRequiredPoints>500</iMinRequiredPoints>
+			<TradeYieldModifiers>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+			</TradeYieldModifiers>
+		</TraitInfo>
+		<TraitInfo>		<!-- Virtuous Pirate 3-->
+			<Type>TRAIT_VIRTUOUS_PIRATE3</Type>
+			<ParentTrait>TRAIT_VIRTUOUS_PIRATE</ParentTrait>
+			<iLevel>3</iLevel>
+			<Civilopedia>TXT_KEY_TRAIT_VIRTUOUS_PIRATE_PEDIA</Civilopedia>
+			<iMinRequiredPoints>1500</iMinRequiredPoints>
+			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+			<Description>TXT_KEY_TRAIT_VIRTUOUS_PIRATE</Description>
+			<ShortDescription>TXT_KEY_TRAIT_VIRTUOUS_PIRATE_SHORT</ShortDescription>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_NAVIGATION1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_BOARDING</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
+			<TradeYieldModifiers>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+				<iYield>50</iYield>
+			</TradeYieldModifiers>
+		</TraitInfo>
+		<TraitInfo>		<!-- Keepers of the Danalin's Sorrow (Aifon Isle) -->
+			<Type>TRAIT_KEEPERS_AIFON</Type>
+			<TraitClass>TRAITCLASS_KEEPERS</TraitClass>
+			<iMinRequiredPoints>500</iMinRequiredPoints>
+			<bCanBeLost>1</bCanBeLost>
+			<Description>TXT_KEY_TRAIT_KEEPERS_AIFON</Description>
+			<Civilopedia>TXT_KEY_TRAIT_KEEPERS_PEDIA</Civilopedia>
+			<ShortDescription>TXT_KEY_TRAIT_KEEPERS_AIFON_SHORT</ShortDescription>
+			<TradeYieldModifiers>
+				<iYield>15</iYield>
+				<iYield>0</iYield>
+				<iYield>15</iYield>
+			</TradeYieldModifiers>
+		</TraitInfo>
+	</TraitInfos>
+</Civ4TraitInfos>
