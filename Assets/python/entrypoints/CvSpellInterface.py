@@ -11982,7 +11982,7 @@ def helpVaultGates (argsList):
 		if iThadeMax != int(iThadeMax):
 			iThadeMax = int(iThadeMax)+1
 		iDjinnCur		= iNumUC(getInfoType('UNITCLASS_DJINN'))
-		iDjinnMax		= bGov * iMMMana * UnitCap / 4
+		iDjinnMax		= bGov * iMMMana * UnitCap / 8
 		if iDjinnMax != int(iDjinnMax):
 			iDjinnMax = int(iDjinnMax)+1
 		iFElementalCur	= iNumUC(getInfoType('UNITCLASS_FIRE_ELEMENTAL'))
