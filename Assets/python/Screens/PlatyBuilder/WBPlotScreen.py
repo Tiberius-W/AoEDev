@@ -235,6 +235,13 @@ class WBPlotScreen:
 			sText = u"%s%c" %(sText, gc.getYieldInfo(i).getChar())
 			screen.setLabel("BaseYieldText" + str(i), "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			iY += 30
+
+		screen.setButtonGFC("PlotCounterPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, i, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+		screen.setButtonGFC("PlotCounterMinus" , "", "", iX + 25, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, i, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+		sText = "<font=3>" + CyTranslator().getText("TXT_KEY_WB_PLOT_COUNTER",()) + ": " + str(pPlot.getPlotCounter()) + "</font>"
+		sText = u"%s %c" %(sText, gc.getReligionInfo(gc.getInfoTypeForString("RELIGION_THE_ASHEN_VEIL")).getChar())
+		screen.setLabel("PlotCounterText", "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 		self.placeSigns()
 		self.placeRivers()
 
@@ -592,6 +599,31 @@ class WBPlotScreen:
 				if iImprovement > -1:
 					iYield -= pPlot.calculateImprovementYieldChange(iImprovement, i, pPlot.getOwner(), False)
 				CyGame().setPlotExtraYield(pPlot.getX(), pPlot.getY(), i, - min(iChange, iYield))
+			self.placeStats()
+
+		elif inputClass.getFunctionName().find("PlotCounter") > -1:
+			iCounter = pPlot.getPlotCounter()
+			if iEditType == 0:
+				if   inputClass.getData1() == 1030:
+					pPlot.changePlotCounter(iChange)
+				elif inputClass.getData1() == 1031:
+					pPlot.changePlotCounter(-min(iChange, iCounter))
+			else:
+				if   inputClass.getData1() == 1030:
+					for i in xrange(CyMap().numPlots()):
+						pLoopPlot = CyMap().plotByIndex(i)
+						if pLoopPlot.isNone(): continue
+						if iEditType == 1:
+							if pLoopPlot.getArea() != pPlot.getArea(): continue
+						pLoopPlot.changePlotCounter(iChange)
+				elif inputClass.getData1() == 1031:
+					for i in xrange(CyMap().numPlots()):
+						pLoopPlot = CyMap().plotByIndex(i)
+						if pLoopPlot.isNone(): continue
+						if iEditType == 1:
+							if pLoopPlot.getArea() != pPlot.getArea(): continue
+						pLoopPlot.changePlotCounter(-min(iChange, iCounter))
+			self.placeTerrain()
 			self.placeStats()
 
 		elif inputClass.getFunctionName() == "RiverWestAButton":
