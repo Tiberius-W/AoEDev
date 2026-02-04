@@ -24749,8 +24749,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bOverflowProduction, "bOverflowProduction");
 	pXML->GetChildXmlValByName(&m_bUnhappyProduction, "bUnhappyProduction");
 	pXML->GetChildXmlValByName(&m_iCrime, "iCrime");
-	pXML->GetChildXmlValByName(&m_iCrime, "iExtraCrimePerUnhappy");
-	pXML->GetChildXmlValByName(&m_iCrime, "iExtraCrimePerUnhealth");
+	pXML->GetChildXmlValByName(&m_iCrimePerUnhappyModifier, "iExtraCrimePerUnhappy");
+	pXML->GetChildXmlValByName(&m_iCrimePerUnhealthModifier, "iExtraCrimePerUnhealth");
 	pXML->GetChildXmlValByName(&m_iFreePromotionPick, "iFreePromotionPick");
 	pXML->GetChildXmlValByName(szTextVal, "FreeBonus2");
 	m_iFreeBonus2 = pXML->FindInInfoClass(szTextVal);

@@ -497,6 +497,7 @@ class CvGameUtils:
 							if (iBuild == Build["Cottage"]): return 1
 
 		if pPlayer.isHuman() == False:
+			return 1 #deactivate all ai-only stuff for testing
 			Tech	 	= Manager.Techs
 			Trait	 	= Manager.Traits
 			Alignment 	= Manager.Alignments
