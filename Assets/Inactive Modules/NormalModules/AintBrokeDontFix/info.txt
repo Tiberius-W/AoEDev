@@ -1,0 +1,36 @@
+;Name - no need to explain
+;note: one line
+[name]
+Aint Broke Dont Fix
+;
+;
+;Version - version of module
+;Note: it have to be number, so only numberic characters and none or one period
+;note: one line
+[version]
+1.00
+;
+;
+;RifE version - version of RifE for which is this module tested, checked, developed, etc
+;Note: it have to be number, so only numberic characters and none or one period
+;note: one line
+[rifeversion]
+383
+;
+;
+;Author - you
+;note: one line
+[author]
+Tikumara
+;
+;
+;Short description - text showed in contect menu
+;note: one line
+[shortdesc]
+Re-adds fun broken things like food from trade or early Iron.
+;
+;
+;Description - text showed in message box
+;note: can be multiline
+[desc]
+Adds the fun things that ruin the balance.

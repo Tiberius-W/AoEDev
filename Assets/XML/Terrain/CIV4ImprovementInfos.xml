@@ -1200,7 +1200,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_WAY_OF_THE_WICKED</LairCreationWeightTechType> 
-					<iLairCreationWeightTech>1000</iLairCreationWeightTech>
+					<iLairCreationWeightTech>25</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<iBasePlotCounterModify>30</iBasePlotCounterModify>
@@ -2850,12 +2850,12 @@
 					<bGoodyClass>1</bGoodyClass>
 				</GoodyClass>
 			</GoodyClasses>
-			<iAppearanceProbability>50</iAppearanceProbability>
-			<iLairCreationWeight>75</iLairCreationWeight>
+			<iAppearanceProbability>55</iAppearanceProbability>
+			<iLairCreationWeight>25</iLairCreationWeight>
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_NECROMANCY</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-75</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -2977,11 +2977,11 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_NECROMANCY</LairCreationWeightTechType>
-					<iLairCreationWeightTech>75</iLairCreationWeightTech>
+					<iLairCreationWeightTech>25</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_MALEVOLENT_DESIGNS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>-75</iLairCreationWeightTech>
+					<iLairCreationWeightTech>-25</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<LairUpgradeTechs>
@@ -3114,7 +3114,7 @@
 			<LairCreationWeightTechs>
 				<LairCreationWeightTech>
 					<LairCreationWeightTechType>TECH_MALEVOLENT_DESIGNS</LairCreationWeightTechType>
-					<iLairCreationWeightTech>75</iLairCreationWeightTech>
+					<iLairCreationWeightTech>25</iLairCreationWeightTech>
 				</LairCreationWeightTech>
 			</LairCreationWeightTechs>
 			<iBasePlotCounterModify>20</iBasePlotCounterModify>
@@ -7381,7 +7381,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iPillageGold>10</iPillageGold>
 			<SpawnUnitType>UNIT_DEVILCASTER</SpawnUnitType>
-			<SpawnUnitCiv>CIVILIZATION_DEMON</SpawnUnitCiv>
+			<bSpawnOnlyForOwner>1</bSpawnOnlyForOwner>
 			<iSpawnAtOnceLimit>1</iSpawnAtOnceLimit>
 			<iBasePlotCounterModify>60</iBasePlotCounterModify>
 			<iDefenseModifier>15</iDefenseModifier>

@@ -7,6 +7,7 @@ import CvUtil
 import Popup as PyPopup
 import CvScreenEnums
 import CvEventInterface
+import time
 
 class CustomFunctions:
 	def __init__(self):
@@ -207,9 +208,8 @@ class CustomFunctions:
 		if pFromPlayer != -1:
 			iFromTeam	= pFromPlayer.getTeam()
 			pFromTeam	= gc.getTeam(iFromTeam)
-			hasTech		= pFromTeam.isHasTech
 			for iTech in xrange(gc.getNumTechInfos()):
-				if not hasTech(iTech): continue
+				if not pFromTeam.isHasTech(iTech): continue
 				pTeam.setHasTech(iTech, True, iPlayer, True, False)
 			if iFromTeam != iTeam:
 				if not pFromTeam.isAtWar(gc.getORC_TEAM()):
@@ -258,17 +258,16 @@ class CustomFunctions:
 			CyInterface().addMessage(iOwner, True, 25, szText, '', iMessage, szButton, iGreen, iX, iY, True, True)
 
 	### TODO: Dictionaries
-	def doFFTurn(self):
-		iAreThereLizardsHere	= CyGame().getNumCivActive(self.Civilizations["Mazatl"]) + CyGame().getNumCivActive(self.Civilizations["Cualli"])
-		iAreThereScionsHere		= CyGame().getNumCivActive(self.Civilizations["Scions"])
-		if not (iAreThereLizardsHere or iAreThereScionsHere or not self.GameOptions["No Plot Counter"]): return
+	def doFFTurn(self, iTurn):
+		iNumScions		= CyGame().getNumCivActive(self.Civilizations["Scions"])
 		gc				= CyGlobalContext()
 		git				= gc.getInfoTypeForString
 		iPlotTreshold	= gc.getDefineINT("PLOT_COUNTER_HELL_THRESHOLD")
-		iJungleChance 	= 10
-		iSwampChance 	= 25
+		iJungleChance	= 10
+		iSwampChance	= 25
 		iHLSeed			= 0
-		if iAreThereScionsHere:
+
+		if iNumScions:
 			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 				pLoopPlayer	= gc.getPlayer(iLoopPlayer)
 				iLoopCiv	= pLoopPlayer.getCivilizationType()
@@ -363,6 +362,83 @@ class CustomFunctions:
 				if iTerrain == self.Terrain["Burning sands"] and not bCity and not bPeak:
 					if CyGame().getSorenRandNum(100, "Flames") <= self.Defines["Flame Spread"]:
 						pPlot.setFeatureType(self.Feature["Flames"], 0)
+		# Annoying popup
+		if iTurn == 3:
+			if not CyGame().isNetworkMultiPlayer():
+				t = "TROPHY_FEAT_INTRODUCTION"
+				if not CyGame().isHasTrophy(t):
+					CyGame().changeTrophyValue(t, 1)
+					addPopupWB(CyTranslator().getText("TXT_KEY_FFH_INTRO",()),'art/interface/popups/FfHIntro.dds')
+		# Global Unit Spawn
+		bOrthus			= not CyGame().isOption(self.GameOptions["No Orthus"])
+		lSpawnTurns		= [75, 100, 120] # Orthus, Zarcaz, Gyre
+		fSpeedMod		= float(gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent()) / 100
+		lSpawnTurns		= [int(iSpawnTurn * fSpeedMod) for iSpawnTurn in lSpawnTurns]
+		if   iTurn == lSpawnTurns[0]:
+			if not CyGame().isUnitClassMaxedOut(self.UnitClasses["Orthus"], 0) and bOrthus:
+				iOrthusPlayer = gc.getORC_PLAYER()
+				if git("MODULE_EMERGENT_LEADERS") != -1:
+					for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+						pLoopPlayer = gc.getPlayer(iLoopPlayer)
+						if not pLoopPlayer.hasTrait(self.Traits["Matriarch 1"]): continue
+						if not pLoopPlayer.isAlive(): continue
+						iOrthusPlayer = iLoopPlayer
+				addUnit(self.Heroes["Orthus"], iOrthusPlayer)
+		elif iTurn == lSpawnTurns[1]:
+			if not CyGame().isUnitClassMaxedOut(self.UnitClasses["Zarcaz"], 0) and bOrthus:
+				iZarcazPlayer	= gc.getORC_PLAYER()
+				pZarcazPlayer	= gc.getPlayer(iZarcazPlayer)
+				pZarcaz			= addUnit(self.Heroes["Zarcaz"], iZarcazPlayer)
+				iX				= pZarcaz.getX()
+				iY				= pZarcaz.getY()
+				iAIValue		= UnitAITypes.NO_UNITAI
+				iDirection		= DirectionTypes.DIRECTION_SOUTH
+				newUnit			= pZarcazPlayer.initUnit(self.Units["Scorpion Clan"]["Archer"], iX, iY, iAIValue, iDirection)
+				pZarcaz.addMinion(newUnit)
+				newUnit2		= pZarcazPlayer.initUnit(self.Units["Scorpion Clan"]["Goblin"], iX, iY, iAIValue, iDirection)
+				pZarcaz.addMinion(newUnit2)
+				newUnit3		= pZarcazPlayer.initUnit(self.Units["Scorpion Clan"]["Wolf Rider"], iX, iY, iAIValue, iDirection)
+				pZarcaz.addMinion(newUnit3)
+		elif iTurn == lSpawnTurns[2]:
+			if not CyGame().isUnitClassMaxedOut(git('UNITCLASS_GYRE_CARLIN'), 0) and bOrthus:
+				addUnit(git('UNIT_GYRE_CARLIN'), gc.getDEMON_PLAYER())
+		# UF Teleport
+		if (iTurn + 1) % (40 - 5 * CyGame().getGameSpeedType()) == 0:
+			bOrcPlayer			= gc.getPlayer(gc.getORC_PLAYER())
+			if not bOrcPlayer.isHasFlag(git('FLAG_CONTROLED_LACUNA')):
+				iBL	= self.UniqueImprovements["Bair of Lacuna"]
+				lBL	= self.findImprovements(iBL)
+				if lBL:
+					pPlotBL		= lBL[0]
+					iBestValue	= 0
+					pBestPlot	= -1
+					for iLoopPlot in xrange(CyMap().numPlots()):
+						pLoopPlot = CyMap().plotByIndex(iLoopPlot)
+						if pLoopPlot.isWater():					continue
+						if pLoopPlot.isPeak():					continue
+						if pLoopPlot.getBonusType(-1) != -1:	continue
+						if pLoopPlot.getRealBonusType() != -1:	continue
+						if pLoopPlot.getNumUnits() > 0:			continue
+						if pLoopPlot.isCity():					continue
+						if pLoopPlot == pPlotBL:				continue
+						iValue = 0
+						if pLoopPlot.getImprovementType() == -1:	iValue += 1000
+						else:
+							if gc.getImprovementInfo(pLoopPlot.getImprovementType()).isPermanent(): continue
+						if not pLoopPlot.isOwned():					iValue += 500
+						if pLoopPlot.getRouteType() == -1:			iValue += 500
+						iValue += CyGame().getSorenRandNum(1000, "Bair Move")
+						if iValue > iBestValue:
+							iBestValue = iValue
+							pBestPlot = pLoopPlot
+					if pBestPlot != -1:
+						pBestPlot.setImprovementType(iBL)
+						pBestPlot.setExploreNextTurn(pPlotBL.getExploreNextTurn())
+						pBestPlot.setRouteType(pPlotBL.getRouteType())
+						pPlotBL.setImprovementType(-1)
+						pPlotBL.setBonusType(-1)
+						pPlotBL.setRouteType(-1)
+						pPlotBL.setExploreNextTurn(0)
 
 	def doTurnKhazad(self, iPlayer):
 		gc			= CyGlobalContext()
@@ -398,7 +474,6 @@ class CustomFunctions:
 
 		for iUnit in xrange(pPlayer.getNumUnits()):
 			pUnit = pPlayer.getUnit(iUnit)
-			
 			if   pUnit.getUnitType() == self.Heroes["Barnaxus"]:
 				pBarnaxus = pUnit
 			elif pUnit.isHasPromotion(self.Promotions["Race"]["Golem"]) and not pUnit.isHasPromotion(self.Promotions["Generic"]["Empower V"]):
@@ -607,6 +682,7 @@ class CustomFunctions:
 		if (pPlayer.getUnitClassCount(self.UnitClasses["Ranger"]) + pPlayer.getUnitClassCount(self.UnitClasses["Haunt"])) < 1:
 			pPlayer.setFeatAccomplished(FeatTypes.FEAT_MANIFEST_FIRST_HORNED_DREAD, False)
 
+	### TODO: Dictionaries
 	def doChanceAwakenedSpawn(self, iPlayer):
 		gc			= CyGlobalContext()
 		pPlayer		= gc.getPlayer(iPlayer)
@@ -878,37 +954,34 @@ class CustomFunctions:
 	def doAnimalListDoviello(self, iPlayer):
 		gc				= CyGlobalContext()
 		pPlayer			= gc.getPlayer(iPlayer)
-		iTeam			= pPlayer.getTeam()
-		pTeam			= gc.getTeam(iTeam)
-
 		lUnits			= []
 
-		if   pTeam.isHasTech( self.Techs["Feral Bond"]):			lUnits.append(self.Units["Animal"]["Dire Wolf"])
-		elif pTeam.isHasTech( self.Techs["Tracking"]):				lUnits.append(self.Units["Animal"]["Wolf Pack"])
+		if   pPlayer.isHasTech( self.Techs["Feral Bond"]):			lUnits.append(self.Units["Animal"]["Dire Wolf"])
+		elif pPlayer.isHasTech( self.Techs["Tracking"]):				lUnits.append(self.Units["Animal"]["Wolf Pack"])
 		else:														lUnits.append(self.Units["Animal"]["Wolf"])
 
 		if pPlayer.getBuildingClassCount(self.BuildingClasses["Bear Den"]) >= 1:
-			if   pTeam.isHasTech(self.Techs["Iron Working"]):		lUnits.append(self.Units["Animal"]["Cave Bears"])
-			elif pTeam.isHasTech(self.Techs["Bronze Working"]):		lUnits.append(self.Units["Animal"]["Bear group"])
+			if   pPlayer.isHasTech(self.Techs["Iron Working"]):		lUnits.append(self.Units["Animal"]["Cave Bears"])
+			elif pPlayer.isHasTech(self.Techs["Bronze Working"]):		lUnits.append(self.Units["Animal"]["Bear group"])
 			else:													lUnits.append(self.Units["Animal"]["Bear"])
 
 		if pPlayer.getBuildingClassCount(self.BuildingClasses["Boar Pen"]) >= 1:
-			if   pTeam.isHasTech(self.Techs["Engineering"]):		lUnits.append(self.Units["Animal"]["Blood Boar"])
-			elif pTeam.isHasTech(self.Techs["Construction"]):		lUnits.append(self.Units["Animal"]["Boar Herd"])
+			if   pPlayer.isHasTech(self.Techs["Engineering"]):		lUnits.append(self.Units["Animal"]["Blood Boar"])
+			elif pPlayer.isHasTech(self.Techs["Construction"]):		lUnits.append(self.Units["Animal"]["Boar Herd"])
 			else:													lUnits.append(self.Units["Animal"]["Boar"])
 
 		if pPlayer.getBuildingClassCount(self.BuildingClasses["Gorilla Hut"]) >= 1:
-			if   pTeam.isHasTech(self.Techs["Bowyers"]):			lUnits.append(self.Units["Animal"]["Silverback"])
-			elif pTeam.isHasTech(self.Techs["Archery"] ):			lUnits.append(self.Units["Animal"]["Gorilla Troop"])
+			if   pPlayer.isHasTech(self.Techs["Bowyers"]):			lUnits.append(self.Units["Animal"]["Silverback"])
+			elif pPlayer.isHasTech(self.Techs["Archery"] ):			lUnits.append(self.Units["Animal"]["Gorilla Troop"])
 			else:													lUnits.append(self.Units["Animal"]["Gorilla"])
 
 		if pPlayer.getBuildingClassCount(self.BuildingClasses["Griffin Weyr"]) >= 1:
-			if   pTeam.isHasTech(self.Techs["Stirrups"]):			lUnits.append(self.Units["Animal"]["Roc"])
-			elif pTeam.isHasTech(self.Techs["Horseback Riding"]):	lUnits.append(self.Units["Animal"]["Griffon"])
+			if   pPlayer.isHasTech(self.Techs["Stirrups"]):			lUnits.append(self.Units["Animal"]["Roc"])
+			elif pPlayer.isHasTech(self.Techs["Horseback Riding"]):	lUnits.append(self.Units["Animal"]["Griffon"])
 			else:													lUnits.append(self.Units["Animal"]["Hippogriff"])
 
 		if pPlayer.getBuildingClassCount(self.BuildingClasses["Stag Copse"]) >= 1:
-			if   pTeam.isHasTech(self.Techs["Priesthood"]):			lUnits.append(self.Units["Animal"]["Stag"])
+			if   pPlayer.isHasTech(self.Techs["Priesthood"]):			lUnits.append(self.Units["Animal"]["Stag"])
 			else:													lUnits.append(self.Units["Animal"]["Elk"])
 
 		return lUnits
@@ -934,13 +1007,13 @@ class CustomFunctions:
 		CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, pCity.getX(), pCity.getY(), True, True)
 
 		if iUnit == self.Units["Sheaim"]["Mobius Witch"]:
-			lSpheres	= [	self.Promotions["Generic"]["Air I"],	self.Promotions["Generic"]["Earth I"],		self.Promotions["Generic"]["Fire I"],			self.Promotions["Generic"]["Ice I"],		self.Promotions["Generic"]["Water I"],
+			fSpheres	= (	self.Promotions["Generic"]["Air I"],	self.Promotions["Generic"]["Earth I"],		self.Promotions["Generic"]["Fire I"],			self.Promotions["Generic"]["Ice I"],		self.Promotions["Generic"]["Water I"],
 							self.Promotions["Generic"]["Chaos I"],	self.Promotions["Generic"]["Death I"],		self.Promotions["Generic"]["Dimensional I"],	self.Promotions["Generic"]["Entropy I"],	self.Promotions["Generic"]["Shadow I"],
 							self.Promotions["Generic"]["Body I"],	self.Promotions["Generic"]["Creation I"],	self.Promotions["Generic"]["Enchantment I"],	self.Promotions["Generic"]["Force I"],		self.Promotions["Generic"]["Nature I"],
-							self.Promotions["Generic"]["Metamagic I"]]
+							self.Promotions["Generic"]["Metamagic I"])
 			newUnit.setLevel(3)
 			newUnit.setExperienceTimes100(1000 + CyGame().getGlobalCounter() * 25, -1)
-			for iSphere in lSpheres:
+			for iSphere in fSpheres:
 				if CyGame().getSorenRandNum(8, "Mobius Witch Free Promotions") != 0: continue
 				newUnit.setHasPromotion(iSphere, True)
 		else:
@@ -1037,18 +1110,6 @@ class CustomFunctions:
 
 		pCity.setCityCounter(iChance)
 	### Memorial of the Refugee End
-
-#### TODO: remove call from CvEventManager.py and remove function
-	def doTurnCualli(self, iPlayer):
-		return
-		# for iUnit in xrange(pPlayer.getNumUnits()):
-			# pUnit = pPlayer.getUnit(iUnit)
-			# if iUnitType != self.Units["Cualli"]["Priest of Agruonn"] and iUnitType != self.Units["Cualli"]["Shadow Priest of Agruonn"] and iUnitType != self.Heroes["Miquiztli"]: return
-			# if   pUnit.isHasPromotion(self.Promotions["Generic"]["Empower V"]):		pUnit.setHasPromotion(self.Promotions["Generic"]["Empower V"], False)
-			# elif pUnit.isHasPromotion(self.Promotions["Generic"]["Empower IV"]):	pUnit.setHasPromotion(self.Promotions["Generic"]["Empower IV"], False)
-			# elif pUnit.isHasPromotion(self.Promotions["Generic"]["Empower III"]):	pUnit.setHasPromotion(self.Promotions["Generic"]["Empower III"], False)
-			# elif pUnit.isHasPromotion(self.Promotions["Generic"]["Empower II"]):	pUnit.setHasPromotion(self.Promotions["Generic"]["Empower II"], False)
-			# elif pUnit.isHasPromotion(self.Promotions["Generic"]["Empower I"]):		pUnit.setHasPromotion(self.Promotions["Generic"]["Empower I"], False)
 
 	def genesis(self, iPlayer):
 		for i in xrange(CyMap().numPlots()):
@@ -1205,15 +1266,18 @@ class CustomFunctions:
 				szSound		= 'AS2D_UNIT_FALLS'
 				iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
 				iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
-				szText		= CyTranslator().getText("TXT_KEY_MESSAGE_ADD_FROZEN_SOULS",())
-				szArt		= 'Art/Interface/Buttons/Promotions/Races/frostling.dds'
-				if   iUnit == iMane:
+				if   iUnit == iFrozenSoul:
+					szText	= CyTranslator().getText("TXT_KEY_MESSAGE_ADD_FROZEN_SOULS",())
+					szArt	= 'Art/Interface/Buttons/Promotions/Races/frostling.dds'
+					CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, iX, iY, True, True)
+				elif iUnit == iMane:
 					szText	= CyTranslator().getText("TXT_KEY_MESSAGE_ADD_MANES",())
 					szArt	= 'Art/Interface/Buttons/Promotions/Races/Demon.dds'
+					CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, iX, iY, True, True)
 				elif iUnit == iAngel:
 					szText	= CyTranslator().getText("TXT_KEY_MESSAGE_ADD_ANGEL",())
 					szArt	= 'Art/Interface/Buttons/Promotions/Races/Angel.dds'
-				CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, iX, iY, True, True)
+					CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, iX, iY, True, True)
 			elif iUnit in (iMane, iFrozenSoul):
 				if CyGame().getSorenRandNum(100, "Manes") >= (100 - (pCity.getPopulation() * 5)): continue
 				pCity.changePopulation(1)
@@ -1330,31 +1394,6 @@ class CustomFunctions:
 		if iCiv2 == self.Civilizations["Elohim"]:	return False
 		if pTeam2.isAVassal():						return False
 		return True
-
-	def countMana(self, pPlayer):
-		iNum = 0
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Air"]        )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Body"]       )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Chaos"]      )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Creation"]   )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Death"]      )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Dimensional"])
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Earth"]      )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Enchantment"])
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Entropy"]    )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Fire"]       )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Force"]      )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Ice"]        )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Law"]        )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Life"]       )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Metamagic"]  )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Mind"]       )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Nature"]     )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Shadow"]     )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Spirit"]     )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Sun"]        )
-		iNum += pPlayer.getNumAvailableBonuses(self.Mana["Water"]      )
-		return iNum
 
 	def canReceiveReligionUnit(self, pPlayer):
 		iCiv = pPlayer.getCivilizationType()
@@ -1557,21 +1596,18 @@ class CustomFunctions:
 		# trim name length
 		if len(sFull) > 25:
 			sFull = sFull[:25]
-		#CyInterface().addMessage(caster.getOwner(),True,25,"NAME : "+sFull,'AS2D_POSITIVE_DINK',1,'Art/Interface/Buttons/Spells/Rob Grave.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
 
 		return sFull
 
 	### TODO: Dictionaries
 	def resetRepublicTraits(self, pPlayer):
-		git	= CyGlobalContext().getInfoTypeForString
-		pPlayer.setHasTrait(git("TRAIT_AGGRESSIVE_REPUBLIC"),	False)
-		pPlayer.setHasTrait(git("TRAIT_DEFENDER_REPUBLIC"),		False)
-		pPlayer.setHasTrait(git("TRAIT_FINANCIAL_REPUBLIC"),	False)
-		pPlayer.setHasTrait(git("TRAIT_EXPANSIVE_REPUBLIC"),	False)
-		pPlayer.setHasTrait(git("TRAIT_SPIRITUAL_REPUBLIC"),	False)
-		pPlayer.setHasTrait(git("TRAIT_ORGANIZED_REPUBLIC"),	False)
-		pPlayer.setHasTrait(git("TRAIT_PHILOSOPHICAL_REPUBLIC"),False)
-		pPlayer.setHasTrait(git("TRAIT_INDUSTRIOUS_REPUBLIC"),	False)
+		gc = CyGlobalContext()
+		for iTrait in xrange(gc.getNumTraitInfos()):
+			if gc.getTraitInfo(iTrait).getTraitClass() != gc.getInfoTypeForString("TRAITCLASS_REPUBLIC"): continue
+			if not gc.isNoCrash():
+				pPlayer.setHasTrait((iTrait),False,-1,True,True)
+			else:
+				pPlayer.setHasTrait((iTrait),False)
 
 	### TODO: Dictionaries
 	def angelorMane(self, pUnit):
@@ -1789,14 +1825,15 @@ class CustomFunctions:
 		return True
 
 	def doBarbarianWorld(self):
-		lStartingPlots = []
-		lValuedPlots = []
-		iNumCities = 0
-		pBarbPlayer = CyGlobalContext().getPlayer(CyGlobalContext().getORC_PLAYER())
+		gc				= CyGlobalContext()
+		lStartingPlots	= []
+		lValuedPlots	= []
+		iNumCities		= 0
+		pBarbPlayer		= gc.getPlayer(gc.getORC_PLAYER())
 
 		# Creating a list of starting points to avoid few checks every plot
-		for iPlayer in xrange(CyGlobalContext().getMAX_PLAYERS()):
-			pLoopPlayer = CyGlobalContext().getPlayer(iPlayer)
+		for iPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iPlayer)
 			if pLoopPlayer.isAlive():
 				iNumCities += 1
 				pStartingPlot = pLoopPlayer.getStartingPlot()
@@ -1811,16 +1848,16 @@ class CustomFunctions:
 			iAIValue	= 0
 			iDist		= 0
 			# Checks that are more likely to filter out a plot are higher
-			if pLoopPlot.isWater(): continue
-			elif pLoopPlot.isImpassable(): continue
-			elif pLoopPlot.isPeak(): continue
-			elif pLoopPlot.getBonusType(-1) != -1: continue
-			elif pLoopPlot.getImprovementType() != -1: continue
-			elif pLoopPlot.isCity(): continue
-			elif pLoopPlot.isFoundDisabled(): continue
+			if pLoopPlot.isWater():						continue
+			elif pLoopPlot.isImpassable():				continue
+			elif pLoopPlot.isPeak():					continue
+			elif pLoopPlot.getBonusType(-1) != -1:		continue
+			elif pLoopPlot.getImprovementType() != -1:	continue
+			elif pLoopPlot.isCity():					continue
+			elif pLoopPlot.isFoundDisabled():			continue
 
-			iAIValue += pBarbPlayer.AI_foundValue(pLoopPlot.getX(), pLoopPlot.getY(), -1, true)
-			if iAIValue == 0: continue
+			iAIValue += pBarbPlayer.AI_foundValue(pLoopPlot.getX(), pLoopPlot.getY(), -1, True)
+			if iAIValue == 0:							continue
 
 			for StartingPlot in lStartingPlots:
 				iDist = plotDistance(pLoopPlot.getX(),pLoopPlot.getY(),StartingPlot.getX(),StartingPlot.getY())
@@ -1861,3 +1898,1656 @@ class CustomFunctions:
 				pLoopPlot = CyMap().plotByIndex(tLoopPlot[0])
 				iDist = plotDistance(pLoopPlot.getX(),pLoopPlot.getY(),pCityPlot.getX(),pCityPlot.getY())
 				if iDist > -1 and iDist < 7: lValuedPlots.remove(tLoopPlot)
+
+	### TODO: Dictionaries
+	def doAoEGameStart(self):
+		gc				= CyGlobalContext()
+		iAnimalTeam		= gc.getANIMAL_TEAM()
+		bOrcPlayer		= gc.getPlayer(gc.getORC_PLAYER())
+		bAnimalPlayer	= gc.getPlayer(gc.getANIMAL_PLAYER())
+		bDemonPlayer	= gc.getPlayer(gc.getDEMON_PLAYER())
+		iElohim			= self.Civilizations["Elohim"]
+		iCaln			= self.Civilizations["Clan of Embers"]
+		iFeral			= self.Traits["Feral"]
+		iCapria			= self.Traits["Aspect Capria"]
+		iMahon			= self.Traits["Aspect Mahon"]
+		iSauros			= gc.getInfoTypeForString('LEADER_SAUROS')
+		iAI				= UnitAITypes.NO_UNITAI
+		iDirection		= DirectionTypes.DIRECTION_SOUTH
+		# Set Flags
+		gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_AKHARIEN_LOST'),True)
+		gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_MOKKA_LOST'),True)
+		if not self.GameOptions["No Orthus"]: gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_ORTHUS'),True)
+		lWell = self.findImprovements(self.UniqueImprovements["Bradeline's Well"])
+		if not lWell: gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_PURIFIED_WELL'),True)
+
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive(): continue
+			if pLoopPlayer.hasTrait(iFeral):
+				pTeam = gc.getTeam(pLoopPlayer.getTeam())
+				pTeam.makePeace(iAnimalTeam)
+			if pLoopPlayer.hasTrait(iCapria):
+				gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_CAPRIA'),True)
+			if pLoopPlayer.hasTrait(iMahon):
+				gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAHON'),True)
+			if pLoopPlayer.isHuman() and pLoopPlayer.getCivilizationType() == iElohim:
+				showUniqueImprovements(iLoopPlayer)
+			if pLoopPlayer.getLeaderType() == iSauros and pLoopPlayer.getCivilizationType() ==  iCaln:
+				pLoopPlayer.setNumMaxTraitPerClass(gc.getInfoTypeForString('TRAITCLASS_SAVAGE'),0)
+		## GAME OPTIONS CHECK
+		if self.GameOptions["Barbarian World"]:
+			self.doBarbarianWorld()
+
+		if self.GameOptions["Wild Mana"]:
+			iMana		= self.Mana["Mana"]
+			iMGPromo	= self.Promotions["Effects"]["Mana Guardian"]
+			iSize		= CyMap().getWorldSize()
+			iAdditionalMana = 15
+			if   iSize	== self.WorldSizes["Duel"]:		iAdditionalMana += -7
+			elif iSize	== self.WorldSizes["Tiny"]:		iAdditionalMana += -5
+			elif iSize	== self.WorldSizes["Small"]:	iAdditionalMana += -3
+			elif iSize	== self.WorldSizes["Large"]:	iAdditionalMana += 3
+			elif iSize	== self.WorldSizes["Huge"]:		iAdditionalMana += 6
+			elif iSize	== self.WorldSizes["Huger"]:	iAdditionalMana += 12
+			addBonus('BONUS_MANA', iAdditionalMana, -1)
+
+			iConvertRnd = 60
+			if self.GameOptions["Feral Mana"]: iConvertRnd = 100
+
+			# Conversion	Mana Type					Mana Guardian									Player
+			lWildMana = [	(self.Mana["Air"],			self.Units["Summons"]["Lightning Elemental"],	bDemonPlayer),
+							(self.Mana["Body"],			self.Units["Summons"]["Flesh Golem"],			bDemonPlayer),
+							(self.Mana["Chaos"],		self.Units["Sheaim"]["Chaos Marauder"],			bDemonPlayer),
+							(self.Mana["Death"],		self.Units["Summons"]["Lich"],					bDemonPlayer),
+							(self.Mana["Earth"],		self.Units["Summons"]["Earth Elemental"],		bDemonPlayer),
+							(self.Mana["Enchantment"],	self.Units["Luchuirp"]["Wood Golem"],			bOrcPlayer),
+							(self.Mana["Entropy"],		self.Units["Sheaim"]["Tar Demon"],				bDemonPlayer),
+							(self.Mana["Fire"],			self.Units["Summons"]["Fire Elemental"],		bDemonPlayer),
+							(self.Mana["Law"],			self.Units["Summons"]["Einherjar"],				bOrcPlayer),
+							(self.Mana["Life"],			self.Units["Mercurian"]["Angel"],				bOrcPlayer),
+							(self.Mana["Metamagic"],	self.Units["Kahdi"]["Thade"],					bDemonPlayer),
+							(self.Mana["Mind"],			self.Units["Kahdi"]["Psion"],					bDemonPlayer),
+							(self.Mana["Shadow"],		self.Units["Summons"]["Spectre"],				bDemonPlayer),
+							(self.Mana["Spirit"],		self.Units["Elohim"]["Monk"],					bOrcPlayer),
+							(self.Mana["Sun"],			self.Units["Summons"]["Aurealis"],				bOrcPlayer),
+							(self.Mana["Water"],		self.Units["Summons"]["Water Elemental"],		bDemonPlayer),
+							(self.Mana["Creation"],		self.Units["Animal"]["Elk"],					bAnimalPlayer),
+							(self.Mana["Force"],		self.Units["Grigori"]["Dragon Slayer"],			bOrcPlayer),
+							(self.Mana["Dimensional"],	self.Units["Kahdi"]["Uber Gnosling"],			bDemonPlayer),
+							(self.Mana["Ice"],			self.Units["Summons"]["Ice Elemental"],			bDemonPlayer),
+							(self.Mana["Nature"],		self.Units["Summons"]["Guardian Vines"],		bAnimalPlayer)]
+
+			for iLoopPlot in xrange(CyMap().numPlots()):
+				pLoopPlot = CyMap().plotByIndex(iLoopPlot)
+				if pLoopPlot.getBonusType(-1) != iMana:								continue
+				if pLoopPlot.isWater():												continue
+				if pLoopPlot.getImprovementType() != -1:							continue
+				if CyGame().getSorenRandNum(100, "Mana Creation") >= iConvertRnd:	continue
+				tBonus = lWildMana[CyGame().getSorenRandNum(len(lWildMana), "Pick Mana")]
+				pLoopPlot.setBonusType(tBonus[0])
+				if not self.GameOptions["Mana Guardians"]:							continue
+				if pLoopPlot.getNumUnits()!= 0:										continue
+				iUnit		= tBonus[1]
+				pWildPlayer	= tBonus[2]
+				newUnit		= pWildPlayer.initUnit(iUnit, pLoopPlot.getX(), pLoopPlot.getY(), iAI, iDirection)
+				newUnit.setHasPromotion(iMGPromo, True)
+
+		if self.GameOptions["Thaw"]:
+			# FlavourMod: Changed by Jean Elcard 11/06/2008 (Extended End of Winter Option)
+			FLAT_WORLDS = ["ErebusWrap", "Erebus"]			# map scripts with wrapping but no equator
+			MAX_EOW_PERCENTAGE = 0.35 						# percentage of EoW on total game turns
+			THAW_DELAY_PERCENTAGE = 0.05 					# don't start thawing for x percent of EoW
+			# forest varieties
+			DECIDUOUS_FOREST = 0
+			CONIFEROUS_FOREST = 1
+			SNOWY_CONIFEROUS_FOREST = 2
+
+			iIce			= self.Feature["Ice"]
+			iForest			= self.Feature["Forest"]
+			iJungle			= self.Feature["Jungle"]
+			iVolcano		= self.Feature["Volcano"]
+			iCPlains		= gc.getInfoTypeForString("FEATURE_CRYSTAL_PLAINS")
+			iTaiga			= self.Terrain["Taiga"]
+			iTundra			= self.Terrain["Tundra"]
+			iGrass			= self.Terrain["Grass"]
+			iPlains			= self.Terrain["Plains"]
+			iDesert			= self.Terrain["Desert"]
+			iMarsh			= self.Terrain["Marsh"]
+
+			iTotalGameTurns	= gc.getGameSpeedInfo(CyGame().getGameSpeedType()).getGameTurnInfo(0).iNumGameTurnsPerIncrement
+			iMaxEOWTurns	= max(1, int(iTotalGameTurns * MAX_EOW_PERCENTAGE))
+			iThawDelayTurns	= max(1, int(iMaxEOWTurns * THAW_DELAY_PERCENTAGE))
+			iRandomTurns	= iMaxEOWTurns - iThawDelayTurns
+			iMaxLatitude	= max(CyMap().getTopLatitude(), abs(CyMap().getBottomLatitude()))
+			bIsFlatWorld	= not (CyMap().isWrapX() or CyMap().isWrapY()) or CyMap().getMapScriptName() in FLAT_WORLDS
+
+			for iLoopPlot in xrange(CyMap().numPlots()):
+				pPlot		= CyMap().plotByIndex(iLoopPlot)
+				iTerrain	= pPlot.getTerrainType()
+				iFeature	= pPlot.getFeatureType()
+				iVariety	= pPlot.getFeatureVariety()
+				iBonus		= pPlot.getBonusType(-1)
+				randTerrain = CyGame().getSorenRandNum(100, "Thaw Terrain Swap")
+				randTurns	= CyGame().getSorenRandNum(iRandomTurns, "Thaw Requirement")
+				if not bIsFlatWorld:
+					iLatitude	= abs(pPlot.getLatitude())
+					randTurns	= int(randTurns * ((float(iLatitude) / iMaxLatitude) ** 0.4))
+				randTurns	+= iThawDelayTurns
+				# cover erebus' oceans and lakes in ice
+				if   pPlot.isWater():
+					if   bIsFlatWorld:
+						if CyGame().getSorenRandNum(100, "Thaw Iceburg Placement") < 90:
+							pPlot.setTempFeatureType(iIce, 0, randTurns)
+					elif iLatitude + 10 > CyGame().getSorenRandNum(50, "Thaw Glacier Placement"):
+						pPlot.setTempFeatureType(iIce, 0, randTurns)
+					elif iFeature != -1 and iFeature != iIce:
+						pPlot.setTempFeatureType(iIce, 0, randTurns)
+				# change terrains to colder climate versions
+				elif iTerrain == iTaiga:
+					if randTerrain < 90:
+						pPlot.setTempTerrainTypeFM(iTundra,	randTurns, False, False)
+				elif iTerrain == iGrass and iFeature != iJungle:
+					if randTerrain < 60:
+						pPlot.setTempTerrainTypeFM(iTundra,	randTurns, False, False)
+					else:
+						pPlot.setTempTerrainTypeFM(iTaiga,	randTurns, False, False)
+				elif iTerrain == iPlains:
+					if randTerrain < 30:
+						pPlot.setTempTerrainTypeFM(iTundra,	randTurns, False, False)
+					else:
+						pPlot.setTempTerrainTypeFM(iTaiga,	randTurns, False, False)
+				elif iTerrain == iDesert:
+					if randTerrain < 50:
+						pPlot.setTempTerrainTypeFM(iTaiga,	randTurns, False, False)
+					else:
+						pPlot.setTempTerrainTypeFM(iPlains,	randTurns, False, False)
+				elif iTerrain == iMarsh:
+					pPlot.setTempTerrainTypeFM(iGrass,		randTurns, False, False)
+				# change all features (except ice) to colder climate versions
+				if iFeature == iForest:
+					if iVariety == DECIDUOUS_FOREST:
+						pPlot.setTempFeatureType(iForest, CONIFEROUS_FOREST, randTurns)
+					elif iVariety == CONIFEROUS_FOREST:
+						pPlot.setTempFeatureType(iForest, SNOWY_CONIFEROUS_FOREST, randTurns)
+				elif (iFeature != FeatureTypes.NO_FEATURE and not pPlot.isWater()):
+					if not iFeature in (iIce, iVolcano, iCPlains):
+						pPlot.setTempFeatureType(iForest, DECIDUOUS_FOREST, randTurns)
+				# remove invalid bonuses or replace them (if food) with a valid surrogate
+				if iBonus != -1 and not pPlot.canHaveBonus(iBonus, True):
+					if gc.getBonusInfo(iBonus).getYieldChange(YieldTypes.YIELD_FOOD) > 0:
+						iPossibleTempFoodBonuses = []
+						for iLoopBonus in xrange(gc.getNumBonusInfos()):
+							if gc.getBonusInfo(iLoopBonus).getYieldChange(YieldTypes.YIELD_FOOD) > 0:
+								if pPlot.canHaveBonus(iLoopBonus, True):
+									iPossibleTempFoodBonuses.append(iLoopBonus)
+						if len(iPossibleTempFoodBonuses) > 0:
+							pPlot.setTempBonusType(iPossibleTempFoodBonuses[CyGame().getSorenRandNum(len(iPossibleTempFoodBonuses), "Thaw Food Replacement")], randTurns)
+						else:
+							pPlot.setTempBonusType(-1, randTurns)
+					else:
+						pPlot.setTempBonusType(-1, randTurns)
+		## Wilderness
+		if self.GameOptions["Dark Forests"]:
+			randWild	= CyGame().getSorenRandNum(100, "DF Wilderness chance")
+			iBestValue1	= 0
+			iBestValue2	= 0
+			pBestPlot1	= -1
+			pBestPlot2	= -1
+			iForest		= self.Feature["Forest"]
+			iJungle		= self.Feature["Jungle"]
+			iScrub		= self.Feature["Scrub"]
+			for iLoopPlot in xrange(CyMap().numPlots()):
+				pLoopPlot	= CyMap().plotByIndex(iLoopPlot)
+				if pLoopPlot.isWater():													continue
+				if pLoopPlot.getNumUnits()!= 0:											continue
+				if not pLoopPlot.getFeatureType() in (iForest, iJungle, iScrub):		continue
+				if pLoopPlot.getImprovementType() != -1:								continue
+				if randWild < 55:
+					if pLoopPlot.getFeatureType() == iScrub:							continue
+					iValue1	= CyGame().getSorenRandNum(1000, "DF Looking for Blighted Forest spot")
+					if not pLoopPlot.isOwned(): iValue1 += 1000
+					if iValue1 > iBestValue1:
+						iBestValue1	= iValue1
+						pBestPlot1	= pLoopPlot
+				if randWild >= 45:
+					iValue2	= CyGame().getSorenRandNum(1000, "DF Diakonos placement spot")
+					if not pLoopPlot.isOwned(): iValue2 += 1000
+					if iValue2 > iBestValue2:
+						iBestValue2	= iValue2
+						pBestPlot2	= pLoopPlot
+
+			if pBestPlot1 != -1:
+				newUnit = bAnimalPlayer.initUnit(self.Units["Animal"]["Malignant Flora"], pBestPlot1.getX(), pBestPlot1.getY(), iAI, iDirection)
+				pBestPlot1.setImprovementType(self.Lairs["Blighted Forest"])
+			if pBestPlot2 != -1:
+				iDiakonos = self.Units["Animal"]["Diakonos"]
+				iX = pBestPlot2.getX(); iY = pBestPlot2.getY()
+				newUnit = bAnimalPlayer.initUnit(iDiakonos, iX, iY, iAI, iDirection)
+				newUnit = bAnimalPlayer.initUnit(iDiakonos, iX, iY, iAI, iDirection)
+				newUnit = bAnimalPlayer.initUnit(iDiakonos, iX, iY, iAI, iDirection)
+				newUnit = bAnimalPlayer.initUnit(iDiakonos, iX, iY, iAI, iDirection)
+				newUnit = bAnimalPlayer.initUnit(iDiakonos, iX, iY, iAI, iDirection)
+
+		if not self.GameOptions["No Barbarians"]:
+			iGoblinArcher	= self.Units["Scorpion Clan"]["Archer"]
+			lGoblinCamp		= self.findImprovements(self.Lairs["Goblin Camp"])
+			for pLoopPlot in lGoblinCamp:
+				if pLoopPlot.getNumUnits()!= 0: continue
+				bOrcPlayer.initUnit(iGoblinArcher, pLoopPlot.getX(), pLoopPlot.getY(), iAI, iDirection)
+
+		# Clearing starting locations of dangerous spots, like Mana Guardians and Lairs
+		# Keep unit spawns above
+		iLairClearRange	= 5
+		iBarbClearRange	= 5
+		tSettlers		= (self.UnitClasses["Settler"], gc.getInfoTypeForString("UNITCLASS_VESSEL_DTESH"), self.UnitClasses["Awakened"])
+
+		for iLoopPlot in xrange(CyMap().numPlots()):
+			pLoopPlot = CyMap().plotByIndex(iLoopPlot)
+			
+			for iLoopUnit in xrange(pLoopPlot.getNumUnits()):
+				pLoopUnit	= pLoopPlot.getUnit(iLoopUnit)
+				iUnitClass	= pLoopUnit.getUnitClassType()
+				if not iUnitClass in tSettlers:					continue
+				pOwner		= gc.getPlayer(pLoopUnit.getOwner())
+				iOwnerTeam	= pOwner.getTeam()
+				pOwnerTeam	= gc.getTeam(iOwnerTeam)
+				### Lairs
+				for x, y in plotsInRange(pLoopUnit.getX(), pLoopUnit.getY(), iLairClearRange):
+					pLairPlot = CyMap().plot(x, y)
+					if pLairPlot.getImprovementType() == -1:	continue
+					pImprovement = gc.getImprovementInfo(pLairPlot.getImprovementType())
+					if   pImprovement.getSpawnUnitType() != -1:				pLairPlot.setImprovementType(-1)
+					elif pImprovement.getSpawnGroupType() != -1:			pLairPlot.setImprovementType(-1)
+					elif pImprovement.getImmediateSpawnUnitType() != -1:	pLairPlot.setImprovementType(-1)
+					elif pImprovement.getImmediateSpawnGroupType() != -1:	pLairPlot.setImprovementType(-1)
+				### Enemies
+				for x, y in plotsInRange(pLoopUnit.getX(), pLoopUnit.getY(), iBarbClearRange):
+					pEnemyPlot = CyMap().plot(x, y)
+					for iEnemyUnit in xrange(pEnemyPlot.getNumUnits(), -1, -1):
+						pEnemyUnit		= pEnemyPlot.getUnit(iEnemyUnit)
+						iEnemyPlayer	= pEnemyUnit.getOwner()
+						if iEnemyPlayer == -1: continue
+						pEnemyPlayer	= gc.getPlayer(iEnemyPlayer)
+						iEnemyTeam		= pEnemyPlayer.getTeam()
+						if not pOwnerTeam.isAtWar(iEnemyTeam): continue
+						pEnemyUnit.kill(False, -1)
+
+	### TODO: Dictionaries
+	def doTurnInfernal(self, iPlayer):
+		gc = CyGlobalContext()
+		if not gc.isNoCrash():
+			CyGame().releasefromDeathList(gc.getInfoTypeForString('DEATHLIST_DEMON_CONVERSION'), iPlayer, 6, self.Units["Infernal"]["Manes"])
+			CyGame().releasefromDeathList(gc.getInfoTypeForString('DEATHLIST_DEMON_REBIRTH'), iPlayer, 0, -1)
+
+	### TODO: Dictionaries
+	def doTurnMercurians(self, iPlayer):
+		gc = CyGlobalContext()
+		if not gc.isNoCrash():
+			CyGame().releasefromDeathList(gc.getInfoTypeForString('DEATHLIST_ANGEL_CONVERSION'), iPlayer, 1, self.Units["Mercurian"]["Angel"])
+
+	### TODO: Dictionaries
+	def doInsane(self, iPlayer):
+		if CyGame().getSorenRandNum(1, "Insane Trait Roll") != 0: return
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
+		pCapital	= pPlayer.getCapitalCity()
+		iInsane		= self.Traits["Insane"]
+		randFlag	= CyGame().getSorenRandNum(100,"Insane Flag")
+		lTraits		= []
+		for iTrait in xrange(gc.getNumTraitInfos()):
+			if not gc.getTraitInfo(iTrait).isSelectable():	continue
+			if iTrait == iInsane:							continue
+			if not gc.isNoCrash():
+				pPlayer.setHasTrait((iTrait),False,-1,True,True)
+			else:
+				pPlayer.setHasTrait((iTrait),False)
+			lTraits.append(iTrait)
+		if len(lTraits) >= 3:
+			lTraits = sorted(lTraits, key=lambda x: CyGame().getSorenRandNum(67, "Insane Trait"))
+			lTraits = lTraits[:3]
+		for iTrait in lTraits:
+			if not gc.isNoCrash():
+				pPlayer.setHasTrait((iTrait),True,-1,True,True)
+			else:
+				pPlayer.setHasTrait((iTrait),True)
+		if randFlag < 10: pPlayer.setHasFlag(gc.getInfoTypeForString("FLAG_PERPENTACH_BODY_SWITCH"),True)
+		if pCapital.isNone():return
+		iColor		= CyGame().getSorenRandNum(123, "Insane Color Pick")
+		szMessage	= CyTranslator().getText("TXT_KEY_INSANE_HELP", (gc.getTraitInfo(lTraits[0]).getDescription(), gc.getTraitInfo(lTraits[1]).getDescription(), gc.getTraitInfo(lTraits[2]).getDescription(),))
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		lIcon		= ["Art/Interface/Buttons/General/happy_person.dds", "Art/Interface/mainscreen/cityscreen/angry_citizen.dds", "Art/Interface/Buttons/General/unhealthy_person.dds", "Art/Interface/Buttons/WorldBuilder/Crab.dds"]
+		iIcon		= lIcon[CyGame().getSorenRandNum(len(lIcon), "Insane Icon Pick")]
+		CyInterface().addMessage(iPlayer, True, 25, szMessage, '', 3, iIcon, ColorTypes(iColor), pCapital.getX(), pCapital.getY(), True, True)
+
+	def doAdaptive(self, iPlayer, iTurn):
+		gc			= CyGlobalContext()
+		iCycle		= gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() - 5
+		if iTurn % iCycle != 0: return
+		pPlayer		= gc.getPlayer(iPlayer)
+
+		lAdaptiveTrairs	= [	self.Traits["Aggressive"],	self.Traits["Arcane"],		self.Traits["Charismatic"],	self.Traits["Creative"],		self.Traits["Expansive"],
+							self.Traits["Financial"],	self.Traits["Industrious"],	self.Traits["Organized"],	self.Traits["Philosophical"],	self.Traits["Raiders"],
+							self.Traits["Spiritual"]]
+		# Type Name is used in popup to display mouseover help, should match with the list above
+		lWidgetTraits	= [	"TRAIT_AGGRESSIVE",			"TRAIT_ARCANE",				"TRAIT_CHARISMATIC",		"TRAIT_CREATIVE",				"TRAIT_EXPANSIVE",
+							"TRAIT_FINANCIAL",			"TRAIT_INDUSTRIOUS",		"TRAIT_ORGANIZED",			"TRAIT_PHILOSOPHICAL",			"TRAIT_RAIDERS",
+							"TRAIT_SPIRITUAL"]
+
+		if pPlayer.isHuman():
+			popupInfo	= CyPopupInfo()
+			popupInfo.setOption2(True)
+			popupInfo.setFlags(165) # Trait widget on mouseover
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+			popupInfo.setData1(iPlayer)
+			popupInfo.setData3(100) # onModNetMessage id
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENTTRIGGER_TRAIT_ADAPTIVE", ()))
+			for iTrait in lAdaptiveTrairs:
+				iIndex = lAdaptiveTrairs.index(iTrait)
+				if pPlayer.hasTrait(iTrait) and gc.getLeaderHeadInfo(pPlayer.getLeaderType()).getPermanentTrait() != iTrait:	# Reset iTrait
+					if not gc.isNoCrash():
+						pPlayer.setHasTrait((iTrait),False,-1,True,True)
+					else:
+						pPlayer.setHasTrait((iTrait),False)
+				if not pPlayer.hasTrait(iTrait):																				# Set iTrait to the pick list
+					popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ADAPTIVE_HELP", (gc.getTraitInfo(iTrait).getDescription(), )), lWidgetTraits[iIndex])
+			popupInfo.addPopup(iPlayer)
+		else:
+			lAITraits = []
+			for iTrait in lAdaptiveTrairs:
+				if pPlayer.hasTrait(iTrait) and gc.getLeaderHeadInfo(pPlayer.getLeaderType()).getPermanentTrait() != iTrait:	# Reset iTrait
+					if not gc.isNoCrash():
+						pPlayer.setHasTrait((iTrait),False,-1,True,True)
+					else:
+						pPlayer.setHasTrait((iTrait),False)
+				if not pPlayer.hasTrait(iTrait):
+					lAITraits.append(iTrait)
+			if not lAITraits: return
+			iAITrait = lAITraits[CyGame().getSorenRandNum(len(lAITraits), "AI Adaptive Trait Roll")]
+			if not gc.isNoCrash():
+				pPlayer.setHasTrait((iAITrait),True,-1,True,True)
+			else:
+				pPlayer.setHasTrait((iAITrait),True)
+
+	### TODO: Dictionaries
+	def doRepublic(self, iPlayer, iTurn):
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
+		pPlayer.changeFlagValue(gc.getInfoTypeForString("FLAG_REPUBLIC_TIMER"), 1)
+		iCycle		= gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() / 10 * 4
+		if pPlayer.getFlagValue(gc.getInfoTypeForString("FLAG_REPUBLIC_TIMER")) == iCycle:
+			pPlayer.setFlagValue(gc.getInfoTypeForString("FLAG_REPUBLIC_TIMER"), 0)
+		if pPlayer.getFlagValue(gc.getInfoTypeForString("FLAG_REPUBLIC_TIMER")) != 1: return
+		self.resetRepublicTraits(pPlayer)
+		iElection = CyGame().getSorenRandNum(4, "Republic Election Type")
+		if pPlayer.isHuman():
+			if   iElection == 0:
+				szHeader	=	"TXT_KEY_EVENTTRIGGER_REPUBLIC_ELECTION_HAWK_VS_DOVE"
+				lText		=	["TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_HAWK",		"TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_DOVE", 	"TXT_KEY_EVENT_REPUBLIC_ELECTION_FAIR_HAWK_VS_DOVE"]
+				lWidget		=	['EVENT_REPUBLIC_ELECTION_SUPPORT_HAWK',				'EVENT_REPUBLIC_ELECTION_SUPPORT_DOVE',				'EVENT_REPUBLIC_ELECTION_FAIR_HAWK_VS_DOVE']
+			elif iElection == 1:
+				szHeader	=	"TXT_KEY_EVENTTRIGGER_REPUBLIC_ELECTION_LANDOWNER_VS_PEASANTS"
+				lText		=	["TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_LANDOWNER",	"TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_PEASANT",	"TXT_KEY_EVENT_REPUBLIC_ELECTION_FAIR_LANDOWNER_VS_PEASANT"]
+				lWidget		=	['EVENT_REPUBLIC_ELECTION_SUPPORT_LANDOWNER',			'EVENT_REPUBLIC_ELECTION_SUPPORT_PEASANT',			'EVENT_REPUBLIC_ELECTION_FAIR_LANDOWNER_VS_PEASANT']
+			elif iElection == 2:
+				szHeader	=	"TXT_KEY_EVENTTRIGGER_REPUBLIC_ELECTION_CHURCH_VS_STATE"
+				lText		=	["TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_CHURCH",		"TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_STATE",	"TXT_KEY_EVENT_REPUBLIC_ELECTION_FAIR_CHURCH_VS_STATE"]
+				lWidget		=	['EVENT_REPUBLIC_ELECTION_SUPPORT_CHURCH',				'EVENT_REPUBLIC_ELECTION_SUPPORT_STATE',			'EVENT_REPUBLIC_ELECTION_FAIR_CHURCH_VS_STATE']
+			else:
+				szHeader	=	"TXT_KEY_EVENTTRIGGER_REPUBLIC_ELECTION_LABOR_VS_ACADEMIA"
+				lText		=	["TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_LABOR",		"TXT_KEY_EVENT_REPUBLIC_ELECTION_SUPPORT_ACADEMIA",	"TXT_KEY_EVENT_REPUBLIC_ELECTION_FAIR_LABOR_VS_ACADEMIA"]
+				lWidget		=	['EVENT_REPUBLIC_ELECTION_SUPPORT_LABOR',				'EVENT_REPUBLIC_ELECTION_SUPPORT_ACADEMIA',			'EVENT_REPUBLIC_ELECTION_FAIR_LABOR_VS_ACADEMIA']
+			popupInfo = CyPopupInfo()
+			popupInfo.setOption2(True)
+			popupInfo.setFlags(126) # Event widget on mouseover
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+			popupInfo.setData1(iPlayer)
+			popupInfo.setData2(iElection)
+			popupInfo.setData3(101) # onModNetMessage id
+			popupInfo.setText(CyTranslator().getText(szHeader, ()))
+			popupInfo.addPythonButton(CyTranslator().getText(lText[0], ()), lWidget[0])
+			popupInfo.addPythonButton(CyTranslator().getText(lText[1], ()), lWidget[1])
+			popupInfo.addPythonButton(CyTranslator().getText(lText[2], ()), lWidget[2])
+			popupInfo.addPopup(iPlayer)
+		else:
+			argsList = [2, iPlayer, iElection]
+			CvScreensInterface.effectRepublic(argsList) # based on iAIValue of events (always fair)
+
+	def doBaneDivine(self, iPlayer):
+		gc				= CyGlobalContext()
+		iCombatDisciple	= self.UnitCombats["Disciple"]
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive(): continue
+			for iLoopUnit in xrange(pLoopPlayer.getNumUnits()):
+				pLoopUnit = pLoopPlayer.getUnit(iLoopUnit)
+				if pLoopUnit.getUnitCombatType() != iCombatDisciple: continue
+				pLoopUnit.kill(False, iPlayer)
+
+	def doGlory(self, iPlayer):
+		gc				= CyGlobalContext()
+		iEvil			= self.Alignments["Evil"]
+		iDemon			= self.Promotions["Race"]["Demon"]
+		iUndead			= self.Promotions["Race"]["Undead"]
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive():														continue
+			if not (pLoopPlayer.getAlignment() == iEvil or pLoopPlayer.isBarbarian()):			continue
+			for iLoopUnit in xrange(pLoopPlayer.getNumUnits()):
+				pLoopUnit = pLoopPlayer.getUnit(iLoopUnit)
+				if not (pLoopUnit.isHasPromotion(iDemon) or pLoopUnit.isHasPromotion(iUndead)):	continue
+				pLoopUnit.kill(False, iPlayer)
+
+	def doRoO(self):
+		iAdditionalMana	= 7
+		iSize			= CyMap().getWorldSize()
+		if   iSize	== self.WorldSizes["Duel"]:		iAdditionalMana += -3
+		elif iSize	== self.WorldSizes["Tiny"]:		iAdditionalMana += -2
+		elif iSize	== self.WorldSizes["Small"]:	iAdditionalMana += -1
+		elif iSize	== self.WorldSizes["Large"]:	iAdditionalMana += 1
+		elif iSize	== self.WorldSizes["Huge"]:		iAdditionalMana += 3
+		elif iSize	== self.WorldSizes["Huger"]:	iAdditionalMana += 5
+		addBonus('BONUS_MANA', iAdditionalMana, 'Art/Interface/Buttons/WorldBuilder/mana_button.dds')
+
+	def doNatureRevolt(self):
+		gc				= CyGlobalContext()
+		bAnimalPlayer	= gc.getPlayer(gc.getANIMAL_PLAYER())
+		bOrcPlayer		= gc.getPlayer(gc.getORC_PLAYER())
+		iAIValue		= UnitAITypes.NO_UNITAI
+		iDirection		= DirectionTypes.DIRECTION_SOUTH
+		lPromotions		= [	self.Promotions["Effects"]["Heroic Defense I"],		self.Promotions["Effects"]["Heroic Defense II"],
+							self.Promotions["Effects"]["Heroic Strength I"],	self.Promotions["Effects"]["Heroic Strength II"]]
+		for iLoopUnit in xrange(bOrcPlayer.getNumUnits()):
+			pLoopUnit	= pLoopPlayer.getUnit(iLoopUnit)
+			bValid		= False
+			iUC			= pLoopUnit.getUnitClassType()
+			if   iUC == self.UnitClasses["Worker"]:		iNewUnit = self.Units["Animal"]["Elephant"];		bValid = True
+			elif iUC == self.UnitClasses["Scout"]:		iNewUnit = self.Units["Animal"]["Sabretooth"];		bValid = True
+			elif iUC == self.UnitClasses["Warrior"]:	iNewUnit = self.Units["Animal"]["Dire Wolf"];		bValid = True
+			elif iUC == self.UnitClasses["Hunter"]:		iNewUnit = self.Units["Animal"]["Tyrant"];			bValid = True
+			elif iUC == self.UnitClasses["Axeman"]:		iNewUnit = self.Units["Animal"]["Cave Bears"];		bValid = True
+			elif iUC == self.UnitClasses["Fawn"]:		iNewUnit = self.Units["Animal"]["Roc"];				bValid = True
+			elif iUC == self.UnitClasses["Hill Giant"]:	iNewUnit = self.Units["Animal"]["Red Drake"];		bValid = True
+			elif iUC == self.UnitClasses["Archer"]:		iNewUnit = self.Units["Animal"]["Silverback"];		bValid = True
+			elif iUC == self.UnitClasses["Cyklop"]:		iNewUnit = self.Units["Animal"]["Giant Spider"];	bValid = True
+			elif iUC == self.UnitClasses["Minotaur"]:	iNewUnit = self.Units["Animal"]["Blood Boar"];		bValid = True
+			elif iUC == self.UnitClasses["Horseman"]:	iNewUnit = self.Units["Animal"]["Giant Scorpion"];	bValid = True
+			elif iUC == self.UnitClasses["Frostling"]:	iNewUnit = self.Units["Animal"]["White Drake"];		bValid = True
+
+			if not bValid: continue
+			iX		= pLoopUnit.getX()
+			iY		= pLoopUnit.getY()
+			newUnit	= bAnimalPlayer.initUnit(iNewUnit, iX, iY, iAIValue, iDirection)
+			newUnit	= bAnimalPlayer.initUnit(iNewUnit, iX, iY, iAIValue, iDirection)
+			newUnit	= bAnimalPlayer.initUnit(iNewUnit, iX, iY, iAIValue, iDirection)
+			pLoopUnit.kill(True, -1)
+
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive(): continue
+			for iLoopUnit in xrange(pLoopPlayer.getNumUnits()):
+				pLoopUnit = pLoopPlayer.getUnit(iLoopUnit)
+				if not pLoopUnit.isAnimal(): continue
+				for iPromotion in lPromotions: pLoopUnit.setHasPromotion(iPromotion, True)
+
+	def doBloodOfThePhoenix(self, iPlayer):
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iImmortal	= self.Promotions["Effects"]["Immortal"]
+		for iLoopUnit in xrange(pPlayer.getNumUnits()):
+			pLoopUnit = pPlayer.getUnit(iLoopUnit)
+			if not pLoopUnit.isAlive():				continue
+			if pLoopUnit.getUnitCombatType() == -1:	continue
+			pLoopUnit.setHasPromotion(iImmortal, True)
+
+	def doPurge(self, iPlayer):
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iStateRel	= pPlayer.getStateReligion()
+		if iStateRel == self.Religions["Order"]:	iRevolt = -1
+		else:										iRevolt = 0
+		for iLoopCity in xrange(pPlayer.getNumCities()):
+			pLoopCity	= pPlayer.getCity(iLoopCity)
+			lBadRel		= []
+			iRevolt		+= CyGame().getSorenRandNum(2, "Purge the Unfaithful Revolt")
+			for iLoopRel in xrange(gc.getNumReligionInfos()):
+				if iStateRel == iLoopRel:					continue
+				if not pLoopCity.isHasReligion(iLoopRel):	continue
+				if pLoopCity.isHolyCityByType(iLoopRel):	continue
+				pLoopCity.setHasReligion(iLoopRel, False, True, True)
+				iRevolt	+= 1
+				lBadRel.append(iLoopRel)
+			if not lBadRel:		continue
+			for iBuilding in xrange(gc.getNumBuildingInfos()):
+				if pLoopCity.getNumBuilding(iBuilding) <= 0:							continue
+				if not gc.getBuildingInfo(iBuilding).getPrereqReligion() in lBadRel:	continue
+				pLoopCity.setNumRealBuilding(iBuilding, 0)
+			if iRevolt <= 0:	continue
+			pLoopCity.setOccupationTimer(iRevolt)
+
+	### TODO: Dictionaries
+	def doSamhain(self, iPlayer):
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iOrcPlayer	= gc.getORC_PLAYER()
+		iFrostling	= self.Units["Frostling"]["Frostling"]
+		iFArcher	= self.Units["Frostling"]["Archer"]
+		iWolfRaider	= self.Units["Frostling"]["Wolf Rider"]
+		iCount = CyGame().countCivPlayersAlive() + int(CyGame().getHandicapType()) - 5
+		for i in xrange(iCount):
+			addUnit(iFrostling,		iOrcPlayer)
+			addUnit(iFrostling,		iOrcPlayer)
+			addUnit(iFArcher,		iOrcPlayer)
+			addUnit(iWolfRaider,	iOrcPlayer)
+		pMokka = addUnit(self.Heroes["Mokka"], iOrcPlayer)
+		if not pPlayer.isHasFlag(gc.getInfoTypeForString('FLAG_MOKKA_LOST')):
+			pMokka.safeRemovePromotion(gc.getInfoTypeForString("PROMOTION_MOKKAS_CAULDRON"))
+		gc.getGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_MOKKA_LOST'), False)
+
+	def doProjectWH(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iPriest		= self.Units["White Hand"]["Priest"]
+		iX			= pCity.getX()
+		iY			= pCity.getY()
+		iAI			= UnitAITypes.NO_UNITAI
+		iDirection	= DirectionTypes.DIRECTION_SOUTH
+		lNames		= ["Dumannios", "Riuros", "Anagantios"]
+		pCity.setHasReligion( self.Religions["White Hand"], True, True, True)
+		for i in xrange(3):
+			newUnit = pPlayer.initUnit(self.Units["White Hand"]["Priest"], iX, iY, iAI, iDirection)
+			newUnit.setName(lNames[i])
+			newUnit.changeStrBoost(1)
+
+	def doDeepening(self):
+		iTimer = 40 + (CyGame().getGameSpeedType() * 20)
+		lStartingTerrain	= [self.Terrain["Tundra"],	self.Terrain["Taiga"],	self.Terrain["Grass"],	self.Terrain["Plains"],	self.Terrain["Desert"]]
+		lDeepeningTerrain	= [self.Terrain["Glacier"],	self.Terrain["Tundra"],	self.Terrain["Taiga"],	self.Terrain["Taiga"],	self.Terrain["Plains"]]
+		iBlizzard			= self.Feature["Blizzard"]
+		for iPlot in xrange(CyMap().numPlots()):
+			pPlot	= CyMap().plotByIndex(iPlot)
+			bValid	= False
+			if pPlot.isWater():															continue
+			if CyGame().getSorenRandNum(100, "The Deepening") >= 25:					continue
+			iTerrain	= pPlot.getTerrainType()
+			if not iTerrain in lStartingTerrain:										continue
+			iPlotTimer	= CyGame().getSorenRandNum(iTimer, "Deepening Terrain Timer") + 10
+			iIndex		= lStartingTerrain.index(iTerrain)
+			pPlot.setTempTerrainTypeFM(lDeepeningTerrain[iIndex], iPlotTimer, False, False)
+			if CyGame().getSorenRandNum(750, "The Deepening, Blizzard Creation") >= 10:	continue
+			pPlot.setFeatureType(iBlizzard, -1)
+
+	def stirFromSlumber(self, pCity):
+		gc		= CyGlobalContext()
+		iPlayer	= pCity.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+		pPlayer.initUnit(self.Heroes["Drifa"], pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		if pPlayer.getLeaderType() != self.Leaders["Raitlor"]: return
+		if not gc.isNoCrash():
+			pPlayer.setHasTrait(self.Traits["Ice Touched"], True,-1,True,True)
+		else:
+			pPlayer.setHasTrait(self.Traits["Ice Touched"], True)
+
+	### TODO: Dictionaries
+	def doDraw(self, iPlayer):
+		gc				= CyGlobalContext()
+		pPlayer			= gc.getPlayer(iPlayer)
+		iTeam			= pPlayer.getTeam()
+		pTeam			= gc.getTeam(iTeam)
+		iOrcTeam		= gc.getORC_TEAM()
+		iAnimalTeam		= gc.getANIMAL_TEAM()
+		iDemonTeam		= gc.getDEMON_TEAM()
+		pPlayer.changeNoDiplomacyWithEnemies(1)
+		pPlayer.setHasFlag(gc.getInfoTypeForString("FLAG_DRAW"),True)
+		for iLoopTeam in xrange(gc.getMAX_TEAMS()):
+			if iLoopTeam == iTeam:			continue
+			if iLoopTeam == iOrcTeam:		continue
+			if iLoopTeam == iAnimalTeam:	continue
+			if iLoopTeam == iDemonTeam:		continue
+			pLoopTeam = gc.getTeam(iLoopTeam)
+			if not pLoopTeam.isAlive():		continue
+			if pLoopTeam.isAVassal():		continue
+			pTeam.declareWar(iLoopTeam, False, WarPlanTypes.WARPLAN_LIMITED)
+		for iLoopUnit in xrange(pPlayer.getNumUnits()):
+			pLoopUnit	= pPlayer.getUnit(iLoopUnit)
+			iDamage		= pLoopUnit.getDamage() * 2
+			iDamage		= min(99, iDamage)
+			iDamage		= max(50, iDamage)
+			pLoopUnit.setDamage(iDamage, iPlayer)
+		for iLoopCity in xrange(pPlayer.getNumCities()):
+			pLoopCity	= pPlayer.getCity(iLoopCity)
+			iPop		= int(pLoopCity.getPopulation() / 2)
+			iPop		= max(1, iPop)
+			pLoopCity.setPopulation(iPop)
+
+	def doAscension(self, iPlayer):
+		gc		= CyGlobalContext()
+		pPlayer	= gc.getPlayer(iPlayer)
+		lAurics	= (self.Heroes["Auric"], self.Heroes["Auric Winter"])
+		iWHRel	= self.Religions["White Hand"]
+		iTeam	= pPlayer.getTeam()
+		### Auric Spawn
+		for iLoopUnit in xrange(pPlayer.getNumUnits()):
+			pLoopUnit	= pPlayer.getUnit(iLoopUnit)
+			if not pLoopUnit.getUnitType() in lAurics:		continue
+			newUnit = pPlayer.initUnit( self.Heroes["Auric Ascended"], pLoopUnit.getX(), pLoopUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			newUnit.convert(pLoopUnit)
+			break
+		### WH Vassals
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive():					continue
+			if pLoopPlayer.isBarbarian():					continue
+			if pLoopPlayer.getStateReligion() != iWHRel:	continue
+			iLoopTeam = pLoopPlayer.getTeam()
+			pLoopTeam = gc.getTeam(iLoopTeam)
+			pLoopTeam.makePeace(iTeam)
+			pLoopTeam.setVassal(iTeam, True, False)
+		## Trophy
+		if pPlayer.isHuman():
+			t = "TROPHY_FEAT_ASCENSION"
+			if not CyGame().isHasTrophy(t): CyGame().changeTrophyValue(t, 1)
+		## Godslayer Spawn
+		if CyGame().getWBMapScript(): return
+		iBestPlayer	= -1
+		iBestValue	= 0
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive():					continue
+			if pLoopPlayer.isBarbarian():					continue
+			if pLoopPlayer.getTeam() != iTeam:				continue
+			if pLoopPlayer.getStateReligion() == iWHRel:	continue
+			pLoopCapital	= pLoopPlayer.getCapitalCity()
+			if pLoopCapital.isNone():						continue
+			iValue = CyGame().getSorenRandNum(500, "Ascension")
+			iValue += (20 - CyGame().getPlayerRank(iLoopPlayer)) * 50
+			if pLoopPlayer.isHuman(): iValue += 2000
+			if iValue > iBestValue:
+				iBestValue	= iValue
+				iBestPlayer	= iLoopPlayer
+		if iBestPlayer == -1: return
+		pBestPlayer	= gc.getPlayer(iBestPlayer)
+		if pBestPlayer.isHuman():
+			popupInfo	= CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+			popupInfo.setData1(iBestPlayer)
+			popupInfo.setData3(102) # onModNetMessage id
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_GODSLAYER", ()))
+			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_CONTINUE", ()),"")
+			popupInfo.addPopup(iBestPlayer)
+		else:
+			pContainer		= -1
+			pBestCity		= pBestPlayer.getCapitalCity()
+			pPlot			= pBestCity.plot()
+			iContainer		= self.Units["Equipment"]["Container"]
+			for iUnit in xrange(pPlot.getNumUnits()):
+				pUnit = pPlot.getUnit(iUnit)
+				if pUnit.getUnitType() != iContainer: continue
+				pContainer = pUnit
+			if pContainer == -1:
+				bPlayer	= gc.getPlayer(gc.getORC_PLAYER())
+				pContainer = bPlayer.initUnit(iContainer, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			pContainer.setHasPromotion(self.Promotions["Equipment"]["Godslayer"], True)
+
+	### TODO: Dictionaries
+	def unitCreatedTraits(self, pUnit):
+		gc		= CyGlobalContext()
+		iPlayer	= pUnit.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+
+		if pPlayer.hasTrait(self.Traits["Defender"]):
+			if pUnit.getUnitCombatType() == self.UnitCombats["Worker"]:
+				pUnit.setHasPromotion(self.Promotions["Generic"]["Hardy I"], True)
+
+		if pPlayer.hasTrait(self.Traits["Instructor"]):
+			if pUnit.getUnitType() == self.Units["Bannor"]["Demagog"]:
+				pUnit.changeFreePromotionPick(1)
+				
+		if gc.getInfoTypeForString("MODULE_EMERGENT_LEADERS") != - 1 and pPlayer.hasTrait(self.Traits["Incorporeal 1"]):
+			if pUnit.getUnitCombatType() == self.UnitCombats["Mounted"] or pUnit.isSecondaryUnitCombat(self.UnitCombats["Mounted"]):
+				pUnit.setHasPromotion(self.Promotions["Race"]["Illusion"], True)
+
+		if pPlayer.hasTrait(self.Traits["Spiderkin"]):
+			pNest = pPlayer.getCapitalCity()
+			iNestPop = pNest.getPopulation()
+			spiderUnits = [self.Units["Archos"]["Baby Spider"], self.Units["Archos"]["Spider"], self.Units["Archos"]["Giant Spider"], self.Units["Archos"]["Nesting Spider"], self.Heroes["Mother"]]
+			if iNestPop >= 15 and pUnit.getUnitType() not in spiderUnits: pUnit.setHasPromotion(self.Promotions["Effects"]["Spiderkin"], True)
+
+	def unitCreatedWelp(self, pUnit):
+		gc		= CyGlobalContext()
+		iPlayer	= pUnit.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+		pPlot	= pUnit.plot()
+
+		GoblinChoice = [(self.Units["Scorpion Clan"]["Goblin"], 10)]
+
+		if   pPlot.getNumUnits() > 5:							GoblinChoice.append((self.Units["Scorpion Clan"]["Lord"], 25))
+		if   pPlayer.isHasTech(self.Techs["Bowyers"]):			GoblinChoice.append((self.Units["Scorpion Clan"]["Sapper"], 25));		GoblinChoice.append((self.Units["Scorpion Clan"]["Archer"], 10))
+		elif pPlayer.isHasTech(self.Techs["Archery"]): 			GoblinChoice.append((self.Units["Scorpion Clan"]["Archer"], 25))
+		if   pPlayer.isHasTech(self.Techs["Stirrups"]):			GoblinChoice.append((self.Units["Scorpion Clan"]["Wolf Archer"], 25));	GoblinChoice.append((self.Units["Scorpion Clan"]["Wolf Rider"], 10))
+		elif pPlayer.isHasTech(self.Techs["Horseback Riding"]):	GoblinChoice.append((self.Units["Scorpion Clan"]["Wolf Rider"], 25))
+		if   pPlayer.isHasTech(self.Techs["Construction"]):		GoblinChoice.append((self.Units["Scorpion Clan"]["Chariot"], 25))
+
+		getGoblin	= wchoice( GoblinChoice, 'Goblin Whelp Upgrade' )
+		newUnit		= pPlayer.initUnit(getGoblin(), pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.convert(pUnit)
+		return newUnit
+
+	def unitCreatedAdept(self, pUnit):
+		gc				= CyGlobalContext()
+		iPlayer			= pUnit.getOwner()
+		pPlayer			= gc.getPlayer(iPlayer)
+
+		bChanneling2	= pUnit.isHasPromotion(self.Promotions["Effects"]["Channeling II"])
+		bChanneling3	= pUnit.isHasPromotion(self.Promotions["Effects"]["Channeling III"])
+
+		lMana			= [	self.Mana["Air"],			self.Mana["Body"],		self.Mana["Chaos"],		self.Mana["Death"],			self.Mana["Earth"],
+							self.Mana["Enchantment"],	self.Mana["Entropy"],	self.Mana["Fire"],		self.Mana["Law"],			self.Mana["Life"],
+							self.Mana["Metamagic"],		self.Mana["Mind"],		self.Mana["Shadow"],	self.Mana["Spirit"],		self.Mana["Sun"],
+							self.Mana["Water"],			self.Mana["Creation"],	self.Mana["Force"],		self.Mana["Dimensional"],	self.Mana["Ice"],
+							self.Mana["Nature"]]
+
+		lSphere			= [	self.Promotions["Generic"]["Air I"],			self.Promotions["Generic"]["Body I"],		self.Promotions["Generic"]["Chaos I"],	self.Promotions["Generic"]["Death I"],			self.Promotions["Generic"]["Earth I"],
+							self.Promotions["Generic"]["Enchantment I"],	self.Promotions["Generic"]["Entropy I"],	self.Promotions["Generic"]["Fire I"],	self.Promotions["Generic"]["Law I"],			self.Promotions["Generic"]["Life I"],
+							self.Promotions["Generic"]["Metamagic I"],		self.Promotions["Generic"]["Mind I"],		self.Promotions["Generic"]["Shadow I"],	self.Promotions["Generic"]["Spirit I"],			self.Promotions["Generic"]["Sun I"],
+							self.Promotions["Generic"]["Water I"],			self.Promotions["Generic"]["Creation I"],	self.Promotions["Generic"]["Force I"],	self.Promotions["Generic"]["Dimensional I"],	self.Promotions["Generic"]["Ice I"],
+							self.Promotions["Generic"]["Nature I"]]
+
+		if pPlayer.getCivilizationType() in (self.Civilizations["Scions"], self.Civilizations["D'Tesh"]):
+			lSphere[1] = self.Promotions["Generic"]["Corpus I"]
+
+		for iMana in lMana:
+			iIndex		= lMana.index(iMana)
+			iNumBonuses	= pPlayer.getNumAvailableBonuses(iMana)
+			if iNumBonuses <= 1:	continue
+			pUnit.setHasPromotion(lSphere[iIndex], True)
+			if iNumBonuses <= 2:	continue
+			if not bChanneling2:	continue
+			iSphere2	= gc.getPromotionInfo(lSphere[iIndex]).getPromotionNextLevel()
+			pUnit.setHasPromotion(iSphere2, True)
+			if iNumBonuses <= 3:	continue
+			if not bChanneling3:	continue
+			iSphere3	= gc.getPromotionInfo(iSphere2).getPromotionNextLevel()
+			pUnit.setHasPromotion(iSphere3, True)
+
+	### TODO: Dictionaries
+	def unitCreatedAspect(self, pUnit):
+		if CyGame().getSorenRandNum(100, "Aspect") >= 5:	return
+		gc		= CyGlobalContext()
+		iPlayer	= pUnit.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+		iTeam	= pPlayer.getTeam()
+		pTeam	= gc.getTeam(iTeam)
+		if pTeam.getAtWarCount(True) <= 0:					return
+
+		lFlags	= [	gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_CAPRIA'),	gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_2'),	gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_1'),
+					gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_ORTHUS'),	gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_ARAK'),			gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAGNADINE'),
+					gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAHON'),]
+		# Promotion and Flag should share the same index
+		lPromos	= [	self.Promotions["Effects"]["Aspect Capria"],			self.Promotions["Effects"]["Aspect Unknown2"],				self.Promotions["Effects"]["Aspect Unknown1"],
+					self.Promotions["Effects"]["Aspect Orthus"],			self.Promotions["Effects"]["Aspect Arak"],					self.Promotions["Effects"]["Aspect Magnadine"],
+					self.Promotions["Effects"]["Aspect Mahon"]]
+
+		for iFlag in lFlags:
+			if pPlayer.isHasFlag(iFlag): continue
+			iIndex = lFlags.index(iFlag)
+			pUnit.setHasPromotion(lPromos[iIndex], True)
+			gc.getGame().setGlobalFlag(iFlag, True)
+			break
+
+	### TODO: Dictionaries
+	def unitCreatedMounted(self, pUnit):
+		gc		= CyGlobalContext()
+		if gc.getUnitInfo(pUnit.getUnitType()).getPrereqOrBonuses(0) != self.Resources["Horse"]: return
+		iPlayer	= pUnit.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+		lMounts = [gc.getInfoTypeForString("PROMOTION_HORSE"), gc.getInfoTypeForString("PROMOTION_NIGHTMARE"), gc.getInfoTypeForString("PROMOTION_HYAPON"), gc.getInfoTypeForString("PROMOTION_CAMEL")]
+		bHasDefaultMount = False
+		for iPromotion in lMounts:
+			if not gc.getUnitInfo(pUnit.getUnitType()).getFreePromotions(iPromotion): continue
+			bHasDefaultMount = True
+			break
+		if bHasDefaultMount: return
+
+		if   pPlayer.hasBonus(self.Resources["Camel"]) and pPlayer.getCivilizationType() == self.Civilizations["Malakim"]:
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CAMEL"),True)
+		elif pPlayer.hasBonus(gc.getInfoTypeForString("BONUS_HYAPON")):
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_HYAPON"),True)
+		elif pPlayer.hasBonus(self.Resources["Nightmare"]):
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_NIGHTMARE"),True)
+		elif pPlayer.hasBonus(self.Resources["Horse"]):
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_HORSE"),True)
+
+	### TODO: Dictionaries
+	def doHalfMortal(self, pUnit):
+		gc			= CyGlobalContext()
+		pPlot		= pUnit.plot()
+		iCountAngel	= 0
+		iCountDemon	= 0
+		iCountSylph	= 0
+		iNumUnits	= pPlot.getNumUnits()
+		if iNumUnits <= 1: return
+		for iLoopUnit in xrange(iNumUnits):
+			pLoopUnit = pPlot.getUnit(iLoopUnit)
+			if pLoopUnit == pUnit: continue
+			if pLoopUnit.isHasPromotion(self.Promotions["Race"]["Angel"]):				iCountAngel += 1
+			if pLoopUnit.isHasPromotion(self.Promotions["Race"]["Demon"]):				iCountDemon += 1
+			if pLoopUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_SLYPH")):	iCountSylph += 1
+		if CyGame().getSorenRandNum(100,"doHalfMortal Aasimar") < iCountAngel:
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_AASIMAR"),True)
+		if CyGame().getSorenRandNum(100,"doHalfMortal Cambion") < iCountDemon:
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CAMBION"),True)
+		if CyGame().getSorenRandNum(100,"doHalfMortal Slyph") < iCountSylph:
+			pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SLYPH_BLOOD"),True)
+
+	def doBeastOfAgares(self, pCity):
+		if pCity.getCivilizationType() == self.Civilizations["Infernal"]: return
+		iPop = max(1, pCity.getPopulation() - 4)
+		pCity.setPopulation(iPop)
+		pCity.setOccupationTimer(4)
+
+	### TODO: Dictionaries
+	def unitBuiltAmurites(self, pUnit, pCity):
+		gc			= CyGlobalContext()
+		iCombatType	= pUnit.getUnitCombatType()
+		iPlayer		= pUnit.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+
+		tUC			= (	gc.getInfoTypeForString("UNITCOMBAT_ROGUE"),	gc.getInfoTypeForString("UNITCOMBAT_DEFENSIVE_MELEE"),	self.UnitCombats["Melee"],	self.UnitCombats["Archer"],
+						self.UnitCombats["Mounted"],					self.UnitCombats["Recon"],								self.UnitCombats["Adept"],	self.UnitCombats["Disciple"])
+
+		if not iCombatType in tUC: return
+		iNumSoG		= pCity.getNumBuilding(self.Buildings["School of Govannon"])
+		iNumCoA		= pCity.getNumBuilding(self.Buildings["Cave of Ancestors"])
+
+		if iCombatType == self.UnitCombats["Adept"] and iNumCoA > 0:
+			iExtraXP = 0
+			for iBonus in xrange(gc.getNumBonusInfos()):
+				if gc.getBonusInfo(iBonus).getBonusClassType() != self.Mana["Mana Class"]: continue
+				if pCity.hasBonus(iBonus): iExtraXP += 1
+			if iExtraXP != 0: pUnit.changeExperience(iExtraXP, -1, False, False, False)
+
+		lMana		= [	self.Mana["Air"],			self.Mana["Body"],		self.Mana["Chaos"],		self.Mana["Death"],			self.Mana["Earth"],
+						self.Mana["Enchantment"],	self.Mana["Entropy"],	self.Mana["Fire"],		self.Mana["Law"],			self.Mana["Life"],
+						self.Mana["Metamagic"],		self.Mana["Mind"],		self.Mana["Shadow"],	self.Mana["Spirit"],		self.Mana["Sun"],
+						self.Mana["Water"],			self.Mana["Creation"],	self.Mana["Force"],		self.Mana["Dimensional"],	self.Mana["Ice"],
+						self.Mana["Nature"]]
+
+		fSphere		= (	self.Promotions["Generic"]["Air I"],			self.Promotions["Generic"]["Body I"],		self.Promotions["Generic"]["Chaos I"],	self.Promotions["Generic"]["Death I"],			self.Promotions["Generic"]["Earth I"],
+						self.Promotions["Generic"]["Enchantment I"],	self.Promotions["Generic"]["Entropy I"],	self.Promotions["Generic"]["Fire I"],	self.Promotions["Generic"]["Law I"],			self.Promotions["Generic"]["Life I"],
+						self.Promotions["Generic"]["Metamagic I"],		self.Promotions["Generic"]["Mind I"],		self.Promotions["Generic"]["Shadow I"],	self.Promotions["Generic"]["Spirit I"],			self.Promotions["Generic"]["Sun I"],
+						self.Promotions["Generic"]["Water I"],			self.Promotions["Generic"]["Creation I"],	self.Promotions["Generic"]["Force I"],	self.Promotions["Generic"]["Dimensional I"],	self.Promotions["Generic"]["Ice I"],
+						self.Promotions["Generic"]["Nature I"])
+
+		iChance		= 20
+		lValidSphere = []
+		for iMana in lMana:
+			iIndex			= lMana.index(iMana)
+			iNumBonuses		= pPlayer.getNumAvailableBonuses(iMana)
+			if iNumBonuses == 0: continue
+			iChance		   += iNumBonuses * 5
+			lValidSphere.append((fSphere[iIndex], iNumBonuses))
+
+		if not lValidSphere:															return
+		if CyGame().getSorenRandNum(100, "unitBuiltAmurites Sphere Chance") >= iChance:	return
+		getSphere1	= wchoice( lValidSphere, "unitBuiltAmurites Sphere Pick" )
+		iSphere1	= getSphere1
+		pUnit.setHasPromotion(iSphere1, True)
+		if iNumSoG <= 0:																return
+		iSphere2	= gc.getPromotionInfo(iSphere1).getPromotionNextLevel()
+		pUnit.setHasPromotion(iSphere2, True)
+		if iNumCoA <= 0:																return
+		iSphere3	= gc.getPromotionInfo(iSphere2).getPromotionNextLevel()
+		pUnit.setHasPromotion(iSphere3, True)
+
+	def unitBuiltLuchuirp(self, pUnit, pCity):
+		if not pUnit.isHasPromotion(self.Promotions["Race"]["Golem"]):		return
+		if pCity.getNumBuilding(self.Buildings["Blasting Workshop"]) > 0:	pUnit.setHasPromotion( self.Promotions["Generic"]["Fire II"], True)
+		if pCity.getNumBuilding(self.Buildings["Pallens Engine"]) > 0:		pUnit.setHasPromotion( self.Promotions["Generic"]["Perfect Sight"], True)
+		if pCity.getNumBuilding(self.Buildings["Adularia Chamber"]) > 0:	pUnit.setHasPromotion( self.Promotions["Effects"]["Hidden"], True)
+
+	def unitBuiltAcheron(self, pUnit, pCity):
+		pCity.setNumRealBuilding(self.Buildings["Dragons Hoard"], 1)
+		pUnit.setHasPromotion(self.Promotions["Effects"]["Acheron Leashed"], True)
+		iX	= pCity.getX()
+		iY	= pCity.getY()
+		for dX, dY in RANGE1:
+			pPlot		= CyMap().plot(iX+dX, iY+dY)
+			iFeature	= pPlot.getFeatureType()
+			if not iFeature in (self.Feature["Forest"], self.Feature["Jungle"]): continue
+			pPlot.setFeatureType(self.Feature["Flames"], 0)
+
+	def unitKilledCity(self, pUnit):
+		gc		= CyGlobalContext()
+		pPlot	= pUnit.plot()
+		iX		= pUnit.getX()
+		iY		= pUnit.getY()
+
+		for dX, dY in RANGE1:
+			pDeltaPlot = CyMap().plot(iX+dX, iY+dY)
+			if not pDeltaPlot.isCity(): continue
+			pCity = pDeltaPlot.getPlotCity()
+			if pCity.getNumBuilding(self.Buildings["Soul Forge"]) > 0:
+				pCity.changeProduction(pUnit.getExperienceTimes100() / 100 + 10)
+
+				szText		= CyTranslator().getText("TXT_KEY_MESSAGE_SOUL_FORGE",())
+				szSound		= 'AS2D_DISCOVERBONUS'
+				szArt		= 'Art/Interface/Buttons/Buildings/Soulforge.dds'
+				iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+				iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+				CyInterface().addMessage(pCity.getOwner(), True, 25, szText, szSound, iMessage, szArt, iGreen, pCity.getX(), pCity.getY(), True, True)
+			if gc.getPlayer(pCity.getOwner()).hasTrait(self.Traits["Lycanthropic"]):
+				pCity.changeFood(pUnit.getExperienceTimes100()/100 + 10)
+
+				szText		= CyTranslator().getText("TXT_KEY_MESSAGE_CANNIBALIZE",())
+				szSound		= 'AS2D_DISCOVERBONUS'
+				szArt		= 'Art/Interface/Buttons/Promotions/Cannibalize.dds'
+				iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+				iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+				CyInterface().addMessage(pCity.getOwner(), True, 25, szText, szSound, iMessage, szArt, iGreen, pCity.getX(), pCity.getY(), True, True)
+
+		if not pPlot.isCity():												return
+		pCity	= pPlot.getPlotCity()
+		if pCity.getNumBuilding(self.Buildings["Mokkas Cauldron"]) <= 0:	return
+		iLoserPlayer = pUnit.getOwner()
+		pLoserPlayer = gc.getPlayer(iLoserPlayer)
+		if pCity.getOwner() != iLoserPlayer:								return
+		iUnit = self.getUnholyVersion(pUnit)
+		if iUnit == -1:														return
+		newUnit = pLoserPlayer.initUnit(iUnit, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.setHasPromotion(self.Promotions["Race"]["Demon"], True)
+		newUnit.setDamage(50, PlayerTypes.NO_PLAYER)
+		newUnit.finishMoves()
+
+		szBuffer	= gc.getUnitInfo(newUnit.getUnitType()).getDescription()
+		szText		= CyTranslator().getText("TXT_KEY_MESSAGE_MOKKAS_CAULDRON",((szBuffer, )))
+		szSound		= 'AS2D_DISCOVERBONUS'
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		szArt		= 'Art/Interface/Buttons/Buildings/MokkasCauldron.dds'
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iLoserPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, pCity.getX(), pCity.getY(), True, True)
+
+	### TODO: Dictionaries
+	def unitKilledAoM(self, pUnit):
+		gc			= CyGlobalContext()
+		bCanBeMane	= False
+		bCanBeAngel	= False
+		iInfernal	= self.Civilizations["Infernal"]
+		iMercurians	= self.Civilizations["Mercurians"]
+		if CyGame().countKnownTechNumTeams(self.Techs["Infernal Pact"]) > 0 and CyGame().getNumCivActive(iInfernal) > 0:
+			bCanBeMane	= True
+		if CyGame().getBuildingClassCreatedCount(self.Buildings["Mercurian Gate"]) > 0 and CyGame().getNumCivActive(iMercurians) > 0:
+			bCanBeAngel	= True
+		if not (bCanBeMane or bCanBeAngel): return
+		iAngel		= self.Units["Mercurian"]["Angel"]
+		iMane		= self.Units["Infernal"]["Manes"]
+		iUnitType	= self.angelorMane(pUnit)
+		pPlot		= pUnit.plot()
+		iPlayer		= pUnit.getOwner()
+
+		if   bCanBeMane and iUnitType == iMane:
+			if not gc.isNoCrash():
+				CyGame().addtoDeathList(gc.getInfoTypeForString('DEATHLIST_DEMON_CONVERSION'), pUnit)
+			else:
+				self.giftUnit(iMane, iInfernal, 0, pPlot, iPlayer)
+		elif bCanBeAngel and iUnitType == iAngel:
+			if not gc.isNoCrash():
+				CyGame().addtoDeathList(gc.getInfoTypeForString('DEATHLIST_ANGEL_CONVERSION'), pUnit)
+			else:
+				self.giftUnit(iAngel, iMercurians, pUnit.getExperienceTimes100(), pPlot, iPlayer)
+
+	def unitKilledGuide(self, pUnit):
+		gc		= CyGlobalContext()
+		if pUnit.getExperience() <= 0:	return
+		lUnits	= []
+		iPlayer	= pUnit.getOwner()
+		pPlayer	= gc.getPlayer(iPlayer)
+		for iLoopUnit in xrange(pPlayer.getNumUnits()):
+			pLoopUnit = pPlayer.getUnit(iLoopUnit)
+			if not pLoopUnit.isAlive():		continue
+			if pLoopUnit.isOnlyDefensive():	continue
+			if pLoopUnit.isDelayedDeath():	continue
+			lUnits.append(pLoopUnit)
+		if len(lUnits) <= 0:			return
+		pTargetUnit = lUnits[CyGame().getSorenRandNum(len(lUnits), "Spirit Guide")]
+		iXP = pUnit.getExperienceTimes100() / 2
+		pTargetUnit.changeExperienceTimes100(iXP, -1, False, False, False)
+
+		szText		= CyTranslator().getText("TXT_KEY_MESSAGE_SPIRIT_GUIDE",())
+		szSound		= 'AS2D_DISCOVERBONUS'
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		szArt		= 'Art/Interface/Buttons/Promotions/SpiritGuide.dds'
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, pUnit.getX(), pUnit.getY(), True, True)
+
+	### TODO: Dictionaries
+	def resetAspects(self, pUnit):
+		gc = CyGlobalContext()
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Capria"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_CAPRIA'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Capria"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Mahon"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAHON'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Mahon"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Magnadine"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_MAGNADINE'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Magnadine"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Arak"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_ARAK'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Arak"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Orthus"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_ORTHUS'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Orthus"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Unknown1"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_1'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Unknown1"], False)
+		if pUnit.isHasPromotion(self.Promotions["Effects"]["Aspect Unknown2"]):
+			CyGame().setGlobalFlag(gc.getInfoTypeForString('FLAG_ASPECT_OF_WAR_UNKNOWN_2'),False)
+			pUnit.setHasPromotion(self.Promotions["Effects"]["Aspect Unknown2"], False)
+
+	### TODO: Dictionaries
+	def pillageSlave(self, pUnit, iImprovement):
+		gc			= CyGlobalContext()
+		iUnittype	= pUnit.getUnitType()
+		iChance		= CyGame().getSorenRandNum(100, "Capture Chance")
+		if iUnittype == gc.getInfoTypeForString('UNIT_SLAVE_HUNTER'):	iChance -= 10
+		if iUnittype == gc.getInfoTypeForString('UNIT_RAIDER'):			iChance -= 20
+		if iChance >= 20:						return
+
+		lImprovements	= [	self.Improvements["Pasture"],					self.Improvements["Farm"],					gc.getInfoTypeForString("IMPROVEMENT_HOMESTEAD"),	self.Improvements["Cottage (I)"],					self.Improvements["Hamlet (II)"],
+							self.Improvements["Village (III)"],				self.Improvements["Town (IV)"],				self.CivImprovements["Kuriotates"]["Enclave"],		self.Improvements["Plantation"],					self.CivImprovements["Dwarven"]["Mine 2"],
+							self.CivImprovements["Dwarven"]["Mine 1"],		self.CivImprovements["Dwarven"]["Mine 3"],	self.CivImprovements["Dwarven"]["Mine 4"],			self.CivImprovements["Malakim"]["Bedouin Camp"],	self.CivImprovements["Malakim"]["Bedouin Gathering"],
+							self.CivImprovements["Malakim"]["Bedouin Sit"],	self.CivImprovements["Malakim"]["Bedouin Village"]]
+
+		if not iImprovement in lImprovements:	return
+		iUnit		= gc.getInfoTypeForString("UNIT_SLAVE")
+		iRace		= -1
+		pPlot		= pUnit.plot()
+		if pPlot.isOwned():
+			iPlayer		= pUnit.getOwner()
+			pPlayer		= gc.getPlayer(iPlayer)
+			pVictim		= gc.getPlayer(pPlot.getOwner())
+			if pPlayer == pVictim: return
+			iVictimCiv	= pVictim.getCivilizationType()
+			pVictimCiv	= gc.getCivilizationInfo(iVictimCiv)
+			if gc.getInfoTypeForString("MODULE_JOTNAR") != -1:
+				if iVictimCiv == self.Civilizations["Jotnar"]:
+					iUnit = self.Units["Jotnar"]["Jotnar Slave"]
+			iRace	= pVictimCiv.getDefaultRace()
+		newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		if iRace > -1: newUnit.setHasPromotion(iRace, True)
+
+	def techRel(self, iTechType, iPlayer):
+		gc			= CyGlobalContext()
+		lRelTechs	= [	self.Techs["Corruption of Spirit"],		self.Techs["Orders from Heaven"],	self.Techs["Way of the Forests"],	self.Techs["Way of the Earthmother"],
+						self.Techs["Message from the Deep"],	self.Techs["Honor"],				self.Techs["Deception"],			self.Techs["White Hand"]]
+
+		if not iTechType in lRelTechs:						return
+		pPlayer		= gc.getPlayer(iPlayer)
+		if not self.canReceiveReligionUnit(pPlayer):		return
+		iIndex		= lRelTechs.index(iTechType)
+
+		tRels		= (	self.Religions["Ashen Veil"],			self.Religions["Order"],			self.Religions["Fellowship"],		self.Religions["Runes of Kilmorph"],
+						self.Religions["Octopus Overlords"],	self.Religions["Empyrean"],			self.Religions["Council of Esus"],	self.Religions["White Hand"])
+
+		if not CyGame().isReligionFounded(tRels[iIndex]):	return
+
+		tUnits		= (	self.Units["Veil"]["Disciple"],			self.Units["Order"]["Disciple"],	self.Units["Leaves"]["Disciple"],	self.Units["Runes"]["Disciple"],
+						self.Units["Overlords"]["Disciple"],	self.Units["Empyrean"]["Disciple"],	self.Units["Esus"]["Nightwatch"],	self.Units["White Hand"]["Disciple"])
+
+		self.giftUnit(tUnits[iIndex], pPlayer.getCivilizationType(), 0, -1, -1)
+
+	### TODO: Dictionaries
+	def infernalPact(self, iTechType, iPlayer):
+		gc			= CyGlobalContext()
+		if gc.getGame().isOption(self.GameOptions["No Hyborem or Basium"]):	return
+		pPlayer		= gc.getPlayer(iPlayer)
+		iLeader		= pPlayer.getLeaderType()
+
+		lDemonLordsList					= [	self.Leaders["Hyborem"]]
+
+		if gc.getInfoTypeForString("MODULE_IMPORTANT_LEADERS") != -1:
+
+			lDemonLordsList			   += [	gc.getInfoTypeForString("LEADER_MERESIN"),	gc.getInfoTypeForString("LEADER_OUZZA"),	gc.getInfoTypeForString("LEADER_STATIUS"),
+											gc.getInfoTypeForString("LEADER_SALLOS"),	gc.getInfoTypeForString("LEADER_LETHE"),	gc.getInfoTypeForString("LEADER_JUDECCA")]
+
+		if iLeader in lDemonLordsList:										return
+
+		lDemonLordsTraitList			= [	"TRAIT_PACT_HYBOREM"]
+		lDemonLordsHelpTraitList		= [	"EVENT_PYHELP_TRAIT_HYBOREM"]
+		lDemonLordsHelpPactList			= [	"EVENT_PYHELP_PACT_HYBOREM"]
+
+		if gc.getInfoTypeForString("MODULE_IMPORTANT_LEADERS") != -1:
+
+			lDemonLordsTraitList	   += [	"TRAIT_PACT_MERESIN",						"TRAIT_PACT_OUZZA",							"TRAIT_PACT_STATIUS",
+											"TRAIT_PACT_SALLOS",						"TRAIT_PACT_LETHE",							"TRAIT_PACT_JUDECCA"]
+			lDemonLordsHelpTraitList   += [	"EVENT_PYHELP_TRAIT_MERESIN",				"EVENT_PYHELP_TRAIT_OUZZA",					"EVENT_PYHELP_TRAIT_STATIUS",
+											"EVENT_PYHELP_TRAIT_SALLOS",				"EVENT_PYHELP_TRAIT_LETHE",					"EVENT_PYHELP_TRAIT_JUDECCA"]
+			lDemonLordsHelpPactList	   += [	"EVENT_PYHELP_PACT_MERESIN",				"EVENT_PYHELP_PACT_OUZZA",					"EVENT_PYHELP_PACT_STATIUS",
+											"EVENT_PYHELP_PACT_SALLOS",					"EVENT_PYHELP_PACT_LETHE",					"EVENT_PYHELP_PACT_JUDECCA"]
+
+		lDemonLordsToSpawn				= []
+		lDemonLordsTraitToSpawn			= []
+		lDemonLordsHelpTraitClean		= []
+		lDemonLordsHelpPactClean		= []
+		for iLeader in xrange(len(lDemonLordsList)):
+			if CyGame().isLeaderEverActive(lDemonLordsList[iLeader]): continue
+			lDemonLordsToSpawn.append(lDemonLordsList[iLeader])
+			lDemonLordsTraitToSpawn.append(lDemonLordsTraitList[iLeader])
+			lDemonLordsHelpTraitClean.append(lDemonLordsHelpTraitList[iLeader])
+			lDemonLordsHelpPactClean.append(lDemonLordsHelpPactList[iLeader])
+		if lDemonLordsToSpawn:
+			if pPlayer.isHuman() and not CyGame().GetWorldBuilderMode():
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_PICK_DEMON_LORD",()))
+				popupInfo.setData1(iPlayer)
+				popupInfo.setData3(103) # onModNetMessage id
+				popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+				popupInfo.setOption2(True); #Activate WIDGET HELP in buttons
+				popupInfo.setFlags(126); #165 is WIDGET_HELP_EVENT
+				for i in range(len(lDemonLordsToSpawn)):
+					popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_SPAWN_DEMON_LORD", (gc.getLeaderHeadInfo(lDemonLordsToSpawn[i]).getDescription(),)), lDemonLordsHelpTraitClean[i])
+					popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_START_AS_DEMON_LORD", (gc.getLeaderHeadInfo(lDemonLordsToSpawn[i]).getDescription(),)), lDemonLordsHelpPactClean[i])
+				popupInfo.addPopup(iPlayer)
+			else:
+				iRnd	= CyGame().getSorenRandNum(len(lDemonLordsToSpawn), "Random Infernal Lord")
+				iLeader	= lDemonLordsToSpawn[iRnd]
+				iTrait	= gc.getInfoTypeForString(lDemonLordsTraitToSpawn[iRnd])
+				self.spawnDemonLord(iLeader,iPlayer)
+				if not gc.isNoCrash():
+					pPlayer.setHasTrait((iTrait),False,-1,True,True)
+				else:
+					pPlayer.setHasTrait((iTrait),False)
+		elif CyGame().isLeaderEverActive(self.Leaders["Hyborem"]) and not CyGame().isUnitClassMaxedOut(self.Heroes["Class-Hyborem"], 0):
+			pInfernalPlayer	= gc.getPlayer(CyGame().getCivActivePlayer(self.Civilizations["Infernal"], 0))
+			pCapital		= pInfernalPlayer.getCapitalCity()
+			if pCapital.isNone(): return
+			NewUnit = pInfernalPlayer.initUnit(self.Heroes["Hyborem"], pCapital.getX(), pCapital.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			NewUnit.setHasPromotion(self.Promotions["Effects"]["Immortal"], True)
+			NewUnit.setHasCasted(True)
+			NewUnit.setExperienceTimes100(2500, -1)
+
+	def spreadOrder(self, iOwner, pSpreadCity):
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iOwner)
+		if pPlayer.getStateReligion() != self.Religions["Order"]:	return
+		if pSpreadCity.getOccupationTimer() > 0:					return
+		if pPlayer.isHasTech(self.Techs["Fanaticism"]):
+			iUnit	= self.Units["Order"]["Crusader"]
+			szText	= CyTranslator().getText("TXT_KEY_MESSAGE_ORDER_SPAWN_CRUSADER",())
+			szArt	= 'Art/Interface/Buttons/Units/Crusader.dds'
+		else:
+			iUnit	= self.Units["Order"]["Disciple"]
+			szText	= CyTranslator().getText("TXT_KEY_MESSAGE_ORDER_SPAWN_ACOLYTE",())
+			szArt	= 'Art/Interface/Buttons/Units/Disciple Order.dds'
+		newUnit = pPlayer.initUnit(iUnit, pSpreadCity.getX(), pSpreadCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+		szSound		= 'AS2D_UNIT_BUILD_UNIT'
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iOwner, True, 25, szText, szSound, iMessage, szArt, iGreen, pSpreadCity.getX(), pSpreadCity.getY(), True, True)
+
+	### TODO: Dictionaries
+	def resetPactTraits(self, iTeamA, iTeamB):
+		gc							= CyGlobalContext()
+		lDemonLordsList				= [	self.Leaders["Hyborem"]]
+		lDemonLordsTraitList		= [	"TRAIT_PACT_HYBOREM"]
+
+		if gc.getInfoTypeForString("MODULE_IMPORTANT_LEADERS") != -1:
+			lDemonLordsList		   += [	gc.getInfoTypeForString("LEADER_MERESIN"),	gc.getInfoTypeForString("LEADER_OUZZA"),	gc.getInfoTypeForString("LEADER_STATIUS"),
+										gc.getInfoTypeForString("LEADER_SALLOS"),	gc.getInfoTypeForString("LEADER_LETHE"),	gc.getInfoTypeForString("LEADER_JUDECCA")]
+
+			lDemonLordsTraitList   += [	"TRAIT_PACT_MERESIN",						"TRAIT_PACT_OUZZA",							"TRAIT_PACT_STATIUS",
+										"TRAIT_PACT_SALLOS",						"TRAIT_PACT_LETHE",							"TRAIT_PACT_JUDECCA"]
+
+		lEverActive					= [ iLeader for iLeader in lDemonLordsList if CyGame().isLeaderEverActive(iLeader) ]
+		if not lEverActive: return
+		lTraitsToRemoveA			= []
+		lTraitsToRemoveB			= []
+		### If a member of TeamA or TeamB is a DemonLord put their trait in the list
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer				= gc.getPlayer(iLoopPlayer)
+			iLeader					= pLoopPlayer.getLeaderType()
+			if not iLeader in lEverActive: continue
+			iLoopTeam				= pLoopPlayer.getTeam()
+			if   iLoopTeam == iTeamA:
+				iIndex				= lDemonLordsList.index(iLeader)
+				lTraitsToRemoveA.append(lDemonLordsTraitList[iIndex])
+			elif iLoopTeam == iTeamB:
+				iIndex				= lDemonLordsList.index(iLeader)
+				lTraitsToRemoveB.append(lDemonLordsTraitList[iIndex])
+		### Remove Traits granted by TeamA from TeamB if any
+		for szTrait in lTraitsToRemoveA:
+			iTrait					= gc.getInfoTypeForString(szTrait)
+			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+				pLoopPlayer			= gc.getPlayer(iLoopPlayer)
+				iLoopTeam			= pLoopPlayer.getTeam()
+				if iLoopTeam != iTeamB: continue
+				if not gc.isNoCrash():
+					pLoopPlayer.setHasTrait((iTrait),False,-1,True,True)
+				else:
+					pLoopPlayer.setHasTrait((iTrait),False)
+		### Remove Traits granted by TeamB from TeamA if any
+		for szTrait in lTraitsToRemoveB:
+			iTrait					= gc.getInfoTypeForString(szTrait)
+			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+				pLoopPlayer			= gc.getPlayer(iLoopPlayer)
+				iLoopTeam			= pLoopPlayer.getTeam()
+				if iLoopTeam != iTeamA: continue
+				if not gc.isNoCrash():
+					pLoopPlayer.setHasTrait((iTrait),False,-1,True,True)
+				else:
+					pLoopPlayer.setHasTrait((iTrait),False)
+
+	### TODO: Dictionaries
+	def cityTraitCheck(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+
+		if pPlayer.hasTrait(self.Traits["Imperialist"]):
+			eSpeed		= CyGame().getGameSpeedType()
+			iCulture	= 10
+			if   eSpeed == self.GameSpeeds["Marathon"]:	iCulture = iCulture * 3
+			elif eSpeed == self.GameSpeeds["Epic"]:		iCulture = iCulture * 3 / 2
+			elif eSpeed == self.GameSpeeds["Quick"]:	iCulture = iCulture / 3 * 2
+			pCity.changeCulture(iPlayer, iCulture, True)
+
+		if gc.getInfoTypeForString("MODULE_IMPORTANT_LEADERS") != -1:
+			if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_TYRANT")):
+				pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_TYRANT"), 1)
+
+		if pCity.isCapital():
+			if pPlayer.hasTrait(self.Traits["Hydromancer 1"]):
+				pCity.setNumRealBuilding(self.Buildings["Water Mana"], 1)
+			if pPlayer.hasTrait(self.Traits["Necromancer 1"]):
+				pCity.setNumRealBuilding(self.Buildings["Death Mana"], 1)
+			if pPlayer.hasTrait(self.Traits["Ambitious"]):
+				pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MANA_MIND"), 1)
+			if gc.getInfoTypeForString("MODULE_CHUREL") !=- 1:
+				if pPlayer.hasTrait(self.Traits["Graveleech 1"]):
+					pCity.setNumRealBuilding(self.Buildings["Death Mana"], 1)
+			if gc.getInfoTypeForString("MODULE_EMERGENT_LEADERS") !=- 1:
+				if pPlayer.hasTrait(self.Traits["Incorporeal 1"]):
+					pCity.setNumRealBuilding(self.Buildings["Nightmare"], 1)
+
+	### TODO: Dictionaries
+	def cityLeaderCheck(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iLeader		= pPlayer.getLeaderType()
+
+		if iLeader == gc.getInfoTypeForString("LEADER_SAUROS"):
+			iCiv	= pPlayer.getCivilizationType()
+			if   iCiv == self.Civilizations["Clan of Embers"]:
+				pCity.setCityClass(gc.getInfoTypeForString("CITYCLASS_SAUROS_CLAN"))
+			elif iCiv == self.Civilizations["Cualli"]:
+				pCity.setCityClass(gc.getInfoTypeForString("CITYCLASS_SAUROS_CUALLI"))
+
+		if iLeader == self.Leaders["Risen Emperor"]:
+			pCity.setNumRealBuilding(self.Buildings["Emperors Mark"], 1)
+
+	### TODO: Dictionaries
+	def cityCivCheck(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iCiv		= pPlayer.getCivilizationType()
+
+		if   iCiv == self.Civilizations["Infernal"]:
+			pCity.setNumRealBuilding(self.Buildings["Demonic Citizens"], 1)
+			pCity.setPopulation(3)
+			if CyGame().countKnownTechNumTeams(self.Techs["Infernal Pact"]) > 0:
+				pCity.setHasReligion(self.Religions["Ashen Veil"], True, True, True)
+				pCity.setNumRealBuilding(self.Buildings["Elder Council"], 1)
+				pCity.setNumRealBuilding(self.Buildings["Barracks"], 1)
+				pCity.setNumRealBuilding(self.Buildings["Obsidian Gate"], 1)
+				pCity.setNumRealBuilding(self.Buildings["Forge"], 1)
+				pCity.setNumRealBuilding(self.Buildings["Mage Guild"], 1)
+
+		elif iCiv == self.Civilizations["Austrin"]:
+			pCity.setNumRealBuilding(self.Buildings["Austrin Settlement"], 1)
+
+		elif iCiv == self.Civilizations["Balseraphs"]:
+			pCity.setHasCorporation( self.Corporations["Masquerade"], True, False, False)
+
+		elif iCiv == self.Civilizations["Barbarian (Orc)"]:
+			eEra		= CyGame().getStartEra()
+			iUnit1		= self.Units["Generic"]["Warrior"]
+			iX			= pCity.getX()
+			iY			= pCity.getY()
+			iAI			= UnitAITypes.NO_UNITAI
+			iDirection	= DirectionTypes.DIRECTION_SOUTH
+			if   pPlayer.isHasTech(self.Techs["Iron Working"]) or eEra > self.Eras["Classical"]:
+				iUnit1	= self.Units["Generic"]["Champion"]
+			elif pPlayer.isHasTech(self.Techs["Bronze Working"]) or eEra > self.Eras["Ancient"]:
+				iUnit1	= self.Units["Generic"]["Axeman"]
+			newUnit1	= pPlayer.initUnit(iUnit1, iX, iY, iAI, iDirection)
+			newUnit1.setHasPromotion( self.Promotions["Race"]["Orcish"], True)
+			iUnit2	= self.Units["Generic"]["Archer"]
+			if pPlayer.isHasTech( self.Techs["Bowyers"]) or eEra > self.Eras["Classical"]:
+				iUnit2	= self.Units["Generic"]["Longbowman"]
+			newUnit2	= pPlayer.initUnit(iUnit2, iX, iY, iAI, iDirection)
+			newUnit3	= pPlayer.initUnit(iUnit2, iX, iY, iAI, iDirection)
+			newUnit2.setHasPromotion(self.Promotions["Race"]["Orcish"], True)
+			newUnit3.setHasPromotion(self.Promotions["Race"]["Orcish"], True)
+			if not pPlayer.isHasTech( self.Techs["Archery"]) or eEra == self.Eras["Ancient"]:
+				newUnit2.setHasPromotion(self.Promotions["Effects"]["Weak"], True)
+				newUnit3.setHasPromotion(self.Promotions["Effects"]["Weak"], True)
+
+		elif iCiv == self.Civilizations["D'Tesh"]:
+			pPlot	= pCity.plot()
+			iBonus	= pPlot.getBonusType(-1)
+			if iBonus != -1:
+				tBonusAlive		= (	self.Resources["Arctic Deer"],	self.Resources["Banana"],	self.Resources["Corn"],			self.Resources["Cotton"],	self.Resources["Deer"],
+									self.Resources["Dye"],			self.Resources["Fur"],		self.Resources["Gulagarm"],		self.Resources["Ivory"],	self.Resources["Incense"],
+									self.Resources["Mushrooms"],	self.Resources["Pig"],		self.Resources["Razorweed"],	self.Resources["Reagents"],	self.Resources["Rice"],
+									self.Resources["Silk"],			self.Resources["Sheep"],	self.Resources["Sugar"],		self.Resources["Toad"],		self.Resources["Wine"],
+									self.Resources["Wheat"])
+
+				tBonusNightmare	= (	self.Resources["Bison"], self.Resources["Camel"], self.Resources["Cow"], self.Resources["Horse"])
+
+				bWantsNightmare		= False
+				bMessage			= False
+				if not pPlayer.hasBonus(self.Resources["Nightmare"]):
+					bWantsNightmare	= True
+
+				if   iBonus in tBonusAlive:
+					pPlot.setBonusType(gc.getInfoTypeForString('BONUS_ASH'))
+					bMessage		= True
+				elif iBonus in tBonusNightmare:
+					if not pPlayer.isHasTech(self.Techs["Animal Husbandry"]):
+						pPlot.setBonusType(gc.getInfoTypeForString('BONUS_ASH'))
+						bMessage	= True
+					else:
+						if pPlayer.isHuman():
+							popupInfo = CyPopupInfo()
+							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+							popupInfo.setText(CyTranslator().getText("TXT_KEY_DTESH_FIND_HORSE",()))
+							popupInfo.setData1(pCity.getID())
+							popupInfo.setData2(iPlayer)
+							popupInfo.setData3(121) # onModNetMessage id
+							popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_DTESH_FIND_HORSE_NIGHTMARE",()),"")
+							popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_DTESH_FIND_HORSE_BURN",()),"")
+							popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+							popupInfo.addPopup(iPlayer)
+						elif bWantsNightmare:
+							pPlot.setBonusType(self.Resources["Nightmare"])
+						else:
+							pPlot.setBonusType(gc.getInfoTypeForString('BONUS_ASH'))
+				elif iBonus == self.Resources["Nightmare"]:
+					if pPlayer.isHuman():
+						popupInfo = CyPopupInfo()
+						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+						popupInfo.setText(CyTranslator().getText("TXT_KEY_DTESH_FIND_NIGHTMARE",()))
+						popupInfo.setData1(pCity.getID())
+						popupInfo.setData2(iPlayer)
+						popupInfo.setData3(122) # onModNetMessage id
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_DTESH_FIND_NIGHTMARE_KEEP",()),"")
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_DTESH_FIND_NIGHTMARE_BURN",()),"")
+						popupInfo.setOnClickedPythonCallback("passToModNetMessage")
+						popupInfo.addPopup(iPlayer)
+					elif bWantsNightmare:
+						pPlot.setBonusType(self.Resources["Nightmare"])
+					else:
+						pPlot.setBonusType(gc.getInfoTypeForString('BONUS_ASH'))
+
+				if bMessage:
+					szText		= CyTranslator().getText("TXT_KEY_BONUS_CONVERTED_TO_ASH",())
+					szSound		= 'AS2D_DISCOVERBONUS'
+					iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+					szArt		= 'Art/Civs/Dtesh/Ashes.dds'
+					iGrey		= gc.getInfoTypeForString("COLOR_LIGHT_GREY")
+					CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGrey, pPlot.getX(), pPlot.getY(), True, True)
+
+	def razeScorcedEarth(self, pCity):
+		gc			= CyGlobalContext()
+		pPlot		= pCity.plot()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iPopulation	= pCity.getPopulation()
+		for iUnit in xrange(pPlot.getNumUnits()):
+			pUnit = pPlot.getUnit(iUnit)
+			if pUnit.getOwner() != iPlayer: continue
+			pUnit.changeExperience(iPopulation, -1, False, False, False)
+
+	def razeAoM(self, pCity):
+		iInfernal		= self.Civilizations["Infernal"]
+		iMercurians		= self.Civilizations["Mercurians"]
+		if CyGame().getNumCivActive(iInfernal) + CyGame().getNumCivActive(iMercurians) <= 0: return
+		gc				= CyGlobalContext()
+		pPlot			= pCity.plot()
+		iPlayer			= pCity.getOwner()
+		iPopulation		= pCity.getPopulation()
+		iOriginalPlayer	= pCity.getOriginalOwner()
+		pOriginalPlayer	= gc.getPlayer(iOriginalPlayer)
+		iOriginalCiv	= pOriginalPlayer.getCivilizationType()
+		iAlignment		= pOriginalPlayer.getAlignment()
+
+		if CyGame().countKnownTechNumTeams(self.Techs["Infernal Pact"]) > 0 and CyGame().getNumCivActive(iInfernal) > 0:
+			if not iOriginalCiv == iInfernal:
+				iNumManes		= iPopulation
+				if   iAlignment == self.Alignments["Neutral"]:
+					iNumManes	= (iPopulation / 2) + 1
+				elif iAlignment == self.Alignments["Good"]:
+					iNumManes	= 0
+				iManes			= self.Units["Infernal"]["Manes"]
+				for i in xrange(iNumManes):
+					self.giftUnit(iManes, iInfernal, 0, pPlot, iPlayer)
+
+		if CyGame().getBuildingClassCreatedCount(self.Buildings["Mercurian Gate"]) > 0 and CyGame().getNumCivActive(iMercurians) > 0:
+			if not iOriginalCiv == iMercurians:
+				iNumAngels		= 0
+				if   iAlignment == self.Alignments["Neutral"]:
+					iNumAngels	= (iPopulation / 4) + 1
+				elif iAlignment == self.Alignments["Good"]:
+					iNumAngels	= (iPopulation / 2) + 1
+				iAngel			= self.Units["Mercurian"]["Angel"]
+				for i in xrange(iNumAngels):
+					self.giftUnit(iAngel, iMercurians, 0, pPlot, iPlayer)
+
+	def razeScions(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		if not pPlayer.isHasTech(self.Techs["Sorcery"]):	return
+		if not pPlayer.isHasTech(self.Techs["Priesthood"]):	return
+		iReborn		= self.Units["Scions"]["Reborn"]
+		iPopulation	= pCity.getPopulation()
+		iNumReborn	= max((iPopulation - 1), 1)
+		iX			= pCity.getX()
+		iY			= pCity.getY()
+		iAI			= UnitAITypes.NO_UNITAI
+		iDirection	= DirectionTypes.DIRECTION_SOUTH
+		bGodKing	= pPlayer.isCivic(self.Civics["God King"])
+		for i in xrange(iNumReborn):
+			newUnit	= pPlayer.initUnit(iReborn, iX, iY, iAI, iDirection)
+			if bGodKing: 
+				szName = CyTranslator().getText("TXT_KEY_UNIT_REBORN_GOD_KING", ())
+				newUnit.setName(szName)
+
+		szText		= CyTranslator().getText("TXT_KEY_MESSAGE_REBORN_SPAWNED_RAZED", ())
+		szSound		= ''
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		szArt		= 'Art/Interface/Buttons/Units/Scions/reborn.dds'
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, iX, iY, True, True)
+
+	def razeDtesh(self, pCity):
+		gc			= CyGlobalContext()
+		iPlayer		= pCity.getOwner()
+		pPlayer		= gc.getPlayer(iPlayer)
+		iX			= pCity.getX()
+		iY			= pCity.getY()
+		iAI			= UnitAITypes.NO_UNITAI
+		iDirection	= DirectionTypes.DIRECTION_SOUTH
+		iSlave		= self.Units["D'Tesh"]["Slave"]
+		iPopulation	= pCity.getPopulation()
+		iNumSlave	= max((iPopulation * 3 / 4), 1)
+		pPlayer.initUnit(self.Units["D'Tesh"]["Vessel of D'tesh"], iX, iY, iAI, iDirection)
+		for i in xrange(iNumSlave):
+			pPlayer.initUnit(iSlave, iX, iY, iAI, iDirection)
+
+	### TODO: Dictionaries
+	def doCityTurnPixieGarden(self, pCity, iPlayer):
+		if CyGame().getSorenRandNum(1000, "City Turn Pixie") < 2:	return
+		gc		= CyGlobalContext()
+		pPlot	= pCity.plot()
+		if pPlot.getNumUnits() <= 0:					return
+		pUnit	= pPlot.getUnit(0)
+		if not pUnit.isAlive():							return
+		if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_PIXIE_COMPANION")): return
+		pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_PIXIE_COMPANION"), True)
+
+		szText		= CyTranslator().getText("TXT_KEY_MESSAGE_PIXIE_JOIN", ())
+		szSound		= 'AS2D_TECH_DING'
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		szArt		= 'Art/units/spawns/fairy/fairy.dds'
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, pPlot.getX(), pPlot.getY(), True, True)
+
+	def doCityTurnEAE(self, pCity, iPlayer):
+		gc		= CyGlobalContext()
+		pPlayer	= gc.getPlayer(iPlayer)
+		iTeam	= pPlayer.getTeam()
+		pTeam	= gc.getTeam(iTeam)
+		lTeams	= []
+		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive():			continue
+			if iLoopPlayer == iPlayer:				continue
+			iLoopTeam = pLoopPlayer.getTeam()
+			if not pTeam.isOpenBorders(iLoopTeam):	continue
+			lTeams.append(iLoopTeam)
+		if len(lTeams) < 3: return
+		for iTech in xrange(gc.getNumTechInfos()):
+			if not pPlayer.canEverResearch(iTech):	continue
+			if pTeam.isHasTech(iTech):				continue
+			iCount = 0
+			for iLoopTeam in lTeams:
+				pLoopTeam = gc.getTeam(iLoopTeam)
+				if not pLoopTeam.isHasTech(iTech):	continue
+				iCount += 1
+			if iCount < 3:							continue
+			pTeam.setHasTech(iTech, True, iPlayer, False, True)
+
+			szText		= CyTranslator().getText("TXT_KEY_MESSAGE_EYES_AND_EARS_NETWORK_FREE_TECH", ())
+			szSound		= 'AS2D_TECH_DING'
+			iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+			szArt		= 'Art/Interface/Buttons/Buildings/Eyesandearsnetwork.dds'
+			iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+			CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, iGreen, pCity.getX(), pCity.getY(), True, True)
+
+	def doCityTurnHallOfMirrors(self, pCity, iPlayer):
+		gc		= CyGlobalContext()
+		pPlayer	= gc.getPlayer(iPlayer)
+		iTeam	= pPlayer.getTeam()
+		pTeam	= gc.getTeam(iTeam)
+		pUnit	= -1
+		iX		= pCity.getX()
+		iY		= pCity.getY()
+		for dX, dY in RANGE1:
+			if not pUnit == -1: break
+			pDeltaPlot = CyMap().plot(iX+dX, iY+dY)
+			if not pDeltaPlot.isVisibleEnemyUnit(iPlayer): continue
+			for iUnit in xrange(pDeltaPlot.getNumUnits()):
+				pLoopUnit	= pDeltaPlot.getUnit(iUnit)
+				if not pTeam.isAtWar(pLoopUnit.getTeam()): continue
+				pUnit		= pLoopUnit
+				break
+		if pUnit == -1: return
+		newUnit = pPlayer.initUnit(pUnit.getUnitType(), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		newUnit.setHasPromotion( self.Promotions["Race"]["Illusion"], True)
+		if pPlayer.hasTrait(self.Traits["Summoner"]):	newUnit.setDuration(5)
+		else:											newUnit.setDuration(3)
+
+	### TODO: Dictionaries
+	def doCityTurnKahdiVault(self, pCity, iPlayer):
+		gc		= CyGlobalContext()
+		pPlayer	= gc.getPlayer(iPlayer)
+		iMax	= 1
+		iMult	= 1
+		if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_OGHMA")):
+			iMult	= 3
+			iMax	= 1.5
+		if pCity.getNumBuilding(self.Buildings["Library"]) > 0:	iMult += 0.5
+		if CyGame().getSorenRandNum(10000, "Planar Gate") > (self.Defines["Planar Gate"] * iMult): return
+		lAvailableUnits	= []
+		iGates			= pPlayer.countNumBuildings(self.Buildings["Kahdi Vault Gate"])
+		iLibraries		= pPlayer.countNumBuildings(self.Buildings["Library"])
+		iMedHalls		= pPlayer.countNumBuildings(self.Buildings["School of Govannon"])
+		iGreatLibrary	= pPlayer.countNumBuildings(self.Buildings["The Great Library"]) * 4
+		iMageGuild		= pPlayer.countNumBuildings(self.Buildings["Wizards Hall"])
+		iMax = iMax * (iGates + iLibraries + iMedHalls + iGreatLibrary + iMageGuild)
+		bMageGuild		= False
+		bMedHalls		= False
+		bMammon			= False
+		if pCity.getNumBuilding(self.Buildings["Wizards Hall"]) > 0:		bMageGuild	= True
+		if pCity.getNumBuilding(self.Buildings["School of Govannon"]) > 0:	bMedHalls	= True
+		if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_MAMMON")):	bMammon		= True
+
+		lUnitTypes		= [	self.Units["Kahdi"]["Gnosling"],			self.Units["Kahdi"]["Thade"],		self.Units["Summons"]["Djinn"],			self.Units["Summons"]["Fire Elemental"],
+							self.Units["Summons"]["Air Elemental"],		self.Units["Summons"]["Spectre"],	self.Units["Summons"]["Flesh Golem"],	self.Units["Summons"]["Pit Beast"],
+							self.Units["Summons"]["Ice Elemental"],		self.Units["Summons"]["Einherjar"],	self.Units["Summons"]["Mistform"],		self.Units["Summons"]["Aurealis"],
+							self.Units["Summons"]["Water Elemental"],	self.Units["Kahdi"]["Psion"]]
+
+		fUnitUC			= (	self.UnitClasses["Gnossling"],				self.UnitClasses["Thade"],			self.UnitClasses["Djinn"],				self.UnitClasses["Fire Elemental"],
+							self.UnitClasses["Air Elemental"],			self.UnitClasses["Spectre"],		self.UnitClasses["Flesh Golem"],		self.UnitClasses["Pit Beast"],
+							self.UnitClasses["Ice Elemental"],			self.UnitClasses["Einherjar"],		self.UnitClasses["Mistform"],			self.UnitClasses["Aurealis"],
+							self.UnitClasses["Water Elemental"],		self.UnitClasses["Psion"])
+
+		fCapDivider		= (	2,											3,									8,										6,
+							6,											4,									6,										4,
+							4,											4,									8,										6,
+							6,											10)
+
+		fManaType		= (	-1,											-1,									self.Mana["Metamagic"],					self.Mana["Fire"],
+							self.Mana["Air"],							self.Mana["Death"],					self.Mana["Body"],						self.Mana["Entropy"],
+							self.Mana["Ice"],							self.Mana["Law"],					self.Mana["Shadow"],					self.Mana["Sun"],
+							self.Mana["Water"],							-1)
+
+		fPrereqs		= (	True,										bMageGuild,							bMedHalls,								bMedHalls,
+							bMedHalls,									bMedHalls,							bMedHalls,								bMedHalls,
+							bMedHalls,									bMedHalls,							bMedHalls,								bMedHalls,
+							bMedHalls,									bMammon)
+
+		for iUnit in lUnitTypes:
+			iIndex	= lUnitTypes.index(iUnit)
+			if not fPrereqs[iIndex]:	continue
+			iCountMana	= 1
+			if fManaType[iIndex] != -1:
+				iCountMana = pPlayer.getNumAvailableBonuses(fManaType[iIndex])
+			if iCountMana == 0:			continue
+			iCountUC	= pPlayer.getUnitClassCount(fUnitUC[iIndex])
+			iUnitMax	= iMax / (fCapDivider[iIndex]) * iCountMana
+			if iCountUC >= iUnitMax:	continue
+			lAvailableUnits.append(iUnit)
+
+		if not lAvailableUnits:	return
+		iTarget			= lAvailableUnits[CyGame().getSorenRandNum(len(lAvailableUnits), "Kahdi Gate")]
+		newUnit			= pPlayer.initUnit(iTarget, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		if iTarget == self.Units["Kahdi"]["Thade"]:
+
+			fSpheres	= (	self.Promotions["Generic"]["Air I"],	self.Promotions["Generic"]["Earth I"],		self.Promotions["Generic"]["Fire I"],			self.Promotions["Generic"]["Ice I"],		self.Promotions["Generic"]["Water I"],
+							self.Promotions["Generic"]["Chaos I"],	self.Promotions["Generic"]["Death I"],		self.Promotions["Generic"]["Dimensional I"],	self.Promotions["Generic"]["Entropy I"],	self.Promotions["Generic"]["Shadow I"],
+							self.Promotions["Generic"]["Body I"],	self.Promotions["Generic"]["Creation I"],	self.Promotions["Generic"]["Enchantment I"],	self.Promotions["Generic"]["Force I"],		self.Promotions["Generic"]["Nature I"],
+							self.Promotions["Generic"]["Metamagic I"])
+
+			newUnit.setLevel(3)
+			newUnit.setExperienceTimes100(1000 + CyGame().getGlobalCounter() * 25, -1)
+			for iSphere in fSpheres:
+				if CyGame().getSorenRandNum(8, "Mobius Witch Free Promotions") != 0: continue
+				newUnit.setHasPromotion(iSphere, True)
+
+		szText		= CyTranslator().getText("TXT_KEY_MESSAGE_KAHDI_GATE", ())
+		szSound		= 'AS2D_DISCOVERBONUS'
+		iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
+		szArt		= gc.getUnitInfo(newUnit.getUnitType()).getButton()
+		iGreen		= gc.getInfoTypeForString("COLOR_GREEN")
+		CyInterface().addMessage(iPlayer, True, 25, szText, szSound, iMessage, szArt, iGreen, pCity.getX(), pCity.getY(), True, True)

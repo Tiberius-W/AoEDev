@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Infos -->
+<Civ4ImprovementInfos xmlns="x-schema:ABDF_CIV4TerrainSchema.xml">
+	<ImprovementInfos>
+		<ImprovementInfo><!-- Town -->
+			<Type>IMPROVEMENT_TOWN</Type>
+			<iWorkingCityCrime>0</iWorkingCityCrime>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- Village -->
+			<Type>IMPROVEMENT_VILLAGE</Type>
+			<iWorkingCityCrime>0</iWorkingCityCrime>
+		</ImprovementInfo>
+	</ImprovementInfos>
+</Civ4ImprovementInfos>

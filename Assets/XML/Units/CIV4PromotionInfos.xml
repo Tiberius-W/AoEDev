@@ -21008,6 +21008,7 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 			</UnitCombats>
+			<bAlwaysHeal>1</bAlwaysHeal>
 			<Button>Art/Interface/Buttons/Promotions/FieldMedic2Comm.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Command - Field Medicine 2 (Unit Promo) -->
@@ -26374,14 +26375,83 @@
 					<bApplyEnemy>1</bApplyEnemy>
 					<bApplyRival>1</bApplyRival>
 					<bApplyTeam>1</bApplyTeam>
+					<bApplySelf>1</bApplySelf>
 					<fFood>-3</fFood>
+					<fProduction>-3</fProduction>
+					<fDiplo>-1</fDiplo>
 					<iBonusRange>2</iBonusRange>
 				</CityBonus>
 			</CityBonuses>
+			<bAllowAttacks>1</bAllowAttacks>
+			<bFreeUnit>1</bFreeUnit>
+			<bNoSupply>1</bNoSupply>
+			<bEnraged>1</bEnraged>
+			<iMovesChange>-3</iMovesChange>
 			<PrereqUnits>
 				<PrereqUnit>UNIT_DEVILCASTER</PrereqUnit>
 			</PrereqUnits>
 			<Button>Art/Interface/Buttons/Improvements/Devilgate.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		<!-- Agares demon berserk -->
+			<Type>PROMOTION_DEMONIC_BERSERK</Type>
+			<Description>TXT_KEY_PROMOTION_DEMONIC_BERSERK</Description>
+			<bAllowAttacks>1</bAllowAttacks>
+			<bEnraged>1</bEnraged>
+			<iMinLevel>-1</iMinLevel>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_DEMON</PrereqCivilization>
+			</PrereqCivilizations>
+			<Button>Art/Interface/Buttons/Improvements/Devilgate.dds</Button>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DEFENSIVE_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Vigilante -->
 			<Type>PROMOTION_VIGILANTE</Type>
