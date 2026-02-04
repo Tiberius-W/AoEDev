@@ -4075,6 +4075,7 @@
 			<iTradeRoutes>-2</iTradeRoutes>
 			<bNoForeignTradeRoutes>1</bNoForeignTradeRoutes>
 			<iConquestProb>0</iConquestProb>
+			<bNeverCapture>1</bNeverCapture>
 			<iAsset>0</iAsset>
 			<iPower>0</iPower>
 			<iPlotRadius>1</iPlotRadius>

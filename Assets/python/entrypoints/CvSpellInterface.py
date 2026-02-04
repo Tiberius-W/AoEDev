@@ -4765,8 +4765,7 @@ def spellWildHunt(caster):
 
 	for i in xrange(iNumAnimals):
 		if randNum(10000, "Animal Spawn") < iAnimalChance:
-			sAnimal = lList[randNum(len(lList), "Pick Animal")-1]
-			iUnit = getInfoType(sAnimal)
+			iUnit = lList[randNum(len(lList), "Pick Animal")-1]
 			newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
 			newUnit.setHasPromotion(getInfoType('PROMOTION_LOYALTY3'), True)
 			if iReligion != -1:
@@ -11983,7 +11982,7 @@ def helpVaultGates (argsList):
 		if iThadeMax != int(iThadeMax):
 			iThadeMax = int(iThadeMax)+1
 		iDjinnCur		= iNumUC(getInfoType('UNITCLASS_DJINN'))
-		iDjinnMax		= bGov * iMMMana * UnitCap / 4
+		iDjinnMax		= bGov * iMMMana * UnitCap / 8
 		if iDjinnMax != int(iDjinnMax):
 			iDjinnMax = int(iDjinnMax)+1
 		iFElementalCur	= iNumUC(getInfoType('UNITCLASS_FIRE_ELEMENTAL'))
