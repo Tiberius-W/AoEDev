@@ -109,7 +109,7 @@
 			<Description>TXT_KEY_STYGIAN_SHRINE</Description>
 			<PrereqTech>TECH_MESSAGE_FROM_THE_DEEP</PrereqTech>
 			<Help/>
-			<iTime>1000</iTime>
+			<iTime>1500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENTCLASS_STYGIAN_SHRINE</ImprovementType>

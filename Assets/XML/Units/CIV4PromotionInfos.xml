@@ -7475,6 +7475,10 @@
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_COMMANDER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Sinking.dds</Button>
 		</PromotionInfo>
@@ -26401,7 +26405,7 @@
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DEMON</PrereqCivilization>
 			</PrereqCivilizations>
-			<Button>Art/Interface/Buttons/Improvements/Devilgate.dds</Button>
+			<Button>Art/Interface/Buttons/Improvements/AgaresRage.dds</Button>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
