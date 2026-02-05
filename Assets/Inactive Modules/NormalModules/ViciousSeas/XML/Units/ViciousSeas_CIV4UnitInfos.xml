@@ -2688,12 +2688,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -2709,7 +2703,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DISCIPLE_OVERLORDS</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_AIFON_DROWN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FreePromotions>
@@ -2775,7 +2769,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANGEL</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_AIFON_STYGIAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FreePromotions>
@@ -2817,12 +2811,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

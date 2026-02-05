@@ -456,6 +456,7 @@ class CustomFunctions:
 
 		for iCity in xrange(pPlayer.getNumCities()):
 			pCity = pPlayer.getCity(iCity)
+			if pCity.isNone: continue
 			pCity.setNumRealBuilding(self.Buildings["Vault1"], 0)
 			pCity.setNumRealBuilding(self.Buildings["Vault2"], 0)
 			pCity.setNumRealBuilding(self.Buildings["Vault3"], 0)
@@ -573,6 +574,7 @@ class CustomFunctions:
 
 		for iCity in xrange(pPlayer.getNumCities()):
 			pCity = pPlayer.getCity(iCity)
+			if pCity.isNone:			continue
 			pCityPlot = pCity.plot()
 			if pCityPlot.getTerrainType() == self.Terrain["Desert"]:
 				iNumScorpionCities += 1
@@ -637,6 +639,7 @@ class CustomFunctions:
 				if CyGame().getSorenRandNum(100, "Awakened Distribution") >= 50:
 					iRnd	= CyGame().getSorenRandNum(iNumCities, "Scion City")
 					pTarget	= pPlayer.getCity(iRnd)
+					if pTarget.isNone: pTarget = pTomb
 			spawnUnit = pPlayer.initUnit(self.Units["Scions"]["Awakened"], pTarget.getX(), pTarget.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		## Pity Pop
 		if iNumCities == 1 and iTombPop == 1:
@@ -814,6 +817,7 @@ class CustomFunctions:
 		iNumStatesmen 	= 0
 		for iCity in xrange(pPlayer.getNumCities()):
 			pCity = pPlayer.getCity(iCity)
+			if pCity.isNone: continue
 			if pCity.getNumBuilding(self.Buildings["Forum"]) <= 0: continue
 			iNumStatesmen = (pCity.getSpecialistCount(self.Specialists["Statesman"]) + pCity.getFreeSpecialistCount(self.Specialists["Statesman"]))
 			iStatesmanMod += (iNumStatesmen * 0.33)
@@ -874,7 +878,8 @@ class CustomFunctions:
 		iNumGreatElders		= 0
 		for iCity in xrange(pPlayer.getNumCities()):
 			pCity = pPlayer.getCity(iCity)
-			if pCity.getNumBuilding(self.Buildings["Shaper's Laboratory"]) <= 0: continue
+			if pCity.isNone:														continue
+			if pCity.getNumBuilding(self.Buildings["Shaper's Laboratory"]) <= 0:	continue
 			iNumElders			= pCity.getSpecialistCount(iElder)			+ pCity.getFreeSpecialistCount(iElder)
 			iNumHealers			= pCity.getSpecialistCount(iHealer)			+ pCity.getFreeSpecialistCount(iHealer)
 			iNumGreatElders		= pCity.getSpecialistCount(iGreatElder)		+ pCity.getFreeSpecialistCount(iGreatElder)
@@ -1135,7 +1140,7 @@ class CustomFunctions:
 			if not pPlayer.isAlive() or pPlayer.getCivilizationType() == self.Civilizations["Infernal"]: continue
 			for iCity in xrange(pPlayer.getNumCities()):
 				pCity = pPlayer.getCity(iCity)
-				if not pCity.isHasReligion(self.Religions["Ashen Veil"]) or pCity.isCapital(): continue
+				if not pCity.isHasReligion(self.Religions["Ashen Veil"]) or pCity.isCapital():	continue
 				iValue =  pCity.getPopulation() * 100
 				iValue += pCity.getCulture(iPlayer) / 50
 				iValue += pCity.getNumBuildings() * 10
@@ -1239,11 +1244,10 @@ class CustomFunctions:
 			if CyGame().getSorenRandNum(100, "Gift Unit") <= iChance: return
 		bValid = False
 
-		for i in xrange(CyGame().getNumCivActive(iCivilization)):
-			iPlayer = CyGame().getCivActivePlayer(iCivilization, i)
+		for iPlayer in xrange(gc.getMAX_PLAYERS()):
 			pPlayer = gc.getPlayer(iPlayer)
-			if not pPlayer.isAlive(): continue
-			if pPlayer.getCivilizationType() != iCivilization: continue
+			if not pPlayer.isAlive():							continue
+			if pPlayer.getCivilizationType() != iCivilization:	continue
 
 #			if iUnit == iFrozenSoul: ### TW: Another chance check is a bit too harsh? Worst case scenario would be 0.25% to get a FS.
 #				iChance = 100 * pPlayer.getAveragePopulation() / 15
@@ -1251,17 +1255,17 @@ class CustomFunctions:
 #				if CyGame().getSorenRandNum(100, "Gift Frozen Soul") < iChance: break
 
 			iNumCities = pPlayer.getNumCities()
-			if iNumCities <= 0: continue
+			if iNumCities <= 0:									continue
 
 			bHuman	= pPlayer.isHuman()
 			iRnd	= CyGame().getSorenRandNum(iNumCities, "Gift Unit")
 			pCity	= pPlayer.getCity(iRnd)
+			if pCity.isNone: continue
 			iX		= pCity.getX()
 			iY		= pCity.getY()
 
 			newUnit = pPlayer.initUnit(iUnit, iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			newUnit.changeExperienceTimes100(iXP, -1, False, False, False)
-			if pFromPlot != -1 and gc.getPlayer(iFromPlayer).isHuman(): bValid = True
 			if bHuman:
 				szSound		= 'AS2D_UNIT_FALLS'
 				iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT
@@ -1283,13 +1287,14 @@ class CustomFunctions:
 				pCity.changePopulation(1)
 				newUnit.kill(True, PlayerTypes.NO_PLAYER)
 
-		if bValid:
+		if iUnit in (iMane, iFrozenSoul, iAngel) and gc.getPlayer(iFromPlayer).isHuman() and pFromPlot != -1:
 			szSound		= 'AS2D_UNIT_FALLS'
 			iMessage	= InterfaceMessageTypes.MESSAGE_TYPE_DISPLAY_ONLY
 			iRed		= gc.getInfoTypeForString("COLOR_RED")
-			szText		= CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_FREEZES",())
-			szArt		= 'Art/Interface/Buttons/Promotions/Races/frostling.dds'
-			if   iUnit == iMane:
+			if   iUnit == iFrozenSoul:
+				szText		= CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_FREEZES",())
+				szArt		= 'Art/Interface/Buttons/Promotions/Races/frostling.dds'
+			elif iUnit == iMane:
 				szText	= CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_FALLS",())
 				szArt	= 'Art/Interface/Buttons/Promotions/Races/Demon.dds'
 			elif iUnit == iAngel:
@@ -1714,7 +1719,7 @@ class CustomFunctions:
 			for i in xrange(pClearPlot.getNumUnits()):
 				pUnit = pPlot.getUnit(i)
 				if pUnit.isBarbarian() and not gc.getUnitClassInfo(pUnit.getUnitClassType()).isUnique():
-					pUnit.kill(False,-1)
+					pUnit.kill()
 		# Spawning Civilization
 		CyGame().addPlayerAdvanced(iInfernalPlayer, -1, iLeader, self.Civilizations["Infernal"], iPlayer)
 		iFounderTeam	= gc.getPlayer(iPlayer).getTeam()
@@ -2558,7 +2563,7 @@ class CustomFunctions:
 			pLoopPlayer = gc.getPlayer(iLoopPlayer)
 			if not pLoopPlayer.isAlive():					continue
 			if pLoopPlayer.isBarbarian():					continue
-			if pLoopPlayer.getTeam() != iTeam:				continue
+			if pLoopPlayer.getTeam() == iTeam:				continue
 			if pLoopPlayer.getStateReligion() == iWHRel:	continue
 			pLoopCapital	= pLoopPlayer.getCapitalCity()
 			if pLoopCapital.isNone():						continue

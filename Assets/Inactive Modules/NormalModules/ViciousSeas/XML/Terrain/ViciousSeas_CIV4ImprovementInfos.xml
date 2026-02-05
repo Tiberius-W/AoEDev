@@ -16,7 +16,7 @@
 			<iDefenseModifier>20</iDefenseModifier>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
 			<bFort>1</bFort>
 			<TechYieldChanges>
 				<TechYieldChange>
@@ -67,7 +67,7 @@
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
@@ -129,7 +129,7 @@
 			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
