@@ -3131,6 +3131,10 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	{
 		eImprovement = (ImprovementTypes)GC.getImprovementClassInfo(((ImprovementClassTypes)GC.getBuildInfo(eBuild).getImprovementClass())).getDefaultImprovementIndex();
 	}
+	if (GC.getBuildInfo(eBuild).getImprovementClass() != NO_IMPROVEMENTCLASS && eImprovement == NO_IMPROVEMENT)
+	{
+		return false;
+	}
 	if (eImprovement != NO_IMPROVEMENT)
 	{
 		// CivPlotMods - Jean Elcard - 04/02/09 - Use the player version of this method to account for player-specific natural yields.

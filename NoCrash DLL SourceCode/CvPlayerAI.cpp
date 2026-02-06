@@ -6770,7 +6770,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									/**								---- Start Original Code ----									**
 									eImprovement = finalImprovementUpgrade(eImprovement);
 									/**								----  End Original Code  ----									**/
-									eImprovement = finalImprovementUpgrade(eImprovement, getCivilizationType());
+									eImprovement = finalImprovementUpgrade(eImprovement, getCivilizationType(), 0, NO_IMPROVEMENT, getID());
 									/*************************************************************************************************/
 									/**	MyLand									END													**/
 									/*************************************************************************************************/

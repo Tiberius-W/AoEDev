@@ -696,7 +696,7 @@ ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCou
 	{
 		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade())), (iCount + 1));
 /**								----  End Original Code  ----									**/
-ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, CivilizationTypes eCiv, int iCount, ImprovementTypes eOriginalImprovement)
+ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, CivilizationTypes eCiv, int iCount, ImprovementTypes eOriginalImprovement, int ePlayer)
 {
 	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
 
@@ -707,6 +707,20 @@ ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, Civiliza
 	else
 	{
 		if (eOriginalImprovement == eImprovement && iCount > 0)
+		{
+			return eImprovement;
+		}
+	}
+	if (ePlayer != -1){
+		if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() != NO_IMPROVEMENTCLASS && GET_PLAYER((PlayerTypes)ePlayer).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()) != NO_IMPROVEMENT)
+		{
+			return finalImprovementUpgrade(GET_PLAYER((PlayerTypes)ePlayer).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()), eCiv, iCount + 1, eOriginalImprovement, ePlayer);
+		}
+		if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() != NO_IMPROVEMENTCLASS && GET_PLAYER((PlayerTypes)ePlayer).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade()) == NO_IMPROVEMENT)
+		{
+			return eImprovement;
+		}
+		if (GC.getImprovementInfo(eImprovement).getImprovementClassUpgrade() == NO_IMPROVEMENTCLASS)
 		{
 			return eImprovement;
 		}

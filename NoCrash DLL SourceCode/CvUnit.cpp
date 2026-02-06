@@ -336,7 +336,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 			/*************************************************************************************************/
 		}
 	}
-
+	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		if (m_pUnitInfo->getBuilds(iI))
+		{
+			GET_PLAYER(getOwnerINLINE()).changeAvailableBuild(1, iI);
+		}
+	}
 	FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvUnit::init");
 	for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
 	{
@@ -1881,7 +1887,13 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			setHasPromotion(ePromotion, false, true);
 		}
 	}
-
+	for (int iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		if (m_pUnitInfo->getBuilds(iI))
+		{
+			GET_PLAYER(getOwnerINLINE()).changeAvailableBuild(-1, iI);
+		}
+	}
 	if (isWorldUnitClass((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) && GC.getGameINLINE().getUnitClassCreatedCount((UnitClassTypes)(m_pUnitInfo->getUnitClassType())) == 1)
 	{
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
@@ -22407,6 +22419,10 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue, bool bSupres
 /*************************************************************************************************/
 		setPromotionBuild((kPromotion.getNumPromotionBuilds() != -1) ? 1 : 0);
 		setPromotionBuild((kPromotion.getNumPromotionCannotBuilds() != -1) ? 1 : 0);
+		for (int iI = 0; iI < kPromotion.getNumPromotionBuilds(); iI++)
+		{
+			GET_PLAYER(getOwner()).changeAvailableBuild(iChange, kPromotion.getPromotionBuilds(iI));
+		}
 /*************************************************************************************************/
 /**	Workers Paradise						END													**/
 /*************************************************************************************************/

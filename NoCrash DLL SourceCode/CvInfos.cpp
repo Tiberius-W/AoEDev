@@ -29861,6 +29861,7 @@ m_iRoute(NO_ROUTE),
 m_iEntityEvent(ENTITY_EVENT_NONE),
 m_iMissionType(NO_MISSION),
 m_bKill(false),
+m_bStandard(false),
 m_paiFeatureTech(NULL),
 m_paiFeatureTime(NULL),
 m_paiFeatureProduction(NULL),
@@ -29978,6 +29979,11 @@ bool CvBuildInfo::isKill() const
 	return m_bKill;
 }
 
+bool CvBuildInfo::isStandard() const
+{
+	return m_bStandard;
+}
+
 // Arrays
 
 int CvBuildInfo::getFeatureTech(int i) const
@@ -30031,6 +30037,7 @@ bool CvBuildInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTime, "iTime");
 	pXML->GetChildXmlValByName(&m_iCost, "iCost");
 	pXML->GetChildXmlValByName(&m_bKill, "bKill");
+	pXML->GetChildXmlValByName(&m_bStandard, "bStandard");
 /*************************************************************************************************/
 /**	BuildXP									7/17/10									Valkrionn	**/
 /**																								**/
@@ -30110,7 +30117,8 @@ void CvBuildInfo::copyNonDefaults(CvBuildInfo* pClassInfo, CvXMLLoadUtility* pXM
 	if (getTime()					== 0)					m_iTime						= pClassInfo->getTime();
 	if (getCost()					== 0)					m_iCost						= pClassInfo->getCost();
 	if (isKill()					== false)				m_bKill						= pClassInfo->isKill();
-/*************************************************************************************************/
+	if (isStandard() == false)				m_bStandard = pClassInfo->isStandard();
+	/*************************************************************************************************/
 /**	BuildXP									7/17/10									Valkrionn	**/
 /**																								**/
 /**									Allows Builds to grant XP									**/

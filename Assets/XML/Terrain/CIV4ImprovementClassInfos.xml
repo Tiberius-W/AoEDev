@@ -6,7 +6,7 @@
 <!-- Improvement Class Infos -->
 <Civ4ImprovementClassInfos xmlns="x-schema:CIV4TerrainSchema.xml">
 	<ImprovementClassInfos>
-		<ImprovementClassInfo><!-- Dummy -->
+		<ImprovementClassInfo><!-- Dummy 0-->
 			<Type>IMPROVEMENTCLASS_DUMMY</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -24,13 +24,13 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_CAGE</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Camp -->
+		<ImprovementClassInfo><!-- Camp 1-->
 			<Type>IMPROVEMENTCLASS_CAMP</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_CAMP</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Castle -->
+		<ImprovementClassInfo><!-- Castle 4-->
 			<Type>IMPROVEMENTCLASS_CASTLE</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -54,13 +54,13 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_CITY_RUINS_ANCIENT</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Cottage -->
+		<ImprovementClassInfo><!-- Cottage 8-->
 			<Type>IMPROVEMENTCLASS_COTTAGE</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_COTTAGE</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Farm -->
+		<ImprovementClassInfo><!-- Farm 9-->
 			<Type>IMPROVEMENTCLASS_FARM</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -72,7 +72,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_FISHING_BOATS</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Fort -->
+		<ImprovementClassInfo><!-- Fort 11-->
 			<Type>IMPROVEMENTCLASS_FORT</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -102,7 +102,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_LUMBERMILL</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Mine -->
+		<ImprovementClassInfo><!-- Mine 16-->
 			<Type>IMPROVEMENTCLASS_MINE</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -126,7 +126,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_PENGUINS</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Plantation -->
+		<ImprovementClassInfo><!-- Plantation 20-->
 			<Type>IMPROVEMENTCLASS_PLANTATION</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -156,7 +156,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_SNAKE_PILLAR</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Swamp -->
+		<ImprovementClassInfo><!-- Swamp 25-->
 			<Type>IMPROVEMENTCLASS_SWAMP</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -186,7 +186,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_WARNING_POST</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Watermill -->
+		<ImprovementClassInfo><!-- Watermill 30-->
 			<Type>IMPROVEMENTCLASS_WATERMILL</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>
@@ -204,7 +204,7 @@
 			<bUnique>0</bUnique>
 			<DefaultImprovement>IMPROVEMENT_WINERY</DefaultImprovement>
 		</ImprovementClassInfo>
-		<ImprovementClassInfo><!-- Workshop -->
+		<ImprovementClassInfo><!-- Workshop 33-->
 			<Type>IMPROVEMENTCLASS_WORKSHOP</Type>
 			<Description></Description>
 			<bUnique>0</bUnique>

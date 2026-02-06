@@ -284,7 +284,7 @@ int getWonderScore(BuildingClassTypes eWonderClass);		// Exposed to Python
 /**								---- Start Original Code ----									**
 ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCount = 0);		// Exposed to Python
 /**								----  End Original Code  ----									**/
-ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, CivilizationTypes eCiv = NO_CIVILIZATION, int iCount = 0, ImprovementTypes eOriginalImprovement = NO_IMPROVEMENT);
+ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, CivilizationTypes eCiv = NO_CIVILIZATION, int iCount = 0, ImprovementTypes eOriginalImprovement = NO_IMPROVEMENT,int ePlayer=-1);
 /*************************************************************************************************/
 /**	MyLand									END													**/
 /*************************************************************************************************/

@@ -27,6 +27,7 @@
 	<ElementType name="Strategy" content="textOnly"/>
 	<ElementType name="iTime" content="textOnly" dt:type="int"/>
 	<ElementType name="bKill" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bStandard" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iXPValue" content="textOnly" dt:type="float"/>
 	<ElementType name="LinkedBuilds" content="eltOnly">
 		<element type="LinkedBuild" minOccurs="0"/>
@@ -76,6 +77,7 @@
 		<element type="iTime"/>
 		<element type="iCost"/>
 		<element type="bKill"/>
+		<element type="bStandard"/>
 		<element type="iXPValue"/>
 		<element type="LinkedBuilds"/>
 		<element type="BlockedBuilds"/>

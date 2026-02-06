@@ -14,6 +14,7 @@
 			<iTime>800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<bStandard>1</bStandard>
 			<ImprovementType>NONE</ImprovementType>
 			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
@@ -142,6 +143,7 @@
 			<iTime>2000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<bStandard>1</bStandard>
 			<LinkedBuilds>
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
@@ -211,6 +213,7 @@
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>
+			<bStandard>1</bStandard>
 			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
@@ -230,6 +233,7 @@
 			<iTime>2500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<bStandard>1</bStandard>
 			<LinkedBuilds>
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>
@@ -764,6 +768,7 @@
 			<iTime>2000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<bStandard>1</bStandard>
 			<ImprovementType>IMPROVEMENTCLASS_CAMP</ImprovementType>
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
@@ -848,6 +853,7 @@
 			<iTime>3000</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
+			<bStandard>1</bStandard>
 			<LinkedBuilds>
 				<LinkedBuild>BUILD_REMOVE_FOREST</LinkedBuild>
 				<LinkedBuild>BUILD_REMOVE_JUNGLE</LinkedBuild>

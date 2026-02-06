@@ -6215,6 +6215,7 @@ public:
 	void setMissionType(int iNewType);
 
 	bool isKill() const;				// Exposed to Python
+	bool isStandard() const;				// Exposed to Python
 
 	// Arrays
 
@@ -6278,6 +6279,7 @@ protected:
 /*************************************************************************************************/
 
 	bool m_bKill;
+	bool m_bStandard;
 
 	// Arrays
 

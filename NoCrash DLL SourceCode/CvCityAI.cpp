@@ -7860,7 +7860,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 
 	if (bValid)
 	{
-		ImprovementTypes eFinalImprovement = finalImprovementUpgrade(eImprovement);
+		ImprovementTypes eFinalImprovement = finalImprovementUpgrade(eImprovement,NO_CIVILIZATION,0,NO_IMPROVEMENT,getOwner());
 
 		if (eFinalImprovement == NO_IMPROVEMENT)
 		{
@@ -7942,7 +7942,7 @@ int CvCityAI::AI_getImprovementValue( CvPlot* pPlot, ImprovementTypes eImproveme
 					ImprovementTypes eCurImprovement = pPlot->getImprovementType();
 					if( eCurImprovement != NO_IMPROVEMENT )
 					{
-						ImprovementTypes eCurFinalImprovement = finalImprovementUpgrade(eCurImprovement);
+						ImprovementTypes eCurFinalImprovement = finalImprovementUpgrade(eCurImprovement, NO_CIVILIZATION, 0, NO_IMPROVEMENT, getOwner());
 						if (eCurFinalImprovement == NO_IMPROVEMENT)
 						{
 							eCurFinalImprovement = eCurImprovement;
@@ -11407,7 +11407,7 @@ int CvCityAI::AI_plotValue(CvPlot* pPlot, bool bAvoidGrowth, bool bRemove, bool 
 /**								---- Start Original Code ----									**
 		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement);
 /**								----  End Original Code  ----									**/
-		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType());
+		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType(), 0, NO_IMPROVEMENT, getOwner());
 /*************************************************************************************************/
 /**	MyLand									END													**/
 /*************************************************************************************************/
@@ -11780,6 +11780,14 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 			}
 		}
 	}
+	CvString szError;
+
+		szError.Format("cottage logging for plot : %s",GC.getTerrainInfo(pPlot->getTerrainType()).getType());
+		gDLL->logMsg("cottage.log", szError);
+		szError.Format("cottage logging with feature : %i", pPlot->getFeatureType());
+		gDLL->logMsg("cottage.log", szError);
+		szError.Format("cottage logging with bonus : %i", pPlot->getBonusType());
+		gDLL->logMsg("cottage.log", szError);
 
 	for (iI = 0; iI < GC.getNumImprovementClassInfos(); iI++)
 	{
@@ -11955,7 +11963,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /**								---- Start Original Code ----									**
 			eFinalImprovement = finalImprovementUpgrade(eImprovement);
 /**								----  End Original Code  ----									**/
-			eFinalImprovement = finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType());
+			eFinalImprovement = finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType(), 0, NO_IMPROVEMENT, getOwner());
 /*************************************************************************************************/
 /**	MyLand									END													**/
 /*************************************************************************************************/
@@ -12392,7 +12400,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /**								---- Start Original Code ----									**
 					if (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassUpgrade() != NO_IMPROVEMENT)
 /**								----  End Original Code  ----									**/
-					if (finalImprovementUpgrade(pPlot->getImprovementType(), GET_PLAYER(getOwnerINLINE()).getCivilizationType()) != NO_IMPROVEMENT)
+					if (finalImprovementUpgrade(pPlot->getImprovementType(), GET_PLAYER(getOwnerINLINE()).getCivilizationType(), 0, NO_IMPROVEMENT, getOwner()) != NO_IMPROVEMENT)
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -12470,6 +12478,12 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 /*************************************************************************************************/
 
 				}
+				szError.Format("cottage logging checking for improvementclass %s", GC.getImprovementClassInfo((ImprovementClassTypes)iI).getType());
+				gDLL->logMsg("cottage.log", szError);
+				szError.Format("value is : %i", iValue);
+				gDLL->logMsg("cottage.log", szError);
+				szError.Format("final improvement is : %s", GC.getImprovementInfo(eFinalImprovement).getType());
+				gDLL->logMsg("cottage.log", szError);
 
 				if (iValue > iBestValue)
 				{
@@ -12681,6 +12695,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 			{
 				iBestValue += (iBestValue * std::max(0, aiBestDiffYields[YIELD_COMMERCE])) / 4;
 				iBestValue = std::max(1, iBestValue);
+	
 			}
 
 		}
@@ -12693,6 +12708,9 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 		{
 			*peBestBuild = eBestBuild;
 		}
+		szError.Format("finally selected build %s", GC.getBuildInfo((BuildTypes)eBestBuild).getType());
+		gDLL->logMsg("cottage.log", szError);
+
 	}
 }
 
@@ -13169,7 +13187,7 @@ int CvCityAI::AI_getPlotMagicValue(CvPlot* pPlot, bool bHealthy, bool bWorkerOpt
 /**								---- Start Original Code ----									**
 		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement);
 /**								----  End Original Code  ----									**/
-		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType());
+		eFinalImprovement = finalImprovementUpgrade(eCurrentImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType() ,0, NO_IMPROVEMENT, getOwner());
 /*************************************************************************************************/
 /**	Tweak									END													**/
 /*************************************************************************************************/
@@ -14113,7 +14131,7 @@ void CvCityAI::AI_updateWorkersNeededHere()
 								{
 									iSpecialCount++;
 								}
-								if (GC.getImprovementInfo(finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType())).getFreeSpecialist() != NO_SPECIALIST)
+								if (GC.getImprovementInfo(finalImprovementUpgrade(eImprovement, GET_PLAYER(getOwnerINLINE()).getCivilizationType(), 0, NO_IMPROVEMENT, getOwner())).getFreeSpecialist() != NO_SPECIALIST)
 								{
 
 									iSpecialCount++;
