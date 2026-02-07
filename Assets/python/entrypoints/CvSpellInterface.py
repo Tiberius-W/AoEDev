@@ -3738,15 +3738,26 @@ def sanctifyResource(pPlot):
 		else:
 			if iCount < 66: setBonus(Bonus["Rice"])
 			else: setBonus(Bonus["Wheat"])
-	if iImprovement == getInfoType('IMPROVEMENT_AERON_VAULTGATE'):
-		pPlot.setImprovementType(-1)
-		pPlot.setBonusType(-1)
 
 def spellSanctify(caster):
 	pPlot = caster.plot()
 	pPlayer = gc.getPlayer(caster.getOwner())
 	getPlot	= CyMap().plot
 	iRange = 1 + caster.getSpellExtraRange()
+	iImprovement = pPlot.getImprovementType()
+        iCrossroad = getInfoType('UNIT_DEVILCASTER')
+	if iImprovement == getInfoType('IMPROVEMENT_AERON_VAULTGATE'):
+		pPlot.setImprovementType(-1)
+		pPlot.setBonusType(-1)
+		pPlayer.changeGlobalCounterContrib(-1)
+                for x,y in plotsInRange( caster.getX(), caster.getY(), iRange ):
+                        pPlot = getPlot(x,y)
+                        if not pPlot.isNone():
+                                for i in xrange(pPlot.getNumUnits()):
+                                        pUnit = pPlot.getUnit(i)
+                                        if pUnit.getUnitType() == iCrossroad:
+                                                pUnit.kill(True,0)
+
 	if pPlot.getImprovementType() == Improvement["City Ruins"] or pPlot.getImprovementType() == getInfoType('IMPROVEMENT_CITY_RUINS_ANCIENT') :
 		pPlot.setImprovementType(-1)
 		pPlayer.changeGlobalCounterContrib(-1)

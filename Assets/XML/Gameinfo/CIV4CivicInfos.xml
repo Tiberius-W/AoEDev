@@ -983,8 +983,14 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>100</iCommerce>
+				<iCommerce>50</iCommerce>
 			</CommerceModifiers>
+			<Hurrys>
+				<Hurry>
+					<HurryType>HURRY_CULTURE_VS</HurryType>
+					<bHurry>1</bHurry>
+				</Hurry>
+			</Hurrys>
 			<SpecialistUnlimiteds>
 				<SpecialistUnlimited>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>

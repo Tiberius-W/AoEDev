@@ -16,8 +16,18 @@
 			<iDefenseModifier>20</iDefenseModifier>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
 			<bFort>1</bFort>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_COAST</TerrainType>
@@ -57,7 +67,22 @@
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_COAST</TerrainType>
@@ -104,7 +129,22 @@
 			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>1</bOutsideBorders>
 			<bFort>1</bFort>
-			<iMinimumDistance>1</iMinimumDistance>
+			<iMinimumDistance>2</iMinimumDistance>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FEUDALISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
 					<TerrainType>TERRAIN_COAST</TerrainType>
@@ -1036,6 +1076,167 @@
 				<Promotion>PROMOTION_LEASH_1</Promotion>
 				<Promotion>PROMOTION_STIGMATA</Promotion>
 			</GuardianPromotions>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- SEA_Cottage -->
+			<Type>IMPROVEMENT_SEA_COTTAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEA_COTTAGE</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_SEA_COTTAGE</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SEA_COTTAGE_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SEA_COTTAGE</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<iAdvancedStartCost>24</iAdvancedStartCost>
+			<iUpgradeTime>10</iUpgradeTime>
+			<iAirBombDefense>5</iAirBombDefense>
+			<iPillageGold>10</iPillageGold>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_OCEAN_DEEP</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_BLACKWATER</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SEA_HAMLET</ImprovementUpgrade>
+			<iCultureRange>-1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_PATH_OF_LUGUS</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+            </RouteYieldChanges>
+			<bWater>1</bWater>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- SEA_Hamlet-->
+			<Type>IMPROVEMENT_SEA_HAMLET</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEA_HAMLET</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_SEA_HAMLET</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SEA_COTTAGE_PEDIA</Civilopedia>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SEA_HAMLET</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+			</YieldChanges>
+			<iUpgradeTime>20</iUpgradeTime>
+			<iAirBombDefense>5</iAirBombDefense>
+			<iPillageGold>15</iPillageGold>
+			<ImprovementPillage>IMPROVEMENTCLASS_SEA_COTTAGE</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SEA_VILLAGE</ImprovementUpgrade>
+			<iCultureRange>-1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_PATH_OF_LUGUS</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+            </RouteYieldChanges>
+			<bWater>1</bWater>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- SEA_Village -->
+			<Type>IMPROVEMENT_SEA_VILLAGE</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEA_VILLAGE</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_SEA_VILLAGE</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SEA_COTTAGE_PEDIA</Civilopedia>
+			<Civilopedia/>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SEA_VILLAGE</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>3</iYieldChange>
+			</YieldChanges>
+			<iUpgradeTime>40</iUpgradeTime>
+			<iAirBombDefense>5</iAirBombDefense>
+			<iDefenseModifier>0</iDefenseModifier>
+			<iPillageGold>20</iPillageGold>
+			<ImprovementPillage>IMPROVEMENTCLASS_SEA_HAMLET</ImprovementPillage>
+			<ImprovementUpgrade>IMPROVEMENTCLASS_SEA_TOWN</ImprovementUpgrade>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TAXATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<iCultureRange>-1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_PATH_OF_LUGUS</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+            </RouteYieldChanges>
+			<iWorkingCityCrime>1</iWorkingCityCrime>
+			<bWater>1</bWater>
+		</ImprovementInfo>
+		<ImprovementInfo><!-- SEA_Town -->
+			<Type>IMPROVEMENT_SEA_TOWN</Type>
+			<ImprovementClass>IMPROVEMENTCLASS_SEA_TOWN</ImprovementClass>
+			<Description>TXT_KEY_IMPROVEMENT_SEA_TOWN</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SEA_COTTAGE_PEDIA</Civilopedia>
+			<Civilopedia/>
+			<Help/>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SEA_TOWN</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>4</iYieldChange>
+			</YieldChanges>
+			<iAirBombDefense>5</iAirBombDefense>
+			<iPillageGold>25</iPillageGold>
+			<ImprovementPillage>IMPROVEMENTCLASS_SEA_VILLAGE</ImprovementPillage>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TAXATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<iCultureRange>-1</iCultureRange>
+			<iCultureControlStrength>1</iCultureControlStrength>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_PATH_OF_LUGUS</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+            </RouteYieldChanges>
+			<iWorkingCityCrime>2</iWorkingCityCrime>
+			<bWater>1</bWater>
 		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>

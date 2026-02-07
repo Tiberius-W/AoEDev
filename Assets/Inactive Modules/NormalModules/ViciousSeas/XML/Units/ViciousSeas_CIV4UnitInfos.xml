@@ -10,7 +10,7 @@
 			<Class>UNITCLASS_SEA_SERPENT</Class>
 			<Type>UNIT_ANCIENT_SEA_SERPENT</Type>
 			<Special>SPECIALUNIT_SEABEAST</Special>
-			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<Combat>UNITCOMBAT_BEAST</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ANCIENT_SEA_SERPENT</Description>
@@ -71,7 +71,7 @@
 			<Class>UNITCLASS_GIANT_TORTOISE</Class>
 			<Type>UNIT_TITAN_SHELL_TURTLE</Type>
 			<Special>SPECIALUNIT_SEABEAST</Special>
-			<Combat>UNITCOMBAT_ANIMAL</Combat>
+			<Combat>UNITCOMBAT_BEAST</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_TITAN_SHELL_TURTLE</Description>
@@ -2120,7 +2120,11 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_COTTAGE</BuildType>
+					<BuildType>BUILD_SEA_COTTAGE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_CORAL_FORT</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -2138,7 +2142,7 @@
 			</Builds>
 			<iCost>75</iCost>
 			<iMoves>2</iMoves>
-			<iWorkRate>65</iWorkRate>
+			<iWorkRate>100</iWorkRate>
 			<iAsset>1</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
@@ -2684,12 +2688,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
 			<StateReligion>RELIGION_OCTOPUS_OVERLORDS</StateReligion>
 			<PrereqReligion>RELIGION_OCTOPUS_OVERLORDS</PrereqReligion>
@@ -2705,7 +2703,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DISCIPLE_OVERLORDS</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_AIFON_DROWN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FreePromotions>
@@ -2771,7 +2769,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANGEL</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_AIFON_STYGIAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FreePromotions>
@@ -2813,12 +2811,6 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_STYGIAN_SHRINE</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 		</UnitInfo>
 </UnitInfos>
 </Civ4UnitInfos>

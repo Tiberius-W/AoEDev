@@ -2973,11 +2973,11 @@
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ASHEN_VEIL</ReligionType>
-					<iWeightModifier>-85</iWeightModifier>
+					<iWeightModifier>-95</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
-					<iWeightModifier>-85</iWeightModifier>
+					<iWeightModifier>-95</iWeightModifier>
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>
@@ -3560,28 +3560,32 @@
 					<iWeightModifier>-95</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
-					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
+					<ReligionType>RELIGION_THE_ASHEN_VEIL</ReligionType>
 					<iWeightModifier>-95</iWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
+					<ReligionType>RELIGION_FELLOWSHIP_OF_LEAVES</ReligionType>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_OCTOPUS_OVERLORDS</ReligionType>
-					<iWeightModifier>80</iWeightModifier>
+					<iWeightModifier>100</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
-					<iWeightModifier>-95</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
-					<iWeightModifier>-95</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_THE_ORDER</ReligionType>
-					<iWeightModifier>-95</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 				<ReligionWeightModifier>
 					<ReligionType>RELIGION_WHITE_HAND</ReligionType>
-					<iWeightModifier>-95</iWeightModifier>
+					<iWeightModifier>-99</iWeightModifier>
 				</ReligionWeightModifier>
 			</ReligionWeightModifiers>
 		</LeaderHeadInfo>

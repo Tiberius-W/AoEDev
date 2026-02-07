@@ -621,6 +621,28 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 			</Units>
+			<Improvements>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_COTTAGE</ImprovementClassType>
+					<ImprovementType>NONE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_SEA_COTTAGE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_SEA_COTTAGE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_SEA_HAMLET</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_SEA_HAMLET</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_SEA_VILLAGE</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_SEA_VILLAGE</ImprovementType>
+				</Improvement>
+				<Improvement>
+					<ImprovementClassType>IMPROVEMENTCLASS_SEA_TOWN</ImprovementClassType>
+					<ImprovementType>IMPROVEMENT_SEA_TOWN</ImprovementType>
+				</Improvement>
+			</Improvements>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>

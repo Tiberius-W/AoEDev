@@ -498,6 +498,61 @@ One Condatis was a battle worthy of song, two Condatis is a sick joke by The One
 		<Spanish>Dream</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_IMPROVEMENT_SEA_COTTAGE</Tag>
+		<English>Pearlstone Commune (I)</English>
+		<French>Pearlstone Commune (I)</French>
+		<German>Pearlstone Commune (I)</German>
+		<Italian>Pearlstone Commune (I)</Italian>
+		<Spanish>Pearlstone Commune (I)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_IMPROVEMENT_SEA_HAMLET</Tag>
+		<English>Sea Trench Mansions (II)</English>
+		<French>Sea Trench Mansions (II)</French>
+		<German>Sea Trench Mansions (II)</German>
+		<Italian>Sea Trench Mansions (II)</Italian>
+		<Spanish>Sea Trench Mansions (II)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_IMPROVEMENT_SEA_VILLAGE</Tag>
+		<English>Undersea Paradise (III)</English>
+		<French>Undersea Paradise (III)</French>
+		<German>Undersea Paradise (III)</German>
+		<Italian>Undersea Paradise (III)</Italian>
+		<Spanish>Undersea Paradise (III)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_IMPROVEMENT_SEA_TOWN</Tag>
+		<English>Abyssal Metropolis (IV)</English>
+		<French>Abyssal Metropolis (IV)</French>
+		<German>Abyssal Metropolis (IV)</German>
+		<Italian>Abyssal Metropolis (IV)</Italian>
+		<Spanish>Abyssal Metropolis (IV)</Spanish>
+	</TEXT>
+	<TEXT> 
+		<Tag>TXT_KEY_IMPROVEMENT_SEA_COTTAGE_PEDIA</Tag>
+		<English>Resting on the edge of a deep oceanic trench, nestled among the coral and shimmering fish scales, is a dreamlike domain of underwater homes.
+Each one is suspended in a sphere of air trapped among thickly woven nets of kelp, with soft green glowlights hanging above the open doorways... like the maw of an angler fish.
+
+ It appears almost real, as long as you don't look too close...If you do, shapes and corners seem to blend into each other in impossible ways, and delicate details become clutter and contradictions.</English>
+		<French>Resting on the edge of a deep oceanic trench, nestled among the coral and shimmering fish scales, is a dreamlike domain of underwater homes.
+Each one is suspended in a sphere of air trapped among thickly woven nets of kelp, with soft green glowlights hanging above the open doorways... like the maw of an angler fish.
+
+ It appears almost real, as long as you don't look too close...If you do, shapes and corners seem to blend into each other in impossible ways, and delicate details become clutter and contradictions.</French>
+		<German>Resting on the edge of a deep oceanic trench, nestled among the coral and shimmering fish scales, is a dreamlike domain of underwater homes.
+Each one is suspended in a sphere of air trapped among thickly woven nets of kelp, with soft green glowlights hanging above the open doorways... like the maw of an angler fish.
+
+ It appears almost real, as long as you don't look too close...If you do, shapes and corners seem to blend into each other in impossible ways, and delicate details become clutter and contradictions.</German>
+		<Italian>Resting on the edge of a deep oceanic trench, nestled among the coral and shimmering fish scales, is a dreamlike domain of underwater homes.
+Each one is suspended in a sphere of air trapped among thickly woven nets of kelp, with softgreen glowlights hanging above the open doorways... like the maw of an angler fish.
+
+ It appears almost real, as long as you don't look too close...If you do, shapes and corners seem to blend into each other in impossible ways, and delicate details become clutter and contradictions.</Italian>
+		<Spanish>Resting on the edge of a deep oceanic trench, nestled among the coral and shimmering fish scales, is a dreamlike domain of underwater homes.
+Each one is suspended in a sphere of air trapped among thickly woven nets of kelp, with soft green glowlights hanging above the open doorways... like the maw of an angler fish.
+
+ It appears almost real, as long as you don't look too close...If you do, shapes and corners seem to blend into each other in impossible ways, and delicate details become clutter and contradictions.</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_BUILDING_DREAM_OF_JOY</Tag>
 		<English>Dream of Joy</English>
 		<French>Dream of Joy</French>
