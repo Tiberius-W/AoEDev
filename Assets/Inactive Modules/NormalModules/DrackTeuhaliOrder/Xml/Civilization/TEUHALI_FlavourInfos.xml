@@ -1,0 +1,29 @@
+<CivFlavourInfos>
+    <CivFlavourInfo>
+		<Civilization>CIVILIZATION_TEUHALI</Civilization>
+		<Preference>
+			<FlavourType>MOBILITY</FlavourType>
+			<Value>5</Value>
+		</Preference>
+        <Preference>
+			<FlavourType>YIELD_FOOD</FlavourType>
+			<Value>2</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>BONUS_HORSE</FlavourType>
+			<Value>1</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_OCEAN</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_TUNDRA</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+        <Preference>
+			<FlavourType>TERRAIN_DESERT</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+	</CivFlavourInfo>
+</CivFlavourInfos>

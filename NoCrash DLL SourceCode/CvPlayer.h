@@ -1232,6 +1232,10 @@ public:
 	int getAvailableBuild(int iI) const;
 	void changeAvailableBuild(int fChange, int iI);
 
+
+	int getReligionWeight(int iI) const;
+	void changeReligionWeight(int fChange, int iI);
+
 	int getPlotEffectSpawnChance(int iI)const;
 	void changePlotEffectSpawnChance(int iChange, int iI);
 
@@ -1817,6 +1821,8 @@ protected:
 	int* m_paiFreeBonus;
 
 	int* m_paiAvailableBuild;
+
+	int* m_paiReligionWeights;
 
 	int* m_paiPlotEffectSpawnChance;
 

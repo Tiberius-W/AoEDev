@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Promotion Infos -->
+<Civ4PromotionInfos xmlns="x-schema:AOSNISIRA_CIV4UnitSchema.xml">
+	<PromotionInfos>
+		<PromotionInfo> <!-- Sira Species Promotion -->
+			<Type>PROMOTION_SIRA</Type>
+			<Description>Sira</Description>
+			<iCombatPercent>-25</iCombatPercent>
+			<PromotionAllows>
+				<Promotion>PROMOTION_WOODSMAN1</Promotion>
+			</PromotionAllows>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_OBSCURED_LOS</Promotion>
+				<Promotion>PROMOTION_TAME</Promotion>
+			</PromotionExcludes>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_TAME</Promotion>
+			</PromotionOverwrites>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
+					<iFeatureAttack>60</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureDefense>50</iFeatureDefense>
+				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
+					<iFeatureDefense>60</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
+			<FeatureMoveCosts>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureMoveCost>-1</iFeatureMoveCost>
+				</FeatureMoveCost>
+				<FeatureMoveCost>
+					<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
+					<iFeatureMoveCost>-1</iFeatureMoveCost>
+				</FeatureMoveCost>
+			</FeatureMoveCosts>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\other\Sira_Race_Button.dds</Button>
+			<bRace>1</bRace>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ELF</UnitArtStyleType>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iResist>-35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iResist>-35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>-60</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>15</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+		</PromotionInfo>
+		<PromotionInfo>        <!-- Forest Stealth     added more unitclasses to forest stealth-->
+			<Type>PROMOTION_FOREST_STEALTH</Type>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+		</PromotionInfo> 
+	</PromotionInfos>
+</Civ4PromotionInfos>

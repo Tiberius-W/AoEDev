@@ -76,7 +76,7 @@
             <Civilopedia>TXT_KEY_DRACKBUILDING_CRAFTSMENHUT_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_CRAFTSMENHUT_STRATEGY</Strategy>
             <Help></Help>
-            <Advisor>ADVISOR_MILITARY</Advisor>
+            <Advisor>ADVISOR_ECONOMY</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_CRAFTSMENHUT</ArtDefineTag> 
             <MovieDefineTag>NONE</MovieDefineTag>
             <PrereqTech>TECH_MASONRY</PrereqTech>
@@ -100,7 +100,7 @@
             <iPower>2</iPower>
             <YieldChanges>
 				<iYield>0</iYield> <!-- Food -->
-                <iYield>2</iYield> <!-- Production -->
+                <iYield>1</iYield> <!-- Production -->
                 <iYield>0</iYield> <!-- Gold -->
             </YieldChanges>
             <fVisibilityPriority>10000</fVisibilityPriority>
@@ -118,16 +118,63 @@
                 </Flavor>
             </Flavors>
         </BuildingInfo>
+        <BuildingInfo>  <!-- Trenton Mill -->
+            <BuildingClass>BUILDINGCLASS_DRACK_GENERAL_TRENTON_MILL</BuildingClass>
+            <Type>BUILDING_DRACK_GENERAL_TRENTON_MILL</Type>
+            <Description>TXT_KEY_DRACKBUILDING_TRENTON_MILL</Description>
+            <Civilopedia>TXT_KEY_DRACKBUILDING_TRENTON_MILL_LORE</Civilopedia>
+            <Advisor>ADVISOR_ECONOMY</Advisor>
+            <ArtDefineTag>ART_DEF_BUILDING_TRENTON_MILL</ArtDefineTag> 
+            <MovieDefineTag>NONE</MovieDefineTag>
+            <PrereqTech>TECH_ENGINEERING</PrereqTech>
+            <bCenterInCity>0</bCenterInCity>
+            <iAIWeight>0</iAIWeight>
+            <iCost>350</iCost>
+            <iAdvancedStartCost>140</iAdvancedStartCost>
+            <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+            <iMinAreaSize>-1</iMinAreaSize>
+            <iConquestProb>25</iConquestProb>
+            <iMaxLatitude>90</iMaxLatitude>
+            <iAsset>1</iAsset>
+            <iPower>2</iPower>
+            <bRiver>1</bRiver>
+            <CommerceChanges>
+                <iCommerce>2</iCommerce> <!--Gold-->
+                <iCommerce>0</iCommerce> <!--Research-->
+                <iCommerce>0</iCommerce> <!--Culture-->
+            </CommerceChanges>
+            <RiverPlotYieldChanges>
+                <iYield>0</iYield> <!-- Food -->
+                <iYield>0</iYield> <!-- Production -->
+                <iYield>1</iYield> <!-- Gold -->
+            </RiverPlotYieldChanges>
+            <fVisibilityPriority>10000</fVisibilityPriority>
+            <ConstructSound>AS2D_BUILD_WALLS</ConstructSound>
+            <SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+            <Flavors>
+                <Flavor>
+                    <FlavorType>FLAVOR_GROWTH</FlavorType>
+                    <iFlavor>10</iFlavor>
+                </Flavor>
+                <Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+            </Flavors>
+        </BuildingInfo>
         <!-- Religious Buildings -->
         <!-- Leaves Religion -->
         <BuildingInfo>  <!-- Fruit Garden -->
             <BuildingClass>BUILDINGCLASS_DRACK_LEAVES_FRUITGARDEN</BuildingClass>
             <Type>BUILDING_DRACK_LEAVES_FRUITGARDEN</Type>
-            <SpecialBuildingType>NONE</SpecialBuildingType>
             <Description>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_LEAVES_FRUITGARDEN_STRATEGY</Strategy>
-            <Help></Help>
             <iCrime>8</iCrime>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_FRUITGARDEN</ArtDefineTag>  
@@ -144,7 +191,7 @@
             </ProductionTraits>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>100</iCost>
+            <iCost>140</iCost>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
             <iMinAreaSize>-1</iMinAreaSize>
@@ -162,7 +209,7 @@
 				<iYield>2</iYield> <!-- Food -->
             </YieldChanges>
             <YieldModifiers>
-                <iYield>10</iYield> <!--Food %-->
+                <iYield>5</iYield> <!--Food %-->
                 <iYield>0</iYield> <!--Production %-->
                 <iYield>0</iYield> <!--Gold %-->
             </YieldModifiers>
@@ -178,12 +225,6 @@
                     <iFlavor>10</iFlavor>
                 </Flavor>
             </Flavors>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_LEAVES</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Iron Woods -->
             <BuildingClass>BUILDINGCLASS_DRACK_LEAVES_IRONWOODS</BuildingClass>
@@ -222,28 +263,13 @@
 					<iExperience>2</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
-            <CommerceChanges>
-                <iCommerce>0</iCommerce> <!--Gold-->
-                <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
-            </CommerceChanges>
             <ConstructSound>AS2D_LEAVES_DINK</ConstructSound>
             <Flavors>
                 <Flavor>
                     <FlavorType>FLAVOR_MILITARY</FlavorType>
-                    <iFlavor>10</iFlavor>
+                    <iFlavor>20</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_LEAVES</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Treesinger -->
             <BuildingClass>BUILDINGCLASS_DRACK_LEAVES_TREESINGER</BuildingClass>
@@ -320,7 +346,7 @@
             <PrereqTech>TECH_RELIGIOUS_LAW</PrereqTech>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>999</iAIWeight>
-            <iCost>600</iCost>
+            <iCost>400</iCost>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iStateReligionHappiness>4</iStateReligionHappiness>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -346,7 +372,7 @@
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
+                <iCommerce>4</iCommerce> <!--Culture-->
             </CommerceChanges>
             <SpecialistCounts>
 				<SpecialistCount>
@@ -371,7 +397,7 @@
             <Civilopedia>TXT_KEY_DRACKBUILDING_EMPRYREAN_RADIANTTOWER_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_EMPRYREAN_RADIANTTOWER_STRATEGY</Strategy>
             <Help></Help>
-            <iCrime>-8</iCrime>
+            <iCrime>-4</iCrime>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_EMPRYREAN_RADIANTTOWER</ArtDefineTag>
             <ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
@@ -381,7 +407,7 @@
             <PrereqTech>TECH_HONOR</PrereqTech>
             <bCenterInCity>0</bCenterInCity>
             <iTradeRoutes>1</iTradeRoutes>
-            <iTradeRouteModifier>25</iTradeRouteModifier>
+            <iTradeRouteModifier>15</iTradeRouteModifier>
             <iAIWeight>0</iAIWeight>
             <iCost>180</iCost>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -407,19 +433,10 @@
                     <iSpecialistCount>1</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
-            <CommerceChanges>
-                <iCommerce>0</iCommerce> <!--Gold-->
-                <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
-            </CommerceChanges>
             <ConstructSound>AS2D_EMPYREAN_DINK</ConstructSound>
             <Flavors>
                 <Flavor>
-                    <FlavorType>FLAVOR_MILITARY</FlavorType>
+                    <FlavorType>FLAVOR_GOLD</FlavorType>
                     <iFlavor>4</iFlavor>
                 </Flavor>
                 <Flavor>
@@ -427,21 +444,13 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_EMPYREAN</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Prayer Hall -->
             <BuildingClass>BUILDINGCLASS_DRACK_EMPRYREAN_PRAYERHALL</BuildingClass>
             <Type>BUILDING_DRACK_EMPRYREAN_PRAYERHALL</Type>
-            <SpecialBuildingType>NONE</SpecialBuildingType>
             <Description>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_EMPRYREAN_PRAYERHALL_STRATEGY</Strategy>
-            <Help></Help>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_EMPRYREAN_PRAYERHALL</ArtDefineTag>  
             <ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
@@ -449,10 +458,12 @@
             <bStateReligion>1</bStateReligion>
             <PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
             <PrereqTech>TECH_RELIGIOUS_LAW</PrereqTech>
-			<iGlobalGreatPeopleRateModifier>5</iGlobalGreatPeopleRateModifier>
+			<iGlobalGreatPeopleRateModifier>10</iGlobalGreatPeopleRateModifier>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>150</iCost>
+            <iMaintenanceModifier>10</iMaintenanceModifier>
+            <iHappiness>1</iHappiness>
+            <iCost>180</iCost>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
             <iMinAreaSize>-1</iMinAreaSize>
@@ -474,10 +485,6 @@
                     <iSpecialistCount>1</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
@@ -487,15 +494,9 @@
             <Flavors>
                 <Flavor>
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
-                    <iFlavor>5</iFlavor>
+                    <iFlavor>15</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_EMPYREAN</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Redemption Shrine -->
             <BuildingClass>BUILDINGCLASS_DRACK_EMPRYREAN_REDEMPTIONSHRINE</BuildingClass>
@@ -513,6 +514,7 @@
             <bStateReligion>1</bStateReligion>
             <PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
             <PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+            <iMaintenanceModifier>5</iMaintenanceModifier>
 			<iGlobalGreatPeopleRateModifier>0</iGlobalGreatPeopleRateModifier>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
@@ -536,16 +538,12 @@
             <SpecialistCounts>
                 <SpecialistCount>
                     <SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-                    <iSpecialistCount>2</iSpecialistCount>
+                    <iSpecialistCount>1</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
             <CommerceChanges>
                 <iCommerce>2</iCommerce> <!--Gold-->
-                <iCommerce>2</iCommerce> <!--Research-->
+                <iCommerce>1</iCommerce> <!--Research-->
                 <iCommerce>0</iCommerce> <!--Culture-->
             </CommerceChanges>
             <ConstructSound>AS2D_EMPYREAN_DINK</ConstructSound>
@@ -555,12 +553,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_EMPYREAN</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Brilliant Hall -->
             <BuildingClass>BUILDINGCLASS_DRACK_EMPRYREAN_BRILLIANTHALL</BuildingClass>
@@ -577,11 +569,11 @@
             <bStateReligion>1</bStateReligion>
             <PrereqReligion>RELIGION_THE_EMPYREAN</PrereqReligion>
             <PrereqTech>TECH_FANATICISM</PrereqTech>
-            <iGreatPeopleRateModifier>50</iGreatPeopleRateModifier>
+            <iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
 			<iGlobalGreatPeopleRateModifier>0</iGlobalGreatPeopleRateModifier>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>500</iCost>
+            <iCost>400</iCost>
             <iStateReligionHappiness>0</iStateReligionHappiness>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -603,32 +595,24 @@
             <SpecialistCounts>
                 <SpecialistCount>
                     <SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-                    <iSpecialistCount>2</iSpecialistCount>
+                    <iSpecialistCount>4</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>5</iCommerce> <!--Culture-->
+                <iCommerce>4</iCommerce> <!--Culture-->
             </CommerceChanges>
             <BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_WHEAT</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-			</BonusHappinessChanges>
-            <BonusHappinessChanges>
-				<BonusHappinessChange>
+                <BonusHappinessChange>
 					<BonusType>BONUS_CORN</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-			</BonusHappinessChanges>
-            <BonusHappinessChanges>
-				<BonusHappinessChange>
+                <BonusHappinessChange>
 					<BonusType>BONUS_RICE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
@@ -637,16 +621,10 @@
             <Flavors>
                 <Flavor>
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
-                    <iFlavor>5</iFlavor>
+                    <iFlavor>15</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_EMPYREAN</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-            <iMilitaryProductionModifier>-50</iMilitaryProductionModifier>
+            <iMilitaryProductionModifier>-15</iMilitaryProductionModifier>
         </BuildingInfo>
         <!-- Kilmorph -->
         <BuildingInfo>  <!-- Altar of Kilmorph -->
@@ -656,7 +634,6 @@
             <Description>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_KILMORPH_ALTAR_STRATEGY</Strategy>
-            <Help></Help>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_KILMORPH_ALTAR</ArtDefineTag>
             <ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
@@ -682,20 +659,6 @@
             <iAsset>1</iAsset>
             <iPower>2</iPower>
             <fVisibilityPriority>10000</fVisibilityPriority>
-            <iDefense>0</iDefense>
-            <UnitCombatFreeExperiences>
-			</UnitCombatFreeExperiences>
-            <SpecialistCounts>
-            </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
-            <CommerceChanges>
-                <iCommerce>0</iCommerce> <!--Gold-->
-                <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
-            </CommerceChanges>
             <BonusYieldModifiers>
                 <BonusYieldModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -717,7 +680,7 @@
 					<BonusType>BONUS_IRON</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>5</iYield>
+						<iYield>3</iYield>
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
@@ -725,7 +688,7 @@
 					<BonusType>BONUS_MITHRIL</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>8</iYield>
+						<iYield>5</iYield>
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
@@ -746,13 +709,11 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_GROWTH</FlavorType>
+                    <iFlavor>15</iFlavor>
+                </Flavor>
             </Flavors>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_KILMORPH</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Workshop -->
             <BuildingClass>BUILDINGCLASS_DRACK_KILMORPH_WORKSHOP</BuildingClass>
@@ -817,12 +778,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_KILMORPH</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Pile of Gold -->
             <BuildingClass>BUILDINGCLASS_DRACK_KILMORPH_PILEOFGOLD</BuildingClass>
@@ -833,7 +788,7 @@
             <Strategy>TXT_KEY_DRACKBUILDING_KILMORPH_PILEOFGOLD_STRATEGY</Strategy>
             <Help></Help>
             <Advisor>ADVISOR_RELIGION</Advisor>
-            <iCrime>25</iCrime>
+            <iCrime>18</iCrime>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_KILMORPH_PILEOFGOLD</ArtDefineTag>
             <ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
             <StateReligion>RELIGION_RUNES_OF_KILMORPH</StateReligion>
@@ -884,22 +839,18 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_GOLD</FlavorType>
+                    <iFlavor>15</iFlavor>
+                </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_KILMORPH</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Halls of Wealth -->
             <BuildingClass>BUILDINGCLASS_DRACK_KILMORPH_HALLSOFWEALTH</BuildingClass>
             <Type>BUILDING_DRACK_KILMORPH_HALLSOFWEALTH</Type>
-            <SpecialBuildingType>NONE</SpecialBuildingType>
             <Description>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_KILMORPH_HALLSOFWEALTH_STRATEGY</Strategy>
-            <Help></Help>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <iCrime>25</iCrime>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_KILMORPH_HALLSOFWEALTH</ArtDefineTag>
@@ -943,7 +894,7 @@
 				<iYield>0</iYield> <!-- Food -->
             </YieldChanges>
             <CommerceChanges>
-                <iCommerce>5</iCommerce> <!--Gold-->
+                <iCommerce>4</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
                 <iCommerce>0</iCommerce> <!--Culture-->
             </CommerceChanges>
@@ -959,12 +910,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_KILMORPH</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <!-- Order -->
         <BuildingInfo>  <!-- Wall of Heroes -->
@@ -974,8 +919,7 @@
             <Description>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_ORDER_WALLOFHEROES_STRATEGY</Strategy>
-            <Help></Help>
-            <Advisor>ADVISOR_RELIGION</Advisor>
+            <Advisor>ADVISOR_MILITARY</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_ORDER_WALLOFHEROES</ArtDefineTag>
             <ReligionType>RELIGION_THE_ORDER</ReligionType>
             <StateReligion>RELIGION_THE_ORDER</StateReligion>
@@ -985,7 +929,7 @@
             <iGreatPeopleRateChange>0</iGreatPeopleRateChange>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>80</iCost>
+            <iCost>120</iCost>
             <iStateReligionHappiness>2</iStateReligionHappiness>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1008,10 +952,6 @@
                     <iSpecialistCount>1</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
@@ -1023,19 +963,21 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_MILITARY</FlavorType>
+                    <iFlavor>15</iFlavor>
+                </Flavor>
             </Flavors>
             <TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<fTrainXPRate>0.10</fTrainXPRate>
+					<fTrainXPRate>0.20</fTrainXPRate>
+				</TrainXPRate>
+                <TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<fTrainXPRate>0.20</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_ORDER</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- School of Demonhunters -->
             <BuildingClass>BUILDINGCLASS_DRACK_ORDER_SCHOOLOFDEMONHUNTERS</BuildingClass>
@@ -1104,16 +1046,10 @@
             <TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
-					<fTrainXPRate>0.40</fTrainXPRate>
+					<fTrainXPRate>0.30</fTrainXPRate>
 				</TrainXPRate>
 			</TrainXPRates>
             <FreePromotion>PROMOTION_DEMON_SLAYING</FreePromotion>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_ORDER</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Chamber of Faith -->
             <BuildingClass>BUILDINGCLASS_DRACK_ORDER_CHAMBEROFFAITH</BuildingClass>
@@ -1132,7 +1068,7 @@
             <PrereqTech>TECH_FANATICISM</PrereqTech>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>80</iCost>
+            <iCost>140</iCost>
             <iStateReligionHappiness>0</iStateReligionHappiness>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1146,7 +1082,7 @@
             <iAsset>1</iAsset>
             <iPower>2</iPower>
             <fVisibilityPriority>10000</fVisibilityPriority>
-            <iDefense>5</iDefense>
+            <iCrime>-10</iCrime>
             <UnitCombatFreeExperiences>
 			</UnitCombatFreeExperiences>
             <SpecialistCounts>
@@ -1157,19 +1093,31 @@
             </SpecialistCounts>
             <ImprovementFreeSpecialists>
                 <ImprovementFreeSpecialist>
-                    <ImprovementType>IMPROVEMENT_MANA_LIFE</ImprovementType>
-                    <iFreeSpecialistCount>1</iFreeSpecialistCount>
+                    <ImprovementType>IMPROVEMENT_MANA_LAW</ImprovementType>
+                    <iFreeSpecialistCount>2</iFreeSpecialistCount>
                 </ImprovementFreeSpecialist>
             </ImprovementFreeSpecialists>
-            <iHealth>2</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
+            <BonusYieldModifiers>
+				<BonusYieldModifier>
+					<BonusType>BONUS_MANA_LAW</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>10</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+			</BonusYieldModifiers>
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
                 <iCommerce>2</iCommerce> <!--Culture-->
             </CommerceChanges>
+            <BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_MANA_LAW</BonusType>
+					<iHappinessChange>2</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
             <BonusHealthChanges>
 				<BonusHealthChange>
 					<BonusType>BONUS_MANA_LIFE</BonusType>
@@ -1183,12 +1131,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_ORDER</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Congress of Order -->
             <BuildingClass>BUILDINGCLASS_DRACK_ORDER_CONGRESSOFORDER</BuildingClass>
@@ -1197,8 +1139,7 @@
             <Description>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER</Description>
             <Civilopedia>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER_LORE</Civilopedia>
             <Strategy>TXT_KEY_DRACKBUILDING_ORDER_CONGRESSOFORDER_STRATEGY</Strategy>
-            <Help></Help>
-            <iCrime>-50</iCrime>
+            <iCrime>-40</iCrime>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_DRACK_ORDER_CONGRESSOFORDER</ArtDefineTag>
             <ReligionType>RELIGION_THE_ORDER</ReligionType>
@@ -1226,19 +1167,6 @@
             <iAsset>1</iAsset>
             <iPower>2</iPower>
             <fVisibilityPriority>10000</fVisibilityPriority>
-            <iDefense>0</iDefense>
-            <UnitCombatFreeExperiences>
-				<UnitCombatFreeExperience>
-					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
-					<iExperience>2</iExperience>
-				</UnitCombatFreeExperience>
-			</UnitCombatFreeExperiences>
-            <SpecialistCounts>
-            </SpecialistCounts>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
             <CommerceChanges>
                 <iCommerce>0</iCommerce> <!--Gold-->
                 <iCommerce>0</iCommerce> <!--Research-->
@@ -1250,6 +1178,10 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_MILITARY</FlavorType>
+                    <iFlavor>25</iFlavor>
+                </Flavor>
             </Flavors>
             <TrainXPRates>
 				<TrainXPRate>
@@ -1260,15 +1192,9 @@
             <TrainXPCaps>
 				<TrainXPCap>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
-					<fTrainXPCap>12</fTrainXPCap>
+					<fTrainXPCap>20</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_ORDER</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <!-- Octopus -->
         <BuildingInfo>  <!-- Port of Hemah -->
@@ -1289,11 +1215,11 @@
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
             <bWater>1</bWater>
-            <iCost>200</iCost>
-            <iTradeRoutes>2</iTradeRoutes>
+            <iCost>250</iCost>
+            <iTradeRoutes>1</iTradeRoutes>
             <TradeYieldModifiers>
 				<iYield>15</iYield><!--  food bonus from trade -->
-				<iYield>25</iYield><!-- hammers bonus from trade -->
+				<iYield>15</iYield><!-- hammers bonus from trade -->
 				<iYield>0</iYield><!-- commerce bonus from trade -->
 			</TradeYieldModifiers>
             <iHappiness>-2</iHappiness>
@@ -1319,19 +1245,6 @@
                     <iSpecialistCount>0</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
-            <ImprovementFreeSpecialists>
-            </ImprovementFreeSpecialists>
-            <iHealth>0</iHealth> <!-- Health-->
-            <YieldChanges>
-				<iYield>0</iYield> <!-- Food -->
-            </YieldChanges>
-            <CommerceChanges>
-                <iCommerce>0</iCommerce> <!--Gold-->
-                <iCommerce>0</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
-            </CommerceChanges>
-            <BonusHealthChanges>
-			</BonusHealthChanges>
             <BonusHappinessChanges>
                 <BonusHappinessChange>
                     <BonusType>BONUS_CLAM</BonusType>
@@ -1364,13 +1277,11 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_GROWTH</FlavorType>
+                    <iFlavor>15</iFlavor>
+                </Flavor>
             </Flavors>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_OVERLORDS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- Dark Overlords’s Habor -->
             <BuildingClass>BUILDINGCLASS_DRACK_OCTO_OVERLORDHABOR</BuildingClass>
@@ -1439,13 +1350,11 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_GOLD</FlavorType>
+                    <iFlavor>25</iFlavor>
+                </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_OVERLORDS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
         <BuildingInfo>  <!-- House of Madness -->
             <BuildingClass>BUILDINGCLASS_DRACK_OCTO_HOUSEMADNESS</BuildingClass>
@@ -1510,12 +1419,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_OVERLORDS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
             <iMilitaryProductionModifier>20</iMilitaryProductionModifier>
         </BuildingInfo>
         <BuildingInfo>  <!-- Chamber of Apathy -->
@@ -1549,18 +1452,17 @@
             <iAsset>1</iAsset>
             <iPower>2</iPower>
             <fVisibilityPriority>10000</fVisibilityPriority>
-            <iDefense>15</iDefense>
             <UnitCombatFreeExperiences>
 			</UnitCombatFreeExperiences>
             <SpecialistCounts>
                 <SpecialistCount>
                     <SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-                    <iSpecialistCount>2</iSpecialistCount>
+                    <iSpecialistCount>1</iSpecialistCount>
                 </SpecialistCount>
             </SpecialistCounts>
             <ImprovementFreeSpecialists>
             </ImprovementFreeSpecialists>
-            <iHealth>-1</iHealth> <!-- Health-->
+            <iHealth>-2</iHealth> <!-- Health-->
             <YieldChanges>
 				<iYield>0</iYield> <!-- Food -->
             </YieldChanges>
@@ -1582,14 +1484,11 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_SCIENCE</FlavorType>
+                    <iFlavor>8</iFlavor>
+                </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_OVERLORDS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-            <iMilitaryProductionModifier>0</iMilitaryProductionModifier>
         </BuildingInfo>
         <!-- Ashen Veil -->
         <BuildingInfo>  <!-- Temples of Agares -->
@@ -1665,14 +1564,15 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_GOLD</FlavorType>
+                    <iFlavor>5</iFlavor>
+                </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_SCIENCE</FlavorType>
+                    <iFlavor>5</iFlavor>
+                </Flavor>
             </Flavors>
-            <BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_VEIL</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-            <iMilitaryProductionModifier>0</iMilitaryProductionModifier>
         </BuildingInfo>
         <BuildingInfo>  <!-- Temple of Aeron -->
             <BuildingClass>BUILDINGCLASS_DRACK_VEIL_TEMPLEAERON</BuildingClass>
@@ -1745,13 +1645,11 @@
                     <FlavorType>FLAVOR_RELIGION</FlavorType>
                     <iFlavor>5</iFlavor>
                 </Flavor>
+                <Flavor>
+                    <FlavorType>FLAVOR_MILITARY</FlavorType>
+                    <iFlavor>5</iFlavor>
+                </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_VEIL</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
             <TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -1834,12 +1732,6 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_VEIL</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
             <TrainXPRates>
 				<TrainXPRate>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -1894,17 +1786,6 @@
             <iAsset>1</iAsset>
             <iPower>2</iPower>
             <fVisibilityPriority>10000</fVisibilityPriority>
-            <iDefense>0</iDefense>
-            <UnitCombatFreeExperiences>
-			</UnitCombatFreeExperiences>
-            <SpecialistCounts>
-                <SpecialistCount>
-                    <SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-                    <iSpecialistCount>0</iSpecialistCount>
-                </SpecialistCount>
-            </SpecialistCounts>
-            <ImprovementFreeSpecialists>
-            </ImprovementFreeSpecialists>
             <FreeSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
@@ -1915,18 +1796,6 @@
             <YieldChanges>
 				<iYield>4</iYield> <!-- Food -->
             </YieldChanges>
-            <CommerceChanges>
-                <iCommerce>0</iCommerce> <!--Gold-->
-                <iCommerce>1</iCommerce> <!--Research-->
-                <iCommerce>0</iCommerce> <!--Culture-->
-            </CommerceChanges>
-            <CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>				
-			</CommerceModifiers>
-            <BonusHealthChanges>
-			</BonusHealthChanges>
             <ConstructSound>AS2D_ASHEN_DINK</ConstructSound>
             <Flavors>
                 <Flavor>
@@ -1934,12 +1803,469 @@
                     <iFlavor>5</iFlavor>
                 </Flavor>
             </Flavors>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_THE_VEIL</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
         </BuildingInfo>
+        <!-- White Hand -->
+        <BuildingInfo>		<!-- Hall of the Hand -->
+			<BuildingClass>BUILDINGCLASS_DRACK_HAND_HALLOFTHEHAND</BuildingClass>
+			<Type>BUILDING_DRACK_HAND_HALLOFTHEHAND</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_HAND_HALLOFTHEHAND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_HAND_HALLOFTHEHAND_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_HAND_HALLOFTHEHAND</ArtDefineTag>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
+            <ReligionType>RELIGION_WHITE_HAND</ReligionType>
+            <StateReligion>RELIGION_WHITE_HAND</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_WHITE_HAND</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>140</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+            <BonusYieldModifiers>
+				<BonusYieldModifier>
+					<BonusType>BONUS_DEER</BonusType>
+					<YieldModifiers>
+						<iYield>10</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+				<BonusYieldModifier>
+					<BonusType>BONUS_BISON</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>10</iYield>
+						<iYield>0</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+			</BonusYieldModifiers>
+            <BonusCommerceModifiers>
+                <BonusCommerceModifier>
+					<BonusType>BONUS_FUR</BonusType>
+					<CommerceModifiers>
+						<iCommerce>10</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+            </BonusCommerceModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+                <Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Guild of the Icefarmers -->
+			<BuildingClass>BUILDINGCLASS_DRACK_HAND_GUILDOFTHEICEFARMERS</BuildingClass>
+			<Type>BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</ArtDefineTag>
+			<PrereqTech>TECH_ELEMENTALISM</PrereqTech>
+            <ReligionType>RELIGION_WHITE_HAND</ReligionType>
+            <StateReligion>RELIGION_WHITE_HAND</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_WHITE_HAND</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>160</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+            <TerrainYieldChanges>
+				<TerrainYieldChange>
+					<TerrainType>TERRAIN_GLACIER</TerrainType>
+					<TerrainYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TerrainYields>
+				</TerrainYieldChange>
+            </TerrainYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Guild of Icewitches (Illian UB) -->
+			<BuildingClass>BUILDINGCLASS_DRACK_HAND_GUILDOFTHEICEFARMERS</BuildingClass>
+			<Type>BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_Illian</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_Illian</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_Illian_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</ArtDefineTag>
+			<PrereqTech>TECH_ELEMENTALISM</PrereqTech>
+            <ReligionType>RELIGION_WHITE_HAND</ReligionType>
+            <StateReligion>RELIGION_WHITE_HAND</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_WHITE_HAND</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+            <iHappiness>1</iHappiness>
+            <UnitCombatFreeExperiences>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iExperience>2</iExperience>
+				</UnitCombatFreeExperience>
+                <UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iExperience>2</iExperience>
+				</UnitCombatFreeExperience>
+			</UnitCombatFreeExperiences>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Glacier Mine -->
+			<BuildingClass>BUILDINGCLASS_DRACK_HAND_GLACIERMINE</BuildingClass>
+			<Type>BUILDING_DRACK_HAND_GLACIERMINE</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_HAND_GLACIERMINE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_HAND_GLACIERMINE_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_HAND_GLACIERMINE</ArtDefineTag>
+			<PrereqTech>TECH_RELIGIOUS_LAW</PrereqTech>
+            <ReligionType>RELIGION_WHITE_HAND</ReligionType>
+            <StateReligion>RELIGION_WHITE_HAND</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_WHITE_HAND</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>180</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+            <iCrime>4</iCrime>
+            <iMaintenanceModifier>10</iMaintenanceModifier>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+            <CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</CommerceChanges>
+			<fVisibilityPriority>10</fVisibilityPriority>
+            <BonusYieldModifiers>
+				<BonusYieldModifier>
+					<BonusType>BONUS_MANA_ICE</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>25</iYield>
+						<iYield>10</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+			</BonusYieldModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Statue of Winter -->
+			<BuildingClass>BUILDINGCLASS_DRACK_HAND_STATUEOFWINTER</BuildingClass>
+			<Type>BUILDING_DRACK_HAND_STATUEOFWINTER</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_HAND_STATUEOFWINTER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_HAND_STATUEOFWINTER_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_HAND_STATUEOFWINTER</ArtDefineTag>
+			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
+            <ReligionType>RELIGION_WHITE_HAND</ReligionType>
+            <StateReligion>RELIGION_WHITE_HAND</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_WHITE_HAND</PrereqReligion>
+			<bNeverCapture>1</bNeverCapture>
+            <GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
+			<iAIWeight>10</iAIWeight>
+			<iCost>350</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>10</iConquestProb>
+			<iGlobalHappiness>2</iGlobalHappiness>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>10</fVisibilityPriority>
+            <SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BonusYieldModifiers>
+				<BonusYieldModifier>
+					<BonusType>BONUS_MANA_ICE</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>5</iYield>
+						<iYield>0</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+			</BonusYieldModifiers>
+            <BonusCommerceModifiers>
+                <BonusCommerceModifier>
+					<BonusType>BONUS_MANA_ICE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>25</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+            </BonusCommerceModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+                <Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <!-- Esus -->
+        <BuildingInfo>		<!-- Veiled Market -->
+			<BuildingClass>BUILDINGCLASS_DRACK_ESUS_VEILEDMARKET</BuildingClass>
+			<Type>BUILDING_DRACK_ESUS_VEILEDMARKET</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_ESUS_VEILEDMARKET</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_ESUS_VEILEDMARKET_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_ESUS_VEILEDMARKET</ArtDefineTag>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+            <ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
+            <StateReligion>RELIGION_COUNCIL_OF_ESUS</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>140</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+            <iCrime>10</iCrime>
+			<iPower>4</iPower>
+            <PerCrimeEffectYieldChanges>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>3</iYield>
+			</PerCrimeEffectYieldChanges>
+            <CommerceChanges>
+				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceChanges>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Midnight Banquet -->
+			<BuildingClass>BUILDINGCLASS_DRACK_ESUS_MIDNIGHTBANQUET</BuildingClass>
+			<Type>BUILDING_DRACK_ESUS_MIDNIGHTBANQUET</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_ESUS_MIDNIGHTBANQUET</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_ESUS_MIDNIGHTBANQUET_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_ESUS_MIDNIGHTBANQUET</ArtDefineTag>
+			<PrereqTech>TECH_SANITATION</PrereqTech>
+            <ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
+            <StateReligion>RELIGION_COUNCIL_OF_ESUS</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>180</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+            <iHealth>-2</iHealth>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+            <iCrime>8</iCrime>
+			<iPower>4</iPower>
+            <PerCrimeEffectYieldChanges>
+				<iYield>1</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</PerCrimeEffectYieldChanges>
+            <CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceChanges>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+                <Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Black Fortress -->
+			<BuildingClass>BUILDINGCLASS_DRACK_ESUS_BLACKFORTRESS</BuildingClass>
+			<Type>BUILDING_DRACK_ESUS_BLACKFORTRESS</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_ESUS_BLACKFORTRESS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_ESUS_BLACKFORTRESS_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_ESUS_BLACKFORTRESS</ArtDefineTag>
+			<PrereqTech>TECH_MILITARY_STRATEGY</PrereqTech>
+            <ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
+            <StateReligion>RELIGION_COUNCIL_OF_ESUS</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>180</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+            <iCrime>12</iCrime>
+			<iPower>4</iPower>
+            <CommerceChanges>
+				<iCommerce>-3</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceChanges>
+            <iMaintenanceModifier>10</iMaintenanceModifier>
+            <PerCrimeTrainXPRates>
+				<TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<fTrainXPRate>0.1</fTrainXPRate>
+				</TrainXPRate>
+                <TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<fTrainXPRate>0.1</fTrainXPRate>
+				</TrainXPRate>
+                <TrainXPRate>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<fTrainXPRate>0.1</fTrainXPRate>
+				</TrainXPRate>
+			</PerCrimeTrainXPRates>
+			<PerCrimeTrainXPCaps>
+				<TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_ROGUE</UnitCombatType>
+					<fTrainXPCap>3</fTrainXPCap>
+				</TrainXPCap>
+                <TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<fTrainXPCap>3</fTrainXPCap>
+				</TrainXPCap>
+                <TrainXPCap>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<fTrainXPCap>3</fTrainXPCap>
+				</TrainXPCap>
+			</PerCrimeTrainXPCaps>
+            <FreePromotion>PROMOTION_AMBUSH1</FreePromotion>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <BuildingInfo>		<!-- Mirror Piece from Cerdiwen -->
+			<BuildingClass>BUILDINGCLASS_DRACK_ESUS_MIRRORPIECE</BuildingClass>
+			<Type>BUILDING_DRACK_ESUS_MIRRORPIECE</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_ESUS_MIRRORPIECE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_ESUS_MIRRORPIECE_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_ESUS_MIRRORPIECE</ArtDefineTag>
+			<PrereqTech>TECH_TRADE</PrereqTech>
+            <ReligionType>RELIGION_COUNCIL_OF_ESUS</ReligionType>
+            <StateReligion>RELIGION_COUNCIL_OF_ESUS</StateReligion>
+            <bStateReligion>1</bStateReligion>
+            <PrereqReligion>RELIGION_COUNCIL_OF_ESUS</PrereqReligion>
+            <GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<iAIWeight>40</iAIWeight>
+			<iCost>250</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+            <iCrime>15</iCrime>
+			<iPower>4</iPower>
+            <iPerCrimeEffectHappy>1</iPerCrimeEffectHappy>
+            <PerCrimeEffectCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+			</PerCrimeEffectCommerceChanges>
+            <CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceChanges>
+            <CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceModifiers>
+            <SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+        <!-- No State Religion -->
+        <BuildingInfo>		<!-- School -->
+			<BuildingClass>BUILDINGCLASS_DRACK_NORELIGION_SCHOOL</BuildingClass>
+			<Type>BUILDING_DRACK_NORELIGION_SCHOOL</Type>
+			<Description>TXT_KEY_BUILDING_DRACK_NORELIGION_SCHOOL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRACK_NORELIGION_SCHOOL_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRACK_NORELIGION_SCHOOL</ArtDefineTag>
+			<PrereqTech>TECH_WRITING</PrereqTech>
+            <bPrereqNoReligion>1</bPrereqNoReligion>
+			<iAIWeight>40</iAIWeight>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iConquestProb>25</iConquestProb>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
+            <bMustMaintain>1</bMustMaintain>
+            <CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceChanges>
+            <CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceModifiers>
+			<fVisibilityPriority>10</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>20</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
     </BuildingInfos>
 </Civ4BuildingInfos>

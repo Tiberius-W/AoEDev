@@ -89,12 +89,28 @@
 		<Spanish>Vicar Solg Nars</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PROPHET_GREATESTPEOPLE_2</Tag>
+		<English>Sorcerer Wakigara Yc Yurahito</English>
+		<French>Sorcerer Wakigara Yc Yurahito</French>
+		<German>Sorcerer Wakigara Yc Yurahito</German>
+		<Italian>Sorcerer Wakigara Yc Yurahito</Italian>
+		<Spanish>Sorcerer Wakigara Yc Yurahito</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_QUOTE_PROPHET_GREATESTPEOPLE_1</Tag>
 		<English>I come to this world to learn, not to preach. Well, sometimes to preach, but I can control it. But what I got out there is a bunch of people don't much wanna talk about anything. Your captain's a particularly tight-lipped fellow.[NEWLINE][NEWLINE] Vicar Nars, on a Lanun transport ship to Golden Leane [NEWLINE]</English>
 		<French>I come to this world to learn, not to preach. Well, sometimes to preach, but I can control it. But what I got out there is a bunch of people don't much wanna talk about anything. Your captain's a particularly tight-lipped fellow.[NEWLINE][NEWLINE] Vicar Nars, on a Lanun transport ship to Golden Leane [NEWLINE]</French>
 		<German>I come to this world to learn, not to preach. Well, sometimes to preach, but I can control it. But what I got out there is a bunch of people don't much wanna talk about anything. Your captain's a particularly tight-lipped fellow.[NEWLINE][NEWLINE] Vicar Nars, on a Lanun transport ship to Golden Leane [NEWLINE]</German>
 		<Italian>I come to this world to learn, not to preach. Well, sometimes to preach, but I can control it. But what I got out there is a bunch of people don't much wanna talk about anything. Your captain's a particularly tight-lipped fellow.[NEWLINE][NEWLINE] Vicar Nars, on a Lanun transport ship to Golden Leane [NEWLINE]</Italian>
 		<Spanish>I come to this world to learn, not to preach. Well, sometimes to preach, but I can control it. But what I got out there is a bunch of people don't much wanna talk about anything. Your captain's a particularly tight-lipped fellow.[NEWLINE][NEWLINE] Vicar Nars, on a Lanun transport ship to Golden Leane [NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_QUOTE_PROPHET_GREATESTPEOPLE_2</Tag>
+		<English>I see. You're very foolish. A true sign of a hero. You want to protect your friends, but make no mistake; they too will die.[NEWLINE][NEWLINE] And Your soul is mine!</English>
+		<French>I see. You're very foolish. A true sign of a hero. You want to protect your friends, but make no mistake; they too will die.[NEWLINE][NEWLINE] And Your soul is mine!</French>
+		<German>I see. You're very foolish. A true sign of a hero. You want to protect your friends, but make no mistake; they too will die.[NEWLINE][NEWLINE] And Your soul is mine!</German>
+		<Italian>I see. You're very foolish. A true sign of a hero. You want to protect your friends, but make no mistake; they too will die.[NEWLINE][NEWLINE] And Your soul is mine!</Italian>
+		<Spanish>I see. You're very foolish. A true sign of a hero. You want to protect your friends, but make no mistake; they too will die.[NEWLINE][NEWLINE] And Your soul is mine!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MERCHANT_GREATESTPEOPLE_1</Tag>

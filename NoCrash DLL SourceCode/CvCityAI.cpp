@@ -592,6 +592,18 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 	{
 		aiYields[iI] = GET_PLAYER(getOwnerINLINE()).specialistYield(eSpecialist, ((YieldTypes)iI));
 	}
+	int iSpecialistHealth = GC.getSpecialistInfo(eSpecialist).getHealth();
+
+	//New health weight calculation, version 383, by kaczkar123
+	int iHealthLevel = goodHealth() - badHealth(/*bNoAngry*/ false);
+	if (iHealthLevel < 0)
+	{
+		aiYields[0] += std::min(iSpecialistHealth, -iHealthLevel);
+	}
+	else if (iSpecialistHealth + iHealthLevel < 0)
+	{
+		aiYields[0] += std::max(iSpecialistHealth, iSpecialistHealth + iHealthLevel);
+	}
 
 	short int aiCommerceYields[NUM_COMMERCE_TYPES];
 
@@ -726,7 +738,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 			for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
 			{
-				ReligionTypes eReligion = (ReligionTypes) iJ;
+				ReligionTypes eReligion = (ReligionTypes)iJ;
 
 				if (isHolyCity(eReligion) && !hasShrine(eReligion)
 					&& ((iCurrentEra < iTotalEras / 2) || GC.getGameINLINE().countReligionLevels(eReligion) >= 10))
@@ -744,7 +756,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 						int	shrineBuildingCount = GC.getGameINLINE().getShrineBuildingCount(eReligion);
 						for (int iI = 0; iI < shrineBuildingCount; iI++)
 						{
-							int eBuilding = (int) GC.getGameINLINE().getShrineBuilding(iI, eReligion);
+							int eBuilding = (int)GC.getGameINLINE().getShrineBuilding(iI, eReligion);
 
 							// if this unit builds this building
 							if (GC.getUnitInfo(eGreatPeopleUnit).getBuildings(eBuilding))
@@ -774,7 +786,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 	}
 	else
 	{
-		SpecialistTypes eGenericCitizen = (SpecialistTypes) GC.getDefineINT("DEFAULT_SPECIALIST");
+		SpecialistTypes eGenericCitizen = (SpecialistTypes)GC.getDefineINT("DEFAULT_SPECIALIST");
 
 		// are we the generic specialist?
 		if (eSpecialist == eGenericCitizen)
@@ -791,60 +803,61 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		int iHasMetCount = GET_TEAM(getTeam()).getHasMetCivCount(true);
 
 		iValue += (iExperience * ((iHasMetCount > 0) ? 4 : 2));
-		if (iProductionRank <= iNumCities/2 + 1)
+		if (iProductionRank <= iNumCities / 2 + 1)
 		{
-			iValue += iExperience *  4;
+			iValue += iExperience * 4;
 		}
 		iValue += ((getMilitaryProductionModifier() * iExperience * 8) / 100);
 	}
 
-/*************************************************************************************************/
-/**	Specialists Enhancements, by Supercheese 10/12/09           Imported by Valkrionn   10/22/09**/
-/**							Rewritten by Snarko 07/07/10										**/
-/**			why were we doing these calcs for specialists that don't give health/happy?			**/
-/*************************************************************************************************/
-/** -- Start Original Code                                                                      **
-	int iSpecialistHealth = GC.getSpecialistInfo(eSpecialist).getHealth();
-	int iSpecialistHappiness = GC.getSpecialistInfo(eSpecialist).getHappiness();
+	/*************************************************************************************************/
+	/**	Specialists Enhancements, by Supercheese 10/12/09           Imported by Valkrionn   10/22/09**/
+	/**							Rewritten by Snarko 07/07/10										**/
+	/**			why were we doing these calcs for specialists that don't give health/happy?			**/
+	/*************************************************************************************************/
+	/** -- Start Original Code                                                                      **
+		int iSpecialistHealth = GC.getSpecialistInfo(eSpecialist).getHealth();
+		int iSpecialistHappiness = GC.getSpecialistInfo(eSpecialist).getHappiness();
+		int iHappinessLevel = happyLevel() - unhappyLevel(1);
+		int iAngryPopulation = range(-iHappinessLevel, 0, (getPopulation() + 1));
+		int iHealthLevel = goodHealth() - badHealth(false, std::max(0, (iHappinessLevel + 1) / 2));
+		int iBadHealth = std::max(0, -iHealthLevel);
+
+		int iHappyModifier = (iHappinessLevel >= iHealthLevel && iHappinessLevel <= 6) ? 6 : 3;
+		int iHealthModifier = (iHealthLevel > iHappinessLevel && iHealthLevel <= 4) ? 4 : 2;
+		if (iHappinessLevel >= 10)
+		{
+			iHappyModifier = 1;
+		}
+		if (iHealthModifier >= 8)
+		{
+			iHealthModifier = 0;
+		}
+
+		if (iSpecialistHealth != 0)
+		{
+			iValue += (std::min(iSpecialistHealth, iBadHealth) * 12)
+				+ (std::max(0, iSpecialistHealth - iBadHealth) * iHealthModifier);
+		}
+
+		if (iSpecialistHappiness != 0)
+		{
+			iValue += (std::min(iSpecialistHappiness, iAngryPopulation) * 10)
+				+ (std::max(0, iSpecialistHappiness - iAngryPopulation) * iHappyModifier);
+		}
+	/** -- End Original Code                                                                        **/
+	/*************************************************************************************************/
+	/**	Civilization Flavors				09/07/10										Snarko	**/
+	/**																								**/
+	/**							Making civilization flavors,										**/
+	/**			for helping AI with things we can't really add in a non-hardcoded way				**/
+	/*************************************************************************************************/
 	int iHappinessLevel = happyLevel() - unhappyLevel(1);
-	int iAngryPopulation = range(-iHappinessLevel, 0, (getPopulation() + 1));
-	int iHealthLevel = goodHealth() - badHealth(false, std::max(0, (iHappinessLevel + 1) / 2));
-	int iBadHealth = std::max(0, -iHealthLevel);
+	//Old health specialist weight (versions <=482) begin
+	//int iSpecialistHealth = GC.getSpecialistInfo(eSpecialist).getHealth();
+	//int iHealthLevel = goodHealth() - badHealth(/*bNoAngry*/ false);
 
-	int iHappyModifier = (iHappinessLevel >= iHealthLevel && iHappinessLevel <= 6) ? 6 : 3;
-	int iHealthModifier = (iHealthLevel > iHappinessLevel && iHealthLevel <= 4) ? 4 : 2;
-	if (iHappinessLevel >= 10)
-	{
-		iHappyModifier = 1;
-	}
-	if (iHealthModifier >= 8)
-	{
-		iHealthModifier = 0;
-	}
-
-	if (iSpecialistHealth != 0)
-	{
-		iValue += (std::min(iSpecialistHealth, iBadHealth) * 12)
-			+ (std::max(0, iSpecialistHealth - iBadHealth) * iHealthModifier);
-	}
-
-	if (iSpecialistHappiness != 0)
-	{
-		iValue += (std::min(iSpecialistHappiness, iAngryPopulation) * 10)
-			+ (std::max(0, iSpecialistHappiness - iAngryPopulation) * iHappyModifier);
-	}
-/** -- End Original Code                                                                        **/
-/*************************************************************************************************/
-/**	Civilization Flavors				09/07/10										Snarko	**/
-/**																								**/
-/**							Making civilization flavors,										**/
-/**			for helping AI with things we can't really add in a non-hardcoded way				**/
-/*************************************************************************************************/
-	int iSpecialistHealth = GC.getSpecialistInfo(eSpecialist).getHealth();
-	int iHappinessLevel = happyLevel() - unhappyLevel(1);
-	int iHealthLevel = goodHealth() - badHealth(/*bNoAngry*/ false);
-
-	if (iSpecialistHealth != 0)
+	/*if (iSpecialistHealth != 0)
 	{
 		int iBadHealth = std::max(0, -iHealthLevel);
 		int iHealthModifier = 10;
@@ -865,8 +878,8 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 		iValue += std::min(iSpecialistHealth, iBadHealth) * iHealthModifier;
 		iValue += std::max(0, iSpecialistHealth - iBadHealth) * iHealthModifier - std::max(0, iSpecialistHealth - iBadHealth) / 2;
-	}
-
+	}*/
+	//Old health specialist weight (versions <=482) end
 
 	int iSpecialistHappiness = GC.getSpecialistInfo(eSpecialist).getHappiness();
 	if (iSpecialistHappiness != 0)
@@ -880,23 +893,21 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		}
 		if (iAngryPopulation == 0)
 		{
-			iHappyModifier = std::max(1,iHappyModifier - iHappinessLevel);
+			iHappyModifier = std::max(1, iHappyModifier - iHappinessLevel);
 		}
 
 		iValue += std::min(iSpecialistHappiness, iAngryPopulation) * iHappyModifier;
 		iValue += std::max(0, iSpecialistHappiness - iAngryPopulation) * iHappyModifier - std::max(0, iSpecialistHappiness - iAngryPopulation) / 2;
 	}
-/*************************************************************************************************/
-/**	Civilization Flavors					END													**/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/** Specialists Enhancements                          END                                        */
-/*************************************************************************************************/
+	/*************************************************************************************************/
+	/**	Civilization Flavors					END													**/
+	/*************************************************************************************************/
+	/*************************************************************************************************/
+	/** Specialists Enhancements                          END                                        */
+	/*************************************************************************************************/
 
 	return (iValue * 100);
 }
-
-
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                      10/22/09                                jdog5000      */
 /*                                                                                              */
@@ -12617,7 +12628,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 			int iTempValue = 0;
 			if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 			{
-				if ((eOldRoute == NO_ROUTE) || (GC.getRouteInfo(eRoute).getValue() > GC.getRouteInfo(eOldRoute).getValue()))
+				if ((eOldRoute == NO_ROUTE) || ((GC.getRouteInfo(eRoute).getMovementCost()+GET_TEAM(getTeam()).getRouteChange(eRoute) )< (GC.getRouteInfo(eOldRoute).getMovementCost() + GET_TEAM(getTeam()).getRouteChange(eOldRoute))))
 				{
 /*************************************************************************************************/
 /**	Xienwolf Tweak							03/18/09											**/

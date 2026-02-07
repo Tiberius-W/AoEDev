@@ -11965,7 +11965,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCrime>5</iCrime>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Unhealthy Discontent2                                      Scions Internal Mechanism -->
@@ -11998,7 +11997,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<bGraphicalOnly>1</bGraphicalOnly>
 			<iCrime>5</iCrime>
 		</BuildingInfo>
 		<BuildingInfo>		<!-- Well -->

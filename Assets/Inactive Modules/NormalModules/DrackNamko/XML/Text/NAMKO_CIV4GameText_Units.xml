@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!-- Nepharakis -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_NEPHRAKIS_NAME</Tag>
+        <English>Nephrakis</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_NEPHRAKIS_PEDIA</Tag>
+        <English>The Nephrakis are the most faithful of Namkos undead, bound directly to Nephtharias command. Unlike lesser necromancers, their art is sacred, an extension of divine will rather than mere sorcery. These spectral-robed masters walk among the legions, raising the fallen back into unlife with a single gesture, ensuring that Namkos armies never dwindle. In battle, they stand as towering guardians, clad in golden bone and wielding staffs of radiant necromantic energy. Their presence alone is enough to turn the tide of war, for death in their gaze is but an invitation to rise again</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_NEPHRAKIS_MILITARY_STRATEGY</Tag>
+        <English>Use the Nephrakis as the backline of your cities and armies. With their medic promotion, they are a must have in each army. They can cast skeletons as an extra meat shield, or a first wave of attack.</English>
+    </TEXT>
+    <!-- Pyraspis -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_PYRASPIS_NAME</Tag>
+        <English>Pyraspis</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_PYRASPIS_PEDIA</Tag>
+        <English>The Pyraspis form the unshakable backbone of Namkos forces, undying priest-warriors who march with unyielding devotion. Wielding great shields of reinforced bone and enchanted blades, they advance in unbreakable formations, chanting battle hymns to the gods. Though death took them once, they rise anew, not as mere soldiers, but as instruments of divine justice. Their discipline ensures that even in the face of overwhelming odds, Namkos line will never break.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_PYRASPIS_MILITARY_STRATEGY</Tag>
+        <English>The Pyraspis are a disciple unit that wields extra fire damage. They are the replacement for Archer and are stronger than the base Archer, yet as Namko has no access to advanced archer units, this unit remains the prime defense for your cities. It can use Bronze and Iron Weapons for a later increase in base strength.</English>
+    </TEXT>
+    <!-- Ichorian -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_ICHORIAN_NAME</Tag>
+        <English>Ichorian</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_ICHORIAN_PEDIA</Tag>
+        <English>To see the Ichorians advance is to witness death itself march upon the living. The elite among Namkos legions, they are both warriors and necromancers, cutting through the enemys frontlines while reanimating the fallen mid-battle. Clad in blackened steel and shrouded in unholy energy, they wield massive weapons infused with necrotic power. The battlefield is their domain, a place where flesh is torn, souls are devoured, and only the undying endure.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_ICHORIAN_MILITARY_STRATEGY</Tag>
+        <English>The Ichorian are best use from within armies, as their attack is stronger than their defense. They make good breaker units, especially as they can raise their killed enemies as skeletons.</English>
+    </TEXT>
+    <!-- Amenthian -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AMENTHIAN_NAME</Tag>
+        <English>Amenthian</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_AMENTHIAN_PEDIA</Tag>
+        <English>More shadow than substance, the Amenthians are Namkos silent watchers. These spectral scouts drift through enemy lines unseen, their wraithlike forms slipping between worlds as they gather intelligence. They are the unseen whisper before an army falls, the cold presence in a commanders tent before disaster strikes. Mortal eyes cannot perceive them, and mortal hands cannot harm them, by the time their prey realizes the danger, it is already too late.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_AMENTHIAN_MILITARY_STRATEGY</Tag>
+        <English>Your hidden scout unit allows you to scout the terrain early game without worries of it being killed by most babarians.</English>
+    </TEXT>
+    <!-- Anubila -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_ANUBILA_NAME</Tag>
+        <English>Anubila</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_ANUBILA_PEDIA</Tag>
+        <English>
+[H2]Chosen of the Gods, Bound to Undeath[\H2]
+Before the fall of Patria, Anubila was a high priestess, a vessel of divine will who led ceremonies in honor of the gods. Her words carried power, her prayers shaped destinies, and her faith was unshakable. But faith alone was not enough to stop the great collapse. As the world around her burned, she stood at the temples heart, invoking her gods to protect what remained of her people. Yet no miracle came. Only death.
+
+But the gods do not abandon their faithful so easily.
+
+When Nephtharia rose as the first undying queen of Namko, she sought out those whose spirits burned brightest. Anubila was among them, her soul still tethered to the world by an unfulfilled purpose. With divine magic and necromantic ritual, Nephtharia brought her back, not as a mere revenant, but as something far greater. Anubila awoke, no longer a mortal priestess but a deathless herald, imbued with the will of both gods and undeath alike.
+
+[H2]The Divine Necromancer of War[\H2]
+Unlike many of Namkos necromancers, Anubila does not practice undeath as a means to an end, she sees it as a sacred duty. To her, undeath is not a curse, but the highest blessing, freeing mortals from weakness and allowing them to serve the gods for eternity. She marches alongside Namkos legions not as a mere spellcaster, but as a divine agent, ensuring that the faithful never truly fall.
+
+Her presence on the battlefield is both awe-inspiring and terrifying. Cloaked in flowing vestments of black and gold, she raises the fallen with whispered prayers, guiding their souls back to serve Namkos cause. Her magic does not merely reanimate, it sanctifies, strengthening the Deathless Empires armies with divine resilience. And when the battle turns grim, she unleashes righteous devastation, wielding holy light twisted into a weapon of annihilation.
+
+[H2]Anubilas Purpose[\H2]
+Among the Deathless Court, Anubila is respected, even feared. Thalmetra sees her as a zealot lost in faith, while Zephos scoffs at her piousness. Yet even they do not deny her power. Setharia considers her an indispensable force on the battlefield, and Nephtharia entrusts her with Namkos greatest crusades.
+
+To Anubila, there is no greater purpose than ensuring the empires eternal reign. She does not fight for conquest or glory, but for the divine truth that only the undying may serve the gods in full. Every soul she raises, every enemy she cuts down, is another step toward Namkos ultimate destiny, a world where only the eternal remain.
+        
+        </English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_ANUBILA_MILITARY_STRATEGY</Tag>
+        <English>A mighty hero unit, able to wield divine magic. She stacks the Necromancy promotion on killing a living unit and is generally a strong fighter.</English>
+    </TEXT>
+    <!-- Thanatoguard -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_THANATOGUARD_NAME</Tag>
+        <English>Thanatoguard</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_THANATOGUARD_PEDIA</Tag>
+        <English>A wall of rotting flesh and gnashing teeth, the Thanatoguard is Namkos unrelenting horde. Though they are but mindless corpses given motion, their sheer numbers make them an unshakable force on the battlefield. They form the heart of Namkos armies, holding the center with ceaseless resilience, their endless ranks replenished by the Nephrakis dark miracles. They do not waver, they do not break, only the dead join their ranks.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_THANATOGUARD_MILITARY_STRATEGY</Tag>
+        <English>A midgame unit that makes the backbone of your army as a strong melee fighter unit. They are good against disciple units.</English>
+    </TEXT>
+    <!-- Myrmiphage -->
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_MYRMIPHAGE_NAME</Tag>
+        <English>Myrmiphage</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_MYRMIPHAGE_PEDIA</Tag>
+        <English>Setharias most loyal warriors, the Myrmiphage are the pinnacle of her war doctrine, holy warriors clad in divine armor, blessed by the Order. Unlike the brutal Ichorians, they fight with precise, unwavering discipline, their weapons infused with righteous energy. To face them is to fight against an unyielding wall of faith and steel, for even in undeath, their conviction remains unshaken. They are the will of Namko made manifest, unstoppable, eternal, and merciless.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_UNIT_MYRMIPHAGE_MILITARY_STRATEGY</Tag>
+        <English>The Myrmiphage are your elite endgame units. They are resurrected in your capital after their death.</English>
+    </TEXT>
+</Civ4GameText>

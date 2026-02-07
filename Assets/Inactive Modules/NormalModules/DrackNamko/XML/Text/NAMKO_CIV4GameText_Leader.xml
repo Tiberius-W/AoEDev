@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!-- Nephtharia -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEPHTHARIA</Tag>
+        <English>Nephtharia</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEPHTHARIA_PEDIA</Tag>
+        <English>
+[H2]The Undying Light of Namko[\H2]
+Nephtharia, High Priestess of the Namko province, was once a woman of great faith and devotion. In the golden age of Patria, she served as a beacon of divine wisdom, guiding her people in the worship of the gods. Yet, when the empire fell to ruin, her world was shattered. Betrayed, left to perish in the cold abyss of history, Nephtharia refused to succumb to oblivion.
+
+In her final breath, she prayed, not for salvation, but for strength. And the gods answered. Undeath took her, not as a curse, but as a trial. Bound in a form neither living nor dead, she wandered the frozen wastelands of the Age of Ice, lost and alone, her faith the only flame that would not be extinguished.
+
+Through suffering, she found enlightenment. She saw the weakness of mortal flesh, its limits, its frailty. She saw that in death, devotion need not end. And in time, she discovered the way to bring back her people, not as mere corpses, but as deathless servants of the divine.
+
+[H2]Redeemer of the Nameless[\H2]
+Nephtharias return to the ruins of Namko was both a resurrection and a reckoning. With sacred rites, she raised the fallen, their souls cleansed of mortal weakness, their bodies reforged in service to the gods. No longer would death be the end of faith. No longer would her people suffer the failures of the living.
+
+Her empire was reborn, not in blood, but in eternity. The Deathless Court took shape, and with it, the Nameless Procession began, a ceaseless march of those reborn in undeath, their past selves erased, their purpose made absolute.
+
+To some, she is a tyrant, a necromancer who defies the natural order. To the faithful of Namko, she is the Redeemer, the Shepherd of the Eternal Flock. She has not enslaved her people, she has saved them.
+        
+    </English>
+    </TEXT>
+    <!-- Thalmetra -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_THALMETRA</Tag>
+        <English>Thalmetra</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_THALMETRA_PEDIA</Tag>
+        <English>
+[H2]Seeker of Forbidden Truths[\H2]
+Where Nephtharia found solace in faith, Thalmetra found purpose in knowledge. Born in the final days of Patrias golden age, she was already a woman of intellect and ambition before the empire's fall. A scholar of great renown, she sought to unravel the mysteries of magic, life, and the gods themselves. But when the world crumbled, wisdom proved no shield against death.
+
+Unlike Nephtharia, Thalmetra did not embrace undeath as salvation, she seized it as an opportunity. When the High Priestess of Namko offered her a place in the reborn empire, she did not accept out of loyalty or devotion, but out of cold calculation. To her, mortality had always been a limitation. Now, she was free from it. And with eternity at her disposal, she could begin her true work.
+
+[H2]The Mad Scholar of Namko[\H2]
+While the faithful of Namko march in service of the gods, Thalmetra moves to the rhythm of her own mind. Within the shadowed halls of Akuro, her grand laboratory and library, she conducts endless experiments, some wondrous, others horrific. She dissects the nature of undeath, questions the gods themselves, and searches for the ultimate truth: What is the purpose of existence when death is no longer the end?
+        
+Her experiments have long surpassed mere curiosity. She has crafted phylacteries that trap knowledge itself, siphoned memories from the dead, and even attempted to raise the souls of ancient Patrian scholars in forms untouched by time. While most of Namkos deathless citizens serve with quiet reverence, those who enter Thalmetras domain often leave changed, or do not leave at all.
+
+[H2]The Eternal Gambler[\H2]
+Unlike Nephtharia, who seeks to protect Namkos people, Thalmetra sees them as pieces on a board. She is a master of finance, using gold and influence to fund her research, amassing wealth not for luxury, but for power. She is an expert manipulator, a weaver of schemes that stretch across centuries.
+
+Some whisper that she secretly trades with the living, exchanging knowledge for artifacts of lost ages. Others say she has found a way to reshape undeath itself, altering the minds of the risen, twisting their spirits to better serve her own ambitions. What is certain is that while Nephtharia is the empires heart, Thalmetra is its mind, cold, calculating, and willing to do whatever it takes to uncover the truth.
+
+[H2]A Dangerous Ally, a Terrifying Foe[\H2]
+Nephtharia tolerates Thalmetras presence because her knowledge is invaluable, but even the Deathless Redeemer does not trust her. There is something in Thalmetras gaze, an unquenchable hunger, a glint of something that suggests even eternity will not be enough to satisfy her.
+
+What happens when she finally understands the meaning of undeath? What happens when she no longer needs the gods?
+
+Namko stands as a kingdom of faith, but in the halls of Akuro, another path is being carved. And if Thalmetra has her way, it will not be the gods who shape the future of the deathless, it will be her.
+
+        </English>
+    </TEXT>
+    <!-- Setharia -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_SETHARIA</Tag>
+        <English>Setharia</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_SETHARIA_PEDIA</Tag>
+        <English>
+[H2]Setharia, the Iron Hand of Namko[\H2]
+Setharia is Namkos iron-clad fist. As the War Minister of the Deathless Court, she is the architect of Namkos military, the unyielding general whose strategies have kept the empire secure against the living who fear it and the horrors that lurk beyond its borders.
+
+Setharia was once a mortal commander in the armies of Patria, a rising star of discipline and tactical brilliance. When the empire fell, she did not die in battle, she died in disgrace. Betrayed by those who sought to save themselves, left to rot among the ruins of her legion, she swore that if she ever rose again, she would never allow weakness to undo her people. And Nephtharia gave her that chance.
+Now, in undeath, she wages a war that will never end, not for conquest, but for order.
+
+[H2]Forged in Cold Steel[\H2]
+Setharias vision of war is not one of chaos and bloodlust, but of structure, precision, and absolute control. She is a master strategist who believes in the supremacy of discipline, and she has molded Namkos legions into an army unlike any other. The dead do not fear pain, nor do they break rank. They march tirelessly, wielding weapons reforged from the ruins of Patria and the riches of newly mined veins of iron and steel.
+
+Under her command, Namkos war machine is ever-expanding. She demands an endless supply of metal, for armor, for weapons, for the great siege engines that stand as a testament to Namkos enduring might. The mines beneath Kakokrak run deep, churning out steel for her soldiers and iron for her fortresses. Where others see war as destruction, Setharia sees it as creation, a forge that tempers both empire and warrior alike.
+
+[H2]The Faithful Enforcer[\H2]
+Unlike Thalmetra, whose loyalty to the gods is questionable at best, Setharia is a firm believer in the Order. To her, undeath is not merely a state of existence, it is a duty. Those who have been given the gift of eternity must use it to serve with absolute devotion. Her faith is rigid, her laws strict, and she does not tolerate disobedience within her ranks.
+
+To the outside world, she is a terror. A relentless commander whose armies march with a mechanical precision, whose forces do not falter, do not fear, and do not forgive. To Namko, she is a protector, the shield that stands between the faithful and those who would seek to undo their eternal order.
+
+ [H2]A Warrior Without an End[\H2]
+Setharia does not fight for herself. She has no ambition beyond the security of Namko. While others in the Deathless Court may pursue knowledge, faith, or power, she pursues one thing alone: duty.
+
+She knows that war will never end. She knows that peace is an illusion. But as long as Namko stands, as long as the Deathless Empire endures, she will be there. Clad in steel, armed with an unbreakable will, leading her legions into battle.
+
+Because the dead do not rest. And neither does she.
+        
+        </English>
+    </TEXT>
+    <!-- Zephos -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_ZEPHOS</Tag>
+        <English>Zephos</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_ZEPHOS_PEDIA</Tag>
+        <English>
+[H2]Zephos, the Shadowbound Sorcerer[\H2]
+Zephos was never a man of faith, nor a warrior bound by duty. Even before his undeath, he was a creature of pragmatism, a mage who sought power above all else. His fascination with necromancy led him down dark paths, from grave-robbing to forbidden rituals whispered in the ruins of fallen kingdoms. Unlike those who feared the dead, Zephos embraced them, bending them to his will.
+
+Yet even the greatest mortal necromancers face a final truth, death comes for them too. But Zephos had no intention of allowing that to happen.
+
+When word of the Deathless Empire of Namko reached him, he did not see an abomination or a blasphemy, he saw an opportunity. A kingdom where death was not the end, where knowledge could be pursued for eternity? He sought it out without hesitation. And when he stood before Nephtharia, he did not beg for a place in her empire, he demanded it, offering his power in exchange for the gift of undeath.
+
+Nephtharia granted his wish.
+
+[H2]The Armys Shadow[\H2]
+Zephos serves Namko as a war mage, marching alongside Setharias disciplined legions. Where steel and strategy fail, his sorcery prevails. He commands vast hordes of lesser undead, reforging the broken bodies of fallen enemies into weapons against their former allies. He shrouds the battlefield in unnatural darkness, tears the life from those who stand against him, and twists the winds of magic to shatter enemy formations.
+
+Yet, while he is a potent tool of war, he is no zealot. Unlike Namkos faithful, Zephos serves out of convenience, not belief. As long as Namko remains a sanctuary for the undying and a place where his power can grow, he is a loyal servant. But should the empire falter, should a better offer arise, his loyalty would be measured against his own survival.
+
+ [H2]A Dangerous Ally[\H2]
+Though tolerated for his usefulness, Zephos is regarded with suspicion by the Deathless Court. Thalmetra respects his knowledge, though she views him as a reckless dabbler rather than a true scholar. Setharia despises his lack of discipline but cannot deny his battlefield prowess. And Nephtharia? She watches him carefully, ever aware that his service is conditional.
+
+But for now, Zephos remains a valuable asset to Namko. He walks the fine line between loyalty and self-interest, reveling in the dark arts that others fear. He has cheated death, secured eternity, and holds power beyond the reach of mortal men.
+
+And as long as Namko continues to serve his needs, he will continue to serve Namko.
+        </English>
+    </TEXT>
+     <!-- Nephron -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEPHRON</Tag>
+        <English>Nephron</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEPHRON_PEDIA</Tag>
+        <English>
+[H2]Nephron, the Ravenous General[\H2]
+Before his undeath, Nephron was a man without a nation, a sellsword who fought for coin rather than cause. His loyalty belonged to the highest bidder, and his battlefield prowess ensured that his purse was never empty for long. He had no grand ideals, no sense of duty beyond survival and profit. War was simply a means to an end.
+
+That end came swiftly when his company crossed paths with the Deathless Legions of Namko. Unlike his past enemies, these warriors did not tire, did not waver, did not bleed. His men broke, and he fell amidst the carnage, one more corpse left behind in the tide of the undead.
+
+But death was not his fate. It was only the beginning.
+
+When he awoke, he was no longer a man of flesh, but a soldier of bone and steel. A nameless warrior in the endless ranks of Namko. Most in his position would have fought against it, clinging to memories of their past life. Nephron, ever pragmatic, did not resist. He adapted. And as he had done in life, he climbed the ranks.
+
+Faster than any other.
+
+[H2]The Plundering Warmaster[\H2]
+Where Setharia wages war with precision and structure, Nephron embraces the chaos of conquest. He is a ruthless, pragmatic tactician who sees war not as a noble pursuit, but as the ultimate form of acquisition. He takes what he needs, then takes more. His campaigns are swift, brutal, and efficient, driven by the philosophy that nothing should be left behind if it can be used to strengthen Namko.
+
+Looted cities become fortresses, stolen arms and armor are reforged for his legions, and even the dead of the enemy are not wasted, they rise to fight for Namko, just as he once did. To Nephron, morality is a weakness, a relic of the living world. He does not seek to glorify war. He seeks to win it.
+
+His greed is boundless, but so is his effectiveness. While others might question his methods, none can deny the results. Namko has grown stronger under his campaigns, its armories filled with plunder, its legions reinforced by the very foes who dared to challenge it.
+
+[H2]Loyalty Without Honor[\H2]
+Despite his ruthless nature, Nephron is unwaveringly loyal to Namko. Not out of devotion to its gods, nor out of faith in its cause, but because it is the empire that gave him power and purpose. As long as Namko thrives, so does he. His loyalty is not built on honor, it is built on self-interest, but it is absolute.
+
+Unlike Zephos, who would abandon Namko if it ceased to benefit him, Nephron is tied to it as both his benefactor and his battlefield. He may be greedy, he may be ruthless, but he is not foolish. His empire is his wealth, and he will defend it with the same brutality he brings to his conquests.
+
+And should anyone threaten it, they will learn firsthand what it means to be consumed by the relentless march of Namkos war machine.
+        </English>
+    </TEXT>
+</Civ4GameText>

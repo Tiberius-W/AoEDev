@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <!-- Help -->
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_PALACE_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +2 and increases other population increasements.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_BUILDING_ARISEN_HOUSING_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +2 (+4 if Capital).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_LIBRARY_NAMKO_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +1 (+2 if Capital).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_NAMKO_MONEYCHANGER_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +2 (+4 if Capital).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_BUILDING_ARISEN_FORTRESS_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +4 (+6 if Capital) (Requires Recreation Furnace).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_BUILDING_MAGE_QUARTERS_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +3 (+5 if capital) (Requires Recreation Furnace).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_BUILDING_TEMPLE_OF_ETERNITY_HELP</Tag>
+        <English>[ICON_BULLET]Increase Population cap +7 (+12 if capital) (Requires Recreation Furnace).</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_BUILDING_NAMKO_RECREATION_FURNACE_HELP</Tag>
+        <English>[ICON_BULLET]Activates population increasements of other buildings.</English>
+    </TEXT>
+    <!-- Name -->
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_PALACE_NAME</Tag>
+        <English>Namko Palace</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_LIBRARY</Tag>
+        <English>Eternal Halls</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MONEYCHANGER</Tag>
+        <English>Soul Exchange</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_HOUSING_NAME</Tag>
+        <English>Arisen Housings</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_FORTRESS_NAME</Tag>
+        <English>Arisen Fortress</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MAGE_QUARTERS_NAME</Tag>
+        <English>Namko Mage Quarters</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_TEMPLE_OF_ETERNITY_NAME</Tag>
+        <English>Temple of Eternity</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TEXT_BUILDING_NAMKO_RECREATION_FURNACE_NAME</Tag>
+        <English>Recreation Furnace</English>
+    </TEXT>
+    <!-- Strategy -->
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_PALACE_PEDIA</Tag>
+        <English>The capital allows a higher population cap than normal Namko cities. It is likely that this will be your center of production. It is highly recommended to build your first recreation furnace here.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_HOUSING_STRAT</Tag>
+        <English>This building is a must have for your cities. It strongly reduces Maintenance and allow for a slightly higher population cap. It also prevents your city from growing unhealthy.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MONEYCHANGER_STRATEGY</Tag>
+        <English>A slightly weaker version of the standard Money Change. Instead, it increases the Namko population cap.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_LIBRARY_NAMKO_STRATEGY</Tag>
+        <English>The Eternal Halls exchange bonus to research with an extra researcher. It is a slightly weaker version compared to the standard Library. Instead, it increases the Namko population cap.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_FORTRESS_STRAT</Tag>
+        <English>Your fortress increases not only defense, but also gives a push for science. It also increases your population cap as long as you also have a recreation furnace in this city.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MAGE_QUARTERS_STRAT</Tag>
+        <English>The Namko Mage Quarters are stronger but more costly than the normal variant. It also increases your population cap as long as you also have a recreation furnace in this city.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_TEMPLE_OF_ETERNITY_STRAT</Tag>
+        <English>Together with your recreation furnace, this is your most important building for your big cities. It heavily increases population cap together with a recreation furnace.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_RECREATION_FURNACE_STRAT</Tag>
+        <English>Every 5 cities, you can build one of these. Select the cities in which you build them with care, as these cities will grow far bigger than your base cities and will be the centers of your civilization.</English>
+    </TEXT>
+    <!-- Lore -->
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_HOUSING_PEDIA</Tag>
+        <English>A city of the undead does not slumber, nor does it bustle with the energy of the living. The Arisen Housings reflect this eternal stillness, vast districts of simple, functional dwellings, built for those whose personalities have faded with time. These featureless homes stand in orderly rows, silent save for the occasional shuffling of their inhabitants. Yet among them, scattered and distinct, stand grander houses, residences of those whose will and memories endured undeath. These individuals, still bearing their past identities, dwell in homes not unlike those of the living, reminders of a world that once was.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_ARISEN_FORTRESS_PEDIA</Tag>
+        <English>Great bastions of bone and blackened stone, the Arisen Fortresses are both training grounds and defensive strongholds for Namkos warrior-priests. Here, the Myrmiphage and Pyraspis are forged, their faith strengthened through relentless drills and sacred rites. The fortresses stand as grim monuments to Namkos military power, their walls etched with scripture and their halls echoing with the sound of prayer and clashing steel. Within these walls, the eternal warriors of Namko prepare for war without end.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MAGE_QUARTERS_PEDIA</Tag>
+        <English>Unlike the mage guilds of mortal nations, where arcane study is pursued for power or knowledge, Namkos Mage Quarters are temples as much as they are academies. Here, necromantic scholars and devoted priests study the mysteries of eternal life, seeking divine enlightenment through undeath. Within these halls, whispered prayers blend with the murmured incantations of resurrection, and the flickering candlelight casts shadows that never quite belong to the living.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_TEMPLE_OF_ETERNITY_PEDIA</Tag>
+        <English>Every Namko city is built around the Temple of Eternity, a towering edifice of dark stone and gold, where the faithful gather in endless worship. It is here that the undying reaffirm their purpose, offering prayers to the gods who granted them this eternal state. Priests chant in voices both living and spectral, and the glow of consecrated necromantic energy suffuses the air. To the faithful, this is not merely a place of worship, it is the foundation of Namkos existence.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_RECREATION_FURNACE_PEDIA</Tag>
+        <English>Towering above the cityscape, the Recreation Furnaces burn with an eerie, holy glow. These massive metal forges are not for smelting ore but for reforging life itself. Here, the willing, or the captured, undergo the sacred transformation into undeath. Within their heated chambers, necromantic rituals intertwine with divine blessings, burning away mortality and reshaping flesh and bone into something everlasting. Each furnace is a place of both reverence and awe, for within its flames, new soldiers of Namko are born.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_NAMKO_MONEYCHANGER_PEDIA</Tag>
+        <English>Krina smiled from ear to ear as she held the bag of gold in her hand. "Was it really that simple?" She asked herself while reflection her action. "I mean, what do I care what happens to me after death, rigth?" It was so simple. Let a Namko Priest put a spell on your body and soul and receive the income equialent of a 3 years of a commoner. "Ah, what do I care. I only live once. May they have my body and soul afterwards~" Krina hummed, not knowing that she just sold her undead eternity for a mere 3 years of income.</English>
+    </TEXT>
+    <TEXT>  
+        <Tag>TXT_KEY_BUILDING_LIBRARY_NAMKO_PEDIA</Tag>
+        <English>The clercs of Namko ensure that everything stored inside the Eternal Halls will be preserved for eternity. Humidity is magically reduced to the absolut minimum, the temperature is cooled down and the halls themselves are hostile to life. The Namko do not live after all and their texts will endure.</English>
+    </TEXT>
+</Civ4GameText>

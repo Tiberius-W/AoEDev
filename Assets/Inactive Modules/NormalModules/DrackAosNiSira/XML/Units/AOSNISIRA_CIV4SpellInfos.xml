@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Spell Infos -->
+<Civ4SpellInfos xmlns="x-schema:AOSNISIRA_CIV4UnitSpellSchema.xml">
+	<SpellInfos>
+		<!-- World Spell -->
+		<!-- Natures Fury -->
+		<SpellInfo>
+            <Type>SPELL_AOSNISIRA_NATURESFURY</Type>
+            <Description>Natures Fury</Description>
+            <Civilopedia>TEXT_SPELL_AOSNISIRA_NATURESFURY</Civilopedia>
+            <Help>TEXT_SPELL_AOSNISIRA_NATURESFURY_HELP</Help>
+			<TechPrereq>TECH_SORCERY</TechPrereq>
+            <CivilizationPrereq>CIVILIZATION_AOSNISIRA</CivilizationPrereq>
+            <bAllowAI>1</bAllowAI>
+            <bGlobal>1</bGlobal>
+            <iAIWeight>300</iAIWeight>
+            <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+            <bHasCasted>1</bHasCasted>
+			<PyResult>__import__('aosnisiraWorldSpell').spellNaturesFury(pCaster)</PyResult>
+            <Effect>EFFECT_SPELL1</Effect>
+            <Sound>AS3D_SPELL_INSPIRATION</Sound>
+            <Button>Modules\NormalModules\DrackAosNiSira\Art\Other\NaturesFury.dds</Button>
+        </SpellInfo>
+        <SpellInfo>			<!-- Plant Forest Heart in Fort -->
+			<Type>SPELL_PLANTFORESTHEART_FORT</Type>
+			<Description>Transform to Forest Heart</Description>
+            <Civilopedia>TXT_KEY_SPELL_PLANTFORESTHEART_FORT_PEDIA</Civilopedia>
+			<UnitPrereq>UNIT_AOSNISIRA_COMMANDER</UnitPrereq>
+			<PyRequirement>__import__('aosnisiraSpells').reqPlantForestHeartOnFort(pCaster)</PyRequirement>
+			<PyResult>__import__('aosnisiraSpells').spellPlantForestHeartOnFort(pCaster)</PyResult>
+			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
+			<Effect>EFFECT_SPELL1</Effect>
+			<Sound>AS3D_SPELL_COMMANDER_JOIN</Sound>
+			<Button>Art/Interface/Buttons/Improvements/Yggdrasil.dds</Button>
+		</SpellInfo>
+	</SpellInfos>
+</Civ4SpellInfos>

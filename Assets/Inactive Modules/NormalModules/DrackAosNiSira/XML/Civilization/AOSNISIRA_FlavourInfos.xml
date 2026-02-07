@@ -1,0 +1,29 @@
+<CivFlavourInfos>
+    <CivFlavourInfo>
+		<Civilization>CIVILIZATION_AOSNISIRA</Civilization>
+		<Preference>
+			<FlavourType>FEATURE_FOREST</FlavourType>
+			<Value>2</Value>
+		</Preference>
+        <Preference>
+			<FlavourType>YIELD_FOOD</FlavourType>
+			<Value>2</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_OCEAN</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_TUNDRA</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+        <Preference>
+			<FlavourType>TERRAIN_DESERT</FlavourType>
+			<Value>-2</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>IMPROVEMENT_YGGDRASIL</FlavourType>
+			<Value>1</Value>
+		</Preference>
+	</CivFlavourInfo>
+</CivFlavourInfos>

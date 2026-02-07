@@ -7898,7 +7898,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iRandomMax += iRoll;
 										iRandomFactor += iReligionValue;
 
-										iReligionValue += GC.getLeaderHeadInfo(getPersonalityType()).getReligionWeightModifier(iJ) * 100;
+										iReligionValue += getReligionWeight(iJ) * 100;
 
 										if (iPathLength < 2)
 										{
@@ -11257,7 +11257,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus) const
 							iTempValue += 40;
 						}
 					}
-					if ((eBestRoute != NO_ROUTE) && (GC.getRouteInfo(eBestRoute).getValue() <= GC.getRouteInfo(eRoute).getValue()))
+					if ((eBestRoute != NO_ROUTE) && ((GC.getRouteInfo(eBestRoute).getMovementCost() + GET_TEAM(getTeam()).getRouteChange(eBestRoute)) >= (GC.getRouteInfo(eRoute).getMovementCost() + GET_TEAM(getTeam()).getRouteChange(eRoute))))
 					{
 						iValue += iTempValue;
 					}
@@ -15088,7 +15088,7 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 
 //FfH: Modified by Kael 09/29/2007
 //	return iValue;
-	iValue += GC.getLeaderHeadInfo(getPersonalityType()).getReligionWeightModifier(eReligion);
+	iValue += getReligionWeight(eReligion);
 	return std::max(iValue, 0);
 //FfH: End Modify
 

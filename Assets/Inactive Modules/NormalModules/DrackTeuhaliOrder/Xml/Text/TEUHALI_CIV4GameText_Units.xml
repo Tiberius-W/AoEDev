@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_NAME</Tag>
+        <English>Dietrich</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_ASCENDED_NAME</Tag>
+        <English>Dietrich, Chosen of Hali</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STADTWACHE_NAME</Tag>
+        <English>Stadtwache</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PIKEMAN_NAME</Tag>
+        <English>Doppelhaender</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PHALANX_NAME</Tag>
+        <English>Knight Champion</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_BLUTWACHE_NAME</Tag>
+        <English>Blutwache</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_TERROR_TERRORRITTER</Tag>
+        <English>Terrorritter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_ADEPT</Tag>
+        <English>Lehrling</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STREITER</Tag>
+        <English>Streiter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STADTWACHE_STRATEGY</Tag>
+        <English>Stadtwachen are your main defensive unit next to Archers. They start with Heavy, giving them a strong benefit compared to normal Spearman.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_MILITARY_ASCENDED_STRATEGY</Tag>
+        <English>Dietrich in his Ascended version is a strong Attack Unit. Be sure to always have Phoenix Blood on him before sending him into battle to ensure he is not permamently lost.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PIKEMAN_STRATEGY</Tag>
+        <English>Doppelhaender are excellent defensive Units against Melee and Mounted Units. They start with Heavy and Guardsman, allowing them to defend other units in their stack well.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PHALANX_STRATEGY</Tag>
+        <English>Knight Champions are excellent defensive units. They are one of the few non-mounted Units that have access to the Teuhali Knight promotion, which allows them to become dangerously strong fighters.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_BLUTWACHE_STRATEGY</Tag>
+        <English>The Blutwache is a strong melee Unit on a similar level of Champions. They are Vampires and Teuhali Knights, making them extremely strong and useful Units.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_TERROR_TERRORRITTER_STRATEGY</Tag>
+        <English>Terrorritter are your strongest Unit as a Terror Order Leader. They are Immortal Vampire Knights with strong base stats and useful Promotions. Use them aggressively.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_ADEPT_STRATEGY</Tag>
+        <English>Lehrlinge can be promoted to many different Units, allowing you to let them learn some spells at start before letting them become other types of Units. This gives you powerful units with access to Tier 1 magic.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STREITER_STRATEGY</Tag>
+        <English>Streiter are the early attack units of the Sonnenstrahl Order. They are Aasimar and work similar to Axemen.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_ASCENDED_PEDIA</Tag>
+        <English>All heroes one day die, and so did Dietrich. His soul went into the vault of Lugus. There, he began changing, slowly but steadily, into an Angel. For the people of Teuhali, it was a big surprise as Dietrich appeared during a battle, nearly 100 years after his death. The legendary hero returned as an Angel. Like his patron Hali, Dietrich became an Unbound Angel and came to Erebus, back to his people. Now, as not a servant of Hali, but as a true partner to defend their chosen people.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STADTWACHE_PEDIA</Tag>
+        <English>Every citizen of the Teuhali Order is, by law, required to learn the handling of at least one weapon of their choice. In times of attacks, every citizen, no matter if farmer, smith, or merchant, is called to protect their lives themselves. The Stadtwache are recruited from these simple citizens during attacks. Only a small number are permanently on duty to ensure that crime stays low inside the cities.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PIKEMAN_PEDIA</Tag>
+        <English>"I do not care if 100 or 10.000 enemies are storming through this gate soon! I want you to hold the line. Now, raise your weapons and think of your training. Form a line of death, so that this city will hold another week, another day, or just another hour. For Hali and the Order!"</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_PHALANX_PEDIA</Tag>
+        <English>Some Knights, often called Ritter in the Teuhali language, retire for many reasons before their prime is over. Some lost their horse in battle and do not want to ride a different one to respect the honor of their fallen comrade. Others got wounded and are unable to ride long distances anymore. Either way, such a Ritter can instead become a Knight Champion. These veterans stay on foot and often train the next generations or protect the cities from attacks.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_BLUTWACHE_PEDIA</Tag>
+        <English>"Do you seek death? Put that apple back in an instant before the guards see you!" An old man told the thief, but the younger man just laughed. "Are you insane? I am hungry, and what is the worst that could happen?" The old man shook his head. "You are not from here, that much is clear. This is a city controlled by the Terror Order, and the guards here are the Blutwachen! Blood Guards. Do you know why we call them that? Because their punishment for every crime is death."</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_TERROR_TERRORRITTER_PEDIA</Tag>
+        <English>
+The Hippus laughed and plundered the corpses of the knight army of Teuhali. "They may be good fighters, but are far too slow and inflexible!" One Hippus Horselord shouted over to his men. On the horizon, he noticed another Knight appearing, wearing black armor and riding a black horse. "Well, seems we have forgotten one!"
+
+The Terrorritter licked the blood of his sword after he had slain the last of the riders. Some were taken as prisoners by him, alive enough to last another day. He smiled down at them. "Trust me, you will soon wish that you met my blade. As your fate will be far worse than theirs."
+</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_ADEPT_PEDIA</Tag>
+        <English>A Lehrling as a great benefit from other adepts of other nations. He has not yet a set path in front of him, but instead can chose for their destiny later. The mages of the Hexen Order are eager to recruit their Lehrlinge into their ranks, but also take care that those who are unfit to become true mages will continue to use what they have learned in their career, nevertheless. After all, not many enemies expect a soldier holding a Pike to cast magic.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_STREITER_PEDIA</Tag>
+        <English>The Sonnenstrahl Order has mana Aasimar in their ranks, people who can trace back their origin to Hali and have divine blood flowing through their veins. They set up a high moral code for themselves, and many hope to one day gain the attention and love of their ancestor.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_PEDIA</Tag>
+        <English>Born to simple parents in the fortress-city of Suederwall, Dietrich was never destined for nobility or command. He was raised among the working class, trained like all citizens in the ways of war, and took his place among the Stadtwache, defending his home from the threats that lurked beyond the Orders borders. But fate had greater plans for him.
+
+When the orcish warbands of the wildlands descended upon Suederwall, their assault was fiercer than any before. The outer defenses crumbled under their relentless assault, and chaos spread through the citys streets. The disciplined lines of the Stadtwache wavered, their morale teetering on the edge of collapse. But from within the ranks rose a man who refused to break.
+
+Dietrich, armed only with his faith and a soldiers discipline, seized command where others faltered. His voice cut through the panic, his blade carved a path through the enemy, and his unshakable presence became the pillar upon which Suederwall stood. With shield raised and sword in hand, he rallied the defenders, formed new battle lines, and led countercharges into the blood-soaked streets. For days, the city held under his command, the banners of the Order still flying above the bastions. When the Ordensritter finally arrived to relieve the siege, they found not a city in ruin, but a fortress still standing, held together by the will of a single warrior.
+
+His deeds could not go unnoticed. The Knight Champions, the Orders greatest paladins, extended an invitation that few could ever dream of. Dietrich, the son of a commoner, the soldier who had saved Suederwall, was to be trained in the sacred arts of divine magic. Under the tutelage of the Orders holiest warriors, he honed his abilities, not only as a fighter but as a wielder of Lugus light, a knight who could inspire with his presence alone.
+
+Now, Dietrich stands as one of the Orders mightiest heroes. He is no general, no leader of grand campaigns, but a master of battle, a warrior who can shift the tide of war through sheer skill and faith. His presence on the battlefield is said to invigorate those who fight beside him, and when he calls upon the divine, golden light spills forth, shattering darkness and sending the wicked into retreat. Some whisper that he is chosen by Hali herself, a mortal hand of divine will, though Dietrich himself remains humble, seeing himself only as a servant of the Order.
+
+Wherever the flames of war rise, Dietrich rides toward them. Where there is a battle on the brink of disaster, he is there, turning despair into victory. For as long as he fights, the Order shall never fall.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_DIETRICH_MILITARY_STRATEGY</Tag>
+        <English>Strong hero unit that starts as a Teuhali Knight and the Immortal Promotion.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_ARCHER</Tag>
+        <English>Leichter Schuetze</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_LONGBOWMAN</Tag>
+        <English>Schwerer Schuetze</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_GEISSLER</Tag>
+        <English>Geissler</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_GEISSLER_PEDIA</Tag>
+        <English>Geissler are fanatics who hurt themselves to prove their faith. They have little sense of self-preservation and attack the enemy without mercy. The Weizen Order leads these men and women of faith into battle, well knowing that they rarely survive their first encounters.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_TEUHALI_GEISSLER_STRATEGY</Tag>
+        <English>Geisslers are the Melee Attack Unit of the Weizen Order. Use them only in attack, as their defense is weak. Also, be careful about their enrage.</English>
+    </TEXT>
+</Civ4GameText>

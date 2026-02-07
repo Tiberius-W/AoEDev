@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <!-- Name -->
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WOLF_PACK_NAME</Tag>
+        <English>Possessed Wolf Pack</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WEREWOLF_NAME</Tag>
+        <English>Possessed Werewolf</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SPIDER_PEDIA</Tag>
+        <English>Possessed Spider</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_MAC_TIR_NI_NADUR_NAME</Tag>
+        <English>Mac Tir Ni Nadur</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SEERNIEOLAS_NAME</Tag>
+        <English>Seer Ni Eolas</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_BEASTNIEOLAS_NAME</Tag>
+        <English>Beast Ni Eolas</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_DRUID_NAME</Tag>
+        <English>Nadur Tir</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_BEASTMASTER</Tag>
+        <English>Beast Tir</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_WORKER_NAME</Tag>
+        <English>Treesinger</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_ARCHER_NAME</Tag>
+        <English>Bas Ni Lonroiri</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_ADEPT_NAME</Tag>
+        <English>Dalta-Ni-Nadur</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_ADEPT_NAME</Tag>
+        <English>Dalta-Ni-Nadur</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_MAGE_NAME</Tag>
+        <English>Afhios-Ni-Nadur</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_ARCHMAGE_NAME</Tag>
+        <English>Maistir-Ni-Nadur</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_POSSESSED_GIANT_TORTOISE_NAME</Tag>
+        <English>Possessed Giant Tortoise</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_BEAR_NAME</Tag>
+        <English>Possessed Bears</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_COMMANDER</Tag>
+        <English>Forest Heart Warden</English>
+    </TEXT>
+    
+    <!-- Pedia -->
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WOLF_PACK_PEDIA</Tag>
+        <English>The first and most frequent answer to intruders in the Aos-Ni-Sira forests, these packs of possessed wolves hunt as one. While only the Alpha is directly fused with a Sira, the rest of the pack follows its commands with uncanny discipline, moving as though guided by an unseen hand. These wolves do not kill out of hunger, but rather for territory, vengeance, and the will of the Sira. When they howl in unison, it is not merely the sound of beasts, it is the voice of the forest itself, rejecting the intruder with fang and claw.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WOLF_PACK_STRATEGY</Tag>
+        <English>Base Early Mid Game unit that is excellent in fighting in the forests of your lands.
+        It is not good against cities, but especialy strong for raiding enemies.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WEREWOLF_PEDIA</Tag>
+        <English>From the deepest, most untamed wilds, where even the Ljosalfar fear to tread, the Aos-Ni-Sira have claimed a force more savage than any beast, the werewolves. These cursed beings, once feral and mindless, have been bound to the will of the Sira through ancient possession magic. Under Oonaghs ruthless leadership, they are unleashed only when all other methods fail. But even the Sira fear the curse they spread, for each kill brings the risk of another monster rising. In war, the Possessed Werewolves are unstoppable, but once released, they may never be fully leashed again.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_WEREWOLF_STRATEGY</Tag>
+        <English>Late Game Elite Unit of the Sira, it has strong raw power and the strong werewolf promotion.
+        It has an affinity with nature magic, making it stronger over time.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SPIDER_PEDIA</Tag>
+        <English>From the darkest chasms beneath the trees, the Aos-Ni-Sira have bound giant spiders to their will, turning them into living traps for intruders. Weaving vast webs through the twisting paths of the forest, these horrors lure prey into unseen snares, their venom ensuring slow, painful ends. Unlike wolves or bears, these creatures know neither mercy nor honor, only the cold patience of the hunt. To be caught in their webs is to be left for the Siras judgment, or the spiders hunger.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SPIDER_STRATEGY</Tag>
+        <English>Strong defensive Unit.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_MAC_TIR_NI_NADUR_PEDIA</Tag>
+        <English>
+Mac Tir Ni Nadur is the masterpiece of Oonaghs experiments and breeding programs. The beast is the biggest and most dangerous creature of the Sira Forest Realm and not even fully controlled by the Sira themselves. No Sira could not dream of controlling him alone; It requires several of them to just lead him towards the enemies.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_MAC_TIR_NI_NADUR_STRATEGY</Tag>
+        <English>
+Mighty Hero unit with massive base strength due to its affinity to nature magic.
+As a Sira, he is best at raiding and attacking units inside forests.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SEERNIEOLAS_PEDIA</Tag>
+        <English>
+Even the Sira require to patrol their forests. Not all beasts and spirits in their realms are on their side after all.
+It is the tasks of the Seer Ni Eolas to be the patrolling units and to ensure that all invaders are taken care of.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_SEERNIEOLAS_STRATEGY</Tag>
+        <English>
+Recon Units with the secondary type of disciple. They are strong against Melee Units and can be upgraded to several priests.
+They are able to use Divine Magic.
+</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_ARCHER_PEDIA</Tag>
+        <English>The archers of the Aos-Ni-Sira, the Bas-Ni-Lonroiri sought to imitate the Ljosalfar, but found their pixie hands too small and light for perfect elven precision. Instead, they developed their own form of war archery, relying on swiftness, deception, and magic rather than raw skill. Their arrows are enchanted with illusions and toxins, confusing enemies and driving beasts into a berserk frenzy. While they are rarely the main force in battle, they are the silent watchers of the forest, raining down death from the canopy upon those foolish enough to trespass.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_ARCHER_STRATEGY</Tag>
+        <English>
+The Aos Ni Sira Longbowman replacement has a bonus versus Melee Units. They have no Bonus fighting on Hills, but have 2 instead of 1 first strike.
+</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_POSSESSED_GIANT_TORTOISE_PEDIA</Tag>
+        <English>The gentle colossi of the Aos-Ni-Sira, these ancient tortoises serve as living transport ships, ferrying warriors and supplies across rivers, lakes, and even open seas. Bound to their Sira handlers through magic, they move with calm patience, undisturbed by the chaos of war. Though they are rarely used in battle, in times of great peril, these giants have been turned against enemy ships, their armored shells deflecting arrows as they ram through wooden hulls, sinking fleets with sheer weight and force.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_POSSESSED_GIANT_TORTOISE_STRATEGY</Tag>
+        <English>The only water unit of the Sira. Mostly used to transport Units across the sea.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_BEASTNIEOLAS_PEDIA</Tag>
+        <English>
+Elite patroll Units of the Sira. They are sent to the deepest, most dangerous places. It is their duty to ensure that the forest will react to invaders.            
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_UNIT_BEASTNIEOLAS_STRATEGY</Tag>
+        <English>
+They are strong against Melee Units and have the benefit of being able to use divine Magic compared to normal rangers.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_WORKER_PEDIA</Tag>
+        <English>
+It is the holy duty of the Treesingers to plant and to care for the Forest Hearts.            
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_AOSNISIRA_WORKER_STRATEGY</Tag>
+        <English>
+Differently to normal Worker Units, the Treesingers can only build Trails and plant the mighty Forest hearts.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_UNIT_AOSNISIRA_ARCHMAGE_STRATEGY</Tag>
+        <English>
+The Maistir Ni Nadur are Archmages with an Affinity to Nature and Spirit Mana as well as Stalker.           
+        </English>
+    </TEXT>
+</Civ4GameText>

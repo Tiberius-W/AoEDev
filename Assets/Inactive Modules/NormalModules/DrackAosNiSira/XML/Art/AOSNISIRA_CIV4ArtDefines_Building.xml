@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jason Winokur (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Building art path information -->
+<Civ4ArtDefines xmlns="x-schema:AOSNISIRA_CIV4ArtDefinesSchema.xml">
+	<BuildingArtInfos>
+		<BuildingArtInfo> <!-- Aos Ni Sira palace -->
+			<Type>ART_DEF_BUILDING_PALACE_AOSNISIRA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\Palace.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Ting Ni Sira -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_SAGE_DISTRICT</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\District_Sage.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Ait Ni Eolas -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_LIBRARY</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\District_Library.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Forest Council -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_ELDER_COUNCIL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\ElderCouncil.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Hunting Logde -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_HUNTING_GROUNDS</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\HuntingGrounds.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Hunting Hall -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_HUNTING_HALL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\Training.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Grove -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_GROVE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\Barracks.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- TRAINING_YARD -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_TRAINING_YARD</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\WarAcadmey.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo> <!-- Ait-Ni-Foraois -->
+			<Type>ART_DEF_BUILDING_AOSNISIRA_PAGAN_TEMPLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huntinglodge/huntinglodge.nif</NIF>
+			<KFM/>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Buildings\Temple.dds</Button>
+		</BuildingArtInfo>
+	</BuildingArtInfos>
+</Civ4ArtDefines>

@@ -76,6 +76,7 @@ CvPlayer::CvPlayer()
 	m_paiNoBonus = new int[GC.getNumBonusInfos()];
 	m_paiFreeBonus = new int[GC.getNumBonusInfos()];
 	m_paiAvailableBuild = new int[GC.getNumBuildInfos()];
+	m_paiReligionWeights = new int[GC.getNumReligionInfos()];
 	m_paiPlotEffectSpawnChance = new int[GC.getNumPlotEffectInfos()];
 	m_pafPotencyAffinity = new float[GC.getNumBonusInfos()];
 	m_paiPotencyBonusPrereq = new int[GC.getNumBonusInfos()];
@@ -219,6 +220,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_paiNoBonus);
 	SAFE_DELETE_ARRAY(m_paiFreeBonus);
 	SAFE_DELETE_ARRAY(m_paiAvailableBuild);
+	SAFE_DELETE_ARRAY(m_paiReligionWeights);
 	SAFE_DELETE_ARRAY(m_paiPlotEffectSpawnChance);
 	SAFE_DELETE_ARRAY(m_pafPotencyAffinity);
 	SAFE_DELETE_ARRAY(m_paiPotencyBonusPrereq);
@@ -416,7 +418,10 @@ void CvPlayer::init(PlayerTypes eID)
 //FfH: End Modify
 
 		}
-
+		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			m_paiReligionWeights[iI] = GC.getLeaderHeadInfo(getLeaderType()).getReligionWeightModifier(iI);
+		}
 //FfH: Added by Kael 08/14/2007
 		if (GC.getCivilizationInfo(getCivilizationType()).getCivTrait() != NO_TRAIT)
 		{
@@ -929,6 +934,11 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 		{
 			m_paiAvailableBuild[iI] = 0;
+		}
+		m_paiReligionWeights = new int[GC.getNumReligionInfos()];
+		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			m_paiReligionWeights[iI] = 0;
 		}
 		m_paiPlotEffectSpawnChance = new int[GC.getNumPlotEffectInfos()];
 		m_pafPotencyAffinity = new float[GC.getNumBonusInfos()];
@@ -9145,7 +9155,7 @@ void CvPlayer::updateRouteCache()
 	int iI;
 	TechTypes eTechPrereq;
 
-	iBestValue = 0;
+	iBestValue = MAX_INT;
 	eBestRoute = NO_ROUTE;
 
 	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
@@ -9157,9 +9167,9 @@ void CvPlayer::updateRouteCache()
 			eTechPrereq = (TechTypes)GC.getBuildInfo((BuildTypes)iI).getTechPrereq();
 			if ((eTechPrereq == NO_TECH) || GET_TEAM(getTeam()).isHasTech(eTechPrereq))
 			{
-				iValue = GC.getRouteInfo(eRoute).getValue();
+				iValue = GC.getRouteInfo(eRoute).getMovementCost()+GET_TEAM(getTeam()).getRouteChange(eRoute);
 
-				if (iValue > iBestValue)
+				if (iValue < iBestValue)
 				{
 					iBestValue = iValue;
 					eBestRoute = eRoute;
@@ -9198,7 +9208,7 @@ RouteTypes CvPlayer::getBestRoute(CvPlot* pPlot) const
 	int iBestValue;
 	int iI;
 
-	iBestValue = 0;
+	iBestValue = MAX_INT;
 	eBestRoute = NO_ROUTE;
 
 	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
@@ -9209,9 +9219,9 @@ RouteTypes CvPlayer::getBestRoute(CvPlot* pPlot) const
 		{
 			if ((pPlot != NULL) ? ((pPlot->getRouteType() == eRoute) || canBuild(pPlot, ((BuildTypes)iI))) : GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBuildInfo((BuildTypes)iI).getTechPrereq())))
 			{
-				iValue = GC.getRouteInfo(eRoute).getValue();
+				iValue = GC.getRouteInfo(eRoute).getMovementCost() + GET_TEAM(getTeam()).getRouteChange(eRoute);
 
-				if (iValue > iBestValue)
+				if (iValue < iBestValue)
 				{
 					iBestValue = iValue;
 					eBestRoute = eRoute;
@@ -10561,7 +10571,11 @@ bool CvPlayer::canDoReligion(ReligionTypes eReligion) const
 	{
 		return false;
 	}
-	if (GC.getLeaderHeadInfo(getPersonalityType()).getReligionWeightModifier(eReligion) <= -100)
+	if (getReligionWeight(eReligion) <= -100)
+	{
+		return false;
+	}
+	if (getReligionWeight(eReligion) == -99 && !isHuman())
 	{
 		return false;
 	}
@@ -11568,6 +11582,12 @@ int CvPlayer::getAvailableBuild(int iI) const
 	if (iI < 0 || iI > GC.getNumBuildInfos()) return 0;
 	return m_paiAvailableBuild[iI];
 }
+int CvPlayer::getReligionWeight(int iI) const
+{
+	if (iI < 0 || iI > GC.getNumReligionInfos()) return 0;
+	return m_paiReligionWeights[iI];
+}
+
 int CvPlayer::getPlotEffectSpawnChance(int iI) const
 {
 	if (iI < 0 || iI > GC.getNumPlotEffectInfos()) return 0;
@@ -11643,6 +11663,13 @@ void CvPlayer::changeAvailableBuild(int fChange, int iI)
 	{
 		m_paiAvailableBuild[iI] += fChange;
 		m_paiAvailableBuild[iI] = std::max(0, m_paiAvailableBuild[iI]);
+	}
+}
+void CvPlayer::changeReligionWeight(int fChange, int iI)
+{
+	if (iI >= 0 && iI <= GC.getNumReligionInfos())
+	{
+		m_paiReligionWeights[iI] += fChange;
 	}
 }
 void CvPlayer::changePotencyBonusPrereq(int iChange, int iI)
@@ -15796,7 +15823,7 @@ int CvPlayer::countTotalHasReligion() const
 		iCount += getHasReligionCount((ReligionTypes)iI);
 /** -- End Original Code --                                                                     **/
 /*************************************************************************************************/
-		if (GC.getLeaderHeadInfo(getPersonalityType()).getReligionWeightModifier((ReligionTypes)iI) > -100)
+		if (getReligionWeight((ReligionTypes)iI) > -100)
 		{
 			iCount += getHasReligionCount((ReligionTypes)iI);
 		}
@@ -20658,6 +20685,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumBonusInfos(), m_paiNoBonus);
 	pStream->Read(GC.getNumBonusInfos(), m_paiFreeBonus);
 	pStream->Read(GC.getNumBuildInfos(), m_paiAvailableBuild);
+	pStream->Read(GC.getNumReligionInfos(), m_paiReligionWeights);
 
 	pStream->Read(GC.getNumPlotEffectInfos(), m_paiPlotEffectSpawnChance);
 
@@ -21407,6 +21435,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBonusInfos(), m_paiNoBonus);
 	pStream->Write(GC.getNumBonusInfos(), m_paiFreeBonus);
 	pStream->Write(GC.getNumBuildInfos(), m_paiAvailableBuild);
+	pStream->Write(GC.getNumReligionInfos(), m_paiReligionWeights);
 	pStream->Write(GC.getNumPlotEffectInfos(), m_paiPlotEffectSpawnChance);
 
 	pStream->Write(m_iPotency);

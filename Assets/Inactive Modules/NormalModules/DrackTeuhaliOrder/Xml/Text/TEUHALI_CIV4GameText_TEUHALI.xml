@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_CIV_TEUHALI_NAME</Tag>
+        <English>Teuhali Order</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_HEXEN</Tag>
+        <English>Hexen Order</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_TERROR</Tag>
+        <English>Terror Order</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_WEIZEN</Tag>
+        <English>Weizen Order</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_SONNENSTRAHL</Tag>
+        <English>Sonnenstrahl Order</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_CHOSEN_OF_HALI_NAME</Tag>
+        <English>Chosen of Hali</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_CHOSEN_OF_HALI_PEDIA</Tag>
+        <English>Knights who have shown their skills and faith can become chosen of Hali. It is a special honor that is only granted to the most worthy of the Teuhali Ritter, and very few live long enough to reach it. It means to become a living legend, a bringer of hope for the Teuhali people and death to the enemies of the High Knights.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_TEUHALI_PRAY</Tag>
+        <English>Pray to Hali</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_TEUHALI_PRAY_PEDIA</Tag>
+        <English>After slaying the great Bandit leader Bernard the Bloody, Sir Friendrich was praised by not only his soldiers, but also the clerics. It was now or never. He was already blessed by Hali and was now ready to receive her mercy. He prepared the required incense and other tools and walked into the Temple of Hali to pray.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_TEUHALI_PRAY_STRATEGY</Tag>
+        <English>Teuhali Knights who have the Chosen by Hali Promotion can receive the Immortal Promotion. It is recommended to do this to your knights whenever possible to save your best units from dying.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_FAMOUS_RITTER_NAME</Tag>
+        <English>Famous Ritter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_FAMOUS_RITTER_PEDIA</Tag>
+        <English>It is important to never undervalue how important the morale of your population is. A true Ritter of Teuhali knows this and appears visible in cities to be seen. The people feel safe and protected by the mere presence of such a Ritter.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_WISE_RITTER_NAME</Tag>
+        <English>Wise Ritter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_WISE_RITTER_PEDIA</Tag>
+        <English>As important as bravery is, it is also critical to know when to retreat. Young Ritter often die simply because they don’t know their own limits.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_TEUHALI_STRATEGY</Tag>
+        <English>
+The Teuhali Order is a Trade oriented, defensive nation with strong Melee Defense Units and Knights. Each Leader is part of an Order, which unlocks certain units or special promotions.
+[H2]Reminders[\H2]
+[ICON_BULLET] Build [LINK=BUILDING_TEUHALI_FORTRESS_CITY]Fortress City[\LINK] in your main military production cities. Due to the high maintenance costs, it is recommended to not build them in every city, but to choose certain cities as military production hubs.
+[ICON_BULLET] Many replacement buildings switch direct commerce boni for trade ones. Be sure to build your economy around trade.
+[ICON_BULLET] Try to get your hand on a corporation. Each corporation allows you to build a powerful Guild House Building in your city.
+[ICON_BULLET] Be careful with crime. Many buildings heavily increase crime, while others reduce it. Use your Knight Units to push down crime additionally.
+[H2]Orders[\H2]
+[ICON_BULLET] The Sonnenstrahl Order grants access to the [LINK=UNIT_TEUHALI_STREITER]Streiter[\LINK] and improves Mounted and Disciple Units.
+[ICON_BULLET] The Terror Order allows access to two powerful vampire units, the [LINK=UNIT_TEUHALI_TERROR_BLUTWACHE]Blutwache[\LINK] and [LINK=UNIT_TEUHALI_TERROR_TERRORRITTER]Terrorritter[\LINK].
+[ICON_BULLET] The Weizen Order makes farms stronger and reduces upkeep for Recon and Rogue Units. Addionally it grants access to the [LINK=UNIT_TEUHALI_GEISSLER]Geissler[\LINK].
+[ICON_BULLET] The Hexen Order grants access to the [LINK=UNIT_TEUHALI_ADEPT]Lehrling[\LINK], which can be promoted to different Units and allows having diverse Units with Channeling 1.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_TEUHALI_PEDIA</Tag>
+        <English>
+During the Age of Ice, survivors gathered in an old stronghold and resisted not only the temperatures outside, but also barbarians, and worse. One by one, they sold their life costly, yet they fell, and their numbers dimmed further and further. It would have been one untold story under thousands of these dark times for humanity if not for the intervention of Hali.
+
+Hali came to the Neuburg Stronghold as a simple woman, hiding her true origin as an Angel at first. She wanted to test the humans, test their mercy and their faith in the gods. The inhabitants of Neuburg took Hali in, gave her work to do, and a spear into her hands to help defend the small bastion against the darkness. They shared what they had with her, but expected that she would work as hard as everyone else.
+            
+During an Doviello raid on the stronghold, Hali revealed what she was and quickly rose to a leading position. She helped to strengthen the core aspects of the people and formed them into the Teuhali Order. The Order would been built around mercy, but also law and order. Everyone would be welcome as long as they followed the Orders rules and worked for their share of the land. Together they endured the long winter. And they began to grow in numbers again as they took in more and more groups and formed them into knights and workers for the new nation.
+            
+Hasfest and Sahifest were raised as the first fortress-towns, their walls hewn from stone and faith, shielding the growing nation from external threats. The discipline of the Orders warriors kept order within their borders, while the wisdom of Hali ensured that no soul lost hope. As the ice finally began to melt, Hali stepped down from her position as Grandmaster of the Order and allowed the humans to take the full lead again.             
+
+Governed by a Grandmaster and guided by Halis successors, the Order has since maintained its balance of faith and strength, never allowing itself to falter. While some see them as rigid and unyielding, others recognize them as a necessary shield against the horrors of Erebus. For in a world of chaos, betrayal, and war, the Teuhali Order remains one of the last true bastions of light.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_HEXEN_PEDIA</Tag>
+        <English>
+Magic may be seen as a gift of the gods, or something the mortals have claimed to have a chance in this world. For the Hexen Order it is neither of these. For them, it is simply a tool like any other. The origins of this Order lay with the Amurites.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_TERROR_PEDIA</Tag>
+        <English>
+It is better to be feared than loved. Fear paralizes your enemies and prevent your peasants from revolting. It is a simple fact of this world that the strong rule over the weak. The Terror Order rules by strict laws and hard punishments. Rumors speak of vampires in their ranks, yet whoever dares to mention this in public soon vanishes forever.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_WEIZEN_PEDIA</Tag>
+        <English>
+From the people for the people. Not the knights in their shimmering armor bring in the food and are the foundation of economy, but the farmers, the fishers, the simple people. The Weizen Order knows this well and cooperates on eye level with their citizens. The best cavalery charges are these that were prepared by information provided by these that know the land best.            
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_SONNENSTRAHL_PEDIA</Tag>
+        <English>
+It was the Angel Hali that saved the Teuhali people. The Sonnenstrahl Order never forgot this and will never forget the mercy that she has shown the simple men and women. They are fanatics, people of strong faith and followers of the light. Everything in their life is dictated by the laws and dogmas of holy words.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_CIVILIZATION</Tag>
+        <English>Teuhali Ritterschaft 1</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_CIVILIZATION2</Tag>
+        <English>Teuhali Ritterschaft 2</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_CIVILIZATION3</Tag>
+        <English>Teuhali Ritterschaft 3</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_CIVILIZATION_PEDIA</Tag>
+        <English>
+It is a knights duty to protect the people from threats they cant take care of themselves. In their shimmering armors they ride across the lands, secure trade routes, slay monsters and get the princess at the end of the adventure. At least that is what bards want to tell the common people. Most knights are just humans that are of noble birth, or claimed that title due to their skills. They indeed protect the trade routes and slay monsters, yet they do this for their own benefit as well. It is their duty and one they fulfill well.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_PROMOTION_TEUHALI_WEIZENRITTER</Tag>
+        <English>Weizenritter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_PROMOTION_TEUHALI_WEIZENRITTER_PEDIA</Tag>
+        <English>
+It is a service in its own to help the people. Weizenritter are no trained knights, nor are they of noble birth. They are the common people who took arms and defend their homes. If the mighty knights in their shimmering armors do not come to help them, then the peasants must help themselves.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_SPELL_TEUHALI_LASTSTAND</Tag>
+        <English>Last Stand</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_SPELL_TEUHALI_LASTSTAND_HELP</Tag>
+        <English>[ICON_BULLET]Build Walls and Palisades in each city.[NEWLINE][ICON_BULLET]Spaws 3 Stadtwache (Spearman) Units in each city.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_SPELL_TEUHALI_LASTSTAND_PEDIA</Tag>
+        <English>
+A last great stand against the darkness of this world it shall be! A last time the
+Order raises its fortresses and amasses its citizens to war. A single last stand before
+the world ends!
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_HEXEN_SHORT</Tag>
+        <English>HO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_TERROR_SHORT</Tag>
+        <English>TR</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_WEIZEN_SHORT</Tag>
+        <English>WO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_ORDER_SONNENSTRAHL_SHORT</Tag>
+        <English>SO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAITCLASS_TEUHALI_CIV</Tag>
+        <English>Leveling Civilization Trait</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAITCLASS_TEUHALI_ORDER</Tag>
+        <English>Order Trait</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_MARIA_AMARA_ZUCKER</Tag>
+        <English>Maria Amara Zucker</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_MARIA_AMARA_ZUCKER_PEDIA</Tag>
+        <English>
+The history of Marias parents was an uncommon and quite dangerous one. Her father was sent out to kill an evil demon that had dared to raid a village, only to learn that the villagers were indeed alive. Well, most of them at least. But instead, they were under the charm of a Succubus, the mentioned demon that he was sent out to kill for the Order. Instead of killing the succubus, however, he fell in love with her. It is unknown to Maria if her mother has used charm magic on her father, or if it was true love, and it does not matter much to her. She is a Cambion, a mix of demonic and human blood.
+
+Maybe it was more surprising how well the fort commander received this news. After all, there stood a Succubus, one of his best Knights and a young child in front of his gates. He decided to let them in and to allow the child to be raised as a member of the Order. Maria grew up to be a fine lady, and she was not alone. It did not take long before her Mother gave her many siblings, and Maria became the leader of her own little Cambion group.
+</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_LUSTFUL_ORIGIN</Tag>
+        <English>Lustful Origin</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_LUSTFUL_ORIGIN_PEDIA</Tag>
+        <English>While it may sound uncommon to let a demon into a fortified fort, it happens. Especially if that demon follows the rules of the fort commander of the Teuhali Knights. After all, all who can follow the laws and bring in something for the Order are welcome in their ranks.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_TEUHALI_LUSTFUL_ORIGIN_SHORT</Tag>
+        <English>Lo</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_BRUNHILDE_VON_MITTE</Tag>
+        <English>Brunhilde von Mitte</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_BRUNHILDE_VON_MITTE_PEDIA</Tag>
+        <English>"My lady, the food is ready." The maid said with a wide grin. Blood was dripping from one of her hands while she awaited the answer of her lady. The knight in shimmering armor turned around to her maid. "Good, thank you, Brundhilde. I guess you could not wait for your own amusement. Well, do I need to know who they were?" The maid shook her head. "Nobodies. Low-life thugs who thought that they stood above your laws." Brundhilde licked her lips. "But they were tasty thugs I must say."</English>
+    </TEXT>
+</Civ4GameText>

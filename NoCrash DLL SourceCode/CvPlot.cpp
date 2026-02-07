@@ -1042,7 +1042,7 @@ void CvPlot::doImprovementCityWorking()
 		iBonus = iI % GC.getNumBonusInfos();
 
 		// Can't dowsing our way into patrician artifacts
-		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes)iBonus).getTechReveal())))
+		if (GC.getBonusInfo((BonusTypes)iBonus).getTechReveal()!=NO_TECH && !GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getBonusInfo((BonusTypes)iBonus).getTechReveal())))
 		{
 			continue;
 		}
@@ -3218,7 +3218,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 		if (getRouteType() != NO_ROUTE)
 		{
-			if (GC.getRouteInfo(getRouteType()).getValue() >= GC.getRouteInfo(eRoute).getValue())
+			if ((GC.getRouteInfo(getRouteType()).getMovementCost() + GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getRouteChange(getRouteType())) <= (GC.getRouteInfo(eRoute).getMovementCost() + GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getRouteChange(eRoute)))
 			{
 				return false;
 			}

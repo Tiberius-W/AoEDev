@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+        <Tag>TXT_KEY_FORESTHEART_SAPLING</Tag>
+        <English>Forest Heart Sapling</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_FORESTHEART_SAPLING_PEDIA</Tag>
+        <English>X</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_FORESTHEART</Tag>
+        <English>Forest Heart</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_FORESTHEART_PEDIA</Tag>
+        <English>X</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_FORESTHEART_TITAN</Tag>
+        <English>Forest Heart Titan</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_FORESTHEART_TITAN_PEDIA</Tag>
+        <English>X</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_TREEROOT</Tag>
+        <English>Tree Root</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_IMPROVEMENT_TREEROOT_PEDIA</Tag>
+        <English>Tree Roots spread automatically on ressources (except Mana) around Forest Hearts. They still require a Road or Path to connect the ressource to a city.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILD_TREE_ROOT</Tag>
+        <English>Plant Tree Root</English>
+    </TEXT>
+    
+</Civ4GameText>

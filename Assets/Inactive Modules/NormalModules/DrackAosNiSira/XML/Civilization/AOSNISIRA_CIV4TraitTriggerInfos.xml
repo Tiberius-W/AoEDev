@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+
+<Civ4TraitTriggerInfos xmlns="x-schema:AOSNISIRA_CIV4CivilizationsSchema.xml">
+	<TraitTriggerInfos>
+        <TraitTriggerInfo> <!-- Build     Forest Heart        HungryForBlood -->
+			<Type>TRAITTRIGGER_BUILD_HUNGRYFORBLOOD_FOREST_HEART</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>25</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>		
+			<TraitHookType>TRAITHOOK_BUILD_IMPROVEMENT</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_FORESTHEART_SAPLING</PrereqImprovementType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Cast                Transform Forest heart 	 						Sira HungryForBlood-->
+			<Type>TRAITTRIGGER_CAST_TRANSFORM_FOREST_HEART</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>25</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>			
+			<TraitHookType>TRAITHOOK_CAST_SPELL</TraitHookType>
+			<PrereqSpellType>SPELL_PLANTFORESTHEART_FORT</PrereqSpellType>
+		</TraitTriggerInfo>
+        <TraitTriggerInfo> <!-- Kill      Unit in Border        HungryForBlood-->
+			<Type>TRAITTRIGGER_KILL_HUNGRYFORBLOOD</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>8</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_KILL_UNIT</TraitHookType>
+            <PrereqUnitCombatType>UNITCOMBAT_BEAST</PrereqUnitCombatType>
+            <bInBorders>1</bInBorders>
+		</TraitTriggerInfo>
+        <TraitTriggerInfo> <!-- Train               Beast                                    Hungry for Blood -->
+			<Type>TRAITTRIGGER_TRAIN_HUNGRYFORBLOOD_BEAST</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>6</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_TRAIN_UNIT</TraitHookType>
+			<PrereqUnitCombatType>UNITCOMBAT_BEAST</PrereqUnitCombatType>
+		</TraitTriggerInfo>
+        <TraitTriggerInfo> <!-- Tech                Feral Bond                                		Hungry for Blood -->
+			<Type>TRAITTRIGGER_TECH_HUNGRYFORBLOOD_FERAL_BOND</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>200</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<PrereqTech>TECH_FERAL_BOND</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Hunting                                		Hungry for Blood -->
+			<Type>TRAITTRIGGER_TECH_HUNGRYFORBLOOD_HUNTING</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>100</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<PrereqTech>TECH_HUNTING</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Tracking                                		Hungry for Blood -->
+			<Type>TRAITTRIGGER_TECH_HUNGRYFORBLOOD_TRACKING</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>150</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Construct           Beast Hall                       			Hungry for Blood -->
+			<Type>TRAITTRIGGER_CONSTRUCT_BUILDING_BEASTHALL_HUNGRYFORBLOOD</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>40</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>			
+			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
+			<PrereqBuildingClassType>BUILDINGCLASS_HUNTERS_HALL</PrereqBuildingClassType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Construct           Beast Lodge                       			Hungry for Blood -->
+			<Type>TRAITTRIGGER_CONSTRUCT_BUILDING_BEASTLODGE_HUNGRYFORBLOOD</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_HUNGRYFORBLOOD</TraitType>
+					<iModifier>30</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>			
+			<TraitHookType>TRAITHOOK_CONSTRUCT_BUILDING</TraitHookType>
+			<PrereqBuildingClassType>BUILDINGCLASS_HUNTING_LODGE</PrereqBuildingClassType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Feral Bond                                		Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_TRICKERY_FERAL_BOND</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>200</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_FERAL_BOND</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Hunting                                		Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_TRICKERY_HUNTING</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>100</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_HUNTING</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Tracking                                		Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_TRICKERY_TRACKING</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>100</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_TRACKING</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Alteration                               		Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_TRICKERY_ALTERATION</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>100</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_ALTERATION</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Currency                                		Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_TRICKERY_CURRENCY</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>200</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Build     Forest Heart        Sira Trickery	 -->
+			<Type>TRAITTRIGGER_BUILD_SIRA_TRICKERY_FOREST_HEART</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>25</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>		
+			<TraitHookType>TRAITHOOK_BUILD_IMPROVEMENT</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_FORESTHEART_SAPLING</PrereqImprovementType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Upgrade to          Forest Heart                             Sira Trickery -->
+			<Type>TRAITTRIGGER_UPGRADE_SIRA_TRICKERY_FOREST_HEART</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>20</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<TraitHookType>TRAITHOOK_IMPROVE_IMPROVEMENT</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_FORESTHEART</PrereqImprovementType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Upgrade to          Forest Heart Titan                            Sira Trickery -->
+			<Type>TRAITTRIGGER_UPGRADE_SIRA_TRICKERY_FOREST_HEART_TITAN</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>20</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<TraitHookType>TRAITHOOK_IMPROVE_IMPROVEMENT</TraitHookType>
+			<PrereqImprovementType>IMPROVEMENT_FORESTHEART_TITAN</PrereqImprovementType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Cast                Transform Forest heart 	 						Sira Trickery-->
+			<Type>TRAITTRIGGER_CAST_TRANSFORM_FOREST_HEART</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>25</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>			
+			<TraitHookType>TRAITHOOK_CAST_SPELL</TraitHookType>
+			<PrereqSpellType>SPELL_PLANTFORESTHEART_FORT</PrereqSpellType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Player turn         Number of Nature Mana                        Sira Trickery -->
+			<Type>TRAITTRIGGER_PLAYER_SIRA_TURN_MANA_NATURE</Type>
+			<BonusMultiplierType>BONUS_MANA_NATURE</BonusMultiplierType>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>1</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<TraitHookType>TRAITHOOK_PLAYER_TURN</TraitHookType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Tech                Sorcery	                                	Sira Trickery -->
+			<Type>TRAITTRIGGER_TECH_SIRA_SORCERY</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_SIRA_TRICKERY</TraitType>
+					<iModifier>500</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_SIRA</TraitClassType>
+			<PrereqTech>TECH_SORCERY</PrereqTech>
+			<TraitHookType>TRAITHOOK_TECH</TraitHookType>	
+		</TraitTriggerInfo>
+    </TraitTriggerInfos>
+</Civ4TraitTriggerInfos>

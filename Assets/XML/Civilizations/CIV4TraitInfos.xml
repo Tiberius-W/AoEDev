@@ -4437,6 +4437,16 @@
 					<UnitType>UNIT_KAHD</UnitType>
 				</ExtraUnitClass>
 			</ExtraUnitClasses>
+			<ReligionWeightModifiers>
+				<ReligionWeightModifier>
+					<ReligionType>RELIGION_RUNES_OF_KILMORPH</ReligionType>
+					<iWeightModifier>100</iWeightModifier>
+				</ReligionWeightModifier>
+				<ReligionWeightModifier>
+					<ReligionType>RELIGION_THE_EMPYREAN</ReligionType>
+					<iWeightModifier>200</iWeightModifier>
+				</ReligionWeightModifier>
+			</ReligionWeightModifiers>
 		</TraitInfo>
 		<TraitInfo>		<!-- Mammon - Kahd's traits -->
 			<Type>TRAIT_KAHD_MAMMON</Type>

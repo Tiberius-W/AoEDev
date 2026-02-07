@@ -794,6 +794,7 @@
 		<element type="PeakYieldChange"/>
 		<element type="SpecialistYieldChanges"/>
 		<element type="SpecialistCommerceChanges"/>
+		<element type="ReligionWeightModifiers"/>
 	</ElementType>
 	<ElementType name="TraitInfos" content="eltOnly">
 		<element type="TraitInfo" maxOccurs="*"/>

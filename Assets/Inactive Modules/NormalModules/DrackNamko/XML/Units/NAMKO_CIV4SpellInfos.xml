@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Spell Infos -->
+<Civ4SpellInfos xmlns="x-schema:NAMKO_CIV4UnitSpellSchema.xml">
+	<SpellInfos>
+		<!-- World Spell -->
+		<!-- Holy March -->
+		<SpellInfo>
+            <Type>SPELL_NAMKO_HOLY_MARCH</Type>
+            <Description>Holy March</Description>
+            <Civilopedia>TEXT_SPELL_NAMKO_HOLYMARCH</Civilopedia>
+            <Help>TEXT_SPELL_NAMKO_HOLYMARCH_HELP</Help>
+			<TechPrereq>TECH_FANATICISM</TechPrereq>
+            <CivilizationPrereq>CIVILIZATION_NAMKO</CivilizationPrereq>
+            <bAllowAI>1</bAllowAI>
+            <bGlobal>1</bGlobal>
+            <iAIWeight>300</iAIWeight>
+            <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+            <bHasCasted>1</bHasCasted>
+			<PyResult>__import__('NamkoCvSpells').spellHolyMarch(pCaster)</PyResult>
+            <Effect>EFFECT_SPELL1</Effect>
+            <Sound>AS3D_SPELL_INSPIRATION</Sound>
+            <Button>Modules\NormalModules\DrackNamko\Art\Spells\HolyMarch.dds</Button>
+        </SpellInfo>
+	</SpellInfos>
+</Civ4SpellInfos>

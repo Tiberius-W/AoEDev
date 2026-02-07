@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Derek Paxton (None) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- UnitClass Schema -->
+<Civ4UnitClassInfos xmlns="x-schema:TEUHALI_CIV4UnitSchema.xml">
+	<UnitClassInfos>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_DIETRICH</Type>
+			<Description>Dietrich</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_DIETRICH</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_DIETRICH_ASCENDED</Type>
+			<Description>Dietrich</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_DIETRICH_ASCENDED</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_TERROR_BLUTWACHE</Type>
+			<Description>Blutwache</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_TERROR_BLUTWACHE</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_TERROR_TERRORRITTER</Type>
+			<Description>Terrorritter</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>4</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_TERROR_TERRORRITTER</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_STREITER</Type>
+			<Description>TXT_KEY_UNIT_TEUHALI_STREITER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_STREITER</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TEUHALI_GEISSLER</Type>
+			<Description>TXT_KEY_UNIT_TEUHALI_GEISSLER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TEUHALI_GEISSLER</DefaultUnit>
+			<bUnique>1</bUnique>
+		</UnitClassInfo>
+	</UnitClassInfos>
+</Civ4UnitClassInfos>

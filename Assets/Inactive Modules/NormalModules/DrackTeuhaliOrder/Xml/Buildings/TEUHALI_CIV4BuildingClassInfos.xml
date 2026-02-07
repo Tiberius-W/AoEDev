@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Building Class Infos -->
+<!-- Created by Drackzahn -->
+<Civ4BuildingClassInfos xmlns="x-schema:TEUHALI_CIV4BuildingsSchema.xml">
+	<BuildingClassInfos>
+		<BuildingClassInfo> <!-- Teuhali Fortress City -->
+			<Type>BUILDINGCLASS_TEUHALI_FORTRESS_CITY</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_FORTRESS_CITY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_FORTRESS_CITY</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo> <!-- Fabricaforma -->
+			<Type>BUILDINGCLASS_TEUHALI_FABRICAFORMA</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_FABRICAFORMA</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_FABRICAFORMA</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo> <!-- Farmers Guild -->
+			<Type>BUILDINGCLASS_TEUHALI_FARMERSGUILD</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_FARMERSGUILD</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_FARMERSGUILD</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo> <!-- Kingfisher -->
+			<Type>BUILDINGCLASS_TEUHALI_KINGFISHER</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_KINGFISHER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_KINGFISHER</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo> <!-- Masquerade -->
+			<Type>BUILDINGCLASS_TEUHALI_MASQUERADE</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_MASQUERADE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_MASQUERADE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo> <!-- Stonefire -->
+			<Type>BUILDINGCLASS_TEUHALI_STONEFIRE</Type>
+			<Description>TXT_KEY_BUILDING_TEUHALI_STONEFIRE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<bUnique>1</bUnique>
+			<DefaultBuilding>BUILDING_TEUHALI_STONEFIRE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+	</BuildingClassInfos>
+</Civ4BuildingClassInfos>

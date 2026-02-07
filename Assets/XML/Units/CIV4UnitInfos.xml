@@ -10357,6 +10357,7 @@
 				<UniqueName>TXT_KEY_UNIT_PROPHET_19</UniqueName>
 				<UniqueName>TXT_KEY_UNIT_PROPHET_20</UniqueName>
 				<UniqueName>TXT_KEY_UNIT_PROPHET_GREATESTPEOPLE_1</UniqueName>
+				<UniqueName>TXT_KEY_UNIT_PROPHET_GREATESTPEOPLE_2</UniqueName>
 			</UniqueNames>
 			<Quotes>
 				<Quote>TXT_KEY_QUOTE_PROPHET_1</Quote>
@@ -10380,6 +10381,7 @@
 				<Quote>TXT_KEY_QUOTE_PROPHET_19</Quote>
 				<Quote>TXT_KEY_QUOTE_PROPHET_20</Quote>
 				<Quote>TXT_KEY_QUOTE_PROPHET_GREATESTPEOPLE_1</Quote>
+				<Quote>TXT_KEY_QUOTE_PROPHET_GREATESTPEOPLE_2</Quote>
 			</Quotes>
 			<Images>
 				<Image>art\interface\popups\greatpeople\Tuatha-De-Danann.dds</Image>
@@ -10403,6 +10405,7 @@
 				<Image>art\interface\popups\greatpeople\Gosea.dds</Image>
 				<Image>art\interface\popups\greatpeople\Vaghan of Lugus.dds</Image>
 				<Image>art\interface\popups\greatpeople\Ron Glass.dds</Image>
+				<Image>art\interface\popups\greatpeople\cary-hiroyuki_tagawa.dds</Image>
 			</Images>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<DefaultUnitAI>UNITAI_PROPHET</DefaultUnitAI>

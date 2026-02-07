@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FORTRESS_CITY_NAME</Tag>
+        <English>Fortress City</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FORTRESS_CITY_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FORTRESS_CITY_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PALACE_NAME</Tag>
+        <English>Teuhali Palace</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PALACE_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_STABLE</Tag>
+        <English>Ritterstaelle</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BARRACKS</Tag>
+        <English>Stahlhalle</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BARRACKS_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BARRACKS_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MARKET</Tag>
+        <English>Wochenmarkt</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MARKET_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_INN</Tag>
+        <English>Gildenhaus</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_INN_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MONEYCHANGER</Tag>
+        <English>Zollhaus</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MONEYCHANGER_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BAZAAR_OF_MAMMON</Tag>
+        <English>Der Sternenmarkt</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BAZAAR_OF_MAMMON_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_BAZAAR_OF_MAMMON_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_COURTHOUSE</Tag>
+        <English>Rathaus</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_COURTHOUSE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PAGAN_TEMPLE</Tag>
+        <English>Temple of Hali</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PAGAN_TEMPLE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_PAGAN_TEMPLE_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FABRICAFORMA</Tag>
+        <English>Gilde der Kuenstler</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FABRICAFORMA_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FARMERSGUILD</Tag>
+        <English>Gilde der Bauern</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_FARMERSGUILD_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_KINGFISHER</Tag>
+        <English>Gilde der Angler</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_KINGFISHER_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MASQUERADE</Tag>
+        <English>Gilde der Taenzer</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_MASQUERADE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_STONEFIRE</Tag>
+        <English>Gilde der Schmiede</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_TEUHALI_STONEFIRE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+</Civ4GameText>

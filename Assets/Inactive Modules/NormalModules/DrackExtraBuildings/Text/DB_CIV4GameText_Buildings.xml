@@ -160,11 +160,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_DRACKBUILDING_OCTO_OVERLORDHABOR</Tag>
-        <English>Dark Overlords Harbor</English>
-        <French>Dark Overlords Harbor</French>
-        <German>Dark Overlords Harbor</German>
-        <Italian>Dark Overlords Harbor</Italian>
-        <Spanish>Dark Overlords Harbor</Spanish>
+        <English>Dark Overlords Habor</English>
+        <French>Dark Overlords Habor</French>
+        <German>Dark Overlords Habor</German>
+        <Italian>Dark Overlords Habor</Italian>
+        <Spanish>Dark Overlords Habor</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_DRACKBUILDING_OCTO_HOUSEMADNESS</Tag>
@@ -184,11 +184,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAGARES</Tag>
-        <English>Temples of Agares</English>
-        <French>Temples of Agares</French>
-        <German>Temples of Agares</German>
-        <Italian>Temples of Agares</Italian>
-        <Spanish>Temples of Agares</Spanish>
+        <English>Temple of Agares</English>
+        <French>Temple of Agares</French>
+        <German>Temple of Agares</German>
+        <Italian>Temple of Agares</Italian>
+        <Spanish>Temple of Agares</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_DRACKBUILDING_VEIL_TEMPLEAERON</Tag>
@@ -639,6 +639,94 @@
         <German>Lore</German>
         <Italian>Lore</Italian>
         <Spanish>Lore</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_HALLOFTHEHAND</Tag>
+        <English>Hall of the Hand</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_HALLOFTHEHAND_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</Tag>
+        <English>Guild of the Icefarmers</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_Illian</Tag>
+        <English>Guild of Icewitches</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS_Illian_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GLACIERMINE</Tag>
+        <English>Glacier Mine</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_GLACIERMINE_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_STATUEOFWINTER</Tag>
+        <English>Statue of Winter</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_HAND_STATUEOFWINTER_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_VEILEDMARKET</Tag>
+        <English>Veiled Market</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_VEILEDMARKET_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_MIDNIGHTBANQUET</Tag>
+        <English>Midnight Banquet</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_MIDNIGHTBANQUET_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_BLACKFORTRESS</Tag>
+        <English>Black Fortress</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_BLACKFORTRESS_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_MIRRORPIECE</Tag>
+        <English>Mirror Piece from Cerdiwen</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_ESUS_MIRRORPIECE_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_NORELIGION_SCHOOL</Tag>
+        <English>School</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_DRACK_NORELIGION_SCHOOL_PEDIA</Tag>
+        <English>Lore</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_TRENTON_MILL</Tag>
+        <English>Trenton Mill</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_DRACKBUILDING_TRENTON_MILL_LORE</Tag>
+        <English>Lore</English>
     </TEXT>
 
 </Civ4GameText>

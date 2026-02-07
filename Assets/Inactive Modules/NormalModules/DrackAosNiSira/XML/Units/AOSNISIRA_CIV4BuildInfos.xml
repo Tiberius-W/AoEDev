@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Bart Muzzin (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Build Infos -->
+<Civ4BuildInfos xmlns="x-schema:AOSNISIRA_CIV4UnitSchema.xml">
+    <BuildInfos>
+        <BuildInfo> <!-- Plant Forest Heart -->
+            <Type>BUILD_FOREST_HEART</Type>
+            <Description>TXT_KEY_BUILD_TREE_ROOT</Description>
+            <Help/>
+            <PrereqTech>NONE</PrereqTech>
+            <iTime>5200</iTime>
+            <iCost>0</iCost>
+            <bKill>0</bKill>
+            <ImprovementType>IMPROVEMENTCLASS_FORT</ImprovementType>
+            <RouteType>NONE</RouteType>
+            <EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+            <HotKey>KB_F</HotKey>
+            <bAltDown>0</bAltDown>
+            <bShiftDown>0</bShiftDown>
+            <bCtrlDown>1</bCtrlDown>
+            <iHotKeyPriority>0</iHotKeyPriority>
+            <Button>Art/Interface/Buttons/Improvements/Yggdrasil.dds</Button>
+            <TechBuildDiscounts>
+                <TechBuildDiscount>
+                    <TechType>TECH_TRACKING</TechType>
+                    <iDiscount>2400</iDiscount>
+                </TechBuildDiscount>
+                <TechBuildDiscount>
+                    <TechType>TECH_HIDDEN_PATHS</TechType>
+                    <iDiscount>1400</iDiscount>
+                </TechBuildDiscount>
+            </TechBuildDiscounts>
+        </BuildInfo>
+        <BuildInfo> <!-- Fishing Boats Aos Ni Sira Special -->
+			<Type>BUILD_FISHING_BOATS_AOSNISIRA</Type>
+			<Description>TXT_KEY_BUILD_FISHING_BOATS</Description>
+			<Help/>
+			<PrereqTech>NONE</PrereqTech>
+			<iTime>400</iTime>
+			<iCost>0</iCost>
+			<ImprovementType>IMPROVEMENTCLASS_FISHING_BOATS</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<FeatureStructs/>
+			<HotKey>KB_F</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>1</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildFishingBoats.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,7</Button>
+		</BuildInfo>
+    </BuildInfos>
+</Civ4BuildInfos>

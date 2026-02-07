@@ -27,6 +27,16 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_DRACK_GENERAL_CRAFTSMENHUT</DefaultBuilding> 
         </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Trenton Mill -->
+            <Type>BUILDINGCLASS_DRACK_GENERAL_TRENTON_MILL</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_GENERAL_TRENTON_MILL</DefaultBuilding> 
+        </BuildingClassInfo>
         <!-- Religious Buildings -->
         <!-- Leaves Religion -->
         <BuildingClassInfo> <!-- Fruit garden -->
@@ -273,6 +283,99 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_DRACK_VEIL_CADAVERPITT</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- White Hand -->
+		<BuildingClassInfo> <!-- Hall of the Hand -->
+            <Type>BUILDINGCLASS_DRACK_HAND_HALLOFTHEHAND</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_HAND_HALLOFTHEHAND</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Guild of the Icefarmers -->
+            <Type>BUILDINGCLASS_DRACK_HAND_GUILDOFTHEICEFARMERS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_HAND_GUILDOFTHEICEFARMERS</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Glacier Mine -->
+            <Type>BUILDINGCLASS_DRACK_HAND_GLACIERMINE</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_HAND_GLACIERMINE</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Statue of Winter -->
+            <Type>BUILDINGCLASS_DRACK_HAND_STATUEOFWINTER</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_HAND_STATUEOFWINTER</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- Esus -->
+		<BuildingClassInfo> <!-- Veiled Market -->
+            <Type>BUILDINGCLASS_DRACK_ESUS_VEILEDMARKET</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ESUS_VEILEDMARKET</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Midnight Banquet -->
+            <Type>BUILDINGCLASS_DRACK_ESUS_MIDNIGHTBANQUET</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ESUS_MIDNIGHTBANQUET</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Black Fortress -->
+            <Type>BUILDINGCLASS_DRACK_ESUS_BLACKFORTRESS</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ESUS_BLACKFORTRESS</DefaultBuilding>
+        </BuildingClassInfo>
+		<BuildingClassInfo> <!-- Mirror Piece from Cerdiwen -->
+            <Type>BUILDINGCLASS_DRACK_ESUS_MIRRORPIECE</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_ESUS_MIRRORPIECE</DefaultBuilding>
+        </BuildingClassInfo>
+		<!-- No State Religion -->
+		<BuildingClassInfo> <!-- School -->
+            <Type>BUILDINGCLASS_DRACK_NORELIGION_SCHOOL</Type>
+            <iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_DRACK_NORELIGION_SCHOOL</DefaultBuilding>
         </BuildingClassInfo>
     </BuildingClassInfos>
 </Civ4BuildingClassInfos>

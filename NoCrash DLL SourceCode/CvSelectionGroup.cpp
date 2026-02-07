@@ -3935,7 +3935,7 @@ RouteTypes CvSelectionGroup::getBestBuildRoute(CvPlot* pPlot, BuildTypes* peBest
 		*peBestBuild = NO_BUILD;
 	}
 
-	iBestValue = 0;
+	iBestValue = MAX_INT;
 	eBestRoute = NO_ROUTE;
 
 	pUnitNode = headUnitNode();
@@ -3953,9 +3953,9 @@ RouteTypes CvSelectionGroup::getBestBuildRoute(CvPlot* pPlot, BuildTypes* peBest
 			{
 				if (pLoopUnit->canBuild(pPlot, ((BuildTypes)iI)))
 				{
-					iValue = GC.getRouteInfo(eRoute).getValue();
+					iValue = GC.getRouteInfo(eRoute).getMovementCost() + GET_TEAM(getTeam()).getRouteChange(eRoute);
 
-					if (iValue > iBestValue)
+					if (iValue < iBestValue)
 					{
 						iBestValue = iValue;
 						eBestRoute = eRoute;

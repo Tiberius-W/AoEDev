@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+        <Tag>TXT_KEY_CIV_AOSNISIRA_DESC</Tag>
+        <English>Aos-Ni-Sira</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_CIV_AOSNISIRA_SHORT_DESC</Tag>
+        <English>Aos-Ni-Sira</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_CIV_AOSNISIRA_ADJECTIVE</Tag>
+        <English>Aos-Ni-Sira</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIV_AOSNISIRA_STRATEGY</Tag>
+        <English>
+The Aos-Ni-Sira are a nature orientated civilization that thrives in Forests and has a nice selection of Beast Units and Hunters.
+[H2]Strategy[\H2]
+[ICON_BULLET] You have no access to normal improvements. Instead you plant Forest Hearts.
+[ICON_BULLET] If the area around a Forest Heart in your realm is suitable for it, forest will grow.
+[ICON_BULLET] Forest Hearts automatically plant Tree Roots on Bonus Ressources around them. (Except for Mana)
+[ICON_BULLET] Your Units are especially strong inside Forests, but weaker outside.
+[ICON_BULLET] Very few Units of your standard roster have access to weapons.
+[ICON_BULLET] You have no access to siege weapons and most of your units will be bad in attacking cities. Raid your enemies and use magic to clear their cities.
+[ICON_BULLET] Animals will spawn in your cities.
+</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_CIV_AOSNISIRA_PEDIA</Tag>
+        <English>
+[H2]The Realm of the Hidden Ones[\H2]
+Deep within the emerald embrace of the great forests, beyond the reach of roads and the grasp of mortal empires, dwell the Sira, ethereal beings of mischief and magic. They are neither wholly of the world nor apart from it, bound to the pulse of nature in ways few outsiders can fathom. Light as the breeze, swift as whispers in the leaves, they flit unseen through their verdant dominion, shaping the wilds to their will.
+
+It was Ceridwen who brought the Sira to Erebus. Naturally, they are not of this realm, but they adapted quickly. It is not known why, or for what reason, or goal Ceridwen did what she did, but in the end, the Sira are here to stay.
+
+The Aos-Ni-Sira are both protectors and tormentors. Those who come with reverence, who understand the rhythm of the wilds and offer their respect, may earn a place within their secret glades. Certain elves of the Ljosalfar have been welcomed into their sanctuaries, and on rare occasions, even humans who have forsaken the corrupting touch of civilization. Yet those who come with steel and fire find nothing but nightmares. Trespassers vanish without a trace, their last memories filled with laughter too sweet to be kind. Armies sent to claim the Siras woods find their ranks splintered and their leaders lost to madness, those who flee speak of shadows that move, roots that strangle, and beasts whose eyes glow with unnatural intelligence.
+
+For the Sira do not fight as men do. They do not march to war in neat formations or challenge their foes in the open field. Instead, they let the forest fight for them. The Aos-Ni-Sira wield magic that bends nature itself to their command, the trees whisper warnings, the vines entangle, the beasts of the wilds become extensions of their will. Most fearsome of all is their ability to fuse with creatures, a sacred bond that allows them to meld their essence into wolves, bears, and even werewolves, guiding the hunts with unnatural precision.
+
+The Aos-Ni-Sira do not seek conquest. They do not build great monuments or carve their names into historys stone. But those who think them passive fools do not live long enough to correct their mistake.
+       </English>
+    </TEXT>
+    <!-- World Spell -->
+    <TEXT>
+        <Tag>TEXT_SPELL_AOSNISIRA_NATURESFURY</Tag>
+        <English>Empowers all units under control with the Empower promotions.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TEXT_SPELL_AOSNISIRA_NATURESFURY_HELP</Tag>
+        <English>[ICON_BULLET]Empowers all Units</English>
+    </TEXT>
+    <!-- Spells -->
+    <TEXT>
+        <Tag>TXT_KEY_SPELL_PLANTFORESTHEART_FORT_PEDIA</Tag>
+        <English>Transform Forts to Forest Heart Sapling</English>
+    </TEXT>
+    <!-- Trait -->
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_HUNGRYFORBLOOD</Tag>
+        <English>Hungry for Blood 1</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_HUNGRYFORBLOOD_PEDIA</Tag>
+        <English>The beasts of nature are hungry for those who dare to enter their forest. It does not matter if human, elf, ork or child, all will pay with their lives.</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_HUNGRYFORBLOOD_SHORT</Tag>
+        <English>HB</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_HUNGRYFORBLOOD2</Tag>
+        <English>Hungry for Blood 2</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_HUNGRYFORBLOOD3</Tag>
+        <English>Hungry for Blood 3</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_SIRA_TRICKERY</Tag>
+        <English>Sira Trickery 1</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_SIRA_TRICKERY_PEDIA</Tag>
+        <English>
+The Sira way of living is one of close connection to nature. They do not build houses, do not destroy woods to get what lies under it. They are masters of living in harmoney with the forest.
+        </English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_SIRA_TRICKERY_SHORT</Tag>
+        <English>ST</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_SIRA_TRICKERY2</Tag>
+        <English>Sira Trickery 2</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAIT_SIRA_TRICKERY3</Tag>
+        <English>Sira Trickery 3</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_TRAITCLASS_SIRA</Tag>
+        <English>Leveling Civilization Trait</English>
+    </TEXT>
+    <!-- Animal Spawning -->
+    <TEXT>
+        <Tag>TXT_KEY_MESSAGE_AOSSINIRA_ANIMAL_SPAWN</Tag>
+        <English>A Sira has joined spirit with an animal.</English>
+    </TEXT>
+</Civ4GameText>

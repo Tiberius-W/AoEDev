@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!-- Neifara -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEIFARA</Tag>
+        <English>Neifara</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_NEIFARA_PEDIA</Tag>
+        <English>
+Neifara - The Rivers Will
+
+When the Sira found the child, she was half-frozen, a wailing bundle of limbs wrapped in cloth, left at the edge of their sacred woods. The forest had nearly swallowed her, snow piled around her like a grave, the cold gnawing at her frail body. Had the Sira been a moment later, she would have been just another forgotten whisper of the world beyond their trees.
+
+But fate had other plans.
+
+They named her Neifara, after the river that had led them to her. The Sira do not often keep outsiders, not even elven ones, but Neifara was different. She did not cry. She did not wail for the warmth of a mother she had never known. She simply watched, her eyes wide, her small hands reaching for the magic that hummed in the air around her.
+
+And the forest responded.
+
+By the time she could walk, the streams would shift their courses at her whim. By the time she could speak, the rain would fall only where she willed it to. The Sira whispered among themselves, was she a gift, a sign, a spirit reborn in elven form?
+
+One among them, a Sira more attuned to Neifara than the rest, believed she knew the answer. And she did the unthinkable.
+
+She merged with the young elf, fusing their spirits together in a way that had never been attempted before. The result was something new, a being neither wholly Sira nor wholly Elf, but something in between. The Sira became a part of her, whispering in her thoughts, guiding her hands, sharpening her instincts. Together, they were greater than either had been apart.
+
+Now, Neifara moves like water given form, gentle one moment, a raging torrent the next. She is barely past a century in age, yet her magic bends the world around her with a force that even the eldest Sira struggle to comprehend. She can flood valleys, shift rivers, and call the rain with a mere thought.
+
+Her youth makes her seem innocent, playful even, but behind that smile lies an unshakable will. Those who dare trespass in the Aos-Ni-Sira forests do not find an army waiting for them.
+
+They find the rivers changing course to swallow their camps whole.
+They find the ground beneath them turning to mud, dragging them under.
+They find the storm clouds gathering above, their fury barely contained.
+
+For Neifara is not a warrior, nor a politician, nor a queen. She is the forests breath, the rivers will, the storms quiet promise.
+
+And she will never be abandoned again.
+        </English>
+    </TEXT>
+	<!-- Kira Ni Crann -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_KIRANICRANN</Tag>
+        <English>Kira Ni Crann</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_KIRANICRANN_PEDIA</Tag>
+        <English>
+Kira Ni Crann - The Root of Wisdom
+
+There are trees in the Aos-Ni-Sira forests whose roots stretch so deep that they have never known the touch of sunlight. There are rivers that have carved their way through stone for centuries beyond counting. And there is Kira Ni Crann, whose mind is as vast and ancient as the forest itself.
+
+No Sira alive today remembers when Kira Ni Crann was born. Perhaps she was always there, like the wind through the leaves, like the whispering branches in the night. Perhaps she once had a childhood, but if so, she has long since left it behind.
+
+What is known is this: Kira Ni Crann is wisdom given form.
+
+She has seen the rise and fall of empires, the coming and going of gods, the turning of ages that shattered nations and reshaped the world itself. And through it all, she has remained. Watching. Learning. Adapting. While other Sira clung to their traditions, hiding in the safety of their groves, Kira Ni Crann listened to the wind that carried change. She saw what happened to those who refused to evolve. She saw how the world crushed those who stood still.
+
+When the Age of Ice froze the world into silence, she did not despair. She did not weep for the dying forests, as so many others did. She waited. She listened. She endured.
+
+And when the ice melted, and the world awoke once more, she knew what had to be done. The old ways had kept them alive, but they would not keep them strong. The Sira needed more than their whispers and illusions. They needed a kingdom. A sanctuary, a force, a future.
+
+It was Kira Ni Crann who led the Sira in forging the Aos-Ni-Sira, the first true court of their kind. Not a simple refuge, but a nation. A place where the Sira could wield their power not just in secret, but as a force to be reckoned with. She gathered the wisest, the strongest, the most cunning, and shaped them into leaders, warriors, and seers.
+
+To the Sira, she is a living archive, a mind that carries the weight of ages. To outsiders, she is a whisper in the shadows, an unseen force that guides the forest itself. To her enemies, she is death that comes without warning, a power that sees all.
+
+She does not rule the Aos-Ni-Sira with arrogance. She does not demand reverence or cling to old traditions for their own sake. She simply does what must be done.
+
+Even if it means abandoning the past to shape the future.
+        </English>
+    </TEXT>
+	<!-- Ciara  -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_CIARA</Tag>
+        <English>Ciara</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_CIARA_PEDIA</Tag>
+        <English>
+Ciara - The Iron-Willed Enchantress
+
+Ciara was not born in the forest. She was born in the heart of war.
+
+The child of refugees, she grew up in a world that did not care whether she lived or died. Her homeland had been reduced to ash and bone by the ceaseless wars of men, and she learned, from a young age, that the only things that mattered were power and control. She saw the strong take what they desired, the weak suffer beneath them. No gods came to save the helpless. No heroes emerged from the mists to cast down the tyrants. The world, she realized, was not fair, but it could be shaped.
+
+The day her magic awakened was the day she chose to never be weak again.
+
+She fled from the shattered towns of men, deeper and deeper into the wilds, seeking knowledge that could elevate her above the chaos. The forests of the Aos-Ni-Sira should have devoured her. The beasts should have torn her apart, the spirits should have twisted her into an unmarked corpse beneath the roots. But Ciara was not like other wanderers. She spoke the language of the wild, not with reverence, but with understanding. She wove magic not with the blind faith of druids, but with the cold precision of an artisan. She knew how the threads of the world wove together, and she knew how to pull them apart.
+
+The Sira watched her. They tested her. They sent beasts in the night, wrapped her in illusions, led her into traps to see how she would struggle. They did not find humility in her. They did not find love for the wilds. But they found something else. Efficiency. Pragmatism. Ruthless brilliance.
+
+The Aos-Ni-Sira had no illusions that Ciara was one of them. She had not been shaped by their sacred groves or their whispered traditions. But the world was changing, and they needed those who could wield power, even if that power came at a cost. So they let her live. Not as one of their kin, but as an experiment, an outsider given reign over a small part of their domain. If she failed, the forest would reclaim her. If she succeeded… then perhaps the old ways were not the only ways.
+
+And succeed she did.
+
+Where Ciara ruled, there was order. The beasts obeyed. The land flourished, but only because she forced it to. Her presence alone kept invaders at bay, not through mysticism or the mercy of nature, but through the cold, hard reality that no one wanted to challenge her. The Sira who lived within her domain resented her, feared her, but they could not deny that she got results.
+
+To the more traditional Sira Ciara was an anomaly, an insult to the sacred balance. But to those who understood the true language of power, like Kira Ni Crann, she was a valuable piece in a larger game.
+
+For Ciara, the Sira were not family. They were a means to an end. And she knew, just as they did, that they only kept her around as long as she was useful. But that was fine. She had no interest in love, in trust, or in fairy tales.
+
+She only cared about one thing: being strong enough that no one could ever take her power away.
+        </English>
+    </TEXT>
+	<!-- Aoife -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_AOIFE</Tag>
+        <English>Aoife</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_AOIFE_PEDIA</Tag>
+        <English>
+Aoife - The Verdant Blade
+
+Once a sworn protector of the Ljosalfar, Aoife's fate changed when she ventured too deep into the untamed heart of the Siras domain. She had been hunting a band of Svartalfar raiders who had defiled the sacred groves, burning and cutting as they fled. But as she pursued them, the forest around her began to shift, the trees whispering warnings in a language she did not yet understand. The raiders disappeared without a trace, claimed by the unseen hands of the Aos-Ni-Sira, but Aoife herself did not turn back. She kneeled in prayer to Cernunnos beneath the towering oaks, asking for guidance, and in that moment, the spirits of the wild took notice.
+
+The Sira do not welcome outsiders easily, but they recognized the unwavering devotion in Aoifes heart. They saw a warrior whose blade did not seek conquest, but protection, a soul who lived not to rule, but to serve the land itself. Over time, they tested her, pulling her deeper into their hidden realm, subjecting her to trials of the wild. She drank from enchanted springs, faced spirits in dreamlike duels, and allowed the forest itself to weigh her intentions. In the end, she did not return to the Ljosalfar. She shed her past as an elf of the cities and became something more, one of the Sira in all but blood.
+
+Now, Aoife is the Verdant Blade, the sacred warrior of the Aos-Ni-Sira, blessed with mastery over life magic. She walks as a guardian of the deep glades, a protector of the innocent and a scourge to defilers. Where she treads, the land flourishes, her mere presence coaxes dying plants into bloom, purifies tainted waters, and mends the wounds of the beasts she calls allies. Yet, she is no mere healer. When the forest is threatened, she calls upon the wrath of nature itself, striking down intruders with roots that shatter bone, vines that strangle, and blades wreathed in viridescent fire.
+
+Unlike the more enigmatic Sira, Aoife does not believe in secrecy for its own sake. She has argued, time and again, that the Aos-Ni-Sira should act as a guiding force in the world, rather than merely lurking in the shadows of the woods. This has earned her a complicated relationship with Kira Ni Crann, the mistress of the Seer-Ni-Eolas. The two respect each other, but Kira sees the world as something to be studied, not openly engaged with. Aoife, however, believes that if the wilds are to survive, their protectors must be willing to fight for them beyond the depths of their own forests.
+
+Despite her convictions, she is neither a conqueror nor a fanatic. She does not force her way upon others, but simply walks the path she believes to be just. To those who would defile nature, she is a nightmare clad in emerald, appearing as swiftly as the wind and vanishing like mist before dawn. But to those who love the land, who cherish the quiet beauty of untouched groves, she is a guardian, a teacher, and a light in the darkness.
+        </English>
+    </TEXT>
+	<!-- Oonagh -->
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_OONAGH</Tag>
+        <English>Oonagh</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_OONAGH_PEDIA</Tag>
+        <English>
+Oonagh - The Huntmother
+
+Deep in the Aos-Ni-Sira forests, where the canopy blots out the sky and the air is thick with the scent of damp earth and blood, Oonagh reigns.
+
+She is no queen. No ruler in the way outsiders understand power. She is the Huntmother, the Wild Fang, the one who answers the call of battle with a snarl and a blade.
+
+Among the Sira, few have walked as deep into the heart of the wild as Oonagh. Fewer still have embraced it so completely. She has merged with the werewolves of the darkwood not once, not twice, but many times. Each time, she took in more of their fury, more of their strength, until even in her natural form, her nails grew sharper, her senses keener, and her laughter held the edge of a growl.
+
+She is not civilized like Aoife.
+She is not pragmatic like Ciara.
+She is Sira to her very core, feral, faithful, unyielding.
+
+Oonagh has no patience for outsiders. To her, the Aos-Ni-Sira forests are sacred, and those who enter without respect must be taught fear. She leads her warband beyond the trees, not for conquest, not for greed, but for ritual.
+
+The hunt.
+
+Foresters who dare take more than the forest gives vanish in the night.
+Settlers who cut deep into sacred groves wake to find their homes torn apart.
+Caravans that do not seek Sira blessing never reach their destination.
+
+To the world outside, Oonagh is a terror, a beast wrapped in Sira flesh, a nightmare given form. To the Sira, she is a guardian, a sacred predator, the one who ensures that the laws of the wild are never forgotten.
+
+For she knows this truth above all else: Mercy is for the weak.
+
+And the weak do not belong in the Aos-Ni-Sira forests.
+        </English>
+    </TEXT>
+</Civ4GameText>

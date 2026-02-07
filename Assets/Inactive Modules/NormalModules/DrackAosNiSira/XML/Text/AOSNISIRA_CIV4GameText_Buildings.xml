@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Risna -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+        <Tag>TXT_KEY_BUILDING_PALACE_AOSNISIRA</Tag>
+        <English>Aos-Ni-Sira Palace</English>
+    </TEXT>
+    <!-- Library -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_LIBRARY_NAME</Tag>
+        <English>Ait-Ni-Eolas</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_LIBRARY_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_LIBRARY_STRATEGY</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <!-- Elder Council -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_ELDERCOUNCIL_NAME</Tag>
+        <English>Forest Council</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_ELDERCOUNCIL_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_ELDERCOUNCIL_STRATEGY</Tag>
+        <English>The Forest Council gives you no research, but 2 Sages instead of 1 and replaces the healer with a priest. It also add 10% Defense for the town.</English>
+    </TEXT>
+    <!-- Beast Logde -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTLODGE_NAME</Tag>
+        <English>Beast Logde</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTLODGE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTLODGE_STRATEGY</Tag>
+        <English>The Beast Lodge addionally trains Beast Units next to Recon Units.</English>
+    </TEXT>
+    <!-- Beast Hall -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTHALL_NAME</Tag>
+        <English>Beast Hall</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTHALL_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_BEASTHALL_STRATEGY</Tag>
+        <English>The Beast Hall addionally trains Beast Units next to Recon Units. It also trains both to a higher level.</English>
+    </TEXT>
+    <!-- Beast Grove -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_GROVE_NAME</Tag>
+        <English>Beast Grove</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_GROVE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_GROVE_STRATEGY</Tag>
+        <English>The Beast Hall trains Beast Units and gives 1 priest.</English>
+    </TEXT>
+    <!-- Beast Training Grounds -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_TRAINING_YARD_NAME</Tag>
+        <English>Beast Training Grounds</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_TRAINING_YARD_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_TRAINING_YARD_STRATEGY</Tag>
+        <English>The Beast Hall trains Beast Units and gives 1 priest.</English>
+    </TEXT>
+    <!-- Deep Roots Temple -->
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_PAGAN_TEMPLE_NAME</Tag>
+        <English>Deep Roots Temple</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_PAGAN_TEMPLE_PEDIA</Tag>
+        <English>TODO</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_BUILDING_AOSNISIRA_PAGAN_TEMPLE_STRATEGY</Tag>
+        <English>The Deep Roots Temple grants the Woodman 1 promotion as well as giving an extra happiness for access to deers.</English>
+    </TEXT>
+    
+</Civ4GameText>

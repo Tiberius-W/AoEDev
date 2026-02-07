@@ -33993,7 +33993,7 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(&m_bFlatlands, "bFlatlands");
 	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bNoRiverSide");
-	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bDiscoverable");
+	pXML->GetChildXmlValByName(&m_bDiscoverable, "bDiscoverable");
 	pXML->GetChildXmlValByName(&m_bNormalize, "bNormalize");
 
 	pXML->SetVariableListTagPair(&m_pbTerrain, "TerrainBooleans", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
@@ -40867,6 +40867,7 @@ m_pabFreeSpecialistNonStateReligion(NULL),
 m_paiSpecialistHealthChange(NULL),
 m_paiSpecialistHappinessChange(NULL),
 m_paiSpecialistCrimeChange(NULL),
+m_paiReligiousWeightModifier(NULL),
 m_paiUnitClassPlayerInstancesChange(NULL),
 m_piExtraUnitClass(NULL),
 m_piExtraBuildingClass(NULL),
@@ -41386,6 +41387,10 @@ int CvTraitInfo::getSpecialistCrimeChange(int i) const
 {
 	return m_paiSpecialistCrimeChange ? m_paiSpecialistCrimeChange[i] : -1;
 }
+int CvTraitInfo::getReligiousWeightModifier(int i) const
+{
+	return m_paiReligiousWeightModifier ? m_paiReligiousWeightModifier[i] : -1;
+}
 
 int CvTraitInfo::getUnitClassPlayerInstancesChange(int i) const
 {
@@ -41767,6 +41772,7 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_paiSpecialistHappinessChange, "SpecialistHappinessChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 	pXML->SetVariableListTagPair(&m_paiSpecialistHealthChange, "SpecialistHealthChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 	pXML->SetVariableListTagPair(&m_paiSpecialistCrimeChange, "SpecialistCrimeChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
+	pXML->SetVariableListTagPair(&m_paiReligiousWeightModifier, "ReligionWeightModifiers", sizeof(GC.getReligionInfo((ReligionTypes)0)), GC.getNumReligionInfos());
 	pXML->SetVariableListTagPair(&m_paiUnitClassPlayerInstancesChange, "UnitClassPlayerInstancesChanges", sizeof(GC.getUnitClassInfo((UnitClassTypes)0)), GC.getNumUnitClassInfos());
 
 	pXML->SetVariableListTagPair(&m_pabFreePromotion, "FreePromotions", sizeof(GC.getPromotionInfo((PromotionTypes)0)), GC.getNumPromotionInfos());
@@ -42266,6 +42272,10 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 		if (getSpecialistHappinessChange(j) == 0) m_paiSpecialistHappinessChange[j] = pClassInfo->getSpecialistHappinessChange(j);
 		if (getSpecialistHealthChange(j) == 0) m_paiSpecialistHealthChange[j] = pClassInfo->getSpecialistHealthChange(j);
 		if (getSpecialistCrimeChange(j) == 0) m_paiSpecialistCrimeChange[j] = pClassInfo->getSpecialistCrimeChange(j);
+	}
+	for (int j = 0; j < GC.getNumReligionInfos(); j++)
+	{
+		if (getReligiousWeightModifier(j) == 0) m_paiReligiousWeightModifier[j] = pClassInfo->getReligiousWeightModifier(j);
 	}
 	for (int j = 0; j < GC.getNumUnitClassInfos(); j++)
 	{

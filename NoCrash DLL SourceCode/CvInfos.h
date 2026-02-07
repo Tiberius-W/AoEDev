@@ -9363,6 +9363,8 @@ public:
 	int getSpecialistHappinessChange(int i)const;
 	int getSpecialistHealthChange(int i)const;
 	int getSpecialistCrimeChange(int i)const;
+	
+	int getReligiousWeightModifier(int i)const;
 
 	int getUnitClassPlayerInstancesChange(int i)const;
 
@@ -9575,6 +9577,7 @@ protected:
 	int* m_paiSpecialistHealthChange;
 	int* m_paiSpecialistHappinessChange;
 	int* m_paiSpecialistCrimeChange;
+	int* m_paiReligiousWeightModifier;
 
 	int* m_paiUnitClassPlayerInstancesChange;
 

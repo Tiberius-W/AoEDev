@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+
+<Civ4LeaderClassInfos xmlns="x-schema:TEUHALI_CIV4CivilizationsSchema.xml">
+	<LeaderClassInfos>
+		<LeaderClassInfo> <!-- Teuhali Historical-->
+			<Type>LEADERCLASS_TEUHALI_HISTORICAL</Type>
+			<Description>TXT_KEY_LEADERCLASS_HISTORICAL</Description>
+			<LeaderStatus>HISTORICAL_STATUS</LeaderStatus>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_PERSONALITY</TraitClass>
+					<iMax>2</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_ORDER</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+
+		</LeaderClassInfo>
+		<LeaderClassInfo> <!--Teuhali Emergent-->
+			<Type>LEADERCLASS_TEUHALI_EMERGENT</Type>
+			<Description>TXT_KEY_LEADERCLASS_EMERGENT</Description>
+			<LeaderStatus>EMERGENT_STATUS</LeaderStatus>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_ORDER</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+		</LeaderClassInfo>
+		<LeaderClassInfo> <!--Teuhali Important-->
+			<Type>LEADERCLASS_TEUHALI_IMPORTANT</Type>
+			<Description>TXT_KEY_LEADERCLASS_IMPORTANT</Description>
+			<LeaderStatus>IMPORTANT_STATUS</LeaderStatus>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_PERSONALITY</TraitClass>
+					<iMax>3</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_TEUHALI_ORDER</TraitClass>
+					<iMax>1</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_TEUHALI_CIV</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_PERSONALITY</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+		</LeaderClassInfo>
+		<LeaderClassInfo> <!--Teuhali
+			DYNREL Historical-->
+			<Type>LEADERCLASS_TEUHALI_HISTORICAL</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_DYNAMIC_RELIGION</DependencyType>
+			</AndDependencyTypes>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<iMax>8</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+
+		</LeaderClassInfo>
+		<LeaderClassInfo> <!--Teuhali
+			DYNREL Emergent-->
+			<Type>LEADERCLASS_TEUHALI_EMERGENT</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_DYNAMIC_RELIGION</DependencyType>
+			</AndDependencyTypes>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<iMax>8</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+
+		</LeaderClassInfo>
+		<LeaderClassInfo> <!--Teuhali
+			DYNREL Important-->
+			<Type>LEADERCLASS_TEUHALI_IMPORTANT</Type>
+			<bTypeDependency>1</bTypeDependency>
+			<AndDependencyTypes>
+				<DependencyType>MODULE_DYNAMIC_RELIGION</DependencyType>
+			</AndDependencyTypes>
+			<MaxTraitsPerClass>
+				<TraitClassMax>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<iMax>8</iMax>
+				</TraitClassMax>
+			</MaxTraitsPerClass>
+			<EvolveTraitClasses>
+				<TraitClassEvolve>
+					<TraitClass>TRAITCLASS_RELIGION</TraitClass>
+					<bChange>1</bChange>
+				</TraitClassEvolve>
+			</EvolveTraitClasses>
+
+		</LeaderClassInfo>
+	</LeaderClassInfos>
+</Civ4LeaderClassInfos>

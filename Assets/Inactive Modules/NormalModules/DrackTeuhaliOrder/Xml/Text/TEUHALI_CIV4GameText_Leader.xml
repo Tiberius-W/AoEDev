@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_SABRINA</Tag>
+        <English>Sabrina</English>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LEADER_SABRINA_PEDIA</Tag>
+        <English>
+Sabrina was always a child with immense talent. From a young age onwards, she showed her potential in the arcane and was taken in by the Hexen Order at the mere age of 10. There, she soaked in all knowledge like a sponge.
+
+At the age of 19, she became a Hexe, the title for full female members of the Hexen Order. From that day onward, she began roaming the land in search of new magic to study and new opportunities to take.
+            
+        </English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_HALI</Tag>
+        <English>Hali</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_HALI_PEDIA</Tag>
+        <English>
+Hali was once an Angel of Lugus, with an affinity towards revealing the truth in others and seeking out truly good and honest souls for her god. During the Age of Ice, however, she could no longer watch how one light after the other turned dark on Erebus, how one group after the other either fell to dark temptations or simply fell prey to the beasts that roamed the eternal winter.
+
+The angel sought out Lugus and asked for his guidance and wisdom before she decided to leave the compact, her old home, and become an Unbound Angel. Hali came down onto Erebus and began seeking out groups of survivors. Yet, one group after the other failed her tests. She wanted a group of truly good souls, those who had mercy in their hearts even during such dark times. She eventually found them in a group of survivors in the Neuburg Stronghold.
+
+At first, she did not reveal who she was. She came as a simple woman with nothing of value and asked for safety and warmth. And the group welcomed her in under the rule that she also has to work, has to bring in her part to the group. During her first weeks and months, she tested everyone. She spoke to them, learned about them, and looked deep into their very souls to find those who were worthy of her light. She found enough of them.
+
+During a Doviello raid on the stronghold, she revealed herself and led the group to victory. Instead of ruling with full control, however, she wished to simply be one of several rulers, and even came to agreements and compromises that would have been betrayal in the eyes of some of her Angel siblings. Hali helped form the group into the Teuhali Order and began to lead one of the many Orders of the group, the Sonnenstrahl Order. From time to time, Hali was voted to become the Grandmaster of the Order, a title that is normally held till death. Hali instead decided to hold it for 40 years before retreating from the position and giving place to the next Grandmaster. To this day, she is the only one in the Teuhali Order who held the title more than once.
+
+With time, Hali bonded with many mortals and gave birth to the Aasamir Children. Nearly all Aasamir that are part of the Teuhali Order can trace their origin to Hali. 
+Many in the Order pray to Hali and see her as a divine entity worthy of their faith. Hali neither denied these prayers nor supported this tradition fully, yet she helped those who truly were worthy in her eyes. Those, however, who were not honest in their heart and not redeemable, were pushed aside by her, no matter if a simple farmer, a knight, or even one of her own children.</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_SIGISMUND</Tag>
+        <English>Sigismund</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_SIGISMUND_PEDIA</Tag>
+        <English>
+        Sigismund, the Eternal Defender of the Order
+
+No warrior of the Teuhali Order is spoken of with greater reverence than Sigismund, the great defender of the realm. A man of unwavering discipline and faith, he dedicated his entire life to the protection of his people, leading countless campaigns to drive back the evils that threatened the Orders borders. He was not merely a general; he was a symbol of strength, a shield against the darkness, and a paragon of knightly virtue.
+
+Sigismunds rise was not one of nobility or privilege, but of duty and merit. Born in the fortress-city of Kapfenburg, he trained as a soldier from a young age, rising through the ranks through sheer determination and brilliance on the battlefield. He was a warrior of iron will, wielding both sword and strategy with equal mastery. Whether leading the charge against demonic hordes, breaking sieges laid by raiders, or holding the line against the restless dead, Sigismund was always at the forefront, never asking of his men what he would not do himself.
+
+When Hali stepped down from her position as Grandmaster, it was Sigismund whom the people called to take her place. Though reluctant at first, believing himself more suited to war than governance, he ultimately accepted, swearing to uphold her legacy. Under his rule, the Orders armies grew stronger, their bastions more fortified, their people more secure. For many years, he ruled with wisdom and strength, ensuring that the Teuhali Order remained a bastion of faith and discipline amidst the dangers of Erebus.
+
+But time spares no man, not even the greatest of warriors. When age finally bent his back and dulled his sword, Sigismund knew his time as Grandmaster had come to an end. He did not seek rest, nor did he accept the honors of retirement. Instead, he was last seen walking into the Temple of Hali in Neuburg, clad in his finest armor, his sword in hand. He passed through its great doors, and from that moment onward, he was never seen again.
+</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_ANNAVONNEUBURG</Tag>
+        <English>Anna von Neuburg</English>
+    </TEXT>
+	<TEXT>
+        <Tag>TXT_KEY_LEADER_ANNAVONNEUBURG_PEDIA</Tag>
+        <English>
+        Anna von Neuburg, the Golden Lady of Trade
+
+In the grand halls of the Teuhali Orders merchant guilds, no name commands more respect than Anna von Neuburg. A woman of noble birth and refined elegance, she is the unrivaled matriarch of trade, a master of coin and commerce whose influence stretches from the fertile farmlands of the Order to the bustling markets of distant lands. Draped in the finest silks, adorned with jewelry of exquisite taste, and ever carrying the scent of rare perfumes, Anna is the embodiment of wealth and power, earned not merely through birthright, but through shrewd intellect and relentless ambition.
+
+Born into one of Neuburgs esteemed noble families, Anna was groomed for a life of privilege. Yet, unlike many of her peers, she did not squander her fortune in idle luxury. From a young age, she displayed an uncanny sense for business, turning small estate holdings into vast agricultural enterprises. She understood the land, the cycles of harvest, and the intricate dance of supply and demand. Through careful investments in grain, livestock, and textiles, she not only secured her own fortune but revitalized entire regions of the Order, ensuring prosperity for those who tilled the soil and traded its bounty.
+
+Annas brilliance lies not merely in amassing wealth for herself but in ensuring that her ventures uplift those around her. It is said that wherever she strikes a bargain, wealth follows, not just for her, but for all who take part in her endeavors. She is undeniably greedy, but her greed is tempered by wisdom; she knows that a thriving economy benefits both ruler and merchant, peasant and noble alike. This pragmatic generosity has earned her both admiration and wariness, she is seen as a necessary force, one who walks the fine line between ambition and duty, self-interest and service.
+
+As the leader of one of the largest merchant guilds in the Order, Anna wields power rivaling even the most esteemed generals and priests. She has financed bastions, supplied armies, and ensured that the Orders economy remains strong in times of war and famine alike. Though some whisper that her influence is too great, that her guilds hold the purse strings of the realm itself, none can deny that the Order would be far weaker without her golden touch.
+
+Anna von Neuburg is not just a merchant, she is a force of nature, as inevitable and enduring as the cycles of trade itself. She knows the game of wealth better than any, and as long as gold flows through the Orders cities, she will remain at its heart, guiding its prosperity with a keen eye, a calculating mind, and an unyielding will.
+        </English>
+    </TEXT>
+</Civ4GameText>

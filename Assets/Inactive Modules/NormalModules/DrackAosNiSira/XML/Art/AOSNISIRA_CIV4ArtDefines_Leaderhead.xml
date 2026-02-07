@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Bart Muzzin (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leaderhead art path information -->
+<Civ4ArtDefines xmlns="x-schema:AOSNISIRA_CIV4ArtDefinesSchema.xml">
+	<LeaderheadArtInfos>
+		<!-- Neifara -->
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_NEIFARA</Type>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Leader\Neifara_button.dds</Button>
+			<NIF>Modules\NormalModules\DrackAosNiSira\Art\Leader\Neifara_leaderhead.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<!-- Kira Ni Crann -->
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KIRANICRANN</Type>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Leader\KiraNiCrann_button.dds</Button>
+			<NIF>Modules\NormalModules\DrackAosNiSira\Art\Leader\KiraNiCrann_leaderhead.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<!-- Ciara  -->
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CIARA</Type>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Leader\Ciara_button.dds</Button>
+			<NIF>Modules\NormalModules\DrackAosNiSira\Art\Leader\Ciara_leaderhead.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<!-- Aoife -->
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_AOIFE</Type>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Leader\Aoife_button.dds</Button>
+			<NIF>Modules\NormalModules\DrackAosNiSira\Art\Leader\Aoife_leaderhead.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+		<!-- Oonagh -->
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_OONAGH</Type>
+			<Button>Modules\NormalModules\DrackAosNiSira\Art\Leader\Oonagh_button.dds</Button>
+			<NIF>Modules\NormalModules\DrackAosNiSira\Art\Leader\Oonagh_leaderhead.dds</NIF>
+			<KFM/>
+			<NoShaderNIF/>
+			<BackgroundKFM/>
+		</LeaderheadArtInfo>
+	</LeaderheadArtInfos>
+</Civ4ArtDefines>
