@@ -318,9 +318,9 @@ class CvTechChooser:
 
 			# Unlockable units...
 			for j in range( gc.getNumUnitClassInfos() ):
-				eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(j)
+				eLoopUnit = pPlayer.getPlayerUnit(j)
 				if iLeader == gc.getInfoTypeForString("LEADER_SAUROS"):
-					if pCapital != - 1:
+					if not pCapital.isNone():
 						eLoopUnit = pCapital.getCityUnits(j)
 				if (eLoopUnit != -1):
 					if (gc.getUnitInfo(eLoopUnit).getPrereqAndTech() == i):
@@ -337,10 +337,10 @@ class CvTechChooser:
 			# Unlockable Buildings...
 			for j in range(gc.getNumBuildingClassInfos()):
 				bTechFound = 0
-				eLoopBuilding = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
+				eLoopBuilding = pPlayer.getPlayerBuilding(j)
 				if iLeader == gc.getInfoTypeForString("LEADER_SAUROS"):
-					if pCapital != - 1:
-						eLoopUnit = pCapital.getCityBuildings(j)
+					if not pCapital.isNone():
+						eLoopBuilding = pCapital.getCityBuildings(j)
 				if (eLoopBuilding != -1):
 					if (gc.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == i):
 						iAlignment = pPlayer.getAlignment()

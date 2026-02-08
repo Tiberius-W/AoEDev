@@ -7,7 +7,6 @@ import CvUtil
 import Popup as PyPopup
 import CvScreenEnums
 import CvEventInterface
-import time
 
 class CustomFunctions:
 	def __init__(self):
@@ -150,16 +149,13 @@ class CustomFunctions:
 		pPlayer 		= gc.getPlayer(iPlayer)
 		iSouth			= DirectionTypes.DIRECTION_SOUTH
 		iNoAI			= UnitAITypes.NO_UNITAI
-		Improvement		= self.Improvements
-		Unit 			= self.Units["Bannor"]
-		initUnit 		= pPlayer.initUnit
 		for i in xrange(CyMap().numPlots()):
 			pPlot = CyMap().plotByIndex(i)
-			if pPlot.getImprovementType() != Improvement["Town (IV)"]:		continue
-			if pPlot.getOwner() != iPlayer:									continue
-			if CyGame().getSorenRandNum(100, "Crusade") >= iCrusadeChance:	continue
-			newUnit = initUnit(Unit["Demagog"], pPlot.getX(), pPlot.getY(), iNoAI, iSouth)
-			pPlot.setImprovementType(Improvement["Village (III)"])
+			if pPlot.getImprovementType() != self.Improvements["Town (IV)"]:	continue
+			if pPlot.getOwner() != iPlayer:										continue
+			if CyGame().getSorenRandNum(100, "Crusade") >= iCrusadeChance:		continue
+			newUnit = pPlayer.initUnit(self.Units["Bannor"]["Demagog"], pPlot.getX(), pPlot.getY(), iNoAI, iSouth)
+			pPlot.setImprovementType(self.Improvements["Village (III)"])
 
 	def doForestPush(self, pVictim, pPlot, pCaster, bResistable):
 		gc		= CyGlobalContext()
@@ -454,9 +450,8 @@ class CustomFunctions:
 		elif	(iGold >= 300 and iGold <= 499):	iNewVault = self.Buildings["Vault6"]
 		elif	iGold >= 500:						iNewVault = self.Buildings["Vault7"]
 
-		for iCity in xrange(pPlayer.getNumCities()):
-			pCity = pPlayer.getCity(iCity)
-			if pCity.isNone: continue
+		(pCity, iter) = pPlayer.firstCity(False)
+		while(pCity):
 			pCity.setNumRealBuilding(self.Buildings["Vault1"], 0)
 			pCity.setNumRealBuilding(self.Buildings["Vault2"], 0)
 			pCity.setNumRealBuilding(self.Buildings["Vault3"], 0)
@@ -465,6 +460,7 @@ class CustomFunctions:
 			pCity.setNumRealBuilding(self.Buildings["Vault6"], 0)
 			pCity.setNumRealBuilding(self.Buildings["Vault7"], 0)
 			pCity.setNumRealBuilding(iNewVault, 1)
+			(pCity, iter) = pPlayer.nextCity(iter, False)
 
 	def doTurnLuchuirp(self, iPlayer):
 		gc			= CyGlobalContext()
@@ -572,14 +568,14 @@ class CustomFunctions:
 		iNumScorpionCities = 0
 		iNumSpiderCities = 0
 
-		for iCity in xrange(pPlayer.getNumCities()):
-			pCity = pPlayer.getCity(iCity)
-			if pCity.isNone:			continue
+		(pCity, iter) = pPlayer.firstCity(False)
+		while(pCity):
 			pCityPlot = pCity.plot()
 			if pCityPlot.getTerrainType() == self.Terrain["Desert"]:
 				iNumScorpionCities += 1
 			else:
 				iNumSpiderCities += 1
+			(pCity, iter) = pPlayer.nextCity(iter, False)
 
 		for iiX,iiY in BFC:
 			pLoopPlot = CyMap().plot(iX+iiX,iY+iiY)
@@ -645,8 +641,8 @@ class CustomFunctions:
 		if iNumCities == 1 and iTombPop == 1:
 			pTomb.changePopulation(1)
 		### City Start
-		for iCity in xrange(pPlayer.getNumCities()):
-			pCity = pPlayer.getCity(iCity)
+		(pCity, iter) = pPlayer.firstCity(False)
+		while(pCity):
 			### Clean Buildings
 			for iBuilding in lOBB:
 				pCity.setNumRealBuilding(iBuilding, 0)
@@ -671,6 +667,7 @@ class CustomFunctions:
 					pCity.setNumRealBuilding(self.Buildings["Unhealthy Discontent II"], 1)
 				elif iUH > 4:
 					pCity.setNumRealBuilding(self.Buildings["Unhealthy Discontent I"], 1)
+			(pCity, iter) = pPlayer.nextCity(iter, False)
 		### Alcinus AI
 		for iUnit in xrange(pPlayer.getNumUnits()):
 			pUnit		= pPlayer.getUnit(iUnit)
@@ -815,12 +812,12 @@ class CustomFunctions:
 		# Allows Statesmen to take affect after their city has an Assembly
 		iStatesmanMod 	= 0.00
 		iNumStatesmen 	= 0
-		for iCity in xrange(pPlayer.getNumCities()):
-			pCity = pPlayer.getCity(iCity)
-			if pCity.isNone: continue
-			if pCity.getNumBuilding(self.Buildings["Forum"]) <= 0: continue
-			iNumStatesmen = (pCity.getSpecialistCount(self.Specialists["Statesman"]) + pCity.getFreeSpecialistCount(self.Specialists["Statesman"]))
-			iStatesmanMod += (iNumStatesmen * 0.33)
+		(pCity, iter) = pPlayer.firstCity(False)
+		while(pCity):
+			if pCity.getNumBuilding(self.Buildings["Forum"]) > 0:
+				iNumStatesmen = (pCity.getSpecialistCount(self.Specialists["Statesman"]) + pCity.getFreeSpecialistCount(self.Specialists["Statesman"]))
+				iStatesmanMod += (iNumStatesmen * 0.33)
+			(pCity, iter) = pPlayer.nextCity(iter, False)
 		# AI modifier
 		iAImod = 1
 		if not pPlayer.isHuman():
@@ -876,15 +873,15 @@ class CustomFunctions:
 		iNumGreatHealers	= 0
 		iNumElders			= 0
 		iNumGreatElders		= 0
-		for iCity in xrange(pPlayer.getNumCities()):
-			pCity = pPlayer.getCity(iCity)
-			if pCity.isNone:														continue
-			if pCity.getNumBuilding(self.Buildings["Shaper's Laboratory"]) <= 0:	continue
-			iNumElders			= pCity.getSpecialistCount(iElder)			+ pCity.getFreeSpecialistCount(iElder)
-			iNumHealers			= pCity.getSpecialistCount(iHealer)			+ pCity.getFreeSpecialistCount(iHealer)
-			iNumGreatElders		= pCity.getSpecialistCount(iGreatElder)		+ pCity.getFreeSpecialistCount(iGreatElder)
-			iNumGreatHealers	= pCity.getSpecialistCount(iGreatHealer)	+ pCity.getFreeSpecialistCount(iGreatHealer)
-			iSpecialistMod		+= (iNumHealers * 0.5) + (iNumElders * 0.5) + (iNumGreatElders * 1) + (iNumGreatHealers * 1)
+		(pCity, iter) = pPlayer.firstCity(False)
+		while(pCity):
+			if pCity.getNumBuilding(self.Buildings["Shaper's Laboratory"]) > 0:
+				iNumElders			= pCity.getSpecialistCount(iElder)			+ pCity.getFreeSpecialistCount(iElder)
+				iNumHealers			= pCity.getSpecialistCount(iHealer)			+ pCity.getFreeSpecialistCount(iHealer)
+				iNumGreatElders		= pCity.getSpecialistCount(iGreatElder)		+ pCity.getFreeSpecialistCount(iGreatElder)
+				iNumGreatHealers	= pCity.getSpecialistCount(iGreatHealer)	+ pCity.getFreeSpecialistCount(iGreatHealer)
+				iSpecialistMod		+= (iNumHealers * 0.5) + (iNumElders * 0.5) + (iNumGreatElders * 1) + (iNumGreatHealers * 1)
+			(pCity, iter) = pPlayer.nextCity(iter, False)
 		# AI modifier
 		iAImod = 1
 		if not pPlayer.isHuman():
@@ -1138,15 +1135,16 @@ class CustomFunctions:
 		for iPlayer in xrange(gc.getMAX_PLAYERS()):
 			pPlayer = gc.getPlayer(iPlayer)
 			if not pPlayer.isAlive() or pPlayer.getCivilizationType() == self.Civilizations["Infernal"]: continue
-			for iCity in xrange(pPlayer.getNumCities()):
-				pCity = pPlayer.getCity(iCity)
-				if not pCity.isHasReligion(self.Religions["Ashen Veil"]) or pCity.isCapital():	continue
-				iValue =  pCity.getPopulation() * 100
-				iValue += pCity.getCulture(iPlayer) / 50
-				iValue += pCity.getNumBuildings() * 10
-				iValue += pCity.getNumWorldWonders() * 200
-				iValue += pCity.countNumImprovedPlots() * 20
-				lValuedCities.append((pCity,iValue))
+			(pCity, iter) = pPlayer.firstCity(False)
+			while(pCity):
+				if pCity.isHasReligion(self.Religions["Ashen Veil"]) and not pCity.isCapital():
+					iValue =  pCity.getPopulation() * 100
+					iValue += pCity.getCulture(iPlayer) / 50
+					iValue += pCity.getNumBuildings() * 10
+					iValue += pCity.getNumWorldWonders() * 200
+					iValue += pCity.countNumImprovedPlots() * 20
+					lValuedCities.append((pCity,iValue))
+				(pCity, iter) = pPlayer.nextCity(iter, False)
 		lValuedCities.sort(key=lambda tup: tup[1], reverse=True)
 		if len(lValuedCities) > 3:
 			pBestCity1 = lValuedCities[0][0]
@@ -2162,7 +2160,8 @@ class CustomFunctions:
 					pLairPlot = CyMap().plot(x, y)
 					if pLairPlot.getImprovementType() == -1:	continue
 					pImprovement = gc.getImprovementInfo(pLairPlot.getImprovementType())
-					if   pImprovement.getSpawnUnitType() != -1:				pLairPlot.setImprovementType(-1)
+					if   pImprovement.isUnique():				continue
+					elif pImprovement.getSpawnUnitType() != -1:				pLairPlot.setImprovementType(-1)
 					elif pImprovement.getSpawnGroupType() != -1:			pLairPlot.setImprovementType(-1)
 					elif pImprovement.getImmediateSpawnUnitType() != -1:	pLairPlot.setImprovementType(-1)
 					elif pImprovement.getImmediateSpawnGroupType() != -1:	pLairPlot.setImprovementType(-1)
@@ -2413,8 +2412,8 @@ class CustomFunctions:
 		iStateRel	= pPlayer.getStateReligion()
 		if iStateRel == self.Religions["Order"]:	iRevolt = -1
 		else:										iRevolt = 0
-		for iLoopCity in xrange(pPlayer.getNumCities()):
-			pLoopCity	= pPlayer.getCity(iLoopCity)
+		(pLoopCity, iter) = pPlayer.firstCity(False)
+		while(pLoopCity):
 			lBadRel		= []
 			iRevolt		+= CyGame().getSorenRandNum(2, "Purge the Unfaithful Revolt")
 			for iLoopRel in xrange(gc.getNumReligionInfos()):
@@ -2424,13 +2423,13 @@ class CustomFunctions:
 				pLoopCity.setHasReligion(iLoopRel, False, True, True)
 				iRevolt	+= 1
 				lBadRel.append(iLoopRel)
-			if not lBadRel:		continue
-			for iBuilding in xrange(gc.getNumBuildingInfos()):
-				if pLoopCity.getNumBuilding(iBuilding) <= 0:							continue
-				if not gc.getBuildingInfo(iBuilding).getPrereqReligion() in lBadRel:	continue
-				pLoopCity.setNumRealBuilding(iBuilding, 0)
-			if iRevolt <= 0:	continue
-			pLoopCity.setOccupationTimer(iRevolt)
+			if lBadRel:
+				for iBuilding in xrange(gc.getNumBuildingInfos()):
+					if pLoopCity.getNumBuilding(iBuilding) <= 0:							continue
+					if not gc.getBuildingInfo(iBuilding).getPrereqReligion() in lBadRel:	continue
+					pLoopCity.setNumRealBuilding(iBuilding, 0)
+			if iRevolt > 0: pLoopCity.setOccupationTimer(iRevolt)
+			(pLoopCity, iter) = pPlayer.nextCity(iter, False)
 
 	### TODO: Dictionaries
 	def doSamhain(self, iPlayer):
@@ -2522,11 +2521,12 @@ class CustomFunctions:
 			iDamage		= min(99, iDamage)
 			iDamage		= max(50, iDamage)
 			pLoopUnit.setDamage(iDamage, iPlayer)
-		for iLoopCity in xrange(pPlayer.getNumCities()):
-			pLoopCity	= pPlayer.getCity(iLoopCity)
+		(pLoopCity, iter) = pPlayer.firstCity(False)
+		while(pLoopCity):
 			iPop		= int(pLoopCity.getPopulation() / 2)
 			iPop		= max(1, iPop)
 			pLoopCity.setPopulation(iPop)
+			(pLoopCity, iter) = pPlayer.nextCity(iter, False)
 
 	def doAscension(self, iPlayer):
 		gc		= CyGlobalContext()
@@ -2797,15 +2797,17 @@ class CustomFunctions:
 			iChance		   += iNumBonuses * 5
 			lValidSphere.append((fSphere[iIndex], iNumBonuses))
 
-		if not lValidSphere:															return
-		if CyGame().getSorenRandNum(100, "unitBuiltAmurites Sphere Chance") >= iChance:	return
+		if not lValidSphere:																return
+		if CyGame().getSorenRandNum(100, "unitBuiltAmurites Sphere Chance 1") >= iChance:	return
 		getSphere1	= wchoice( lValidSphere, "unitBuiltAmurites Sphere Pick" )
-		iSphere1	= getSphere1
+		iSphere1	= getSphere1()
 		pUnit.setHasPromotion(iSphere1, True)
-		if iNumSoG <= 0:																return
+		if CyGame().getSorenRandNum(100, "unitBuiltAmurites Sphere Chance 2") >= iChance:	return
+		if iNumSoG <= 0:																	return
 		iSphere2	= gc.getPromotionInfo(iSphere1).getPromotionNextLevel()
 		pUnit.setHasPromotion(iSphere2, True)
-		if iNumCoA <= 0:																return
+		if CyGame().getSorenRandNum(100, "unitBuiltAmurites Sphere Chance 3") >= iChance:	return
+		if iNumCoA <= 0:																	return
 		iSphere3	= gc.getPromotionInfo(iSphere2).getPromotionNextLevel()
 		pUnit.setHasPromotion(iSphere3, True)
 

@@ -1831,7 +1831,7 @@ class CvEventManager:
 		if FoxGlobals["USE_AIAUTOPLAY_SOUND"]:
 			if CyGame().getAIAutoPlay() == 1:
 				pCapital = gc.getPlayer(0).getCapitalCity().plot()
-				if not pCapital != None:
+				if pCapital != None :
 					CyCamera().JustLookAtPlot(pCapital)
 					point 			= pCapital.getPoint()
 					profile			= CyUserProfile()

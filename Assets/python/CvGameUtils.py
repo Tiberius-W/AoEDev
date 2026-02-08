@@ -7,7 +7,6 @@ import CvUtil
 from CvPythonExtensions import *
 from BasicFunctions import *
 import CvEventInterface
-import CustomFunctions
 import ScenarioFunctions
 
 ## *******************
@@ -464,124 +463,15 @@ class CvGameUtils:
 
 	def canBuild(self,argsList):
 		iX, iY, iBuild, iPlayer = argsList
-		gc 			= CyGlobalContext()
-		getInfoType = gc.getInfoTypeForString
-		pPlayer 	= gc.getPlayer(iPlayer)
-		pTeam 		= gc.getTeam(pPlayer.getTeam())
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(iPlayer)
 		eCiv 		= pPlayer.getCivilizationType()
 		Manager		= CvEventInterface.getEventManager()
-		Civ			= Manager.Civilizations
-		Improvement	= Manager.Improvements
-		Build		= Manager.Builds
-		Terrain 	= Manager.Terrain
-		Bonus	 	= Manager.Resources
 
-		if eCiv == Civ["Malakim"]:
-			pPlot 	= CyMap().plot(iX, iY)
-			if (iBuild == Improvement["Road"]):
-				if (pPlot.getTerrainType() == Terrain["Desert"]):
-					return 0
-# scions start
-		elif eCiv == Civ["Scions"]:
+		if eCiv == Manager.Civilizations["Scions"] and iBuild == Manager.Builds["Farm"]:
 			pPlot = CyMap().plot(iX, iY)
-			if pPlot.getOwner() == iPlayer:
-				if pPlot.isCity() == False:
-					if (iBuild == Build["Farm"]) and (pPlot.getImprovementType() != Improvement["Farm"]):
-						if pPlot.getBonusType(-1) == Bonus["Wheat"]:  return 1
-						elif pPlot.getBonusType(-1) == Bonus["Corn"]: return 1
-						elif pPlot.getBonusType(-1) == Bonus["Rice"]: return 1
-						else: return 0
-
-					if pPlot.getImprovementType() != Improvement["Cottage (I)"]:
-						if pPlot.getTerrainType() == Terrain["Desert"]:
-							if (iBuild == Build["Cottage"]): return 1
-
-		if pPlayer.isHuman() == False:
-			return 1 #deactivate all ai-only stuff for testing
-			Tech	 	= Manager.Techs
-			Trait	 	= Manager.Traits
-			Alignment 	= Manager.Alignments
-			Mana		= Manager.Mana
-			Civic		= Manager.Civics
-			hasTech		= pTeam.isHasTech
-			isCivic 	= pPlayer.isCivic
-			hasBonus	= pPlayer.hasBonus
-			eAlignment 	= pPlayer.getAlignment()
-
-			if hasTech(Tech["Construction"]):
-				if isCivic(Civic["Aristocracy"]) and isCivic(Civic["Agrarianism"]):
-					if iBuild == Build["Cottage"]: return 0
-
-			if isCivic(Civic["Arete"]):
-				if iBuild == Build["Windmill"]: return 0
-
-			if not hasTech(Tech["Guilds"]):
-				if not pPlayer.hasTrait(Trait["Fallow"]):
-					if iBuild == Build["Workshop"]: return 0
-
-			if hasTech(Tech["Necromancy"]):
-				if eAlignment == Alignment["Good"]:
-					if iBuild == Build["Mana Death"]: 	return 0
-					if iBuild == Build["Mana Entropy"]:	return 0
-			if hasTech(Tech["Divination"]):
-				if eAlignment == Alignment["Evil"]:
-					if iBuild == Build["Mana Life"]: 	return 0
-			# Waste for elven civs to build these
-			if iBuild == Build["Lumbermill"]:
-				if eCiv == Civ["Ljosalfar"] or eCiv == Civ["Svartalfar"]:
-					return 0
-			# Luchuirp need fire for blasting workshops, but only one
-			if gc.getBuildInfo(iBuild).getType()[0:11] == 'BUILD_MANA_':
-				if eCiv == Civ["Luchuirp"]:
-					if hasTech(Tech["Elementalism"]):
-						if not hasBonus(Mana["Fire"]):
-							if iBuild != Build["Mana Fire"]:	return 0
-				# Spectres!
-				if eCiv in (Civ["Sheaim"], Civ["Calabim"], Civ["Balseraphs"]):
-					hasHolyCity = pPlayer.hasHolyCity
-					Rel			= Manager.Religions
-					if iBuild not in (Build["Mana Death"], Build["Mana Chaos"], Build["Mana Entropy"], Build["Mana Shadow"], Build["Mana Enchantment"]):
-						return 0
-					if hasBonus(Mana["Chaos"]):
-						if iBuild == Build["Mana Chaos"]:		return 0
-					if hasBonus(Mana["Shadow"]) or hasHolyCity(Rel["Council of Esus"]):
-						if iBuild == Build["Mana Shadow"]:		return 0
-					if hasBonus(Mana["Entropy"]) or hasHolyCity(Rel["Ashen Veil"]):
-						if iBuild == Build["Mana Entropy"]:		return 0
-					if hasBonus(Mana["Enchantment"]):
-						if iBuild == Build["Mana Enchantment"]:	return 0
-				#one enchantment node for everyone
-				if hasTech(Tech["Alteration"]):
-					if not hasBonus(Mana["Enchantment"]):
-						if iBuild != Build["Mana Enchantment"]:	return 0
-					elif iBuild == Build["Mana Enchantment"]:	return 0
-				#one life node for non evil civs
-				if hasTech(Tech["Divination"]):
-					if eAlignment != Alignment["Evil"]:
-						if not hasBonus(Mana["Life"]):
-							if iBuild != Build["Mana Life"]:	return 0
-						elif iBuild == Build["Mana Life"]:		return 0
-				#one fire node for elves
-				if hasTech(Tech["Elementalism"]):
-					if eCiv == Civ["Ljosalfar"] or eCiv == Civ["Svartalfar"]:
-						if not hasBonus(Mana["Fire"]):
-							if iBuild != Build["Mana Fire"]:	return 0
-						elif iBuild == Build["Mana Fire"]:		return 0
-				#one body node for most civs
-				if hasTech(Tech["Alteration"]):
-					if eCiv not in (Civ["Lanun"], Civ["Sheaim"], Civ["Luchuirp"], Civ["Scions"]):
-						if not hasBonus(Mana["Body"]):
-							if hasBonus(Mana["Enchantment"]):
-								if iBuild != Build["Mana Body"]:	return 0
-							elif iBuild == Build["Mana Body"]:		return 0
-				#Evil civs take advantage of Necromancy
-				if hasTech(Tech["Necromancy"]):
-					if eAlignment == Alignment["Evil"]:
-						if not hasBonus(Mana["Death"]):
-							if iBuild != Build["Mana Death"]: return 0
-						if hasBonus(Mana["Death"]):
-							if not hasBonus(Mana["Entropy"]):
-								if iBuild != Build["Mana Entropy"]:return 0
+			if pPlot.getBonusType(-1) in (Manager.Resources["Wheat"], Manager.Resources["Corn"], Manager.Resources["Rice"]): return -1
+			else: return 0
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -635,10 +525,10 @@ class CvGameUtils:
 		return False
 
 	def cannotSelectionListMove(self,argsList):
-		pPlot = argsList[0]
-		bAlt = argsList[1]
-		bShift = argsList[2]
-		bCtrl = argsList[3]
+		pPlot	= argsList[0]
+		bAlt	= argsList[1]
+		bShift	= argsList[2]
+		bCtrl	= argsList[3]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -654,13 +544,13 @@ class CvGameUtils:
 		return False
 
 	def cannotSelectionListGameNetMessage(self,argsList):
-		eMessage = argsList[0]
-		iData2 = argsList[1]
-		iData3 = argsList[2]
-		iData4 = argsList[3]
-		iFlags = argsList[4]
-		bAlt = argsList[5]
-		bShift = argsList[6]
+		eMessage	= argsList[0]
+		iData2		= argsList[1]
+		iData3		= argsList[2]
+		iData4		= argsList[3]
+		iFlags		= argsList[4]
+		bAlt		= argsList[5]
+		bShift		= argsList[6]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -692,9 +582,9 @@ class CvGameUtils:
 		return False
 
 	def canResearch(self,argsList):
-		ePlayer = argsList[0]
-		eTech = argsList[1]
-		bTrade = argsList[2]
+		ePlayer	= argsList[0]
+		eTech	= argsList[1]
+		bTrade	= argsList[2]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -710,154 +600,65 @@ class CvGameUtils:
 		return False
 
 	def cannotResearch(self,argsList):
-		ePlayer 	= argsList[0]
-		eTech 		= argsList[1]
-		bTrade 		= argsList[2]
-		gc 			= CyGlobalContext()
-		pPlayer 	= gc.getPlayer(ePlayer)
-		pTeam 		= gc.getTeam(pPlayer.getTeam())
-		sf 			= ScenarioFunctions.ScenarioFunctions()
+		ePlayer		= argsList[0]
+		eTech		= argsList[1]
+		bTrade		= argsList[2]
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(ePlayer)
+		sf			= ScenarioFunctions.ScenarioFunctions()
 		Manager		= CvEventInterface.getEventManager()
-		Civ			= Manager.Civilizations
-		Trait		= Manager.Traits
-		Alignment	= Manager.Alignments
-		Unit		 = Manager.Units
-		Tech		= Manager.Techs
-		Option		= Manager.GameOptions
-		hasTrait	= pPlayer.hasTrait
-		eAlignment	= pPlayer.getAlignment()
 		eCiv		= pPlayer.getCivilizationType()
-		bAI			= pPlayer.isHuman() == False
 		bAgnostic	= pPlayer.isAgnostic()
 
-		if eTech == Tech["Orders from Heaven"]:
-			if Option["No Order"]: return True
-			if bAgnostic: return True
-			if bAI and eAlignment == Alignment["Evil"]: return True
+		if   eTech == Manager.Techs["Orders from Heaven"]:
+			if Manager.GameOptions["No Order"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["White Hand"]:
-			if bAgnostic: return True
+		elif eTech == Manager.Techs["White Hand"]:
+			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_RELIGION_7): return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Way of the Earthmother"]:
-			if Option["No RoK"]: return True
-			if bAgnostic: return True
+		elif eTech == Manager.Techs["Way of the Earthmother"]:
+			if Manager.GameOptions["No RoK"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Way of the Forests"]:
-			if Option["No Leaves"]: return True
-			if bAgnostic: return True
+		elif eTech == Manager.Techs["Way of the Forests"]:
+			if Manager.GameOptions["No Leaves"]:			return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Message from the Deep"]:
-			if Option["No OO"]: return True
-			if bAgnostic: return True
-			if bAI and eAlignment == Alignment["Good"]: return True
+		elif eTech == Manager.Techs["Message from the Deep"]:
+			if Manager.GameOptions["No OO"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Corruption of Spirit"]:
-			if Option["No Veil"]: return True
-			if bAgnostic: return True
-			if bAI and eAlignment == Alignment["Good"]: return True
+		elif eTech == Manager.Techs["Corruption of Spirit"]:
+			if Manager.GameOptions["No Veil"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Way of the Wise"]:
-			if bAI and eAlignment == Alignment["Evil"]: return True
+		elif eTech == Manager.Techs["Honor"]:
+			if Manager.GameOptions["No Empy"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Way of the Wicked"]:
-			if bAI and eAlignment == Alignment["Good"]: return True
+		elif eTech == Manager.Techs["Deception"]:
+			if Manager.GameOptions["No Esus"]:				return True
+			if bAgnostic:									return True
 
-		elif eTech == Tech["Honor"]:
-			if bAgnostic: return True
-			if bAI and eAlignment == Alignment["Evil"]: return True
+		elif eTech == Manager.Techs["Seafaring"]:
+			if eCiv != Manager.Civilizations["Lanun"]:		return True
 
-		elif eTech == Tech["Deception"]:
-			if bAgnostic: return True
-			if bAI and eAlignment == Alignment["Good"]: return True
+		elif eTech == Manager.Techs["Steam Power"]:
+			if eCiv != Manager.Civilizations["Mechanos"]:	return True
 
-		elif eTech == Tech["Seafaring"]:
-			if eCiv != Civ["Lanun"]: return True
+		elif eTech == Manager.Techs["Alchemy"]:
+			if eCiv != Manager.Civilizations["Mechanos"] and gc.getInfoTypeForString("MODULE_SILVER_CIRCLE") == -1: return True
 
-		elif eTech == Tech["Steam Power"]:
-			if eCiv != Civ["Mechanos"]: return True
+		elif eTech == Manager.Techs["Swampdwelling"]:		return True
 
-		elif eTech == Tech["Alchemy"]:
-			if eCiv != Civ["Mechanos"] and Unit["Generic"]["Wandering Sage"]==-1 : return True
-			
-		elif eTech == Tech["Swampdwelling"]:return True
-		elif eTech == Tech["The Gift"]: return True
+		elif eTech == Manager.Techs["The Gift"]:			return True
 
 		if CyGame().getWBMapScript():
 			bBlock = sf.cannotResearch(ePlayer, eTech, bTrade)
 			if bBlock:
 				return True
-
-# Block techs in certain situations.
-		if bAI:
-			isHasTech 	= pTeam.isHasTech
-			hasBonus	= pPlayer.hasBonus
-			Bonus		= Manager.Resources
-			Civic		= Manager.Civics
-			isCivic 	= pPlayer.isCivic
-
-			if eTech == Tech["Stirrups"]:
-				if not isHasTech(Tech["Iron Working"]):
-					if eCiv == Civ["Luchuirp"] or eCiv == Civ["Khazad"]:
-						return True
-				elif eCiv == Civ["Ljosalfar"]:
-					if not hasBonus(Bonus["Deer"]):
-						return True
-				elif not hasBonus(Bonus["Horse"]):
-					if not hasBonus(Bonus["Nightmare"]):
-						if not hasBonus(Bonus["Camel"]):
-							if not eCiv == Civ["Kuriotates"]:
-								return True
-
-			elif eTech == Tech["Bowyers"]:
-				if eCiv == Civ["Luchuirp"] or eCiv == Civ["Khazad"]:
-					if not isHasTech(Tech["Mithril Working"]):
-						return True
-				elif not hasBonus(Bonus["Iron"]):
-					if not hasBonus(Bonus["Copper"]):
-						if not eCiv == Civ["Ljosalfar"]:
-							return True
-
-			elif eTech == Tech["Construction"]:
-				if eCiv == Civ["Ljosalfar"] or eCiv == Civ["Svartalfar"]:
-					if not isHasTech(Tech["Sanitation"]):
-						return True
-
-##			elif eTech == Tech["Priesthood"]:
-##				if not bAgnostic:
-##					if pPlayer.getStateReligion() == -1:
-##						if not eCiv == Civ["Mechanos"]:
-##							return True
-
-			elif eTech == Tech["Divination"]:
-				if eAlignment == Alignment["Evil"]:
-					if not isHasTech(Tech["Necromancy"]):
-						return True
-
-			elif eTech == Tech["Necromancy"]:
-				if eAlignment == Alignment["Good"]:
-					if not isHasTech(Tech["Divination"]):
-						return True
-
-# Once you have signed the Pact, there's no going back!.
-			elif eTech == Tech["Way of the Forests"]:
-				if isHasTech(Tech["Infernal Pact"]):
-					if isCivic(Civic["Sacrifice The Weak"]): return True
-
-			elif eTech == Tech["Honor"]:
-				if isHasTech(Tech["Infernal Pact"]):
-					if isCivic(Civic["Sacrifice The Weak"]): return True
-
-			elif eTech == Tech["Orders from Heaven"]:
-				if isHasTech(Tech["Infernal Pact"]):
-					if isCivic(Civic["Sacrifice The Weak"]): return True
-
-			elif eTech == Tech["Way of the Earthmother"]:
-				if isHasTech(Tech["Infernal Pact"]):
-					if isCivic(Civic["Sacrifice The Weak"]): return True
-
-			elif eTech == Tech["Message from the Deep"]:
-				if isHasTech(Tech["Infernal Pact"]):
-					if isCivic(Civic["Sacrifice The Weak"]): return True
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -873,8 +674,8 @@ class CvGameUtils:
 		return False
 
 	def canDoCivic(self,argsList):
-		ePlayer = argsList[0]
-		eCivic = argsList[1]
+		ePlayer	= argsList[0]
+		eCivic	= argsList[1]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -890,109 +691,20 @@ class CvGameUtils:
 		return False
 
 	def cannotDoCivic(self,argsList):
-		ePlayer 	= argsList[0]
-		eCivic 		= argsList[1]
-		gc 			= CyGlobalContext()
-		pPlayer 	= gc.getPlayer(ePlayer)
-		pTeam 		= gc.getTeam(pPlayer.getTeam())
+		ePlayer		= argsList[0]
+		eCivic		= argsList[1]
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(ePlayer)
 		eCiv		= pPlayer.getCivilizationType()
 		Manager		= CvEventInterface.getEventManager()
-		Civ			= Manager.Civilizations
-		Civic		= Manager.Civics
-		eCivicType  = gc.getCivicInfo(eCivic).getCivicOptionType()
+		eCivicType	= gc.getCivicInfo(eCivic).getCivicOptionType()
 
-		if eCiv == Civ["Jotnar"]:
-			if eCivicType == Civic["Government"]:
-				if eCivic != Civic["Traditions"]:	return True
+		if eCiv == Manager.Civilizations["Jotnar"]:
+			if eCivicType == Manager.Civics["Government"]:
+				if eCivic != Manager.Civics["Traditions"]:	return True
 		
-		if eCiv == gc.getInfoTypeForString("CIVILIZATION_MECHANOS") and gc.getInfoTypeForString("MODULE_VCIVICS")!=-1:
-			if(eCivic==gc.getInfoTypeForString("CIVIC_MAGOCRACY")):
-				return True
-		
-		if pPlayer.isHuman() == False:
-			Trait 		= Manager.Traits
-			UnitClass 	= Manager.UnitClasses
-			Tech	 	= Manager.Techs
-			hasTech		= pTeam.isHasTech
-			isCivic 	= pPlayer.isCivic
-			hasTrait	= pPlayer.hasTrait
-
-			if   eCivic == Civic["Religion"]:
-				if pPlayer.getStateReligion() == -1: return True
-
-			elif eCivic == Civic["Pacifism"]:
-				if not hasTrait(Trait["Philosophical"]):
-					unitCCM = pPlayer.getUnitClassCountPlusMaking
-					if unitCCM(UnitClass["Warrior"]) >= 5 and unitCCM(UnitClass["Archer"]) >= 5 and unitCCM(UnitClass["Axeman"]) >= 5:
-						if pTeam.getAtWarCount(True) == 1:	return True
-
-			elif eCivic == Civic["Conquest"]:
-				if hasTrait(Trait["Fallow"]):		return True
-				if hasTrait(Trait["Financial"]):	return True
-				if not hasTech(Tech["Sanitation"]):	return True
-				if pPlayer.getNumCities() <= 5: 	return True
-				if isCivic(Civic["Aristocracy"]): 	return True
-
-			elif eCivic == Civic["Tribalism"]:
-				if hasTech(Tech["Education"]): 	  return True
-
-			elif eCivic == Civic["Mercentalism"]: return True
-
-			elif eCivic == Civic["Despotism"]:
-				if hasTech(Tech["Cartography"]):  return True
-				elif hasTech(Tech["Mysticism"]):  return True
-
-			elif eCivic == Civic["God King"]:
-				if hasTech(Tech["Cartography"]):
-					if not eCiv == Civ["Kuriotates"]:
-						if pPlayer.getNumCities() >= 6: return True
-
-			elif eCivic == Civic["Apprenticeship"]:
-				if hasTech(Tech["Taxation"]): return True
-# Scions start
-			elif eCivic == Civic["Slavery"]:
-				if eCiv == Civ["Scions"]: return True
-# scions end
-
-			if hasTech(Tech["Taxation"]) or hasTech(Tech["Guilds"]):
-				if not eCivic in(Civic["Caste System"], Civic["Arete"], Civic["Guilds"]):
-					return True
-			if hasTech(Tech["Trade"]):
-				if hasTech(Tech["Sailing"]):
-					if eCivicType == Civic["Economy"]:
-						if eCivic != Civic["Guardian of Nature"]:
-							if eCivic != Civic["Foreign Trade"]:
-								if pPlayer.countNumCoastalCities() >=8:
-									print ("Trade Economy")
-									return True
-			if hasTech(Tech["Warfare"]):
-				if hasTech(Tech["Sanitation"]):
-					if not hasTrait(Trait["Financial"]) :
-						if not hasTrait(Trait["Fallow"]) :
-							if eCivicType == Civic["Labor"]:
-								if eCivic == Civic["Apprenticeship"] or eCivic == Civic["Caste System"]:
-									if eCivicType == Civic["Economy"]:
-										if eCivic != Civic["Conquest"] or eCivic != Civic["Guardian of Nature"] or eCivic != Civic["Foreign Trade"]:
-											BCCPM = pPlayer.getBuildingClassCountPlusMaking
-											if hasTrait(Trait["Aggressive"]) or hasTrait(Trait["Charismatic"]):
-												print ("Conquest Forced due to Trait")
-												return True
-											if BCCPM(Building["Form of the Titan"])== 1:
-												print ("Conquest Forced due to Form of The Titan")
-												return True
-											if hasTrait(Trait["Organized"])	and BCCPM(Building["Command Post"])>= 3:
-												print ("Conquest Forced due to Command Posts")
-												return True
-
-			if hasTech(Tech["Code of Laws"]):
-				if eCivicType == Civic["Government"]:
-					if eCivic != Civic["Aristocracy"]:
-						if hasTrait(Trait["Financial"]): return True
-				elif isCivic(Civic["Aristocracy"]):
-					if eCivicType == Civic["Economy"]:
-						if hasTech(Tech["Calendar"]):
-							if eCivic != Civic["Agrarianism"] or eCivic != Civic["Guardian of Nature"]:
-								return True
+		if eCiv == gc.getInfoTypeForString("CIVILIZATION_MECHANOS") and gc.getInfoTypeForString("MODULE_VCIVICS") != -1:
+			if eCivic == gc.getInfoTypeForString("CIVIC_MAGOCRACY"): return True
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1008,29 +720,25 @@ class CvGameUtils:
 		return False
 
 	def canTrain(self,argsList):
-		pCity = argsList[0]
-		eUnit = argsList[1]
-		bContinue 		= argsList[2]
-		bTestVisible 	= argsList[3]
-		bIgnoreCost 	= argsList[4]
-		bIgnoreUpgrades = argsList[5]
-		gc 			= CyGlobalContext()
-		ePlayer 	= pCity.getOwner()
-		pPlayer 	= gc.getPlayer(ePlayer)
-		eUnitClass 	= gc.getUnitInfo(eUnit).getUnitClassType()
-
-		Manager		= CvEventInterface.getEventManager()
-		UnitClass	= Manager.UnitClasses
-		Building	= Manager.Buildings
-		Civ			= Manager.Civilizations
+		pCity			= argsList[0]
+		eUnit			= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
+		bIgnoreCost		= argsList[4]
+		bIgnoreUpgrades	= argsList[5]
+		gc				= CyGlobalContext()
+		ePlayer			= pCity.getOwner()
+		pPlayer			= gc.getPlayer(ePlayer)
+		eUnitClass		= gc.getUnitInfo(eUnit).getUnitClassType()
+		Manager			= CvEventInterface.getEventManager()
 
 		if Manager.GameOptions["One City Challenge"]:
-			if pPlayer.getCivilizationType() == Civ["Scions"]:
-				if eUnitClass == UnitClass["Awakened"]:
-					if pCity.getNumRealBuilding(Building["Scions Palace"]) > 0:
+			if pPlayer.getCivilizationType() == Manager.Civilizations["Scions"]:
+				if eUnitClass == Manager.UnitClasses["Awakened"]:
+					if pCity.getNumRealBuilding(Manager.Buildings["Scions Palace"]) > 0:
 						return True
-				if eUnitClass == UnitClass["Reborn"]:
-					if pCity.getNumRealBuilding(Building["Cathedral of Rebirth"]) > 0:
+				if eUnitClass == Manager.UnitClasses["Reborn"]:
+					if pCity.getNumRealBuilding(Manager.Buildings["Cathedral of Rebirth"]) > 0:
 						return True
 
 		## *******************
@@ -1047,273 +755,46 @@ class CvGameUtils:
 		return False
 
 	def cannotTrain(self,argsList):
-		pCity 			= argsList[0]
-		eUnit 			= argsList[1]
-		bContinue 		= argsList[2]
-		bTestVisible 	= argsList[3]
-		bIgnoreCost 	= argsList[4]
-		bIgnoreUpgrades = argsList[5]
-		gc 				= CyGlobalContext()
-		ePlayer 		= pCity.getOwner()
-		pPlayer 		= gc.getPlayer(ePlayer)
-		eUnitClass 		= gc.getUnitInfo(eUnit).getUnitClassType()
-		pTeam 			= gc.getTeam(pPlayer.getTeam())
-		hasTech			= pTeam.isHasTech
-		iStable 		= 0
-		sf 				= ScenarioFunctions.ScenarioFunctions()
-		canConstruct	= pPlayer.canConstruct
-		getUCC			= pPlayer.getUnitClassCount
+		pCity			= argsList[0]
+		eUnit			= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
+		bIgnoreCost		= argsList[4]
+		bIgnoreUpgrades	= argsList[5]
+		gc				= CyGlobalContext()
+		pPlayer			= gc.getPlayer(pCity.getOwner())
+		sf				= ScenarioFunctions.ScenarioFunctions()
 		eCiv			= pPlayer.getCivilizationType()
-		bAI 			= not pPlayer.isHuman()
-		iNumCities 		= pPlayer.getNumCities()
-		getUCCPlusMaking= pPlayer.getUnitClassCountPlusMaking
+		Manager			= CvEventInterface.getEventManager()
 
-		Manager		 	= CvEventInterface.getEventManager()
-		UnitClass	 	= Manager.UnitClasses
-		Tech		 	= Manager.Techs
-		Hero		 	= Manager.Heroes
-		Trait		 	= Manager.Traits
-		Civ			 	= Manager.Civilizations
-		Rel			 	= Manager.Religions
-		Civic		 	= Manager.Civics
-		Bonus		 	= Manager.Resources
-		Leader		 	= Manager.Leaders
-		Unit		 	= Manager.Units
-		BuildingClass	= Manager.BuildingClasses
-		Building	 	= Manager.Buildings
-		bBarbarian		= pPlayer.isBarbarian()
-		hasBonus		= pPlayer.hasBonus
-
-		# if  bAI and not bContinue:
-			# return False #attempt to stop ai python adhoc rules
-			# infoCiv = gc.getCivilizationInfo(eCiv)
-			# if eUnit == Unit["Bannor"]["Demagog"]:
-				# if getUCC(UnitClass["Demagog"]) > 6: return True
-			# # Units outdated? Dont build more - Hunters are limited elsewhere.
-			# elif eUnit == Unit["Generic"]["Horseman"]:
-				# if eCiv != Civ["Hippus"]:
-					# iHorsemancounter = 0
-					# for iTeam2 in range(gc.getMAX_PLAYERS()):
-						# eTeam2 = gc.getTeam(iTeam2)
-						# if eTeam2.isAlive():
-							# isHasTech = eTeam2.isHasTech
-							# if isHasTech(Tech["Iron Working"]): 	iHorsemancounter += 2
-							# if isHasTech(Tech["Bowyers"]): 			iHorsemancounter += 2
-							# if isHasTech(Tech["Stirrups"]): 		iHorsemancounter += 2
-							# if isHasTech(Tech["Animal Handling"]): 	iHorsemancounter += 2
-					# if hasBonus(Bonus["Iron"]):						iHorsemancounter += 2
-					# if iHorsemancounter > 3:
-						# if getUCC(UnitClass["Horseman"]) >= 5:
-							# print ("Horseman Blocked")
-							# return True
-
-			# elif eUnit == Unit["Generic"]["Ranger"]:
-				# if eCiv != Civ["Ljosalfar"] and eCiv != Civ["Svartalfar"]:
-					# iRangercounter = 0
-					# for iTeam2 in xrange(gc.getMAX_PLAYERS()):
-						# eTeam2 = gc.getTeam(iTeam2)
-						# if eTeam2.isAlive():
-							# isHasTech = eTeam2.isHasTech
-							# if isHasTech(Tech["Iron Working"]): 	iRangercounter += 2
-							# if isHasTech(Tech["Bowyers"]): 			iRangercounter += 2
-					# if hasTech(Tech["Iron Working"]):				iRangercounter += 2
-					# if hasBonus(Bonus["Iron"]): 					iRangercounter += 2
-					# if iRangercounter > 3:
-						# if getUCC(UnitClass["Ranger"]) >= 30:
-							# print ("Ranger Blocked")
-							# return True
-
-			# # don't go pirating if there are big ships hunting you
-			# elif eUnit == Unit["Generic"]["Privateer"]:
-				# iPrivateercounter = 0
-				# for iTeam2 in xrange(gc.getMAX_PLAYERS()):
-					# eTeam2 = gc.getTeam(iTeam2)
-					# if eTeam2.isAlive():
-						# isHasTech = eTeam2.isHasTech
-						# if isHasTech(Tech["Optics"]) and isHasTech(Tech["Iron Working"]):
-							# iPrivateercounter = iPrivateercounter +1
-				# if iPrivateercounter > 1: return True
-
-			# elif eUnit == Unit["Generic"]["Javelin Thrower"]:
-				# if 2 * iNumCities <= getUCCPlusMaking(UnitClass["Archer"]):
-					# if hasTech(Tech["Bronze Working"]): return True
-
-			# # UnitClasses
-			# elif eUnitClass == UnitClass["Scout"]:
-				# if eCiv != Civ["Svartalfar"] and eCiv != gc.getInfoTypeForString("CIVILIZATION_GOBLIN"):
-					# if getUCC(UnitClass["Scout"]) > 3: return True
-					# iHuntingLodge = infoCiv.getCivilizationBuildings(BuildingClass["Hunting Lodge"])
-					# if iHuntingLodge != -1:
-						# if canConstruct(iHuntingLodge, False, False, False, False): return True
-			# # Settlers
-			# elif eUnitClass == UnitClass["Settler"]:
-
-				# if iNumCities > 3:
-					# if not (hasTech(Tech["Code of Laws"]) and hasTech(Tech["Festivals"]) and hasTech(Tech["Cartography"])): return True
-
-				# if iNumCities <= 5:
-					# if not hasTech(Tech["Festivals"]) and not hasTech(Tech["Cartography"]):
-						# if getUCCPlusMaking(UnitClass["Settler"]) > 1: return True
-				# else:
-					# if getUCCPlusMaking(UnitClass["Settler"]) > 2: return True
-
-
-			# # Dont spam too many priests
-			# elif eUnitClass == UnitClass["Priest of Leaves"]:
-				# if 3* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Leaves"]) :
-					# if not hasTech(Tech["Theology"]): return True
-			# elif eUnitClass == UnitClass["Priest of Kilmorph"]:
-				# if 3* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Kilmorph"]) :
-					# if not hasTech(Tech["Theology"]): return True
-			# elif eUnitClass == UnitClass["Priest of Order"]:
-				# if 5* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Order"]) :
-					# if not hasTech(Tech["Theology"]): return True
-			# elif eUnitClass == UnitClass["Priest of Empyrean"]:
-				# if 5* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Empyrean"]) :
-					# if not hasTech(Tech["Theology"]): return True
-			# elif eUnitClass == UnitClass["Priest of Overlords"]:
-				# if 5* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Overlords"]) :
-					# if not hasTech(Tech["Theology"]): return True
-			# elif eUnitClass == UnitClass["Priest of Veil"]:
-				# if 5* iNumCities <= getUCCPlusMaking(UnitClass["Priest of Veil"]) :
-					# if not hasTech(Tech["Theology"]): return True
-
-			# elif eUnitClass == UnitClass["Hunter"]:
-				# if eCiv != Civ["Svartalfar"]:
-					# if hasTech(Tech["Bronze Working"]) and hasBonus(Bonus["Copper"]):
-						# if 2* iNumCities <= getUCCPlusMaking(UnitClass["Hunter"]): return True
-
-			# elif eUnitClass == UnitClass["Worker"]:
-				# if pTeam.getAtWarCount(True) > 0:
-					# if getUCCPlusMaking(UnitClass["Worker"]) > iNumCities:	return True
-				# if getUCCPlusMaking(UnitClass["Worker"]) > (iNumCities * 3):return True
-				# if pCity.isCapital():
-					# iNumDefenders = 0
-					# iNumDefenders += getUCC(UnitClass["Warrior"])
-					# iNumDefenders += getUCC(UnitClass["Archer"])
-					# iNumDefenders += getUCC(UnitClass["Axeman"])
-					# iNumDefenders += getUCC(UnitClass["Longbowman"])
-					# iDefRequired = 3.5 + (getUCC(UnitClass["Worker"]) * 1.5)
-					# if iNumDefenders < iDefRequired: return True
-				# else:
-					# iMinSize = 3
-					# if eCiv == Civ["Luchuirp"]: iMinSize = 1;
-					# if pCity.getPopulation() <	iMinSize: return True
-					# iNumDefenders = 0
-					# iNumDefenders += getUCCPlusMaking(UnitClass["Warrior"])
-					# iNumDefenders += getUCCPlusMaking(UnitClass["Archer"])
-					# iNumDefenders += getUCCPlusMaking(UnitClass["Axeman"])
-					# iNumDefenders += getUCCPlusMaking(UnitClass["Longbowman"])
-					# if iNumDefenders < (iNumCities * 3):	return True
-
-			# elif eUnitClass == Hero["Class-Rantine"]:
-				# if not pCity.isCapital():	return True
-
-			# elif eUnitClass == UnitClass["Disciple Empyrean"]:
-				# if getUCC(UnitClass["Disciple Empyrean"]) > 2:	return True
-				# if not pPlayer.hasHolyCity(Rel["Empyrean"]):
-					# if not eCiv == Civ["Malakim"]:			return True
-			# elif eUnitClass == UnitClass["Disciple Leaves"]:
-				# if getUCC(UnitClass["Disciple Leaves"]) > 2:	return True
-				# if not pPlayer.hasHolyCity(Rel["Fellowship"]) :
-					# if not eCiv == Civ["Ljosalfar"]:		return True
-			# elif eUnitClass == UnitClass["Disciple Overlords"]:
-				# if getUCC(UnitClass["Disciple Overlords"]) > 2:	return True
-				# if not pPlayer.hasHolyCity(Rel["Octopus Overlords"]) :
-					# if not eCiv == Civ["Lanun"]:			return True
-			# elif eUnitClass == UnitClass["Disciple Kilmorph"]:
-				# if getUCC(UnitClass["Disciple Kilmorph"]) > 2:	return True
-				# if not pPlayer.hasHolyCity(Rel["Runes of Kilmorph"]) :
-					# if not eCiv == Civ["Khazad"]:			return True
-			# elif eUnitClass == UnitClass["Disciple Veil"]:
-				# if getUCC(UnitClass["Disciple Veil"]) > 2: return True
-				# if not pPlayer.hasHolyCity(Rel["Ashen Veil"]) :
-					# if not eCiv == Civ["Sheaim"]:			return True
-			# elif eUnitClass == UnitClass["Disciple Order"]:
-				# if getUCC(UnitClass["Disciple Order"]) > 2:	return True
-				# if not pPlayer.hasHolyCity(Rel["Order"]) :
-					# if not eCiv == Civ["Bannor"]:			return True
-
-			# # don't start producing units that need to be finished fast in backwater cities
-			# if isWorldUnitClass(eUnitClass):
-				# if pCity.findBaseYieldRateRank(YieldTypes.YIELD_PRODUCTION)>2 and not bBarbarian:
-					# if pCity.getUnitProduction(eUnit) == 0: return True
-
-		# LIMITATIONS FOR BOTH AI AND HUMAN PLAYERS - BEGINNING
-		if pPlayer.isCivic(Civic["Crusade"]):
-			if eUnit == Unit["Generic"]["Worker"]: 		return True
-			if eUnit == Unit["Generic"]["Settler"]: 	return True
-			if eUnit == Unit["Generic"]["Workboat"]: 	return True
-
-		if eUnit == Unit["Veil"]["Beast of Agares"]:
+		if   eUnit == Manager.Units["Veil"]["Beast of Agares"]:
 			if pCity.getPopulation() <= 5: return True
-		elif eUnit == Unit["Cualli"]["Shadow Priest of Agruonn"]:
-			if not CyGame().isUnitClassMaxedOut(Hero["Class-Miquiztli"], 0): return True
-		elif eUnit == Hero["Acheron"]:
+
+		elif eUnit in (Manager.Units["Generic"]["Worker"], Manager.Units["Generic"]["Settler"], Manager.Units["Generic"]["Workboat"]):
+			if pPlayer.isCivic(Manager.Civics["Crusade"]): return True
+
+		elif eUnit == Manager.Units["Cualli"]["Shadow Priest of Agruonn"]:
+			if not CyGame().isUnitClassMaxedOut(Manager.Heroes["Class-Miquiztli"], 0): return True
+
+		elif eUnit == Manager.Heroes["Acheron"]:
 			if Manager.GameOptions["No Acheron"]: return True
-		elif eUnit == Hero["Duin"]:
+
+		elif eUnit == Manager.Heroes["Duin"]:
 			if Manager.GameOptions["No Duin"]: return True
 			for iPlayer in xrange(gc.getMAX_PLAYERS()):
 				pLoopPlayer = gc.getPlayer(iPlayer)
-				if pLoopPlayer.getLeaderType() == Leader["Duin"] and pLoopPlayer.isAlive(): return True
-		elif eUnit == Hero["Varulv"]:
-			if pPlayer.getLeaderType() != Leader["Duin"]: return True
-		#elif eUnit == Unit["Summons"]["Water Elemental"]:
-		#	if not pPlayer.hasTrait(Trait["Hydromancer 2"]): return True
-	#	elif eUnit == gc.getInfoTypeForString("UNIT_PRIESTESS_OF_BHALL") and pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC")) and pPlayer.getCivilizationType()==gc.getInfoTypeForString("CIVILIZATION_CUALLI"):
-	#		if not pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC2")):
-	#			return True
-	#	elif eUnit == gc.getInfoTypeForString("UNIT_LIZARD_PRIEST_OF_AGRUONN") and pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC")) and pPlayer.getCivilizationType()==gc.getInfoTypeForString("CIVILIZATION_CLAN_OF_EMBERS"):
-	#		if not pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC2")):
-	#			return True
-	#	elif eUnit == gc.getInfoTypeForString("UNIT_HIGH_PRIESTESS_OF_BHALL") and pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC")) and pPlayer.getCivilizationType()==gc.getInfoTypeForString("CIVILIZATION_CUALLI"):
-	#		if not pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC3")):
-	#			return True
-	#	elif eUnit == gc.getInfoTypeForString("UNIT_SHADOW_PRIEST_OF_AGRUONN") and pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC")) and pPlayer.getCivilizationType()==gc.getInfoTypeForString("CIVILIZATION_CLAN_OF_EMBERS"):
-	#		if not pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_HEMAPYROSYNCRETISTIC3")):
-	#			return True
-	#	elif eUnit == Hero["Kahd"]:
-	#		if not (pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_OGHMA")) or pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_MAMMON"))):	return True
+				if pLoopPlayer.getLeaderType() == Manager.Leaders["Duin"] and pLoopPlayer.isAlive(): return True
 
-		# emergency warrior production. # Note from Ronkhar : this would be bad when we enable Dtesh AI
-		#if bAI:
-		#	if eUnitClass != UnitClass["Warrior"]:
-		#		if pPlayer.getUnitClassCountPlusMaking(UnitClass["Warrior"]) <= 2:
-		#			if not hasTech(Tech["Bronze Working"]) and not hasTech(Tech["Archery"]): return True
+		elif eUnit == Manager.Heroes["Varulv"]:
+			if pPlayer.getLeaderType() != Manager.Leaders["Duin"]: return True
 
+		elif eUnit in (Manager.Units["Malakim"]["Horseman"], Manager.Units["Malakim"]["Knight"], Manager.Units["Malakim"]["Camel Archer"]):
+			if eCiv == Manager.Civilizations["Malakim"]:
+				if pCity.getNumRealBuilding(Manager.Buildings["Camel Stable"]) == 0 and pCity.getNumRealBuilding(Manager.Buildings["Stable"]) == 0: return True
 
 		if CyGame().getWBMapScript():
 			bBlock = sf.cannotTrain(pCity, eUnit, bContinue, bTestVisible, bIgnoreCost, bIgnoreUpgrades)
-			if bBlock:	return True
-
-		if eCiv == Civ["Malakim"]:
-			if pCity.getNumRealBuilding(Building["Camel Stable"]) > 0:	iStable = 1
-			elif pCity.getNumRealBuilding(Building["Stable"]) > 0: 		iStable = 1
-			if eUnit == Unit["Malakim"]["Horseman"]:
-				if iStable == 0:	return True
-			if eUnit == Unit["Malakim"]["Knight"]:
-				if iStable == 0:	return True
-			if eUnit == Unit["Malakim"]["Camel Archer"]:
-				if iStable == 0: 	return True
-
-		# Mekara Units
-		# if eCiv != gc.getInfoTypeForString('CIVILIZATION_MEKARA'): #Ronkhar does not see any use to these 3 lines
-		#	if eUnitClass == gc.getInfoTypeForString('UNIT_OVERSEER'): return True
-		#	if eUnitClass == gc.getInfoTypeForString('UNIT_COMBAT_OVERSEER'): return True
-		# TODO Ronkhar: redo all this limitation code
-		#if pPlayer.getLeaderType() == gc.getInfoTypeForString('LEADER_ZARIA'):
-		#	if eUnitClass == gc.getInfoTypeForString('UNITCLASS_ASSASSIN'): return True
-		#	if eUnitClass == gc.getInfoTypeForString('UNITCLASS_SHADOW'): return True
-		#else:
-		#	if eUnitClass == gc.getInfoTypeForString('UNITCLASS_AGENT'): return True
-		#	if eUnitClass == gc.getInfoTypeForString('UNITCLASS_ADJUNCT'): return True
-		#	if eUnitClass == gc.getInfoTypeForString('UNITCLASS_CARETAKER_MATRON'): return True
-	#	if pPlayer.getLeaderType() != gc.getInfoTypeForString('LEADER_JAMAL'):
-	#		if eUnitClass == gc.getInfoTypeForString('UNITCLASS_KARAS_V2'): return True
-		#if pPlayer.getLeaderType() != gc.getInfoTypeForString('LEADER_IRAM'):
-		#	if eUnit == gc.getInfoTypeForString('UNIT_CUSTODIAN'): return True
-		#	if eUnit == gc.getInfoTypeForString('UNIT_SHARPSHOOTER'): return True
-		#	if eUnit == gc.getInfoTypeForString('UNIT_SKIRMISHER'): return True
+			if bBlock: return True
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1328,11 +809,11 @@ class CvGameUtils:
 		return False
 
 	def canConstruct(self,argsList):
-		pCity = argsList[0]
-		eBuilding = argsList[1]
-		bContinue = argsList[2]
-		bTestVisible = argsList[3]
-		bIgnoreCost = argsList[4]
+		pCity			= argsList[0]
+		eBuilding		= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
+		bIgnoreCost		= argsList[4]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1348,357 +829,79 @@ class CvGameUtils:
 		return False
 
 	def cannotConstruct(self,argsList):
-		pCity 			= argsList[0]
-		eBuilding 		= argsList[1]
-		bContinue 		= argsList[2]
-		bTestVisible 	= argsList[3]
-		bIgnoreCost 	= argsList[4]
-		gc 				= CyGlobalContext()
-		pPlayer 		= gc.getPlayer(pCity.getOwner())
-		iBuildingClass 	= gc.getBuildingInfo(eBuilding).getBuildingClassType()
+		pCity			= argsList[0]
+		eBuilding		= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
+		bIgnoreCost		= argsList[4]
+		gc				= CyGlobalContext()
+		pPlayer			= gc.getPlayer(pCity.getOwner())
 		bAI				= pPlayer.isHuman() == False
-		pTeam 			= gc.getTeam(pPlayer.getTeam())
-		eCiv 			= pPlayer.getCivilizationType()
-		isCivic			= pPlayer.isCivic
-		hasTrait		= pPlayer.hasTrait
-		iNumCities		= pPlayer.getNumCities()
-		bBarbarian		= pPlayer.isBarbarian()
-		getNumB			= pCity.getNumBuilding
-
+		eCiv			= pPlayer.getCivilizationType()
 		Manager			= CvEventInterface.getEventManager()
-		Civ				= Manager.Civilizations
-		Rel				= Manager.Religions
-		Leader			= Manager.Leaders
-		UnitClass		= Manager.UnitClasses
-		Tech			= Manager.Techs
-		Trait			= Manager.Traits
-		Building		= Manager.Buildings
-		BuildingClass	= Manager.BuildingClasses
-		Civic			= Manager.Civics
-		Alignment		= Manager.Alignments
-		Option			= Manager.GameOptions
 
-		#if bAI:
-		#	return False #attempt to stop ai python adhoc rules
-		#	if pPlayer.getUnitClassCountPlusMaking(UnitClass["Warrior"]) <= 3:
-		#		if not pTeam.isHasTech(Tech["Bronze Working"]):
-		#			if not pTeam.isHasTech(Tech["Archery"]): return True
+		if   eBuilding in (	Manager.Buildings["Alchemy Lab"],		Manager.Buildings["Aqueduct"],		Manager.Buildings["Brewery"],
+							Manager.Buildings["Carnival"],			Manager.Buildings["Courthouse"],	Manager.Buildings["Elder Council"],
+							Manager.Buildings["Gambling House"],	Manager.Buildings["Granary"],		Manager.Buildings["Harbor"],
+							Manager.Buildings["Herbalist"],			Manager.Buildings["Library"],		Manager.Buildings["Market"],
+							Manager.Buildings["Moneychanger"],		Manager.Buildings["Public Baths"],	Manager.Buildings["Smokehouse"],
+							Manager.Buildings["Theatre"] ):
+			if pPlayer.isCivic(Manager.Civics["Crusade"]): return True
 
-		#	if isWorldWonderClass(iBuildingClass):
-		#		if pCity.findBaseYieldRateRank(YieldTypes.YIELD_PRODUCTION)>5 and not bBarbarian:
-		#			if pCity.getBuildingProduction(eBuilding)==0: return True
+		elif eBuilding in (Manager.Buildings["Camel Stable"], Manager.Buildings["Stable"]):
+			if eCiv == Manager.Civilizations["Malakim"]:
+				if pCity.getNumBuilding(Manager.Buildings["Stable"]) > 0 or pCity.getNumBuilding(Manager.Buildings["Camel Stable"]) > 0: return True
 
-		# """ Alchemy Lab """
-		if   eBuilding == Building["Alchemy Lab"]:
-			if isCivic(Civic["Crusade"]): return True
+		elif eBuilding == Manager.Buildings["Imperial Cenotaph"]:
+			if pPlayer.getLeaderType() == Manager.Leaders["Risen Emperor"]: return True
 
-		# """ Aqueduct """
-		elif eBuilding == Building["Aqueduct"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if eCiv == Civ["Infernal"]: return True
-			#	if pCity.badHealth(False)-pCity.goodHealth() < -1 : return True
-			#	if pTeam.getAtWarCount(True) >= 1: return True
+		elif eBuilding == Manager.Buildings["Mercurian Gate"]:
+			if Manager.GameOptions["No Hyborem or Basium"]: return True
+			if pPlayer.getStateReligion() == Manager.Religions["Ashen Veil"]: return True
+			if pCity.isCapital() and not pCity.getCivilizationType() == Manager.Civilizations["Mercurians"]: return True
 
-		# """ Archery Range """
-		#elif Building == Building["Archery Range"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if iNumCities >= 3:
-		#			if pPlayer.getBuildingClassCountPlusMaking(BuildingClass["Archery Range"]) * 3 >  iNumCities:
-		#				if eCiv not in (Civ["Ljosalfar"], Civ["Sheaim"], Civ["Svartalfar"]):
-		#					return True
-		# """ Brewery """
-		elif eBuilding == Building["Brewery"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Breeding Pit """
-		#elif eBuilding == Building["Breeding Pit"]:
-			#if bAI:
-				
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.happyLevel() - pCity.unhappyLevel(1) <= 0: return True
-
-		# """ Carnival """
-		elif eBuilding == Building["Carnival"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if not hasTrait(Trait["Creative"]) :
-			#		if pCity.happyLevel() - pCity.unhappyLevel(1) > 0: return True
-
-		# """ Camel Stable """
-		elif eBuilding == Building["Camel Stable"]:
-			if eCiv == Civ["Malakim"]:
-				if getNumB(Building["Stable"]) > 0: return True
-
-		# """ City of a Thousand Slums """
-		#elif eBuilding == Building["Thousand Slums"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.getPopulation() <=20: return True
-
-		# """ Courthouse """
-		elif eBuilding == Building["Courthouse"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Elder Council """
-		elif eBuilding == Building["Elder Council"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Gambling House """
-		elif eBuilding == Building["Gambling House"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Granary """
-		elif eBuilding == Building["Granary"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if eCiv == Civ["Infernal"]: return True
-
-		# """ Harbor """
-		elif eBuilding == Building["Harbor"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Herbalist """
-		elif eBuilding == Building["Herbalist"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if eCiv == Civ["Infernal"]: return True
-			#	if pCity.badHealth(False)-pCity.goodHealth() < -1: return True
-
-		# """ Hunting Lodge """
-		#elif eBuilding == Building["Hunting Lodge"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if iNumCities >= 3:
-		#			if pPlayer.getBuildingClassCountPlusMaking(BuildingClass["Hunting Lodge"]) * 3 > iNumCities:
-		#				if eCiv != Civ["Svartalfar"]: return True
-
-		# """ Imperial Cenotaph """
-		elif eBuilding == Building["Imperial Cenotaph"]:
-			if pPlayer.getLeaderType() == Leader["Risen Emperor"]: return True
-
-		# """ Infirmary """
-		#elif eBuilding == Building["Infirmary"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if eCiv == Civ["Infernal"]: return True
-		#		if pCity.badHealth(False)-pCity.goodHealth() < 1: return True
-		#		if pTeam.getAtWarCount(True) >= 1: return True
-
-		# """ Inn """
-		#elif eBuilding == Building["Inn"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.getPopulation() <=10: return True
-		#		if pTeam.getAtWarCount(True) >= 1: return True
-
-		# """ Library """
-		elif eBuilding == Building["Library"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Market """
-		elif eBuilding == Building["Market"]:
-			if isCivic(Civic["Crusade"]): return True
-
-		# """ Mercurian Gate """
-		elif eBuilding == Building["Mercurian Gate"]:
-			if Option["No Hyborem or Basium"]: return True
-			if pPlayer.getStateReligion() == Rel["Ashen Veil"]: return True
-			if pCity.isCapital() and not pCity.getCivilizationType() == Civ["Mercurians"]:
-				return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if pPlayer.getAlignment() == Alignment["Evil"]: return True
-
-		# """ Moneychanger """
-		elif eBuilding == Building["Moneychanger"]:
-			if isCivic(Civic["Crusade"]): return True
-
-##		# """ Monument """
-##		elif eBuilding == Building["Monument"]:
-##			if isCivic(Civic["Crusade"]): return True
-##			if bAI:
-##				if hasTrait(Trait["Creative"]) and pCity.getPopulation() <=5:
-##					return True
-##				if not hasTrait(Trait["Financial"]):
-##					if pCity.getPopulation() <=8: 		return True
-##					if pTeam.getAtWarCount(True) >= 1:	return True
-
-		# """ Monument to Avarice """
-		elif eBuilding == Building["Monument to Avarice"]:
+		elif eBuilding == Manager.Buildings["Monument to Avarice"]:
 			if pPlayer.isFeatAccomplished(FeatTypes.FEAT_GLOBAL_SPELL):
-				if hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_MAMMON")): return False
+				if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_KAHD_MAMMON")): return False
 			return True
 
-		# """ Prophecy of Ragnarok """
-		#elif eBuilding == Building["Prophechy of Ragnarok"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pPlayer.getAlignment() != Alignment["Evil"]:
-		#			return True
-
-		# """ Public Baths """
-		elif eBuilding == Building["Public Baths"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if eCiv == Civ["Infernal"]: return True
-
-		# """ Reliquary """
-		#if eBuilding == Building["Reliquary"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.getPopulation() <=8: return True
-
-		# """ Sewer """
-		#elif eBuilding == Building["Sewer"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if eCiv == Civ["Infernal"]: return True
-
-		# """ Shrine of the Champion """
-		elif eBuilding == Building["Shrine of the Champion"]:
+		elif eBuilding == Manager.Buildings["Shrine of the Champion"]:
 			iHero = Manager.cf.getHero(pPlayer)
 			if iHero == -1: return True
 			if CyGame().isUnitClassMaxedOut(iHero, 0) == False: return True
 			if pPlayer.getUnitClassCount(iHero) > 0: return True
 
-		# """ Siege Workshop """
-		elif eBuilding == Building["Siege Workshop"]:
-			if not eCiv != Civ["Ljosalfar"]:	return True
-			if not eCiv != Civ["Svartalfar"]:	return True
-			if not pTeam.isHasTech(Tech["Construction"]): 	return True
+		elif eBuilding == Manager.Buildings["Siege Workshop"]:
+			if eCiv in (Manager.Civilizations["Ljosalfar"], Manager.Civilizations["Svartalfar"]): return True
+			if not pPlayer.isHasTech(Manager.Techs["Construction"]): return True
 
-		# """ Smokehouse """
-		elif eBuilding == Building["Smokehouse"]:
-			if isCivic(Civic["Crusade"]): return True
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if eCiv == Civ["Infernal"]: return True
-
-		# """ Smugglers Port """
-		elif eBuilding == Building["Smugglers Port"]:
+		elif eBuilding == Manager.Buildings["Smugglers Port"]:
 			if pPlayer.isSmugglingRing() == False: return True
 
-		# """ Stable """
-		elif eBuilding == Building["Stable"]:
-			#if bAI:
-			#	return False #attempt to stop ai python adhoc rules
-			#	if iNumCities >= 3:
-			#		if pPlayer.getBuildingClassCountPlusMaking(BuildingClass["Stable"]) * 3 > iNumCities:
-			#			if eCiv != Civ["Hippus"]: return True
+		elif eBuilding == Manager.Buildings["Temple of the Gift"]:
+			if pPlayer.getLeaderType() == Manager.Leaders["Korrina"]: return True
 
-			if eCiv == Civ["Malakim"]:
-				if pCity.getNumBuilding(Building["Camel Stable"]) > 0: return True
+		elif eBuilding == Manager.Buildings["Vacant Mausoleum"]:
+			if pPlayer.getLeaderType() == Manager.Leaders["Risen Emperor"]: return True
 
-		# """ Tavern """
-		#if eBuilding == Building["Tavern"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.getPopulation() <=15:
-		#			return True
-
-		# """ Tax Office """
-		#elif eBuilding == Building["Tax Office"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.getPopulation() <=12 or pCity.happyLevel() - pCity.unhappyLevel(1) <=0:
-		#			return True
-		#		if pTeam.getAtWarCount(True) >= 1: return True
-
-		# """ Temple of the Gift """
-		elif eBuilding == Building["Temple of the Gift"]:
-			if pPlayer.getLeaderType() == Leader["Korrina"]: return True
-
-		# """ Tower of Complacency """
-		#elif 	eBuilding == Building["Tower of Complacency"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if pCity.goodHealth() <= 14: return True
-
-		# """ Theatre """
-		elif eBuilding == Building["Theatre"]:
-			if isCivic(Civic["Crusade"]): return True
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if hasTrait(Trait["Creative"]) and pCity.getPopulation() <=6:
-		#			return True
-		#		if pTeam.getAtWarCount(True) >= 1:
-		#			return True
-		#		if hasTrait(Trait["Creative"]) == False:
-		#			if pCity.getPopulation() <=12:
-		#				return True
-
-		# """ Training Yard """
-		#elif eBuilding == Building["Training Yard"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if iNumCities >= 3:
-		#			if eCiv == Civ["Svartalfar"] or eCiv == Civ["Hippus"] or eCiv == Civ["Ljosalfar"]:
-		#				if pPlayer.getBuildingClassCountPlusMaking(BuildingClass["Training Yard"]) * 3 > iNumCities:
-		#					return True
-
-		# """ Vacant Mausoleum """
-		elif eBuilding == Building["Vacant Mausoleum"]:
-			if pPlayer.getLeaderType() == Leader["Risen Emperor"]: return True
-
-		# """ Vault Gate """
-		elif eBuilding == Building["Kahdi Vault Gate"]:
-			if pPlayer.getLeaderType() != Leader["Kahd"]: return True
-
-		# """ Well """
-		#elif eBuilding == Building["Well"]:
-		#	if bAI:
-		#		return False #attempt to stop ai python adhoc rules
-		#		if eCiv == Civ["Infernal"]: return True
+		elif eBuilding == Manager.Buildings["Kahdi Vault Gate"]:
+			if pPlayer.getLeaderType() != Manager.Leaders["Kahd"]: return True
 
 		elif eBuilding == gc.getInfoTypeForString("BUILDING_RIDE_OF_THE_NINE_KINGS"):
 			if not (pCity.hasBonus(gc.getInfoTypeForString("BONUS_HYAPON")) or pCity.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")) or pCity.hasBonus(gc.getInfoTypeForString("BONUS_NIGHTMARE"))): return True
 
-		iAltar1 = Building["Altar of Luonnotar"]
-		iAltar2 = Building["Altar - Anointed"]
-		iAltar3 = Building["Altar - Blessed"]
-		iAltar4 = Building["Altar - Consecrated"]
-		iAltar5 = Building["Altar - Divine"]
-		iAltar6 = Building["Altar - Exalted"]
-		iAltar7 = Building["Altar - Final"]
-
-		if eBuilding in (iAltar1, iAltar2, iAltar3, iAltar4, iAltar5, iAltar6, iAltar7):
-			if pPlayer.getAlignment() == Alignment["Evil"]: return True
-			countNum = pPlayer.countNumBuildings
-			if eBuilding == iAltar1:
-				if (countNum(iAltar2) > 0 or countNum(iAltar3) > 0 or countNum(iAltar4) > 0 or countNum(iAltar5) > 0 or countNum(iAltar6) > 0 or countNum(iAltar7) > 0): return True
-			elif eBuilding == iAltar2:
-				if (countNum(iAltar3) > 0 or countNum(iAltar4) > 0 or countNum(iAltar5) > 0 or countNum(iAltar6) > 0 or countNum(iAltar7) > 0): return True
-			elif eBuilding == iAltar3:
-				if (countNum(iAltar4) > 0 or countNum(iAltar5) > 0 or countNum(iAltar6) > 0 or countNum(iAltar7) > 0): return True
-			elif eBuilding == iAltar4:
-				if (countNum(iAltar5) > 0 or countNum(iAltar6) > 0 or countNum(iAltar7) > 0): return True
-			elif eBuilding == iAltar5:
-				if (countNum(iAltar6) > 0 or countNum(iAltar7) > 0): return True
-			elif eBuilding == iAltar6:
-				if countNum(iAltar7) > 0: return True
-				
-				
-		getInfoType			= gc.getInfoTypeForString
-				
-		if (getInfoType("MODULE_DAO")!=-1):
-			if (eBuilding==getInfoType("BUILDING_SHRINE_AIR")):
-				if pCity.getNumBuilding(getInfoType("BUILDING_SHRINE_EARTH"))>0:
+		if gc.getInfoTypeForString("MODULE_DAO") != -1:
+			if   eBuilding==gc.getInfoTypeForString("BUILDING_SHRINE_AIR"):
+				if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_SHRINE_EARTH"))>0:
 					return True
-			if (eBuilding==getInfoType("BUILDING_SHRINE_EARTH")):
-				if pCity.getNumBuilding(getInfoType("BUILDING_SHRINE_AIR"))>0:
+			elif eBuilding==gc.getInfoTypeForString("BUILDING_SHRINE_EARTH"):
+				if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_SHRINE_AIR"))>0:
 					return True
-			if (eBuilding==getInfoType("BUILDING_SHRINE_WATER")):
-				if pCity.getNumBuilding(getInfoType("BUILDING_SHRINE_FIRE"))>0:
+			elif eBuilding==gc.getInfoTypeForString("BUILDING_SHRINE_WATER"):
+				if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_SHRINE_FIRE"))>0:
 					return True
-			if (eBuilding==getInfoType("BUILDING_SHRINE_FIRE")):
-				if pCity.getNumBuilding(getInfoType("BUILDING_SHRINE_WATER"))>0:
+			elif eBuilding==gc.getInfoTypeForString("BUILDING_SHRINE_FIRE"):
+				if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_SHRINE_WATER"))>0:
 					return True
 					
 		## *******************
@@ -1715,10 +918,10 @@ class CvGameUtils:
 		return False
 
 	def canCreate(self,argsList):
-		pCity = argsList[0]
-		eProject = argsList[1]
-		bContinue = argsList[2]
-		bTestVisible = argsList[3]
+		pCity			= argsList[0]
+		eProject		= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1734,69 +937,54 @@ class CvGameUtils:
 		return False
 
 	def cannotCreate(self,argsList):
-		pCity = argsList[0]
-		eProject = argsList[1]
-		bContinue = argsList[2]
-		bTestVisible = argsList[3]
-		gc 				= CyGlobalContext()
-		pPlayer 		= gc.getPlayer(pCity.getOwner())
-		pTeam 			= gc.getTeam(pPlayer.getTeam())
-		bAI 			= pPlayer.isHuman() == False
+		pCity			= argsList[0]
+		eProject		= argsList[1]
+		bContinue		= argsList[2]
+		bTestVisible	= argsList[3]
+		gc				= CyGlobalContext()
+		pPlayer			= gc.getPlayer(pCity.getOwner())
+		pTeam			= gc.getTeam(pPlayer.getTeam())
+		bAI				= not pPlayer.isHuman()
 		eCiv			= pPlayer.getCivilizationType()
-
+		iReligion		= pPlayer.getStateReligion()
 		Manager			= CvEventInterface.getEventManager()
-		Civ				= Manager.Civilizations
-		Alignment		= Manager.Alignments
-		Rel				= Manager.Religions
-		Project			= Manager.Projects
-		Hero			= Manager.Heroes
-		Leader			= Manager.Leaders
-		Option			= Manager.GameOptions
 
-	#	if bAI:
-	#		#attempt to stop ai python adhoc rules
-	#		if pCity.findBaseYieldRateRank(YieldTypes.YIELD_PRODUCTION)>2: return True
+		if   eProject == Manager.Projects["Purge the Unfaithful"]:
+			if bAI: return True # this means AIs never cast this ritual. (even if they're aiming for religious victory) TODO update AI
+			if iReligion == -1: return True
 
-		if eProject == Project["Purge the Unfaithful"]:
-			if not pPlayer.isHuman(): return True # this means AIs never cast this ritual. (even if they're aiming for religious victory) TODO update AI
-			if pPlayer.getStateReligion() == -1: return True
-
-		elif eProject == Project["Birthright Regained"]:
+		elif eProject == Manager.Projects["Birthright Regained"]:
 			if not pPlayer.isFeatAccomplished(FeatTypes.FEAT_GLOBAL_SPELL): return True
 
-		elif eProject == Project["Stir From Slumber"]:
-			if (pPlayer.getPlayersKilled() == 0 or pPlayer.getStateReligion() != Rel["White Hand"]):
-					return True
+		elif eProject == Manager.Projects["Stir From Slumber"]:
+			if (pPlayer.getPlayersKilled() == 0 or iReligion != Manager.Religions["White Hand"]): return True
 
-		elif eProject == Project["The Deepening"]:
-			if pPlayer.getStateReligion() != Rel["White Hand"]: return True
+		elif eProject == Manager.Projects["The Deepening"]:
+			if iReligion != Manager.Religions["White Hand"]: return True
 
-		elif eProject == Project["The Draw"]:
-			if pPlayer.getLeaderType() == Leader["Raitlor"]: return True
-			if bAI and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0:
-				return True
+		elif eProject == Manager.Projects["The Draw"]:
+			if pPlayer.getLeaderType() == Manager.Leaders["Raitlor"]: return True
+			if bAI and pPlayer.getUnitClassCount(self.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(self.Heroes["Class-Auric Winter"]) == 0: return True
 
-		elif eProject == Project["Ascension"]:
-			if pPlayer.getLeaderType() == Leader["Raitlor"]: return True
-			if eCiv == Civ["Illians"]:
-				if pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC"))==0 and pPlayer.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_AURIC_WINTER"))==0: return True 
+		elif eProject == Manager.Projects["Ascension"]:
+			if pPlayer.getLeaderType() == Manager.Leaders["Raitlor"]: return True
+			if eCiv == Manager.Civilizations["Illians"]:
+				if pPlayer.getUnitClassCount(self.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(self.Heroes["Class-Auric Winter"]) == 0: return True 
 
 # TODO Ronkhar: split and move to frozen module (here = if genesis and civ illians. In module = if genesis and civ frozen)
-		# """ Genesis """
-		elif eProject == Project["Genesis"]:															#Changed in Frozen: TC01
-			if eCiv in (Civ["Illians"], Civ["Frozen"]): return True
+		elif eProject == Manager.Projects["Genesis"]:															#Changed in Frozen: TC01
+			if eCiv in (Manager.Civilizations["Illians"], Manager.Civilizations["Frozen"]): return True
 
 # TODO Ronkhar: move liberation to frozen module
-		elif eProject == Project["Liberation"]:
-			if Option["No Liberation"]: return True
-			if pPlayer.getAlignment() == Alignment["Good"]: return True
+		elif eProject == Manager.Projects["Liberation"]:
+			if Manager.GameOptions["No Liberation"]: return True
+			if pPlayer.getAlignment() == Manager.Alignments["Good"]: return True
 
-		elif eProject == Project["Pax Diabolis"]:
-			if pPlayer.getStateReligion() != Rel["Ashen Veil"] or not gc.getTeam(pPlayer.getTeam()).isAtWar(gc.getDEMON_TEAM()):
-				return True
-			if bAI and (pCity.getPopulation()>10 or pCity.isCapital() or pCity.isHolyCity()):
-				return True
-		elif eProject == Project["Prepare Expedition"]:
+		elif eProject == Manager.Projects["Pax Diabolis"]:
+			if iReligion != Manager.Religions["Ashen Veil"] or not pTeam.isAtWar(gc.getDEMON_TEAM()): return True
+			if bAI and (pCity.getPopulation() > 10 or pCity.isCapital() or pCity.isHolyCity()): return True
+
+		elif eProject == Manager.Projects["Prepare Expedition"]:
 			if pPlayer.isFeatAccomplished(FeatTypes.FEAT_EXPEDITION_READY): return True
 
 		## *******************
@@ -1813,9 +1001,9 @@ class CvGameUtils:
 		return False
 
 	def canMaintain(self,argsList):
-		pCity = argsList[0]
-		eProcess = argsList[1]
-		bContinue = argsList[2]
+		pCity		= argsList[0]
+		eProcess	= argsList[1]
+		bContinue	= argsList[2]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1831,39 +1019,34 @@ class CvGameUtils:
 		return False
 
 	def cannotMaintain(self,argsList):
-		pCity 		= argsList[0]
-		eProcess 	= argsList[1]
-		bContinue 	= argsList[2]
-		gc 			= CyGlobalContext()
-		pPlayer	 	= gc.getPlayer(pCity.getOwner())
-
+		pCity		= argsList[0]
+		eProcess	= argsList[1]
+		bContinue	= argsList[2]
+		gc			= CyGlobalContext()
+		pPlayer		= gc.getPlayer(pCity.getOwner())
 		Manager		= CvEventInterface.getEventManager()
-		Tech		= Manager.Techs
-		Process		= Manager.Processes
-		Civic		= Manager.Civics
-		Building	= Manager.Buildings
 
 		# Caste System Requires the civic
-		if eProcess == Process["Caste System"] :
-			if not pPlayer.isCivic(Civic["Caste System"]): return True
+		if eProcess == Manager.Processes["Caste System"] :
+			if not pPlayer.isCivic(Manager.Civics["Caste System"]):			return True
 
 		# Wealth is automatically upgraded with the Taxation technology
-		if eProcess == Process["Wealth"]:
-			if gc.getTeam(pPlayer.getTeam()).isHasTech(Tech["Taxation"]): return True
+		if eProcess == Manager.Processes["Wealth"]:
+			if pPlayer.isHasTech(Manager.Techs["Taxation"]):				return True
 
 		# Culture rate improved by running Liberty
-		if eProcess == Process["Culture Improved"]:
-			if not pPlayer.isCivic(Civic["Liberty"]): return True
+		if eProcess == Manager.Processes["Culture Improved"]:
+			if not pPlayer.isCivic(Manager.Civics["Liberty"]):				return True
 
-		if eProcess == Process["Culture"]:
-			if pPlayer.isCivic(Civic["Liberty"]): return True
+		if eProcess == Manager.Processes["Culture"]:
+			if pPlayer.isCivic(Manager.Civics["Liberty"]):					return True
 
 		# Research rate conversion more effective with Academy
-		if eProcess == Process["Research"]:
-			if pCity.getNumRealBuilding(Building["Academy"]) > 0: return True
+		if eProcess == Manager.Processes["Research"]:
+			if pCity.getNumRealBuilding(Manager.Buildings["Academy"]) > 0:	return True
 
-		if eProcess == Process["Research Improved"]:
-			if not pCity.getNumRealBuilding(Building["Academy"]) > 0: return True
+		if eProcess == Manager.Processes["Research Improved"]:
+			if pCity.getNumRealBuilding(Manager.Buildings["Academy"]) <= 0:	return True
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -1894,925 +1077,6 @@ class CvGameUtils:
 		return TechTypes.NO_TECH
 
 	def AI_chooseProduction(self,argsList):
-		pCity 				= argsList[0]
-		gc 					= CyGlobalContext()
-		getInfoType			= gc.getInfoTypeForString
-		game				= CyGame()
-		eConstruct			= OrderTypes.ORDER_CONSTRUCT
-		eTrain				= OrderTypes.ORDER_TRAIN
-		iOwner				= pCity.getOwner()
-		pPlayer 			= gc.getPlayer(iOwner)
-		pTeam 				= gc.getTeam(pPlayer.getTeam())
-		eCiv 				= pPlayer.getCivilizationType()
-		eAlignment			= pPlayer.getAlignment()
-		eRel				= pPlayer.getStateReligion()
-		infoCiv 			= gc.getCivilizationInfo(eCiv)
-		pPlot 				= pCity.plot()
-		getNumB				= pCity.getNumBuilding
-		canConstruct		= pCity.canConstruct
-		getBCCPM			= pPlayer.getBuildingClassCountPlusMaking
-		getUCCPM			= pPlayer.getUnitClassCountPlusMaking
-		hasTrait			= pPlayer.hasTrait
-		hasTech 			= pTeam.isHasTech
-		getBaseYieldRate	= pCity.getBaseYieldRate
-		iProductionRank 	= pCity.findBaseYieldRateRank(YieldTypes.YIELD_PRODUCTION)
-
-		hasBonus			= pPlayer.hasBonus
-		pushOrder			= pCity.pushOrder
-		iWarCount			= pTeam.getAtWarCount(True)
-
-		iGold				= pPlayer.getGold()
-		isCivic				= pPlayer.isCivic
-		hasHolyCity			= pPlayer.hasHolyCity
-		isHolyCity			= pCity.isHolyCityByType
-		randNum				= game.getSorenRandNum
-		civB				= gc.getCivilizationInfo(eCiv).getCivilizationBuildings
-
-		bAgnostic			= pPlayer.isAgnostic()
-		bBarbarian			= pPlayer.isBarbarian()
-
-		iNumCities			= pPlayer.getNumCities()
-		iCulture			= pCity.getCulture(iOwner)
-		iNumUnits			= pPlot.getNumUnits()
-		iPop				= pCity.getPopulation()
-
-		Manager				= CvEventInterface.getEventManager()
-		Civ					= Manager.Civilizations
-		Rel					= Manager.Religions
-		Tech				= Manager.Techs
-		Civic				= Manager.Civics
-		Unit				= Manager.Units
-		UnitClass			= Manager.UnitClasses
-		Mana				= Manager.Mana
-		Trait				= Manager.Traits
-		Alignment			= Manager.Alignments
-		Terrain				= Manager.Terrain
-		Feature				= Manager.Feature
-		Bonus				= Manager.Resources
-		Building			= Manager.Buildings
-		BuildingClass		= Manager.BuildingClasses
-
-		if eCiv == Civ["Luchuirp"]:
-			if pPlayer.getUnitClassCount(UnitClass["Worker"]) == 0:
-				if pCity.canTrain(Unit["Luchuirp"]["Mud Golem"],False,False):
-					if getBaseYieldRate(1) >= 3:
-						pushOrder(eTrain, Unit["Luchuirp"]["Mud Golem"], -1, False, False, False, True)
-						return True
-		if hasTech(Tech["Mysticism"]):
-			if iNumUnits >= 3:
-				iBuilding = civB(BuildingClass["Elder Council"])
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if canConstruct(iBuilding,False,False,False):
-						pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-						return True
-						
-		if hasTech(Tech["Festivals"]):
-			if iNumUnits >= 2 and iNumCities >= 4:
-				iBuilding = civB(BuildingClass["Market"])
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if canConstruct(iBuilding,False,False,False):
-						pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-						return True
-
-		if hasTech(Tech["Smelting"]):
-			if iNumUnits >= 2 and iPop >=6:
-				if iProductionRank <= 2:
-					if iNumCities >= 5:
-						iBuilding = civB(BuildingClass["Forge"])
-						if iBuilding!=-1 and getNumB(iBuilding) == 0:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		if hasTech(Tech["Bronze Working"]):
-			if eCiv != Civ["Sheaim"]:
-				if getBaseYieldRate(1) >=7:
-					if iNumUnits >= 4 and iNumCities >= 2:
-						iBuilding = civB(BuildingClass["Barracks"])
-						if iBuilding!=-1 and getNumB(iBuilding) == 0:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		if hasTech(Tech["Hunting"]):
-			if getBaseYieldRate(1) >=7:
-				if iNumUnits >= 4:
-					if iNumCities >= 2:
-						iBuilding = civB(BuildingClass["Hunting Lodge"])
-						if iBuilding!=-1 and getNumB(iBuilding) == 0:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		if hasTech(Tech["Archery"]):
-			if getBaseYieldRate(1) >=7:
-				if iNumUnits >= 4:
-					if iNumCities >= 2:
-						iBuilding = civB(BuildingClass["Fletcher"])
-						if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-							if getNumB(iBuilding) == 0:
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		if eCiv == Civ["Calabim"]:
-			if hasTech(Tech["Code of Laws"]):
-				iBuilding = Building["Manor"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if hasTrait(Trait["Organized"]) or getBaseYieldRate(1) >=6:
-						if iNumUnits >= 2:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		elif eCiv == Civ["Clan of Embers"]:
-			if hasTech(Tech["Masonry"]):
-				iBuilding = Building["Warrens"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if getBaseYieldRate(1) >=7:
-						if iNumUnits >= 2:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		elif eCiv == Civ["Svartalfar"]:
-			if hasTech(Tech["Tracking"]):
-				if getNumB(Building["Hunting Lodge"]) == 1:
-					iBuilding = Building["Shrouded Woods"]
-					if iBuilding!=-1 and getNumB(iBuilding) == 0:
-						if getBaseYieldRate(1) >=7 and iNumUnits >= 2:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		elif eCiv == Civ["Luchuirp"]:
-			if hasTech(Tech["Sorcery"]):
-				if getNumB(Building["Sculptors Studio"]) == 1:
-					iBuilding = Building["Blasting Workshop"]
-					if iBuilding!=-1 and getNumB(iBuilding) == 0:
-						if getBaseYieldRate(1) >=7 and iNumUnits >= 2:
-							if canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								return True
-
-		#public baths are insanely good, should be built asap
-		if hasTech(Tech["Sanitation"]) and not bBarbarian:
-			print ("pb check1")
-			if not eCiv == Civ["Infernal"]:
-				iBuilding	= Building["Public Baths"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if pCity.happyLevel() - pCity.unhappyLevel(1) <0:
-						if getBaseYieldRate(1) >=5:
-							if iNumUnits >= 2:
-								if canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-									print ("Pbath built")
-									return True
-
-		if hasTech(Tech["Construction"] and not bBarbarian):
-			if not eCiv == Civ["Ljosalfar"]:
-				if not eCiv == Civ["Svartalfar"]:
-					iBuilding = Building["Siege Workshop"]
-					if iBuilding!=-1 and getNumB(iBuilding) == 0:
-						if iNumCities >= 2 and iNumUnits >= 2:
-							if getBCCPM(BuildingClass["Siege Workshop"]) * 3 < iNumCities:
-								if getBaseYieldRate(1) >=7:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-										return True
-
-		if eCiv == Civ["Ljosalfar"]:
-			if hasTech(Tech["Archery"]):
-				iBuilding	= Building["Archery Range"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if getBaseYieldRate(1) >=10:
-						if iCulture>0:
-							if iNumUnits >= 2:
-								if canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-									print ("Archery Range built")
-									return True
-
-		elif eCiv == Civ["Hippus"]:
-			if hasTech(Tech["Horseback Riding"]):
-				iBuilding	= Building["Stable"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if getBaseYieldRate(1) >=10:
-						if iCulture>0:
-							if iNumUnits >= 2:
-								if canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-									print ("Stable built")
-									return True
-
-		#At peace? Boost science if possible.
-		if iWarCount == 0:
-			if hasTech(Tech["Writing"]):
-				if eCiv != Civ["Clan of Embers"]:
-					if eCiv != Civ["Doviello"]:
-						if iNumUnits >= 2 and iNumCities >= 3:
-							if pCity.getBaseCommerceRate(1) >=10:
-								iBuilding = Building["Library"]
-								if iBuilding!=-1 and getNumB(iBuilding) == 0:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-										print ("Library built")
-										return True
-
-			if hasTech(Tech["Sorcery"]):
-				if eCiv != Civ["Svartalfar"]:
-					if iNumUnits >= 2:
-						if iNumCities >= 5:
-							if pCity.getBaseCommerceRate(1) >=20:
-								iBuilding	= Building["Alchemy Lab"]
-								if iBuilding!=-1 and getNumB(iBuilding) == 0:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-										print ("Alchemy lab built")
-										return True
-
-			if hasTech(Tech["Currency"]):
-				if not bBarbarian:
-					if iNumUnits >= 2:
-						if iNumCities >= 5:
-							if pCity.getBaseCommerceRate(0) >=20:
-								iBuilding	= Building["Moneychanger"]
-								if iBuilding!=-1 and getNumB(iBuilding) == 0:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-										print ("Alchemy lab built")
-										return True
-
-			#At peace? Reduce maintenance if possible.
-			if hasTech(Tech["Code of Laws"]):
-				if eCiv != Civ["Calabim"]:
-					if iNumUnits >= 2 and iNumCities >= 3:
-						if pCity.getMaintenance() >=5:
-							iBuilding = civB(BuildingClass["Courthouse"])
-							if iBuilding!=-1 and getNumB(iBuilding) == 0:
-								if canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-									print ("Courthouse built")
-									return True
-
-			#Build sewer?.
-			if hasTech(Tech["Sanitation"]):
-				if eCiv != Civ["Infernal"]:
-					if iNumUnits >= 2 and iPop >=6:
-						if pCity.getBuildingBadHealth() >=2:
-							iBuilding = Building["Sewer"]
-							if iBuilding!=-1 and getNumB(iBuilding) == 0:
-								if canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-									print ("Sewer built")
-									return True
-
-			#fix for the -300 AIvalue weight modifier. built smoke and gran if lots of growth potential or health needed
-			if hasTech(Tech["Animal Husbandry"]) and not bBarbarian and eCiv != Civ["Infernal"]:
-				print ("smokehouse check1")
-				iBuilding	= Building["Smokehouse"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if iCulture>0:
-						if pCity.happyLevel() - pCity.unhappyLevel(1) >7:
-							if pCity.foodDifference(False) >=4:
-								if getBaseYieldRate(1) >=7:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("Smokehouse built")
-											return True
-						elif pCity.goodHealth() <= pCity.badHealth(False):
-							if pCity.happyLevel() - pCity.unhappyLevel(1) >0:
-								if pPlayer.getNumAvailableBonuses(Bonus["Cow"])>0 or pPlayer.getNumAvailableBonuses(Bonus["Pig"])>0 or pPlayer.getNumAvailableBonuses(Bonus["Sheep"])>0:
-									if getBaseYieldRate(1) >=5:
-										if iNumUnits >= 2:
-											if canConstruct(iBuilding,False,False,False):
-												pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-												print ("Smokehouse built")
-												return True
-			if hasTech(Tech["Agriculture"]) and not bBarbarian and eCiv != Civ["Infernal"]:
-				print ("granary check1")
-				iBuilding = Building["Granary"]
-				if iBuilding!=-1 and getNumB(iBuilding) == 0:
-					if iCulture>0:
-						if pCity.happyLevel() - pCity.unhappyLevel(1) >7:
-							if pCity.foodDifference(False) >=4:
-								if getBaseYieldRate(1) >=7:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("Granary built")
-											return True
-						elif pCity.goodHealth() <= pCity.badHealth(False):
-							if pCity.happyLevel() - pCity.unhappyLevel(1) >0:
-								if pPlayer.getNumAvailableBonuses(Bonus["Wheat"])>0 or pPlayer.getNumAvailableBonuses(Bonus["Corn"])>0 or pPlayer.getNumAvailableBonuses(Bonus["Rice"])>0:
-									if getBaseYieldRate(1) >=5:
-										if iNumUnits >= 2:
-											if canConstruct(iBuilding,False,False,False):
-												pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-												print ("Granary built")
-												return True
-
-		#spread leaves if elven or has holy city
-		if hasTech(Tech["Way of the Forests"]) and not bBarbarian and not bAgnostic:
-			print ("leaves temple check1")
-			if eCiv == Civ["Ljosalfar"] or eCiv == Civ["Svartalfar"] or isHolyCity(Rel["Fellowship"]):
-				if not eRel == Rel["Fellowship"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						iBuilding	= Building["Temple of the Leaves"]
-						if iBuilding!=-1 and getNumB(iBuilding) == 0:
-							if getBaseYieldRate(1) >=5:
-								if iNumUnits >= 2:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-										print ("leaves temple built")
-										return True
-			print ("leaves disciple check1")
-			if eCiv == Civ["Ljosalfar"] or eCiv == Civ["Svartalfar"] or isHolyCity(Rel["Fellowship"]):
-				if not eRel == Rel["Fellowship"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel) == True :
-					if eRel != -1 and not hasHolyCity(eRel):
-						if getNumB(Building["Temple of the Leaves"]) == 1:
-							if getUCCPM(UnitClass["Disciple Leaves"]) <=3:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Leaves"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Leaves"]["Disciple"], -1, False, False, False, False)
-											print ("leaves disciple built")
-											return True
-		#spread runes if dwarven or has holy city
-		if hasTech(Tech["Way of the Earthmother"]) and not bBarbarian and not bAgnostic:
-			print ("runes temple check1")
-			if eCiv == Civ["Khazad"] or eCiv == Civ["Luchuirp"] or isHolyCity(Rel["Runes of Kilmorph"]):
-				if not eRel == Rel["Runes of Kilmorph"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel) == True :
-					if eRel != -1 and not hasHolyCity(eRel):
-						iBuilding	= Building["Temple of the Kilmorph"]
-						if iBuilding!=-1 and getNumB(iBuilding) == 0:
-							if getBaseYieldRate(1) >=5:
-								if iNumUnits >= 2:
-									if canConstruct(iBuilding,False,False,False):
-										pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-										print ("runes temple built")
-										return True
-			print ("runes disciple check1")
-			if eCiv == Civ["Khazad"] or eCiv == Civ["Luchuirp"] or isHolyCity(Rel["Runes of Kilmorph"]):
-				if not eRel == Rel["Runes of Kilmorph"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if getNumB(Building["Temple of the Kilmorph"]) == 1:
-							if getUCCPM(UnitClass["Disciple Kilmorph"]) <=3:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Runes"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Runes"]["Disciple"], -1, False, False, False, False)
-											print ("runes disciple built")
-											return True
-		#spread esus if has holy city, spreading it is cheap, but don't produce nightwatches all day long
-		if hasTech(Tech["Deception"]) and not bBarbarian and not bAgnostic:
-			print ("esus disc check1")
-			if isHolyCity(Rel["Council of Esus"]):
-				if randNum(100, "Esusspread") <= 20:
-					if not eRel == Rel["Council of Esus"]:
-						if getBaseYieldRate(1) >=5:
-							if iNumUnits >= 2:
-								if pCity.canTrain(Unit["Esus"]["Nightwatch"],False,False):
-									pushOrder(eTrain, Unit["Esus"]["Nightwatch"], -1, False, False, False, False)
-									print ("nightwatch built")
-									return True
-		#spread the empyrean if has holy city
-		if hasTech(Tech["Honor"]) and not bBarbarian and not bAgnostic:
-			print ("empy temple check1")
-			if isHolyCity(Rel["Empyrean"]):
-				if not eRel == Rel["Empyrean"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Evil"]:
-							iBuilding	= Building["Temple of the Empyrean"]
-							if getNumB(Building["Temple of the Empyrean"]) == 0:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("empyrean temple built")
-											return True
-			print ("empy disc check1")
-			if isHolyCity(Rel["Empyrean"]):
-				if not eRel == Rel["Empyrean"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Evil"]:
-							if getNumB(Building["Temple of the Empyrean"]) == 1:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Empyrean"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Empyrean"]["Disciple"], -1, False, False, False, False)
-											print ("empyrean disciple built")
-											return True
-		#spread the order if has holy city
-		if hasTech(Tech["Orders from Heaven"]) and not bBarbarian and not bAgnostic:
-			print ("order temple check1")
-			if isHolyCity(Rel["Order"]):
-				if not eRel == Rel["Order"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Evil"]:
-							iBuilding	= Building["Temple of the Order"]
-							if iBuilding!=-1 and getNumB(iBuilding) == 0:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("order temple built")
-											return True
-			print ("order aco check1")
-			if isHolyCity(Rel["Order"]):
-				if not eRel == Rel["Order"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Evil"]:
-							if getNumB(Building["Temple of the Order"]) == 1:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Order"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Order"]["Disciple"], -1, False, False, False, False)
-											print ("order disciple built")
-											return True
-		#spread the veil if has holy city
-		if hasTech(Tech["Corruption of Spirit"]) and not bBarbarian and not bAgnostic:
-			print ("Veil1 check")
-			if isHolyCity(Rel["Ashen Veil"]):
-				if not eRel == Rel["Ashen Veil"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Good"]:
-							iBuilding	= Building["Temple of the Veil"]
-							if iBuilding!=-1 and getNumB(iBuilding) == 0:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("veil temple built")
-											return True
-			print ("veil disc check1")
-			if isHolyCity(Rel["Ashen Veil"]):
-				if not eRel == Rel["Ashen Veil"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Good"]:
-							if getNumB(Building["Temple of the Veil"]) == 1:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Veil"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Veil"]["Disciple"], -1, False, False, False, False)
-											bOverride = True
-											print ("veil disciple built")
-											return True
-		#spread the overlords if has holy city
-		if hasTech(Tech["Message from the Deep"]) and not bBarbarian and not bAgnostic:
-			print ("Octo1 check")
-			if isHolyCity(Rel["Octopus Overlords"]):
-				if not eRel == Rel["Octopus Overlords"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Good"]:
-							iBuilding	= Building["Temple of the Overlords"]
-							if iBuilding!=-1 and getNumB(iBuilding) == 0:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("octo temple built")
-											return True
-
-			print ("Octo disc check1")
-			if isHolyCity(Rel["Octopus Overlords"]):
-				if not eRel == Rel["Octopus Overlords"]:
-#Snarko 25/05/2010
-#eRel can be NO_RELIGION!
-##orig					if not hasHolyCity(eRel):
-					if eRel != -1 and not hasHolyCity(eRel):
-						if not eAlignment == Alignment["Good"]:
-							if getNumB(Building["Temple of the Overlords"]) == 1:
-								if getBaseYieldRate(1) >=5:
-									if iNumUnits >= 2:
-										if pCity.canTrain(Unit["Overlords"]["Disciple"],False,False):
-											pushOrder(eTrain, Unit["Overlords"]["Disciple"], -1, False, False, False, False)
-											print ("octo disciple built")
-											return True
-		#build the towers if possible
-		if hasTech(Tech["Elementalism"]) and not bBarbarian:
-			print ("ele tower check1")
-			if getBCCPM(BuildingClass["Tower of Elements"]) == 0:
-				if hasBonus(Mana["Fire"]):
-					if hasBonus(Mana["Water"]):
-						if hasBonus(Mana["Air"]):
-							if hasBonus(Mana["Earth"]):
-								if getBaseYieldRate(1) >=25:
-									if iNumUnits >= 2:
-										iBuilding	= Building["Tower of Elements"]
-										if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("element tower built")
-											return True
-		if hasTech(Tech["Divination"]) and not bBarbarian:
-			print ("div tower check1")
-			if getBCCPM(BuildingClass["Tower of Divination"]) == 0:
-				if hasBonus(Mana["Sun"]):
-					if hasBonus(Mana["Spirit"]):
-						if hasBonus(Mana["Law"]):
-							if hasBonus(Mana["Mind"]):
-								if getBaseYieldRate(1) >=25:
-									if iNumUnits >= 2:
-										iBuilding	= Building["Tower of Divination"]
-										if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("div tower built")
-											return True
-		if hasTech(Tech["Necromancy"]) and not bBarbarian:
-			print ("tower necro check1")
-			if getBCCPM(BuildingClass["Tower of Necromancy"]) == 0:
-				if (hasBonus(Mana["Shadow"]) and hasBonus(Mana["Death"]) and hasBonus(Mana["Entropy"]) and hasBonus(Mana["Chaos"])):
-					if getBaseYieldRate(1) >=25:
-						if iNumUnits >= 2:
-							iBuilding	= Building["Tower of Necromancy"]
-							if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-								print ("necro tower built")
-								return True
-		if hasTech(Tech["Alteration"]) and not bBarbarian:
-			print ("tower alt check1")
-			if getBCCPM(BuildingClass["Tower of Alteration"]) == 0:
-				if hasBonus(Mana["Body"]):
-					if hasBonus(Mana["Nature"]):
-						if hasBonus(Mana["Life"]):
-							if hasBonus(Mana["Enchantment"]):
-								if getBaseYieldRate(1) >=25:
-									if iNumUnits >= 2:
-										iBuilding	= Building["Tower of Alteration"]
-										if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("alteration tower built")
-											return True
-
-		#prioritize the nat epic
-		if hasTech(Tech["Warfare"]) and hasTech(Tech["Writing"]) and not bBarbarian:
-			print ("lib epic check1")
-			if getBCCPM(BuildingClass["National Epic"]) == 0:
-				iBuilding = civB(BuildingClass["Library"])
-				if getNumB(iBuilding) == 0:
-					if pCity.getBaseGreatPeopleRate() >=12:
-						if getBaseYieldRate(1) >=10:
-							if iNumUnits >= 2:
-								if not eCiv == Civ["Clan of Embers"]:
-									if not eCiv == Civ["Doviello"]:
-										if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-											pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-											print ("nat epic library built")
-											return True
-			print ("nat epic check1")
-			if getBCCPM(BuildingClass["National Epic"]) == 0:
-				iBuilding = civB(BuildingClass["Library"])
-				if getNumB(iBuilding) == 1:
-					if pCity.getBaseGreatPeopleRate() >=12:
-						if getBaseYieldRate(1) >=10:
-							if iNumUnits >= 2:
-								iBuilding = Building["National Epic"]
-								if iBuilding!=-1 and canConstruct(iBuilding,False,False,False):
-									pushOrder(eConstruct, iBuilding, -1, False, False, False, False)
-									print ("nat epic built")
-									return True
-		#prioritize the heroic epic
-		if hasTech(Tech["Warfare"]) and not bBarbarian:
-			print ("heroic epic check1")
-			if getBCCPM(BuildingClass["Heroic Epic"]) == 0:
-				if iProductionRank == 1:
-					iBuilding	= Building["Heroic Epic"]
-					bHeroic 	= canConstruct(iBuilding,False,False,False)
-					if bHeroic:
-						if getBaseYieldRate(1) >=10:
-							if iNumUnits >= 2:
-								pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-								print ("heroic epic built")
-								return True
-		#build the shrine in the he city
-		if not bBarbarian:
-			print ("championshrine check1")
-			if getBCCPM(BuildingClass["Shrine of Champion"]) == 0:
-				if getNumB(BuildingClass["Heroic Epic"]) == 1:
-					if iNumUnits >= 2:
-						if canConstruct(Building["Shrine of the Champion"],False,False,False):
-							pushOrder(eConstruct, Building["Shrine of the Champion"], -1, False, False, False, True)
-							print ("Shrine of the Champion built")
-							return True
-		#Civ can build a Hero?
-		if iProductionRank <= 2:
-			print ("Rank Hero Check1")
-			if getBaseYieldRate(1) >= 10:
-				# Might need to rewrite this...
-				print ("Rank Hero Check2")
-				sHero=['UNITCLASS_DONAL','UNITCLASS_TEUTORIX','UNITCLASS_CORLINDALE','UNITCLASS_BASIUM','UNITCLASS_GUYBRUSH']
-				sHero=sHero+['UNITCLASS_EURABATRES','UNITCLASS_GILDEN','UNITCLASS_MAROS','UNITCLASS_MAGNADINE']
-				sHero=sHero+['UNITCLASS_GOVANNON','UNITCLASS_LOKI','UNITCLASS_RANTINE','UNITCLASS_ALAZKAN']
-				sHero=sHero+['UNITCLASS_LOSHA','UNITCLASS_ABASHI','UNITCLASS_RATHUS','UNITCLASS_WILBOMAN','UNITCLASS_HYBOREM']
-				sHero=sHero+['UNITCLASS_YVAIN','UNITCLASS_KITHRA','UNITCLASS_BAMBUR','UNITCLASS_ARTHENDAIN']
-				sHero=sHero+['UNITCLASS_SAVEROUS','UNITCLASS_HEMAH','UNITCLASS_ROSIER','UNITCLASS_MARDERO']
-				sHero=sHero+['UNITCLASS_VALIN','UNITCLASS_SPHENER','UNITCLASS_CHALID','UNITCLASS_GIBBON','UNITCLASS_DUIN']
-				for k in range(len(sHero)):
-					iUnit = infoCiv.getCivilizationUnits(getInfoType(sHero[k]))
-					if iUnit != -1:
-						if pCity.canTrain(iUnit,False,False):
-							print iUnit
-							pushOrder(eTrain,iUnit,-1, False, False, False, True)
-							print ("Hero %s built"%(gc.getUnitInfo(iUnit).getType()))
-							return True
-		# helping the Illians understand their temple
-		if eCiv == Civ["Illians"]:
-			if getNumB(Building["Temple of the Hand"]) == 0:
-				print ("Illian snowtemple check")
-				iTaigacounter = 0
-				getPlot = pCity.getCityIndexPlot
-				for iI in xrange(1, 21):
-					pLoopPlot = getPlot(iI)
-					if pLoopPlot:
-						print iTaigacounter
-						if not pLoopPlot.isNone():
-							if not pLoopPlot.isWater():
-								eTerrain = pLoopPlot.getTerrainType()
-								if   eTerrain == Terrain["Taiga"]: 		iTaigacounter += 1
-								elif eTerrain == Terrain["Desert"]: 		iTaigacounter += 1
-								eFeature = pLoopPlot.getFeatureType()
-								if   eFeature == Feature["Jungle"]:			iTaigacounter += 1
-								elif eFeature == Feature["Flood Plains"]:	iTaigacounter -= 3
-								elif eFeature == Feature["Scrub"]: 			iTaigacounter += 1
-								if pLoopPlot.isRiverSide(): iTaigacounter -= 1
-				if iTaigacounter >= 1:
-					if iNumUnits >= 2:
-						if canConstruct(Building["Temple of the Hand"],False,False,False):
-							pushOrder(eConstruct, Building["Temple of the Hand"], -1, False, False, False, False)
-							print ("Ice Temple built")
-							return True
-		#get one military building in each city. some weighting for diversity
-
-				'''
-		if hasTech(Tech["Bronze Working"]) or hasTech(Tech["Archery"]) or hasTech(Tech["Hunting"]) or hasTech(Tech["Horseback Riding"]):
-			iBuilding1 = civB(BuildingClass["Barracks"])
-			iBuilding2 = civB(BuildingClass["Fletcher"])
-			iBuilding3 = civB(BuildingClass["Hunting Lodge"])
-			iBuilding4 = civB(BuildingClass["Stable"])
-			iCount=0
-			if getNumB(iBuilding1) ==1: iCount +=1
-			if getNumB(iBuilding2) ==1: iCount +=1
-			if getNumB(iBuilding3) ==1: iCount +=1
-			if getNumB(iBuilding4) ==1: iCount +=1
-			if iCount == 0:
-				iBarracks = 0; 		iFletcher = 0
-				iHuntingLodge = 0; 	iStable = 0
-				if hasTech(Tech["Bronze Working"]):
-					iBarracks += 1000
-					iBarracks += getBCCPM(iBuilding2)*50
-					iBarracks += getBCCPM(iBuilding3)*50
-					iBarracks += getBCCPM(iBuilding4)*50
-					if hasTech(Tech["Iron Working"]): 	iBarracks += 1000
-					if hasBonus(Bonus["Mithril"]): 		iBarracks += 600
-					elif hasBonus(Bonus["Iron"]):		iBarracks += 400
-					elif hasBonus(Bonus["Copper"]):		iBarracks += 200
-					if hasBonus(Mana["Enchantment"]):
-						if hasTech(Tech["Knowledge of the Ether"]):	iBarracks += 200
-					if eCiv == Civ["Khazad"]:	iBarracks += 2000
-					if isCivic(Civic["Nationhood"]):	iBarracks += 200
-				if hasTech(Tech["Archery"]):
-					iFletcher += 1000
-					iFletcher += getBCCPM(iBuilding1)*50
-					iFletcher += getBCCPM(iBuilding3)*50
-					iFletcher += getBCCPM(iBuilding4)*50
-					if hasTech(Tech["Bowyers"]): 	 iFletcher += 1000
-					if hasTrait(Trait["Defender"]):  iFletcher += 400
-					if hasTrait(Trait["Dexterous"]): iFletcher += 200
-					if hasBonus(Mana["Enchantment"]):
-						if hasTech(Tech["Sorcery"]): iFletcher += 400
-				if hasTech(Tech["Hunting"]):
-					iHuntingLodge += 1000
-					iHuntingLodge += getBCCPM(iBuilding1)*50
-					iHuntingLodge += getBCCPM(iBuilding2)*50
-					iHuntingLodge += getBCCPM(iBuilding4)*50
-					if hasTech(Tech["Animal Handling"]): iHuntingLodge += 1000
-					if hasTech(Tech["Poisons"]):		 iHuntingLodge += 400
-					if hasTrait(Trait["Sinister"]):		 iHuntingLodge += 200
-					if hasBonus(Mana["Nature"]):
-						if hasTech(Tech["Sorcery"]): 	 iHuntingLodge += 200
-				if hasTech(Tech["Horseback Riding"]):
-					iStable += 1000
-					iStable += getBCCPM(iBuilding1)*50
-					iStable += getBCCPM(iBuilding2)*50
-					iStable += getBCCPM(iBuilding3)*50
-					if hasTech(Tech["Stirrups"]): 		iStable += 1000
-					if hasTrait(Trait["Horselord"]): 	iStable += 200
-					if hasTrait(Trait["Raiders"]): 		iStable += 200
-					if eCiv == Civ["Kuriotates"]:		iStable += 400
-				if iCulture>0:
-					if getBaseYieldRate(1) >= 8:
-						if iNumUnits >= 2:
-							if iBarracks>=iStable and iBarracks>=iHuntingLodge and iBarracks>=iFletcher and canConstruct(iBuilding1,False,False,False):
-								if canConstruct(iBuilding1,False,False,False):
-									pushOrder(eConstruct, iBuilding1, -1, False, False, False, True)
-									print ("Barracks built")
-									return True
-							elif iFletcher>=iBarracks and iFletcher>=iHuntingLodge and iFletcher>=iStable and canConstruct(iBuilding2,False,False,False):
-								if canConstruct(iBuilding2,False,False,False):
-									pushOrder(eConstruct, iBuilding2, -1, False, False, False, True)
-									print ("Fletcher built")
-									return True
-							elif iHuntingLodge>=iBarracks and iHuntingLodge>=iFletcher and iHuntingLodge>=iStable and canConstruct(iBuilding3,False,False,False):
-								if canConstruct(iBuilding3,False,False,False):
-									pushOrder(eConstruct, iBuilding3, -1, False, False, False, True)
-									print ("Hunting Lodge built")
-									return True
-							elif iStable>=iBarracks and iStable>=iFletcher and iStable>=iHuntingLodge and canConstruct(iBuilding4,False,False,False):
-								if canConstruct(iBuilding4,False,False,False):
-									pushOrder(eConstruct, iBuilding4, -1, False, False, False, True)
-									print ("Stable built")
-									return True
-				'''
-
-		#if at war we need some catapults
-		if hasTech(Tech["Construction"]) and not bBarbarian:
-			print ("cata check1")
-			if not hasTech(Tech["Blasting Powder"]) and iWarCount > 0:
-				print ("warplan check1")
-				if eCiv not in (Civ["Ljosalfar"],Civ["Svartalfar"],Civ["Khazad"],Civ["Luchuirp"]):
-					if getNumB(Building["Siege Workshop"]) == 1:
-						if iNumCities > 5 * getUCCPM(UnitClass["Catapult"]):
-							if getBaseYieldRate(1) >=7:
-								if iNumUnits >= 2:
-									iUnit	= Unit["Generic"]["Catapult"]
-									if pCity.canTrain(iUnit,False,False):
-										pushOrder(eTrain, iUnit, -1, False, False, False, False)
-										print ("Catapult built")
-										return True
-
-		#Only One City?
-		if hasTech(Tech["Bronze Working"]) or hasTech(Tech["Archery"]):
-			if eCiv not in (Civ["Khazad"], Civ["Kuriotates"]):
-				if not getUCCPM(UnitClass["Settler"]) >= 1 and iNumCities < 2:
-					print ("settler check1")
-					if iWarCount == 0:
-						iBuildSettler = 0
-						if hasTech(Tech["Ancient Chants"]):	iBuildSettler += 2
-						if iPop >=6:						iBuildSettler += 2
-						if hasTrait(Trait["Expansive"]):	iBuildSettler += 2
-						if hasTrait(Trait["Creative"]):		iBuildSettler += 2
-						if getNumB(Building["Market"]) == 1:iBuildSettler += 2
-						if iNumUnits >= 8:					iBuildSettler += 2
-						if iGold / iNumCities >= 149:		iBuildSettler += 2
-						if isCivic(Civic["City States"]):	iBuildSettler *= 2
-						if isCivic(Civic["God King"]):		iBuildSettler -= 2
-						if iBuildSettler >= 5:
-							if getBaseYieldRate(1) >=7:
-								if iNumUnits >= 5:
-									if pCity.canTrain(Unit["Generic"]["Settler"],False,False):
-										pushOrder(eTrain, Unit["Generic"]["Settler"], -1, False, False, False, False)
-										print ("First Settler Built")
-										return True
-
-		#do we need to expand?
-		if hasTech(Tech["Festivals"]) or hasTech(Tech["Code of Laws"]):
-			print ("settler check2")
-			if iWarCount == 0 and iNumCities < 5:
-				iBuildSettler = 0
-				if hasTrait(Trait["Expansive"]):		iBuildSettler += 2
-				if hasTrait(Trait["Creative"]):			iBuildSettler += 1
-				if iNumCities <= 3:						iBuildSettler += 2
-				if getNumB(Building["Market"]) == 1:	iBuildSettler += 1
-				if getNumB(Building["Courthouse"]) == 1:iBuildSettler += 1
-				if iGold / iNumCities >= 149:			iBuildSettler += 1
-				if iGold / iNumCities <= 25:			iBuildSettler -= 1
-				if isCivic(Civic["City States"]):		iBuildSettler *= 2
-				if isCivic(Civic["God King"]):			iBuildSettler -= 2
-				if iBuildSettler > 3:
-					if not eCiv == Civ["Khazad"]:
-						if getUCCPM(UnitClass["Settler"]) < 1:
-							if getBaseYieldRate(1) >=7:
-								if iNumUnits >= 3:
-									if pCity.canTrain(Unit["Generic"]["Settler"],False,False):
-										pushOrder(eTrain, Unit["Generic"]["Settler"], -1, False, False, False, False)
-										print ("Settler Built")
-										return True
-
-				'''
-		if iPop >= 3:
-			getProdTime 		= pCity.getBuildingProductionTime
-			getNumRealBuilding 	= pCity.getNumRealBuilding
-
-			iBuilding 		= civB(BuildingClass["Fletcher"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Barracks"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Archery Range"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Hunting Lodge"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Courthouse"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Market"])
-			if (iBuilding != -1):
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			iBuilding = civB(BuildingClass["Siege Workshop"])
-			if not eCiv == Civ["Svartalfar"] and not eCiv == Civ["Ljosalfar"]:
-				if (iBuilding != -1):
-					if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-						pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-						return True
-
-			if eCiv == Civ["Lanun"]:
-				iBuilding = Building["Harbor Lanun"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-				iBuilding = Building["Lighthouse"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			elif eCiv == Civ["Amurites"]:
-				iBuilding = Building["Wizards Hall"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-				iBuilding = Building["Meditation Hall"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-				iBuilding = Building["Vault Gate"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			elif eCiv == Civ["Sheaim"]:
-				iBuilding = Building["Planar Gate"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-				iBuilding = Building["Mage Guild"]
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-
-			elif eCiv == Civ["Hippus"]:
-				iBuilding = civB(BuildingClass["Stable"])
-				if getNumRealBuilding(iBuilding) == 0 and canConstruct(iBuilding, False, False, False) and getProdTime(iBuilding) < scale(15):
-					pushOrder(eConstruct, iBuilding, -1, False, False, False, True)
-					return True
-				'''
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -2831,69 +1095,39 @@ class CvGameUtils:
 		pUnit 		= argsList[0]
 		iOwner		= pUnit.getOwner()
 		gc			= CyGlobalContext()
-		getInfoType	= gc.getInfoTypeForString
 		pPlot 		= pUnit.plot()
 		eUnitType	= pUnit.getUnitType()
 		eUnitClass	= pUnit.getUnitClassType()
-
-		Manager		= CvEventInterface.getEventManager()
-		UnitClass	= Manager.UnitClasses
-		Unit		= Manager.Units
-		Hero		= Manager.Heroes
-		Lair		= Manager.Lairs
-		Improvement	= Manager.Improvements
-		UnitType	= pUnit.getUnitType()
 		iNumUnits	= pPlot.getNumUnits()
 		bAnimal		= pUnit.isAnimal()
+		Manager		= CvEventInterface.getEventManager()
 
-		if eUnitClass == UnitClass["Giant Spider"]:
+		if eUnitClass == Manager.UnitClasses["Giant Spider"]:
 			iX = pUnit.getX(); iY = pUnit.getY()
 			if pPlot.isOwned():	return 0
 			getPlot = CyMap().plot
 			for iiX,iiY in RANGE1:
 				pLoopPlot = getPlot(iX+iiX,iY+iiY)
 				for i in xrange(pLoopPlot.getNumUnits()):
-					if pLoopPlot.getUnit(i).getOwner() != iOwner:
-						return 0
+					if pLoopPlot.getUnit(i).getOwner() != iOwner: return 0
 			return 1
 
-		if eUnitType == Hero["Acheron"]:
+		if eUnitType == Manager.Heroes["Acheron"]:
 			if pPlot.isVisibleEnemyUnit(iOwner):
-				pUnit.cast(getInfoType('SPELL_BREATH_FIRE'))
+				pUnit.cast(gc.getInfoTypeForString('SPELL_BREATH_FIRE'))
 
 		if not isLimitedUnitClass(eUnitClass):
 			iImprovement = pPlot.getImprovementType()
-			if iImprovement != -1:
-				if (iImprovement == Lair["Barrow"] or iImprovement == Lair["Ruins"] or iImprovement == Improvement["Hellfire"]):
-					if not pUnit.isHurt():
-						if not bAnimal:
-							if iNumUnits - pPlot.getNumAnimalUnits() == 1:
-								return 1
-				if (iImprovement == Lair["Bear Den"] or iImprovement == Lair["Lion Den"]):
-					if not pUnit.isHurt():
-						if bAnimal:
-							if pPlot.getNumAnimalUnits() == 1:
-								return 1
-				if iImprovement == Lair["Goblin Camp"]:
-					if not pUnit.isHurt():
-						if not bAnimal:
-							if iNumUnits - pPlot.getNumAnimalUnits() <= 3:
-								return 1
-
-		iImprovement = pPlot.getImprovementType()
-		if iImprovement != -1:
-			if (iImprovement == Lair["Barrow"] or iImprovement == Lair["Ruins"] or iImprovement == Improvement["Hellfire"]):
-				if not bAnimal:
-					if iNumUnits - pPlot.getNumAnimalUnits() == 1:
-						return 1
-			if (iImprovement == Lair["Bear Den"] or iImprovement == Lair["Lion Den"]):
-				if bAnimal:
-					if pPlot.getNumAnimalUnits() == 1:
-						return 1
-			if iImprovement == Lair["Goblin Camp"]:
-				if not bAnimal:
-					if iNumUnits - pPlot.getNumAnimalUnits() <= 3:
-						return 1
+			if iImprovement != -1 and not pUnit.isHurt():
+				if   iImprovement in (Manager.Lairs["Barrow"], Manager.Lairs["Ruins"], Manager.Improvements["Hellfire"]):
+					if not bAnimal:
+						if iNumUnits - pPlot.getNumAnimalUnits() == 1:	return 1
+				elif iImprovement in (Manager.Lairs["Bear Den"], Manager.Lairs["Lion Den"]):
+					if bAnimal:
+						if pPlot.getNumAnimalUnits() == 1:				return 1
+				elif iImprovement == Manager.Lairs["Goblin Camp"]:
+					if not bAnimal:
+						if iNumUnits - pPlot.getNumAnimalUnits() <= 3:	return 1
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -2941,19 +1175,19 @@ class CvGameUtils:
 		return False
 
 	def calculateScore(self,argsList):
-		ePlayer 	= argsList[0]
-		bFinal 		= argsList[1]
-		bVictory 	= argsList[2]
-		gc 			= CyGlobalContext()
-		scoreComp 	= CvUtil.getScoreComponent
-		pPlayer 	= gc.getPlayer(ePlayer)
+		ePlayer		= argsList[0]
+		bFinal		= argsList[1]
+		bVictory	= argsList[2]
+		gc			= CyGlobalContext()
+		scoreComp	= CvUtil.getScoreComponent
+		pPlayer		= gc.getPlayer(ePlayer)
 		game		= CyGame()
 		getDefINT	= gc.getDefineINT
 
-		iPopulationScore 	= scoreComp(pPlayer.getPopScore(), game.getInitPopulation(), game.getMaxPopulation(), getDefINT("SCORE_POPULATION_FACTOR"), True, bFinal, bVictory)
-		iLandScore 			= scoreComp(pPlayer.getLandScore(), game.getInitLand(), game.getMaxLand(), getDefINT("SCORE_LAND_FACTOR"), True, bFinal, bVictory)
-		iTechScore 			= scoreComp(pPlayer.getTechScore(), game.getInitTech(), game.getMaxTech(), getDefINT("SCORE_TECH_FACTOR"), True, bFinal, bVictory)
-		iWondersScore 		= scoreComp(pPlayer.getWondersScore(), game.getInitWonders(), game.getMaxWonders(), getDefINT("SCORE_WONDER_FACTOR"), False, bFinal, bVictory)
+		iPopulationScore	= scoreComp(pPlayer.getPopScore(), game.getInitPopulation(), game.getMaxPopulation(), getDefINT("SCORE_POPULATION_FACTOR"), True, bFinal, bVictory)
+		iLandScore			= scoreComp(pPlayer.getLandScore(), game.getInitLand(), game.getMaxLand(), getDefINT("SCORE_LAND_FACTOR"), True, bFinal, bVictory)
+		iTechScore			= scoreComp(pPlayer.getTechScore(), game.getInitTech(), game.getMaxTech(), getDefINT("SCORE_TECH_FACTOR"), True, bFinal, bVictory)
+		iWondersScore		= scoreComp(pPlayer.getWondersScore(), game.getInitWonders(), game.getMaxWonders(), getDefINT("SCORE_WONDER_FACTOR"), False, bFinal, bVictory)
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -2984,10 +1218,10 @@ class CvGameUtils:
 		return False
 
 	def doHolyCityTech(self,argsList):
-		pTeam = argsList[0]
-		ePlayer = argsList[1]
-		eTech = argsList[2]
-		bFirst = argsList[3]
+		pTeam	= argsList[0]
+		ePlayer	= argsList[1]
+		eTech	= argsList[2]
+		bFirst	= argsList[3]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -3035,9 +1269,9 @@ class CvGameUtils:
 		return False
 
 	def doGoody(self,argsList):
-		ePlayer = argsList[0]
-		pPlot = argsList[1]
-		pUnit = argsList[2]
+		ePlayer	= argsList[0]
+		pPlot	= argsList[1]
+		pUnit	= argsList[2]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -3101,13 +1335,7 @@ class CvGameUtils:
 		return False
 
 	def cannotSpreadReligionHere(self,argsList):
-		pCity = argsList[0]
-		gc 		= CyGlobalContext()
-
-		Manager		= CvEventInterface.getEventManager()
-		Civ			= Manager.Civilizations
-
-		pPlayer = gc.getPlayer(pCity.getOwner())
+		pCity	= argsList[0]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -3155,10 +1383,10 @@ class CvGameUtils:
 		return False
 
 	def doPlotCulture(self,argsList):
-		pCity = argsList[0]
-		bUpdate = argsList[1]
-		ePlayer = argsList[2]
-		iCultureRate = argsList[3]
+		pCity			= argsList[0]
+		bUpdate			= argsList[1]
+		ePlayer			= argsList[2]
+		iCultureRate	= argsList[3]
 
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -3256,18 +1484,15 @@ class CvGameUtils:
 
 	def doPillageGold(self, argsList):
 		"controls the gold result of pillaging"
-		pPlot 			= argsList[0]
-		pUnit 			= argsList[1]
-		gc 				= CyGlobalContext()
-		game			= CyGame()
-		eImprovement 	= pPlot.getImprovementType()
-		iPillage 		= gc.getImprovementInfo(eImprovement).getPillageGold()
-		randNum			= game.getSorenRandNum
+		pPlot			= argsList[0]
+		pUnit			= argsList[1]
+		gc				= CyGlobalContext()
+		eImprovement	= pPlot.getImprovementType()
+		iPillage		= gc.getImprovementInfo(eImprovement).getPillageGold()
 
-		iPillageGold = 0
-		iPillageGold = 	randNum(iPillage, "Pillage Gold 1")
-		iPillageGold +=	randNum(iPillage, "Pillage Gold 2")
-
+		iPillageGold  = 0
+		iPillageGold  = CyGame().getSorenRandNum(iPillage, "Pillage Gold 1")
+		iPillageGold += CyGame().getSorenRandNum(iPillage, "Pillage Gold 2")
 		iPillageGold += (pUnit.getPillageChange() * iPillageGold) / 100
 
 		## *******************
@@ -3284,22 +1509,20 @@ class CvGameUtils:
 
 	def doCityCaptureGold(self, argsList):
 		"controls the gold result of capturing a city"
-		pOldCity 		= argsList[0]
-		gc 		 		= CyGlobalContext()
-		randNum			= CyGame().getSorenRandNum
-		getDefINT		= gc.getDefineINT
-		iCaptureGold 	= 0
+		pOldCity		= argsList[0]
+		gc				= CyGlobalContext()
 		iGameTurn		= CyGame().getGameTurn()
 
-		iCaptureGold += getDefINT("BASE_CAPTURE_GOLD")
-		iCaptureGold += (pOldCity.getPopulation() * getDefINT("CAPTURE_GOLD_PER_POPULATION"))
-		iCaptureGold += randNum(getDefINT("CAPTURE_GOLD_RAND1"), "Capture Gold 1")
-		iCaptureGold += randNum(getDefINT("CAPTURE_GOLD_RAND2"), "Capture Gold 2")
+		iCaptureGold  = 0
+		iCaptureGold += gc.getDefineINT("BASE_CAPTURE_GOLD")
+		iCaptureGold += pOldCity.getPopulation() * gc.getDefineINT("CAPTURE_GOLD_PER_POPULATION")
+		iCaptureGold += CyGame().getSorenRandNum(gc.getDefineINT("CAPTURE_GOLD_RAND1"), "Capture Gold 1")
+		iCaptureGold += CyGame().getSorenRandNum(gc.getDefineINT("CAPTURE_GOLD_RAND2"), "Capture Gold 2")
 
-		iGoldMaxTurns = getDefINT("CAPTURE_GOLD_MAX_TURNS")
+		iGoldMaxTurns = gc.getDefineINT("CAPTURE_GOLD_MAX_TURNS")
 
 		if (iGoldMaxTurns > 0):
-			iCaptureGold *= cyIntRange((iGameTurn - pOldCity.getGameTurnAcquired()), 0, getDefINT("CAPTURE_GOLD_MAX_TURNS"))
+			iCaptureGold *= cyIntRange((iGameTurn - pOldCity.getGameTurnAcquired()), 0, gc.getDefineINT("CAPTURE_GOLD_MAX_TURNS"))
 			iCaptureGold /= iGoldMaxTurns
 
 		## *******************
@@ -3434,9 +1657,9 @@ class CvGameUtils:
 
 	def getBuildingCostMod(self, argsList):
 		iPlayer, iCityID, iBuilding = argsList
-		gc 		= CyGlobalContext()
-		pPlayer = gc.getPlayer(iPlayer)
-		pCity 	= pPlayer.getCity(iCityID)
+		gc		= CyGlobalContext()
+		pPlayer	= gc.getPlayer(iPlayer)
+		pCity	= pPlayer.getCity(iCityID)
 
 		iCostMod = -1 # Any value > 0 will be used
 		Manager		= CvEventInterface.getEventManager()
@@ -3445,7 +1668,6 @@ class CvGameUtils:
 
 		if iBuilding == Building["Gambling House"]:
 			if pPlayer.isGamblingRing():
-				#iCostMod = gc.getBuildingInfo(iBuilding).getProductionCost() / 4
 				iCostMod = 25
 		## *******************
 		## Modular Python: ANW 29-may-2010
@@ -3801,7 +2023,7 @@ class CvGameUtils:
 				return gc.getPlotEffectInfo(iData2).getDescription()
 ## Trait Text ##
 			elif iData1 == 7884:
-				return CyGameTextMgr().parseTraits(iData2, -1, false)
+				return CyGameTextMgr().parseTraits(iData2, -1, False)
 ## Flag Text ##
 			elif iData1 == 7885:
 				return gc.getFlagInfo(iData2).getDescription()
