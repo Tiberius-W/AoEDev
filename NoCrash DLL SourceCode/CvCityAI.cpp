@@ -779,7 +779,15 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		// Scale up value for civs/civics with bonuses
 		// BETTER_BTS_AI_MOD - jdog5000 - 12/06/09 - Bugfix, City AI
 		iTempValue *= getTotalGreatPeopleRateModifier();
-		iTempValue /= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+		//iTempValue /= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
+		iTempValue /= (GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier() == 0 ? 1 : GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier());
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 
 		iTempValue /= (1 + iEmphasisCount);
 		iValue += iTempValue;
@@ -7683,10 +7691,22 @@ void CvCityAI::AI_getYieldMultipliers( int &iFoodMultiplier, int &iProductionMul
 		}
 	}
 
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
+	//iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
+	//iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
+	//iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);	
+
 	int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
-	iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
+	iProductionAdvantage /= (kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION) == 0 ? 1 : kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION));
 	iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
-	iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);
+	iProductionAdvantage /= (AI_yieldMultiplier(YIELD_COMMERCE) == 0 ? 1 : AI_yieldMultiplier(YIELD_COMMERCE));
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 
 	//now we normalize the effect by # of cities
 
@@ -7701,10 +7721,26 @@ void CvCityAI::AI_getYieldMultipliers( int &iFoodMultiplier, int &iProductionMul
 	iProductionMultiplier /= 100;
 
 	iCommerceMultiplier *= 100;
-	iCommerceMultiplier /= iProductionAdvantage;
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//iCommerceMultiplier /= iProductionAdvantage;
+	iCommerceMultiplier /= (iProductionAdvantage == 0 ? 1 : iProductionAdvantage);
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 
 	int iGreatPeopleAdvantage = 100 * getTotalGreatPeopleRateModifier();
-	iGreatPeopleAdvantage /= kPlayer.AI_averageGreatPeopleMultiplier();
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//iGreatPeopleAdvantage /= kPlayer.AI_averageGreatPeopleMultiplier();
+	iGreatPeopleAdvantage /= (kPlayer.AI_averageGreatPeopleMultiplier() == 0 ? 1 : kPlayer.AI_averageGreatPeopleMultiplier());
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 	iGreatPeopleAdvantage = ((iGreatPeopleAdvantage * (iNumCities - 1) + 200) / (iNumCities + 1));
 	iGreatPeopleAdvantage += 200; //gpp multipliers are larger than others so lets not go overboard
 	iGreatPeopleAdvantage /= 3;
@@ -8680,10 +8716,22 @@ void CvCityAI::AI_updateBestBuild()
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
 
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
+	//iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
+	//iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
+	//iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);	
+
 	int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
-	iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
+	iProductionAdvantage /= (kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION) == 0 ? 1 : kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION));
 	iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
-	iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);
+	iProductionAdvantage /= (AI_yieldMultiplier(YIELD_COMMERCE) == 0 ? 1 : AI_yieldMultiplier(YIELD_COMMERCE));
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 
 	//now we normalize the effect by # of cities
 
@@ -8691,17 +8739,33 @@ void CvCityAI::AI_updateBestBuild()
 	FAssert(iNumCities > 0);//superstisious?
 
 	//in short in an OCC the relative multipliers should *never* make a difference
-	//so this indeed equals "100" for the iNumCities == 0 case.
+	//so this indeed equals "100" for the iNumCities == 0 case.						//Klauros Correction, it equals "100" when iNumCities == 1
 	iProductionAdvantage = ((iProductionAdvantage * (iNumCities - 1) + 200) / (iNumCities + 1));
 
 	iProductionMultiplier *= iProductionAdvantage;
 	iProductionMultiplier /= 100;
 
 	iCommerceMultiplier *= 100;
-	iCommerceMultiplier /= iProductionAdvantage;
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//iCommerceMultiplier /= iProductionAdvantage;
+	iCommerceMultiplier /= (iProductionAdvantage == 0 ? 1 : iProductionAdvantage);
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 
 	int iGreatPeopleAdvantage = 100 * getTotalGreatPeopleRateModifier();
-	iGreatPeopleAdvantage /= kPlayer.AI_averageGreatPeopleMultiplier();
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+	//iGreatPeopleAdvantage /= kPlayer.AI_averageGreatPeopleMultiplier();
+	iGreatPeopleAdvantage /= (kPlayer.AI_averageGreatPeopleMultiplier() == 0 ? 1 : kPlayer.AI_averageGreatPeopleMultiplier());
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 	iGreatPeopleAdvantage = ((iGreatPeopleAdvantage * (iNumCities - 1) + 200) / (iNumCities + 1));
 	iGreatPeopleAdvantage += 200; //gpp multipliers are larger than others so lets not go overboard
 	iGreatPeopleAdvantage /= 3;
@@ -11358,7 +11422,15 @@ int CvCityAI::AI_yieldValue(short* piYields, short* piCommerceYields, bool bAvoi
 			iProductionValue += iSlaveryValue;
 			iProductionValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_PRODUCTION)));
 
-			iProductionValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION);
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+			//iProductionValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION);
+			iProductionValue /= (GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION) == 0 ? 1 : GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION));
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 		}
 
 		iValue += std::max(1,iProductionValue);
@@ -11367,14 +11439,30 @@ int CvCityAI::AI_yieldValue(short* piYields, short* piCommerceYields, bool bAvoi
 	if( iCommerceValue > 0 )
 	{
 		iCommerceValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_COMMERCE)));
-		iCommerceValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE);
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+		//iCommerceValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE);
+		iCommerceValue /= (GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE) == 0 ? 1 : GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE));
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 		iValue += std::max(1, iCommerceValue);
 	}
 //
 	if( iFoodValue > 0 )
 	{
 		iFoodValue *= 100;
-		iFoodValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD);
+/*************************************************************************************************/
+/**	AverageMultipliersFix				Feb 8 2026										Klauros	**/
+/**									Fix Division by 0											**/
+/*************************************************************************************************/
+		//iFoodValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD);
+		iFoodValue /= (GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD) == 0 ? 1 : GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD));
+/*************************************************************************************************/
+/**	AverageMultipliersFix					END													**/
+/*************************************************************************************************/
 		iValue += std::max(1, iFoodValue);
 	}
 /************************************************************************************************/
