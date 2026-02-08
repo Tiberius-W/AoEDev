@@ -64,6 +64,7 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+			<bPermanent>1</bPermanent>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dao Earth Mana Node I -->
 			<Type>IMPROVEMENT_MANA_EARTH_I_DAO</Type>
@@ -123,6 +124,7 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+			<bPermanent>1</bPermanent>
 		</ImprovementInfo>	
 		<ImprovementInfo><!-- Dao Water Mana Node I -->
 			<Type>IMPROVEMENT_MANA_WATER_I_DAO</Type>
@@ -182,6 +184,7 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+			<bPermanent>1</bPermanent>
 		</ImprovementInfo>
 		<ImprovementInfo><!-- Dao Fire Mana Node I -->
 			<Type>IMPROVEMENT_MANA_FIRE_I_DAO</Type>
@@ -241,6 +244,7 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
+			<bPermanent>1</bPermanent>
 		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
