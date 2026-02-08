@@ -5104,7 +5104,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 			if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 			{
-				if (DOMAIN_SEA != getDomainType() || pPlot->getTeam() != getTeam())  // sea units can enter impassable in own cultural borders
+				if ((!(pPlot->isWater() && canMoveAllTerrain()) && DOMAIN_SEA != getDomainType()) || pPlot->getTeam() != getTeam())  // sea units can enter impassable in own cultural borders
 				{
 					if (bIgnoreLoad || !canLoad(pPlot))
 					{

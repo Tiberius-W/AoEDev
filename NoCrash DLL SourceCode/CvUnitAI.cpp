@@ -22850,7 +22850,7 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 			bool bCanImprove = (pLoopPlot->area() == area());
 			if (!bCanImprove)
 			{
-				if (DOMAIN_SEA == getDomainType() && pLoopPlot->isWater() && plot()->isAdjacentToArea(pLoopPlot->area()))
+				if ((DOMAIN_SEA == getDomainType() || canMoveAllTerrain()) && pLoopPlot->isWater() && plot()->isAdjacentToArea(pLoopPlot->area()))
 				{
 					bCanImprove = true;
 				}
