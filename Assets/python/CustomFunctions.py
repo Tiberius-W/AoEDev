@@ -3470,9 +3470,13 @@ class CustomFunctions:
 				break
 		if pUnit == -1: return
 		newUnit = pPlayer.initUnit(pUnit.getUnitType(), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		newUnit.setHasPromotion( self.Promotions["Race"]["Illusion"], True)
+		newUnit.setHasPromotion(self.Promotions["Race"]["Illusion"], True)
 		if pPlayer.hasTrait(self.Traits["Summoner"]):	newUnit.setDuration(5)
 		else:											newUnit.setDuration(3)
+		for iPromotion in xrange(gc.getNumPromotionInfos()):
+			if not newUnit.isHasPromotion(iPromotion):				continue
+			if not gc.getPromotionInfo(iPromotion).isEquipment():	continue
+			newUnit.setHasPromotion(iPromotion, False)
 
 	### TODO: Dictionaries
 	def doCityTurnKahdiVault(self, pCity, iPlayer):
