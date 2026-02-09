@@ -2316,8 +2316,7 @@ class CustomFunctions:
 			popupInfo.addPythonButton(CyTranslator().getText(lText[2], ()), lWidget[2])
 			popupInfo.addPopup(iPlayer)
 		else:
-			argsList = [2, iPlayer, iElection]
-			CvScreensInterface.effectRepublic(argsList) # based on iAIValue of events (always fair)
+			CyMessageControl().sendModNetMessage(101, 2, iPlayer, iElection,-1) # based on iAIValue of events (always fair)
 
 	def doBaneDivine(self, iPlayer):
 		gc				= CyGlobalContext()
@@ -3470,9 +3469,13 @@ class CustomFunctions:
 				break
 		if pUnit == -1: return
 		newUnit = pPlayer.initUnit(pUnit.getUnitType(), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		newUnit.setHasPromotion( self.Promotions["Race"]["Illusion"], True)
+		newUnit.setHasPromotion(self.Promotions["Race"]["Illusion"], True)
 		if pPlayer.hasTrait(self.Traits["Summoner"]):	newUnit.setDuration(5)
 		else:											newUnit.setDuration(3)
+		for iPromotion in xrange(gc.getNumPromotionInfos()):
+			if not newUnit.isHasPromotion(iPromotion):				continue
+			if not gc.getPromotionInfo(iPromotion).isEquipment():	continue
+			newUnit.setHasPromotion(iPromotion, False)
 
 	### TODO: Dictionaries
 	def doCityTurnKahdiVault(self, pCity, iPlayer):
