@@ -447,6 +447,8 @@ void CyInfoPythonInterface3()
 		.def("getMaxGlobalBuildingProductionModifier", &CvTraitInfo::getMaxGlobalBuildingProductionModifier, "int ()")
 		.def("getMaxTeamBuildingProductionModifier", &CvTraitInfo::getMaxTeamBuildingProductionModifier, "int ()")
 		.def("getMaxPlayerBuildingProductionModifier", &CvTraitInfo::getMaxPlayerBuildingProductionModifier, "int ()")
+		.def("getExtraBuildingClasses", &CvTraitInfo::getExtraBuildingClasses, "int (int i)")
+		.def("getExtraUnitClasses", &CvTraitInfo::getExtraUnitClasses, "int (int i)")
 
 		.def("getShortDescription", &CvTraitInfo::getShortDescription, "int (int i)")
 		.def("getExtraYieldThreshold", &CvTraitInfo::getExtraYieldThreshold, "int (int i)")

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EERT_ADJECTIVE</Tag>
+		<English>Eertian</English>
+		<French>Eertian</French>
+		<German>Eertian</German>
+		<Italian>Eertian</Italian>
+		<Spanish>Eertian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EERT_DESC</Tag>
+		<English>Eert</English>
+		<French>Eert</French>
+		<German>Eert</German>
+		<Italian>Eert</Italian>
+		<Spanish>Eert</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EERT_SHORT_DESC</Tag>
+		<English>Eert</English>
+		<French>Eert</French>
+		<German>Eert</German>
+		<Italian>Eert</Italian>
+		<Spanish>Eert</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EERT_STRATEGY</Tag>
+		<English>Economy:
+	[ICON_BULLET]As Eert, you are blocked from building most of the improvements, what means most of their tiles will end up having pretty average yields
+	[ICON_BULLET]Moreover, once you capture land with improvements already existing, they will be destroyed adding a small amount of production to nearest city
+	[ICON_BULLET]You can build three special improvements: Water gardens, Gardens and Animal Colonies.
+	[ICON_BULLET]Gardens are mainly used for gathering resources and improving defense. They also slightly improve yields of the tile.
+	[ICON_BULLET]Animal Colonies provide additional specialists to your cities.
+	[ICON_BULLET]The cities are heavily focused on Specialists. Many building boost effects given by Specialists, some may give a free Specialist in expense of food.
+Warfare:
+	[ICON_BULLET]As Eert you have access to multiple special Units Dryads and Treants.
+	[ICON_BULLET]Dryads are Tier 1 and Tier 2 Units. You cannot train Tier 3 Units.
+	[ICON_BULLET]All tier 2 Dryads can only be trained in your Capital, the Tier 1 Dryad can be created anywhere. Those Units are also expensive.
+	[ICON_BULLET]Dryads get better with Technology, certain Technologies give you bonuses to [ICON_STRENGTH] or special Promotions. This allows Dryads to grow stronger than their equivalents of the same Tier.
+	[ICON_BULLET]Treants are your Tier 4 Units. They can be created in every Eertian city. Those are also the only units capable of damaging city defenses directly.
+	[ICON_BULLET]Neither Dryads nor Treants can use metal weapons.
+Religion:
+	[ICON_BULLET]Eertians cannot mine Copper, Iron or Mithril naturally. If you want to have those resources, you would need either ROK Dwarven Mines, Mines of Gal Dur or to acquire them through trade.
+	[ICON_BULLET]If you decide to follow Runes of Kilmorph, you will be able to build Dwarven mines but they won't grow beyond level II.
+	[ICON_BULLET]Normally any forest focused civ should avoid Ashen Veil like a plague but in this case your cities are heavily focused on specialists so you can try it.
+	[ICON_BULLET]Fellowship of Leaves seems like an obvious pick. It allows you to grow Ancient Forests for better yields on most of your tiles and additional Health in cities.</English>
+		<French>Economy:
+	[ICON_BULLET]As Eert, you are blocked from building most of the improvements, what means most of their tiles will end up having pretty average yields
+	[ICON_BULLET]Moreover, once you capture land with improvements already existing, they will be destroyed adding a small amount of production to nearest city
+	[ICON_BULLET]You can build three special improvements: Water gardens, Gardens and Animal Colonies.
+	[ICON_BULLET]Gardens are mainly used for gathering resources and improving defense. They also slightly improve yields of the tile.
+	[ICON_BULLET]Animal Colonies provide additional specialists to your cities.
+	[ICON_BULLET]The cities are heavily focused on Specialists. Many building boost effects given by Specialists, some may give a free Specialist in expense of food.
+Warfare:
+	[ICON_BULLET]As Eert you have access to multiple special Units Dryads and Treants.
+	[ICON_BULLET]Dryads are Tier 1 and Tier 2 Units. You cannot train Tier 3 Units.
+	[ICON_BULLET]All tier 2 Dryads can only be trained in your Capital, the Tier 1 Dryad can be created anywhere. Those Units are also quite expensive.
+	[ICON_BULLET]Dryads get better with Technology, certain Technologies give you bonuses to [ICON_STRENGTH] or special Promotions. This allows Dryads to grow stronger than their equivalents of the same Tier.
+	[ICON_BULLET]Treants are your Tier 4 Units. They can be created in every Eertian city. Those are also the only units capable of damaging city defenses directly.</French>
+		<German>Economy:
+	[ICON_BULLET]As Eert, you are blocked from building most of the improvements, what means most of their tiles will end up having pretty average yields
+	[ICON_BULLET]Moreover, once you capture land with improvements already existing, they will be destroyed adding a small amount of production to nearest city
+	[ICON_BULLET]You can build three special improvements: Water gardens, Gardens and Animal Colonies.
+	[ICON_BULLET]Gardens are mainly used for gathering resources and improving defense. They also slightly improve yields of the tile.
+	[ICON_BULLET]Animal Colonies provide additional specialists to your cities.
+	[ICON_BULLET]The cities are heavily focused on Specialists. Many building boost effects given by Specialists, some may give a free Specialist in expense of food.
+Warfare:
+	[ICON_BULLET]As Eert you have access to multiple special Units Dryads and Treants.
+	[ICON_BULLET]Dryads are Tier 1 and Tier 2 Units. You cannot train Tier 3 Units.
+	[ICON_BULLET]All tier 2 Dryads can only be trained in your Capital, the Tier 1 Dryad can be created anywhere. Those Units are also quite expensive.
+	[ICON_BULLET]Dryads get better with Technology, certain Technologies give you bonuses to [ICON_STRENGTH] or special Promotions. This allows Dryads to grow stronger than their equivalents of the same Tier.
+	[ICON_BULLET]Treants are your Tier 4 Units. They can be created in every Eertian city. Those are also the only units capable of damaging city defenses directly.</German>
+		<Italian>Economy:
+	[ICON_BULLET]As Eert, you are blocked from building most of the improvements, what means most of their tiles will end up having pretty average yields
+	[ICON_BULLET]Moreover, once you capture land with improvements already existing, they will be destroyed adding a small amount of production to nearest city
+	[ICON_BULLET]You can build three special improvements: Water gardens, Gardens and Animal Colonies.
+	[ICON_BULLET]Gardens are mainly used for gathering resources and improving defense. They also slightly improve yields of the tile.
+	[ICON_BULLET]Animal Colonies provide additional specialists to your cities.
+	[ICON_BULLET]The cities are heavily focused on Specialists. Many building boost effects given by Specialists, some may give a free Specialist in expense of food.
+Warfare:
+	[ICON_BULLET]As Eert you have access to multiple special Units Dryads and Treants.
+	[ICON_BULLET]Dryads are Tier 1 and Tier 2 Units. You cannot train Tier 3 Units.
+	[ICON_BULLET]All tier 2 Dryads can only be trained in your Capital, the Tier 1 Dryad can be created anywhere. Those Units are also quite expensive.
+	[ICON_BULLET]Dryads get better with Technology, certain Technologies give you bonuses to [ICON_STRENGTH] or special Promotions. This allows Dryads to grow stronger than their equivalents of the same Tier.
+	[ICON_BULLET]Treants are your Tier 4 Units. They can be created in every Eertian city. Those are also the only units capable of damaging city defenses directly.</Italian>
+		<Spanish>Economy:
+	[ICON_BULLET]As Eert, you are blocked from building most of the improvements, what means most of their tiles will end up having pretty average yields
+	[ICON_BULLET]Moreover, once you capture land with improvements already existing, they will be destroyed adding a small amount of production to nearest city
+	[ICON_BULLET]You can build three special improvements: Water gardens, Gardens and Animal Colonies.
+	[ICON_BULLET]Gardens are mainly used for gathering resources and improving defense. They also slightly improve yields of the tile.
+	[ICON_BULLET]Animal Colonies provide additional specialists to your cities.
+	[ICON_BULLET]The cities are heavily focused on Specialists. Many building boost effects given by Specialists, some may give a free Specialist in expense of food.
+Warfare:
+	[ICON_BULLET]As Eert you have access to multiple special Units Dryads and Treants.
+	[ICON_BULLET]Dryads are Tier 1 and Tier 2 Units. You cannot train Tier 3 Units.
+	[ICON_BULLET]All tier 2 Dryads can only be trained in your Capital, the Tier 1 Dryad can be created anywhere. Those Units are also quite expensive.
+	[ICON_BULLET]Dryads get better with Technology, certain Technologies give you bonuses to [ICON_STRENGTH] or special Promotions. This allows Dryads to grow stronger than their equivalents of the same Tier.
+	[ICON_BULLET]Treants are your Tier 4 Units. They can be created in every Eertian city. Those are also the only units capable of damaging city defenses directly.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TREANT</Tag>
+		<English>Ancient Oak</English>
+		<French>Ancient Oak</French>
+		<German>Ancient Oak</German>
+		<Italian>Ancient Oak</Italian>
+		<Spanish>Ancient Oak</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag></Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

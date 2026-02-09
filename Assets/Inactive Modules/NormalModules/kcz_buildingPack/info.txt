@@ -1,0 +1,14 @@
+[name]
+kcz_buildingPack
+[version]
+0.2
+[rifeversion]
+383
+[author]
+kaczkar123
+[dependency]
+;
+[compatible]
+;
+[desc]
+Adds some new fancy buildings

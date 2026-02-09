@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+
+<Civ4TraitTriggerInfos xmlns="x-schema:Woods_CIV4CivilizationsSchema.xml">
+	<TraitTriggerInfos>
+		<TraitTriggerInfo> <!-- Build               Mind Nature Node                                	Fury of Nature -->
+			<Type>TRAITTRIGGER_BUILD_MANA_NATURE_EERT</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_FURY_OF_NATURE</TraitType>
+					<iModifier>50</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_CONNECT_RESOURCE</TraitHookType>
+			<PrereqBonusType>BONUS_MANA_NATURE</PrereqBonusType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Kill                Animal        kills anything                 Fury of Nature -->
+			<Type>TRAITTRIGGER_ANIMAL_KILLS_UNIT</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_FURY_OF_NATURE</TraitType>
+					<iModifier>7</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_KILL_UNIT</TraitHookType>
+			<PrereqUnitCombatType>UNITCOMBAT_ANIMAL</PrereqUnitCombatType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Kill                Beast        kills anything                 Fury of Nature -->
+			<Type>TRAITTRIGGER_BEAST_KILLS_UNIT</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_FURY_OF_NATURE</TraitType>
+					<iModifier>7</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_KILL_UNIT</TraitHookType>
+			<PrereqUnitCombatType>UNITCOMBAT_BEAST</PrereqUnitCombatType>
+		</TraitTriggerInfo>
+		<TraitTriggerInfo> <!-- Kill                Animal        kills anything                 Fury of Nature -->
+			<Type>TRAITTRIGGER_ANYONE_KILLS_RECON_UNIT</Type>
+			<CounterChanges>
+				<CounterChange>
+					<TraitType>TRAIT_FURY_OF_NATURE</TraitType>
+					<iModifier>10</iModifier>
+				</CounterChange>
+			</CounterChanges>
+			<TraitClassType>TRAITCLASS_EMERGENT</TraitClassType>
+			<TraitHookType>TRAITHOOK_KILL_UNIT</TraitHookType>
+			<PrereqKilledUnitCombatType>UNITCOMBAT_RECON</PrereqKilledUnitCombatType>
+		</TraitTriggerInfo>
+	</TraitTriggerInfos>
+</Civ4TraitTriggerInfos>

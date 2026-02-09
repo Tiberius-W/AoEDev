@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DRYAD</Tag>
+		<English>Dryad</English>
+		<French>Dryad</French>
+		<German>Dryad</German>
+		<Italian>Dryad</Italian>
+		<Spanish>Dryad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_TREANT</Tag>
+		<English>Treant</English>
+		<French>Treant</French>
+		<German>Treant</German>
+		<Italian>Treant</Italian>
+		<Spanish>Treant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_IMMOBILE_PLANT</Tag>
+		<English>Immobile Plant</English>
+		<French>Immobile Plant</French>
+		<German>Immobile Plant</German>
+		<Italian>Immobile Plant</Italian>
+		<Spanish>Immobile Plant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_KELP_STALKER</Tag>
+		<English>Kelp Stalker</English>
+		<French>Kelp Stalker</French>
+		<German>Kelp Stalker</German>
+		<Italian>Kelp Stalker</Italian>
+		<Spanish>Kelp Stalker</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_KELP_STEALTH</Tag>
+		<English>Kelp Stealth</English>
+		<French>Kelp Stealth</French>
+		<German>Kelp Stealth</German>
+		<Italian>Kelp Stealth</Italian>
+		<Spanish>Kelp Stealth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_NO_HEALING</Tag>
+		<English>No Natural Healing</English>
+		<French>No Natural Healing</French>
+		<German>No Natural Healing</German>
+		<Italian>No Natural Healing</Italian>
+		<Spanish>No Natural Healing</Spanish>
+	</TEXT>
+</Civ4GameText>

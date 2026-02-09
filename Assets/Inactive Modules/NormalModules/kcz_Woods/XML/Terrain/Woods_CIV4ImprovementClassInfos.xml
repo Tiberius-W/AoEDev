@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Improvement Class Infos -->
+<Civ4ImprovementClassInfos xmlns="x-schema:Woods_CIV4TerrainSchema.xml">
+	<ImprovementClassInfos>
+		<ImprovementClassInfo><!-- Dummy -->
+			<Type>IMPROVEMENTCLASS_ANIMAL_COLONY</Type>
+			<Description>TXT_KEY_IMPROVEMENT_ANIMAL_COLONY</Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_ANIMAL_COLONY</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dummy -->
+			<Type>IMPROVEMENTCLASS_WILD_GARDEN</Type>
+			<Description>TXT_KEY_IMPROVEMENT_WILD_GARDEN</Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WILD_GARDEN</DefaultImprovement>
+		</ImprovementClassInfo>
+		<ImprovementClassInfo><!-- Dummy -->
+			<Type>IMPROVEMENTCLASS_WILD_SANCTUARY</Type>
+			<Description>TXT_KEY_IMPROVEMENT_WILD_SANCTUARY</Description>
+			<bUnique>1</bUnique>
+			<DefaultImprovement>IMPROVEMENT_WILD_SANCTUARY</DefaultImprovement>
+		</ImprovementClassInfo>
+	</ImprovementClassInfos>
+</Civ4ImprovementClassInfos>

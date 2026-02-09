@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leader Trait Infos -->
+<Civ4TraitInfos xmlns="x-schema:Woods_CIV4CivilizationsSchema.xml">
+	<TraitInfos>
+		<TraitInfo>		<!-- Fury of Nature -->
+			<Type>TRAIT_FURY_OF_NATURE</Type>
+			<NextTrait>TRAIT_FURY_OF_NATURE2</NextTrait>
+			<iLevel>1</iLevel>
+			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+			<Description>TXT_KEY_TRAIT_FURY_OF_NATURE</Description>
+			<Civilopedia>TXT_KEY_TRAIT_FURY_OF_NATURE_PEDIA</Civilopedia>
+			<Help>TXT_KEY_TRAIT_FURY_OF_NATURE_HELP</Help>
+
+			<ShortDescription>TXT_KEY_TRAIT_FURY_OF_NATURE_SHORT</ShortDescription>
+		</TraitInfo>
+		<TraitInfo>		<!-- Fury of Nature 2 -->
+			<Type>TRAIT_FURY_OF_NATURE2</Type>
+			<ParentTrait>TRAIT_FURY_OF_NATURE</ParentTrait>
+			<NextTrait>TRAIT_FURY_OF_NATURE3</NextTrait>
+			<Civilopedia>TXT_KEY_TRAIT_FURY_OF_NATURE_PEDIA</Civilopedia>
+			<Help>TXT_KEY_TRAIT_FURY_OF_NATURE2_HELP</Help>
+			<iLevel>2</iLevel>
+			<iMinRequiredPoints>300</iMinRequiredPoints>
+			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+			<Description>TXT_KEY_TRAIT_FURY_OF_NATURE</Description>
+			<ShortDescription>TXT_KEY_TRAIT_FURY_OF_NATURE_SHORT</ShortDescription>
+			<iHealth>2</iHealth>
+			<FreeBonuses>
+				<FreeBonus>
+					<BonusType>BONUS_MANA_NATURE</BonusType>
+					<bFreeBonus>1</bFreeBonus>
+				</FreeBonus>
+			</FreeBonuses>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WOODSMAN1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WOODSMAN2</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<FreePromotionUnitCombats>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_ANIMAL</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+				<FreePromotionUnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
+				</FreePromotionUnitCombat>
+			</FreePromotionUnitCombats>
+		</TraitInfo>
+		<TraitInfo>		<!-- Fury of Nature 3 -->
+			<Type>TRAIT_FURY_OF_NATURE3</Type>
+			<ParentTrait>TRAIT_FURY_OF_NATURE2</ParentTrait>
+			<Civilopedia>TXT_KEY_TRAIT_FURY_OF_NATURE_PEDIA</Civilopedia>
+			<Help>TXT_KEY_TRAIT_FURY_OF_NATURE3_HELP</Help>
+
+			<iLevel>3</iLevel>
+			<iMinRequiredPoints>1500</iMinRequiredPoints>
+			<TraitClass>TRAITCLASS_EMERGENT</TraitClass>
+			<Description>TXT_KEY_TRAIT_FURY_OF_NATURE</Description>
+			<ShortDescription>TXT_KEY_TRAIT_FURY_OF_NATURE_SHORT</ShortDescription>
+			<iHealth>5</iHealth>
+			<UnitClassPlayerInstancesChanges>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_SHADOW</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_ARCHMAGE</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_BEASTMASTER</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_IMMORTAL</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_PHALANX</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+				<UnitClassPlayerInstancesChange>
+					<UnitClassType>UNITCLASS_WAR_CHARIOT</UnitClassType>
+					<iPlayerInstancesChange>1</iPlayerInstancesChange>
+				</UnitClassPlayerInstancesChange>
+			</UnitClassPlayerInstancesChanges>
+		</TraitInfo>
+	</TraitInfos> 
+</Civ4TraitInfos>

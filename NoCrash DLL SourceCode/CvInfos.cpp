@@ -21193,6 +21193,7 @@ m_bForceTeamVoteEligible(false),
 m_bCapital(false),
 m_bGovernmentCenter(false),
 m_bGoldenAge(false),
+m_bFoodProduction(false),
 m_bMapCentering(false),
 m_bNoUnhappiness(false),
 m_bNoUnhealthiness(false),
@@ -22188,6 +22189,10 @@ bool CvBuildingInfo::isGoldenAge() const
 	return m_bGoldenAge;
 }
 
+bool CvBuildingInfo::isFoodProduction() const
+{
+	return m_bFoodProduction;
+}
 bool CvBuildingInfo::isMapCentering() const
 {
 	return m_bMapCentering;
@@ -23292,6 +23297,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bCapital);
 	stream->Read(&m_bGovernmentCenter);
 	stream->Read(&m_bGoldenAge);
+	stream->Read(&m_bFoodProduction);
 	stream->Read(&m_bMapCentering);
 	stream->Read(&m_bNoUnhappiness);
 	stream->Read(&m_bNoUnhealthiness);
@@ -24002,6 +24008,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bCapital);
 	stream->Write(m_bGovernmentCenter);
 	stream->Write(m_bGoldenAge);
+	stream->Write(m_bFoodProduction);
 	stream->Write(m_bMapCentering);
 	stream->Write(m_bNoUnhappiness);
 	stream->Write(m_bNoUnhealthiness);
@@ -24538,6 +24545,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bCapital, "bCapital");
 	pXML->GetChildXmlValByName(&m_bGovernmentCenter, "bGovernmentCenter");
 	pXML->GetChildXmlValByName(&m_bGoldenAge, "bGoldenAge");
+	pXML->GetChildXmlValByName(&m_bFoodProduction, "bFoodProduction");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
 	pXML->GetChildXmlValByName(&m_bMapCentering, "bMapCentering");
 	pXML->GetChildXmlValByName(&m_bNoUnhappiness, "bNoUnhappiness");
@@ -25452,6 +25460,7 @@ void CvBuildingInfo::copyNonDefaults(CvBuildingInfo* pClassInfo, CvXMLLoadUtilit
 	if (isCapital()								== false)				m_bCapital							= pClassInfo->isCapital();
 	if (isGovernmentCenter()					== false)				m_bGovernmentCenter					= pClassInfo->isGovernmentCenter();
 	if (isGoldenAge ()							== false)				m_bGoldenAge						= pClassInfo->isGoldenAge ();
+	if (isFoodProduction() == false)				m_bFoodProduction = pClassInfo->isFoodProduction();
 	if (isAllowsNukes()							== false)				m_bAllowsNukes						= pClassInfo->isAllowsNukes();
 	if (isMapCentering()						== false)				m_bMapCentering						= pClassInfo->isMapCentering();
 	if (isNoUnhappiness()						== false)				m_bNoUnhappiness					= pClassInfo->isNoUnhappiness();
@@ -40800,6 +40809,8 @@ m_iPillageInfluenceModifier(100),
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 m_bOverflowProduction(false),
+m_bFoodUnitProduction(false),
+m_bFoodBuildingProduction(false),
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
@@ -41233,6 +41244,14 @@ bool CvTraitInfo::isOverflowProduction() const
 {
 	return m_bOverflowProduction;
 }
+bool CvTraitInfo::isFoodUnitProduction() const
+{
+	return m_bFoodUnitProduction;
+}
+bool CvTraitInfo::isFoodBuildingProduction() const
+{
+	return m_bFoodBuildingProduction;
+}
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
@@ -41642,6 +41661,8 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	pXML->GetChildXmlValByName(&m_bOverflowProduction, "bOverflowProduction");
+	pXML->GetChildXmlValByName(&m_bFoodUnitProduction, "bFoodUnitProduction");
+	pXML->GetChildXmlValByName(&m_bFoodBuildingProduction, "bFoodBuildingProduction");
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
@@ -42181,6 +42202,8 @@ void CvTraitInfo::copyNonDefaults(CvTraitInfo* pClassInfo, CvXMLLoadUtility* pXM
 	/**					Allows overflow production to produce multiple units each turn				**/
 	/*************************************************************************************************/
 	if (isOverflowProduction() == false)		m_bOverflowProduction = pClassInfo->isOverflowProduction();
+	if (isFoodBuildingProduction() == false)		m_bFoodBuildingProduction = pClassInfo->isFoodBuildingProduction();
+	if (isFoodUnitProduction() == false)		m_bFoodUnitProduction = pClassInfo->isFoodUnitProduction();
 	/*************************************************************************************************/
 	/**	Multiple Production							END												**/
 	/*************************************************************************************************/

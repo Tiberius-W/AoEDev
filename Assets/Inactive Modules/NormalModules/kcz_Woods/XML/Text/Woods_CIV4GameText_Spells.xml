@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_NATURES_CALL</Tag>
+		<English>Nature's Call</English>
+		<French>Nature's Call</French>
+		<German>Nature's Call</German>
+		<Italian>Nature's Call</Italian>
+		<Spanish>Nature's Call</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_NATURES_CALL_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Turns 80% of your forests into ancient forests. [NEWLINE][ICON_BULLET]Turns 20% other forests into ancient forests.</English>
+		<French>[NEWLINE][ICON_BULLET]Turns 80% of your forests into ancient forests. [NEWLINE][ICON_BULLET]Turns 20% other forests into ancient forests.</French>
+		<German>[NEWLINE][ICON_BULLET]Turns 80% of your forests into ancient forests. [NEWLINE][ICON_BULLET]Turns 20% other forests into ancient forests.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Turns 80% of your forests into ancient forests. [NEWLINE][ICON_BULLET]Turns 20% other forests into ancient forests.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Turns 80% of your forests into ancient forests. [NEWLINE][ICON_BULLET]Turns 20% other forests into ancient forests.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BIOLOGICAL_EROSION</Tag>
+		<English>Biological Erosion</English>
+		<French>Biological Erosion</French>
+		<German>Biological Erosion</German>
+		<Italian>Biological Erosion</Italian>
+		<Spanish>Biological Erosion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_BIOLOGICAL_EROSION_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Damages city defences. Has small chance of destroying buildings.</English>
+		<French>[NEWLINE][ICON_BULLET]Damages city defences. Has small chance of destroying buildings.</French>
+		<German>[NEWLINE][ICON_BULLET]Damages city defences. Has small chance of destroying buildings.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Damages city defences. Has small chance of destroying buildings.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Damages city defences. Has small chance of destroying buildings.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_FURY_OF_NATURE</Tag>
+		<English>Fury of Nature</English>
+		<French>Fury of Nature</French>
+		<German>Fury of Nature</German>
+		<Italian>Fury of Nature</Italian>
+		<Spanish>Fury of Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_FURY_OF_NATURE_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Summons a random Animal with 3 turns duration and gives it Marksman.[NEWLINE][ICON_BULLET]The strongest animal that can be summoned with this spell depends on Unit's level</English>
+		<French>[NEWLINE][ICON_BULLET]Summons a random Animal with 3 turns duration and gives it Marksman.[NEWLINE][ICON_BULLET]The strongest animal that can be summoned with this spell depends on Unit's level</French>
+		<German>[NEWLINE][ICON_BULLET]Summons a random Animal with 3 turns duration and gives it Marksman.[NEWLINE][ICON_BULLET]The strongest animal that can be summoned with this spell depends on Unit's level</German>
+		<Italian>[NEWLINE][ICON_BULLET]Summons a random Animal with 3 turns duration and gives it Marksman.[NEWLINE][ICON_BULLET]The strongest animal that can be summoned with this spell depends on Unit's level</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Summons a random Animal with 3 turns duration and gives it Marksman.[NEWLINE][ICON_BULLET]The strongest animal that can be summoned with this spell depends on Unit's level</Spanish>
+	</TEXT>
+</Civ4GameText>

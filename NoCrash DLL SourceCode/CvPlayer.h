@@ -1392,6 +1392,11 @@ public:
 	bool isOverflowProduction() const;
 	void  changeOverflowProduction(int iNewValue);
 	void setOverflowProduction(int bNewValue);
+	bool isFoodUnitProduction() const;
+	void  changeFoodUnitProduction(int iNewValue);
+	bool isFoodBuildingProduction() const;
+	void  changeFoodBuildingProduction(int iNewValue);
+
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
@@ -1897,7 +1902,9 @@ protected:
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	int m_iOverflowProduction;
-/*************************************************************************************************/
+	int m_iFoodUnitProduction;
+	int m_iFoodBuildingProduction;
+	/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/

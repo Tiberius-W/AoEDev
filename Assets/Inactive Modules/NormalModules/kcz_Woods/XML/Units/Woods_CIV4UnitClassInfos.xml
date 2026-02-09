@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Derek Paxton (None) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- UnitClass Schema -->
+<Civ4UnitClassInfos xmlns="x-schema:Woods_CIV4UnitSchema.xml">
+	<UnitClassInfos>
+		<UnitClassInfo>		<!-- Eertian hero -->
+			<Type>UNITCLASS_EERTIAN_HERO</Type>
+			<Description>TXT_KEY_UNIT_EERTIAN_HERO</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>NONE</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Poison Ivyr -->
+			<Type>UNITCLASS_POISON_IVY</Type>
+			<Description>TXT_KEY_UNIT_POISON_IVY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_POISON_IVY</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Bees -->
+			<Type>UNITCLASS_BEES</Type>
+			<Description>TXT_KEY_UNIT_BEES</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<bUnique>1</bUnique>
+			<DefaultUnit>UNIT_BEES</DefaultUnit>
+			<iMercenaryWeight>0</iMercenaryWeight>
+		</UnitClassInfo>
+	</UnitClassInfos>
+</Civ4UnitClassInfos>

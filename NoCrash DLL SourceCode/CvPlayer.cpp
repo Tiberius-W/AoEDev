@@ -1029,7 +1029,9 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	m_iOverflowProduction = 0;
-/*************************************************************************************************/
+	m_iFoodUnitProduction = 0;
+	m_iFoodBuildingProduction = 0;
+	/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/
@@ -3500,7 +3502,15 @@ void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
 	{
 		changeOverflowProduction(iChange);
 	}
-/*************************************************************************************************/
+	if (GC.getTraitInfo(eTrait).isFoodUnitProduction())
+	{
+		changeFoodUnitProduction(iChange);
+	}
+	if (GC.getTraitInfo(eTrait).isFoodBuildingProduction())
+	{
+		changeFoodBuildingProduction(iChange);
+	}
+	/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/
@@ -10224,6 +10234,10 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 	if( eCivic == NO_CIVIC )
 	{
 		return true;
+	}
+	if (isBarbarian())
+	{
+		return false;
 	}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
@@ -20757,7 +20771,9 @@ void CvPlayer::read(FDataStreamBase* pStream)
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	pStream->Read(&m_iOverflowProduction);
-/*************************************************************************************************/
+	pStream->Read(&m_iFoodUnitProduction);
+	pStream->Read(&m_iFoodBuildingProduction);
+	/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/
@@ -21506,7 +21522,9 @@ void CvPlayer::write(FDataStreamBase* pStream)
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	pStream->Write(m_iOverflowProduction);
-/*************************************************************************************************/
+	pStream->Write(m_iFoodUnitProduction);
+	pStream->Write(m_iFoodBuildingProduction);
+	/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/
@@ -28289,6 +28307,22 @@ void CvPlayer::changeOverflowProduction(int iNewValue)
 void CvPlayer::setOverflowProduction(int bNewValue)
 {
 	m_iOverflowProduction = bNewValue;
+}
+bool CvPlayer::isFoodUnitProduction() const
+{
+	return m_iFoodUnitProduction > 0;
+}
+void CvPlayer::changeFoodUnitProduction(int iNewValue)
+{
+	m_iFoodUnitProduction = m_iFoodUnitProduction + iNewValue;
+}
+bool CvPlayer::isFoodBuildingProduction() const
+{
+	return m_iFoodBuildingProduction > 0;
+}
+void CvPlayer::changeFoodBuildingProduction(int iNewValue)
+{
+	m_iFoodBuildingProduction = m_iFoodBuildingProduction + iNewValue;
 }
 /*************************************************************************************************/
 /**	Multiple Production							END												**/

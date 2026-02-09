@@ -8160,7 +8160,15 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 		{
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_OVERFLOW_PRODUCTION_HELP"));
 		}
-/*************************************************************************************************/
+		if (GC.getTraitInfo(eTrait).isFoodUnitProduction())
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_FOOD_UNIT_PRODUCTION_HELP"));
+		}
+		if (GC.getTraitInfo(eTrait).isFoodBuildingProduction())
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_FOOD_BUILDING_PRODUCTION_HELP"));
+		}
+		/*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
 /*************************************************************************************************/

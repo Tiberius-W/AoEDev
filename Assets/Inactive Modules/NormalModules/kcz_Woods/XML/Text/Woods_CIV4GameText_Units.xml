@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD</Tag>
+		<English>Dryad</English>
+		<French>Dryad</French>
+		<German>Dryad</German>
+		<Italian>Dryad</Italian>
+		<Spanish>Dryad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD_PEDIA</Tag>
+		<English>Dryad_ped</English>
+		<French>Dryad</French>
+		<German>Dryad</German>
+		<Italian>Dryad</Italian>
+		<Spanish>Dryad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD_ARCHER</Tag>
+		<English>Dryad Archer</English>
+		<French>Dryad Archer</French>
+		<German>Dryad Archer</German>
+		<Italian>Dryad Archer</Italian>
+		<Spanish>Dryad Archer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD_ARCHER_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+0/1[ICON_STRENGTH], +2 ranged STR, +10% max r. damage with Bowyers
+[ICON_BULLET]+1/1[ICON_STRENGTH], +1 ranged STR, +1 ramge with Precision
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+0/1[ICON_STRENGTH], +2 ranged STR, +10% max r. damage with Bowyers
+[ICON_BULLET]+1/1[ICON_STRENGTH], +1 ranged STR, +1 ramge with Precision
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+0/1[ICON_STRENGTH], +2 ranged STR, +10% max r. damage with Bowyers
+[ICON_BULLET]+1/1[ICON_STRENGTH], +1 ranged STR, +1 ramge with Precision
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+0/1[ICON_STRENGTH], +2 ranged STR, +10% max r. damage with Bowyers
+[ICON_BULLET]+1/1[ICON_STRENGTH], +1 ranged STR, +1 ramge with Precision
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+0/1[ICON_STRENGTH], +2 ranged STR, +10% max r. damage with Bowyers
+[ICON_BULLET]+1/1[ICON_STRENGTH], +1 ranged STR, +1 ramge with Precision
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAD_ARCHER_PEDIA</Tag>
+		<English>Dryad_archer_ped</English>
+		<French>Dryad</French>
+		<German>Dryad</German>
+		<Italian>Dryad</Italian>
+		<Spanish>Dryad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAID</Tag>
+		<English>Dryad Enchantress</English>
+		<French>Dryad Enchantress</French>
+		<German>Dryad Enchantress</German>
+		<Italian>Dryad Enchantress</Italian>
+		<Spanish>Dryad Enchantress</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRYAID_HELP</Tag>
+		<English>
+[ICON_BULLET]Gains Channeling II with sorcery
+[ICON_BULLET]+1[ICON_STRENGTH] with Arcane Lore
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]Gains Channeling II with sorcery
+[ICON_BULLET]+1[ICON_STRENGTH] with Arcane Lore
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]Gains Channeling II with sorcery
+[ICON_BULLET]+1[ICON_STRENGTH] with Arcane Lore
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]Gains Channeling II with sorcery
+[ICON_BULLET]+1[ICON_STRENGTH] with Arcane Lore
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]Gains Channeling II with sorcery
+[ICON_BULLET]+1[ICON_STRENGTH] with Arcane Lore
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_Dryaid_PEDIA</Tag>
+		<English>Dryaid_ped</English>
+		<French>Dryad</French>
+		<German>Dryad</German>
+		<Italian>Dryad</Italian>
+		<Spanish>Dryad</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANIMAL_CHARMER</Tag>
+		<English>Animal Charmer</English>
+		<French>Animal Charmer</French>
+		<German>Animal Charmer</German>
+		<Italian>Animal Charmer</Italian>
+		<Spanish>Animal Charmer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANIMAL_CHARMER_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Handling
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Feral Bond
+[ICON_BULLET]+1 Poison [ICON_STRENGTH] with Poisons
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Mastery
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Handling
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Feral Bond
+[ICON_BULLET]+1 Poison [ICON_STRENGTH] with Poisons
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Mastery
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Handling
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Feral Bond
+[ICON_BULLET]+1 Poison [ICON_STRENGTH] with Poisons
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Mastery
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Handling
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Feral Bond
+[ICON_BULLET]+1 Poison [ICON_STRENGTH] with Poisons
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Mastery
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Handling
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Feral Bond
+[ICON_BULLET]+1 Poison [ICON_STRENGTH] with Poisons
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Animal Mastery
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FOREST_GUARDIAN</Tag>
+		<English>Forest Guardian</English>
+		<French>Forest Guardian</French>
+		<German>Forest Guardian</German>
+		<Italian>Forest Guardian</Italian>
+		<Spanish>Forest Guardian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FOREST_GUARDIAN_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+2/1[ICON_STRENGTH] with Mithril Working
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BEAR_RIDER_EERT</Tag>
+		<English>Bear Rider</English>
+		<French>Bear Rider</French>
+		<German>Bear Rider</German>
+		<Italian>Bear Rider</Italian>
+		<Spanish>Bear Rider</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BEAR_RIDER_EERT_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Stirrups
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Warhorses
+[ICON_BULLET]+2/0[ICON_STRENGTH] with Armored Cavalry
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</English>
+		<French>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Stirrups
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Warhorses
+[ICON_BULLET]+2/0[ICON_STRENGTH] with Armored Cavalry
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</French>
+		<German>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Stirrups
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Warhorses
+[ICON_BULLET]+2/0[ICON_STRENGTH] with Armored Cavalry
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</German>
+		<Italian>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Stirrups
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Warhorses
+[ICON_BULLET]+2/0[ICON_STRENGTH] with Armored Cavalry
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Italian>
+		<Spanish>
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Bronze Working
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Iron Working
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Stirrups
+[ICON_BULLET]+1/0[ICON_STRENGTH] with Warhorses
+[ICON_BULLET]+2/0[ICON_STRENGTH] with Armored Cavalry
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BURNING_TREANT</Tag>
+		<English>Burning Treant</English>
+		<French>Burning Treant</French>
+		<German>Burning Treant</German>
+		<Italian>Burning Treant</Italian>
+		<Spanish>Burning Treant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREE_OF_LIFE</Tag>
+		<English>Tree of Life</English>
+		<French>Tree of Life</French>
+		<German>Tree of Life</German>
+		<Italian>Tree of Life</Italian>
+		<Spanish>Tree of Life</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREE_OF_LIFE_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREANT_ELDER</Tag>
+		<English>Treant Elder</English>
+		<French>Treant Elder</French>
+		<German>Treant Elder</German>
+		<Italian>Treant Elder</Italian>
+		<Spanish>Treant Elder</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GUARDIAN_TREE</Tag>
+		<English>Guardian Tree</English>
+		<French>Guardian Tree</French>
+		<German>Guardian Tree</German>
+		<Italian>Guardian Tree</Italian>
+		<Spanish>Guardian Tree</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_POISON_IVY</Tag>
+		<English>Poison Ivy</English>
+		<French>Poison Ivy</French>
+		<German>Poison Ivy</German>
+		<Italian>Poison Ivy</Italian>
+		<Spanish>Poison Ivy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LESHIY</Tag>
+		<English>Leshiy</English>
+		<French>Leshiy</French>
+		<German>Leshiy</German>
+		<Italian>Leshiy</Italian>
+		<Spanish>Leshiy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EERTIAN_HERO</Tag>
+		<English>Bartek the Oak</English>
+		<French>Bartek the Oak</French>
+		<German>Bartek the Oak</German>
+		<Italian>Bartek the Oak</Italian>
+		<Spanish>Bartek the Oak</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EERTIAN_HERO_HELP</Tag>
+		<English>
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature
+[ICON_BULLET]Resurrected in the Capital if killer in a Forest or Ancient Forest</English>
+		<French>
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature
+[ICON_BULLET]Resurrected in the Capital if killer in a Forest or Ancient Forest</French>
+		<German>
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature
+[ICON_BULLET]Resurrected in the Capital if killer in a Forest or Ancient Forest</German>
+		<Italian>
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature
+[ICON_BULLET]Resurrected in the Capital if killer in a Forest or Ancient Forest</Italian>
+		<Spanish>
+[ICON_BULLET]+0/1[ICON_STRENGTH] with Way of the Forests
+[ICON_BULLET]+1/1[ICON_STRENGTH] with Commune with Nature
+[ICON_BULLET]Resurrected in the Capital if killer in a Forest or Ancient Forest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EAGLE</Tag>
+		<English>Eagles</English>
+		<French>Eagles</French>
+		<German>Eagles</German>
+		<Italian>Eagles</Italian>
+		<Spanish>Eagles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EAGLE_HELP</Tag>
+		<English>
+[ICON_BULLET]+1/0[ICON_STRENGTH], +1[ICON_MOVES] with Sailing
+[ICON_BULLET]+1 Cargo space, +1 PERC with Optics
+[ICON_BULLET]+2/1[ICON_STRENGTH], +1[ICON_MOVES] with Astronomy</English>
+		<French>
+[ICON_BULLET]+1/0[ICON_STRENGTH], +1[ICON_MOVES] with Sailing
+[ICON_BULLET]+1 Cargo space, +1 PERC with Optics
+[ICON_BULLET]+2/1[ICON_STRENGTH], +1[ICON_MOVES] with Astronomy</French>
+		<German>
+[ICON_BULLET]+1/0[ICON_STRENGTH], +1[ICON_MOVES] with Sailing
+[ICON_BULLET]+1 Cargo space, +1 PERC with Optics
+[ICON_BULLET]+2/1[ICON_STRENGTH], +1[ICON_MOVES] with Astronomy</German>
+		<Italian>
+[ICON_BULLET]+1/0[ICON_STRENGTH], +1[ICON_MOVES] with Sailing
+[ICON_BULLET]+1 Cargo space, +1 PERC with Optics
+[ICON_BULLET]+2/1[ICON_STRENGTH], +1[ICON_MOVES] with Astronomy</Italian>
+		<Spanish>
+[ICON_BULLET]+1/0[ICON_STRENGTH], +1[ICON_MOVES] with Sailing
+[ICON_BULLET]+1 Cargo space, +1 PERC with Optics
+[ICON_BULLET]+2/1[ICON_STRENGTH], +1[ICON_MOVES] with Astronomy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NAIAD</Tag>
+		<English>Naiad</English>
+		<French>Naiad</French>
+		<German>Naiad</German>
+		<Italian>Naiad</Italian>
+		<Spanish>Naiad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NAIAD_HELP</Tag>
+		<English>
++0/1[ICON_STRENGTH] with Way of the Forests
++1/0[ICON_STRENGTH] with Message form the Deep
++1/1[ICON_STRENGTH] with Commune with Nature
+		</English>
+		<French>
++0/1[ICON_STRENGTH] with Way of the Forests
++1/0[ICON_STRENGTH] with Message form the Deep
++1/1[ICON_STRENGTH] with Commune with Nature
+		</French>
+		<German>
++0/1[ICON_STRENGTH] with Way of the Forests
++1/0[ICON_STRENGTH] with Message form the Deep
++1/1[ICON_STRENGTH] with Commune with Nature
+		</German>
+		<Italian>
++0/1[ICON_STRENGTH] with Way of the Forests
++1/0[ICON_STRENGTH] with Message form the Deep
++1/1[ICON_STRENGTH] with Commune with Nature
+		</Italian>
+		<Spanish>
++0/1[ICON_STRENGTH] with Way of the Forests
++1/0[ICON_STRENGTH] with Message form the Deep
++1/1[ICON_STRENGTH] with Commune with Nature
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LILYPAD</Tag>
+		<English>Lilypad</English>
+		<French>Lilypad</French>
+		<German>Lilypad</German>
+		<Italian>Lilypad</Italian>
+		<Spanish>Lilypad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EARTHBREAKER</Tag>
+		<English>Earthbreaker</English>
+		<French>Earthbreaker</French>
+		<German>Earthbreaker</German>
+		<Italian>Earthbreaker</Italian>
+		<Spanish>Earthbreaker</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FOREST_VANGUARD</Tag>
+		<English>Forest Vanguard</English>
+		<French>Forest Vanguard</French>
+		<German>Forest Vanguard</German>
+		<Italian>Forest Vanguard</Italian>
+		<Spanish>Forest Vanguard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BEES</Tag>
+		<English>Swarm of Bees</English>
+		<French>Swarm of Bees</French>
+		<German>Swarm of Bees</German>
+		<Italian>Swarm of Bees</Italian>
+		<Spanish>Swarm of Bees</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CROWS</Tag>
+		<English>Crows</English>
+		<French>Crows</French>
+		<German>Crows</German>
+		<Italian>Crows</Italian>
+		<Spanish>Crows</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANGROVE</Tag>
+		<English>Mangrove</English>
+		<French>Mangrove</French>
+		<German>Mangrove</German>
+		<Italian>Mangrove</Italian>
+		<Spanish>Mangrove</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FLOATING_ISLAND</Tag>
+		<English>Floating Island</English>
+		<French>Floating Island</French>
+		<German>Floating Island</German>
+		<Italian>Floating Island</Italian>
+		<Spanish>Floating Island</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag></Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

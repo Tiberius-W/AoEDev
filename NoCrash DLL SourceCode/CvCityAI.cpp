@@ -139,7 +139,7 @@ void CvCityAI::AI_reset()
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
-		m_aiBestBuildValue[iI] = NO_BUILD;
+		m_aiBestBuildValue[iI] = 0;
 	}
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -3743,7 +3743,30 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 
 	iBestValue = 0;
 	eBestBuilding = NO_BUILDING;
+	bool bGrowMore = false;
 
+	if (foodDifference() > 0)
+	{
+		// BBAI NOTE: This is where small city worker and settler production is blocked
+		if (GET_PLAYER(getOwnerINLINE()).getNumCities() <= 2)
+		{
+			bGrowMore = ((getPopulation() < 3) && (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		else
+		{
+			bGrowMore = ((getPopulation() < 3) || (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		if (!bGrowMore && (getPopulation() < 6) && (AI_countGoodTiles(true, false, 80) >= getPopulation()))
+		{
+			if ((getFood() - (getFoodKept() / 2)) >= (growthThreshold() / 2))
+			{
+				if ((angryPopulation(1) == 0) && (healthRate(false, 1) == 0))
+				{
+					bGrowMore = true;
+				}
+			}
+		}
+	}
 
 	if (iFocusFlags & BUILDINGFOCUS_CAPITAL)
 	{
@@ -3784,6 +3807,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 		{
 			eLoopBuilding = ((BuildingTypes)(getCityBuildings(iI)));
 
+			if (bGrowMore && GC.getBuildingInfo(eLoopBuilding).isFoodProduction())
+			{
+				continue;
+			}
 			if ((eLoopBuilding != NO_BUILDING) && (getNumBuilding(eLoopBuilding) < GC.getCITY_MAX_NUM_BUILDINGS())
 			&&  (!isProductionAutomated() || !(isWorldWonderClass((BuildingClassTypes)iI) || isNationalWonderClass((BuildingClassTypes)iI))))
 			{

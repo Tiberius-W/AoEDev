@@ -1280,6 +1280,22 @@
 		<Spanish>[NEWLINE][ICON_BULLET]Multiple items can be constructed each turn, if production is sufficient.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FOOD_UNIT_PRODUCTION_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Can Build Units with Food.</English>
+		<French>[NEWLINE][ICON_BULLET]Can Build Units with Food.</French>
+		<German>[NEWLINE][ICON_BULLET]Can Build Units with Food.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Can Build Units with Food.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Can Build Units with Food.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FOOD_BUILDING_PRODUCTION_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Can Build Buildings with Food.</English>
+		<French>[NEWLINE][ICON_BULLET]Can Build Buildings with Food.</French>
+		<German>[NEWLINE][ICON_BULLET]Can Build Buildings with Food.</German>
+		<Italian>[NEWLINE][ICON_BULLET]Can Build Buildings with Food.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Can Build Buildings with Food.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PEACECOMMERCE_MODIFIERS</Tag>
 		<English>[NEWLINE][ICON_BULLET]%D1%% %F2_commerce when at peace</English>
 		<French>[NEWLINE][ICON_BULLET]%D1%% %F2_commerce en période de paix</French>

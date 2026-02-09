@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_1</Tag>
+		<English>Tannirean Woods</English>
+		<French>Tannirean Woods</French>
+		<German>Tannirean Woods</German>
+		<Italian>Tannirean Woods</Italian>
+		<Spanish>Tannirean Woods</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_2</Tag>
+		<English>Barlon</English>
+		<French>Barlon</French>
+		<German>Barlon</German>
+		<Italian>Barlon</Italian>
+		<Spanish>Barlon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_3</Tag>
+		<English>Ibrion</English>
+		<French>Ibrion</French>
+		<German>Ibrion</German>
+		<Italian>Ibrion</Italian>
+		<Spanish>Ibrion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_4</Tag>
+		<English>Keartonis</English>
+		<French>Keartonis</French>
+		<German>Keartonis</German>
+		<Italian>Keartonis</Italian>
+		<Spanish>Keartonis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_5</Tag>
+		<English>Amyke</English>
+		<French>Amyke</French>
+		<German>Amyke</German>
+		<Italian>Amyke</Italian>
+		<Spanish>Amyke</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_6</Tag>
+		<English>Delaria</English>
+		<French>Delaria</French>
+		<German>Delaria</German>
+		<Italian>Delaria</Italian>
+		<Spanish>Delaria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_7</Tag>
+		<English>Shanalion</English>
+		<French>Shanalion</French>
+		<German>Shanalion</German>
+		<Italian>Shanalion</Italian>
+		<Spanish>Shanalion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_8</Tag>
+		<English>Shinahel</English>
+		<French>Shinahel</French>
+		<German>Shinahel</German>
+		<Italian>Shinahel</Italian>
+		<Spanish>Shinahel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_9</Tag>
+		<English>Bashal</English>
+		<French>Bashal</French>
+		<German>Bashal</German>
+		<Italian>Bashal</Italian>
+		<Spanish>Bashal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_10</Tag>
+		<English>Breesh</English>
+		<French>Breesh</French>
+		<German>Breesh</German>
+		<Italian>Breesh</Italian>
+		<Spanish>Breesh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_11</Tag>
+		<English>Boreal</English>
+		<French>Boreal</French>
+		<German>Boreal</German>
+		<Italian>Boreal</Italian>
+		<Spanish>Boreal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_EERT_12</Tag>
+		<English>Arekab</English>
+		<French>Arekab</French>
+		<German>Arekab</German>
+		<Italian>Arekab</Italian>
+		<Spanish>Arekab</Spanish>
+	</TEXT>
+
+</Civ4GameText>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Relations between leaders -->
+<Civ4LeaderRelationInfos xmlns="x-schema:Woods_CIV4LeaderRelationsSchema.xml">
+	<LeaderRelationInfos>
+			<LeaderRelationInfo>
+			<Type>LEADERRELATION_TREANT</Type>
+			<Leader>LEADER_TREANT</Leader>
+			<LeaderAttitudeChanges>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_VEROCCHIO</TargetLeaderType>
+					<iAttitudeChange>-5</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_MAER</TargetLeaderType>
+					<iAttitudeChange>-5</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_OS-GABELLA</TargetLeaderType>
+					<iAttitudeChange>-3</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_TEBRYN</TargetLeaderType>
+					<iAttitudeChange>-3</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_OPHELIA</TargetLeaderType>
+					<iAttitudeChange>-2</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_AURIC</TargetLeaderType>
+					<iAttitudeChange>-3</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_CARDITH</TargetLeaderType>
+					<iAttitudeChange>1</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_ARENDEL</TargetLeaderType>
+					<iAttitudeChange>1</iAttitudeChange>
+				</LeaderAttitudeChange>
+				<LeaderAttitudeChange>
+					<TargetLeaderType>LEADER_FAERYL</TargetLeaderType>
+					<iAttitudeChange>1</iAttitudeChange>
+				</LeaderAttitudeChange>
+			</LeaderAttitudeChanges>
+		</LeaderRelationInfo>
+	</LeaderRelationInfos>
+</Civ4LeaderRelationInfos>

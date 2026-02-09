@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PALACE_EERT</Tag>
+		<English>Eertian Palace</English>
+		<French>Eertian Palace</French>
+		<German>Eertian Palace</German>
+		<Italian>Eertian Palace</Italian>
+		<Spanish>Eertian Palace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ROOT_WALL</Tag>
+		<English>Root wall</English>
+		<French>Root wall</French>
+		<German>Root wall</German>
+		<Italian>Root wall</Italian>
+		<Spanish>Root wall</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ROOT_WALL_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]City regenerates additional 3% defense every turn.</English>
+		<French>[NEWLINE][ICON_BULLET]City regenerates additional 3% defense every turn.</French>
+		<German>[NEWLINE][ICON_BULLET]City regenerates additional 3% defense every turn.</German>
+		<Italian>[NEWLINE][ICON_BULLET]City regenerates additional 3% defense every turn.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]City regenerates additional 3% defense every turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THORNROOT_WALLS</Tag>
+		<English>Thornroot walls</English>
+		<French>Thornroot walls</French>
+		<German>Thornroot walls</German>
+		<Italian>Thornroot walls</Italian>
+		<Spanish>Thornroot walls</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THORNROOT_WALLS_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]City regenerates additional 5% defense every turn.</English>
+		<French>[NEWLINE][ICON_BULLET]City regenerates additional 5% defense every turn.</French>
+		<German>[NEWLINE][ICON_BULLET]City regenerates additional 5% defense every turn.</German>
+		<Italian>[NEWLINE][ICON_BULLET]City regenerates additional 5% defense every turn.</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]City regenerates additional 5% defense every turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POND</Tag>
+		<English>Pond</English>
+		<French>Pond</French>
+		<German>Pond</German>
+		<Italian>Pond</Italian>
+		<Spanish>Pond</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WARPED_GARDEN</Tag>
+		<English>Warped Garden</English>
+		<French>Warped Garden</French>
+		<German>Warped Garden</German>
+		<Italian>Warped Garden</Italian>
+		<Spanish>Warped Garden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GIANT_FLYTRAPS</Tag>
+		<English>Giant Flytraps</English>
+		<French>Giant Flytraps</French>
+		<German>Giant Flytraps</German>
+		<Italian>Giant Flytraps</Italian>
+		<Spanish>Giant Flytraps</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GIANT_FLYTRAPS_HELP</Tag>
+		<English>
+			[ICON_BULLET]At the start of your turn destroys weakest non-hero hostile Unit within one tile of the city and converts it into Food.</English>
+		<French>
+			[ICON_BULLET]At the start of your turn destroys weakest non-hero hostile Unit within one tile of the city and converts it into Food.</French>
+		<German>
+			[ICON_BULLET]At the start of your turn destroys weakest non-hero hostile Unit within one tile of the city and converts it into Food.</German>
+		<Italian>
+			[ICON_BULLET]At the start of your turn destroys weakest non-hero hostile Unit within one tile of the city and converts it into Food.</Italian>
+		<Spanish>
+			[ICON_BULLET]At the start of your turn destroys weakest non-hero hostile Unit within one tile of the city and converts it into Food.</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_FOREST_NURSERY</Tag>
+		<English>Forest Nursery</English>
+		<French>Forest Nursery</French>
+		<German>Forest Nursery</German>
+		<Italian>Forest Nursery</Italian>
+		<Spanish>Forest Nursery</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_NEEM_TREE</Tag>
+		<English>Neem Tree</English>
+		<French>Neem Tree</French>
+		<German>Neem Tree</German>
+		<Italian>Neem Tree</Italian>
+		<Spanish>Neem Tree</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_WILD_STREAM</Tag>
+		<English>Wild Stream</English>
+		<French>Wild Stream</French>
+		<German>Wild Stream</German>
+		<Italian>Wild Stream</Italian>
+		<Spanish>Wild Stream</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_SEAGULL_NEST</Tag>
+		<English>Seagull Nest</English>
+		<French>Seagull Nest</French>
+		<German>Seagull Nest</German>
+		<Italian>Seagull Nest</Italian>
+		<Spanish>Seagull Nest</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_MANGROVE</Tag>
+		<English>Mangrove</English>
+		<French>Mangrove</French>
+		<German>Mangrove</German>
+		<Italian>Mangrove</Italian>
+		<Spanish>Mangrove</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_MUSHROOM_GLADE</Tag>
+		<English>Mushroom Glade</English>
+		<French>Mushroom Glade</French>
+		<German>Mushroom Glade</German>
+		<Italian>Mushroom Glade</Italian>
+		<Spanish>Mushroom Glade</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_MUSHROOM_CAVE</Tag>
+		<English>Mushroom Cave</English>
+		<French>Mushroom Cave</French>
+		<German>Mushroom Cave</German>
+		<Italian>Mushroom Cave</Italian>
+		<Spanish>Mushroom Cave</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_FOREST_HEART</Tag>
+		<English>Forest Heart</English>
+		<French>Forest Heart</French>
+		<German>Forest Heart</German>
+		<Italian>Forest Heart</Italian>
+		<Spanish>Forest Heart</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_MOSS_CAVE</Tag>
+		<English>Moss Cave</English>
+		<French>Moss Cave</French>
+		<German>Moss Cave</German>
+		<Italian>Moss Cave</Italian>
+		<Spanish>Moss Cave</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_NATURES_TRIBUNAL</Tag>
+		<English>Nature's Tribunal</English>
+		<French>Nature's Tribunal</French>
+		<German>Nature's Tribunal</German>
+		<Italian>Nature's Tribunal</Italian>
+		<Spanish>Nature's Tribunal</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_HOT_SPRINGS</Tag>
+		<English>Hot Springs</English>
+		<French>Hot Springs</French>
+		<German>Hot Springs</German>
+		<Italian>Hot Springs</Italian>
+		<Spanish>Hot Springs</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_THICKET</Tag>
+		<English>Thicket</English>
+		<French>Thicket</French>
+		<German>Thicket</German>
+		<Italian>Thicket</Italian>
+		<Spanish>Thicket</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_FOREST_FIRES</Tag>
+		<English>(Crime) Forest Fires</English>
+		<French>(Crime) Forest Fires</French>
+		<German>(Crime) Forest Fires</German>
+		<Italian>(Crime) Forest Fires</Italian>
+		<Spanish>(Crime) Forest Fires</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_FOREST_FIRES_HELP</Tag>
+		<English>
+			[ICON_BULLET]Has a small chance of burning forests around the city</English>
+		<French>
+			[ICON_BULLET]Has a small chance of burning forests around the city</French>
+		<German>
+			[ICON_BULLET]Has a small chance of burning forests around the city</German>
+		<Italian>
+			[ICON_BULLET]Has a small chance of burning forests around the city</Italian>
+		<Spanish>
+			[ICON_BULLET]Has a small chance of burning forests around the city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_UNCONTROLLED_VEGETATION</Tag>
+		<English>(Crime) Unnatural Vegetation</English>
+		<French>(Crime) Unnatural Vegetation</French>
+		<German>(Crime) Unnatural Vegetation</German>
+		<Italian>(Crime) Unnatural Vegetation</Italian>
+		<Spanish>(Crime) Unnatural Vegetation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_UNCONTROLLED_VEGETATION_HELP</Tag>
+		<English>
+			[ICON_BULLET]Has a small chance of creating ancient forests or spawning hostile flora nearby.</English>
+		<French>
+			[ICON_BULLET]Has a small chance of creating ancient forests or spawning hostile flora nearby.</French>
+		<German>
+			[ICON_BULLET]Has a small chance of creating ancient forests or spawning hostile flora nearby.</German>
+		<Italian>
+			[ICON_BULLET]Has a small chance of creating ancient forests or spawning hostile flora nearby.</Italian>
+		<Spanish>
+			[ICON_BULLET]Has a small chance of creating ancient forests or spawning hostile flora nearby.</Spanish>
+	</TEXT>
+    <TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_PROGRESSIVE_MUTATION</Tag>
+		<English>(Crime) Progressive Mutation</English>
+		<French>(Crime) Progressive Mutation</French>
+		<German>(Crime) Progressive Mutation</German>
+		<Italian>(Crime) Progressive Mutation</Italian>
+		<Spanish>(Crime) Progressive Mutation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WISE_WILLOW</Tag>
+		<English>Wise Willow</English>
+		<French>Wise Willow</French>
+		<German>Wise Willow</German>
+		<Italian>Wise Willow</Italian>
+		<Spanish>Wise Willow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANCIENT_OAK</Tag>
+		<English>Ancient Oak</English>
+		<French>Ancient Oak</French>
+		<German>Ancient Oak</German>
+		<Italian>Ancient Oak</Italian>
+		<Spanish>Ancient Oak</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PINK_IVORY</Tag>
+		<English>Pink Ivory</English>
+		<French>Pink Ivory</French>
+		<German>Pink Ivory</German>
+		<Italian>Pink Ivory</Italian>
+		<Spanish>Pink Ivory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERB_GARDEN</Tag>
+		<English>Herb Garden</English>
+		<French>Herb Garden</French>
+		<German>Herb Garden</German>
+		<Italian>Herb Garden</Italian>
+		<Spanish>Herb Garden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRANQUIL_GLADE</Tag>
+		<English>Tranquil Glade</English>
+		<French>Tranquil Glade</French>
+		<German>Tranquil Glade</German>
+		<Italian>Tranquil Glade</Italian>
+		<Spanish>Tranquil Glade</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLD_GROWTH</Tag>
+		<English>Old Growth</English>
+		<French>Old Growth</French>
+		<German>Old Growth</German>
+		<Italian>Old Growth</Italian>
+		<Spanish>Old Growth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAJESTIC_CEDAR</Tag>
+		<English>Majestic Cedar</English>
+		<French>Majestic Cedar</French>
+		<German>Majestic Cedar</German>
+		<Italian>Majestic Cedar</Italian>
+		<Spanish>Majestic Cedar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLIVE_TREE</Tag>
+		<English>Olive Tree</English>
+		<French>Olive Tree</French>
+		<German>Olive Tree</German>
+		<Italian>Olive Tree</Italian>
+		<Spanish>Olive Tree</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANIMAL_DEN</Tag>
+		<English>Animal Den</English>
+		<French>Animal Den</French>
+		<German>Animal Den</German>
+		<Italian>Animal Den</Italian>
+		<Spanish>Animal Den</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LICHENS</Tag>
+		<English>Lichens</English>
+		<French>Lichens</French>
+		<German>Lichens</German>
+		<Italian>Lichens</Italian>
+		<Spanish>Lichens</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANIMAL_COLONY</Tag>
+		<English>Animal Colony</English>
+		<French>Animal Colony</French>
+		<German>Animal Colony</German>
+		<Italian>Animal Colony</Italian>
+		<Spanish>Animal Colony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BEEHIVE</Tag>
+		<English>Beehive</English>
+		<French>Beehive</French>
+		<German>Beehive</German>
+		<Italian>Beehive</Italian>
+		<Spanish>Beehive</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BEAVER_DAM</Tag>
+		<English>Beaver Dam</English>
+		<French>Beaver Dam</French>
+		<German>Beaver Dam</German>
+		<Italian>Beaver Dam</Italian>
+		<Spanish>Beaver Dam</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BIRD_CONCERT</Tag>
+		<English>Bird Concert</English>
+		<French>Bird Concert</French>
+		<German>Bird Concert</German>
+		<Italian>Bird Concert</Italian>
+		<Spanish>Bird Concert</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLOWER_MEADOW</Tag>
+		<English>Flower Meadow</English>
+		<French>Flower Meadow</French>
+		<German>Flower Meadow</German>
+		<Italian>Flower Meadow</Italian>
+		<Spanish>Flower Meadow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATURES_SANCTUARY</Tag>
+		<English>Nature's Sanctuary</English>
+		<French>Nature's Sanctuary</French>
+		<German>Nature's Sanctuary</German>
+		<Italian>Nature's Sanctuary</Italian>
+		<Spanish>Nature's Sanctuary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MENHIR</Tag>
+		<English>Menhir</English>
+		<French>Menhir</French>
+		<German>Menhir</German>
+		<Italian>Menhir</Italian>
+		<Spanish>Menhir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ETERNAL_PINE</Tag>
+		<English>Eternal Pine</English>
+		<French>Eternal Pine</French>
+		<German>Eternal Pine</German>
+		<Italian>Eternal Pine</Italian>
+		<Spanish>Eternal Pine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BLOSSOMING_CHERRY</Tag>
+		<English>Blossoming Cherry</English>
+		<French>Blossoming Cherry</French>
+		<German>Blossoming Cherry</German>
+		<Italian>Blossoming Cherry</Italian>
+		<Spanish>Blossoming Cherry</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ACORN_STORAGE</Tag>
+		<English>Acorn Storage</English>
+		<French>Acorn Storage</French>
+		<German>Acorn Storage</German>
+		<Italian>Acorn Storage</Italian>
+		<Spanish>Acorn Storage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CLEAR_PATH</Tag>
+		<English>Clear Path</English>
+		<French>Clear Path</French>
+		<German>Clear Path</German>
+		<Italian>Clear Path</Italian>
+		<Spanish>Clear Path</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CROW_NEST</Tag>
+		<English>Crow Nest</English>
+		<French>Crow Nest</French>
+		<German>Crow Nest</German>
+		<Italian>Crow Nest</Italian>
+		<Spanish>Crow Nest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MYSTIC_GLEN</Tag>
+		<English>Mystic Glen</English>
+		<French>Mystic Glen</French>
+		<German>Mystic Glen</German>
+		<Italian>Mystic Glen</Italian>
+		<Spanish>Mystic Glen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BEASTS_LAIR</Tag>
+		<English>Beast's Lair</English>
+		<French>Beast's Lair</French>
+		<German>Beast's Lair</German>
+		<Italian>Beast's Lair</Italian>
+		<Spanish>Beast's Lair</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BACKWOODS</Tag>
+		<English>Backwoods</English>
+		<French>Backwoods</French>
+		<German>Backwoods</German>
+		<Italian>Backwoods</Italian>
+		<Spanish>Backwoods</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANTHILL</Tag>
+		<English>Anthill</English>
+		<French>Anthill</French>
+		<German>Anthill</German>
+		<Italian>Anthill</Italian>
+		<Spanish>Anthill</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OVERGROWN_PATH</Tag>
+		<English>Overgrown Path</English>
+		<French>Overgrown Path</French>
+		<German>Overgrown Path</German>
+		<Italian>Overgrown Path</Italian>
+		<Spanish>Overgrown Path</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUNTING_GROUNDS</Tag>
+		<English>Hunting Grounds</English>
+		<French>Hunting Grounds</French>
+		<German>Hunting Grounds</German>
+		<Italian>Hunting Grounds</Italian>
+		<Spanish>Hunting Grounds</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WOODPECKER_NEST</Tag>
+		<English>Woodpecker Nest</English>
+		<French>Woodpecker Nest</French>
+		<German>Woodpecker Nest</German>
+		<Italian>Woodpecker Nest</Italian>
+		<Spanish>Woodpecker Nest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OWL_HOLLOW</Tag>
+		<English>Owl Hollow</English>
+		<French>Owl Hollow</French>
+		<German>Owl Hollow</German>
+		<Italian>Owl Hollow</Italian>
+		<Spanish>Owl Hollow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAGPIE_NEST</Tag>
+		<English>Magpie Nest</English>
+		<French>Magpie Nest</French>
+		<German>Magpie Nest</German>
+		<Italian>Magpie Nest</Italian>
+		<Spanish>Magpie Nest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ONE_HUNDRED_ACRE_WOODS</Tag>
+		<English>The Hundred Acre Wood</English>
+		<French>The Hundred Acre Wood</French>
+		<German>The Hundred Acre Wood</German>
+		<Italian>The Hundred Acre Wood</Italian>
+		<Spanish>The Hundred Acre Wood</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRASS_DRAKE_LAIR</Tag>
+		<English>Brass Drake Lair</English>
+		<French>Brass Drake Lair</French>
+		<German>Brass Drake Lair</German>
+		<Italian>Brass Drake Lair</Italian>
+		<Spanish>Brass Drake Lair</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WHISPERS_OF_THE_OLD_TREES</Tag>
+		<English>Whispers of the Old Trees</English>
+		<French>Whispers of the Old Trees</French>
+		<German>Whispers of the Old Trees</German>
+		<Italian>Whispers of the Old Trees</Italian>
+		<Spanish>Whispers of the Old Trees</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUTTERFLY_MEADOW</Tag>
+		<English>Butterfly Meadow</English>
+		<French>Butterfly Meadow</French>
+		<German>Butterfly Meadow</German>
+		<Italian>Butterfly Meadow</Italian>
+		<Spanish>Butterfly Meadow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ENRAGED_PREDATORS</Tag>
+		<English>(Crime) Enraged Predators</English>
+		<French>(Crime) Enraged Predators</French>
+		<German>(Crime) Enraged Predators</German>
+		<Italian>(Crime) Enraged Predators</Italian>
+		<Spanish>(Crime) Enraged Predators</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BIRCH</Tag>
+		<English>Birch</English>
+		<French>Birch</French>
+		<German>Birch</German>
+		<Italian>Birch</Italian>
+		<Spanish>Birch</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOTHER_TREE</Tag>
+		<English>Mother Tree</English>
+		<French>Mother Tree</French>
+		<German>Mother Tree</German>
+		<Italian>Mother Tree</Italian>
+		<Spanish>Mother Tree</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_PESTS</Tag>
+		<English>(Crime) Pests</English>
+		<French>(Crime) Pests</French>
+		<German>(Crime) Pests</German>
+		<Italian>(Crime) Pests</Italian>
+		<Spanish>(Crime) Pests</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ACORN_THIEVES</Tag>
+		<English>(Crime) Acorn Thieves</English>
+		<French>(Crime) Acorn Thieves</French>
+		<German>(Crime) Acorn Thieves</German>
+		<Italian>(Crime) Acorn Thieves</Italian>
+		<Spanish>(Crime) Acorn Thieves</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_INVASIVE_SPECIES</Tag>
+		<English>(Crime) Invasive Species</English>
+		<French>(Crime) Invasive Species</French>
+		<German>(Crime) Invasive Species</German>
+		<Italian>(Crime) Invasive Species</Italian>
+		<Spanish>(Crime) Invasive Species</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_PESTS</Tag>
+		<English>(Crime) Pests</English>
+		<French>(Crime) Pests</French>
+		<German>(Crime) Pests</German>
+		<Italian>(Crime) Pests</Italian>
+		<Spanish>(Crime) Pests</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_DEPLETED_SOIL</Tag>
+		<English>(Crime) Depleted Soil</English>
+		<French>(Crime) Depleted Soil</French>
+		<German>(Crime) Depleted Soil</German>
+		<Italian>(Crime) Depleted Soil</Italian>
+		<Spanish>(Crime) Depleted Soil</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_PARASITIC_FUNGI</Tag>
+		<English>(Crime) Parasitic Fungi</English>
+		<French>(Crime) Parasitic Fungi</French>
+		<German>(Crime) Parasitic Fungi</German>
+		<Italian>(Crime) Parasitic Fungi</Italian>
+		<Spanish>(Crime) Parasitic Fungi</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,17 @@
+<CivFlavourInfos>
+	<CivFlavourInfo>
+		<Civilization>CIVILIZATION_EERT</Civilization>
+		<Preference>
+			<FlavourType>FEATURE_FOREST</FlavourType>
+			<Value>3</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_DESERT</FlavourType>
+			<Value>-1</Value>
+		</Preference>
+		<Preference>
+			<FlavourType>TERRAIN_TUNDRA</FlavourType>
+			<Value>-1</Value>
+		</Preference>
+	</CivFlavourInfo>
+</CivFlavourInfos>

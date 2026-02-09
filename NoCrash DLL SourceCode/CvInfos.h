@@ -4477,6 +4477,7 @@ public:
 	bool isCapital() const;				// Exposed to Python
 	bool isGovernmentCenter() const;				// Exposed to Python
 	bool isGoldenAge() const;				// Exposed to Python
+	bool isFoodProduction() const;				// Exposed to Python
 	bool isMapCentering() const;				// Exposed to Python
 	bool isNoUnhappiness() const;				// Exposed to Python
 	bool isNoUnhealthiness() const;				// Exposed to Python
@@ -4905,6 +4906,7 @@ protected:
 	bool m_bCapital;
 	bool m_bGovernmentCenter;
 	bool m_bGoldenAge;
+	bool m_bFoodProduction;
 	bool m_bMapCentering;
 	bool m_bNoUnhappiness;
 	bool m_bNoUnhealthiness;
@@ -9304,6 +9306,8 @@ public:
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	bool isOverflowProduction() const;
+	bool isFoodUnitProduction() const;
+	bool isFoodBuildingProduction() const;
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/
@@ -9505,6 +9509,8 @@ protected:
 /**					Allows overflow production to produce multiple units each turn				**/
 /*************************************************************************************************/
 	bool m_bOverflowProduction;
+	bool m_bFoodUnitProduction;
+	bool m_bFoodBuildingProduction;
 /*************************************************************************************************/
 /**	Multiple Production							END												**/
 /*************************************************************************************************/

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Game Text - CIV Name -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_WATER_GARDEN</Tag>
+		<English>Water Garden</English>
+		<French>Water Garden</French>
+		<German>Water Garden</German>
+		<Italian>Water Garden</Italian>
+		<Spanish>Water Garden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_WILD_GARDEN</Tag>
+		<English>Wild Garden</English>
+		<French>Wild Garden</French>
+		<German>Wild Garden</German>
+		<Italian>Wild Garden</Italian>
+		<Spanish>Wild Garden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_WILD_SANCTUARY</Tag>
+		<English>Wild Sanctuary</English>
+		<French>Wild Sanctuary</French>
+		<German>Wild Sanctuary</German>
+		<Italian>Wild Sanctuary</Italian>
+		<Spanish>Wild Sanctuary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_ANIMAL_COLONY</Tag>
+		<English>Animal Colony</English>
+		<French>Animal Colony</French>
+		<German>Animal Colony</German>
+		<Italian>Animal Colony</Italian>
+		<Spanish>Animal Colony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_ANIMAL_COLONY</Tag>
+		<English>Create Animal Colony</English>
+		<French>Create Animal Colony</French>
+		<German>Create Animal Colony</German>
+		<Italian>Create Animal Colony</Italian>
+		<Spanish>Create Animal Colony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_WILD_GARDEN</Tag>
+		<English>Plant a Wild Garden</English>
+		<French>Plant a Wild Garden</French>
+		<German>Plant a Wild Garden</German>
+		<Italian>Plant a Wild Garden</Italian>
+		<Spanish>Plant a Wild Garden</Spanish>
+	</TEXT>
+</Civ4GameText>

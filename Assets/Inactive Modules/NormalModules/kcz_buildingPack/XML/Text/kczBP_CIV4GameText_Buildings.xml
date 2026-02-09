@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RESIDENCE</Tag>
+		<English>Residence</English>
+		<French>Résidence</French>
+		<German>Residenz</German>
+		<Italian>Residenza</Italian>
+		<Spanish>Residencia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHRINE_OF_THE_KING</Tag>
+		<English>Shrine of the King</English>
+		<French>Sanctuaire du Roi</French>
+		<German>Schrein des Königs</German>
+		<Italian>Santuario del Re</Italian>
+		<Spanish>Santuario del Rey</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AGORA</Tag>
+		<English>Agora</English>
+		<French>Agora</French>
+		<German>Agora</German>
+		<Italian>Agora</Italian>
+		<Spanish>Agora</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CATHEDRAL</Tag>
+		<English>Cathedral</English>
+		<French>Cathedral</French>
+		<German>Cathedral</German>
+		<Italian>Cathedral</Italian>
+		<Spanish>Cathedral</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SENATE</Tag>
+		<English>Senate</English>
+		<French>Senate</French>
+		<German>Senate</German>
+		<Italian>Senate</Italian>
+		<Spanish>Senate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PILLORY</Tag>
+		<English>Pillory</English>
+		<French>Pilori</French>
+		<German>Pranger</German>
+		<Italian>Berlina</Italian>
+		<Spanish>Picota</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OBSERVATORY</Tag>
+		<English>Observatory</English>
+		<French>Observatoire</French>
+		<German>Observatorium</German>
+		<Italian>Osservatorio</Italian>
+		<Spanish>Observatorio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WATCHTOWER</Tag>
+		<English>Watchtower</English>
+		<French>Tour de guet</French>
+		<German>Wachturm</German>
+		<Italian>Torre di vedetta</Italian>
+		<Spanish>Atalaya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CISTERN</Tag>
+		<English>Cistern</English>
+		<French>Citerne</French>
+		<German>Zisterne</German>
+		<Italian>Cisterna</Italian>
+		<Spanish>Cisterna</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MINT</Tag>
+		<English>Mint</English>
+		<French>Mint</French>
+		<German>Mint</German>
+		<Italian>Mint</Italian>
+		<Spanish>Mint</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PANTHEON</Tag>
+		<English>Pantheon</English>
+		<French>Pantheon</French>
+		<German>Pantheon</German>
+		<Italian>Pantheon</Italian>
+		<Spanish>Pantheon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUARD_OUTPOST</Tag>
+		<English>Guard Outpost</English>
+		<French>Guard Outpost</French>
+		<German>Guard Outpost</German>
+		<Italian>Guard Outpost</Italian>
+		<Spanish>Guard Outpost</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THE_GREAT_ARSENAL</Tag>
+		<English>The Great Arsenal</English>
+		<French>Le Grand Arsenal</French>
+		<German>Das Große Arsenal</German>
+		<Italian>Il Grande Arsenale</Italian>
+		<Spanish>El Gran Arsenal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ORGY</Tag>
+		<English>(Crime) Orgy</English>
+		<French>(Crime) Orgy</French>
+		<German>(Crime) Orgy</German>
+		<Italian>(Crime) Orgy</Italian>
+		<Spanish>(Crime) Orgy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_PICKPOCKET</Tag>
+		<English>(Crime) Pickpocket</English>
+		<French>(Crime) Pickpocket</French>
+		<German>(Crime) Pickpocket</German>
+		<Italian>(Crime) Pickpocket</Italian>
+		<Spanish>(Crime) Pickpocket</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_ILLEGAL_HORSE_RACES</Tag>
+		<English>(Crime) Illegal Horse Races</English>
+		<French>(Crime) Illegal Horse Races</French>
+		<German>(Crime) Illegal Horse Races</German>
+		<Italian>(Crime) Illegal Horse Races</Italian>
+		<Spanish>(Crime) Illegal Horse Races</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_SMUGGLING</Tag>
+		<English>(Crime) Smuggling</English>
+		<French>(Crime) Smuggling</French>
+		<German>(Crime) Smuggling</German>
+		<Italian>(Crime) Smuggling</Italian>
+		<Spanish>(Crime) Smuggling</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRIME_MISINFORMATION</Tag>
+		<English>(Crime) Misinformation</English>
+		<French>(Crime) Misinformation</French>
+		<German>(Crime) Misinformation</German>
+		<Italian>(Crime) Misinformation</Italian>
+		<Spanish>(Crime) Misinformation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

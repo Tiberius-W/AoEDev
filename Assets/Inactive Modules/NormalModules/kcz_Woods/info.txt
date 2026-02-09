@@ -1,0 +1,14 @@
+[name]
+kcz_Woods
+[version]
+0.5
+[rifeversion]
+383
+[author]
+kaczkar123
+[dependency]
+;
+[compatible]
+Not intended to be used with modules that add new improvements for balance purposes, not intended to be used with kcz_buildingPack;
+[desc]
+Adds Eert, a new treehugger civilization

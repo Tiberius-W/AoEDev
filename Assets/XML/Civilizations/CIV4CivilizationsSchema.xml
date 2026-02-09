@@ -486,6 +486,8 @@
 	<ElementType name="bSelectable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSprawling" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bOverflowProduction" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bFoodUnitProduction" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bFoodBuildingProduction" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNomadic" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iFreeXPFromCombat" content="textOnly" dt:type="float"/>
 	<ElementType name="iMaxCities" content="textOnly" dt:type="int"/>
@@ -763,6 +765,8 @@
 		<element type="bSelectable"/>
 		<element type="bSprawling"/>
 		<element type="bOverflowProduction"/>
+		<element type="bFoodUnitProduction"/>
+		<element type="bFoodBuildingProduction"/>
 		<element type="bNomadic"/>
 		<element type="iFreeXPFromCombat"/>
 		<element type="iMaxCities"/>

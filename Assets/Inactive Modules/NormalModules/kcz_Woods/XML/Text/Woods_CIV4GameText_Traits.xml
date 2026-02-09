@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FURY_OF_NATURE</Tag>
+		<English>Fury of Nature</English>
+		<French>Fury of Nature</French>
+		<German>Fury of Nature</German>
+		<Italian>Fury of Nature</Italian>
+		<Spanish>Fury of Nature</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FURY_OF_NATURE_SHORT</Tag>
+		<English>Nat</English>
+		<French>Nat</French>
+		<German>Nat</German>
+		<Italian>Nat</Italian>
+		<Spanish>Nat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FURY_OF_NATURE_HELP</Tag>
+		<English>
+[ICON_BULLET]Animals spawn in your territory when you are at war.
+[ICON_BULLET]Prevents your Animals and Beasts from getting Tame.
+[ICON_BULLET]All your opponents get -30% capture rate against Animals and Beasts
+[ICON_BULLET]Razing cities creates Forests and Ancient Forests around them.
+		</English>
+		<French>
+[ICON_BULLET]Animals spawn in your territory when you are at war.
+[ICON_BULLET]Prevents your Animals and Beasts from getting Tame.
+[ICON_BULLET]All your opponents get -30% capture rate against Animals and Beasts
+[ICON_BULLET]Razing cities creates Forests and Ancient Forests around them.</French>
+		<German>
+[ICON_BULLET]Animals spawn in your territory when you are at war.
+[ICON_BULLET]Prevents your Animals and Beasts from getting Tame.
+[ICON_BULLET]All your opponents get -30% capture rate against Animals and Beasts
+[ICON_BULLET]Razing cities creates Forests and Ancient Forests around them.</German>
+		<Italian>
+[ICON_BULLET]Animals spawn in your territory when you are at war.
+[ICON_BULLET]Prevents your Animals and Beasts from getting Tame.
+[ICON_BULLET]All your opponents get -30% capture chance against Animals and Beasts
+[ICON_BULLET]Razing cities creates Forests and Ancient Forests around them.</Italian>
+		<Spanish>
+[ICON_BULLET]Animals spawn in your territory when you are at war.
+[ICON_BULLET]Prevents your Animals and Beasts from getting Tame.
+[ICON_BULLET]All your opponents get -30% capture rate against Animals and Beasts
+[ICON_BULLET]Razing cities creates Forests and Ancient Forests around them.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FURY_OF_NATURE2_HELP</Tag>
+		<English>
+[ICON_BULLET]Randomly creates new Forests in the world when acquired.
+[ICON_BULLET]All wild Animals and Beasts get Marksman promotion.
+[ICON_BULLET]All your opponents get -20% capture chance against Animals and Beasts.</English>
+		<French>
+[ICON_BULLET]Randomly creates new Forests in the world when acquired.
+[ICON_BULLET]All wild Animals and Beasts get Marksman promotion.
+[ICON_BULLET]All your opponents get -20% capture chance against Animals and Beasts.</French>
+		<German>
+[ICON_BULLET]Randomly creates new Forests in the world when acquired.
+[ICON_BULLET]All wild Animals and Beasts get Marksman promotion.
+[ICON_BULLET]All your opponents get -20% capture chance against Animals and Beasts.</German>
+		<Italian>
+[ICON_BULLET]Randomly creates new Forests in the world when acquired.
+[ICON_BULLET]All wild Animals and Beasts get Marksman promotion.
+[ICON_BULLET]All your opponents get -20% capture chance against Animals and Beasts.</Italian>
+		<Spanish>
+[ICON_BULLET]Randomly creates new Forests in the world when acquired.
+[ICON_BULLET]All wild Animals and Beasts get Marksman promotion.
+[ICON_BULLET]All your opponents get -20% capture chance against Animals and Beasts.</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_FURY_OF_NATURE3_HELP</Tag>
+		<English>[ICON_BULLET]Randomly creates new forests and ancient forests in the world when acquired.
+		</English>
+		<French>[NEWLINE][ICON_BULLET]Summoned animals gain Heroic attack I, Woodsman I and II[NEWLINE][ICON_BULLET]Randomly creates new forests and ancient forests in the world when acquired</French>
+		<German>[NEWLINE][ICON_BULLET]Summoned animals gain Heroic attack I, Woodsman I and II[NEWLINE][ICON_BULLET]Randomly creates new forests and ancient forests in the world when acquired</German>
+		<Italian>[NEWLINE][ICON_BULLET]Summoned animals gain Heroic attack I, Woodsman I and II[NEWLINE][ICON_BULLET]Randomly creates new forests and ancient forests in the world when acquired</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Summoned animals gain Heroic attack I, Woodsman I and II[NEWLINE][ICON_BULLET]Randomly creates new forests and ancient forests in the world when acquired</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag></Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

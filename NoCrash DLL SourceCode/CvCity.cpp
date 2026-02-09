@@ -4163,6 +4163,8 @@ bool CvCity::isFoodProduction() const
 			break;
 
 		case ORDER_CONSTRUCT:
+			return isFoodProduction((BuildingTypes)(pOrderNode->m_data.iData1));
+			break;
 		case ORDER_CREATE:
 		case ORDER_MAINTAIN:
 			break;
@@ -4191,6 +4193,25 @@ bool CvCity::isFoodProduction(UnitTypes eUnit) const
 			return true;
 		}
 	}
+	if (GET_PLAYER(getOwnerINLINE()).isFoodUnitProduction())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool CvCity::isFoodProduction(BuildingTypes eBuilding) const
+{
+	if (GC.getBuildingInfo(eBuilding).isFoodProduction())
+	{
+		return true;
+	}
+	if (GET_PLAYER(getOwnerINLINE()).isFoodBuildingProduction())
+	{
+		return true;
+	}
+
 
 	return false;
 }
@@ -4481,7 +4502,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, false));
+	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, isFoodProduction(eBuilding), (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, isFoodProduction(eBuilding), false));
 }
 
 

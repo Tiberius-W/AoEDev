@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Civilization Infos -->
+<Civ4UnitArtStyleTypeInfos xmlns="x-schema:Woods_CIV4CivilizationsSchema.xml">
+	<UnitArtStyleTypeInfos>
+	<!--Racial-->
+		<UnitArtStyleTypeInfo>	<!--Dark Elf-->
+			<Type>UNIT_ARTSTYLE_TREANT</Type>
+			<StyleUnits>
+				<StyleUnit><!--Worker-->
+					<UnitType>UNIT_WORKER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_TREANT</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_WORKER_TREANT</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_TREANT</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Settler-->
+					<UnitType>UNIT_SETTLER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_TREANT</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_SETTLER_TREANT</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_SETTLER_TREANT</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Settler-->
+					<UnitType>UNIT_BEASTMASTER</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_BEASTMASTER_TREANT</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_BEASTMASTER_TREANT</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_BEASTMASTER_TREANT</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Settler-->
+					<UnitType>UNIT_DRUID</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_DRUID_TREANT</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_DRUID_TREANT</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_DRUID_TREANT</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit><!--Settler-->
+					<UnitType>UNIT_PALADIN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PALADIN_TREANT</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PALADIN_TREANT</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PALADIN_TREANT</MiddleArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+			</StyleUnits>
+		</UnitArtStyleTypeInfo>
+	</UnitArtStyleTypeInfos>
+</Civ4UnitArtStyleTypeInfos>

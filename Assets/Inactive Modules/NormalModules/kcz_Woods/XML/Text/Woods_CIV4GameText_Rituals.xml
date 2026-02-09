@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Alignment -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SYMBIOSIS</Tag>
+		<English>Symbiosis</English>
+		<French>Symbiosis</French>
+		<German>Symbiosis</German>
+		<Italian>Symbiosis</Italian>
+		<Spanish>Symbiosis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SYMBIOSIS_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SYMBIOSIS_STRATEGY</Tag>
+		<English>Use this project to turn your forests into ancient forest without having to follow FoL religion. Each completion of symbiosis turns 2-4 forests within city borders into ancient ones.</English>
+		<French>Use this project to turn your forests into ancient forest without having to follow FoL religion. Each completion of symbiosis turns 2-4 forests within city borders into ancient ones.</French>
+		<German>Use this project to turn your forests into ancient forest without having to follow FoL religion. Each completion of symbiosis turns 2-4 forests within city borders into ancient ones.</German>
+		<Italian>Use this project to turn your forests into ancient forest without having to follow FoL religion. Each completion of symbiosis turns 2-4 forests within city borders into ancient ones.</Italian>
+		<Spanish>Use this project to turn your forests into ancient forest without having to follow FoL religion. Each completion of symbiosis turns 2-4 forests within city borders into ancient ones..</Spanish>
+	</TEXT>
+</Civ4GameText>
