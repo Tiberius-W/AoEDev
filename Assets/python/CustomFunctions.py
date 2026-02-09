@@ -2316,8 +2316,7 @@ class CustomFunctions:
 			popupInfo.addPythonButton(CyTranslator().getText(lText[2], ()), lWidget[2])
 			popupInfo.addPopup(iPlayer)
 		else:
-			argsList = [2, iPlayer, iElection]
-			CvScreensInterface.effectRepublic(argsList) # based on iAIValue of events (always fair)
+			CyMessageControl().sendModNetMessage(101, 2, iPlayer, iElection,-1) # based on iAIValue of events (always fair)
 
 	def doBaneDivine(self, iPlayer):
 		gc				= CyGlobalContext()

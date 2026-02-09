@@ -964,12 +964,12 @@ class CvGameUtils:
 
 		elif eProject == Manager.Projects["The Draw"]:
 			if pPlayer.getLeaderType() == Manager.Leaders["Raitlor"]: return True
-			if bAI and pPlayer.getUnitClassCount(self.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(self.Heroes["Class-Auric Winter"]) == 0: return True
+			if bAI and pPlayer.getUnitClassCount(Manager.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(Manager.Heroes["Class-Auric Winter"]) == 0: return True
 
 		elif eProject == Manager.Projects["Ascension"]:
 			if pPlayer.getLeaderType() == Manager.Leaders["Raitlor"]: return True
 			if eCiv == Manager.Civilizations["Illians"]:
-				if pPlayer.getUnitClassCount(self.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(self.Heroes["Class-Auric Winter"]) == 0: return True 
+				if pPlayer.getUnitClassCount(Manager.Heroes["Class-Auric"]) == 0 and pPlayer.getUnitClassCount(Manager.Heroes["Class-Auric Winter"]) == 0: return True 
 
 # TODO Ronkhar: split and move to frozen module (here = if genesis and civ illians. In module = if genesis and civ frozen)
 		elif eProject == Manager.Projects["Genesis"]:															#Changed in Frozen: TC01
