@@ -1985,6 +1985,7 @@
 			<Type>BUILDING_HALL_OF_MIRRORS</Type>
 			<Description>TXT_KEY_BUILDING_HALL_OF_MIRRORS</Description>
 			<Civilopedia>TEXT_MUST_BE_WRITTEN</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HALL_OF_MIRRORS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HALL_OF_MIRRORS</ArtDefineTag>
 			<PrereqTech>TECH_ALTERATION</PrereqTech>

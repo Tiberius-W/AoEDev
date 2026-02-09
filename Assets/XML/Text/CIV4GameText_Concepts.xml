@@ -537,6 +537,373 @@ Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of P
 		<Spanish>[H1]World Spells[\H1][NEWLINE][NEWLINE]Each civilization was a World Spell they can use. These spells have a huge effect but can only be used once per game so consider carefully before you use them. The following are the world spells for each civilization:[NEWLINE][NEWLINE]Amurites- [LINK=SPELL_ARCANE_LACUNA]Arcane Lacuna[\LINK][NEWLINE]Balseraphs- [LINK=SPELL_REVELRY]Revelry[\LINK][NEWLINE]Bannor- [LINK=SPELL_RALLY]Rally[\LINK][NEWLINE]Calabim- [LINK=SPELL_RIVER_OF_BLOOD]River of Blood[\LINK][NEWLINE]Clan of Embers- [LINK=SPELL_FOR_THE_HORDE]For the Horde[\LINK][NEWLINE]Doviello- [LINK=SPELL_WILD_HUNT]Wild Hunt[\LINK][NEWLINE]Elohim- [LINK=SPELL_SANCTUARY]Sanctuary[\LINK][NEWLINE]Grigori- [LINK=SPELL_ARDOR]Ardor[\LINK][NEWLINE]Hippus- [LINK=SPELL_HIPPUS]Hippus[\LINK][NEWLINE]Illians- [LINK=SPELL_STASIS]Stasis[\LINK][NEWLINE]Infernal- [LINK=SPELL_HYBOREMS_WHISPER]Hyborem's Whisper[\LINK][NEWLINE]Khazad- [LINK=SPELL_MOTHER_LODE]Mother Lode[\LINK][NEWLINE]Kuriotates- [LINK=SPELL_LEGENDS]Legends[\LINK][NEWLINE]Lanun- [LINK=SPELL_RAGING_SEAS]Raging Seas[\LINK][NEWLINE]Ljosalfar- [LINK=SPELL_MARCH_OF_THE_TREES]March of the Trees[\LINK][NEWLINE]Luchuirp- [LINK=SPELL_GIFTS_OF_NANTOSUELTA]Gifts of Nantosuelta[\LINK][NEWLINE]Malakim- [LINK=SPELL_RELIGIOUS_FERVOR]Religious Fervor[\LINK][NEWLINE]Mercurians- [LINK=SPELL_DIVINE_RETRIBUTION]Divine Retribution[\LINK][NEWLINE]Sheaim- [LINK=SPELL_WORLDBREAK]Worldbreak[\LINK][NEWLINE]Sidar- [LINK=SPELL_INTO_THE_MIST]Into the Mist[\LINK][NEWLINE]Svartalfar- [LINK=SPELL_VEIL_OF_NIGHT]Veil of Night[\LINK][NEWLINE][NEWLINE][TAB]Kael's Notes: We added these for two reasons. Of course they help us differentiate each of the civilizations. But we also wanted to add a strategic option where the player was forced to decide when was the best moment to use the ability. As such all of the World Spells generally grow more powerful over time, rewarding players who don't profit from there use early on.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_GRIGORI_ADVENTURERS_AND_REFUGEES</Tag>
+		<English>Grigori - Adventurers and Refugees</English>
+		<French>Grigori - Adventurers and Refugees</French>
+		<German>Grigori - Adventurers and Refugees</German>
+		<Italian>Grigori - Adventurers and Refugees</Italian>
+		<Spanish>Grigori - Adventurers and Refugees</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_GRIGORI_ADVENTURERS_AND_REFUGEES_PEDIA</Tag>
+		<English>Grigori are able to trigger spawns of two different unit types: the [LINK=UNIT_ADVENTURER]Adventurer[\LINK] and the [LINK=UNIT_REFUGEE]Refugee.[\LINK]
+The former is a hero unit that can upgrade into any unitclass you have access to (An adept, a warrior, a scout, etc.) 
+And the latter is a non-hero unit that can also upgrade into any unit class, but with a random racial promotion (Orc, Dwarf, Giant, etc.).
+
+The Adventurer is earned much like a great person, by generating adventurer points every turn until a new adventurer is born. 
+Each new adventurer requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++1    Base point per turn.
+
++0.33 For every Grigori Temple building.
+
++0.33 For every Museum building.
+
++1    For every Tavern building.
+
++0.5  For every Adventurers Guild building.
+
++1    For every Dwelling of Refuge building.
+
++1    For every Crime Bounty building.
+
++2    If Apprenticeship civic.
+
++0.33 For every Statesman specialist if Forum building is present.
+
+
+
+Multipliers:
+
+*1.25 If Apprenticeship civic.
+
+
+
+
+And the Refugee:
+
+Each city has a chance to spawn a Refugee each turn if the following buildings are present in the city:
+
++4% for Memorial of the Refugee.
+
++2% for Dwelling of Refuge.</English>
+		<French>Grigori are able to trigger spawns of two different unit types: the [LINK=UNIT_ADVENTURER]Adventurer[\LINK] and the [LINK=UNIT_REFUGEE]Refugee.[\LINK]
+The former is a hero unit that can upgrade into any unitclass you have access to (An adept, a warrior, a scout, etc.) 
+And the latter is a non-hero unit that can also upgrade into any unit class, but with a random racial promotion (Orc, Dwarf, Giant, etc.).
+
+The Adventurer is earned much like a great person, by generating adventurer points every turn until a new adventurer is born. 
+Each new adventurer requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++1    Base point per turn.
+
++0.33 For every Grigori Temple building.
+
++0.33 For every Museum building.
+
++1    For every Tavern building.
+
++0.5  For every Adventurers Guild building.
+
++1    For every Dwelling of Refuge building.
+
++1    For every Crime Bounty building.
+
++2    If Apprenticeship civic.
+
++0.33 For every Statesman specialist if Forum building is present.
+
+
+
+Multipliers:
+
+*1.25 If Apprenticeship civic.
+
+
+
+
+And the Refugee:
+
+Each city has a chance to spawn a Refugee each turn if the following buildings are present in the city:
+
++4% for Memorial of the Refugee.
+
++2% for Dwelling of Refuge.</French>
+		<German>Grigori are able to trigger spawns of two different unit types: the [LINK=UNIT_ADVENTURER]Adventurer[\LINK] and the [LINK=UNIT_REFUGEE]Refugee.[\LINK]
+The former is a hero unit that can upgrade into any unitclass you have access to (An adept, a warrior, a scout, etc.) 
+And the latter is a non-hero unit that can also upgrade into any unit class, but with a random racial promotion (Orc, Dwarf, Giant, etc.).
+
+The Adventurer is earned much like a great person, by generating adventurer points every turn until a new adventurer is born. 
+Each new adventurer requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++1    Base point per turn.
+
++0.33 For every Grigori Temple building.
+
++0.33 For every Museum building.
+
++1    For every Tavern building.
+
++0.5  For every Adventurers Guild building.
+
++1    For every Dwelling of Refuge building.
+
++1    For every Crime Bounty building.
+
++2    If Apprenticeship civic.
+
++0.33 For every Statesman specialist if Forum building is present.
+
+
+
+Multipliers:
+
+*1.25 If Apprenticeship civic.
+
+
+
+
+And the Refugee:
+
+Each city has a chance to spawn a Refugee each turn if the following buildings are present in the city:
+
++4% for Memorial of the Refugee.
+
++2% for Dwelling of Refuge.</German>
+		<Italian>Grigori are able to trigger spawns of two different unit types: the [LINK=UNIT_ADVENTURER]Adventurer[\LINK] and the [LINK=UNIT_REFUGEE]Refugee.[\LINK]
+The former is a hero unit that can upgrade into any unitclass you have access to (An adept, a warrior, a scout, etc.) 
+And the latter is a non-hero unit that can also upgrade into any unit class, but with a random racial promotion (Orc, Dwarf, Giant, etc.).
+
+The Adventurer is earned much like a great person, by generating adventurer points every turn until a new adventurer is born. 
+Each new adventurer requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++1    Base point per turn.
+
++0.33 For every Grigori Temple building.
+
++0.33 For every Museum building.
+
++1    For every Tavern building.
+
++0.5  For every Adventurers Guild building.
+
++1    For every Dwelling of Refuge building.
+
++1    For every Crime Bounty building.
+
++2    If Apprenticeship civic.
+
++0.33 For every Statesman specialist if Forum building is present.
+
+
+
+Multipliers:
+
+*1.25 If Apprenticeship civic.
+
+
+
+
+And the Refugee:
+
+Each city has a chance to spawn a Refugee each turn if the following buildings are present in the city:
+
++4% for Memorial of the Refugee.
+
++2% for Dwelling of Refuge.</Italian>
+		<Spanish>Grigori are able to trigger spawns of two different unit types: the [LINK=UNIT_ADVENTURER]Adventurer[\LINK] and the [LINK=UNIT_REFUGEE]Refugee.[\LINK]
+The former is a hero unit that can upgrade into any unitclass you have access to (An adept, a warrior, a scout, etc.) 
+And the latter is a non-hero unit that can also upgrade into any unit class, but with a random racial promotion (Orc, Dwarf, Giant, etc.).
+
+The Adventurer is earned much like a great person, by generating adventurer points every turn until a new adventurer is born. 
+Each new adventurer requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++1    Base point per turn.
+
++0.33 For every Grigori Temple building.
+
++0.33 For every Museum building.
+
++1    For every Tavern building.
+
++0.5  For every Adventurers Guild building.
+
++1    For every Dwelling of Refuge building.
+
++1    For every Crime Bounty building.
+
++2    If Apprenticeship civic.
+
++0.33 For every Statesman specialist if Forum building is present.
+
+
+
+Multipliers:
+
+*1.25 If Apprenticeship civic.
+
+
+
+
+And the Refugee:
+
+Each city has a chance to spawn a Refugee each turn if the following buildings are present in the city:
+
++4% for Memorial of the Refugee.
+
++2% for Dwelling of Refuge.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_MEKARA_ASPIRANTS</Tag>
+		<English>Mekara - Aspirants</English>
+		<French>Mekara - Aspirants</French>
+		<German>Mekara - Aspirants</German>
+		<Italian>Mekara - Aspirants</Italian>
+		<Spanish>Mekara - Aspirants</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_MEKARA_ASPIRANTS_PEDIA</Tag>
+		<English>Mekara, under the rule of Iram Damar, is able to trigger spawns of the [LINK=UNIT_ASPIRANT]Aspirant.[\LINK]
+The Aspirant is a unit that can upgrade into any unit class and grows stronger with age.
+An Aspirant who is transformed into an Ascendant is more powerful than other Ascendants.
+
+The Aspirant is earned much like a great person, by generating Aspirant points every turn until a new Aspirant is born. 
+Each new Aspirant requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++3   Base points per turn.
+
++2   for every Shaper Cabal building.
+
++1   for every Shaper's Laboratory building.
+
++2   for Slavery civic.
+
++0.5 for every Healer and Elder if Shaper's Laboratory building is present.
+
++1   for every Great Healer and Great Elder if Shaper's Laboratory building is present.
+
+
+
+Multipliers:
+
+*1.25 if Slavery.</English>
+		<French>Mekara, under the rule of Iram Damar, is able to trigger spawns of the [LINK=UNIT_ASPIRANT]Aspirant.[\LINK]
+The Aspirant is a unit that can upgrade into any unit class and grows stronger with age.
+An Aspirant who is transformed into an Ascendant is more powerful than other Ascendants.
+
+The Aspirant is earned much like a great person, by generating Aspirant points every turn until a new Aspirant is born. 
+Each new Aspirant requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++3   Base points per turn.
+
++2   for every Shaper Cabal building.
+
++1   for every Shaper's Laboratory building.
+
++2   for Slavery civic.
+
++0.5 for every Healer and Elder if Shaper's Laboratory building is present.
+
++1   for every Great Healer and Great Elder if Shaper's Laboratory building is present.
+
+
+
+Multipliers:
+
+*1.25 if Slavery.</French>
+		<German>Mekara, under the rule of Iram Damar, is able to trigger spawns of the [LINK=UNIT_ASPIRANT]Aspirant.[\LINK]
+The Aspirant is a unit that can upgrade into any unit class and grows stronger with age.
+An Aspirant who is transformed into an Ascendant is more powerful than other Ascendants.
+
+The Aspirant is earned much like a great person, by generating Aspirant points every turn until a new Aspirant is born. 
+Each new Aspirant requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++3   Base points per turn.
+
++2   for every Shaper Cabal building.
+
++1   for every Shaper's Laboratory building.
+
++2   for Slavery civic.
+
++0.5 for every Healer and Elder if Shaper's Laboratory building is present.
+
++1   for every Great Healer and Great Elder if Shaper's Laboratory building is present.
+
+
+
+Multipliers:
+
+*1.25 if Slavery.</German>
+		<Italian>Mekara, under the rule of Iram Damar, is able to trigger spawns of the [LINK=UNIT_ASPIRANT]Aspirant.[\LINK]
+The Aspirant is a unit that can upgrade into any unit class and grows stronger with age.
+An Aspirant who is transformed into an Ascendant is more powerful than other Ascendants.
+
+The Aspirant is earned much like a great person, by generating Aspirant points every turn until a new Aspirant is born. 
+Each new Aspirant requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++3   Base points per turn.
+
++2   for every Shaper Cabal building.
+
++1   for every Shaper's Laboratory building.
+
++2   for Slavery civic.
+
++0.5 for every Healer and Elder if Shaper's Laboratory building is present.
+
++1   for every Great Healer and Great Elder if Shaper's Laboratory building is present.
+
+
+
+Multipliers:
+
+*1.25 if Slavery.</Italian>
+		<Spanish>Mekara, under the rule of Iram Damar, is able to trigger spawns of the [LINK=UNIT_ASPIRANT]Aspirant.[\LINK]
+The Aspirant is a unit that can upgrade into any unit class and grows stronger with age.
+An Aspirant who is transformed into an Ascendant is more powerful than other Ascendants.
+
+The Aspirant is earned much like a great person, by generating Aspirant points every turn until a new Aspirant is born. 
+Each new Aspirant requires 20 more points than the previous one (100, 120, 140, etc.).
+
+Additives:
+
++3   Base points per turn.
+
++2   for every Shaper Cabal building.
+
++1   for every Shaper's Laboratory building.
+
++2   for Slavery civic.
+
++0.5 for every Healer and Elder if Shaper's Laboratory building is present.
+
++1   for every Great Healer and Great Elder if Shaper's Laboratory building is present.
+
+
+
+Multipliers:
+
+*1.25 if Slavery.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_ALIGNMENT</Tag>
 		<English>Alignment</English>
 		<French>Alignement</French>
@@ -579,50 +946,135 @@ Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of P
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_DOVIELLO_PLUS_PEDIA</Tag>
 		<English>[H1]Animal Spawning[\H1]
-Doviello cities periodically spawn animals, at a base chance of 4% per city each turn, reduced by .4% per population point in the city. This means that a standard city will no longer spawn animals once it hits 11 population. [NEWLINE]The spawn chance can be increased in two ways: It is doubled by the Doviello-only Membership civic, [LINK=CIVIC_WILDCOUNCIL]Council of the Wilds[\LINK], and increased by 50% when following Fellowship of the Leaves.
-[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allow units built in the city a Kindred Spirit promotion.
+Doviello cities periodically have a chance to spawn animals.
+[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allows units built in the city to have a Kindred Spirit promotion.
 [ICON_BULLET][LINK=UNIT_WOLF]Wolves[\LINK] - Available from start.
 [ICON_BULLET][LINK=UNIT_BOAR]Boars[\LINK] - [LINK=BUILDING_BOAR_PEN]Boar Den[\LINK], available with [LINK=TECH_EDUCATION]Education[\LINK].
 [ICON_BULLET][LINK=UNIT_BEAR]Bears[\LINK] - [LINK=BUILDING_BEAR_DEN]Bear Den[\LINK], available with [LINK=TECH_MINING]Mining[\LINK].
 [ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorilla Hut[\LINK], available with [LINK=TECH_CARTOGRAPHY]Cartography[\LINK].
 [ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], available with [LINK=TECH_ANIMAL_HUSBANDRY]Animal Husbandry[\LINK].
-[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].</English>
-		<French>[H1]Apparition d'Animaux[\H1]
-Les villes Doviello font maintenant apparaître périodiquement des Animaux. La probabilité d'apparition à chaque tour est de 4% par ville, reduit de 0,4% par point de population dans la ville. Cela signifie donc qu'une ville de 11 de population ne fera plus apparaître d'Animaux.[NEWLINE]La probabilité d'apparition peut être augmentée de deux manières : elle est doublée par la Doctrine spécifique aux Doviellos, le [LINK=CIVIC_WILDCOUNCIL]Conseil de la Nature Sauvage[\LINK], et augmentée de 50% par la religion Communauté des Feuilles.
-[NEWLINE]Diverses Merveilles Nationales sont nécessaires pour permettre aux différents types d'Animaux d'apparaître. La construction de ces Merveilles permet également aux unités construites dans la ville d'obtenir la promotion Âme Jumelle.
-[ICON_BULLET][LINK=UNIT_WOLF]Loups[\LINK] : disponibles dès le début.
-[ICON_BULLET][LINK=UNIT_BOAR]Sangliers[\LINK] : nécessite la [LINK=BUILDING_BOAR_PEN]Tanière de sanglier[\LINK], disponible après avoir découvert le [LINK=TECH_EDUCATION]Minage[\LINK].
-[ICON_BULLET][LINK=UNIT_BEAR]Ours[\LINK] : nécessite l'[LINK=BUILDING_BEAR_DEN]Antre des Ours[\LINK], disponible après avoir découvert la [LINK=TECH_MINING]Mining[\LINK].
-[ICON_BULLET][LINK=UNIT_GORILLA]Gorilles[\LINK] : nécessite l'[LINK=BUILDING_GORILLA_HUT]Cabane de Gorilles[\LINK], disponible après avoir découvert l'[LINK=TECH_CARTOGRAPHY]Cartographie[\LINK].
-[ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] : nécessite l' [LINK=BUILDING_GRIFFIN_WEYR]Aire des Griffons[\LINK], disponible après avoir découvert le [LINK=TECH_ANIMAL_HUSBANDRY]Dressage[\LINK].
-[ICON_BULLET][LINK=UNIT_STAG]Cerfs[\LINK] : nécessite le [LINK=BUILDING_STAG_COPSE]Taillis des Cerfs[\LINK], disponible après avoir découvert la  [LINK=TECH_PHILOSOPHY]Philosophie[\LINK].</French>
-		<German>[H1]Laichen von Tieren[\H1]
-In Doviello-Städten erscheinen regelmäßig Tiere. Die Grundwahrscheinlichkeit beträgt 4 % pro Stadt und Runde, reduziert um 0,4 % pro Bevölkerungspunkt in der Stadt. Das bedeutet, dass eine Standardstadt ab 11 Einwohnern keine Tiere mehr erscheinen lässt. [NEWLINE]Die Wahrscheinlichkeit, Tiere zu erschaffen, kann auf zwei Arten erhöht werden: Sie wird durch die nur in Doviello verfügbare Mitgliedschafts-Staatsform [LINK=CIVIC_WILDCOUNCIL]Rat der Wildnis[\LINK] verdoppelt und durch die Mitgliedschaft in der Gemeinschaft der Blätter um 50 % erhöht.
-[NEWLINE]Damit die einzelnen Tierarten entstehen können, sind verschiedene Nationalwunder erforderlich. Durch den Bau dieser Wunder können in der Stadt errichtete Einheiten außerdem zu einer Seelenverwandten-Beförderung befördert werden.
-[ICON_BULLET][LINK=UNIT_WOLF]Wölfe[\LINK] - Von Anfang an verfügbar.
-[ICON_BULLET][LINK=UNIT_BOAR]Eber[\LINK] - [LINK=BUILDING_BOAR_PEN]Eberbau[\LINK], verfügbar mit [LINK=TECH_EDUCATION]Bildung[\LINK].
-[ICON_BULLET][LINK=UNIT_BEAR]Bären[\LINK] - [LINK=BUILDING_BEAR_DEN]Bärenhöhle[\LINK], verfügbar mit [LINK=TECH_MINING]Bergbau[\LINK].
-[ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorillahütte[\LINK], verfügbar mit [LINK=TECH_CARTOGRAPHY]Kartografie[\LINK].
-[ICON_BULLET][LINK=UNIT_GRIFFON]Greife[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Greif-Weyr[\LINK], verfügbar mit [LINK=TECH_ANIMAL_HUSBANDRY]Tierhaltung[\LINK].
-[ICON_BULLET][LINK=UNIT_STAG]Hirsche[\LINK] - [LINK=BUILDING_STAG_COPSE]Hirschwäldchen[\LINK], verfügbar mit [LINK=TECH_PHILOSOPHY]Philosophie[\LINK].</German>
-		<Italian>[H1]Deposizione delle uova di animali[\H1]
-Le città Doviello generano periodicamente animali, con una probabilità base del 4% per città a turno, ridotta dello 0,4% per punto popolazione nella città. Ciò significa che una città standard non genererà più animali una volta raggiunta la popolazione di 11. [NEWLINE]La probabilità di generazione può essere aumentata in due modi: raddoppiata dalla civica "Appartenenza" esclusiva di Doviello, [LINK=CIVIC_WILDCOUNCIL]Consiglio delle Terre Selvagge[\LINK], e aumentata del 50% se si segue la Compagnia delle Foglie.
-[NEWLINE]Sono necessarie diverse Meraviglie Nazionali per consentire a ogni tipo di animale di generarsi. La costruzione di queste Meraviglie conferisce anche alle unità costruite in città una promozione Spirito Affine.
-[ICON_BULLET][LINK=UNIT_WOLF]Lupi[\LINK] - Disponibili dall'inizio.
-[ICON_BULLET][LINK=UNIT_BOAR]Cinghiali[\LINK] - [LINK=BUILDING_BOAR_PEN]Tana del cinghiale[\LINK], disponibile con [LINK=TECH_EDUCATION]Istruzione[\LINK].
-[ICON_BULLET][LINK=UNIT_BEAR]Orsi[\LINK] - [LINK=BUILDING_BEAR_DEN]Tana dell'orso[\LINK], disponibile con [LINK=TECH_MINING]Estrazione mineraria[\LINK].
-[ICON_BULLET][LINK=UNIT_GORILLA]Gorilla[\LINK] - [LINK=BUILDING_GORILLA_HUT]Capanna del gorilla[\LINK], disponibile con [LINK=TECH_CARTOGRAPHY]Cartografia[\LINK].
-[ICON_BULLET][LINK=UNIT_GRIFFON]Griffoni[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], disponibile con [LINK=TECH_ANIMAL_HUSBANDRY]Allevamento Animali[\LINK].
-[ICON_BULLET][LINK=UNIT_STAG]Cervi[\LINK] - [LINK=BUILDING_STAG_COPSE]Bosco di Cervo[\LINK], disponibile con [LINK=TECH_PHILOSOPHY]Filosofia[\LINK].</Italian>
-		<Spanish>[H1]Desove de animales[\H1]
-Las ciudades Doviello generan animales periódicamente, con una probabilidad base del 4% por ciudad en cada turno, reducida en un 0,4% por punto de población. Esto significa que una ciudad estándar ya no generará animales al alcanzar 11 puntos de población. [NEWLINE]La probabilidad de aparición se puede aumentar de dos maneras: se duplica con el cívico de membresía exclusivo para Doviello, [LINK=CIVIC_WILDCOUNCIL]Consejo de las Tierras Salvajes[\LINK], y aumenta en un 50% al seguir la Comunidad de las Hojas.
-[NEWLINE]Se requieren varias Maravillas Nacionales para que cada tipo de animal aparezca. La construcción de estas maravillas también otorga a las unidades construidas en la ciudad una promoción de Espíritu Afín.
-[ICON_BULLET][LINK=UNIT_WOLF]Lobos[\LINK] - Disponible desde el principio.
-[ICON_BULLET][LINK=UNIT_BOAR]Jabalíes[\LINK] - [LINK=BUILDING_BOAR_PEN]Guarida de jabalíes[\LINK], disponible con [LINK=TECH_EDUCATION]Educación[\LINK].
-[ICON_BULLET][LINK=UNIT_BEAR]Osos[\LINK] - [LINK=BUILDING_BEAR_DEN]Guarida de osos[\LINK], disponible con [LINK=TECH_MINING]Minería[\LINK].
-[ICON_BULLET][LINK=UNIT_GORILLA]Gorilas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Cabaña de gorilas[\LINK], disponible con [LINK=TECH_CARTOGRAPHY]Cartografía[\LINK].
-[ICON_BULLET][LINK=UNIT_GRIFFON]Grifos[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Weyr de Grifos[\LINK], disponible con [LINK=TECH_ANIMAL_HUSBANDRY]Cría de Animales[\LINK].
-[ICON_BULLET][LINK=UNIT_STAG]Ciervos[\LINK] - [LINK=BUILDING_STAG_COPSE]Sotobosque de Ciervos[\LINK], disponible con [LINK=TECH_PHILOSOPHY]Filosofía[\LINK].</Spanish>
+[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].
+
+
+Here is the modifiers that dictate animal spawn chance:
+Per city spawn chance:
++8%   Base per turn.
+-0.6% per population after 1. (Animals are scared of too many people.)
++0.5% for Bear Cave.
++0.5% for Gorilla Forest.
++0.5% for Lion Savanna.
++0.5% for Tiger Mangrove.
++0.5% for Wolf Burrow.
++1%   for Crime Ravenous Pack.
++1%  for Crime Ravenous Pack (Esus Var).
+
+multipliers:
+*2   if Wild Council civic.
+*1.5 if Fellowship of Leaves religion.</English>
+		<French>[H1]Animal Spawning[\H1]
+Doviello cities periodically have a chance to spawn animals.
+[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allows units built in the city to have a Kindred Spirit promotion.
+[ICON_BULLET][LINK=UNIT_WOLF]Wolves[\LINK] - Available from start.
+[ICON_BULLET][LINK=UNIT_BOAR]Boars[\LINK] - [LINK=BUILDING_BOAR_PEN]Boar Den[\LINK], available with [LINK=TECH_EDUCATION]Education[\LINK].
+[ICON_BULLET][LINK=UNIT_BEAR]Bears[\LINK] - [LINK=BUILDING_BEAR_DEN]Bear Den[\LINK], available with [LINK=TECH_MINING]Mining[\LINK].
+[ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorilla Hut[\LINK], available with [LINK=TECH_CARTOGRAPHY]Cartography[\LINK].
+[ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], available with [LINK=TECH_ANIMAL_HUSBANDRY]Animal Husbandry[\LINK].
+[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].
+
+
+Here is the modifiers that dictate animal spawn chance:
+Per city spawn chance:
++8%   Base per turn.
+-0.6% per population after 1. (Animals are scared of too many people.)
++0.5% for Bear Cave.
++0.5% for Gorilla Forest.
++0.5% for Lion Savanna.
++0.5% for Tiger Mangrove.
++0.5% for Wolf Burrow.
++1%   for Crime Ravenous Pack.
++1%  for Crime Ravenous Pack (Esus Var).
+
+multipliers:
+*2   if Wild Council civic.
+*1.5 if Fellowship of Leaves religion.</French>
+		<German>[H1]Animal Spawning[\H1]
+Doviello cities periodically have a chance to spawn animals.
+[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allows units built in the city to have a Kindred Spirit promotion.
+[ICON_BULLET][LINK=UNIT_WOLF]Wolves[\LINK] - Available from start.
+[ICON_BULLET][LINK=UNIT_BOAR]Boars[\LINK] - [LINK=BUILDING_BOAR_PEN]Boar Den[\LINK], available with [LINK=TECH_EDUCATION]Education[\LINK].
+[ICON_BULLET][LINK=UNIT_BEAR]Bears[\LINK] - [LINK=BUILDING_BEAR_DEN]Bear Den[\LINK], available with [LINK=TECH_MINING]Mining[\LINK].
+[ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorilla Hut[\LINK], available with [LINK=TECH_CARTOGRAPHY]Cartography[\LINK].
+[ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], available with [LINK=TECH_ANIMAL_HUSBANDRY]Animal Husbandry[\LINK].
+[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].
+
+
+Here is the modifiers that dictate animal spawn chance:
+Per city spawn chance:
++8%   Base per turn.
+-0.6% per population after 1. (Animals are scared of too many people.)
++0.5% for Bear Cave.
++0.5% for Gorilla Forest.
++0.5% for Lion Savanna.
++0.5% for Tiger Mangrove.
++0.5% for Wolf Burrow.
++1%   for Crime Ravenous Pack.
++1%  for Crime Ravenous Pack (Esus Var).
+
+multipliers:
+*2   if Wild Council civic.
+*1.5 if Fellowship of Leaves religion.</German>
+		<Italian>[H1]Animal Spawning[\H1]
+Doviello cities periodically have a chance to spawn animals.
+[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allows units built in the city to have a Kindred Spirit promotion.
+[ICON_BULLET][LINK=UNIT_WOLF]Wolves[\LINK] - Available from start.
+[ICON_BULLET][LINK=UNIT_BOAR]Boars[\LINK] - [LINK=BUILDING_BOAR_PEN]Boar Den[\LINK], available with [LINK=TECH_EDUCATION]Education[\LINK].
+[ICON_BULLET][LINK=UNIT_BEAR]Bears[\LINK] - [LINK=BUILDING_BEAR_DEN]Bear Den[\LINK], available with [LINK=TECH_MINING]Mining[\LINK].
+[ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorilla Hut[\LINK], available with [LINK=TECH_CARTOGRAPHY]Cartography[\LINK].
+[ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], available with [LINK=TECH_ANIMAL_HUSBANDRY]Animal Husbandry[\LINK].
+[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].
+
+
+Here is the modifiers that dictate animal spawn chance:
+Per city spawn chance:
++8%   Base per turn.
+-0.6% per population after 1. (Animals are scared of too many people.)
++0.5% for Bear Cave.
++0.5% for Gorilla Forest.
++0.5% for Lion Savanna.
++0.5% for Tiger Mangrove.
++0.5% for Wolf Burrow.
++1%   for Crime Ravenous Pack.
++1%  for Crime Ravenous Pack (Esus Var).
+
+multipliers:
+*2   if Wild Council civic.
+*1.5 if Fellowship of Leaves religion.</Italian>
+		<Spanish>[H1]Animal Spawning[\H1]
+Doviello cities periodically have a chance to spawn animals.
+[NEWLINE]Various National Wonders are required to allow each type of animal to spawn. Construction of these wonders also allows units built in the city to have a Kindred Spirit promotion.
+[ICON_BULLET][LINK=UNIT_WOLF]Wolves[\LINK] - Available from start.
+[ICON_BULLET][LINK=UNIT_BOAR]Boars[\LINK] - [LINK=BUILDING_BOAR_PEN]Boar Den[\LINK], available with [LINK=TECH_EDUCATION]Education[\LINK].
+[ICON_BULLET][LINK=UNIT_BEAR]Bears[\LINK] - [LINK=BUILDING_BEAR_DEN]Bear Den[\LINK], available with [LINK=TECH_MINING]Mining[\LINK].
+[ICON_BULLET][LINK=UNIT_GORILLA]Gorillas[\LINK] - [LINK=BUILDING_GORILLA_HUT]Gorilla Hut[\LINK], available with [LINK=TECH_CARTOGRAPHY]Cartography[\LINK].
+[ICON_BULLET][LINK=UNIT_GRIFFON]Griffons[\LINK] - [LINK=BUILDING_GRIFFIN_WEYR]Griffon Weyr[\LINK], available with [LINK=TECH_ANIMAL_HUSBANDRY]Animal Husbandry[\LINK].
+[ICON_BULLET][LINK=UNIT_STAG]Stags[\LINK] - [LINK=BUILDING_STAG_COPSE]Stag Copse[\LINK], available with [LINK=TECH_PHILOSOPHY]Philosophy[\LINK].
+
+
+Here is the modifiers that dictate animal spawn chance:
+Per city spawn chance:
++8%   Base per turn.
+-0.6% per population after 1. (Animals are scared of too many people.)
++0.5% for Bear Cave.
++0.5% for Gorilla Forest.
++0.5% for Lion Savanna.
++0.5% for Tiger Mangrove.
++0.5% for Wolf Burrow.
++1%   for Crime Ravenous Pack.
++1%  for Crime Ravenous Pack (Esus Var).
+
+multipliers:
+*2   if Wild Council civic.
+*1.5 if Fellowship of Leaves religion.</Spanish>
 	</TEXT>
 	<TEXT>
         <Tag>TXT_KEY_CONCEPT_DOVIELLO_PLUS</Tag>
@@ -837,8 +1289,8 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- +5% Aristocracy
 			- +0.5% for every Happy Bonus type (not total)
 			- +1% for each Body Mana if at least 1 Flesh Studio is present
-			- +1% for each PA
-			- +5% if RoP is owned
+			- +1% for each Patrian Artifact resource
+			- +5% if Remnants of Patria is owned
 			- +0.5% for each Temple of the Gift
 			- +1% for each Imperial Cenotaph
 			- +1% for each Hall of the Covenant
@@ -847,13 +1299,10 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- -4% for each Unhealthy Discontent II
 		
 			Multiplicative modifiers:
-			- *0 if Stasis (STASIS MENTIONED!)
-			- *2.5 if AI
 			- *1.5 if Total pop is under (6)
-			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- GrowthPercent (*0.34 Marathon, *0.67 Epic, *1.5 Quick)
 			- *1.25 for God King if Emperor or Kounperor
-			- *1.25 for Aristocracy if Korinna
-			- *[Dynamic Total Pop Multi]</English>
+			- *1.25 for Aristocracy if Korinna</English>
 		<French>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
 			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
@@ -875,8 +1324,8 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- +5% Aristocracy
 			- +0.5% for every Happy Bonus type (not total)
 			- +1% for each Body Mana if at least 1 Flesh Studio is present
-			- +1% for each PA
-			- +5% if RoP is owned
+			- +1% for each Patrian Artifact resource
+			- +5% if Remnants of Patria is owned
 			- +0.5% for each Temple of the Gift
 			- +1% for each Imperial Cenotaph
 			- +1% for each Hall of the Covenant
@@ -885,13 +1334,10 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- -4% for each Unhealthy Discontent II
 		
 			Multiplicative modifiers:
-			- *0 if Stasis (STASIS MENTIONED!)
-			- *2.5 if AI
 			- *1.5 if Total pop is under (6)
-			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- GrowthPercent (*0.34 Marathon, *0.67 Epic, *1.5 Quick)
 			- *1.25 for God King if Emperor or Kounperor
-			- *1.25 for Aristocracy if Korinna
-			- *[Dynamic Total Pop Multi]</French>
+			- *1.25 for Aristocracy if Korinna</French>
 		<German>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
 			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
@@ -913,8 +1359,8 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- +5% Aristocracy
 			- +0.5% for every Happy Bonus type (not total)
 			- +1% for each Body Mana if at least 1 Flesh Studio is present
-			- +1% for each PA
-			- +5% if RoP is owned
+			- +1% for each Patrian Artifact resource
+			- +5% if Remnants of Patria is owned
 			- +0.5% for each Temple of the Gift
 			- +1% for each Imperial Cenotaph
 			- +1% for each Hall of the Covenant
@@ -923,13 +1369,10 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- -4% for each Unhealthy Discontent II
 		
 			Multiplicative modifiers:
-			- *0 if Stasis (STASIS MENTIONED!)
-			- *2.5 if AI
 			- *1.5 if Total pop is under (6)
-			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- GrowthPercent (*0.34 Marathon, *0.67 Epic, *1.5 Quick)
 			- *1.25 for God King if Emperor or Kounperor
-			- *1.25 for Aristocracy if Korinna
-			- *[Dynamic Total Pop Multi]</German>
+			- *1.25 for Aristocracy if Korinna</German>
 		<Italian>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
 			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
@@ -951,8 +1394,8 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- +5% Aristocracy
 			- +0.5% for every Happy Bonus type (not total)
 			- +1% for each Body Mana if at least 1 Flesh Studio is present
-			- +1% for each PA
-			- +5% if RoP is owned
+			- +1% for each Patrian Artifact resource
+			- +5% if Remnants of Patria is owned
 			- +0.5% for each Temple of the Gift
 			- +1% for each Imperial Cenotaph
 			- +1% for each Hall of the Covenant
@@ -961,13 +1404,10 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- -4% for each Unhealthy Discontent II
 		
 			Multiplicative modifiers:
-			- *0 if Stasis (STASIS MENTIONED!)
-			- *2.5 if AI
 			- *1.5 if Total pop is under (6)
-			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- GrowthPercent (*0.34 Marathon, *0.67 Epic, *1.5 Quick)
 			- *1.25 for God King if Emperor or Kounperor
-			- *1.25 for Aristocracy if Korinna
-			- *[Dynamic Total Pop Multi]</Italian>
+			- *1.25 for Aristocracy if Korinna</Italian>
 		<Spanish>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
 			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
@@ -989,8 +1429,8 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- +5% Aristocracy
 			- +0.5% for every Happy Bonus type (not total)
 			- +1% for each Body Mana if at least 1 Flesh Studio is present
-			- +1% for each PA
-			- +5% if RoP is owned
+			- +1% for each Patrian Artifact resource
+			- +5% if Remnants of Patria is owned
 			- +0.5% for each Temple of the Gift
 			- +1% for each Imperial Cenotaph
 			- +1% for each Hall of the Covenant
@@ -999,13 +1439,10 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			- -4% for each Unhealthy Discontent II
 		
 			Multiplicative modifiers:
-			- *0 if Stasis (STASIS MENTIONED!)
-			- *2.5 if AI
 			- *1.5 if Total pop is under (6)
-			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- GrowthPercent (*0.34 Marathon, *0.67 Epic, *1.5 Quick)
 			- *1.25 for God King if Emperor or Kounperor
-			- *1.25 for Aristocracy if Korinna
-			- *[Dynamic Total Pop Multi]</Spanish>
+			- *1.25 for Aristocracy if Korinna</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SCIONS_DARK_COUNCIL</Tag>
