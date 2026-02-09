@@ -11572,6 +11572,14 @@ Their lives flashing before their eyes, the scouts are shocked and relieved when
 		<Spanish>Abbey</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_ABBEY_PEDIA</Tag>
+		<English>Unlike its urban brethren, a countryside's Abbey sacrifices a sliver of its spiritual care to ensure adequate physical protection for its occupants. Erebus may be harsh and cruel, but the Elohim will remain stalwart against all suffering, and they will protect their charges to the bitter end.</English>
+		<French>Unlike its urban brethren, a countryside's Abbey sacrifices a sliver of its spiritual care to ensure adequate physical protection for its occupants. Erebus may be harsh and cruel, but the Elohim will remain stalwart against all suffering, and they will protect their charges to the bitter end.</French>
+		<German>Unlike its urban brethren, a countryside's Abbey sacrifices a sliver of its spiritual care to ensure adequate physical protection for its occupants. Erebus may be harsh and cruel, but the Elohim will remain stalwart against all suffering, and they will protect their charges to the bitter end.</German>
+		<Italian>Unlike its urban brethren, a countryside's Abbey sacrifices a sliver of its spiritual care to ensure adequate physical protection for its occupants. Erebus may be harsh and cruel, but the Elohim will remain stalwart against all suffering, and they will protect their charges to the bitter end.</Italian>
+		<Spanish>Unlike its urban brethren, a countryside's Abbey sacrifices a sliver of its spiritual care to ensure adequate physical protection for its occupants. Erebus may be harsh and cruel, but the Elohim will remain stalwart against all suffering, and they will protect their charges to the bitter end.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PRIORY</Tag>
 		<English>Priory</English>
 		<French>Priory</French>
@@ -11580,12 +11588,28 @@ Their lives flashing before their eyes, the scouts are shocked and relieved when
 		<Spanish>Priory</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PRIORY_PEDIA</Tag>
+		<English>Most nations' fortifications are spartan and designed for war at the expense of all else. The Elohim defy this mentality, with the Priory serving as a sanctuary of the soul as much as it is of the body. And with Sirona's grace, it will become something more.</English>
+		<French>Most nations' fortifications are spartan and designed for war at the expense of all else. The Elohim defy this mentality, with the Priory serving as a sanctuary of the soul as much as it is of the body. And with Sirona's grace, it will become something more.</French>
+		<German>Most nations' fortifications are spartan and designed for war at the expense of all else. The Elohim defy this mentality, with the Priory serving as a sanctuary of the soul as much as it is of the body. And with Sirona's grace, it will become something more.</German>
+		<Italian>Most nations' fortifications are spartan and designed for war at the expense of all else. The Elohim defy this mentality, with the Priory serving as a sanctuary of the soul as much as it is of the body. And with Sirona's grace, it will become something more.</Italian>
+		<Spanish>Most nations' fortifications are spartan and designed for war at the expense of all else. The Elohim defy this mentality, with the Priory serving as a sanctuary of the soul as much as it is of the body. And with Sirona's grace, it will become something more.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FORTIFIED_ABBEY</Tag>
 		<English>Fortified Abbey</English>
 		<French>Fortified Abbey</French>
 		<German>Fortified Abbey</German>
 		<Italian>Fortified Abbey</Italian>
 		<Spanish>Fortified Abbey</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_FORTIFIED_ABBEY_PEDIA</Tag>
+		<English>Comparable to the Citadels of less kindly nations, yet not dedicated to just protection, a Fortified Abbey is the exemplar of the Elohim ideal. Part Citadel, part Abbey, and now part Infirmary, it promises salvation in every way possible, untouchable by the malice of the world. Even the dreaded Verdandi broke against the wall of Cahir Abbey's surrounding fortifications, a testament to their stalwartness.</English>
+		<French>Comparable to the Citadels of less kindly nations, yet not dedicated to just protection, a Fortified Abbey is the exemplar of the Elohim ideal. Part Citadel, part Abbey, and now part Infirmary, it promises salvation in every way possible, untouchable by the malice of the world. Even the dreaded Verdandi broke against the wall of Cahir Abbey's surrounding fortifications, a testament to their stalwartness.</French>
+		<German>Comparable to the Citadels of less kindly nations, yet not dedicated to just protection, a Fortified Abbey is the exemplar of the Elohim ideal. Part Citadel, part Abbey, and now part Infirmary, it promises salvation in every way possible, untouchable by the malice of the world. Even the dreaded Verdandi broke against the wall of Cahir Abbey's surrounding fortifications, a testament to their stalwartness.</German>
+		<Italian>Comparable to the Citadels of less kindly nations, yet not dedicated to just protection, a Fortified Abbey is the exemplar of the Elohim ideal. Part Citadel, part Abbey, and now part Infirmary, it promises salvation in every way possible, untouchable by the malice of the world. Even the dreaded Verdandi broke against the wall of Cahir Abbey's surrounding fortifications, a testament to their stalwartness.</Italian>
+		<Spanish>Comparable to the Citadels of less kindly nations, yet not dedicated to just protection, a Fortified Abbey is the exemplar of the Elohim ideal. Part Citadel, part Abbey, and now part Infirmary, it promises salvation in every way possible, untouchable by the malice of the world. Even the dreaded Verdandi broke against the wall of Cahir Abbey's surrounding fortifications, a testament to their stalwartness.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_CARRIES</Tag>

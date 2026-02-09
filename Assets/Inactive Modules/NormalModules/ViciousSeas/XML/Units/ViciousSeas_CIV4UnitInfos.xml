@@ -2708,7 +2708,7 @@
 			</UnitMeshGroups>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<PromotionType>PROMOTION_DEMON</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>
@@ -2778,7 +2778,7 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_DREAM</PromotionType>
+					<PromotionType>PROMOTION_DEMON</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 			</FreePromotions>

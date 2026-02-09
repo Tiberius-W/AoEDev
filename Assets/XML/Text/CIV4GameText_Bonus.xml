@@ -11,7 +11,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_ALE_PEDIA</Tag>
-		<English>Ale can only be produced by the Deruptus Brewing House national wonder, which might be useful for a slow early-game defensive empire that needs the extra happiness to expand. [LINK=LEADER_GOODREAU]Though, Ale provides more than just happiness...[\LINK]</English>
+		<English>
+Ale can be produced in two ways: via a Workshop's "discovery" chance, or the Deruptus Brewing House national wonder. The free happiness provided is perfect for any empire, whether for early-game growth focus, or late-game happiness management in resource-poor playthroughs.  [LINK=LEADER_GOODREAU]Though, Ale provides more than just happiness...[\LINK]</English>
 		<French>La bière est produite à la Brasserie Deruptus (une merveille nationale).</French>
 		<German>Bier kann nur von dem Nationalwunder Brauerei der Deruptus produziert werden, which might be useful for a slow early-game defensive empire that needs the extra happiness to expand. [LINK=LEADER_GOODREAU]Though, Ale provides more than just happiness...[\LINK]</German>
 		<Italian>La birra può essere prodotta solo dalla meraviglia nazionale Birrificio Dereptus. La birra fornisce un bonus alla felicità. [LINK=LEADER_GOODREAU]Anche se, la birra può portare altro oltre la felicità...[\LINK]</Italian>
@@ -470,7 +471,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_FINE_CLOTHES_PEDIA</Tag>
-		<English>[TAB]Fine clothes can only be produced by the Kuriotate Tailor building.</English>
+		<English>[TAB]Fine Clothes can only be "produced" via a Workshop's "discovery" chance, except for the Kuriotates, who can build the Tailor building. Fine Clothes is a catch-all resource that represents high quality or luxurious garments of all types, crafted from material such as silk.
+
+Players with Fine Clothes have new units get the Dressed to Kill promotion, which gives +1 Culture per unit they kill.</English>
 		<French>[TAB]Les vêtements de qualité sont produits par le tailleur kuriotate.</French>
 		<German>[TAB]Wunderschöne Kleider können nur vom Tuchmacher der Kuriotaten produziert werden.</German>
 		<Italian>[TAB]I vestiti raffinati posso essere prodotti solo dall'edificio Sarto dei Kuriotate.</Italian>
@@ -568,7 +571,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_JEWELS_PEDIA</Tag>
-		<English>[TAB]Jewels can only be produced by the Kuriotate Jeweler building.</English>
+		<English>[TAB]
+Jewelry can only be "produced" via a Workshop's "discovery" chance, except for the Kuriotates, who can build the Jeweler building. Jewelry is a catch-all resource that represents ormanemts of all types, crafted from precious metals and/or gemstones with high skill.
+
+Players with Jewelry have new units get the Dazzling Glare promotion, which increases defensive strike chance and damage by +10%.</English>
 		<French>[TAB]Les bijoux sont taillés par le joaillier kuriotate.</French>
 		<German>[TAB]Schmuck kann nur vom Goldschmied der Kuriotaten produziert werden</German>
 		<Italian>[TAB]I gioielli possono essere prodotti solo dall'edificio Gioielliere dei Kuriotate.</Italian>
@@ -1773,11 +1779,11 @@ This is the power of revelation and spiritual truth. At modest levels it can des
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SHEUT_STONE_PEDIA</Tag>
-		<English>[TAB]Only Agares knows the origin of these stones. They may be a pale reflection of the gems of creation or Agares's failed attempts to make his own. Regardless, they radiate powerful death magic and draw wraiths to them like silent beacons. During the Age of Magic necromancers were said to have turned the stones into powerful weapons for those that wielded them.</English>
-		<French>[TAB]Seul Agares connaît l'origine de ces pierres. Elles sont peut être le pâle reflet des gemmes de la Création ou une tentative avortée d'Agares pour créer les siennes. Quoi qu'il en soit, elles irradient d'une puissante magie de mort et attirent les fantômes comme une balise silencieuse. On dit que durant l'Âge de la Magie, les nécromants transformèrent ces pierres en de puissantes armes pour ceux qui les maniaient.</French>
-		<German>[TAB]Nur Agares kennt die Herkunft dieser Steine. Vielleicht sind sie ein schwacher Abglanz der Schöpfungssteine oder Agares' Versuch, eigene zu schaffen, schlug fehl. Wie auch immer, von ihnen geht starke Todesmagie aus und sie ziehen wie ein stilles Leuchtfeuer Gespenster an. Von Totenbeschwörern heißt es, dass sie im Zeitalter der Magie die Steine für ihre Besitzer in mächtige Waffen verwandelt haben.</German>
-		<Italian>[TAB]Solo Agares conosce l'origine di queste pietre. Possono essere un pallido riflessodelle gemme della creazione o il risultato dei tentativi falliti di Agares di crearne di sue. Indipendentemente da ciò, esse emanano una fortissima magia della morte e attirano verso di loro i wraiths come fari silenziosi. Si dice che, durante l'Era della Magia, i necromanti trasformassero le pietre in potentissime armi per coloro che le maneggiavano.</Italian>
-		<Spanish>[TAB]Sólo Agares conoce el origen de estas piedras. Pueden ser un reflejo pálido de las gemas de la creación o un intento fallido de Agares de crear la suya propia. De cualquier forma irradian magia de muerte potente y dibuja espectros en ellas como balizas silenciosas. Durante la Edad de la Magia se decía que los nigromantes convirtieron las piedras en poderosas armas para aquellos que pudieran manejarlas.</Spanish>
+		<English>[TAB]Only Agares knows the origin of these stones. They may be a pale reflection of the gems of creation or Agares's failed attempts to make his own. Regardless, they radiate powerful death magic and draw wraiths to them like silent beacons. During the Age of Magic necromancers were said to have turned the stones into powerful weapons for those that wielded them.[NEWLINE][NEWLINE][ICON_BULLET][LINK=PROMOTION_SHEUT_STONE]Sheut Stone Promotion[\LINK]</English>
+		<French>[TAB]Seul Agares connaît l'origine de ces pierres. Elles sont peut être le pâle reflet des gemmes de la Création ou une tentative avortée d'Agares pour créer les siennes. Quoi qu'il en soit, elles irradient d'une puissante magie de mort et attirent les fantômes comme une balise silencieuse. On dit que durant l'Âge de la Magie, les nécromants transformèrent ces pierres en de puissantes armes pour ceux qui les maniaient.[NEWLINE][NEWLINE][ICON_BULLET][LINK=PROMOTION_SHEUT_STONE]Sheut Stone Promotion[\LINK]</French>
+		<German>[TAB]Nur Agares kennt die Herkunft dieser Steine. Vielleicht sind sie ein schwacher Abglanz der Schöpfungssteine oder Agares' Versuch, eigene zu schaffen, schlug fehl. Wie auch immer, von ihnen geht starke Todesmagie aus und sie ziehen wie ein stilles Leuchtfeuer Gespenster an. Von Totenbeschwörern heißt es, dass sie im Zeitalter der Magie die Steine für ihre Besitzer in mächtige Waffen verwandelt haben.[NEWLINE][NEWLINE][ICON_BULLET][LINK=PROMOTION_SHEUT_STONE]Sheut Stone Promotion[\LINK]</German>
+		<Italian>[TAB]Solo Agares conosce l'origine di queste pietre. Possono essere un pallido riflessodelle gemme della creazione o il risultato dei tentativi falliti di Agares di crearne di sue. Indipendentemente da ciò, esse emanano una fortissima magia della morte e attirano verso di loro i wraiths come fari silenziosi. Si dice che, durante l'Era della Magia, i necromanti trasformassero le pietre in potentissime armi per coloro che le maneggiavano.[NEWLINE][NEWLINE][ICON_BULLET][LINK=PROMOTION_SHEUT_STONE]Sheut Stone Promotion[\LINK]</Italian>
+		<Spanish>[TAB]Sólo Agares conoce el origen de estas piedras. Pueden ser un reflejo pálido de las gemas de la creación o un intento fallido de Agares de crear la suya propia. De cualquier forma irradian magia de muerte potente y dibuja espectros en ellas como balizas silenciosas. Durante la Edad de la Magia se decía que los nigromantes convirtieron las piedras en poderosas armas para aquellos que pudieran manejarlas.[NEWLINE][NEWLINE][ICON_BULLET][LINK=PROMOTION_SHEUT_STONE]Sheut Stone Promotion[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SHRIMP</Tag>

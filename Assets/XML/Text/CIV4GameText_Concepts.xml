@@ -42,11 +42,146 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CRIME_RATE_PEDIA</Tag>
-		<English>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings, shown by the purple mask icon on the top left of your city view. When the Crime Rate reaches certain levels in your city, some crimes become widespread. This produces various effects, both negative and positive, depending on the crime, your religion, and civilization. Letting the crime rate unchecked may harm your economy or even go so far (if recklessly ignored) to render a city utterly unproductive, so you are alerted when it begins to rise in any of your cities.[NEWLINE][NEWLINE]You can mouse over the crime value in city view to see things impacting crime in any of your cities, but for example, an incomplete list of things that impact crime include:[NEWLINE][ICON_BULLET]Each unit of population increases the crime rate by 2.[NEWLINE][ICON_BULLET]Various buildings both increase and decrease the crime rate; ones such as a [LINK=BUILDING_GAMBLING_HOUSE]Gambling House[\LINK] will increase it, and others like [LINK=BUILDING_ELDER_COUNCIL]Elder Council[\LINK] or [LINK=BUILDING_WALLS]Walls[\LINK] decrease it.[NEWLINE][ICON_BULLET]]Melee and Archery Units have access to the [LINK=PROMOTION_PATROL1]Patrol Promotion[\LINK] line to decrease the crime rate in cities they're stationed in.[NEWLINE][ICON_BULLET]Constructing the [LINK=BUILDING_PENAL_COLONY]Penal Colony[\LINK] National Wonder (available with [LINK=TECH_CODE_OF_LAWS]Code of Laws[\LINK]) will change your crime-per-population value to 1 in the rest of your cities, in exchange for empire-wide 10% reduced growth (but giving the Patrol 1 promotion for free for units built in the penal colony).[NEWLINE][ICON_BULLET]Access to Law or Chaos Mana.[NEWLINE][ICON_BULLET]While in a golden age, crime will be significantly reduced in all of your cities; this can be a good way to temporarily deal with crime that has spiraled to very high values.</English>
-		<French>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings, shown by the purple mask icon on the top left of your city view. When the Crime Rate reaches certain levels in your city, some crimes become widespread. This produces various effects, both negative and positive, depending on the crime, your religion, and civilization. Letting the crime rate unchecked may harm your economy or even go so far (if recklessly ignored) to render a city utterly unproductive, so you are alerted when it begins to rise in any of your cities.[NEWLINE][NEWLINE]You can mouse over the crime value in city view to see things impacting crime in any of your cities, but for example, an incomplete list of things that impact crime include:[NEWLINE][ICON_BULLET]Each unit of population increases the crime rate by 2.[NEWLINE][ICON_BULLET]Various buildings both increase and decrease the crime rate; ones such as a [LINK=BUILDING_GAMBLING_HOUSE]Gambling House[\LINK] will increase it, and others like [LINK=BUILDING_ELDER_COUNCIL]Elder Council[\LINK] or [LINK=BUILDING_WALLS]Walls[\LINK] decrease it.[NEWLINE][ICON_BULLET]]Melee and Archery Units have access to the [LINK=PROMOTION_PATROL1]Patrol Promotion[\LINK] line to decrease the crime rate in cities they're stationed in.[NEWLINE][ICON_BULLET]Constructing the [LINK=BUILDING_PENAL_COLONY]Penal Colony[\LINK] National Wonder (available with [LINK=TECH_CODE_OF_LAWS]Code of Laws[\LINK]) will change your crime-per-population value to 1 in the rest of your cities, in exchange for empire-wide 10% reduced growth (but giving the Patrol 1 promotion for free for units built in the penal colony).[NEWLINE][ICON_BULLET]Access to Law or Chaos Mana.[NEWLINE][ICON_BULLET]While in a golden age, crime will be significantly reduced in all of your cities; this can be a good way to temporarily deal with crime that has spiraled to very high values.</French>
-		<German>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings, shown by the purple mask icon on the top left of your city view. When the Crime Rate reaches certain levels in your city, some crimes become widespread. This produces various effects, both negative and positive, depending on the crime, your religion, and civilization. Letting the crime rate unchecked may harm your economy or even go so far (if recklessly ignored) to render a city utterly unproductive, so you are alerted when it begins to rise in any of your cities.[NEWLINE][NEWLINE]You can mouse over the crime value in city view to see things impacting crime in any of your cities, but for example, an incomplete list of things that impact crime include:[NEWLINE][ICON_BULLET]Each unit of population increases the crime rate by 2.[NEWLINE][ICON_BULLET]Various buildings both increase and decrease the crime rate; ones such as a [LINK=BUILDING_GAMBLING_HOUSE]Gambling House[\LINK] will increase it, and others like [LINK=BUILDING_ELDER_COUNCIL]Elder Council[\LINK] or [LINK=BUILDING_WALLS]Walls[\LINK] decrease it.[NEWLINE][ICON_BULLET]]Melee and Archery Units have access to the [LINK=PROMOTION_PATROL1]Patrol Promotion[\LINK] line to decrease the crime rate in cities they're stationed in.[NEWLINE][ICON_BULLET]Constructing the [LINK=BUILDING_PENAL_COLONY]Penal Colony[\LINK] National Wonder (available with [LINK=TECH_CODE_OF_LAWS]Code of Laws[\LINK]) will change your crime-per-population value to 1 in the rest of your cities, in exchange for empire-wide 10% reduced growth (but giving the Patrol 1 promotion for free for units built in the penal colony).[NEWLINE][ICON_BULLET]Access to Law or Chaos Mana.[NEWLINE][ICON_BULLET]While in a golden age, crime will be significantly reduced in all of your cities; this can be a good way to temporarily deal with crime that has spiraled to very high values.</German>
-		<Italian>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings, shown by the purple mask icon on the top left of your city view. When the Crime Rate reaches certain levels in your city, some crimes become widespread. This produces various effects, both negative and positive, depending on the crime, your religion, and civilization. Letting the crime rate unchecked may harm your economy or even go so far (if recklessly ignored) to render a city utterly unproductive, so you are alerted when it begins to rise in any of your cities.[NEWLINE][NEWLINE]You can mouse over the crime value in city view to see things impacting crime in any of your cities, but for example, an incomplete list of things that impact crime include:[NEWLINE][ICON_BULLET]Each unit of population increases the crime rate by 2.[NEWLINE][ICON_BULLET]Various buildings both increase and decrease the crime rate; ones such as a [LINK=BUILDING_GAMBLING_HOUSE]Gambling House[\LINK] will increase it, and others like [LINK=BUILDING_ELDER_COUNCIL]Elder Council[\LINK] or [LINK=BUILDING_WALLS]Walls[\LINK] decrease it.[NEWLINE][ICON_BULLET]]Melee and Archery Units have access to the [LINK=PROMOTION_PATROL1]Patrol Promotion[\LINK] line to decrease the crime rate in cities they're stationed in.[NEWLINE][ICON_BULLET]Constructing the [LINK=BUILDING_PENAL_COLONY]Penal Colony[\LINK] National Wonder (available with [LINK=TECH_CODE_OF_LAWS]Code of Laws[\LINK]) will change your crime-per-population value to 1 in the rest of your cities, in exchange for empire-wide 10% reduced growth (but giving the Patrol 1 promotion for free for units built in the penal colony).[NEWLINE][ICON_BULLET]Access to Law or Chaos Mana.[NEWLINE][ICON_BULLET]While in a golden age, crime will be significantly reduced in all of your cities; this can be a good way to temporarily deal with crime that has spiraled to very high values.</Italian>
-		<Spanish>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings, shown by the purple mask icon on the top left of your city view. When the Crime Rate reaches certain levels in your city, some crimes become widespread. This produces various effects, both negative and positive, depending on the crime, your religion, and civilization. Letting the crime rate unchecked may harm your economy or even go so far (if recklessly ignored) to render a city utterly unproductive, so you are alerted when it begins to rise in any of your cities.[NEWLINE][NEWLINE]You can mouse over the crime value in city view to see things impacting crime in any of your cities, but for example, an incomplete list of things that impact crime include:[NEWLINE][ICON_BULLET]Each unit of population increases the crime rate by 2.[NEWLINE][ICON_BULLET]Various buildings both increase and decrease the crime rate; ones such as a [LINK=BUILDING_GAMBLING_HOUSE]Gambling House[\LINK] will increase it, and others like [LINK=BUILDING_ELDER_COUNCIL]Elder Council[\LINK] or [LINK=BUILDING_WALLS]Walls[\LINK] decrease it.[NEWLINE][ICON_BULLET]]Melee and Archery Units have access to the [LINK=PROMOTION_PATROL1]Patrol Promotion[\LINK] line to decrease the crime rate in cities they're stationed in.[NEWLINE][ICON_BULLET]Constructing the [LINK=BUILDING_PENAL_COLONY]Penal Colony[\LINK] National Wonder (available with [LINK=TECH_CODE_OF_LAWS]Code of Laws[\LINK]) will change your crime-per-population value to 1 in the rest of your cities, in exchange for empire-wide 10% reduced growth (but giving the Patrol 1 promotion for free for units built in the penal colony).[NEWLINE][ICON_BULLET]Access to Law or Chaos Mana.[NEWLINE][ICON_BULLET]While in a golden age, crime will be significantly reduced in all of your cities; this can be a good way to temporarily deal with crime that has spiraled to very high values.</Spanish>
+		<English>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings.  When the Crime Rate reaches certain levels in your cities, some crimes become widespread.  This produces various effects, both positive and negative, depending on the crime.  Letting the crime rate run unchecked may put harm on your city and economy.
+
+Each unit of population increases the per-turn crime rate by two, so crime rate will steadily increase as your city grows.  Access to Chaos mana increases the crime rate by two (more chaos will not increase it further).  Many buildings increase crime rate per-turn, such as the Gambling House, Smuggler's Port, or the Bazaar of Mammon.
+
+Some buildings set the minimum crime of your city to a particular number.  These include the Thieves' Den, Thieves' Guild, and Poisoner's Workshop buildings.  These are very helpful if you want the benefits of a certain level of crime within a city.
+
+In general, 'too high' crime is 650, as Arson reduces hammers which is harsh.  900 crime's 'Corruption' gives you crime-per-population which almost certainly means it will spiral out of control.
+
+To reduce crime, and some examples:
+Buildings: Courthouses, dungeons, walls, garrison quarters 
+Religious Buildings: Kilmorph, White Hand, Empyrean, and especially Order
+Basic Patrol Promotions: Melee
+Advanced Patrol Promotions: Defensive Melee, Archers
+Others: Golden Age, Civics, Martial Law
+
+As a last resort the city can go into Martial Law (Unlocked at Code of Laws), resulting in the city not directly building anything but working on reducing its crime.
+
+The Penal Colony is a unique national wonder which will half crime in all your cities except the city with the Penal Colony building.  The Penal Colony city will itself get a huge influx of crime (+50), but gets hammers per active crime, gets a hefty food bonus, and builds units with a free patrol which can help mitigate some of that crime.  It is very strong, but be careful when and where you build it as 50 is a lot of crime to suddenly dump into a city.
+
+In the other direction, crime can be made to work for you.  The poisoner's workshop boosts science in the city, for example, and some crimes are purely or mostly positive such as Illegal Immigration.
+
+Making Crime work for you:
+Crime-focused Civs: Cualli, and especially Lanun.  Both of these have unique crimes that are more helpful than not.  Lanun also have buildings which will help based on how many crimes you have.  Keep your crime at 400 for Cualli, or 300 for Lanun.
+
+Council of Esus religion: Removes the happiness penalty from crimes,and gives some buildings that are helpful.  Swapping to Esus may make a crime-addled city back to being functional.
+
+Good Civs for Crime: Lanun, Cualli, Austrin, Hippus
+Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of Patria.</English>
+		<French>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings.  When the Crime Rate reaches certain levels in your cities, some crimes become widespread.  This produces various effects, both positive and negative, depending on the crime.  Letting the crime rate run unchecked may put harm on your city and economy.
+
+Each unit of population increases the per-turn crime rate by two, so crime rate will steadily increase as your city grows.  Access to Chaos mana increases the crime rate by two (more chaos will not increase it further).  Many buildings increase crime rate per-turn, such as the Gambling House, Smuggler's Port, or the Bazaar of Mammon.
+
+Some buildings set the minimum crime of your city to a particular number.  These include the Thieves' Den, Thieves' Guild, and Poisoner's Workshop buildings.  These are very helpful if you want the benefits of a certain level of crime within a city.
+
+In general, 'too high' crime is 650, as Arson reduces hammers which is harsh.  900 crime's 'Corruption' gives you crime-per-population which almost certainly means it will spiral out of control.
+
+To reduce crime, and some examples:
+Buildings: Courthouses, dungeons, walls, garrison quarters 
+Religious Buildings: Kilmorph, White Hand, Empyrean, and especially Order
+Basic Patrol Promotions: Melee
+Advanced Patrol Promotions: Defensive Melee, Archers
+Others: Golden Age, Civics, Martial Law
+
+As a last resort the city can go into Martial Law (Unlocked at Code of Laws), resulting in the city not directly building anything but working on reducing its crime.
+
+The Penal Colony is a unique national wonder which will half crime in all your cities except the city with the Penal Colony building.  The Penal Colony city will itself get a huge influx of crime (+50), but gets hammers per active crime, gets a hefty food bonus, and builds units with a free patrol which can help mitigate some of that crime.  It is very strong, but be careful when and where you build it as 50 is a lot of crime to suddenly dump into a city.
+
+In the other direction, crime can be made to work for you.  The poisoner's workshop boosts science in the city, for example, and some crimes are purely or mostly positive such as Illegal Immigration.
+
+Making Crime work for you:
+Crime-focused Civs: Cualli, and especially Lanun.  Both of these have unique crimes that are more helpful than not.  Lanun also have buildings which will help based on how many crimes you have.  Keep your crime at 400 for Cualli, or 300 for Lanun.
+
+Council of Esus religion: Removes the happiness penalty from crimes,and gives some buildings that are helpful.  Swapping to Esus may make a crime-addled city back to being functional.
+
+Good Civs for Crime: Lanun, Cualli, Austrin, Hippus
+Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of Patria.</French>
+		<German>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings.  When the Crime Rate reaches certain levels in your cities, some crimes become widespread.  This produces various effects, both positive and negative, depending on the crime.  Letting the crime rate run unchecked may put harm on your city and economy.
+
+Each unit of population increases the per-turn crime rate by two, so crime rate will steadily increase as your city grows.  Access to Chaos mana increases the crime rate by two (more chaos will not increase it further).  Many buildings increase crime rate per-turn, such as the Gambling House, Smuggler's Port, or the Bazaar of Mammon.
+
+Some buildings set the minimum crime of your city to a particular number.  These include the Thieves' Den, Thieves' Guild, and Poisoner's Workshop buildings.  These are very helpful if you want the benefits of a certain level of crime within a city.
+
+In general, 'too high' crime is 650, as Arson reduces hammers which is harsh.  900 crime's 'Corruption' gives you crime-per-population which almost certainly means it will spiral out of control.
+
+To reduce crime, and some examples:
+Buildings: Courthouses, dungeons, walls, garrison quarters 
+Religious Buildings: Kilmorph, White Hand, Empyrean, and especially Order
+Basic Patrol Promotions: Melee
+Advanced Patrol Promotions: Defensive Melee, Archers
+Others: Golden Age, Civics, Martial Law
+
+As a last resort the city can go into Martial Law (Unlocked at Code of Laws), resulting in the city not directly building anything but working on reducing its crime.
+
+The Penal Colony is a unique national wonder which will half crime in all your cities except the city with the Penal Colony building.  The Penal Colony city will itself get a huge influx of crime (+50), but gets hammers per active crime, gets a hefty food bonus, and builds units with a free patrol which can help mitigate some of that crime.  It is very strong, but be careful when and where you build it as 50 is a lot of crime to suddenly dump into a city.
+
+In the other direction, crime can be made to work for you.  The poisoner's workshop boosts science in the city, for example, and some crimes are purely or mostly positive such as Illegal Immigration.
+
+Making Crime work for you:
+Crime-focused Civs: Cualli, and especially Lanun.  Both of these have unique crimes that are more helpful than not.  Lanun also have buildings which will help based on how many crimes you have.  Keep your crime at 400 for Cualli, or 300 for Lanun.
+
+Council of Esus religion: Removes the happiness penalty from crimes,and gives some buildings that are helpful.  Swapping to Esus may make a crime-addled city back to being functional.
+
+Good Civs for Crime: Lanun, Cualli, Austrin, Hippus
+Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of Patria.</German>
+		<Italian>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings.  When the Crime Rate reaches certain levels in your cities, some crimes become widespread.  This produces various effects, both positive and negative, depending on the crime.  Letting the crime rate run unchecked may put harm on your city and economy.
+
+Each unit of population increases the per-turn crime rate by two, so crime rate will steadily increase as your city grows.  Access to Chaos mana increases the crime rate by two (more chaos will not increase it further).  Many buildings increase crime rate per-turn, such as the Gambling House, Smuggler's Port, or the Bazaar of Mammon.
+
+Some buildings set the minimum crime of your city to a particular number.  These include the Thieves' Den, Thieves' Guild, and Poisoner's Workshop buildings.  These are very helpful if you want the benefits of a certain level of crime within a city.
+
+In general, 'too high' crime is 650, as Arson reduces hammers which is harsh.  900 crime's 'Corruption' gives you crime-per-population which almost certainly means it will spiral out of control.
+
+To reduce crime, and some examples:
+Buildings: Courthouses, dungeons, walls, garrison quarters 
+Religious Buildings: Kilmorph, White Hand, Empyrean, and especially Order
+Basic Patrol Promotions: Melee
+Advanced Patrol Promotions: Defensive Melee, Archers
+Others: Golden Age, Civics, Martial Law
+
+As a last resort the city can go into Martial Law (Unlocked at Code of Laws), resulting in the city not directly building anything but working on reducing its crime.
+
+The Penal Colony is a unique national wonder which will half crime in all your cities except the city with the Penal Colony building.  The Penal Colony city will itself get a huge influx of crime (+50), but gets hammers per active crime, gets a hefty food bonus, and builds units with a free patrol which can help mitigate some of that crime.  It is very strong, but be careful when and where you build it as 50 is a lot of crime to suddenly dump into a city.
+
+In the other direction, crime can be made to work for you.  The poisoner's workshop boosts science in the city, for example, and some crimes are purely or mostly positive such as Illegal Immigration.
+
+Making Crime work for you:
+Crime-focused Civs: Cualli, and especially Lanun.  Both of these have unique crimes that are more helpful than not.  Lanun also have buildings which will help based on how many crimes you have.  Keep your crime at 400 for Cualli, or 300 for Lanun.
+
+Council of Esus religion: Removes the happiness penalty from crimes,and gives some buildings that are helpful.  Swapping to Esus may make a crime-addled city back to being functional.
+
+Good Civs for Crime: Lanun, Cualli, Austrin, Hippus
+Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of Patria.</Italian>
+		<Spanish>[H1]Crime Rate[\H1][NEWLINE][NEWLINE]Crime is a value that accumulates in your cities each turn based on population and buildings.  When the Crime Rate reaches certain levels in your cities, some crimes become widespread.  This produces various effects, both positive and negative, depending on the crime.  Letting the crime rate run unchecked may put harm on your city and economy.
+
+Each unit of population increases the per-turn crime rate by two, so crime rate will steadily increase as your city grows.  Access to Chaos mana increases the crime rate by two (more chaos will not increase it further).  Many buildings increase crime rate per-turn, such as the Gambling House, Smuggler's Port, or the Bazaar of Mammon.
+
+Some buildings set the minimum crime of your city to a particular number.  These include the Thieves' Den, Thieves' Guild, and Poisoner's Workshop buildings.  These are very helpful if you want the benefits of a certain level of crime within a city.
+
+In general, 'too high' crime is 650, as Arson reduces hammers which is harsh.  900 crime's 'Corruption' gives you crime-per-population which almost certainly means it will spiral out of control.
+
+To reduce crime, and some examples:
+Buildings: Courthouses, dungeons, walls, garrison quarters 
+Religious Buildings: Kilmorph, White Hand, Empyrean, and especially Order
+Basic Patrol Promotions: Melee
+Advanced Patrol Promotions: Defensive Melee, Archers
+Others: Golden Age, Civics, Martial Law
+
+As a last resort the city can go into Martial Law (Unlocked at Code of Laws), resulting in the city not directly building anything but working on reducing its crime.
+
+The Penal Colony is a unique national wonder which will half crime in all your cities except the city with the Penal Colony building.  The Penal Colony city will itself get a huge influx of crime (+50), but gets hammers per active crime, gets a hefty food bonus, and builds units with a free patrol which can help mitigate some of that crime.  It is very strong, but be careful when and where you build it as 50 is a lot of crime to suddenly dump into a city.
+
+In the other direction, crime can be made to work for you.  The poisoner's workshop boosts science in the city, for example, and some crimes are purely or mostly positive such as Illegal Immigration.
+
+Making Crime work for you:
+Crime-focused Civs: Cualli, and especially Lanun.  Both of these have unique crimes that are more helpful than not.  Lanun also have buildings which will help based on how many crimes you have.  Keep your crime at 400 for Cualli, or 300 for Lanun.
+
+Council of Esus religion: Removes the happiness penalty from crimes,and gives some buildings that are helpful.  Swapping to Esus may make a crime-addled city back to being functional.
+
+Good Civs for Crime: Lanun, Cualli, Austrin, Hippus
+Poor Civs for Crime: Clan of Embers, Balseraphs, Khazad, Kuriotates, Scions of Patria.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_BARBARIANS</Tag>
@@ -691,45 +826,37 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			Capturing cities:
 			Of course anyone can do this. All you need is a bunch of guys with swords. However, the lifestyles of other civs isn't very compatible with the unlifestyle of the Scions. When a city changes hands to or from the Scions most of the population is lost. This reduction isn't as great if the Scions are using the "God King" civic.
 			[H1]Details on Awakened Spawning:[\H1][NEWLINE][NEWLINE] 
-			The formula determining the odds an Awakened appear each turn isn't complicated, but it is rather long.
+			The formula determining the odds an Awakened appear each turn isn't complicated(lies), but it is rather long: 
+			Total pop cap to spawn Awa: max(10, Total Land plots / 2)
+			Total pop cap refers to the sum of city populations + number of awakened + number of reborn.
+			Starting from half of the total pop cap a linearly decreasing multiplier is applied to a spawn chance: multi = 1 at 50% cap, = 0 at 100% cap
+			AI gets Awa at capital with a 50% chance, random city 50%.
 			The base chance for a Standard-sized world is:
-			Quick: ~9%
-			Normal: ~6%
-			Epic: ~3.5%
-			Marathon: ~3%
-			World Size adjustment:
-			"Population limit" / 40
-			That limit is 20 for a Duel sized world and goes up to 70 for a Huge world.
-			The world size also sets a cap on Awakened generation: It ranges from 20 for a Duel world to 70 for a Huge one.
-			Additive factors:
-			Capital population / 4
-			Total buildings:
-			Gift Temples or Cenotaphs * 1
-			Halls of the Covenant * 2
-			Shrines to Kylorin / 2
-			Resources:
-			+0.75 for every Patrian Artifact.
-			+1 for access to Gems, Silk, and Dye. 
-			+0.5 for access to Gold, Ivory, Cotton, Incense, Pearls, and Fur.
-			Multipliers:
-			Civic: Aristocracy? Then * 1.4
-			Game speed - the numbers are linked to game-speed production adjustments. Divide by...
-			Quick: 0.5
-			Normal: 0.75
-			Epic: 1.125
-			Marathon: 1.5
-			Game turn. Every turn it's a little harder by...
-			Quick: 0.5%
-			Normal: 0.25%
-			Epic: 0.165%
-			Marathon: 0.125%
-			Ai mod:
-			The AI gets a 20% bonus.
-			Leader:
-			Korrina has a 25% penalty.</English>
+			Additive modifiers:
+			- +3% Base
+			- +5% Aristocracy
+			- +0.5% for every Happy Bonus type (not total)
+			- +1% for each Body Mana if at least 1 Flesh Studio is present
+			- +1% for each PA
+			- +5% if RoP is owned
+			- +0.5% for each Temple of the Gift
+			- +1% for each Imperial Cenotaph
+			- +1% for each Hall of the Covenant
+			- +0.5% for each Shrine to Kylorin
+			- -2% for each Unhealthy Discontent I
+			- -4% for each Unhealthy Discontent II
+		
+			Multiplicative modifiers:
+			- *0 if Stasis (STASIS MENTIONED!)
+			- *2.5 if AI
+			- *1.5 if Total pop is under (6)
+			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- *1.25 for God King if Emperor or Kounperor
+			- *1.25 for Aristocracy if Korinna
+			- *[Dynamic Total Pop Multi]</English>
 		<French>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
-			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.   But they honored dead are hard to predict - you'll often be forced to go in after them.
+			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
 			The easiest way for the Scions to get population is for an Awakened just walk out of the capital's Bottomless Tomb of it's own free will. But while the Tomb is bottomless an endless army of Awakened won't be coming:  They have their own alien amusements there.  The longer they stay the less willing they are to leave.  
 			The frequency with which Awakened emerge is displayed in the message area and can be increased by the player's actions.  Building Shrines to Kylorin, Imperial Cenotaphs or Temples of the Gift, Halls of the Covenant, or the Flesh Studio all attract Awakened.  Most luxuries will help lure Awakened.  Of special note is the "Patrian Artifacts" resource.  Only the Scions player can see these resources, and unlike the other luxuries each resource owned increases the odds.  The larger, more bustling the Capital the more will Awakened are to emerge.  And when society is explicitly run for the benefit of the Awakened, "Aristocracy", Awakened are more likely to come forth.
 			[H1]Reborn:[\H1][NEWLINE][NEWLINE] Reborn are formerly living inhabitants of Erebus granted the Gift and transformed into undead Scions. There are five ways to gain Reborn. First, Reborn can be created from combat with a priest of the Gift - A Legate, a Doomsayer, or a Doomgiver.  The enemy unit is persuaded that unlife among the Scions is preferable to their present meager existence. Second, Reborn can be "built" in a city containing a Cathedral of Rebirth. Third, Pelemoc Goldtongue may persaude the citizens of other civilzations to join Patria Reborn. Fourth, once the Scions have Sorcery and Priesthood a razed city will yield a few Reborn.
@@ -737,45 +864,37 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			Capturing cities:
 			Of course anyone can do this. All you need is a bunch of guys with swords. However, the lifestyles of other civs isn't very compatible with the unlifestyle of the Scions. When a city changes hands to or from the Scions most of the population is lost. This reduction isn't as great if the Scions are using the "God King" civic.
 			[H1]Details on Awakened Spawning:[\H1][NEWLINE][NEWLINE] 
-			The formula determining the odds an Awakened appear each turn isn't complicated, but it is rather long.
+			The formula determining the odds an Awakened appear each turn isn't complicated(lies), but it is rather long: 
+			Total pop cap to spawn Awa: max(10, Total Land plots / 2)
+			Total pop cap refers to the sum of city populations + number of awakened + number of reborn.
+			Starting from half of the total pop cap a linearly decreasing multiplier is applied to a spawn chance: multi = 1 at 50% cap, = 0 at 100% cap
+			AI gets Awa at capital with a 50% chance, random city 50%.
 			The base chance for a Standard-sized world is:
-			Quick: ~9%
-			Normal: ~6%
-			Epic: ~3.5%
-			Marathon: ~3%
-			World Size adjustment:
-			"Population limit" / 40
-			That limit is 20 for a Duel sized world and goes up to 70 for a Huge world.
-			The world size also sets a cap on Awakened generation: It ranges from 20 for a Duel world to 70 for a Huge one.
-			Additive factors:
-			Capital population / 4
-			Total buildings:
-			Gift Temples or Cenotaphs * 1
-			Halls of the Covenant * 2
-			Shrines to Kylorin / 2
-			Resources:
-			+0.75 for every Patrian Artifact.
-			+1 for access to Gems, Silk, and Dye. 
-			+0.5 for access to Gold, Ivory, Cotton, Incense, Pearls, and Fur.
-			Multipliers:
-			Civic: Aristocracy? Then * 1.4
-			Game speed - the numbers are linked to game-speed production adjustments. Divide by...
-			Quick: 0.5
-			Normal: 0.75
-			Epic: 1.125
-			Marathon: 1.5
-			Game turn. Every turn it's a little harder by...
-			Quick: 0.5%
-			Normal: 0.25%
-			Epic: 0.165%
-			Marathon: 0.125%
-			Ai mod:
-			The AI gets a 20% bonus.
-			Leader:
-			Korrina has a 25% penalty.</French>
+			Additive modifiers:
+			- +3% Base
+			- +5% Aristocracy
+			- +0.5% for every Happy Bonus type (not total)
+			- +1% for each Body Mana if at least 1 Flesh Studio is present
+			- +1% for each PA
+			- +5% if RoP is owned
+			- +0.5% for each Temple of the Gift
+			- +1% for each Imperial Cenotaph
+			- +1% for each Hall of the Covenant
+			- +0.5% for each Shrine to Kylorin
+			- -2% for each Unhealthy Discontent I
+			- -4% for each Unhealthy Discontent II
+		
+			Multiplicative modifiers:
+			- *0 if Stasis (STASIS MENTIONED!)
+			- *2.5 if AI
+			- *1.5 if Total pop is under (6)
+			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- *1.25 for God King if Emperor or Kounperor
+			- *1.25 for Aristocracy if Korinna
+			- *[Dynamic Total Pop Multi]</French>
 		<German>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
-			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.   But they honored dead are hard to predict - you'll often be forced to go in after them.
+			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
 			The easiest way for the Scions to get population is for an Awakened just walk out of the capital's Bottomless Tomb of it's own free will. But while the Tomb is bottomless an endless army of Awakened won't be coming:  They have their own alien amusements there.  The longer they stay the less willing they are to leave.  
 			The frequency with which Awakened emerge is displayed in the message area and can be increased by the player's actions.  Building Shrines to Kylorin, Imperial Cenotaphs or Temples of the Gift, Halls of the Covenant, or the Flesh Studio all attract Awakened.  Most luxuries will help lure Awakened.  Of special note is the "Patrian Artifacts" resource.  Only the Scions player can see these resources, and unlike the other luxuries each resource owned increases the odds.  The larger, more bustling the Capital the more will Awakened are to emerge.  And when society is explicitly run for the benefit of the Awakened, "Aristocracy", Awakened are more likely to come forth.
 			[H1]Reborn:[\H1][NEWLINE][NEWLINE] Reborn are formerly living inhabitants of Erebus granted the Gift and transformed into undead Scions. There are five ways to gain Reborn. First, Reborn can be created from combat with a priest of the Gift - A Legate, a Doomsayer, or a Doomgiver.  The enemy unit is persuaded that unlife among the Scions is preferable to their present meager existence. Second, Reborn can be "built" in a city containing a Cathedral of Rebirth. Third, Pelemoc Goldtongue may persaude the citizens of other civilzations to join Patria Reborn. Fourth, once the Scions have Sorcery and Priesthood a razed city will yield a few Reborn.
@@ -783,45 +902,37 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			Capturing cities:
 			Of course anyone can do this. All you need is a bunch of guys with swords. However, the lifestyles of other civs isn't very compatible with the unlifestyle of the Scions. When a city changes hands to or from the Scions most of the population is lost. This reduction isn't as great if the Scions are using the "God King" civic.
 			[H1]Details on Awakened Spawning:[\H1][NEWLINE][NEWLINE] 
-			The formula determining the odds an Awakened appear each turn isn't complicated, but it is rather long.
+			The formula determining the odds an Awakened appear each turn isn't complicated(lies), but it is rather long: 
+			Total pop cap to spawn Awa: max(10, Total Land plots / 2)
+			Total pop cap refers to the sum of city populations + number of awakened + number of reborn.
+			Starting from half of the total pop cap a linearly decreasing multiplier is applied to a spawn chance: multi = 1 at 50% cap, = 0 at 100% cap
+			AI gets Awa at capital with a 50% chance, random city 50%.
 			The base chance for a Standard-sized world is:
-			Quick: ~9%
-			Normal: ~6%
-			Epic: ~3.5%
-			Marathon: ~3%
-			World Size adjustment:
-			"Population limit" / 40
-			That limit is 20 for a Duel sized world and goes up to 70 for a Huge world.
-			The world size also sets a cap on Awakened generation: It ranges from 20 for a Duel world to 70 for a Huge one.
-			Additive factors:
-			Capital population / 4
-			Total buildings:
-			Gift Temples or Cenotaphs * 1
-			Halls of the Covenant * 2
-			Shrines to Kylorin / 2
-			Resources:
-			+0.75 for every Patrian Artifact.
-			+1 for access to Gems, Silk, and Dye. 
-			+0.5 for access to Gold, Ivory, Cotton, Incense, Pearls, and Fur.
-			Multipliers:
-			Civic: Aristocracy? Then * 1.4
-			Game speed - the numbers are linked to game-speed production adjustments. Divide by...
-			Quick: 0.5
-			Normal: 0.75
-			Epic: 1.125
-			Marathon: 1.5
-			Game turn. Every turn it's a little harder by...
-			Quick: 0.5%
-			Normal: 0.25%
-			Epic: 0.165%
-			Marathon: 0.125%
-			Ai mod:
-			The AI gets a 20% bonus.
-			Leader:
-			Korrina has a 25% penalty.</German>
+			Additive modifiers:
+			- +3% Base
+			- +5% Aristocracy
+			- +0.5% for every Happy Bonus type (not total)
+			- +1% for each Body Mana if at least 1 Flesh Studio is present
+			- +1% for each PA
+			- +5% if RoP is owned
+			- +0.5% for each Temple of the Gift
+			- +1% for each Imperial Cenotaph
+			- +1% for each Hall of the Covenant
+			- +0.5% for each Shrine to Kylorin
+			- -2% for each Unhealthy Discontent I
+			- -4% for each Unhealthy Discontent II
+		
+			Multiplicative modifiers:
+			- *0 if Stasis (STASIS MENTIONED!)
+			- *2.5 if AI
+			- *1.5 if Total pop is under (6)
+			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- *1.25 for God King if Emperor or Kounperor
+			- *1.25 for Aristocracy if Korinna
+			- *[Dynamic Total Pop Multi]</German>
 		<Italian>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
-			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.   But they honored dead are hard to predict - you'll often be forced to go in after them.
+			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
 			The easiest way for the Scions to get population is for an Awakened just walk out of the capital's Bottomless Tomb of it's own free will. But while the Tomb is bottomless an endless army of Awakened won't be coming:  They have their own alien amusements there.  The longer they stay the less willing they are to leave.  
 			The frequency with which Awakened emerge is displayed in the message area and can be increased by the player's actions.  Building Shrines to Kylorin, Imperial Cenotaphs or Temples of the Gift, Halls of the Covenant, or the Flesh Studio all attract Awakened.  Most luxuries will help lure Awakened.  Of special note is the "Patrian Artifacts" resource.  Only the Scions player can see these resources, and unlike the other luxuries each resource owned increases the odds.  The larger, more bustling the Capital the more will Awakened are to emerge.  And when society is explicitly run for the benefit of the Awakened, "Aristocracy", Awakened are more likely to come forth.
 			[H1]Reborn:[\H1][NEWLINE][NEWLINE] Reborn are formerly living inhabitants of Erebus granted the Gift and transformed into undead Scions. There are five ways to gain Reborn. First, Reborn can be created from combat with a priest of the Gift - A Legate, a Doomsayer, or a Doomgiver.  The enemy unit is persuaded that unlife among the Scions is preferable to their present meager existence. Second, Reborn can be "built" in a city containing a Cathedral of Rebirth. Third, Pelemoc Goldtongue may persaude the citizens of other civilzations to join Patria Reborn. Fourth, once the Scions have Sorcery and Priesthood a razed city will yield a few Reborn.
@@ -829,45 +940,37 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			Capturing cities:
 			Of course anyone can do this. All you need is a bunch of guys with swords. However, the lifestyles of other civs isn't very compatible with the unlifestyle of the Scions. When a city changes hands to or from the Scions most of the population is lost. This reduction isn't as great if the Scions are using the "God King" civic.
 			[H1]Details on Awakened Spawning:[\H1][NEWLINE][NEWLINE] 
-			The formula determining the odds an Awakened appear each turn isn't complicated, but it is rather long.
+			The formula determining the odds an Awakened appear each turn isn't complicated(lies), but it is rather long: 
+			Total pop cap to spawn Awa: max(10, Total Land plots / 2)
+			Total pop cap refers to the sum of city populations + number of awakened + number of reborn.
+			Starting from half of the total pop cap a linearly decreasing multiplier is applied to a spawn chance: multi = 1 at 50% cap, = 0 at 100% cap
+			AI gets Awa at capital with a 50% chance, random city 50%.
 			The base chance for a Standard-sized world is:
-			Quick: ~9%
-			Normal: ~6%
-			Epic: ~3.5%
-			Marathon: ~3%
-			World Size adjustment:
-			"Population limit" / 40
-			That limit is 20 for a Duel sized world and goes up to 70 for a Huge world.
-			The world size also sets a cap on Awakened generation: It ranges from 20 for a Duel world to 70 for a Huge one.
-			Additive factors:
-			Capital population / 4
-			Total buildings:
-			Gift Temples or Cenotaphs * 1
-			Halls of the Covenant * 2
-			Shrines to Kylorin / 2
-			Resources:
-			+0.75 for every Patrian Artifact.
-			+1 for access to Gems, Silk, and Dye. 
-			+0.5 for access to Gold, Ivory, Cotton, Incense, Pearls, and Fur.
-			Multipliers:
-			Civic: Aristocracy? Then * 1.4
-			Game speed - the numbers are linked to game-speed production adjustments. Divide by...
-			Quick: 0.5
-			Normal: 0.75
-			Epic: 1.125
-			Marathon: 1.5
-			Game turn. Every turn it's a little harder by...
-			Quick: 0.5%
-			Normal: 0.25%
-			Epic: 0.165%
-			Marathon: 0.125%
-			Ai mod:
-			The AI gets a 20% bonus.
-			Leader:
-			Korrina has a 25% penalty.</Italian>
+			Additive modifiers:
+			- +3% Base
+			- +5% Aristocracy
+			- +0.5% for every Happy Bonus type (not total)
+			- +1% for each Body Mana if at least 1 Flesh Studio is present
+			- +1% for each PA
+			- +5% if RoP is owned
+			- +0.5% for each Temple of the Gift
+			- +1% for each Imperial Cenotaph
+			- +1% for each Hall of the Covenant
+			- +0.5% for each Shrine to Kylorin
+			- -2% for each Unhealthy Discontent I
+			- -4% for each Unhealthy Discontent II
+		
+			Multiplicative modifiers:
+			- *0 if Stasis (STASIS MENTIONED!)
+			- *2.5 if AI
+			- *1.5 if Total pop is under (6)
+			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- *1.25 for God King if Emperor or Kounperor
+			- *1.25 for Aristocracy if Korinna
+			- *[Dynamic Total Pop Multi]</Italian>
 		<Spanish>The greatest difference between the Scions and the other civs is how the Scions gain population.
 			As a Fallow civ the Scions don't gain population via food and normal growth. Instead they must lure Awakened from the Bottomless Tomb, create Reborn, or capture cities.
-			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.   But they honored dead are hard to predict - you'll often be forced to go in after them.
+			[H1]Awakened:[\H1][NEWLINE][NEWLINE] Citizens of long-departed Patria, the Age of Magic's greatest empire, are the the core population of the Scions of Patria. They have been given the Gift, but they still must be brought out of the Bottomless Tomb. Awakened may be "built" in the capital. Structures much like bridges are extended into the Tomb and used to find and ferry the honored dead back into the world. But they are very expensive and inevitably temporary. After a short time they become animate and unalive, like everything in the Tomb, and may no longer be used. Awakened gained this way are expensive.  But they honored dead are hard to predict - you'll often be forced to go in after them.
 			The easiest way for the Scions to get population is for an Awakened just walk out of the capital's Bottomless Tomb of it's own free will. But while the Tomb is bottomless an endless army of Awakened won't be coming:  They have their own alien amusements there.  The longer they stay the less willing they are to leave.  
 			The frequency with which Awakened emerge is displayed in the message area and can be increased by the player's actions.  Building Shrines to Kylorin, Imperial Cenotaphs or Temples of the Gift, Halls of the Covenant, or the Flesh Studio all attract Awakened.  Most luxuries will help lure Awakened.  Of special note is the "Patrian Artifacts" resource.  Only the Scions player can see these resources, and unlike the other luxuries each resource owned increases the odds.  The larger, more bustling the Capital the more will Awakened are to emerge.  And when society is explicitly run for the benefit of the Awakened, "Aristocracy", Awakened are more likely to come forth.
 			[H1]Reborn:[\H1][NEWLINE][NEWLINE] Reborn are formerly living inhabitants of Erebus granted the Gift and transformed into undead Scions. There are five ways to gain Reborn. First, Reborn can be created from combat with a priest of the Gift - A Legate, a Doomsayer, or a Doomgiver.  The enemy unit is persuaded that unlife among the Scions is preferable to their present meager existence. Second, Reborn can be "built" in a city containing a Cathedral of Rebirth. Third, Pelemoc Goldtongue may persaude the citizens of other civilzations to join Patria Reborn. Fourth, once the Scions have Sorcery and Priesthood a razed city will yield a few Reborn.
@@ -875,42 +978,34 @@ Las ciudades Doviello generan animales periódicamente, con una probabilidad base
 			Capturing cities:
 			Of course anyone can do this. All you need is a bunch of guys with swords. However, the lifestyles of other civs isn't very compatible with the unlifestyle of the Scions. When a city changes hands to or from the Scions most of the population is lost. This reduction isn't as great if the Scions are using the "God King" civic.
 			[H1]Details on Awakened Spawning:[\H1][NEWLINE][NEWLINE] 
-			The formula determining the odds an Awakened appear each turn isn't complicated, but it is rather long.
+			The formula determining the odds an Awakened appear each turn isn't complicated(lies), but it is rather long: 
+			Total pop cap to spawn Awa: max(10, Total Land plots / 2)
+			Total pop cap refers to the sum of city populations + number of awakened + number of reborn.
+			Starting from half of the total pop cap a linearly decreasing multiplier is applied to a spawn chance: multi = 1 at 50% cap, = 0 at 100% cap
+			AI gets Awa at capital with a 50% chance, random city 50%.
 			The base chance for a Standard-sized world is:
-			Quick: ~9%
-			Normal: ~6%
-			Epic: ~3.5%
-			Marathon: ~3%
-			World Size adjustment:
-			"Population limit" / 40
-			That limit is 20 for a Duel sized world and goes up to 70 for a Huge world.
-			The world size also sets a cap on Awakened generation: It ranges from 20 for a Duel world to 70 for a Huge one.
-			Additive factors:
-			Capital population / 4
-			Total buildings:
-			Gift Temples or Cenotaphs * 1
-			Halls of the Covenant * 2
-			Shrines to Kylorin / 2
-			Resources:
-			+0.75 for every Patrian Artifact.
-			+1 for access to Gems, Silk, and Dye. 
-			+0.5 for access to Gold, Ivory, Cotton, Incense, Pearls, and Fur.
-			Multipliers:
-			Civic: Aristocracy? Then * 1.4
-			Game speed - the numbers are linked to game-speed production adjustments. Divide by...
-			Quick: 0.5
-			Normal: 0.75
-			Epic: 1.125
-			Marathon: 1.5
-			Game turn. Every turn it's a little harder by...
-			Quick: 0.5%
-			Normal: 0.25%
-			Epic: 0.165%
-			Marathon: 0.125%
-			Ai mod:
-			The AI gets a 20% bonus.
-			Leader:
-			Korrina has a 25% penalty.</Spanish>
+			Additive modifiers:
+			- +3% Base
+			- +5% Aristocracy
+			- +0.5% for every Happy Bonus type (not total)
+			- +1% for each Body Mana if at least 1 Flesh Studio is present
+			- +1% for each PA
+			- +5% if RoP is owned
+			- +0.5% for each Temple of the Gift
+			- +1% for each Imperial Cenotaph
+			- +1% for each Hall of the Covenant
+			- +0.5% for each Shrine to Kylorin
+			- -2% for each Unhealthy Discontent I
+			- -4% for each Unhealthy Discontent II
+		
+			Multiplicative modifiers:
+			- *0 if Stasis (STASIS MENTIONED!)
+			- *2.5 if AI
+			- *1.5 if Total pop is under (6)
+			- GrowthPercent (300 - Mara / 150 - Epic / 100 - Normal / 67 - Quick)
+			- *1.25 for God King if Emperor or Kounperor
+			- *1.25 for Aristocracy if Korinna
+			- *[Dynamic Total Pop Multi]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SCIONS_DARK_COUNCIL</Tag>

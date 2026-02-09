@@ -32,7 +32,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>8.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn.dds</Button>
 		</BuildingArtInfo>
@@ -42,7 +42,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>8.3</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn2.dds</Button>
 		</BuildingArtInfo>
@@ -52,7 +52,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>8.5</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress2.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress2.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn3.dds</Button>
 		</BuildingArtInfo>
@@ -62,7 +62,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>8.7</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress3.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress3.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn4.dds</Button>
 		</BuildingArtInfo>
@@ -72,7 +72,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>9.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress3.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress3.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn5.dds</Button>
 		</BuildingArtInfo>
@@ -82,7 +82,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>10.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn6.dds</Button>
 		</BuildingArtInfo>
@@ -92,7 +92,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>12.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Modules/NormalModules/ViciousSeas/Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
+			<NIF>Art/Structures/Improvements/Phantom_Fortress/Phantom_Frotress4.nif</NIF>
 			<KFM/>
 			<Button>Modules/NormalModules/ViciousSeas/Art/Interface/Buttons/Buildings/AifonsLunn7.dds</Button>
 		</BuildingArtInfo>
