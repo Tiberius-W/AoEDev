@@ -2380,16 +2380,12 @@
 					<iAIVictoryWeight>20</iAIVictoryWeight>
 				</VictoryAI>
 				<VictoryAI>
-					<VictoryAIType>AI_VICTORY_WEIGHT_ALTAR_OF_THE_LUONNOTAR</VictoryAIType>
-					<iAIVictoryWeight>60</iAIVictoryWeight>
-				</VictoryAI>
-				<VictoryAI>
 					<VictoryAIType>AI_VICTORY_WEIGHT_RELIGION</VictoryAIType>
 					<iAIVictoryWeight>60</iAIVictoryWeight>
 				</VictoryAI>
 				<VictoryAI>
 					<VictoryAIType>AI_VICTORY_WEIGHT_GP_BUILDING</VictoryAIType>
-					<iAIVictoryWeight>20</iAIVictoryWeight>
+					<iAIVictoryWeight>60</iAIVictoryWeight>
 				</VictoryAI>
 			</VictoryAIs>
 			<iMaxWarRand>40</iMaxWarRand>
@@ -3004,7 +3000,7 @@
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<VictoryAIs>
 				<VictoryAI>
-					<VictoryAIType>AI_VICTORY_WEIGHT_ALTAR_OF_THE_LUONNOTAR</VictoryAIType>
+					<VictoryAIType>AI_VICTORY_WEIGHT_GP_BUILDING</VictoryAIType>
 					<iAIVictoryWeight>80</iAIVictoryWeight>
 				</VictoryAI>
 				<VictoryAI>

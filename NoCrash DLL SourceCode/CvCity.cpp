@@ -1814,7 +1814,7 @@ void CvCity::doTurn()
 	}
 	if (getImprovementCrime() != improvementcrime)
 	{
-		int improvementcrime = (improvementcrime - getImprovementCrime());
+		improvementcrime = (improvementcrime - getImprovementCrime());
 		changeImprovementCrime(improvementcrime);
 	}
 

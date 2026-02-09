@@ -15,7 +15,7 @@
 			<Strategy>TXT_KEY_CIV_TEUHALI_STRATEGY</Strategy>
 			<DefaultPlayerColor>PLAYERCOLOR_TEUHALI</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TEUHALI</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_GRIGORY</ArtStyleType>
+			<ArtStyleType>ARTSTYLE_GRIGORI</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_BANNOR</UnitArtStyleType>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>

@@ -45,6 +45,14 @@
 		<Spanish>Kelp Stealth</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BOND_WITH_THE_FOREST</Tag>
+		<English>Bond with the Forest</English>
+		<French>Bond with the Forest</French>
+		<German>Bond with the Forest</German>
+		<Italian>Bond with the Forest</Italian>
+		<Spanish>Bond with the Forest</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_NO_HEALING</Tag>
 		<English>No Natural Healing</English>
 		<French>No Natural Healing</French>

@@ -11496,7 +11496,15 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 			{
 				szBuffer.append(gDLL->getText("TXT_KEY_AND"));
 			}
-			szBuffer.append(gDLL->getText("TXT_KEY_LINK", GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getImprovementClass()).getTextKeyWide(), GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getImprovementClass()).getTextKeyWide()));
+			if (GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getImprovementClass() != NO_IMPROVEMENTCLASS)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_LINK", GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getImprovementClass()).getTextKeyWide(), GC.getImprovementClassInfo((ImprovementClassTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getImprovementClass()).getTextKeyWide()));
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_LINK", GC.getRouteInfo((RouteTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getRoute()).getTextKeyWide(), GC.getRouteInfo((RouteTypes)GC.getBuildInfo((BuildTypes)GC.getPromotionInfo(ePromotion).getPromotionBuilds(iI)).getRoute()).getTextKeyWide()));
+
+			}
 			bFirst = false;
 		}
 	}

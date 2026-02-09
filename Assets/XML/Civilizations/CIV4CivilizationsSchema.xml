@@ -87,6 +87,7 @@
 	<ElementType name="iFreedomAppreciation" content="textOnly" dt:type="int"/>
 	<ElementType name="FavoriteCivic" content="textOnly"/>
 	<ElementType name="TraitType" content="textOnly"/>
+	<ElementType name="PrimaryLeader" content="textOnly"/>
 	<ElementType name="bTrait" content="textOnly" dt:type="boolean"/>
 	<ElementType name="Trait" content="eltOnly">
 		<element type="TraitType"/>
@@ -214,6 +215,7 @@
 	<ElementType name="EthicalAlignment" content="textOnly"/>
 	<ElementType name="iEthicalAlignmentModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bTrueNeutral" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bLeaderVariant" content="textOnly" dt:type="boolean"/>
 	<ElementType name="FavoriteWonder" content="textOnly"/>
 	<ElementType name="iHatedCivicAttitudeChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iHatedCivicAttitudeDivisor" content="textOnly" dt:type="int"/>
@@ -396,6 +398,7 @@
 		<element type="iVassalPowerModifier"/>
 		<element type="iFreedomAppreciation"/>
 		<element type="FavoriteCivic"/>
+		<element type="PrimaryLeader"/>
 		<element type="Traits"/>
 		<element type="Flavors"/>
 		<element type="ContactRands"/>
@@ -425,6 +428,7 @@
 		<element type="EthicalAlignment"/>
 		<element type="iEthicalAlignmentModifier"/>
 		<element type="bTrueNeutral"/>
+		<element type="bLeaderVariant"/>
 		<element type="FavoriteWonder"/>
 		<element type="PermanentTrait"/>
 		<element type="iHatedCivicAttitudeChange"/>

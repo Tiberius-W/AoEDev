@@ -3489,8 +3489,5 @@
 			</DamageTypeCombats>
 			<bForceOverwrite>1</bForceOverwrite>
 		</UnitInfo>
-		<!--<AndDependencyTypes>
-		        <DependencyType>MODULE_VCIVICS</DependencyType>
-		     </AndDependencyTypes> -->
-</UnitInfos>
+	</UnitInfos>
 </Civ4UnitInfos>

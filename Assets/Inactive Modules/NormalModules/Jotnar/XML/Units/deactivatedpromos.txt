@@ -1,0 +1,275 @@
+<!--    <PromotionInfo>		 Jotnar Great Person Charge 
+			<Type>PROMOTION_GREAT_JOTNAR</Type>
+			<Description>Jotnar Great Person</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Bard 
+			<Type>PROMOTION_GREAT_JOTNAR_ARTIST</Type>
+			<Description>Jotnar Great Bard</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Engineer 
+			<Type>PROMOTION_GREAT_JOTNAR_ENGINEER</Type>
+			<Description>Jotnar Great Engineer</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Merchant 
+			<Type>PROMOTION_GREAT_JOTNAR_MERCHANT</Type>
+			<Description>Jotnar Great Merchant</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Prophet 
+			<Type>PROMOTION_GREAT_JOTNAR_PROPHET</Type>
+			<Description>Jotnar Great Prophet</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Sage 
+			<Type>PROMOTION_GREAT_JOTNAR_SCIENTIST</Type>
+			<Description>Jotnar Great Sage</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>		 Jotnar Great Healer 
+			<Type>PROMOTION_GREAT_JOTNAR_HEALER</Type>
+			<Description>Jotnar Great Healer</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<Button>Art/Civs/Jotnar/buttons/jot_traditions.dds</Button>
+		</PromotionInfo> -->
+   <!-- <PromotionInfo>	-->	<!-- Seakin - Swimmer -->
+	<!--    <Type>PROMOTION_SWIMMER</Type>
+			<Description>TXT_KEY_PROMOTION_SWIMMER</Description>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_SEAKIN</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bEffectProm>1</bEffectProm>
+			<bMustMaintain>1</bMustMaintain>
+			<bNoXP>1</bNoXP>
+			<PrereqbAllowNULLUnitCombat>1</PrereqbAllowNULLUnitCombat>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqTerrains>
+				<PrereqTerrain>TERRAIN_OCEAN</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLACKWATER</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_BLIGHTED_COAST</PrereqTerrain>
+				<PrereqTerrain>TERRAIN_OCEAN_DEEP</PrereqTerrain>
+			</PrereqTerrains>
+			<iMovesChange>2</iMovesChange>
+			<iWithdrawalChange>15</iWithdrawalChange>
+			<iCargoChange>1</iCargoChange>
+			<iEnemyHealChange>5</iEnemyHealChange>
+			<iNeutralHealChange>5</iNeutralHealChange>
+			<iFriendlyHealChange>5</iFriendlyHealChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_BEAST</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/BigPinkBox.dds</Button>
+		</PromotionInfo> -->
+<!--    <PromotionInfo>	-->	<!-- Wizened Troll -->
+<!--    <Type>PROMOTION_WIZENED_TROLL</Type>
+			<Description>TXT_KEY_PROMOTION_CLEVER_TROLL</Description>
+			<TechPrereq>TECH_ANIMAL_MASTERY</TechPrereq>
+			<bAutoAcquire>1</bAutoAcquire>
+			<bEffectProm>1</bEffectProm>
+			<bNoXP>1</bNoXP>
+			<iSlaveGenerationChance>15</iSlaveGenerationChance>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+			</PrereqCivilizations>
+			<PrereqUnits>
+				<PrereqUnit>UNIT_JOT_BEASTMASTER</PrereqUnit>
+			</PrereqUnits>
+			<PromotionExcludes>
+			<Promotion>PROMOTION_FERAL</Promotion>
+			</PromotionExcludes>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Civs/Jotnar/buttons/jot_troll.dds</Button>
+			<PromotionCombatMods>
+				<PromotionCombatMod>
+					<PromotionType>PROMOTION_TROLLKIN</PromotionType>
+					<iCombatMod>30</iCombatMod>
+				</PromotionCombatMod>			
+			</PromotionCombatMods>
+			<DamageTypeResists>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iResist>35</iResist>
+				</DamageTypeResist>
+				<DamageTypeResist>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iResist>-75</iResist>
+				</DamageTypeResist>
+			</DamageTypeResists>
+		</PromotionInfo> -->
+<!-- 	<PromotionInfo>	-->	<!-- Blackblade -->
+<!--    <Type>PROMOTION_BLACKBLADE</Type>
+			<Description>TXT_KEY_PROMOTION_BLACKBLADE</Description>
+			<PrereqPromotionANDs>
+				<PrereqPromotionAND>
+					<PromotionType>PROMOTION_DRILL2</PromotionType>
+					<iPrereqApplications>1</iPrereqApplications>
+				</PrereqPromotionAND>
+			</PrereqPromotionANDs>
+			<TechPrereq>TECH_POISONS</TechPrereq>
+			<PrereqCivilizations>
+				<PrereqCivilization>CIVILIZATION_JOTNAR</PrereqCivilization>
+			</PrereqCivilizations>
+			<iCityAttack>-30</iCityAttack>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iMaxApplications>0</iMaxApplications>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/TechTree/Poisons.dds</Button>
+			<bTargetWeakestUnit>1</bTargetWeakestUnit>
+			<iExtraCombatDefense>-2</iExtraCombatDefense>
+			<PromotionCombatApply>PROMOTION_POISONED</PromotionCombatApply>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_POISON</DamageType>
+					<iCombat>2</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+		</PromotionInfo> -->
+  <!--  <PromotionInfo>		 Eidolon 
+			<Type>PROMOTION_EIDOLON</Type>
+			<Description>TXT_KEY_UNIT_EIDOLON</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<bPillageOnMove>1</bPillageOnMove>
+			<PromotionAllows>
+				<Promotion>PROMOTION_CHANNELING1</Promotion>
+				<Promotion>PROMOTION_CHANNELING2</Promotion>
+			</PromotionAllows>
+			<PromotionOverwrites>
+			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
+			</PromotionOverwrites>
+			<bAlwaysHeal>1</bAlwaysHeal>
+			<Button>Art/Interface/Buttons/Units/Eidolon.dds</Button>
+			<bFear>1</bFear>
+			<bImmuneToFear>1</bImmuneToFear>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EIDOLON</UnitArtStyleType>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_UNHOLY</DamageType>
+					<iCombat>4</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_ENTROPY</BonusType>
+					<iAffinity>1</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+		</PromotionInfo> -->
+  <!-- <PromotionInfo>		 Radiant 
+			<Type>PROMOTION_RADIANT</Type>
+			<Description>TXT_KEY_PROMOTION_RADIANT</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<NewName>Radiant</NewName>
+			<PromotionAllows>
+				<Promotion>PROMOTION_CHANNELING1</Promotion>
+				<Promotion>PROMOTION_CHANNELING2</Promotion>
+			</PromotionAllows>
+			<PromotionOverwrites>
+				<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
+			</PromotionOverwrites>
+			<bAlwaysHeal>1</bAlwaysHeal>
+			<iMovesChange>2</iMovesChange>
+			<Button>Art/Interface/Buttons/Units/RadiantGuard.dds</Button>
+			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_DISEASED</Promotion>
+				<Promotion>PROMOTION_PLAGUED</Promotion>
+				<Promotion>PROMOTION_BLACKBLOOD</Promotion>
+			</PromotionExcludes>
+			<UnitArtStyleType>UNIT_ARTSTYLE_RADIANT</UnitArtStyleType>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_FIRE</DamageType>
+					<iCombat>3</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_SUN</BonusType>
+					<iAffinity>1</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+		</PromotionInfo> -->
+   <!-- <PromotionInfo>		Paladin       
+			<Type>PROMOTION_PALADIN</Type>
+			<Description>TXT_KEY_UNIT_PALADIN</Description>
+			<TechPrereq>TECH_NEVER</TechPrereq>
+			<NewName>Paladin</NewName>
+			<PromotionAllows>
+				<Promotion>PROMOTION_CHANNELING1</Promotion>
+				<Promotion>PROMOTION_CHANNELING2</Promotion>
+			</PromotionAllows>
+			<PromotionOverwrites>
+			<Promotion>PROMOTION_JOT_ALLEGIANCE</Promotion>
+			</PromotionOverwrites>
+			<bAlwaysHeal>1</bAlwaysHeal>
+			<Button>Art/Interface/Buttons/Units/Paladin.dds</Button>
+			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_DISEASED</Promotion>
+				<Promotion>PROMOTION_PLAGUED</Promotion>
+				<Promotion>PROMOTION_BLACKBLOOD</Promotion>
+			</PromotionExcludes>
+			<UnitArtStyleType>UNIT_ARTSTYLE_PALADIN</UnitArtStyleType>
+			<DamageTypeCombats>
+				<DamageTypeCombat>
+					<DamageType>DAMAGE_HOLY</DamageType>
+					<iCombat>3</iCombat>
+				</DamageTypeCombat>
+			</DamageTypeCombats>
+			<BonusAffinities>
+				<BonusAffinity>
+					<BonusType>BONUS_MANA_LAW</BonusType>
+					<iAffinity>1</iAffinity>
+				</BonusAffinity>
+			</BonusAffinities>
+		</PromotionInfo> -->

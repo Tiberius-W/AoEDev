@@ -697,7 +697,7 @@
 				</UnitCombat>
 			</UnitCombats>
 			<iMinLevel>-1</iMinLevel>
-			<Button>Modules/NormalModules/kcz_Woods/Art/Interface/Buttons/Promotions/Races/nohealing.dds</Button>
+			<Button>Modules/NormalModules/kcz_Woods/Art/Interface/Buttons/Promotions/nohealing.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- No casting -->
 			<Type>PROMOTION_SUMMONED_ANIMAL</Type>
@@ -716,7 +716,6 @@
 		<PromotionInfo>		<!-- Bond with nature -->
 			<Type>PROMOTION_BOND_WITH_THE_FOREST</Type>
 			<Description>TXT_KEY_PROMOTION_BOND_WITH_THE_FOREST</Description>
-			<Help>TXT_KEY_PROMOTION_BOND_WITH_THE_FOREST_HELP</Help>
 			<PrereqUnits>
 				<PrereqUnit>UNIT_EERTIAN_HERO</PrereqUnit>
 			</PrereqUnits>
@@ -735,7 +734,6 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
 			<Button>Modules/NormalModules/kcz_Woods/Art/Interface/Buttons/Spells/naturescall.dds</Button>
-			<iMinLevel>-1</iMinLevel>
 		</PromotionInfo>
 		<!-- races -->
 		<PromotionInfo>		<!-- Treant (race) -->

@@ -8,7 +8,7 @@
 			<NIF>Art/Terrain/Resources/wheat/wheat.nif</NIF>
 			<KFM/>
 			<Button>Modules\NormalModules\kcz_Woods\Art\Interface\Buttons\Worldbuilder\Honey.dds</Button>
-			<FontButtonIndex>120</FontButtonIndex>
+			<FontButtonIndex>62</FontButtonIndex>
 		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>

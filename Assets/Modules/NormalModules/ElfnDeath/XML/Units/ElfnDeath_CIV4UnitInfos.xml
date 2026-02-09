@@ -156,7 +156,7 @@
 			</BonusAffinities>
 			<bForceOverwrite>1</bForceOverwrite>
 		</UnitInfo>
-				<UnitInfo>        <!-- Ostaurii Rider 650-->          <!-- MOUNTED UNITS -->
+		<UnitInfo>        <!-- Ostaurii Rider 650-->          <!-- MOUNTED UNITS -->
 			<Class>UNITCLASS_HORSEMAN</Class>
 			<Type>UNIT_OSTAURII_RIDER</Type>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
@@ -294,7 +294,7 @@
 			</DamageTypeCombats>
 			<bForceOverwrite>1</bForceOverwrite>
 		</UnitInfo>
-				<UnitInfo>        <!-- Sluagh -->
+		<UnitInfo>        <!-- Sluagh -->
 			<Class>UNITCLASS_SLUAGH</Class>
 			<Type>UNIT_SLUAGH</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>

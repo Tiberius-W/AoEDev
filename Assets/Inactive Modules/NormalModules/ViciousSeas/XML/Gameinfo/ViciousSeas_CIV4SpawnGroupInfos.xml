@@ -18,7 +18,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
-				<Tech>TECH_NONE</Tech>
+				<Tech>TECH_NEVER</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Carrack -->
@@ -37,7 +37,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
-				<Tech>TECH_NONE</Tech>
+				<Tech>TECH_NEVER</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Privateer -->
@@ -71,7 +71,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
-				<Tech>TECH_NONE</Tech>
+				<Tech>TECH_NEVER</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
 		<SpawnGroupInfo>	<!--  Queen of the Line -->
@@ -94,7 +94,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses>
 			<PrereqTechANDs>
-				<Tech>TECH_NONE</Tech>
+				<Tech>TECH_NEVER</Tech>
 				<Tech>TECH_ENGINEERING</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
@@ -110,7 +110,7 @@
 				</GroupUnitClass>
 			</GroupUnitClasses> 
 			<PrereqTechANDs>
-				<Tech>TECH_NONE</Tech>
+				<Tech>TECH_NEVER</Tech>
 				<Tech>TECH_SORCERY</Tech>
 			</PrereqTechANDs>
 		</SpawnGroupInfo>
