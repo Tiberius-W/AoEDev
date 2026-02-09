@@ -8815,6 +8815,10 @@ void CvCityAI::AI_updateBestBuild()
 /**	Xienwolf Notes							NOTES												**/
 /**								WTH are these doing precisely?									**/
 /*************************************************************************************************/
+// The following calculations take values < 100 and shift them to be between 0 and 100.  Specifically, all negative values become >=0 while staying mostly in order.
+// This is important because the variables iFoodMultiplier, iProductionMultiplier, and iCommerceMultiplier are not actually multipliers, but AI weights for determining
+// 	how the AI will prioritize different improvements.  Negative weights would probably cause the AI to try to get rid of the corresponding yield instead of just
+//	not caring about it. (Klauros)
 	if (iFoodMultiplier < 100)
 	{
 		iFoodMultiplier = 10000 / (200 - iFoodMultiplier);
