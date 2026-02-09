@@ -182,11 +182,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_WORKSHOP_PEDIA</Tag>
-		<English>The workshop is a basic improvement (there is no prerequisite technology to build them). After your civilization has developed [LINK=TECH_CRAFTING]Crafting[\LINK], workers build them 25% faster.</English>
+		<English>The workshop is a basic improvement (there is no prerequisite technology to build them). 
+
+In addition to raising Production on flatland tiles, Workshops can also "discover" manufactured goods resources, an abstraction of them becoming notable about a specific craft. 
+
+Workshops are the only improvement able to properly "exploit" the Obsidian resource that spawns out of the Volcanic Eruption event. They also possess the ability to discover it on their own, important for less fortunate Empires.</English>
 		<French>L'atelier est un aménagement basique qui ne nécessite aucune technologie préalable pour sa construction. Une fois la technologie [LINK=TECH_CRAFTING]Artisanat[\LINK] découverte, les ouvriers construiront les ateliers 33% plus vite.</French>
-		<German>The workshop is a basic improvement (there is no prerequisite technology to build them). After your civilization has developed [LINK=TECH_CRAFTING]Crafting[\LINK], workers build them 25% faster.</German>
-		<Italian>The workshop is a basic improvement (there is no prerequisite technology to build them). After your civilization has developed [LINK=TECH_CRAFTING]Crafting[\LINK], workers build them 25% faster.</Italian>
-		<Spanish>The workshop is a basic improvement (there is no prerequisite technology to build them). After your civilization has developed [LINK=TECH_CRAFTING]Crafting[\LINK], workers build them 25% faster.</Spanish>
+		<German>The workshop is a basic improvement (there is no prerequisite technology to build them). 
+
+In addition to raising Production on flatland tiles, Workshops can also "discover" manufactured goods resources, an abstraction of them becoming notable about a specific craft. 
+
+Workshops are the only improvement able to properly "exploit" the Obsidian resource that spawns out of the Volcanic Eruption event. They also possess the ability to discover it on their own, important for less fortunate Empires.</German>
+		<Italian>The workshop is a basic improvement (there is no prerequisite technology to build them). 
+
+In addition to raising Production on flatland tiles, Workshops can also "discover" manufactured goods resources, an abstraction of them becoming notable about a specific craft. 
+
+Workshops are the only improvement able to properly "exploit" the Obsidian resource that spawns out of the Volcanic Eruption event. They also possess the ability to discover it on their own, important for less fortunate Empires.</Italian>
+		<Spanish>The workshop is a basic improvement (there is no prerequisite technology to build them). 
+
+In addition to raising Production on flatland tiles, Workshops can also "discover" manufactured goods resources, an abstraction of them becoming notable about a specific craft. 
+
+Workshops are the only improvement able to properly "exploit" the Obsidian resource that spawns out of the Volcanic Eruption event. They also possess the ability to discover it on their own, important for less fortunate Empires.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_COTTAGE</Tag>
@@ -1554,21 +1570,31 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_POLAR_NEXUS_PEDIA</Tag>
-		<English>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+		<English>The Precept of Ice longs. It has longed ever since it lost its master at the hands of Kylorin. It longs for a return to the times it had a master. It longs for a return to the endless winters of a sundered age. It longs for perilous blizzards, of Eagles being its Four Winds, of a dispassionate people given the power to revere it as it deserved.
 
-The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</English>
-		<French>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+Eager to sate this longing, the White Hand has built these unyielding structures wherever they could. They anchor the Precept to Creation, allow it to manifest its desire, unbidden by the Compact via its lack of a master. And whether via actual gratitude, beyond rudimentary as it is, or a mistaken imitation of such via instinctual mechanism, it blesses the meager vicinity it can reach with a taste of a bygone Age, soon to return.
 
-The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</French>
-		<German>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+(Polar Nexuses can be destroyed via the Metamagic II spell Dispel Magic)</English>
+		<French>The Precept of Ice longs. It has longed ever since it lost its master at the hands of Kylorin. It longs for a return to the times it had a master. It longs for a return to the endless winters of a sundered age. It longs for perilous blizzards, of Eagles being its Four Winds, of a dispassionate people given the power to revere it as it deserved.
 
-The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</German>
-		<Italian>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+Eager to sate this longing, the White Hand has built these unyielding structures wherever they could. They anchor the Precept to Creation, allow it to manifest its desire, unbidden by the Compact via its lack of a master. And whether via actual gratitude, beyond rudimentary as it is, or a mistaken imitation of such via instinctual mechanism, it blesses the meager vicinity it can reach with a taste of a bygone Age, soon to return.
 
-The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Italian>
-		<Spanish>Inertia grips the plane of Erebus, for the longest time, this was a domain of the god of Winter, and now with the return of the White Hand, Erebus reverts to the frozen hell as easily as pulling on a time-worn glove.
+(Polar Nexuses can be destroyed via the Metamagic II spell Dispel Magic)</French>
+		<German>The Precept of Ice longs. It has longed ever since it lost its master at the hands of Kylorin. It longs for a return to the times it had a master. It longs for a return to the endless winters of a sundered age. It longs for perilous blizzards, of Eagles being its Four Winds, of a dispassionate people given the power to revere it as it deserved.
 
-The Polar Nexus gathers the essence of icy death into its core - whipping up enormous winter storms. (Chance to spawn Blizzards)</Spanish>
+Eager to sate this longing, the White Hand has built these unyielding structures wherever they could. They anchor the Precept to Creation, allow it to manifest its desire, unbidden by the Compact via its lack of a master. And whether via actual gratitude, beyond rudimentary as it is, or a mistaken imitation of such via instinctual mechanism, it blesses the meager vicinity it can reach with a taste of a bygone Age, soon to return.
+
+(Polar Nexuses can be destroyed via the Metamagic II spell Dispel Magic)</German>
+		<Italian>The Precept of Ice longs. It has longed ever since it lost its master at the hands of Kylorin. It longs for a return to the times it had a master. It longs for a return to the endless winters of a sundered age. It longs for perilous blizzards, of Eagles being its Four Winds, of a dispassionate people given the power to revere it as it deserved.
+
+Eager to sate this longing, the White Hand has built these unyielding structures wherever they could. They anchor the Precept to Creation, allow it to manifest its desire, unbidden by the Compact via its lack of a master. And whether via actual gratitude, beyond rudimentary as it is, or a mistaken imitation of such via instinctual mechanism, it blesses the meager vicinity it can reach with a taste of a bygone Age, soon to return.
+
+(Polar Nexuses can be destroyed via the Metamagic II spell Dispel Magic)</Italian>
+		<Spanish>The Precept of Ice longs. It has longed ever since it lost its master at the hands of Kylorin. It longs for a return to the times it had a master. It longs for a return to the endless winters of a sundered age. It longs for perilous blizzards, of Eagles being its Four Winds, of a dispassionate people given the power to revere it as it deserved.
+
+Eager to sate this longing, the White Hand has built these unyielding structures wherever they could. They anchor the Precept to Creation, allow it to manifest its desire, unbidden by the Compact via its lack of a master. And whether via actual gratitude, beyond rudimentary as it is, or a mistaken imitation of such via instinctual mechanism, it blesses the meager vicinity it can reach with a taste of a bygone Age, soon to return.
+
+(Polar Nexuses can be destroyed via the Metamagic II spell Dispel Magic)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PENITENTIARY</Tag>
@@ -1661,21 +1687,41 @@ In time, they will come to thank us."
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SACRED_HARVEST_PEDIA</Tag>
-		<English>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+		<English>Contrary to outsider mockery, the felling of trees is not a strict ban reminiscent of the Code of Junil. Any Priest of Leaves will stress that the spirit of the law is more important than the letter of it, and there is no better example of such than the practice of the Sacred Cull.
 
-There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</English>
-		<French>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+While elegant in its workings, nature does not possess any but the most rudimentary ways to care for itself. The Sacred Cull is a custom that grew to tend to its needs: shrines staffed with faithful and Fawns are scattered through ancient forestry, keeping vigil for any ailments that may afflict it, and healing such when they appear.
 
-There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</French>
-		<German>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+Such a scenario, however, is rare by virtue of the constant preventative care given: one process is the uprooting of trees that are too old or big to keep around safely, replacing them with saplings that won't parasitize the forest around them. This not only helps with productivity in a faith that detests lumbermill industry, but also allows for higher diversity of flora.
 
-There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</German>
-		<Italian>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+(Many a shrine became famous for cultivating unique fruits and dyes they saved from extinction. Perhaps yours will manage the same?)</English>
+		<French>Contrary to outsider mockery, the felling of trees is not a strict ban reminiscent of the Code of Junil. Any Priest of Leaves will stress that the spirit of the law is more important than the letter of it, and there is no better example of such than the practice of the Sacred Cull.
 
-There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Italian>
-		<Spanish>The felling of trees is a crime within the fellowship, and bringing an axe to bear against an ancient elm tree carries with it the death penalty.
+While elegant in its workings, nature does not possess any but the most rudimentary ways to care for itself. The Sacred Cull is a custom that grew to tend to its needs: shrines staffed with faithful and Fawns are scattered through ancient forestry, keeping vigil for any ailments that may afflict it, and healing such when they appear.
 
-There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fallen logs, or even a sick and dying ancient, is considered within the bounds of "nurturing the balance".</Spanish>
+Such a scenario, however, is rare by virtue of the constant preventative care given: one process is the uprooting of trees that are too old or big to keep around safely, replacing them with saplings that won't parasitize the forest around them. This not only helps with productivity in a faith that detests lumbermill industry, but also allows for higher diversity of flora.
+
+(Many a shrine became famous for cultivating unique fruits and dyes they saved from extinction. Perhaps yours will manage the same?)</French>
+		<German>Contrary to outsider mockery, the felling of trees is not a strict ban reminiscent of the Code of Junil. Any Priest of Leaves will stress that the spirit of the law is more important than the letter of it, and there is no better example of such than the practice of the Sacred Cull.
+
+While elegant in its workings, nature does not possess any but the most rudimentary ways to care for itself. The Sacred Cull is a custom that grew to tend to its needs: shrines staffed with faithful and Fawns are scattered through ancient forestry, keeping vigil for any ailments that may afflict it, and healing such when they appear.
+
+Such a scenario, however, is rare by virtue of the constant preventative care given: one process is the uprooting of trees that are too old or big to keep around safely, replacing them with saplings that won't parasitize the forest around them. This not only helps with productivity in a faith that detests lumbermill industry, but also allows for higher diversity of flora.
+
+(Many a shrine became famous for cultivating unique fruits and dyes they saved from extinction. Perhaps yours will manage the same?)</German>
+		<Italian>Contrary to outsider mockery, the felling of trees is not a strict ban reminiscent of the Code of Junil. Any Priest of Leaves will stress that the spirit of the law is more important than the letter of it, and there is no better example of such than the practice of the Sacred Cull.
+
+While elegant in its workings, nature does not possess any but the most rudimentary ways to care for itself. The Sacred Cull is a custom that grew to tend to its needs: shrines staffed with faithful and Fawns are scattered through ancient forestry, keeping vigil for any ailments that may afflict it, and healing such when they appear.
+
+Such a scenario, however, is rare by virtue of the constant preventative care given: one process is the uprooting of trees that are too old or big to keep around safely, replacing them with saplings that won't parasitize the forest around them. This not only helps with productivity in a faith that detests lumbermill industry, but also allows for higher diversity of flora.
+
+(Many a shrine became famous for cultivating unique fruits and dyes they saved from extinction. Perhaps yours will manage the same?)</Italian>
+		<Spanish>Contrary to outsider mockery, the felling of trees is not a strict ban reminiscent of the Code of Junil. Any Priest of Leaves will stress that the spirit of the law is more important than the letter of it, and there is no better example of such than the practice of the Sacred Cull.
+
+While elegant in its workings, nature does not possess any but the most rudimentary ways to care for itself. The Sacred Cull is a custom that grew to tend to its needs: shrines staffed with faithful and Fawns are scattered through ancient forestry, keeping vigil for any ailments that may afflict it, and healing such when they appear.
+
+Such a scenario, however, is rare by virtue of the constant preventative care given: one process is the uprooting of trees that are too old or big to keep around safely, replacing them with saplings that won't parasitize the forest around them. This not only helps with productivity in a faith that detests lumbermill industry, but also allows for higher diversity of flora.
+
+(Many a shrine became famous for cultivating unique fruits and dyes they saved from extinction. Perhaps yours will manage the same?)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE</Tag>
@@ -1687,61 +1733,41 @@ There are "loopholes", however, Satyrs guiding workers to toxic overgrowth, fall
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_AERON_VAULTGATE_PEDIA</Tag>
-		<English>Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand a price in exchange for riches, secrets and power.
-In this case, the price is the souls of your citizens, often plucked before their destined day.
-(-3 food, -3 production in cities within two tiles.)
+		<English>When an Empire overtaken by the Veil falls deep enough into depravity and lust for power, a certain figure will approach its nobility in their dreams. That figure will introduce itself as a respected tutor of the Temple of Supplication, and express interest in their repeated dealings with their pupils. "But you wish for more, yes? You have proven yourself as worthy bargainers," it offers. "And I can give you more, if you follow my instructions."
 
+The Hell Gate is the end result of their acceptance of such an offer. Dangerously skirting the line of violating the Compact, it is an artificial doorway to Aeron's Vault itself, bound to the Crossroad Devil responsible for it. And it will honor its end of the bargain by bestowing access to bounty unlike any before - a Mana Sphere from its Treasury it built up over its long tenure.
 
-Crossroad Demons are friendly demons who are untargetable and out of your control.
-They cost no upkeep and will respawn if slain.
+But such bounties come with steep costs. And its tastes are as refined as they are cruel: skimming the cream of the crop of a city's souls, made to serve it as payment for its service. And akin to an Angel of Death, its tithe will not be denied, even if it makes its victim city suffer for it... especially if its victim city suffers for it.
 
-Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+(Hell Gates can be destroyed via the Life I spell Sanctify)</English>
+		<French>When an Empire overtaken by the Veil falls deep enough into depravity and lust for power, a certain figure will approach its nobility in their dreams. That figure will introduce itself as a respected tutor of the Temple of Supplication, and express interest in their repeated dealings with their pupils. "But you wish for more, yes? You have proven yourself as worthy bargainers," it offers. "And I can give you more, if you follow my instructions."
 
-A Hell Gate can only be removed by the Sanctify spell.</English>
-		<French>Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand a price in exchange for riches, secrets and power.
-In this case, the price is the souls of your citizens, often plucked before their destined day.
-(-3 food, -3 production in cities within two tiles.)
+The Hell Gate is the end result of their acceptance of such an offer. Dangerously skirting the line of violating the Compact, it is an artificial doorway to Aeron's Vault itself, bound to the Crossroad Devil responsible for it. And it will honor its end of the bargain by bestowing access to bounty unlike any before - a Mana Sphere from its Treasury it built up over its long tenure.
 
+But such bounties come with steep costs. And its tastes are as refined as they are cruel: skimming the cream of the crop of a city's souls, made to serve it as payment for its service. And akin to an Angel of Death, its tithe will not be denied, even if it makes its victim city suffer for it... especially if its victim city suffers for it.
 
-Crossroad Demons are friendly demons who are untargetable and out of your control.
-They cost no upkeep and will respawn if slain.
+(Hell Gates can be destroyed via the Life I spell Sanctify)</French>
+		<German>When an Empire overtaken by the Veil falls deep enough into depravity and lust for power, a certain figure will approach its nobility in their dreams. That figure will introduce itself as a respected tutor of the Temple of Supplication, and express interest in their repeated dealings with their pupils. "But you wish for more, yes? You have proven yourself as worthy bargainers," it offers. "And I can give you more, if you follow my instructions."
 
-Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+The Hell Gate is the end result of their acceptance of such an offer. Dangerously skirting the line of violating the Compact, it is an artificial doorway to Aeron's Vault itself, bound to the Crossroad Devil responsible for it. And it will honor its end of the bargain by bestowing access to bounty unlike any before - a Mana Sphere from its Treasury it built up over its long tenure.
 
-A Hell Gate can only be removed by the Sanctify spell.</French>
-		<German>Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand a price in exchange for riches, secrets and power.
-In this case, the price is the souls of your citizens, often plucked before their destined day.
-(-3 food, -3 production in cities within two tiles.)
+But such bounties come with steep costs. And its tastes are as refined as they are cruel: skimming the cream of the crop of a city's souls, made to serve it as payment for its service. And akin to an Angel of Death, its tithe will not be denied, even if it makes its victim city suffer for it... especially if its victim city suffers for it.
 
+(Hell Gates can be destroyed via the Life I spell Sanctify)</German>
+		<Italian>When an Empire overtaken by the Veil falls deep enough into depravity and lust for power, a certain figure will approach its nobility in their dreams. That figure will introduce itself as a respected tutor of the Temple of Supplication, and express interest in their repeated dealings with their pupils. "But you wish for more, yes? You have proven yourself as worthy bargainers," it offers. "And I can give you more, if you follow my instructions."
 
-Crossroad Demons are friendly demons who are untargetable and out of your control.
-They cost no upkeep and will respawn if slain.
+The Hell Gate is the end result of their acceptance of such an offer. Dangerously skirting the line of violating the Compact, it is an artificial doorway to Aeron's Vault itself, bound to the Crossroad Devil responsible for it. And it will honor its end of the bargain by bestowing access to bounty unlike any before - a Mana Sphere from its Treasury it built up over its long tenure.
 
-Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
+But such bounties come with steep costs. And its tastes are as refined as they are cruel: skimming the cream of the crop of a city's souls, made to serve it as payment for its service. And akin to an Angel of Death, its tithe will not be denied, even if it makes its victim city suffer for it... especially if its victim city suffers for it.
 
-A Hell Gate can only be removed by the Sanctify spell.</German>
-		<Italian>Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand a price in exchange for riches, secrets and power.
-In this case, the price is the souls of your citizens, often plucked before their destined day.
-(-3 food, -3 production in cities within two tiles.)
+(Hell Gates can be destroyed via the Life I spell Sanctify)</Italian>
+		<Spanish>When an Empire overtaken by the Veil falls deep enough into depravity and lust for power, a certain figure will approach its nobility in their dreams. That figure will introduce itself as a respected tutor of the Temple of Supplication, and express interest in their repeated dealings with their pupils. "But you wish for more, yes? You have proven yourself as worthy bargainers," it offers. "And I can give you more, if you follow my instructions."
 
+The Hell Gate is the end result of their acceptance of such an offer. Dangerously skirting the line of violating the Compact, it is an artificial doorway to Aeron's Vault itself, bound to the Crossroad Devil responsible for it. And it will honor its end of the bargain by bestowing access to bounty unlike any before - a Mana Sphere from its Treasury it built up over its long tenure.
 
-Crossroad Demons are friendly demons who are untargetable and out of your control.
-They cost no upkeep and will respawn if slain.
+But such bounties come with steep costs. And its tastes are as refined as they are cruel: skimming the cream of the crop of a city's souls, made to serve it as payment for its service. And akin to an Angel of Death, its tithe will not be denied, even if it makes its victim city suffer for it... especially if its victim city suffers for it.
 
-Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
-
-A Hell Gate can only be removed by the Sanctify spell.</Italian>
-		<Spanish>Hell Gates spawn Crossroad Demons, pact keepers of Aeron who demand a price in exchange for riches, secrets and power.
-In this case, the price is the souls of your citizens, often plucked before their destined day.
-(-3 food, -3 production in cities within two tiles.)
-
-
-Crossroad Demons are friendly demons who are untargetable and out of your control.
-They cost no upkeep and will respawn if slain.
-
-Hell Gates spread hell terrain, from which other demons can spawn from to attack you.
-
-A Hell Gate can only be removed by the Sanctify spell.</Spanish>
+(Hell Gates can be destroyed via the Life I spell Sanctify)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN</Tag>
@@ -1753,21 +1779,36 @@ A Hell Gate can only be removed by the Sanctify spell.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_THIEVES_DEN_PEDIA</Tag>
-		<English>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+		<English>
+This little "structure", if one can even call it that, isn't deliberately crafted as much as put together on a whim due to a pressing need for hiding spots. Most of the time, it's not even built from the ground up as much as a hijack of another structure by stuffing it full of secret stashes and maybe even a tunnel network, if they're fancying making a mockery out of the Earthmother.
 
-These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</English>
-		<French>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+And whatever "riches" it might end up building up? Not discovered naturally or created legitimately. But its owner happens to know a guy who knows a guy who, well, knows a guy, and isn't averse to offering their services for the right amount of coin. They'll even give you exclusive access to their stash, on a need-to-have basis, to sweeten the deal.
 
-These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</French>
-		<German>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+Their connections are pretty reliable, by the way. They'll shank anyone you need shanked. You can trust them on that.</English>
+		<French>
+This little "structure", if one can even call it that, isn't deliberately crafted as much as put together on a whim due to a pressing need for hiding spots. Most of the time, it's not even built from the ground up as much as a hijack of another structure by stuffing it full of secret stashes and maybe even a tunnel network, if they're fancying making a mockery out of the Earthmother.
 
-These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</German>
-		<Italian>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+And whatever "riches" it might end up building up? Not discovered naturally or created legitimately. But its owner happens to know a guy who knows a guy who, well, knows a guy, and isn't averse to offering their services for the right amount of coin. They'll even give you exclusive access to their stash, on a need-to-have basis, to sweeten the deal.
 
-These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Italian>
-		<Spanish>Criminal Contacts that allow followers of Esus to establish underground trade networks of "discovered" goods that might otherwise be difficult to acquire.
+Their connections are pretty reliable, by the way. They'll shank anyone you need shanked. You can trust them on that.</French>
+		<German>
+This little "structure", if one can even call it that, isn't deliberately crafted as much as put together on a whim due to a pressing need for hiding spots. Most of the time, it's not even built from the ground up as much as a hijack of another structure by stuffing it full of secret stashes and maybe even a tunnel network, if they're fancying making a mockery out of the Earthmother.
 
-These same contacts also know a guy who knows a guy who knows a guy who can deal with that little problem of yours, kapeesh?</Spanish>
+And whatever "riches" it might end up building up? Not discovered naturally or created legitimately. But its owner happens to know a guy who knows a guy who, well, knows a guy, and isn't averse to offering their services for the right amount of coin. They'll even give you exclusive access to their stash, on a need-to-have basis, to sweeten the deal.
+
+Their connections are pretty reliable, by the way. They'll shank anyone you need shanked. You can trust them on that.</German>
+		<Italian>
+This little "structure", if one can even call it that, isn't deliberately crafted as much as put together on a whim due to a pressing need for hiding spots. Most of the time, it's not even built from the ground up as much as a hijack of another structure by stuffing it full of secret stashes and maybe even a tunnel network, if they're fancying making a mockery out of the Earthmother.
+
+And whatever "riches" it might end up building up? Not discovered naturally or created legitimately. But its owner happens to know a guy who knows a guy who, well, knows a guy, and isn't averse to offering their services for the right amount of coin. They'll even give you exclusive access to their stash, on a need-to-have basis, to sweeten the deal.
+
+Their connections are pretty reliable, by the way. They'll shank anyone you need shanked. You can trust them on that.</Italian>
+		<Spanish>
+This little "structure", if one can even call it that, isn't deliberately crafted as much as put together on a whim due to a pressing need for hiding spots. Most of the time, it's not even built from the ground up as much as a hijack of another structure by stuffing it full of secret stashes and maybe even a tunnel network, if they're fancying making a mockery out of the Earthmother.
+
+And whatever "riches" it might end up building up? Not discovered naturally or created legitimately. But its owner happens to know a guy who knows a guy who, well, knows a guy, and isn't averse to offering their services for the right amount of coin. They'll even give you exclusive access to their stash, on a need-to-have basis, to sweeten the deal.
+
+Their connections are pretty reliable, by the way. They'll shank anyone you need shanked. You can trust them on that.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PATH_OF_LUGUS</Tag>

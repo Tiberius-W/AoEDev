@@ -1631,6 +1631,7 @@
 			</SpellClasses>
 			<PromotionPrereq1>PROMOTION_FORCE1</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<bIsAutoCastable>1</bIsAutoCastable>
@@ -1660,6 +1661,7 @@
 			</SpellClasses>
 			<PromotionPrereq1>PROMOTION_FORCE2</PromotionPrereq1>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>300</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bHasCasted>1</bHasCasted>
 			<bResistable>1</bResistable>
@@ -1693,6 +1695,7 @@
 			<PromotionPrereq1>PROMOTION_FORCE3</PromotionPrereq1>
 			<PromotionPrereq2>PROMOTION_CHANNELING3</PromotionPrereq2>
 			<bAllowAI>1</bAllowAI>
+			<iAIWeight>50</iAIWeight>
 			<bDisplayWhenDisabled>1</bDisplayWhenDisabled>
 			<bInBordersOnly>1</bInBordersOnly>
 			<bInCityOnly>1</bInCityOnly>

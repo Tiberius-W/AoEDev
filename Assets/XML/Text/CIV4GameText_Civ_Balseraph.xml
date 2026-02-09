@@ -397,6 +397,24 @@ Author - 'Doesn't'</English>
 		<Spanish>Sala de los Espejos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HALL_OF_MIRRORS_STRATEGY</Tag>
+		<English>Hall of Mirrors spawns a copy of an enemy unit within 1 tile radius of the city it is built in.
+This new unit lasts 3 turns (5 with summoner trait) and has the Illusion promotion.
+This effect fires once per turn.</English>
+		<French>Hall of Mirrors spawns a copy of an enemy unit within 1 tile radius of the city it is built in.
+This new unit lasts 3 turns (5 with summoner trait) and has the Illusion promotion.
+This effect fires once per turn.</French>
+		<German>Hall of Mirrors spawns a copy of an enemy unit within 1 tile radius of the city it is built in.
+This new unit lasts 3 turns (5 with summoner trait) and has the Illusion promotion.
+This effect fires once per turn.</German>
+		<Italian>Hall of Mirrors spawns a copy of an enemy unit within 1 tile radius of the city it is built in.
+This new unit lasts 3 turns (5 with summoner trait) and has the Illusion promotion.
+This effect fires once per turn.</Italian>
+		<Spanish>Hall of Mirrors spawns a copy of an enemy unit within 1 tile radius of the city it is built in.
+This new unit lasts 3 turns (5 with summoner trait) and has the Illusion promotion.
+This effect fires once per turn.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PALACE_BALSERAPHS</Tag>
 		<English>Balseraphs Palace</English>
 		<French>Palais balséraphin</French>

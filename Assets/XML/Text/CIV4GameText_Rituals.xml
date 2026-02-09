@@ -235,11 +235,31 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GENESIS_STRATEGY</Tag>
-		<English>Upgrades the terrain in the building empire.</English>
-		<French>Améliore le terrain de l'Empire qui le construit.</French>
-		<German>Wertet das Gelände der Erbauer-Zivilisation auf</German>
-		<Italian>Upgrades the terrain in the building empire.</Italian>
-		<Spanish>Upgrades the terrain in the building empire.</Spanish>
+		<English>Upgrades the terrain in the building empire.[NEWLINE[NEWLINE]Tundra -> Taiga.
+Taiga  -> Plains.
+Desert w/o Oasis -> Plains.
+Plains -> Grass.
+Grass  -> grow Forest if not a peak or already a forest or Volcano, or any Improvement.</English>
+		<French>Améliore le terrain de l'Empire qui le construit.[NEWLINE[NEWLINE]Tundra -> Taiga.
+Taiga  -> Plains.
+Desert w/o Oasis -> Plains.
+Plains -> Grass.
+Grass  -> grow Forest if not a peak or already a forest or Volcano, or any Improvement.</French>
+		<German>Wertet das Gelände der Erbauer-Zivilisation auf[NEWLINE[NEWLINE]Tundra -> Taiga.
+Taiga  -> Plains.
+Desert w/o Oasis -> Plains.
+Plains -> Grass.
+Grass  -> grow Forest if not a peak or already a forest or Volcano, or any Improvement.</German>
+		<Italian>Upgrades the terrain in the building empire.[NEWLINE[NEWLINE]Tundra -> Taiga.
+Taiga  -> Plains.
+Desert w/o Oasis -> Plains.
+Plains -> Grass.
+Grass  -> grow Forest if not a peak or already a forest or Volcano, or any Improvement.</Italian>
+		<Spanish>Upgrades the terrain in the building empire.[NEWLINE[NEWLINE]Tundra -> Taiga.
+Taiga  -> Plains.
+Desert w/o Oasis -> Plains.
+Plains -> Grass.
+Grass  -> grow Forest if not a peak or already a forest or Volcano, or any Improvement.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GLORY_EVERLASTING</Tag>

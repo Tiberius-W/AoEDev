@@ -2065,6 +2065,22 @@
 		<Spanish>Two objectives for the Virtuous Pirate emergent trait. First, use your navy to control the oceans. Then, once the seas are safe, expand your trade opportunities.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRAIT_BERSERK_AGARES</Tag>
+		<English>Demonic Hate</English>
+		<French>Demonic Hate</French>
+		<German>Demonic Hate</German>
+		<Italian>Demonic Hate</Italian>
+		<Spanish>Demonic Hate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRAIT_BERSERK_AGARES_PEDIA</Tag>
+		<English>Fueled by hate for creation, they seek out and destroy civilisation wherever it can be found.</English>
+		<French>Fueled by hate for creation, they seek out and destroy civilisation wherever it can be found.</French>
+		<German>Fueled by hate for creation, they seek out and destroy civilisation wherever it can be found.</German>
+		<Italian>Fueled by hate for creation, they seek out and destroy civilisation wherever it can be found.</Italian>
+		<Spanish>Fueled by hate for creation, they seek out and destroy civilisation wherever it can be found.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRAIT_NULL_PEDIA</Tag>
 		<English></English>
 		<French></French>

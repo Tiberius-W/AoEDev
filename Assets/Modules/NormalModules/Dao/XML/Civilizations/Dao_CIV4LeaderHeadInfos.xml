@@ -479,23 +479,23 @@
 			<ImprovementWeightModifiers>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_FIRE_I_DAO</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_WATER_I_DAO</ImprovementType>
-					<iWeightModifier>50</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_EARTH_I_DAO</ImprovementType>
-					<iWeightModifier>50</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_AIR_I_DAO</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_FORCE</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
@@ -1081,23 +1081,23 @@
 			<ImprovementWeightModifiers>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_AIR_I_DAO</ImprovementType>
-					<iWeightModifier>50</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_FIRE_I_DAO</ImprovementType>
-					<iWeightModifier>50</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_WATER_I_DAO</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_EARTH_I_DAO</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 				 <ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_MANA_FORCE</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>200</iWeightModifier>
 				 </ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
