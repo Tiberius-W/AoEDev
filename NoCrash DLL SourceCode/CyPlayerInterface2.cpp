@@ -181,6 +181,29 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getDisableProduction", &CyPlayer::getDisableProduction, "int ()")
 		.def("changeDisableResearch", &CyPlayer::changeDisableResearch, "void (int iChange)")
 		.def("getDisableResearch", &CyPlayer::getDisableResearch, "int ()")
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 3 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+		.def("getMaxStasisTurns", &CyPlayer::getMaxStasisTurns, "int ()")
+		.def("changeMaxStasisTurns", &CyPlayer::changeMaxStasisTurns, "void (int iChange)")
+		.def("getRemainingStasisTurns", &CyPlayer::getRemainingStasisTurns, "int ()")
+		.def("changeRemainingStasisTurns", &CyPlayer::changeRemainingStasisTurns, "void (int iChange)")
+		.def("getStasisBaseGrowthThreshold", &CyPlayer::getStasisBaseGrowthThreshold, "int ()")
+		.def("changeStasisBaseGrowthThreshold", &CyPlayer::changeStasisBaseGrowthThreshold, "void (int iChange)")
+		.def("getStasisBaseProductionModifier", &CyPlayer::getStasisBaseProductionModifier, "int ()")
+		.def("changeStasisBaseProductionModifier", &CyPlayer::changeStasisBaseProductionModifier, "void (int iChange)")
+		.def("getStasisBaseCommerceModifier", &CyPlayer::getStasisBaseCommerceModifier, "int ()")
+		.def("changeStasisBaseCommerceModifier", &CyPlayer::changeStasisBaseCommerceModifier, "void (int iChange)")
+		.def("getStasisBaseCultureModifier", &CyPlayer::getStasisBaseCultureModifier, "int ()")
+		.def("changeStasisBaseCultureModifier", &CyPlayer::changeStasisBaseCultureModifier, "void (int iChange)")
+		.def("getStasisBaseGPPModifier", &CyPlayer::getStasisBaseGPPModifier, "int ()")
+		.def("changeStasisBaseGPPModifier", &CyPlayer::changeStasisBaseGPPModifier, "void (int iChange)")
+		.def("stasisEffectOnModifier", &CyPlayer::stasisEffectOnModifier, "int (int iModifier)")
+		.def("resetStasis", &CyPlayer::resetStasis, "void ()")
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 		.def("changeDisableSpellcasting", &CyPlayer::changeDisableSpellcasting, "void (int iChange)")
 		.def("getDisableSpellcasting", &CyPlayer::getDisableSpellcasting, "int ()")
 		.def("getMaxCities", &CyPlayer::getMaxCities, "int ()")

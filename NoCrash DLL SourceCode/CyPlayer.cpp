@@ -2647,6 +2647,101 @@ int CyPlayer::getDisableResearch() const
 	return m_pPlayer ? m_pPlayer->getDisableResearch() : -1;
 }
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 3 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+int CyPlayer::getMaxStasisTurns() const
+{
+	return m_pPlayer ? m_pPlayer->getMaxStasisTurns() : 0;
+}
+
+void CyPlayer::changeMaxStasisTurns(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeMaxStasisTurns(iChange);
+}
+
+int CyPlayer::getRemainingStasisTurns() const
+{
+	return m_pPlayer ? m_pPlayer->getRemainingStasisTurns() : 0;
+}
+
+void CyPlayer::changeRemainingStasisTurns(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeRemainingStasisTurns(iChange);
+}
+
+int CyPlayer::getStasisBaseGrowthThreshold() const
+{
+	return m_pPlayer ? m_pPlayer->getStasisBaseGrowthThreshold() : 0;
+}
+
+void CyPlayer::changeStasisBaseGrowthThreshold(int iChange)
+{
+		if (m_pPlayer)
+		m_pPlayer->changeStasisBaseGrowthThreshold(iChange);
+}
+
+int CyPlayer::getStasisBaseProductionModifier() const
+{
+	return m_pPlayer ? m_pPlayer->getStasisBaseProductionModifier() : 0;
+}
+
+void CyPlayer::changeStasisBaseProductionModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStasisBaseProductionModifier(iChange);
+}
+
+int CyPlayer::getStasisBaseCommerceModifier() const
+{
+	return m_pPlayer ? m_pPlayer->getStasisBaseCommerceModifier() : 0;
+}
+
+void CyPlayer::changeStasisBaseCommerceModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStasisBaseCommerceModifier(iChange);
+}
+
+int CyPlayer::getStasisBaseCultureModifier() const
+{
+	return m_pPlayer ? m_pPlayer->getStasisBaseCultureModifier() : 0;
+}
+
+void CyPlayer::changeStasisBaseCultureModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStasisBaseCultureModifier(iChange);
+}
+
+int CyPlayer::getStasisBaseGPPModifier() const
+{
+	return m_pPlayer ? m_pPlayer->getStasisBaseGPPModifier() : 0;
+}
+
+void CyPlayer::changeStasisBaseGPPModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStasisBaseGPPModifier(iChange);
+}
+
+int CyPlayer::stasisEffectOnModifier(int iModifier) const
+{
+	return m_pPlayer ? m_pPlayer->stasisEffectOnModifier(iModifier) : 0;
+}
+
+void CyPlayer::resetStasis()
+{
+	if (m_pPlayer)
+		m_pPlayer->resetStasis();
+}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 void CyPlayer::changeDisableSpellcasting(int iChange)
 {
 	if (m_pPlayer)

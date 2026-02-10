@@ -8250,7 +8250,15 @@ int CvCity::calculateBaseMaintenanceTimes100() const
 
 int CvCity::getMaintenanceModifier() const
 {
-	return m_iMaintenanceModifier;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	return m_iMaintenanceModifier;
+	return m_iMaintenanceModifier + GET_PLAYER(getOwnerINLINE()).stasisEffectOnModifier(GET_PLAYER(getOwnerINLINE()).getStasisBaseCommerceModifier());
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 }
 
 
