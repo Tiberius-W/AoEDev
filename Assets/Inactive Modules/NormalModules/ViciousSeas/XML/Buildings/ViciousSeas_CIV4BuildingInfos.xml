@@ -252,8 +252,6 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<bCenterInCity>1</bCenterInCity>
-			<bNoUnhappiness>1</bNoUnhappiness>
-			<iCityCapModifier>1</iCityCapModifier>
 			<iAIWeight>300</iAIWeight>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -371,8 +369,31 @@
 						<iCommerce>5</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_SUGAR</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_MUSHROOMS</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_ALE</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-			<iCityCapModifier>1</iCityCapModifier>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -427,24 +448,7 @@
 						<iCommerce>5</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_TOAD</BonusType>
-					<CommerceModifiers>
-						<iCommerce>0</iCommerce>
-						<iCommerce>0</iCommerce>
-						<iCommerce>5</iCommerce>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_BISON</BonusType>
-					<CommerceModifiers>
-						<iCommerce>0</iCommerce>
-						<iCommerce>0</iCommerce>
-						<iCommerce>5</iCommerce>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
-			<iCityCapModifier>1</iCityCapModifier>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -499,7 +503,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iCityCapModifier>3</iCityCapModifier>
 		</BuildingInfo>	
 		<BuildingInfo>		<!-- Public Baths - Wet Dream -->
 			<BuildingClass>BUILDINGCLASS_PUBLIC_BATHS</BuildingClass>
@@ -533,7 +536,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<iCityCapModifier>3</iCityCapModifier>
 		</BuildingInfo>		
 		<BuildingInfo>		<!-- Infirmary - Dream of Care-->
 			<BuildingClass>BUILDINGCLASS_INFIRMARY</BuildingClass>
@@ -550,6 +552,11 @@
 			<iHealRateChange>20</iHealRateChange>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>3</iCommerce>
+			</ObsoleteSafeCommerceChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_HEALER</SpecialistType>
@@ -566,7 +573,6 @@
 			<RemovePromotion>PROMOTION_DISEASED</RemovePromotion>
 			<iPrereqBroadAlignment>0</iPrereqBroadAlignment>
 			<iAlignmentModifier>5</iAlignmentModifier>
-			<iCityCapModifier>5</iCityCapModifier>
 		</BuildingInfo>	
 		<BuildingInfo>		<!-- Hunting Lodge -Dream of the Hunt -->
 			<BuildingClass>BUILDINGCLASS_HUNTING_LODGE</BuildingClass>
@@ -583,40 +589,40 @@
 			<iAsset>2</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>10</fVisibilityPriority>
-			<BonusYieldModifiers>
-				<BonusYieldModifier>
+			<BonusCommerceModifiers>
+				<BonusCommerceModifier>
 					<BonusType>BONUS_FUR</BonusType>
-					<YieldModifiers>
-						<iYield>0</iYield>
-						<iYield>5</iYield>
-						<iYield>0</iYield>
-					</YieldModifiers>
-				</BonusYieldModifier>
-				<BonusYieldModifier>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
 					<BonusType>BONUS_IVORY</BonusType>
-					<YieldModifiers>
-						<iYield>0</iYield>
-						<iYield>5</iYield>
-						<iYield>0</iYield>
-					</YieldModifiers>
-				</BonusYieldModifier>
-				<BonusYieldModifier>
-					<BonusType>BONUS_DEER</BonusType>
-					<YieldModifiers>
-						<iYield>0</iYield>
-						<iYield>5</iYield>
-						<iYield>0</iYield>
-					</YieldModifiers>
-				</BonusYieldModifier>
-				<BonusYieldModifier>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
+					<BonusType>BONUS_TOAD</BonusType>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+				<BonusCommerceModifier>
 					<BonusType>BONUS_BISON</BonusType>
-					<YieldModifiers>
-						<iYield>0</iYield>
-						<iYield>5</iYield>
-						<iYield>0</iYield>
-					</YieldModifiers>
-				</BonusYieldModifier>
-			</BonusYieldModifiers>
+					<CommerceModifiers>
+						<iCommerce>0</iCommerce>
+						<iCommerce>0</iCommerce>
+						<iCommerce>5</iCommerce>
+					</CommerceModifiers>
+				</BonusCommerceModifier>
+			</BonusCommerceModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -633,7 +639,6 @@
 					<fTrainXPCap>5</fTrainXPCap>
 				</TrainXPCap>
 			</TrainXPCaps>
-			<iCityCapModifier>1</iCityCapModifier>
 		</BuildingInfo>
 		<BuildingInfo> <!--Crime--><!--Nightmares are Gremlins-->
 			<BuildingClass>BUILDINGCLASS_NIGHTMARES</BuildingClass>
@@ -827,7 +832,7 @@
 				<Alignment>ALIGNMENT_EVIL</Alignment>
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--            Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_ANOINTED</BuildingClass>
@@ -879,7 +884,7 @@
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--           Dream Aifon                   Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_BLESSED</BuildingClass>
@@ -953,7 +958,7 @@
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
 			<bApplyFreePromotionOnMove>1</bApplyFreePromotionOnMove>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--           Dream Aifon              Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_CONSECRATED</BuildingClass>
@@ -1011,7 +1016,7 @@
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--            Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_DIVINE</BuildingClass>
@@ -1081,7 +1086,7 @@
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--             Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_EXALTED</BuildingClass>
@@ -1133,7 +1138,7 @@
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<iCityCapModifier>2</iCityCapModifier>
+			<iHappiness>2</iHappiness>
 		</BuildingInfo>
 		<BuildingInfo>		<!--             Dream Aifon                 Great Priest National Wonder -->
 			<BuildingClass>BUILDINGCLASS_ALTAR_OF_THE_LUONNOTAR_FINAL</BuildingClass>
@@ -1211,7 +1216,8 @@
 				<Alignment>ALIGNMENT_NEUTRAL</Alignment>
 			</PrereqAlignments>
 			<bGraphicalOnly>1</bGraphicalOnly>
-			<iCityCapModifier>10</iCityCapModifier>
+			<bNoUnhappiness>1</bNoUnhappiness>
+			<iCrime>-500</iCrime>
 		</BuildingInfo>
 	</BuildingInfos>
 </Civ4BuildingInfos>

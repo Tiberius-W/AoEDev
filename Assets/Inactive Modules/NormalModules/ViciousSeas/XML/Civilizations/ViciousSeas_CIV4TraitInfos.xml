@@ -112,7 +112,6 @@
 			<Civilopedia>TXT_KEY_TRAIT_DREAM_PEDIA</Civilopedia>
 			<ShortDescription>TXT_KEY_TRAIT_DREAM_SHORT</ShortDescription>
 			<bIgnoreHealth>1</bIgnoreHealth>
-			<iInitialCityCap>6</iInitialCityCap>
 			<bAmphibian>1</bAmphibian>
 			<PlotEffectSpawnChances>
 				<PlotEffectSpawnChance>

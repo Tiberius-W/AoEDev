@@ -498,6 +498,14 @@ One Condatis was a battle worthy of song, two Condatis is a sick joke by The One
 		<Spanish>Dream</Spanish>
 	</TEXT>
 	<TEXT> 
+		<Tag>TXT_KEY_BUILD_SEA_HAVEN</Tag>
+		<English>Build a [LINK=IMPROVEMENT_SEA_COTTAGE]Pearlstone Commune[\LINK],</English>
+		<French>Build a [LINK=IMPROVEMENT_SEA_COTTAGE]Pearlstone Commune[\LINK],</French>
+		<German>Build a [LINK=IMPROVEMENT_SEA_COTTAGE]Pearlstone Commune[\LINK],</German>
+		<Italian>Build a [LINK=IMPROVEMENT_SEA_COTTAGE]Pearlstone Commune[\LINK],</Italian>
+		<Spanish>Build a [LINK=IMPROVEMENT_SEA_COTTAGE]Pearlstone Commune[\LINK],</Spanish>
+	</TEXT>
+	<TEXT> 
 		<Tag>TXT_KEY_IMPROVEMENT_SEA_COTTAGE</Tag>
 		<English>Pearlstone Commune (I)</English>
 		<French>Pearlstone Commune (I)</French>
