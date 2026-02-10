@@ -3491,6 +3491,7 @@ class CvEventManager:
 		iPreviousOwner, iNewOwner, pCity, bConquest, bTrade = argsList
 		gc			= CyGlobalContext()
 		pPlayer		= gc.getPlayer(iNewOwner)
+		pOldOwner	= gc.getPlayer(iPreviousOwner)
 		eLeader		= pPlayer.getLeaderType()
 		iCiv		= pPlayer.getCivilizationType()
 		iPop		= pCity.getPopulation()
@@ -3505,6 +3506,7 @@ class CvEventManager:
 			iSlave 		= self.Units["Generic"]["Slave"]
 			iSlavePop 	= iPop / 2
 			pCity.changePopulation(-iSlavePop)
+			iPop		= pCity.getPopulation()
 			iX			= pCity.getX()
 			iY			= pCity.getY()
 			iAI			= UnitAITypes.NO_UNITAI
@@ -3512,19 +3514,21 @@ class CvEventManager:
 			for i in xrange(iSlavePop):
 				pPlayer.initUnit(iSlave, iX, iY, iAI, iDirection)
 
-		if pPlayer.getCivilizationType() == self.Civilizations["Scions"]:
-			if pPlayer.isCivic(self.Civics["God King"]):
+		if   iCiv == self.Civilizations["Scions"]:
+			if   pOldOwner.getCivilizationType() == self.Civilizations["Scions"]:
+				pass
+			elif pPlayer.isCivic(self.Civics["God King"]):
 				iPopReduction = iPop * 10 / 16
 				pCity.changePopulation(-iPopReduction)
 			else:
 				iPopReduction = iPop * 10 / 12
 				pCity.changePopulation(-iPopReduction)
 
-		if pPlayer.getCivilizationType() == self.Civilizations["D'Tesh"]:
+		elif iCiv == self.Civilizations["D'Tesh"]:
 			iPopReduction = iPop / 3
 			pCity.changePopulation(-iPopReduction)
 
-		if gc.getPlayer(pCity.getPreviousOwner()).getCivilizationType() == self.Civilizations["Scions"]:
+		elif pOldOwner.getCivilizationType() == self.Civilizations["Scions"]:
 			iPopReduction = iPop * 10 / 12
 			pCity.changePopulation(-iPopReduction)
 

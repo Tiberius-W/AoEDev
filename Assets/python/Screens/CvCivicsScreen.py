@@ -76,7 +76,7 @@ class CvCivicsScreen:
 	def setValues(self):
 		screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
 		resolutionWidth = 1024
-		resolutionHeigth = 768
+		resolutionHeigth = 720
 
 
 		self.H_SCREEN = resolutionHeigth
@@ -145,7 +145,7 @@ class CvCivicsScreen:
 		screen.showWindowBackground(False)
 
 		# Set the background and exit button, and show the screen
-		screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
+		screen.setDimensions(screen.centerX(0), self.Y_POSITION, self.W_SCREEN, self.H_SCREEN)
 
 		# set the standard "exit" text, other text "cancel, revolution" are handled at the bottom in this python file
 		screen.setText(self.CANCEL_NAME, "Background", u"<font=4>" + localText.getText("TXT_KEY_SCREEN_CANCEL", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_CANCEL, self.Y_CANCEL, self.Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, 1, 0)
