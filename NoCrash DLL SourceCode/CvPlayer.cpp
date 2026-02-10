@@ -4194,19 +4194,9 @@ void CvPlayer::doTurn()
 /**								---- Start Original Code ----									**
 	if (getGoldenAgeTurns() > 0)
 /**								----  End Original Code  ----									**/
-	//if (getGoldenAgeTurns() > 0 && !(getDisableProduction() > 0 && getDisableResearch() > 0))
+	if (getGoldenAgeTurns() > 0 && !(getDisableProduction() > 0 && getDisableResearch() > 0))
 /*************************************************************************************************/
 /**	Tweak									END													**/
-/*************************************************************************************************/
-
-/*************************************************************************************************/
-/**	StasisReworkCode					Feb 1 2026										Klauros	**/
-/**								Coding for Stasis Rework										**/
-/*************************************************************************************************/
-//	if (getGoldenAgeTurns() > 0 && !(getDisableProduction() > 0 && getDisableResearch() > 0))
-	if (getGoldenAgeTurns() > 0 && !(getDisableProduction() > 0 && getDisableResearch() > 0) && getMaxStasisTurns() == 0)
-/*************************************************************************************************/
-/**	StasisReworkCode						END													**/
 /*************************************************************************************************/
 	{
 		changeGoldenAgeTurns(-1);
