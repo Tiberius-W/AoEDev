@@ -26405,7 +26405,7 @@
 			<PrereqCivilizations>
 				<PrereqCivilization>CIVILIZATION_DEMON</PrereqCivilization>
 			</PrereqCivilizations>
-			<Button>Art/Interface/Buttons/Improvements/AgaresRage.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/AgaresRage.dds</Button>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
