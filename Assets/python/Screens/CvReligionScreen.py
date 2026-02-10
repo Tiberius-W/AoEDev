@@ -70,7 +70,7 @@ class CvReligionScreen:
 	def setValues(self):
 		screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
 		resolutionWidth = 1024
-		resolutionHeigth = 768
+		resolutionHeigth = 720
 
 ## johny smith
 ## this sets the resoultion below
@@ -204,7 +204,7 @@ class CvReligionScreen:
 		screen.showWindowBackground(False)
 
 		# Set the background and exit button, and show the screen
-		screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
+		screen.setDimensions(screen.centerX(0), self.Y_POSITION, self.W_SCREEN, self.H_SCREEN)
 
 		self.SCREEN_ART = ArtFileMgr.getInterfaceArtInfo("TECH_BG").getPath()
 		self.NO_STATE_BUTTON_ART = ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()
