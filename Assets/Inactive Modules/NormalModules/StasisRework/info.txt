@@ -1,0 +1,16 @@
+[name]
+StasisRework
+[version]
+1.0 
+[rifeversion]
+382
+[author]
+Klauros
+[dependency]
+;Ashes of Erebus
+[compatible]
+;everything
+[shortdesc]
+Rework of Stasis Spell
+[desc]
+Change the Stasis spell to apply modifiers to city growth threshold, production, commerce (gold income and research but also expenses and maintenance), culture, great person growth.

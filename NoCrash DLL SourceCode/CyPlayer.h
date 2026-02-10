@@ -676,6 +676,29 @@ public:
 	int getDisableProduction() const;
 	void changeDisableResearch(int iChange);
 	int getDisableResearch() const;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 3 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	int getMaxStasisTurns() const;
+	void changeMaxStasisTurns(int iChange);
+	int getRemainingStasisTurns() const;
+	void changeRemainingStasisTurns(int iChange);
+	int getStasisBaseGrowthThreshold() const;
+	void changeStasisBaseGrowthThreshold(int iChange);
+	int getStasisBaseProductionModifier() const;
+	void changeStasisBaseProductionModifier(int iChange);
+	int getStasisBaseCommerceModifier() const;
+	void changeStasisBaseCommerceModifier(int iChange);
+	int getStasisBaseCultureModifier() const;
+	void changeStasisBaseCultureModifier(int iChange);
+	int getStasisBaseGPPModifier() const;
+	void changeStasisBaseGPPModifier(int iChange);
+	int stasisEffectOnModifier(int iModifier) const;
+	void resetStasis();
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	void changeDisableSpellcasting(int iChange);
 	int getDisableSpellcasting() const;
 	int getMaxCities() const;

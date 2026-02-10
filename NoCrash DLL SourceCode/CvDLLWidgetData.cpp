@@ -5424,6 +5424,20 @@ void CvDLLWidgetData::parseMaintenanceHelp(CvWidgetDataStruct &widgetDataStruct,
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_PROXIMITY_MAINT_FLOAT", szMaint.GetCString()));
 			}
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+			CvPlayer& owner = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE());
+			int iStasisMod = owner.stasisEffectOnModifier(owner.getStasisBaseCommerceModifier());
+			if (iStasisMod != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MOD_STASIS", iStasisMod, ""));
+			}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 			szBuffer.append(SEPARATOR);
 			int iMaintx100 = pHeadSelectedCity->getMaintenanceTimes100() + iMaintenanceValue;
 			CvWString szMaint = CvWString::format(L"%d.%02d", iMaintx100/100, abs(iMaintx100%100));

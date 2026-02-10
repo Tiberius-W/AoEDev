@@ -1062,6 +1062,20 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 /*************************************************************************************************/
 	m_iDisableProduction = 0;
 	m_iDisableResearch = 0;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	m_iMaxStasisTurns = 0;
+	m_iRemainingStasisTurns = 0;
+	m_iStasisBaseGrowthThreshold = 0;
+	m_iStasisBaseProductionModifier = 0;
+	m_iStasisBaseCommerceModifier = 0;
+	m_iStasisBaseCultureModifier = 0;
+	m_iStasisBaseGPPModifier = 0;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	m_iDisableSpellcasting = 0;
 	m_iDiscoverRandModifier = 0;
 	m_iSpreadRandModifier = 0;
@@ -4221,6 +4235,23 @@ void CvPlayer::doTurn()
 	{
 		changeDisableResearch(-1);
 	}
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (getRemainingStasisTurns() > 0)
+	{
+		changeRemainingStasisTurns(-1);
+		updateCommerce();
+		updateMaintenance();
+		if (getRemainingStasisTurns() == 0)
+		{
+			resetStasis();
+		}
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	if (getDisableSpellcasting() > 0)
 	{
 		changeDisableSpellcasting(-1);
@@ -8715,6 +8746,18 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit) const
 		}
 	}
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (getMaxStasisTurns() != 0)
+	{
+		iMultiplier += stasisEffectOnModifier(getStasisBaseProductionModifier());
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 	return iMultiplier;
 }
 
@@ -8749,6 +8792,18 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 		iMultiplier += getMaxPlayerBuildingProductionModifier();
 	}
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (getMaxStasisTurns() != 0)
+	{
+		iMultiplier += stasisEffectOnModifier(getStasisBaseProductionModifier());
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 	return iMultiplier;
 }
 
@@ -8757,6 +8812,18 @@ int CvPlayer::getProductionModifier(ProjectTypes eProject) const
 	int iMultiplier = 0;
 
 	iMultiplier += getRitualProductionModifier();
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (getMaxStasisTurns() != 0)
+	{
+		iMultiplier += stasisEffectOnModifier(getStasisBaseProductionModifier());
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	return iMultiplier;
 }
@@ -9558,6 +9625,22 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 		iSupport /= 100;
 	}
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	iMilitaryCost *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iMilitaryCost /= 100;
+	iBaseUnitCost *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iBaseUnitCost /= 100;
+	iExtraCost *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iExtraCost /= 100;
+	iSupport *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iSupport /= 100;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 	FAssert(iSupport >= 0);
 
 /*************************************************************************************************/
@@ -9639,6 +9722,18 @@ int CvPlayer::calculateUnitSupply(int& iPaidUnits, int& iBaseSupplyCost) const
 		iSupply *= std::max(0, ((GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIPerEraModifier() * getCurrentEra()) + 100));
 		iSupply /= 100;
 	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	iBaseSupplyCost *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iBaseSupplyCost /= 100;
+	iSupply *= (100 + stasisEffectOnModifier(getStasisBaseCommerceModifier()));
+	iSupply /= 100;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	FAssert(iSupply >= 0);
 
@@ -12068,7 +12163,15 @@ void CvPlayer::changeGreatGeneralsThresholdModifier(int iChange)
 
 int CvPlayer::getGreatPeopleRateModifier() const
 {
-	return m_iGreatPeopleRateModifier;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	return m_iGreatPeopleRateModifier;
+	return m_iGreatPeopleRateModifier + stasisEffectOnModifier(getStasisBaseGPPModifier());
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 }
 
 
@@ -15031,7 +15134,24 @@ int CvPlayer::getCommerceRateModifier(CommerceTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
-	return m_aiCommerceRateModifier[eIndex];
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	return m_aiCommerceRateModifier[eIndex];
+	int iModifier = m_aiCommerceRateModifier[eIndex];
+	if (eIndex == COMMERCE_CULTURE)
+	{
+		iModifier += stasisEffectOnModifier(getStasisBaseCultureModifier());
+	}
+	if (eIndex == COMMERCE_GOLD || eIndex == COMMERCE_RESEARCH)
+	{
+		iModifier += stasisEffectOnModifier(getStasisBaseCommerceModifier());
+	}
+	return iModifier;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 }
 
 
@@ -16161,6 +16281,16 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	{
 		iTotalUpkeep += getSingleCivicUpkeep(paeCivics[iI], bIgnoreAnarchy);
 	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	iTotalUpkeep *= stasisEffectOnModifier(getStasisBaseCommerceModifier());
+	iTotalUpkeep /= 100;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	return iTotalUpkeep;
 }
@@ -20804,6 +20934,20 @@ void CvPlayer::read(FDataStreamBase* pStream)
 /*************************************************************************************************/
 	pStream->Read(&m_iDisableProduction);
 	pStream->Read(&m_iDisableResearch);
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	pStream->Read(&m_iMaxStasisTurns);
+	pStream->Read(&m_iRemainingStasisTurns);
+	pStream->Read(&m_iStasisBaseGrowthThreshold);
+	pStream->Read(&m_iStasisBaseProductionModifier);
+	pStream->Read(&m_iStasisBaseCommerceModifier);
+	pStream->Read(&m_iStasisBaseCultureModifier);
+	pStream->Read(&m_iStasisBaseGPPModifier);
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	pStream->Read(&m_iDisableSpellcasting);
 	pStream->Read(&m_iDiscoverRandModifier);
 	pStream->Read(&m_iSpreadRandModifier);
@@ -21555,6 +21699,20 @@ void CvPlayer::write(FDataStreamBase* pStream)
 /*************************************************************************************************/
 	pStream->Write(m_iDisableProduction);
 	pStream->Write(m_iDisableResearch);
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	pStream->Write(m_iMaxStasisTurns);
+	pStream->Write(m_iRemainingStasisTurns);
+	pStream->Write(m_iStasisBaseGrowthThreshold);
+	pStream->Write(m_iStasisBaseProductionModifier);
+	pStream->Write(m_iStasisBaseCommerceModifier);
+	pStream->Write(m_iStasisBaseCultureModifier);
+	pStream->Write(m_iStasisBaseGPPModifier);
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	pStream->Write(m_iDisableSpellcasting);
 	pStream->Write(m_iDiscoverRandModifier);
 	pStream->Write(m_iSpreadRandModifier);
@@ -26568,7 +26726,15 @@ int CvPlayer::getNewCityProductionValue() const
 }
 int CvPlayer::getExtraGrowthThreshold() const
 {
-	return m_iExtraGrowthThreshold + GC.getGame().getGlobalCounter() * getACGrowthThreshold() / 100;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	return m_iExtraGrowthThreshold + GC.getGame().getGlobalCounter() * getACGrowthThreshold() / 100;
+	return m_iExtraGrowthThreshold + (GC.getGame().getGlobalCounter() * getACGrowthThreshold() / 100) + stasisEffectOnModifier(getStasisBaseGrowthThreshold());
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 }
 void CvPlayer::changeExtraGrowthThreshold(int iChange)
 {
@@ -28489,6 +28655,148 @@ void CvPlayer::changeDisableProduction(int iChange)
 		m_iDisableProduction = (m_iDisableProduction + iChange);
 	}
 }
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+int CvPlayer::getMaxStasisTurns() const
+{
+	return m_iMaxStasisTurns;
+}
+
+void CvPlayer::changeMaxStasisTurns(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iMaxStasisTurns = (m_iMaxStasisTurns + iChange);
+		updateCommerce();
+		updateMaintenance();
+	}
+}
+
+int CvPlayer::getRemainingStasisTurns() const
+{
+	return m_iRemainingStasisTurns;
+}
+
+void CvPlayer::changeRemainingStasisTurns(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iRemainingStasisTurns = (m_iRemainingStasisTurns + iChange);
+	}
+}
+
+int CvPlayer::getStasisBaseGrowthThreshold() const
+{
+	return m_iStasisBaseGrowthThreshold;
+}
+
+void CvPlayer::changeStasisBaseGrowthThreshold(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iStasisBaseGrowthThreshold = (m_iStasisBaseGrowthThreshold + iChange);
+	}
+}
+
+int CvPlayer::getStasisBaseProductionModifier() const
+{
+	return m_iStasisBaseProductionModifier;
+}
+
+void CvPlayer::changeStasisBaseProductionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iStasisBaseProductionModifier = (m_iStasisBaseProductionModifier + iChange);
+	}
+}
+
+int CvPlayer::getStasisBaseCommerceModifier() const
+{
+	return m_iStasisBaseCommerceModifier;
+}
+
+void CvPlayer::changeStasisBaseCommerceModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iStasisBaseCommerceModifier = (m_iStasisBaseCommerceModifier + iChange);
+	}
+}
+
+int CvPlayer::getStasisBaseCultureModifier() const
+{
+	return m_iStasisBaseCultureModifier;
+}
+
+void CvPlayer::changeStasisBaseCultureModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iStasisBaseCultureModifier = (m_iStasisBaseCultureModifier + iChange);
+	}
+}
+
+int CvPlayer::getStasisBaseGPPModifier() const
+{
+	return m_iStasisBaseGPPModifier;
+}
+
+void CvPlayer::changeStasisBaseGPPModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iStasisBaseGPPModifier = (m_iStasisBaseGPPModifier + iChange);
+	}
+}
+
+int CvPlayer::stasisEffectOnModifier(int iModifier) const
+{
+	if (getMaxStasisTurns() == 0)
+	{
+		return 0;
+	}
+	return ((iModifier * getRemainingStasisTurns()) / getMaxStasisTurns());
+}
+
+void CvPlayer::resetStasis()
+{
+	if (getMaxStasisTurns() != 0)
+	{
+		changeMaxStasisTurns(-getMaxStasisTurns());
+	}
+	if (getRemainingStasisTurns() != 0)
+	{
+		changeRemainingStasisTurns(-getRemainingStasisTurns());
+	}
+	if (getStasisBaseGrowthThreshold() != 0)
+	{
+		changeStasisBaseGrowthThreshold(-getStasisBaseGrowthThreshold());
+	}
+	if (getStasisBaseProductionModifier() != 0)
+	{
+		changeStasisBaseProductionModifier(-getStasisBaseProductionModifier());
+	}
+	if (getStasisBaseCommerceModifier() != 0)
+	{
+		changeStasisBaseCommerceModifier(-getStasisBaseCommerceModifier());
+	}
+	if (getStasisBaseCultureModifier() != 0)
+	{
+		changeStasisBaseCultureModifier(-getStasisBaseCultureModifier());
+	}
+	if (getStasisBaseGPPModifier() != 0)
+	{
+		changeStasisBaseGPPModifier(-getStasisBaseGPPModifier());
+	}
+}
+
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 int CvPlayer::getDisableResearch() const
 {

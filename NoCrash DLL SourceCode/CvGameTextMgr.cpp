@@ -4627,8 +4627,8 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 void createTestFontString(CvWStringBuffer& szString)
 {
 	int iI;
-	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[×]^_`abcdefghijklmnopqrstuvwxyz\n");
-	szString.append(L"{}~\\ßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞŸßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ¿¡«»°ŠŒšœ™©®€£¢”‘“…’");
+	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[ ]^_`abcdefghijklmnopqrstuvwxyz\n");
+	szString.append(L"{}~\\                              ŞŸ                                                       ");
 	for (iI=0;iI<NUM_YIELD_TYPES;++iI)
 		szString.append(CvWString::format(L"%c", GC.getYieldInfo((YieldTypes) iI).getChar()));
 
@@ -27419,6 +27419,19 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 /**	Upkeep										END												**/
 /*************************************************************************************************/
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (player.getRemainingStasisTurns() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MOD_STASIS", player.stasisEffectOnModifier(player.getStasisBaseCommerceModifier()), ""));
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST", iPaidUnits, iFreeUnits, iBaseUnitCost));
 
@@ -27434,6 +27447,7 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_HANDICAP_COST", iHandicap));
 	}
+
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST_4", iCost));
 }
 
@@ -27457,7 +27471,23 @@ void CvGameTextMgr::buildFinanceAwaySupplyString(CvWStringBuffer& szBuffer, Play
 	}
 
 	szBuffer.append(NEWLINE);
-	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_SUPPLY_COST", iPaidUnits, GC.getDefineINT("INITIAL_FREE_OUTSIDE_UNITS"), iBaseCost, szHandicap.GetCString(), iCost));
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_SUPPLY_COST", iPaidUnits, GC.getDefineINT("INITIAL_FREE_OUTSIDE_UNITS"), iBaseCost, szHandicap.GetCString(), iCost));
+	
+	if (player.getRemainingStasisTurns() != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_SUPPLY_COST_STASIS_REWORK", iPaidUnits, GC.getDefineINT("INITIAL_FREE_OUTSIDE_UNITS"), iBaseCost, szHandicap.GetCString(), iCost, player.stasisEffectOnModifier(player.getStasisBaseCommerceModifier())));
+	} else
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_SUPPLY_COST", iPaidUnits, GC.getDefineINT("INITIAL_FREE_OUTSIDE_UNITS"), iBaseCost, szHandicap.GetCString(), iCost));
+	}
+	
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 }
 
 void CvGameTextMgr::buildFinanceCityMaintString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer)
@@ -27520,7 +27550,24 @@ void CvGameTextMgr::buildFinanceCityMaintString(CvWStringBuffer& szBuffer, Playe
 	//PerPopEffect
 	iTotalMaint += iPerPopMaint;
 
-	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_NEW", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, iProximityMaint, iPerPopMaint, iTotalMaint));
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+//	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_NEW", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, iProximityMaint, iPerPopMaint, iTotalMaint));
+	int iStasisMod = player.stasisEffectOnModifier(player.getStasisBaseCommerceModifier());
+	if (iStasisMod != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_STASIS_REWORK", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, iProximityMaint, iPerPopMaint, iTotalMaint, iStasisMod));
+	}
+	else
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_NEW", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, iProximityMaint, iPerPopMaint, iTotalMaint));
+	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 /*************************************************************************************************/
 /**	People's Choice							END													**/
 /*************************************************************************************************/
@@ -27544,6 +27591,20 @@ void CvGameTextMgr::buildFinanceCivicUpkeepString(CvWStringBuffer& szBuffer, Pla
 			szCivicOptionCosts += NEWLINE + szTemp;
 		}
 	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (player.getRemainingStasisTurns() != 0)
+	{
+		CvWString szTemp;
+		szTemp.Format(L"%d%%%c: Stasis Effect", player.stasisEffectOnModifier(player.getStasisBaseCommerceModifier()), GC.getCommerceInfo(COMMERCE_GOLD).getChar());
+		szCivicOptionCosts += NEWLINE + szTemp;
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CIVIC_UPKEEP_COST", szCivicOptionCosts.GetCString(), player.getCivicUpkeep()));
@@ -27907,6 +27968,24 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			}
 		}
 	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (GET_PLAYER(city.getOwnerINLINE()).getRemainingStasisTurns() != 0)
+	{
+		int iStasisMod = GET_PLAYER(city.getOwnerINLINE()).stasisEffectOnModifier(GET_PLAYER(city.getOwnerINLINE()).getStasisBaseProductionModifier());
+		if (iStasisMod != 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MOD_STASIS", iStasisMod, ""));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += iStasisMod;
+		}
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	int iFoodProduction = (city.isFoodProduction() ? std::max(0, (city.getYieldRate(YIELD_FOOD) - city.foodConsumption(true))) : 0);
 	if (iFoodProduction > 0)
@@ -28329,6 +28408,32 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 		iModifier += iCivicMod;
 	}
 
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	if (owner.getRemainingStasisTurns() != 0)
+	{
+		int iStasisMod = 0;
+		if (eCommerceType == COMMERCE_CULTURE)
+		{
+			iStasisMod += owner.stasisEffectOnModifier(owner.getStasisBaseCultureModifier());
+		}
+		if (eCommerceType == COMMERCE_GOLD || eCommerceType == COMMERCE_RESEARCH)
+		{
+			iStasisMod += owner.stasisEffectOnModifier(owner.getStasisBaseCommerceModifier());
+		}
+	
+		if (iStasisMod != 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MOD_STASIS", iStasisMod, info.getChar()));
+			szBuffer.append(NEWLINE);
+			iModifier += iStasisMod;
+		}
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 
 	int iModYield = (iModifier * iBaseCommerceRate) / 100;
 
@@ -28772,6 +28877,22 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 			}
 		}
 	}
+
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 2 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	int iStasisMod = owner.stasisEffectOnModifier(owner.getStasisBaseGPPModifier());
+	if (iStasisMod != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MOD_STASIS", iStasisMod, "[ICON_GREATPEOPLE]"));
+		szBuffer.append(NEWLINE);
+		iModifier += iStasisMod;
+	}
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
+
 	int iModGreatPeople = (iModifier * city.getBaseGreatPeopleRate()) / 100;
 
 	FAssertMsg(iModGreatPeople == city.getGreatPeopleRate(), "Great person rate does not match actual value");

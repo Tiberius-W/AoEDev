@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_MOD_STASIS</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Stasis</English>
+		<French>[ICON_BULLET]%D1%%%F2 depuis la Stase</French>
+		<German>[ICON_BULLET]%D1%%%F2 aus Stasis</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 dalla Stasi</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 desde Estasis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST_STASIS_REWORK</Tag>
+		<English>[NEWLINE]%d8%% [ICON_GOLD]: Stasis Active[NEWLINE]%d1[ICON_GOLD]: Distance Maintenance[NEWLINE]%d2[ICON_GOLD]: Number of Cities Maintenance[NEWLINE]%d3[ICON_GOLD]: Colony Expenses[NEWLINE]%d4[ICON_GOLD]: Corporation Payments[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]TOTAL CITY MAINTENANCE COST: %d7[ICON_GOLD]</English>
+		<French>[NEWLINE]%d8%% [ICON_GOLD]: Stasis Active[NEWLINE]%d1[ICON_GOLD] : entretien lié à la distance[NEWLINE]%d2[ICON_GOLD] : entretien lié au nombre de villes[NEWLINE]%d3[ICON_GOLD] : dépenses des colonies[NEWLINE]%d4[ICON_GOLD] : paiements des sociétés commerciales[NEWLINE]%d5[ICON_GOLD]: Unités voisines[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COÛT De ENTRETIEN TOTAL DES VILLES : %d7[ICON_GOLD]</French>
+		<German>[NEWLINE]%d8%% [ICON_GOLD]: Stasis Active[NEWLINE]%d1[ICON_GOLD]: Unterhalt für entfernte Städte[NEWLINE]%d2[ICON_GOLD]: Anzahl der unterhaltspflichtigen Städte[NEWLINE]%d3[ICON_GOLD]: Kolonialausgaben[NEWLINE]%d4[ICON_GOLD]: Zahlungen für Kapitalgesellschaften[NEWLINE]%d5[ICON_GOLD]: Einheiten in der Nähe[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]STADTUNTERHALTSKOSTEN GESAMT: %d7[ICON_GOLD]</German>
+		<Italian>[NEWLINE]%d8%% [ICON_GOLD]: Stasis Active[NEWLINE]%d1[ICON_GOLD]: Distanza Mantenimento[NEWLINE]%d2[ICON_GOLD]: Numero di città Mantenimento[NEWLINE]%d3[ICON_GOLD]: Spese per le colonie[NEWLINE]%d4[ICON_GOLD]: Pagamenti corporativi[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COSTO TOTALE MANTENIMENTO CITT&#192;: %d7[ICON_GOLD]</Italian>
+		<Spanish>[NEWLINE]%d8%% [ICON_GOLD]: Stasis Active[NEWLINE]%d1 [ICON_GOLD]: mantenimiento por lejan&#237;a[NEWLINE]%d2 [ICON_GOLD]: mantenimiento por cantidad de ciudades[NEWLINE]%d3[ICON_GOLD]: gastos de la colonia[NEWLINE]%d4 [ICON_GOLD]: pagos a la corporaci&#243;n[NEWLINE]%d5[ICON_GOLD]: Nearby Units[NEWLINE]%d6[ICON_GOLD]: Population[NEWLINE]------------------------[NEWLINE]------------------------[NEWLINE]COSTE TOTAL MANTENIMIENTO CIUDAD: %d7 [ICON_GOLD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_SUPPLY_COST_STASIS_REWORK</Tag>
+		<English>[NEWLINE]%d3[ICON_GOLD]: Away supply cost for %d1 units (free supply for %d2)%s4[NEWLINE]%d6%% from Stasis[NEWLINE]------------------------[NEWLINE]TOTAL SUPPLY COST: %d5[ICON_GOLD]</English>
+		<French>[NEWLINE]%d3[ICON_GOLD] : co&#251;t de ravitaillement pour %d1 unit&#233;s (gratuit pour %d2)%s4[NEWLINE]%d6%% depuis la Stase[NEWLINE]------------------------[NEWLINE]CO&#219;T TOTAL RAVITAILLEMENT : %d5[ICON_GOLD]</French>
+		<German>[NEWLINE]%d3[ICON_GOLD]: Reisenachschubkosten f&#252;r %d1 [NUM1:Einheit:Einheiten] (freier Nachschub f&#252;r %d2)%s4[NEWLINE]%d6%% aus Stasis[NEWLINE]------------------------[NEWLINE]NACHSCHUBKOSTEN GESAMT: %d5[ICON_GOLD]</German>
+		<Italian>[NEWLINE]%d3[ICON_GOLD]: Costi di supporto per %d1 unit&#224; (supporto gratuito per %d2)%s4[NEWLINE]%d6%% dalla Stasi[NEWLINE]------------------------[NEWLINE]TOTALE COSTI DI SUPPORTO: %d5[ICON_GOLD]</Italian>
+		<Spanish>[NEWLINE]%d3 [ICON_GOLD]: coste de suministro por lejan&#237;a para %d1 [NUM1:unidad:unidades] (suministro gratis para %d2) %s4[NEWLINE]%d6%% desde Estasis[NEWLINE]------------------------[NEWLINE]COSTE DE SUMINISTRO TOTAL: %d5 [ICON_GOLD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_STASIS_TURNS_REMAINING</Tag>
+		<English>Stasis lasts for %d1 more turns</English>
+		<French>La stase dure encore %d1 tours</French>
+		<German>Stasis hält %d1 weitere Runden an</German>
+		<Italian>La stasi dura per %d1 turni in più</Italian>
+		<Spanish>La estasis dura %d1 turnos más</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPELL_REWORKEDSTASIS_HELP</Tag>
+		<English>[ICON_BULLET]Applies gradually reducing penalties to other players city growth, production, culture, great people, and commerce, and promotions to their units that wear off over time</English>
+		<French>[ICON_BULLET]Applique progressivement des pénalités sur la croissance de la ville, la production, la culture, les bonnes personnages et le commerce des autres joueurs, ainsi que les promotions sur leurs unités qui s'estompent avec le temps</French>
+		<German>[ICON_BULLET]Wird allmählich Strafen für das Stadtwachstum, die Produktion, die Kultur, die großen Persönlichkeiten und den Handel anderer Spieler reduziert, und Beförderungen für deren Einheiten verringern sich mit der Zeit</German>
+		<Italian>[ICON_BULLET]Applica gradualmente penalità ridotte alla crescita della città, produzione, cultura, grandi personaggi e commercio degli altri giocatori, e promozioni alle loro unità che svaniscono col tempo</Italian>
+		<Spanish>[ICON_BULLET]Aplica reduciendo gradualmente las penalizaciones al crecimiento de la ciudad, producción, cultura, gran gente y comercio de otros jugadores, y promociones a sus unidades que se desgastan con el tiempo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GLOBALSPELL_REWORKEDSTASIS</Tag>
+		<English>Applies fading penalties to the cities and units of other players</English>
+		<French>Applique des pénalités de fondu aux villes et unités des autres joueurs</French>
+		<German>Legt Schwächungsstrafen auf die Städte und Einheiten anderer Spieler an</German>
+		<Italian>Applica penalità di svanimento alle città e alle unità degli altri giocatori</Italian>
+		<Spanish>Aplica penalizaciones de desvanecimiento a las ciudades y unidades de otros jugadores</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_CHILLED_BODY</Tag>
+		<English>Chilled Body</English>
+		<French>Corps Refroidi</French>
+		<German>Kalter Körper</German>
+		<Italian>Corpo Raffreddato</Italian>
+		<Spanish>Cuerpo Frío</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_CHILLED_SOUL</Tag>
+		<English>Chilled Soul</English>
+		<French>Âme Froide</French>
+		<German>Kalter Geist</German>
+		<Italian>Anima Fredda</Italian>
+		<Spanish>Alma Fría</Spanish>
+	</TEXT>
+</Civ4GameText>

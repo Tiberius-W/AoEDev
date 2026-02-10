@@ -1445,6 +1445,29 @@ public:
 	DllExport int getDisableProduction() const;
 	DllExport void changeDisableResearch(int iChange);
 	DllExport int getDisableResearch() const;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	DllExport int getMaxStasisTurns() const;
+	DllExport void changeMaxStasisTurns(int iChange);
+	DllExport int getRemainingStasisTurns() const;
+	DllExport void changeRemainingStasisTurns(int iChange);
+	DllExport int getStasisBaseGrowthThreshold() const;
+	DllExport void changeStasisBaseGrowthThreshold(int iChange);
+	DllExport int getStasisBaseProductionModifier() const;
+	DllExport void changeStasisBaseProductionModifier(int iChange);
+	DllExport int getStasisBaseCommerceModifier() const;
+	DllExport void changeStasisBaseCommerceModifier(int iChange);
+	DllExport int getStasisBaseCultureModifier() const;
+	DllExport void changeStasisBaseCultureModifier(int iChange);
+	DllExport int getStasisBaseGPPModifier() const;
+	DllExport void changeStasisBaseGPPModifier(int iChange);
+	DllExport int stasisEffectOnModifier(int iModifier) const;
+	DllExport void resetStasis();
+/*************************************************************************************************/
+/**	StasisReworkCode						END											Klauros	**/
+/*************************************************************************************************/
 	DllExport void changeDisableSpellcasting(int iChange);
 	DllExport int getDisableSpellcasting() const;
 	int getEnslavementChance() const;
@@ -1935,6 +1958,20 @@ protected:
 /*************************************************************************************************/
 	int m_iDisableProduction;
 	int m_iDisableResearch;
+/*************************************************************************************************/
+/**	StasisReworkCode					Feb 1 2026										Klauros	**/
+/**								Coding for Stasis Rework										**/
+/*************************************************************************************************/
+	int m_iMaxStasisTurns;
+	int m_iRemainingStasisTurns;
+	int m_iStasisBaseGrowthThreshold;
+	int m_iStasisBaseProductionModifier;
+	int m_iStasisBaseCommerceModifier;
+	int m_iStasisBaseCultureModifier;
+	int m_iStasisBaseGPPModifier;
+/*************************************************************************************************/
+/**	StasisReworkCode						END													**/
+/*************************************************************************************************/
 	int m_iDisableSpellcasting;
 	int m_iDiscoverRandModifier;
 	int m_iSpreadRandModifier;
