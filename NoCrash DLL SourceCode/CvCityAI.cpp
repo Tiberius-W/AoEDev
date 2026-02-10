@@ -3807,7 +3807,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 		{
 			eLoopBuilding = ((BuildingTypes)(getCityBuildings(iI)));
 
-			if (bGrowMore && GC.getBuildingInfo(eLoopBuilding).isFoodProduction())
+			if (eLoopBuilding!=NO_BUILDING && bGrowMore && GC.getBuildingInfo(eLoopBuilding).isFoodProduction())
 			{
 				continue;
 			}
