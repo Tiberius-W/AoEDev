@@ -4843,6 +4843,9 @@ class CvMainInterface:
 		screen.hide( "HighToLowTag" )
 		screen.hide( "DisableProductionTag" )
 		screen.hide( "DisableResearchTag" )
+#StasisRework Addition by Klauros
+		screen.hide( "StasisTag" )
+#End StasisRework Addition
 		screen.hide( "DisableSpellcastingTag" )
 		for i in xrange( gc.getMAX_PLAYERS() ):
 			screen.hide( "ScoreText" + str(i) )
@@ -5087,6 +5090,14 @@ class CvMainInterface:
 			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_DISABLE_RESEARCH", (pActivePlayer.getDisableResearch(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
 			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 			screen.show( szName )
+#StasisRework Addition by Klauros
+		if pActivePlayer.getRemainingStasisTurns() > 0:
+			iRowSpecial += 1
+			szName = "StasisTag"
+			szBuffer = u"<font=2>" + localText.getColorText("TXT_KEY_MESSAGE_STASIS_TURNS_REMAINING", (pActivePlayer.getRemainingStasisTurns(), ()), gc.getInfoTypeForString("COLOR_RED")) + "</font>"
+			screen.setText( szName, "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, iX, iY - ((iRow + iRowSpecial) * iBtnHeight), -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			screen.show( szName )
+#End StasisRework Addition
 		if pActivePlayer.getDisableSpellcasting() > 0:
 			iRowSpecial += 1
 			szName = "DisableSpellcastingTag"
