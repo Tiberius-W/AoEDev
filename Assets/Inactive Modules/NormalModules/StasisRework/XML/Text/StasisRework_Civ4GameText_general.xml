@@ -39,11 +39,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPELL_REWORKEDSTASIS_HELP</Tag>
-		<English>[ICON_BULLET]Applies gradually reducing penalties to other players city growth, production, culture, great people, and commerce, and promotions to their units that wear off over time</English>
-		<French>[ICON_BULLET]Applique progressivement des pénalités sur la croissance de la ville, la production, la culture, les bonnes personnages et le commerce des autres joueurs, ainsi que les promotions sur leurs unités qui s'estompent avec le temps</French>
-		<German>[ICON_BULLET]Wird allmählich Strafen für das Stadtwachstum, die Produktion, die Kultur, die großen Persönlichkeiten und den Handel anderer Spieler reduziert, und Beförderungen für deren Einheiten verringern sich mit der Zeit</German>
-		<Italian>[ICON_BULLET]Applica gradualmente penalità ridotte alla crescita della città, produzione, cultura, grandi personaggi e commercio degli altri giocatori, e promozioni alle loro unità che svaniscono col tempo</Italian>
-		<Spanish>[ICON_BULLET]Aplica reduciendo gradualmente las penalizaciones al crecimiento de la ciudad, producción, cultura, gran gente y comercio de otros jugadores, y promociones a sus unidades que se desgastan con el tiempo</Spanish>
+		<English>[ICON_BULLET]Applies gradually reducing penalties to other players city growth, production, culture, great people, and commerce, and the promotions [LINK=PROMOTION_CHILLED_BODY]Chilled Body[\LINK] and [LINK=PROMOTION_CHILLED_SOUL]Chilled Soul[\LINK] to their units (which wear off over time)</English>
+		<French>[ICON_BULLET]Applique progressivement des pénalités réduites à la croissance urbaine, à la production, à la culture, aux bonnes personnalités et au commerce des autres joueurs, ainsi que les promotions [LINK=PROMOTION_CHILLED_BODY]Corps Refroidi[\LINK] et [LINK=PROMOTION_CHILLED_SOUL]Âme Froide[\LINK] à leurs unités (qui s'estompent avec le temps)</French>
+		<German>[ICON_BULLET]Es wird allmählich Strafen für Stadtwachstum, Produktion, Kultur, großartige Menschen und Handel anderer Spieler reduziert, und die Beförderungen [LINK=PROMOTION_CHILLED_BODY]Kalter Körper[\LINK] und [LINK=PROMOTION_CHILLED_SOUL]Kalter Geist[\LINK] auf ihre Einheiten reduziert (die mit der Zeit nachlassen).</German>
+		<Italian>[ICON_BULLET]Applica gradualmente penalità riducendo la crescita della città, la produzione, la cultura, le grandi persone e il commercio degli altri giocatori, e le promozioni [LINK=PROMOTION_CHILLED_BODY]Corpo Raffreddato[\LINK] e [LINK=PROMOTION_CHILLED_SOUL]Anima Fredda[\LINK] alle loro unità (che svaniscono col tempo)</Italian>
+		<Spanish>[ICON_BULLET]Aplica que reduce gradualmente las penalizaciones al crecimiento de la ciudad, producción, cultura, gran gente y comercio de otros jugadores, y las promociones [LINK=PROMOTION_CHILLED_BODY]Cuerpo Frío[\LINK] y [LINK=PROMOTION_CHILLED_SOUL]Alma Fría[\LINK] a sus unidades (que se desgastan con el tiempo)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GLOBALSPELL_REWORKEDSTASIS</Tag>
@@ -59,7 +59,7 @@
 		<French>Corps Refroidi</French>
 		<German>Kalter Körper</German>
 		<Italian>Corpo Raffreddato</Italian>
-		<Spanish>Cuerpo Frío</Spanish>
+		<Spanish>c</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_CHILLED_SOUL</Tag>
