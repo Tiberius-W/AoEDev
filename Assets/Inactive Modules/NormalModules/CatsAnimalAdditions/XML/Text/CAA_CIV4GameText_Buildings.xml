@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RODENT_NEST</Tag>
+		<English>Rodent Nest</English>
+		<French>Rodent Nest</French>
+		<German>Rodent Nest</German>
+		<Italian>Rodent Nest</Italian>
+		<Spanish>Rodent Nest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUNYIP_FARM</Tag>
+		<English>Bunyip Farm</English>
+		<French>Bunyip Farm</French>
+		<German>Bunyip Farm</German>
+		<Italian>Bunyip Farm</Italian>
+		<Spanish>Bunyip Farm</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SEA_SERPENT_SHIPPING</Tag>
+		<English>Sea Serpent Shipping</English>
+		<French>Sea Serpent Shipping</French>
+		<German>Sea Serpent Shipping</German>
+		<Italian>Sea Serpent Shipping</Italian>
+		<Spanish>Sea Serpent Shipping</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURTLE_YARD</Tag>
+		<English>Turtle Offshore Shipyard</English>
+		<French>Turtle Offshore Shipyard</French>
+		<German>Turtle Offshore Shipyard</German>
+		<Italian>Turtle Offshore Shipyard</Italian>
+		<Spanish>Turtle Offshore Shipyard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CARGO_KRAKEN</Tag>
+		<English>Cargo Crane Kraken</English>
+		<French>Cargo Crane Kraken</French>
+		<German>Cargo Crane Kraken</German>
+		<Italian>Cargo Crane Kraken</Italian>
+		<Spanish>Cargo Crane Kraken</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUNTING_FROGS</Tag>
+		<English>Insect Hunting Frogs</English>
+		<French>Insect Hunting Frogs</French>
+		<German>Insect Hunting Frogs</German>
+		<Italian>Insect Hunting Frogs</Italian>
+		<Spanish>Insect Hunting Frogs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STINGMARCH</Tag>
+		<English>The Stingmarch</English>
+		<French>The Stingmarch</French>
+		<German>The Stingmarch</German>
+		<Italian>The Stingmarch</Italian>
+		<Spanish>The Stingmarch</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RAPTOR_RACING</Tag>
+		<English>Raptor Racing</English>
+		<French>Raptor Racing</French>
+		<German>Raptor Racing</German>
+		<Italian>Raptor Racing</Italian>
+		<Spanish>Raptor Racing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WYRM_CARAVAN_SAND</Tag>
+		<English>Wyrm Caravan (Sand)</English>
+		<French>Wyrm Caravan (Sand)</French>
+		<German>Wyrm Caravan (Sand)</German>
+		<Italian>Wyrm Caravan (Sand)</Italian>
+		<Spanish>Wyrm Caravan (Sand)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WYRM_CARAVAN_FROST</Tag>
+		<English>Wyrm Caravan (Frost)</English>
+		<French>Wyrm Caravan (Frost)</French>
+		<German>Wyrm Caravan (Frost)</German>
+		<Italian>Wyrm Caravan (Frost)</Italian>
+		<Spanish>Wyrm Caravan (Frost)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WYRM_CARAVAN_MARSH</Tag>
+		<English>Wyrm Caravan (Marsh)</English>
+		<French>Wyrm Caravan (Marsh)</French>
+		<German>Wyrm Caravan (Marsh)</German>
+		<Italian>Wyrm Caravan (Marsh)</Italian>
+		<Spanish>Wyrm Caravan (Marsh)</Spanish>
+	</TEXT>
+</Civ4GameText>

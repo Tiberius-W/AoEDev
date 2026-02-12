@@ -1,0 +1,27 @@
+[name]
+Cats Animal Additions
+[version]
+1.0
+[rifeversion]
+383
+[author]
+Catmillo
+[dependency]
+;
+[compatible]
+;
+[shortdesc]
+More animal pens and buildings for your cities and a way to spread these
+[desc]
+Hi ^^, thanks for checking.
+|
+This is a mod I made because I was annoyed at how little impact domesticating fantastical beasts had on the gameplay.
+|
+Feature list:
+• New animal buildings for those missing them
+• New buildable unites that spread these new buildings
+|
+ _._     _,-'""`-.
+(,-.`._,'(       |\`-/|
+    `-.-' \ )-`( , o o)
+            `-    \`_`"'-

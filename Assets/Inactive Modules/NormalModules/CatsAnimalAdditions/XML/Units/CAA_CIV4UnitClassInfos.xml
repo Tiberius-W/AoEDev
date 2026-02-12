@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Derek Paxton (None) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- UnitClass Schema -->
+<Civ4UnitClassInfos xmlns="x-schema:CAA_CIV4UnitSchema.xml">
+	<UnitClassInfos>
+		
+		<!-- Unites that spread the NEW Buildings -->
+		
+		<UnitClassInfo>		<!-- Lab Rat -->
+			<Type>UNITCLASS_LAB_RAT</Type>
+			<Description>TXT_KEY_UNIT_LAB_RAT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_LAB_RAT</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Bunyip Tanker -->
+			<Type>UNITCLASS_BUNYIP_TANKER</Type>
+			<Description>TXT_KEY_UNIT_BUNYIP_TANKER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_BUNYIP_TANKER</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Sea Serpent -->
+			<Type>UNITCLASS_DOCILE_SEA_SERPENT</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_SEA_SERPENT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_SEA_SERPENT</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Giant Turtle -->
+			<Type>UNITCLASS_DOCILE_GIANT_TORTOISE</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_GIANT_TORTOISE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_GIANT_TORTOISE</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Kraken -->
+			<Type>UNITCLASS_DOCILE_KRAKEN</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_KRAKEN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_KRAKEN</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Exterminator Frogs -->
+			<Type>UNITCLASS_EXTERMINATOR_TOAD</Type>
+			<Description>TXT_KEY_UNIT_EXTERMINATOR_TOAD</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_EXTERMINATOR_TOAD</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Scorpions Pilgramage -->
+			<Type>UNITCLASS_SCORPIONS_PILGRAMAGE</Type>
+			<Description>TXT_KEY_UNIT_SCORPIONS_PILGRAMAGE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SCORPIONS_PILGRAMAGE</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Racing Raptors -->
+			<Type>UNITCLASS_RACING_RAPTORS</Type>
+			<Description>TXT_KEY_UNIT_RACING_RAPTORS</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_RACING_RAPTORS</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Wandering Wyrm Caravan (Sand) -->
+			<Type>UNITCLASS_SAND_WORM_WANDERING_CARAVAN</Type>
+			<Description>TXT_KEY_UNIT_SAND_WORM_WANDERING_CARAVAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SAND_WORM_WANDERING_CARAVAN</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Wandering Wyrm Caravan (Frost) -->
+			<Type>UNITCLASS_FROST_WORM_WANDERING_CARAVAN</Type>
+			<Description>TXT_KEY_UNIT_FROST_WORM_WANDERING_CARAVAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_FROST_WORM_WANDERING_CARAVAN</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Wandering Wyrm Caravan (Marsh) -->
+			<Type>UNITCLASS_MARSH_WORM_WANDERING_CARAVAN</Type>
+			<Description>TXT_KEY_UNIT_MARSH_WORM_WANDERING_CARAVAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_MARSH_WORM_WANDERING_CARAVAN</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		
+		<!-- Unites that spread the OLD Buildings -->
+		
+		<UnitClassInfo>		<!-- Docile Griffon -->
+			<Type>UNITCLASS_DOCILE_GRIFFON</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_GRIFFON</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_GRIFFON</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Elephant -->
+			<Type>UNITCLASS_DOCILE_ELEPHANT</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_ELEPHANT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_ELEPHANT</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Boar -->
+			<Type>UNITCLASS_DOCILE_BOAR</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_BOAR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_BOAR</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Goat -->
+			<Type>UNITCLASS_DOCILE_GOAT</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_GOAT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_GOAT</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Stag -->
+			<Type>UNITCLASS_DOCILE_STAG</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_STAG</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_STAG</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Carnival Bear -->
+			<Type>UNITCLASS_CARNIVAL_BEAR</Type>
+			<Description>TXT_KEY_UNIT_CARNIVAL_BEAR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVAL_BEAR</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Carnival Gorilla -->
+			<Type>UNITCLASS_CARNIVAL_GORILLA</Type>
+			<Description>TXT_KEY_UNIT_CARNIVAL_GORILLA</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVAL_GORILLA</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Carnival Tiger -->
+			<Type>UNITCLASS_CARNIVAL_TIGER</Type>
+			<Description>TXT_KEY_UNIT_CARNIVAL_TIGER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVAL_TIGER</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Carnival Wolf -->
+			<Type>UNITCLASS_CARNIVAL_WOLF</Type>
+			<Description>TXT_KEY_UNIT_CARNIVAL_WOLF</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVAL_WOLF</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Carnival Lion -->
+			<Type>UNITCLASS_CARNIVAL_LION</Type>
+			<Description>TXT_KEY_UNIT_CARNIVAL_LION</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_CARNIVAL_LION</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		<UnitClassInfo>		<!-- Docile Silk Spider -->
+			<Type>UNITCLASS_DOCILE_SILK_SPIDER</Type>
+			<Description>TXT_KEY_UNIT_DOCILE_SILK_SPIDER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DOCILE_SILK_SPIDER</DefaultUnit>
+			<iMercenaryWeight>-1</iMercenaryWeight>
+		</UnitClassInfo>
+		
+	</UnitClassInfos>
+</Civ4UnitClassInfos>

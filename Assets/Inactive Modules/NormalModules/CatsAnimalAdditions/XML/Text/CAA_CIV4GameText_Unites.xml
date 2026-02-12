@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with the FfH editor by Kael -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - Units -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	
+	<!-- Unites for the NEW Buildings -->
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LAB_RAT</Tag>
+		<English>Lab Rat</English>
+		<French>Lab Rat</French>
+		<German>Lab Rat</German>
+		<Italian>Lab Rat</Italian>
+		<Spanish>Lab Rat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BUNYIP_TANKER</Tag>
+		<English>Bunyip Tanker</English>
+		<French>Bunyip Tanker</French>
+		<German>Bunyip Tanker</German>
+		<Italian>Bunyip Tanker</Italian>
+		<Spanish>Bunyip Tanker</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_SEA_SERPENT</Tag>
+		<English>Docile Sea Serpent</English>
+		<French>Docile Sea Serpent</French>
+		<German>Docile Sea Serpent</German>
+		<Italian>Docile Sea Serpent</Italian>
+		<Spanish>Docile Sea Serpent</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_GIANT_TORTOISE</Tag>
+		<English>Docile Giant Turtle</English>
+		<French>Docile Giant Turtle</French>
+		<German>Docile Giant Turtle</German>
+		<Italian>Docile Giant Turtle</Italian>
+		<Spanish>Docile Giant Turtle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_KRAKEN</Tag>
+		<English>Docile Kraken</English>
+		<French>Docile Kraken</French>
+		<German>Docile Kraken</German>
+		<Italian>Docile Kraken</Italian>
+		<Spanish>Docile Kraken</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXTERMINATOR_TOAD</Tag>
+		<English>Exterminator Frogs</English>
+		<French>Exterminator Frogs</French>
+		<German>Exterminator Frogs</German>
+		<Italian>Exterminator Frogs</Italian>
+		<Spanish>Exterminator Frogs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SCORPIONS_PILGRAMAGE</Tag>
+		<English>Scorpions Pilgramage</English>
+		<French>Scorpions Pilgramage</French>
+		<German>Scorpions Pilgramage</German>
+		<Italian>Scorpions Pilgramage</Italian>
+		<Spanish>Scorpions Pilgramage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RACING_RAPTORS</Tag>
+		<English>Racing Raptors</English>
+		<French>Racing Raptors</French>
+		<German>Racing Raptors</German>
+		<Italian>Racing Raptors</Italian>
+		<Spanish>Racing Raptors</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SAND_WORM_WANDERING_CARAVAN</Tag>
+		<English>Wandering Wyrm Caravan (Sand)</English>
+		<French>Wandering Wyrm Caravan (Sand)</French>
+		<German>Wandering Wyrm Caravan (Sand)</German>
+		<Italian>Wandering Wyrm Caravan (Sand)</Italian>
+		<Spanish>Wandering Wyrm Caravan (Sand)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FROST_WORM_WANDERING_CARAVAN</Tag>
+		<English>Wandering Wyrm Caravan (Frost)</English>
+		<French>Wandering Wyrm Caravan (Frost)</French>
+		<German>Wandering Wyrm Caravan (Frost)</German>
+		<Italian>Wandering Wyrm Caravan (Frost)</Italian>
+		<Spanish>Wandering Wyrm Caravan (Frost)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MARSH_WORM_WANDERING_CARAVAN</Tag>
+		<English>Wandering Wyrm Caravan (Marsh)</English>
+		<French>Wandering Wyrm Caravan (Marsh)</French>
+		<German>Wandering Wyrm Caravan (Marsh)</German>
+		<Italian>Wandering Wyrm Caravan (Marsh)</Italian>
+		<Spanish>Wandering Wyrm Caravan (Marsh)</Spanish>
+	</TEXT>
+	
+	<!-- Unites for the OLD Buildings -->
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_GRIFFON</Tag>
+		<English>Docile Griffon</English>
+		<French>Docile Griffon</French>
+		<German>Docile Griffon</German>
+		<Italian>Docile Griffon</Italian>
+		<Spanish>Docile Griffon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_ELEPHANT</Tag>
+		<English>Docile Elephant</English>
+		<French>Docile Elephant</French>
+		<German>Docile Elephant</German>
+		<Italian>Docile Elephant</Italian>
+		<Spanish>Docile Elephant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_BOAR</Tag>
+		<English>Docile Boar</English>
+		<French>Docile Boar</French>
+		<German>Docile Boar</German>
+		<Italian>Docile Boar</Italian>
+		<Spanish>Docile Boar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_GOAT</Tag>
+		<English>Docile Goat</English>
+		<French>Docile Goat</French>
+		<German>Docile Goat</German>
+		<Italian>Docile Goat</Italian>
+		<Spanish>Docile Goat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_STAG</Tag>
+		<English>Docile Stag</English>
+		<French>Docile Stag</French>
+		<German>Docile Stag</German>
+		<Italian>Docile Stag</Italian>
+		<Spanish>Docile Stag</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVAL_BEAR</Tag>
+		<English>Carnival Bear</English>
+		<French>Carnival Bear</French>
+		<German>Carnival Bear</German>
+		<Italian>Carnival Bear</Italian>
+		<Spanish>Carnival Bear</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVAL_GORILLA</Tag>
+		<English>Carnival Gorilla</English>
+		<French>Carnival Gorilla</French>
+		<German>Carnival Gorilla</German>
+		<Italian>Carnival Gorilla</Italian>
+		<Spanish>Carnival Gorilla</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVAL_TIGER</Tag>
+		<English>Carnival Tiger</English>
+		<French>Carnival Tiger</French>
+		<German>Carnival Tiger</German>
+		<Italian>Carnival Tiger</Italian>
+		<Spanish>Carnival Tiger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVAL_WOLF</Tag>
+		<English>Carnival Wolf</English>
+		<French>Carnival Wolf</French>
+		<German>Carnival Wolf</German>
+		<Italian>Carnival Wolf</Italian>
+		<Spanish>Carnival Wolf</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARNIVAL_LION</Tag>
+		<English>Carnival Lion</English>
+		<French>Carnival Lion</French>
+		<German>Carnival Lion</German>
+		<Italian>Carnival Lion</Italian>
+		<Spanish>Carnival Lion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOCILE_SILK_SPIDER</Tag>
+		<English>Docile Silk Spider</English>
+		<French>Docile Silk Spider</French>
+		<German>Docile Silk Spider</German>
+		<Italian>Docile Silk Spider</Italian>
+		<Spanish>Docile Silk Spider</Spanish>
+	</TEXT>
+	
+</Civ4GameText>
