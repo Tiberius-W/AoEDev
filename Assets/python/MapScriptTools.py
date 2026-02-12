@@ -7343,7 +7343,7 @@ class MapPrint:
 				else:
 					linPlots += "?"									# something is wrong - unknown terrain
 					sprint += "[MST] Unknown Terrain @ %i,%i - %i.%r \n" % (xx, yy, ter, gc.getTerrainInfo(ter).getType())
-					sprint += "[MST] - known Terrains: %r \n" % (dTerrain)
+					sprint += "[MST] - known Terrains: %r \n" % (dTerrains)
 			# place lines into dictionary
 			self.__lines[ self.__offset[0]+y ] = linPlots
 		# print errors, if any

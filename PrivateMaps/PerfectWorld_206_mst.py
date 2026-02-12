@@ -4479,8 +4479,11 @@ class StartingPlotFinder :
 		for n in range(gc.getNumBuildInfos()):
 			#Test for improvement validity
 			buildInfo = gc.getBuildInfo(n)
-			impEnum = buildInfo.getImprovement()
+			iImprovementClass = buildInfo.getImprovementClass()
+			if iImprovementClass == -1: continue
+			impEnum = gc.getImprovementClassInfo(iImprovementClass).getDefaultImprovementIndex()
 			impInfo = gc.getImprovementInfo(impEnum)
+			
 			if impInfo == None:
 				continue
 			#some mods use improvements for other things, so if there's no tech requirement we still don't want it factored in.

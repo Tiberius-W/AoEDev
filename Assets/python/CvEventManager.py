@@ -1676,6 +1676,8 @@ class CvEventManager:
 			if lReminders:
 				self.reminders = lReminders
 
+		CyGame().setAIAutoPlay(0)
+
 		## *******************
 		## Modular Python: ANW 29-may-2010
 

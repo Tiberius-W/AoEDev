@@ -151,7 +151,7 @@ class CvReligionScreen:
 		self.X_CITY2_AREA = 522
 		self.Y_CITY_AREA = 250
 		self.W_CITY_AREA = 457
-		self.H_CITY_AREA = 460
+		self.H_CITY_AREA = 412
 
 		self.X_CITY = 10
 		self.DY_CITY = 38
