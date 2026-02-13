@@ -19,6 +19,7 @@
 			<Button>Art/Modules/MagisterAshes/Buttons/Asmoday.dds</Button>
 			<iCollateralExtraTargets>2</iCollateralExtraTargets>
 			<iCollateralLimitBoost>20</iCollateralLimitBoost>
+			<iCollateralDamageChange>10</iCollateralDamageChange>
 			<PrereqTraits>
 				<PrereqTrait>TRAIT_KEEPERS_ASMODAY</PrereqTrait>
 			</PrereqTraits>
@@ -61,6 +62,7 @@
 			<Button>Art/Modules/MagisterAshes/Buttons/Asmoday.dds</Button>
 			<iCollateralExtraTargets>2</iCollateralExtraTargets>
 			<iCollateralLimitBoost>40</iCollateralLimitBoost>
+			<iCollateralDamageChange>20</iCollateralDamageChange>
 			<PrereqTraits>
 				<PrereqTrait>TRAIT_KEEPERS_ASMODAY</PrereqTrait>
 			</PrereqTraits>
