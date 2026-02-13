@@ -266,8 +266,9 @@ class CustomFunctions:
 		if iNumScions:
 			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 				pLoopPlayer	= gc.getPlayer(iLoopPlayer)
+				if not pLoopPlayer.isAlive():					continue
 				iLoopCiv	= pLoopPlayer.getCivilizationType()
-				if iLoopCiv != self.Civilizations["Scions"]: continue
+				if iLoopCiv != self.Civilizations["Scions"]:	continue
 				iNatureMana = pLoopPlayer.getNumAvailableBonuses(self.Mana["Nature"])
 				iManaMod = 1 + (iNatureMana * 0.1)
 				iGhostwalkerFactor	= pLoopPlayer.getUnitClassCount(self.UnitClasses["Ranger"])
@@ -376,8 +377,8 @@ class CustomFunctions:
 				if git("MODULE_EMERGENT_LEADERS") != -1:
 					for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 						pLoopPlayer = gc.getPlayer(iLoopPlayer)
-						if not pLoopPlayer.hasTrait(self.Traits["Matriarch 1"]): continue
 						if not pLoopPlayer.isAlive(): continue
+						if not pLoopPlayer.hasTrait(self.Traits["Matriarch 1"]): continue
 						iOrthusPlayer = iLoopPlayer
 				addUnit(self.Heroes["Orthus"], iOrthusPlayer)
 		elif iTurn == lSpawnTurns[1]:
@@ -1316,6 +1317,7 @@ class CustomFunctions:
 		for iPlayer2 in xrange(gc.getMAX_PLAYERS()):
 			iWarCount	= pTeam.getAtWarCount(True)
 			pPlayer2	= gc.getPlayer(iPlayer2)
+			if not pPlayer2.isAlive(): continue
 			iCiv2		= pPlayer2.getCivilizationType()
 			bBetter		= False
 			bWorse2		= False
@@ -1324,7 +1326,6 @@ class CustomFunctions:
 				bBetter	= True
 			if iEnemy == -1 or CyGame().getPlayerRank(iPlayer2) > CyGame().getPlayerRank(iEnemy):
 				bWorse2 = True
-			if not pPlayer2.isAlive(): continue
 			iTeam2 = pPlayer2.getTeam()
 
 			if pTeam.isAtWar(iTeam2):
@@ -1837,11 +1838,11 @@ class CustomFunctions:
 		# Creating a list of starting points to avoid few checks every plot
 		for iPlayer in xrange(gc.getMAX_PLAYERS()):
 			pLoopPlayer = gc.getPlayer(iPlayer)
-			if pLoopPlayer.isAlive():
-				iNumCities += 1
-				pStartingPlot = pLoopPlayer.getStartingPlot()
-				if pStartingPlot.isNone(): continue
-				lStartingPlots.append(pStartingPlot)
+			if not pLoopPlayer.isAlive():	continue
+			iNumCities += 1
+			pStartingPlot = pLoopPlayer.getStartingPlot()
+			if pStartingPlot.isNone():		continue
+			lStartingPlots.append(pStartingPlot)
 
 		# Early exits everywhere to shave some time
 		for iPlot in xrange(CyMap().numPlots()):
@@ -3118,8 +3119,9 @@ class CustomFunctions:
 		### If a member of TeamA or TeamB is a DemonLord put their trait in the list
 		for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 			pLoopPlayer				= gc.getPlayer(iLoopPlayer)
+			if not pLoopPlayer.isAlive():	continue
 			iLeader					= pLoopPlayer.getLeaderType()
-			if not iLeader in lEverActive: continue
+			if not iLeader in lEverActive:	continue
 			iLoopTeam				= pLoopPlayer.getTeam()
 			if   iLoopTeam == iTeamA:
 				iIndex				= lDemonLordsList.index(iLeader)
@@ -3132,8 +3134,9 @@ class CustomFunctions:
 			iTrait					= gc.getInfoTypeForString(szTrait)
 			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 				pLoopPlayer			= gc.getPlayer(iLoopPlayer)
+				if not pLoopPlayer.isAlive():	continue
 				iLoopTeam			= pLoopPlayer.getTeam()
-				if iLoopTeam != iTeamB: continue
+				if iLoopTeam != iTeamB:			continue
 				if not gc.isNoCrash():
 					pLoopPlayer.setHasTrait((iTrait),False,-1,True,True)
 				else:
@@ -3143,8 +3146,9 @@ class CustomFunctions:
 			iTrait					= gc.getInfoTypeForString(szTrait)
 			for iLoopPlayer in xrange(gc.getMAX_PLAYERS()):
 				pLoopPlayer			= gc.getPlayer(iLoopPlayer)
+				if not pLoopPlayer.isAlive():	continue
 				iLoopTeam			= pLoopPlayer.getTeam()
-				if iLoopTeam != iTeamA: continue
+				if iLoopTeam != iTeamA:			continue
 				if not gc.isNoCrash():
 					pLoopPlayer.setHasTrait((iTrait),False,-1,True,True)
 				else:
