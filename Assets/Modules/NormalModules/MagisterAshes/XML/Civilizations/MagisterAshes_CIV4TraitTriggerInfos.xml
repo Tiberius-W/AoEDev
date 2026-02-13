@@ -40,7 +40,7 @@
 			<PrereqImprovementType>IMPROVEMENT_BADBS_BLIZZARD</PrereqImprovementType>
 		</TraitTriggerInfo>
 		<TraitTriggerInfo> <!-- Gain improvement	Carnivean's Camp					Keepers -->
-			<Type>TRAITTRIGGER_GAIN_IMPROVEMENT_CARNIVEAN</Type>
+			<Type>TRAITTRIGGER_GAIN_PLOT_CARNIVEAN</Type>
 			<CounterChanges>
 				<CounterChange>
 					<TraitType>TRAIT_KEEPERS_CARNIVEAN</TraitType>

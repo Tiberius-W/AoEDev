@@ -16908,7 +16908,6 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Verdandi -->
 			<Class>UNITCLASS_PHALANX</Class>
-			<SecondaryClass>UNITCLASS_BERSERKER</SecondaryClass>
 			<Type>UNIT_VERDANDI</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -51275,6 +51274,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_UNDEAD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
 			<iMoves>1</iMoves>
 			<iAirRange>1</iAirRange>
 			<FeaturePassableTechs/>
@@ -51334,6 +51339,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_UNDEAD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
 			<iMoves>1</iMoves>
 			<iCombat>3</iCombat>
 			<iCombatDefense>4</iCombatDefense>
@@ -51382,6 +51393,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_UNDEAD</PromotionType>
+					<iNumApplied>1</iNumApplied>
+				</FreePromotion>
+			</FreePromotions>
 			<iMoves>1</iMoves>
 			<iCombat>4</iCombat>
 			<iCombatDefense>4</iCombatDefense>

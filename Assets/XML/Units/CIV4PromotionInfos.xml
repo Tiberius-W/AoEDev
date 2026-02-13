@@ -389,6 +389,9 @@
 			<Description>TXT_KEY_PROMOTION_ANGEL</Description>
 			<Button>Art/Interface/Buttons/Races/Race_Angel.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
 			<DamageTypeResists>
@@ -424,6 +427,9 @@
 			<Civilopedia>TXT_KEY_PROMOTION_AASIMAR_PEDIA</Civilopedia>
 			<Button>Art/Interface/Buttons/Races/Aasimar.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_DEATH</DamageType>
@@ -458,6 +464,9 @@
 			<Button>Art/Interface/Buttons/Races/Race_Avatar.dds</Button>
 			<bImmuneToCapture>1</bImmuneToCapture>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bImmuneToMagic>1</bImmuneToMagic>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
@@ -517,6 +526,9 @@
 			</TerrainDefenses>
 			<Button>Art/Interface/Buttons/Races/Race_Demon.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
 			<UnitArtStyleType>UNIT_ARTSTYLE_DEMON</UnitArtStyleType>
@@ -699,6 +711,9 @@
 			</TerrainDefenses>
 			<Button>Art/Interface/Buttons/Races/Cambion.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<DamageTypeResists>
 				<DamageTypeResist>
 					<DamageType>DAMAGE_DEATH</DamageType>
@@ -735,6 +750,9 @@
 			<Button>Art/Interface/Buttons/Races/Race_Dragon.dds</Button>
 			<bFear>1</bFear>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bRace>1</bRace>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Dwarven -->
@@ -765,6 +783,9 @@
 			<Description>TXT_KEY_PROMOTION_ELEMENTAL</Description>
 			<Button>Art/Interface/Buttons/Races/Race_Elemental.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
 			<DamageTypeResists>
@@ -957,6 +978,9 @@
 			<Description>TXT_KEY_PROMOTION_FALLEN_ANGEL</Description>
 			<Button>Art/Interface/Buttons/Races/Race_F_Angel.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
 			<DamageTypeResists>
@@ -1141,6 +1165,9 @@
 			<iFriendlyHealChange>-10</iFriendlyHealChange>
 			<Button>Art/Interface/Buttons/Races/Race_Golem.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<bRace>1</bRace>
 			<NoBadExploreImprovements>
@@ -1719,6 +1746,9 @@
 			</PromotionOverwrites>
 			<Button>Art/Interface/Buttons/Races/Race_Undead.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bNotAlive>1</bNotAlive>
 			<NoBadExploreImprovements>
 				<NoBadExploreImprovement>
@@ -2279,6 +2309,9 @@
 			<Button>Art/Interface/Buttons/Equipment/heartstone.dds</Button>
 			<bFear>1</bFear>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iCasterResistModify>-35</iCasterResistModify>
 			<iSpellCasterXP>35</iSpellCasterXP>
 			<bEquipment>1</bEquipment>
@@ -2804,6 +2837,9 @@
 			<bEquipment>1</bEquipment>
 			<bFear>1</bFear>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 		</PromotionInfo>
 		<PromotionInfo>			<!-- Mask of the Coven of the Black Candle -->
 			<Type>PROMOTION_MASK_OF_THE_COVEN_OF_THE_BLACK_CANDLE_BARBATOS</Type>
@@ -6015,6 +6051,9 @@
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
 			<Button>Art/Interface/Buttons/Promotions/AeronsChosen.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iCombatHealPercent>20</iCombatHealPercent>
 			<iMinLevel>-1</iMinLevel>
 			<DamageTypeCombats>
@@ -6366,6 +6405,9 @@
 			<Button>Art/Interface/Buttons/Units/Berserker.dds</Button>
 			<bFear>1</bFear>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iCombatHealPercent>10</iCombatHealPercent>
 			<PromotionRandomApply>PROMOTION_ENRAGED</PromotionRandomApply>
 			<iPromotionRandomApplyChance>10</iPromotionRandomApplyChance>
@@ -6799,6 +6841,9 @@
 			</UnitCombats>
 			<Button>Art/Interface/Buttons/Promotions/Burningblood.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iBetrayalChance>5</iBetrayalChance>
 			<iExpireChance>25</iExpireChance>
 			<iMinLevel>-1</iMinLevel>
@@ -7737,6 +7782,7 @@
 				<Promotion>PROMOTION_SHATTERED_NERVE</Promotion>
 				<Promotion>PROMOTION_SPOOKED</Promotion>
 				<Promotion>PROMOTION_LION_BLOOD</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<iSameTileHealChange>10</iSameTileHealChange>
 			<UnitCombats>
@@ -8358,6 +8404,9 @@
 			</DamageTypeCombats>
 			<Button>Art/Interface/Buttons/Promotions/Civs/Amurites/DeathWielder.dds</Button>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<PromotionRandomApply>PROMOTION_UNDEAD</PromotionRandomApply>
 			<iAIWeight>50</iAIWeight>
 		</PromotionInfo>
@@ -8417,6 +8466,7 @@
 			<iMinLevel>-1</iMinLevel>
 			<PromotionExcludes>
 				<Promotion>PROMOTION_ENRAGED</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<PromotionCombatMods>
 				<PromotionCombatMod>
@@ -10052,6 +10102,9 @@
 				<PrereqImprovement>IMPROVEMENT_DWARVEN_FORTRESS</PrereqImprovement>
 				<PrereqImprovement>IMPROVEMENT_DTESH_MAUSOLEUM</PrereqImprovement>
 				<PrereqImprovement>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_TEMPLE</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_CATHEDRAL</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_GRAND_SPIRE</PrereqImprovement>
 			</PrereqImprovements>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fort Commander 3 -->
@@ -10085,6 +10138,9 @@
 				<PrereqImprovement>IMPROVEMENT_CITADEL_OF_LIGHT</PrereqImprovement>
 				<PrereqImprovement>IMPROVEMENT_DWARVEN_FORTRESS</PrereqImprovement>
 				<PrereqImprovement>IMPROVEMENT_DTESH_MAUSOLEUM_GREATER</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_TEMPLE</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_CATHEDRAL</PrereqImprovement>
+				<PrereqImprovement>IMPROVEMENT_STYGIAN_GRAND_SPIRE</PrereqImprovement>
 			</PrereqImprovements>
 		</PromotionInfo>
 		<PromotionInfo>		<!-- Fort Commander 1 - Dwarven -->
@@ -11437,10 +11493,12 @@
 				<Promotion>PROMOTION_DEADLY_MISHAP</Promotion>
 				<Promotion>PROMOTION_HEROIC</Promotion>
 			    <Promotion>PROMOTION_MILITIA</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_HEROIC</Promotion>
 			    <Promotion>PROMOTION_MILITIA</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionOverwrites>
 			<iGroupSize>1</iGroupSize>
 		</PromotionInfo>
@@ -11453,9 +11511,11 @@
 				<Promotion>PROMOTION_HEROIC_DEFENSE2</Promotion>
 				<Promotion>PROMOTION_HEROIC_STRENGTH2</Promotion>
 			    <Promotion>PROMOTION_MILITIA</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 			    <Promotion>PROMOTION_MILITIA</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionOverwrites>
 			<PromotionReplacedBy>
 				<Promotion>PROMOTION_HERO</Promotion>
@@ -12360,6 +12420,7 @@
 				<Promotion>PROMOTION_ENRAGED</Promotion>
 				<Promotion>PROMOTION_LOYALTY2</Promotion>
 				<Promotion>PROMOTION_LOYALTY3</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionExcludes>
 			<UnitCombats>
 				<UnitCombat>
@@ -12426,6 +12487,7 @@
 				<Promotion>PROMOTION_ENRAGED</Promotion>
 				<Promotion>PROMOTION_LOYALTY</Promotion>
 				<Promotion>PROMOTION_LOYALTY3</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionExcludes>
 			<UnitCombats>
 				<UnitCombat>
@@ -12492,6 +12554,7 @@
 				<Promotion>PROMOTION_ENRAGED</Promotion>
 				<Promotion>PROMOTION_LOYALTY</Promotion>
 				<Promotion>PROMOTION_LOYALTY2</Promotion>
+				<Promotion>PROMOTION_ESTRANGED</Promotion>
 			</PromotionExcludes>
 			<UnitCombats>
 				<UnitCombat>
@@ -13581,6 +13644,9 @@
 			<PromotionAllows>
 				<Promotion>PROMOTION_MITHRIL_WEAPONS</Promotion>
 			</PromotionAllows>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_DISCIPLE</UnitCombatType>
@@ -31603,6 +31669,7 @@
 				<Promotion>PROMOTION_SHATTERED_NERVE</Promotion>
 				<Promotion>PROMOTION_SPOOKED</Promotion>
 				<Promotion>PROMOTION_COURAGE</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<iSameTileHealChange>10</iSameTileHealChange>
 			<UnitCombats>
@@ -35816,6 +35883,7 @@
 				<Promotion>PROMOTION_HARDY3</Promotion>
 				<Promotion>PROMOTION_MOBILITY1</Promotion>
 				<Promotion>PROMOTION_MOBILITY2</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<PromotionAllows>
 				<Promotion>PROMOTION_INDEPENDENT_V2</Promotion>
@@ -35842,6 +35910,7 @@
 				<Promotion>PROMOTION_OVERSEER_SCORCH_UNIT_V2</Promotion>
 				<Promotion>PROMOTION_OVERSEER_SPRING_UNIT_V2</Promotion>
 				<Promotion>PROMOTION_OVERSEER_BLOOM_UNIT_V2</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionAllows>
 			<CommanderPromotions>
 				<PromotionType>PROMOTION_SLUGA_PSIONIC_LINK_V2</PromotionType>
@@ -37235,6 +37304,9 @@
 				</UnitCombat>
 			</UnitCombats>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<DamageTypeCombats>
 				<DamageTypeCombat>
 					<DamageType>DAMAGE_HOLY</DamageType>
@@ -38381,6 +38453,9 @@
 			<Button>Art/Interface/Buttons/Promotions/Loyalty1.dds</Button>
 			<bImmuneToCapture>1</bImmuneToCapture>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iMinLevel>-1</iMinLevel>
 			<UnitCombats>
 				<UnitCombat>
@@ -38475,6 +38550,9 @@
 			<Button>Art/Interface/Buttons/Promotions/Loyalty1.dds</Button>
 			<bImmuneToCapture>1</bImmuneToCapture>
 			<bImmuneToFear>1</bImmuneToFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<iMinLevel>-1</iMinLevel>
 			<iCombatPercent>25</iCombatPercent>
 			<iCombatPercentDefense>-25</iCombatPercentDefense>

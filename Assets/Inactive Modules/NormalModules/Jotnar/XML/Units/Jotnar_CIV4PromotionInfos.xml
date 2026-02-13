@@ -747,6 +747,7 @@
 				<Promotion>PROMOTION_SHATTERED_NERVE</Promotion>
 				<Promotion>PROMOTION_SPOOKED</Promotion>
 				<Promotion>PROMOTION_COURAGE</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<PromotionOverwrites>
 				<Promotion>PROMOTION_PACKMASTER1</Promotion>
@@ -1483,6 +1484,9 @@
 			<iMovesChange>1</iMovesChange>
 			<Button>Art/Interface/Buttons/Units/Scions/phalanx.dds</Button>
 			<bFear>1</bFear>
+			<PromotionExcludes>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
+			</PromotionExcludes>
 			<bImmuneToFear>1</bImmuneToFear>
 			<iExpireChance>100</iExpireChance>
 		</PromotionInfo>

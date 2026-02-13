@@ -2652,6 +2652,12 @@
 			<iWarWearinessModifier>-25</iWarWearinessModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1</fVisibilityPriority>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -12821,7 +12827,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_HIPPUS_HORSELORD_FIELD_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HIPPUS_HORSELORD_FIELD_STRAT</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRAINING_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_JOUSTING_TILT</ArtDefineTag>
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<ProductionTraits>
 				<ProductionTrait>
