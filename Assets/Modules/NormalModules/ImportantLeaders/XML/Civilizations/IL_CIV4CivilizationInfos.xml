@@ -269,69 +269,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ARSON_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_BANK_ROBBERY_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_BREAKOUT_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_DESERTION_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_GANGS_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_RIOTS_ESUS</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_DEMONIC_RIOTS_ESUS</BuildingType>
-				</Building>
-
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_MURDER_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ORGANIZED_CRIME_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ROGUE_MAGES_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_SHOPLIFTING_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_TAX_EVASION_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
+				</Building>	
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_EMPTY_HEART</BuildingClassType>
 					<BuildingType>NONE</BuildingType>

@@ -82,10 +82,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_ARSON_ESUS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>

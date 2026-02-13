@@ -37,8 +37,15 @@
 	<ElementType name="iExtraMaxDamage" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraNumTargets" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraTargetRange" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraDuration" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraImmobileTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraFortifyTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraPromotionApply" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxApplications" content="textOnly" dt:type="int"/>
 	<ElementType name="bExtraImmuneTeam" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraImmuneNeutral" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraImmuneEnemy" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bExtraPermanent" content="textOnly" dt:type="boolean"/>
 	
 	<ElementType name="SpellBonus" content="eltOnly" order="many">
 		<element type="iPrereqExtraPower"/>
@@ -46,8 +53,15 @@
 		<element type="iExtraMaxDamage"/>
 		<element type="iExtraNumTargets"/>
 		<element type="iExtraTargetRange"/>
+		<element type="iExtraDuration"/>
+		<element type="iExtraImmobileTurns"/>
+		<element type="iExtraFortifyTurns"/>
+		<element type="iExtraPromotionApply"/>
 		<element type="iMaxApplications"/>
 		<element type="bExtraImmuneTeam"/>
+		<element type="bExtraImmuneNeutral"/>
+		<element type="bExtraImmuneEnemy"/>
+		<element type="bExtraPermanent"/>
 	</ElementType>
 	<ElementType name="SpellBonuses" content="eltOnly">
 		<element type="SpellBonus" minOccurs="0"/>
@@ -72,6 +86,7 @@
 	<ElementType name="UnitCombatPrereq" content="textOnly"/>
 	<ElementType name="UnitInStackPrereq" content="textOnly"/>
 	<ElementType name="BuildingPrereq" content="textOnly"/>
+	<ElementType name="BuildingClassPrereq" content="textOnly"/>
 	<ElementType name="BuildingClassOwnedPrereq" content="textOnly"/>
 	<ElementType name="CivilizationPrereq" content="textOnly"/>
 	<ElementType name="CorporationPrereq" content="textOnly"/>
@@ -161,6 +176,7 @@
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
 	<ElementType name="iDelay" content="textOnly" dt:type="int"/>
 	<ElementType name="iImmobileTurns" content="textOnly" dt:type="int"/>
+	<ElementType name="iFortifyTurns" content="textOnly" dt:type="int"/>
 	<ElementType name="iMiscastChance" content="textOnly" dt:type="int"/>
 	<ElementType name="PyMiscast" content="textOnly"/>
 	<ElementType name="PyResult" content="textOnly"/>
@@ -204,6 +220,7 @@
 		<element type="UnitCombatPrereq"/>
 		<element type="UnitInStackPrereq"/>
 		<element type="BuildingPrereq"/>
+		<element type="BuildingClassPrereq"/>
 		<element type="BuildingClassOwnedPrereq"/>
 		<element type="CivilizationPrereq"/>
 		<element type="CorporationPrereq"/>
@@ -288,6 +305,7 @@
 		<element type="iCost"/>
 		<element type="iDelay"/>
 		<element type="iImmobileTurns"/>
+		<element type="iFortifyTurns"/>
 		<element type="iMiscastChance"/>
 		<element type="PyHelp"/>
 		<element type="PyMiscast"/>

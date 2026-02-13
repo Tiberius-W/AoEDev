@@ -8974,6 +8974,7 @@ public:
 /*************************************************************************************************/
 //FfH Religion: Added by Kael 08/09/2007
 	bool isHidden() const;
+	bool isNoCrimeUnhappy() const;
 	bool isSneakAttack() const;
 	bool isUpdateSight() const;
 	int getACPlotAttenuationMod() const;
@@ -9075,6 +9076,7 @@ protected:
 /*************************************************************************************************/
 //FfH Religion: Added by Kael 08/09/2007
 	bool m_bHidden;
+	bool m_bNoCrimeUnhappy;
 	bool m_bSneakAttack;
 	bool m_bUpdateSight;
 	int m_iACPlotAttenuationMod;

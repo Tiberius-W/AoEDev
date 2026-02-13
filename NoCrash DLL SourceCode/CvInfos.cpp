@@ -39547,6 +39547,7 @@ m_iEthicalAlignmentShiftTowardsNeutral(-1),
 /*************************************************************************************************/
 //FfH Religion: Added by Kael 08/09/2007
 m_bHidden(false),
+m_bNoCrimeUnhappy(false),
 m_bSneakAttack(false),
 m_bUpdateSight(false),
 m_iACPlotAttenuationMod(0),
@@ -39908,6 +39909,11 @@ bool CvReligionInfo::isHidden() const
 	return m_bHidden;
 }
 
+bool CvReligionInfo::isNoCrimeUnhappy() const
+{
+	return m_bNoCrimeUnhappy;
+}
+
 bool CvReligionInfo::isSneakAttack() const
 {
 	return m_bSneakAttack;
@@ -40136,6 +40142,7 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 /*************************************************************************************************/
 //FfH Religions: Added by Kael 08/09/2007
 	pXML->GetChildXmlValByName(&m_bHidden, "bHidden");
+	pXML->GetChildXmlValByName(&m_bNoCrimeUnhappy, "bNoCrimeUnhappy");
 	pXML->GetChildXmlValByName(&m_bSneakAttack, "bSneakAttack");
 	pXML->GetChildXmlValByName(&m_bUpdateSight, "bUpdateSight");
 	pXML->GetChildXmlValByName(&m_iACPlotAttenuationMod, "iACPlotAttenuationMod");
@@ -40210,6 +40217,7 @@ void CvReligionInfo::copyNonDefaults(CvReligionInfo* pClassInfo, CvXMLLoadUtilit
 	CvHotkeyInfo::copyNonDefaults(pClassInfo, pXML);
 
 	if (isHidden()							== false)			m_bHidden								= pClassInfo->isHidden();
+	if (isNoCrimeUnhappy() == false)			m_bNoCrimeUnhappy = pClassInfo->isNoCrimeUnhappy();
 	if (isSneakAttack()						== false)			m_bSneakAttack							= pClassInfo->isSneakAttack();
 	if (isUpdateSight()						== false)			m_bUpdateSight							= pClassInfo->isUpdateSight();
 	if (getNumFreeUnits()					== 0)				m_iNumFreeUnits							= pClassInfo->getNumFreeUnits();

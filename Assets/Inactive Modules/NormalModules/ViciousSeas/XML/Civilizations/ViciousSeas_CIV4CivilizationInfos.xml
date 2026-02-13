@@ -65,15 +65,7 @@
 					<BuildingClassType>BUILDINGCLASS_CRIME_CUALLI_LOYALIST</BuildingClassType>
 					<BuildingType>BUILDING_CRIME_CUALLI_LOYALIST</BuildingType>
 				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_STOLEN_EGGS_ESUS</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CRIME_CUALLI_LOYALIST_ESUS</BuildingClassType>
-					<BuildingType>BUILDING_CRIME_CUALLI_LOYALIST_ESUS</BuildingType>
-				</Building>
-				<Building>
+					<Building>
 					<BuildingClassType>BUILDINGCLASS_SHIPYARD</BuildingClassType>
 					<BuildingType>BUILDING_FEEDING_GROUNDS</BuildingType>
 				</Building>

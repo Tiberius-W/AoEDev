@@ -1816,7 +1816,8 @@
 			<bMustMaintain>1</bMustMaintain>
 			<bNoXP>1</bNoXP>
 			<iNoBadExplore>25</iNoBadExplore>
-			<UnitCombats>			<!-- Why only these types? its so you can form a working adventuring party with your scouts -->
+			<!-- Why only these types? its so you can form a working adventuring party with your scouts -->
+			<UnitCombats>			
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>

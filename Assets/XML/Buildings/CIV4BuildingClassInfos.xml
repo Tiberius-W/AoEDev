@@ -3164,18 +3164,6 @@
 			<DefaultBuilding>BUILDING_CRIME_ARSON</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Arson Esus-->
-			<Type>BUILDINGCLASS_CRIME_ARSON_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ARSON</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ARSON_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Bank Robbery-->
 			<Type>BUILDINGCLASS_CRIME_BANK_ROBBERY</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_BANK_ROBBERY</Description>
@@ -3186,18 +3174,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_BANK_ROBBERY</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Bank Robbery Esus-->
-			<Type>BUILDINGCLASS_CRIME_BANK_ROBBERY_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_BANK_ROBBERY</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_BANK_ROBBERY_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Breakout-->
@@ -3212,18 +3188,6 @@
 			<DefaultBuilding>BUILDING_CRIME_BREAKOUT</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Breakout Esus-->
-			<Type>BUILDINGCLASS_CRIME_BREAKOUT_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_BREAKOUT</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_BREAKOUT_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Corruption-->
 			<Type>BUILDINGCLASS_CRIME_CORRUPTION</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
@@ -3236,18 +3200,6 @@
 			<DefaultBuilding>BUILDING_CRIME_CORRUPTION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Corruption Esus-->
-			<Type>BUILDINGCLASS_CRIME_CORRUPTION_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_CORRUPTION</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_CORRUPTION_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Desertion-->
 			<Type>BUILDINGCLASS_CRIME_DESERTION</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_DESERTION</Description>
@@ -3258,18 +3210,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_DESERTION</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Desertion Esus-->
-			<Type>BUILDINGCLASS_CRIME_DESERTION_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_DESERTION</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_DESERTION_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--False Accusation-->
@@ -3296,18 +3236,6 @@
 			<DefaultBuilding>BUILDING_CRIME_GANGS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Gangs Esus-->
-			<Type>BUILDINGCLASS_CRIME_GANGS_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_GANGS</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_GANGS_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Gangs Warfare-->
 			<Type>BUILDINGCLASS_CRIME_GANGS_WARFARE</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
@@ -3318,18 +3246,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_GANGS_WARFARE</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Gangs Warfare Esus-->
-			<Type>BUILDINGCLASS_CRIME_GANGS_WARFARE_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_GANGS_WARFARE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_GANGS_WARFARE_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Human Trafficking-->
@@ -3344,18 +3260,6 @@
 			<DefaultBuilding>BUILDING_CRIME_HUMAN_TRAFFICKING</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Human Trafficking Esus-->
-			<Type>BUILDINGCLASS_CRIME_HUMAN_TRAFFICKING_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_HUMAN_TRAFFICKING</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_HUMAN_TRAFFICKING_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Riots-->
 			<Type>BUILDINGCLASS_CRIME_RIOTS</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
@@ -3366,18 +3270,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_RIOTS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Riots Esus-->
-			<Type>BUILDINGCLASS_CRIME_RIOTS_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_RIOTS</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_RIOTS_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Illegal Immigration-->
@@ -3443,18 +3335,6 @@
 			<DefaultBuilding>BUILDING_CRIME_INSUBORDINATION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Insubordination Esus-->
-			<Type>BUILDINGCLASS_CRIME_INSUBORDINATION_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_INSUBORDINATION</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_INSUBORDINATION_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Murder-->
 			<Type>BUILDINGCLASS_CRIME_MURDER</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_MURDER</Description>
@@ -3465,18 +3345,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_MURDER</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Murder Esus-->
-			<Type>BUILDINGCLASS_CRIME_MURDER_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_MURDER</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_MURDER_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Organized Crime-->
@@ -3491,18 +3359,6 @@
 			<DefaultBuilding>BUILDING_CRIME_ORGANIZED_CRIME</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Organized Crime Esus-->
-			<Type>BUILDINGCLASS_CRIME_ORGANIZED_CRIME_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ORGANIZED_CRIME</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ORGANIZED_CRIME_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Rogue Mages-->
 			<Type>BUILDINGCLASS_CRIME_ROGUE_MAGES</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_ROGUE_MAGES</Description>
@@ -3515,18 +3371,6 @@
 			<DefaultBuilding>BUILDING_CRIME_ROGUE_MAGES</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Rogue Mages Esus-->
-			<Type>BUILDINGCLASS_CRIME_ROGUE_MAGES_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROGUE_MAGES</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_ROGUE_MAGES_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Pirates-->
 			<Type>BUILDINGCLASS_CRIME_PIRATES</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_PIRATES</Description>
@@ -3537,18 +3381,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_PIRATES</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Pirates ESUS-->
-			<Type>BUILDINGCLASS_CRIME_PIRATES_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_PIRATES</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_PIRATES_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Tavern Brawl-->
@@ -3575,18 +3407,6 @@
 			<DefaultBuilding>BUILDING_CRIME_SHOPLIFTING</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Shoplifting Esus-->
-			<Type>BUILDINGCLASS_CRIME_SHOPLIFTING_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_SHOPLIFTING</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_SHOPLIFTING_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Tax Evasion-->
 			<Type>BUILDINGCLASS_CRIME_TAX_EVASION</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_TAX_EVASION</Description>
@@ -3599,18 +3419,6 @@
 			<DefaultBuilding>BUILDING_CRIME_TAX_EVASION</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Tax Evasion Esus-->
-			<Type>BUILDINGCLASS_CRIME_TAX_EVASION_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_TAX_EVASION</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_TAX_EVASION_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Unethical Experiment-->
 			<Type>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_UNETHICAL_EXPERIMENT</Description>
@@ -3621,18 +3429,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CRIME_UNETHICAL_EXPERIMENT</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-			<BuildingClassInfo>  <!--Crime --><!--Unethical Experiment Esus-->
-			<Type>BUILDINGCLASS_CRIME_UNETHICAL_EXPERIMENT_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_UNETHICAL_EXPERIMENT</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CRIME_UNETHICAL_EXPERIMENT_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo><!-- National Wonder - Penal Colony -->
@@ -3657,18 +3453,6 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_PENAL_COLONY_EFFECT</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-	<BuildingClassInfo>  <!-- Esus Benevolence -->
-			<Type>BUILDINGCLASS_ESUS_BENEVOLENCE</Type>
-			<Description>TXT_KEY_BUILDING_ESUS_BENEVOLENCE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_ESUS_BENEVOLENCE</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>  <!--Crime --><!--Carnival of Knives-->
@@ -3827,162 +3611,6 @@
 			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_LOW</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Carnival of Knives_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_CARNIVAL_OF_KNIVES_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_CARNIVAL_OF_KNIVES</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_CARNIVAL_OF_KNIVES_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Ravenous Pack_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_RAVENOUS_PACK_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_RAVENOUS_PACK</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_RAVENOUS_PACK_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Winter Loyalist_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_WINTER_LOYALIST_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_WINTER_LOYALIST</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_WINTER_LOYALIST_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Cualli Loyalist_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_CUALLI_LOYALIST_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_CUALLI_LOYALIST</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_CUALLI_LOYALIST_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Water Thieves_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_WATER_THIEVES_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_WATER_THIEVES</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_WATER_THIEVES_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>  <!--Crime --><!--Black Market Fuel_ESUS-->
-			<Type>BUILDINGCLASS_CRIME_BLACK_MARKET_FUEL_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_BLACK_MARKET_FUEL</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_BLACK_MARKET_FUEL_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery Vault 7_ESUS -->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_OVERFLOWING_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT_OVERFLOWING</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_OVERFLOWING_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery  Vault 6 _ESUS-->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_FULL_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT_FULL</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_FULL_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery  Vault 5_ESUS -->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ABUNDANT_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT_ABUNDANT</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_ABUNDANT_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery  Vault 4_ESUS -->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_STOCKED_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT_STOCKED</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_STOCKED_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery  Vault 3 _ESUS-->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Crime Robbery  Vault 2_ESUS -->
-			<Type>BUILDINGCLASS_CRIME_ROBBERY_VAULT_LOW_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_ROBBERY_VAULT_LOW</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_ROBBERY_VAULT_LOW_ESUS</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
 		<BuildingClassInfo><!-- Jewelry Heist -->
 			<Type>BUILDINGCLASS_CRIME_JEWELRY_HEIST</Type>
 			<Description>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST</Description>
@@ -3994,19 +3622,6 @@
 			<bMonument>0</bMonument>
 			<bUnique>1</bUnique>
 			<DefaultBuilding>BUILDING_CRIME_JEWELRY_HEIST</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo><!-- Jewelry Heist Esus-->
-			<Type>BUILDINGCLASS_CRIME_JEWELRY_HEIST_ESUS</Type>
-			<Description>TXT_KEY_BUILDING_CRIME_JEWELRY_HEIST</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<bUnique>1</bUnique>
-			<DefaultBuilding>BUILDING_CRIME_JEWELRY_HEIST_ESUS</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo><!-- Blood of Nemed -->

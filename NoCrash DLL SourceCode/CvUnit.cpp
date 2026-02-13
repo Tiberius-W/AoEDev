@@ -33366,7 +33366,14 @@ bool CvUnit::exploreLair(CvPlot* pPlot)
 			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(),true,GC.getEVENT_MESSAGE_TIME(),gDLL->getText("TXT_KEY_MESSAGE_LAIR_DESTROYED").GetCString(),"AS2D_POSITIVE_DINK",MESSAGE_TYPE_DISPLAY_ONLY,"Art/Interface/Buttons/Spells/Rob Grave.dds",(ColorTypes)8,pPlot->getX(),pPlot->getY(),true,true);
 			pPlot->clearCultureControl(pPlot->getImprovementOwner(), pPlot->getImprovementType(), true);
 			plot()->setImprovementOwner(NO_PLAYER);
-			pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()));
+			if (pPlot->getOwner() != NO_PLAYER)
+			{
+				pPlot->setImprovementType((ImprovementTypes)GET_PLAYER(pPlot->getOwner()).getPlayerImprovement((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage()));
+			}
+			else
+			{
+				pPlot->setImprovementType((ImprovementTypes)GC.getImprovementClassInfo(((ImprovementClassTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementClassPillage())).getDefaultImprovementIndex());
+			}
 		}
 		else
 		{

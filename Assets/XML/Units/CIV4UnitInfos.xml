@@ -16908,6 +16908,7 @@
 		</UnitInfo>
 		<UnitInfo>        <!-- Verdandi -->
 			<Class>UNITCLASS_PHALANX</Class>
+			<SecondaryClass>UNITCLASS_BERSERKER</SecondaryClass>
 			<Type>UNIT_VERDANDI</Type>
 			<Combat>UNITCOMBAT_DEFENSIVE_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>

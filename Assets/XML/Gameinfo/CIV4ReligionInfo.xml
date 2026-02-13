@@ -456,6 +456,7 @@
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
 			<iTGAIndex>6</iTGAIndex>
+			<bNoCrimeUnhappy>1</bNoCrimeUnhappy>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>

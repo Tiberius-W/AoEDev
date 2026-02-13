@@ -27,6 +27,7 @@
 	<ElementType name="Strategy" content="textOnly"/>
 	<ElementType name="iTime" content="textOnly" dt:type="int"/>
 	<ElementType name="bKill" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bStandard" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iXPValue" content="textOnly" dt:type="float"/>
 	<ElementType name="LinkedBuilds" content="eltOnly">
 		<element type="LinkedBuild" minOccurs="0"/>
@@ -76,6 +77,7 @@
 		<element type="iTime"/>
 		<element type="iCost"/>
 		<element type="bKill"/>
+		<element type="bStandard"/>
 		<element type="iXPValue"/>
 		<element type="LinkedBuilds"/>
 		<element type="BlockedBuilds"/>
@@ -1237,6 +1239,7 @@
 	<ElementType name="bFirstStrikeVulnerable" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFreeUnit" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCannotCast" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bRevealed" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAllowDefenseBonuses" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNonAbandon" content="textOnly" dt:type="boolean"/>
 	<ElementType name="YieldsFromWin" content="eltOnly">
@@ -1476,6 +1479,7 @@
 	<ElementType name="bHillsDoubleMove" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bClimbPeaks" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bImmuneToFirstStrikes" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bDurationDecreaseSpellpower" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iVisibilityChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iExtraPerception" content="textOnly" dt:type="int"/>
 	<ElementType name="iMovesChange" content="textOnly" dt:type="int"/>
@@ -1523,6 +1527,7 @@
 	<ElementType name="bEnraged" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bBoarding" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDispellable" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iPrereqDispelPower" content="textOnly" dt:type="int"/>
 	<ElementType name="bDoubleFortifyBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bEquipment" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFear" content="textOnly" dt:type="boolean"/>
@@ -1678,6 +1683,7 @@
 		<element type="bLeveledImmortality"/>
 		<element type="bCannotCapture"/>
 		<element type="bCannotCast"/>
+		<element type="bRevealed"/>
 		<element type="bCannotPillage"/>
 		<element type="bCanPillage"/>
 		<element type="bPrereqAtPeace"/>
@@ -1860,6 +1866,7 @@
 		<element type="bAlwaysHeal"/>
 		<element type="bHillsDoubleMove"/>
 		<element type="bImmuneToFirstStrikes"/>
+		<element type="bDurationDecreaseSpellpower"/>
 		<element type="iVisibilityChange"/>
 		<element type="iExtraPerception"/>
 		<element type="iMovesChange"/>
@@ -1919,6 +1926,7 @@
 		<element type="bBoarding"/>
 		<element type="bOnlyDefensive"/>
 		<element type="bDispellable"/>
+		<element type="iPrereqDispelPower"/>
 		<element type="bDoubleFortifyBonus"/>
 		<element type="bEquipment"/>
 		<element type="bFear"/>

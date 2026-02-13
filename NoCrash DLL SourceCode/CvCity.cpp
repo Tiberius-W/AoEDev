@@ -754,6 +754,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iMilitaryHappinessUnits = 0;
 	m_iBuildingGoodHappiness = 0;
 	m_iBuildingBadHappiness = 0;
+	m_iBuildingBadHappinessCrime = 0;
 	m_iExtraBuildingGoodHappiness = 0;
 	m_iExtraBuildingBadHappiness = 0;
 	m_iExtraBuildingGoodHealth = 0;
@@ -969,6 +970,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_fPerPopGold = 0;
 	m_fPerPopGPP = 0;
 	m_fPerPopHappy = 0;
+	m_fPerPopHappyCrime = 0;
 	m_fPerPopHealth = 0;
 	m_fPerPopProduction = 0;
 	m_fPerPopTradeRoutes = 0;
@@ -5682,7 +5684,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 		else
 		{
-			changeBuildingBadHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
+			changeBuildingBadHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange,GC.getBuildingInfo(eBuilding).isCrimeEffect());
 		}
 		if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 		{
@@ -5913,7 +5915,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (cbTemp.fFreeXP != 0) changePerPopFreeXP(iChange * (cbTemp.fFreeXP));
 		if (cbTemp.fGold != 0) changePerPopGold(iChange * (cbTemp.fGold));
 		if (cbTemp.fGPP != 0) changePerPopGPP(iChange * (cbTemp.fGPP));
-		if (cbTemp.fHappy != 0) changePerPopHappy(iChange * (cbTemp.fHappy));
+		if (cbTemp.fHappy < 0) changePerPopHappy(iChange * (cbTemp.fHappy), GC.getBuildingInfo(eBuilding).isCrimeEffect());
+		if (cbTemp.fHappy > 0) changePerPopHappy(iChange * (cbTemp.fHappy));
 		if (cbTemp.fHealth != 0) changePerPopHealth(iChange * (cbTemp.fHealth));
 		if (cbTemp.fProduction != 0) changePerPopProduction(iChange * (cbTemp.fProduction));
 		if (cbTemp.fTradeRoutes != 0) changePerPopTradeRoutes(iChange * (cbTemp.fTradeRoutes));
@@ -6459,6 +6462,12 @@ int CvCity::unhappyLevel(int iExtra) const
 	{
 		return 0;
 	}
+	bool bcrimeincluded = true;
+	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && GC.getReligionInfo(GET_PLAYER(getOwnerINLINE()).getStateReligion()).isNoCrimeUnhappy() && this->isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		bcrimeincluded = false;
+	}
+
 	if (!isNoUnhappiness())
 	{
 		iAngerPercent = 0;
@@ -6493,7 +6502,7 @@ int CvCity::unhappyLevel(int iExtra) const
 /**	DecimalHappiness							END												**/
 /*************************************************************************************************/
 		iUnhappiness -= std::min(0, getCurrentStateReligionHappiness());
-		iUnhappiness -= std::min(0, getBuildingBadHappiness());
+		iUnhappiness -= std::min(0, getBuildingBadHappiness(bcrimeincluded));
 /*************************************************************************************************/
 /** Specialists Enhancements, by Supercheese 10/9/09           Imported by Valkrionn   10/22/09  */
 /**                                                                                              */
@@ -6535,7 +6544,7 @@ int CvCity::unhappyLevel(int iExtra) const
 /**	People's Choice							END													**/
 /*************************************************************************************************/
 		//PerPopEffect
-		iUnhappiness -= std::min(0, int(getPerPopHappy() * getPopulation()));
+		iUnhappiness -= std::min(0, int(getPerPopHappy(bcrimeincluded) * getPopulation()));
 
 		//PerCrimeEffect
 		iUnhappiness -= std::min(0, int(getPerCrimeEffectHappy() * getNumCrimeEffects()));
@@ -6548,6 +6557,11 @@ int CvCity::unhappyLevel(int iExtra) const
 int CvCity::happyLevel() const
 {
 	int iHappiness;
+	bool bcrimeincluded = true;
+	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && GC.getReligionInfo(GET_PLAYER(getOwnerINLINE()).getStateReligion()).isNoCrimeUnhappy() && this->isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		bcrimeincluded = false;
+	}
 
 	iHappiness = 0;
 
@@ -6606,7 +6620,7 @@ int CvCity::happyLevel() const
 /**	People's Choice							END													**/
 /*************************************************************************************************/
 	//PerPopEffect
-	iHappiness += std::max(0, int(getPerPopHappy() * getPopulation()));
+	iHappiness += std::max(0, int(getPerPopHappy(bcrimeincluded) * getPopulation()));
 	//PerCrimeEffect
 	iHappiness += std::max(0, int(getPerCrimeEffectHappy() * getNumCrimeEffects()));
 
@@ -8841,9 +8855,16 @@ int CvCity::getBuildingGoodHappiness() const
 }
 
 
-int CvCity::getBuildingBadHappiness() const
+int CvCity::getBuildingBadHappiness(bool bCrimeIncluded) const
 {
-	return m_iBuildingBadHappiness;
+	if (bCrimeIncluded)	
+	{ 
+		return m_iBuildingBadHappiness+m_iBuildingBadHappinessCrime;
+	}
+	else
+	{
+		return m_iBuildingBadHappiness;
+	}
 }
 
 
@@ -8887,11 +8908,18 @@ void CvCity::changeBuildingGoodHappiness(int iChange)
 }
 
 
-void CvCity::changeBuildingBadHappiness(int iChange)
+void CvCity::changeBuildingBadHappiness(int iChange, bool bCrime)
 {
 	if (iChange != 0)
 	{
-		m_iBuildingBadHappiness = (m_iBuildingBadHappiness + iChange);
+		if (bCrime)
+		{
+			m_iBuildingBadHappinessCrime = (m_iBuildingBadHappinessCrime+iChange);
+		}
+		else 
+		{
+			m_iBuildingBadHappiness = (m_iBuildingBadHappiness + iChange);
+		}
 		FAssert(getBuildingBadHappiness() <= 0);
 
 		AI_setAssignWorkDirty(true);
@@ -16963,6 +16991,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMilitaryHappinessUnits);
 	pStream->Read(&m_iBuildingGoodHappiness);
 	pStream->Read(&m_iBuildingBadHappiness);
+	pStream->Read(&m_iBuildingBadHappinessCrime);
 	pStream->Read(&m_iExtraBuildingGoodHappiness);
 	pStream->Read(&m_iExtraBuildingBadHappiness);
 	pStream->Read(&m_iExtraBuildingGoodHealth);
@@ -17331,6 +17360,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_fPerPopGold);
 	pStream->Read(&m_fPerPopGPP);
 	pStream->Read(&m_fPerPopHappy);
+	pStream->Read(&m_fPerPopHappyCrime);
 	pStream->Read(&m_fPerPopHealth);
 	pStream->Read(&m_fPerPopProduction);
 	pStream->Read(&m_fPerPopTradeRoutes);
@@ -17406,6 +17436,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMilitaryHappinessUnits);
 	pStream->Write(m_iBuildingGoodHappiness);
 	pStream->Write(m_iBuildingBadHappiness);
+	pStream->Write(m_iBuildingBadHappinessCrime);
 	pStream->Write(m_iExtraBuildingGoodHappiness);
 	pStream->Write(m_iExtraBuildingBadHappiness);
 	pStream->Write(m_iExtraBuildingGoodHealth);
@@ -17756,6 +17787,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_fPerPopGold);
 	pStream->Write(m_fPerPopGPP);
 	pStream->Write(m_fPerPopHappy);
+	pStream->Write(m_fPerPopHappyCrime);
 	pStream->Write(m_fPerPopHealth);
 	pStream->Write(m_fPerPopProduction);
 	pStream->Write(m_fPerPopTradeRoutes);
@@ -22367,9 +22399,14 @@ float CvCity::getPerPopGPP() const
 {
 	return m_fPerPopGPP;
 }
-float CvCity::getPerPopHappy() const
+float CvCity::getPerPopHappy(bool bCrimeIncluded) const
 {
-	return m_fPerPopHappy;
+	if(bCrimeIncluded)
+		return m_fPerPopHappy + m_fPerPopHappyCrime;
+	else
+	{
+		return m_fPerPopHappy;
+	}
 }
 float CvCity::getPerPopHealth() const
 {
@@ -22443,9 +22480,16 @@ void CvCity::changePerPopGPP(float fChange)
 {
 	m_fPerPopGPP = m_fPerPopGPP + fChange;
 }
-void CvCity::changePerPopHappy(float fChange)
+void CvCity::changePerPopHappy(float fChange, bool bCrime)
 {
-	m_fPerPopHappy = m_fPerPopHappy + fChange;
+	if (bCrime)
+	{
+		m_fPerPopHappyCrime = m_fPerPopHappyCrime + fChange;
+
+	}
+	else {
+		m_fPerPopHappy = m_fPerPopHappy + fChange;
+	}
 	AI_setAssignWorkDirty(true);
 }
 void CvCity::changePerPopHealth(float fChange)

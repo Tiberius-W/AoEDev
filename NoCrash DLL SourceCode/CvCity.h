@@ -454,10 +454,10 @@ public:
 	void changeMilitaryHappinessUnits(int iChange);
 
 	int getBuildingGoodHappiness() const;																	// Exposed to Python
-	int getBuildingBadHappiness() const;																	// Exposed to Python
+	int getBuildingBadHappiness(bool bCrimeIncluded=true) const;																	// Exposed to Python
 	int getBuildingHappiness(BuildingTypes eBuilding) const;							// Exposed to Python
 	void changeBuildingGoodHappiness(int iChange);
-	void changeBuildingBadHappiness(int iChange);
+	void changeBuildingBadHappiness(int iChange, bool bCrime=false);
 
 	int getExtraBuildingGoodHappiness() const;														// Exposed to Python
 	int getExtraBuildingBadHappiness() const;															// Exposed to Python
@@ -1272,7 +1272,7 @@ public:
 	float getPerPopFreeXP() const;
 	float getPerPopGold() const;
 	float getPerPopGPP() const;
-	float getPerPopHappy() const;
+	float getPerPopHappy(bool bCrimeIncluded=true) const;
 	float getPerPopHealth() const;
 	float getPerPopProduction() const;
 	float getPerPopTradeRoutes() const;
@@ -1291,7 +1291,7 @@ public:
 	void changePerPopFreeXP(float fChange);
 	void changePerPopGold(float fChange);
 	void changePerPopGPP(float fChange);
-	void changePerPopHappy(float fChange);
+	void changePerPopHappy(float fChange,bool bCrime=false);
 	void changePerPopHealth(float fChange);
 	void changePerPopProduction(float fChange);
 	void changePerPopTradeRoutes(float fChange);
@@ -1566,6 +1566,7 @@ protected:
 	int m_iMilitaryHappinessUnits;
 	int m_iBuildingGoodHappiness;
 	int m_iBuildingBadHappiness;
+	int m_iBuildingBadHappinessCrime;
 	int m_iExtraBuildingGoodHappiness;
 	int m_iExtraBuildingBadHappiness;
 	int m_iExtraBuildingGoodHealth;
@@ -1785,6 +1786,7 @@ protected:
 	float m_fPerPopGold;
 	float m_fPerPopGPP;
 	float m_fPerPopHappy;
+	float m_fPerPopHappyCrime;
 	float m_fPerPopHealth;
 	float m_fPerPopProduction;
 	float m_fPerPopTradeRoutes;

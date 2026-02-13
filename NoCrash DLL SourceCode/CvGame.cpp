@@ -465,6 +465,25 @@ void CvGame::init(HandicapTypes eHandicap)
 			makeSpecialBuildingValid((SpecialBuildingTypes)iI);
 		}
 	}
+	CvString szError;
+	for (int i = 0; i < GC.getNumUnitClassInfos(); i++)
+	{
+		szError.Format("id %i for type %s",i, GC.getUnitClassInfo((UnitClassTypes)i).getType());
+		gDLL->logMsg("listunitclass.log", szError);
+
+	}
+	for (int i = 0; i < GC.getNumUnitInfos(); i++)
+	{
+		szError.Format("id %i for type %s", i, GC.getUnitInfo((UnitTypes)i).getType());
+		gDLL->logMsg("listunit.log", szError);
+
+	}
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		szError.Format("id %i for type %s", i, GC.getTraitInfo((TraitTypes)i).getType());
+		gDLL->logMsg("listtrait.log", szError);
+
+	}
 
 	AI_init();
 

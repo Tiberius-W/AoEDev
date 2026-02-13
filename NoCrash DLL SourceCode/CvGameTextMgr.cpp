@@ -23411,7 +23411,11 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	int iNewAnger;
 	int iAnger;
 	int iI;
-
+	bool bcrimeincluded = true;
+	if (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).isNoCrimeUnhappy() && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
+	{
+		bcrimeincluded = false;
+	}
 	if (city.isOccupation())
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_ANGER_RESISTANCE"));
@@ -23587,7 +23591,7 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 		iOldAnger = iNewAnger;
 
-		iNewAnger -= std::min(0, (city.getBuildingBadHappiness() + city.getExtraBuildingBadHappiness()));
+		iNewAnger -= std::min(0, (city.getBuildingBadHappiness(bcrimeincluded) + city.getExtraBuildingBadHappiness()));
 		iAnger = ((iNewAnger - iOldAnger) + std::min(0, iOldAnger));
 		if (iAnger > 0)
 		{
@@ -23712,7 +23716,7 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 /**	People's Choice							END													**/
 /*************************************************************************************************/
 		//PerPopEffect
-		iNewAnger -= std::min(0, int(city.getPerPopHappy() * city.getPopulation()));
+		iNewAnger -= std::min(0, int(city.getPerPopHappy(bcrimeincluded) * city.getPopulation()));
 		iAnger = ((iNewAnger - iOldAnger) + std::min(0, iOldAnger));
 		if (iAnger > 0)
 		{
@@ -23749,6 +23753,12 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	{
 		return;
 	}
+	bool bcrimeincluded = true;
+	if (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).isNoCrimeUnhappy() && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
+	{
+		bcrimeincluded = false;
+	}
+
 	if (city.happyLevel() > 0)
 	{
 		iHappy = city.getLargestCityHappiness();
@@ -23916,7 +23926,7 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 /**	People's Choice							END													**/
 /*************************************************************************************************/
 		//PerPopEffect
-		iHappy = int(city.getPerPopHappy() * city.getPopulation());
+		iHappy = int(city.getPerPopHappy(bcrimeincluded) * city.getPopulation());
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
