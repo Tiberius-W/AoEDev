@@ -2332,7 +2332,7 @@
 					<UnitType>UNIT_MONK</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_BERSERKER</UnitClassType>
+					<UnitClassType>UNITCLASS_PHALANX</UnitClassType>
 					<UnitType>UNIT_VERDANDI</UnitType>
 				</Unit>
 				<Unit>

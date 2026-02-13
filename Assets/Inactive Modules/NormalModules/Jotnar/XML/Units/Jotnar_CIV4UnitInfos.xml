@@ -1219,10 +1219,6 @@
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_LOYALTY2</PromotionType>
-					<iNumApplied>1</iNumApplied>
-				</FreePromotion>
-				<FreePromotion>
 					<PromotionType>PROMOTION_HURLER</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
@@ -3629,10 +3625,6 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_COURAGE</PromotionType>
-					<iNumApplied>1</iNumApplied>
-				</FreePromotion>
-				<FreePromotion>
-					<PromotionType>PROMOTION_LOYALTY</PromotionType>
 					<iNumApplied>1</iNumApplied>
 				</FreePromotion>
 				<FreePromotion>

@@ -1622,20 +1622,7 @@
 		<UnitInfo>        <!-- Caravel -->
 			<Class>UNITCLASS_CARAVEL</Class>
 			<Type>UNIT_CARAVEL</Type>
-			<FeatureMoveCosts>
-				<FeatureMoveCost>
-					<FeatureType>FEATURE_KELP</FeatureType>
-					<iFeatureMoveCost>-2</iFeatureMoveCost>
-				</FeatureMoveCost>
-				<FeatureMoveCost>
-					<FeatureType>FEATURE_KELP_FOREST</FeatureType>
-					<iFeatureMoveCost>-2</iFeatureMoveCost>
-				</FeatureMoveCost>
-				<FeatureMoveCost>
-					<FeatureType>FEATURE_REEFS</FeatureType>
-					<iFeatureMoveCost>-2</iFeatureMoveCost>
-				</FeatureMoveCost>
-			</FeatureMoveCosts>
+			<iMoves>5</iMoves>
 		</UnitInfo>
 		<UnitInfo>        <!-- Workboat -->
 			<Class>UNITCLASS_WORKBOAT</Class>

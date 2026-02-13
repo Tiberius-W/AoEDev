@@ -14,6 +14,7 @@
 				<Promotion>PROMOTION_SPOOKED</Promotion>
 				<Promotion>PROMOTION_LION_BLOOD</Promotion>
 				<Promotion>PROMOTION_COURAGE</Promotion>
+				<Promotion>PROMOTION_TERRIFIED</Promotion>
 			</PromotionExcludes>
 			<bPrereqAlive>1</bPrereqAlive>
 			<iEnemyHealChange>-5</iEnemyHealChange>
