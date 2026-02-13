@@ -946,12 +946,12 @@
 			<CommanderUnits>
 				<Unit>UNIT_FALLEN_ANGEL</Unit>
 			</CommanderUnits>
-			<GroupUnitClasses>
-				<GroupUnitClass>
-					<UnitClass>UNITCLASS_ANGEL</UnitClass>
+			<GroupUnits>
+				<GroupUnit>
+					<Unit>UNIT_FALLEN_ANGEL</Unit>
 					<iNumUnits>5</iNumUnits>
-				</GroupUnitClass>
-			</GroupUnitClasses>
+				</GroupUnit>
+			</GroupUnits>
 			<GroupPromotions>
 				<Promotion>PROMOTION_COMMAND1</Promotion>
 				<Promotion>PROMOTION_FALLEN_ANGEL</Promotion>
@@ -967,12 +967,12 @@
 			<CommanderUnits>
 				<Unit>UNIT_GHOSTWALKER</Unit>
 			</CommanderUnits>
-			<GroupUnitClasses>
-				<GroupUnitClass>
-					<UnitClass>UNIT_GHOSTWALKER</UnitClass>
+			<GroupUnits>
+				<GroupUnit>
+					<Unit>UNIT_GHOSTWALKER</Unit>
 					<iNumUnits>2</iNumUnits>
-				</GroupUnitClass>
-			</GroupUnitClasses>
+				</GroupUnit>
+			</GroupUnits>
 			<GroupPromotions>
 				<Promotion>PROMOTION_UNDEAD</Promotion>
 				<Promotion>PROMOTION_NO_ORC</Promotion>

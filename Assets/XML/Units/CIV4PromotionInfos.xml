@@ -17890,10 +17890,6 @@
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
 				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
-					<iMaxApplications>0</iMaxApplications>
-				</UnitCombat>
-				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<iMaxApplications>0</iMaxApplications>
 				</UnitCombat>
